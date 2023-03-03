@@ -1,11 +1,8 @@
 # Dependencies
 /node_modules
-
+.idea
 # Production
 /build
-
-.idea
-
 # Generated files
 .docusaurus
 .cache-loader
