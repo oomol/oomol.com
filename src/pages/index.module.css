@@ -4,20 +4,82 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.sectionOne {
+    display: flex;
+    flex-direction: row;
+    height: 600px;
+}
+
+.sectionOneLeft {
+    width: 40%;
+    height: 100%;
+    background-color: #4fddbf;
+    display: flex;
+    align-items: center;
+}
+
+.sectionOneRight {
+    width: 60%;
+    height: 100%;
+    background-color: darkseagreen;
+}
+
+.sectionTwo {
+    display: flex;
+    flex-direction: row;
+    height: 380px;
+}
+
+.sectionTwoLeft {
+    width: 50%;
+    height: 100%;
+    background-color: rebeccapurple;
+    display: flex;
+    align-items: center;
+}
+
+.sectionTwoRight {
+    width: 50%;
+    height: 100%;
+    background-color: salmon;
+    display: flex;
+    align-items: center;
+}
+
+.sectionDownload {
+    display: flex;
+    flex-direction: row;
+    height: 380px;
+    align-items: center;
+    justify-content: center;
+}
+
+.sectionDownloadCell {
+    width: 180px;
+    height: 180px;
+    background-color: yellow;
+    margin-left: 18px;
+    margin-right: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 @media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+    .heroBanner {
+        padding: 2rem;
+    }
 }
 
 .buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
