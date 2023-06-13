@@ -11,45 +11,114 @@
 }
 
 .sectionOne {
+    background-color: #383970;
+}
+
+.sectionOneBox {
     display: flex;
     flex-direction: row;
     height: 600px;
+    width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .sectionOneLeft {
     width: 40%;
     height: 100%;
-    background-color: #4fddbf;
     display: flex;
     align-items: center;
+    flex-direction: row-reverse;
+    /*background-color: red;*/
+}
+
+.sectionOneLeftBox {
+    width: 500px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 24px;
+    color: white;
+}
+
+.sectionOneLeftTitle {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.sectionOneLeftInner {
+    font-size: 18px;
+    margin-top: 12px;
+}
+
+.sectionOneLeftBtn {
+    width: 180px;
+    height: 54px;
+    font-size: 18px;
+    margin-top: 24px;
+    background-color: white;
+    border-color: white;
+    color: #383970;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
 }
 
 .sectionOneRight {
     width: 60%;
     height: 100%;
-    background-color: darkseagreen;
+    display: flex;
+    align-items: center;
+}
+
+.sectionOneRightImage {
+    width: 720px;
+    margin-left:120px;
 }
 
 .sectionTwo {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     height: 380px;
+    background-color: #1fa588;
 }
 
-.sectionTwoLeft {
-    width: 50%;
+.sectionTwoBox {
+    width: 1200px;
+    background-color: yellow;
+    display: flex;
+}
+
+.sectionTwoSmall {
+    width: 40%;
     height: 100%;
-    background-color: rebeccapurple;
     display: flex;
     align-items: center;
 }
 
-.sectionTwoRight {
-    width: 50%;
+.sectionTwoLarge {
+    width: 60%;
     height: 100%;
-    background-color: salmon;
+    background-color: palegoldenrod;
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.sectionTwoLargeBox {
+    width: 480px;
+}
+
+.sectionTwoLargeTitle {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.sectionTwoLargeInner {
+    font-size: 16px;
+    margin-top: 12px;
 }
 
 .sectionDownload {
@@ -60,16 +129,34 @@
     justify-content: center;
 }
 
+.sectionFooter {
+    width: 100%;
+    height: 420px;
+    background-color: #383970;
+    color: white;
+}
+
 .sectionDownloadCell {
     width: 180px;
-    height: 180px;
-    background-color: yellow;
-    margin-left: 18px;
-    margin-right: 18px;
+    height: 160px;
+    margin-left: 24px;
+    margin-right: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.sectionDownloadBtn {
+    width: 180px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #383970;
+    color: white;
+    margin-left: 24px;
+    margin-right: 24px;
 }
 
 @media screen and (max-width: 996px) {

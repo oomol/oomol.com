@@ -4,9 +4,9 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import undraw_docusaurus_mountain from '@site/static/img/undraw_docusaurus_mountain.svg';
-
 import styles from './index.module.css';
+import Image from '@theme/ThemedImage';
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 function HomepageHeader() {
     const {siteConfig} = useDocusaurusContext();
@@ -37,82 +37,187 @@ export default function Home(): JSX.Element {
             {/*<HomepageHeader />*/}
             <main>
                 <div className={styles.sectionOne}>
-                    <div className={styles.sectionOneLeft}>
-                        <div>
-                            <div>
-                                好用的自动化、数据分析工具。
+                    <div className={styles.sectionOneBox}>
+                        <div className={styles.sectionOneLeft}>
+                            <div className={styles.sectionOneLeftBox}>
+                                <div className={styles.sectionOneLeftTitle}>
+                                    好用的自动化、数据分析工具。
+                                </div>
+                                <div className={styles.sectionOneLeftInner}>
+                                    使用熟悉的开发语言，丰富的内置工具套件，活跃的社区分享<br/>
+                                    帮助你轻松完成自动化、数据分析构建工作
+                                </div>
+                                <div className={styles.sectionOneLeftBtn}>
+                                    下载使用
+                                </div>
                             </div>
-                            <div>
-                                使用熟悉的开发语言，丰富的内置工具套件，活跃的社区分享<br/>
-                                帮助你轻松完成自动化、数据分析构建工作
-                            </div>
-                            <div>
-                                <button>下载使用</button>
+                        </div>
+                        <div className={styles.sectionOneRight}>
+                            <Image className={styles.sectionOneRightImage} sources={{
+                                light: useBaseUrl('/img/oomol_studio.jpg'),
+                                dark: useBaseUrl('/img/oomol_studio.jpg'),
+                            }}/>
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.sectionTwo}>
+                    <div className={styles.sectionTwoBox}>
+                        <div className={styles.sectionTwoSmall}>
+                        </div>
+                        <div className={styles.sectionTwoLarge}>
+                            <div className={styles.sectionTwoLargeBox}>
+                                <div className={styles.sectionTwoLargeTitle}>
+                                    代码编写 & 工作流编排
+                                </div>
+                                <div className={styles.sectionTwoLargeInner}>
+                                    继承 vscode 的全部开发体验，支持可视化 Workflow 进行逻辑编排。
+                                    可以同时在一个工具内同时拥有最好的编写和编排体验
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div className={styles.sectionOneRight}>
-                        {/*<img src={}/>*/}
+                </div>
+                <div className={styles.sectionTwo}>
+                    <div className={styles.sectionTwoBox}>
+                        <div className={styles.sectionTwoLarge}>
+                            <div className={styles.sectionTwoLargeBox}>
+                                <div className={styles.sectionTwoLargeTitle}>
+                                    多语言 & 数据处理、渲染
+                                </div>
+                                <div className={styles.sectionTwoLargeInner}>
+                                    可以用常见的开发语言以及相关的语言库进行数据处理，甚至可以进行跨语言配合。
+                                    处理后的数据可以通过内置的图包进行渲染，如果内置的不满足也可以支持社区扩展。
+                                    处理数据和图表化显示导出可以在一个工具中获得最好的体验。
+                                </div>
+                            </div>
+                        </div>
+                        <div className={styles.sectionTwoSmall}>
+                        </div>
                     </div>
                 </div>
                 <div className={styles.sectionTwo}>
-                    <div className={styles.sectionTwoLeft}>
-                    </div>
-                    <div className={styles.sectionTwoRight}>
-                        继承 vscode 的全部开发体验<br/>
-                        支持可视化 Pipeline 进行逻辑编排<br/>
-                        可以同时在一个工具内同时拥有最好的编写和编排体验<br/>
-                    </div>
-                </div>
-                <div className={styles.sectionTwo}>
-                    <div className={styles.sectionTwoLeft}>
-                        可以用常见的开发语言以及相关的语言库进行数据处理，甚至可以进行跨语言配合。<br/>
-                        处理后的数据可以通过内置的图包进行渲染，如果内置的不满足也可以支持社区扩展.<br/>
-                        处理数据和图表化显示导出可以在一个工具中获得最好的体验。
-                    </div>
-                    <div className={styles.sectionTwoRight}>
-                    </div>
-                </div>
-                <div className={styles.sectionTwo}>
-                    <div className={styles.sectionTwoLeft}>
-                    </div>
-                    <div className={styles.sectionTwoRight}>
-                        在本地调试通过之后，可以轻松的部署到云端。方便将代码变为高可用的服务。<br/>
-                        可以方便的分析给别人使用以及可以长时间大算力的处理数据。<br/>
-                        用户可以专注于构建数学模型或者自动化流程，而部署和运维可以交给我们。
+                    <div className={styles.sectionTwoBox}>
+                        <div className={styles.sectionTwoSmall}>
+                        </div>
+                        <div className={styles.sectionTwoLarge}>
+                            <div className={styles.sectionTwoLargeBox}>
+                                <div className={styles.sectionTwoLargeTitle}>
+                                    协作 & 管理 & 分享
+                                </div>
+                                <div className={styles.sectionTwoLargeInner}>
+                                    原生支持社区常用的协作开发工具 git 管理项目。
+                                    提供 Oomol Workflow 功能的开源分享社区，方便开发者交流。
+                                    让好的想法和创新被更多人看见以及被更多的工程使用。
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className={styles.sectionTwo}>
-                    <div className={styles.sectionTwoLeft}>
-                        我们将支持社区常用的协作开发工具<br/>
-                        我们还会提供 Oomol pipeline 功能的开源分享社区，方便大家交流。<br/>
-                        让好的想法和创新被更多人看见以及被更多的工程使用。
-                    </div>
-                    <div className={styles.sectionTwoRight}>
+                    <div className={styles.sectionTwoBox}>
+                        <div className={styles.sectionTwoLarge}>
+                            <div className={styles.sectionTwoLargeBox}>
+                                <div className={styles.sectionTwoLargeTitle}>
+                                    多语言协作 & 数据处理、渲染
+                                </div>
+                                <div className={styles.sectionTwoLargeInner}>
+                                    本地使用更加安全、轻量和经济。
+                                    云端部署可以很方便地分享给他人使用，且支持长时间大算力的处理数据。
+                                    使用 Oomol Studio 本地调试通过之后可以轻松的部署到云端，将代码变为高可用的服务。
+                                    用户可以专注于构建数学模型以及自动化流程，而部署和运维可以交给我们。
+                                </div>
+                            </div>
+                        </div>
+                        <div className={styles.sectionTwoSmall}>
+                        </div>
                     </div>
                 </div>
                 <div className={styles.sectionTwo}>
-                    <div className={styles.sectionTwoLeft}>
+                    <div className={styles.sectionTwoBox}>
+                        <div className={styles.sectionTwoSmall}>
+                        </div>
+                        <div className={styles.sectionTwoLarge}>
+                            <div className={styles.sectionTwoLargeBox}>
+                                <div className={styles.sectionTwoLargeTitle}>
+                                    本地 & 云端
+                                </div>
+                                <div className={styles.sectionTwoLargeInner}>
+                                    本地使用更加安全、轻量和经济。
+                                    云端部署可以很方便地分享给他人使用，且支持长时间大算力的处理数据。
+                                    使用 Oomol Studio 本地调试通过之后可以轻松的部署到云端，将代码变为高可用的服务。
+                                    用户可以专注于构建数学模型以及自动化流程，而部署和运维可以交给我们。
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className={styles.sectionTwoRight}>
-                        编排引擎内核 vocana 开源，支持 vscode 插件<br/>
-                        数据使用符合 GDPR 要求<br/>
-                        总结：提供安全和值得信赖的生产力工具。
+                </div>
+                <div className={styles.sectionTwo}>
+                    <div className={styles.sectionTwoBox}>
+                        <div className={styles.sectionTwoLarge}>
+                            <div className={styles.sectionTwoLargeBox}>
+                                <div className={styles.sectionTwoLargeTitle}>
+                                    内核开源 & 数据安全
+                                </div>
+                                <div className={styles.sectionTwoLargeInner}>
+                                    编排引擎内核 vocana 开源，支持基于 vscode 插件使用。
+                                    数据使用符合 GDPR 要求。
+                                    提供安全和值得信赖的生产力工具。
+                                </div>
+                            </div>
+                        </div>
+                        <div className={styles.sectionTwoSmall}>
+                        </div>
                     </div>
                 </div>
                 <div className={styles.sectionDownload}>
-                    <div className={styles.sectionDownloadCell}>
-                        <div>logo</div>
-                        <div>MacOS</div>
+                    <div>
+                        <div className={styles.sectionDownloadCell}>
+                            <Image style={{width: 80}} sources={{
+                                light: useBaseUrl('/img/windows.svg'),
+                                dark: useBaseUrl('/img/windows.svg'),
+                            }}/>
+                        </div>
+                        <div className={styles.sectionDownloadBtn}>
+                            <Image style={{width: 14}} sources={{
+                                light: useBaseUrl('/img/download.svg'),
+                                dark: useBaseUrl('/img/download.svg'),
+                            }}/>
+                            <span style={{marginLeft: 8}}>Windows</span>
+                        </div>
                     </div>
-                    <div className={styles.sectionDownloadCell}>
-                        <div>logo</div>
-                        <div>Windows</div>
+                    <div>
+                        <div className={styles.sectionDownloadCell}>
+                            <Image style={{width: 120}} sources={{
+                                light: useBaseUrl('/img/linux.svg'),
+                                dark: useBaseUrl('/img/linux.svg'),
+                            }}/>
+                        </div>
+                        <div className={styles.sectionDownloadBtn}>
+                            <Image style={{width: 14}} sources={{
+                                light: useBaseUrl('/img/download.svg'),
+                                dark: useBaseUrl('/img/download.svg'),
+                            }}/>
+                            <span style={{marginLeft: 8}}>Linux</span>
+                        </div>
                     </div>
-                    <div className={styles.sectionDownloadCell}>
-                        <div>logo</div>
-                        <div>Linux</div>
+                    <div>
+                        <div className={styles.sectionDownloadCell}>
+                            <Image style={{width: 100}} sources={{
+                                light: useBaseUrl('/img/macos.svg'),
+                                dark: useBaseUrl('/img/macos.svg'),
+                            }}/>
+                        </div>
+                        <div className={styles.sectionDownloadBtn}>
+                            <Image style={{width: 14}} sources={{
+                                light: useBaseUrl('/img/download.svg'),
+                                dark: useBaseUrl('/img/download.svg'),
+                            }}/>
+                            <span style={{marginLeft: 8}}>MacOS</span>
+                        </div>
                     </div>
+                </div>
+                <div className={styles.sectionFooter}>
+
                 </div>
                 {/*<HomepageFeatures/>*/}
             </main>
