@@ -64,29 +64,28 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Oomol Studio',
         logo: {
           alt: 'Oomol Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo.png',
         },
         items: [
           {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: '文档',
           },
-          {to: '/blog', label: 'Updates', position: 'left'},
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {to: '/blog', label: 'Pricing', position: 'left'},
+          {to: '/blog', label: '更新日志', position: 'left'},
+          {to: '/blog', label: '博客', position: 'left'},
+          {to: '/blog', label: '价格', position: 'left'},
           {
             to: '/blog',
-            label: 'Login',
+            label: '登录',
             position: 'right',
           },
           {
             to: '/blog',
-            label: 'Get Oomol free',
+            label: '注册',
             position: 'right',
           },
           {
@@ -124,52 +123,6 @@ const config = {
         searchPagePath: 'search',
 
         //... other Algolia params
-      },
-
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
