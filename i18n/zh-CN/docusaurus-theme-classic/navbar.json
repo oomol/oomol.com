@@ -1,0 +1,34 @@
+{
+  "logo.alt": {
+    "message": "Oomol Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Blog": {
+    "message": "博客",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.Documentation": {
+    "message": "文档",
+    "description": "Navbar item with label Documentation"
+  },
+  "item.label.Price": {
+    "message": "价格",
+    "description": "Navbar item with label Price"
+  },
+  "item.label.Changelog": {
+    "message": "更新日志",
+    "description": "Navbar item with label Changelog"
+  },
+  "item.label.Login": {
+    "message": "登录",
+    "description": "Navbar item with label Login"
+  },
+  "item.label.Sign Up": {
+    "message": "注册",
+    "description": "Navbar item with label Sign Up"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}

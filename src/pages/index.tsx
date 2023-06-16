@@ -7,6 +7,7 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import styles from './index.module.css';
 import Image from '@theme/ThemedImage';
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import Translate, { translate } from '@docusaurus/Translate'
 
 function HomepageHeader() {
     const {siteConfig} = useDocusaurusContext();
@@ -41,14 +42,20 @@ export default function Home(): JSX.Element {
                         <div className={styles.sectionOneLeft}>
                             <div className={styles.sectionOneLeftBox}>
                                 <div className={styles.sectionOneLeftTitle}>
-                                    好用的自动化、数据分析工具。
+                                    <Translate>A powerful automation and data analysis tool</Translate>
                                 </div>
                                 <div className={styles.sectionOneLeftInner}>
-                                    使用熟悉的开发语言，丰富的内置工具套件，活跃的社区分享<br/>
-                                    帮助你轻松完成自动化、数据分析构建工作
+                                    <Translate>
+                                    Using familiar programming languages, a rich set of built-in toolkits, and an active community sharing resources,
+                                    it helps you effortlessly accomplish automation and data analysis tasks.    
+                                    </Translate>
+                                    <br/>
+                                    <Translate>
+                                    Assisting you in effortlessly accomplishing automation and data analysis tasks.
+                                    </Translate>
                                 </div>
                                 <div className={styles.sectionOneLeftBtn}>
-                                    下载使用
+                                    <Translate>Download</Translate>
                                 </div>
                             </div>
                         </div>
