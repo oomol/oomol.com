@@ -99,6 +99,71 @@ const config = {
           },
         ],
       },
+      
+      footer: {
+        style: 'dark',
+        links: [
+          {
+            title: 'Repositories',
+            items: [
+              {
+                label: 'OOMOL',
+                href: '/',
+                target: '_self',
+              },
+              {
+                label: 'OOMOL-Studio',
+                href: 'https://github.com/oomol/oomol-studio',
+                target: '_self',
+              },
+            ],
+          },
+          {
+            title: 'Contact',
+            items: [
+              {
+                label: 'Mail',
+                href: 'mailto:contact@oomol-studio',
+                target: '_self',
+              },
+              {
+                label: 'Twitter',
+                href: 'https://twitter.com/oomol-studio',
+                target: '_self',
+              },
+            ],
+          },
+          {
+            title: 'Network',
+            items: [
+              {
+                label: 'Blog',
+                to: 'blog',
+              },
+              {
+                label: 'GitHub',
+                href: 'https://github.com/oomol/oomol-studio',
+                target: '_self',
+              },
+            ],
+          },
+          {
+            title: 'Community',
+            items: [
+              {
+                label: 'Sponsors',
+                to: '/#sponsors',
+              },
+              {
+                label: 'Discord',
+                href: '/',
+                target: '_self',
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} OOMOL Studio Contributors. CC-BY / MIT`,
+      },
       algolia: {
         // Algolia 提供的应用 ID
         appId: 'YOUR_APP_ID',
