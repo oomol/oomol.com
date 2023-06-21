@@ -15,9 +15,9 @@
     "message": "价格",
     "description": "Navbar item with label Price"
   },
-  "item.label.Changelog": {
-    "message": "更新日志",
-    "description": "Navbar item with label Changelog"
+  "item.label.Releases": {
+    "message": "发布说明",
+    "description": "Navbar item with label Releases"
   },
   "item.label.Login": {
     "message": "登录",

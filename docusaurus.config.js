@@ -75,19 +75,20 @@ const config = {
             position: 'left',
             label: 'Documentation',
           },
-          {to: '/blog', label: 'Changelog', position: 'left'},
           {to: '/blog', label: 'Blog', position: 'left'},
-          {to: '/blog', label: 'Price', position: 'left'},
-          {
-            to: '/blog',
-            label: 'Login',
-            position: 'right',
-          },
-          {
-            to: '/blog',
-            label: 'Sign Up',
-            position: 'right',
-          },
+          {to: '/price/intro', label: 'Price', position: 'left'},
+          {to: '/releases', label: 'Releases', position: 'left'},
+          // TODO: 等登录注册有网页版再放出来
+          // {
+          //   to: '/login',
+          //   label: 'Login',
+          //   position: 'right',
+          // },
+          // {
+          //   to: '/signup',
+          //   label: 'Sign Up',
+          //   position: 'right',
+          // },
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
@@ -164,6 +165,7 @@ const config = {
         ],
         copyright: `Copyright © ${new Date().getFullYear()} OOMOL Studio Contributors. CC-BY / MIT`,
       },
+      // TODO: 当前还不需要搜索模块，等内容更全了再添加
       algolia: {
         // Algolia 提供的应用 ID
         appId: 'YOUR_APP_ID',
