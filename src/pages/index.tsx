@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
+import { Analytics } from '@vercel/analytics/react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
@@ -227,6 +228,7 @@ export default function Home(): JSX.Element {
 
                 </div>
                 {/*<HomepageFeatures/>*/}
+                <Analytics />
             </main>
         </Layout>
     );
