@@ -82,12 +82,10 @@
     display: flex;
     justify-content: center;
     height: 380px;
-    background-color: #1fa588;
 }
 
 .sectionTwoBox {
     width: 1200px;
-    background-color: yellow;
     display: flex;
 }
 
@@ -96,12 +94,12 @@
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .sectionTwoLarge {
     width: 60%;
     height: 100%;
-    background-color: palegoldenrod;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,6 +125,7 @@
     height: 380px;
     align-items: center;
     justify-content: center;
+    background-color: #F2F2F2;
 }
 
 .sectionFooter {
