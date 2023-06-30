@@ -35,3 +35,8 @@
 .menu__caret::before {
   display: none;
 }
+
+.footer__links {
+  margin-bottom: 3rem;
+  padding: 0 20%;
+}
