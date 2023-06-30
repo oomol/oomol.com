@@ -39,4 +39,13 @@
 .footer__links {
   margin-bottom: 3rem;
   padding: 0 20%;
+  padding-left: 23rem;
+}
+
+/* 移动端下的自定义样式 */
+@media screen and (max-width: 996px) {
+  .footer__links {
+    padding: 0;
+    padding-left: 0;
+  }
 }
