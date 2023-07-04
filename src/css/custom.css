@@ -20,6 +20,8 @@
 
   .navbar {
     background-color: #edeeff;
+    background-color: transparent;
+    backdrop-filter: blur(2px);
   }
 }
 
@@ -36,6 +38,8 @@
 
   .navbar {
     background-color: #edeeff;
+    background-color: transparent;
+    backdrop-filter: blur(2px);
   }
 }
 
@@ -59,7 +63,5 @@
 }
 
 .navbar {
-  background-color: transparent;
-  backdrop-filter: blur(2px);
   box-shadow: none;
 }
