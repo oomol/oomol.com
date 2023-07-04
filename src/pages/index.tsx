@@ -10,6 +10,7 @@ import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Translate, {translate} from "@docusaurus/Translate";
 import {Button, ConfigProvider} from 'antd';
+import {DownloadOutlined} from "@ant-design/icons";
 
 function HomepageHeader() {
     const {siteConfig} = useDocusaurusContext();
@@ -77,12 +78,14 @@ export default function Home(): JSX.Element {
                                                 data analysis tasks.
                                             </Translate>
                                         </div>
-                                        {/*<div className={styles.sectionOneTextBtn}>*/}
-
-                                        {/*</div>*/}
-                                        <Button type="primary">
-                                            <Translate>Download</Translate>
-                                        </Button>
+                                        <div className={styles.sectionOneBtnBox}>
+                                            <Button className={styles.sectionOneBtn} type="primary" size="large" shape="round">
+                                                <Translate>下载</Translate>
+                                            </Button>
+                                            <Button className={styles.sectionOneBtn} size="large" shape="round">
+                                                <Translate>注册</Translate>
+                                            </Button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className={styles.sectionOneImageBox}>
@@ -122,7 +125,7 @@ export default function Home(): JSX.Element {
                                 <div className={styles.scenesText}>
                                     <div className={styles.scenesTextTitle}>AI 场景支持</div>
                                     <div className={styles.scenesTextInner}>
-                                        内置 LangChain 和 Stable Diffusion 等生成式 AI 开源库， 开发者可以一键启动并且灵活扩展开发。
+                                        内置 LangChain 和 Stable Diffusion 等生成式 AI 开源库，并深度集成 OOMOL 的可视化工作流。开发者可以快捷启动项目，并且灵活扩展开发。
                                     </div>
                                 </div>
                             </div>
@@ -139,8 +142,7 @@ export default function Home(): JSX.Element {
                                 <div className={styles.scenesText}>
                                     <div className={styles.scenesTextTitle}>数据处理和分析</div>
                                     <div className={styles.scenesTextInner}>
-                                        支持 Python、JavaScript、R 等多语言配合使用，发挥每个语言生态的优势。可以通过可视化工作流建模，调试方便且一键部署，
-
+                                        支持 Python、JavaScript、R 等多语言配合使用，发挥每个语言生态的优势。并可以一键部署到云端，方便地分享给他人使用。
                                     </div>
                                 </div>
                             </div>
@@ -299,16 +301,7 @@ export default function Home(): JSX.Element {
                                     }}
                                 />
                             </div>
-                            <div className={styles.sectionDownloadBtn}>
-                                <Image
-                                    style={{width: 14}}
-                                    sources={{
-                                        light: useBaseUrl("/img/download.svg"),
-                                        dark: useBaseUrl("/img/download.svg"),
-                                    }}
-                                />
-                                <span style={{marginLeft: 8}}>Windows</span>
-                            </div>
+                            <Button type="primary" icon={<DownloadOutlined />}>Windows</Button>
                         </div>
                         <div className={styles.sectionDownloadCellBox}>
                             <div className={styles.sectionDownloadCell}>
@@ -320,16 +313,7 @@ export default function Home(): JSX.Element {
                                     }}
                                 />
                             </div>
-                            <div className={styles.sectionDownloadBtn}>
-                                <Image
-                                    style={{width: 14}}
-                                    sources={{
-                                        light: useBaseUrl("/img/download.svg"),
-                                        dark: useBaseUrl("/img/download.svg"),
-                                    }}
-                                />
-                                <span style={{marginLeft: 8}}>Linux</span>
-                            </div>
+                            <Button type="primary" icon={<DownloadOutlined />}>Linux</Button>
                         </div>
                         <div className={styles.sectionDownloadCellBox}>
                             <div className={styles.sectionDownloadCell}>
@@ -341,16 +325,7 @@ export default function Home(): JSX.Element {
                                     }}
                                 />
                             </div>
-                            <div className={styles.sectionDownloadBtn}>
-                                <Image
-                                    style={{width: 14}}
-                                    sources={{
-                                        light: useBaseUrl("/img/download.svg"),
-                                        dark: useBaseUrl("/img/download.svg"),
-                                    }}
-                                />
-                                <span style={{marginLeft: 8}}>MacOS</span>
-                            </div>
+                            <Button type="primary" icon={<DownloadOutlined />} >MacOS</Button>
                         </div>
                     </div>
                     <Analytics/>

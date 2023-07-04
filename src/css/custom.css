@@ -6,62 +6,70 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #7d7fe9;
-  --ifm-color-primary-dark: #5e61e4;
-  --ifm-color-primary-darker: #4f52e1;
-  --ifm-color-primary-darkest: #2428d6;
-  --ifm-color-primary-light: #9c9dee;
-  --ifm-color-primary-lighter: #abacf1;
-  --ifm-color-primary-lightest: #d9d9f9;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --ifm-font-family-base: "PingFangSC-Semibold", "PingFang SC", "Source Han Sans SC", "Microsoft YaHei",
-  "Helvetica Neue", "Noto Sans CJK SC", "WenQuanYi Micro Hei", sans-serif;
+    --ifm-color-primary: #7d7fe9;
+    --ifm-color-primary-dark: #5e61e4;
+    --ifm-color-primary-darker: #4f52e1;
+    --ifm-color-primary-darkest: #2428d6;
+    --ifm-color-primary-light: #9c9dee;
+    --ifm-color-primary-lighter: #abacf1;
+    --ifm-color-primary-lightest: #d9d9f9;
+    --ifm-code-font-size: 95%;
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+    --ifm-font-family-base: "PingFangSC-Semibold", "PingFang SC", "Source Han Sans SC", "Microsoft YaHei",
+    "Helvetica Neue", "Noto Sans CJK SC", "WenQuanYi Micro Hei", sans-serif;
 
-  .navbar {
-    background-color: #edeeff;
-    background-color: transparent;
-    backdrop-filter: blur(2px);
-  }
+.navbar {
+    background-color: white;
+    /*background-color: transparent;*/
+    /*backdrop-filter: blur(2px);*/
+}
+
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #7d7fe9;
-  --ifm-color-primary-dark: #5e61e4;
-  --ifm-color-primary-darker: #4f52e1;
-  --ifm-color-primary-darkest: #2428d6;
-  --ifm-color-primary-light: #9c9dee;
-  --ifm-color-primary-lighter: #abacf1;
-  --ifm-color-primary-lightest: #d9d9f9;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+    --ifm-color-primary: #7d7fe9;
+    --ifm-color-primary-dark: #5e61e4;
+    --ifm-color-primary-darker: #4f52e1;
+    --ifm-color-primary-darkest: #2428d6;
+    --ifm-color-primary-light: #9c9dee;
+    --ifm-color-primary-lighter: #abacf1;
+    --ifm-color-primary-lightest: #d9d9f9;
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 
-  .navbar {
-    background-color: #edeeff;
-    background-color: transparent;
-    backdrop-filter: blur(2px);
-  }
+.navbar {
+    background-color: white;
+    /*background-color: transparent;*/
+    /*backdrop-filter: blur(2px);*/
+}
+
 }
 
 /* disabled 文档模块的方向箭头  */
 .menu__caret::before {
-  display: none;
+    display: none;
+}
+
+.footer {
+    background-color:white;
+    margin-top: 48px;
+    margin-bottom: 48px;
 }
 
 .footer__links {
-  margin-bottom: 3rem;
-  padding: 0 20%;
-  padding-left: 23rem;
+    margin-bottom: 3rem;
+    padding: 0 20%;
+    padding-left: 23rem;
 }
 
 /* 移动端下的自定义样式 */
 @media screen and (max-width: 996px) {
-  .footer__links {
-    padding: 0;
-    padding-left: 0;
-  }
+    .footer__links {
+        padding: 0;
+        padding-left: 0;
+    }
 }
 
 .navbar {
-  box-shadow: none;
+    box-shadow: none;
 }
