@@ -9,6 +9,7 @@ import styles from "./index.module.css";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Translate, { translate } from "@docusaurus/Translate";
+import { Button } from 'antd';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -71,9 +72,12 @@ export default function Home(): JSX.Element {
                       data analysis tasks.
                     </Translate>
                   </div>
-                  <div className={styles.sectionOneTextBtn}>
+                  {/*<div className={styles.sectionOneTextBtn}>*/}
+
+                  {/*</div>*/}
+                  <Button type="primary">
                     <Translate>Download</Translate>
-                  </div>
+                  </Button>
                 </div>
               </div>
               <div className={styles.sectionOneImageBox}>
