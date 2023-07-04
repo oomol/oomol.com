@@ -114,34 +114,52 @@
 
 .sectionInner {
     width: 100%;
-    background-color: antiquewhite;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .sectionCell {
-    width: 280px;
+    width: 360px;
     height: 100%;
-    background-color: yellow;
-    margin-left: 24px;
-    margin-right: 24px;
+    margin-left: 48px;
+    margin-right: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.30);
 }
 
 .scenes {
     width: 100%;
-    background-color: #F2F2F2;
+    margin-bottom: 64px;
+    margin-top: 64px;
 }
 
 .scenesImage {
     width: 100%;
-    height: 180px;
-    background-color: red;
+    /*height: 180px;*/
+    /*background-color: red;*/
+}
+
+.scenesText {
+}
+
+.scenesTextTitle {
+    margin-top: 12px;
+    font-size: 18px;
+}
+
+.scenesTextInner {
+    margin-top: 8px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    padding-left: 12px;
+    padding-right: 12px;
 }
 
 .sectionTwoBox {
@@ -185,7 +203,6 @@
     height: 540px;
     align-items: center;
     justify-content: center;
-    background-color: #EDEEFF;
 }
 
 .sectionFooter {
