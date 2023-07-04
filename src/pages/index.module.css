@@ -11,7 +11,7 @@
 }
 
 .sectionOne {
-    background-color: #EDEEFF;
+    background-color: white;
     display: flex;
     /*flex-direction: row;*/
     /*height: 1000px;*/
@@ -68,18 +68,17 @@
     margin-top: 12px;
 }
 
-.sectionOneTextBtn {
-    width: 120px;
-    height: 36px;
-    background-color: #7D7FE9;
+.sectionOneBtnBox {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
     margin-top: 24px;
-    border-radius: 18px;
-    font-weight: 800;
-    cursor: pointer;
-    color: white;
+    margin-bottom: 36px;
+}
+
+.sectionOneBtn {
+    width: 120px;
+    margin-left: 12px;
+    margin-right: 12px;
 }
 
 .sectionOneImageBox {
@@ -136,8 +135,9 @@
 
 .scenes {
     width: 100%;
-    margin-bottom: 64px;
-    margin-top: 64px;
+    padding-bottom: 64px;
+    /*margin-top: 64px;*/
+    background-color: rgb(249, 249, 249);
 }
 
 .scenesImage {
@@ -200,16 +200,10 @@
 .sectionDownload {
     display: flex;
     flex-direction: row;
-    height: 540px;
+    height: 420px;
     align-items: center;
     justify-content: center;
-}
-
-.sectionFooter {
-    width: 100%;
-    height: 420px;
-    background-color: #383970;
-    color: white;
+    background-color: rgb(249, 249, 249);
 }
 
 .sectionDownloadCell {
