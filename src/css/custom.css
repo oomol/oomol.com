@@ -17,6 +17,10 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-font-family-base: "PingFangSC-Semibold", "PingFang SC", "Source Han Sans SC", "Microsoft YaHei",
   "Helvetica Neue", "Noto Sans CJK SC", "WenQuanYi Micro Hei", sans-serif;
+
+  .navbar {
+    background-color: #edeeff;
+  }
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -29,6 +33,10 @@
   --ifm-color-primary-lighter: #abacf1;
   --ifm-color-primary-lightest: #d9d9f9;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  .navbar {
+    background-color: #edeeff;
+  }
 }
 
 /* disabled 文档模块的方向箭头  */
@@ -48,4 +56,10 @@
     padding: 0;
     padding-left: 0;
   }
+}
+
+.navbar {
+  background-color: transparent;
+  backdrop-filter: blur(2px);
+  box-shadow: none;
 }
