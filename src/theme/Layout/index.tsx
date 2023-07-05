@@ -3,7 +3,8 @@ import styles from "./styles.module.css";
 import React, { ReactNode } from "react";
 import LayoutProvider from "@theme/Layout/Provider";
 import clsx from "clsx";
-import { Footer } from "../Footer";
+import Navbar from '@theme/Navbar';
+import Footer from '@theme/Footer';
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 interface LayoutProps {
@@ -12,7 +13,7 @@ interface LayoutProps {
     wrapperClassName?: string;
 }
 
-export const Layout: React.FC<LayoutProps> = ({children, wrapperClassName}) => {
+const Layout: React.FC<LayoutProps> = ({children, wrapperClassName}) => {
     // const { siteConfig } = useDocusaurusContext()
     // const {
     //   title: siteTitle,
@@ -22,6 +23,7 @@ export const Layout: React.FC<LayoutProps> = ({children, wrapperClassName}) => {
     
     return (
         <LayoutProvider>
+            <Navbar />
             <div className={clsx(styles.wrapper, wrapperClassName)}>
                 {children}
             </div>
@@ -29,3 +31,5 @@ export const Layout: React.FC<LayoutProps> = ({children, wrapperClassName}) => {
         </LayoutProvider>
     )
 }
+
+export default Layout;

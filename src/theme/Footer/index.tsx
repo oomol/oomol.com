@@ -31,7 +31,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({ to, href, label, ...props }) =>
     );
 }
 
-export const Footer: React.FC = () => {
+const Footer: React.FC = () => {
     const { siteConfig } = useDocusaurusContext();
     const { copyright, links = [] } = siteConfig.themeConfig.footer;
     const hasFooter = !!siteConfig.themeConfig.footer;
@@ -99,3 +99,5 @@ export const Footer: React.FC = () => {
     </footer>
     )
 }
+
+export default Footer;

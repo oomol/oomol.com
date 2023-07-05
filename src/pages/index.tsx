@@ -1,38 +1,14 @@
 import React from "react";
-import clsx from "clsx";
 import Link from "@docusaurus/Link";
-import {Analytics} from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-// import Layout from "@theme/Layout";
-import { Layout } from "../theme/Layout";
-import HomepageFeatures from "@site/src/components/HomepageFeatures";
+import Layout from "../theme/Layout";
 import styles from "./index.module.css";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import Translate, {translate} from "@docusaurus/Translate";
-import {Button, ConfigProvider} from 'antd';
-import {DownloadOutlined} from "@ant-design/icons";
-
-function HomepageHeader() {
-    const {siteConfig} = useDocusaurusContext();
-    console.log(siteConfig);
-    return (
-        <header className={clsx("hero hero--primary", styles.heroBanner)}>
-            <div className="container">
-                <h1 className="hero__title">{siteConfig.title}</h1>
-                <p className="hero__subtitle">{siteConfig.tagline}</p>
-                <div className={styles.buttons}>
-                    <Link
-                        className="button button--secondary button--lg"
-                        to="/docs/intro"
-                    >
-                        Docusaurus Tutorial - 5min ⏱️
-                    </Link>
-                </div>
-            </div>
-        </header>
-    );
-}
+import Translate, { translate } from "@docusaurus/Translate";
+import { Button, ConfigProvider } from 'antd';
+import { DownloadOutlined } from "@ant-design/icons";
 
 export default function Home(): JSX.Element {
     const {siteConfig} = useDocusaurusContext();
@@ -43,8 +19,8 @@ export default function Home(): JSX.Element {
             }
         }}>
             <Layout
-                title={`Hello from ${siteConfig.title}`}
-                description="Description will go into a meta tag in <head />"
+                // title={`Hello from ${siteConfig.title}`}
+                // description="Description will go into a meta tag in <head />"
             >
                 {/*<HomepageHeader />*/}
                 <main>
