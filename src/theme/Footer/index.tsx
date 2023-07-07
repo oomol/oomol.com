@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
                         <img
                             alt="logo"
                             src="/img/oomol_app.svg"
-                            width={48}
+                            width={42}
                             style={{marginRight: 16}}
                             loading="lazy"
                         />
