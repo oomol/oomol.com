@@ -50,8 +50,8 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
     }, [])
 
     return (
-        <header className={styles.innerBox}>
-            <div className={styles.inner}>
+        <header className={clsx("navbar", styles.navbar)}>
+            <div className={clsx("navbar__inner", styles.inner)}>
                 <div className="navbar__items">
                     <Link className={styles.brand} to="/">
                         <img
