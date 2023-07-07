@@ -24,8 +24,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /*background-color: bisque;*/
-    width: 1200px;
+    width: 100%;
 }
 
 .innerBox {
@@ -47,6 +46,11 @@
     top: 0;
     z-index: 100;
     --ifm-navbar-padding-vertical: 0;
+    border-bottom-style: solid;
+    border-bottom-color: #fafafa;
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
 }
 
 :global(.navbar__items--right .navbar__item.header-github-link) {
@@ -159,7 +163,7 @@
 
 @media (min-width: 1300px) {
     .inner {
-        max-width: calc(var(--ifm-container-width) + 100px);
+        /*max-width: calc(var(--ifm-container-width) + 100px);*/
     }
 }
 
