@@ -11,29 +11,29 @@ interface FooterLinkProps {
     to?: string
 }
 
-const FooterLink: React.FC<FooterLinkProps> = ({ to, href, label, ...props }) => {
-    const footerLinkHref = useBaseUrl(href ?? "", { forcePrependBaseUrl: undefined });
+const FooterLink: React.FC<FooterLinkProps> = ({to, href, label, ...props}) => {
+    const footerLinkHref = useBaseUrl(href ?? "", {forcePrependBaseUrl: undefined});
     const footerLinkTo = useBaseUrl(to ?? "");
     return (
         <a
-        className={styles.link}
-        {...(href != null
-          ? {
-              href: footerLinkHref,
-              rel: "noopener noreferrer",
-              target: "_blank",
-            }
-          : { href: footerLinkTo })}
-        {...props}
-      >
-        {label}
-      </a>
+            className={styles.link}
+            {...(href != null
+                ? {
+                    href: footerLinkHref,
+                    rel: "noopener noreferrer",
+                    target: "_blank",
+                }
+                : {href: footerLinkTo})}
+            {...props}
+        >
+            {label}
+        </a>
     );
 }
 
 const Footer: React.FC = () => {
-    const { siteConfig } = useDocusaurusContext();
-    const { copyright, links = [] } = siteConfig.themeConfig.footer;
+    const {siteConfig} = useDocusaurusContext();
+    const {copyright, links = []} = siteConfig.themeConfig.footer;
     const hasFooter = !!siteConfig.themeConfig.footer;
 
     if (!hasFooter) {
@@ -42,61 +42,100 @@ const Footer: React.FC = () => {
 
     return (
         <footer className={styles.root}>
-      <div className={clsx(styles.content, styles.center)}>
-        <img
-          alt="QuestDB logo"
-          className={styles.logo}
-          src="/img/footer/questdb.svg"
-          title="QuestDB - Fastest open source database for time-series and analytics"
-          width={108}
-          height={27}
-          loading="lazy"
-        />
+            <div className={styles.content}>
+                <div className={styles.leftBox}>
+                    <div className={styles.leftBoxLogo}>
+                        <img
+                            alt="logo"
+                            src="/img/oomol_app.svg"
+                            width={48}
+                            style={{marginRight: 16}}
+                            loading="lazy"
+                        />
+                        <img
+                            alt="oomol"
+                            src="/img/oomol.svg"
+                            width={72}
+                            loading="lazy"
+                        />
+                    </div>
+                    <div className={styles.iconOutBox}>
+                        <div className={styles.iconBox}>
+                            <img
+                                alt="twitter"
+                                src="/img/twitter.svg"
+                                width={20}
+                                loading="lazy"
+                            />
+                        </div>
+                        <div className={styles.iconBox}>
+                            <img
+                                alt="discord"
+                                src="/img/discord.svg"
+                                width={22}
+                                loading="lazy"
+                            />
+                        </div>
+                        <div className={styles.iconBox}>
+                            <img
+                                alt="youtube"
+                                src="/img/youtube.svg"
+                                width={22}
+                                loading="lazy"
+                            />
+                        </div>
+                        <div className={styles.iconBox}>
+                            <img
+                                alt="github"
+                                src="/img/github.svg"
+                                width={20}
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
 
-        <div className={styles.tagline}>
-          <p className={styles.taglineText}>{siteConfig.tagline}</p>
-
-          <div className={styles.subscribe}>
-            <p className={styles.subscribeText}>
-              Subscribe to our newsletter. Stay up to date with all things
-              OOMOL.
-            </p>
-          </div>
-        </div>
-
-        <div className={styles.links}>
-          {links.map((linkItem, i) => (
-            <div key={i} className={styles.category}>
-              {Boolean(linkItem.title) && (
-                <span className={styles.title}>{linkItem.title}</span>
-              )}
-
-              {linkItem.items?.length > 0 && (
-                <ul className={styles.items}>
-                  {linkItem.items.map((item) => (
-                    <li className={styles.item} key={item.href ?? item.to}>
-                      <FooterLink {...item} />
-                    </li>
-                  ))}
-                </ul>
-              )}
+                </div>
+                <div className={styles.links}>
+                    {links.map((linkItem, i) => (
+                        <div key={i} className={styles.category}>
+                            {Boolean(linkItem.title) && (
+                                <div className={styles.title}>{linkItem.title}</div>
+                            )}
+                            {linkItem.items?.length > 0 && (
+                                <div className={styles.items}>
+                                    {linkItem.items.map((item) => (
+                                        <div className={styles.item} key={item.href ?? item.to}>
+                                            <FooterLink {...item} />
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
             </div>
-          ))}
-        </div>
-      </div>
 
-      <div className={styles.border}>
-        <div className={styles.bottom}>
-          {copyright}
-          <a className={styles.link} href="/privacy-notice/">
-            Privacy
-          </a>
-          <a className={styles.link} href="/terms/">
-            Terms
-          </a>
-        </div>
-      </div>
-    </footer>
+            <div className={styles.border}>
+                <div className={styles.bottom}>
+                    <div className={styles.bottomLeft}>
+                        <div className={styles.iconBox}>
+                            <img
+                                alt="logo"
+                                src="/img/logo_black.svg"
+                                width={20}
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
+                    <div className={styles.bottomInfo}>
+                        {copyright}
+                    </div>
+                    <div className={styles.bottomRight}>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     )
 }
 
