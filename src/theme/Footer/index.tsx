@@ -4,6 +4,9 @@ import React from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import clsx from "clsx";
+import {Switch} from "antd";
+import ColorModeToggle from "@theme/ColorModeToggle";
+import {useColorMode} from "@docusaurus/theme-common";
 
 interface FooterLinkProps {
     href?: string
@@ -35,7 +38,7 @@ const Footer: React.FC = () => {
     const {siteConfig} = useDocusaurusContext();
     const {copyright, links = []} = siteConfig.themeConfig.footer;
     const hasFooter = !!siteConfig.themeConfig.footer;
-
+    const { colorMode, setColorMode } = useColorMode();
     if (!hasFooter) {
         return null;
     }
@@ -131,7 +134,10 @@ const Footer: React.FC = () => {
                         {copyright}
                     </div>
                     <div className={styles.bottomRight}>
-                        <div></div>
+                        <ColorModeToggle
+                            value={colorMode}
+                            onChange={setColorMode}
+                        />
                     </div>
                 </div>
             </div>
