@@ -36,8 +36,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
             },
         },
     } = useDocusaurusContext();
-
-    // const location = useLocation();
+    const location = useLocation();
     const [sidebarShown, setSidebarShown] = useState(false);
     const {colorMode, setColorMode} = useColorMode();
 
