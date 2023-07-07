@@ -166,6 +166,7 @@
 @media (max-width: 996px) {
     .benchmarkButton,
     :global(.navbar__items--right .navbar__item.header-github-link),
-    .searchBar
-}
+    .searchBar {
 
+    }
+}
