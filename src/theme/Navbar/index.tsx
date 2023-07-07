@@ -36,7 +36,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
         },
       } = useDocusaurusContext();
     
-    // const location = useLocation();
+    const location = useLocation();
     const [sidebarShown, setSidebarShown] = useState(false);
     const { colorMode, setColorMode } = useColorMode();
 
@@ -51,30 +51,30 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
 
     return (
         <header
-      className={clsx("navbar", styles.navbar, "navbar--light", {
-        "navbar-sidebar--show": sidebarShown,
-      })}
-    >
+            className={clsx("navbar", styles.navbar, "navbar--light", {
+                "navbar-sidebar--show": sidebarShown,
+            })}
+        >
       <div className={clsx("navbar__inner", styles.inner)}>
         <div className="navbar__items">
           <a className={clsx("navbar__brand", styles.brand)} href="/">
-            OOMOL Studio
+                OOMOL Studio
           </a>
           {leftItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
           ))}
         </div>
         <div className="navbar__items navbar__items--right">
-          {rightItems.map((item, i) => (
-            <NavbarItem {...item} key={i} />
-          ))}
+            {rightItems.map((item, i) => (
+                <NavbarItem {...item} key={i} />
+            ))}
             <ColorModeToggle
               className={styles.themeToggleInHeading}
               value={colorMode}
               onChange={setColorMode}
             />
           <div className={styles.searchBar}>
-            <SearchBar />
+            {location.pathname.startsWith("/doc") && <SearchBar />}
           </div>
           <div
             aria-label="Navigation bar toggle"
