@@ -62,7 +62,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
                         />
                     </Link>
                     {leftItems.map((item, i) => (
-                        <NavbarItem style={{ fontWeight: 200 }} {...item} key={i}/>
+                        <NavbarItem {...item} key={i}/>
                     ))}
                 </div>
                 <div className="">
