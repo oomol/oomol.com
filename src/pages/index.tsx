@@ -278,7 +278,7 @@ export default function Home(): JSX.Element {
                                     }}
                                 />
                             </div>
-                            <Button type="primary" icon={<DownloadOutlined />}>Windows</Button>
+                            <Button icon={<DownloadOutlined />}>Windows</Button>
                         </div>
                         <div className={styles.sectionDownloadCellBox}>
                             <div className={styles.sectionDownloadCell}>
@@ -290,7 +290,7 @@ export default function Home(): JSX.Element {
                                     }}
                                 />
                             </div>
-                            <Button type="primary" icon={<DownloadOutlined />}>Linux</Button>
+                            <Button icon={<DownloadOutlined />}>Linux</Button>
                         </div>
                         <div className={styles.sectionDownloadCellBox}>
                             <div className={styles.sectionDownloadCell}>
@@ -302,7 +302,7 @@ export default function Home(): JSX.Element {
                                     }}
                                 />
                             </div>
-                            <Button type="primary" icon={<DownloadOutlined />} >MacOS</Button>
+                            <Button icon={<DownloadOutlined />} >MacOS</Button>
                         </div>
                     </div>
                     <Analytics/>

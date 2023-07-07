@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Oomol',
-  tagline: 'Oomol are cool',
+  tagline: 'Easily connect code and services',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -28,7 +28,7 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
+    defaultLocale: 'zh-CN',
     locales: ['zh-CN', 'en'],
   },
 
@@ -66,7 +66,7 @@ const config = {
       navbar: {
         logo: {
           alt: 'Oomol Logo',
-          src: 'img/logo.png',
+          src: 'img/logo.svg',
         },
         items: [
           {
@@ -89,81 +89,114 @@ const config = {
           //   label: 'Sign Up',
           //   position: 'right',
           // },
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
-          },
-          {
-            type: 'localeDropdown',
-            position: 'right',
-          },
+          // {
+          //   href: 'https://github.com/facebook/docusaurus',
+          //   label: 'GitHub',
+          //   position: 'right',
+          // },
+          // {
+          //   type: 'localeDropdown',
+          //   position: 'right',
+          // },
         ],
       },
-      
+
       footer: {
         style: 'light',
         links: [
           {
-            title: 'Repositories',
+            title: 'Product',
             items: [
               {
-                label: 'OOMOL',
+                label: 'Oomol Studio',
                 href: '/',
                 target: '_self',
               },
               {
-                label: 'OOMOL-Studio',
+                label: 'Oomol Cloud',
+                href: 'https://github.com/oomol/oomol-studio',
+                target: '_self',
+              },
+              {
+                label: 'Oomol Api',
                 href: 'https://github.com/oomol/oomol-studio',
                 target: '_self',
               },
             ],
           },
           {
-            title: 'Contact',
+            title: 'Resources',
             items: [
               {
-                label: 'Mail',
-                href: 'mailto:contact@oomol-studio',
-                target: '_self',
+                label: 'Support',
+                to: 'support',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/oomol-studio',
-                target: '_self',
+                label: 'System Status',
+                to: 'system-status',
+              },
+              {
+                label: 'Brand Assets',
+                to: 'brand-assets',
+              },
+              {
+                label: 'Download',
+                to: 'download',
               },
             ],
           },
           {
-            title: 'Network',
+            title: 'Developers',
             items: [
+              {
+                label: 'Documentation',
+                to: 'documentation',
+              },
+              {
+                label: 'Changelog',
+                to: 'change-log',
+              },
+              {
+                label: 'Open Source',
+                to: 'opensource',
+              },
+              {
+                label: 'Contributing',
+                to: 'contributing'
+              }
+            ],
+          },
+          {
+            title: 'Company',
+            items: [
+              {
+                label: 'About Us',
+                to: '/about-us',
+              },
               {
                 label: 'Blog',
-                to: 'blog',
+                to: '/blog',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/oomol/oomol-studio',
-                target: '_self',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Sponsors',
-                to: '/#sponsors',
+                label: 'Terms of Service',
+                to: '/terms',
               },
               {
-                label: 'Discord',
-                href: '/',
-                target: '_self',
+                label: 'Privacy Policy',
+                to: '/privacy',
               },
+              // {
+              //   label: 'Acceptable Use Policy',
+              //   to: '/acceptable',
+              // },
+              // {
+              //   label: 'Support Policy',
+              //   to: '/support',
+              // }
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} OOMOL Studio Contributors. CC-BY / MIT`,
+        copyright: `Copyright © ${new Date().getFullYear()} OOMOL Contributors.`,
       },
       // TODO: 当前还不需要搜索模块，等内容更全了再添加
       algolia: {
