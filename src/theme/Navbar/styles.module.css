@@ -85,6 +85,7 @@
     font-size: var(--ifm-font-size-base);
     padding: 0.2rem 0.6rem;
     margin: 0 0.6rem;
+    font-weight: 700;
 }
 
 :global(.navbar__item.dropdown .navbar__link):after {
