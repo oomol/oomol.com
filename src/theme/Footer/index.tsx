@@ -106,8 +106,8 @@ const Footer: React.FC = () => {
                             )}
                             {linkItem.items?.length > 0 && (
                                 <div className={styles.items}>
-                                    {linkItem.items.map((item) => (
-                                        <div className={styles.item} key={item.href ?? item.to}>
+                                    {linkItem.items.map((item, i) => (
+                                        <div className={styles.item} key={i}>
                                             <FooterLink {...item} />
                                         </div>
                                     ))}

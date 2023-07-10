@@ -72,10 +72,14 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
                     {/*<div className={styles.searchBar}>*/}
                     {/*    <SearchBar/>*/}
                     {/*</div>*/}
-                    <Button style={{marginRight: 12}}>Login</Button>
-                    <Button type="primary">
-                        Get Started
-                    </Button>
+                    {location.pathname === '/' &&
+                      <div>
+                        <Button style={{marginRight: 12}}>Login</Button>
+                        <Button type="primary">
+                            Get Started
+                        </Button>
+                      </div>
+                      }
                 </div>
             </div>
             <div
