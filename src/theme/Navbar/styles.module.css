@@ -105,6 +105,10 @@
     font-size: 1rem;
 }
 
+:global(.navbar__toggle) {
+    padding-left: 12px;
+}
+
 .themeToggleInSidebar {
     display: none;
     margin: 0 1rem 0 auto;
