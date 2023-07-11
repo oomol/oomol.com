@@ -76,7 +76,7 @@ const config = {
             label: 'Documentation',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
-          {to: '/price/intro', label: 'Price', position: 'left'},
+          {to: '/pricing', label: 'Pricing', position: 'left'},
           {to: '/releases', label: 'Releases', position: 'left'},
           // TODO: 等登录注册有网页版再放出来
           // {
@@ -109,18 +109,19 @@ const config = {
             items: [
               {
                 label: 'Oomol Studio',
-                href: '/',
-                target: '_self',
+                to: '/oomol-studio',
               },
               {
                 label: 'Oomol Cloud',
-                href: 'https://github.com/oomol/oomol-studio',
-                target: '_self',
+                to: '/oomol-cloud',
               },
               {
                 label: 'Oomol Api',
-                href: 'https://github.com/oomol/oomol-studio',
-                target: '_self',
+                to: '/oomol-api',
+              },
+              {
+                label: 'Pricing',
+                to: '/pricing',
               },
             ],
           },
@@ -129,19 +130,19 @@ const config = {
             items: [
               {
                 label: 'Support',
-                to: 'support',
+                to: '/support',
               },
               {
                 label: 'System Status',
-                to: 'system-status',
+                to: '/system-status',
               },
               {
                 label: 'Brand Assets',
-                to: 'brand-assets',
+                to: '/brand-assets',
               },
               {
                 label: 'Download',
-                to: 'download',
+                to: '/download',
               },
             ],
           },
@@ -150,20 +151,20 @@ const config = {
             items: [
               {
                 label: 'Documentation',
-                to: 'documentation',
+                to: '/docs/intro',
               },
               {
-                label: 'Changelog',
-                to: 'change-log',
+                label: 'Releases',
+                to: '/releases',
               },
               {
                 label: 'Open Source',
-                to: 'opensource',
+                to: 'open-source',
               },
-              {
-                label: 'Contributing',
-                to: 'contributing'
-              }
+              // {
+              //   label: 'Contributing',
+              //   to: 'contributing'
+              // }
             ],
           },
           {
