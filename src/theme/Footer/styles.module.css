@@ -56,10 +56,11 @@
 }
 
 .links {
-    width:800px;
+    width: 800px;
     height: 100%;
     display: flex;
     flex-direction: row;
+    /*background-color: #abacf1;*/
 }
 
 @media screen and (min-width: 700px) {
@@ -70,25 +71,28 @@
 .category {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     flex: 1;
+    /*background-color: #abacf1;*/
 }
 
 .title {
     font-size: 14px;
     font-weight: bolder;
     /*background-color: yellow;*/
+    margin-left: 48px;
 }
 
 .item {
     font-size: 14px;
     line-height: 36px;
+    /*background-color: yellow;*/
+    margin-left: 48px;
 }
 
 .link {
-    font-weight: lighter;
-    opacity: 0.4;
-    color: black;
+    font-weight: normal;
+    color: #8D8D8D;
 }
 
 .subscribe {

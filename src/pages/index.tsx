@@ -1,14 +1,14 @@
 import React from "react";
 import Link from "@docusaurus/Link";
-import { Analytics } from "@vercel/analytics/react";
+import {Analytics} from "@vercel/analytics/react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "../theme/Layout";
 import styles from "./index.module.css";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import Translate, { translate } from "@docusaurus/Translate";
-import { Button, ConfigProvider } from 'antd';
-import { DownloadOutlined } from "@ant-design/icons";
+import Translate, {translate} from "@docusaurus/Translate";
+import {Button, ConfigProvider} from 'antd';
+import {DownloadOutlined} from "@ant-design/icons";
 
 export default function Home(): JSX.Element {
     const {siteConfig} = useDocusaurusContext();
@@ -40,27 +40,23 @@ export default function Home(): JSX.Element {
                                     <div className={styles.sectionOneTextBox}>
                                         <div className={styles.sectionOneTextTitle}>
                                             <Translate>
-                                                A powerful automation and data analysis tool
+                                                Easily connect code and services
                                             </Translate>
                                         </div>
                                         <div className={styles.sectionOneTextInner}>
                                             <Translate>
-                                                Using familiar programming languages, a rich set of built-in
-                                                toolkits, and an active community sharing resources, it
-                                                helps you effortlessly accomplish automation and data
-                                                analysis tasks.
-                                            </Translate>
-                                            <Translate>
-                                                Assisting you in effortlessly accomplishing automation and
-                                                data analysis tasks.
+                                                OOMOL STUDIO is a workflow authoring and orchestration tool. Provides a
+                                                variety of programming language operating environments, built-in rich
+                                                tool suites, and supports containers and cloud-native.
                                             </Translate>
                                         </div>
                                         <div className={styles.sectionOneBtnBox}>
-                                            <Button className={styles.sectionOneBtn} type="primary" size="large" shape="round">
-                                                <Translate>下载</Translate>
+                                            <Button className={styles.sectionOneBtn} type="primary" size="large"
+                                                    shape="round">
+                                                <Translate>Download</Translate>
                                             </Button>
                                             <Button className={styles.sectionOneBtn} size="large" shape="round">
-                                                <Translate>注册</Translate>
+                                                <Translate>Get Started</Translate>
                                             </Button>
                                         </div>
                                     </div>
@@ -87,7 +83,9 @@ export default function Home(): JSX.Element {
                         </div>
                     </div>
                     <div className={styles.scenes}>
-                        <div className={styles.sectionTitle}>提高效率的使用场景</div>
+                        <div className={styles.sectionTitle}>
+                            Use Scenarios to Improve Efficiency
+                        </div>
                         <div className={styles.sectionInner}>
                             <div className={styles.sectionCell}>
                                 <div className={styles.scenesImage}>
@@ -100,9 +98,12 @@ export default function Home(): JSX.Element {
                                     />
                                 </div>
                                 <div className={styles.scenesText}>
-                                    <div className={styles.scenesTextTitle}>AI 场景支持</div>
+                                    <div className={styles.scenesTextTitle}>AI scene support</div>
                                     <div className={styles.scenesTextInner}>
-                                        内置 LangChain 和 Stable Diffusion 等生成式 AI 开源库，并深度集成 OOMOL 的可视化工作流。开发者可以快捷启动项目，并且灵活扩展开发。
+                                        Built-in generative AI open source libraries such as LangChain and Stable
+                                        Diffusion, and deeply integrated OOMOL STUDIO
+                                        visual workflow. Developers can start projects quickly and expand development
+                                        flexibly.
                                     </div>
                                 </div>
                             </div>
@@ -117,9 +118,12 @@ export default function Home(): JSX.Element {
                                     />
                                 </div>
                                 <div className={styles.scenesText}>
-                                    <div className={styles.scenesTextTitle}>数据处理和分析</div>
+                                    <div className={styles.scenesTextTitle}>Data Processing and Analysis</div>
                                     <div className={styles.scenesTextInner}>
-                                        支持 Python、JavaScript、R 等多语言配合使用，发挥每个语言生态的优势。并可以一键部署到云端，方便地分享给他人使用。
+                                        It supports multiple languages such as Python, JavaScript, and R to be used in
+                                        conjunction to give full play to the advantages of each language ecology. And it
+                                        can be deployed to the cloud with one click, so that it can be easily shared
+                                        with others.
                                     </div>
                                 </div>
                             </div>
@@ -143,7 +147,7 @@ export default function Home(): JSX.Element {
                         </div>
                     </div>
                     <div className={styles.sectionTwo}>
-                        <div className={styles.sectionTitle}>产品设计的优越性</div>
+                        <div className={styles.sectionTitle}>The superiority of product design</div>
                         <div className={styles.sectionTwoBox}>
                             <div className={styles.sectionTwoSmall}>
                                 <Image
@@ -157,12 +161,13 @@ export default function Home(): JSX.Element {
                             <div className={styles.sectionTwoLarge}>
                                 <div className={styles.sectionTwoLargeBox}>
                                     <div className={styles.sectionTwoLargeTitle}>
-                                        代码编写 & 工作流编排
+                                        Coding & Workflow Orchestration
                                     </div>
                                     <div className={styles.sectionTwoLargeInner}>
-                                        继承 vscode 的完善编程体验，同时支持可视化 Workflow
-                                        进行逻辑编排。
-                                        可以同时在一个工具内同时拥有最好的编写和编排体验。
+                                        Inherit the perfect programming experience of vscode, and support visual
+                                        Workflow at the same time
+                                        Organize logically. It is possible to have the best authoring and orchestration
+                                        experience all within one tool at the same time.
                                     </div>
                                 </div>
                             </div>
@@ -173,12 +178,15 @@ export default function Home(): JSX.Element {
                             <div className={styles.sectionTwoLarge}>
                                 <div className={styles.sectionTwoLargeBox}>
                                     <div className={styles.sectionTwoLargeTitle}>
-                                        多语言 & 数据处理、渲染
+                                        Multilingual & Data processing, Rendering
                                     </div>
                                     <div className={styles.sectionTwoLargeInner}>
-                                        可以用常见的开发语言以及相关的语言库进行数据处理，甚至可以进行跨语言配合。
-                                        处理后的数据可以通过内置的图包进行渲染，如果内置的不满足也可以支持社区扩展。
-                                        处理数据和图表化显示导出可以在一个工具中获得最好的体验。
+                                        Common development language and related language libraries can be used for
+                                        data processing, and even cross-language cooperation is possible.
+                                        The processed data can be rendered through the built-in graphics package, and if
+                                        the built-in is not satisfied, it can also support community expansion.
+                                        Processing data and graphical display export can be best experienced in one
+                                        tool.
                                     </div>
                                 </div>
                             </div>
@@ -207,12 +215,14 @@ export default function Home(): JSX.Element {
                             <div className={styles.sectionTwoLarge}>
                                 <div className={styles.sectionTwoLargeBox}>
                                     <div className={styles.sectionTwoLargeTitle}>
-                                        协作 & 管理 & 分享
+                                        Collaborate & Manage & Share
                                     </div>
                                     <div className={styles.sectionTwoLargeInner}>
-                                        原生支持社区常用的协作开发工具 git 管理项目。 提供 Oomol
-                                        Workflow 功能的开源分享社区，方便开发者交流。
-                                        让好的想法和创新被更多人看见以及被更多的工程使用。
+                                        Natively supports the collaborative development tool git commonly used by the
+                                        community to manage projects. Provide OOMOL STUDIO
+                                        The open source sharing community of Workflow function facilitates communication
+                                        among developers.
+                                        Let good ideas and innovations be seen by more people and used by more projects.
                                     </div>
                                 </div>
                             </div>
@@ -222,7 +232,7 @@ export default function Home(): JSX.Element {
                         <div className={styles.sectionTwoBox}>
                             <div className={styles.sectionTwoLarge}>
                                 <div className={styles.sectionTwoLargeBox}>
-                                    <div className={styles.sectionTwoLargeTitle}>本地 & 云端</div>
+                                    <div className={styles.sectionTwoLargeTitle}>Local & Cloud</div>
                                     <div className={styles.sectionTwoLargeInner}>
                                         本地使用更加安全、轻量和经济。
                                         云端部署可以很方便地分享给他人使用，且支持长时间大算力的处理数据。
@@ -257,11 +267,12 @@ export default function Home(): JSX.Element {
                             <div className={styles.sectionTwoLarge}>
                                 <div className={styles.sectionTwoLargeBox}>
                                     <div className={styles.sectionTwoLargeTitle}>
-                                        内核开源 & 数据安全
+                                        Kernel Open Source & Data Security
                                     </div>
                                     <div className={styles.sectionTwoLargeInner}>
-                                        编排引擎内核 vocana 开源，支持基于 vscode 插件使用。
-                                        数据使用符合 GDPR 要求。 提供安全和值得信赖的生产力工具。
+                                        The core of the orchestration engine, vocana, is open source and supports use
+                                        based on vscode plug-ins. Data usage complies with GDPR requirements. Provides
+                                        secure and trusted productivity tools.
                                     </div>
                                 </div>
                             </div>
@@ -278,7 +289,7 @@ export default function Home(): JSX.Element {
                                     }}
                                 />
                             </div>
-                            <Button icon={<DownloadOutlined />}>Windows</Button>
+                            <Button icon={<DownloadOutlined/>}>Windows</Button>
                         </div>
                         <div className={styles.sectionDownloadCellBox}>
                             <div className={styles.sectionDownloadCell}>
@@ -290,7 +301,7 @@ export default function Home(): JSX.Element {
                                     }}
                                 />
                             </div>
-                            <Button icon={<DownloadOutlined />}>Linux</Button>
+                            <Button icon={<DownloadOutlined/>}>Linux</Button>
                         </div>
                         <div className={styles.sectionDownloadCellBox}>
                             <div className={styles.sectionDownloadCell}>
@@ -302,7 +313,7 @@ export default function Home(): JSX.Element {
                                     }}
                                 />
                             </div>
-                            <Button icon={<DownloadOutlined />} >MacOS</Button>
+                            <Button icon={<DownloadOutlined/>}>MacOS</Button>
                         </div>
                     </div>
                     <Analytics/>
