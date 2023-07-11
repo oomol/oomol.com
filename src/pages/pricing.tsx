@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../theme/Layout";
 import styles from "./pricing.module.css";
 import {CheckCircleFilled} from "@ant-design/icons";
-import {PricingData} from "./pricing-data";
+import { PricingData }  from "../utils/mock-data/pricing-data";
 
 export default function Pricing() {
     const planNode = PricingData.map((data, index) => {
