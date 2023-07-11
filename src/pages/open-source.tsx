@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../theme/Layout";
 import styles from "./open-source.module.css";
 
-export default function OpenSource(): JSX.Element {
+export default function OpenSource() {
     return (
         <Layout>
             <div className={styles.box}>

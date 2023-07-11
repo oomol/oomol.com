@@ -2,7 +2,7 @@ import styles from './styles.module.css';
 
 import React, {useCallback, useState} from 'react';
 import type {ComponentProps} from 'react';
-import { useColorMode } from '@docusaurus/theme-common';
+import {useColorMode} from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {useLocation} from '@docusaurus/router';
 import NavbarItem from '@theme/NavbarItem';
@@ -53,7 +53,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
     return (
         <header className={clsx("navbar", styles.navbar, {
             "navbar-sidebar--show": sidebarShown,
-          })}>
+        })}>
             <div className={clsx("navbar__inner", styles.inner)}>
                 <div className="navbar__items">
                     <Link className={styles.brand} to="/">
@@ -76,13 +76,13 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
                     {/*    <SearchBar/>*/}
                     {/*</div>*/}
                     {location.pathname === '/' &&
-                      <div>
-                        <Button style={{marginRight: 12}}>Login</Button>
-                        <Button type="primary">
-                            Get Started
-                        </Button>
-                      </div>
-                      }
+                        <div>
+                            <Button style={{marginRight: 12}}>Login</Button>
+                            <Button type="primary">
+                                Get Started
+                            </Button>
+                        </div>
+                    }
                 </div>
                 <div
                     aria-label="Navigation bar toggle"
