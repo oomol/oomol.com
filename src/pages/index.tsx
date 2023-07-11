@@ -10,7 +10,7 @@ import Translate, {translate} from "@docusaurus/Translate";
 import {Button, ConfigProvider} from 'antd';
 import {DownloadOutlined} from "@ant-design/icons";
 
-export default function Home(): JSX.Element {
+export default function Home() {
     const {siteConfig} = useDocusaurusContext();
     return (
         <ConfigProvider theme={{
@@ -51,11 +51,11 @@ export default function Home(): JSX.Element {
                                             </Translate>
                                         </div>
                                         <div className={styles.sectionOneBtnBox}>
-                                            <Button className={styles.sectionOneBtn} type="primary" size="large"
+                                            <Button className={styles.sectionOneBtn} size="large"
                                                     shape="round">
                                                 <Translate>Download</Translate>
                                             </Button>
-                                            <Button className={styles.sectionOneBtn} size="large" shape="round">
+                                            <Button className={styles.sectionOneBtn} type="primary" size="large" shape="round">
                                                 <Translate>Get Started</Translate>
                                             </Button>
                                         </div>
