@@ -78,6 +78,21 @@ const config = {
           {to: '/blog', label: 'Blog', position: 'left'},
           {to: '/pricing', label: 'Pricing', position: 'left'},
           {to: '/releases', label: 'Releases', position: 'left'},
+          {
+            label: 'Product',
+            position: 'left',
+            href: '#',
+            items: [
+              {
+                label: 'Oomol Studio',
+                to: '#',
+              },
+              {
+                label: 'Vocana',
+                to: '#',
+              }
+            ]
+          }
           // TODO: 等登录注册有网页版再放出来
           // {
           //   to: '/login',
