@@ -2,8 +2,7 @@ import styles from './styles.module.css';
 
 import React, {useCallback, useState} from 'react';
 import type {ComponentProps} from 'react';
-import {useThemeConfig} from '@docusaurus/theme-common';
-import {useColorMode} from '@docusaurus/theme-common';
+import { useColorMode } from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {useLocation} from '@docusaurus/router';
 import NavbarItem from '@theme/NavbarItem';
@@ -11,6 +10,8 @@ import SearchBar from '@theme/SearchBar';
 import clsx from 'clsx';
 import Link from "@docusaurus/Link";
 import {Button} from "antd";
+import Translate from '@docusaurus/Translate';
+
 
 interface NavbarProps {
 
@@ -50,7 +51,9 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
     }, [])
 
     return (
-        <header className={clsx("navbar", styles.navbar)}>
+        <header className={clsx("navbar", styles.navbar, {
+            "navbar-sidebar--show": sidebarShown,
+          })}>
             <div className={clsx("navbar__inner", styles.inner)}>
                 <div className="navbar__items">
                     <Link className={styles.brand} to="/">
@@ -81,6 +84,32 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
                       </div>
                       }
                 </div>
+                <div
+                    aria-label="Navigation bar toggle"
+                    className="navbar__toggle"
+                    role="button"
+                    tabIndex={0}
+                    onClick={showSidebar}
+                    onKeyDown={showSidebar}
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="30"
+                        height="30"
+                        viewBox="0 0 30 30"
+                        role="img"
+                        focusable="false"
+                    >
+                        <title>An icon showing a hamburger menu</title>
+                        <path
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeMiterlimit="10"
+                            strokeWidth="2"
+                            d="M4 7h22M4 15h22M4 23h22"
+                        />
+                    </svg>
+                </div>
             </div>
             <div
                 role="presentation"
@@ -101,7 +130,6 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
                             loading="lazy"
                         />
                     </Link>
-
                 </div>
                 <div className="navbar-sidebar__items">
                     <div className="menu">
