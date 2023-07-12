@@ -1,12 +1,12 @@
 import React from "react";
-import Layout from "../theme/Layout";
-import styles from "./privacy.module.css";
+import Layout from "../../theme/Layout";
+import styles from "./styles.module.less";
 
-export default function Privacy() {
+export default function Index() {
     return (
         <Layout>
             <div className={styles.box}>
-                privacy
+                OomolApi
             </div>
         </Layout>
     );

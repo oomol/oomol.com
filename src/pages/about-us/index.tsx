@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "./about-us.module.css";
-import Layout from "../theme/Layout";
+import styles from "./styles.module.less";
+import Layout from "../../theme/Layout";
 
-export default function AboutUs() {
+export default function Index() {
     return (
         <Layout>
             <div className={styles.box}>
-               about
+               about us
             </div>
         </Layout>
     );

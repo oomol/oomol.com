@@ -3,21 +3,18 @@ import Link from "@docusaurus/Link";
 import {Analytics} from "@vercel/analytics/react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "../theme/Layout";
-import styles from "./index.module.css";
+import styles from "./index.module.less";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Translate, {translate} from "@docusaurus/Translate";
 import {Button, ConfigProvider} from 'antd';
 import {DownloadOutlined} from "@ant-design/icons";
+// import 'antd/dist/antd.css';
 
 export default function Home() {
     const {siteConfig} = useDocusaurusContext();
     return (
-        <ConfigProvider theme={{
-            token: {
-                colorPrimary: "#7d7fe9",
-            }
-        }}>
+        <ConfigProvider>
             <Layout
                 // title={`Hello from ${siteConfig.title}`}
                 // description="Description will go into a meta tag in <head />"
@@ -259,8 +256,8 @@ export default function Home() {
                                 <Image
                                     style={{width: 320}}
                                     sources={{
-                                        light: useBaseUrl("/img/opensource.svg"),
-                                        dark: useBaseUrl("/img/opensource.svg"),
+                                        light: useBaseUrl("/img/open-source.svg"),
+                                        dark: useBaseUrl("/img/open-source.svg"),
                                     }}
                                 />
                             </div>

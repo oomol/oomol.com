@@ -1,12 +1,12 @@
 import React from "react";
-import Layout from "../theme/Layout";
-import styles from "./oomol-api.module.css";
+import styles from "./styles.module.less";
+import Layout from "../../theme/Layout";
 
-export default function OomolApi() {
+export default function Index() {
     return (
         <Layout>
             <div className={styles.box}>
-                OomolApi
+                Download
             </div>
         </Layout>
     );

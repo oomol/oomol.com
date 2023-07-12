@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./system-status.module.css";
-import Layout from "../theme/Layout";
+import styles from "./styles.module.less";
+import Layout from "../../theme/Layout";
 
-export default function SystemStatus() {
+export default function Index() {
     return (
         <Layout>
             <div className={styles.box}>

@@ -1,8 +1,8 @@
 import React from "react";
-import Layout from "../theme/Layout";
-import styles from "./terms.module.css";
+import Layout from "../../theme/Layout";
+import styles from "./styles.module.less";
 
-export default function Terms() {
+export default function Index() {
     return (
         <Layout>
             <div className={styles.box}>
