@@ -5,6 +5,42 @@
  */
 
 /* You can override the default Infima variables here. */
+@font-face {
+    font-family: Jost;
+    src: url(/static/fonts/Jost-Regular.woff2) format("woff2"),
+        url(/static/fonts/Jost-Regular.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: Jost;
+    src: url(/static/fonts/Jost-Bold.woff2) format("woff2"),
+        url(/static/fonts/Jost-Bold.woff) format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: Jost;
+    src: url(/static/fonts/Jost-ExtraBold.woff2) format("woff2"),
+        url(/static/fonts/Jost-ExtraBold.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: Jost;
+    src: url(/static/fonts/Jost-Light.woff2) format("woff2"),
+        url(/static/fonts/Jost-Light.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
 :root {
     --ifm-color-primary: #7d7fe9;
     --ifm-color-primary-dark: #5e61e4;
@@ -15,7 +51,7 @@
     --ifm-color-primary-lightest: #d9d9f9;
     --ifm-code-font-size: 95%;
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-    --ifm-font-family-base: "PingFang SC", "PingFangSC-Semibold", "Source Han Sans SC", "Microsoft YaHei",
+    --ifm-font-family-base: "Jost", "PingFang SC", "PingFangSC-Semibold", "Source Han Sans SC", "Microsoft YaHei",
     "Helvetica Neue", "Noto Sans CJK SC", "WenQuanYi Micro Hei", sans-serif;
 }
 
