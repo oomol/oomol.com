@@ -188,8 +188,8 @@
 
 @media (max-width: 996px) {
     .benchmarkButton,
-    :global(.navbar__items--right .navbar__item.header-github-link),
+    :global(.navbar__items--right .navbar__item.header-github-link .navbar-siderbar),
     .searchBar {
-
+        display: none;
     }
 }
