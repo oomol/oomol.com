@@ -138,7 +138,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
                         </Link>
                     </div>
                     <div className="navbar-sidebar__items">
-                        <div className="menu">
+                        <div className="navbar-sidebar__item menu">
                             <ul className="menu__list">
                                 {items.map((item, i) => (
                                     <NavbarItem
