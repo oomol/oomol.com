@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "./download.module.css";
-import Layout from "../theme/Layout";
+import Layout from "../../theme/Layout";
+import styles from "./styles.module.less";
 
-export default function Download() {
+export default function Index() {
     return (
         <Layout>
             <div className={styles.box}>
-                Download
+                privacy
             </div>
         </Layout>
     );

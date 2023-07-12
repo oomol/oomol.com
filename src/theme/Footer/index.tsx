@@ -4,7 +4,6 @@ import React from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import clsx from "clsx";
-import {Switch} from "antd";
 import ColorModeToggle from "@theme/ColorModeToggle";
 import {useColorMode} from "@docusaurus/theme-common";
 
