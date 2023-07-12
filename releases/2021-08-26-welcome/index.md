@@ -1,11 +1,11 @@
 ---
-slug: welcome
-title: Welcome Release!
-authors: [slorber, yangshun]
-tags: [facebook, hello, docusaurus]
+slug: June 2023
+title: June 2023
 ---
 
 [Docusaurus blogging features](https://docusaurus.io/docs/blog) are powered by the [blog plugin](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).
+
+## banc
 
 Simply add Markdown files (or folders) to the `blog` directory.
 
@@ -18,8 +18,13 @@ The blog post date can be extracted from filenames, such as:
 
 A blog post folder can be convenient to co-locate blog post images:
 
+## ban888
+
 ![Docusaurus Plushie](./docusaurus-plushie-banner.jpeg)
 
 The blog supports tags as well!
+
+
+### cccc
 
 **And if you don't want a blog**: just delete this directory, and use `blog: false` in your Docusaurus config.

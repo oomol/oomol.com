@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
     const {siteConfig} = useDocusaurusContext();
     const {copyright, links = []} = siteConfig.themeConfig.footer;
     const hasFooter = !!siteConfig.themeConfig.footer;
-    const { colorMode, setColorMode } = useColorMode();
+    const {colorMode, setColorMode} = useColorMode();
     if (!hasFooter) {
         return null;
     }
@@ -63,38 +63,46 @@ const Footer: React.FC = () => {
                         />
                     </div>
                     <div className={styles.iconOutBox}>
-                        <div className={styles.iconBox}>
-                            <img
-                                alt="twitter"
-                                src="/img/twitter.svg"
-                                width={20}
-                                loading="lazy"
-                            />
-                        </div>
-                        <div className={styles.iconBox}>
-                            <img
-                                alt="discord"
-                                src="/img/discord.svg"
-                                width={22}
-                                loading="lazy"
-                            />
-                        </div>
-                        <div className={styles.iconBox}>
-                            <img
-                                alt="youtube"
-                                src="/img/youtube.svg"
-                                width={22}
-                                loading="lazy"
-                            />
-                        </div>
-                        <div className={styles.iconBox}>
-                            <img
-                                alt="github"
-                                src="/img/github.svg"
-                                width={20}
-                                loading="lazy"
-                            />
-                        </div>
+                        <a target="_blank" href="https://twitter.com/OomolStudio">
+                            <div className={styles.iconBox}>
+                                <img
+                                    alt="twitter"
+                                    src="/img/twitter.svg"
+                                    width={20}
+                                    loading="lazy"
+                                />
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://discord.com/channels/918759925805617163/1128586819185934436">
+                            <div className={styles.iconBox}>
+                                <img
+                                    alt="discord"
+                                    src="/img/discord.svg"
+                                    width={22}
+                                    loading="lazy"
+                                />
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://www.youtube.com/@oomolstudio">
+                            <div className={styles.iconBox}>
+                                <img
+                                    alt="youtube"
+                                    src="/img/youtube.svg"
+                                    width={22}
+                                    loading="lazy"
+                                />
+                            </div>
+                        </a>
+                        <a target="_blank" href="https://github.com/oomol">
+                            <div className={styles.iconBox}>
+                                <img
+                                    alt="github"
+                                    src="/img/github.svg"
+                                    width={20}
+                                    loading="lazy"
+                                />
+                            </div>
+                        </a>
                     </div>
 
                 </div>

@@ -3,7 +3,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /*margin-top: 36px;*/
+    border-top-style: solid;
+    border-top-color: rgb(249, 249, 249);
+    border-top-width: 1px;
 }
 
 .center {
@@ -162,7 +164,6 @@
     align-items: center;
     justify-content: center;
     opacity: 0.48;
-    /*background-color: #7D7FE9;*/
 }
 
 .bottomRight {

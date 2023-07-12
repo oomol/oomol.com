@@ -45,7 +45,7 @@ export default function Home() {
                                         </div>
                                         <div className={styles.sectionOneTextInner}>
                                             <Translate>
-                                                OOMOL STUDIO is a workflow authoring and orchestration tool. Provides a
+                                                OOMOL is a workflow authoring and orchestration tool. Provides a
                                                 variety of programming language operating environments, built-in rich
                                                 tool suites, and supports containers and cloud-native.
                                             </Translate>
@@ -101,7 +101,7 @@ export default function Home() {
                                     <div className={styles.scenesTextTitle}>AI scene support</div>
                                     <div className={styles.scenesTextInner}>
                                         Built-in generative AI open source libraries such as LangChain and Stable
-                                        Diffusion, and deeply integrated OOMOL STUDIO
+                                        Diffusion, and deeply integrated OOMOL
                                         visual workflow. Developers can start projects quickly and expand development
                                         flexibly.
                                     </div>
@@ -219,7 +219,7 @@ export default function Home() {
                                     </div>
                                     <div className={styles.sectionTwoLargeInner}>
                                         Natively supports the collaborative development tool git commonly used by the
-                                        community to manage projects. Provide OOMOL STUDIO
+                                        community to manage projects. Provide OOMOL
                                         The open source sharing community of Workflow function facilitates communication
                                         among developers.
                                         Let good ideas and innovations be seen by more people and used by more projects.
@@ -236,7 +236,7 @@ export default function Home() {
                                     <div className={styles.sectionTwoLargeInner}>
                                         本地使用更加安全、轻量和经济。
                                         云端部署可以很方便地分享给他人使用，且支持长时间大算力的处理数据。
-                                        使用 Oomol Studio
+                                        使用 Oomol
                                         本地调试通过之后可以轻松的部署到云端，将调试脚本变为高可用的服务。
                                         用户可以专注于构建数学模型以及自动化流程，而部署和运维可以交给我们。
                                     </div>
