@@ -32,6 +32,17 @@ const config = {
     locales: ['zh-CN', 'en'],
   },
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'releases',
+        routeBasePath: 'releases',
+        path: './releases'
+      }
+    ]
+  ],
+
   presets: [
     [
       'classic',
