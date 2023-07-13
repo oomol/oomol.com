@@ -83,7 +83,7 @@ const downloadData: DownloadDataType[] = [
         ],
     },
 ];
-export default function HomepageDownload() {
+export default function HomepageDownloads() {
     const downloadNodes = downloadData.map((data, index) => {
         const btnNodes = data.package.map((btn, index) => {
             return (
