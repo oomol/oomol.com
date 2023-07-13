@@ -61,7 +61,12 @@ declare module "@docusaurus/useGlobalData" {
   export { usePluginData };
 }
 
-declare module '*.less' {
-  const content: { [className: string]: string };
+// declare module '*.less' {
+//   const content: { [className: string]: string };
+//   export default content;
+// }
+
+declare module '*.scss' {
+  const content: Record<string, string>;
   export default content;
 }

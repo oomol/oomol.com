@@ -1,4 +1,4 @@
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 
 import React, { ReactNode } from "react";
 import LayoutProvider from "@theme/Layout/Provider";
@@ -20,7 +20,7 @@ const Layout: React.FC<LayoutProps> = ({children, wrapperClassName}) => {
     //   themeConfig: { image: defaultImage },
     //   url: siteUrl,
     // } = siteConfig
-    
+
     return (
         <LayoutProvider>
             <Navbar />

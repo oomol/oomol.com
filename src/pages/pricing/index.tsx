@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../../theme/Layout";
-import styles from "./styles.module.less";
+import styles from "./styles.module.scss";
 import {CheckCircleFilled} from "@ant-design/icons";
 
 export const PricingData = [

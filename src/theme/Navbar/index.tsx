@@ -1,4 +1,4 @@
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 import React, {useCallback, useState} from 'react';
 import type {ComponentProps} from 'react';
