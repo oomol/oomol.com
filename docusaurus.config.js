@@ -33,7 +33,19 @@ const config = {
     },
 
     plugins: [
-        'docusaurus-plugin-less',
+        ['docusaurus-plugin-less',
+            {
+                lessOptions:
+                    {
+                        javascriptEnabled: true,
+                        modifyVars: {
+                            'primary-color': '#7D7FE9',
+                            'link-color': '#7D7FE9',
+                            'border-radius-base': '4px',
+                        },
+                    },
+            }
+        ],
         [
             '@docusaurus/plugin-content-blog',
             {
@@ -112,7 +124,7 @@ const config = {
                         label: 'Docs',
                     },
                     {to: '/blog', label: 'Blog', position: 'left'},
-                    {to: '/pricing', label: 'Index', position: 'left'},
+                    {to: '/pricing', label: 'Pricing', position: 'left'},
                     {to: '/releases', label: 'Releases', position: 'left'},
                     // TODO: 等登录注册有网页版再放出来
                     // {

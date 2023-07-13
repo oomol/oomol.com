@@ -71,6 +71,7 @@ export default function Index() {
             </div>
         );
     })
+    console.log(styles);
     return (
         <Layout>
             <div className={styles.box}>
