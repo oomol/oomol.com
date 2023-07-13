@@ -1,13 +1,12 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import Layout from "../../theme/Layout";
+import ComingSoon from "@site/src/components/ComingSoon";
 
 export default function Index() {
     return (
         <Layout>
-            <div className={styles.box}>
-               about us
-            </div>
+            <ComingSoon name={"About us"}/>
         </Layout>
     );
 }
