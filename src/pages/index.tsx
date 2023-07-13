@@ -1,3 +1,5 @@
+import 'antd/dist/reset.css';
+
 import React from "react";
 import Link from "@docusaurus/Link";
 import {Analytics} from "@vercel/analytics/react";
@@ -9,17 +11,18 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import Translate, {translate} from "@docusaurus/Translate";
 import {Button, ConfigProvider} from 'antd';
 import {DownloadOutlined} from "@ant-design/icons";
-// import 'antd/dist/antd.css';
+import { createCache, extractStyle } from '@ant-design/cssinjs';
+import CustomAntdTheme from '../utils/customAntdTheme';
 
 export default function Home() {
     const {siteConfig} = useDocusaurusContext();
+
     return (
-        <ConfigProvider>
+        CustomAntdTheme(
             <Layout
                 // title={`Hello from ${siteConfig.title}`}
                 // description="Description will go into a meta tag in <head />"
             >
-                {/*<HomepageHeader />*/}
                 <main>
                     <div className={styles.sectionOne}>
                         <div className={styles.sectionOneBox}>
@@ -316,6 +319,6 @@ export default function Home() {
                     <Analytics/>
                 </main>
             </Layout>
-        </ConfigProvider>
+        )
     );
 }

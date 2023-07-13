@@ -9,13 +9,12 @@ import NavbarItem from '@theme/NavbarItem';
 import SearchBar from '@theme/SearchBar';
 import clsx from 'clsx';
 import Link from "@docusaurus/Link";
-import {Button, ConfigProvider} from "antd";
+import { Button } from "antd";
 import Translate from '@docusaurus/Translate';
+import CustomAntdTheme from '@site/src/utils/customAntdTheme';
 
 
-interface NavbarProps {
-
-}
+interface NavbarProps {}
 
 const DefaultNavItemPosition = "right"
 
@@ -51,11 +50,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
     }, [])
 
     return (
-        <ConfigProvider theme={{
-            token: {
-                colorPrimary: "#7d7fe9",
-            }
-        }}>
+        CustomAntdTheme(
             <header className={clsx("navbar", styles.navbar, {
                 "navbar-sidebar--show": sidebarShown,
             })}>
@@ -153,7 +148,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
                     </div>
                 </div>
             </header>
-        </ConfigProvider>
+        )
     )
 }
 
