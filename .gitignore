@@ -6,7 +6,6 @@
 # Generated files
 .docusaurus
 .cache-loader
-/static/css/antd.min.css
 
 # Misc
 .DS_Store
