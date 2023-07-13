@@ -1,5 +1,3 @@
-import 'antd/dist/reset.css';
-
 import React from "react";
 import Link from "@docusaurus/Link";
 import {Analytics} from "@vercel/analytics/react";
@@ -14,6 +12,8 @@ import {DownloadOutlined} from "@ant-design/icons";
 import { createCache, extractStyle } from '@ant-design/cssinjs';
 import CustomAntdTheme from '../utils/customAntdTheme';
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
+import HomepageDownloads from "@site/src/components/HomepageDownloads";
+import HomepageScenes from "@site/src/components/HomepageScenes";
 
 export default function Home() {
     const {siteConfig} = useDocusaurusContext();
@@ -79,109 +79,9 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className={styles.scenes}>
-                        <div className={styles.sectionTitle}>
-                            Use Scenarios to Improve Efficiency
-                        </div>
-                        <div className={styles.sectionInner}>
-                            <div className={styles.sectionCell}>
-                                <div className={styles.scenesImage}>
-                                    <Image
-                                        style={{width: "100%"}}
-                                        sources={{
-                                            light: useBaseUrl("/img/ai.jpg"),
-                                            dark: useBaseUrl("/img/ai.jpg"),
-                                        }}
-                                    />
-                                </div>
-                                <div className={styles.scenesText}>
-                                    <div className={styles.scenesTextTitle}>AI scene support</div>
-                                    <div className={styles.scenesTextInner}>
-                                        Built-in generative AI open source libraries such as LangChain and Stable
-                                        Diffusion, and deeply integrated OOMOL
-                                        visual workflow. Developers can start projects quickly and expand development
-                                        flexibly.
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={styles.sectionCell}>
-                                <div className={styles.scenesImage}>
-                                    <Image
-                                        style={{width: "100%"}}
-                                        sources={{
-                                            light: useBaseUrl("/img/data.jpg"),
-                                            dark: useBaseUrl("/img/data.jpg"),
-                                        }}
-                                    />
-                                </div>
-                                <div className={styles.scenesText}>
-                                    <div className={styles.scenesTextTitle}>Data Processing and Analysis</div>
-                                    <div className={styles.scenesTextInner}>
-                                        It supports multiple languages such as Python, JavaScript, and R to be used in
-                                        conjunction to give full play to the advantages of each language ecology. And it
-                                        can be deployed to the cloud with one click, so that it can be easily shared
-                                        with others.
-                                    </div>
-                                </div>
-                            </div>
-                            {/*<div className={styles.sectionCell}>*/}
-                            {/*    <div className={styles.scenesImage}>*/}
-                            {/*        <Image*/}
-                            {/*            style={{width: "100%"}}*/}
-                            {/*            sources={{*/}
-                            {/*                light: useBaseUrl("/img/trade.jpg"),*/}
-                            {/*                dark: useBaseUrl("/img/trade.jpg"),*/}
-                            {/*            }}*/}
-                            {/*        />*/}
-                            {/*    </div>*/}
-                            {/*    <div className={styles.scenesText}>*/}
-                            {/*        <div className={styles.scenesTextTitle}>轻松实现量化交易模型</div>*/}
-                            {/*        <div className={styles.scenesTextInner}>*/}
-                            {/*            原生支持 Langchain, 并且内置各种 AI 服务套件*/}
-                            {/*        </div>*/}
-                            {/*    </div>*/}
-                            {/*</div>*/}
-                        </div>
-                    </div>
+                    <HomepageScenes/>
                     <HomepageFeatures/>
-                    <div className={styles.sectionDownload}>
-                        <div className={styles.sectionDownloadCellBox}>
-                            <div className={styles.sectionDownloadCell}>
-                                <Image
-                                    style={{width: 80}}
-                                    sources={{
-                                        light: useBaseUrl("/img/windows.svg"),
-                                        dark: useBaseUrl("/img/windows.svg"),
-                                    }}
-                                />
-                            </div>
-                            <Button icon={<DownloadOutlined/>}>Windows</Button>
-                        </div>
-                        <div className={styles.sectionDownloadCellBox}>
-                            <div className={styles.sectionDownloadCell}>
-                                <Image
-                                    style={{width: 120}}
-                                    sources={{
-                                        light: useBaseUrl("/img/linux.svg"),
-                                        dark: useBaseUrl("/img/linux.svg"),
-                                    }}
-                                />
-                            </div>
-                            <Button icon={<DownloadOutlined/>}>Linux</Button>
-                        </div>
-                        <div className={styles.sectionDownloadCellBox}>
-                            <div className={styles.sectionDownloadCell}>
-                                <Image
-                                    style={{width: 100}}
-                                    sources={{
-                                        light: useBaseUrl("/img/macos.svg"),
-                                        dark: useBaseUrl("/img/macos.svg"),
-                                    }}
-                                />
-                            </div>
-                            <Button icon={<DownloadOutlined/>}>MacOS</Button>
-                        </div>
-                    </div>
+                    <HomepageDownloads/>
                     <Analytics/>
                 </main>
             </Layout>

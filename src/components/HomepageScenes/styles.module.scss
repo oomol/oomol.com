@@ -1,0 +1,53 @@
+.sectionTitle {
+    width: 100%;
+    height: 160px;
+    font-size: 36px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sectionInner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sectionCell {
+    width: 375px;
+    height: 100%;
+    margin-left: 48px;
+    margin-right: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.30);
+}
+
+.scenes {
+    width: 100%;
+    padding-bottom: 64px;
+    background-color: rgb(249, 249, 249);
+}
+
+.scenesText {
+}
+
+.scenesTextTitle {
+    margin-top: 12px;
+    font-size: 18px;
+}
+
+.scenesTextInner {
+    margin-top: 8px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
