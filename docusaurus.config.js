@@ -159,7 +159,7 @@ const config = {
                 to: "/oomol-api",
               },
               {
-                label: "Index",
+                label: "Pricing",
                 to: "/pricing",
               },
             ],
@@ -180,7 +180,7 @@ const config = {
                 to: "/brand-assets",
               },
               {
-                label: "Index",
+                label: "download",
                 to: "/download",
               },
             ],

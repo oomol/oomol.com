@@ -80,8 +80,18 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
                                 <div className={styles.cutLine}/>
                             </>
                         }
-                        <Button style={{marginRight: 12}}>Login</Button>
-                        <Button type="primary">
+                        <Button
+                            target="_blank"
+                            href={"https://console.oomol.com/"}
+                            className={styles.btn}
+                            style={{marginRight: 12}}>
+                            Login
+                        </Button>
+                        <Button
+                            target="_blank"
+                            href={"https://console.oomol.com/"}
+                            className={styles.btn}
+                            type="primary">
                             Get Started
                         </Button>
                     </div>

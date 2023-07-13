@@ -48,12 +48,20 @@ export default function Home() {
                                             </Translate>
                                         </div>
                                         <div className={styles.sectionOneBtnBox}>
-                                            <Button className={styles.sectionOneBtn} size="large"
-                                                    shape="round">
-                                                <Translate>Download</Translate>
-                                            </Button>
-                                            <Button className={styles.sectionOneBtn} type="primary" size="large" shape="round">
-                                                <Translate>Get Started</Translate>
+                                            <Link to={"/download"}>
+                                                <Button className={styles.sectionOneBtn} size="large"
+                                                        shape="round">
+                                                    <Translate>Download</Translate>
+                                                </Button>
+                                            </Link>
+                                            <Button
+                                                className={styles.sectionOneBtn}
+                                                href={"https://console.oomol.com/"}
+                                                target="_blank"
+                                                type="primary"
+                                                size="large"
+                                                shape="round">
+                                                Get Started
                                             </Button>
                                         </div>
                                     </div>
