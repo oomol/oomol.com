@@ -1,5 +1,3 @@
-import 'antd/dist/reset.css';
-
 import React from "react";
 import Link from "@docusaurus/Link";
 import {Analytics} from "@vercel/analytics/react";
@@ -14,6 +12,7 @@ import {DownloadOutlined} from "@ant-design/icons";
 import { createCache, extractStyle } from '@ant-design/cssinjs';
 import CustomAntdTheme from '../utils/customAntdTheme';
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
+import HomepageDownload from "@site/src/components/HomepageDownload";
 
 export default function Home() {
     const {siteConfig} = useDocusaurusContext();
@@ -144,44 +143,7 @@ export default function Home() {
                         </div>
                     </div>
                     <HomepageFeatures/>
-                    <div className={styles.sectionDownload}>
-                        <div className={styles.sectionDownloadCellBox}>
-                            <div className={styles.sectionDownloadCell}>
-                                <Image
-                                    style={{width: 80}}
-                                    sources={{
-                                        light: useBaseUrl("/img/windows.svg"),
-                                        dark: useBaseUrl("/img/windows.svg"),
-                                    }}
-                                />
-                            </div>
-                            <Button icon={<DownloadOutlined/>}>Windows</Button>
-                        </div>
-                        <div className={styles.sectionDownloadCellBox}>
-                            <div className={styles.sectionDownloadCell}>
-                                <Image
-                                    style={{width: 120}}
-                                    sources={{
-                                        light: useBaseUrl("/img/linux.svg"),
-                                        dark: useBaseUrl("/img/linux.svg"),
-                                    }}
-                                />
-                            </div>
-                            <Button icon={<DownloadOutlined/>}>Linux</Button>
-                        </div>
-                        <div className={styles.sectionDownloadCellBox}>
-                            <div className={styles.sectionDownloadCell}>
-                                <Image
-                                    style={{width: 100}}
-                                    sources={{
-                                        light: useBaseUrl("/img/macos.svg"),
-                                        dark: useBaseUrl("/img/macos.svg"),
-                                    }}
-                                />
-                            </div>
-                            <Button icon={<DownloadOutlined/>}>MacOS</Button>
-                        </div>
-                    </div>
+                    <HomepageDownload/>
                     <Analytics/>
                 </main>
             </Layout>

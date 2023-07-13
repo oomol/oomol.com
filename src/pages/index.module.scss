@@ -154,34 +154,6 @@
     padding-right: 12px;
 }
 
-.sectionDownload {
-    display: flex;
-    flex-direction: row;
-    height: 420px;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(249, 249, 249);
-}
-
-.sectionDownloadCell {
-    width: 180px;
-    height: 160px;
-    margin-left: 24px;
-    margin-right: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.sectionDownloadCellBox {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 240px;
-    flex-direction: column;
-}
-
 .sectionDownloadBtn {
     width: 120px;
     height: 42px;
