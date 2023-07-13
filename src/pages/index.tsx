@@ -13,16 +13,13 @@ import {Button, ConfigProvider} from 'antd';
 import {DownloadOutlined} from "@ant-design/icons";
 import { createCache, extractStyle } from '@ant-design/cssinjs';
 import CustomAntdTheme from '../utils/customAntdTheme';
+import HomepageFeatures from "@site/src/components/HomepageFeatures";
 
 export default function Home() {
     const {siteConfig} = useDocusaurusContext();
-
     return (
         CustomAntdTheme(
-            <Layout
-                // title={`Hello from ${siteConfig.title}`}
-                // description="Description will go into a meta tag in <head />"
-            >
+            <Layout>
                 <main>
                     <div className={styles.sectionOne}>
                         <div className={styles.sectionOneBox}>
@@ -146,138 +143,7 @@ export default function Home() {
                             {/*</div>*/}
                         </div>
                     </div>
-                    <div className={styles.sectionTwo}>
-                        <div className={styles.sectionTitle}>The superiority of product design</div>
-                        <div className={styles.sectionTwoBox}>
-                            <div className={styles.sectionTwoSmall}>
-                                <Image
-                                    style={{width: 300}}
-                                    sources={{
-                                        light: useBaseUrl("/img/workflow.svg"),
-                                        dark: useBaseUrl("/img/workflow.svg"),
-                                    }}
-                                />
-                            </div>
-                            <div className={styles.sectionTwoLarge}>
-                                <div className={styles.sectionTwoLargeBox}>
-                                    <div className={styles.sectionTwoLargeTitle}>
-                                        Coding & Workflow Orchestration
-                                    </div>
-                                    <div className={styles.sectionTwoLargeInner}>
-                                        Inherit the perfect programming experience of vscode, and support visual
-                                        Workflow at the same time
-                                        Organize logically. It is possible to have the best authoring and orchestration
-                                        experience all within one tool at the same time.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.sectionTwo}>
-                        <div className={styles.sectionTwoBox}>
-                            <div className={styles.sectionTwoLarge}>
-                                <div className={styles.sectionTwoLargeBox}>
-                                    <div className={styles.sectionTwoLargeTitle}>
-                                        Multilingual & Data processing, Rendering
-                                    </div>
-                                    <div className={styles.sectionTwoLargeInner}>
-                                        Common development language and related language libraries can be used for
-                                        data processing, and even cross-language cooperation is possible.
-                                        The processed data can be rendered through the built-in graphics package, and if
-                                        the built-in is not satisfied, it can also support community expansion.
-                                        Processing data and graphical display export can be best experienced in one
-                                        tool.
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={styles.sectionTwoSmall}>
-                                <Image
-                                    style={{width: 360}}
-                                    sources={{
-                                        light: useBaseUrl("/img/data.svg"),
-                                        dark: useBaseUrl("/img/data.svg"),
-                                    }}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.sectionTwo}>
-                        <div className={styles.sectionTwoBox}>
-                            <div className={styles.sectionTwoSmall}>
-                                <Image
-                                    style={{width: 360}}
-                                    sources={{
-                                        light: useBaseUrl("/img/interactive.svg"),
-                                        dark: useBaseUrl("/img/interactive.svg"),
-                                    }}
-                                />
-                            </div>
-                            <div className={styles.sectionTwoLarge}>
-                                <div className={styles.sectionTwoLargeBox}>
-                                    <div className={styles.sectionTwoLargeTitle}>
-                                        Collaborate & Manage & Share
-                                    </div>
-                                    <div className={styles.sectionTwoLargeInner}>
-                                        Natively supports the collaborative development tool git commonly used by the
-                                        community to manage projects. Provide OOMOL
-                                        The open source sharing community of Workflow function facilitates communication
-                                        among developers.
-                                        Let good ideas and innovations be seen by more people and used by more projects.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.sectionTwo}>
-                        <div className={styles.sectionTwoBox}>
-                            <div className={styles.sectionTwoLarge}>
-                                <div className={styles.sectionTwoLargeBox}>
-                                    <div className={styles.sectionTwoLargeTitle}>Local & Cloud</div>
-                                    <div className={styles.sectionTwoLargeInner}>
-                                        本地使用更加安全、轻量和经济。
-                                        云端部署可以很方便地分享给他人使用，且支持长时间大算力的处理数据。
-                                        使用 Oomol
-                                        本地调试通过之后可以轻松的部署到云端，将调试脚本变为高可用的服务。
-                                        用户可以专注于构建数学模型以及自动化流程，而部署和运维可以交给我们。
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={styles.sectionTwoSmall}>
-                                <Image
-                                    style={{width: 360}}
-                                    sources={{
-                                        light: useBaseUrl("/img/cloud.svg"),
-                                        dark: useBaseUrl("/img/cloud.svg"),
-                                    }}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.sectionTwo}>
-                        <div className={styles.sectionTwoBox}>
-                            <div className={styles.sectionTwoSmall}>
-                                <Image
-                                    style={{width: 320}}
-                                    sources={{
-                                        light: useBaseUrl("/img/open-source.svg"),
-                                        dark: useBaseUrl("/img/open-source.svg"),
-                                    }}
-                                />
-                            </div>
-                            <div className={styles.sectionTwoLarge}>
-                                <div className={styles.sectionTwoLargeBox}>
-                                    <div className={styles.sectionTwoLargeTitle}>
-                                        Kernel Open Source & Data Security
-                                    </div>
-                                    <div className={styles.sectionTwoLargeInner}>
-                                        The core of the orchestration engine, vocana, is open source and supports use
-                                        based on vscode plug-ins. Data usage complies with GDPR requirements. Provides
-                                        secure and trusted productivity tools.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <HomepageFeatures/>
                     <div className={styles.sectionDownload}>
                         <div className={styles.sectionDownloadCellBox}>
                             <div className={styles.sectionDownloadCell}>

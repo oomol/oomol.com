@@ -3,7 +3,6 @@ import styles from "./styles.module.scss";
 import React from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import clsx from "clsx";
 import ColorModeToggle from "@theme/ColorModeToggle";
 import {useColorMode} from "@docusaurus/theme-common";
 
@@ -33,6 +32,40 @@ const FooterLink: React.FC<FooterLinkProps> = ({to, href, label, ...props}) => {
     );
 }
 
+type LogoNodeDataType = {
+    name: string,
+    src: string,
+    href: string,
+    width: number,
+};
+
+const logoNodeData: LogoNodeDataType[] = [
+    {
+        name: "twitter",
+        src: "/img/twitter.svg",
+        href: "https://twitter.com/OomolStudio",
+        width: 20,
+    },
+    {
+        name: "discord",
+        src: "/img/discord.svg",
+        href: "https://discord.com/channels/918759925805617163/1128586819185934436",
+        width: 22,
+    },
+    {
+        name: "youtube",
+        src: "/img/youtube.svg",
+        href: "https://www.youtube.com/@oomolstudio",
+        width: 22,
+    },
+    {
+        name: "github",
+        src: "/img/github.svg",
+        href: "https://github.com/oomol",
+        width: 20,
+    },
+];
+
 const Footer: React.FC = () => {
     const {siteConfig} = useDocusaurusContext();
     const {copyright, links = []} = siteConfig.themeConfig.footer;
@@ -42,6 +75,20 @@ const Footer: React.FC = () => {
         return null;
     }
 
+    const logoNodes = logoNodeData.map((data, index) => {
+        return (
+            <a target="_blank" href={data.href} key={`${index}-${data.name}`}>
+                <div className={styles.iconBox}>
+                    <img
+                        alt={data.name}
+                        src={data.src}
+                        width={data.width}
+                        loading="lazy"
+                    />
+                </div>
+            </a>
+        );
+    })
     return (
         <footer className={styles.root}>
             <div className={styles.content}>
@@ -62,46 +109,7 @@ const Footer: React.FC = () => {
                         />
                     </div>
                     <div className={styles.iconOutBox}>
-                        <a target="_blank" href="https://twitter.com/OomolStudio">
-                            <div className={styles.iconBox}>
-                                <img
-                                    alt="twitter"
-                                    src="/img/twitter.svg"
-                                    width={20}
-                                    loading="lazy"
-                                />
-                            </div>
-                        </a>
-                        <a target="_blank" href="https://discord.com/channels/918759925805617163/1128586819185934436">
-                            <div className={styles.iconBox}>
-                                <img
-                                    alt="discord"
-                                    src="/img/discord.svg"
-                                    width={22}
-                                    loading="lazy"
-                                />
-                            </div>
-                        </a>
-                        <a target="_blank" href="https://www.youtube.com/@oomolstudio">
-                            <div className={styles.iconBox}>
-                                <img
-                                    alt="youtube"
-                                    src="/img/youtube.svg"
-                                    width={22}
-                                    loading="lazy"
-                                />
-                            </div>
-                        </a>
-                        <a target="_blank" href="https://github.com/oomol">
-                            <div className={styles.iconBox}>
-                                <img
-                                    alt="github"
-                                    src="/img/github.svg"
-                                    width={20}
-                                    loading="lazy"
-                                />
-                            </div>
-                        </a>
+                        {logoNodes}
                     </div>
 
                 </div>
