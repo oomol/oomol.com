@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Oomol",
+  title: "OOMOL",
   tagline: "Easily connect code and services",
   favicon: "img/favicon.ico",
 
@@ -18,7 +18,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
+  organizationName: "oomol", // Usually your GitHub org/user name.
   projectName: "docusaurus", // Usually your repo name.
 
   onBrokenLinks: "throw",
@@ -33,19 +33,7 @@ const config = {
   },
 
   plugins: [
-    [
-      "docusaurus-plugin-less",
-      {
-        lessOptions: {
-          javascriptEnabled: true,
-          modifyVars: {
-            "primary-color": "#7D7FE9",
-            "link-color": "#7D7FE9",
-            "border-radius-base": "4px",
-          },
-        },
-      },
-    ],
+    "docusaurus-plugin-sass",
     [
       "@docusaurus/plugin-content-blog",
       {
@@ -83,7 +71,7 @@ const config = {
         theme: {
           customCss: [
             require.resolve("./static/css/antd.min.css"),
-            require.resolve("./src/css/custom.less"),
+            require.resolve("./src/css/custom.scss"),
           ],
         },
       }),

@@ -5,7 +5,7 @@ import Link from "@docusaurus/Link";
 import {Analytics} from "@vercel/analytics/react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "../theme/Layout";
-import styles from "./index.module.less";
+import styles from "./index.module.scss";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Translate, {translate} from "@docusaurus/Translate";

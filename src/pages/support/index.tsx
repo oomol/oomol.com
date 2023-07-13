@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./styles.module.less";
+import styles from "./styles.module.scss";
 import Layout from "../../theme/Layout";
 import {Button} from "antd";
 
