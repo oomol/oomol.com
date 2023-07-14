@@ -9,44 +9,40 @@
 }
 
 .center {
+    max-width: var(--ifm-container-width);
+    width: 100%;
+    padding: 4.5rem 3rem;
+    margin: 0 auto;
 }
 
 .content {
-    width: 1200px;
-    /*height: 360px;*/
-    margin-top: 72px;
-    margin-bottom: 72px;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-rows: 30px 1fr;
+    gap: 2rem;
+    grid-template-areas:
+      "logo logo"
+      "leftBoxLogo leftBoxLogo"
+      "links links";
 }
-
-.leftBox {
-    width: 340px;
-    height: 100%;
-    margin-right: 60px;
-}
-
-.leftBoxLogo {
-    display: flex;
-    flex-direction: row;
-}
-
+  
 @media screen and (min-width: 1000px) {
     .content {
         grid-template-areas:
         "logo logo"
-        "tagline links";
+        "leftBoxLogo links";
     }
 }
 
-.logo {
-    width: 96px;
+.leftBox {
+    grid-area: leftBoxLogo;
 }
 
-.tagline {
-    margin-top: 12px;
-    font-size: 16px;
-    font-weight: 100;
+.leftBoxLogo {
+    display: flex;
+}
+
+.logo {
+    grid-area: logo;
 }
 
 .githubButton {
@@ -58,15 +54,15 @@
 }
 
 .links {
-    width: 800px;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    /*background-color: #abacf1;*/
+    grid-area: links;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem 1rem;
 }
 
 @media screen and (min-width: 700px) {
     .links {
+      grid-template-columns: repeat(4, 1fr);
     }
 }
 
@@ -82,37 +78,17 @@
     font-size: 14px;
     font-weight: bolder;
     /*background-color: yellow;*/
-    margin-left: 48px;
 }
 
 .item {
     font-size: 14px;
     line-height: 36px;
     /*background-color: yellow;*/
-    margin-left: 48px;
 }
 
 .link {
     font-weight: normal;
     color: #8D8D8D;
-}
-
-.subscribe {
-}
-
-.subscribeInputs {
-}
-
-.subscribeInputs input {
-}
-
-.subscribeText {
-}
-
-.subscribeSubmit {
-}
-
-:global(html[data-theme="light"]) .subscribeSubmit {
 }
 
 .items {
@@ -128,11 +104,12 @@
 }
 
 .bottom {
-    width: 1200px;
+    width: 1080px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 48px;
+    padding: 0 24px;
 }
 
 .bottomLeft {
