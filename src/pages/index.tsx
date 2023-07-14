@@ -23,15 +23,6 @@ export default function Home() {
                 <main>
                     <div className={styles.sectionOne}>
                         <div className={styles.sectionOneBox}>
-                            <div className={styles.sectionOneSide}>
-                                <Image
-                                    style={{width: 380, marginRight: 88}}
-                                    sources={{
-                                        light: useBaseUrl("/img/side_left.svg"),
-                                        dark: useBaseUrl("/img/side_left.svg"),
-                                    }}
-                                />
-                            </div>
                             <div className={styles.sectionOneMid}>
                                 <div className={styles.sectionOneText}>
                                     <div className={styles.sectionOneTextBox}>
@@ -69,21 +60,13 @@ export default function Home() {
                                 <div className={styles.sectionOneImageBox}>
                                     <Image
                                         className={styles.sectionOneImage}
+                                        style={{width: 640, paddingTop: 50}}
                                         sources={{
                                             light: useBaseUrl("/img/oomol_studio.png"),
                                             dark: useBaseUrl("/img/oomol_studio.png"),
                                         }}
                                     />
                                 </div>
-                            </div>
-                            <div className={styles.sectionOneSide}>
-                                <Image
-                                    style={{width: 380, marginLeft: 88}}
-                                    sources={{
-                                        light: useBaseUrl("/img/side_right.svg"),
-                                        dark: useBaseUrl("/img/side_right.svg"),
-                                    }}
-                                />
                             </div>
                         </div>
                     </div>
