@@ -5,6 +5,8 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import ColorModeToggle from "@theme/ColorModeToggle";
 import {useColorMode} from "@docusaurus/theme-common";
+import clsx from "clsx"
+
 
 interface FooterLinkProps {
     href?: string
@@ -91,7 +93,7 @@ const Footer: React.FC = () => {
     })
     return (
         <footer className={styles.root}>
-            <div className={styles.content}>
+            <div className={clsx(styles.content, styles.center)}>
                 <div className={styles.leftBox}>
                     <div className={styles.leftBoxLogo}>
                         <img
@@ -111,12 +113,11 @@ const Footer: React.FC = () => {
                     <div className={styles.iconOutBox}>
                         {logoNodes}
                     </div>
-
                 </div>
                 <div className={styles.links}>
                     {links.map((linkItem, i) => (
                         <div key={i} className={styles.category}>
-                            {Boolean(linkItem.title) && (
+                            {linkItem.title && (
                                 <div className={styles.title}>{linkItem.title}</div>
                             )}
                             {linkItem.items?.length > 0 && (
@@ -132,7 +133,6 @@ const Footer: React.FC = () => {
                     ))}
                 </div>
             </div>
-
             <div className={styles.border}>
                 <div className={styles.bottom}>
                     <div className={styles.bottomLeft}>
