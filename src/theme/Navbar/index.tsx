@@ -80,20 +80,22 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
                                 <div className={styles.cutLine}/>
                             </>
                         }
-                        <Button
-                            target="_blank"
-                            href={"https://console.oomol.com/"}
-                            className={styles.btn}
-                            style={{marginRight: 12}}>
-                            Login
-                        </Button>
-                        <Button
-                            target="_blank"
-                            href={"https://console.oomol.com/"}
-                            className={styles.btn}
-                            type="primary">
-                            Get Started
-                        </Button>
+                        <div className={styles.navbarBtnBox}>
+                            <Button
+                                target="_blank"
+                                href={"https://console.oomol.com/"}
+                                className={styles.btn}
+                                style={{marginRight: 12}}>
+                                Login
+                            </Button>
+                            <Button
+                                target="_blank"
+                                href={"https://console.oomol.com/"}
+                                className={styles.btn}
+                                type="primary">
+                                Get Started
+                            </Button>
+                        </div>
                     </div>
                     <div
                         aria-label="Navigation bar toggle"
@@ -154,6 +156,13 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
                                     />
                                 ))}
                             </ul>
+                            <Button
+                                target="_blank"
+                                href={"https://console.oomol.com/"}
+                                className={styles.btn}
+                                style={{marginRight: 12}}>
+                                Login
+                            </Button>
                         </div>
                     </div>
                 </div>
