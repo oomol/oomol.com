@@ -206,4 +206,26 @@
     .sectionOneTextTitle {
         font-size: 45px;
     }
+
+    .sectionOneImageBox {
+        > img {
+            padding-top: 80px;
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .sectionOneTextTitle {
+        font-size: 40px;
+    }
+
+    .sectionOneTextInner {
+        padding: 0 24px;
+    }
+
+    .sectionOneImageBox {
+        > img {
+            padding-top: 80px;
+        }
+    }
 }

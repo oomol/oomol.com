@@ -98,6 +98,12 @@
   }
 }
 
+@media screen and (max-width: 414px) {
+  .sectionTwoLargeBox {
+    width: 394px;
+  }
+}
+
 @media screen and (max-width: 390px) {
   .sectionTwo {
     padding: 0 150px;
@@ -109,5 +115,11 @@
 
   .sectionTwoLargeInner {
     text-align: left;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .sectionTwoLargeBox {
+    width: 355px;
   }
 }
