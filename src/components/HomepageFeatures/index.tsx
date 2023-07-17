@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './styles.module.scss';
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { clsx } from 'clsx';
 
 const superiorityList = [
     {
@@ -35,11 +36,20 @@ const superiorityList = [
         inner: "The core of the orchestration engine, vocana, is open source and supports use based on vscode plug-ins. Data usage complies with GDPR requirements. Provides secure and trusted productivity tools.",
     },
 ];
+
+function isOdd(num) {
+    return num % 2 !== 0;
+}
+
 export default function HomepageFeatures() {
     const superiorityNode = superiorityList.map((data, index) => {
+        // const reverseWrapEven = index % 2 !== 0;
         if (isOdd(index)) {
             return (
-                <div className={styles.sectionTwo} key={`${index}`}>
+                <div className={clsx(
+                    styles.sectionTwo,
+                    isOdd(index) && styles.evenSectionTwo
+                )} key={`${index}`}>
                     <div className={styles.sectionTwoBox}>
                         <div className={styles.sectionTwoSmall}>
                             <Image
@@ -65,7 +75,10 @@ export default function HomepageFeatures() {
             );
         } else {
             return (
-                <div className={styles.sectionTwo} key={`${index}`}>
+                <div className={clsx(
+                    styles.sectionTwo,
+                    isOdd(index) && styles.evenSectionTwo
+                )} key={`${index}`}>
                     <div className={styles.sectionTwoBox}>
                         <div className={styles.sectionTwoLarge}>
                             <div className={styles.sectionTwoLargeBox}>
@@ -91,9 +104,7 @@ export default function HomepageFeatures() {
             )
         }
     });
-    function isOdd(num) {
-        return num % 2 !== 0;
-    }
+
     return (
         <>
             <div className={styles.sectionTitle}>The superiority of product design</div>
