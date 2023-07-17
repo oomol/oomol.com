@@ -1,11 +1,10 @@
 .sectionDownload {
     display: flex;
     flex-direction: row;
-    height: 420px;
+    padding: 60px 0;
     align-items: center;
     justify-content: center;
     background-color: rgb(249, 249, 249);
-    width: 100%;
 }
 
 .sectionDownloadCell {
@@ -22,8 +21,7 @@
 .sectionDownloadCellBox {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 240px;
+    width: 245px;
     flex-direction: column;
 }
 
@@ -33,5 +31,15 @@
     span {
         margin-right: 8px;
         font-family: Jost, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .sectionDownloadCellBox {
+        width: 100%;
+    }
+
+    .sectionDownload {
+        flex-wrap: wrap;
     }
 }
