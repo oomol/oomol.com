@@ -94,7 +94,19 @@
 
 @media screen and (max-width: 768px) {
   .sectionTwoLargeBox {
-    width: 748px;
+    width: 660px;
+  }
+}
+
+@media screen and (max-width: 678px) {
+  .sectionTwoLargeBox {
+    width: 560px;
+  }
+}
+
+@media screen and (max-width: 578px) {
+  .sectionTwoLargeBox {
+    width: 460px;
   }
 }
 
