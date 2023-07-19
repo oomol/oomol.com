@@ -37,9 +37,9 @@ const config = {
     [
       "@docusaurus/plugin-content-blog",
       {
-        id: "releases",
-        routeBasePath: "releases",
-        path: "./releases",
+        id: "updates",
+        routeBasePath: "updates",
+        path: "./updates",
         showReadingTime: true,
         blogSidebarCount: "ALL",
         blogSidebarTitle: "Updates",
@@ -116,7 +116,7 @@ const config = {
           },
           { to: "/blog", label: "Blog", position: "left" },
           { to: "/pricing", label: "Pricing", position: "left" },
-          { to: "/releases", label: "Releases", position: "left" },
+          { to: "/updates", label: "Updates", position: "left" },
           // TODO: 等登录注册有网页版再放出来
           // {
           //   to: '/login',
@@ -193,8 +193,8 @@ const config = {
                 to: "/docs/intro",
               },
               {
-                label: "Releases",
-                to: "/releases",
+                label: "Updates",
+                to: "/updates",
               },
               {
                 label: "Open Source",
