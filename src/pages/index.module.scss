@@ -50,8 +50,6 @@
 }
 
 .sectionOneTextBox {
-    max-width: 800px;
-    height: 280px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -59,11 +57,13 @@
 }
 
 .sectionOneTextTitle {
-    font-size: 48px;
+    max-width: 600px;
+    font-size: 46px;
     font-weight: bold;
 }
 
 .sectionOneTextInner {
+    max-width: 800px;
     font-size: 18px;
     margin-top: 12px;
 }
@@ -173,7 +173,7 @@
     position: relative;
     padding: 0 100px; /* 中间留出 100px 的空间 */
   }
-  
+
   .sectionOne::before,
   .sectionOne::after {
     content: "";
@@ -184,12 +184,12 @@
     background-repeat: no-repeat;
     background-size: 350px;
   }
-  
+
   .sectionOne::before {
     left: 7%;
     background-image: url(/img/side_left.svg);
   }
-  
+
   .sectionOne::after {
     right: 2%;
     background-image: url(/img/side_right.svg);

@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import Link from "@docusaurus/Link";
 
 type ScenesDataType = {
     imageUrl: string,
@@ -12,13 +13,13 @@ type ScenesDataType = {
 const scenesData: ScenesDataType[] = [
     {
         imageUrl: "/img/ai.jpg",
-        title: "AI scene support",
-        inner: "Built-in generative AI open source libraries such as LangChain and Stable Diffusion, and deeply integrated OOMOL visual workflow. Developers can start projects quickly and expand development flexibly.",
+        title: "Creative Arts Inspiration",
+        inner: "By leveraging Oomol Studio's visual configurations for Stable Diffusion AI models, artists can significantly enhance their creative process, as it simplifies the otherwise complex task of using Stable Diffusion, empowering them to effortlessly explore unique and visually stunning inspirations from descriptive text.",
     },
     {
         imageUrl: "/img/data.jpg",
         title: "Data Processing and Analysis",
-        inner: "It supports multiple languages such as Python, JavaScript, and R to be used in conjunction to give full play to the advantages of each language ecology. And it can be deployed to the cloud with one click, so that it can be easily shared with others.",
+        inner: "Data scientists enhance their work by using Oomol Studio, which supports multiple languages like Python, JavaScript, and R, allowing them to leverage the strengths of each language's ecosystem, and seamlessly deploy their projects to the cloud for easy collaboration with co-workers.",
     },
 ];
 export default function HomepageScenes() {
