@@ -49,7 +49,7 @@ export default function HomepageScenes() {
     return (
         <div className={styles.scenes}>
             <div className={styles.sectionTitle}>
-                Use Scenarios to Improve Efficiency
+                Productivity, Improved
             </div>
             <div className={styles.sectionInner}>
                 {scenesNodes}
