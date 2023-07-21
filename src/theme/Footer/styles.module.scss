@@ -3,16 +3,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-top-style: solid;
-    border-top-color: rgb(249, 249, 249);
-    border-top-width: 1px;
+    background-color: rgb(249, 249, 249);
 }
 
 .center {
     max-width: var(--ifm-container-width);
     width: 100%;
-    padding: 4.5rem 3rem;
-    margin: 0 auto;
+    margin-bottom: 48px;
 }
 
 .content {
@@ -24,7 +21,7 @@
       "leftBoxLogo leftBoxLogo"
       "links links";
 }
-  
+
 @media screen and (min-width: 1000px) {
     .content {
         grid-template-areas:
@@ -101,6 +98,7 @@
     justify-content: center;
     width: 100%;
     height: 72px;
+    margin-bottom: 16px;
 }
 
 .bottom {

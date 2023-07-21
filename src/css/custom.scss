@@ -5,7 +5,7 @@
  */
 /* You can override the default Infima variables here. */
 @font-face {
-    font-family: Jost;
+    font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", Jost, "WenQuanYi Micro Hei";
     src: url(/static/fonts/Jost-Regular.woff2) format("woff2"),
         url(/static/fonts/Jost-Regular.woff) format("woff");
     font-weight: 400;
@@ -14,7 +14,7 @@
 }
 
 @font-face {
-    font-family: Jost;
+    font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", Jost, "WenQuanYi Micro Hei";
     src: url(/static/fonts/Jost-Bold.woff2) format("woff2"),
         url(/static/fonts/Jost-Bold.woff) format("woff");
     font-weight: 500;
@@ -23,7 +23,7 @@
 }
 
 @font-face {
-    font-family: Jost;
+    font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", Jost, "WenQuanYi Micro Hei";
     src: url(/static/fonts/Jost-ExtraBold.woff2) format("woff2"),
         url(/static/fonts/Jost-ExtraBold.woff) format("woff");
     font-weight: 400;
@@ -32,7 +32,7 @@
 }
 
 @font-face {
-    font-family: Jost;
+    font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", Jost, "WenQuanYi Micro Hei";
     src: url(/static/fonts/Jost-Light.woff2) format("woff2"),
         url(/static/fonts/Jost-Light.woff) format("woff");
     font-weight: 400;
@@ -79,15 +79,13 @@
 
 .footer__links {
     margin-bottom: 3rem;
-    padding: 0 20%;
-    padding-left: 23rem;
+    padding: 0 20% 0 23rem;
 }
 
 /* 移动端下的自定义样式 */
 @media screen and (max-width: 996px) {
     .footer__links {
         padding: 0;
-        padding-left: 0;
     }
 }
 
