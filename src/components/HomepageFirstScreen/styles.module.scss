@@ -206,7 +206,11 @@
 
 @media screen and (max-width: 390px) {
     .sectionOneTextTitle {
-        font-size: 45px;
+        font-size: 40px;
+    }
+
+    .sectionOneTextInner {
+        padding: 0 16px;
     }
 
     .sectionOneImageBox {
