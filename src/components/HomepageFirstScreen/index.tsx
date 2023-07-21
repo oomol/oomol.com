@@ -23,12 +23,10 @@ export default function HomepageFirstScreen() {
                                 {data.script}
                             </div>
                             <div className={styles.sectionOneBtnBox}>
-                                <Link to={"/download"}>
-                                    <Button className={styles.sectionOneBtn} size="large"
-                                            shape="round">
-                                        Download
-                                    </Button>
-                                </Link>
+                                <Button href="#download" className={styles.sectionOneBtn} size="large"
+                                        shape="round">
+                                    Download
+                                </Button>
                                 <Button
                                     className={styles.sectionOneBtn}
                                     href={"https://console.oomol.com/"}
