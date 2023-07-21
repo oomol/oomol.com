@@ -60,7 +60,6 @@ function isOdd(num) {
 
 export default function HomepageFeatures() {
     const superiorityNode = superiorityList.map((data, index) => {
-        // const reverseWrapEven = index % 2 !== 0;
         const innerNodes = data.inners.map((inner, index) => {
             return (
                 <li key={`inner-${index}`}>
@@ -131,7 +130,7 @@ export default function HomepageFeatures() {
 
     return (
         <>
-            <div className={styles.sectionTitle}>The superiority of product design</div>
+            <div className={styles.sectionTitle}>Features</div>
             {superiorityNode}
         </>
     );

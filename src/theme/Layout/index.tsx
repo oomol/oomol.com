@@ -6,6 +6,7 @@ import clsx from "clsx";
 import Navbar from '@theme/Navbar';
 import Footer from '@theme/Footer';
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import CustomAntdTheme from "@site/src/utils/customAntdTheme";
 
 interface LayoutProps {
     // title: string;
@@ -14,21 +15,16 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({children, wrapperClassName}) => {
-    // const { siteConfig } = useDocusaurusContext()
-    // const {
-    //   title: siteTitle,
-    //   themeConfig: { image: defaultImage },
-    //   url: siteUrl,
-    // } = siteConfig
-
     return (
-        <LayoutProvider>
-            <Navbar />
-            <div className={clsx(styles.wrapper, wrapperClassName)}>
-                {children}
-            </div>
-            <Footer />
-        </LayoutProvider>
+        CustomAntdTheme(
+            <LayoutProvider>
+                <Navbar />
+                <div className={clsx(styles.wrapper, wrapperClassName)}>
+                    {children}
+                </div>
+                <Footer />
+            </LayoutProvider>
+        )
     )
 }
 

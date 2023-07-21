@@ -90,7 +90,8 @@
 }
 
 .sectionOneImage {
-    width: 1080px;
+    width: 820px;
+    padding-top: 50px;
 }
 
 .sectionInner {
@@ -172,33 +173,33 @@
 .sectionOne {
     position: relative;
     padding: 0 100px; /* 中间留出 100px 的空间 */
-  }
+}
 
-  .sectionOne::before,
-  .sectionOne::after {
+.sectionOne::before,
+.sectionOne::after {
     content: "";
     position: absolute;
     top: 76px;
     bottom: 0;
-    width: 20%; /* 左右两侧各占一半 */
+    width: 28%; /* 左右两侧各占一半 */
     background-repeat: no-repeat;
     background-size: 350px;
-  }
+}
 
-  .sectionOne::before {
+.sectionOne::before {
     left: 7%;
     background-image: url(/img/side_left.svg);
-  }
+}
 
-  .sectionOne::after {
+.sectionOne::after {
     right: 2%;
     background-image: url(/img/side_right.svg);
-  }
+}
 
 @media screen and (max-width: 960px) {
     .sectionOne::before,
     .sectionOne::after {
-      background-image: none;
+        background-image: none;
     }
 }
 

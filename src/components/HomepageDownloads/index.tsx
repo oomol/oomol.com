@@ -115,7 +115,7 @@ export default function HomepageDownloads() {
         );
     });
     return (
-        <div className={styles.sectionDownload}>
+        <div id="download" className={styles.sectionDownload}>
             {downloadNodes}
         </div>
     );
