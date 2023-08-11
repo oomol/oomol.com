@@ -122,7 +122,10 @@
 
 .bottomInfo {
     font-size: 14px;
-    opacity: 0.48;
+    // opacity: 0.48;
+    a {
+        margin-left: 8px;
+    }
 }
 
 .iconOutBox {

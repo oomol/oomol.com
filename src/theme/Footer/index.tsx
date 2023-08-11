@@ -147,6 +147,7 @@ const Footer: React.FC = () => {
                     </div>
                     <div className={styles.bottomInfo}>
                         {copyright}
+                        <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2023018874号-1</a>
                     </div>
                     <div className={styles.bottomRight}>
                         <ColorModeToggle
