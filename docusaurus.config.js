@@ -180,7 +180,7 @@ const config = {
                 to: "/brand-assets",
               },
               {
-                label: "download",
+                label: "Download",
                 to: "/download",
               },
             ],
