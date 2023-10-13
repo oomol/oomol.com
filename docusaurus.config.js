@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "可讷软件",
+  title: "OOMOL",
   tagline: "Easily connect code and services",
   favicon: "img/favicon.ico",
 
