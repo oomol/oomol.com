@@ -15,6 +15,7 @@ import multiSelectSample from './img/multi-select-sample.png';
 import fileSample from './img/file-sample.png';
 import dirSample from './img/dir-sample.png';
 import dateTimeSample from './img/date-time-sample.png';
+import dateSample from './img/date-sample.png';
 import timeSample from './img/time-sample.png';
 import textSample from './img/text-sample.png';
 import anySample from './img/any-sample.png';
@@ -183,11 +184,22 @@ schema:
 ```
 schema:
   type: number
-  format: date
+  format: date-time
 ```
 **view in graph**
 
 <img className={styles["sample-image"]} src={dateTimeSample}/>
+
+## Date Picker
+**yaml**
+```
+schema:
+  type: number
+  format: date
+```
+**view in graph**
+
+<img className={styles["sample-image"]} src={dateSample}/>
 
 ## Time Picker
 **yaml**
