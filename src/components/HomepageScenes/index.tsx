@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./styles.module.scss";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import Link from "@docusaurus/Link";
 
 type ScenesDataType = {
     imageUrl: string,
@@ -26,15 +25,13 @@ export default function HomepageScenes() {
     const scenesNodes = scenesData.map((data, index) => {
         return (
             <div className={styles.sectionCell} key={`scenes-${index}`}>
-                <div className={styles.scenesImage}>
-                    <Image
+                <Image
                         style={{width: "100%"}}
                         sources={{
                             light: useBaseUrl(data.imageUrl),
                             dark: useBaseUrl(data.imageUrl),
                         }}
                     />
-                </div>
                 <div className={styles.scenesText}>
                     <div className={styles.scenesTextTitle}>
                         {data.title}
