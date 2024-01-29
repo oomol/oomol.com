@@ -90,25 +90,6 @@ const config = {
         },
         items: [
           {
-            label: "Product",
-            position: "left",
-            href: "#",
-            items: [
-              {
-                label: "Oomol Studio",
-                to: "/oomol-studio",
-              },
-              {
-                label: "Oomol Cloud",
-                to: "/oomol-cloud",
-              },
-              {
-                label: "Oomol Api",
-                to: "/oomol-api",
-              },
-            ],
-          },
-          {
             type: "doc",
             docId: "overview",
             position: "left",
