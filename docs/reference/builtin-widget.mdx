@@ -54,10 +54,10 @@ schema:
 ```
 schema:
   type: integer
-  minimum: 1  // integer range, can be undefined
+  minimum: 1  # integer range, can be undefined
   maximum: 100
   "ui:options":
-    step: 2  // integer change step, can be undefined
+    step: 2  # integer change step, can be undefined
 ```
 **view in graph**
 
@@ -69,7 +69,7 @@ schema:
 schema:
   type: number
   "ui:options":
-    step: 1  // number change step, can be undefined
+    step: 1  # number change step, can be undefined
 ```
 **view in graph**
 
@@ -83,7 +83,7 @@ schema:
   minimum: 1
   maximum: 50
   "ui:options":
-    step: 0.1  // number change step, can be undefined
+    step: 0.1  # number change step, can be undefined
 ```
 **view in graph**
 
@@ -123,15 +123,29 @@ schema:
 
 ## Select
 **yaml**
+
+:::caution
+You should make items in `enum` field be unique.
+:::
 ```
 schema:
-  type: string
+  type: string # type of Select Widget is unrestricted.
+  enum: ["csv", "xls", "txt"]
+```
+or:
+
+:::caution
+You should make `value` in `metaOptions` field be unique.
+:::
+```
+schema:
+  type: string  # type of Select Widget is unrestricted.
   "ui:widget": select
   "ui:options":
     metaOptions: 
-      - label: csv
+      - label: csvLabel
         value: csv
-      - label: xls
+      - label: xlsLabel
         value: xls
 ```
 **view in graph**
@@ -140,9 +154,14 @@ schema:
 
 ## Multi Select
 **yaml**
+
+:::caution
+You should make `value` in `metaOptions` field be unique.
+:::
+
 ```
 schema:
-  type: string
+  type: array
   "ui:widget": multiSelect
   "ui:options":
     metaOptions: 
@@ -227,7 +246,7 @@ schema:
 **yaml**
 ```
 schema:
-  type:   // user can limit types
+  type:   # user can limit types
     - string
     - number
     - integer
