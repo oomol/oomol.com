@@ -129,24 +129,8 @@ You should make items in `enum` field be unique.
 :::
 ```
 schema:
-  type: string # type of Select Widget is unrestricted.
-  enum: ["csv", "xls", "txt"]
-```
-or:
-
-:::caution
-You should make `value` in `metaOptions` field be unique.
-:::
-```
-schema:
-  type: string  # type of Select Widget is unrestricted.
-  "ui:widget": select
-  "ui:options":
-    metaOptions: 
-      - label: csvLabel
-        value: csv
-      - label: xlsLabel
-        value: xls
+  type: string   # type of Select Widget is unrestricted.
+  enum: ["csv", "xls"]
 ```
 **view in graph**
 
