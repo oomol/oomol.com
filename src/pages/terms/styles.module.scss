@@ -1,8 +1,10 @@
-.box {
+.container {
     width: 100%;
-    height: 300px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    background-color: bisque;
+    margin-top: 32px;
+}
+
+.box {
+    width: 1200px;
 }
