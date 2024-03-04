@@ -1,55 +1,55 @@
 .supportBox {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 64px;
-    margin-bottom: 240px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 64px;
+  margin-bottom: 240px;
 }
 
 .supportTitle {
-    font-size: 64px;
-    font-weight: bolder;
-    width: 720px;
-    text-align: center;
-    margin-top: 64px;
-    margin-bottom: 120px;
+  font-size: 64px;
+  font-weight: bolder;
+  width: 720px;
+  text-align: center;
+  margin-top: 64px;
+  margin-bottom: 120px;
 }
 
 .supportCellBox {
-    width: 720px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 720px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .supportCell {
-    width: 320px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /*background-color: yellow;*/
-    padding-top: 36px;
-    padding-bottom: 36px;
-    border-style: solid;
-    border-color: #EDEDED;
-    border-radius: 8px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /*background-color: yellow;*/
+  padding-top: 36px;
+  padding-bottom: 36px;
+  border-style: solid;
+  border-color: #ededed;
+  border-radius: 8px;
 }
 
 .title {
-    width: 260px;
-    font-weight: bolder;
-    font-size: 18px;
+  width: 260px;
+  font-weight: bolder;
+  font-size: 18px;
 }
 
 .inner {
-    width: 260px;
-    margin-top: 12px
+  width: 260px;
+  margin-top: 12px;
 }
 
 .text {
-    margin-bottom: 42px;
-    font-size: 14px;
+  margin-bottom: 42px;
+  font-size: 14px;
 }

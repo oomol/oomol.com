@@ -4,229 +4,229 @@
  */
 
 .heroBanner {
-    padding: 4rem 0;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .sectionOne {
-    background-color: white;
-    display: flex;
-    /*flex-direction: row;*/
-    /*height: 1000px;*/
-    justify-content: center;
+  background-color: white;
+  display: flex;
+  /*flex-direction: row;*/
+  /*height: 1000px;*/
+  justify-content: center;
 }
 
 .sectionOneSide {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /*background-color: yellow;*/
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*background-color: yellow;*/
 }
 
 .sectionOneBox {
-    display: flex;
-    /*flex-direction: column;*/
+  display: flex;
+  /*flex-direction: column;*/
 }
 
 .sectionOneMid {
-    display: flex;
-    flex-direction: column;
-    padding-top: 72px;
-    padding-bottom: 88px;
-    z-index: 2;
-    /*background-color: yellow;*/
+  display: flex;
+  flex-direction: column;
+  padding-top: 72px;
+  padding-bottom: 88px;
+  z-index: 2;
+  /*background-color: yellow;*/
 }
 
 .sectionOneText {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .sectionOneTextBox {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .sectionOneTextTitle {
-    max-width: 600px;
-    font-size: 46px;
-    font-weight: bold;
+  max-width: 600px;
+  font-size: 46px;
+  font-weight: bold;
 }
 
 .sectionOneTextInner {
-    max-width: 800px;
-    font-size: 18px;
-    margin-top: 12px;
+  max-width: 800px;
+  font-size: 18px;
+  margin-top: 12px;
 }
 
 .sectionOneBtnBox {
-    display: flex;
-    flex-direction: row;
-    margin-top: 24px;
-    margin-bottom: 36px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 24px;
+  margin-bottom: 36px;
 }
 
 .sectionOneBtn {
-    width: 180px;
-    margin-left: 12px;
-    margin-right: 12px;
-    font-weight: bold;
+  width: 180px;
+  margin-left: 12px;
+  margin-right: 12px;
+  font-weight: bold;
 }
 
 .sectionOneImageBox {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sectionOneImage {
-    width: 960px;
-    padding-top: 12px;
+  width: 960px;
+  padding-top: 12px;
 }
 
 .sectionInner {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sectionCell {
-    width: 375px;
-    height: 100%;
-    margin-left: 48px;
-    margin-right: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 8px 0 rgba(0,0,0,0.30);
+  width: 375px;
+  height: 100%;
+  margin-left: 48px;
+  margin-right: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
 }
 
 .scenes {
-    width: 100%;
-    padding-bottom: 64px;
-    /*margin-top: 64px;*/
-    background-color: rgb(249, 249, 249);
+  width: 100%;
+  padding-bottom: 64px;
+  /*margin-top: 64px;*/
+  background-color: rgb(249, 249, 249);
 }
 
 .scenesImage {
-    width: 100%;
-    /*height: 180px;*/
-    /*background-color: red;*/
+  width: 100%;
+  /*height: 180px;*/
+  /*background-color: red;*/
 }
 
 .scenesTextTitle {
-    margin-top: 12px;
-    font-size: 18px;
+  margin-top: 12px;
+  font-size: 18px;
 }
 
 .scenesTextInner {
-    margin-top: 8px;
-    font-size: 14px;
-    margin-bottom: 20px;
-    padding-left: 12px;
-    padding-right: 12px;
+  margin-top: 8px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 .sectionDownloadBtn {
-    width: 120px;
-    height: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #7D7FE9;
-    color: white;
-    margin-left: 24px;
-    margin-right: 24px;
-    border-radius: 4px;
+  width: 120px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #7d7fe9;
+  color: white;
+  margin-left: 24px;
+  margin-right: 24px;
+  border-radius: 4px;
 }
 
 @media screen and (max-width: 996px) {
-    .heroBanner {
-        padding: 2rem;
-    }
+  .heroBanner {
+    padding: 2rem;
+  }
 }
 
 .buttons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sectionOne {
-    position: relative;
-    padding: 0 100px; /* 中间留出 100px 的空间 */
+  position: relative;
+  padding: 0 100px; /* 中间留出 100px 的空间 */
 }
 
 .sectionOne::before,
 .sectionOne::after {
-    content: "";
-    position: absolute;
-    top: 76px;
-    bottom: 0;
-    width: 28%; /* 左右两侧各占一半 */
-    background-repeat: no-repeat;
-    background-size: 350px;
+  content: "";
+  position: absolute;
+  top: 76px;
+  bottom: 0;
+  width: 28%; /* 左右两侧各占一半 */
+  background-repeat: no-repeat;
+  background-size: 350px;
 }
 
 .sectionOne::before {
-    left: 7%;
-    background-image: url(/img/side_left.svg);
+  left: 7%;
+  background-image: url(/img/side_left.svg);
 }
 
 .sectionOne::after {
-    right: 2%;
-    background-image: url(/img/side_right.svg);
+  right: 2%;
+  background-image: url(/img/side_right.svg);
 }
 
 @media screen and (max-width: 960px) {
-    .sectionOne::before,
-    .sectionOne::after {
-        background-image: none;
-    }
+  .sectionOne::before,
+  .sectionOne::after {
+    background-image: none;
+  }
 }
 
 @media screen and (max-width: 390px) {
-    .sectionOneTextTitle {
-        font-size: 40px;
-    }
+  .sectionOneTextTitle {
+    font-size: 40px;
+  }
 
-    .sectionOneTextInner {
-        padding: 0 16px;
-    }
+  .sectionOneTextInner {
+    padding: 0 16px;
+  }
 
-    .sectionOneImageBox {
-        > img {
-            padding-top: 80px;
-        }
+  .sectionOneImageBox {
+    > img {
+      padding-top: 80px;
     }
+  }
 }
 
 @media screen and (max-width: 375px) {
-    .sectionOneTextTitle {
-        font-size: 40px;
-    }
+  .sectionOneTextTitle {
+    font-size: 40px;
+  }
 
-    .sectionOneTextInner {
-        padding: 0 24px;
-    }
+  .sectionOneTextInner {
+    padding: 0 24px;
+  }
 
-    .sectionOneImageBox {
-        > img {
-            padding-top: 80px;
-        }
+  .sectionOneImageBox {
+    > img {
+      padding-top: 80px;
     }
+  }
 }

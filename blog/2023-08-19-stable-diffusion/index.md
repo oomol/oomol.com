@@ -6,7 +6,6 @@ tags: [facebook, hello, docusaurus]
 date: 2023-08-19
 ---
 
-
 ## Welcome
 
 ![banner](./banner.png)
@@ -16,7 +15,6 @@ date: 2023-08-19
 The blog supports tags as well!
 
 **And if you don't want a blog**: just delete this directory, and use `blog: false` in your Docusaurus config.
-
 
 Simply add Markdown files (or folders) to the `blog` directory.
 

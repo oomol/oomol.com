@@ -1,6 +1,6 @@
 import fs from "fs";
 import { extractStyle } from "@ant-design/static-style-extract";
-import CustomAntdTheme from "../src/utils/customAntdTheme"
+import CustomAntdTheme from "../src/utils/customAntdTheme";
 
 const outputPath = "./static/css/antd.min.css";
 
