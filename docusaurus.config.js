@@ -199,11 +199,11 @@ const config = {
                 to: "/blog",
               },
               {
-                label: "Index of Service",
+                label: "Terms",
                 to: "/terms",
               },
               {
-                label: "Index Policy",
+                label: "Privacy",
                 to: "/privacy",
               },
               // {
