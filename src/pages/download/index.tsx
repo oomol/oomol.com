@@ -4,9 +4,9 @@ import Layout from "../../theme/Layout";
 import ComingSoon from "@site/src/components/ComingSoon";
 
 export default function Index() {
-    return (
-        <Layout>
-            <ComingSoon name={"Download"}/>
-        </Layout>
-    );
+  return (
+    <Layout>
+      <ComingSoon name={"Download"} />
+    </Layout>
+  );
 }

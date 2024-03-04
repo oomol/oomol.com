@@ -1,50 +1,50 @@
 {
-    "link.title.Repositories": {
-      "message": "仓库",
-      "description": "The title of the footer links column with title=Repositories in the footer"
-    },
-    "link.title.Contact": {
-      "message": "联系方式",
-      "description": "The title of the footer links column with title=Contact in the footer"
-    },
-    "link.title.Network": {
-      "message": "链接",
-      "description": "The title of the footer links column with title=Network in the footer"
-    },
-    "link.title.Community": {
-      "message": "社区",
-      "description": "The title of the footer links column with title=Community in the footer"
-    },
-    "link.item.label.OOMOL": {
-      "message": "OOMOL",
-      "description": "The label of footer link with label=OOMOL linking to https://github.com/oomol/oomol-studio"
-    },
-    "link.item.label.Mail": {
-      "message": "邮箱",
-      "description": "The label of footer link with label=Mail linking to mailto:contact@oomol.app"
-    },
-    "link.item.label.Twitter": {
-      "message": "推特",
-      "description": "The label of footer link with label=Twitter linking to https://twitter.com/oomol-studio"
-    },
-    "link.item.label.Blog": {
-      "message": "Blog",
-      "description": "The label of footer link with label=Blog linking to blog"
-    },
-    "link.item.label.GitHub": {
-      "message": "GitHub",
-      "description": "The label of footer link with label=GitHub linking to https://github.com/oomol/oomol-studio"
-    },
-    "link.item.label.Sponsors": {
-      "message": "赞助商",
-      "description": "The label of footer link with label=Sponsors linking to /#sponsors"
-    },
-    "link.item.label.Discord": {
-      "message": "Discord",
-      "description": "The label of footer link with label=Discord linking to https://discord.com/invite/oomol"
-    },
-    "copyright": {
-      "message": "© 2023 Oomol Inc.",
-      "description": "The footer copyright"
-    }
+  "link.title.Repositories": {
+    "message": "仓库",
+    "description": "The title of the footer links column with title=Repositories in the footer"
+  },
+  "link.title.Contact": {
+    "message": "联系方式",
+    "description": "The title of the footer links column with title=Contact in the footer"
+  },
+  "link.title.Network": {
+    "message": "链接",
+    "description": "The title of the footer links column with title=Network in the footer"
+  },
+  "link.title.Community": {
+    "message": "社区",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.item.label.OOMOL": {
+    "message": "OOMOL",
+    "description": "The label of footer link with label=OOMOL linking to https://github.com/oomol/oomol-studio"
+  },
+  "link.item.label.Mail": {
+    "message": "邮箱",
+    "description": "The label of footer link with label=Mail linking to mailto:contact@oomol.app"
+  },
+  "link.item.label.Twitter": {
+    "message": "推特",
+    "description": "The label of footer link with label=Twitter linking to https://twitter.com/oomol-studio"
+  },
+  "link.item.label.Blog": {
+    "message": "Blog",
+    "description": "The label of footer link with label=Blog linking to blog"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/oomol/oomol-studio"
+  },
+  "link.item.label.Sponsors": {
+    "message": "赞助商",
+    "description": "The label of footer link with label=Sponsors linking to /#sponsors"
+  },
+  "link.item.label.Discord": {
+    "message": "Discord",
+    "description": "The label of footer link with label=Discord linking to https://discord.com/invite/oomol"
+  },
+  "copyright": {
+    "message": "© 2023 Oomol Inc.",
+    "description": "The footer copyright"
+  }
 }

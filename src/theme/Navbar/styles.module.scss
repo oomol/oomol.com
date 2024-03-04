@@ -90,7 +90,7 @@
   }
 }
 
-:global(html[data-theme="light"] .navbar__item.header-github-link ) {
+:global(html[data-theme="light"] .navbar__item.header-github-link) {
   /* background: url("/img/github.svg") 0 center / 20px 20px no-repeat; */
 }
 
@@ -133,7 +133,7 @@
   margin: 0 1rem 0 auto;
 }
 
-@media(max-width: 480px) {
+@media (max-width: 480px) {
   .themeToggleInSidebar {
     display: block;
   }
@@ -166,7 +166,8 @@
 }
 
 /* prevent navbar right side to climb up on the left side, by shrinking the search bar */
-@media (min-width: 997px) and (max-width: 1027px), (min-width: 1201px) and (max-width: 1300px) {
+@media (min-width: 997px) and (max-width: 1027px),
+  (min-width: 1201px) and (max-width: 1300px) {
   :global(.DocSearch-Button-Keys) {
     display: none;
   }
@@ -197,7 +198,9 @@
 
 @media (max-width: 996px) {
   .benchmarkButton,
-  :global(.navbar__items--right .navbar__item.header-github-link .navbar-siderbar),
+  :global(
+      .navbar__items--right .navbar__item.header-github-link .navbar-siderbar
+    ),
   .searchBar {
     display: none;
   }

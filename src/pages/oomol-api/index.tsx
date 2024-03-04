@@ -4,9 +4,9 @@ import styles from "./styles.module.scss";
 import ComingSoon from "@site/src/components/ComingSoon";
 
 export default function Index() {
-    return (
-        <Layout>
-            <ComingSoon name={"OOMOL API"}/>
-        </Layout>
-    );
+  return (
+    <Layout>
+      <ComingSoon name={"OOMOL API"} />
+    </Layout>
+  );
 }
