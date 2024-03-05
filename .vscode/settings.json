@@ -49,4 +49,5 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "cSpell.words": ["Oomol", "antd"],
+  "conventionalCommits.scopes": ["project"]
 }

@@ -1,10 +1,8 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import Layout from "../../theme/Layout";
-import ComingSoon from "@site/src/components/ComingSoon";
 import { DownloadOutlined } from "@ant-design/icons";
 import { Button } from "antd";
-// import brand from "@site/static/img/brand.png";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Image from "@theme/ThemedImage";
 
@@ -44,21 +42,6 @@ export default function Index() {
             </div>
             <div>
               <Button icon={<DownloadOutlined />}>Download logo kit</Button>
-            </div>
-          </div>
-        </div>
-        <div className={styles.card}>
-          <div className={styles["card-left"]}></div>
-          <div className={styles["card-right"]}>
-            <div className={styles.name}>Oomol Integrations</div>
-            <div className={styles.script}>
-              When building a Oomol Integration, use this "Connect Oomol" button
-              to initiate the OAuth redirect.
-              <br />
-              Do not use any other color for the wordmark.
-            </div>
-            <div>
-              <Button icon={<DownloadOutlined />}>Download button kit</Button>
             </div>
           </div>
         </div>
