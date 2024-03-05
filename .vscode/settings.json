@@ -48,6 +48,5 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": ["Oomol"]
-  "cSpell.words": ["antd"]
+  "cSpell.words": ["Oomol", "antd"],
 }
