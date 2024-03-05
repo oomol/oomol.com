@@ -7,9 +7,9 @@ sidebar_position: 1
 ## Properties
 | property    | type                                                    | description    |
 | ----------- | ------------------------------------------------------- | -------------- | 
-| props       | {[handleKey]: [Handle](block#handle-type)} \| undefined | block input    |
-| results     | {[handleKey]: [Handle](block#handle-type)} \| undefined | block output   |
-| options     | {[handleKey]: [Handle](block#handle-type)} \| undefined | block options  |
+| props       | \{[handleKey]: [Handle](block#handle-type)} \| undefined | block input    |
+| results     | \{[handleKey]: [Handle](block#handle-type)} \| undefined | block output   |
+| options     | \{[handleKey]: [Handle](block#handle-type)} \| undefined | block options  |
 | title       | string \| undefined                                     | block title    |
 | description | string \| undefined                                     | description    |
 | icon        | string \| undefined                                     | icon url       |
