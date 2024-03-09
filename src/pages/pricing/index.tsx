@@ -8,7 +8,7 @@ import { ButtonType } from "antd/es/button";
 export const PricingData = [
   {
     meta: {
-      type: "Free",
+      type: "FREE",
       sub_title: "The basics for individuals",
       value: "$0",
     },
@@ -25,7 +25,7 @@ export const PricingData = [
   },
   {
     meta: {
-      type: "Team",
+      type: "PRO",
       sub_title: "Advanced features for teams",
       value: "$20",
     },
@@ -56,7 +56,7 @@ export default function Index() {
         </div>
       );
     });
-    const isTeam = data.meta.type === "Team";
+    const isTeam = data.meta.type === "PRO ";
     return (
       <div
         className={styles.plan}
