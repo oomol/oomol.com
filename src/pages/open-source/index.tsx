@@ -5,6 +5,7 @@ import { List } from "antd";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Image from "@theme/ThemedImage";
 import { ForkOutlined, StarOutlined } from "@ant-design/icons";
+import HomepageStarter from "@site/src/components/HomepageStarter";
 
 export default function Index() {
   const data = [
@@ -77,6 +78,7 @@ export default function Index() {
           </div>
         </div>
       </div>
+      <HomepageStarter />
     </Layout>
   );
 }

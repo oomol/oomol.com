@@ -5,6 +5,7 @@ import { DownloadOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Image from "@theme/ThemedImage";
+import HomepageStarter from "@site/src/components/HomepageStarter";
 
 export default function Index() {
   return (
@@ -46,6 +47,7 @@ export default function Index() {
           </div>
         </div>
       </div>
+      <HomepageStarter />
     </Layout>
   );
 }
