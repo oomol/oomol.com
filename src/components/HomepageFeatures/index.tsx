@@ -103,7 +103,7 @@ export default function HomepageFeatures() {
             <div className={styles.sectionTwoLarge}>
               <div className={styles.sectionTwoLargeBox}>
                 <div className={styles.sectionTwoLargeTitle}>{data.title}</div>
-                <div className={styles.sectionTwoLargeInner}>{innerNodes}</div>
+                <div className={styles.sectionTwoLargeInner}>{innerNodes}</div>å
               </div>
             </div>
             <div className={styles.sectionTwoSmall}>

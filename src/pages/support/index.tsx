@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import Layout from "../../theme/Layout";
 import { Button } from "antd";
 import CustomAntdTheme from "@site/src/utils/customAntdTheme";
+import HomepageStarter from "@site/src/components/HomepageStarter";
 
 type SupportDataType = {
   name: string;
@@ -75,6 +76,7 @@ export default function Support() {
           </div>
         </div>
       </div>
+      <HomepageStarter />
     </Layout>
   );
 }

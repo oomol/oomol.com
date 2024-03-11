@@ -5,8 +5,10 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 64px;
-  margin-bottom: 64px;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  border-top-style: solid;
+  border-top-color: rgb(249, 249, 249);
 }
 
 .title {

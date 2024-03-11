@@ -4,6 +4,7 @@ import styles from "./styles.module.scss";
 import { CheckCircleFilled } from "@ant-design/icons";
 import { Button } from "antd";
 import { ButtonType } from "antd/es/button";
+import HomepageStarter from "@site/src/components/HomepageStarter";
 
 export const PricingData = [
   {
@@ -91,6 +92,7 @@ export default function Index() {
         <div className={styles.title}>Find a plan to power your projects</div>
         <div className={styles.planBox}>{planNode}</div>
       </div>
+      <HomepageStarter />
     </Layout>
   );
 }
