@@ -2,8 +2,8 @@ import React from "react";
 import styles from "./styles.module.scss";
 import Layout from "../../theme/Layout";
 import { Button } from "antd";
-import CustomAntdTheme from "@site/src/utils/customAntdTheme";
 import HomepageStarter from "@site/src/components/HomepageStarter";
+import { DiscordOutlined, MailOutlined } from "@ant-design/icons";
 
 type SupportDataType = {
   name: string;
@@ -47,10 +47,13 @@ export default function Support() {
   return (
     <Layout>
       <div className={styles.supportBox}>
-        <div className={styles.supportTitle}>support</div>
+        <div className={styles.supportTitle}>Support</div>
         <div className={styles.supportCellBox}>
           <div className={styles.supportCell}>
-            <div className={styles.title}>Discord Support</div>
+            <div className={styles.title}>
+              <DiscordOutlined />
+              <span className={styles["support-title"]}>Discord Support</span>
+            </div>
             <div className={styles.inner}>
               <div className={styles.text}>
                 We offer email based support. If you need SLAs, guaranteed
@@ -65,7 +68,10 @@ export default function Support() {
             </div>
           </div>
           <div className={styles.supportCell}>
-            <div className={styles.title}>Email Support</div>
+            <div className={styles.title}>
+              <MailOutlined />
+              <span className={styles["support-title"]}>Email Support</span>
+            </div>
             <div className={styles.inner}>
               <div className={styles.text}>
                 We offer email based support. If you need SLAs, guaranteed
