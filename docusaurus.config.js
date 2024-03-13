@@ -1,7 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const {themes} = require('prism-react-renderer');
+const { themes } = require("prism-react-renderer");
 const lightTheme = themes.github;
 const darkTheme = themes.dracula;
 
@@ -115,13 +115,12 @@ const config = {
           //   label: 'GitHub',
           //   position: 'right',
           // },
-          // {
-          //   type: 'localeDropdown',
-          //   position: 'right',
-          // },
+          {
+            type: "localeDropdown",
+            position: "right",
+          },
         ],
       },
-
       footer: {
         style: "light",
         links: [
