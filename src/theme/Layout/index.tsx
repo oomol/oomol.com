@@ -4,12 +4,9 @@ import LayoutProvider from "@theme/Layout/Provider";
 import clsx from "clsx";
 import Navbar from "@theme/Navbar";
 import Footer from "@theme/Footer";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import CustomAntdTheme from "@site/src/utils/customAntdTheme";
-import HomepageStarter from "@site/src/components/HomepageStarter";
 
 interface LayoutProps {
-  // title: string;
   children: ReactNode;
   wrapperClassName?: string;
 }
