@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { ConfigProvider, MappingAlgorithm, theme } from "antd";
+import { useThemeMode } from "../useThemeMode";
 
 const antdDarkTheme: MappingAlgorithm = (seedToken, mapToken) => ({
   ...theme.darkAlgorithm(seedToken, mapToken),
@@ -12,19 +13,7 @@ const antdLightTheme: MappingAlgorithm = seedToken => ({
 });
 
 const CustomAntdTheme = (children: JSX.Element) => {
-  const [themeMode, setThemeMode] = useState(localStorage.getItem("theme"));
-
-  useEffect(() => {
-    const handleStorageChange = () => {
-      setThemeMode(localStorage.getItem("theme"));
-    };
-
-    window.addEventListener("storage", handleStorageChange);
-
-    return () => {
-      window.removeEventListener("storage", handleStorageChange);
-    };
-  });
+  const themeMode = useThemeMode();
 
   return (
     <>
