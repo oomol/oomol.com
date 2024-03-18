@@ -1,11 +1,11 @@
 import React from "react";
 import Layout from "../../theme/Layout";
 import styles from "./styles.module.scss";
-import { List } from "antd";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Image from "@theme/ThemedImage";
-import { ForkOutlined, StarOutlined } from "@ant-design/icons";
 import HomepageStarter from "@site/src/components/HomepageStarter";
+import { List } from "@arco-design/web-react";
+import { IconBranch, IconStar } from "@arco-design/web-react/icon";
 
 export default function Index() {
   const data = [
@@ -44,7 +44,7 @@ export default function Index() {
             <List
               bordered
               dataSource={data}
-              renderItem={item => (
+              render={item => (
                 <List.Item>
                   <div style={{ width: "100%" }}>
                     <div className={styles["project-name"]}>
@@ -63,11 +63,11 @@ export default function Index() {
                       <div className={styles.data}>
                         <div>
                           <span className={styles.cell}>800</span>
-                          <ForkOutlined />
+                          <IconBranch />
                         </div>
                         <div>
                           <span className={styles.cell}>600</span>
-                          <StarOutlined />
+                          <IconStar />
                         </div>
                       </div>
                     </div>

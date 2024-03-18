@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./styles.module.scss";
-import { Button } from "antd";
+import { Button } from "@arco-design/web-react";
 
 export default function HomepageStarter() {
   return (

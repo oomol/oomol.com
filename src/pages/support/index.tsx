@@ -1,9 +1,8 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import Layout from "../../theme/Layout";
-import { Button } from "antd";
 import HomepageStarter from "@site/src/components/HomepageStarter";
-import { DiscordOutlined, MailOutlined } from "@ant-design/icons";
+import { Button } from "@arco-design/web-react";
 
 type SupportDataType = {
   name: string;
@@ -51,7 +50,6 @@ export default function Support() {
         <div className={styles.supportCellBox}>
           <div className={styles.supportCell}>
             <div className={styles.title}>
-              <DiscordOutlined />
               <span className={styles["support-title"]}>Discord Support</span>
             </div>
             <div className={styles.inner}>
@@ -69,7 +67,6 @@ export default function Support() {
           </div>
           <div className={styles.supportCell}>
             <div className={styles.title}>
-              <MailOutlined />
               <span className={styles["support-title"]}>Email Support</span>
             </div>
             <div className={styles.inner}>
