@@ -1,10 +1,12 @@
+import "@arco-design/web-react/dist/css/arco.css";
 import styles from "./styles.module.scss";
-import React, { ReactNode } from "react";
+
+import React, { ReactNode, useEffect } from "react";
 import LayoutProvider from "@theme/Layout/Provider";
 import clsx from "clsx";
 import Navbar from "@theme/Navbar";
 import Footer from "@theme/Footer";
-import CustomAntdTheme from "@site/src/utils/customAntdTheme";
+import BrowserOnly from "@docusaurus/BrowserOnly";
 
 interface LayoutProps {
   children: ReactNode;
@@ -12,12 +14,48 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children, wrapperClassName }) => {
-  return CustomAntdTheme(
-    <LayoutProvider>
-      <Navbar />
-      <div className={clsx(styles.wrapper, wrapperClassName)}>{children}</div>
-      <Footer />
-    </LayoutProvider>
+  useEffect(() => {
+    const htmlElement = document.documentElement;
+
+    const handleThemeChange = () => {
+      const themeMode = htmlElement.getAttribute("data-theme");
+      if (themeMode === "dark") {
+        document.body.setAttribute("arco-theme", "dark");
+      } else {
+        document.body.removeAttribute("arco-theme");
+      }
+    };
+
+    // 初始设置主题模式
+    handleThemeChange();
+
+    // 监听 data-theme 属性变化
+    const observer = new MutationObserver(mutationsList => {
+      for (let mutation of mutationsList) {
+        if (mutation.attributeName === "data-theme") {
+          handleThemeChange();
+        }
+      }
+    });
+    observer.observe(htmlElement, { attributes: true });
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <BrowserOnly>
+      {() => (
+        <>
+          <LayoutProvider>
+            <Navbar />
+            <div className={clsx(styles.wrapper, wrapperClassName)}>
+              {children}
+            </div>
+            <Footer />
+          </LayoutProvider>
+        </>
+      )}
+    </BrowserOnly>
   );
 };
 
