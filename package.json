@@ -16,14 +16,11 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@ant-design/icons": "^5.1.4",
-    "@ant-design/static-style-extract": "^1.0.1",
     "@arco-design/web-react": "^2.61.0",
     "@docusaurus/core": "^3.1.1",
     "@docusaurus/preset-classic": "^3.1.1",
     "@mdx-js/react": "^3.0.0",
     "@vercel/analytics": "^1.0.1",
-    "antd": "^5.6.4",
     "clsx": "^1.2.1",
     "docusaurus-plugin-sass": "^0.2.4",
     "prism-react-renderer": "^2.1.0",

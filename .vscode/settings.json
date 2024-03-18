@@ -48,6 +48,6 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": ["antd", "clsx", "Oomol", "vocana"],
+  "cSpell.words": ["clsx", "Oomol", "vocana"],
   "conventionalCommits.scopes": ["project"]
 }
