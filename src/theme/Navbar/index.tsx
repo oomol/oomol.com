@@ -85,7 +85,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
               target="_blank"
               href={"https://console.oomol.com/"}
               className={styles.btn}
-              style={{ marginRight: 12 }}
+              style={{ marginRight: 12, marginLeft: 12 }}
             >
               Login
             </Button>
