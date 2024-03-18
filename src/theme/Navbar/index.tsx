@@ -9,9 +9,8 @@ import NavbarItem from "@theme/NavbarItem";
 import SearchBar from "@theme/SearchBar";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
-import { Button } from "antd";
+import { Button } from "@arco-design/web-react";
 import Translate from "@docusaurus/Translate";
-import CustomAntdTheme from "@site/src/utils/customAntdTheme";
 
 interface NavbarProps {}
 
@@ -54,7 +53,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
     setSidebarShown(false);
   }, []);
 
-  return CustomAntdTheme(
+  return (
     <header
       className={clsx("navbar", styles.navbar, {
         "navbar-sidebar--show": sidebarShown,
