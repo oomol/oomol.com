@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import Link from "@docusaurus/Link";
-import { Button } from "antd";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { Button } from "@arco-design/web-react";
 
 const data = {
   slogan: "Seamlessly connects code and services.",
@@ -25,6 +25,7 @@ export default function HomepageFirstScreen() {
                   className={styles.sectionOneBtn}
                   size="large"
                   shape="round"
+                  type="outline"
                 >
                   Download
                 </Button>

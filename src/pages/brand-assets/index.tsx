@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import Layout from "../../theme/Layout";
-import { DownloadOutlined } from "@ant-design/icons";
-import { Button } from "antd";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Image from "@theme/ThemedImage";
 import HomepageStarter from "@site/src/components/HomepageStarter";
+import { Button } from "@arco-design/web-react";
+import { IconDownload } from "@arco-design/web-react/icon";
 
 export default function Index() {
   return (
@@ -42,7 +42,7 @@ export default function Index() {
               Do not use any other color for the wordmark.
             </div>
             <div>
-              <Button icon={<DownloadOutlined />}>Download logo kit</Button>
+              <Button icon={<IconDownload />}>Download logo kit</Button>
             </div>
           </div>
         </div>

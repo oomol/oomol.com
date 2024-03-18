@@ -1,9 +1,8 @@
 import React from "react";
 import Layout from "../../theme/Layout";
 import styles from "./styles.module.scss";
-import { CheckCircleFilled } from "@ant-design/icons";
-import { Button } from "antd";
-import { ButtonType } from "antd/es/button";
+import { Button } from "@arco-design/web-react";
+import { IconCheckCircleFill } from "@arco-design/web-react/icon";
 import HomepageStarter from "@site/src/components/HomepageStarter";
 
 export const PricingData = [
@@ -51,7 +50,7 @@ export default function Index() {
       return (
         <div className={styles.planCell} key={`cell-${index}`}>
           <div className={styles.planIcon}>
-            <CheckCircleFilled />
+            <IconCheckCircleFill />
           </div>
           <div className={styles.inner}>{data}</div>
         </div>
@@ -79,7 +78,7 @@ export default function Index() {
         <Button
           size="large"
           className={styles.btn}
-          type={data.button.type as ButtonType}
+          type={data.button.type as any}
         >
           {data.button.text}
         </Button>

@@ -2,8 +2,8 @@ import React from "react";
 import styles from "./styles.module.scss";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { Button, Tag } from "antd";
-import { DownloadOutlined } from "@ant-design/icons";
+import { Button, Tag } from "@arco-design/web-react";
+import { IconDownload } from "@arco-design/web-react/icon";
 
 enum Platform {
   ARM64 = "ARM64",
@@ -91,11 +91,14 @@ export default function HomepageDownloads() {
           className={styles.btn}
           size={"large"}
           key={`btn-${index}`}
+          type="outline"
           href={btn.url}
-          icon={<DownloadOutlined />}
+          icon={<IconDownload />}
         >
-          <span>{data.os}</span>
-          <Tag color={btn.isReady && "green"}>{btn.platform}</Tag>
+          <span className={styles.os}>{data.os}</span>
+          <Tag bordered={true} color={btn.isReady && "green"}>
+            {btn.platform}
+          </Tag>
         </Button>
       );
     });
