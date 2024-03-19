@@ -1,3 +1,4 @@
+import "@arco-themes/react-oomol/css/arco.css";
 import styles from "./styles.module.scss";
 
 import React, { ReactNode, useEffect } from "react";
