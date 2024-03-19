@@ -1,4 +1,3 @@
-import "@arco-design/web-react/dist/css/arco.css";
 import styles from "./styles.module.scss";
 
 import React, { ReactNode, useEffect } from "react";
@@ -7,6 +6,8 @@ import clsx from "clsx";
 import Navbar from "@theme/Navbar";
 import Footer from "@theme/Footer";
 import BrowserOnly from "@docusaurus/BrowserOnly";
+import { ConfigProvider } from "@arco-design/web-react";
+import { componentConfig } from "@arco-themes/react-oomol/config";
 
 interface LayoutProps {
   children: ReactNode;
@@ -45,7 +46,7 @@ const Layout: React.FC<LayoutProps> = ({ children, wrapperClassName }) => {
   return (
     <BrowserOnly>
       {() => (
-        <>
+        <ConfigProvider componentConfig={componentConfig}>
           <LayoutProvider>
             <Navbar />
             <div className={clsx(styles.wrapper, wrapperClassName)}>
@@ -53,7 +54,7 @@ const Layout: React.FC<LayoutProps> = ({ children, wrapperClassName }) => {
             </div>
             <Footer />
           </LayoutProvider>
-        </>
+        </ConfigProvider>
       )}
     </BrowserOnly>
   );
