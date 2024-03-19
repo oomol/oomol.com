@@ -1,6 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-
+const ArcoWebpackPlugin = require("@arco-plugins/webpack-react");
 const { themes } = require("prism-react-renderer");
 const lightTheme = themes.github;
 const darkTheme = themes.dracula;
@@ -46,6 +46,21 @@ const config = {
         blogSidebarTitle: "Updates",
       },
     ],
+    function () {
+      return {
+        name: "custom-oomol-theme",
+        configureWebpack() {
+          return {
+            plugins: [
+              new ArcoWebpackPlugin({
+                theme: "@arco-themes/react-oomol",
+                style: "css",
+              }),
+            ],
+          };
+        },
+      };
+    },
   ],
 
   presets: [
