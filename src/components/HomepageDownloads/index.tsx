@@ -71,12 +71,12 @@ const downloadData: DownloadDataType[] = [
     package: [
       {
         platform: Platform.X64,
-        url: "https://oomol-studio-dev.s3.ap-southeast-1.amazonaws.com/nightlies/20230713/oomol-studio-nightly.20230713-x64.dmg",
+        url: "https://static.oomol.com/release/beta/darwin/x64/1.0.0-beta.1.dmg",
         isReady: true,
       },
       {
         platform: Platform.ARM64,
-        url: "https://oomol-studio-dev.s3.ap-southeast-1.amazonaws.com/nightlies/20230712/oomol-studio-nightly.20230712-arm64.dmg",
+        url: "https://static.oomol.com/release/beta/darwin/arm64/1.0.0-beta.1.dmg",
         isReady: true,
       },
     ],
