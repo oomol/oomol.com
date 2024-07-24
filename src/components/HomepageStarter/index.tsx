@@ -17,7 +17,7 @@ export default function HomepageStarter() {
         type="primary"
         size={"large"}
       >
-        Get Started
+        Download
       </Button>
     </div>
   );
