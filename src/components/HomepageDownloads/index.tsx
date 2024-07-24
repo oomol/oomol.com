@@ -47,23 +47,23 @@ const downloadData: DownloadDataType[] = [
       },
     ],
   },
-  {
-    imageUrl: "/img/linux.svg",
-    width: 120,
-    os: OS.Linux,
-    package: [
-      {
-        platform: Platform.X64,
-        url: "",
-        isReady: false,
-      },
-      {
-        platform: Platform.ARM64,
-        url: "",
-        isReady: false,
-      },
-    ],
-  },
+  // {
+  //   imageUrl: "/img/linux.svg",
+  //   width: 120,
+  //   os: OS.Linux,
+  //   package: [
+  //     {
+  //       platform: Platform.X64,
+  //       url: "",
+  //       isReady: false,
+  //     },
+  //     {
+  //       platform: Platform.ARM64,
+  //       url: "",
+  //       isReady: false,
+  //     },
+  //   ],
+  // },
   {
     imageUrl: "/img/macos.svg",
     width: 100,

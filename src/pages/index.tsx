@@ -15,7 +15,7 @@ export default function Home() {
         <HomepageScenes />
         <HomepageFeatures />
         <HomepageDownloads />
-        <HomepageStarter />
+        {/* <HomepageStarter /> */}
         <Analytics />
       </main>
     </Layout>

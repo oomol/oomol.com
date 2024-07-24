@@ -69,7 +69,7 @@ const logoNodeData: LogoNodeDataType[] = [
   {
     name: "github",
     src: "/img/github.svg",
-    href: "https://github.com/oomol",
+    href: "https://github.com/oomol-lab",
     width: 20,
   },
 ];
@@ -98,6 +98,18 @@ const Footer: React.FC = () => {
       </a>
     );
   });
+
+  console.log(links);
+
+  // return (
+  //   <footer className={styles.root}>
+  //     <div>
+  //       <div className={styles.iconOutBox}>{logoNodes}</div>
+  //       <div></div>
+  //     </div>
+  //     <div>2</div>
+  //   </footer>
+  // );
   return (
     <footer className={styles.root}>
       <div className={clsx(styles.content, styles.center)}>

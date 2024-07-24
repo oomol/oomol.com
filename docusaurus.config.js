@@ -108,8 +108,8 @@ const config = {
             position: "left",
             label: "Docs",
           },
-          { to: "/blog", label: "Blog", position: "left" },
-          { to: "/pricing", label: "Pricing", position: "left" },
+          // { to: "/blog", label: "Blog", position: "left" },
+          // { to: "/pricing", label: "Pricing", position: "left" },
           { to: "/updates", label: "Updates", position: "left" },
           // TODO: 等登录注册有网页版再放出来
           // {
@@ -136,27 +136,27 @@ const config = {
       footer: {
         style: "light",
         links: [
-          {
-            title: "Product",
-            items: [
-              {
-                label: "Oomol Studio",
-                to: "/oomol-studio",
-              },
-              {
-                label: "Oomol Cloud",
-                to: "/oomol-cloud",
-              },
-              {
-                label: "Oomol Api",
-                to: "/oomol-api",
-              },
-              {
-                label: "Pricing",
-                to: "/pricing",
-              },
-            ],
-          },
+          // {
+          //   title: "Product",
+          //   items: [
+          //     {
+          //       label: "Oomol Studio",
+          //       to: "/oomol-studio",
+          //     },
+          //     {
+          //       label: "Oomol Cloud",
+          //       to: "/oomol-cloud",
+          //     },
+          //     {
+          //       label: "Oomol Api",
+          //       to: "/oomol-api",
+          //     },
+          //     {
+          //       label: "Pricing",
+          //       to: "/pricing",
+          //     },
+          //   ],
+          // },
           {
             title: "Resources",
             items: [
@@ -164,18 +164,18 @@ const config = {
                 label: "Support",
                 to: "/support",
               },
-              {
-                label: "System Status",
-                to: "/system-status",
-              },
+              // {
+              //   label: "System Status",
+              //   to: "/system-status",
+              // },
               {
                 label: "Brand Assets",
                 to: "/brand-assets",
               },
-              {
-                label: "Download",
-                to: "/download",
-              },
+              // {
+              //   label: "Download",
+              //   to: "/download",
+              // },
             ],
           },
           {
@@ -189,10 +189,10 @@ const config = {
                 label: "Updates",
                 to: "/updates",
               },
-              {
-                label: "Open Source",
-                to: "open-source",
-              },
+              // {
+              //   label: "Open Source",
+              //   to: "open-source",
+              // },
               // {
               //   label: 'Contributing',
               //   to: 'contributing'
@@ -202,14 +202,14 @@ const config = {
           {
             title: "Company",
             items: [
-              {
-                label: "About Us",
-                to: "/about-us",
-              },
-              {
-                label: "Blog",
-                to: "/blog",
-              },
+              // {
+              //   label: "About Us",
+              //   to: "/about-us",
+              // },
+              // {
+              //   label: "Blog",
+              //   to: "/blog",
+              // },
               {
                 label: "Terms",
                 to: "/terms",

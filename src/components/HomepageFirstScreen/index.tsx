@@ -20,7 +20,7 @@ export default function HomepageFirstScreen() {
               <div className={styles.sectionOneTextTitle}>{data.slogan}</div>
               <div className={styles.sectionOneTextInner}>{data.script}</div>
               <div className={styles.sectionOneBtnBox}>
-                <Button
+                {/* <Button
                   href="#download"
                   className={styles.sectionOneBtn}
                   size="large"
@@ -28,7 +28,7 @@ export default function HomepageFirstScreen() {
                   type="outline"
                 >
                   Download
-                </Button>
+                </Button> */}
                 <Button
                   className={styles.sectionOneBtn}
                   href={"https://console.oomol.com/"}
@@ -37,7 +37,7 @@ export default function HomepageFirstScreen() {
                   size="large"
                   shape="round"
                 >
-                  Get Started
+                  Download
                 </Button>
               </div>
             </div>
