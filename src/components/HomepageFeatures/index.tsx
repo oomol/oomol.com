@@ -13,42 +13,44 @@ type SuperiorityType = {
 
 const superiorityList: SuperiorityType[] = [
   {
-    imageUrl: "/img/data.svg",
+    imageUrl: "/img/cloud.svg",
     width: 360,
-    title: "Easy Kick-Start",
+    title: "交互直观，配置灵活",
     inners: [
-      "Get started swiftly with an out-of-the-box environment and adaptable customization options.",
-      "Code only when necessary, keeping simplicity at the forefront.",
-      "Experience cross-platform compatibility and multi-language support, with LSP syntax highlighting and code completion.",
+      "拖放即可轻松构建工作流程。",
+      "用户可以自由配置节点的 UI 组件",
+      "支持多种类型常用数据的展示 ",
     ],
   },
   {
-    imageUrl: "/img/cloud.svg",
+    imageUrl: "/img/data.svg",
     width: 360,
-    title: "Seamless Scalability",
+    title: "环境预装，分享无忧",
     inners: [
-      "Effortlessly scale from a single machine to clusters without any code modifications.",
-      "Deploy directly to OOMOL Cloud for seamless expansion.",
+      "无需为安装 Python、Node.js 运行环境而烦恼，开箱即用",
+      "OOMOL 为用户将开发环境统一到容器中，不同系统的用户可以自由互相分享工作流",
+      "安全隔离，不会影响用户本地环境。用户也不用担心设备中的数据安全问题",
     ],
   },
   {
     imageUrl: "/img/interactive.svg",
     width: 360,
-    title: "Thriving Ecosystem",
+    title: "对接社区，编程友好",
     inners: [
-      "Join an inclusive community where sharing workflows is a breeze.",
-      "Explore a rich assortment of built-in apps to suit diverse needs.",
-      "Unlock the potential of composability with existing packages or services using just a YAML file.",
+      "内置 Python、Node.js, 支持安装各种开源库",
+      "编辑器支持代码补全、高亮以及 AI 代码提示",
+      "具有精美易用的日志展示界面，方便工程师调试使用",
     ],
   },
+
   {
     imageUrl: "/img/open-source.svg",
     width: 320,
-    title: "Fortified Security Measures",
+    title: "支持分享，拥抱开源",
     inners: [
-      "Ensure utmost security with workflows running in isolated environments",
-      "Benefit from effective secrets management for added protection.",
-      "The Vocana engine, responsible for the workflow runtime, is open-sourced to ensure transparency and reliability.",
+      "支持将工作流、工具节点分享到 OOMOL 社区，方便其他用户使用",
+      "用户可以将自己的工作流源代码分享到 Github",
+      "OOMOL会在 oomol-lab 组织中开源 内置工具插件，常用工作流，底层运行容器等",
     ],
   },
 ];
@@ -123,7 +125,7 @@ export default function HomepageFeatures() {
 
   return (
     <>
-      <div className={styles.sectionTitle}>Features</div>
+      <div className={styles.sectionTitle}>功能和优势</div>
       {superiorityNode}
     </>
   );
