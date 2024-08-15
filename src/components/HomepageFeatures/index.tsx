@@ -13,44 +13,44 @@ type SuperiorityType = {
 
 const superiorityList: SuperiorityType[] = [
   {
-    imageUrl: "/img/cloud.svg",
-    width: 360,
-    title: "交互直观，配置灵活",
+    imageUrl: "/img/feature_1.jpg",
+    width: 540,
+    title: "Intuitive interaction",
     inners: [
-      "拖放即可轻松构建工作流程。",
-      "用户可以自由配置节点的 UI 组件",
-      "支持多种类型常用数据的展示 ",
+      "Easily build workflows with drag and drop.",
+      "Users can flexibly configure node parameters through UI components.",
+      "Supports preview of multiple types of commonly used data. ",
     ],
   },
   {
-    imageUrl: "/img/data.svg",
-    width: 360,
-    title: "环境预装，分享无忧",
+    imageUrl: "/img/feature_2.jpg",
+    width: 540,
+    title: "Pre-installed environment",
     inners: [
-      "无需为安装 Python、Node.js 运行环境而烦恼，开箱即用",
-      "OOMOL 为用户将开发环境统一到容器中，不同系统的用户可以自由互相分享工作流",
-      "安全隔离，不会影响用户本地环境。用户也不用担心设备中的数据安全问题",
+      "No need to worry about installing Python or Node.js running environment, it can be used right out of the box.",
+      "OOMOL unifies the development environment into containers for users, and users of different systems can freely share workflows with each other.",
+      "Safe isolation will not affect the user's local environment. Users also don’t have to worry about data security issues in their devices.",
     ],
   },
   {
-    imageUrl: "/img/interactive.svg",
-    width: 360,
-    title: "对接社区，编程友好",
+    imageUrl: "/img/feature_3.jpg",
+    width: 540,
+    title: "Programming friendly",
     inners: [
-      "内置 Python、Node.js, 支持安装各种开源库",
-      "编辑器支持代码补全、高亮以及 AI 代码提示",
-      "具有精美易用的日志展示界面，方便工程师调试使用",
+      "Built-in Python, Node.js, supports installation of various open source libraries.",
+      "Based on vscode framework, supports code completion, highlighting and AI code prompts",
+      "With a beautiful and easy-to-use log display interface, it is convenient for engineers to debug and use.",
     ],
   },
 
   {
-    imageUrl: "/img/open-source.svg",
-    width: 320,
-    title: "支持分享，拥抱开源",
+    imageUrl: "/img/feature_4.jpg",
+    width: 540,
+    title: "Support sharing",
     inners: [
-      "支持将工作流、工具节点分享到 OOMOL 社区，方便其他用户使用",
-      "用户可以将自己的工作流源代码分享到 Github",
-      "OOMOL会在 oomol-lab 组织中开源 内置工具插件，常用工作流，底层运行容器等",
+      "Support sharing workflows and tool nodes to the OOMOL community for easy use by other users.",
+      "Users can share their workflow source code with GitHub.",
+      "OOMOL will be open-sourced in the oomol-lab organization, with built-in tool plug-ins, common workflows, and underlying running containers, etc.",
     ],
   },
 ];
@@ -62,7 +62,11 @@ function isOdd(num) {
 export default function HomepageFeatures() {
   const superiorityNode = superiorityList.map((data, index) => {
     const innerNodes = data.inners.map((inner, index) => {
-      return <li key={`inner-${index}`}>{inner}</li>;
+      return (
+        <div className={styles.sectionList} key={`inner-${index}`}>
+          {inner}
+        </div>
+      );
     });
     if (isOdd(index)) {
       return (
@@ -76,7 +80,7 @@ export default function HomepageFeatures() {
           <div className={styles.sectionTwoBox}>
             <div className={styles.sectionTwoSmall}>
               <Image
-                style={{ width: data.width }}
+                style={{ width: data.width, borderRadius: 8 }}
                 sources={{
                   light: useBaseUrl(data.imageUrl),
                   dark: useBaseUrl(data.imageUrl),
@@ -110,7 +114,7 @@ export default function HomepageFeatures() {
             </div>
             <div className={styles.sectionTwoSmall}>
               <Image
-                style={{ width: data.width }}
+                style={{ width: data.width, borderRadius: 8 }}
                 sources={{
                   light: useBaseUrl(data.imageUrl),
                   dark: useBaseUrl(data.imageUrl),
@@ -125,7 +129,7 @@ export default function HomepageFeatures() {
 
   return (
     <>
-      <div className={styles.sectionTitle}>功能和优势</div>
+      <div className={styles.sectionTitle}>Features and Benefits</div>
       {superiorityNode}
     </>
   );
