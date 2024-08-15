@@ -3,9 +3,10 @@ import styles from "./styles.module.scss";
 import Link from "@docusaurus/Link";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { Button, Tag } from "@arco-design/web-react";
-import { IconDownload } from "@arco-design/web-react/icon";
-
+import { Button, Popover, Tag } from "@arco-design/web-react";
+import { IconDown, IconDownload } from "@arco-design/web-react/icon";
+import content from "@arco-design/web-react/es/Layout/content";
+const ButtonGroup = Button.Group;
 const data = {
   slogan: "Workflow-based data processing IDE.",
   script:
@@ -47,6 +48,18 @@ function detectOSAndArchitecture(): OS {
 }
 
 export default function HomepageFirstScreen() {
+  const content = (
+    <div className={styles.popoverBox}>
+      <div className={styles.popoverBtn}>
+        <IconDownload style={{ marginLeft: 8 }} />
+        <span style={{ marginLeft: 8 }}>Intel Chip</span>
+      </div>
+      <div className={styles.popoverBtn}>
+        <IconDownload style={{ marginLeft: 8 }} />
+        <span style={{ marginLeft: 8 }}>Apple Silicon</span>
+      </div>
+    </div>
+  );
   return (
     <div className={styles.sectionOne}>
       <div className={styles.sectionOneBox}>
@@ -56,18 +69,33 @@ export default function HomepageFirstScreen() {
               <div className={styles.sectionOneTextTitle}>{data.slogan}</div>
               <div className={styles.sectionOneTextInner}>{data.script}</div>
               <div className={styles.sectionOneBtnBox}>
-                <Button
-                  className={styles.sectionOneBtn}
-                  href={"https://console.oomol.com/"}
-                  target="_blank"
-                  type="primary"
-                  size="large"
-                  shape="round"
-                  icon={<IconDownload />}
-                >
-                  Download for {detectOSAndArchitecture()}
-                  <Tag style={{ marginLeft: 8 }}>{supportsM1WebAssembly()}</Tag>
-                </Button>
+                {detectOSAndArchitecture() === OS.MacOS ? (
+                  <Popover position="bottom" content={content}>
+                    <Button
+                      className={styles.sectionOneBtn}
+                      type="primary"
+                      size="large"
+                      icon={<IconDownload />}
+                    >
+                      Download for MacOS
+                      <IconDown />
+                    </Button>
+                  </Popover>
+                ) : (
+                  <div className={styles.windowsBox}>
+                    <Button
+                      className={styles.sectionOneBtn}
+                      type="primary"
+                      size="large"
+                      icon={<IconDownload />}
+                    >
+                      Download for Windows
+                    </Button>
+                    <span className={styles.windowsSubtitle}>
+                      only supports x64
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
           </div>

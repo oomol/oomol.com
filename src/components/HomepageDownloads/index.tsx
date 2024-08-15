@@ -17,7 +17,7 @@ enum OS {
 }
 
 type PackageType = {
-  platform: Platform;
+  platform: string;
   url: string;
   isReady: boolean;
 };
@@ -38,12 +38,7 @@ const downloadData: DownloadDataType[] = [
       {
         platform: Platform.X64,
         url: "",
-        isReady: false,
-      },
-      {
-        platform: Platform.ARM64,
-        url: "",
-        isReady: false,
+        isReady: true,
       },
     ],
   },
@@ -70,12 +65,12 @@ const downloadData: DownloadDataType[] = [
     os: OS.MacOS,
     package: [
       {
-        platform: Platform.X64,
+        platform: "Intel Chip",
         url: "https://static.oomol.com/release/beta/darwin/x64/1.0.0-beta.1.dmg",
         isReady: true,
       },
       {
-        platform: Platform.ARM64,
+        platform: "Apple Silicon",
         url: "https://static.oomol.com/release/beta/darwin/arm64/1.0.0-beta.1.dmg",
         isReady: true,
       },
@@ -112,7 +107,7 @@ export default function HomepageDownloads() {
             }}
           />
         </div>
-        {btnNodes}
+        <div className={styles.btnNodeBox}>{btnNodes}</div>
       </div>
     );
   });
