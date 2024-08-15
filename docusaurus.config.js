@@ -1,7 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-const ArcoWebpackPlugin = require("@arco-plugins/webpack-react");
-const { themes } = require("prism-react-renderer");
+import ArcoWebpackPlugin from "@arco-plugins/webpack-react";
+import { themes } from "prism-react-renderer";
 const lightTheme = themes.github;
 const darkTheme = themes.dracula;
 
@@ -20,7 +20,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "oomol", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  projectName: "oomol", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -268,4 +268,4 @@ const config = {
     }),
 };
 
-module.exports = config;
+export default config;

@@ -66,7 +66,7 @@ const downloadData: DownloadDataType[] = [
   // },
   {
     imageUrl: "/img/macos.svg",
-    width: 100,
+    width: 80,
     os: OS.MacOS,
     package: [
       {

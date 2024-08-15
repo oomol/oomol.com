@@ -16,21 +16,21 @@ type ScenesDataType = {
 const scenesData: ScenesDataType[] = [
   {
     imageUrl: "/img/table.jpg",
-    title: "数据科学",
+    title: "Data Science",
     type: "purple",
-    tag: "结构化数据",
+    tag: "Structured Data",
     color: "blue",
     inner:
-      "用户可以用熟悉的脚本语言进行数据处理、图表展示。在此之上，我们还支持用户使用 UI 界面来配置节点的参数，并且可以通过拖拽快、连接等简单操作来创建一个工作流。我们提供的容器环境又帮用户去除了分享的障碍，因此大幅缩短了从脚本到产品的距离。",
+      "Users can process data and display charts using familiar scripting languages. In addition, we support users in configuring node parameters through a UI interface, allowing them to create a workflow with simple operations such as drag-and-drop and connections. The container environment we provide also removes barriers to sharing, significantly reducing the distance from script to product.",
   },
   {
     imageUrl: "/img/media.jpg",
-    title: "媒体处理",
+    title: "Media Processing",
     type: "purple",
-    tag: "非结构化数据",
+    tag: "Unstructured Data",
     color: "green",
     inner:
-      "开发者可以将常用的视频处理库封装成一个个功能节点，节点可以用 OOMOL 提供的 UI 配置界面来添加各种可调的参数。基于这样的工具，像 tiktok 上的内容制作者就可以通过拖拽创建一个工作流来处理他们的的视频音频素材。比如将视频加上各种语言的字幕等工作可以自动化批量完成。",
+      "Developers can encapsulate common video processing libraries into functional nodes, which can be added with various adjustable parameters using the UI configuration interface provided by OOMOL. With such a tool, content creators on platforms like TikTok can drag and drop to create a workflow for processing their video and audio materials. Tasks such as adding subtitles in multiple languages to videos can be automated and completed in batches.",
   },
 ];
 export default function HomepageScenes() {
