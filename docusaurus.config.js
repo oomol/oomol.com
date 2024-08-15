@@ -28,10 +28,10 @@ const config = {
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: "en",
-    locales: ["zh-CN", "en"],
-  },
+  // i18n: {
+  //   defaultLocale: "en",
+  //   locales: ["en", "zh-CN"],
+  // },
 
   plugins: [
     "docusaurus-plugin-sass",
@@ -127,10 +127,10 @@ const config = {
           //   label: 'GitHub',
           //   position: 'right',
           // },
-          {
-            type: "localeDropdown",
-            position: "right",
-          },
+          // {
+          //   type: "localeDropdown",
+          //   position: "right",
+          // },
         ],
       },
       footer: {
@@ -229,6 +229,11 @@ const config = {
             ],
           },
         ],
+        colorMode: {
+          defaultMode: "dark",
+          disableSwitch: true,
+          respectPrefersColorScheme: false,
+        },
         copyright: `Copyright © ${new Date().getFullYear()} OOMOL Contributors.`,
       },
       // TODO: 当前还不需要搜索模块，等内容更全了再添加

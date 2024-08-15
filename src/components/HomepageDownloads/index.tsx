@@ -91,7 +91,7 @@ export default function HomepageDownloads() {
           className={styles.btn}
           size={"large"}
           key={`btn-${index}`}
-          type="outline"
+          type="primary"
           href={btn.url}
           icon={<IconDownload />}
         >
