@@ -1,7 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-const ArcoWebpackPlugin = require("@arco-plugins/webpack-react");
-const { themes } = require("prism-react-renderer");
+import ArcoWebpackPlugin from "@arco-plugins/webpack-react";
+import { themes } from "prism-react-renderer";
 const lightTheme = themes.github;
 const darkTheme = themes.dracula;
 
@@ -20,7 +20,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "oomol", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  projectName: "oomol", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -28,10 +28,10 @@ const config = {
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: "en",
-    locales: ["zh-CN", "en"],
-  },
+  // i18n: {
+  //   defaultLocale: "en",
+  //   locales: ["en", "zh-CN"],
+  // },
 
   plugins: [
     "docusaurus-plugin-sass",
@@ -127,10 +127,10 @@ const config = {
           //   label: 'GitHub',
           //   position: 'right',
           // },
-          {
-            type: "localeDropdown",
-            position: "right",
-          },
+          // {
+          //   type: "localeDropdown",
+          //   position: "right",
+          // },
         ],
       },
       footer: {
@@ -229,6 +229,11 @@ const config = {
             ],
           },
         ],
+        colorMode: {
+          defaultMode: "dark",
+          disableSwitch: true,
+          respectPrefersColorScheme: false,
+        },
         copyright: `Copyright © ${new Date().getFullYear()} OOMOL Contributors.`,
       },
       // TODO: 当前还不需要搜索模块，等内容更全了再添加
@@ -268,4 +273,4 @@ const config = {
     }),
 };
 
-module.exports = config;
+export default config;

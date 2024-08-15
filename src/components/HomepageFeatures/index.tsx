@@ -13,42 +13,44 @@ type SuperiorityType = {
 
 const superiorityList: SuperiorityType[] = [
   {
-    imageUrl: "/img/data.svg",
-    width: 360,
-    title: "Easy Kick-Start",
+    imageUrl: "/img/feature_1.jpg",
+    width: 540,
+    title: "Intuitive interaction",
     inners: [
-      "Get started swiftly with an out-of-the-box environment and adaptable customization options.",
-      "Code only when necessary, keeping simplicity at the forefront.",
-      "Experience cross-platform compatibility and multi-language support, with LSP syntax highlighting and code completion.",
+      "Easily build workflows with drag and drop.",
+      "Users can flexibly configure node parameters through UI components.",
+      "Supports preview of multiple types of commonly used data. ",
     ],
   },
   {
-    imageUrl: "/img/cloud.svg",
-    width: 360,
-    title: "Seamless Scalability",
+    imageUrl: "/img/feature_2.jpg",
+    width: 540,
+    title: "Pre-installed environment",
     inners: [
-      "Effortlessly scale from a single machine to clusters without any code modifications.",
-      "Deploy directly to OOMOL Cloud for seamless expansion.",
+      "No need to worry about installing Python or Node.js running environment, it can be used right out of the box.",
+      "OOMOL unifies the development environment into containers for users, and users of different systems can freely share workflows with each other.",
+      "Safe isolation will not affect the user's local environment. Users also don't have to worry about data security issues in their devices.",
     ],
   },
   {
-    imageUrl: "/img/interactive.svg",
-    width: 360,
-    title: "Thriving Ecosystem",
+    imageUrl: "/img/feature_3.jpg",
+    width: 540,
+    title: "Programming friendly",
     inners: [
-      "Join an inclusive community where sharing workflows is a breeze.",
-      "Explore a rich assortment of built-in apps to suit diverse needs.",
-      "Unlock the potential of composability with existing packages or services using just a YAML file.",
+      "Built-in Python, Node.js, supports installation of various open source libraries.",
+      "Based on vscode framework, supports code completion, highlighting and AI code prompts",
+      "With a beautiful and easy-to-use log display interface, it is convenient for engineers to debug and use.",
     ],
   },
+
   {
-    imageUrl: "/img/open-source.svg",
-    width: 320,
-    title: "Fortified Security Measures",
+    imageUrl: "/img/feature_4.jpg",
+    width: 540,
+    title: "Support sharing",
     inners: [
-      "Ensure utmost security with workflows running in isolated environments",
-      "Benefit from effective secrets management for added protection.",
-      "The Vocana engine, responsible for the workflow runtime, is open-sourced to ensure transparency and reliability.",
+      "Support sharing workflows and tool nodes to the OOMOL community for easy use by other users.",
+      "Users can share their workflow source code with GitHub.",
+      "OOMOL will be open-sourced in the oomol-lab organization, with built-in tool plug-ins, common workflows, and underlying running containers, etc.",
     ],
   },
 ];
@@ -60,7 +62,11 @@ function isOdd(num) {
 export default function HomepageFeatures() {
   const superiorityNode = superiorityList.map((data, index) => {
     const innerNodes = data.inners.map((inner, index) => {
-      return <li key={`inner-${index}`}>{inner}</li>;
+      return (
+        <div className={styles.sectionList} key={`inner-${index}`}>
+          {inner}
+        </div>
+      );
     });
     if (isOdd(index)) {
       return (
@@ -74,7 +80,7 @@ export default function HomepageFeatures() {
           <div className={styles.sectionTwoBox}>
             <div className={styles.sectionTwoSmall}>
               <Image
-                style={{ width: data.width }}
+                style={{ width: data.width, borderRadius: 8 }}
                 sources={{
                   light: useBaseUrl(data.imageUrl),
                   dark: useBaseUrl(data.imageUrl),
@@ -108,7 +114,7 @@ export default function HomepageFeatures() {
             </div>
             <div className={styles.sectionTwoSmall}>
               <Image
-                style={{ width: data.width }}
+                style={{ width: data.width, borderRadius: 8 }}
                 sources={{
                   light: useBaseUrl(data.imageUrl),
                   dark: useBaseUrl(data.imageUrl),
@@ -123,7 +129,7 @@ export default function HomepageFeatures() {
 
   return (
     <>
-      <div className={styles.sectionTitle}>Features</div>
+      <div className={styles.sectionTitle}>Features and Benefits</div>
       {superiorityNode}
     </>
   );

@@ -4,11 +4,12 @@ import Link from "@docusaurus/Link";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { Button } from "@arco-design/web-react";
+import { IconDownload } from "@arco-design/web-react/icon";
 
 const data = {
-  slogan: "Seamlessly connects code and services.",
+  slogan: "Workflow-based data processing IDE.",
   script:
-    "OOMOL is a robust workflow automation platform that effortlessly connects code and services through intuitive visual interactions, while also allowing seamless code integration.",
+    "OOMOL makes it easy to connect code snippets and API services through intuitive visual interactions.",
 };
 export default function HomepageFirstScreen() {
   return (
@@ -20,15 +21,6 @@ export default function HomepageFirstScreen() {
               <div className={styles.sectionOneTextTitle}>{data.slogan}</div>
               <div className={styles.sectionOneTextInner}>{data.script}</div>
               <div className={styles.sectionOneBtnBox}>
-                {/* <Button
-                  href="#download"
-                  className={styles.sectionOneBtn}
-                  size="large"
-                  shape="round"
-                  type="outline"
-                >
-                  Download
-                </Button> */}
                 <Button
                   className={styles.sectionOneBtn}
                   href={"https://console.oomol.com/"}
@@ -36,6 +28,7 @@ export default function HomepageFirstScreen() {
                   type="primary"
                   size="large"
                   shape="round"
+                  icon={<IconDownload />}
                 >
                   Download
                 </Button>
