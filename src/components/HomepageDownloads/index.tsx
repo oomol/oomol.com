@@ -96,9 +96,7 @@ export default function HomepageDownloads() {
           icon={<IconDownload />}
         >
           <span className={styles.os}>{data.os}</span>
-          <Tag bordered={true} color={btn.isReady && "green"}>
-            {btn.platform}
-          </Tag>
+          <Tag>{btn.platform}</Tag>
         </Button>
       );
     });

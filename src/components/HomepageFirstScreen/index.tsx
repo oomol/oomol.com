@@ -13,18 +13,29 @@ const data = {
 };
 
 enum Platform {
-  ARM = "ARM",
-  X64 = "Intel",
+  ARM = "Apple Silicon",
+  X64 = "Intel Chip",
 }
 enum OS {
   Windows = "Windows",
   MacOS = "MacOS",
 }
+function supportsM1WebAssembly(): Platform {
+  try {
+    // 创建一个WebAssembly实例，检查是否可以成功实例化
+    const module = new WebAssembly.Module(
+      Uint8Array.of(0x0, 0x61, 0x73, 0x6d, 0x1, 0x0, 0x0, 0x0)
+    );
+    new WebAssembly.Instance(module);
+    return Platform.ARM;
+  } catch (e) {
+    return Platform.X64;
+  }
+}
 
-function detectOSAndArchitecture(): { os: OS; architecture: Platform } {
+function detectOSAndArchitecture(): OS {
   const userAgent = navigator.userAgent;
   let os = OS.Windows;
-  let architecture = Platform.X64;
 
   if (userAgent.indexOf("Win") !== -1) {
     os = OS.Windows;
@@ -32,13 +43,7 @@ function detectOSAndArchitecture(): { os: OS; architecture: Platform } {
     os = OS.MacOS;
   }
 
-  if (userAgent.indexOf("arm") !== -1) {
-    architecture = Platform.ARM;
-  } else {
-    architecture = Platform.X64;
-  }
-
-  return { os, architecture };
+  return os;
 }
 
 export default function HomepageFirstScreen() {
@@ -60,10 +65,8 @@ export default function HomepageFirstScreen() {
                   shape="round"
                   icon={<IconDownload />}
                 >
-                  Download for {detectOSAndArchitecture().os}
-                  <Tag style={{ marginLeft: 8 }}>
-                    {detectOSAndArchitecture().architecture}
-                  </Tag>
+                  Download for {detectOSAndArchitecture()}
+                  <Tag style={{ marginLeft: 8 }}>{supportsM1WebAssembly()}</Tag>
                 </Button>
               </div>
             </div>
