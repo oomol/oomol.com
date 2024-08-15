@@ -11,6 +11,7 @@ import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import { Button } from "@arco-design/web-react";
 import Translate from "@docusaurus/Translate";
+import { IconMessage, IconSend } from "@arco-design/web-react/icon";
 
 interface NavbarProps {}
 
@@ -84,11 +85,11 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
             <Button
               style={{ marginLeft: 12 }}
               target="_blank"
-              href={"https://console.oomol.com/"}
+              href={"https://hub.oomol.com/"}
               className={styles.btn}
               type="primary"
             >
-              Download
+              Go flow hub <IconSend />
             </Button>
           </div>
         </div>
