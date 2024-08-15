@@ -96,6 +96,11 @@ const config = {
     ({
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
+      colorMode: {
+        defaultMode: "dark",
+        disableSwitch: true,
+        respectPrefersColorScheme: false,
+      },
       navbar: {
         logo: {
           alt: "Oomol Logo",
@@ -229,11 +234,6 @@ const config = {
             ],
           },
         ],
-        colorMode: {
-          defaultMode: "dark",
-          disableSwitch: true,
-          respectPrefersColorScheme: false,
-        },
         copyright: `Copyright © ${new Date().getFullYear()} OOMOL Contributors.`,
       },
       // TODO: 当前还不需要搜索模块，等内容更全了再添加

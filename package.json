@@ -18,8 +18,8 @@
   "dependencies": {
     "@arco-design/web-react": "^2.61.0",
     "@arco-themes/react-oomol": "^0.0.4",
-    "@docusaurus/core": "^3.1.1",
-    "@docusaurus/preset-classic": "^3.1.1",
+    "@docusaurus/core": "^3.5.2",
+    "@docusaurus/preset-classic": "^3.5.2",
     "@mdx-js/react": "^3.0.0",
     "@vercel/analytics": "^1.0.1",
     "clsx": "^1.2.1",
