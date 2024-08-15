@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import Link from "@docusaurus/Link";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { Button } from "@arco-design/web-react";
+import { Button, Tag } from "@arco-design/web-react";
 import { IconDownload } from "@arco-design/web-react/icon";
 
 const data = {
@@ -11,6 +11,41 @@ const data = {
   script:
     "OOMOL makes it easy to connect code snippets and API services through intuitive visual interactions.",
 };
+
+enum Platform {
+  ARM = "Apple Silicon",
+  X64 = "Intel Chip",
+}
+enum OS {
+  Windows = "Windows",
+  MacOS = "MacOS",
+}
+function supportsM1WebAssembly(): Platform {
+  try {
+    // 创建一个WebAssembly实例，检查是否可以成功实例化
+    const module = new WebAssembly.Module(
+      Uint8Array.of(0x0, 0x61, 0x73, 0x6d, 0x1, 0x0, 0x0, 0x0)
+    );
+    new WebAssembly.Instance(module);
+    return Platform.ARM;
+  } catch (e) {
+    return Platform.X64;
+  }
+}
+
+function detectOSAndArchitecture(): OS {
+  const userAgent = navigator.userAgent;
+  let os = OS.Windows;
+
+  if (userAgent.indexOf("Win") !== -1) {
+    os = OS.Windows;
+  } else if (userAgent.indexOf("Mac") !== -1) {
+    os = OS.MacOS;
+  }
+
+  return os;
+}
+
 export default function HomepageFirstScreen() {
   return (
     <div className={styles.sectionOne}>
@@ -30,7 +65,8 @@ export default function HomepageFirstScreen() {
                   shape="round"
                   icon={<IconDownload />}
                 >
-                  Download
+                  Download for {detectOSAndArchitecture()}
+                  <Tag style={{ marginLeft: 8 }}>{supportsM1WebAssembly()}</Tag>
                 </Button>
               </div>
             </div>
