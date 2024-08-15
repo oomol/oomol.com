@@ -29,7 +29,7 @@ const superiorityList: SuperiorityType[] = [
     inners: [
       "No need to worry about installing Python or Node.js running environment, it can be used right out of the box.",
       "OOMOL unifies the development environment into containers for users, and users of different systems can freely share workflows with each other.",
-      "Safe isolation will not affect the user's local environment. Users also don’t have to worry about data security issues in their devices.",
+      "Safe isolation will not affect the user's local environment. Users also don't have to worry about data security issues in their devices.",
     ],
   },
   {
