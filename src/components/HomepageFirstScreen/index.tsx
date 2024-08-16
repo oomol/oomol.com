@@ -62,14 +62,24 @@ export default function HomepageFirstScreen() {
 
   const content = (
     <div className={styles.popoverBox}>
-      <div className={styles.popoverBtn}>
-        <IconDownload style={{ marginLeft: 8 }} />
-        <span style={{ marginLeft: 8 }}>Intel Chip</span>
-      </div>
-      <div className={styles.popoverBtn}>
-        <IconDownload style={{ marginLeft: 8 }} />
-        <span style={{ marginLeft: 8 }}>Apple Silicon</span>
-      </div>
+      <a
+        download
+        href="https://static.oomol.com/release/insider/darwin/x64/OomolStudio.app-1.92.2-2024-08-16.16.dmg"
+      >
+        <div className={styles.popoverBtn}>
+          <IconDownload style={{ marginLeft: 8 }} />
+          <span style={{ marginLeft: 8 }}>Intel Chip</span>
+        </div>
+      </a>
+      <a
+        download
+        href="https://static.oomol.com/release/insider/darwin/arm64/OomolStudio.app-1.92.2-2024-08-16.16.dmg"
+      >
+        <div className={styles.popoverBtn}>
+          <IconDownload style={{ marginLeft: 8 }} />
+          <span style={{ marginLeft: 8 }}>Apple Silicon</span>
+        </div>
+      </a>
     </div>
   );
   return (
@@ -99,6 +109,7 @@ export default function HomepageFirstScreen() {
                       className={styles.sectionOneBtn}
                       type="primary"
                       size="large"
+                      disabled
                       icon={<IconDownload />}
                     >
                       Download for Windows

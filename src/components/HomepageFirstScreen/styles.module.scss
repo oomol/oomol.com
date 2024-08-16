@@ -12,6 +12,9 @@
 
 .popoverBox {
   width: 194px;
+  a {
+    text-decoration: none;
+  }
 }
 
 .popoverBtn {
@@ -23,6 +26,7 @@
   border-radius: 4px;
   transition: background-color 0.2s ease;
   font-weight: bold;
+  color: white;
   &:hover {
     cursor: pointer;
     background-color: #5c5e8d;
