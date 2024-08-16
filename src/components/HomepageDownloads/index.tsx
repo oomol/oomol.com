@@ -38,7 +38,7 @@ const downloadData: DownloadDataType[] = [
       {
         platform: Platform.X64,
         url: "",
-        isReady: true,
+        isReady: false,
       },
     ],
   },
@@ -66,12 +66,12 @@ const downloadData: DownloadDataType[] = [
     package: [
       {
         platform: "Intel Chip",
-        url: "https://static.oomol.com/release/beta/darwin/x64/1.0.0-beta.1.dmg",
+        url: "https://static.oomol.com/release/insider/darwin/x64/OomolStudio.app-1.92.2-2024-08-16.16.dmg",
         isReady: true,
       },
       {
         platform: "Apple Silicon",
-        url: "https://static.oomol.com/release/beta/darwin/arm64/1.0.0-beta.1.dmg",
+        url: "https://static.oomol.com/release/insider/darwin/arm64/OomolStudio.app-1.92.2-2024-08-16.16.dmg",
         isReady: true,
       },
     ],
