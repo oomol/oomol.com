@@ -3,14 +3,13 @@ import styles from "./styles.module.scss";
 import Link from "@docusaurus/Link";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { Button, Popover, Tag } from "@arco-design/web-react";
+import { Button, Popover } from "@arco-design/web-react";
 import { IconDown, IconDownload } from "@arco-design/web-react/icon";
-import content from "@arco-design/web-react/es/Layout/content";
-const ButtonGroup = Button.Group;
 
 import Translate, { translate } from "@docusaurus/Translate";
 
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { DownloadUrl } from "@site/src/download_url";
 
 const data = {
   slogan: translate({
@@ -62,19 +61,13 @@ export default function HomepageFirstScreen() {
 
   const content = (
     <div className={styles.popoverBox}>
-      <a
-        download
-        href="https://static.oomol.com/release/insider/darwin/x64/OomolStudio.app-1.92.2-2024-08-16.16.dmg"
-      >
+      <a download href={DownloadUrl.MacOS.Intel}>
         <div className={styles.popoverBtn}>
           <IconDownload style={{ marginLeft: 8 }} />
           <span style={{ marginLeft: 8 }}>Intel Chip</span>
         </div>
       </a>
-      <a
-        download
-        href="https://static.oomol.com/release/insider/darwin/arm64/OomolStudio.app-1.92.2-2024-08-16.16.dmg"
-      >
+      <a download href={DownloadUrl.MacOS.AppleSilicon}>
         <div className={styles.popoverBtn}>
           <IconDownload style={{ marginLeft: 8 }} />
           <span style={{ marginLeft: 8 }}>Apple Silicon</span>
