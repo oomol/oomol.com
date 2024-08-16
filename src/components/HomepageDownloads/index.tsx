@@ -4,6 +4,7 @@ import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { Button, Tag } from "@arco-design/web-react";
 import { IconDownload } from "@arco-design/web-react/icon";
+import { DownloadUrl } from "@site/src/download_url";
 
 enum Platform {
   ARM64 = "ARM64",
@@ -37,7 +38,7 @@ const downloadData: DownloadDataType[] = [
     package: [
       {
         platform: Platform.X64,
-        url: "",
+        url: DownloadUrl.Windows.X64,
         isReady: false,
       },
     ],
@@ -66,12 +67,12 @@ const downloadData: DownloadDataType[] = [
     package: [
       {
         platform: "Intel Chip",
-        url: "https://static.oomol.com/release/insider/darwin/x64/OomolStudio.app-1.92.2-2024-08-16.16.dmg",
+        url: DownloadUrl.MacOS.Intel,
         isReady: true,
       },
       {
         platform: "Apple Silicon",
-        url: "https://static.oomol.com/release/insider/darwin/arm64/OomolStudio.app-1.92.2-2024-08-16.16.dmg",
+        url: DownloadUrl.MacOS.AppleSilicon,
         isReady: true,
       },
     ],
