@@ -4,4 +4,6 @@ title: 0.0.1-alpha.3
 date: 2023-07-19
 ---
 
+<!-- truncate -->
+
 ![banner](./banner.png)
