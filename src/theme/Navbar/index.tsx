@@ -1,8 +1,7 @@
 import styles from "./styles.module.scss";
 
-import React, { useCallback, useState } from "react";
+import React, { memo, useCallback, useMemo, useState } from "react";
 import type { ComponentProps } from "react";
-import { useColorMode } from "@docusaurus/theme-common";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useLocation } from "@docusaurus/router";
 import NavbarItem from "@theme/NavbarItem";
@@ -33,19 +32,31 @@ function splitNavItemsByPosition(
   return { leftItems, rightItems };
 }
 
-const Navbar: React.FC<NavbarProps> = ({}) => {
+const Navbar: React.FC<NavbarProps> = memo(() => {
   const {
     siteConfig: {
       themeConfig: {
         navbar: { items },
       },
     },
-  } = useDocusaurusContext();
+    i18n,
+  } = useDocusaurusContext() as any;
+  const locale = i18n.currentLocale;
   const location = useLocation();
-  const [sidebarShown, setSidebarShown] = useState(false);
-  const { colorMode, setColorMode } = useColorMode();
 
-  const { leftItems, rightItems } = splitNavItemsByPosition(items);
+  const [sidebarShown, setSidebarShown] = useState(false);
+
+  const isDocumentPath = useMemo(() => {
+    return (
+      location.pathname.startsWith("/docs") ||
+      location.pathname.startsWith(`/${locale}/docs`)
+    );
+  }, [location.pathname, locale]);
+
+  const { leftItems, rightItems } = useMemo(
+    () => splitNavItemsByPosition(items),
+    [items]
+  );
 
   const showSidebar = useCallback(() => {
     setSidebarShown(true);
@@ -73,7 +84,8 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
           {rightItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
           ))}
-          {location.pathname.startsWith("/docs") && (
+          {/* 当路由与文档路径匹配时，显示文档搜索框 */}
+          {isDocumentPath && (
             <>
               <div className={styles.searchBar}>
                 <SearchBar />
@@ -156,6 +168,6 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
       </div>
     </header>
   );
-};
+});
 
 export default Navbar;
