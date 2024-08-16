@@ -7,10 +7,18 @@ import { Button, Popover, Tag } from "@arco-design/web-react";
 import { IconDown, IconDownload } from "@arco-design/web-react/icon";
 import content from "@arco-design/web-react/es/Layout/content";
 const ButtonGroup = Button.Group;
+
+import Translate, { translate } from "@docusaurus/Translate";
+
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+
 const data = {
-  slogan: "Workflow-based data processing IDE.",
-  script:
-    "OOMOL makes it easy to connect code snippets and API services through intuitive visual interactions.",
+  slogan: translate({
+    message: "HOME.FirstScreen.slogan",
+  }),
+  script: translate({
+    message: "HOME.FirstScreen.script",
+  }),
 };
 
 enum Platform {
@@ -48,6 +56,10 @@ function detectOSAndArchitecture(): OS {
 }
 
 export default function HomepageFirstScreen() {
+  const context: any = useDocusaurusContext();
+  const { i18n } = context;
+  console.log("i18n >>>> ", i18n.currentLocale);
+
   const content = (
     <div className={styles.popoverBox}>
       <div className={styles.popoverBtn}>

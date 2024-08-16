@@ -30,5 +30,13 @@
   "item.label.GitHub": {
     "message": "GitHub",
     "description": "Navbar item with label GitHub"
+  },
+  "item.label.Docs": {
+    "message": "Docs",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.Updates": {
+    "message": "Updates",
+    "description": "Navbar item with label Updates"
   }
 }
