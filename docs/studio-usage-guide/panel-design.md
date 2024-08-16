@@ -2,6 +2,6 @@
 sidebar_position: 1
 ---
 
-# Use Coding block
+# Panel Design
 
 coming soon

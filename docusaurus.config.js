@@ -12,7 +12,7 @@ const config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://your-docusaurus-test-site.com",
+  url: "https://oomol.com",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -20,7 +20,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "oomol", // Usually your GitHub org/user name.
-  projectName: "oomol", // Usually your repo name.
+  projectName: "oomol.com", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -72,8 +72,6 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         blog: {
           showReadingTime: true,
@@ -81,8 +79,6 @@ const config = {
           blogSidebarTitle: "All posts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         theme: {
           customCss: [require.resolve("./src/css/custom.scss")],
@@ -95,7 +91,6 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: "img/docusaurus-social-card.jpg",
       colorMode: {
         defaultMode: "dark",
         disableSwitch: true,
@@ -139,7 +134,7 @@ const config = {
         ],
       },
       footer: {
-        style: "light",
+        style: "dark",
         links: [
           // {
           //   title: "Product",
@@ -239,12 +234,12 @@ const config = {
       // TODO: 当前还不需要搜索模块，等内容更全了再添加
       algolia: {
         // Algolia 提供的应用 ID
-        appId: "YOUR_APP_ID",
+        appId: "36S5HY6ZV7",
 
         //  公开 API 密钥：提交它没有危险
-        apiKey: "YOUR_SEARCH_API_KEY",
+        apiKey: "26b6fe54af78be1bd1fbe98e758d4c7f",
 
-        indexName: "YOUR_INDEX_NAME",
+        indexName: "prod_oomol_com",
 
         // 可选：见下文
         contextualSearch: true,

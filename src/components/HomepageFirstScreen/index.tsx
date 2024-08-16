@@ -115,8 +115,8 @@ export default function HomepageFirstScreen() {
             <Image
               className={styles.sectionOneImage}
               sources={{
-                light: useBaseUrl("/img/oomol_studio.jpeg"),
-                dark: useBaseUrl("/img/oomol_studio.jpeg"),
+                light: useBaseUrl("/img/oomol_studio.jpg"),
+                dark: useBaseUrl("/img/oomol_studio.jpg"),
               }}
             />
           </div>

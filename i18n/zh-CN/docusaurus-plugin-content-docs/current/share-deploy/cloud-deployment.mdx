@@ -2,38 +2,38 @@
 sidebar_position: 2
 ---
 
-import styles from "./styles.module.css";
-import booleanSample from "./img/boolean-sample.png";
-import integerSample from "./img/integer-sample.png";
-import numberSample from "./img/number-sample.png";
-import numberRangeSample from "./img/number-range-sample.png";
-import stringSample from "./img/string-sample.png";
-import colorSample from "./img/color-sample.png";
-import codeSample from "./img/code-sample.png";
-import selectSample from "./img/select-sample.png";
-import multiSelectSample from "./img/multi-select-sample.png";
-import fileSample from "./img/file-sample.png";
-import dirSample from "./img/dir-sample.png";
-import dateTimeSample from "./img/date-time-sample.png";
-import dateSample from "./img/date-sample.png";
-import timeSample from "./img/time-sample.png";
-import textSample from "./img/text-sample.png";
-import anySample from "./img/any-sample.png";
-import objectSample from "./img/object-sample.png";
-import arraySample from "./img/array-sample.png";
-import anyOfSample from "./img/any-of-sample.png";
-import allOfSample from "./img/all-of-sample.png";
-import oneOfSample from "./img/one-of-sample.png";
+import styles from './styles.module.css';
+import booleanSample from './img/boolean-sample.png';
+import integerSample from './img/integer-sample.png';
+import numberSample from './img/number-sample.png';
+import numberRangeSample from './img/number-range-sample.png';
+import stringSample from './img/string-sample.png';
+import colorSample from './img/color-sample.png';
+import codeSample from './img/code-sample.png';
+import selectSample from './img/select-sample.png';
+import multiSelectSample from './img/multi-select-sample.png';
+import fileSample from './img/file-sample.png';
+import dirSample from './img/dir-sample.png';
+import dateTimeSample from './img/date-time-sample.png';
+import dateSample from './img/date-sample.png';
+import timeSample from './img/time-sample.png';
+import textSample from './img/text-sample.png';
+import anySample from './img/any-sample.png';
+import objectSample from './img/object-sample.png';
+import arraySample from './img/array-sample.png';
+import anyOfSample from './img/any-of-sample.png';
+import allOfSample from './img/all-of-sample.png';
+import oneOfSample from './img/one-of-sample.png';
 
-import Translate, { translate } from "@docusaurus/Translate";
 
-# Builtin Widget
+import Translate, {translate} from '@docusaurus/Translate';
 
-为了让用户能够快速编写区块的 UI，我们将选项的模式字段映射到内置的小部件。以下是如何在 YAML 文件中声明使用内置小部件，以及在图表中展示小部件的外观。
+# Cloud Deployment
+In order to allow users to quickly write the UI of the block, we map the schema field of Options to the built-in widget.
+Here we show how to declare the use of built-in widgets in a yaml file and show how the widgets look in the graph.
 
 For complete configuration file, refer to [Block](http://localhost:3000/docs/reference/block#properties).
 Here we only discuss the value of the `options` field. such as:
-
 ```
 ...
 options:
@@ -43,22 +43,17 @@ options:
 ```
 
 ## Boolean
-
 **yaml**
-
 ```
 schema:
   type: boolean
 ```
-
 **view in graph**
 
-<img className={styles["sample-image"]} src={booleanSample} />
+<img className={styles["sample-image"]} src={booleanSample}/>
 
 ## Integer
-
 **yaml**
-
 ```
 schema:
   type: integer
@@ -67,30 +62,24 @@ schema:
   "ui:options":
     step: 2  # integer change step, can be undefined
 ```
-
 **view in graph**
 
-<img className={styles["sample-image"]} src={integerSample} />
+<img className={styles["sample-image"]} src={integerSample}/>
 
 ## Number
-
 **yaml**
-
 ```
 schema:
   type: number
   "ui:options":
     step: 1  # number change step, can be undefined
 ```
-
 **view in graph**
 
-<img className={styles["sample-image"]} src={numberSample} />
+<img className={styles["sample-image"]} src={numberSample}/>
 
 ## Number Range
-
 **yaml**
-
 ```
 schema:
   type: number
@@ -99,72 +88,58 @@ schema:
   "ui:options":
     step: 0.1  # number change step, can be undefined
 ```
-
 **view in graph**
 
-<img className={styles["sample-image"]} src={numberRangeSample} />
+<img className={styles["sample-image"]} src={numberRangeSample}/>
 
 ## String Input
-
 **yaml**
-
 ```
 schema:
   type: string
 ```
-
 **view in graph**
 
-<img className={styles["sample-image"]} src={stringSample} />
+<img className={styles["sample-image"]} src={stringSample}/>
 
 ## Color Picker
-
 **yaml**
-
 ```
 schema:
   type: string
   "ui:widget": color
 ```
-
 **view in graph**
 
-<img className={styles["sample-image"]} src={colorSample} />
+<img className={styles["sample-image"]} src={colorSample}/>
 
 ## Code
-
 **yaml**
-
 ```
 schema:
   type: string
   "ui:widget": code
 ```
-
 **view in graph**
 
-<img className={styles["sample-image"]} src={codeSample} />
+<img className={styles["sample-image"]} src={codeSample}/>
 
 ## Select
-
 **yaml**
 
 :::caution
 You should make items in `enum` field be unique.
 :::
-
 ```
 schema:
   type: string   # type of Select Widget is unrestricted.
   enum: ["csv", "xls"]
 ```
-
 **view in graph**
 
-<img className={styles["sample-image"]} src={selectSample} />
+<img className={styles["sample-image"]} src={selectSample}/>
 
 ## Multi Select
-
 **yaml**
 
 :::caution
@@ -176,7 +151,7 @@ schema:
   type: array
   "ui:widget": multiSelect
   "ui:options":
-    metaOptions:
+    metaOptions: 
       - label: csv
         value: csv
       - label: xls
@@ -184,99 +159,78 @@ schema:
       - label: txt
         value: txt
 ```
-
 **view in graph**
 
-<img className={styles["sample-image"]} src={multiSelectSample} />
+<img className={styles["sample-image"]} src={multiSelectSample}/>
 
 ## File Selector
-
 **yaml**
-
 ```
 schema:
   type: string
   "ui:widget": file
 ```
-
 **view in graph**
 
-<img className={styles["sample-image"]} src={fileSample} />
+<img className={styles["sample-image"]} src={fileSample}/>
 
 ## Dir Selector
-
 **yaml**
-
 ```
 schema:
   type: string
   "ui:widget": dir
 ```
-
 **view in graph**
 
-<img className={styles["sample-image"]} src={dirSample} />
+<img className={styles["sample-image"]} src={dirSample}/>
 
 ## Date Time Picker
-
 **yaml**
-
 ```
 schema:
   type: string
   format: date-time
 ```
-
 **view in graph**
 
-<img className={styles["sample-image"]} src={dateTimeSample} />
+<img className={styles["sample-image"]} src={dateTimeSample}/>
 
 ## Date Picker
-
 **yaml**
-
 ```
 schema:
   type: string
   format: date
 ```
-
 **view in graph**
 
-<img className={styles["sample-image"]} src={dateSample} />
+<img className={styles["sample-image"]} src={dateSample}/>
 
 ## Time Picker
-
 **yaml**
-
 ```
 schema:
   type: string
   format: time
 ```
-
 **view in graph**
 
-<img className={styles["sample-image"]} src={timeSample} />
+<img className={styles["sample-image"]} src={timeSample}/>
 
 ## Text Input
-
 **yaml**
-
 ```
 schema:
   type: string
   "ui:widget": text
 ```
-
 **view in graph**
 
-<img className={styles["sample-image"]} src={textSample} />
+<img className={styles["sample-image"]} src={textSample}/>
 
 ## Any
-
 **yaml**
-
 ```
 schema:
   type:   # user can limit types
@@ -287,15 +241,12 @@ schema:
     - object
     - array
 ```
-
 **view in graph**
 
-<img className={styles["sample-image"]} src={anySample} />
+<img className={styles["sample-image"]} src={anySample}/>
 
 ## Object
-
 **yaml**
-
 ```
 schema:
   type: object
@@ -314,15 +265,12 @@ schema:
         input:
           type: string
 ```
-
 **view in graph**
 
-<img className={styles["sample-image"]} src={objectSample} />
+<img className={styles["sample-image"]} src={objectSample}/>
 
 ## Array
-
 **yaml**
-
 ```
 schema:
   type: array
@@ -334,17 +282,14 @@ schema:
       inputNumber:
         type: number
 ```
-
 **view in graph**
 
-<img className={styles["sample-image"]} src={arraySample} />
+<img className={styles["sample-image"]} src={arraySample}/>
 
 ## Any Of
-
 Check: [AnyOf](https://json-schema.org/understanding-json-schema/reference/combining#anyOf)
 
 **yaml**
-
 ```
 schema:
   anyOf:
@@ -357,17 +302,14 @@ schema:
     - type: number
     - type: string
 ```
-
 **view in graph**
 
-<img className={styles["sample-image"]} src={anyOfSample} />
+<img className={styles["sample-image"]} src={anyOfSample}/>
 
 ## All Of
-
 Means all of schema conditions must be satisfied. Check: [AllOf](https://json-schema.org/understanding-json-schema/reference/combining#allof)
 
 **yaml**
-
 ```
 schema:
   allOf:
@@ -380,17 +322,14 @@ schema:
     - type: number
     - type: string
 ```
-
 **view in graph**
 
-<img className={styles["sample-image"]} src={allOfSample} />
+<img className={styles["sample-image"]} src={allOfSample}/>
 
 ## One Of
-
 Check: [OneOf](https://json-schema.org/understanding-json-schema/reference/combining#oneOf)
 
 **yaml**
-
 ```
 schema:
   oneOf:
@@ -403,7 +342,6 @@ schema:
     - type: number
     - type: string
 ```
-
 **view in graph**
 
-<img className={styles["sample-image"]} src={oneOfSample} />
+<img className={styles["sample-image"]} src={oneOfSample}/>
