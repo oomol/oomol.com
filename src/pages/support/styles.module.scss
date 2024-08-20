@@ -18,7 +18,7 @@
 }
 
 .supportCellBox {
-  width: 720px;
+  width: 1080px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34,7 +34,7 @@
   padding-top: 36px;
   padding-bottom: 36px;
   border-style: solid;
-  border-color: #ededed;
+  border-color: rgb(67, 67, 67);
   border-radius: 8px;
 }
 
@@ -42,6 +42,8 @@
   width: 260px;
   font-weight: bolder;
   font-size: 18px;
+  display: flex;
+  align-items: center;
 }
 
 .support-title {
