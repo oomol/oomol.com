@@ -136,27 +136,27 @@ const config = {
       footer: {
         style: "dark",
         links: [
-          // {
-          //   title: "Product",
-          //   items: [
-          //     {
-          //       label: "Oomol Studio",
-          //       to: "/oomol-studio",
-          //     },
-          //     {
-          //       label: "Oomol Cloud",
-          //       to: "/oomol-cloud",
-          //     },
-          //     {
-          //       label: "Oomol Api",
-          //       to: "/oomol-api",
-          //     },
-          //     {
-          //       label: "Pricing",
-          //       to: "/pricing",
-          //     },
-          //   ],
-          // },
+          {
+            title: "Product",
+            items: [
+              {
+                label: "Roadmap",
+                href: "https://github.com/orgs/oomol-lab/projects/1/views/1",
+              },
+              // {
+              //   label: "Oomol Cloud",
+              //   to: "/oomol-cloud",
+              // },
+              // {
+              //   label: "Oomol Api",
+              //   to: "/oomol-api",
+              // },
+              // {
+              //   label: "Pricing",
+              //   to: "/pricing",
+              // },
+            ],
+          },
           {
             title: "Resources",
             items: [

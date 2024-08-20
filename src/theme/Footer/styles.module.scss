@@ -10,7 +10,8 @@
   max-width: var(--ifm-container-width);
   width: 100%;
   // margin-bottom: 48px;
-  padding: 0 24px;
+  // padding: 0 24px;
+  padding-left: 24px;
   margin: 0 auto;
   // background-color: yellow;
 }
@@ -35,6 +36,7 @@
 
 .leftBox {
   grid-area: leftBoxLogo;
+  // margin-right: 20px;
 }
 
 .leftBoxLogo {
@@ -60,7 +62,7 @@
 // @media screen and (min-width: 700px) {
 // }
 .links {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 .category {
   display: flex;
