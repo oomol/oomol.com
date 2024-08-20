@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import Layout from "../../theme/Layout";
-import HomepageStarter from "@site/src/components/HomepageStarter";
 import { Button } from "@arco-design/web-react";
-
+import { IconEmail } from "@arco-design/web-react/icon";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import Image from "@theme/ThemedImage";
 type SupportDataType = {
   name: string;
   inner: string;
@@ -50,12 +51,43 @@ export default function Support() {
         <div className={styles.supportCellBox}>
           <div className={styles.supportCell}>
             <div className={styles.title}>
+              <Image
+                style={{ width: 20 }}
+                sources={{
+                  light: useBaseUrl("/img/github.svg"),
+                  dark: useBaseUrl("/img/github.svg"),
+                }}
+              />
+              <span className={styles["support-title"]}>Github Support</span>
+            </div>
+            <div className={styles.inner}>
+              <div className={styles.text}>
+                Go to our GitHub discussions to browse for help and best
+                practices.
+              </div>
+              <Button
+                target="_blank"
+                href="https://github.com/orgs/oomol-lab/discussions"
+              >
+                Github Discussions
+              </Button>
+            </div>
+          </div>
+          <div className={styles.supportCell}>
+            <div className={styles.title}>
+              <Image
+                style={{ width: 20, opacity: 0.7 }}
+                sources={{
+                  light: useBaseUrl("/img/discord_line.svg"),
+                  dark: useBaseUrl("/img/discord_line.svg"),
+                }}
+              />
               <span className={styles["support-title"]}>Discord Support</span>
             </div>
             <div className={styles.inner}>
               <div className={styles.text}>
-                We offer email based support. If you need SLAs, guaranteed
-                response times, or have an issue, please contact us here.
+                If you need instant communication, please join our Discord
+                server.
               </div>
               <Button
                 target="_blank"
@@ -67,19 +99,20 @@ export default function Support() {
           </div>
           <div className={styles.supportCell}>
             <div className={styles.title}>
+              <IconEmail style={{ width: 20, opacity: 0.7 }} />
               <span className={styles["support-title"]}>Email Support</span>
             </div>
             <div className={styles.inner}>
               <div className={styles.text}>
-                We offer email based support. If you need SLAs, guaranteed
-                response times, or have an issue, please contact us here.
+                If you need help beyond the product, you can contact us by
+                email.
               </div>
               <Button href="mailto:support@oomol.com">Email To Us</Button>
             </div>
           </div>
         </div>
       </div>
-      <HomepageStarter />
+      {/* <HomepageStarter /> */}
     </Layout>
   );
 }
