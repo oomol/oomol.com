@@ -94,11 +94,11 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
           )}
           <div className={styles.navbarBtnBox}>
             <Button
-              className={styles.btn}
+              className={styles["btn-nav"]}
               target="_blank"
               href="https://hub.oomol.com/"
             >
-              Go flow hub
+              Go to Flowhub
             </Button>
           </div>
         </div>

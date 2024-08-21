@@ -7,14 +7,23 @@ export interface ButtonProps {
   href?: string;
   target?: React.HTMLAttributeAnchorTarget;
   onClick?: () => void;
+  disabled?: boolean;
 }
 
-export const Button = ({ children, href, target, className }: ButtonProps) => {
+export const Button = ({
+  children,
+  href,
+  target,
+  className,
+  disabled,
+}: ButtonProps) => {
   return (
-    <button className={`${styles.btn} ${className}`}>
-      <a target={target} href={href}>
+    <a target={target} href={href}>
+      <button
+        className={`${disabled ? styles.btnDisable : styles.btn} ${className}`}
+      >
         {children}
-      </a>
-    </button>
+      </button>
+    </a>
   );
 };

@@ -1,13 +1,14 @@
 import styles from "./styles.module.scss";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-import Translate, { translate } from "@docusaurus/Translate";
+import { translate } from "@docusaurus/Translate";
 
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { DownloadUrl } from "@site/src/download_url";
+import { Button } from "../Button";
 
 const data = {
   slogan: translate({
@@ -25,18 +26,6 @@ enum Platform {
 enum OS {
   Windows = "Windows",
   MacOS = "MacOS",
-}
-function supportsM1WebAssembly(): Platform {
-  try {
-    // 创建一个WebAssembly实例，检查是否可以成功实例化
-    const module = new WebAssembly.Module(
-      Uint8Array.of(0x0, 0x61, 0x73, 0x6d, 0x1, 0x0, 0x0, 0x0)
-    );
-    new WebAssembly.Instance(module);
-    return Platform.ARM;
-  } catch (e) {
-    return Platform.X64;
-  }
 }
 
 function detectOSAndArchitecture(): OS {
@@ -56,6 +45,9 @@ export default function HomepageFirstScreen() {
   const context: any = useDocusaurusContext();
   const { i18n } = context;
 
+  const [isBtnPopView, setBtnPopState] = useState(false);
+  const [isPopView, setPopState] = useState(false);
+
   const content = (
     <div className={styles.popoverBox}>
       <a download href={DownloadUrl.MacOS.Intel}>
@@ -72,6 +64,14 @@ export default function HomepageFirstScreen() {
       </a>
     </div>
   );
+
+  const isNeedPopView = (btn: boolean, pop: boolean): boolean => {
+    if (btn || pop) {
+      return true;
+    } else {
+      return false;
+    }
+  };
   return (
     <div className={styles.sectionOne}>
       <div className={styles.sectionOneBox}>
@@ -94,18 +94,45 @@ export default function HomepageFirstScreen() {
                   //     <IconDown />
                   //   </Button>
                   // </Popover>
-                  <button className={styles.sectionOneBtn}>
-                    Download for MacOS
-                  </button>
+                  <div>
+                    <div
+                      onMouseOver={() => {
+                        setBtnPopState(true);
+                      }}
+                      onMouseLeave={() => {
+                        setBtnPopState(false);
+                      }}
+                    >
+                      <Button className={styles.sectionOneBtn}>
+                        Download for MacOS
+                      </Button>
+                    </div>
+                    <div
+                      onMouseEnter={() => {
+                        setPopState(true);
+                      }}
+                      onMouseLeave={() => {
+                        setPopState(false);
+                      }}
+                      style={{
+                        display: isNeedPopView(isBtnPopView, isPopView)
+                          ? "block"
+                          : "none",
+                      }}
+                      className={styles.popover}
+                    >
+                      <div className={styles.mid}>{content}</div>
+                    </div>
+                  </div>
                 ) : (
                   <div className={styles.windowsBox}>
-                    <button
+                    <Button
                       className={styles.sectionOneBtn}
                       disabled
                       // icon={<IconDownload />}
                     >
                       Download for Windows
-                    </button>
+                    </Button>
                     <span className={styles.windowsSubtitle}>
                       only supports x64
                     </span>

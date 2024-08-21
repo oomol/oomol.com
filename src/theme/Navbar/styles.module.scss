@@ -24,9 +24,10 @@
   margin-right: 8px;
 }
 
-.btn {
+.btn-nav {
   width: 150px;
   font-weight: bold;
+  margin-left: 12px;
 }
 
 :global(html[data-theme="light"]) .brand {
