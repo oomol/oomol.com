@@ -11,7 +11,7 @@
 }
 
 .popoverBox {
-  width: 194px;
+  width: 200px;
   a {
     text-decoration: none;
   }
@@ -26,10 +26,11 @@
   border-radius: 4px;
   transition: background-color 0.2s ease;
   font-weight: bold;
+  font-size: 14px;
   color: white;
   &:hover {
     cursor: pointer;
-    background-color: #5c5e8d;
+    background-color: #383970;
     transition: background-color 0.2s ease;
   }
 }
@@ -101,7 +102,20 @@
 }
 
 .sectionOneBtn {
+  width: 200px;
+  // padding-left: 12px;
+  // padding-right: 12px;
   font-weight: bold;
+}
+
+.popover {
+  width: 200px;
+  position: absolute;
+  .mid {
+    background-color: black;
+    border-radius: 4px;
+    margin-top: 8px;
+  }
 }
 
 .windowsSubtitle {

@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { DownloadUrl } from "@site/src/download_url";
+import { Button } from "../Button";
 
 enum Platform {
   ARM64 = "ARM64",
@@ -80,17 +81,17 @@ export default function HomepageDownloads() {
   const downloadNodes = downloadData.map((data, index) => {
     const btnNodes = data.package.map((btn, index) => {
       return (
-        <button
+        <Button
           disabled={!btn.isReady}
           className={styles.btn}
           key={`btn-${index}`}
-          // href={btn.url}
+          href={btn.url}
           // icon={<IconDownload />}
         >
           <span className={styles.os}>{data.os}</span>
           {/* <Tag>{btn.platform}</Tag> */}
           {btn.platform}
-        </button>
+        </Button>
       );
     });
 
