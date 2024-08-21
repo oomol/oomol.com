@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# 📄 Panels Description
+# 📝 Panels Description
 
 Introducing the functions and uses of important panels.
 

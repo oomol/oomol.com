@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Shark in Flowhub
+# 🏘️ Share in Flowhub
 
 ## Properties
 
