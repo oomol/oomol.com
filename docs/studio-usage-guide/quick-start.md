@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Quick Start
+# 🚀 Quick Start
 
 Follow the document from download to launching your first workflow.
 
