@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./styles.module.scss";
-import { Button } from "@arco-design/web-react";
 
 export default function HomepageStarter() {
   return (
@@ -11,14 +10,13 @@ export default function HomepageStarter() {
         Whether you’re new to Oomol or back to see what’s new, we’ll have you
         set up and ready to do your best work in minutes.
       </div>
-      <Button
-        href="https://console.oomol.com/"
-        target="_blank"
-        type="primary"
-        size={"large"}
+      <button
+      // href="https://console.oomol.com/"
+      // target="_blank"
+      // size={"large"}
       >
         Download
-      </Button>
+      </button>
     </div>
   );
 }

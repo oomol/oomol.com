@@ -2,8 +2,6 @@ import React from "react";
 import styles from "./styles.module.scss";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { Button, Tag } from "@arco-design/web-react";
-import { IconDownload } from "@arco-design/web-react/icon";
 import { DownloadUrl } from "@site/src/download_url";
 
 enum Platform {
@@ -82,18 +80,17 @@ export default function HomepageDownloads() {
   const downloadNodes = downloadData.map((data, index) => {
     const btnNodes = data.package.map((btn, index) => {
       return (
-        <Button
+        <button
           disabled={!btn.isReady}
           className={styles.btn}
-          size={"large"}
           key={`btn-${index}`}
-          type="primary"
-          href={btn.url}
-          icon={<IconDownload />}
+          // href={btn.url}
+          // icon={<IconDownload />}
         >
           <span className={styles.os}>{data.os}</span>
-          <Tag>{btn.platform}</Tag>
-        </Button>
+          {/* <Tag>{btn.platform}</Tag> */}
+          {btn.platform}
+        </button>
       );
     });
 

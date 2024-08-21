@@ -16,8 +16,6 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@arco-design/web-react": "^2.61.0",
-    "@arco-themes/react-oomol": "^0.0.4",
     "@docusaurus/core": "^3.5.2",
     "@docusaurus/preset-classic": "^3.5.2",
     "@mdx-js/react": "^3.0.0",
@@ -29,7 +27,6 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@arco-plugins/webpack-react": "^1.4.9",
     "@docusaurus/module-type-aliases": "^3.1.1",
     "@docusaurus/tsconfig": "3.0.0",
     "@docusaurus/types": "3.0.0",

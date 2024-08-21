@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./styles.module.scss";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { Tag } from "@arco-design/web-react";
 
 type ScenesDataType = {
   imageUrl: string;
@@ -40,14 +39,15 @@ export default function HomepageScenes() {
         <div className={styles.scenesText}>
           <div className={styles.scenesTextTitle}>
             {data.title}
-            <Tag
+            {/* TODO: 重构组件后删除此注释 */}
+            {/* <Tag
               key={index}
               style={{ marginLeft: 6 }}
               color={data.color}
               bordered
             >
               {data.tag}
-            </Tag>
+            </Tag> */}
           </div>
           <div className={styles.scenesTextInner}>{data.inner}</div>
         </div>

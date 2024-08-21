@@ -3,8 +3,6 @@ import styles from "./styles.module.scss";
 import React from "react";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { Button, Popover } from "@arco-design/web-react";
-import { IconDown, IconDownload } from "@arco-design/web-react/icon";
 
 import Translate, { translate } from "@docusaurus/Translate";
 
@@ -62,13 +60,13 @@ export default function HomepageFirstScreen() {
     <div className={styles.popoverBox}>
       <a download href={DownloadUrl.MacOS.Intel}>
         <div className={styles.popoverBtn}>
-          <IconDownload style={{ marginLeft: 8 }} />
+          {/* <IconDownload style={{ marginLeft: 8 }} /> */}
           <span style={{ marginLeft: 8 }}>Intel Chip</span>
         </div>
       </a>
       <a download href={DownloadUrl.MacOS.AppleSilicon}>
         <div className={styles.popoverBtn}>
-          <IconDownload style={{ marginLeft: 8 }} />
+          {/* <IconDownload style={{ marginLeft: 8 }} /> */}
           <span style={{ marginLeft: 8 }}>Apple Silicon</span>
         </div>
       </a>
@@ -84,28 +82,30 @@ export default function HomepageFirstScreen() {
               <div className={styles.sectionOneTextInner}>{data.script}</div>
               <div className={styles.sectionOneBtnBox}>
                 {detectOSAndArchitecture() === OS.MacOS ? (
-                  <Popover position="bottom" content={content}>
-                    <Button
-                      className={styles.sectionOneBtn}
-                      type="primary"
-                      size="large"
-                      icon={<IconDownload />}
-                    >
-                      Download for MacOS
-                      <IconDown />
-                    </Button>
-                  </Popover>
+                  // TODO: 重构组件后删除此注释
+                  // <Popover position="bottom" content={content}>
+                  //   <Button
+                  //     className={styles.sectionOneBtn}
+                  //     type="primary"
+                  //     size="large"
+                  //     icon={<IconDownload />}
+                  //   >
+                  //     Download for MacOS
+                  //     <IconDown />
+                  //   </Button>
+                  // </Popover>
+                  <button className={styles.sectionOneBtn}>
+                    Download for MacOS
+                  </button>
                 ) : (
                   <div className={styles.windowsBox}>
-                    <Button
+                    <button
                       className={styles.sectionOneBtn}
-                      type="primary"
-                      size="large"
                       disabled
-                      icon={<IconDownload />}
+                      // icon={<IconDownload />}
                     >
                       Download for Windows
-                    </Button>
+                    </button>
                     <span className={styles.windowsSubtitle}>
                       only supports x64
                     </span>
