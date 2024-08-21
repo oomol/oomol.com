@@ -8,9 +8,7 @@ import NavbarItem from "@theme/NavbarItem";
 import SearchBar from "@theme/SearchBar";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
-import { Button } from "@arco-design/web-react";
 import Translate from "@docusaurus/Translate";
-import { IconMessage, IconSend } from "@arco-design/web-react/icon";
 
 interface NavbarProps {}
 
@@ -94,7 +92,8 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
             </>
           )}
           <div className={styles.navbarBtnBox}>
-            <Button
+            {/* TODO: 重构组件后删除此注释 */}
+            {/* <Button
               style={{ marginLeft: 12 }}
               target="_blank"
               href={"https://hub.oomol.com/"}
@@ -102,7 +101,10 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
               type="primary"
             >
               Go flow hub <IconSend />
-            </Button>
+            </Button> */}
+            <button style={{ marginLeft: 12 }} className={styles.btn}>
+              Go flow hub
+            </button>
           </div>
         </div>
         <div
@@ -155,14 +157,18 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
                 />
               ))}
             </ul>
-            <Button
+            {/* TODO: 重构组件后删除此注释 */}
+            {/* <Button
               target="_blank"
               href={"https://console.oomol.com/"}
               className={styles.btn}
               style={{ marginRight: 12 }}
             >
               Login
-            </Button>
+            </Button> */}
+            <button className={styles.btn} style={{ marginRight: 12 }}>
+              Login
+            </button>
           </div>
         </div>
       </div>

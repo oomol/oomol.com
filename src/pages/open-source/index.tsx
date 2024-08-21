@@ -4,8 +4,6 @@ import styles from "./styles.module.scss";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Image from "@theme/ThemedImage";
 import HomepageStarter from "@site/src/components/HomepageStarter";
-import { List } from "@arco-design/web-react";
-import { IconBranch, IconStar } from "@arco-design/web-react/icon";
 
 export default function Index() {
   const data = [
@@ -41,7 +39,8 @@ export default function Index() {
             </div>
           </div>
           <div className={styles.list}>
-            <List
+            {/* TODO: 重构组件后删除此注释 */}
+            {/* <List
               bordered
               dataSource={data}
               render={item => (
@@ -74,7 +73,7 @@ export default function Index() {
                   </div>
                 </List.Item>
               )}
-            />
+            /> */}
           </div>
         </div>
       </div>

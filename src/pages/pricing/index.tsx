@@ -1,8 +1,6 @@
 import React from "react";
 import Layout from "../../theme/Layout";
 import styles from "./styles.module.scss";
-import { Button } from "@arco-design/web-react";
-import { IconCheckCircleFill } from "@arco-design/web-react/icon";
 import HomepageStarter from "@site/src/components/HomepageStarter";
 
 export const PricingData = [
@@ -50,7 +48,8 @@ export default function Index() {
       return (
         <div className={styles.planCell} key={`cell-${index}`}>
           <div className={styles.planIcon}>
-            <IconCheckCircleFill />
+            {/* TODO: 重构组件后删除此注释 */}
+            {/* <IconCheckCircleFill /> */}
           </div>
           <div className={styles.inner}>{data}</div>
         </div>
@@ -75,13 +74,9 @@ export default function Index() {
           </div>
           {planCell}
         </div>
-        <Button
-          size="large"
-          className={styles.btn}
-          type={data.button.type as any}
-        >
+        <button className={styles.btn} type={data.button.type as any}>
           {data.button.text}
-        </Button>
+        </button>
       </div>
     );
   });

@@ -4,8 +4,6 @@ import Layout from "../../theme/Layout";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Image from "@theme/ThemedImage";
 import HomepageStarter from "@site/src/components/HomepageStarter";
-import { Button } from "@arco-design/web-react";
-import { IconDownload } from "@arco-design/web-react/icon";
 
 export default function Index() {
   return (
@@ -42,7 +40,9 @@ export default function Index() {
               Do not use any other color for the wordmark.
             </div>
             <div>
-              <Button icon={<IconDownload />}>Download logo kit</Button>
+              {/* TODO: 重构组件后删除此注释 */}
+              {/* <button icon={<IconDownload />}>Download logo kit</button> */}
+              <button>Download logo kit</button>
             </div>
           </div>
         </div>
