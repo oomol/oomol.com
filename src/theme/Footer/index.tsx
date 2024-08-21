@@ -3,8 +3,6 @@ import styles from "./styles.module.scss";
 import React from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import ColorModeToggle from "@theme/ColorModeToggle";
-import { useColorMode } from "@docusaurus/theme-common";
 import clsx from "clsx";
 
 interface FooterLinkProps {
@@ -75,11 +73,11 @@ const logoNodeData: LogoNodeDataType[] = [
 ];
 
 const Footer: React.FC = () => {
-  const { siteConfig } = useDocusaurusContext();
+  const { siteConfig, i18n } = useDocusaurusContext() as any;
   const { copyright, links = [] } = siteConfig.themeConfig.footer;
   const hasFooter = !!siteConfig.themeConfig.footer;
-  const { colorMode, setColorMode } = useColorMode();
-  console.log("colorMode", colorMode);
+  const currentLocale = i18n.currentLocale;
+
   if (!hasFooter) {
     return null;
   }
@@ -99,17 +97,6 @@ const Footer: React.FC = () => {
     );
   });
 
-  console.log(links);
-
-  // return (
-  //   <footer className={styles.root}>
-  //     <div>
-  //       <div className={styles.iconOutBox}>{logoNodes}</div>
-  //       <div></div>
-  //     </div>
-  //     <div>2</div>
-  //   </footer>
-  // );
   return (
     <footer className={styles.root}>
       <div className={clsx(styles.content, styles.center)}>
@@ -149,9 +136,11 @@ const Footer: React.FC = () => {
         <div className={styles.bottom}>
           <div className={styles.bottomInfo}>
             {copyright}
-            <a href="https://beian.miit.gov.cn/" target="_blank">
-              浙ICP备2023018874号-1
-            </a>
+            {currentLocale === "zh-CN" && (
+              <a href="https://beian.miit.gov.cn/" target="_blank">
+                浙ICP备2023018874号-1
+              </a>
+            )}
           </div>
           <div className={styles.bottomLeft}>
             <div className={styles.iconBox}>

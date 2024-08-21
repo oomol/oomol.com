@@ -1,6 +1,6 @@
-import React from "react";
 import styles from "./styles.module.scss";
-import Link from "@docusaurus/Link";
+
+import React from "react";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { Button, Popover } from "@arco-design/web-react";
@@ -57,7 +57,6 @@ function detectOSAndArchitecture(): OS {
 export default function HomepageFirstScreen() {
   const context: any = useDocusaurusContext();
   const { i18n } = context;
-  console.log("i18n >>>> ", i18n.currentLocale);
 
   const content = (
     <div className={styles.popoverBox}>
