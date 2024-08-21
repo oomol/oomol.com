@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import Layout from "../../theme/Layout";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Image from "@theme/ThemedImage";
+import { Button } from "@site/src/components/Button";
 type SupportDataType = {
   name: string;
   inner: string;
@@ -35,11 +36,9 @@ export default function Support() {
         <div className={styles.title}>{data.name}</div>
         <div className={styles.inner}>
           <div className={styles.text}>{data.inner}</div>
-          {/* <Button target={data.target} href={data.href}>
+          <Button target={data.target} href={data.href}>
             {data.btn}
-          </Button> */}
-          {/* TODO: 重构组件后删除此注释 */}
-          <button>{data.btn}</button>
+          </Button>
         </div>
       </div>
     );
@@ -65,14 +64,12 @@ export default function Support() {
                 Go to our GitHub discussions to browse for help and best
                 practices.
               </div>
-              {/* TODO: 重构组件后删除此注释 */}
-              {/* <Button
+              <Button
                 target="_blank"
                 href="https://github.com/orgs/oomol-lab/discussions"
               >
                 Github Discussions
-              </Button> */}
-              <button>Github Discussions</button>
+              </Button>
             </div>
           </div>
           <div className={styles.supportCell}>
@@ -91,13 +88,12 @@ export default function Support() {
                 If you need instant communication, please join our Discord
                 server.
               </div>
-              {/* TODO: 重构组件后删除此注释 */}
-              {/* <Button
+              <Button
                 target="_blank"
                 href="https://discord.com/channels/918759925805617163/1128586819185934436"
               >
                 Join Discord
-              </Button> */}
+              </Button>
             </div>
           </div>
           <div className={styles.supportCell}>
@@ -111,9 +107,7 @@ export default function Support() {
                 If you need help beyond the product, you can contact us by
                 email.
               </div>
-              {/* TODO: 重构组件后删除此注释 */}
-              {/* <Button href="mailto:support@oomol.com">Email To Us</Button> */}
-              <button>Email To Us</button>
+              <Button href="mailto:support@oomol.com">Email To Us</Button>
             </div>
           </div>
         </div>

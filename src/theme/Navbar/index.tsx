@@ -9,6 +9,7 @@ import SearchBar from "@theme/SearchBar";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
+import { Button } from "@site/src/components/Button";
 
 interface NavbarProps {}
 
@@ -92,19 +93,13 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
             </>
           )}
           <div className={styles.navbarBtnBox}>
-            {/* TODO: 重构组件后删除此注释 */}
-            {/* <Button
-              style={{ marginLeft: 12 }}
-              target="_blank"
-              href={"https://hub.oomol.com/"}
+            <Button
               className={styles.btn}
-              type="primary"
+              target="_blank"
+              href="https://hub.oomol.com/"
             >
-              Go flow hub <IconSend />
-            </Button> */}
-            <button style={{ marginLeft: 12 }} className={styles.btn}>
               Go flow hub
-            </button>
+            </Button>
           </div>
         </div>
         <div
@@ -166,9 +161,9 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
             >
               Login
             </Button> */}
-            <button className={styles.btn} style={{ marginRight: 12 }}>
+            {/* <button className={styles.btn} style={{ marginRight: 12 }}>
               Login
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
