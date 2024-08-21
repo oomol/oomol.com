@@ -2,6 +2,6 @@
 sidebar_position: 5
 ---
 
-# Deploy your Workflow
+# Run and Debug
 
 coming soon
