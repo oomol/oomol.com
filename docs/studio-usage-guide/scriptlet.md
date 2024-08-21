@@ -2,6 +2,6 @@
 sidebar_position: 3
 ---
 
-# Change a Workflow
+# Scriptlet
 
 coming soon

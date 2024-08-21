@@ -2,6 +2,6 @@
 sidebar_position: 1
 ---
 
-# Scriptlet and Block
+# Introduction
 
 scriptlet and Block
