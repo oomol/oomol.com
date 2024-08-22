@@ -96,6 +96,7 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
             <Button
               className={styles["btn-nav"]}
               target="_blank"
+              icon={<div className="i-prime-send" style={{ fontSize: 18 }} />}
               href="https://hub.oomol.com/"
             >
               Go to Flowhub

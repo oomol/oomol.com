@@ -86,11 +86,16 @@ export default function HomepageDownloads() {
           className={styles.btn}
           key={`btn-${index}`}
           href={btn.url}
-          // icon={<IconDownload />}
+          layout="left"
+          icon={
+            <div
+              className="i-material-symbols-download-rounded"
+              style={{ fontSize: 18, marginLeft: 8, marginRight: 4 }}
+            />
+          }
         >
           <span className={styles.os}>{data.os}</span>
-          {/* <Tag>{btn.platform}</Tag> */}
-          {btn.platform}
+          <span className={styles.platform}>{btn.platform}</span>
         </Button>
       );
     });

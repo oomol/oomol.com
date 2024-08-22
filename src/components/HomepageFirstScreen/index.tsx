@@ -53,12 +53,20 @@ export default function HomepageFirstScreen() {
       <a download href={DownloadUrl.MacOS.Intel}>
         <div className={styles.popoverBtn}>
           {/* <IconDownload style={{ marginLeft: 8 }} /> */}
+          <div
+            className="i-file-icons-intel"
+            style={{ fontSize: 20, marginLeft: 12 }}
+          />
           <span style={{ marginLeft: 8 }}>Intel Chip</span>
         </div>
       </a>
       <a download href={DownloadUrl.MacOS.AppleSilicon}>
         <div className={styles.popoverBtn}>
           {/* <IconDownload style={{ marginLeft: 8 }} /> */}
+          <div
+            className="i-ic-baseline-apple"
+            style={{ fontSize: 20, marginLeft: 12 }}
+          />
           <span style={{ marginLeft: 8 }}>Apple Silicon</span>
         </div>
       </a>
@@ -82,18 +90,6 @@ export default function HomepageFirstScreen() {
               <div className={styles.sectionOneTextInner}>{data.script}</div>
               <div className={styles.sectionOneBtnBox}>
                 {detectOSAndArchitecture() === OS.MacOS ? (
-                  // TODO: 重构组件后删除此注释
-                  // <Popover position="bottom" content={content}>
-                  //   <Button
-                  //     className={styles.sectionOneBtn}
-                  //     type="primary"
-                  //     size="large"
-                  //     icon={<IconDownload />}
-                  //   >
-                  //     Download for MacOS
-                  //     <IconDown />
-                  //   </Button>
-                  // </Popover>
                   <div>
                     <div
                       onMouseOver={() => {
@@ -108,7 +104,7 @@ export default function HomepageFirstScreen() {
                         icon={
                           <div
                             className="i-material-symbols-download-rounded"
-                            style={{ fontSize: 24 }}
+                            style={{ fontSize: 18 }}
                           />
                         }
                       >
