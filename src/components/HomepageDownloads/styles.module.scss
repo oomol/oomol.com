@@ -34,10 +34,22 @@
 .btn {
   width: 230px;
   margin-bottom: 12px;
+  font-weight: 600;
 }
 
 .os {
   margin-right: 8px;
+}
+
+.platform {
+  font-size: 12px;
+  font-weight: 400;
+  background-color: rgb(255, 255, 255, 0.2);
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 6px;
+  padding-right: 6px;
+  border-radius: 2px;
 }
 
 @media screen and (max-width: 760px) {
