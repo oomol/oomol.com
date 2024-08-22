@@ -1,3 +1,4 @@
+import "uno.css";
 import styles from "./styles.module.scss";
 
 import React, { ReactNode, useEffect } from "react";

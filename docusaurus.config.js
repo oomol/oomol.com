@@ -1,4 +1,6 @@
+const UnoCSS = require("@unocss/webpack").default;
 import { themes } from "prism-react-renderer";
+
 const lightTheme = themes.github;
 const darkTheme = themes.dracula;
 
@@ -43,6 +45,19 @@ const config = {
         blogSidebarTitle: "Updates",
       },
     ],
+    function () {
+      return {
+        name: "unocss",
+        configureWebpack() {
+          return {
+            plugins: [UnoCSS()],
+            optimization: {
+              realContentHash: true,
+            },
+          };
+        },
+      };
+    },
   ],
 
   presets: [
