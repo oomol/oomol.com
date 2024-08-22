@@ -4,4 +4,4 @@ sidebar_position: 1
 
 # 📚 Introduction
 
-scriptlet and Block
+Introduction to the operating mechanism of `OOCANA`
