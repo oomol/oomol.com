@@ -32,9 +32,11 @@
     "@docusaurus/types": "3.0.0",
     "@types/mdx-js__react": "^1.5.8",
     "@types/react": "^18.2.29",
+    "@unocss/webpack": "^0.62.2",
     "prettier": "^3.2.5",
     "ts-node": "^10.9.1",
-    "typescript": "~5.2.2"
+    "typescript": "~5.2.2",
+    "unocss": "^0.62.2"
   },
   "browserslist": {
     "production": [
