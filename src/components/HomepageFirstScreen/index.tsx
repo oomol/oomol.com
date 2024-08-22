@@ -103,7 +103,15 @@ export default function HomepageFirstScreen() {
                         setBtnPopState(false);
                       }}
                     >
-                      <Button className={styles.sectionOneBtn}>
+                      <Button
+                        className={styles.sectionOneBtn}
+                        icon={
+                          <div
+                            className="i-material-symbols-download-rounded"
+                            style={{ fontSize: 24 }}
+                          />
+                        }
+                      >
                         Download for MacOS
                       </Button>
                     </div>
