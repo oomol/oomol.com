@@ -39,6 +39,7 @@ export default function HomepageScenes() {
         <div className={styles.scenesText}>
           <div className={styles.scenesTextTitle}>
             {data.title}
+            <span className={styles.scenesTag}>{data.tag}</span>
             {/* TODO: 重构组件后删除此注释 */}
             {/* <Tag
               key={index}
