@@ -9,7 +9,6 @@ export default defineConfig({
         "user-select": "none",
         cursor: "default",
       },
-      cdn: "https://esm.sh/",
     }),
     presetWind(),
   ],
