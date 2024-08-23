@@ -1,4 +1,6 @@
 const UnoCSS = require("@unocss/webpack").default;
+const path = require("path");
+
 import { themes } from "prism-react-renderer";
 
 const lightTheme = themes.github;
@@ -50,7 +52,7 @@ const config = {
         name: "unocss",
         configureWebpack() {
           return {
-            plugins: [UnoCSS()],
+            plugins: [UnoCSS(path.join(__dirname, "uno.config.ts"))],
             optimization: {
               realContentHash: true,
             },
