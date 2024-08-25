@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { translate } from "@docusaurus/Translate";
 
 type ScenesDataType = {
   imageUrl: string;
@@ -15,23 +16,22 @@ type ScenesDataType = {
 const scenesData: ScenesDataType[] = [
   {
     imageUrl: "/img/table.jpg",
-    title: "Data Science",
+    title: translate({ message: "HOME.Scenes.data-science.title" }),
     type: "purple",
-    tag: "Structured Data",
+    tag: translate({ message: "HOME.Scenes.data-science.tag" }),
     color: "blue",
-    inner:
-      "Users can process data and display charts using familiar scripting languages. In addition, we support users in configuring node parameters through a UI interface, allowing them to create a workflow with simple operations such as drag-and-drop and connections. The container environment we provide also removes barriers to sharing, significantly reducing the distance from script to product.",
+    inner: translate({ message: "HOME.Scenes.data-science.inner" }),
   },
   {
     imageUrl: "/img/media.jpg",
-    title: "Media Processing",
+    title: translate({ message: "HOME.Scenes.media-processing.title" }),
     type: "purple",
-    tag: "Unstructured Data",
+    tag: translate({ message: "HOME.Scenes.media-processing.tag" }),
     color: "green",
-    inner:
-      "Developers can encapsulate common video processing libraries into functional nodes, which can be added with various adjustable parameters using the UI configuration interface provided by OOMOL. With such a tool, content creators on platforms like TikTok can drag and drop to create a workflow for processing their video and audio materials. Tasks such as adding subtitles in multiple languages to videos can be automated and completed in batches.",
+    inner: translate({ message: "HOME.Scenes.media-processing.inner" }),
   },
 ];
+
 export default function HomepageScenes() {
   const scenesNodes = scenesData.map((data, index) => {
     return (
@@ -67,7 +67,11 @@ export default function HomepageScenes() {
   return (
     <div className={styles.scenes}>
       <div className={styles["scenes-mid"]}>
-        <div className={styles.sectionTitle}>Usage Scenarios</div>
+        <div className={styles.sectionTitle}>
+          {translate({
+            message: "HOME.Scenes.title",
+          })}
+        </div>
         <div className={styles.sectionInner}>{scenesNodes}</div>
       </div>
     </div>

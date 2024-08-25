@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { clsx } from "clsx";
+import { translate } from "@docusaurus/Translate";
 
 type SuperiorityType = {
   imageUrl: string;
@@ -15,42 +16,44 @@ const superiorityList: SuperiorityType[] = [
   {
     imageUrl: "/img/feature_1.jpg",
     width: 540,
-    title: "Intuitive interaction",
+    title: translate({ message: "HOME.Features.intuitive-interaction.title" }),
     inners: [
-      "Easily build workflows with drag and drop.",
-      "Users can flexibly configure node parameters through UI components.",
-      "Supports preview of multiple types of commonly used data. ",
+      translate({ message: "HOME.Features.intuitive-interaction.inner1" }),
+      translate({ message: "HOME.Features.intuitive-interaction.inner2" }),
+      translate({ message: "HOME.Features.intuitive-interaction.inner3" }),
     ],
   },
   {
     imageUrl: "/img/feature_2.jpg",
     width: 540,
-    title: "Pre-installed environment",
+    title: translate({
+      message: "HOME.Features.pre-installed-environment.title",
+    }),
     inners: [
-      "No need to worry about installing Python or Node.js running environment, it can be used right out of the box.",
-      "OOMOL unifies the development environment into containers for users, and users of different systems can freely share workflows with each other.",
-      "Safe isolation will not affect the user's local environment. Users also don't have to worry about data security issues in their devices.",
+      translate({ message: "HOME.Features.pre-installed-environment.inner1" }),
+      translate({ message: "HOME.Features.pre-installed-environment.inner2" }),
+      translate({ message: "HOME.Features.pre-installed-environment.inner3" }),
     ],
   },
   {
     imageUrl: "/img/feature_3.jpg",
     width: 540,
-    title: "Programming friendly",
+    title: translate({ message: "HOME.Features.programming-friendly.title" }),
     inners: [
-      "Built-in Python, Node.js, supports installation of various open source libraries.",
-      "Based on vscode framework, supports code completion, highlighting and AI code prompts",
-      "With a beautiful and easy-to-use log display interface, it is convenient for engineers to debug and use.",
+      translate({ message: "HOME.Features.programming-friendly.inner1" }),
+      translate({ message: "HOME.Features.programming-friendly.inner2" }),
+      translate({ message: "HOME.Features.programming-friendly.inner3" }),
     ],
   },
 
   {
     imageUrl: "/img/feature_4.jpg",
     width: 540,
-    title: "Support sharing",
+    title: translate({ message: "HOME.Features.support-sharing.title" }),
     inners: [
-      "Support sharing workflows and tool nodes to the OOMOL community for easy use by other users.",
-      "Users can share their workflow source code with GitHub.",
-      "OOMOL will be open-sourced in the oomol-lab organization, with built-in tool plug-ins, common workflows, and underlying running containers, etc.",
+      translate({ message: "HOME.Features.support-sharing.inner1" }),
+      translate({ message: "HOME.Features.support-sharing.inner2" }),
+      translate({ message: "HOME.Features.support-sharing.inner3" }),
     ],
   },
 ];
