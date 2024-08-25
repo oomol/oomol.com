@@ -4,5 +4,79 @@
   },
   "HOME.FirstScreen.script": {
     "message": "OOMOL makes it easy to connect code snippets and API services through intuitive visual interactions."
+  },
+
+  "HOME.Scenes.title": {
+    "message": "Usage Scenarios"
+  },
+  "HOME.Scenes.data-science.title": {
+    "message": "Data Science"
+  },
+  "HOME.Scenes.data-science.tag": {
+    "message": "Structured Data"
+  },
+  "HOME.Scenes.data-science.inner": {
+    "message": "Users can process data and display charts using familiar scripting languages. In addition, we support users in configuring node parameters through a UI interface, allowing them to create a workflow with simple operations such as drag-and-drop and connections. The container environment we provide also removes barriers to sharing, significantly reducing the distance from script to product."
+  },
+  "HOME.Scenes.media-processing.title": {
+    "message": "Media Processing"
+  },
+  "HOME.Scenes.media-processing.tag": {
+    "message": "Unstructured Data"
+  },
+  "HOME.Scenes.media-processing.inner": {
+    "message": "Developers can encapsulate common video processing libraries into functional nodes, which can be added with various adjustable parameters using the UI configuration interface provided by OOMOL. With such a tool, content creators on platforms like TikTok can drag and drop to create a workflow for processing their video and audio materials. Tasks such as adding subtitles in multiple languages to videos can be automated and completed in batches."
+  },
+
+  "HOME.Features.title": {
+    "message": "Features and Benefits"
+  },
+  "HOME.Features.intuitive-interaction.title": {
+    "message": "Intuitive interaction"
+  },
+  "HOME.Features.intuitive-interaction.inner1": {
+    "message": "Easily build workflows with drag and drop."
+  },
+  "HOME.Features.intuitive-interaction.inner2": {
+    "message": "Users can flexibly configure node parameters through UI components."
+  },
+  "HOME.Features.intuitive-interaction.inner3": {
+    "message": "Supports preview of multiple types of commonly used data."
+  },
+  "HOME.Features.pre-installed-environment.title": {
+    "message": "Pre-installed environment"
+  },
+  "HOME.Features.pre-installed-environment.inner1": {
+    "message": "No need to worry about installing Python or Node.js running environment, it can be used right out of the box."
+  },
+  "HOME.Features.pre-installed-environment.inner2": {
+    "message": "OOMOL unifies the development environment into containers for users, and users of different systems can freely share workflows with each other."
+  },
+  "HOME.Features.pre-installed-environment.inner3": {
+    "message": "Safe isolation will not affect the user's local environment. Users also don't have to worry about data security issues in their devices."
+  },
+  "HOME.Features.programming-friendly.title": {
+    "message": "Programming friendly"
+  },
+  "HOME.Features.programming-friendly.inner1": {
+    "message": "Built-in Python, Node.js, supports installation of various open source libraries."
+  },
+  "HOME.Features.programming-friendly.inner2": {
+    "message": "Based on vscode framework, supports code completion, highlighting and AI code prompts"
+  },
+  "HOME.Features.programming-friendly.inner3": {
+    "message": "With a beautiful and easy-to-use log display interface, it is convenient for engineers to debug and use."
+  },
+  "HOME.Features.support-sharing.title": {
+    "message": "Support sharing"
+  },
+  "HOME.Features.support-sharing.inner1": {
+    "message": "Support sharing workflows and tool nodes to the OOMOL community for easy use by other users."
+  },
+  "HOME.Features.support-sharing.inner2": {
+    "message": "Users can share their workflow source code with GitHub."
+  },
+  "HOME.Features.support-sharing.inner3": {
+    "message": "OOMOL will be open-sourced in the oomol-lab organization, with built-in tool plug-ins, common workflows, and underlying running containers, etc."
   }
 }

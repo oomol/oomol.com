@@ -5,6 +5,81 @@
   "HOME.FirstScreen.script": {
     "message": "OOMOL STUDIO 是一个工作流编写与编排软件。提供多种编程语言的运行环境，内置丰富的工具套件，支持容器和云原生。"
   },
+
+  "HOME.Scenes.title": {
+    "message": "使用场景"
+  },
+  "HOME.Scenes.data-science.title": {
+    "message": "数据科学"
+  },
+  "HOME.Scenes.data-science.tag": {
+    "message": "结构化数据"
+  },
+  "HOME.Scenes.data-science.inner": {
+    "message": "用户可以使用熟悉的脚本语言处理数据并显示图表。此外，我们支持用户通过 UI 界面配置节点参数，使他们能够通过拖放和连接等简单操作创建工作流。我们提供的容器环境还消除了共享的障碍，大大缩短了从脚本到产品的距离。"
+  },
+  "HOME.Scenes.media-processing.title": {
+    "message": "媒体处理"
+  },
+  "HOME.Scenes.media-processing.tag": {
+    "message": "非结构化数据"
+  },
+  "HOME.Scenes.media-processing.inner": {
+    "message": "开发人员可以将常见的视频处理库封装成功能节点，并使用 OOMOL 提供的 UI 配置界面添加各种可调参数。借助这样的工具，像 TikTok 这样的平台上的内容创作者可以通过拖放创建处理视频和音频材料的工作流。诸如为视频添加多语言字幕等任务可以自动化并批量完成。"
+  },
+
+  "HOME.Features.title": {
+    "message": "功能和优势"
+  },
+  "HOME.Features.intuitive-interaction.title": {
+    "message": "直观交互"
+  },
+  "HOME.Features.intuitive-interaction.inner1": {
+    "message": "通过拖放轻松构建工作流。"
+  },
+  "HOME.Features.intuitive-interaction.inner2": {
+    "message": "用户可以通过 UI 组件灵活配置节点参数。"
+  },
+  "HOME.Features.intuitive-interaction.inner3": {
+    "message": "支持预览多种常用数据类型。"
+  },
+  "HOME.Features.pre-installed-environment.title": {
+    "message": "预安装环境"
+  },
+  "HOME.Features.pre-installed-environment.inner1": {
+    "message": "无需担心安装 Python 或 Node.js 运行环境，开箱即用。"
+  },
+  "HOME.Features.pre-installed-environment.inner2": {
+    "message": "OOMOL 将开发环境统一到容器中，不同系统的用户可以自由共享工作流。"
+  },
+  "HOME.Features.pre-installed-environment.inner3": {
+    "message": "安全隔离不会影响用户的本地环境。用户也无需担心设备中的数据安全问题。"
+  },
+  "HOME.Features.programming-friendly.title": {
+    "message": "编程友好"
+  },
+  "HOME.Features.programming-friendly.inner1": {
+    "message": "内置 Python、Node.js，支持安装各种开源库。"
+  },
+  "HOME.Features.programming-friendly.inner2": {
+    "message": "基于 vscode 框架，支持代码补全、高亮和 AI 代码提示。"
+  },
+  "HOME.Features.programming-friendly.inner3": {
+    "message": "拥有美观易用的日志显示界面，方便工程师调试和使用。"
+  },
+  "HOME.Features.support-sharing.title": {
+    "message": "支持共享"
+  },
+  "HOME.Features.support-sharing.inner1": {
+    "message": "支持将工作流和工具节点共享到 OOMOL 社区，方便其他用户使用。"
+  },
+  "HOME.Features.support-sharing.inner2": {
+    "message": "用户可以将他们的工作流源代码分享到 GitHub。"
+  },
+  "HOME.Features.support-sharing.inner3": {
+    "message": "OOMOL 将在 oomol-lab 组织中开源，内置工具插件、常用工作流和底层运行容器等。"
+  },
+
   "Easily connect code and services": {
     "message": "便捷地连接代码和服务"
   },

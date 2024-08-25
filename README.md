@@ -40,12 +40,12 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
 
-### i18n 翻译方式
+### i18n 翻译开发指南
 
 目前默认语言是英文
 
-- 组件翻译
-  主要存放 `/pages/*/*.jsx/` 组件的文本信息，其中使用 `translate 和 <Translate />` 进行翻译
+- 页面相关组件翻译
+  文件主要存放 `/pages/*/*.jsx/` 组件的文本信息，其中使用 `translate 和 <Translate />` 进行翻译
   翻译的`key` 都存在于 `code.json` 文件中, 所以在翻译的时候需要在 `code.json` 文件中添加对应的 key-value 信息。
   `/i18n/en/code.json` 存放英文文本， `/i18n/zh-CN/code.json` 存放中文文本
 
@@ -57,6 +57,14 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 
 - 其它自定义板块
   `/i18n/zh-CN/docusaurus-plugin-content-updates/current/`
+
+- 启动本地中文页面
+
+  ```
+  $ npm run start -- --locale zh-CN
+  ```
+
+  通过上面的命令可以在本地启动中文语言的网站，可以在本地直接查看页面的中文翻译效果。
 
 - 相关方法：
   在组件中获取当前语言的值，可以使用
