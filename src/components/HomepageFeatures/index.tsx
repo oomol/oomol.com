@@ -132,7 +132,11 @@ export default function HomepageFeatures() {
 
   return (
     <>
-      <div className={styles.sectionTitle}>Features and Benefits</div>
+      <div className={styles.sectionTitle}>
+        {translate({
+          message: "HOME.Features.title",
+        })}
+      </div>
       {superiorityNode}
     </>
   );
