@@ -141,20 +141,6 @@ const Footer: React.FC = () => {
               浙ICP备2023018874号-1
             </a>
           </div>
-          <div className={styles.bottomLeft}>
-            <div className={styles.iconBox}>
-              <img
-                alt="logo"
-                src="/img/logo_black.svg"
-                width={20}
-                loading="lazy"
-              />
-            </div>
-          </div>
-          {/* <div className={styles.bottomRight}>
-            <ColorModeToggle value={colorMode} onChange={setColorMode} />
-          </div> */}
-          {/* TODO: 暂时放这，后续再换位置 */}
           <LocalDropdown />
         </div>
       </div>
