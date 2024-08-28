@@ -4,6 +4,7 @@ import React from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import clsx from "clsx";
+import { LocalDropdown } from "../components/LocalDropdown";
 
 interface FooterLinkProps {
   href?: string;
@@ -153,6 +154,8 @@ const Footer: React.FC = () => {
           {/* <div className={styles.bottomRight}>
             <ColorModeToggle value={colorMode} onChange={setColorMode} />
           </div> */}
+          {/* TODO: 暂时放这，后续再换位置 */}
+          <LocalDropdown />
         </div>
       </div>
     </footer>
