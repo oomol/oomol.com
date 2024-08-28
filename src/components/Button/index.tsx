@@ -19,6 +19,7 @@ export const Button = ({
   target,
   className,
   disabled,
+  onClick,
   icon,
   iconPosition = "start",
   layout = "center",
@@ -64,6 +65,7 @@ export const Button = ({
   return (
     <a target={target} href={href}>
       <button
+        onClick={onClick}
         className={`${disabled ? styles.btnDisable : styles.btn} ${className}`}
       >
         {renderBtnContent()}

@@ -130,11 +130,7 @@ export default function HomepageFirstScreen() {
                   </div>
                 ) : (
                   <div className={styles.windowsBox}>
-                    <Button
-                      className={styles.sectionOneBtn}
-                      disabled
-                      // icon={<IconDownload />}
-                    >
+                    <Button className={styles.sectionOneBtn} disabled>
                       Download for Windows
                     </Button>
                     <span className={styles.windowsSubtitle}>
