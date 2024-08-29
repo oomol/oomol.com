@@ -1,46 +1,46 @@
 {
   "link.title.Product": {
-    "message": "产品",
+    "message": "Product",
     "description": "The title of the footer links column with title=Product in the footer"
   },
   "link.title.Resources": {
-    "message": "资源",
+    "message": "Resources",
     "description": "The title of the footer links column with title=Resources in the footer"
   },
   "link.title.Developers": {
-    "message": "开发者",
+    "message": "Developers",
     "description": "The title of the footer links column with title=Developers in the footer"
   },
   "link.title.Company": {
-    "message": "公司",
+    "message": "Company",
     "description": "The title of the footer links column with title=Company in the footer"
   },
   "link.item.label.Roadmap": {
-    "message": "计划",
+    "message": "Roadmap",
     "description": "The label of footer link with label=Roadmap linking to https://github.com/orgs/oomol-lab/projects/1/views/1"
   },
   "link.item.label.Support": {
-    "message": "支持",
+    "message": "Support",
     "description": "The label of footer link with label=Support linking to /support"
   },
   "link.item.label.Brand Assets": {
-    "message": "品牌资源",
+    "message": "Brand Assets",
     "description": "The label of footer link with label=Brand Assets linking to /brand-assets"
   },
   "link.item.label.Documentation": {
-    "message": "文档",
+    "message": "Documentation",
     "description": "The label of footer link with label=Documentation linking to /docs/overview"
   },
   "link.item.label.Updates": {
-    "message": "更新",
+    "message": "Updates",
     "description": "The label of footer link with label=Updates linking to /updates"
   },
   "link.item.label.Terms": {
-    "message": "使用条款",
+    "message": "Terms",
     "description": "The label of footer link with label=Terms linking to /terms"
   },
   "link.item.label.Privacy": {
-    "message": "隐私政策",
+    "message": "Privacy",
     "description": "The label of footer link with label=Privacy linking to /privacy"
   },
   "copyright": {

@@ -111,26 +111,6 @@ const config = {
           // { to: "/blog", label: "Blog", position: "left" },
           // { to: "/pricing", label: "Pricing", position: "left" },
           { to: "/updates", label: "Updates", position: "left" },
-          // TODO: 等登录注册有网页版再放出来
-          // {
-          //   to: '/login',
-          //   label: 'Login',
-          //   position: 'right',
-          // },
-          // {
-          //   to: '/signup',
-          //   label: 'Sign Up',
-          //   position: 'right',
-          // },
-          // {
-          //   href: 'https://github.com/facebook/docusaurus',
-          //   label: 'GitHub',
-          //   position: 'right',
-          // },
-          // {
-          //   type: "localeDropdown",
-          //   position: "right",
-          // },
         ],
       },
       footer: {
