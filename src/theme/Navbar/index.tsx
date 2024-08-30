@@ -8,8 +8,8 @@ import NavbarItem from "@theme/NavbarItem";
 import SearchBar from "@theme/SearchBar";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
-import Translate from "@docusaurus/Translate";
 import { Button } from "@site/src/components/Button";
+import { translate } from "@docusaurus/Translate";
 
 interface NavbarProps {}
 
@@ -99,7 +99,7 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
               icon={<div className="i-prime-send" style={{ fontSize: 18 }} />}
               href="https://hub.oomol.com/"
             >
-              Go to Flowhub
+              {translate({ message: "Theme.Navbar.go-to-hub-flow" })}
             </Button>
           </div>
         </div>

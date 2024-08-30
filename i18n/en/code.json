@@ -1,4 +1,8 @@
 {
+  "Theme.Navbar.go-to-hub-flow": {
+    "message": "Go to FlowHub"
+  },
+
   "HOME.FirstScreen.slogan": {
     "message": "Workflow-based data processing IDE."
   },

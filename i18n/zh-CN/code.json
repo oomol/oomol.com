@@ -1,4 +1,8 @@
 {
+  "Theme.Navbar.go-to-hub-flow": {
+    "message": "前往工作流社区"
+  },
+
   "HOME.FirstScreen.slogan": {
     "message": "基于工作流的数据处理的集成开发环境"
   },
