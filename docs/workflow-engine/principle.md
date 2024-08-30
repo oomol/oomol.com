@@ -2,6 +2,6 @@
 sidebar_position: 1
 ---
 
-# 📚 Introduction
+# 📚 Principle
 
 Introduction to the operating mechanism of `OOCANA`

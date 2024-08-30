@@ -5,27 +5,29 @@ sidebar_position: 2
 # 📗 Nodejs API
 
 ```typescript
+
 import type { Context } from "@oomol/types/oocana";
 
-interface Context<TInputs = Record<string, any>, TOutputs = Record<string, any>> {
-    readonly sessionId: string;
-    readonly jobId: string;
-    readonly block_path: string;
+type Inputs = Readonly<{ in: unknown }>;
+type Outputs = Readonly<{ out: unknown }>;
 
+export default async function(inputs: Inputs, context: Context<Inputs, Outputs>): Promise<Outputs> {
     /** Report Block done. */
-    readonly done: (err?: any) => Promise<void>;
+    context.done();
     /** Report logs */
-    readonly logJSON: (jsonValue: unknown) => Promise<void>;
+    context.logJSON();
     /** Report error. */
-    readonly error: (error: unknown) => Promise<void>;
+    context.error();
     /** Report extra Block messages. */
-    readonly sendMessage: (payload: unknown) => Promise<void>;
+    context.sendMessage();
     /** Send to Preview */
-    readonly preview: (payload: unknown) => Promise<void>;
+    context.preview();
     /** Report Block's stdio and stdout message. */
-    readonly reportLog: (payload: string, stdio: "stdout" | "stderr") => Promise<void>;
-    /** Report progress, progress 0.0 ~ 1.0 */
-    readonly reportProgress: (progress: number) => Promise<void>;
-}
+    context.reportLog();
+    /** Report progress, progress 1 ~ 100 */
+    context.reportProgress();
+
+    return { out: inputs };
+};
 
 ```
