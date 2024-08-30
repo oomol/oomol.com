@@ -1,11 +1,15 @@
 ---
-slug: 0.0.1-alpha.1
+slug: 0.0.1-beta.1
 title: 0.0.1-beta.1
-date: 2024-08-16
+date: 2024-08-30
 ---
 
-![banner](./banner.png)
+![banner](./oomol_studio.jpg)
 
 <!-- truncate -->
 
-## aaa
+## OOMOL STUDIO
+
+## OVM
+
+## Flowhub
