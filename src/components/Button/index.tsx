@@ -68,7 +68,7 @@ export const Button = ({
         onClick={onClick}
         className={`${disabled ? styles.btnDisable : styles.btn} ${className}`}
       >
-        {renderBtnContent()}
+        <div className={styles.btnContent}>{renderBtnContent()}</div>
       </button>
     </a>
   );
