@@ -98,8 +98,7 @@ export default function Support() {
           </div>
           <div className={styles.supportCell}>
             <div className={styles.title}>
-              {/* TODO: 重构组件后删除此注释 */}
-              {/* <IconEmail style={{ width: 20, opacity: 0.7 }} /> */}
+              <div className="i-codicon-mail" />
               <span className={styles["support-title"]}>Email Support</span>
             </div>
             <div className={styles.inner}>
