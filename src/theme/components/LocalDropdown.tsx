@@ -43,6 +43,7 @@ export const LocalDropdown = ({ queryString = "" }: LocalDropdownProps) => {
               key={locale}
               href={to}
               className={`${styles.item} ${locale === currentLocale ? styles.selected : ""}`}
+              onClick={() => localStorage.setItem("locale", locale)}
             >
               <div>{formateLocale(locale)}</div>
             </a>
