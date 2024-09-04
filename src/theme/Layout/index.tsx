@@ -52,7 +52,17 @@ const Layout: React.FC<LayoutProps> = ({ children, wrapperClassName }) => {
     const localLocale = localStorage.getItem("locale");
 
     if (!localLocale) {
-      return;
+      const isZhCN = navigator.language.includes("zh-");
+
+      if (matchRouteRoot) {
+        if (!isZhCN) {
+          localStorage.setItem("locale", "en");
+          return;
+        }
+
+        location.pathname = location.pathname.replace("/", "/zh-CN/");
+        localStorage.setItem("locale", "zh-CN");
+      }
     }
 
     if (matchRouteRoot) {
