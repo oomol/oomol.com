@@ -74,9 +74,10 @@ const logoNodeData: LogoNodeDataType[] = [
 ];
 
 const Footer: React.FC = () => {
-  const { siteConfig } = useDocusaurusContext();
+  const { siteConfig, i18n } = useDocusaurusContext() as any;
   const { copyright, links = [] } = siteConfig.themeConfig.footer;
   const hasFooter = !!siteConfig.themeConfig.footer;
+  const currentLocale = i18n.currentLocale;
 
   if (!hasFooter) {
     return null;
@@ -136,10 +137,11 @@ const Footer: React.FC = () => {
         <div className={styles.bottom}>
           <div className={styles.bottomInfo}>
             {copyright}
-            {/* TODO:  根据浏览器语言去切换是否显示该内容 */}
-            <a href="https://beian.miit.gov.cn/" target="_blank">
-              浙ICP备2023018874号-1
-            </a>
+            {currentLocale === "zh-CN" && (
+              <a href="https://beian.miit.gov.cn/" target="_blank">
+                浙ICP备2023018874号-1
+              </a>
+            )}
           </div>
           <LocalDropdown />
         </div>
