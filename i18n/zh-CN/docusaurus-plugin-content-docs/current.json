@@ -22,5 +22,25 @@
   "sidebar.tutorialSidebar.category.References.link.generated-index.description": {
     "message": "Reference of block, node, flow and so on",
     "description": "The generated-index page description for category References in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Studio Usage Guide": {
+    "message": "Studio 使用指南",
+    "description": "The label for category Studio Usage Guide in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Studio Usage Guide.link.generated-index.description": {
+    "message": "5 分钟了解最重要的 OOMOL 概念。",
+    "description": "The generated-index page description for category Studio Usage Guide in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Workflow Engine": {
+    "message": "工作流引擎",
+    "description": "The label for category Workflow Engine in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Share and Deploy": {
+    "message": "分享和部署",
+    "description": "The label for category Share and Deploy in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Share and Deploy.link.generated-index.description": {
+    "message": "Block、Node、Flow 等参考",
+    "description": "The generated-index page description for category Share and Deploy in sidebar tutorialSidebar"
   }
 }

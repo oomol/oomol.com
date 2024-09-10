@@ -2,7 +2,6 @@
   "Theme.Navbar.go-to-hub-flow": {
     "message": "前往工作流社区"
   },
-
   "HOME.FirstScreen.slogan": {
     "message": "基于工作流的数据处理的 IDE"
   },
@@ -18,7 +17,6 @@
   "HOME.FirstScreen.download-windows-subtitle": {
     "message": "当前仅支持 x64 版本"
   },
-
   "HOME.Scenes.title": {
     "message": "使用场景"
   },
@@ -40,7 +38,6 @@
   "HOME.Scenes.media-processing.inner": {
     "message": "开发人员可以将常见的视频处理库封装成功能节点，并使用 OOMOL 提供的 UI 配置界面添加各种可调参数。借助这样的工具，像 TikTok 这样的平台上的内容创作者可以通过拖放创建处理视频和音频材料的工作流。诸如为视频添加多语言字幕等任务可以自动化并批量完成。"
   },
-
   "HOME.Features.title": {
     "message": "功能和优势"
   },
@@ -92,7 +89,6 @@
   "HOME.Features.support-sharing.inner3": {
     "message": "OOMOL 将在 oomol-lab 组织中开源，内置工具插件、常用工作流和底层运行容器等。"
   },
-
   "Easily connect code and services": {
     "message": "便捷地连接代码和服务"
   },
