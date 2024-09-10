@@ -25,7 +25,6 @@ import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
     }
 
     if (matchRouteRoot) {
-      console.log("run layout ", location.pathname);
       // 如果当前 localStorage 的语言为英文, 且当前路径为中文首页，则跳转到英文首页 "/"
       if (localLocale === "en" && location.pathname.startsWith("/zh-CN/")) {
         location.pathname = location.pathname.replace("/zh-CN/", "/");
