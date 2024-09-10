@@ -33,6 +33,7 @@ const config = {
     defaultLocale: "en",
     locales: ["en", "zh-CN"],
   },
+  clientModules: ["./scripts/redirect-lang.ts"],
 
   plugins: [
     "docusaurus-plugin-sass",
