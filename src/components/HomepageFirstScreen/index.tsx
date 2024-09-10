@@ -52,7 +52,6 @@ export default function HomepageFirstScreen() {
     <div className={styles.popoverBox}>
       <a download href={DownloadUrl.MacOS.Intel}>
         <div className={styles.popoverBtn}>
-          {/* <IconDownload style={{ marginLeft: 8 }} /> */}
           <div
             className="i-file-icons-intel"
             style={{ fontSize: 20, marginLeft: 12 }}
@@ -62,7 +61,6 @@ export default function HomepageFirstScreen() {
       </a>
       <a download href={DownloadUrl.MacOS.AppleSilicon}>
         <div className={styles.popoverBtn}>
-          {/* <IconDownload style={{ marginLeft: 8 }} /> */}
           <div
             className="i-ic-baseline-apple"
             style={{ fontSize: 20, marginLeft: 12 }}
@@ -90,7 +88,7 @@ export default function HomepageFirstScreen() {
               <div className={styles.sectionOneTextInner}>{data.script}</div>
               <div className={styles.sectionOneBtnBox}>
                 {detectOSAndArchitecture() === OS.MacOS ? (
-                  <div>
+                  <div className={styles.downloadBtnBox}>
                     <div
                       onMouseOver={() => {
                         setBtnPopState(true);
@@ -108,7 +106,9 @@ export default function HomepageFirstScreen() {
                           />
                         }
                       >
-                        Download for MacOS
+                        {translate({
+                          message: "HOME.FirstScreen.download-macos",
+                        })}
                       </Button>
                     </div>
                     <div
@@ -131,10 +131,14 @@ export default function HomepageFirstScreen() {
                 ) : (
                   <div className={styles.windowsBox}>
                     <Button className={styles.sectionOneBtn} disabled>
-                      Download for Windows
+                      {translate({
+                        message: "HOME.FirstScreen.download-windows",
+                      })}
                     </Button>
                     <span className={styles.windowsSubtitle}>
-                      only supports x64
+                      {translate({
+                        message: "HOME.FirstScreen.download-windows-subtitle",
+                      })}
                     </span>
                   </div>
                 )}

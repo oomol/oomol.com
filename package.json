@@ -6,6 +6,7 @@
     "format": "prettier --write .",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
+    "start:zh-cn": "npm run start -- --locale zh-CN",
     "build": "docusaurus build && npm run build-unocss",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",

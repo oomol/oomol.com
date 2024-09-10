@@ -9,6 +9,16 @@
   "HOME.FirstScreen.script": {
     "message": "OOMOL makes it easy to connect code snippets and API services through intuitive visual interactions."
   },
+  "HOME.FirstScreen.download-macos": {
+    "message": "Download for macOS"
+  },
+  "HOME.FirstScreen.download-windows": {
+    "message": "Download for Windows"
+  },
+  "HOME.FirstScreen.download-windows-subtitle": {
+    "message": "only supports x64"
+  },
+
   "HOME.Scenes.title": {
     "message": "Usage Scenarios"
   },
