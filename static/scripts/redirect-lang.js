@@ -1,8 +1,6 @@
-import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
-
 (() => {
   // not in browser
-  if (!ExecutionEnvironment.canUseDOM) return;
+  if (typeof window === "undefined") return;
 
   function redirect() {
     const rootPath = "/";
