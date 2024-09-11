@@ -33,8 +33,7 @@ const config = {
     defaultLocale: "en",
     locales: ["en", "zh-CN"],
   },
-  clientModules: ["./scripts/redirect-lang.ts"],
-
+  // clientModules: ["./scripts/redirect-lang.ts"],
   plugins: [
     "docusaurus-plugin-sass",
     [
@@ -48,6 +47,25 @@ const config = {
         blogSidebarTitle: "Updates",
       },
     ],
+    function () {
+      return {
+        name: "docusaurus-plugin-inject-html",
+        injectHtmlTags() {
+          return {
+            headTags: [
+              {
+                tagName: "script",
+                attributes: {
+                  charset: "utf-8",
+                  src: "./scripts/redirect-lang.js",
+                },
+              },
+              ,
+            ],
+          };
+        },
+      };
+    },
     function () {
       return {
         name: "unocss",
