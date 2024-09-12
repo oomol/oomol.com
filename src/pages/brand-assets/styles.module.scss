@@ -38,7 +38,7 @@
   border-radius: 8px;
   border-style: solid;
   border-width: 1px;
-  border-color: #e0e0e0;
+  border-color: #585555;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -72,6 +72,14 @@
     margin-top: 4px;
     font-size: 14px;
   }
+}
+
+.button-box {
+  padding-top: 8px;
+}
+
+.button {
+  height: 32px !important;
 }
 
 .card-brand {

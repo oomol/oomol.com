@@ -19,6 +19,31 @@
     "message": "only supports x64"
   },
 
+  "HOME.BrandAssets.title": {
+    "message": "Brand assets"
+  },
+  "HOME.BrandAssets.subtitle": {
+    "message": "Download official Oomol logos"
+  },
+  "HOME.BrandAssets.details-1": {
+    "message": "All Oomol trademarks,logos, or other brand elements can never be modified or used for"
+  },
+  "HOME.BrandAssets.details-2": {
+    "message": "any other purpose other than to represent Oomol Inc."
+  },
+  "HOME.BrandAssets.logo-name": {
+    "message": "OOMOL logo"
+  },
+  "HOME.BrandAssets.scripts-1": {
+    "message": "Download Oomol official logos, including as SVG's, in both light and dark theme."
+  },
+  "HOME.BrandAssets.scripts-2": {
+    "message": "Do not use any other color for the wordmark."
+  },
+  "HOME.BrandAssets.download-btn-text": {
+    "message": "Download logo kit"
+  },
+
   "HOME.Scenes.title": {
     "message": "Usage Scenarios"
   },
