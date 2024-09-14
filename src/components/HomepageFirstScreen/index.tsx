@@ -87,7 +87,7 @@ export default function HomepageFirstScreen() {
               <div className={styles.sectionOneTextTitle}>{data.slogan}</div>
               <div className={styles.sectionOneTextInner}>{data.script}</div>
               <div className={styles.sectionOneBtnBox}>
-                {detectOSAndArchitecture() !== OS.MacOS ? (
+                {detectOSAndArchitecture() === OS.MacOS ? (
                   <div className={styles.downloadBtnBox}>
                     <div
                       onMouseOver={() => {
