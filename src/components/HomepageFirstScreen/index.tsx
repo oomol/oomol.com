@@ -87,7 +87,7 @@ export default function HomepageFirstScreen() {
               <div className={styles.sectionOneTextTitle}>{data.slogan}</div>
               <div className={styles.sectionOneTextInner}>{data.script}</div>
               <div className={styles.sectionOneBtnBox}>
-                {detectOSAndArchitecture() === OS.MacOS ? (
+                {detectOSAndArchitecture() !== OS.MacOS ? (
                   <div className={styles.downloadBtnBox}>
                     <div
                       onMouseOver={() => {
@@ -130,11 +130,13 @@ export default function HomepageFirstScreen() {
                   </div>
                 ) : (
                   <div className={styles.windowsBox}>
-                    <Button className={styles.sectionOneBtn} disabled>
-                      {translate({
-                        message: "HOME.FirstScreen.download-windows",
-                      })}
-                    </Button>
+                    <a download href={DownloadUrl.Windows.X64}>
+                      <Button className={styles.sectionOneBtn}>
+                        {translate({
+                          message: "HOME.FirstScreen.download-windows",
+                        })}
+                      </Button>
+                    </a>
                     <span className={styles.windowsSubtitle}>
                       {translate({
                         message: "HOME.FirstScreen.download-windows-subtitle",

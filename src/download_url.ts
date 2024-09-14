@@ -1,6 +1,6 @@
 export const DownloadUrl = {
   Windows: {
-    X64: "",
+    X64: "https://static.oomol.com/release/insider/win32/x64/OomolStudio-1.93.1-2024-09-14.00.exe",
   },
   MacOS: {
     Intel:
