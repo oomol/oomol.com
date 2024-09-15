@@ -38,7 +38,7 @@ const downloadData: DownloadDataType[] = [
       {
         platform: Platform.X64,
         url: DownloadUrl.Windows.X64,
-        isReady: false,
+        isReady: true,
       },
     ],
   },

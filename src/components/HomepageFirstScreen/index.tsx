@@ -130,11 +130,13 @@ export default function HomepageFirstScreen() {
                   </div>
                 ) : (
                   <div className={styles.windowsBox}>
-                    <Button className={styles.sectionOneBtn} disabled>
-                      {translate({
-                        message: "HOME.FirstScreen.download-windows",
-                      })}
-                    </Button>
+                    <a download href={DownloadUrl.Windows.X64}>
+                      <Button className={styles.sectionOneBtn}>
+                        {translate({
+                          message: "HOME.FirstScreen.download-windows",
+                        })}
+                      </Button>
+                    </a>
                     <span className={styles.windowsSubtitle}>
                       {translate({
                         message: "HOME.FirstScreen.download-windows-subtitle",
