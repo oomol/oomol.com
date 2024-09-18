@@ -131,13 +131,13 @@ export default function HomepageFeatures() {
   });
 
   return (
-    <>
+    <div className={styles.container}>
       <div className={styles.sectionTitle}>
         {translate({
           message: "HOME.Features.title",
         })}
       </div>
       {superiorityNode}
-    </>
+    </div>
   );
 }

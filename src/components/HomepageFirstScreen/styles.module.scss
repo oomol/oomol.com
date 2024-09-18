@@ -1,7 +1,20 @@
+@import "../../css/custom.scss";
 /**
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.
  */
+
+@mixin remove-cover-on-phone {
+  @include phone {
+    background-image: none;
+  }
+  @include phone-middle {
+    background-image: none;
+  }
+  @include phone-large {
+    background-image: none;
+  }
+}
 
 .heroBanner {
   padding: 4rem 0;
@@ -36,6 +49,20 @@
 .sectionOne {
   display: flex;
   justify-content: center;
+  position: relative;
+  padding: 0 100px; /* 中间留出 100px 的空间 */
+
+  @include phone {
+    padding: 0 24px;
+  }
+
+  @include phone-middle {
+    padding: 0 24px;
+  }
+
+  @include phone-large {
+    padding: 0 24px;
+  }
 }
 
 .sectionOneSide {
@@ -77,6 +104,18 @@
   max-width: 600px;
   font-size: 46px;
   font-weight: bold;
+
+  @include phone {
+    font-size: 36px;
+  }
+
+  @include phone-middle {
+    font-size: 36px;
+  }
+
+  @include phone-large {
+    font-size: 36px;
+  }
 }
 
 .sectionOneTextInner {
@@ -193,6 +232,18 @@
   margin-left: 24px;
   margin-right: 24px;
   border-radius: 4px;
+
+  @include phone {
+    margin-bottom: 60px;
+  }
+
+  @include phone-middle {
+    margin-bottom: 60px;
+  }
+
+  @include phone-large {
+    margin-bottom: 60px;
+  }
 }
 
 @media screen and (max-width: 996px) {
@@ -205,11 +256,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.sectionOne {
-  position: relative;
-  padding: 0 100px; /* 中间留出 100px 的空间 */
 }
 
 .sectionOne::before,
@@ -227,49 +273,14 @@
   left: 7%;
   background-image: url(/img/side_left.svg);
   opacity: 0.3;
+
+  @include remove-cover-on-phone;
 }
 
 .sectionOne::after {
   right: 2%;
   background-image: url(/img/side_right.svg);
   opacity: 0.3;
-}
 
-@media screen and (max-width: 960px) {
-  .sectionOne::before,
-  .sectionOne::after {
-    background-image: none;
-  }
-}
-
-@media screen and (max-width: 390px) {
-  .sectionOneTextTitle {
-    font-size: 40px;
-  }
-
-  .sectionOneTextInner {
-    padding: 0 16px;
-  }
-
-  .sectionOneImageBox {
-    > img {
-      padding-top: 80px;
-    }
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .sectionOneTextTitle {
-    font-size: 40px;
-  }
-
-  .sectionOneTextInner {
-    padding: 0 24px;
-  }
-
-  .sectionOneImageBox {
-    > img {
-      padding-top: 80px;
-    }
-  }
+  @include remove-cover-on-phone;
 }

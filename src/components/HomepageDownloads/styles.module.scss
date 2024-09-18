@@ -1,10 +1,26 @@
+@import "../../css/custom.scss";
+
 .sectionDownload {
   display: flex;
   flex-direction: row;
   padding: 60px 0;
   align-items: center;
   justify-content: center;
-  // background-color: rgb(249, 249, 249);
+
+  @include phone {
+    flex-wrap: wrap;
+    padding: 0;
+  }
+
+  @include phone-middle {
+    flex-wrap: wrap;
+    padding: 0;
+  }
+
+  @include phone-large {
+    flex-wrap: wrap;
+    padding: 0;
+  }
 }
 .btnNodeBox {
   width: 100%;
@@ -29,6 +45,14 @@
   align-items: center;
   width: 360px;
   flex-direction: column;
+
+  @include pad-middle {
+    width: 100%;
+  }
+
+  @include pad-large {
+    width: 100%;
+  }
 }
 
 .btn {
@@ -50,14 +74,4 @@
   padding-left: 6px;
   padding-right: 6px;
   border-radius: 2px;
-}
-
-@media screen and (max-width: 760px) {
-  .sectionDownloadCellBox {
-    width: 100%;
-  }
-
-  .sectionDownload {
-    flex-wrap: wrap;
-  }
 }

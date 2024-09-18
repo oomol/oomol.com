@@ -40,15 +40,6 @@ export default function HomepageScenes() {
           <div className={styles.scenesTextTitle}>
             {data.title}
             <span className={styles.scenesTag}>{data.tag}</span>
-            {/* TODO: 重构组件后删除此注释 */}
-            {/* <Tag
-              key={index}
-              style={{ marginLeft: 6 }}
-              color={data.color}
-              bordered
-            >
-              {data.tag}
-            </Tag> */}
           </div>
           <div className={styles.scenesTextInner}>{data.inner}</div>
         </div>

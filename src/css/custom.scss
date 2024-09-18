@@ -63,3 +63,53 @@
 .navbar {
   box-shadow: none;
 }
+
+$mobile-width: 375px;
+$mobile-middle-width: 390px;
+$mobile-large-width: 430px;
+$tablet-width: 678px;
+$tablet-middle-width: 768px;
+$tablet-large-width: 820px;
+$desktop-width: 996px;
+
+@mixin phone {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin phone-middle {
+  @media (max-width: #{$mobile-middle-width}) {
+    @content;
+  }
+}
+
+@mixin phone-large {
+  @media (max-width: #{$mobile-large-width}) {
+    @content;
+  }
+}
+
+@mixin pad {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin pad-middle {
+  @media (max-width: #{$tablet-middle-width}) {
+    @content;
+  }
+}
+
+@mixin pad-large {
+  @media (max-width: #{$tablet-large-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
