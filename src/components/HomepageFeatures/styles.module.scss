@@ -26,6 +26,18 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+
+  @include phone {
+    justify-content: flex-start;
+  }
+
+  @include phone-middle {
+    justify-content: flex-start;
+  }
+
+  @include phone-large {
+    justify-content: flex-start;
+  }
 }
 
 .sectionList {
