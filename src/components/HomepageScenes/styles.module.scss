@@ -1,3 +1,5 @@
+@import "../../css/custom.scss";
+
 .sectionTitle {
   font-size: 36px;
   margin-top: 60px;
@@ -7,20 +9,30 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  @include phone {
+    margin-top: 0;
+  }
+
+  @include phone-middle {
+    margin-top: 0;
+  }
+
+  @include phone-large {
+    margin-top: 0;
+  }
 }
 
 .sectionInner {
   display: flex;
   flex-direction: column;
-  max-width: 1200px;
-  // justify-content: center;
-  // align-items: center;
-  // background-color: yellow;
 }
 
 .sectionCell {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   margin-top: 36px;
 }
 
@@ -34,7 +46,6 @@
 .scenes {
   width: 100%;
   padding-bottom: 64px;
-  // background-color: rgb(249, 249, 249);
 }
 
 .scenes-mid {
@@ -42,32 +53,56 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  padding: 0 120px;
+
+  @include phone {
+    padding: 0 24px;
+  }
+
+  @include phone-middle {
+    padding: 0 24px;
+  }
+
+  @include phone-large {
+    padding: 0 24px;
+  }
 }
 
 .scenesText {
-  width: 460px;
+  width: 480px;
   box-sizing: border-box;
-  padding-right: 96px;
-  flex-shrink: 0;
 }
 
 .scenesImage {
-  width: 600px;
+  width: 540px;
   border-radius: 8px;
   overflow: hidden;
+
+  @include phone {
+    padding-top: 36px;
+  }
+
+  @include phone-middle {
+    padding-top: 36px;
+  }
+
+  @include phone-large {
+    padding-top: 36px;
+  }
 }
 
 .scenesTextTitle {
-  font-size: 18px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
   font-weight: bold;
 }
 
 .scenesTag {
+  margin-top: 2px;
   font-size: 12px;
-  // color: #999;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
   padding-left: 8px;
   padding-right: 8px;
   background-color: #383970;

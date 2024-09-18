@@ -1,19 +1,29 @@
+@import "../../css/custom.scss";
+
 .root {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // background-color: rgb(249, 249, 249);
 }
 
 .center {
   max-width: var(--ifm-container-width);
   width: 100%;
-  // margin-bottom: 48px;
-  // padding: 0 24px;
   padding-left: 24px;
   margin: 0 auto;
-  // background-color: yellow;
+
+  @include phone {
+    padding: 0 24px;
+  }
+
+  @include phone-middle {
+    padding: 0 24px;
+  }
+
+  @include phone-large {
+    padding: 0 24px;
+  }
 }
 
 .content {
@@ -96,7 +106,6 @@
   width: 100%;
   height: 72px;
   margin-bottom: 16px;
-  // background-color: green;
 }
 
 .bottom {
@@ -106,6 +115,18 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
+
+  @include phone {
+    padding: 0px 16px;
+  }
+
+  @include phone-middle {
+    padding: 0px 16px;
+  }
+
+  @include phone-large {
+    padding: 0px 16px;
+  }
 }
 
 .bottomLeft {
