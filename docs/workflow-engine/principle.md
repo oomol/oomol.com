@@ -4,4 +4,29 @@ sidebar_position: 1
 
 # 📚 Principle
 
-Introduction to the operating mechanism of `OOCANA`
+OOMOL's workflow engine is called `OOCANA`, which is the basis for the entire `OOMOL Studio` to run.
+
+## OOCANA Introduction
+
+`OOCANA` is a scheduling tool for orchestrating and running a series of task units. The scheduling logic is stored in `flow.oo.yaml`, and the content required to run the task is stored in the `block.oo.yaml` file. The former is referred to as `flow` in the following, and the latter is referred to as `block`. There will be a content in `block.oo.yaml` to identify the source code files required to run the block, which we call the block function.
+
+The `block` function can be a script written in `Nodejs` or `Python` language. This function needs to be a fixed name `main`. This function accepts two parameters, the first parameter is the input data, and the second parameter is the auxiliary function provided by the `block` runtime. When writing the `block` function, we can get the input data through the first parameter. This function can directly return a dictionary object (in `nodejs` it can be a `promise` that ultimately returns a dictionary). This dictionary object is the output data of the `block`.
+
+The `flow` file is used to describe the running trigger sequence and data transfer relationship between `blocks`.
+
+## Block Arrangement and Operation
+
+The triggering sequence of `blocks` is determined by the connections in the `flow`. When the data required by the `block` is ready, the `block` will be triggered for execution. We call it data flow driver. In contrast, there is the triggering method of steps in github action - after the previous step is completed, the next step will be triggered. This event-driven method is mostly used in CI/CD scenarios such as compilation and packaging.
+
+Currently, the running environments of `blocks` include `Nodejs` and `Python`. Currently, blocks of the same language run in the same environment. `Block` data in different locales is transferred through json. In addition to using json to transfer `blocks` in the same locale, variables can also be transferred directly. What needs to be noted about variables is that variables are passed by reference, so modifying the value of a variable in a `block` will affect the variable in other `blocks`.
+
+## Block data transfer
+
+Data formats are defined separately in`block` and `flow`. `OOCANA` currently does not check these data formats (some components of the GUI graphical interface will perform this part of the check). During the actual running process, the actual data format returned by the `block` will not be checked for the time being. Therefore, when writing the `block` function, you need to ensure that the returned data format conforms to the data format defined by `flow` and `block`.
+
+## Debugging and Acceleration of Blocks
+
+When there are many `blocks` in the `flow` and each run takes a long time, we can speed up debugging by specifying the way to run the `block`. There are two acceleration methods for running `blocks` at the same time:
+
+1. After running to the specified `block`, the run will end.
+2. Use the previously run data cache (only supports json data) to skip some `blocks` that do not need to be run and run to the specified `block` as soon as possible.
