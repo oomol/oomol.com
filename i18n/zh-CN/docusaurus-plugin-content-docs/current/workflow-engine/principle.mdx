@@ -1,6 +1,6 @@
-# oocana 介绍
+📚 原理
 
-oocana 是对一系列任务单元进行编排与运行的调度工具。其调度逻辑存储在 flow.oo.yaml 中，而运行任务所需要的内容，则存储在 block.oo.yaml 文件中。前者在下文简称为 flow，后者简称为 block。block.oo.yaml 中会有一个内容用来标识运行 block 所需要的源码文件，我们称之为 block 函数。
+OOCANA 是对一系列任务单元进行编排与运行的调度工具。其调度逻辑存储在 flow.oo.yaml 中，而运行任务所需要的内容，则存储在 block.oo.yaml 文件中。前者在下文简称为 flow，后者简称为 block。block.oo.yaml 中会有一个内容用来标识运行 block 所需要的源码文件，我们称之为 block 函数。
 
 block 函数，可以是 nodejs、python 语言编写的脚本。这个函数需要是固定的名称（main）。这个函数接受两个参数，第一个参数是输入数据，第二个参数则是block 运行时提供的辅助函数。在编写 block 函数时，我们可以通过第一个参数获取到输入数据。这个函数可以直接返回一个字典对象（在 nodejs 中可以是一个最终返回字典的 promise ），这个字典对象就是 block 的输出数据。
 
