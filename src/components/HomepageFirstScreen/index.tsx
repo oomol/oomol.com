@@ -50,15 +50,6 @@ export default function HomepageFirstScreen() {
 
   const content = (
     <div className={styles.popoverBox}>
-      <a download href={DownloadUrl.MacOS.Intel}>
-        <div className={styles.popoverBtn}>
-          <div
-            className="i-file-icons-intel"
-            style={{ fontSize: 20, marginLeft: 12 }}
-          />
-          <span style={{ marginLeft: 8 }}>Intel Chip</span>
-        </div>
-      </a>
       <a download href={DownloadUrl.MacOS.AppleSilicon}>
         <div className={styles.popoverBtn}>
           <div
@@ -66,6 +57,15 @@ export default function HomepageFirstScreen() {
             style={{ fontSize: 20, marginLeft: 12 }}
           />
           <span style={{ marginLeft: 8 }}>Apple Silicon</span>
+        </div>
+      </a>
+      <a download href={DownloadUrl.MacOS.Intel}>
+        <div className={styles.popoverBtn}>
+          <div
+            className="i-file-icons-intel"
+            style={{ fontSize: 20, marginLeft: 12 }}
+          />
+          <span style={{ marginLeft: 8 }}>Intel Chip</span>
         </div>
       </a>
     </div>
