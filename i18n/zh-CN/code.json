@@ -6,7 +6,7 @@
     "message": "基于工作流的数据处理的 IDE"
   },
   "HOME.FirstScreen.script": {
-    "message": "OOMOL Studio 是一个工作流编写与编排软件。提供多种编程语言的运行环境，内置丰富的工具套件，支持容器和云原生。"
+    "message": "OOMOL Studio 通过直观的可视化操作，轻松实现代码模块与 API 服务的连接"
   },
   "HOME.FirstScreen.download-macos": {
     "message": "下载适用于 MacOS 的版本"
@@ -53,7 +53,7 @@
     "message": "结构化数据"
   },
   "HOME.Scenes.data-science.inner": {
-    "message": "使用熟悉的脚本语言处理数据并显示图表。此外，我们支持使用图形界面配置节点参数，通过拖放和连接等简单操作创建工作流。我们提供的容器环境还消除了共享的障碍，大大缩短了从脚本到产品的距离。"
+    "message": "OOMOL 能使用脚本语言处理数据并轻松生成图表。通过简单的拖放和连线操作，且配置节点参数，即可快速构建工作流。OOMOL 的容器环境解决了协作痛点，显著缩短了从脚本到产品的转化路径。"
   },
   "HOME.Scenes.media-processing.title": {
     "message": "多媒体处理"
@@ -62,7 +62,7 @@
     "message": "非结构化数据"
   },
   "HOME.Scenes.media-processing.inner": {
-    "message": "开发人员可以将常见的视频处理库封装成功能节点，并使用 OOMOL 提供的图形配置界面添加各种可调参数。借助这样的工具，像抖音等平台上的内容创作者可以通过拖放即可创建音视频处理工作流。诸如为视频添加多语言字幕等任务可以自动化并批量完成。"
+    "message": "开发人员可以将常用的视频处理库封装为功能节点，并通过 OOMOL 提供的图形化界面添加各种可调参数。借助这一工具，内容创作者如抖音平台用户等，能够通过简单的拖放操作轻松创建音视频处理工作流。诸如为视频添加多语言字幕等任务，都可以自动化并批量完成。"
   },
   "HOME.Features.title": {
     "message": "功能和优势"
@@ -71,13 +71,13 @@
     "message": "直观交互"
   },
   "HOME.Features.intuitive-interaction.inner1": {
-    "message": "通过拖放轻松构建工作流。"
+    "message": "通过简单的拖放操作即可轻松构建工作流。"
   },
   "HOME.Features.intuitive-interaction.inner2": {
-    "message": "通过图形组件灵活配置节点参数。"
+    "message": "支持图形组件灵活配置节点参数。"
   },
   "HOME.Features.intuitive-interaction.inner3": {
-    "message": "预览多种常用数据类型。"
+    "message": "支持预览多种常用数据类型。"
   },
   "HOME.Features.pre-installed-environment.title": {
     "message": "预安装环境"
@@ -89,7 +89,7 @@
     "message": "OOMOL 将开发环境统一到容器中，不同系统的用户可以自由共享工作流。"
   },
   "HOME.Features.pre-installed-environment.inner3": {
-    "message": "安全隔离不会影响用户的本地环境。用户也无需担心设备中的数据安全问题。"
+    "message": "安全隔离不会影响用户的本地环境，用户无需担心设备中的数据安全问题。"
   },
   "HOME.Features.programming-friendly.title": {
     "message": "编程友好"
@@ -107,7 +107,7 @@
     "message": "社区共享"
   },
   "HOME.Features.support-sharing.inner1": {
-    "message": "将工作流和区块工具箱分享到 OOMOL 社区，方便其他用户轻松使用。"
+    "message": "用户可以将工作流和区块工具箱分享到 OOMOL 社区，方便其他用户轻松使用。"
   },
   "HOME.Features.support-sharing.inner2": {
     "message": "工作流源代码也可以作为 GitHub 仓库分享。"
