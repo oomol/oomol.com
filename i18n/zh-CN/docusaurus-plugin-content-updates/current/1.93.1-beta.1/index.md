@@ -1,6 +1,6 @@
 ---
-slug: 0.0.1-beta.1
-title: 0.0.1-beta.1
+slug: 1.93.1-beta.1
+title: 1.93.1-beta.1
 date: 2024-08-30
 ---
 
