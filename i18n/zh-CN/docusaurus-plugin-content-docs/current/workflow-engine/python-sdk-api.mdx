@@ -1,0 +1,234 @@
+---
+sidebar_position: 3
+---
+
+import python_df from "@site/static/img/docs/python_df.png";
+import python_plt from "@site/static/img/docs/python_plt.png";
+import python_plotly from "@site/static/img/docs/python_plotly.png";
+
+# 📙 Python API
+
+## 1. Introduction
+
+开发人员将在 Scriptlet Block 中调用我们的SDK以与 `OOCANA` 工作流引擎进行交互。
+
+## 2. `Context` Object
+
+如何在 Scriptlet Block 中使用 SDK。
+
+```python
+from oocana import Context
+
+def main(inputs: dict, context: Context):
+    # Report Block done.
+    context.done()
+    # Report logs
+    context.log_JSON()
+    # Report error.
+    context.send_error()
+    # Report extra Block messages.
+    context.send_message()
+    # Send to Preview
+    context.preview()
+    # Report Block's stdio and stdout message.
+    context.report_log()
+    # Report progress, progress 1 ~ 100
+    context.report_progress()
+    return { "out": None }
+
+```
+
+## 3. `Context` Types
+
+`OOCANA` SDK 提供的 API 类型描述，帮助用户了解如何准确使用这些 API。
+
+```python
+
+class Context:
+
+    @property
+    def keepAlive(self):
+        return self.__keep_alive
+
+    @property
+    def inputs(self):
+        return self.__inputs
+
+    @property
+    def session_id(self):
+        return self.__block_info.session_id
+
+    @property
+    def job_id(self):
+        return self.__block_info.job_id
+
+    @property
+    def job_info(self) -> JobDict:
+        return self.__block_info.job_info()
+
+    @property
+    def block_info(self) -> BlockDict:
+        return self.__block_info.block_dict()
+
+    @property
+    def node_id(self) -> str:
+        return self.__block_info.stacks[-1].get("node_id", None)
+
+    def output(self, key: str, value: Any, done: bool = False):
+
+    def done(self, error: str | None = None):
+        if self.__is_done:
+            return
+        self.__is_done = True
+        if error is None:
+            self.__mainframe.send(self.job_info, {"type": "BlockFinished"})
+        else:
+            self.__mainframe.send(
+                self.job_info, {"type": "BlockFinished", "error": error}
+            )
+
+    def send_message(self, payload):
+        self.__mainframe.report(
+            self.block_info,
+            {
+                "type": "BlockMessage",
+                "payload": payload,
+            },
+        )
+
+    def preview(self, payload: PreviewPayload):
+        payload = self.__dataframe(payload)
+        payload = self.__matplotlib(payload)
+
+        self.__mainframe.report(
+            self.block_info,
+            {
+                "type": "BlockPreview",
+                "payload": payload,
+            },
+        )
+
+    @throttle(0.3)
+    def report_progress(self, progress: float | int):
+        self.__mainframe.report(
+            self.block_info,
+            {
+                "type": "BlockProgress",
+                "rate": progress,
+            }
+        )
+
+    def report_log(self, line: str, stdio: str = "stdout"):
+        self.__mainframe.report(
+            self.block_info,
+            {
+                "type": "BlockLog",
+                "log": line,
+                stdio: stdio,
+            },
+        )
+
+    def log_json(self, payload):
+        self.__mainframe.report(
+            self.block_info,
+            {
+                "type": "BlockLogJSON",
+                "json": payload,
+            },
+        )
+
+    def send_error(self, error: str):
+        self.__mainframe.send(self.job_info, {"type": "BlockError", "error": error})
+
+```
+
+## 4. `Context.preview` Types
+
+`context.preview()` 是核心 API 。它的主要功能是帮助开发人员预览数据。我们支持几乎所有常用数据的预览。
+
+### 4.1 `PreviewPayload` Types
+
+```python
+    def preview(self, payload: PreviewPayload):
+    # python only
+    payload = self.__dataframe(payload)
+    # python only
+    payload = self.__matplotlib(payload)
+
+    self.__mainframe.report(
+        self.block_info,
+        {
+            "type": "BlockPreview",
+            "payload": payload,
+        },
+    )
+```
+
+```python
+
+    from typing import Any, TypedDict, List, Literal, TypeAlias
+
+    class TablePreviewData(TypedDict):
+        head: List[str | int | float]
+        rows: List[List[str | int | float | bool]]
+
+    class TablePreviewPayload(TypedDict):
+        type: Literal['table']
+        data: TablePreviewData | Any
+
+    class MediaPreviewPayload(TypedDict):
+        type: Literal['image', 'audio', 'video', 'markdown', "iframe"]
+        data: str
+
+    PreviewPayload: TypeAlias = TablePreviewPayload | MediaPreviewPayload | Any
+
+```
+
+### 4.2 `Preview` 例子
+
+```python
+  context.preview({
+    # type can be "image", "video", "audio", "markdown", "table", "iframe"
+    "type": "video",
+    # data can be file path, base64, pandas dataframe
+    "data": "https://www.w3schools.com/html/mov_bbb.mp4"
+  })
+```
+
+:::tip
+仅支持 Python
+:::
+
+```python
+    import pandas as pd
+
+    df = pd.DataFrame({
+        'A': [1, 2, 3],
+        'B': [4, 5, 6],
+        'C': [7, 8, 9]
+    })
+     context.preview(df)
+```
+
+<img src={python_df} width="720" />
+
+```python
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    x = np.linspace(0, 10, 100)
+    y = np.sin(x)
+    plt.plot(x, y)
+    plt.show()
+```
+
+<img src={python_plt} width="720" />
+
+```python
+    import plotly.graph_objects as go
+
+    fig = go.Figure(data=[go.Bar(y=[2, 3, 1])])
+    fig.show()
+```
+
+<img src={python_plotly} width="720" />
