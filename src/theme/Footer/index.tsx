@@ -56,7 +56,7 @@ const logoNodeData: LogoNodeDataType[] = [
   {
     name: "discord",
     src: "/img/discord.svg",
-    href: "https://discord.com/channels/918759925805617163/1128586819185934436",
+    href: "https://discord.gg/W3evr2kJDa",
     width: 22,
   },
   {

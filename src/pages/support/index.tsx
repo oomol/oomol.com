@@ -4,45 +4,7 @@ import Layout from "../../theme/Layout";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Image from "@theme/ThemedImage";
 import { Button } from "@site/src/components/Button";
-type SupportDataType = {
-  name: string;
-  inner: string;
-  href: string;
-  target?: React.HTMLAttributeAnchorTarget;
-  btn: string;
-};
-export const SupportData: SupportDataType[] = [
-  {
-    name: "Discord Support",
-    inner:
-      "We offer email based support. If you need SLAs, guaranteed response times, or have an issue, please contact us here.",
-    href: "https://discord.com/channels/918759925805617163/1128586819185934436",
-    target: "_blank",
-    btn: "Join Discord",
-  },
-  {
-    name: "Email Support",
-    inner:
-      "We offer email based support. If you need SLAs, guaranteed response times, or have an issue, please contact us here.",
-    href: "mailto:support@oomol.com",
-    target: undefined,
-    btn: "Email To Us",
-  },
-];
 export default function Support() {
-  const supportNodes = SupportData.map((data, index) => {
-    return (
-      <div className={styles.supportCell} key={`support-${index}`}>
-        <div className={styles.title}>{data.name}</div>
-        <div className={styles.inner}>
-          <div className={styles.text}>{data.inner}</div>
-          <Button target={data.target} href={data.href}>
-            {data.btn}
-          </Button>
-        </div>
-      </div>
-    );
-  });
   return (
     <Layout>
       <div className={styles.supportBox}>
@@ -88,10 +50,7 @@ export default function Support() {
                 If you need instant communication, please join our Discord
                 server.
               </div>
-              <Button
-                target="_blank"
-                href="https://discord.com/channels/918759925805617163/1128586819185934436"
-              >
+              <Button target="_blank" href="https://discord.gg/W3evr2kJDa">
                 Join Discord
               </Button>
             </div>
@@ -111,7 +70,6 @@ export default function Support() {
           </div>
         </div>
       </div>
-      {/* <HomepageStarter /> */}
     </Layout>
   );
 }
