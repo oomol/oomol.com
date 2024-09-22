@@ -3,7 +3,6 @@ import styles from "./styles.module.scss";
 import Layout from "../../theme/Layout";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Image from "@theme/ThemedImage";
-import HomepageStarter from "@site/src/components/HomepageStarter";
 import { translate } from "@docusaurus/Translate";
 import { Button } from "@site/src/components/Button";
 
@@ -36,7 +35,6 @@ export default function Index() {
           </div>
           <div className={styles["card-right"]}>
             <div className={styles.name}>
-              {" "}
               {translate({ message: "HOME.BrandAssets.logo-name" })}
             </div>
             <div className={styles.script}>
@@ -45,7 +43,10 @@ export default function Index() {
               {translate({ message: "HOME.BrandAssets.scripts-2" })}
             </div>
             <div className={styles["button-box"]}>
-              <Button className={styles.button}>
+              <Button
+                className={styles.button}
+                href="https://oomol-flows.oss-cn-hangzhou.aliyuncs.com/1726976805_logos.zip"
+              >
                 {translate({ message: "HOME.BrandAssets.download-btn-text" })}
               </Button>
             </div>
