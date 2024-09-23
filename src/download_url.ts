@@ -4,8 +4,8 @@ export const DownloadUrl = {
   },
   MacOS: {
     Intel:
-      "https://static.oomol.com/release/insider/darwin/x64/OOMOL%20Studio.app-1.93.1-2024-09-20.23.dmg",
+      "https://static.oomol.com/release/insider/darwin/x64/OOMOL%20Studio.app-1.93.1-2024-09-22.23.dmg",
     AppleSilicon:
-      "https://static.oomol.com/release/insider/darwin/arm64/OOMOL%20Studio.app-1.93.1-2024-09-20.23.dmg",
+      "https://static.oomol.com/release/insider/darwin/arm64/OOMOL%20Studio.app-1.93.1-2024-09-22.23.dmg",
   },
 };
