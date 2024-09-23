@@ -271,10 +271,11 @@
 }
 
 .sectionOne::before {
-  left: 7%;
+  left: 2%;
   background-image: url(/img/side_left.svg);
   opacity: 0.3;
-
+  //
+  background-position: 80% center; /* 新增这一行 */
   @include remove-cover-on-phone;
 }
 
@@ -282,6 +283,7 @@
   right: 2%;
   background-image: url(/img/side_right.svg);
   opacity: 0.3;
-
+  // background-color: yellow;
+  background-position: 20% center; /* 新增这一行 */
   @include remove-cover-on-phone;
 }
