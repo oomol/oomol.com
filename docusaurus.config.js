@@ -236,10 +236,10 @@ const config = {
       // TODO: 当前还不需要搜索模块，等内容更全了再添加
       algolia: {
         // Algolia 提供的应用 ID
-        appId: "36S5HY6ZV7",
+        appId: "N4FWO55T3D",
 
         //  公开 API 密钥：提交它没有危险
-        apiKey: "26b6fe54af78be1bd1fbe98e758d4c7f",
+        apiKey: "eb0faf4f965d7729b0a9709908284633",
 
         indexName: "prod_oomol_com",
 
