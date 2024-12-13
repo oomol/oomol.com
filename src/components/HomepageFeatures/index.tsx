@@ -5,6 +5,30 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import { clsx } from "clsx";
 import { translate } from "@docusaurus/Translate";
 
+export const FeatureItem = () => {
+  return (
+    <div className={styles.feature}>
+      <Image
+        className={styles.image}
+        sources={{
+          light: useBaseUrl("/img/feature_1.png"),
+          dark: useBaseUrl("/img/feature_1.png"),
+        }}
+      />
+      <div className="content">
+        <div className="title">
+          <i className="i-codicon-wand" />
+          <h3 className="sub-title">Intuitive Interaction</h3>
+        </div>
+        <p className="inner">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+    </div>
+  );
+};
+
 type SuperiorityType = {
   imageUrl: string;
   width: number;
@@ -133,11 +157,13 @@ export default function HomepageFeatures() {
   return (
     <div className={styles.container}>
       <div className={styles.sectionTitle}>
+        <i className="i-codicon-symbol-misc" />
         {translate({
           message: "HOME.Features.title",
         })}
       </div>
       {superiorityNode}
+      {/* <FeatureItem /> */}
     </div>
   );
 }
