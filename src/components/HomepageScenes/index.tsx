@@ -11,6 +11,7 @@ type ScenesDataType = {
   tag: string;
   color: string;
   inner: string;
+  icon: string;
 };
 
 const scenesData: ScenesDataType[] = [
@@ -21,6 +22,7 @@ const scenesData: ScenesDataType[] = [
     tag: translate({ message: "HOME.Scenes.data-science.tag" }),
     color: "blue",
     inner: translate({ message: "HOME.Scenes.data-science.inner" }),
+    icon: "i-codicon-graph-line",
   },
   {
     imageUrl: "/img/media.jpg",
@@ -29,6 +31,7 @@ const scenesData: ScenesDataType[] = [
     tag: translate({ message: "HOME.Scenes.media-processing.tag" }),
     color: "green",
     inner: translate({ message: "HOME.Scenes.media-processing.inner" }),
+    icon: "i-codicon-device-camera-video",
   },
 ];
 
@@ -37,11 +40,12 @@ export default function HomepageScenes() {
     return (
       <div className={styles.sectionCell} key={`scenes-${index}`}>
         <div className={styles.scenesText}>
+          <span className={styles.scenesTag}>{data.tag}</span>
           <div className={styles.scenesTextTitle}>
+            <i className={data.icon} />
             {data.title}
-            <span className={styles.scenesTag}>{data.tag}</span>
           </div>
-          <div className={styles.scenesTextInner}>{data.inner}</div>
+          <p className={styles.scenesTextInner}>{data.inner}</p>
         </div>
         <div>
           <Image
@@ -59,6 +63,7 @@ export default function HomepageScenes() {
     <div className={styles.scenes}>
       <div className={styles["scenes-mid"]}>
         <div className={styles.sectionTitle}>
+          <i className="i-codicon-activate-breakpoints" />
           {translate({
             message: "HOME.Scenes.title",
           })}

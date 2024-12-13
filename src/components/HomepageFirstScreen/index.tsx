@@ -79,85 +79,45 @@ export default function HomepageFirstScreen() {
     }
   };
   return (
-    <div className={styles.sectionOne}>
-      <div className={styles.sectionOneBox}>
-        <div className={styles.sectionOneMid}>
-          <div className={styles.sectionOneText}>
-            <div className={styles.sectionOneTextBox}>
-              <div className={styles.sectionOneTextTitle}>{data.slogan}</div>
-              <div className={styles.sectionOneTextInner}>{data.script}</div>
-              <div className={styles.sectionOneBtnBox}>
-                {detectOSAndArchitecture() === OS.MacOS ? (
-                  <div className={styles.downloadBtnBox}>
-                    <div
-                      onMouseOver={() => {
-                        setBtnPopState(true);
-                      }}
-                      onMouseLeave={() => {
-                        setBtnPopState(false);
-                      }}
-                    >
-                      <Button
-                        className={styles.sectionOneBtn}
-                        icon={
-                          <div
-                            className="i-material-symbols-download-rounded"
-                            style={{ fontSize: 18 }}
-                          />
-                        }
-                      >
-                        {translate({
-                          message: "HOME.FirstScreen.download-macos",
-                        })}
-                      </Button>
-                    </div>
-                    <div
-                      onMouseEnter={() => {
-                        setPopState(true);
-                      }}
-                      onMouseLeave={() => {
-                        setPopState(false);
-                      }}
-                      style={{
-                        display: isNeedPopView(isBtnPopView, isPopView)
-                          ? "block"
-                          : "none",
-                      }}
-                      className={styles.popover}
-                    >
-                      <div className={styles.mid}>{content}</div>
-                    </div>
-                  </div>
-                ) : (
-                  <div className={styles.windowsBox}>
-                    <a download href={DownloadUrl.Windows.X64}>
-                      <Button className={styles.sectionOneBtn}>
-                        {translate({
-                          message: "HOME.FirstScreen.download-windows",
-                        })}
-                      </Button>
-                    </a>
-                    <span className={styles.windowsSubtitle}>
-                      {translate({
-                        message: "HOME.FirstScreen.download-windows-subtitle",
-                      })}
-                    </span>
-                  </div>
-                )}
-              </div>
-            </div>
+    <section>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <div className={styles["slogan-box"]}>
+            <h1 className={styles["slogan-one"]}>WorkFlow based</h1>
+            <h1 className={styles["slogan-two"]}>data processing IDE.</h1>
           </div>
-          <div className={styles.sectionOneImageBox}>
-            <Image
-              className={styles.sectionOneImage}
-              sources={{
-                light: useBaseUrl("/img/oomol_studio.jpg"),
-                dark: useBaseUrl("/img/oomol_studio.jpg"),
-              }}
-            />
+          <div className={styles["intro-box"]}>
+            <div className={styles.overview}>
+              OOMOL Studio makes it easy to connect code snippets and API
+              services through intuitive visual interactions.
+            </div>
+            {/* TODO: restore download feature */}
+            <div className={styles["button-box"]}>
+              <Button
+                icon={<i className="i-codicon-desktop-download" />}
+                className={styles.download}
+              >
+                Download For macOS
+              </Button>
+              <Button
+                icon={<i className="i-codicon-device-camera-video" />}
+                className={styles.watch}
+              >
+                Watch Demo
+              </Button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <div className={styles["image-box"]}>
+        <Image
+          className={styles.image}
+          sources={{
+            light: useBaseUrl("/img/oomol_studio.jpg"),
+            dark: useBaseUrl("/img/oomol_studio.jpg"),
+          }}
+        />
+      </div>
+    </section>
   );
 }

@@ -164,19 +164,6 @@
   justify-content: center;
 }
 
-.sectionOneImageBox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sectionOneImage {
-  width: 960px;
-  border-radius: 6px;
-  margin-top: 12px;
-  overflow: hidden;
-}
-
 .sectionInner {
   width: 100%;
   display: flex;
@@ -274,7 +261,6 @@
   left: 2%;
   background-image: url(/img/side_left.svg);
   opacity: 0.3;
-  //
   background-position: 80% center; /* 新增这一行 */
   @include remove-cover-on-phone;
 }
@@ -286,4 +272,90 @@
   // background-color: yellow;
   background-position: 20% center; /* 新增这一行 */
   @include remove-cover-on-phone;
+}
+
+.container {
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.container::before {
+  background: url(/img/background.svg) no-repeat center center;
+  content: "";
+  position: absolute;
+  top: 38px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.header {
+  max-width: 1280px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.slogan-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.slogan-one {
+  font-size: 58px;
+}
+
+.slogan-two {
+  font-size: 58px;
+  background: linear-gradient(90deg, #7d7fe9 0%, #ffffff 50.5%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.overview {
+  max-width: 624px;
+  size: 16px;
+  font-weight: 400;
+  color: #ccccccb2;
+}
+
+.intro-box {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.button-box {
+  display: flex;
+  gap: 14px;
+}
+
+.image-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  max-width: 1280px;
+  border-radius: 6px;
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.download {
+  height: 40px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.watch {
+  height: 40px;
+  border-radius: 8px;
+  background-color: #000000;
+  color: #ffffff;
 }

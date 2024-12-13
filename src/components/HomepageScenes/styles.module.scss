@@ -1,14 +1,15 @@
 @import "../../css/custom.scss";
 
 .sectionTitle {
-  font-size: 36px;
-  margin-top: 60px;
-  margin-bottom: 30px;
-  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  gap: 14px;
+  font-size: 30px;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  font-weight: 900;
 
   @include phone {
     margin-top: 0;
@@ -33,7 +34,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin-top: 36px;
+  align-items: center;
+  margin-top: 40px;
+  gap: 40px;
 }
 
 @media screen and (max-width: 960px) {
@@ -94,24 +97,59 @@
 .scenesTextTitle {
   display: flex;
   align-items: center;
-  font-size: 24px;
-  font-weight: bold;
+  gap: 8px;
+  font-size: 30px;
+  font-weight: 900;
+  color: #f0f6fc;
 }
 
 .scenesTag {
-  margin-top: 2px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 16px;
+  margin-bottom: 14px;
   font-size: 12px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  padding-left: 8px;
-  padding-right: 8px;
-  background-color: #383970;
-  margin-left: 8px;
-  border-radius: 4px;
+  font-weight: 500;
+  color: #f0f6fc;
+  background-color: #0d1116;
+  border-radius: 100px;
+  text-align: center;
+  overflow: hidden;
+  border: none;
+  white-space: nowrap;
+}
+
+.scenesTag::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  padding: 1.5px;
+  background: linear-gradient(
+    127.66deg,
+    #0d1116 0%,
+    #987de9 15%,
+    #7d7fe9 39%,
+    #ffffff 62%,
+    #7da6e9 86%,
+    #0d1116 100%
+  ); /* 渐变背景 */
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  box-sizing: border-box;
 }
 
 .scenesTextInner {
-  margin-top: 12px;
-  font-size: 16px;
+  margin-top: 14px;
   margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(240, 246, 252, 0.7);
 }
