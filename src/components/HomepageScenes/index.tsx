@@ -47,15 +47,13 @@ export default function HomepageScenes() {
           </div>
           <p className={styles.scenesTextInner}>{data.inner}</p>
         </div>
-        <div>
-          <Image
-            className={styles.scenesImage}
-            sources={{
-              light: useBaseUrl(data.imageUrl),
-              dark: useBaseUrl(data.imageUrl),
-            }}
-          />
-        </div>
+        <Image
+          className={styles.scenesImage}
+          sources={{
+            light: useBaseUrl(data.imageUrl),
+            dark: useBaseUrl(data.imageUrl),
+          }}
+        />
       </div>
     );
   });
