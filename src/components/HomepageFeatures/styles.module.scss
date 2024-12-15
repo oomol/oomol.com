@@ -158,8 +158,8 @@
 }
 
 .title-text {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: 900;
   margin-bottom: 0;
 }
 
@@ -184,6 +184,19 @@
 
 .icon {
   font-size: 30px;
+}
+
+.sub-icon {
+  font-size: 20px;
+  background: linear-gradient(
+    127.66deg,
+    #0d1116 0%,
+    #987de9 15%,
+    #7d7fe9 39%,
+    #ffffff 62%,
+    #7da6e9 86%,
+    #0d1116 100%
+  );
 }
 
 .container {

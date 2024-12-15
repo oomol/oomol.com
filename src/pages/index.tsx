@@ -6,6 +6,7 @@ import HomepageDownloads from "@site/src/components/HomepageDownloads";
 import HomepageScenes from "@site/src/components/HomepageScenes";
 import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
 import HomepageStarter from "@site/src/components/HomepageStarter";
+import HomepagePricing from "../components/HomePagePricing";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <HomepageFirstScreen />
         <HomepageScenes />
         <HomepageFeatures />
+        <HomepagePricing />
         <HomepageDownloads />
         {/* <HomepageStarter /> */}
         <Analytics />

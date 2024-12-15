@@ -27,10 +27,11 @@
 .sectionInner {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .sectionCell {
-  width: 100%;
+  max-width: 1280px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;

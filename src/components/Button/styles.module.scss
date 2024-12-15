@@ -1,6 +1,5 @@
 .btn {
   background-color: #383970;
-  // padding: 6px 20px;
   height: 36px;
   border: none;
   border-radius: 4px;
@@ -20,7 +19,6 @@
 
 .btnDisable {
   background-color: #383970;
-  // padding: 6px 20px;
   opacity: 0.7;
   height: 36px;
   border: none;
@@ -38,13 +36,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 12px;
 }
 
 .left {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 12px;
 }
 
 .right {

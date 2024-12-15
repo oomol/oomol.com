@@ -92,16 +92,21 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
               <div className={styles.cutLine} />
             </>
           )}
-          <div className={styles.navbarBtnBox}>
-            <Button
-              className={styles["btn-nav"]}
-              target="_blank"
-              icon={<div className="i-prime-send" style={{ fontSize: 18 }} />}
-              href="https://hub.oomol.com/"
-            >
+          {/* <div className={styles.navbarBtnBox}> */}
+          <Button
+            className={styles["btn-nav"]}
+            target="_blank"
+            iconPosition="end"
+            icon={
+              <div className="i-codicon:arrow-right" style={{ fontSize: 18 }} />
+            }
+            href="https://hub.oomol.com/"
+          >
+            <div className={styles["btn-nav-text"]}>
               {translate({ message: "Theme.Navbar.go-to-hub-flow" })}
-            </Button>
-          </div>
+            </div>
+          </Button>
+          {/* </div> */}
         </div>
         <div
           aria-label="Navigation bar toggle"
@@ -153,18 +158,6 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
                 />
               ))}
             </ul>
-            {/* TODO: 重构组件后删除此注释 */}
-            {/* <Button
-              target="_blank"
-              href={"https://console.oomol.com/"}
-              className={styles.btn}
-              style={{ marginRight: 12 }}
-            >
-              Login
-            </Button> */}
-            {/* <button className={styles.btn} style={{ marginRight: 12 }}>
-              Login
-            </button> */}
           </div>
         </div>
       </div>

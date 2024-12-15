@@ -4,6 +4,7 @@ import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { DownloadUrl } from "@site/src/download_url";
 import { Button } from "../Button";
+import { translate } from "@docusaurus/Translate";
 
 enum Platform {
   ARM64 = "ARM64",
@@ -15,6 +16,31 @@ enum OS {
   Linux = "Linux",
   MacOS = "MacOS",
 }
+
+type DownloadBtnProps = {
+  text: string;
+  icon: string;
+  downloadingUrl: string;
+  isReady?: boolean;
+};
+
+const DownloadBtn: DownloadBtnProps[] = [
+  {
+    text: "Windows x64",
+    icon: "/img/windows.svg",
+    downloadingUrl: DownloadUrl.Windows.X64,
+  },
+  {
+    text: "MacOS Intel Chip",
+    icon: "/img/macos-intel.svg",
+    downloadingUrl: DownloadUrl.MacOS.Intel,
+  },
+  {
+    text: "macOS Apple Silicon",
+    icon: "/img/macos-apple-silicon.svg",
+    downloadingUrl: DownloadUrl.MacOS.AppleSilicon,
+  },
+];
 
 type PackageType = {
   platform: string;
@@ -42,23 +68,6 @@ const downloadData: DownloadDataType[] = [
       },
     ],
   },
-  // {
-  //   imageUrl: "/img/linux.svg",
-  //   width: 120,
-  //   os: OS.Linux,
-  //   package: [
-  //     {
-  //       platform: Platform.X64,
-  //       url: "",
-  //       isReady: false,
-  //     },
-  //     {
-  //       platform: Platform.ARM64,
-  //       url: "",
-  //       isReady: false,
-  //     },
-  //   ],
-  // },
   {
     imageUrl: "/img/macos.svg",
     width: 80,
@@ -77,47 +86,34 @@ const downloadData: DownloadDataType[] = [
     ],
   },
 ];
-export default function HomepageDownloads() {
-  const downloadNodes = downloadData.map((data, index) => {
-    const btnNodes = data.package.map((btn, index) => {
-      return (
-        <Button
-          disabled={!btn.isReady}
-          className={styles.btn}
-          key={`btn-${index}`}
-          href={btn.url}
-          layout="left"
-          icon={
-            <div
-              className="i-material-symbols-download-rounded"
-              style={{ fontSize: 18, marginLeft: 8, marginRight: 4 }}
-            />
-          }
-        >
-          <span className={styles.os}>{data.os}</span>
-          <span className={styles.platform}>{btn.platform}</span>
-        </Button>
-      );
-    });
 
-    return (
-      <div className={styles.sectionDownloadCellBox} key={`download-${index}`}>
-        <div className={styles.sectionDownloadCell}>
-          <Image
-            style={{ width: data.width }}
-            sources={{
-              light: useBaseUrl(data.imageUrl),
-              dark: useBaseUrl(data.imageUrl),
-            }}
-          />
-        </div>
-        <div className={styles.btnNodeBox}>{btnNodes}</div>
-      </div>
-    );
-  });
+export default function HomepageDownloads() {
   return (
-    <div id="download" className={styles.sectionDownload}>
-      {downloadNodes}
+    <div className={styles.container}>
+      <img src={"/img/logo.svg"} />
+      <div className={styles.content}>
+        <p className={styles.overview}>
+          {translate({
+            message: "HOME.FirstScreen.slogan",
+          })}
+        </p>
+        <p className={styles.description}>
+          Oomol Studio 通过直观的视觉交互轻松连接代码片段和 API 服务
+        </p>
+      </div>
+      <div className={styles.downloads}>
+        {DownloadBtn.map((data, index) => {
+          return (
+            <Button
+              className={styles["download-btn"]}
+              icon={<img src={data.icon} />}
+              href={data.downloadingUrl}
+            >
+              {data.text}
+            </Button>
+          );
+        })}
+      </div>
     </div>
   );
 }

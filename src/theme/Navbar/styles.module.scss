@@ -25,9 +25,17 @@
 }
 
 .btn-nav {
-  width: 150px;
+  height: 32px;
   font-weight: bold;
   margin-left: 12px;
+  background-color: #0d1116 !important;
+  border: solid 1px #3d444d !important;
+  border-radius: 8px !important;
+}
+
+.btn-nav-text {
+  font-weight: 500;
+  font-size: 12px;
 }
 
 :global(html[data-theme="light"]) .brand {

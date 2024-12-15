@@ -7,16 +7,16 @@ import { translate } from "@docusaurus/Translate";
 
 type SuperiorityType = {
   imageUrl: string;
-  // width: number;
   title: string;
+  icon: string;
   inners: string[];
 };
 
 const superiorityList: SuperiorityType[] = [
   {
     imageUrl: "/img/feature_1.jpg",
-    // width: 540,
     title: translate({ message: "HOME.Features.intuitive-interaction.title" }),
+    icon: "i-codicon-wand",
     inners: [
       translate({ message: "HOME.Features.intuitive-interaction.inner1" }),
       translate({ message: "HOME.Features.intuitive-interaction.inner2" }),
@@ -25,10 +25,10 @@ const superiorityList: SuperiorityType[] = [
   },
   {
     imageUrl: "/img/feature_2.jpg",
-    // width: 540,
     title: translate({
       message: "HOME.Features.pre-installed-environment.title",
     }),
+    icon: "i-codicon:server-environment",
     inners: [
       translate({ message: "HOME.Features.pre-installed-environment.inner1" }),
       translate({ message: "HOME.Features.pre-installed-environment.inner2" }),
@@ -37,8 +37,8 @@ const superiorityList: SuperiorityType[] = [
   },
   {
     imageUrl: "/img/feature_3.jpg",
-    // width: 540,
     title: translate({ message: "HOME.Features.programming-friendly.title" }),
+    icon: "i-codicon:code",
     inners: [
       translate({ message: "HOME.Features.programming-friendly.inner1" }),
       translate({ message: "HOME.Features.programming-friendly.inner2" }),
@@ -48,8 +48,8 @@ const superiorityList: SuperiorityType[] = [
 
   {
     imageUrl: "/img/feature_4.jpg",
-    // width: 540,
     title: translate({ message: "HOME.Features.support-sharing.title" }),
+    icon: "i-codicon:globe",
     inners: [
       translate({ message: "HOME.Features.support-sharing.inner1" }),
       translate({ message: "HOME.Features.support-sharing.inner2" }),
@@ -58,7 +58,12 @@ const superiorityList: SuperiorityType[] = [
   },
 ];
 
-export const FeatureItem = ({ imageUrl, title, inners }: SuperiorityType) => {
+export const FeatureItem = ({
+  imageUrl,
+  title,
+  inners,
+  icon,
+}: SuperiorityType) => {
   return (
     <div className={styles.feature}>
       <Image
@@ -70,7 +75,7 @@ export const FeatureItem = ({ imageUrl, title, inners }: SuperiorityType) => {
       />
       <div className={styles.content}>
         <div className={styles.title}>
-          <i className="i-codicon-wand" />
+          <i className={`${icon} ${styles["sub-icon"]}`} />
           <h3 className={styles["title-text"]}>Intuitive Interaction</h3>
         </div>
         <p className="inner">
@@ -83,78 +88,7 @@ export const FeatureItem = ({ imageUrl, title, inners }: SuperiorityType) => {
   );
 };
 
-function isOdd(num) {
-  return num % 2 !== 0;
-}
-
 export default function HomepageFeatures() {
-  // const superiorityNode = superiorityList.map((data, index) => {
-  //   const innerNodes = data.inners.map((inner, index) => {
-  //     return (
-  //       <div className={styles.sectionList} key={`inner-${index}`}>
-  //         {inner}
-  //       </div>
-  //     );
-  //   });
-  //   if (isOdd(index)) {
-  //     return (
-  //       <div
-  //         className={clsx(
-  //           styles.sectionTwo,
-  //           isOdd(index) && styles.evenSectionTwo
-  //         )}
-  //         key={`${index}`}
-  //       >
-  //         <div className={styles.sectionTwoBox}>
-  //           <div className={styles.sectionTwoSmall}>
-  //             <Image
-  //               style={{ width: data.width, borderRadius: 8 }}
-  //               sources={{
-  //                 light: useBaseUrl(data.imageUrl),
-  //                 dark: useBaseUrl(data.imageUrl),
-  //               }}
-  //             />
-  //           </div>
-  //           <div className={styles.sectionTwoLarge}>
-  //             <div className={styles.sectionTwoLargeBox}>
-  //               <div className={styles.sectionTwoLargeTitle}>{data.title}</div>
-  //               <div className={styles.sectionTwoLargeInner}>{innerNodes}</div>
-  //             </div>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     );
-  //   } else {
-  //     return (
-  //       <div
-  //         className={clsx(
-  //           styles.sectionTwo,
-  //           isOdd(index) && styles.evenSectionTwo
-  //         )}
-  //         key={`${index}`}
-  //       >
-  //         <div className={styles.sectionTwoBox}>
-  //           <div className={styles.sectionTwoLarge}>
-  //             <div className={styles.sectionTwoLargeBox}>
-  //               <div className={styles.sectionTwoLargeTitle}>{data.title}</div>
-  //               <div className={styles.sectionTwoLargeInner}>{innerNodes}</div>
-  //             </div>
-  //           </div>
-  //           <div className={styles.sectionTwoSmall}>
-  //             <Image
-  //               style={{ width: data.width, borderRadius: 8 }}
-  //               sources={{
-  //                 light: useBaseUrl(data.imageUrl),
-  //                 dark: useBaseUrl(data.imageUrl),
-  //               }}
-  //             />
-  //           </div>
-  //         </div>
-  //       </div>
-  //     );
-  //   }
-  // });
-
   return (
     <div className={styles.container}>
       <div className={styles.sectionTitle}>
@@ -163,7 +97,6 @@ export default function HomepageFeatures() {
           message: "HOME.Features.title",
         })}
       </div>
-      {/* {superiorityNode} */}
       <div className={styles.list}>
         {superiorityList.map((data, index) => {
           return (
@@ -171,6 +104,7 @@ export default function HomepageFeatures() {
               key={`feature-${index}`}
               imageUrl={data.imageUrl}
               title={data.title}
+              icon={data.icon}
               inners={data.inners}
             />
           );
