@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
+import { BlurFade } from "../magic-ui/BlurFade";
 
 type ScenesDataType = {
   imageUrl: string;
@@ -38,23 +39,25 @@ const scenesData: ScenesDataType[] = [
 export default function HomepageScenes() {
   const scenesNodes = scenesData.map((data, index) => {
     return (
-      <div className={styles.sectionCell} key={`scenes-${index}`}>
-        <div className={styles.scenesText}>
-          <span className={styles.scenesTag}>{data.tag}</span>
-          <div className={styles.scenesTextTitle}>
-            <i className={data.icon} />
-            {data.title}
+      <BlurFade key={`scenes-${index}`}>
+        <div className={styles.sectionCell}>
+          <div className={styles.scenesText}>
+            <span className={styles.scenesTag}>{data.tag}</span>
+            <div className={styles.scenesTextTitle}>
+              <i className={data.icon} />
+              {data.title}
+            </div>
+            <p className={styles.scenesTextInner}>{data.inner}</p>
           </div>
-          <p className={styles.scenesTextInner}>{data.inner}</p>
+          <Image
+            className={styles.scenesImage}
+            sources={{
+              light: useBaseUrl(data.imageUrl),
+              dark: useBaseUrl(data.imageUrl),
+            }}
+          />
         </div>
-        <Image
-          className={styles.scenesImage}
-          sources={{
-            light: useBaseUrl(data.imageUrl),
-            dark: useBaseUrl(data.imageUrl),
-          }}
-        />
-      </div>
+      </BlurFade>
     );
   });
   return (

@@ -2,8 +2,8 @@ import React from "react";
 import styles from "./styles.module.scss";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { clsx } from "clsx";
 import { translate } from "@docusaurus/Translate";
+import { BlurFade } from "../magic-ui/BlurFade";
 
 type SuperiorityType = {
   imageUrl: string;
@@ -65,26 +65,28 @@ export const FeatureItem = ({
   icon,
 }: SuperiorityType) => {
   return (
-    <div className={styles.feature}>
-      <Image
-        className={styles.image}
-        sources={{
-          light: useBaseUrl("/img/feature_1.png"),
-          dark: useBaseUrl("/img/feature_1.png"),
-        }}
-      />
-      <div className={styles.content}>
-        <div className={styles.title}>
-          <i className={`${icon} ${styles["sub-icon"]}`} />
-          <h3 className={styles["title-text"]}>Intuitive Interaction</h3>
+    <BlurFade className={styles["feature-blur-fade"]}>
+      <div className={styles.feature}>
+        <Image
+          className={styles.image}
+          sources={{
+            light: useBaseUrl("/img/feature_1.png"),
+            dark: useBaseUrl("/img/feature_1.png"),
+          }}
+        />
+        <div className={styles.content}>
+          <div className={styles.title}>
+            <i className={`${icon} ${styles["sub-icon"]}`} />
+            <h3 className={styles["title-text"]}>Intuitive Interaction</h3>
+          </div>
+          <div className="inner">
+            {inners.map((inner, index) => {
+              return <p key={`inner-${index}`}>{inner}</p>;
+            })}
+          </div>
         </div>
-        <p className="inner">
-          {inners.map((inner, index) => {
-            return <p key={`inner-${index}`}>{inner}</p>;
-          })}
-        </p>
       </div>
-    </div>
+    </BlurFade>
   );
 };
 

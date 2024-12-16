@@ -1,4 +1,5 @@
 import { Button } from "../Button";
+import { BlurFade } from "../magic-ui/BlurFade";
 import styles from "./style.module.scss";
 import React from "react";
 
@@ -57,35 +58,37 @@ const HomepagePricing = () => {
         <img src={"/img/pricing.svg"} />
         价格
       </h1>
-      <div className={styles.pricing}>
-        {pricingData.map((item, index) => (
-          <div key={index} className={`${styles.card}`}>
-            <h2 className={styles["card-title"]}>{item.title}</h2>
-            {item.description && <p>{item.description}</p>}
-            <h3 className={styles.price}>{item.price}</h3>
-            {item.features && (
-              <ul>
-                {item.features.map((feature, idx) => (
-                  <li key={idx} className={styles.option}>
-                    <i className={`${styles.check} i-codicon:check`} />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            )}
-            <Button className={styles.btn}>{item.buttonText}</Button>
-          </div>
-        ))}
-        <div className={styles["top-up-box"]}>
-          {pricingTopUpData.map((item, index) => (
-            <div key={index} className={`${styles.card} ${styles["top-up"]}`}>
-              <h2>{item.title}</h2>
-              <h3>{item.price}</h3>
+      <BlurFade>
+        <div className={styles.pricing}>
+          {pricingData.map((item, index) => (
+            <div key={index} className={`${styles.card}`}>
+              <h2 className={styles["card-title"]}>{item.title}</h2>
+              {item.description && <p>{item.description}</p>}
+              <h3 className={styles.price}>{item.price}</h3>
+              {item.features && (
+                <ul>
+                  {item.features.map((feature, idx) => (
+                    <li key={idx} className={styles.option}>
+                      <i className={`${styles.check} i-codicon:check`} />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              )}
               <Button className={styles.btn}>{item.buttonText}</Button>
             </div>
           ))}
+          <div className={styles["top-up-box"]}>
+            {pricingTopUpData.map((item, index) => (
+              <div key={index} className={`${styles.card} ${styles["top-up"]}`}>
+                <h2>{item.title}</h2>
+                <h3>{item.price}</h3>
+                <Button className={styles.btn}>{item.buttonText}</Button>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </BlurFade>
     </div>
   );
 };
