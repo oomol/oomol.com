@@ -6,17 +6,6 @@ import { DownloadUrl } from "@site/src/download_url";
 import { Button } from "../Button";
 import { translate } from "@docusaurus/Translate";
 
-enum Platform {
-  ARM64 = "ARM64",
-  X64 = "X64",
-}
-
-enum OS {
-  Windows = "Windows",
-  Linux = "Linux",
-  MacOS = "MacOS",
-}
-
 type DownloadBtnProps = {
   text: string;
   icon: string;
@@ -39,51 +28,6 @@ const DownloadBtn: DownloadBtnProps[] = [
     text: "macOS Apple Silicon",
     icon: "/img/macos-apple-silicon.svg",
     downloadingUrl: DownloadUrl.MacOS.AppleSilicon,
-  },
-];
-
-type PackageType = {
-  platform: string;
-  url: string;
-  isReady: boolean;
-};
-
-type DownloadDataType = {
-  imageUrl: string;
-  width: number;
-  os: OS;
-  package: PackageType[];
-};
-
-const downloadData: DownloadDataType[] = [
-  {
-    imageUrl: "/img/windows.svg",
-    width: 80,
-    os: OS.Windows,
-    package: [
-      {
-        platform: Platform.X64,
-        url: DownloadUrl.Windows.X64,
-        isReady: true,
-      },
-    ],
-  },
-  {
-    imageUrl: "/img/macos.svg",
-    width: 80,
-    os: OS.MacOS,
-    package: [
-      {
-        platform: "Intel Chip",
-        url: DownloadUrl.MacOS.Intel,
-        isReady: true,
-      },
-      {
-        platform: "Apple Silicon",
-        url: DownloadUrl.MacOS.AppleSilicon,
-        isReady: true,
-      },
-    ],
   },
 ];
 

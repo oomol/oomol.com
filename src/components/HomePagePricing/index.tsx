@@ -53,7 +53,10 @@ const pricingTopUpData = [
 const HomepagePricing = () => {
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>价格</h1>
+      <h1 className={styles.title}>
+        <img src={"/img/pricing.svg"} />
+        价格
+      </h1>
       <div className={styles.pricing}>
         {pricingData.map((item, index) => (
           <div key={index} className={`${styles.card}`}>

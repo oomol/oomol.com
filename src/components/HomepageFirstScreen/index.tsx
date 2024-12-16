@@ -52,19 +52,13 @@ export default function HomepageFirstScreen() {
     <div className={styles.popoverBox}>
       <a download href={DownloadUrl.MacOS.AppleSilicon}>
         <div className={styles.popoverBtn}>
-          <div
-            className="i-ic-baseline-apple"
-            style={{ fontSize: 20, marginLeft: 12 }}
-          />
+          <div className={`${styles.icon} i-ic-baseline-apple`} />
           <span style={{ marginLeft: 8 }}>Apple Silicon</span>
         </div>
       </a>
       <a download href={DownloadUrl.MacOS.Intel}>
         <div className={styles.popoverBtn}>
-          <div
-            className="i-file-icons-intel"
-            style={{ fontSize: 20, marginLeft: 12 }}
-          />
+          <div className={`${styles.icon} i-file-icons-intel`} />
           <span style={{ marginLeft: 8 }}>Intel Chip</span>
         </div>
       </a>
@@ -78,6 +72,7 @@ export default function HomepageFirstScreen() {
       return false;
     }
   };
+
   return (
     <section>
       <div className={styles.container}>
@@ -91,20 +86,64 @@ export default function HomepageFirstScreen() {
               OOMOL Studio makes it easy to connect code snippets and API
               services through intuitive visual interactions.
             </div>
-            {/* TODO: restore download feature */}
             <div className={styles["button-box"]}>
-              <Button
-                icon={<i className="i-codicon-desktop-download" />}
-                className={styles.download}
-              >
-                Download For macOS
-              </Button>
-              <Button
-                icon={<i className="i-codicon-device-camera-video" />}
-                className={styles.watch}
-              >
-                Watch Demo
-              </Button>
+              {detectOSAndArchitecture() === OS.MacOS ? (
+                <div className={styles.downloadBtnBox}>
+                  <div
+                    onMouseOver={() => {
+                      setBtnPopState(true);
+                    }}
+                    onMouseLeave={() => {
+                      setBtnPopState(false);
+                    }}
+                  >
+                    <Button
+                      className={styles.download}
+                      icon={
+                        <div
+                          className="i-material-symbols-download-rounded"
+                          style={{ fontSize: 18 }}
+                        />
+                      }
+                    >
+                      {translate({
+                        message: "HOME.FirstScreen.download-macos",
+                      })}
+                    </Button>
+                  </div>
+                  <div
+                    onMouseEnter={() => {
+                      setPopState(true);
+                    }}
+                    onMouseLeave={() => {
+                      setPopState(false);
+                    }}
+                    style={{
+                      display: isNeedPopView(isBtnPopView, isPopView)
+                        ? "block"
+                        : "none",
+                    }}
+                    className={styles.popover}
+                  >
+                    <div className={styles.mid}>{content}</div>
+                  </div>
+                </div>
+              ) : (
+                <div className={styles.windowsBox}>
+                  <a download href={DownloadUrl.Windows.X64}>
+                    <Button className={styles.sectionOneBtn}>
+                      {translate({
+                        message: "HOME.FirstScreen.download-windows",
+                      })}
+                    </Button>
+                  </a>
+                  <span className={styles.windowsSubtitle}>
+                    {translate({
+                      message: "HOME.FirstScreen.download-windows-subtitle",
+                    })}
+                  </span>
+                </div>
+              )}
             </div>
           </div>
         </div>

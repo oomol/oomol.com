@@ -21,10 +21,10 @@ export const Button = ({
   target,
   className,
   disabled,
-  onClick,
   icon,
   iconPosition = "start",
   layout = "center",
+  onClick,
 }: ButtonProps) => {
   const getLayout = (layout: string) => {
     switch (layout) {

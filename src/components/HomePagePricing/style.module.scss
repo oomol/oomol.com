@@ -5,6 +5,9 @@
 }
 
 .title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
   font-size: 30px;
   color: #f0f6fc;
   font-weight: 900;
@@ -94,10 +97,6 @@
   margin: 5px 0;
 }
 
-.card button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
 @media (max-width: 768px) {
   .card {
     width: 100%;
@@ -126,6 +125,11 @@
   background-color: #0d1116;
   border: 1px solid #3d444d;
   border-radius: 8px;
+
+  &:hover {
+    background-color: #7d7fe9;
+    color: #f0f6fc;
+  }
 }
 
 .check {
