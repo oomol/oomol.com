@@ -15,6 +15,7 @@
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
+
 [data-theme="dark"] {
   --ifm-color-primary: #7d7fe9;
   --ifm-color-primary-dark: #5e61e4;
@@ -35,6 +36,7 @@
 }
 
 /* disabled 文档模块的方向箭头  */
+
 .menu__caret::before {
   background: var(--ifm-menu-link-sublist-icon) 50% / 1.25rem 1.25rem;
 }
@@ -56,6 +58,7 @@
 }
 
 /* 移动端下的自定义样式 */
+
 @media screen and (max-width: 996px) {
   .footer__links {
     padding: 0;
@@ -67,11 +70,17 @@
 }
 
 $mobile-width: 375px;
+
 $mobile-middle-width: 390px;
+
 $mobile-large-width: 430px;
+
 $tablet-width: 678px;
+
 $tablet-middle-width: 768px;
+
 $tablet-large-width: 820px;
+
 $desktop-width: 996px;
 
 @mixin phone {

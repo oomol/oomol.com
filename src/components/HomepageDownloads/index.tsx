@@ -5,6 +5,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import { DownloadUrl } from "@site/src/download_url";
 import { Button } from "../Button";
 import { translate } from "@docusaurus/Translate";
+import { BlurFade } from "../magic-ui/BlurFade";
 
 type DownloadBtnProps = {
   text: string;
@@ -34,30 +35,33 @@ const DownloadBtn: DownloadBtnProps[] = [
 export default function HomepageDownloads() {
   return (
     <div className={styles.container}>
-      <img src={"/img/logo.svg"} />
-      <div className={styles.content}>
-        <p className={styles.overview}>
-          {translate({
-            message: "HOME.FirstScreen.slogan",
+      <BlurFade className={styles["overview-blur-fade"]}>
+        <img className={styles.image} src={"/img/logo.svg"} />
+        <div className={styles.content}>
+          <p className={styles.overview}>
+            {translate({
+              message: "HOME.FirstScreen.slogan",
+            })}
+          </p>
+          <p className={styles.description}>
+            Oomol Studio 通过直观的视觉交互轻松连接代码片段和 API 服务
+          </p>
+        </div>
+        <div className={styles.downloads}>
+          {DownloadBtn.map((data, index) => {
+            return (
+              <Button
+                key={`download-${index}`}
+                className={styles["download-btn"]}
+                icon={<img src={data.icon} />}
+                href={data.downloadingUrl}
+              >
+                {data.text}
+              </Button>
+            );
           })}
-        </p>
-        <p className={styles.description}>
-          Oomol Studio 通过直观的视觉交互轻松连接代码片段和 API 服务
-        </p>
-      </div>
-      <div className={styles.downloads}>
-        {DownloadBtn.map((data, index) => {
-          return (
-            <Button
-              className={styles["download-btn"]}
-              icon={<img src={data.icon} />}
-              href={data.downloadingUrl}
-            >
-              {data.text}
-            </Button>
-          );
-        })}
-      </div>
+        </div>
+      </BlurFade>
     </div>
   );
 }

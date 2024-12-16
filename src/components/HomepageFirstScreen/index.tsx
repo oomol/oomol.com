@@ -9,6 +9,9 @@ import { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { DownloadUrl } from "@site/src/download_url";
 import { Button } from "../Button";
+import { GradualSpacing } from "../magic-ui/GradualSpacing";
+import { BlurFade } from "../magic-ui/BlurFade";
+import { section } from "framer-motion/client";
 
 const data = {
   slogan: translate({
@@ -78,8 +81,14 @@ export default function HomepageFirstScreen() {
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles["slogan-box"]}>
-            <h1 className={styles["slogan-one"]}>WorkFlow based</h1>
-            <h1 className={styles["slogan-two"]}>data processing IDE.</h1>
+            <GradualSpacing
+              text={"WorkFlow based"}
+              className={styles["slogan-one"]}
+            />
+            <GradualSpacing
+              text={"data processing IDE."}
+              className={styles["slogan-two"]}
+            />
           </div>
           <div className={styles["intro-box"]}>
             <div className={styles.overview}>
@@ -148,15 +157,17 @@ export default function HomepageFirstScreen() {
           </div>
         </div>
       </div>
-      <div className={styles["image-box"]}>
-        <Image
-          className={styles.image}
-          sources={{
-            light: useBaseUrl("/img/oomol_studio.jpg"),
-            dark: useBaseUrl("/img/oomol_studio.jpg"),
-          }}
-        />
-      </div>
+      <BlurFade>
+        <div className={styles["image-box"]}>
+          <Image
+            className={styles.image}
+            sources={{
+              light: useBaseUrl("/img/oomol_studio.jpg"),
+              dark: useBaseUrl("/img/oomol_studio.jpg"),
+            }}
+          />
+        </div>
+      </BlurFade>
     </section>
   );
 }
