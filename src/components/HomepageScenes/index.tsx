@@ -17,7 +17,7 @@ type ScenesDataType = {
 
 const scenesData: ScenesDataType[] = [
   {
-    imageUrl: "/img/table.jpg",
+    imageUrl: "/img/scenes-1.png",
     title: translate({ message: "HOME.Scenes.data-science.title" }),
     type: "purple",
     tag: translate({ message: "HOME.Scenes.data-science.tag" }),
@@ -26,7 +26,7 @@ const scenesData: ScenesDataType[] = [
     icon: "i-codicon-graph-line",
   },
   {
-    imageUrl: "/img/media.jpg",
+    imageUrl: "/img/scenes-2.png",
     title: translate({ message: "HOME.Scenes.media-processing.title" }),
     type: "purple",
     tag: translate({ message: "HOME.Scenes.media-processing.tag" }),

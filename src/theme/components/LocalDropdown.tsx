@@ -11,7 +11,7 @@ export interface LocalDropdownProps {
 }
 
 const localeMap = {
-  "zh-CN": "中文",
+  "zh-CN": "简体中文",
   en: "English",
 };
 
@@ -62,8 +62,8 @@ export const LocalDropdown = ({ queryString = "" }: LocalDropdownProps) => {
       <div className={styles.content}>{isShow && renderBtnContent()}</div>
       <Button
         className={styles.btn}
-        icon={<div className="i-ic-twotone-keyboard-arrow-up" />}
-        iconPosition="end"
+        icon={<div className="i-codicon-globe" />}
+        iconPosition="start"
       >
         {formateLocale(currentLocale)}
       </Button>

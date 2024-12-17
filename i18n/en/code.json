@@ -6,6 +6,12 @@
   "HOME.FirstScreen.slogan": {
     "message": "Workflow-based data processing IDE."
   },
+  "Home.FirstScreen.slogan-part-1": {
+    "message": "Workflow-based"
+  },
+  "Home.FirstScreen.slogan-part-2": {
+    "message": "data processing IDE."
+  },
   "HOME.FirstScreen.script": {
     "message": "OOMOL Studio makes it easy to connect code snippets and API services through intuitive visual interactions."
   },
@@ -116,6 +122,10 @@
   "HOME.Features.support-sharing.inner3": {
     "message": "We will also open-source and share built-in tool plugins, common Workflows, and underlying runtime containers in the oomol-lab GitHub organization."
   },
+  "HOME.Pricing.title": {
+    "message": "Pricing"
+  },
+
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"

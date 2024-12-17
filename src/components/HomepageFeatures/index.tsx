@@ -14,7 +14,7 @@ type SuperiorityType = {
 
 const superiorityList: SuperiorityType[] = [
   {
-    imageUrl: "/img/feature_1.jpg",
+    imageUrl: "/img/feature-1.png",
     title: translate({ message: "HOME.Features.intuitive-interaction.title" }),
     icon: "i-codicon-wand",
     inners: [
@@ -24,7 +24,7 @@ const superiorityList: SuperiorityType[] = [
     ],
   },
   {
-    imageUrl: "/img/feature_2.jpg",
+    imageUrl: "/img/feature-2.png",
     title: translate({
       message: "HOME.Features.pre-installed-environment.title",
     }),
@@ -36,7 +36,7 @@ const superiorityList: SuperiorityType[] = [
     ],
   },
   {
-    imageUrl: "/img/feature_3.jpg",
+    imageUrl: "/img/feature-3.png",
     title: translate({ message: "HOME.Features.programming-friendly.title" }),
     icon: "i-codicon:code",
     inners: [
@@ -47,7 +47,7 @@ const superiorityList: SuperiorityType[] = [
   },
 
   {
-    imageUrl: "/img/feature_4.jpg",
+    imageUrl: "/img/feature-4.png",
     title: translate({ message: "HOME.Features.support-sharing.title" }),
     icon: "i-codicon:globe",
     inners: [
@@ -79,11 +79,13 @@ export const FeatureItem = ({
             <i className={`${icon} ${styles["sub-icon"]}`} />
             <h3 className={styles["title-text"]}>Intuitive Interaction</h3>
           </div>
-          <div className="inner">
-            {inners.map((inner, index) => {
-              return <p key={`inner-${index}`}>{inner}</p>;
-            })}
-          </div>
+          {inners.map((inner, index) => {
+            return (
+              <p key={`inner-${index}`} className={styles.inner}>
+                {inner}
+              </p>
+            );
+          })}
         </div>
       </div>
     </BlurFade>

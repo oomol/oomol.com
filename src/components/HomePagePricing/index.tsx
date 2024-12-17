@@ -1,3 +1,4 @@
+import { translate } from "@docusaurus/Translate";
 import { Button } from "../Button";
 import { BlurFade } from "../magic-ui/BlurFade";
 import styles from "./style.module.scss";
@@ -56,7 +57,7 @@ const HomepagePricing = () => {
     <div className={styles.container}>
       <h1 className={styles.title}>
         <img src={"/img/pricing.svg"} />
-        价格
+        {translate({ message: "HOME.Scenes.data-science.title" })}
       </h1>
       <BlurFade>
         <div className={styles.pricing}>

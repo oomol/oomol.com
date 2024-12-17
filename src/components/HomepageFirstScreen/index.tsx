@@ -11,7 +11,6 @@ import { DownloadUrl } from "@site/src/download_url";
 import { Button } from "../Button";
 import { GradualSpacing } from "../magic-ui/GradualSpacing";
 import { BlurFade } from "../magic-ui/BlurFade";
-import { section } from "framer-motion/client";
 
 const data = {
   slogan: translate({
@@ -82,18 +81,20 @@ export default function HomepageFirstScreen() {
         <div className={styles.header}>
           <div className={styles["slogan-box"]}>
             <GradualSpacing
-              text={"WorkFlow based"}
+              text={translate({ message: "Home.FirstScreen.slogan-part-1" })}
+              // text={translate({ message: "HOME.FirstScreen.slogan" })}
               className={styles["slogan-one"]}
             />
             <GradualSpacing
-              text={"data processing IDE."}
+              text={translate({ message: "Home.FirstScreen.slogan-part-2" })}
               className={styles["slogan-two"]}
             />
           </div>
           <div className={styles["intro-box"]}>
             <div className={styles.overview}>
-              OOMOL Studio makes it easy to connect code snippets and API
-              services through intuitive visual interactions.
+              {translate({
+                message: "HOME.FirstScreen.script",
+              })}
             </div>
             <div className={styles["button-box"]}>
               {detectOSAndArchitecture() === OS.MacOS ? (
@@ -162,8 +163,8 @@ export default function HomepageFirstScreen() {
           <Image
             className={styles.image}
             sources={{
-              light: useBaseUrl("/img/oomol_studio.jpg"),
-              dark: useBaseUrl("/img/oomol_studio.jpg"),
+              light: useBaseUrl("/img/first-screen.png"),
+              dark: useBaseUrl("/img/first-screen.png"),
             }}
           />
         </div>
