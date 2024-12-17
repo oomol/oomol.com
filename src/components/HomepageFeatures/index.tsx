@@ -14,7 +14,7 @@ type SuperiorityType = {
 
 const superiorityList: SuperiorityType[] = [
   {
-    imageUrl: "/img/feature-1.png",
+    imageUrl: "/img/superiority-1.png",
     title: translate({ message: "HOME.Features.intuitive-interaction.title" }),
     icon: "i-codicon-wand",
     inners: [
@@ -24,7 +24,7 @@ const superiorityList: SuperiorityType[] = [
     ],
   },
   {
-    imageUrl: "/img/feature-2.png",
+    imageUrl: "/img/superiority-2.png",
     title: translate({
       message: "HOME.Features.pre-installed-environment.title",
     }),
@@ -36,7 +36,7 @@ const superiorityList: SuperiorityType[] = [
     ],
   },
   {
-    imageUrl: "/img/feature-3.png",
+    imageUrl: "/img/superiority-3.png",
     title: translate({ message: "HOME.Features.programming-friendly.title" }),
     icon: "i-codicon:code",
     inners: [
@@ -47,7 +47,7 @@ const superiorityList: SuperiorityType[] = [
   },
 
   {
-    imageUrl: "/img/feature-4.png",
+    imageUrl: "/img/superiority-4.png",
     title: translate({ message: "HOME.Features.support-sharing.title" }),
     icon: "i-codicon:globe",
     inners: [
@@ -58,20 +58,15 @@ const superiorityList: SuperiorityType[] = [
   },
 ];
 
-export const FeatureItem = ({
-  imageUrl,
-  title,
-  inners,
-  icon,
-}: SuperiorityType) => {
+export const FeatureItem = ({ imageUrl, inners, icon }: SuperiorityType) => {
   return (
     <BlurFade className={styles["feature-blur-fade"]}>
       <div className={styles.feature}>
         <Image
           className={styles.image}
           sources={{
-            light: useBaseUrl("/img/feature_1.png"),
-            dark: useBaseUrl("/img/feature_1.png"),
+            light: useBaseUrl(imageUrl),
+            dark: useBaseUrl(imageUrl),
           }}
         />
         <div className={styles.content}>
