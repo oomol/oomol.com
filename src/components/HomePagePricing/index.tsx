@@ -29,13 +29,7 @@ const pricingData = [
       "最多 3 个 Disks",
     ],
     buttonText: "立即订阅",
-  },
-  {
-    title: "进阶",
-    description: "这是一些描述文本。",
-    price: "¥100.00/月",
-    features: ["同步设置", "同步密钥", "10M+ Token", "无限制", "无限制"],
-    buttonText: "立即订阅",
+    className: styles.pro,
   },
 ];
 
@@ -57,12 +51,12 @@ const HomepagePricing = () => {
     <div className={styles.container}>
       <h1 className={styles.title}>
         <img src={"/img/pricing.svg"} />
-        {translate({ message: "HOME.Scenes.data-science.title" })}
+        {translate({ message: "HOME.Pricing.title" })}
       </h1>
       <BlurFade>
         <div className={styles.pricing}>
           {pricingData.map((item, index) => (
-            <div key={index} className={`${styles.card}`}>
+            <div key={index} className={`${styles.card} ${item.className}`}>
               <h2 className={styles["card-title"]}>{item.title}</h2>
               {item.description && <p>{item.description}</p>}
               <h3 className={styles.price}>{item.price}</h3>

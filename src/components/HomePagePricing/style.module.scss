@@ -23,7 +23,7 @@
 }
 
 .card {
-  width: 305px;
+  width: 413px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -39,11 +39,6 @@
   box-sizing: border-box;
 }
 
-.card:hover {
-  // transform: translateY(-10px);
-  border: 1px solid transparent;
-}
-
 .card-title,
 .price {
   font-size: 20px;
@@ -51,11 +46,14 @@
   color: #f0f6fc;
 }
 
-.card:hover::before {
-  opacity: 1;
+.pro {
+  .btn {
+    background-color: #7d7fe9;
+    color: #f0f6fc;
+  }
 }
 
-.card::before {
+.pro::before {
   content: "";
   position: absolute;
   top: 0;
@@ -80,8 +78,6 @@
   mask-composite: exclude;
   pointer-events: none;
   box-sizing: border-box;
-  opacity: 0;
-  transition: opacity 0.3s ease;
 }
 
 .card h2 {
