@@ -6,12 +6,6 @@
   "HOME.FirstScreen.slogan": {
     "message": "Workflow-based data processing IDE."
   },
-  "Home.FirstScreen.slogan-part-1": {
-    "message": "Workflow-based"
-  },
-  "Home.FirstScreen.slogan-part-2": {
-    "message": "data processing IDE."
-  },
   "HOME.FirstScreen.script": {
     "message": "OOMOL Studio makes it easy to connect code snippets and API services through intuitive visual interactions."
   },

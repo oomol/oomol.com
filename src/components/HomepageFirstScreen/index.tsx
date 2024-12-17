@@ -81,13 +81,8 @@ export default function HomepageFirstScreen() {
         <div className={styles.header}>
           <div className={styles["slogan-box"]}>
             <GradualSpacing
-              text={translate({ message: "Home.FirstScreen.slogan-part-1" })}
-              // text={translate({ message: "HOME.FirstScreen.slogan" })}
+              text={translate({ message: "HOME.FirstScreen.slogan" })}
               className={styles["slogan-one"]}
-            />
-            <GradualSpacing
-              text={translate({ message: "Home.FirstScreen.slogan-part-2" })}
-              className={styles["slogan-two"]}
             />
           </div>
           <div className={styles["intro-box"]}>

@@ -1,5 +1,6 @@
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import { cn } from "@site/src/lib/utils";
+import { memo, useMemo } from "react";
 
 interface GradualSpacingProps {
   text: string;
@@ -9,33 +10,53 @@ interface GradualSpacingProps {
   className?: string;
 }
 
-export function GradualSpacing({
-  text,
-  duration = 0.5,
-  delayMultiple = 0.04,
-  framerProps = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0 },
-  },
-  className,
-}: GradualSpacingProps) {
-  return (
-    <div className="flex">
-      <AnimatePresence>
-        {text.split("").map((char, i) => (
-          <motion.h1
-            key={i}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            variants={framerProps}
-            transition={{ duration, delay: i * delayMultiple }}
-            className={cn("drop-shadow-sm ", className)}
-          >
-            {char === " " ? <span>&nbsp;</span> : char}
-          </motion.h1>
-        ))}
-      </AnimatePresence>
-    </div>
-  );
-}
+export const GradualSpacing = memo(
+  ({
+    text,
+    duration = 0.5,
+    delayMultiple = 0.04,
+    framerProps = {
+      hidden: { opacity: 0, x: -20 },
+      visible: { opacity: 1, x: 0 },
+    },
+    className,
+  }: GradualSpacingProps) => {
+    let charIndex = 0;
+    const words = useMemo(() => text.split(" "), [text]);
+
+    return (
+      <div className="flex flex-wrap">
+        <AnimatePresence>
+          {words.map((word, wordIndex) => (
+            <div key={wordIndex} className="flex">
+              {word.split("").map(char => (
+                <motion.h1
+                  key={charIndex}
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
+                  variants={framerProps}
+                  transition={{ duration, delay: charIndex++ * delayMultiple }}
+                  className={cn("drop-shadow-sm ", className)}
+                >
+                  {char}
+                </motion.h1>
+              ))}
+              <motion.h1
+                key={`space-${wordIndex}`}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                variants={framerProps}
+                transition={{ duration, delay: charIndex++ * delayMultiple }}
+                className={cn("drop-shadow-sm ", className)}
+              >
+                &nbsp;
+              </motion.h1>
+            </div>
+          ))}
+        </AnimatePresence>
+      </div>
+    );
+  }
+);
