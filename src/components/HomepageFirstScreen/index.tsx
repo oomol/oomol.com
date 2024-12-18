@@ -12,19 +12,6 @@ import { Button } from "../Button";
 import { GradualSpacing } from "../magic-ui/GradualSpacing";
 import { BlurFade } from "../magic-ui/BlurFade";
 
-const data = {
-  slogan: translate({
-    message: "HOME.FirstScreen.slogan",
-  }),
-  script: translate({
-    message: "HOME.FirstScreen.script",
-  }),
-};
-
-enum Platform {
-  ARM = "Apple Silicon",
-  X64 = "Intel Chip",
-}
 enum OS {
   Windows = "Windows",
   MacOS = "MacOS",
