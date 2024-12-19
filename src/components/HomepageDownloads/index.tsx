@@ -46,7 +46,9 @@ export default function HomepageDownloads() {
             })}
           </p>
           <p className={styles.description}>
-            Oomol Studio 通过直观的视觉交互轻松连接代码片段和 API 服务
+            {translate({
+              message: "HOME.FirstScreen.script",
+            })}
           </p>
         </div>
         <div className={styles.downloads}>
