@@ -123,21 +123,21 @@ export default function HomepageFirstScreen() {
                 </div>
               ) : (
                 <div className={styles.windowsBox}>
-                  <a download href={DownloadUrl.Windows.X64}>
-                    <Button
-                      className={styles.download}
-                      icon={
-                        <div
-                          className="i-codicon-desktop-download"
-                          style={{ fontSize: 18 }}
-                        />
-                      }
-                    >
-                      {translate({
-                        message: "HOME.FirstScreen.download-windows",
-                      })}
-                    </Button>
-                  </a>
+                  <Button
+                    className={styles.download}
+                    href={DownloadUrl.Windows.X64}
+                    icon={
+                      <div
+                        className="i-codicon-desktop-download"
+                        style={{ fontSize: 18 }}
+                      />
+                    }
+                  >
+                    {translate({
+                      message: "HOME.FirstScreen.download-windows",
+                    })}
+                  </Button>
+
                   <span className={styles.windowsSubtitle}>
                     {translate({
                       message: "HOME.FirstScreen.download-windows-subtitle",

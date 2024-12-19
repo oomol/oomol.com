@@ -51,7 +51,7 @@ export const GradualSpacing = memo(
                 exit="hidden"
                 variants={framerProps}
                 transition={{ duration, delay: charIndex++ * delayMultiple }}
-                className={cn("drop-shadow-sm ", className)}
+                className={cn(`drop-shadow-sm ${styles.space}`, className)}
               >
                 &nbsp;
               </motion.h1>

@@ -174,17 +174,20 @@
   margin-bottom: 0;
   line-height: 50px;
   font-weight: 900;
-}
 
-.slogan-two {
-  font-size: 58px;
-  font-weight: 900;
+  @include phone-large {
+    font-size: 37px;
+  }
 }
 
 .overview {
   size: 16px;
   font-weight: 400;
   color: #ccccccb2;
+
+  @media (max-width: 1024px) {
+    text-align: center;
+  }
 }
 
 .intro-box {
