@@ -16,6 +16,12 @@
   }
 }
 
+.section {
+  @include desktop {
+    padding: 0 24px;
+  }
+}
+
 .popoverBox {
   background-color: #0d1116;
   border-radius: 10px;

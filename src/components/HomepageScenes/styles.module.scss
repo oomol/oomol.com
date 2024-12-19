@@ -72,7 +72,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 120px;
+
+  @include desktop {
+    padding: 0 24px;
+  }
 
   @include phone {
     padding: 0 24px;

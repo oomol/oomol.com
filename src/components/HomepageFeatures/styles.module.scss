@@ -1,106 +1,5 @@
 @import "../../css/custom.scss";
 
-.sectionTwo {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 120px;
-  padding: 0 150px;
-
-  @include phone {
-    padding: 0 24px;
-  }
-
-  @include phone-middle {
-    padding: 0 24px;
-  }
-
-  @include phone-large {
-    padding: 0 24px;
-  }
-}
-
-.sectionTwoBox {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-
-  @include phone {
-    justify-content: flex-start;
-  }
-
-  @include phone-middle {
-    justify-content: flex-start;
-  }
-
-  @include phone-large {
-    justify-content: flex-start;
-  }
-}
-
-.sectionList {
-  margin-top: 16px;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.evenSectionTwo .sectionTwoBox {
-  flex-wrap: wrap-reverse;
-}
-
-.sectionTwoSmall {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  @include phone {
-    > img {
-      padding-top: 36px;
-    }
-  }
-
-  @include phone-middle {
-    > img {
-      padding-top: 36px;
-    }
-  }
-
-  @include phone-large {
-    > img {
-      padding-top: 36px;
-    }
-  }
-}
-
-.sectionTwoLarge {
-  display: flex;
-  justify-content: center;
-}
-
-.sectionTwoLargeBox {
-  width: 100%;
-
-  @include desktop {
-    width: 480px;
-  }
-}
-
-.sectionTwoLargeTitle {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.sectionTwoLargeInner {
-  font-size: 16px;
-  margin-top: 12px;
-
-  @include phone {
-    text-align: left;
-  }
-}
-
 .sectionTitle {
   display: flex;
   align-items: center;
@@ -176,10 +75,17 @@
 
 .list {
   max-width: 1280px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
   gap: 40px;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .icon {
@@ -204,6 +110,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @include desktop {
+    padding: 0 24px;
+  }
 }
 
 .feature-blur-fade {

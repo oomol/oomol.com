@@ -63,7 +63,7 @@ export default function HomepageFirstScreen() {
   };
 
   return (
-    <section>
+    <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles["slogan-box"]}>

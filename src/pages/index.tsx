@@ -15,7 +15,8 @@ export default function Home() {
         <HomepageFirstScreen />
         <HomepageScenes />
         <HomepageFeatures />
-        <HomepagePricing />
+        {/* TODO: 等订阅业务上线后恢复 */}
+        {/* <HomepagePricing /> */}
         <HomepageDownloads />
         {/* <HomepageStarter /> */}
         <Analytics />

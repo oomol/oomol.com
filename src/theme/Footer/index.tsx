@@ -105,8 +105,8 @@ const Footer: React.FC = () => {
           <div className={styles.leftBoxLogo}>
             <img
               alt="logo"
-              src="/img/oomol_app.svg"
-              width={42}
+              src="/img/logo.svg"
+              width={20}
               style={{ marginRight: 16 }}
               loading="lazy"
             />
