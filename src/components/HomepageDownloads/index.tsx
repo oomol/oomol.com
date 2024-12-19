@@ -10,8 +10,8 @@ import { BlurFade } from "../magic-ui/BlurFade";
 type DownloadBtnProps = {
   text: string;
   icon: string;
-  downloadingUrl: string;
-  isReady?: boolean;
+  downloadingUrl?: string;
+  disabled?: boolean;
 };
 
 const DownloadBtn: DownloadBtnProps[] = [
@@ -21,14 +21,16 @@ const DownloadBtn: DownloadBtnProps[] = [
     downloadingUrl: DownloadUrl.Windows.X64,
   },
   {
-    text: "MacOS Intel Chip",
-    icon: "/img/macos-intel.svg",
-    downloadingUrl: DownloadUrl.MacOS.Intel,
-  },
-  {
     text: "macOS Apple Silicon",
     icon: "/img/macos-apple-silicon.svg",
     downloadingUrl: DownloadUrl.MacOS.AppleSilicon,
+  },
+  {
+    text: "MacOS Intel Chip",
+    icon: "/img/macos-intel.svg",
+    // downloadingUrl: DownloadUrl.MacOS.Intel,
+    // TODO: 等 x64 版准备好后再恢复
+    disabled: true,
   },
 ];
 
@@ -55,6 +57,7 @@ export default function HomepageDownloads() {
                 className={styles["download-btn"]}
                 icon={<img src={data.icon} />}
                 href={data.downloadingUrl}
+                disabled={data.disabled}
               >
                 {data.text}
               </Button>

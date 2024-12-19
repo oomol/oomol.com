@@ -45,12 +45,13 @@ export default function HomepageFirstScreen() {
           <span style={{ marginLeft: 8 }}>Apple Silicon</span>
         </div>
       </a>
-      <a download href={DownloadUrl.MacOS.Intel}>
+      {/* TODO: 等 x64 版准备好后再恢复 */}
+      {/* <a download href={DownloadUrl.MacOS.Intel}>
         <div className={styles.popoverBtn}>
           <div className={`${styles.icon} i-file-icons-intel`} />
           <span style={{ marginLeft: 8 }}>Intel Chip</span>
         </div>
-      </a>
+      </a> */}
     </div>
   );
 
@@ -79,7 +80,7 @@ export default function HomepageFirstScreen() {
               })}
             </div>
             <div className={styles["button-box"]}>
-              {detectOSAndArchitecture() === OS.MacOS ? (
+              {detectOSAndArchitecture() === OS.Windows ? (
                 <div className={styles.downloadBtnBox}>
                   <div
                     onMouseOver={() => {
@@ -93,7 +94,7 @@ export default function HomepageFirstScreen() {
                       className={styles.download}
                       icon={
                         <div
-                          className="i-material-symbols-download-rounded"
+                          className="i-codicon-desktop-download"
                           style={{ fontSize: 18 }}
                         />
                       }
@@ -123,7 +124,15 @@ export default function HomepageFirstScreen() {
               ) : (
                 <div className={styles.windowsBox}>
                   <a download href={DownloadUrl.Windows.X64}>
-                    <Button className={styles.sectionOneBtn}>
+                    <Button
+                      className={styles.download}
+                      icon={
+                        <div
+                          className="i-codicon-desktop-download"
+                          style={{ fontSize: 18 }}
+                        />
+                      }
+                    >
                       {translate({
                         message: "HOME.FirstScreen.download-windows",
                       })}
