@@ -80,7 +80,7 @@ export default function HomepageFirstScreen() {
               })}
             </div>
             <div className={styles["button-box"]}>
-              {detectOSAndArchitecture() === OS.Windows ? (
+              {detectOSAndArchitecture() === OS.MacOS ? (
                 <div className={styles.downloadBtnBox}>
                   <div
                     onMouseOver={() => {
