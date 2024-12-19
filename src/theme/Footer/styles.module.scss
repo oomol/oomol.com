@@ -133,6 +133,11 @@
     padding: 0px 16px;
     margin-bottom: 16px;
   }
+
+  @include pad {
+    flex-wrap: wrap;
+    text-align: center;
+  }
 }
 
 .bottomInfo {

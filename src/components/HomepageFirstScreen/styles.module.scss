@@ -175,6 +175,10 @@
   line-height: 50px;
   font-weight: 900;
 
+  @include pad {
+    font-size: 48px;
+  }
+
   @include phone-large {
     font-size: 37px;
   }
