@@ -45,7 +45,6 @@ const superiorityList: SuperiorityType[] = [
       translate({ message: "HOME.Features.programming-friendly.inner3" }),
     ],
   },
-
   {
     imageUrl: "/img/superiority-4.png",
     title: translate({ message: "HOME.Features.support-sharing.title" }),

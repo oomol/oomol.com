@@ -46,6 +46,22 @@
   color: #f0f6fc;
 }
 
+.card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tag {
+  height: 22px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  border: 1px solid #3d444d;
+  border-radius: 100px;
+  padding: 4px 16px;
+}
+
 .pro {
   .btn {
     background-color: #7d7fe9;
@@ -116,8 +132,8 @@
 }
 
 .btn {
-  width: 257px;
-  height: 40px;
+  width: 100%;
+  height: 41px;
   background-color: #0d1116;
   border: 1px solid #3d444d;
   border-radius: 8px;

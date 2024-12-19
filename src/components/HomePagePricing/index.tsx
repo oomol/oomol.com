@@ -21,6 +21,7 @@ const pricingData = [
     title: "专业",
     description: "这是一些描述文本。",
     price: "¥50.00/月",
+    tag: "Most Popular",
     features: [
       "同步设置",
       "同步密钥",
@@ -57,7 +58,10 @@ const HomepagePricing = () => {
         <div className={styles.pricing}>
           {pricingData.map((item, index) => (
             <div key={index} className={`${styles.card} ${item.className}`}>
-              <h2 className={styles["card-title"]}>{item.title}</h2>
+              <h2 className={styles["card-title"]}>
+                {item.title}
+                {item.tag && <span className={styles.tag}>{item.tag}</span>}
+              </h2>
               {item.description && <p>{item.description}</p>}
               <h3 className={styles.price}>{item.price}</h3>
               {item.features && (

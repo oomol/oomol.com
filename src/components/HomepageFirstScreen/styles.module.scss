@@ -147,9 +147,10 @@
 }
 
 .header {
-  max-width: 1280px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 37px;
+  max-width: 1280px;
   padding: 0 30px;
 }
 
@@ -226,4 +227,11 @@
     #0d1116 100%
   );
   padding-left: 12px;
+}
+
+@media (max-width: 1000px) {
+  .header {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
 }
