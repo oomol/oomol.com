@@ -1,0 +1,6 @@
+.container {
+  // TODO: 统一放 custom.scss 中处理
+  @media (max-width: 1024px) {
+    justify-content: center;
+  }
+}

@@ -158,6 +158,10 @@
   gap: 37px;
   max-width: 1280px;
   padding: 0 30px;
+
+  @include desktop {
+    padding: 0;
+  }
 }
 
 .slogan-box {
@@ -178,7 +182,6 @@
 }
 
 .overview {
-  max-width: 624px;
   size: 16px;
   font-weight: 400;
   color: #ccccccb2;
@@ -188,6 +191,11 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  // TODO: 统一放 custom.scss 中处理
+  @media (max-width: 1024px) {
+    align-items: center;
+  }
 }
 
 .button-box {
@@ -235,7 +243,8 @@
   padding-left: 12px;
 }
 
-@media (max-width: 1000px) {
+// TODO: 统一放 custom.scss 中处理
+@media (max-width: 1024px) {
   .header {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;

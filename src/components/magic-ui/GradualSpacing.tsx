@@ -1,3 +1,5 @@
+import styles from "./GradualSpacing.module.scss";
+
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import { cn } from "@site/src/lib/utils";
 import { memo, useMemo } from "react";
@@ -25,7 +27,7 @@ export const GradualSpacing = memo(
     const words = useMemo(() => text.split(" "), [text]);
 
     return (
-      <div className="flex flex-wrap">
+      <div className={`${styles.container} flex flex-wrap `}>
         <AnimatePresence>
           {words.map((word, wordIndex) => (
             <div key={wordIndex} className="flex">
