@@ -18,22 +18,23 @@ How to use the SDK in Scriptlet.
 
 ```python
 from oocana import Context
+from typing import Any
 
 def main(inputs: dict, context: Context):
     # Report Block done.
-    context.done()
+    context.done(err: str | None)
     # Report logs
-    context.log_JSON()
+    context.log_JSON(payload: Any)
     # Report error.
     context.send_error()
     # Report extra Block messages.
     context.send_message()
     # Send to Preview
-    context.preview()
+    context.preview(payload: PreviewPayload)
     # Report Block's stdio and stdout message.
-    context.report_log()
+    context.report_log(line: str, stdio: str = "stdout" | "stderr")
     # Report progress, progress 1 ~ 100
-    context.report_progress()
+    context.report_progress(progress: float | int)
     return { "out": None }
 
 ```
