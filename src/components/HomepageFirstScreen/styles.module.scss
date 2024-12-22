@@ -17,8 +17,53 @@
 }
 
 .section {
+  position: relative;
+
   @include desktop {
     padding: 0 24px;
+  }
+}
+
+.section::before {
+  background: url(/img/background.svg) no-repeat 50%;
+  content: "";
+  position: absolute;
+  bottom: var(--background-bottom, 34%);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  @include desktop {
+    --background-bottom: 31%;
+  }
+
+  @media (max-width: 1024px) {
+    --background-bottom: 23%;
+  }
+
+  @include pad-large {
+    --background-bottom: 18%;
+  }
+
+  @include pad-middle {
+    --background-bottom: 17%;
+  }
+
+  @include pad {
+    --background-bottom: 10%;
+  }
+
+  @media (max-width: 500px) {
+    --background-bottom: 6%;
+  }
+
+  @include phone-large {
+    --background-bottom: 5%;
+  }
+
+  @include phone-middle {
+    --background-bottom: 0;
   }
 }
 
@@ -138,18 +183,6 @@
   padding: 80px 0;
   display: flex;
   justify-content: center;
-  position: relative;
-}
-
-.container::before {
-  background: url(/img/background.svg) no-repeat center/80%;
-  content: "";
-  position: absolute;
-  top: 50px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
 }
 
 .header {
