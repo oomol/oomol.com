@@ -25,10 +25,10 @@
 }
 
 .section::before {
-  background: url(/img/background.svg) no-repeat center/var(--bg-size, 100%);
+  background: url(/img/background.svg) no-repeat center/var(--bg-size, 90%);
   content: "";
   position: absolute;
-  bottom: var(--background-bottom, 37%);
+  bottom: var(--background-bottom, 35%);
   left: 0;
   width: 100%;
   height: 100%;
@@ -36,6 +36,7 @@
 
   @media (max-width: 1600px) {
     --background-bottom: 34%;
+    --bg-size: 100%;
   }
 
   @include desktop {
