@@ -18,22 +18,23 @@ How to use the SDK in Scriptlet.
 
 ```python
 from oocana import Context
+from typing import Any
 
 def main(inputs: dict, context: Context):
     # Report Block done.
-    context.done()
+    context.done(err: str | None)
     # Report logs
-    context.log_JSON()
+    context.log_JSON(payload: Any)
     # Report error.
     context.send_error()
     # Report extra Block messages.
     context.send_message()
     # Send to Preview
-    context.preview()
+    context.preview(payload: PreviewPayload)
     # Report Block's stdio and stdout message.
-    context.report_log()
+    context.report_log(line: str, stdio: str = "stdout" | "stderr")
     # Report progress, progress 1 ~ 100
-    context.report_progress()
+    context.report_progress(progress: float | int)
     return { "out": None }
 
 ```
@@ -144,7 +145,7 @@ class Context:
 
 ## 4. `Context.preview` Types
 
-`context.preview()` is the core API. Its main function is to help developers preview data. We support the preview of almost all commonly used data.
+`context.preview` is the core API. Its main function is to help developers preview data. We support the preview of almost all commonly used data.
 
 ### 4.1 `PreviewPayload` Types
 
@@ -166,21 +167,45 @@ class Context:
 
 ```python
     
-    from typing import Any, TypedDict, List, Literal, TypeAlias
+    from typing import Any, TypedDict, List, Literal, TypeAlias, Union
 
     class TablePreviewData(TypedDict):
-        head: List[str | int | float]
+        columns: List[str | int | float]
         rows: List[List[str | int | float | bool]]
+        row_count: int | None
 
     class TablePreviewPayload(TypedDict):
         type: Literal['table']
         data: TablePreviewData | Any
 
+    class TextPreviewPayload(TypedDict):
+        type: Literal["text"]
+        data: Any
+
+    class JSONPreviewPayload(TypedDict):
+        type: Literal["json"]
+        data: Any
+
+    class ImagePreviewPayload(TypedDict):
+        type: Literal['image']
+        data: str | List[str]
+
     class MediaPreviewPayload(TypedDict):
-        type: Literal['image', 'audio', 'video', 'markdown', "iframe"]
+        type: Literal["image", 'video', 'audio', 'markdown', "iframe", "html"]
         data: str
 
-    PreviewPayload: TypeAlias = TablePreviewPayload | MediaPreviewPayload | Any
+    class DefaultPreviewPayload:
+        type: str
+        data: Any
+
+    PreviewPayload: TypeAlias = Union[
+        TablePreviewPayload,
+        TextPreviewPayload,
+        JSONPreviewPayload,
+        ImagePreviewPayload,
+        MediaPreviewPayload,
+        DefaultPreviewPayload
+    ]
 
 ```
 

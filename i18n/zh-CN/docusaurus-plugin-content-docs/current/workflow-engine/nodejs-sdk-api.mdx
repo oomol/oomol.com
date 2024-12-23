@@ -25,19 +25,31 @@ export default async function (
   context: Context<Inputs, Outputs>
 ): Promise<Outputs> {
   /** Report Block done. */
-  context.done();
+  readonly done: (err?: any) => Promise<void>;
+
   /** Report logs */
-  context.logJSON();
+  readonly logJSON: (jsonValue: unknown) => Promise<void>;
+
   /** Report error. */
-  context.error();
+  readonly error: (error: unknown) => Promise<void>;
+
   /** Report extra Block messages. */
-  context.sendMessage();
+  readonly sendMessage: (payload: unknown) => Promise<void>;
+
   /** Send to Preview */
-  context.preview();
+  readonly preview: (payload: PreviewPayload) => Promise<void>;
+
   /** Report Block's stdio and stdout message. */
-  context.reportLog();
-  /** Report progress, progress 1 ~ 100 */
-  context.reportProgress();
+  readonly reportLog: (
+    payload: string,
+    stdio: "stdout" | "stderr"
+  ) => Promise<void>;
+
+  /** a temporary directory for whole session. all block in one session will share the same directory */
+  readonly sessionDir: string;
+
+  /** Report progress, progress 0 ~ 100, This function has a throttle effect, triggering once every 300ms. */
+  readonly reportProgress: (progress: number) => Promise<void>;
 
   return { out: inputs };
 }
@@ -98,7 +110,7 @@ interface Context<
 
 ## 4. `Context.preview` Types
 
-`context.preview()` 是核心 API 。它的主要功能是帮助开发人员预览数据。我们支持几乎所有常用数据的预览。
+`context.preview` 是核心 API 。它的主要功能是帮助开发人员预览数据。我们支持几乎所有常用数据的预览。
 
 ### 4.1 `PreviewPayload` Types
 
