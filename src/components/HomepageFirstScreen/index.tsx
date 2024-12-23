@@ -80,7 +80,7 @@ export default function HomepageFirstScreen() {
               })}
             </div>
             <div className={styles["button-box"]}>
-              {detectOSAndArchitecture() === OS.MacOS ? (
+              {detectOSAndArchitecture() !== OS.MacOS ? (
                 <div className={styles.downloadBtnBox}>
                   <div
                     onMouseOver={() => {
@@ -125,7 +125,9 @@ export default function HomepageFirstScreen() {
                 <div className={styles.windowsBox}>
                   <Button
                     className={styles.download}
-                    href={DownloadUrl.Windows.X64}
+                    // TODO: 等 Windows 版准备好后再恢复
+                    disabled
+                    // href={DownloadUrl.Windows.X64}
                     icon={
                       <div
                         className="i-codicon-desktop-download"
