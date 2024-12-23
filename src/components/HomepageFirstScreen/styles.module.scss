@@ -25,45 +25,62 @@
 }
 
 .section::before {
-  background: url(/img/background.svg) no-repeat 50%;
+  background: url(/img/background.svg) no-repeat center/var(--bg-size, 100%);
   content: "";
   position: absolute;
-  bottom: var(--background-bottom, 34%);
+  bottom: var(--background-bottom, 37%);
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
 
+  @media (max-width: 1600px) {
+    --background-bottom: 34%;
+  }
+
   @include desktop {
-    --background-bottom: 31%;
+    --background-bottom: 28%;
+    --bg-size: 110%;
   }
 
   @media (max-width: 1024px) {
-    --background-bottom: 23%;
+    --background-bottom: 22%;
+    --bg-size: 180%;
   }
 
   @include pad-large {
-    --background-bottom: 18%;
+    --background-bottom: 14%;
+    --bg-size: 180%;
   }
 
   @include pad-middle {
-    --background-bottom: 17%;
+    --background-bottom: 12%;
+    --bg-size: 180%;
   }
 
   @include pad {
-    --background-bottom: 10%;
+    --background-bottom: 4%;
+    --bg-size: 180%;
+  }
+
+  @media (max-width: 542px) {
+    --background-bottom: -5%;
+    --bg-size: 180%;
   }
 
   @media (max-width: 500px) {
-    --background-bottom: 6%;
+    --background-bottom: -5%;
+    --bg-size: 180%;
   }
 
   @include phone-large {
-    --background-bottom: 5%;
+    --background-bottom: -6%;
+    --bg-size: 200%;
   }
 
   @include phone-middle {
-    --background-bottom: 0;
+    --background-bottom: -11%;
+    --bg-size: 200%;
   }
 }
 
