@@ -26,11 +26,9 @@ const DownloadBtn: DownloadBtnProps[] = [
     downloadingUrl: DownloadUrl.MacOS.AppleSilicon,
   },
   {
-    text: "MacOS Intel Chip",
+    text: "macOS Intel Chip",
     icon: "/img/macos-intel.svg",
-    // downloadingUrl: DownloadUrl.MacOS.Intel,
-    // TODO: 等 x64 版准备好后再恢复
-    disabled: true,
+    downloadingUrl: DownloadUrl.MacOS.Intel,
   },
 ];
 

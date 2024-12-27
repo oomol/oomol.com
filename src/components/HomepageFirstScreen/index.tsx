@@ -45,13 +45,12 @@ export default function HomepageFirstScreen() {
           <span style={{ marginLeft: 8 }}>Apple Silicon</span>
         </div>
       </a>
-      {/* TODO: 等 x64 版准备好后再恢复 */}
-      {/* <a download href={DownloadUrl.MacOS.Intel}>
+      <a download href={DownloadUrl.MacOS.Intel}>
         <div className={styles.popoverBtn}>
           <div className={`${styles.icon} i-file-icons-intel`} />
           <span style={{ marginLeft: 8 }}>Intel Chip</span>
         </div>
-      </a> */}
+      </a>
     </div>
   );
 
