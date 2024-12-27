@@ -4,7 +4,7 @@ title: 1.93.1-beta.1
 date: 2024-08-30
 ---
 
-![banner](@site/static/img/oomol_studio.jpg)
+![banner](@site/static/img/first-screen.png)
 
 <!-- truncate -->
 
