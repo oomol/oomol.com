@@ -124,9 +124,7 @@ export default function HomepageFirstScreen() {
                 <div className={styles.windowsBox}>
                   <Button
                     className={styles.download}
-                    // TODO: 等 Windows 版准备好后再恢复
-                    disabled
-                    // href={DownloadUrl.Windows.X64}
+                    href={DownloadUrl.Windows.X64}
                     icon={
                       <div
                         className="i-codicon-desktop-download"
