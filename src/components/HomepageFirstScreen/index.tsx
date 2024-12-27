@@ -1,6 +1,6 @@
 import styles from "./styles.module.scss";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
@@ -11,6 +11,7 @@ import { DownloadUrl } from "@site/src/download_url";
 import { Button } from "../Button";
 import { GradualSpacing } from "../magic-ui/GradualSpacing";
 import { BlurFade } from "../magic-ui/BlurFade";
+import { Popover } from "../Popover";
 
 enum OS {
   Windows = "Windows",
@@ -34,9 +35,6 @@ export default function HomepageFirstScreen() {
   const context: any = useDocusaurusContext();
   const { i18n } = context;
 
-  const [isBtnPopView, setBtnPopState] = useState(false);
-  const [isPopView, setPopState] = useState(false);
-
   const content = (
     <div className={styles.popoverBox}>
       <a download href={DownloadUrl.MacOS.AppleSilicon}>
@@ -53,14 +51,6 @@ export default function HomepageFirstScreen() {
       </a>
     </div>
   );
-
-  const isNeedPopView = (btn: boolean, pop: boolean): boolean => {
-    if (btn || pop) {
-      return true;
-    } else {
-      return false;
-    }
-  };
 
   return (
     <section className={styles.section}>
@@ -80,15 +70,8 @@ export default function HomepageFirstScreen() {
             </div>
             <div className={styles["button-box"]}>
               {detectOSAndArchitecture() === OS.MacOS ? (
-                <div className={styles.downloadBtnBox}>
-                  <div
-                    onMouseOver={() => {
-                      setBtnPopState(true);
-                    }}
-                    onMouseLeave={() => {
-                      setBtnPopState(false);
-                    }}
-                  >
+                <Popover
+                  trigger={
                     <Button
                       className={styles.download}
                       icon={
@@ -102,24 +85,9 @@ export default function HomepageFirstScreen() {
                         message: "HOME.FirstScreen.download-macos",
                       })}
                     </Button>
-                  </div>
-                  <div
-                    onMouseEnter={() => {
-                      setPopState(true);
-                    }}
-                    onMouseLeave={() => {
-                      setPopState(false);
-                    }}
-                    style={{
-                      display: isNeedPopView(isBtnPopView, isPopView)
-                        ? "block"
-                        : "none",
-                    }}
-                    className={styles.popover}
-                  >
-                    <div className={styles.mid}>{content}</div>
-                  </div>
-                </div>
+                  }
+                  content={content}
+                />
               ) : (
                 <div className={styles.windowsBox}>
                   <Button

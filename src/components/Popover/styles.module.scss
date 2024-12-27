@@ -1,0 +1,14 @@
+.popoverContainer {
+  position: relative;
+  width: 240px;
+}
+
+.popoverContent {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  padding-top: 8px;
+  border-radius: 10px;
+}
