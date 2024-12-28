@@ -57,7 +57,12 @@ const superiorityList: SuperiorityType[] = [
   },
 ];
 
-export const FeatureItem = ({ imageUrl, inners, icon }: SuperiorityType) => {
+export const FeatureItem = ({
+  title,
+  imageUrl,
+  inners,
+  icon,
+}: SuperiorityType) => {
   return (
     <BlurFade className={styles["feature-blur-fade"]}>
       <div className={styles.feature}>
@@ -71,7 +76,7 @@ export const FeatureItem = ({ imageUrl, inners, icon }: SuperiorityType) => {
         <div className={styles.content}>
           <div className={styles.title}>
             <i className={`${icon} ${styles["sub-icon"]}`} />
-            <h3 className={styles["title-text"]}>Intuitive Interaction</h3>
+            <h3 className={styles["title-text"]}>{title}</h3>
           </div>
           {inners.map((inner, index) => {
             return (
