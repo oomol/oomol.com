@@ -73,6 +73,33 @@ const logoNodeData: LogoNodeDataType[] = [
   },
 ];
 
+const logoNodeDataCN: LogoNodeDataType[] = [
+  {
+    name: "twitter",
+    src: "/img/twitter.svg",
+    href: "https://twitter.com/OomolStudio",
+    width: 20,
+  },
+  {
+    name: "discord",
+    src: "/img/discord.svg",
+    href: "https://discord.gg/47WpfqtdVa",
+    width: 22,
+  },
+  {
+    name: "youtube",
+    src: "/img/youtube.svg",
+    href: "https://www.youtube.com/@oomolstudio",
+    width: 22,
+  },
+  {
+    name: "github",
+    src: "/img/github.svg",
+    href: "https://github.com/oomol-lab",
+    width: 20,
+  },
+];
+
 const Footer: React.FC = () => {
   const { siteConfig, i18n } = useDocusaurusContext() as any;
   const { copyright, links = [] } = siteConfig.themeConfig.footer;
@@ -83,7 +110,10 @@ const Footer: React.FC = () => {
     return null;
   }
 
-  const logoNodes = logoNodeData.map((data, index) => {
+  const logoNodesArray =
+    currentLocale === "zh-CN" ? logoNodeDataCN : logoNodeData;
+
+  const logoNodes = logoNodesArray.map((data, index) => {
     return (
       <a target="_blank" href={data.href} key={`${index}-${data.name}`}>
         <div className={styles.iconBox}>
