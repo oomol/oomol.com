@@ -225,7 +225,7 @@
   flex-direction: column;
 }
 
-.slogan-one {
+.slogan {
   font-size: 58px;
   margin-bottom: 0;
   line-height: 50px;
@@ -238,6 +238,10 @@
   @include phone-large {
     font-size: 37px;
   }
+}
+
+.slogan-cn {
+  line-height: 60px;
 }
 
 .overview {

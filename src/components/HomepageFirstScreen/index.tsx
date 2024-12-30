@@ -12,6 +12,7 @@ import { Button } from "../Button";
 import { GradualSpacing } from "../magic-ui/GradualSpacing";
 import { BlurFade } from "../magic-ui/BlurFade";
 import { Popover } from "../Popover";
+import clsx from "clsx";
 
 enum OS {
   Windows = "Windows",
@@ -59,7 +60,10 @@ export default function HomepageFirstScreen() {
           <div className={styles["slogan-box"]}>
             <GradualSpacing
               text={translate({ message: "HOME.FirstScreen.slogan" })}
-              className={styles["slogan-one"]}
+              className={clsx(
+                styles["slogan"],
+                i18n.currentLocale === "zh-CN" && styles["slogan-cn"]
+              )}
             />
           </div>
           <div className={styles["intro-box"]}>
