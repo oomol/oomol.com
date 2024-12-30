@@ -5,7 +5,8 @@
 }
 
 .brand {
-  display: block;
+  display: flex;
+  align-items: center;
   height: 30px;
   /*min-width: 119px;*/
   margin-right: var(--ifm-navbar-item-padding-horizontal);
