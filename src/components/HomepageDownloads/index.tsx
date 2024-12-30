@@ -17,17 +17,17 @@ type DownloadBtnProps = {
 const DownloadBtn: DownloadBtnProps[] = [
   {
     text: "Windows x64",
-    icon: "/img/windows.svg",
+    icon: "i-mage-microsoft-windows",
     downloadingUrl: DownloadUrl.Windows.X64,
   },
   {
     text: "macOS Apple Silicon",
-    icon: "/img/macos-apple-silicon.svg",
+    icon: "i-ic-baseline-apple",
     downloadingUrl: DownloadUrl.MacOS.AppleSilicon,
   },
   {
     text: "macOS Intel Chip",
-    icon: "/img/macos-intel.svg",
+    icon: "i-file-icons-intel",
     downloadingUrl: DownloadUrl.MacOS.Intel,
   },
 ];
@@ -55,7 +55,7 @@ export default function HomepageDownloads() {
               <Button
                 key={`download-${index}`}
                 className={styles["download-btn"]}
-                icon={<img src={data.icon} />}
+                icon={<i className={`${data.icon} ${styles.icon}`} />}
                 href={data.downloadingUrl}
                 disabled={data.disabled}
               >
