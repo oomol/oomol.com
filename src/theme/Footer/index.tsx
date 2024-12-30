@@ -134,13 +134,13 @@ const Footer: React.FC = () => {
         <div className={styles.leftBox}>
           <div className={styles.leftBoxLogo}>
             <img
-              alt="logo"
-              src="/img/logo.svg"
-              width={20}
-              style={{ marginRight: 16 }}
+              alt="oomol"
+              src={
+                currentLocale === "en" ? "/img/logo-en.svg" : "/img/logo-zh.svg"
+              }
+              height={24}
               loading="lazy"
             />
-            <img alt="oomol" src="/img/oomol.svg" width={72} loading="lazy" />
           </div>
           <div className={styles.iconOutBox}>{logoNodes}</div>
         </div>

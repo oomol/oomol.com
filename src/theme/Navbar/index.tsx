@@ -1,4 +1,6 @@
 import styles from "./styles.module.scss";
+import LogoENSvg from "@site/static/img/logo-en.svg";
+import LogoZHSvg from "@site/static/img/logo-zh.svg";
 
 import React, { memo, useCallback, useMemo, useState } from "react";
 import type { ComponentProps } from "react";
@@ -73,7 +75,12 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
       <div className={clsx("navbar__inner", styles.inner)}>
         <div className="navbar__items">
           <Link className={styles.brand} to="/">
-            <img width={32} alt="logo" src="/img/logo.svg" loading="lazy" />
+            <img
+              height={24}
+              alt="logo"
+              src={locale === "en" ? "/img/logo-en.svg" : "/img/logo-zh.svg"}
+              loading="lazy"
+            />
           </Link>
           {leftItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
@@ -83,15 +90,16 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
           {rightItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
           ))}
+          {/* TODO: restore docs search */}
           {/* 当路由与文档路径匹配时，显示文档搜索框 */}
-          {isDocumentPath && (
+          {/* {isDocumentPath && (
             <>
               <div className={styles.searchBar}>
                 <SearchBar />
               </div>
               <div className={styles.cutLine} />
             </>
-          )}
+          )} */}
           {/* <div className={styles.navbarBtnBox}> */}
           <Button
             className={styles["btn-nav"]}
@@ -143,7 +151,12 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
       <div className="navbar-sidebar">
         <div className="navbar-sidebar__brand">
           <Link className={styles.brand} to="/" onClick={hideSidebar}>
-            <img width={32} alt="logo" src="/img/logo.svg" loading="lazy" />
+            <img
+              width={24}
+              alt="logo"
+              src={locale === "en" ? "/img/logo-en.svg" : "/img/logo-zh.svg"}
+              loading="lazy"
+            />
           </Link>
         </div>
         <div className="navbar-sidebar__items">
