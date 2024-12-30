@@ -8,10 +8,10 @@ date: 2024-12-27
 
 <!-- truncate -->
 
-## 概述
+## Overview
 
 First release, welcome to OOMOL Studio!
 
-## 功能
+## Features
 
 Refer to the [Landing Page](https://oomol.com) introduction.
