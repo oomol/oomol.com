@@ -32,15 +32,15 @@ def main(params: dict, context: Context):
 ### 2.2 Common APIs
 
 ```python
-#   /** Report block completion */
+    # Report block completion
     def done(self, error: str | None = None):
-#   /** Report an error */
+    # Report an error
     def error(self, error: str):
-#   /** Enable preview */
+    # Enable preview
     def preview(self, payload: PreviewPayload):
-#   /** Temporary directory for the entire session, users can use it to store temporary files */
+    # Temporary directory for the entire session, users can use it to store temporary files
     def session_dir(self) -> str:
-#   /** Report progress, progress 0~100, this function is throttled to trigger every 300ms. */
+    # Report progress, progress 0~100, this function is throttled to trigger every 300ms
     def report_progress(self, progress: float | int):
 ```
 
@@ -73,14 +73,14 @@ Parameter type: `PreviewPayload`
 ```python
 
     PreviewPayload: TypeAlias = Union[
-    TablePreviewPayload,
-    TextPreviewPayload,
-    JSONPreviewPayload,
-    ImagePreviewPayload,
-    MediaPreviewPayload,
-    DataFrame,
-    PandasPreviewPayload,
-    DefaultPreviewPayload
+        TablePreviewPayload,
+        TextPreviewPayload,
+        JSONPreviewPayload,
+        ImagePreviewPayload,
+        MediaPreviewPayload,
+        DataFrame,
+        PandasPreviewPayload,
+        DefaultPreviewPayload
     ]
 
     class TablePreviewData(TypedDict):

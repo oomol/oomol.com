@@ -32,15 +32,15 @@ def main(params: dict, context: Context):
 ### 2.2 常用 API
 
 ```python
-#   /** 报告块已完成 */
+    # 报告块已完成
     def done(self, error: str | None = None):
-#   /** 报告错误 */
+    # 报告错误
     def error(self, error: str):
-#   /** 启用预览 */
+    # 启用预览
     def preview(self, payload: PreviewPayload):
-#   /** 整个会话的临时目录， 用户可以用来存储临时文件 */
+    # 整个会话的临时目录， 用户可以用来存储临时文件
     def session_dir(self) -> str:
-#   /** 报告进度，进度0~100，该函数有节流效果，每300ms触发一次。 */
+    # 报告进度，进度0~100，该函数有节流效果，每300ms触发一次
     def report_progress(self, progress: float | int):
 ```
 
@@ -72,15 +72,15 @@ def main(params: dict, context: Context):
 
 ```python
 
-    PreviewPayload: TypeAlias = Union[
-    TablePreviewPayload,
-    TextPreviewPayload,
-    JSONPreviewPayload,
-    ImagePreviewPayload,
-    MediaPreviewPayload,
-    DataFrame,
-    PandasPreviewPayload,
-    DefaultPreviewPayload
+     PreviewPayload: TypeAlias = Union[
+        TablePreviewPayload,
+        TextPreviewPayload,
+        JSONPreviewPayload,
+        ImagePreviewPayload,
+        MediaPreviewPayload,
+        DataFrame,
+        PandasPreviewPayload,
+        DefaultPreviewPayload
     ]
 
     class TablePreviewData(TypedDict):
