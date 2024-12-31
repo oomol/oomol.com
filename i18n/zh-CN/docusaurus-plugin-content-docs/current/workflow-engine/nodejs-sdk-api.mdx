@@ -10,54 +10,99 @@ import node_preview from "@site/static/img/docs/cn/node_preview.png";
 
 开发人员将在 Scriptlet Block 中调用我们的SDK以与 `OOCANA` 工作流引擎进行交互。
 
-## 2. `Context` Object
+## 2. 快速开始
 
 如何在 Scriptlet Block 中使用 SDK。
+
+### 2.1 `Scriptlet` 模板
 
 ```typescript
 import type { Context } from "@oomol/types/oocana";
 
-type Inputs = Readonly<{ in: unknown }>;
-type Outputs = Readonly<{ out: unknown }>;
+type Inputs = {
+  input: unknown;
+};
+type Outputs = {
+  output: unknown;
+};
 
 export default async function (
-  inputs: Inputs,
+  params: Inputs,
   context: Context<Inputs, Outputs>
 ): Promise<Outputs> {
-  /** Report Block done. */
-  readonly done: (err?: any) => Promise<void>;
+  // 你的代码写在此处，会被执行
 
-  /** Report logs */
-  readonly logJSON: (jsonValue: unknown) => Promise<void>;
-
-  /** Report error. */
-  readonly error: (error: unknown) => Promise<void>;
-
-  /** Report extra Block messages. */
-  readonly sendMessage: (payload: unknown) => Promise<void>;
-
-  /** Send to Preview */
-  readonly preview: (payload: PreviewPayload) => Promise<void>;
-
-  /** Report Block's stdio and stdout message. */
-  readonly reportLog: (
-    payload: string,
-    stdio: "stdout" | "stderr"
-  ) => Promise<void>;
-
-  /** a temporary directory for whole session. all block in one session will share the same directory */
-  readonly sessionDir: string;
-
-  /** Report progress, progress 0 ~ 100, This function has a throttle effect, triggering once every 300ms. */
-  readonly reportProgress: (progress: number) => Promise<void>;
-
-  return { out: inputs };
+  return { output: null };
 }
 ```
 
-## 3. `Context` Types
+### 2.2 常用 API
 
-`OOCANA` SDK 提供的 API 类型描述，帮助用户了解如何准确使用这些 API。
+```typescript
+  /** 报告块已完成 */
+  readonly done: (err?: any) => Promise<void>;
+  /** 报告错误 */
+  readonly error: (error: unknown) => Promise<void>;
+  /** 启用预览 */
+  readonly preview: (payload: PreviewPayload) => Promise<void>;
+  /** 整个会话的临时目录， 用户可以用来存储临时文件 */
+  readonly sessionDir: string;
+  /** 报告进度，进度0~100，该函数有节流效果，每300ms触发一次。 */
+  readonly reportProgress: (progress: number) => Promise<void>;
+```
+
+## 3. `Context.preview` Types
+
+`context.preview` 是核心 API 。它的主要功能是帮助开发人员预览数据。我们支持几乎所有常用数据的预览。
+
+### 3.1 `PreviewPayload` Types
+
+函数名称：`context.preview`
+
+```typescript
+    readonly preview: (payload: PreviewPayload) => Promise<void>;
+```
+
+参数类型：`PreviewPayload`
+
+```typescript
+type PreviewPayload =
+  | {
+      type: "video" | "audio" | "markdown" | "iframe" | "html";
+      data: string;
+    }
+  | {
+      type: "json" | "text" | `text/${string}`;
+      data: any;
+    }
+  | {
+      type: "image";
+      data: string | string[];
+    }
+  | {
+      type: "table";
+      data: {
+        columns: Array<string | number>;
+        rows: Array<Array<string | number | boolean>>;
+        row_count?: number;
+      };
+    };
+```
+
+### 3.2 `Preview` 例子
+
+```typescript
+await context.preview({
+  type: "video",
+  data: "https://www.youtube.com/watch?v=6g4dkBF5anU",
+});
+```
+
+<img src={node_preview} width="720" />
+
+## 4. `Context` 对象类型的详细类型，
+
+`OOCANA` SDK 提供的 API 类型描述，帮助用户了解如何准确使用这些 API。可以在编辑器中打开看到详细的类型提示。
 
 ```typescript
 interface Context<
@@ -75,11 +120,11 @@ interface Context<
       output: TOutputs[THandle]
     ): Promise<void>;
     /**
-     * @deprecated this method will be removed in the future. please use function without done parameter. if you want to report block done, please use context.done() instead.
-     * Report Block output.
-     * @param handle Output handle
-     * @param output Output value
-     * @param done will remove. Report Block done.
+     * @deprecated 此方法将在未来移除。请使用不带 done 参数的函数。如果您想报告块完成，请使用 context.done()。
+     * 报告块输出。
+     * @param handle 输出句柄
+     * @param output 输出值
+     * @param done 将被移除。报告块完成。
      */
     <THandle extends Extract<keyof TOutputs, string>>(
       handle: THandle,
@@ -87,64 +132,25 @@ interface Context<
       done: boolean
     ): Promise<void>;
   };
-  /** Report Block done. */
+  /** 报告块已完成 */
   readonly done: (err?: any) => Promise<void>;
-  /** Report logs */
+  /** 报告日志 */
   readonly logJSON: (jsonValue: unknown) => Promise<void>;
-  /** Report error. */
+  /** 报告错误 */
   readonly error: (error: unknown) => Promise<void>;
-  /** Report extra Block messages. */
+  /** 报告额外的块消息 */
   readonly sendMessage: (payload: unknown) => Promise<void>;
-  /** Send to Preview */
+  /** 发送到预览 */
   readonly preview: (payload: PreviewPayload) => Promise<void>;
-  /** Report Block's stdio and stdout message. */
+  /** 报告块的 stdio 和 stdout 消息 */
   readonly reportLog: (
     payload: string,
     stdio: "stdout" | "stderr"
   ) => Promise<void>;
-  /** Report progress, progress 0 ~ 100, This function has a throttle effect, triggering once every 300ms. */
+  /** 整个会话的临时目录，所有块在一个会话中将共享同一个目录 */
+  readonly sessionDir: string;
+  /** 报告进度，进度 0 ~ 100，该函数有节流效果，每 300ms 触发一次 */
   readonly reportProgress: (progress: number) => Promise<void>;
   readonly keepAlive: KeepAlive;
 }
 ```
-
-## 4. `Context.preview` Types
-
-`context.preview` 是核心 API 。它的主要功能是帮助开发人员预览数据。我们支持几乎所有常用数据的预览。
-
-### 4.1 `PreviewPayload` Types
-
-```typescript
-    readonly preview: (payload: PreviewPayload) => Promise<void>;
-```
-
-```typescript
-type PreviewPayload =
-  | {
-      type: "video" | "audio" | "markdown" | "iframe" | "html";
-      data: string;
-    }
-  | {
-      type: "image";
-      data: string | string[];
-    }
-  | {
-      type: "table";
-      data: {
-        columns: Array<string | number>;
-        rows: Array<Array<string | number | boolean>>;
-        row_count?: number;
-      };
-    };
-```
-
-### 4.2 `Preview` 例子
-
-```typescript
-await context.preview({
-  type: "video",
-  data: "https://www.youtube.com/watch?v=6g4dkBF5anU",
-});
-```
-
-<img src={node_preview} width="720" />

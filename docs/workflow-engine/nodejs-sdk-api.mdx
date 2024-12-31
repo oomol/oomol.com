@@ -2,133 +2,155 @@
 sidebar_position: 2
 ---
 
-import node_preview from '@site/static/img/docs/node_preview.png';
+import node_preview from "@site/static/img/docs/node_preview.png";
 
 # 📗 Nodejs API
 
 ## 1. Introduction
 
-Developers will call our SDK in  `Scriptlet` to interact with the `OOCANA` workflow engine.
+Developers will call our SDK in the Scriptlet Block to interact with the `OOCANA` workflow engine.
 
-## 2. `Context` Object
+## 2. Quick Start
 
-How to use the SDK in Scriptlet.
+How to use the SDK in the Scriptlet Block.
+
+### 2.1 `Scriptlet` Template
 
 ```typescript
-
 import type { Context } from "@oomol/types/oocana";
 
-type Inputs = Readonly<{ in: unknown }>;
-type Outputs = Readonly<{ out: unknown }>;
-
-export default async function(inputs: Inputs, context: Context<Inputs, Outputs>): Promise<Outputs> {
-    /** Report Block done. */
-    readonly done: (err?: any) => Promise<void>;
-
-    /** Report logs */
-    readonly logJSON: (jsonValue: unknown) => Promise<void>;
-
-    /** Report error. */
-    readonly error: (error: unknown) => Promise<void>;
-
-    /** Report extra Block messages. */
-    readonly sendMessage: (payload: unknown) => Promise<void>;
-
-    /** Send to Preview */
-    readonly preview: (payload: PreviewPayload) => Promise<void>;
-
-    /** Report Block's stdio and stdout message. */
-    readonly reportLog: (
-        payload: string,
-        stdio: "stdout" | "stderr"
-    ) => Promise<void>;
-
-    /** a temporary directory for whole session. all block in one session will share the same directory */
-    readonly sessionDir: string;
-
-    /** Report progress, progress 0 ~ 100, This function has a throttle effect, triggering once every 300ms. */
-    readonly reportProgress: (progress: number) => Promise<void>;
-
-    return { out: inputs };
+type Inputs = {
+  input: unknown;
+};
+type Outputs = {
+  output: unknown;
 };
 
-```
+export default async function (
+  params: Inputs,
+  context: Context<Inputs, Outputs>
+): Promise<Outputs> {
+  // Your code will be executed here
 
-## 3. `Context` Types
-
-API type descriptions provided by the `OOCANA` SDK，help users know how to use these APIs accurately.
-
-```typescript
-interface Context<TInputs = Record<string, any>, TOutputs = Record<string, any>> {
-    readonly sessionId: string;
-    readonly jobId: string;
-    readonly block_path: string;
-    readonly stacks: readonly BlockJobStackLevel[];
-    readonly inputs: TInputs;
-    readonly output: {
-        <THandle extends Extract<keyof TOutputs, string>>(handle: THandle, output: TOutputs[THandle]): Promise<void>;
-        /**
-         * @deprecated this method will be removed in the future. please use function without done parameter. if you want to report block done, please use context.done() instead.
-         * Report Block output.
-         * @param handle Output handle
-         * @param output Output value
-         * @param done will remove. Report Block done.
-         */
-        <THandle extends Extract<keyof TOutputs, string>>(handle: THandle, output: TOutputs[THandle], done: boolean): Promise<void>;
-    };
-    /** Report Block done. */
-    readonly done: (err?: any) => Promise<void>;
-    /** Report logs */
-    readonly logJSON: (jsonValue: unknown) => Promise<void>;
-    /** Report error. */
-    readonly error: (error: unknown) => Promise<void>;
-    /** Report extra Block messages. */
-    readonly sendMessage: (payload: unknown) => Promise<void>;
-    /** Send to Preview */
-    readonly preview: (payload: PreviewPayload) => Promise<void>;
-    /** Report Block's stdio and stdout message. */
-    readonly reportLog: (payload: string, stdio: "stdout" | "stderr") => Promise<void>;
-    /** Report progress, progress 0 ~ 100, This function has a throttle effect, triggering once every 300ms. */
-    readonly reportProgress: (progress: number) => Promise<void>;
-    readonly keepAlive: KeepAlive;
+  return { output: null };
 }
 ```
 
-## 4. `Context.preview` Types
+### 2.2 Common APIs
 
-`context.preview` is the core API. Its main function is to help developers preview data. We support the preview of almost all commonly used data.
+```typescript
+  /** Report block completion */
+  readonly done: (err?: any) => Promise<void>;
+  /** Report an error */
+  readonly error: (error: unknown) => Promise<void>;
+  /** Enable preview */
+  readonly preview: (payload: PreviewPayload) => Promise<void>;
+  /** Temporary directory for the entire session, users can use it to store temporary files */
+  readonly sessionDir: string;
+  /** Report progress, progress 0~100, this function is throttled to trigger every 300ms. */
+  readonly reportProgress: (progress: number) => Promise<void>;
+```
 
-### 4.1 `PreviewPayload` Types
+## 3. `Context.preview` Types
+
+`context.preview` is a core API. Its main function is to help developers preview data. We support previews for almost all common data types.
+
+### 3.1 `PreviewPayload` Types
+
+Function name: `context.preview`
 
 ```typescript
     readonly preview: (payload: PreviewPayload) => Promise<void>;
 ```
 
-```typescript
-    type PreviewPayload = {
-    type: "video" | "audio" | "markdown" | "iframe" | "html";
-    data: string;
-    } | {
-        type: "image";
-        data: string | string[];
-    } | {
-        type: "table";
-        data: {
-            columns: Array<string | number>;
-            rows: Array<Array<string | number | boolean>>;
-            row_count?: number;
-        };
-    };
+Parameter type: `PreviewPayload`
 
+```typescript
+type PreviewPayload =
+  | {
+      type: "video" | "audio" | "markdown" | "iframe" | "html";
+      data: string;
+    }
+  | {
+      type: "json" | "text" | `text/${string}`;
+      data: any;
+    }
+  | {
+      type: "image";
+      data: string | string[];
+    }
+  | {
+      type: "table";
+      data: {
+        columns: Array<string | number>;
+        rows: Array<Array<string | number | boolean>>;
+        row_count?: number;
+      };
+    };
 ```
 
-### 4.2 `Preview` Example
+### 3.2 `Preview` Example
 
 ```typescript
-    await context.preview({
-        type: "video",
-        data: "https://www.youtube.com/watch?v=6g4dkBF5anU"
-    });
+await context.preview({
+  type: "video",
+  data: "https://www.youtube.com/watch?v=6g4dkBF5anU",
+});
 ```
 
 <img src={node_preview} width="720" />
+
+## 4. Detailed Types of `Context` Object
+
+The API type descriptions provided by the `OOCANA` SDK help users understand how to use these APIs accurately. You can open the editor to see detailed type hints.
+
+```typescript
+interface Context<
+  TInputs = Record<string, any>,
+  TOutputs = Record<string, any>,
+> {
+  readonly sessionId: string;
+  readonly jobId: string;
+  readonly block_path: string;
+  readonly stacks: readonly BlockJobStackLevel[];
+  readonly inputs: TInputs;
+  readonly output: {
+    <THandle extends Extract<keyof TOutputs, string>>(
+      handle: THandle,
+      output: TOutputs[THandle]
+    ): Promise<void>;
+    /**
+     * @deprecated This method will be removed in the future. Please use the function without the done parameter. If you want to report block completion, please use context.done().
+     * Report block output.
+     * @param handle Output handle
+     * @param output Output value
+     * @param done Will be removed. Report block completion.
+     */
+    <THandle extends Extract<keyof TOutputs, string>>(
+      handle: THandle,
+      output: TOutputs[THandle],
+      done: boolean
+    ): Promise<void>;
+  };
+  /** Report block completion */
+  readonly done: (err?: any) => Promise<void>;
+  /** Report log */
+  readonly logJSON: (jsonValue: unknown) => Promise<void>;
+  /** Report an error */
+  readonly error: (error: unknown) => Promise<void>;
+  /** Report additional block messages */
+  readonly sendMessage: (payload: unknown) => Promise<void>;
+  /** Send to preview */
+  readonly preview: (payload: PreviewPayload) => Promise<void>;
+  /** Report block's stdio and stdout messages */
+  readonly reportLog: (
+    payload: string,
+    stdio: "stdout" | "stderr"
+  ) => Promise<void>;
+  /** Temporary directory for the entire session, all blocks in a session will share the same directory */
+  readonly sessionDir: string;
+  /** Report progress, progress 0 ~ 100, this function is throttled to trigger every 300ms */
+  readonly reportProgress: (progress: number) => Promise<void>;
+  readonly keepAlive: KeepAlive;
+}
+```

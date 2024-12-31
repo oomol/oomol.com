@@ -2,50 +2,207 @@
 sidebar_position: 3
 ---
 
-import python_df from '@site/static/img/docs/python_df.png';
-import python_plt from '@site/static/img/docs/python_plt.png';
-import python_plotly from '@site/static/img/docs/python_plotly.png';
+import python_df from "@site/static/img/docs/python_df.png";
+import python_plt from "@site/static/img/docs/python_plt.png";
+import python_plotly from "@site/static/img/docs/python_plotly.png";
 
 # 📙 Python API
 
 ## 1. Introduction
 
-Developers will call our SDK in  `Scriptlet` to interact with the `OOCANA` workflow engine.
+Developers will call our SDK in the Scriptlet Block to interact with the `OOCANA` workflow engine.
 
-## 2. `Context` Object
+## 2. Quick Start
 
-How to use the SDK in Scriptlet.
+How to use the SDK in the Scriptlet Block.
+
+### 2.1 `Scriptlet` Template
 
 ```python
 from oocana import Context
-from typing import Any
 
-def main(inputs: dict, context: Context):
-    # Report Block done.
-    context.done(err: str | None)
-    # Report logs
-    context.log_JSON(payload: Any)
-    # Report error.
-    context.send_error()
-    # Report extra Block messages.
-    context.send_message()
-    # Send to Preview
-    context.preview(payload: PreviewPayload)
-    # Report Block's stdio and stdout message.
-    context.report_log(line: str, stdio: str = "stdout" | "stderr")
-    # Report progress, progress 1 ~ 100
-    context.report_progress(progress: float | int)
-    return { "out": None }
+def main(params: dict, context: Context):
+
+  # Your code will be executed here
+
+  return { "output": None }
 
 ```
 
-## 3. `Context` Types
+### 2.2 Common APIs
 
-API type descriptions provided by the `OOCANA` SDK, help users know how to use these APIs accurately.
+```python
+#   /** Report block completion */
+    def done(self, error: str | None = None):
+#   /** Report an error */
+    def error(self, error: str):
+#   /** Enable preview */
+    def preview(self, payload: PreviewPayload):
+#   /** Temporary directory for the entire session, users can use it to store temporary files */
+    def session_dir(self) -> str:
+#   /** Report progress, progress 0~100, this function is throttled to trigger every 300ms. */
+    def report_progress(self, progress: float | int):
+```
+
+## 3. `Context.preview` Types
+
+`context.preview` is a core API. Its main function is to help developers preview data. We support previews for almost all common data types.
+
+### 3.1 `PreviewPayload` Types
+
+Function name: `context.preview`
+
+```python
+    def preview(self, payload: PreviewPayload):
+    # Only supports python
+    payload = self.__dataframe(payload)
+    # Only supports python
+    payload = self.__matplotlib(payload)
+
+    self.__mainframe.report(
+        self.block_info,
+        {
+            "type": "BlockPreview",
+            "payload": payload,
+        },
+    )
+```
+
+Parameter type: `PreviewPayload`
 
 ```python
 
+    PreviewPayload: TypeAlias = Union[
+    TablePreviewPayload,
+    TextPreviewPayload,
+    JSONPreviewPayload,
+    ImagePreviewPayload,
+    MediaPreviewPayload,
+    DataFrame,
+    PandasPreviewPayload,
+    DefaultPreviewPayload
+    ]
+
+    class TablePreviewData(TypedDict):
+        columns: List[str | int | float]
+        rows: List[List[str | int | float | bool]]
+        row_count: int | None
+
+    class TablePreviewPayload(TypedDict):
+        type: Literal['table']
+        data: TablePreviewData | Any
+
+    class TextPreviewPayload(TypedDict):
+        type: Literal["text"]
+        data: Any
+
+    class JSONPreviewPayload(TypedDict):
+        type: Literal["json"]
+        data: Any
+
+    class ImagePreviewPayload(TypedDict):
+        type: Literal['image']
+        data: str | List[str]
+
+    class MediaPreviewPayload(TypedDict):
+        type: Literal["image", 'video', 'audio', 'markdown', "iframe", "html"]
+        data: str
+
+    class PandasPreviewPayload(TypedDict):
+        type: Literal['table']
+        data: DataFrame
+
+    class DefaultPreviewPayload:
+        type: str
+        data: Any
+
+```
+
+### 3.2 `Preview` Examples
+
+```python
+  context.preview({
+    # Type can be: "image" | "video" | "audio" | "markdown" | "iframe" | "html" | "json" | "text" | `text/${string}` | "table";
+    "type": "video",
+    # Type can be: file path, base64, pandas dataframe
+    "data": "https://www.w3schools.com/html/mov_bbb.mp4"
+  })
+```
+
+:::tip
+Only supports Python
+:::
+
+```python
+    import pandas as pd
+
+    df = pd.DataFrame({
+        'A': [1, 2, 3],
+        'B': [4, 5, 6],
+        'C': [7, 8, 9]
+    })
+     context.preview(df)
+```
+
+<img src={python_df} width="720" />
+
+```python
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    x = np.linspace(0, 10, 100)
+    y = np.sin(x)
+    plt.plot(x, y)
+    plt.show()
+```
+
+<img src={python_plt} width="720" />
+
+```python
+    import plotly.graph_objects as go
+
+    fig = go.Figure(data=[go.Bar(y=[2, 3, 1])])
+    fig.show()
+```
+
+<img src={python_plotly} width="720" />
+
+## 4. `Context` Types
+
+API type descriptions provided by the `OOCANA` SDK to help users understand how to use these APIs accurately.
+
+```python
 class Context:
+    __inputs: Dict[str, Any]
+
+    __block_info: BlockInfo
+    __outputs_def: Dict[str, HandleDef]
+    __store: Any
+    __is_done: bool = False
+    __keep_alive: OnlyEqualSelf = OnlyEqualSelf()
+    __session_dir: str
+
+    def __init__(
+        self, inputs: Dict[str, Any], blockInfo: BlockInfo, mainframe: Mainframe, store, outputs, session_dir: str
+    ) -> None:
+
+        self.__block_info = blockInfo
+
+        self.__mainframe = mainframe
+        self.__store = store
+        self.__inputs = inputs
+
+        outputs_defs = {}
+        if outputs is not None:
+            for k, v in outputs.items():
+                outputs_defs[k] = HandleDef(**v)
+        self.__outputs_def = outputs_defs
+        self.__session_dir = session_dir
+
+    @property
+    def session_dir(self) -> str:
+        """Temporary directory for the current session, all blocks in a session will share the same directory."""
+        return self.__session_dir
 
     @property
     def keepAlive(self):
@@ -62,23 +219,97 @@ class Context:
     @property
     def job_id(self):
         return self.__block_info.job_id
-    
+
     @property
     def job_info(self) -> JobDict:
         return self.__block_info.job_info()
-    
+
     @property
     def block_info(self) -> BlockDict:
         return self.__block_info.block_dict()
-    
+
     @property
     def node_id(self) -> str:
         return self.__block_info.stacks[-1].get("node_id", None)
 
+    def __store_ref(self, handle: str):
+        return StoreKey(
+            executor=EXECUTOR_NAME,
+            handle=handle,
+            job_id=self.job_id,
+            session_id=self.session_id,
+        )
+
+    def __is_basic_type(self, value: Any) -> bool:
+        return isinstance(value, (int, float, str, bool))
+
     def output(self, key: str, value: Any, done: bool = False):
+        """
+        Output the value to the next block
+
+        key: str, the output key, should be defined in the block mode output definition, field name is handle
+        value: Any, the output value
+        """
+
+        v = value
+
+        if self.__outputs_def is not None:
+            output_def = self.__outputs_def.get(key)
+            if (
+                output_def is not None and output_def.is_var_handle() and not self.__is_basic_type(value) # Basic types are not stored in the store even if they are variables, they are directly passed as json content
+            ):
+                ref = self.__store_ref(key)
+                self.__store[ref] = value
+                v = asdict(ref)
+            elif output_def is not None and output_def.is_bin_handle():
+                if not isinstance(value, bytes):
+                    self.send_warning(
+                        f"Output handle key: [{key}] is defined as binary, but the value is not bytes."
+                    )
+                    return
+
+                bin_file = f"{self.session_dir}/binary/{self.session_id}/{key}"
+                os.makedirs(os.path.dirname(bin_file), exist_ok=True)
+                try:
+                    with open(bin_file, "wb") as f:
+                        f.write(value)
+                except IOError as e:
+                    self.send_warning(
+                        f"Output handle key: [{key}] is defined as binary, but an error occurred while writing the file: {e}"
+                    )
+                    return
+
+                if os.path.exists(bin_file):
+                    v = bin_file
+                else:
+                    self.send_warning(
+                        f"Output handle key: [{key}] is defined as binary, but the file was not written."
+                    )
+                    return
+
+        # If the passed key does not exist in the output definition, ignore it and do not send data. But done still takes effect.
+        if self.__outputs_def is not None and self.__outputs_def.get(key) is None:
+            self.send_warning(
+                f"Output handle key: [{key}] is not defined in the block output mode."
+            )
+            if done:
+                self.done()
+            return
+
+        node_result = {
+            "type": "BlockOutput",
+            "handle": key,
+            "output": v,
+            "done": done,
+        }
+        self.__mainframe.send(self.job_info, node_result)
+
+        if done:
+            self.done()
 
     def done(self, error: str | None = None):
         if self.__is_done:
+            self.send_warning("done has been called multiple times and will be ignored.")
             return
         self.__is_done = True
         if error is None:
@@ -97,6 +328,50 @@ class Context:
             },
         )
 
+    def __dataframe(self, payload: PreviewPayload) -> PreviewPayload:
+        if isinstance(payload, DataFrame):
+            payload = { "type": "table", "data": payload }
+
+        if isinstance(payload, dict) and payload.get("type") == "table":
+            df = payload.get("data")
+            if isinstance(df, ShapeDataFrame):
+                row_count = df.shape[0]
+                if row_count <= 10:
+                    data = df.to_dict(orient='split')
+                    columns = data.get("columns", [])
+                    rows = data.get("data", [])
+                elif isinstance(df, PartialDataFrame):
+                    data_columns = loads(df.head(5).to_json(orient='split'))
+                    columns = data_columns.get("columns", [])
+                    rows_head = data_columns.get("data", [])
+                    data_tail = loads(df.tail(5).to_json(orient='split'))
+                    rows_tail = data_tail.get("data", [])
+                    rows_dots = [["..."] * len(columns)]
+                    rows = rows_head + rows_dots + rows_tail
+                else:
+                    print("dataframe exceeds 10 rows but does not support head and tail")
+                    return payload
+                data: TablePreviewData = { "rows": rows, "columns": columns, "row_count": row_count }
+                payload = { "type": "table", "data": data }
+            else:
+                print("dataframe does not support shape attribute")
+
+        return payload
+
+    def __matplotlib(self, payload: PreviewPayload) -> PreviewPayload:
+        # payload is a matplotlib Figure
+        if hasattr(payload, 'savefig'):
+            fig: Any = payload
+            buffer = BytesIO()
+            fig.savefig(buffer, format='png')
+            buffer.seek(0)
+            png = buffer.getvalue()
+            buffer.close()
+            url = f'data:image/png;base64,{b64encode(png).decode("utf-8")}'
+            payload = { "type": "image", "data": url }
+
+        return payload
+
     def preview(self, payload: PreviewPayload):
         payload = self.__dataframe(payload)
         payload = self.__matplotlib(payload)
@@ -111,6 +386,19 @@ class Context:
 
     @throttle(0.3)
     def report_progress(self, progress: float | int):
+        """Report progress
+
+        This API is used to report the progress of the block, but it only affects the UI progress and not the real progress.
+        This API is throttled with a minimum interval of 0.3 seconds.
+        When you call this API for the first time, it will report the progress immediately. After calling it once, it will report the progress at the end of the throttle cycle.
+
+        |       0.25 s        |   0.2 s  |
+        First call       Second call    Third call  4 5 6 7 calls
+        |                     |          |          | | | |
+        | -------- 0.3 s -------- | -------- 0.3 s -------- |
+        Call                  Call                    Call
+        :param float | int progress: The progress of the block, the value should be between [0, 100].
+        """
         self.__mainframe.report(
             self.block_info,
             {
@@ -138,121 +426,15 @@ class Context:
             },
         )
 
+    def send_warning(self, warning: str):
+        self.__mainframe.report(self.block_info, {"type": "BlockWarning", "warning": warning})
+
     def send_error(self, error: str):
+        '''
+        Deprecated, please use error(error) instead.
+        Consider removing in the future.
+        '''
+        self.error(error)
+
+    def error(self, error: str):
         self.__mainframe.send(self.job_info, {"type": "BlockError", "error": error})
-
-```
-
-## 4. `Context.preview` Types
-
-`context.preview` is the core API. Its main function is to help developers preview data. We support the preview of almost all commonly used data.
-
-### 4.1 `PreviewPayload` Types
-
-```python
-    def preview(self, payload: PreviewPayload):
-    # python only
-    payload = self.__dataframe(payload)
-    # python only
-    payload = self.__matplotlib(payload)
-
-    self.__mainframe.report(
-        self.block_info,
-        {
-            "type": "BlockPreview",
-            "payload": payload,
-        },
-    )
-```
-
-```python
-    
-    from typing import Any, TypedDict, List, Literal, TypeAlias, Union
-
-    class TablePreviewData(TypedDict):
-        columns: List[str | int | float]
-        rows: List[List[str | int | float | bool]]
-        row_count: int | None
-
-    class TablePreviewPayload(TypedDict):
-        type: Literal['table']
-        data: TablePreviewData | Any
-
-    class TextPreviewPayload(TypedDict):
-        type: Literal["text"]
-        data: Any
-
-    class JSONPreviewPayload(TypedDict):
-        type: Literal["json"]
-        data: Any
-
-    class ImagePreviewPayload(TypedDict):
-        type: Literal['image']
-        data: str | List[str]
-
-    class MediaPreviewPayload(TypedDict):
-        type: Literal["image", 'video', 'audio', 'markdown', "iframe", "html"]
-        data: str
-
-    class DefaultPreviewPayload:
-        type: str
-        data: Any
-
-    PreviewPayload: TypeAlias = Union[
-        TablePreviewPayload,
-        TextPreviewPayload,
-        JSONPreviewPayload,
-        ImagePreviewPayload,
-        MediaPreviewPayload,
-        DefaultPreviewPayload
-    ]
-
-```
-
-### 4.2 `Preview` Example
-
-```python
-  context.preview({
-    # type can be "image", "video", "audio", "markdown", "table", "iframe"
-    "type": "video",
-    # data can be file path, base64, pandas dataframe
-    "data": "https://www.w3schools.com/html/mov_bbb.mp4"
-  })
-```
-
-:::tip
-Python Only
-:::
-
-```python
-    import pandas as pd
-
-    df = pd.DataFrame({
-        'A': [1, 2, 3],
-        'B': [4, 5, 6],
-        'C': [7, 8, 9]
-    })
-     context.preview(df)
-```
-
-<img src={python_df} width="720" />
-
-```python
-    import matplotlib.pyplot as plt
-    import numpy as np
-
-    x = np.linspace(0, 10, 100)
-    y = np.sin(x)
-    plt.plot(x, y)
-    plt.show()
-```
-<img src={python_plt} width="720" />
-
-```python
-    import plotly.graph_objects as go
-
-    fig = go.Figure(data=[go.Bar(y=[2, 3, 1])])
-    fig.show()
-```
-
-<img src={python_plotly} width="720" />
