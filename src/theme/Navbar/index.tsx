@@ -90,16 +90,15 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
           {rightItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
           ))}
-          {/* TODO: restore docs search */}
           {/* 当路由与文档路径匹配时，显示文档搜索框 */}
-          {/* {isDocumentPath && (
+          {isDocumentPath && (
             <>
               <div className={styles.searchBar}>
                 <SearchBar />
               </div>
               <div className={styles.cutLine} />
             </>
-          )} */}
+          )}
           {/* <div className={styles.navbarBtnBox}> */}
           <Button
             className={styles["btn-nav"]}
