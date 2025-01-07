@@ -11,6 +11,7 @@ const config = {
   title: "OOMOL",
   tagline: "Easily connect code and services",
   favicon: "img/favicon.ico",
+  trailingSlash: false,
 
   // Set the production url of your site here
   url: "https://oomol.com",
@@ -254,7 +255,7 @@ const config = {
         indexName: "oomol",
 
         // 可选：见下文
-        contextualSearch: true,
+        contextualSearch: false,
 
         // 可选：声明哪些域名需要用 window.location 型的导航而不是 history.push。 适用于 Algolia 配置会爬取多个文档站点，而我们想要用 window.location.href 在它们之间跳转时。
         externalUrlRegex: "external\\.com|oomol\\.com",
