@@ -11,7 +11,6 @@ const config = {
   title: "OOMOL",
   tagline: "Easily connect code and services",
   favicon: "img/favicon.ico",
-  trailingSlash: false,
 
   // Set the production url of your site here
   url: "https://oomol.com",
