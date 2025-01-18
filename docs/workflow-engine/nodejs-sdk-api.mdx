@@ -49,6 +49,8 @@ export default async function (
   readonly sessionDir: string;
   /** Report progress, progress 0~100, this function is throttled to trigger every 300ms. */
   readonly reportProgress: (progress: number) => Promise<void>;
+  /** oomol environment variables for LLM, you can get base_url api-key model-list */
+  readonly OOMOL_LLM_ENV: OOMOL_LLM_ENV;
 ```
 
 ## 3. `Context.preview` Types

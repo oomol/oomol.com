@@ -39,16 +39,18 @@ export default async function (
 ### 2.2 常用 API
 
 ```typescript
-  /** 报告块已完成 */
+  /** 报告区块已完成 */
   readonly done: (err?: any) => Promise<void>;
   /** 报告错误 */
   readonly error: (error: unknown) => Promise<void>;
   /** 启用预览 */
   readonly preview: (payload: PreviewPayload) => Promise<void>;
-  /** 整个会话的临时目录， 用户可以用来存储临时文件 */
+  /** 每次任务的临时目录， 用户可以用来存储临时文件 */
   readonly sessionDir: string;
   /** 报告进度，进度0~100，该函数有节流效果，每300ms触发一次。 */
   readonly reportProgress: (progress: number) => Promise<void>;
+  /** 获取 OOMOL 内置大模型，可以获取 base_url api-key model-list */
+  readonly OOMOL_LLM_ENV: OOMOL_LLM_ENV;
 ```
 
 ## 3. `Context.preview` Types

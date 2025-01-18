@@ -42,6 +42,8 @@ def main(params: dict, context: Context):
     def session_dir(self) -> str:
     # Report progress, progress 0~100, this function is throttled to trigger every 300ms
     def report_progress(self, progress: float | int):
+    # oomol environment variables for LLM, you can get base_url api-key model-list
+    def oomol_llm_env(self) -> OOMOL_LLM_ENV:
 ```
 
 ## 3. `Context.preview` Types

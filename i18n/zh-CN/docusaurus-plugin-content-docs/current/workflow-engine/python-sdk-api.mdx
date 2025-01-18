@@ -42,6 +42,8 @@ def main(params: dict, context: Context):
     def session_dir(self) -> str:
     # 报告进度，进度0~100，该函数有节流效果，每300ms触发一次
     def report_progress(self, progress: float | int):
+    # 获取 OOMOL 内置大模型，可以获取 base_url api-key model-list
+    def oomol_llm_env(self) -> OOMOL_LLM_ENV:
 ```
 
 ## 3. `Context.preview` Types
