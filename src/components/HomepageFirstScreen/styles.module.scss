@@ -28,19 +28,19 @@
   background: url(/img/background.svg) no-repeat center/var(--bg-size, 90%);
   content: "";
   position: absolute;
-  bottom: var(--background-bottom, 35%);
+  bottom: var(--background-bottom, 32%);
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
 
   @media (max-width: 1600px) {
-    --background-bottom: 34%;
+    --background-bottom: 30%;
     --bg-size: 100%;
   }
 
   @media (max-width: 1540px) {
-    --background-bottom: 32%;
+    --background-bottom: 30%;
     --bg-size: 100%;
   }
 
@@ -210,10 +210,13 @@
 
 .header {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 37px;
-  max-width: 1280px;
+  // grid-template-columns: 1fr 1fr;
+  // gap: 37px;
+  // max-width: 1280px;
+  gap: 14px;
   padding: 0 30px;
+  align-items: center;
+  justify-items: center;
 
   @include desktop {
     padding: 0;
@@ -245,9 +248,10 @@
 }
 
 .overview {
-  size: 16px;
+  size: 18px;
   font-weight: 400;
-  color: #ccccccb2;
+  line-height: 27px;
+  color: rgba(255, 255, 255, 0.7);
 
   @media (max-width: 1024px) {
     text-align: center;
@@ -257,7 +261,8 @@
 .intro-box {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
+  align-items: center;
 
   // TODO: 统一放 custom.scss 中处理
   @media (max-width: 1024px) {

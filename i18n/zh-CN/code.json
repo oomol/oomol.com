@@ -3,10 +3,10 @@
     "message": "前往工作流社区"
   },
   "HOME.FirstScreen.slogan": {
-    "message": "基于工作流的数据处理 IDE"
+    "message": "AI 工作流 IDE"
   },
   "HOME.FirstScreen.script": {
-    "message": "OOMOL Studio 通过直观的可视化操作，轻松实现代码模块与 API 服务的连接"
+    "message": "Oomol Studio 通过直观的视觉交互轻松连接代码片段和 API 服务，帮助用户缩短从想法到产品的距离。"
   },
   "HOME.FirstScreen.download-macos": {
     "message": "下载适用于 MacOS 的版本"
@@ -53,7 +53,7 @@
     "message": "结构化数据"
   },
   "HOME.Scenes.data-science.inner": {
-    "message": "OOMOL 能使用脚本语言处理数据并轻松生成图表。通过简单的拖放和连线操作，且配置节点参数，即可快速构建工作流。OOMOL 的容器环境解决了协作痛点，显著缩短了从脚本到产品的转化路径。"
+    "message": "OOMOL 原生支持使用 Python/JS 处理数据并生成图表，且内置丰富的 AI 功能节点和大模型 API。可以通过自由组合这些节点来构建现代化的 AI 数据分析工作流。"
   },
   "HOME.Scenes.media-processing.title": {
     "message": "多媒体处理"
@@ -62,7 +62,7 @@
     "message": "非结构化数据"
   },
   "HOME.Scenes.media-processing.inner": {
-    "message": "开发人员可以将常用的视频处理库封装为功能节点，并通过 OOMOL 提供的图形化界面添加各种可调参数。借助这一工具，内容创作者如抖音平台用户等，能够通过简单的拖放操作轻松创建音视频处理工作流。诸如为视频添加多语言字幕等任务，都可以自动化并批量完成。"
+    "message": "开发人员可通过OOMOL将视频处理库封装为可调参数的功能节点。内容创作者，如抖音用户，能通过拖放创建音视频处理工作流，自动化完成多语言字幕等任务。"
   },
 
   "HOME.Features.title": {

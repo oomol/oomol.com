@@ -4,10 +4,10 @@
   },
 
   "HOME.FirstScreen.slogan": {
-    "message": "Workflow-based data processing IDE."
+    "message": "AI Workflow IDE."
   },
   "HOME.FirstScreen.script": {
-    "message": "OOMOL Studio makes it easy to connect code snippets and API services through intuitive visual interactions."
+    "message": "Oomol Studio makes it easy to connect code snippets and API services through intuitive visual interactions."
   },
   "HOME.FirstScreen.download-macos": {
     "message": "Download for macOS"
@@ -54,7 +54,7 @@
     "message": "Structured Data"
   },
   "HOME.Scenes.data-science.inner": {
-    "message": "Process data and display charts using familiar scripting languages. Additionally, we support configuring node parameters through a graphical interface, allowing the creation of Workflows with simple drag-and-drop and connection operations. Our provided container environment also eliminates sharing barriers, significantly shortening the distance from script to product."
+    "message": "OOMOL natively supports Python/JS for data processing and chart generation, featuring built-in AI function nodes and large model APIs for creating modern AI analytics workflows."
   },
   "HOME.Scenes.media-processing.title": {
     "message": "Media Processing"
@@ -63,7 +63,7 @@
     "message": "Unstructured Data"
   },
   "HOME.Scenes.media-processing.inner": {
-    "message": "Developers can encapsulate common video processing libraries into functional nodes, which can be added with various adjustable parameters using the UI configuration interface provided by OOMOL. With such a tool, content creators on platforms like TikTok can drag and drop to create a workflow for processing their video and audio materials. Tasks such as adding subtitles in multiple languages to videos can be automated and completed in batches."
+    "message": "OOMOL allows developers to create customizable video processing nodes, enabling content creators to automate tasks like multilingual subtitling through drag-and-drop workflows."
   },
   "HOME.Features.title": {
     "message": "Features and Benefits"
