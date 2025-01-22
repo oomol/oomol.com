@@ -20,12 +20,14 @@
   font-weight: 900;
   text-align: center;
   color: #f0f6fc;
+  margin-bottom: 14px;
 }
 
 .description {
   font-size: 14px;
   font-weight: 400;
   color: rgba(240, 246, 252, 0.7);
+  margin: 0;
 }
 
 .downloads {
@@ -37,6 +39,7 @@
 .download-btn {
   width: 240px;
   height: 40px;
+  font-size: 14px;
   background-color: #0d1116;
   border: solid 1px #3d444d;
   border-radius: 8px;
