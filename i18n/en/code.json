@@ -71,51 +71,28 @@
   "HOME.Features.intuitive-interaction.title": {
     "message": "Intuitive interaction"
   },
-  "HOME.Features.intuitive-interaction.inner1": {
-    "message": "Easily build Workflows with drag and drop."
-  },
-  "HOME.Features.intuitive-interaction.inner2": {
-    "message": "Flexibly configure node parameters through graphical components."
-  },
-  "HOME.Features.intuitive-interaction.inner3": {
-    "message": "Preview various common data types."
-  },
   "HOME.Features.pre-installed-environment.title": {
     "message": "Pre-installed environment"
-  },
-  "HOME.Features.pre-installed-environment.inner1": {
-    "message": "No need to worry about installing Python or Node.js runtime environments; it works out of the box."
-  },
-  "HOME.Features.pre-installed-environment.inner2": {
-    "message": "OOMOL unifies the development environment into containers, allowing users on different systems to freely share Workflows."
-  },
-  "HOME.Features.pre-installed-environment.inner3": {
-    "message": "Security isolation will not affect the user's local environment. Users also do not need to worry about data security issues on their devices."
   },
   "HOME.Features.programming-friendly.title": {
     "message": "Developer-friendly"
   },
-  "HOME.Features.programming-friendly.inner1": {
-    "message": "Built-in Python and Node.js, supports the installation of various open-source libraries."
-  },
-  "HOME.Features.programming-friendly.inner2": {
-    "message": "Based on the VSCode framework, it supports code completion, highlighting, and AI code suggestions."
-  },
-  "HOME.Features.programming-friendly.inner3": {
-    "message": "Features a visually appealing and practical workflow log interface, making it convenient for engineers to debug."
-  },
   "HOME.Features.support-sharing.title": {
     "message": "Community sharing"
   },
-  "HOME.Features.support-sharing.inner1": {
-    "message": "Share Workflows and Block Toolbox with the OOMOL community, making it easy for other users to utilize."
+  "HOME.Features.intuitive-interaction.inner": {
+    "message": "Build workflows easily with drag-and-drop, configure node parameters flexibly via graphical components, and preview common data types."
   },
-  "HOME.Features.support-sharing.inner2": {
-    "message": "Workflow source code can also be shared as a GitHub repository."
+  "HOME.Features.pre-installed-environment.inner": {
+    "message": "No installation of Python or Node.js required; works out of the box. OOMOL uses containers to unify the development environment, enabling seamless Workflow sharing across systems without impacting local environments."
   },
-  "HOME.Features.support-sharing.inner3": {
-    "message": "We will also open-source and share built-in tool plugins, common Workflows, and underlying runtime containers in the oomol-lab GitHub organization."
+  "HOME.Features.programming-friendly.inner": {
+    "message": "Built-in Python and Node.js with open-source library support. Based on VSCode, it offers code completion, highlighting, and AI suggestions. Includes an intuitive workflow log interface for easy debugging."
   },
+  "HOME.Features.support-sharing.inner": {
+    "message": "Share Workflows and Block Toolbox with the OOMOL community and as GitHub repositories. We will open-source built-in tool plugins, common Workflows, and runtime containers in the oomol-lab GitHub organization."
+  },
+
   "HOME.Pricing.title": {
     "message": "Pricing"
   },

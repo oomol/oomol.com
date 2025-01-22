@@ -71,50 +71,26 @@
   "HOME.Features.intuitive-interaction.title": {
     "message": "直观交互"
   },
-  "HOME.Features.intuitive-interaction.inner1": {
-    "message": "通过简单的拖放操作即可轻松构建工作流。"
-  },
-  "HOME.Features.intuitive-interaction.inner2": {
-    "message": "支持图形组件灵活配置节点参数。"
-  },
-  "HOME.Features.intuitive-interaction.inner3": {
-    "message": "支持预览多种常用数据类型。"
-  },
   "HOME.Features.pre-installed-environment.title": {
     "message": "预安装环境"
-  },
-  "HOME.Features.pre-installed-environment.inner1": {
-    "message": "无需担心安装 Python 或 Node.js 运行环境，开箱即用。"
-  },
-  "HOME.Features.pre-installed-environment.inner2": {
-    "message": "OOMOL 将开发环境统一到容器中，不同系统的用户可以自由共享工作流。"
-  },
-  "HOME.Features.pre-installed-environment.inner3": {
-    "message": "安全隔离不会影响用户的本地环境，用户无需担心设备中的数据安全问题。"
   },
   "HOME.Features.programming-friendly.title": {
     "message": "编程友好"
   },
-  "HOME.Features.programming-friendly.inner1": {
-    "message": "内置 Python、Node.js，支持安装各种开源库。"
-  },
-  "HOME.Features.programming-friendly.inner2": {
-    "message": "基于 VSCode 框架，支持代码补全、高亮和 AI 代码提示。"
-  },
-  "HOME.Features.programming-friendly.inner3": {
-    "message": "拥有美观实用的工作流日志界面，方便工程师调试。"
-  },
   "HOME.Features.support-sharing.title": {
     "message": "社区共享"
   },
-  "HOME.Features.support-sharing.inner1": {
-    "message": "用户可以将工作流和区块工具箱分享到 OOMOL 社区，方便其他用户轻松使用。"
+  "HOME.Features.intuitive-interaction.inner": {
+    "message": "通过简单的拖放操作和图形组件灵活配置节点参数，轻松构建工作流并预览多种常用数据类型。"
   },
-  "HOME.Features.support-sharing.inner2": {
-    "message": "工作流源代码也可以作为 GitHub 仓库分享。"
+  "HOME.Features.pre-installed-environment.inner": {
+    "message": "无需安装 Python 或 Node.js，开箱即用。OOMOL 使用容器统一开发环境，支持跨系统共享工作流，并通过安全隔离保护本地环境和数据安全。"
   },
-  "HOME.Features.support-sharing.inner3": {
-    "message": "我们也会在 oomol-lab Github 组织中开源分享内置工具插件、常用工作流和底层运行容器等。"
+  "HOME.Features.programming-friendly.inner": {
+    "message": "内置 Python 和 Node.js，支持开源库安装。基于 VSCode，提供代码补全、高亮和 AI 提示。配备美观实用的工作流日志界面，便于调试。"
+  },
+  "HOME.Features.support-sharing.inner": {
+    "message": "用户可将工作流和工具箱分享至 OOMOL 社区和 GitHub。我们将在 Oomol-lab GitHub 开源内置插件、常用工作流和运行容器。"
   },
   "Easily connect code and services": {
     "message": "便捷地连接代码和服务"

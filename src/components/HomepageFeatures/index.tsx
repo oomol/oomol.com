@@ -9,7 +9,7 @@ type SuperiorityType = {
   imageUrl: string;
   title: string;
   icon: string;
-  inners: string[];
+  inner: string;
 };
 
 const superiorityList: SuperiorityType[] = [
@@ -17,11 +17,7 @@ const superiorityList: SuperiorityType[] = [
     imageUrl: "/img/superiority-1.png",
     title: translate({ message: "HOME.Features.intuitive-interaction.title" }),
     icon: "i-codicon-wand",
-    inners: [
-      translate({ message: "HOME.Features.intuitive-interaction.inner1" }),
-      translate({ message: "HOME.Features.intuitive-interaction.inner2" }),
-      translate({ message: "HOME.Features.intuitive-interaction.inner3" }),
-    ],
+    inner: translate({ message: "HOME.Features.intuitive-interaction.inner" }),
   },
   {
     imageUrl: "/img/superiority-2.png",
@@ -29,38 +25,28 @@ const superiorityList: SuperiorityType[] = [
       message: "HOME.Features.pre-installed-environment.title",
     }),
     icon: "i-codicon:server-environment",
-    inners: [
-      translate({ message: "HOME.Features.pre-installed-environment.inner1" }),
-      translate({ message: "HOME.Features.pre-installed-environment.inner2" }),
-      translate({ message: "HOME.Features.pre-installed-environment.inner3" }),
-    ],
+    inner: translate({
+      message: "HOME.Features.pre-installed-environment.inner",
+    }),
   },
   {
     imageUrl: "/img/superiority-3.png",
     title: translate({ message: "HOME.Features.programming-friendly.title" }),
     icon: "i-codicon:code",
-    inners: [
-      translate({ message: "HOME.Features.programming-friendly.inner1" }),
-      translate({ message: "HOME.Features.programming-friendly.inner2" }),
-      translate({ message: "HOME.Features.programming-friendly.inner3" }),
-    ],
+    inner: translate({ message: "HOME.Features.programming-friendly.inner" }),
   },
   {
     imageUrl: "/img/superiority-4.png",
     title: translate({ message: "HOME.Features.support-sharing.title" }),
     icon: "i-codicon:globe",
-    inners: [
-      translate({ message: "HOME.Features.support-sharing.inner1" }),
-      translate({ message: "HOME.Features.support-sharing.inner2" }),
-      translate({ message: "HOME.Features.support-sharing.inner3" }),
-    ],
+    inner: translate({ message: "HOME.Features.support-sharing.inner" }),
   },
 ];
 
 export const FeatureItem = ({
   title,
   imageUrl,
-  inners,
+  inner,
   icon,
 }: SuperiorityType) => {
   return (
@@ -78,13 +64,7 @@ export const FeatureItem = ({
             <i className={`${icon} ${styles["sub-icon"]}`} />
             <h3 className={styles["title-text"]}>{title}</h3>
           </div>
-          {inners.map((inner, index) => {
-            return (
-              <p key={`inner-${index}`} className={styles.inner}>
-                {inner}
-              </p>
-            );
-          })}
+          <p className={styles.inner}>{inner}</p>
         </div>
       </div>
     </BlurFade>
@@ -108,7 +88,7 @@ export default function HomepageFeatures() {
               imageUrl={data.imageUrl}
               title={data.title}
               icon={data.icon}
-              inners={data.inners}
+              inner={data.inner}
             />
           );
         })}
