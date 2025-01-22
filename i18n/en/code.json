@@ -4,10 +4,10 @@
   },
 
   "HOME.FirstScreen.slogan": {
-    "message": "AI Workflow IDE."
+    "message": "AI Workflow IDE"
   },
   "HOME.FirstScreen.script": {
-    "message": "Oomol Studio makes it easy to connect code snippets and API services through intuitive visual interactions."
+    "message": "Oomol Studio makes it easy to connect code snippets and API services through intuitive visual interactions"
   },
   "HOME.FirstScreen.download-macos": {
     "message": "Download for macOS"
