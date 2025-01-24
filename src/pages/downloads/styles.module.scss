@@ -1,0 +1,150 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+.image {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 40px;
+}
+
+.icon-canary {
+  width: 20px;
+  height: 20px;
+}
+
+.icon {
+  font-size: 20px;
+  background: linear-gradient(
+    127.66deg,
+    #0d1116 0%,
+    #987de9 15%,
+    #7d7fe9 39%,
+    #ffffff 62%,
+    #7da6e9 86%,
+    #0d1116 100%
+  );
+}
+
+.download-icon {
+  font-size: 20px;
+}
+
+.title {
+  font-size: 58px;
+  font-weight: 800;
+  margin: 0;
+  padding-bottom: 14px;
+}
+
+.sub-title {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  padding: 0 20px 14px 20px;
+}
+
+.download-button {
+  padding-bottom: 40px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 24px;
+}
+
+.type {
+  font-size: 20px;
+  font-weight: 900;
+  color: #f0f6fc;
+  margin: 0;
+}
+
+.description {
+  color: rgba(240, 246, 252, 0.7);
+  font-size: 14px;
+  margin: 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+  padding: 40px 0;
+  max-width: 100%;
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 24px;
+  text-align: left;
+  transition: transform 0.3s ease;
+  background-color: #0d1116;
+  border: 1px solid #3d444d;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.stable::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    105.32deg,
+    #0d1116 -6.87%,
+    #987de9 10.42%,
+    #7d7fe9 38.09%,
+    #ffffff 64.61%,
+    #7da6e9 92.28%,
+    #0d1116 108.42%
+  );
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.downloads {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  > a {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+
+    &:hover {
+      color: #a4a5f0;
+    }
+
+    &.active {
+      color: #5859a3;
+    }
+  }
+}
