@@ -38,13 +38,13 @@ export default function HomepageFirstScreen() {
 
   const content = (
     <div className={styles.popoverBox}>
-      <a download href={DownloadUrl.MacOS.AppleSilicon}>
+      <a download href={DownloadUrl.Stable.MacOS.AppleSilicon}>
         <div className={styles.popoverBtn}>
           <div className={`${styles.icon} i-ic-baseline-apple`} />
           <span style={{ marginLeft: 8 }}>Apple Silicon</span>
         </div>
       </a>
-      <a download href={DownloadUrl.MacOS.Intel}>
+      <a download href={DownloadUrl.Stable.MacOS.Intel}>
         <div className={styles.popoverBtn}>
           <div className={`${styles.icon} i-file-icons-intel`} />
           <span style={{ marginLeft: 8 }}>Intel Chip</span>
@@ -96,7 +96,7 @@ export default function HomepageFirstScreen() {
                 <div className={styles.windowsBox}>
                   <Button
                     className={styles.download}
-                    href={DownloadUrl.Windows.X64}
+                    href={DownloadUrl.Stable.Windows.x64}
                     icon={
                       <div
                         className="i-codicon-desktop-download"

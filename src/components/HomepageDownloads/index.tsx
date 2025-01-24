@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "./styles.module.scss";
-import Image from "@theme/ThemedImage";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import { DownloadUrl } from "@site/src/download_url";
 import { Button } from "../Button";
 import { translate } from "@docusaurus/Translate";
@@ -18,17 +16,17 @@ const DownloadBtn: DownloadBtnProps[] = [
   {
     text: "Windows x64",
     icon: "i-mage-microsoft-windows",
-    downloadingUrl: DownloadUrl.Windows.X64,
+    downloadingUrl: DownloadUrl.Stable.Windows.x64,
   },
   {
     text: "macOS Apple Silicon",
     icon: "i-ic-baseline-apple",
-    downloadingUrl: DownloadUrl.MacOS.AppleSilicon,
+    downloadingUrl: DownloadUrl.Stable.MacOS.AppleSilicon,
   },
   {
     text: "macOS Intel Chip",
     icon: "i-file-icons-intel",
-    downloadingUrl: DownloadUrl.MacOS.Intel,
+    downloadingUrl: DownloadUrl.Stable.MacOS.Intel,
   },
 ];
 

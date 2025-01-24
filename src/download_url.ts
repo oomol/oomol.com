@@ -1,11 +1,29 @@
 export const DownloadUrl = {
-  Windows: {
-    X64: "https://static.oomol.com/release/stable/win32/x64/OOMOL%20Studio-1.0.1-2025-01-11.11.exe",
+  Stable: {
+    Windows: {
+      x64: "https://update.oomol.com/latest/win32-x64-user/stable",
+    },
+    MacOS: {
+      Intel: "https://update.oomol.com/latest/darwin/stable",
+      AppleSilicon: "https://update.oomol.com/latest/darwin-arm64/stable",
+    },
   },
-  MacOS: {
-    Intel:
-      "https://static.oomol.com/release/stable/darwin/x64/OOMOL%20Studio.app-1.0.1-2025-01-11.18.dmg",
-    AppleSilicon:
-      "https://static.oomol.com/release/stable/darwin/arm64/OOMOL%20Studio.app-1.0.1-2025-01-11.18.dmg",
+  Canary: {
+    Windows: {
+      x64: "https://update.oomol.com/latest/win32-x64-user/canary",
+    },
+    MacOS: {
+      Intel: "https://update.oomol.com/latest/darwin/canary",
+      AppleSilicon: "https://update.oomol.com/latest/darwin-arm64/canary",
+    },
+  },
+  Nightly: {
+    Windows: {
+      x64: "https://update.oomol.com/latest/win32-x64-user/insider",
+    },
+    MacOS: {
+      Intel: "https://update.oomol.com/latest/darwin/insider",
+      AppleSilicon: "https://update.oomol.com/latest/darwin-arm64/insider",
+    },
   },
 };
