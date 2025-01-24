@@ -143,6 +143,7 @@ const config = {
           // { to: "/blog", label: "Blog", position: "left" },
           // { to: "/pricing", label: "Pricing", position: "left" },
           { to: "/updates", label: "Updates", position: "left" },
+          { to: "/downloads", label: "Downloads", position: "left" },
         ],
       },
       footer: {

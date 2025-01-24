@@ -11,6 +11,12 @@
   "HOME.FirstScreen.download-macos": {
     "message": "下载适用于 MacOS 的版本"
   },
+  "HOME.FirstScreen.download-macos-stable": {
+    "message": "下载适用于 MacOS 的版本 (稳定版)"
+  },
+  "HOME.FirstScreen.download-windows-stable": {
+    "message": "下载适用于 Windows 的版本 (稳定版)"
+  },
   "HOME.FirstScreen.download-windows": {
     "message": "下载适用于 Windows 的版本"
   },
@@ -107,6 +113,31 @@
 
   "HOME.Pricing.title": {
     "message": "价格"
+  },
+
+  "HOME.Downloads.title": {
+    "message": "下载"
+  },
+  "HOME.Downloads.subtitle": {
+    "message": "下载或使用 OOMOL 应用程序，即表示您同意我们的服务条款和隐私政策。"
+  },
+  "HOME.Downloads.Stable.title": {
+    "message": "稳定版"
+  },
+  "HOME.Downloads.Canary.title": {
+    "message": "预发布版"
+  },
+  "HOME.Downloads.Nightly.title": {
+    "message": "每日构建版"
+  },
+  "HOME.Downloads.Stable.subtitle": {
+    "message": "经过全面测试的版本"
+  },
+  "HOME.Downloads.Canary.subtitle": {
+    "message": "具有新功能但未经全面测试的版本"
+  },
+  "HOME.Downloads.Nightly.subtitle": {
+    "message": "隔夜构建版本，较不稳定"
   },
 
   "theme.ErrorPageContent.title": {

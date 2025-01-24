@@ -10,5 +10,9 @@
   "item.label.Updates": {
     "message": "Updates",
     "description": "Navbar item with label Updates"
+  },
+  "item.label.Downloads": {
+    "message": "Downloads",
+    "description": "Navbar item with label Downloads"
   }
 }

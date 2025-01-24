@@ -12,8 +12,14 @@
   "HOME.FirstScreen.download-macos": {
     "message": "Download for macOS"
   },
+  "HOME.FirstScreen.download-macos-stable": {
+    "message": "Download for macOS (Stable)"
+  },
   "HOME.FirstScreen.download-windows": {
     "message": "Download for Windows"
+  },
+  "HOME.FirstScreen.download-windows-stable": {
+    "message": "Download for Windows (Stable)"
   },
   "HOME.FirstScreen.download-windows-subtitle": {
     "message": "only supports x64"
@@ -95,6 +101,31 @@
 
   "HOME.Pricing.title": {
     "message": "Pricing"
+  },
+
+  "HOME.Downloads.title": {
+    "message": "Downloads"
+  },
+  "HOME.Downloads.subtitle": {
+    "message": "By downloading an OOMOL application, You agree that our Terms of Service & Privacy Policy apply to your use of that application."
+  },
+  "HOME.Downloads.Stable.title": {
+    "message": "Stable"
+  },
+  "HOME.Downloads.Canary.title": {
+    "message": "Canary"
+  },
+  "HOME.Downloads.Nightly.title": {
+    "message": "Nightly"
+  },
+  "HOME.Downloads.Stable.subtitle": {
+    "message": "Fully tested version"
+  },
+  "HOME.Downloads.Canary.subtitle": {
+    "message": "Versions with new features but not fully tested"
+  },
+  "HOME.Downloads.Nightly.subtitle": {
+    "message": "Overnight build version, less stable"
   },
 
   "theme.ErrorPageContent.title": {

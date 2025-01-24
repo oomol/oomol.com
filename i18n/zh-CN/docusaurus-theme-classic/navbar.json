@@ -10,5 +10,9 @@
   "item.label.Updates": {
     "message": "更新",
     "description": "Navbar item with label Updates"
+  },
+  "item.label.Downloads": {
+    "message": "下载",
+    "description": "Navbar item with label Downloads"
   }
 }
