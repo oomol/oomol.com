@@ -30,11 +30,8 @@
   "HOME.BrandAssets.subtitle": {
     "message": "下载官方 OOMOL logo"
   },
-  "HOME.BrandAssets.details-1": {
-    "message": "所有 OOMOL 商标、logo 或其他品牌元素不得修改或用于"
-  },
-  "HOME.BrandAssets.details-2": {
-    "message": "任何其他目的，除非是代表 OOMOL 公司。"
+  "HOME.BrandAssets.description": {
+    "message": "所有悟墨商标、标识或其他品牌元素不得被修改或用于除代表悟墨之外的任何其他目的。"
   },
   "HOME.BrandAssets.logo-name": {
     "message": "OOMOL logo"
@@ -46,7 +43,7 @@
     "message": "请勿对字标应用其它颜色。"
   },
   "HOME.BrandAssets.download-btn-text": {
-    "message": "下载 logo 包"
+    "message": "下载"
   },
 
   "HOME.Scenes.title": {

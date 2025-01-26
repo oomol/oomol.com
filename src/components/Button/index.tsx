@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import styles from "./styles.module.scss";
-import Link from "@docusaurus/Link";
 
 // TODO: 添加默认的 size ，large middle small
 export interface ButtonProps {
@@ -65,13 +64,13 @@ export const Button = ({
   };
 
   return (
-    <a target={target} href={href}>
-      <button
-        onClick={onClick}
-        className={`${disabled ? styles.btnDisable : styles.btn} ${className}`}
-      >
+    <button
+      onClick={onClick}
+      className={clsx(disabled ? styles.btnDisable : styles.btn, className)}
+    >
+      <a target={target} href={href}>
         <div className={styles.btnContent}>{renderBtnContent()}</div>
-      </button>
-    </a>
+      </a>
+    </button>
   );
 };

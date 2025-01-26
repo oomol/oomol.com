@@ -3,85 +3,86 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-}
-
-.box {
-  max-width: 1200px;
-  box-sizing: border-box;
-  width: 100%;
-  margin-top: 64px;
-  margin-bottom: 64px;
+  padding-top: 80px;
+  padding-bottom: 40px;
 }
 
 .title {
-  font-size: 42px;
-  font-weight: bold;
+  font-size: 58px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.description-en-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.description-en {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.description {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  padding-top: 14px;
+  padding-bottom: 40px;
+  margin: 0;
 }
 
 .sub-title {
-  font-size: 24px;
-  font-weight: 500;
+  font-size: 30px;
+  font-weight: 900;
+  color: #f0f6fc;
+  margin: 0;
+  padding-top: 40px;
 }
 
-.details {
-  font-size: 18px;
-  margin-top: 20px;
-  margin-top: 8px;
+.cards {
+  max-width: 1280px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 24px;
+  padding: 40px 0;
+  justify-content: center;
+
+  @media (max-width: 1150px) {
+    grid-template-columns: 1fr;
+    width: 50%;
+  }
 }
 
 .card {
-  width: 100%;
-  height: 280px;
-  max-width: 1200px;
-  width: 100%;
-  border-radius: 8px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #151515;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 72px;
-  background-color: #151515;
-}
-
-.card-left {
-  width: 40%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card-right {
-  width: 60%;
-  height: 100%;
-  padding: 16px;
-  box-sizing: border-box;
+  height: 128px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding-left: 64px;
-  .name {
-    font-size: 28px;
-    font-weight: bold;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 24px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border: 1px solid #3d444d;
+}
+
+// TODO: optimize the button override
+.download {
+  width: 100%;
+  border-top: 1px solid #3d444d !important;
+  background-color: #151b23 !important;
+  border-radius: 0px 0px 10px 10px !important;
+
+  &:hover {
+    color: #ffffff !important;
+    background-color: #212830 !important;
+    border: none !important;
+    border-top: 1px solid #3d444d !important;
   }
-
-  .script {
-    margin-bottom: 8px;
-    margin-top: 4px;
-    font-size: 14px;
-  }
 }
 
-.button-box {
-  padding-top: 8px;
-}
-
-.button {
-  height: 32px !important;
-}
-
-.card-brand {
+.logo {
+  height: 48px;
 }

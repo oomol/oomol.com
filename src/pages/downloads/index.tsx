@@ -83,7 +83,7 @@ const downloadData = [
 
 export default function Downloads() {
   return (
-    <Layout title="Hello" description="Hello React Page">
+    <Layout>
       <div className={styles.container}>
         <img className={styles.image} src={"/img/logo2x.png"} />
         <h1 className={styles.title}>
