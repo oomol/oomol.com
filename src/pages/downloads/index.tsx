@@ -5,6 +5,7 @@ import Layout from "@theme/Layout";
 import { DownloadButton } from "@site/src/components/DownloadButton";
 import { DownloadUrl } from "@site/src/download_url";
 import { translate } from "@docusaurus/Translate";
+import CanarySVG from "@site/static/img/canary.svg";
 
 const downloadData = [
   {
@@ -94,9 +95,9 @@ export default function Downloads() {
             message: "HOME.Downloads.subtitle",
           })}
         </p>
-        <div className={styles["download-button"]}>
+        {/* <div className={styles["download-button"]}>
           <DownloadButton />
-        </div>
+        </div> */}
         <div className={styles.cards}>
           {downloadData.map((item, index) => {
             return (
@@ -106,7 +107,7 @@ export default function Downloads() {
               >
                 <div className={styles.content}>
                   {item.type === "Canary" ? (
-                    <img className={styles["icon-canary"]} src={item.icon} />
+                    <CanarySVG className={styles["icon-canary"]} />
                   ) : (
                     <i className={`${styles.icon} ${item.icon}`} />
                   )}
