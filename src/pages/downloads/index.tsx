@@ -2,7 +2,7 @@ import styles from "./styles.module.scss";
 
 import React from "react";
 import Layout from "@theme/Layout";
-import { DownloadButton } from "@site/src/components/DownloadButton";
+// import { DownloadButton } from "@site/src/components/DownloadButton";
 import { DownloadUrl } from "@site/src/download_url";
 import { translate } from "@docusaurus/Translate";
 import CanarySVG from "@site/static/img/canary.svg";
@@ -34,6 +34,7 @@ const downloadData = [
   },
   {
     icon: "./img/canary.svg",
+    iconType: "svg",
     type: translate({
       message: "HOME.Downloads.Canary.title",
     }),
@@ -106,7 +107,7 @@ export default function Downloads() {
                 key={`download-${index}`}
               >
                 <div className={styles.content}>
-                  {item.type === "Canary" ? (
+                  {item?.iconType ? (
                     <CanarySVG className={styles["icon-canary"]} />
                   ) : (
                     <i className={`${styles.icon} ${item.icon}`} />
