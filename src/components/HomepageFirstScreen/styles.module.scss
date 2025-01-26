@@ -44,8 +44,18 @@
     --bg-size: 100%;
   }
 
+  @media (max-width: 1366px) {
+    --background-bottom: 29%;
+    --bg-size: 100%;
+  }
+
+  @media (max-width: 1200px) {
+    --background-bottom: 27%;
+    --bg-size: 100%;
+  }
+
   @include desktop {
-    --background-bottom: 28%;
+    --background-bottom: 26%;
     --bg-size: 110%;
   }
 
