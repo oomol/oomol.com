@@ -95,7 +95,7 @@
   text-align: left;
   transition: transform 0.3s ease;
   background-color: #0d1116;
-  border: 1px solid #3d444d;
+  border: 1.5px solid #3d444d;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
@@ -108,8 +108,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  border-radius: inherit;
-  padding: 1px;
+  border-radius: 8px;
+  padding: 1.5px;
   background: linear-gradient(
     105.32deg,
     #0d1116 -6.87%,
