@@ -1,10 +1,11 @@
 import styles from "./styles.module.scss";
 
-import React from "react";
+import React, { useState } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import clsx from "clsx";
 import { LocalDropdown } from "../components/LocalDropdown";
+import { Popover } from "@site/src/components/Popover";
 
 interface FooterLinkProps {
   href?: string;
@@ -105,6 +106,7 @@ const Footer: React.FC = () => {
   const { copyright, links = [] } = siteConfig.themeConfig.footer;
   const hasFooter = !!siteConfig.themeConfig.footer;
   const currentLocale = i18n.currentLocale;
+  const [isHovered, setIsHovered] = useState(false);
 
   if (!hasFooter) {
     return null;
@@ -142,7 +144,32 @@ const Footer: React.FC = () => {
               loading="lazy"
             />
           </div>
-          <div className={styles.iconOutBox}>{logoNodes}</div>
+          <div className={styles.iconOutBox}>
+            {logoNodes}
+            {currentLocale === "zh-CN" && (
+              <Popover
+                trigger={
+                  <img
+                    src={
+                      isHovered
+                        ? "/img/work-weixin-hover.svg"
+                        : "/img/work-weixin.svg"
+                    }
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                  />
+                }
+                position="top"
+                content={
+                  <img
+                    alt="qrcode"
+                    className={styles.qrcode}
+                    src={"/img/qrcode@3x.png"}
+                  />
+                }
+              />
+            )}
+          </div>
         </div>
         <div className={styles.links}>
           {links.map((linkItem, i) => (

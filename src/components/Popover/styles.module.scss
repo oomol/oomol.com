@@ -1,13 +1,22 @@
 .popoverContainer {
   position: relative;
+  display: flex;
 }
 
 .popoverContent {
   position: absolute;
-  top: 100%;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   z-index: 99;
   padding-top: 8px;
   border-radius: 10px;
+}
+
+.popoverContentTop {
+  bottom: 100%;
+}
+
+.popoverContentBottom {
+  top: 100%;
 }
