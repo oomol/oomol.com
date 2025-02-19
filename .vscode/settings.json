@@ -48,7 +48,15 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": ["clsx", "Flowhub", "OOCANA", "Oomol", "plotly", "vocana"],
+  "cSpell.words": [
+    "clsx",
+    "Flowhub",
+    "OOCANA",
+    "Oomol",
+    "plotly",
+    "vocana",
+    "XSVG"
+  ],
   "conventionalCommits.scopes": ["project"],
   "cSpell.enableFiletypes": ["mdx"]
 }

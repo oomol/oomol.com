@@ -144,6 +144,7 @@ const config = {
           // { to: "/pricing", label: "Pricing", position: "left" },
           { to: "/updates", label: "Updates", position: "left" },
           { to: "/downloads", label: "Downloads", position: "left" },
+          { to: "/community", label: "Community", position: "left" },
         ],
       },
       footer: {
