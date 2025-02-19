@@ -14,5 +14,9 @@
   "item.label.Downloads": {
     "message": "下载",
     "description": "Navbar item with label Downloads"
+  },
+  "item.label.Community": {
+    "message": "社区",
+    "description": "Navbar item with label Community"
   }
 }
