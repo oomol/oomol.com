@@ -128,6 +128,31 @@
     "message": "Overnight build version, less stable"
   },
 
+  "HOME.Community.title": {
+    "message": "Community"
+  },
+  "HOME.Community.subtitle": {
+    "message": "Connecting with people working on OOMOL Studio"
+  },
+  "HOME.Community.contact-title": {
+    "message": "Follow us on"
+  },
+  "HOME.Community.contact-we-com": {
+    "message": "WeCom"
+  },
+  "HOME.Community.slogan-1": {
+    "message": "Stay in the Loop"
+  },
+  "HOME.Community.slogan-2": {
+    "message": "Real Talk, No Ticket ID"
+  },
+  "HOME.Community.slogan-3": {
+    "message": "Developers' Idea Exchange"
+  },
+  "HOME.Community.slogan-4": {
+    "message": "Every Voice Shapes the Future"
+  },
+
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"

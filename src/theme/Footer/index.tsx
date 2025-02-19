@@ -146,29 +146,28 @@ const Footer: React.FC = () => {
           </div>
           <div className={styles.iconOutBox}>
             {logoNodes}
-            {currentLocale === "zh-CN" && (
-              <Popover
-                trigger={
-                  <img
-                    src={
-                      isHovered
-                        ? "/img/work-weixin-hover.svg"
-                        : "/img/work-weixin.svg"
-                    }
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
-                  />
-                }
-                position="top"
-                content={
-                  <img
-                    alt="qrcode"
-                    className={styles.qrcode}
-                    src={"/img/qrcode@3x.png"}
-                  />
-                }
-              />
-            )}
+            <Popover
+              trigger={
+                <img
+                  className={styles["work-weixin"]}
+                  src={
+                    isHovered
+                      ? "/img/work-weixin-hover.svg"
+                      : "/img/work-weixin.svg"
+                  }
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                />
+              }
+              position="top"
+              content={
+                <img
+                  alt="qrcode"
+                  className={styles.qrcode}
+                  src={"/img/qrcode@3x.png"}
+                />
+              }
+            />
           </div>
         </div>
         <div className={styles.links}>

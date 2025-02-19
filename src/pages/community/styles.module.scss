@@ -1,0 +1,125 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.contact-title {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  padding-bottom: 14px;
+}
+
+.title {
+  font-size: 58px;
+  font-weight: 800;
+  margin: 0;
+  padding-bottom: 14px;
+  color: #f0f6fc;
+}
+
+.sub-title {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  padding: 0 20px 14px 20px;
+}
+
+.contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 0 16px;
+}
+
+.item {
+  cursor: pointer;
+  background-color: inherit;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: #171b21;
+  }
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.qrcode {
+  max-width: none;
+  width: 200px;
+  height: 200px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.name {
+  color: rgba(240, 246, 252, 0.7);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.slogans {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 40px 0;
+}
+
+.slogan {
+  width: 302px;
+  height: 116px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  border-radius: 10px;
+  padding: 24px 0;
+  gap: 14px;
+  border-width: 1px;
+  border: 1px solid #3d444d;
+}
+
+.icon {
+  font-size: 30px;
+  background: linear-gradient(
+    127.66deg,
+    #0d1116 0%,
+    #987de9 15%,
+    #7d7fe9 39%,
+    #ffffff 62%,
+    #7da6e9 86%,
+    #0d1116 100%
+  );
+}
+
+.slogan-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(240, 246, 252, 0.7);
+}

@@ -5,9 +5,9 @@
 
 .popoverContent {
   position: absolute;
+  width: 100%;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
   z-index: 99;
   padding-top: 8px;
   border-radius: 10px;
