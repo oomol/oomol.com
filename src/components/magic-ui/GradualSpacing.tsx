@@ -27,12 +27,12 @@ export const GradualSpacing = memo(
     const words = useMemo(() => text.split(" "), [text]);
 
     return (
-      <div className={`${styles.container} flex flex-wrap `}>
+      <h1 className={`${styles.container} flex flex-wrap `}>
         <AnimatePresence>
           {words.map((word, wordIndex) => (
-            <div key={wordIndex} className="flex">
+            <span key={wordIndex} className="flex">
               {word.split("").map(char => (
-                <motion.h1
+                <motion.span
                   key={charIndex}
                   initial="hidden"
                   animate="visible"
@@ -42,9 +42,9 @@ export const GradualSpacing = memo(
                   className={cn("drop-shadow-sm ", className)}
                 >
                   {char}
-                </motion.h1>
+                </motion.span>
               ))}
-              <motion.h1
+              <motion.span
                 key={`space-${wordIndex}`}
                 initial="hidden"
                 animate="visible"
@@ -54,11 +54,11 @@ export const GradualSpacing = memo(
                 className={cn(`drop-shadow-sm ${styles.space}`, className)}
               >
                 &nbsp;
-              </motion.h1>
-            </div>
+              </motion.span>
+            </span>
           ))}
         </AnimatePresence>
-      </div>
+      </h1>
     );
   }
 );
