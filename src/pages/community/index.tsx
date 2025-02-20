@@ -100,7 +100,7 @@ export default function Community() {
                   <a className={styles.content}>
                     <WeComSVG className={styles.logo} />
                     <span className={styles.name}>
-                      {translate({ message: "HOME.Community.we-com" })}
+                      {translate({ message: "HOME.Community.contact-we-com" })}
                     </span>
                   </a>
                 </button>
