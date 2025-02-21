@@ -122,6 +122,9 @@ export default function HomepageFirstScreen() {
       </div>
       <BlurFade>
         <div className={styles["image-box"]}>
+          <div className={styles["image-bg"]}>
+            <img src={useBaseUrl("/img/background.svg")} />
+          </div>
           <Image
             className={styles.image}
             sources={{
