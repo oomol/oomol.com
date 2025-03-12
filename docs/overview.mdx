@@ -6,30 +6,40 @@ import overview from "@site/static/img/docs/overview.png";
 
 # Overview
 
-{/* ## Video Tutorial
+## 1. Core Features
 
-<iframe
-  src="//player.bilibili.com/player.html?bvid=BV1DbAceXE42&autoplay=0&vd_source=074e15df4d816e8ebbec8bdbdf4d6925#reply256944692752"
-  scrolling="no"
-  frameborder="no"
-  framespacing="0"
-  allowfullscreen
-  width="720"
-  height="480"
-/>
+OOMOL is an AI-driven workflow IDE designed for data analysis, automation script development, and intelligent agent construction. Compared to similar products, we focus more on open-source ecosystem and programmability.
 
-## Text Description */}
+### 1.1. Open Source & Open
 
-OOMOL is an AI workflow IDE. Compared to any similar product, we emphasize open source and programmability.
+Our business model: The underlying execution engine is completely open source, while the upper-level applications serve as value-added conveniences.
+
+- Open-source underlying execution engine, making it easy for developers to understand our operating principles and customize functionality
+- Support for exporting Docker images, enabling seamless cross-platform deployment (in development)
+
+### 1.2. Programmable
+
+Our core is the Scriptlet Block, which allows developers to implement custom business logic using Python and Node.js.
+
+- Traditional workflow products typically limit users to predefined modules, restricting business implementation
+- We seamlessly integrate workflows with the vast open-source ecosystem, allowing direct use of various open-source libraries in workflows, giving the product unlimited possibilities
+
+### 1.3. AI Native
+
+- Integrated AI-assisted programming capabilities to lower coding barriers
+- Support for automated programming based on large model function calling
+- Built-in variety of AI models that developers can use directly without complex configuration
+
+## 2. Product Architecture
 
 <img src={overview} width="720" />
 
-## 1. OVM
+### 2.1. OVM
 
 > OOMOL Virtual Machine
 
-1. Container environment, safe and reliable, easy to share.
-2. Built-in multi-language development environment, ready to use out of the box.
+1. Provides isolated container environments, ensuring security and portability
+2. Built-in multi-language development environment, ready to use out of the box
 
 **Open Source Repositories**
 
@@ -38,12 +48,12 @@ OOMOL is an AI workflow IDE. Compared to any similar product, we emphasize open 
 - https://github.com/oomol-lab/ovm-win
 - https://github.com/oomol-lab/ovm-js
 
-## 2. OOCANA
+### 2.2 OOCANA
 
 > OOMOL Workflow Engine
 
-1. Responsible for block scheduling.
-2. Throughput management, back pressure control.
+1. Responsible for block scheduling
+2. Throughput management, back pressure control
 
 **Open Source Repositories**
 
@@ -51,26 +61,26 @@ OOMOL is an AI workflow IDE. Compared to any similar product, we emphasize open 
 - https://github.com/oomol/oocana-python
 - https://github.com/oomol/oocana-rust
 
-## 3. OOMOL STUDIO
+### 2.3 OOMOL STUDIO
 
 > OOMOL Desktop App
 
-1. Convenient drag-and-drop workflow.
-2. Professional code editor.
-3. Exquisite data visualization display.
+1. Convenient drag-and-drop workflows
+2. Professional code editor
+3. Elegant data visualization capabilities
 
-## 4. OOMOL Flowhub
+### 2.4 OOMOL Flowhub
 
-> OOMOL Flow Hub
+> OOMOL Sharing Center
 
-1. Share your creativity.
-2. Collaborate on projects with friends in the community.
-3. Find inspiration from the community.
+1. Share your creative work
+2. Collaborate on projects with community members
+3. Find inspiration from the community
 
-## 5. OOMOL Cloud
+### 2.5 OOMOL Cloud
 
 > OOMOL Cloud Deployment Service `(coming soon)`
 
-1. Web access, available at any time without downloading.
-2. You can use the unlimited computing power of the cloud.
-3. Support API calls and provide services for developers.
+1. Web access, available anytime without download
+2. Leverage unlimited cloud computing power
+3. Support for API integration, providing services for developers
