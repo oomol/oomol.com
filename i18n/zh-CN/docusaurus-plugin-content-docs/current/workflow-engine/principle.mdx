@@ -4,39 +4,42 @@ sidebar_position: 1
 
 # 📚 原理
 
-## 视频教程
+## 1. 核心架构
 
-<iframe
-  src="//player.bilibili.com/player.html?bvid=BV1DbAceXE42&autoplay=0&vd_source=074e15df4d816e8ebbec8bdbdf4d6925#reply256944692752"
-  scrolling="no"
-  frameborder="no"
-  framespacing="0"
-  allowfullscreen
-  width="720"
-  height="480"
-/>
+OOCANA 是一个高效的工作流调度引擎，用于对一系列任务单元进行编排与执行。其架构由两个核心文件组成：
 
-## 图文说明
+- `flow.oo.yaml`：存储任务调度逻辑（以下简称 `flow`）
+- `block.oo.yaml`：定义执行单元所需的内容（以下简称 `block`）
 
-OOCANA 是对一系列任务单元进行编排与运行的调度工具。其调度逻辑存储在 flow.oo.yaml 中，而运行任务所需要的内容，则存储在 block.oo.yaml 文件中。前者在下文简称为 flow，后者简称为 block。block.oo.yaml 中会有一个内容用来标识运行 block 所需要的源码文件，我们称之为 block 函数。
+`block.oo.yaml` 中包含指向执行代码的引用，这些代码我们称为 `block 函数`。
 
-block 函数，可以是 nodejs、python 语言编写的脚本。这个函数需要是固定的名称（main）。这个函数接受两个参数，第一个参数是输入数据，第二个参数则是block 运行时提供的辅助函数。在编写 block 函数时，我们可以通过第一个参数获取到输入数据。这个函数可以直接返回一个字典对象（在 nodejs 中可以是一个最终返回字典的 promise ），这个字典对象就是 block 的输出数据。
+block 函数可以使用 NodeJS 或 Python 语言实现。函数名必须为 `main`，接收两个参数：
 
-flow 文件用来描述 block 之间的运行触发顺序以及数据传递的关系。
+1. 输入数据对象
+2. 运行时提供的辅助函数集
 
-## 1. block 的编排与运行
+开发者可通过第一个参数获取输入数据，并返回一个字典对象（在 NodeJS 中可以是 `Promise<Object>`）作为 block 的输出。
 
-block 的触发顺序由 flow 中的连线决定，当 block 所需要的数据准备好时，block 就会被触发执行，我们称之为数据流驱动。与之相对的还有 github action 中 steps 的触发方式————上一个 step 完成后，下一个 step 才会被触发，这种事件驱动的方式多用于编译、打包等 CI/CD 场景。
+flow 文件则定义了 block 间的执行顺序与数据流动关系。
 
-目前 block 的运行环境有 nodejs 和 python，当前相同语言的 block 之间运行在同一个环境中。不同语言环境的 block 数据传递则是通过 json 传递，同一个语言环境中的 block 之间除了使用 json 传递外，还可以直接传递变量。对于变量需要注意的是，变量的传递是通过引用传递的，所以在 block 中修改变量的值会影响到其他 block 中的这个变量。
+## 2. block 的编排与执行机制
 
-## 2. block 的数据传递
+OOCANA 采用**数据流驱动**模式，block 的触发顺序由 flow 中定义的连线决定。当一个 block 所需的数据准备就绪时，该 block 会被自动触发执行。这与 GitHub Action 中的**事件驱动**方式（上一步完成后触发下一步）有所不同，后者更适用于编译、打包等 CI/CD 场景。
 
-block 和 flow 中都会分别定义数据的格式，oocana 目前不会对这些数据格式进行检查（GUI 图形界面部分组件，会执行这部分检查）。而实际运行过程中暂时不会对 block 实际返回的数据格式进行检查，所以在编写 block 函数时，需要保证返回的数据格式符合 flow 和 block 定义的数据格式。
+目前，block 支持 NodeJS 和 Python 两种运行环境：
 
-## 3. block 的调试与加速
+- 同语言的 block 共享一个运行环境
+- 跨语言环境的数据传递通过 JSON 序列化实现
+- 同一语言环境内可以通过 JSON 或直接变量引用传递数据
+- **注意**：变量采用引用传递机制，一个 block 修改变量值会影响其他 block 中的同一变量
 
-当 flow 中的 block 较多，每次运行耗时较长，我们可以通过指定运行 block 的方式来加快调试速度。同时指定运行 block 有两种加速方式：
+## 3. 数据接口规范
 
-1. 运行到指定 block 后，就结束这次运行
-2. 使用之前运行的数据缓存（只支持 json 数据），来跳过一些可以不运行的 block，尽快运行到指定 block 中。
+block 和 flow 分别定义了输入输出数据的格式规范。目前 OOCANA 运行时不会对这些数据格式进行运行时校验（GUI 图形界面的部分组件会执行静态校验）。因此，开发者需自行确保 block 函数返回的数据结构符合 flow 和 block 中定义的接口规范。
+
+## 4. 调试优化策略
+
+当工作流中包含大量 block 且执行耗时较长时，可采用以下策略加速调试过程：
+
+1. **终止点策略**：指定目标 block，执行到该 block 后立即结束运行
+2. **缓存策略**：利用之前执行的数据缓存（仅支持 JSON 数据），跳过无需重新执行的 block，快速到达指定 block

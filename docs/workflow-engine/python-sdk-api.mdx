@@ -46,6 +46,8 @@ def main(params: dict, context: Context):
     def report_progress(self, progress: float | int):
     # oomol environment variables for LLM, you can get base_url api-key model-list
     def oomol_llm_env(self) -> OOMOL_LLM_ENV:
+    # Get GPU information of the local device, so that the corresponding hardware acceleration library can be called
+    def host_info(self) -> HostInfo:
 ```
 
 ## 3. `Context.preview` Types

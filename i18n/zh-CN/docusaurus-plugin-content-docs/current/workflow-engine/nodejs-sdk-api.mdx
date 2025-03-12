@@ -6,20 +6,6 @@ import node_preview from "@site/static/img/docs/node_preview.png";
 
 # 📗 Nodejs API
 
-## 视频教程
-
-<iframe
-  src="//player.bilibili.com/player.html?bvid=BV1DbAceXE42&autoplay=0&vd_source=074e15df4d816e8ebbec8bdbdf4d6925#reply256944692752"
-  scrolling="no"
-  frameborder="no"
-  framespacing="0"
-  allowfullscreen
-  width="720"
-  height="480"
-/>
-
-## 图文说明
-
 ## 1. 简介
 
 开发者需要在 Scriptlet Block 中调用 SDK 与 `OOCANA` 工作流引擎进行交互。本文档详细介绍了相关 API 的使用方法。
@@ -69,6 +55,8 @@ export default async function (
   readonly reportProgress: (progress: number) => Promise<void>;
   /** 获取 OOMOL 内置大模型，可以获取 base_url api-key model-list */
   readonly OOMOL_LLM_ENV: OOMOL_LLM_ENV;
+  /** 获取本地设备的 GPU 信息，以便调用相应的硬件加速库 */
+  readonly hostInfo: HostInfo;
 ```
 
 ## 3. `Context.preview` Types
