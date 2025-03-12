@@ -22,15 +22,15 @@ import node_preview from "@site/static/img/docs/node_preview.png";
 
 ## 1. 简介
 
-开发人员将在 Scriptlet Block 中调用我们的 SDK 与 `OOCANA` 工作流引擎进行交互。
+开发者需要在 Scriptlet Block 中调用 SDK 与 `OOCANA` 工作流引擎进行交互。本文档详细介绍了相关 API 的使用方法。
 
 ## 2. 快速开始
 
-在 Scriptlet Block 中使用 SDK, 你需要导入 `Context` 对象，然后使用 `Context` 对象中的 API。
+在 Scriptlet Block 中使用 SDK 时，需要导入 `Context` 对象，并通过该对象调用相关 API。
 
 ### 2.1 `Scriptlet` 模板
 
-模板是一个函数，需要执行的代码写在函数中。函数的输入和输出类型由用户自定义。也支持安装第三方库，直接和正常开发一样引用就可以。
+下面是 Scriptlet 的模板函数，需要在函数体内编写执行代码。函数的输入和输出类型可自定义，并且支持导入第三方库。
 
 ```typescript
 import type { Context } from "@oomol/types/oocana";

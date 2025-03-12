@@ -2,9 +2,23 @@
 sidebar_position: 2
 ---
 
-import panel from '@site/static/img/docs/panel.jpg';
+import panel from '@site/static/img/docs/panel.png';
 
 # 📝 Panels Description
+
+## Video Tutorial
+
+<iframe
+  src="//player.bilibili.com/player.html?bvid=BV1DbAceXE42&autoplay=0&vd_source=074e15df4d816e8ebbec8bdbdf4d6925#reply256944692752"
+  scrolling="no"
+  frameborder="no"
+  framespacing="0"
+  allowfullscreen
+  width="720"
+  height="480"
+/>
+
+## Graphical Instructions
 
 Introducing the functions and uses of important panels.
 
@@ -44,9 +58,10 @@ This panel is mainly used for engineers' in-depth development and debugging work
 |Terminal | A terminal connected to the container OVM. Something to note, the system running in OVM is Linux.|
 |Packages | Panel for installing third-party libraries for Python and JS. It should be noted that the Python libraries installed through the panel will be automatically added to `requirements.txt`. Users who install directly using Terminal need to add it manually|
 |Flow Logs | Logs generated during workflow running.|
-|Container Scripts |A script that needs to be automatically executed when the project is started for the first time in the OVM container.|
+|Package Installation Logs | This workflow depends on tools downloaded from the oomol community, which will be installed automatically here|
+|Initialization Logs | A script that needs to be automatically executed when the project is started for the first time in the OVM container.|
 |Problems | Coding error|
-| Port | Used for external access to services within OVM |
+|Port | Used for external access to services within OVM |
 
 ## 4. ⚪ Right Panel
 
@@ -56,7 +71,8 @@ The upper part of the panel is the package, and the lower part of the panel is t
 
 |Module | Description|
 |------------ | -------------|
-|Builtin Packages| OOMOL will pre-install some necessary packages|
+|Installed Packages| Packages installed or pre-installed during OOMOL usage, available here|
 |Packages Store| You can download packages shared by other users in the Packages Store|
-| Release | Release Software Package |
-| AI Assistant | OOMOL Development Assistant, capable of assisting in writing and optimizing code |
+|Release | Release Software Package |
+|AI Chat Assistant OOMOL Copilot Chat | If you have development or usage questions, you can ask OOMOL Copilot, and OOMOL will help you in a conversational way |
+|AI Programming Assistant OOMOL Copilot Edit | OOMOL Development Assistant, capable of assisting in writing and optimizing code |

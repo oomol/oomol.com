@@ -24,57 +24,57 @@ import python_plotly from "@site/static/img/docs/cn/python_plotly.png";
 
 ## 1. 简介
 
-开发人员将在 Scriptlet Block 中调用我们的 SDK 与 `OOCANA` 工作流引擎进行交互。
+开发者需要在 Scriptlet Block 中调用 SDK 与 `OOCANA` 工作流引擎进行交互。本文档详细介绍了相关 API 的使用方法。
 
 ## 2. 快速开始
 
-在 Scriptlet Block 中使用 SDK, 你需要导入 `Context` 对象，然后使用 `Context` 对象中的 API。
+在 Scriptlet Block 中使用 SDK 时，需要导入 `Context` 对象，并通过该对象调用相关 API。
 
 ### 2.1 `Scriptlet` 模板
 
-模板是一个函数，需要执行的代码写在函数中。函数的输入和输出类型由用户自定义。也支持安装第三方库，直接和正常开发一样引用就可以。
+下面是 Scriptlet 的模板函数，需要在函数体内编写执行代码。函数的输入和输出类型可自定义，并且支持导入第三方库。
 
 ```python
 from oocana import Context
 
 def main(params: dict, context: Context):
 
-  # 你的代码写在此处，会被执行
+  # 此处编写需要执行的代码
 
   return { "output": None }
 
 ```
 
-### 2.2 常用 API
+### 2.2 核心 API
 
 ```python
-    # 报告块已完成
+    # 标记当前块已完成执行
     def done(self, error: str | None = None):
-    # 报告错误
+    # 报告错误并终止执行
     def error(self, error: str):
-    # 启用预览
+    # 启用数据预览功能
     def preview(self, payload: PreviewPayload):
-    # 整个会话的临时目录， 用户可以用来存储临时文件
+    # 获取会话临时目录路径，可用于存储临时文件
     def session_dir(self) -> str:
-    # 报告进度，进度0~100，该函数有节流效果，每300ms触发一次
+    # 报告执行进度（0-100），内置节流机制，每300ms触发一次
     def report_progress(self, progress: float | int):
-    # 获取 OOMOL 内置大模型，可以获取 base_url api-key model-list
+    # 获取 OOMOL 内置大模型配置，包括 base_url、api-key、model-list
     def oomol_llm_env(self) -> OOMOL_LLM_ENV:
 ```
 
-## 3. `Context.preview` Types
+## 3. `Context.preview` 类型
 
-`context.preview` 是核心 API 。它的主要功能是帮助开发人员预览数据。我们支持几乎所有常用数据的预览。
+`context.preview` 是一个核心 API，用于预览各种类型的数据。该 API 支持几乎所有常见数据格式的预览。
 
-### 3.1 `PreviewPayload` Types
+### 3.1 `PreviewPayload` 类型定义
 
-函数名称：`context.preview`
+函数签名：`context.preview`
 
 ```python
     def preview(self, payload: PreviewPayload):
-    # 仅支持 python
+    # 仅支持 Python
     payload = self.__dataframe(payload)
-    # 仅支持 python
+    # 仅支持 Python
     payload = self.__matplotlib(payload)
 
     self.__mainframe.report(
@@ -136,19 +136,19 @@ def main(params: dict, context: Context):
 
 ```
 
-### 3.2 `Preview` 例子
+### 3.2 `Preview` 使用示例
 
 ```python
   context.preview({
-    # 类型可以是: "image" | "video" | "audio" | "markdown" | "iframe" | "html" | "json" | "text" | `text/${string}` | "table";
+    # 支持的类型: "image" | "video" | "audio" | "markdown" | "iframe" | "html" | "json" | "text" | `text/${string}` | "table"
     "type": "video",
-    # 类型可以是: 文件路径, base64, pandas dataframe
+    # 数据可以是: 文件路径、base64 编码或 pandas DataFrame
     "data": "https://www.w3schools.com/html/mov_bbb.mp4"
   })
 ```
 
 :::tip
-仅支持 Python
+以下功能仅支持 Python
 :::
 
 ```python
@@ -185,9 +185,9 @@ def main(params: dict, context: Context):
 
 <img src={python_plotly} width="720" />
 
-## 4. `Context` Types
+## 4. `Context` 类型定义
 
-`OOCANA` SDK 提供的 API 类型描述，帮助用户了解如何准确使用这些 API。
+`OOCANA` SDK 提供的完整 API 类型描述，帮助开发者准确理解和使用这些接口。
 
 ```python
 class Context:
@@ -263,10 +263,11 @@ class Context:
 
     def output(self, key: str, value: Any, done: bool = False):
         """
-        将值输出到下一个块
+        将数据输出到下游节点
 
-        key: str, 输出的键，应在块模式输出定义中定义，字段名称为 handle
-        value: Any, 输出的值
+        key: str, 输出键名，必须在块输出定义中已声明，字段名为 handle
+        value: Any, 输出值
+        done: bool, 是否标记当前块执行完成
         """
 
         v = value
@@ -282,7 +283,7 @@ class Context:
             elif output_def is not None and output_def.is_bin_handle():
                 if not isinstance(value, bytes):
                     self.send_warning(
-                        f"输出句柄键: [{key}] 被定义为二进制，但值不是字节。"
+                        f"输出键 [{key}] 被定义为二进制类型，但提供的值不是 bytes 类型"
                     )
                     return
 
@@ -293,7 +294,7 @@ class Context:
                         f.write(value)
                 except IOError as e:
                     self.send_warning(
-                        f"输出句柄键: [{key}] 被定义为二进制，但写入文件时发生错误: {e}"
+                        f"输出键 [{key}] 被定义为二进制类型，但写入文件失败: {e}"
                     )
                     return
 
@@ -301,14 +302,14 @@ class Context:
                     v = bin_file
                 else:
                     self.send_warning(
-                        f"输出句柄键: [{key}] 被定义为二进制，但文件未写入。"
+                        f"输出键 [{key}] 被定义为二进制类型，但文件未成功写入"
                     )
                     return
 
-        # 如果传入 key 在输出定义中不存在，直接忽略，不发送数据。但是 done 仍然生效。
+        # 如果传入的键名在输出定义中不存在，将忽略该数据，但 done 参数仍会生效
         if self.__outputs_def is not None and self.__outputs_def.get(key) is None:
             self.send_warning(
-                f"输出句柄键: [{key}] 未在块输出模式中定义。"
+                f"输出键 [{key}] 未在块输出定义中声明"
             )
             if done:
                 self.done()
@@ -327,7 +328,7 @@ class Context:
 
     def done(self, error: str | None = None):
         if self.__is_done:
-            self.send_warning("done 已被多次调用，将被忽略。")
+            self.send_warning("done 方法已被多次调用，重复调用将被忽略")
             return
         self.__is_done = True
         if error is None:
@@ -404,18 +405,19 @@ class Context:
 
     @throttle(0.3)
     def report_progress(self, progress: float | int):
-        """报告进度
+        """报告执行进度
 
-        此 API 用于报告块的进度，但它只影响 UI 进度而不是真实进度。
-        此 API 有节流效果，最小间隔为 0.3 秒。
-        当您第一次调用此 API 时，它会立即报告进度。在调用一次后，它将在节流周期结束时报告进度。
+        此方法用于更新块的执行进度，仅影响 UI 显示而非实际执行状态。
+        内置节流机制，最小调用间隔为 0.3 秒。
+        首次调用会立即生效，之后的调用将在节流周期结束时统一处理。
 
         |       0.25 s        |   0.2 s  |
-        第一次调用       第二次调用    第三次调用  4 5 6 7 次调用
+        首次调用         第二次调用    第三次调用  4 5 6 7 次调用
         |                     |          |          | | | |
         | -------- 0.3 s -------- | -------- 0.3 s -------- |
-        调用                  调用                    调用
-        :param float | int progress: 块的进度，值应在 [0, 100] 之间。
+        触发                  触发                    触发
+
+        :param float | int progress: 执行进度值，范围应在 [0, 100]
         """
         self.__mainframe.report(
             self.block_info,
@@ -449,8 +451,8 @@ class Context:
 
     def send_error(self, error: str):
         '''
-        已弃用，请使用 error(error) 代替。
-        考虑将来移除。
+        已弃用，请使用 error(error) 替代。
+        此方法将在未来版本中移除。
         '''
         self.error(error)
 

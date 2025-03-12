@@ -2,31 +2,38 @@
 sidebar_position: 1
 ---
 
-# 📚 Principle
+# 📚 Architecture Principles
 
-OOMOL's workflow engine is called `OOCANA`, which is the basis for the entire `OOMOL Studio` to run.
+`OOCANA` is OOMOL's core workflow engine, providing the foundational runtime support for the entire `OOMOL Studio`.
 
-## 1. OOCANA Introduction
+## 1. OOCANA Overview
 
-`OOCANA` is a scheduling tool for orchestrating and running a series of task units. The scheduling logic is stored in `flow.oo.yaml`, and the content required to run the task is stored in the `block.oo.yaml` file. The former is referred to as `flow` in the following, and the latter is referred to as `block`. There will be a content in `block.oo.yaml` to identify the source code files required to run the block, which we call the block function.
+`OOCANA` is an orchestration tool designed for scheduling and executing sequences of task units. The architecture consists of:
+- Scheduling logic stored in `flow.oo.yaml` files (referred to as `flow`)
+- Task execution content stored in `block.oo.yaml` files (referred to as `block`)
+- `block.oo.yaml` contains references to execution code, which we call block functions
 
-The `block` function can be a script written in `Nodejs` or `Python` language. This function needs to be a fixed name `main`. This function accepts two parameters, the first parameter is the input data, and the second parameter is the auxiliary function provided by the `block` runtime. When writing the `block` function, we can get the input data through the first parameter. This function can directly return a dictionary object (in `nodejs` it can be a `promise` that ultimately returns a dictionary). This dictionary object is the output data of the `block`.
+Block functions can be written in either `Nodejs` or `Python`, with a mandatory function name `main`. This function accepts two parameters:
+1. Input data
+2. Auxiliary functions provided by the block runtime
 
-The `flow` file is used to describe the running trigger sequence and data transfer relationship between `blocks`.
+The function should return a dictionary object (or in `Nodejs`, a `Promise` that resolves to a dictionary), which becomes the block's output data.
 
-## 2. Block Arrangement and Operation
+The `flow` file defines the triggering sequence and data transfer relationships between `blocks`.
 
-The triggering sequence of `blocks` is determined by the connections in the `flow`. When the data required by the `block` is ready, the `block` will be triggered for execution. We call it data flow driver. In contrast, there is the triggering method of steps in github action - after the previous step is completed, the next step will be triggered. This event-driven method is mostly used in CI/CD scenarios such as compilation and packaging.
+## 2. Block Orchestration and Execution
 
-Currently, the running environments of `blocks` include `Nodejs` and `Python`. Currently, blocks of the same language run in the same environment. `Block` data in different locales is transferred through json. In addition to using json to transfer `blocks` in the same locale, variables can also be transferred directly. What needs to be noted about variables is that variables are passed by reference, so modifying the value of a variable in a `block` will affect the variable in other `blocks`.
+The execution sequence of `blocks` is determined by connections defined in the `flow`, following a data-flow driven model — when required data is ready, the corresponding `block` is automatically triggered for execution. This differs from event-driven step triggering in GitHub Actions (where the next step is triggered after the previous one completes), which is primarily used in CI/CD scenarios like compilation and packaging.
 
-## 3. Block data transfer
+Currently, `blocks` support `Nodejs` and `Python` runtime environments. Blocks of the same language run in the same environment. Data between different language environments is transferred via JSON, while blocks in the same language environment can transfer data through JSON or directly via variables. Note that variables follow pass-by-reference principles, so modifying a variable value in one `block` affects the same variable in other `blocks`.
 
-Data formats are defined separately in`block` and `flow`. `OOCANA` currently does not check these data formats (some components of the GUI graphical interface will perform this part of the check). During the actual running process, the actual data format returned by the `block` will not be checked for the time being. Therefore, when writing the `block` function, you need to ensure that the returned data format conforms to the data format defined by `flow` and `block`.
+## 3. Block Data Transfer Specifications
 
-## 4. Debugging and Acceleration of Blocks
+Data formats are defined separately in `block` and `flow`. Currently, `OOCANA` runtime does not validate these data formats (some GUI components handle this validation). During execution, the actual data format returned by a `block` is not yet validated. Therefore, developers must ensure that returned data formats conform to the specifications defined by both `flow` and `block`.
 
-When there are many `blocks` in the `flow` and each run takes a long time, we can speed up debugging by specifying the way to run the `block`. There are two acceleration methods for running `blocks` at the same time:
+## 4. Block Debugging and Acceleration Strategies
 
-1. After running to the specified `block`, the run will end.
-2. Use the previously run data cache (only supports json data) to skip some `blocks` that do not need to be run and run to the specified `block` as soon as possible.
+When a `flow` contains numerous `blocks` with time-consuming execution, debugging can be accelerated by specifying block execution strategies. Two acceleration methods are supported:
+
+1. Termination Point Strategy: Execution ends after reaching a specified `block`
+2. Cache Strategy: Utilizing previously executed data cache (JSON data only) to skip blocks that don't need re-execution, quickly reaching the specified `block`

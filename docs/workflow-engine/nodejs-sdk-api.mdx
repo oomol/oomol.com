@@ -6,15 +6,31 @@ import node_preview from "@site/static/img/docs/node_preview.png";
 
 # 📗 Nodejs API
 
+## Video Tutorial
+
+<iframe
+  src="//player.bilibili.com/player.html?bvid=BV1DbAceXE42&autoplay=0&vd_source=074e15df4d816e8ebbec8bdbdf4d6925#reply256944692752"
+  scrolling="no"
+  frameborder="no"
+  framespacing="0"
+  allowfullscreen
+  width="720"
+  height="480"
+/>
+
+## Documentation
+
 ## 1. Introduction
 
-Developers will call our SDK in the Scriptlet Block to interact with the `OOCANA` workflow engine.
+Developers will call our SDK in the Scriptlet Block to interact with the `OOCANA` workflow engine. This document provides a detailed introduction to the API usage.
 
 ## 2. Quick Start
 
-How to use the SDK in the Scriptlet Block.
+When using the SDK in the Scriptlet Block, you need to import the `Context` object and call the relevant APIs through it.
 
 ### 2.1 `Scriptlet` Template
+
+Below is the template function for Scriptlet, where you should write your execution code. The input and output types can be customized, and third-party libraries can be imported.
 
 ```typescript
 import type { Context } from "@oomol/types/oocana";
@@ -37,6 +53,8 @@ export default async function (
 ```
 
 ### 2.2 Common APIs
+
+Here's a list of commonly used APIs:
 
 ```typescript
   /** Report block completion */
