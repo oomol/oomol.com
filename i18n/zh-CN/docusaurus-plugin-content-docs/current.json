@@ -35,8 +35,8 @@
     "message": "工作流引擎",
     "description": "The label for category Workflow Engine in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Share and Deploy": {
-    "message": "分享和部署",
+  "sidebar.tutorialSidebar.category.Cloud": {
+    "message": "云服务",
     "description": "The label for category Share and Deploy in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Share and Deploy.link.generated-index.description": {

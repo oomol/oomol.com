@@ -1,8 +1,9 @@
 {
-  "label": "Share and Deploy",
+  "label": "Cloud",
   "position": 4,
   "link": {
     "type": "generated-index",
     "description": "Reference of block, node, flow and so on"
-  }
+  },
+  "collapsed": false
 }

@@ -3,48 +3,42 @@ sidebar_position: 1
 ---
 
 import open_community from "@site/static/img/docs/cn/open_community.jpg";
-import container_log from "@site/static/img/docs/cn/container_log.jpg";
-import run_btn from "@site/static/img/docs/cn/run_btn.jpg";
+import container_log from "@site/static/img/docs/cn/container_log.png";
+import run_btn from "@site/static/img/docs/cn/run_btn.png";
+import hello_world from "@site/static/img/docs/cn/hello_world.png";
 
 import community from "@site/static/img/docs/cn/community.jpg";
 
 # 🚀 快速开始
 
-按照文档从下载到启动您的第一个工作流程。
+## 视频教程
 
-## 1. 下载
+<iframe
+  src="//player.bilibili.com/player.html?bvid=BV1DbAceXE42&autoplay=0&vd_source=074e15df4d816e8ebbec8bdbdf4d6925#reply256944692752"
+  scrolling="no"
+  frameborder="no"
+  framespacing="0"
+  allowfullscreen
+  width="720"
+  height="480"
+/>
 
-从[登陆页面](https://oomol.com)下载最新版本的 `OOMOL STUDIO`
+## 图文说明
 
-## 2. 安装
+## 1. 下载安装
 
-1. Mac 可以直接安装使用。
-2. Windows 需要按照安装指南启动 [WSL2](https://www.youtube.com/watch?v=MrZolfGm8Zk) 并重新启动才能运行。
+- 1.1 从[下载页面](https://oomol.com/zh-CN/downloads)下载最新版本的 `OOMOL Studio`。
+- 1.2 Mac 可以直接安装使用。
+- 1.3 Windows 需要跟随安装指南启动 [WSL2](https://www.youtube.com/watch?v=MrZolfGm8Zk) 并重新启动才能运行。
 
-## 3. 通过Github登录
+## 2. 打开 hello-world 工作流
 
-我们希望用户将工作流源代码推送到 GitHub 上，所以我们首先支持 GitHub 登录。
+<img src={hello_world} width="720" />
 
-## 4. 从社区启动
+## 3. 等待启动脚本运行完成
 
-您可以在社区中找到您需要的工作流程，然后单击按钮使用 `OOMOL STUDIO` 打开.
+<img src={container_log} width="720" />
 
-### 4.1 找到社区入口
+## 4. 单击运行按钮
 
-<img src={community} width="640" />
-
-### 4.2 在社区中打开
-
-<img src={open_community} width="640" />
-
-## 5.安装依赖项并执行
-
-运行工作流之前的最后一步是运行 Bootstrap 脚本以下载工作流所需的所有依赖项
-
-### 5.1 等待启动脚本运行
-
-<img src={container_log} width="640" />
-
-### 5.2 单击运行按钮
-
-<img src={run_btn} width="640" />
+<img src={run_btn} width="720" />

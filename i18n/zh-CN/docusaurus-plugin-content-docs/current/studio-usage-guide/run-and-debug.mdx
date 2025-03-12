@@ -1,49 +1,82 @@
 ---
-sidebar_position: 5
+sidebar_position: 4
 ---
 
 import package_install from "@site/static/img/docs/cn/package.png";
 import terminal from "@site/static/img/docs/cn/terminal.png";
-import run_nodes from "@site/static/img/docs/cn/run_nodes.jpg";
-import run_btn from "@site/static/img/docs/cn/run_btn.jpg";
-import run_node from "@site/static/img/docs/cn/run_node.jpg";
+import run_nodes from "@site/static/img/docs/cn/run_nodes.png";
+import run_btn from "@site/static/img/docs/cn/run_btn.png";
+import run_node from "@site/static/img/docs/cn/run_node.png";
 import flow_log from "@site/static/img/docs/cn/flow_log.png";
 import container_scripts_run from "@site/static/img/docs/cn/container_scripts_run.png";
-import bootstrap from "@site/static/img/docs/cn/bootstrap.jpg";
-import run_flow from "@site/static/img/docs/cn/run_flow.jpg";
+import bootstrap from "@site/static/img/docs/cn/bootstrap.png";
+import run_flow from "@site/static/img/docs/cn/run_flow.png";
 
 # ☕ 运行和调试
+
+## 视频教程
+
+<iframe
+  src="//player.bilibili.com/player.html?bvid=BV1DbAceXE42&autoplay=0&vd_source=074e15df4d816e8ebbec8bdbdf4d6925#reply256944692752"
+  scrolling="no"
+  frameborder="no"
+  framespacing="0"
+  allowfullscreen
+  width="720"
+  height="480"
+/>
+
+## 图文说明
 
 ## 1. 安装
 
 ### 1.1 引导安装依赖项
 
-<img src={bootstrap} width="640" />
+> `package.oo.yaml` 文件定义了启动脚本，用于自动化引导安装项目依赖：
+>
+> 1. Node.js 依赖项将基于 package.json 文件进行安装
+> 2. Python 依赖项将基于 requirements.txt 文件进行安装
+> 3. 系统级依赖需要通过 apt-get 手动添加到启动脚本中
 
-### 1.2 开发者安装包
+<img src={bootstrap} width="720" />
 
-<img src={package_install} width="640" />
+### 1.2 开发依赖包安装
+
+> 1. 通过界面安装：Python 包会自动添加到 requirements.txt 文件，Node.js 包会自动添加到 package.json 文件
+> 2. 通过命令行安装：Python 包需要手动添加到 requirements.txt 文件，Node.js 包则会自动更新 package.json
+
+<img src={package_install} width="720" />
 
 ## 2. 运行
 
-### 2.1 运行整个流程
+### 2.1 运行整个工作流
 
-<img src={run_flow} width="640" />
+> 前提条件：所有依赖项已安装完毕，且工作流中的必要参数已正确配置
 
-### 2.2 重新运行流中的一些块
+<img src={run_flow} width="720" />
 
-<img src={run_nodes} width="640" />
+### 2.2 运行工作流中的多个节点
 
-### 2.3 重新运行流中的单个块
+> 用于开发过程中针对性地调试选中的多个模块
 
-<img src={run_node} width="640" />
+<img src={run_nodes} width="720" />
+
+### 2.3 运行工作流中的单个节点
+
+> 用于开发过程中精确调试某个特定模块
+
+<img src={run_node} width="720" />
 
 ## 3. 日志
 
 ### 3.1 工作流日志
 
-<img src={flow_log} width="640" />
+> 开发调试的主要日志输出，包含 Node.js 代码中的 console.log() 输出以及 Python 代码中的 print() 输出等信息
+
+<img src={flow_log} width="720" />
 
 ### 3.2 容器引导日志
 
-<img src={container_scripts_run} width="640" />
+> 记录容器启动过程中的引导信息，主要用于排查容器初始化和环境配置问题
+
+<img src={container_scripts_run} width="720" />

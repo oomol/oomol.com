@@ -8,15 +8,31 @@ import python_plotly from "@site/static/img/docs/cn/python_plotly.png";
 
 # 📙 Python API
 
-## 1. Introduction
+## 视频教程
 
-开发人员将在 Scriptlet Block 中调用我们的SDK以与 `OOCANA` 工作流引擎进行交互。
+<iframe
+  src="//player.bilibili.com/player.html?bvid=BV1DbAceXE42&autoplay=0&vd_source=074e15df4d816e8ebbec8bdbdf4d6925#reply256944692752"
+  scrolling="no"
+  frameborder="no"
+  framespacing="0"
+  allowfullscreen
+  width="720"
+  height="480"
+/>
+
+## 图文说明
+
+## 1. 简介
+
+开发人员将在 Scriptlet Block 中调用我们的 SDK 与 `OOCANA` 工作流引擎进行交互。
 
 ## 2. 快速开始
 
-如何在 Scriptlet Block 中使用 SDK。
+在 Scriptlet Block 中使用 SDK, 你需要导入 `Context` 对象，然后使用 `Context` 对象中的 API。
 
 ### 2.1 `Scriptlet` 模板
+
+模板是一个函数，需要执行的代码写在函数中。函数的输入和输出类型由用户自定义。也支持安装第三方库，直接和正常开发一样引用就可以。
 
 ```python
 from oocana import Context
