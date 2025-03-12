@@ -10,13 +10,15 @@ import python_plotly from "@site/static/img/docs/python_plotly.png";
 
 ## 1. Introduction
 
-Developers will call our SDK in the Scriptlet Block to interact with the `OOCANA` workflow engine.
+Developers will call our SDK in the Scriptlet Block to interact with the `OOCANA` workflow engine. This document provides detailed instructions on how to use the related APIs.
 
 ## 2. Quick Start
 
-How to use the SDK in the Scriptlet Block.
+How to use the SDK in the Scriptlet Block. You need to import the `Context` object and use it to call the related APIs.
 
 ### 2.1 `Scriptlet` Template
+
+Below is the template function for a Scriptlet. You need to write your execution code within the function body. The input and output types can be customized, and third-party libraries are supported.
 
 ```python
 from oocana import Context
@@ -251,6 +253,7 @@ class Context:
 
         key: str, the output key, should be defined in the block mode output definition, field name is handle
         value: Any, the output value
+        done: bool, whether to mark the current block as completed
         """
 
         v = value
