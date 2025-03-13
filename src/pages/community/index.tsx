@@ -4,6 +4,7 @@ import GitHubSVG from "@site/static/img/community-github.svg";
 import DiscordSVG from "@site/static/img/community-discord.svg";
 import YoutubeSVG from "@site/static/img/community-youtube.svg";
 import WeComSVG from "@site/static/img/community-we-com.svg";
+import DiscussionSVG from "@site/static/img/community-discussion.svg";
 
 import Layout from "@theme/Layout";
 import { translate } from "@docusaurus/Translate";
@@ -29,6 +30,11 @@ const contentData = [
     icon: <GitHubSVG className={styles.logo} />,
     name: "GitHub",
     href: "https://github.com/oomol-lab",
+  },
+  {
+    icon: <DiscussionSVG className={styles.logo} />,
+    name: "Discussion",
+    href: "https://github.com/orgs/oomol-lab/discussions",
   },
 ];
 
