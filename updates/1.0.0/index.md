@@ -4,7 +4,7 @@ title: OOMOL Studio 1.0.0
 date: 2024-12-27
 ---
 
-![banner](@site/static/img/first-screen.png)
+![banner](@site/static/img/release/1.0.0/first-screen.png)
 
 <!-- truncate -->
 
