@@ -7,10 +7,14 @@ import HomepageScenes from "@site/src/components/HomepageScenes";
 import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
 import HomepageStarter from "@site/src/components/HomepageStarter";
 import HomepagePricing from "../components/HomePagePricing";
+import Head from "@docusaurus/Head";
 
 export default function Home() {
   return (
     <Layout>
+      <Head>
+        <title>OOMOL - AI Workflow Platform</title>
+      </Head>
       <main>
         <HomepageFirstScreen />
         <HomepageScenes />

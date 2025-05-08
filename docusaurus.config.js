@@ -33,7 +33,6 @@ const config = {
     defaultLocale: "en",
     locales: ["en", "zh-CN"],
   },
-  // clientModules: ["./scripts/redirect-lang.ts"],
   plugins: [
     "docusaurus-plugin-sass",
     [
@@ -122,6 +121,37 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [
+        {
+          name: "keywords",
+          content:
+            "workflow, AI platform, workflow automation, service integration, code connector, workflow management, developer tools, AI workflow, service orchestration, automation platform, OOMOL",
+        },
+        {
+          name: "description",
+          content: "AI Workflow Platform",
+        },
+      ],
+      headTags: [
+        {
+          tagName: "script",
+          attributes: {
+            type: "application/ld+json",
+          },
+          innerHTML: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "OOMOL",
+            tagline: "AI Workflow Platform",
+            favicon: "img/favicon.ico",
+            url: "https://oomol.com",
+            sameAs: ["https://hub.oomol.com"],
+            // TODO: add logo to the website
+            // logo: "https://oomol.com/logo.svg",
+          }),
+        },
+      ],
+
       // Replace with your project's social card
       colorMode: {
         defaultMode: "dark",
