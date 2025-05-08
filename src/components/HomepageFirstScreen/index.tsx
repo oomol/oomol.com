@@ -123,9 +123,10 @@ export default function HomepageFirstScreen() {
       <BlurFade>
         <div className={styles["image-box"]}>
           <div className={styles["image-bg"]}>
-            <img src={useBaseUrl("/img/background.svg")} />
+            <img fetchPriority="high" src={useBaseUrl("/img/background.svg")} />
           </div>
           <Image
+            fetchPriority="high"
             className={styles.image}
             sources={{
               light: useBaseUrl("/img/first-screen.png"),
