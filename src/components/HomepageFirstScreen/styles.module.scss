@@ -143,6 +143,7 @@
   display: flex;
   justify-content: center;
   z-index: 1;
+  padding-top: 40px;
 }
 
 .header {
@@ -245,8 +246,8 @@
 
 .download {
   width: 240px;
-  height: 40px;
-  border-radius: 8px;
+  height: 43px;
+  border-radius: 40px;
   background-color: #ffffff;
   color: #000000;
   font-size: 14px;
@@ -271,6 +272,21 @@
     #0d1116 100%
   );
   padding-left: 12px;
+}
+
+.go-to-hub {
+  height: 43px;
+  font-weight: bold;
+  margin-left: 12px;
+  background-color: #0d1116 !important;
+  border: solid 1px #3d444d !important;
+  border-radius: 40px;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
 
 // TODO: 统一放 custom.scss 中处理

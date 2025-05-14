@@ -1,7 +1,9 @@
 .wrapper {
+  height: calc(100% - 72px);
   display: flex;
   flex-direction: column;
   flex: 1 0 auto;
+  margin-top: 72px;
 }
 
 // .wrapper {

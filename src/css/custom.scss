@@ -77,8 +77,12 @@
     left: 0;
     right: 0;
     bottom: 0;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
     z-index: -1;
+  }
+
+  .navbar__inner {
+    justify-content: unset;
   }
 }
 
@@ -135,5 +139,12 @@ $desktop-width: 1280px;
 @mixin desktop {
   @media (max-width: #{$desktop-width}) {
     @content;
+  }
+}
+
+@media (min-width: 997px) {
+  :root {
+    // 已经手动调整 navbar 相关的样式，为了不让默认的影响新的样式，所以设为 0
+    --ifm-navbar-height: 0px;
   }
 }

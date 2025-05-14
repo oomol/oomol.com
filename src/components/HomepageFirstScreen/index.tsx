@@ -72,12 +72,48 @@ export default function HomepageFirstScreen() {
                 message: "HOME.FirstScreen.script",
               })}
             </div>
-            <div className={styles["button-box"]}>
-              {detectOSAndArchitecture() === OS.MacOS ? (
-                <Popover
-                  trigger={
+            <div className={styles.buttons}>
+              <Button
+                className={styles["go-to-hub"]}
+                target="_blank"
+                iconPosition="end"
+                icon={
+                  <div
+                    className="i-codicon:arrow-right"
+                    style={{ fontSize: 18 }}
+                  />
+                }
+                href="https://hub.oomol.com/"
+              >
+                <div className={styles["btn-nav-text"]}>
+                  {translate({ message: "Theme.Navbar.go-to-hub-flow" })}
+                </div>
+              </Button>
+              <div className={styles["button-box"]}>
+                {detectOSAndArchitecture() === OS.MacOS ? (
+                  <Popover
+                    trigger={
+                      <Button
+                        className={styles.download}
+                        icon={
+                          <div
+                            className="i-codicon-desktop-download"
+                            style={{ fontSize: 18 }}
+                          />
+                        }
+                      >
+                        {translate({
+                          message: "HOME.FirstScreen.download-macos",
+                        })}
+                      </Button>
+                    }
+                    content={content}
+                  />
+                ) : (
+                  <div className={styles.windowsBox}>
                     <Button
                       className={styles.download}
+                      href={DownloadUrl.Stable.Windows.x64}
                       icon={
                         <div
                           className="i-codicon-desktop-download"
@@ -86,36 +122,17 @@ export default function HomepageFirstScreen() {
                       }
                     >
                       {translate({
-                        message: "HOME.FirstScreen.download-macos",
+                        message: "HOME.FirstScreen.download-windows",
                       })}
                     </Button>
-                  }
-                  content={content}
-                />
-              ) : (
-                <div className={styles.windowsBox}>
-                  <Button
-                    className={styles.download}
-                    href={DownloadUrl.Stable.Windows.x64}
-                    icon={
-                      <div
-                        className="i-codicon-desktop-download"
-                        style={{ fontSize: 18 }}
-                      />
-                    }
-                  >
-                    {translate({
-                      message: "HOME.FirstScreen.download-windows",
-                    })}
-                  </Button>
-
-                  <span className={styles.windowsSubtitle}>
-                    {translate({
-                      message: "HOME.FirstScreen.download-windows-subtitle",
-                    })}
-                  </span>
-                </div>
-              )}
+                    <span className={styles.windowsSubtitle}>
+                      {translate({
+                        message: "HOME.FirstScreen.download-windows-subtitle",
+                      })}
+                    </span>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
