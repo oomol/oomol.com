@@ -61,7 +61,7 @@ export const LocalDropdown = ({ queryString = "" }: LocalDropdownProps) => {
     >
       <div className={styles.content}>{isShow && renderBtnContent()}</div>
       <Button
-        className={styles.btn}
+        className={styles["language-btn"]}
         icon={<div className="i-codicon-globe" />}
         iconPosition="start"
       >

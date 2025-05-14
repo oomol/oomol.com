@@ -2,7 +2,7 @@ import styles from "./styles.module.scss";
 import LogoENSvg from "@site/static/img/logo-en.svg";
 import LogoZHSvg from "@site/static/img/logo-zh.svg";
 
-import React, { memo, useCallback, useMemo, useState } from "react";
+import React, { memo, useCallback, useEffect, useMemo, useState } from "react";
 import type { ComponentProps } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useLocation } from "@docusaurus/router";
@@ -46,6 +46,7 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
   const location = useLocation();
 
   const [sidebarShown, setSidebarShown] = useState(false);
+  const [hideNavbar, setHideNavbar] = useState(false);
 
   const isDocumentPath = useMemo(() => {
     return (
@@ -66,10 +67,55 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
     setSidebarShown(false);
   }, []);
 
+  const prevScrollPosRef = React.useRef(0);
+
+  useEffect(() => {
+    let ticking = false;
+
+    const handleEvents = () => {
+      const currentScrollPos = window.pageYOffset;
+      const viewportWidth = window.innerWidth;
+
+      if (viewportWidth < 996) {
+        setHideNavbar(false);
+        prevScrollPosRef.current = currentScrollPos;
+        return;
+      }
+
+      const isScrollingDown = prevScrollPosRef.current < currentScrollPos;
+      setHideNavbar(isScrollingDown && currentScrollPos > 50);
+      prevScrollPosRef.current = currentScrollPos;
+      ticking = false;
+    };
+
+    const throttledHandler = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleEvents();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    prevScrollPosRef.current = window.pageYOffset;
+
+    handleEvents();
+
+    window.addEventListener("scroll", throttledHandler, { passive: true });
+    window.addEventListener("resize", throttledHandler, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", throttledHandler);
+      window.removeEventListener("resize", throttledHandler);
+    };
+  }, []);
+
   return (
     <header
       className={clsx("navbar", styles.navbar, {
         "navbar-sidebar--show": sidebarShown,
+        [styles.navbarHidden]: hideNavbar,
       })}
     >
       <div className={clsx("navbar__inner", styles.inner)}>
@@ -82,6 +128,7 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
               loading="lazy"
             />
           </Link>
+
           {leftItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
           ))}
@@ -99,21 +146,6 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
               <div className={styles.cutLine} />
             </>
           )}
-          {/* <div className={styles.navbarBtnBox}> */}
-          <Button
-            className={styles["btn-nav"]}
-            target="_blank"
-            iconPosition="end"
-            icon={
-              <div className="i-codicon:arrow-right" style={{ fontSize: 18 }} />
-            }
-            href="https://hub.oomol.com/"
-          >
-            <div className={styles["btn-nav-text"]}>
-              {translate({ message: "Theme.Navbar.go-to-hub-flow" })}
-            </div>
-          </Button>
-          {/* </div> */}
         </div>
         <div
           aria-label="Navigation bar toggle"
