@@ -23,7 +23,6 @@
   "HOME.FirstScreen.download-windows-subtitle": {
     "message": "当前仅支持 x64 版本"
   },
-
   "HOME.BrandAssets.title": {
     "message": "品牌资产"
   },
@@ -45,7 +44,6 @@
   "HOME.BrandAssets.download-btn-text": {
     "message": "下载"
   },
-
   "HOME.Scenes.title": {
     "message": "使用场景"
   },
@@ -67,7 +65,6 @@
   "HOME.Scenes.media-processing.inner": {
     "message": "开发人员可通过OOMOL将视频处理库封装为可调参数的功能节点。内容创作者，如抖音用户，能通过拖放创建音视频处理工作流，自动化完成多语言字幕等任务。"
   },
-
   "HOME.Features.title": {
     "message": "功能和优势"
   },
@@ -107,11 +104,9 @@
   "Download": {
     "message": "下载使用"
   },
-
   "HOME.Pricing.title": {
     "message": "价格"
   },
-
   "HOME.Downloads.title": {
     "message": "下载"
   },
@@ -136,7 +131,6 @@
   "HOME.Downloads.Nightly.subtitle": {
     "message": "隔夜构建版本，较不稳定"
   },
-
   "HOME.Community.title": {
     "message": "社区"
   },
@@ -161,7 +155,6 @@
   "HOME.Community.slogan-4": {
     "message": "每个提议都会被认真倾听"
   },
-
   "theme.ErrorPageContent.title": {
     "message": "页面已崩溃。",
     "description": "The title of the fallback page when the page crashed"
@@ -607,5 +600,15 @@
   "theme.contentVisibility.draftBanner.message": {
     "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
     "description": "The draft content banner message"
+  },
+  "HOME.BrandAssets.description-1": {
+    "message": "HOME.BrandAssets.description-1"
+  },
+  "HOME.BrandAssets.description-2": {
+    "message": "HOME.BrandAssets.description-2"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "This author has not written any posts yet.",
+    "description": "The text for authors with 0 blog post"
   }
 }
