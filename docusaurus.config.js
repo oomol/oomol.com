@@ -166,7 +166,7 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "overview",
+            docId: "introduction/overview",
             position: "left",
             label: "Docs",
           },
@@ -227,7 +227,7 @@ const config = {
             items: [
               {
                 label: "Documentation",
-                to: "/docs/overview",
+                to: "/docs/introduction/overview",
               },
               {
                 label: "Updates",

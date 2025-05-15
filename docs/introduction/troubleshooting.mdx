@@ -1,0 +1,76 @@
+---
+sidebar_position: 2
+---
+
+# Troubleshoot issues
+
+## Known Possible Issues
+
+Sometimes running OOMOL Studio may encounter some issues. Below are some common troubleshooting methods.
+
+### Unable to Launch OOMOL Studio
+
+If you are a **Windows** user, please ensure that your operating system is version 19044 (Windows 21H2) or higher. This is because OOMOL Studio uses `WSL2` as the base for the virtual machine in Windows systems. Older versions of Windows may face issues with WSL2 not starting correctly.
+
+If you are a **macOS** user, please ensure that your operating system is version 13.1 (Ventura) or higher. This is because OOMOL Studio uses `Virtualization.framework` in macOS (Intel) systems, and versions lower than this lack some necessary APIs, preventing OOMOL Studio from launching properly.
+
+### Warning: `The OOMOL Studio must be single instance`
+
+Currently, OOMOL Studio does not support starting multiple instances. Therefore, if you attempt to launch more than one instance, this warning window will pop up.
+
+If you believe you haven’t started another instance, it may be due to leftover processes. You can end the processes of other instances in the task manager and then reopen OOMOL Studio.
+
+### Warning: `The OOMOL Studio is running under ARM64 translation mode. Please download the ARM64 architecture version.`
+
+This warning appears because OOMOL Studio does not yet support running the x86_64 version on the ARM64 architecture of **Apple Silicon**. Therefore, you need to download and install the ARM64 architecture version of OOMOL Studio.
+
+### Unable to download dependencies or install plugins in OOMOL Studio
+
+If you encounter this situation, it is most likely caused by network issues. Since most servers for npm, pip, and system sources are located overseas, connection failures may occur.
+
+You can try the following methods to resolve this issue:
+
+1. Ensure the current system time is accurate. Large discrepancies may lead to SSL certificate verification failures.
+
+If neither of the above methods solves the problem, you can try using proxy software and enable the following options:
+
+- If you are on a Windows system and using proxy software like `Clash`, please ensure the following are enabled:
+  1. Allow LAN access
+  2. TUN Mode, and use the `GVisor` stack
+  3. Service Mode
+- If you are on a macOS system and using proxy software like `Surge`, please ensure the following are enabled:
+  1. Allow LAN access
+  2. Enhanced Mode
+
+If you are a Windows user and the above methods are ineffective, you may be encountering issues with Windows itself. It is recommended to try the following method:
+
+Open the terminal (administrator mode) and execute the following commands:
+
+```bash
+wsl --shutdown
+netsh winsock reset
+netsh int ip reset all
+netsh winhttp reset proxy
+ipconfig /flushdns
+```
+
+Then restart your computer and try opening OOMOL Studio again.
+
+:::info
+In addition to the above methods, you can also try: _disabling the firewall_, _exiting antivirus software_, or manually searching for: `WSL2 cannot connect to the internet` for more solutions.
+:::
+
+## Getting Logs
+
+When encountering other problems, you can try to retrieve the logs from OOMOL Studio to help us identify the issues.
+
+Currently, OOMOL Studio's logs are stored in the following locations:
+
+- **Windows**: `%USERPROFILE%\.oomol-studio\logs` and `%USERPROFILE%\.oomol-studio\ovm\log`
+- **macOS**: `~/.oomol-studio/logs` and `~/.oomol-studio/ovm-krun/logs` (if you have an Intel Mac, it will be `~/.oomol-studio/ovm/logs`)
+
+> Please do not share your log files publicly on the internet, as they may contain sensitive information.
+
+## Online Help
+
+If you encounter issues while using OOMOL Studio, or have any suggestions or feedback, please feel free to contact us through the [community](https://oomol.com/community).
