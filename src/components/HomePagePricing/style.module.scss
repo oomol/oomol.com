@@ -1,3 +1,5 @@
+@import "../../css/custom.scss";
+
 .container {
   display: flex;
   flex-direction: column;
@@ -153,5 +155,6 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  color: rgba(240, 246, 252, 0.7);
+
+  @include linearGradientColor;
 }
