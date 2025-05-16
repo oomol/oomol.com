@@ -1,0 +1,111 @@
+---
+sidebar_position: 1
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# Quick Start
+
+Before we introduce various concepts of OOMOL Studio, let's start by doing something interesting with OOMOL Studio.
+
+## Get NASA Astronomy Picture of the Day (APOD)
+
+Before we officially start, you can try it locally by [clicking here](https://hub.oomol.com/package/nasa-apod-quickstarts?open=true).
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/get-started/quickstarts/apod-simple-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/get-started/quickstarts/apod-simple-dark.png"
+    ),
+  }}
+/>
+
+In this example, we will use OOMOL Studio to get NASA's Astronomy Picture of the Day (APOD) and save it locally in a compressed format.
+
+According to the [NASA APOD API](https://api.nasa.gov/) documentation, we can use the following API to obtain the daily astronomy picture:
+
+```bash
+GET https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
+```
+
+:::info
+You can visit https://api.nasa.gov/ and take 30 seconds to apply for a free API Key. However, you can use `DEMO_KEY` without registering, but there are some limitations. For this example, using `DEMO_KEY` is perfectly fine.
+:::
+
+In the example image above, we used the `context.preview` function to preview the image and translate the image description using `X AI Grok 3 Mini Beta` and `Gemini2 5 Flash` models. You don’t need to separately configure these APIs and Keys as OOMOL Studio has already built in the AI APIs.
+
+> `context.preview` is one of our built-in functions that can preview various types of files such as images, videos, audio, and text. This will be explained in detail in later chapters.
+
+### Compress and Save the Image
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/get-started/quickstarts/apod-compression-save-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/get-started/quickstarts/apod-compression-save-dark.png"
+    ),
+  }}
+/>
+
+In this example, we used the `sharp` library to compress the image and saved it in the `~/oomol-storage/apod` directory.
+
+:::info
+You may notice that in the `Save` Block, we filled in the path as `/oomol-driver/oomol-storage/apod`, while the actual saved path is `~/oomol-storage/apod`. This is because OOMOL Studio does not by default expose all files or directories of the current user to the virtual environment in OOMOL Studio, primarily for security reasons. In future chapters, we will introduce how to expose a specified local directory to the virtual environment in OOMOL Studio.
+:::
+
+### Optimize with Key
+
+After multiple runs, you may find requests resulting in errors, like the one below:
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/get-started/quickstarts/apod-secret-limit-error-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/get-started/quickstarts/apod-secret-limit-error-dark.png"
+    ),
+  }}
+/>
+
+This error occurs because NASA's `DEMO_KEY` has request limits. You can resolve this issue by applying for a free API Key.
+
+In OOMOL Studio, we can use `Secrets` to store the API Key. You can find `OOMOL Secrets` in the left menu, then click the `Add Secret` button to add a new key, as shown in the image.
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/get-started/quickstarts/apod-secret-add-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/get-started/quickstarts/apod-secret-add-dark.png"
+    ),
+  }}
+/>
+
+Then, in the Block, add an `Add Input`, change its type to `Secret`, and select the key you just added. Replace the `DEMO_KEY` used in the code with `${params.input}` interface.
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/get-started/quickstarts/apod-secret-run-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/get-started/quickstarts/apod-secret-run-dark.png"
+    ),
+  }}
+/>
+
+:::info
+When using the key, you don’t need to worry about the key leaking when sharing the project with others, because OOMOL Studio only passes the key to the workflow at runtime to ensure the security of the key.
+:::
+
+In this example, we have briefly explored how to request the APOD, use LLM for translation, utilize a third-party library to compress images, save images locally, and use secrets to store API Keys.
+
+As a simple quick start, we have completed a full workflow. In subsequent chapters, we will cover more interesting and practical features and uses of OOMOL Studio.

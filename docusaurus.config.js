@@ -160,13 +160,13 @@ const config = {
       },
       navbar: {
         logo: {
-          alt: "Oomol Logo",
+          alt: "OOMOL Logo",
           src: "img/logo.svg",
         },
         items: [
           {
             type: "doc",
-            docId: "introduction/overview",
+            docId: "get-started/quickstarts",
             position: "left",
             label: "Docs",
           },

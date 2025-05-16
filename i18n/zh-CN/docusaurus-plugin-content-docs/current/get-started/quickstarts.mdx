@@ -1,0 +1,114 @@
+---
+sidebar_position: 1
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# 快速开始
+
+在介绍 OOMOL Studio 的各种概念之前，让我们先使用 OOMOL Studio 开始做一些有意思的事情吧。
+
+## 获取 NASA 每日天文图片(APOD)
+
+在正式开始前，你可以通过[点击这里](https://hub.oomol.com/package/nasa-apod-quickstarts?open=true)，先在本地进行尝试。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/get-started/quickstarts/apod-simple-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/get-started/quickstarts/apod-simple-dark.png"
+    ),
+  }}
+/>
+
+在这个示例中，我们将使用 OOMOL Studio 获取 NASA 每日天文图片(APOD)，并压缩保存到本地。
+
+根据 [NASA APOD API](https://api.nasa.gov/) 的文档，我们可以使用以下 API 获取每日天文图片：
+
+```bash
+GET https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
+```
+
+:::info
+你可以打开 https://api.nasa.gov/ 网站，并花 30 秒的时间申请一个免费的 API Key。
+但是你在不注册的情况下，可以使用 `DEMO_KEY`，只不过它有一些限制。但是对于这个示例来说，使用 `DEMO_KEY` 是完全可以的。
+:::
+
+在上面的示例图中，我们使用了 `context.preview` 函数来预览图片，并将图片的描述通过 `X AI Grok 3 Mini Beta` 和 `Gemini2 5 Flash` 模型进行翻译。你无需单独配置这些 API 和 Key，因为 OOMOL Studio 已经内置了 AI 的 API。
+
+> `context.preview` 是我们内置的函数之一，它可以预览图片、视频、音频、文本等多种类型的文件。这将在后面的章节中详细介绍。
+
+### 压缩并保存图片
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/get-started/quickstarts/apod-compression-save-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/get-started/quickstarts/apod-compression-save-dark.png"
+    ),
+  }}
+/>
+
+在这个例子中，我们使用了 `sharp` 库来压缩图片，并将图片保存在了 `~/oomol-storage/apod` 目录下。
+
+:::info
+你可能会发现，在 `Save` Block 中，我们填写的路径是 `/oomol-driver/oomol-storage/apod`，而实际保存的路径却是 `~/oomol-storage/apod`。
+这是因为 OOMOL Studio 在默认情况下不会把当前用户的所有文件或者目录都暴露给 OOMOL Studio 中的虚拟环境中，这主要是为了安全起见。
+在以后的章节中，我们会介绍如何将本地指定目录暴露给 OOMOL Studio 中的虚拟环境中。
+:::
+
+### 使用密钥优化
+
+在多次运行后，你可能会发现，请求报错，就像下面这样:
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/get-started/quickstarts/apod-secret-limit-error-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/get-started/quickstarts/apod-secret-limit-error-dark.png"
+    ),
+  }}
+/>
+
+这是错误是因为 NASA 的 `DEMO_KEY` 有请求限制。你可以通过申请一个免费的 API Key 来解决这个问题。
+
+在 OOMOL Studio 中，我们可以使用 `密钥` 来存储 API Key。你可以在左侧的菜单中找到 `OOMOL 密钥`，然后点击 `添加密钥` 按钮，添加一个新的密钥。如图
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/get-started/quickstarts/apod-secret-add-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/get-started/quickstarts/apod-secret-add-dark.png"
+    ),
+  }}
+/>
+
+然后在 Block 中，添加一个 `输入接口`，并将类型修改为 `密钥`，然后选择你刚刚添加的密钥。并将代码中使用的 `DEMO_KEY` 替换为 `${params.input}`接口
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/get-started/quickstarts/apod-secret-run-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/get-started/quickstarts/apod-secret-run-dark.png"
+    ),
+  }}
+/>
+
+:::info
+在使用密钥时，不用担心将项目分享给其他人时，密钥会泄露。因为 OOMOL Studio 只会在运行时才会将密钥传递给工作流，以确保密钥的安全性。
+:::
+
+在本次示例中，我们简单了解了如何请求 APOD、使用 LLM 翻译、使用第三方库去压缩图片、将图片保存到本地、使用密钥来存储 API Key。
+
+作为一次简单的快速开始，我们已经完成了一个完整的工作流。后续章节我们将会介绍更多有趣且实用的 OOMOL Studio 的功能和用法。
