@@ -1,0 +1,115 @@
+@import "../../css/custom.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  overflow: hidden;
+}
+
+.projects {
+  width: 100%;
+  max-width: 1280px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 20px 40px;
+  overflow: hidden;
+  margin: 40px 0;
+}
+
+.project {
+  max-width: 290px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  overflow: hidden;
+  padding: 8px 16px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #151b23;
+    border-radius: 10px;
+  }
+}
+
+.image {
+  width: 40px;
+  height: 40px;
+}
+
+.section-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: #f0f6fc;
+}
+
+.subtitle {
+  font-size: 20px;
+
+  @include linearGradientColor;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 16px;
+  color: #f0f6fc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.description {
+  font-size: 14px;
+  color: #838b95;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.button {
+  width: 202px;
+  height: 43px;
+  background: inherit;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 400;
+
+  border-radius: 40px;
+  border: solid #212830;
+  border-width: 2px 0.5px;
+
+  &:hover {
+    .icon {
+      color: #7d7fe9;
+    }
+  }
+}
+
+.icon {
+  font-size: 16px;
+  color: #f0f6fc;
+}
+
+@media (max-width: 1200px) {
+  .projects {
+    padding: 0 16px;
+  }
+}
+
+@include pad-large {
+  .projects {
+    overflow: auto;
+  }
+
+  .project {
+    overflow: unset;
+  }
+}
