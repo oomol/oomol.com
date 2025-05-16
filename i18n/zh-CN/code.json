@@ -92,6 +92,88 @@
   "HOME.Features.support-sharing.inner": {
     "message": "用户可将工作流和工具箱分享至 OOMOL 社区和 GitHub。我们将在 Oomol-lab GitHub 开源内置插件、常用工作流和运行容器。"
   },
+  "HOME.Guide.title": {
+    "message": "开启你的项目"
+  },
+  "HOME.Guide.subtitle": {
+    "message": "探索社区，寻找适合你需求的工作流"
+  },
+  "HOME.Guide.project-1.title": {
+    "message": "Video Translater"
+  },
+  "HOME.Guide.project-1.description": {
+    "message": "翻译并添加字幕"
+  },
+  "HOME.Guide.project-2.title": {
+    "message": "PDF Craft"
+  },
+  "HOME.Guide.project-2.description": {
+    "message": "集成 pdf-craft 的起始项目"
+  },
+  "HOME.Guide.project-3.title": {
+    "message": "FFmpeg"
+  },
+  "HOME.Guide.project-3.description": {
+    "message": "使用 FFmpeg 进行视频处理"
+  },
+  "HOME.Guide.project-4.title": {
+    "message": "Data Lab"
+  },
+  "HOME.Guide.project-4.description": {
+    "message": "使用 pandas & plotly 数据分析"
+  },
+  "HOME.Guide.project-5.title": {
+    "message": "Stock Analysis"
+  },
+  "HOME.Guide.project-5.description": {
+    "message": "股票分析与回测"
+  },
+  "HOME.Guide.project-6.title": {
+    "message": "Transform"
+  },
+  "HOME.Guide.project-6.description": {
+    "message": "常见数据转换"
+  },
+  "HOME.Guide.project-7.title": {
+    "message": "Tiny PNG"
+  },
+  "HOME.Guide.project-7.description": {
+    "message": "图像文件压缩"
+  },
+  "HOME.Guide.project-8.title": {
+    "message": "MinerU"
+  },
+  "HOME.Guide.project-8.description": {
+    "message": "将 PDF 转换为机器可读格式"
+  },
+  "HOME.Guide.project-9.title": {
+    "message": "Whisper"
+  },
+  "HOME.Guide.project-9.description": {
+    "message": "识别音频中的语音"
+  },
+  "HOME.Guide.project-10.title": {
+    "message": "SiliconFlow"
+  },
+  "HOME.Guide.project-10.description": {
+    "message": "Siliconflow 平台的多种功能集"
+  },
+  "HOME.Guide.project-11.title": {
+    "message": "V2EX Lottery"
+  },
+  "HOME.Guide.project-11.description": {
+    "message": "用于 V2EX 抽奖"
+  },
+  "HOME.Guide.project-12.title": {
+    "message": "Manga Translator"
+  },
+  "HOME.Guide.project-12.description": {
+    "message": "翻译漫画图片和 PDF"
+  },
+  "HOME.Guide.view-all-projects": {
+    "message": "查看全部"
+  },
+
   "Easily connect code and services": {
     "message": "便捷地连接代码和服务"
   },

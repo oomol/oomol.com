@@ -98,6 +98,87 @@
   "HOME.Features.support-sharing.inner": {
     "message": "Share Workflows and Block Toolbox with the OOMOL community and as GitHub repositories. We will open-source built-in tool plugins, common Workflows, and runtime containers in the oomol-lab GitHub organization."
   },
+  "HOME.Guide.title": {
+    "message": "Start With A Project"
+  },
+  "HOME.Guide.subtitle": {
+    "message": "Explore the Community to find a workflow that fits your needs."
+  },
+  "HOME.Guide.project-1.title": {
+    "message": "Video Translater"
+  },
+  "HOME.Guide.project-1.description": {
+    "message": "Translate and add subtitles"
+  },
+  "HOME.Guide.project-2.title": {
+    "message": "PDF Craft"
+  },
+  "HOME.Guide.project-2.description": {
+    "message": "OOMOL Starter with pdf-craft"
+  },
+  "HOME.Guide.project-3.title": {
+    "message": "FFmpeg"
+  },
+  "HOME.Guide.project-3.description": {
+    "message": "Video processing with FFmpeg"
+  },
+  "HOME.Guide.project-4.title": {
+    "message": "Data Lab"
+  },
+  "HOME.Guide.project-4.description": {
+    "message": "Data analysis with pandas & plotly."
+  },
+  "HOME.Guide.project-5.title": {
+    "message": "Stock Analysis"
+  },
+  "HOME.Guide.project-5.description": {
+    "message": "Stock analysis and backtesting."
+  },
+  "HOME.Guide.project-6.title": {
+    "message": "Transform"
+  },
+  "HOME.Guide.project-6.description": {
+    "message": "Common data conversion."
+  },
+  "HOME.Guide.project-7.title": {
+    "message": "Tiny PNG"
+  },
+  "HOME.Guide.project-7.description": {
+    "message": "Images Compression"
+  },
+  "HOME.Guide.project-8.title": {
+    "message": "Voice Recognition"
+  },
+  "HOME.Guide.project-8.description": {
+    "message": "Convert PDFs to machine-readable formats."
+  },
+  "HOME.Guide.project-9.title": {
+    "message": "Whisper"
+  },
+  "HOME.Guide.project-9.description": {
+    "message": "Recognizes voices from audio."
+  },
+  "HOME.Guide.project-10.title": {
+    "message": "SiliconFlow"
+  },
+  "HOME.Guide.project-10.description": {
+    "message": "Various feature sets of the SiliconFlow platform"
+  },
+  "HOME.Guide.project-11.title": {
+    "message": "V2EX Lottery"
+  },
+  "HOME.Guide.project-11.description": {
+    "message": "Used for the V2EX lottery"
+  },
+  "HOME.Guide.project-12.title": {
+    "message": "Manga Translator"
+  },
+  "HOME.Guide.project-12.description": {
+    "message": "Translate Manga pics & PDF"
+  },
+  "HOME.Guide.view-all-projects": {
+    "message": "View All Projects"
+  },
 
   "HOME.Pricing.title": {
     "message": "Pricing"
