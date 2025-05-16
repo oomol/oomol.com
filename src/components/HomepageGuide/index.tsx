@@ -90,9 +90,12 @@ const ProjectItem = ({ imgUrl, url, itemIndex }: ProjectItemProps) => {
 export default function HomepageGuide() {
   return (
     <section className={styles.container}>
-      <h2 className={styles["section-title"]}>Start With A Project</h2>
+      <h2 className={styles["section-title"]}>
+        {" "}
+        {translate({ message: "HOME.Guide.title" })}
+      </h2>
       <p className={styles.subtitle}>
-        Explore the Community to find a workflow that fits your needs.
+        {translate({ message: "HOME.Guide.subtitle" })}
       </p>
       <div className={styles.projects}>
         {projectsData.map((project, index) => (
