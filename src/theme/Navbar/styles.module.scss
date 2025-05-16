@@ -228,10 +228,8 @@
 
     padding: 12px 24px;
     border-radius: 40px;
-    border-right: 0.5px solid #212830;
-    border-left: 0.5px solid #212830;
-    border-top: 2px solid #212830;
-    border-bottom: 2px solid #212830;
+    border: solid #212830;
+    border-width: 2px 0.5px;
   }
 
   .navbarHidden {

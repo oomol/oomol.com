@@ -8,6 +8,7 @@ import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
 import HomepageStarter from "@site/src/components/HomepageStarter";
 import HomepagePricing from "../components/HomePagePricing";
 import Head from "@docusaurus/Head";
+import HomepageGuide from "../components/HomepageGuide";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <HomepageFirstScreen />
         <HomepageScenes />
         <HomepageFeatures />
+        <HomepageGuide />
         {/* TODO: 等订阅业务上线后恢复 */}
         {/* <HomepagePricing /> */}
         <HomepageDownloads />

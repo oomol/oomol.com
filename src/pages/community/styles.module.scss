@@ -1,3 +1,5 @@
+@import "../../css/custom.scss";
+
 .container {
   display: flex;
   flex-direction: column;
@@ -79,9 +81,9 @@
 }
 
 .name {
-  color: rgba(240, 246, 252, 0.7);
   font-size: 14px;
   font-weight: 400;
+  @include linearGradientColor;
 }
 
 .slogans {
@@ -122,5 +124,6 @@
 .slogan-text {
   font-size: 16px;
   font-weight: 400;
-  color: rgba(240, 246, 252, 0.7);
+
+  @include linearGradientColor;
 }

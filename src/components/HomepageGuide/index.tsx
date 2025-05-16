@@ -1,0 +1,117 @@
+import styles from "./styles.module.scss";
+
+import React from "react";
+import { Button } from "../Button";
+import { translate } from "@docusaurus/Translate";
+
+type ProjectsData = {
+  imgUrl: string;
+  url: string;
+};
+
+// TODO: add zh-CN url
+const projectsData: ProjectsData[] = [
+  {
+    imgUrl: "/img/pages/project-1.png",
+    url: "https://hub.oomol.com/package/videos-translater",
+  },
+  {
+    imgUrl: "/img/pages/project-2.png",
+    url: "https://hub.oomol.com/package/pdf-craft-starter",
+  },
+  {
+    imgUrl: "/img/pages/project-3.png",
+    url: "https://hub.oomol.com/package/ffmpeg",
+  },
+  {
+    imgUrl: "/img/pages/project-4.png",
+    url: "https://hub.oomol.com/package/data-lab",
+  },
+  {
+    imgUrl: "/img/pages/project-5.png",
+    url: "https://hub.oomol.com/package/default",
+  },
+  {
+    imgUrl: "/img/pages/project-6.png",
+    url: "https://hub.oomol.com/package/oomol-transform",
+  },
+  {
+    imgUrl: "/img/pages/project-7.png",
+    url: "https://hub.oomol.com/package/tiny-png",
+  },
+  {
+    imgUrl: "/img/pages/project-8.png",
+    url: "https://hub.oomol.com/package/mineru",
+  },
+  {
+    imgUrl: "/img/pages/project-9.png",
+    url: "https://hub.oomol.com/package/whisper",
+  },
+  {
+    imgUrl: "/img/pages/project-10.png",
+    url: "https://hub.oomol.com/package/siliconflow",
+  },
+  {
+    imgUrl: "/img/pages/project-11.png",
+    url: "https://hub.oomol.com/package/v2ex-lottery",
+  },
+  {
+    imgUrl: "/img/pages/project-12.png",
+    url: "https://hub.oomol.com/package/manga-translator",
+  },
+];
+
+interface ProjectItemProps extends ProjectsData {
+  itemIndex: number;
+}
+
+const ProjectItem = ({ imgUrl, url, itemIndex }: ProjectItemProps) => {
+  const title = translate({
+    message: `HOME.Guide.project-${itemIndex + 1}.title`,
+  });
+
+  const description = translate({
+    message: `HOME.Guide.project-${itemIndex + 1}.description`,
+  });
+
+  console.log("title", title);
+
+  return (
+    <div className={styles.project} onClick={() => window.open(url)}>
+      <img className={styles.image} src={imgUrl} alt={title} />
+      <div className={styles.content}>
+        <span className={styles.title}>{title}</span>
+        <span className={styles.description}>{description}</span>
+      </div>
+    </div>
+  );
+};
+
+export default function HomepageGuide() {
+  return (
+    <section className={styles.container}>
+      <h2 className={styles["section-title"]}>
+        {" "}
+        {translate({ message: "HOME.Guide.title" })}
+      </h2>
+      <p className={styles.subtitle}>
+        {translate({ message: "HOME.Guide.subtitle" })}
+      </p>
+      <div className={styles.projects}>
+        {projectsData.map((project, index) => (
+          <ProjectItem {...project} key={index} itemIndex={index} />
+        ))}
+      </div>
+      <Button
+        onClick={() => window.open("https://hub.oomol.com")}
+        className={styles.button}
+        icon={<i className={`${styles.icon} i-codicon:arrow-right`} />}
+        iconPosition="end"
+      >
+        {translate({
+          message: "HOME.Guide.view-all-projects",
+        })}
+      </Button>
+    </section>
+  );
+}

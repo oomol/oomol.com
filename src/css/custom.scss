@@ -24,8 +24,8 @@
   --ifm-color-primary-light: #9c9dee;
   --ifm-color-primary-lighter: #abacf1;
   --ifm-color-primary-lightest: #d9d9f9;
-  --ifm-navbar-background-color: #0d1116;
-  --ifm-background-color: #0d1116 !important;
+  --ifm-navbar-background-color: #010409;
+  --ifm-background-color: #010409 !important;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
@@ -147,4 +147,10 @@ $desktop-width: 1280px;
     // 已经手动调整 navbar 相关的样式，为了不让默认的影响新的样式，所以设为 0
     --ifm-navbar-height: 0px;
   }
+}
+
+@mixin linearGradientColor {
+  background-image: linear-gradient(90deg, #656c76 0%, #bcc9dc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
