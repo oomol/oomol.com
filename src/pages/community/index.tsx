@@ -122,17 +122,15 @@ export default function Community() {
             />
           </div>
         </div>
-        <div className={styles.footer}>
-          <div className={styles.slogans}>
-            {sloganData.map((item, index) => {
-              return (
-                <div key={`slogan-${index}`} className={styles.slogan}>
-                  <i className={`${item.icon} ${styles.icon}`} />
-                  <span className={styles["slogan-text"]}>{item.text}</span>
-                </div>
-              );
-            })}
-          </div>
+        <div className={styles.slogans}>
+          {sloganData.map((item, index) => {
+            return (
+              <div key={`slogan-${index}`} className={styles.slogan}>
+                <i className={`${item.icon} ${styles.icon}`} />
+                <span className={styles["slogan-text"]}>{item.text}</span>
+              </div>
+            );
+          })}
         </div>
       </div>
     </Layout>
