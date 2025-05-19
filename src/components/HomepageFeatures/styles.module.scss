@@ -6,9 +6,8 @@
   justify-content: center;
   text-align: center;
   gap: 14px;
-  padding: 50px 0 100px;
-  font-size: 42px;
-  font-weight: bold;
+  font-size: 48px;
+  font-weight: 800;
 
   @include phone {
     font-size: 36px;
@@ -27,14 +26,15 @@
 }
 
 .feature {
-  max-width: 620px;
+  width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 100%;
-  margin-bottom: 24px;
-  border: 1px solid #3d444d;
-  border-radius: 10px;
+  justify-content: flex-end;
+  gap: 40px;
+  padding: 40px;
+  border-radius: 20px;
+  background-color: #0d1117;
 
   @include phone {
     margin-bottom: 16px;
@@ -47,6 +47,16 @@
   @include phone-large {
     margin-bottom: 16px;
   }
+}
+
+.contentFirst {
+  flex-direction: column-reverse;
+}
+
+.titleBox {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
 .title {
@@ -62,22 +72,49 @@
   margin-bottom: 0;
 }
 
+.sectionSubtitle {
+  max-width: 640px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 400;
+
+  @include linearGradientColor;
+}
+
 .content {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 24px 24px 32px 24px;
 }
 
 .image {
   border-radius: 10px 10px 0 0;
+  overflow: auto;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .list {
   max-width: 1280px;
   display: grid;
-  gap: 40px;
-  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  grid-template-columns: repeat(6, 1fr);
+
+  & > *:nth-child(1),
+  & > *:nth-child(2) {
+    grid-column: span 3;
+    max-height: 582px;
+  }
+
+  & > *:nth-child(3),
+  & > *:nth-child(4),
+  & > *:nth-child(5) {
+    grid-column: span 2;
+    max-height: 406px;
+  }
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
@@ -88,28 +125,13 @@
   }
 }
 
-.icon {
-  font-size: 30px;
-}
-
-.sub-icon {
-  font-size: 20px;
-  background: linear-gradient(
-    127.66deg,
-    #0d1116 0%,
-    #987de9 15%,
-    #7d7fe9 39%,
-    #ffffff 62%,
-    #7da6e9 86%,
-    #0d1116 100%
-  );
-}
-
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 40px;
+  gap: 40px;
 
   @include desktop {
     padding: 0 24px;
@@ -122,6 +144,7 @@
 
 .inner {
   font-size: 14px;
-  color: rgba(240, 246, 252, 0.7);
   margin: 0;
+
+  @include linearGradientColor;
 }

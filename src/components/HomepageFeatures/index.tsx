@@ -4,42 +4,47 @@ import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
 import { BlurFade } from "../magic-ui/BlurFade";
+import clsx from "clsx";
 
 type SuperiorityType = {
   imageUrl: string;
   title: string;
-  icon: string;
   inner: string;
+  contentFirst?: boolean;
 };
 
 const superiorityList: SuperiorityType[] = [
   {
-    imageUrl: "/img/superiority-1.png",
+    imageUrl: "/img/pages/superiority-1.webp",
     title: translate({ message: "HOME.Features.intuitive-interaction.title" }),
-    icon: "i-codicon-wand",
     inner: translate({ message: "HOME.Features.intuitive-interaction.inner" }),
   },
   {
-    imageUrl: "/img/superiority-2.png",
+    imageUrl: "/img/pages/superiority-2.webp",
     title: translate({
       message: "HOME.Features.pre-installed-environment.title",
     }),
-    icon: "i-codicon:server-environment",
     inner: translate({
       message: "HOME.Features.pre-installed-environment.inner",
     }),
   },
   {
-    imageUrl: "/img/superiority-3.png",
+    imageUrl: "/img/pages/superiority-3.webp",
     title: translate({ message: "HOME.Features.programming-friendly.title" }),
-    icon: "i-codicon:code",
     inner: translate({ message: "HOME.Features.programming-friendly.inner" }),
+    contentFirst: true,
   },
   {
-    imageUrl: "/img/superiority-4.png",
+    imageUrl: "/img/pages/superiority-4.webp",
     title: translate({ message: "HOME.Features.support-sharing.title" }),
-    icon: "i-codicon:globe",
     inner: translate({ message: "HOME.Features.support-sharing.inner" }),
+    contentFirst: true,
+  },
+  {
+    imageUrl: "/img/pages/superiority-5.webp",
+    title: translate({ message: "HOME.Features.block-sharing.title" }),
+    inner: translate({ message: "HOME.Features.block-sharing.inner" }),
+    contentFirst: true,
   },
 ];
 
@@ -47,11 +52,15 @@ export const FeatureItem = ({
   title,
   imageUrl,
   inner,
-  icon,
+  contentFirst = false,
 }: SuperiorityType) => {
   return (
     <BlurFade className={styles["feature-blur-fade"]}>
-      <div className={styles.feature}>
+      <div
+        className={clsx(styles.feature, {
+          [styles.contentFirst]: contentFirst,
+        })}
+      >
         <Image
           className={styles.image}
           sources={{
@@ -61,7 +70,6 @@ export const FeatureItem = ({
         />
         <div className={styles.content}>
           <div className={styles.title}>
-            <i className={`${icon} ${styles["sub-icon"]}`} />
             <h3 className={styles["title-text"]}>{title}</h3>
           </div>
           <p className={styles.inner}>{inner}</p>
@@ -73,12 +81,18 @@ export const FeatureItem = ({
 
 export default function HomepageFeatures() {
   return (
-    <div className={styles.container}>
-      <div className={styles.sectionTitle}>
-        <i className={`${styles.icon} i-codicon-symbol-misc`} />
-        {translate({
-          message: "HOME.Features.title",
-        })}
+    <section className={styles.container}>
+      <div className={styles.titleBox}>
+        <div className={styles.sectionTitle}>
+          {translate({
+            message: "HOME.Features.title",
+          })}
+        </div>
+        <span className={styles.sectionSubtitle}>
+          {translate({
+            message: "HOME.Features.subtitle",
+          })}
+        </span>
       </div>
       <div className={styles.list}>
         {superiorityList.map((data, index) => {
@@ -87,12 +101,12 @@ export default function HomepageFeatures() {
               key={`feature-${index}`}
               imageUrl={data.imageUrl}
               title={data.title}
-              icon={data.icon}
               inner={data.inner}
+              contentFirst={data.contentFirst}
             />
           );
         })}
       </div>
-    </div>
+    </section>
   );
 }
