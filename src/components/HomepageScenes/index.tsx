@@ -64,11 +64,15 @@ export default function HomepageScenes() {
     <div className={styles.scenes}>
       <div className={styles["scenes-mid"]}>
         <div className={styles.sectionTitle}>
-          <i className="i-codicon-activate-breakpoints" />
           {translate({
             message: "HOME.Scenes.title",
           })}
         </div>
+        <span className={styles.sectionSubtitle}>
+          {translate({
+            message: "HOME.Scenes.subtitle",
+          })}
+        </span>
         <div className={styles.sectionInner}>{scenesNodes}</div>
       </div>
     </div>
