@@ -51,7 +51,10 @@
   },
 
   "HOME.Scenes.title": {
-    "message": "Use Cases"
+    "message": "Use Case Gallery"
+  },
+  "HOME.Scenes.subtitle": {
+    "message": "OOMOL enables flexible construction of structured and unstructured data workflows through free node combination."
   },
   "HOME.Scenes.data-science.title": {
     "message": "Data Science"
@@ -72,7 +75,10 @@
     "message": "OOMOL allows developers to create customizable video processing nodes, enabling content creators to automate tasks like multilingual subtitling through drag-and-drop workflows."
   },
   "HOME.Features.title": {
-    "message": "Features and Benefits"
+    "message": "Features"
+  },
+  "HOME.Features.subtitle": {
+    "message": "Easy drag-and-drop workflows, professional code editor, and elegant data visualization."
   },
   "HOME.Features.intuitive-interaction.title": {
     "message": "Intuitive interaction"
@@ -86,17 +92,23 @@
   "HOME.Features.support-sharing.title": {
     "message": "Community sharing"
   },
+  "HOME.Features.block-sharing.title": {
+    "message": "Block sharing"
+  },
   "HOME.Features.intuitive-interaction.inner": {
-    "message": "Build workflows easily with drag-and-drop, configure node parameters flexibly via graphical components, and preview common data types."
+    "message": "Easily build workflows, flexibly configure nodes, and preview data."
   },
   "HOME.Features.pre-installed-environment.inner": {
-    "message": "No installation of Python or Node.js required; works out of the box. OOMOL uses containers to unify the development environment, enabling seamless Workflow sharing across systems without impacting local environments."
+    "message": "Built-in Python & Node.js, VSCode-based with AI and clear logs."
   },
   "HOME.Features.programming-friendly.inner": {
-    "message": "Built-in Python and Node.js with open-source library support. Based on VSCode, it offers code completion, highlighting, and AI suggestions. Includes an intuitive workflow log interface for easy debugging."
+    "message": "No installation needed; OOMOL uses containers for seamless workflow sharing."
   },
   "HOME.Features.support-sharing.inner": {
-    "message": "Share Workflows and Block Toolbox with the OOMOL community and as GitHub repositories. We will open-source built-in tool plugins, common Workflows, and runtime containers in the oomol-lab GitHub organization."
+    "message": "Publish as source code for easy secondary development by others."
+  },
+  "HOME.Features.block-sharing.inner": {
+    "message": "Publish as a block for easy use by others, like the npm community."
   },
   "HOME.Guide.title": {
     "message": "Start With A Project"

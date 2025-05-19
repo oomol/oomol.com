@@ -47,6 +47,9 @@
   "HOME.Scenes.title": {
     "message": "使用场景"
   },
+  "HOME.Scenes.subtitle": {
+    "message": "OOMOL 通过自由组合节点，灵活构建结构化与非结构化数据"
+  },
   "HOME.Scenes.data-science.title": {
     "message": "数据科学"
   },
@@ -66,7 +69,10 @@
     "message": "开发人员可通过OOMOL将视频处理库封装为可调参数的功能节点。内容创作者，如抖音用户，能通过拖放创建音视频处理工作流，自动化完成多语言字幕等任务。"
   },
   "HOME.Features.title": {
-    "message": "功能和优势"
+    "message": "功能特点"
+  },
+  "HOME.Features.subtitle": {
+    "message": "方便的拖放式工作流、专业的代码编辑器、精美的数据可视化展示"
   },
   "HOME.Features.intuitive-interaction.title": {
     "message": "直观交互"
@@ -80,17 +86,23 @@
   "HOME.Features.support-sharing.title": {
     "message": "社区共享"
   },
+  "HOME.Features.block-sharing.title": {
+    "message": "模块共享"
+  },
   "HOME.Features.intuitive-interaction.inner": {
-    "message": "通过简单的拖放操作和图形组件灵活配置节点参数，轻松构建工作流并预览多种常用数据类型。"
+    "message": "拖放图形组件，灵活配置节点参数，轻松构建并预览多种数据类型"
   },
   "HOME.Features.pre-installed-environment.inner": {
-    "message": "无需安装 Python 或 Node.js，开箱即用。OOMOL 使用容器统一开发环境，支持跨系统共享工作流，并通过安全隔离保护本地环境和数据安全。"
+    "message": "无需安装 Python 或 Node.js，OOMOL 使用容器统一开发环境，实现无缝工作流共享"
   },
   "HOME.Features.programming-friendly.inner": {
-    "message": "内置 Python 和 Node.js，支持开源库安装。基于 VSCode，提供代码补全、高亮和 AI 提示。配备美观实用的工作流日志界面，便于调试。"
+    "message": "内置 Python/Node.js，支持库安装，基于 VSCode，含代码补全与日志"
   },
   "HOME.Features.support-sharing.inner": {
-    "message": "用户可将工作流和工具箱分享至 OOMOL 社区和 GitHub。我们将在 Oomol-lab GitHub 开源内置插件、常用工作流和运行容器。"
+    "message": "以源码的方式共享，类似开源社区。方便他人基于当前代码进行二次开发"
+  },
+  "HOME.Features.block-sharing.inner": {
+    "message": "以区块的方式共享，类似于npm社区。方便他人直接基于当前区块直接使用"
   },
   "HOME.Guide.title": {
     "message": "开启你的项目"
