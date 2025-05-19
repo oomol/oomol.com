@@ -154,3 +154,39 @@ $desktop-width: 1280px;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+// 文档页面使用，用于在一行显示多个图片
+.image-container {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 15px;
+
+  &:has(> :nth-child(1)) {
+    --sibling-count: 1;
+  }
+
+  &:has(> :last-child:nth-child(2)) {
+    --sibling-count: 2;
+  }
+
+  &:has(> :last-child:nth-child(3)) {
+    --sibling-count: 3;
+  }
+
+  & > img {
+    width: calc(100% / var(--sibling-count));
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .image-container {
+    display: grid;
+    justify-items: center;
+
+    & > img {
+      width: 100%;
+    }
+  }
+}

@@ -54,5 +54,9 @@
   "sidebar.tutorialSidebar.category.Get Started": {
     "message": "开始使用",
     "description": "The label for category Get Started in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.OOMOL Studio Interface": {
+    "message": "OOMOL Studio 界面",
+    "description": "The label for category OOMOL Studio Interface in sidebar tutorialSidebar"
   }
 }

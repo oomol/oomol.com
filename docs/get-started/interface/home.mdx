@@ -1,0 +1,165 @@
+---
+sidebar_position: 1
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# Home Interface
+
+## Project List Page
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/get-started/interface/home-project-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/get-started/interface/home-project-dark.png"
+    ),
+  }}
+/>
+
+When you open OOMOL Studio, the first thing you see is the project list interface. Here you can view all your local projects, as well as create, import, and delete projects.
+
+On the left side is our home navigation bar. By clicking different options, you can switch to different pages, and the functions of these pages will be described below.
+
+In the lower left corner is the Token information for your current account, where you can see the usage and remaining quantity of your Token, as well as access the Token management page.
+
+:::info
+The main purpose of the Token is to call functions such as code AI completion, AI Agent, AI API, etc.
+:::
+
+When you hover over your personal avatar in the top right corner, a menu will pop up allowing you to manage your account information and app settings.
+
+The **Import** button on the right side can be used to import projects. The first option is to select a project folder from your local system for import, while the second option is to choose a local oomol file for import.
+
+:::info
+The `.oomol` file is the project file format for OOMOL Studio, containing all project information and data (excluding secrets). You can export it from the project interface.
+:::
+
+## Community Page
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/get-started/interface/home-community-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/get-started/interface/home-community-dark.png"
+    ),
+  }}
+/>
+
+Here you can view all the Flows shared by the community, and you can also perform searches.
+
+> You can also open: https://hub.oomol.com/ in any browser.
+
+## Secrets Page
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/get-started/interface/home-secrets-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/get-started/interface/home-secrets-dark.png"
+    ),
+  }}
+/>
+
+On this page, you can manage all your key information, including creating, deleting, updating, and viewing detailed key information.
+
+We have pre-set some common key types so you can quickly create related secrets without manually entering key names, as shown in the image:
+
+<div className="image-container">
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/home-secrets-create-types-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/home-secrets-create-types-dark.png"
+      ),
+    }}
+  />
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/home-secrets-create-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/home-secrets-create-dark.png"
+      ),
+    }}
+  />
+</div>
+
+## Space Page
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/get-started/interface/home-space-light.png"
+    ),
+    dark: useBaseUrl("/img/docs/get-started/interface/home-space-dark.png"),
+  }}
+/>
+
+On this page, you can view, delete, and add disks. All these disks will be reflected in the project's virtual environment.
+
+:::info
+"Disk" is a concept in OOMOL Studio that represents the storage mount point of a virtual machine. It is similar to a Volume in Docker.
+:::
+
+When you click the **Mount Disk** button in the top right corner, a dialog box will pop up where you can select the directory to mount. The "Host Directory" represents your system's local directory, while the "Container Directory Name" is the name of the directory that will be displayed in the virtual environment.
+
+<div className="image-container">
+  <Image
+    style={{ width: "520px" }}
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/home-space-add-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/home-space-add-dark.png"
+      ),
+    }}
+  />
+</div>
+
+> To ensure compatibility across different systems, we require that the "Container Dir Name" must start with a lowercase letter + number and can only include: lowercase letters, numbers, dots, underscores, and hyphens, with a maximum of 215 characters.
+
+For security reasons, we only mount the following directories to the virtual environment by default:
+
+- `~/oomol-storage` -> `/oomol-driver/oomol-storage`
+  - The root directory for project data storage. Users can choose this directory or its subdirectories as a data storage directory before running a Flow.
+- `~/.oomol-studio/sessions` -> `/oomol-driver/sessions`
+  - The session directory for each run. Every time a Flow is run, OOMOL Studio creates a new nested directory in this directory as the current session directory.
+  - The nested rules for its creation are as follows: `/oomol-driver/sessions/{project_name}/{flow_name}/{timestamp}`, where `project_name` is the project name, `flow_name` is the Flow name, and `timestamp` is the current timestamp.
+  - As a Flow developer, you can use `context.sessionDir` to obtain the path of the current session directory, suitable for sharing data during the current run.
+  
+- `~/.oomol-studio/oocana-tmp-root` -> `/oomol-driver/oocana-tmp-root`
+  - A temporary directory for debugging. OOMOL Studio creates a new directory in this directory every time it runs, serving as the temporary directory for the current run. This directory has the following properties: it will not be automatically deleted on failure and will be automatically deleted on success.
+  - As a Flow developer, you can use `context.tmpDir` to obtain the path of the temporary directory for the current run.
+
+## Settings Page
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/get-started/interface/home-setting-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/get-started/interface/home-setting-dark.png"
+    ),
+  }}
+/>
+
+On this page, you can configure some basic settings for OOMOL Studio, including theme, language, mirror sources, proxy, etc.
+
+In Windows systems, a new "OVM Folder" will be added here, which is used to change the location where OVM data is stored. Since OVM data can increase in size over time, we recommend placing it on a larger disk. By default, OVM data is stored in the directory `C:\Users\{username}\.oomol-studio\ovm`.
+
+:::info
+For information on migrating the "OVM Folder," please see [here](https://oomol.com/updates/OOMOL_Studio_1.1.0/#ovm-virtual-machine-data-directory-relocation)
+:::
