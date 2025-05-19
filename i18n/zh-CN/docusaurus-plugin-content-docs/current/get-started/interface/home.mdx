@@ -1,0 +1,164 @@
+---
+sidebar_position: 1
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# 首页界面
+
+## 项目列表页面
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/get-started/interface/home-project-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/get-started/interface/home-project-dark.png"
+    ),
+  }}
+/>
+
+在打开 OOMOL Studio 后，首次映入眼帘的就是项目列表界面。你可以在这里查看到你本地的所有项目，也可以创建、导入、删除项目。
+
+左侧是我们首页的导航栏，点击不同的选项可以切换到不同的页面，页面的作用将在下面介绍。
+
+在左下角是你当前账户的 Token 信息，你可以在这里看到 Token 的使用情况和剩余数量，以及跳转到 Token 的管理页面。
+
+:::info
+Token 的作用主要是用于: 代码 AI 补全、AI Agent、AI API 等功能的调用。
+:::
+
+当鼠标移动到右上角个人头像时，会弹出一个菜单，可以在这里管理你的账户信息和 APP 设置。
+
+在右侧的**导入**按钮可以用来导入项目，第一个选项是在本地选择项目的文件夹进行导入，第二选择则是选择本地 oomol 文件进行导入。
+
+:::info
+`.oomol` 文件是 OOMOL Studio 的项目文件格式，包含了项目的所有信息和数据（不包括密钥）。你可以在项目界面对其进行导出。
+:::
+
+## 社区页面
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/get-started/interface/home-community-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/get-started/interface/home-community-dark.png"
+    ),
+  }}
+/>
+
+你可以在这里查看社区分享所有的 Flows，你也可以在这里进行搜索。
+
+> 你也可以使用任意浏览器打开: https://hub.oomol.com/
+
+## 密钥页面
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/get-started/interface/home-secrets-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/get-started/interface/home-secrets-dark.png"
+    ),
+  }}
+/>
+
+在这个页面中，你可以管理你所有的密钥信息，包括创建、删除、更新和查看密钥的详细信息。
+
+我们预设了一些常用的密钥类型，以便你可以快速创建相关密钥，而不用手动输入密钥名称，如图:
+
+<div className="image-container">
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/cn/get-started/interface/home-secrets-create-types-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/cn/get-started/interface/home-secrets-create-types-dark.png"
+      ),
+    }}
+  />
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/cn/get-started/interface/home-secrets-create-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/cn/get-started/interface/home-secrets-create-dark.png"
+      ),
+    }}
+  />
+</div>
+
+## 空间页面
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/get-started/interface/home-space-light.png"
+    ),
+    dark: useBaseUrl("/img/docs/cn/get-started/interface/home-space-dark.png"),
+  }}
+/>
+
+在这个页面中，你可以查看、删除、新增磁盘。这里所有的磁盘将会体现在项目的虚拟环境中。
+
+:::info
+“磁盘” 是 OOMOL Studio 中的一个概念名词，表示虚拟机的存储挂载点。类似于 Docker 中的 Volume。
+:::
+
+当点击右上角的**挂载磁盘**按钮时，会弹出一个对话框，你可以在这里选择要挂载的目录。“宿主机目录”代表着你系统的本地目录，“容器目录名” 则是在虚拟环境中展示的目录名。
+
+<div className="image-container">
+  <Image
+    style={{ width: "520px" }}
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/cn/get-started/interface/home-space-add-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/cn/get-started/interface/home-space-add-dark.png"
+      ),
+    }}
+  />
+</div>
+
+> 为了保持不同系统之间的兼容性问题，我们强制要求“容器目录名” 必须由小写字母 + 数组开头，只能只能包含：小写字母、数字、点、下划线和连字符，且最多 215 个字符。
+
+为了安全起见，我们默认情况下只会挂载下列目录到虚拟环境中:
+
+- `~/oomol-storage` -> `/oomol-driver/oomol-storage`
+  - 项目数据的存储根目录，用户可以在运行 Flow 前，选择此目录或者其下的目录作为数据存储目录。
+- `~/.oomol-studio/sessions` -> `/oomol-driver/sessions`
+  - 每次运行时的会话目录，每次运行 Flow 时，OOMOL Studio 都会在这个目录下创建一个新的嵌套目录，作为当前运行的会话目录。
+  - 其创建的嵌套规则为: `/oomol-driver/sessions/{project_name}/{flow_name}/{timestamp}`，其中 `project_name` 为项目名称，`flow_name` 为 Flow 名称，`timestamp` 为当前时间戳。
+  - 作为 Flow 的开发者，你可以通过使用 `context.sessionDir` 来获取当前会话目录的路径。适用于在本次运行时共用数据的场景。
+- `~/.oomol-studio/oocana-tmp-root` -> `/oomol-driver/oocana-tmp-root`
+  - 用于调试的临时目录，每次运行时，OOMOL Studio 都会在这个目录下创建一个新的目录，作为当前运行时的临时目录，这个目录具备以下性质: 运行失败时不会自动删除，运行成功时会自动删除。
+  - 作为 Flow 的开发者，你可以通过使用 `context.tmpDir` 来获取当前运行时的临时目录的路径。
+
+## 设置页面
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/get-started/interface/home-setting-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/get-started/interface/home-setting-dark.png"
+    ),
+  }}
+/>
+
+在这个页面中，你可以设置 OOMOL Studio 的一些基本设置，包括主题、语言、镜像源、代理等。
+
+在 Windows 系统中，这里将会新增一个 “OVM 文件夹”，这用于修改: OVM 数据存放位置，因为 OVM 数据会随着使用时间的增加而增大，所以我们建议将其放在一个大一点的磁盘中。默认情况下，OVM 数据会存放在 `C:\Users\{username}\.oomol-studio\ovm` 目录下。
+
+:::info
+关于 “OVM 文件夹” 迁移，可以见 [这里](https://oomol.com/zh-CN/updates/OOMOL_Studio_1.1.0#%E6%94%AF%E6%8C%81%E7%A7%BB%E5%8A%A8-ovm-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%95%B0%E6%8D%AE%E7%9B%AE%E5%BD%95)
+:::
