@@ -1,3 +1,5 @@
+@import "./font.scss";
+
 :root {
   --ifm-color-primary: #7d7fe9;
   --ifm-color-primary-dark: #5e61e4;
@@ -8,8 +10,8 @@
   --ifm-color-primary-lightest: #d9d9f9;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+  --ifm-font-family-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
     "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei",
     "Source Han Sans CN", sans-serif;
 }
