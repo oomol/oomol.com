@@ -9,6 +9,7 @@ import HomepageStarter from "@site/src/components/HomepageStarter";
 import HomepagePricing from "../components/HomePagePricing";
 import Head from "@docusaurus/Head";
 import HomepageGuide from "../components/HomepageGuide";
+import HomePageBuiltInLLM from "../components/HomePageBuiltInLLM";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
         <HomepageGuide />
         {/* TODO: 等订阅业务上线后恢复 */}
         {/* <HomepagePricing /> */}
+        <HomePageBuiltInLLM />
         <HomepageDownloads />
         {/* <HomepageStarter /> */}
         <Analytics />

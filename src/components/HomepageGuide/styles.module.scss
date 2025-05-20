@@ -43,11 +43,13 @@
 .section-title {
   font-size: 48px;
   font-weight: 800;
+  text-align: center;
   color: #f0f6fc;
 }
 
 .subtitle {
   font-size: 20px;
+  text-align: center;
 
   @include linearGradientColor;
 }

@@ -191,6 +191,12 @@
   "HOME.Guide.view-all-projects": {
     "message": "View All Projects"
   },
+  "HOME.Built-in.title": {
+    "message": "Built-in LLM Module"
+  },
+  "HOME.Built-in.subtitle": {
+    "message": "Built-in LLM blocks for improved AI workflow efficiency."
+  },
 
   "HOME.Pricing.title": {
     "message": "Pricing"
