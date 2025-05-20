@@ -6,6 +6,8 @@
 # Generated files
 .docusaurus
 .cache-loader
+# unocss
+/styles/uno.css
 
 # Misc
 .DS_Store
