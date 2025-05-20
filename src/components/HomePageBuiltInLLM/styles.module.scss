@@ -1,0 +1,86 @@
+@import "../../css/custom.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0;
+  gap: 40px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 48px;
+  margin-bottom: 14px;
+  font-weight: 800;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 0;
+
+  @include linearGradientColor;
+}
+
+.llmList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.iconWrapper {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  transition:
+    width 0.2s ease,
+    height 0.2s ease;
+}
+.defaultIconWrapper,
+.hoverIconWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.defaultIconWrapper {
+  opacity: 1;
+  transform: scale(1);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.hoverIconWrapper {
+  opacity: 0;
+  transform: scale(0.5);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.llmItem:hover .defaultIconWrapper {
+  opacity: 0;
+  transform: scale(1.5);
+}
+
+.llmItem:hover .hoverIconWrapper {
+  opacity: 1;
+  transform: scale(1.3);
+}
