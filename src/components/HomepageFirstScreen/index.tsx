@@ -143,7 +143,6 @@ export default function HomepageFirstScreen() {
             <img fetchPriority="high" src={useBaseUrl("/img/background.svg")} />
           </div>
           <Image
-            fetchPriority="high"
             className={styles.image}
             sources={{
               light: useBaseUrl("/img/first-screen.png"),
