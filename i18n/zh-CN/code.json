@@ -185,6 +185,13 @@
   "HOME.Guide.view-all-projects": {
     "message": "查看全部"
   },
+  "HOME.Built-in.title": {
+    "message": "内置 LLM 模块"
+  },
+  "HOME.Built-in.subtitle": {
+    "message": "内置可直接调用的 LLM 模块，大幅提升 AI 工作流效率"
+  },
+
   "Easily connect code and services": {
     "message": "便捷地连接代码和服务"
   },

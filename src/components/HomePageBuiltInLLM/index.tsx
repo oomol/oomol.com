@@ -17,8 +17,9 @@ import QwenLightHighSVG from "@site/static/img/pages/home/qwen-highlight.svg";
 import SiliconCloudSVG from "@site/static/img/pages/home/siliconcloud.svg";
 import SiliconCloudLightHighSVG from "@site/static/img/pages/home/siliconcloud-highlight.svg";
 
-import { AuroraText } from "../magic-ui/AuroraText";
 import { memo } from "react";
+import { AuroraText } from "../magic-ui/AuroraText";
+import { translate } from "@docusaurus/Translate";
 
 const llmData = [
   {
@@ -80,9 +81,11 @@ export default function HomePageBuiltInLLM() {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <AuroraText className={styles.title}>Built-in LLM Module</AuroraText>
+        <AuroraText className={styles.title}>
+          {translate({ id: "HOME.Built-in.title" })}
+        </AuroraText>
         <p className={styles.subtitle}>
-          Built-in LLM blocks for improved AI workflow efficiency.
+          {translate({ id: "HOME.Built-in.subtitle" })}
         </p>
       </div>
       <div className={styles.llmList}>
