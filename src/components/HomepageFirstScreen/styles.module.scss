@@ -170,7 +170,7 @@
   font-size: 58px;
   margin-bottom: 0;
   line-height: 50px;
-  font-weight: 900;
+  font-weight: 800;
 
   @include pad {
     font-size: 48px;
@@ -286,7 +286,6 @@
 .buttons {
   display: flex;
   gap: 12px;
-  align-items: center;
 }
 
 // TODO: 统一放 custom.scss 中处理

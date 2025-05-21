@@ -30,6 +30,22 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Inter";
+  src: url("/font/Inter_18pt-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/font/Inter_18pt-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @mixin heading-font {
   font-family: "Inter", sans-serif;
   font-weight: 700;
@@ -38,4 +54,19 @@
 @mixin body-font {
   font-family: "Inter", sans-serif;
   font-weight: 400;
+}
+
+@mixin light-font {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+}
+
+@mixin extrabold-font {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+}
+
+@mixin black-font {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
 }
