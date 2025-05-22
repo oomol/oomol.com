@@ -102,7 +102,7 @@ export default function HomepageGuide() {
       </div>
       <LinkBtn
         text="View All Projects"
-        position="right"
+        iconPos="right"
         iconType="arrow-right"
         url="https://hub.oomol.com"
       />

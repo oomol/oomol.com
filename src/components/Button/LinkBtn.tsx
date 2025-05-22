@@ -3,13 +3,13 @@ import styles from "./LinkBtn.module.scss";
 
 export interface LinkBtnProps {
   text: string;
-  position?: "left" | "right";
-  iconType?: string;
+  iconPos: "left" | "right";
+  iconType: string;
   url: string;
 }
 export default function LinkBtn({
   text,
-  position = "left",
+  iconPos = "left",
   iconType,
   url,
 }: LinkBtnProps) {
@@ -19,9 +19,8 @@ export default function LinkBtn({
       onClick={() => window.open(url, "_blank")}
     >
       <div
-        className={
-          position === "left" ? styles["linkBtn-left"] : styles["linkBtn-right"]
-        }
+        className={`${styles.linkBtn}
+        ${iconPos === "left" ? styles.left : styles.right}`}
       >
         <div className={styles.linkText}>{text}</div>
         <i className={`${styles.linkIcon} i-codicon:${iconType}`} />
