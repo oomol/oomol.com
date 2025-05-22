@@ -1,0 +1,62 @@
+.container {
+  min-width: 191px;
+  height: 43px;
+  border-radius: 40px;
+  padding: 12px 24px;
+  border-top: 2px solid #f0f6fc;
+  border-bottom: 2px solid #f0f6fc;
+  border-left: 0.5px solid #f0f6fc;
+  border-right: 0.5px solid #f0f6fc;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.container:hover {
+  .downloadIcon {
+    color: #212830;
+  }
+  .downloadText {
+    color: #212830;
+  }
+  background-color: #f6f8fa;
+}
+.container:active {
+  .downloadIcon {
+    color: #212830;
+  }
+  .downloadText {
+    color: #212830;
+  }
+  background-color: #d1d9e0;
+  color: #212830;
+}
+
+.downloadIcon {
+  width: 16px;
+  height: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  vertical-align: middle;
+  color: #f0f6fc;
+  cursor: pointer;
+}
+
+.downloadText {
+  height: 19px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  vertical-align: middle;
+  color: #f0f6fc;
+}
+
+.downloadBtn {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 12px;
+  justify-content: center;
+  color: #f0f6fc;
+}
