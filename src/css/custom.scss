@@ -198,24 +198,6 @@ $desktop-width: 1280px;
 $menu-link-default-color: #f0f6fc;
 $menu-link-secondary-color: #838b95;
 
-@mixin menu-link-styles {
-  > .menu__link {
-    color: $menu-link-secondary-color;
-
-    &:hover {
-      color: $menu-link-default-color;
-    }
-  }
-
-  > .menu__link--active {
-    color: var(--ifm-menu-color-active);
-
-    &:hover {
-      color: var(--ifm-menu-color-active);
-    }
-  }
-}
-
 // 文档页面 sidebar 样式
 .sidebar-submenu-item {
   > .menu__link {
@@ -226,7 +208,22 @@ $menu-link-secondary-color: #838b95;
   .theme-doc-sidebar-item-link-level-2,
   .theme-doc-sidebar-item-category-level-2 > .menu__list-item-collapsible,
   .theme-doc-sidebar-item-link-level-3 {
-    @include menu-link-styles;
     font-size: 14px;
+
+    > .menu__link {
+      color: $menu-link-secondary-color !important;
+
+      &:hover {
+        color: $menu-link-default-color !important;
+      }
+    }
+
+    > .menu__link--active {
+      color: var(--ifm-menu-color-active) !important;
+
+      &:hover {
+        color: var(--ifm-menu-color-active) !important;
+      }
+    }
   }
 }
