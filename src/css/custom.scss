@@ -29,6 +29,8 @@
   --ifm-navbar-background-color: #010409;
   --ifm-background-color: #010409 !important;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-menu-color-background-hover: #0d1117;
+  --ifm-toc-link-color: #838b95;
 }
 
 #__docusaurus {
@@ -190,5 +192,41 @@ $desktop-width: 1280px;
     & > img {
       width: 100%;
     }
+  }
+}
+
+$menu-link-default-color: #f0f6fc;
+$menu-link-secondary-color: #838b95;
+
+@mixin menu-link-styles {
+  > .menu__link {
+    color: $menu-link-secondary-color;
+
+    &:hover {
+      color: $menu-link-default-color;
+    }
+  }
+
+  > .menu__link--active {
+    color: var(--ifm-menu-color-active);
+
+    &:hover {
+      color: var(--ifm-menu-color-active);
+    }
+  }
+}
+
+// 文档页面 sidebar 样式
+.sidebar-submenu-item {
+  > .menu__link {
+    font-size: 16px;
+    color: $menu-link-default-color;
+  }
+
+  .theme-doc-sidebar-item-link-level-2,
+  .theme-doc-sidebar-item-category-level-2 > .menu__list-item-collapsible,
+  .theme-doc-sidebar-item-link-level-3 {
+    @include menu-link-styles;
+    font-size: 14px;
   }
 }

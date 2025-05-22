@@ -4,5 +4,6 @@
   "link": {
     "type": "generated-index"
   },
-  "collapsed": false
+  "collapsed": false,
+  "className": "sidebar-submenu-item"
 }
