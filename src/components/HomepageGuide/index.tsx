@@ -1,8 +1,8 @@
 import styles from "./styles.module.scss";
 
 import React from "react";
-import { Button } from "../Button";
 import { translate } from "@docusaurus/Translate";
+import LinkBtn from "../Button/LinkBtn";
 
 type ProjectsData = {
   imgUrl: string;
@@ -100,16 +100,12 @@ export default function HomepageGuide() {
           <ProjectItem {...project} key={index} itemIndex={index} />
         ))}
       </div>
-      <Button
-        onClick={() => window.open("https://hub.oomol.com")}
-        className={styles.button}
-        icon={<i className={`${styles.icon} i-codicon:arrow-right`} />}
-        iconPosition="end"
-      >
-        {translate({
-          message: "HOME.Guide.view-all-projects",
-        })}
-      </Button>
+      <LinkBtn
+        text="View All Projects"
+        iconPos="right"
+        iconType="arrow-right"
+        url="https://hub.oomol.com"
+      />
     </section>
   );
 }

@@ -1,0 +1,55 @@
+.container {
+  min-width: 191px;
+  height: 43px;
+  border-radius: 40px;
+  padding: 12px 24px;
+  border: solid #f0f6fc;
+  border-width: 2px 0.5px;
+  border-color: #212830;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.container:hover {
+  border-color: #3d444d;
+  background-color: inherit;
+}
+.container:active {
+  border-color: #838b95;
+  background-color: inherit;
+}
+
+.linkIcon {
+  width: 16px;
+  height: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  color: #f0f6fc;
+  cursor: pointer;
+}
+
+.linkText {
+  height: 19px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  vertical-align: middle;
+  color: #f0f6fc;
+}
+
+.linkBtn {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  gap: 12px;
+  justify-content: center;
+  color: #f0f6fc;
+}
+
+.left {
+  flex-direction: row-reverse;
+}
+.right {
+  flex-direction: row;
+}
