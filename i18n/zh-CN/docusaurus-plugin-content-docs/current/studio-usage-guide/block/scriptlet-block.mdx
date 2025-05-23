@@ -1,0 +1,101 @@
+---
+sidebar_position: 1
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# 小脚本区块
+
+OOMOL 中的所有区块内容都是从`小脚本区块`转换而来的。
+
+`小脚本区块`是一个核心的基本模块。
+
+当内置区块不能满足创建工作流的需要时，用户可以基于`小脚本区块`编程进行补充。
+
+## 使用
+
+你可以在右侧的`系统区块`工具栏中拖出并使用它。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/scriptlet-use-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/scriptlet-use-dark.png"
+    ),
+  }}
+  width="720"
+/>
+
+## 配置
+
+你可以进行添加或删除输入输出接口，选择输入输出的类型，修改区块名称等操作。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/scriptlet-handle-setting-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/scriptlet-handle-setting-dark.png"
+    ),
+  }}
+  width="720"
+/>
+
+## 编辑代码
+
+`小脚本区块`支持使用 Nodejs 和 Python 处理业务逻辑。支持社区开源库引用，支持AI辅助编程。
+
+在上一步修改的输入输出接口名称和类型会自动同步到代码中。
+
+:::info
+请不要删除代码中生成的
+
+```
+#region generated meta
+...
+#endregion
+```
+
+注释，这些注释用于自动生成输入输出接口的名称和类型代码，如果删除可能会导致代码中的类型与区块设置不匹配。你也可以选择手动编写类型代码。
+:::
+
+这里我们用代码实现一个加法器。功能是将 input1 和 input2 两个输入接口的值相加，并输出到 output 输出接口。
+
+你可以点击图中指示的按钮在新的标签中打开代码，这样可以让你获得更好的代码编辑体验。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/scriptlet-code-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/scriptlet-code-dark.png"
+    ),
+  }}
+  width="720"
+/>
+
+## 运行和结果
+
+你可以选择图中所示的两种运行方式：
+
+1. 启动流程中的所有区块
+2. 仅启动对应的区块
+
+在启动后，可以在下方的日志栏中观察到所有区块的运行情况和输入输出内容
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/scriptlet-run-and-result-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/scriptlet-run-and-result-dark.png"
+    ),
+  }}
+  width="720"
+/>

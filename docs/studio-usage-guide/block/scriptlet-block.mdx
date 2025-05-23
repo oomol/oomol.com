@@ -1,0 +1,101 @@
+---
+sidebar_position: 1
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# Scriptlet Block
+
+All block content in OOMOL is converted from `Scriptlet Blocks`.
+
+`Scriptlet Block` is a core fundamental module.
+
+When built-in blocks cannot meet the needs of creating workflows, users can supplement them by programming based on `Scriptlet Blocks`.
+
+## Usage
+
+You can drag it out from the `System Blocks` toolbar on the right side and use it.
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/scriptlet-use-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/scriptlet-use-dark.png"
+    ),
+  }}
+  width="720"
+/>
+
+## Configuration
+
+You can add or remove input/output interfaces, select input/output types, modify block names, and other operations.
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/scriptlet-handle-setting-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/scriptlet-handle-setting-dark.png"
+    ),
+  }}
+  width="720"
+/>
+
+## Code Editing
+
+`Scriptlet Block` supports using Node.js and Python to handle business logic. It supports community open-source library references and AI-assisted programming.
+
+The input/output interface names and types modified in the previous step will be automatically synchronized to the code.
+
+:::info
+Please do not delete the generated comments in the code:
+
+```
+#region generated meta
+...
+#endregion
+```
+
+These comments are used to automatically generate the names and type codes for input/output interfaces. Deleting them may cause the types in the code to not match the block settings. You can also choose to manually write the type code.
+:::
+
+Here we implement an adder with code. The function is to add the values of the two input interfaces input1 and input2, and output to the output interface.
+
+You can click the button indicated in the image to open the code in a new tab, which can give you a better code editing experience.
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/scriptlet-code-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/scriptlet-code-dark.png"
+    ),
+  }}
+  width="720"
+/>
+
+## Run and Results
+
+You can choose the two running methods shown in the image:
+
+1. Start all blocks in the workflow
+2. Start only the corresponding block
+
+After starting, you can observe the running status and input/output content of all blocks in the log bar below.
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/scriptlet-run-and-result-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/scriptlet-run-and-result-dark.png"
+    ),
+  }}
+  width="720"
+/>
