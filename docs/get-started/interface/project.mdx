@@ -1,0 +1,550 @@
+---
+sidebar_position: 1
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# Project Interface
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/get-started/interface/project-overview-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/get-started/interface/project-overview-dark.png"
+    ),
+  }}
+/>
+
+After opening any project, the global view of the project is what first catches the eye, which we temporarily divide into four areas:
+
+## 1. Left Sidebar
+
+In the left sidebar, OOMOL Studio will show "Explorer" by default. You can also switch to other subviews as needed, such as: Search, Source Control (git), Extensions, OOMOL Storage, OOMOL Secrets.
+
+### Explorer
+
+Here you can view all workflows, shared blocks, and files in the current project.
+
+#### Flows
+
+<div className="image-container">
+  <Image
+    style={{ width: "72%" }}
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/project-left-resource-flow-icon-and-setting-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/project-left-resource-flow-icon-and-setting-dark.png"
+      ),
+    }}
+  />
+  <div>
+    <Image
+      sources={{
+        light: useBaseUrl(
+          "/img/docs/get-started/interface/project-left-resource-flow-rename-light.png"
+        ),
+        dark: useBaseUrl(
+          "/img/docs/get-started/interface/project-left-resource-flow-rename-dark.png"
+        ),
+      }}
+    />
+    <Image
+      sources={{
+        light: useBaseUrl(
+          "/img/docs/get-started/interface/project-left-resource-flow-reid-light.png"
+        ),
+        dark: useBaseUrl(
+          "/img/docs/get-started/interface/project-left-resource-flow-reid-dark.png"
+        ),
+      }}
+    />
+  </div>
+</div>
+
+This area shows which Flows are available in the current project; you can add, delete, rename, and copy them here.
+
+Clicking the left icon allows you to change the icon of this workflow, and clicking the gear icon in the lower right corner allows you to copy and delete it. The function of "Convert to Subflow Block" will be introduced in later sections.
+
+Each Flow has a name and an ID, where the ID must be unique, and the name can be duplicated. The purpose of the ID is reflected in disk storage; we will use the ID as the directory name, while the name is for user recognition.
+
+Currently, the sorting of multiple Flows is done in dictionary order by ID, and we will provide drag-and-drop sorting functionality in the future.
+
+> By default, if you do not fill in the Flow name, the system will automatically name it as the ID.
+
+#### Shared Blocks
+
+This area displays all shared blocks in the current project, and the UI interaction is basically the same as the workflows mentioned above. It is primarily used to store reusable blocks, such as commonly used functions and data processing logic.
+
+We will introduce the usage of shared blocks in detail in subsequent sections.
+
+#### File Tree
+
+All files for this project are stored here. You can perform create, delete, modify, and query operations on the files here.
+
+### Search
+
+<div className="image-container">
+  <Image
+    style={{ width: "300px" }}
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/project-left-search-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/project-left-search-dark.png"
+      ),
+    }}
+  />
+</div>
+
+This will search through all file contents in the current project and supports regular expression searching.
+
+### Source Control
+
+<div className="image-container">
+  <Image
+    style={{ width: "300px" }}
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/project-left-git-init-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/project-left-git-init-dark.png"
+      ),
+    }}
+  />
+  <Image
+    style={{ width: "300px" }}
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/project-left-git-tree-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/project-left-git-tree-dark.png"
+      ),
+    }}
+  />
+</div>
+
+Here you can view the git status of the current project and perform operations such as commit, push, and pull. We have built-in an SSH Agent for macOS, which proxies your local SSH keys, avoiding the need for password input or SSH configuration. It integrates well with the local 1Password.
+
+:::info
+Regarding the SSH Agent, we have open-sourced it: [ssh-forward](https://github.com/oomol-lab/ssh-forward), [ovm-ssh-agent](https://github.com/oomol-lab/ovm-ssh-agent).
+For usage instructions, refer to [Support System's SSH Auth](https://oomol.com/updates/OOMOL_Studio_1.1.0/#system-ssh-authentication-support).
+
+This feature currently only supports macOS.
+:::
+
+:::warning
+It is important to note that the git status may not always be timely; if you leave OOMOL Studio to modify the project's files (add, delete, rename, etc.), the git status will not be updated. You can manually refresh by clicking the refresh button in the upper left corner.
+
+This issue occurs due to problems with the Linux kernel's inotify mechanism on virtiofs. More details can be found at: https://github.com/containers/podman/issues/22343.
+
+This issue is currently only present on macOS, and we will fix it in future versions.
+:::
+
+### Extensions
+
+<div className="image-container">
+  <Image
+    style={{ width: "300px" }}
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/project-left-ext-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/project-left-ext-dark.png"
+      ),
+    }}
+  />
+</div>
+
+You can view all extensions for the current project in this tab, and you can also click the button in the upper right corner to install local extensions.
+
+Currently, the extension source used by OOMOL Studio is [OpenVSX](https://open-vsx.org/).
+
+### Space
+
+<div className="image-container">
+  <Image
+    style={{ width: "300px" }}
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/project-left-space-home-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/project-left-space-home-dark.png"
+      ),
+    }}
+  />
+  <Image
+    style={{ width: "300px" }}
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/project-left-space-tree-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/project-left-space-tree-dark.png"
+      ),
+    }}
+  />
+</div>
+
+This is basically equivalent to the [Home - Space](https://oomol.com/docs/get-started/interface/home/#space-page), just adapted to a narrower width.
+
+:::info
+You cannot create new mount points on the current page. If you want to create new mount points, please go to the [Home - Space](https://oomol.com/docs/get-started/interface/home/#space-page) to create them.
+:::
+
+### Keys
+
+<div className="image-container">
+  <Image
+    style={{ width: "300px" }}
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/project-left-secret-list-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/project-left-secret-list-dark.png"
+      ),
+    }}
+  />
+  <Image
+    style={{ width: "300px" }}
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/project-left-secret-info-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/project-left-secret-info-dark.png"
+      ),
+    }}
+  />
+</div>
+
+This is equivalent to [Home - Secrets](https://oomol.com/docs/get-started/interface/home/#secrets-page), just adapted to a narrower width.
+
+## 2. Center Main Area
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/get-started/interface/project-main-all-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/get-started/interface/project-main-all-dark.png"
+    ),
+  }}
+/>
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/get-started/interface/project-main-part-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/get-started/interface/project-main-part-dark.png"
+    ),
+  }}
+/>
+
+This area will display the current workflow, which is the most frequently used area. You can edit the workflow here, including running, debugging, and connecting.
+
+The four icons in the upper right represent:
+
+- Run
+- Debug
+- Toggle between UI and YAML
+  - The underlying workflow is a YAML file, but by default, we convert it to a UI form.
+- Split Editor
+
+The four icons in the lower left represent:
+
+- Zoom In
+- Zoom Out
+- Fit to Current View Dimensions
+- Auto Layout
+  - When there are many blocks and connections, auto layout can reduce visual clutter.
+
+The four icons in the lower right represent:
+
+- Mode switch for touchpad and mouse
+  - When using the touchpad, we recommend switching to touchpad mode.
+  - When using the mouse, we recommend switching to mouse mode.
+- Open Mini Map
+- Full Screen Area
+- Workflow Settings
+  - Icon
+  - Title
+  - Description
+
+## 3. Bottom Bar
+
+In this area, you can observe runtime logs and manage third-party dependencies needed during development.
+
+### Problems
+
+<div className="image-container">
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/project-bottom-question-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/project-bottom-question-dark.png"
+      ),
+    }}
+  />
+</div>
+
+This area will automatically collect some code issues and errors so you can promptly locate problems and errors.
+
+### Output
+
+<div className="image-container">
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/project-bottom-output-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/project-bottom-output-dark.png"
+      ),
+    }}
+  />
+</div>
+
+This area will display some log information from OOMOL Studio itself and output logs from plugins. Generally, you do not need to pay attention to this area.
+
+### Terminal
+
+<div className="image-container">
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/project-bottom-terminal-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/project-bottom-terminal-dark.png"
+      ),
+    }}
+  />
+</div>
+
+This area allows you to use a terminal within OOMOL Studio, where you can execute some Linux commands. The project runs in a container, not in your local environment, so commands executed here **will generally not** affect your local environment.
+
+:::info
+Although the environment is isolated, do not perform dangerous operations, such as `rm -rf /`, as mounting certain directories may lead to files being deleted from your local machine.
+:::
+
+### Code Deps
+
+<div className="image-container">
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/project-bottom-code-dependency-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/project-bottom-code-dependency-dark.png"
+      ),
+    }}
+  />
+</div>
+
+Here, you can install some npm / PyPI dependencies into the current project so you can include and call them in scriptlets.
+
+### Flow Logs
+
+<div className="image-container">
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/project-bottom-flow-log-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/project-bottom-flow-log-dark.png"
+      ),
+    }}
+  />
+</div>
+
+When you run a workflow, any output from the workflow will be displayed here. If you do not care about event logs, you can click in the upper right corner to switch to "Stdio" which will only show `stdout` and `stderr` from the workflow.
+
+### Project Bootstrap
+
+<div className="image-container">
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/project-bottom-project-init-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/project-bottom-project-init-dark.png"
+      ),
+    }}
+  />
+</div>
+
+When you import a new project, OOMOL Studio will automatically initialize the project, including:
+
+- Downloading Toolpack
+- Installing Toolpack
+- Executing Project Bootstrap Script
+  - Defined by the `scripts.bootstrap` field in the current project's `package.oo.yaml` file.
+
+### Toolpack Install
+
+<div className="image-container">
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/project-bottom-tool-package-install-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/project-bottom-tool-package-install-dark.png"
+      ),
+    }}
+  />
+</div>
+
+When you install third-party toolpack, logs of the toolpack installation will be displayed here.
+
+## 4. Right Sidebar
+
+In this area, you can install and use toolpack, or publish the current project to the OOMOL Store. You can also use the AI assistant to complete certain tasks.
+
+### Toolpack
+
+<div className="image-container">
+  <Image
+    style={{ width: "380px" }}
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/project-right-toolpack-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/project-right-toolpack-dark.png"
+      ),
+    }}
+  />
+</div>
+
+Each toolpack may contain one or more blocks; the package name is displayed above, and the block list is displayed below. Except for some built-in system blocks in OOMOL Studio, you can delete all others.
+
+Each toolpack may have different versions, and you can click the version number of the toolpack below to upgrade or downgrade.
+
+:::info
+When you install Tool-1 in the Proj-A project, you can also use Tool-1 directly in the Proj-B project without needing to reinstall it.
+
+Only when you actually use Tool-1 in the workflow will it be included when publishing to the OOMOL Store. Otherwise, it will not be included.
+:::
+
+### Store
+
+<div className="image-container">
+  <Image
+    style={{ width: "380px" }}
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/project-right-store-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/project-right-store-dark.png"
+      ),
+    }}
+  />
+</div>
+
+Here, you can browse all toolpack in the OOMOL Store and install them. If there are some installed packages that are not the latest version, you can also upgrade them in one click.
+
+When you click any toolpack, we will display the usage instructions (README) for that toolpack in the central area.
+
+### Publish
+
+<div className="image-container">
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/project-right-publish-register-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/project-right-publish-register-dark.png"
+      ),
+    }}
+  />
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/project-right-publish-register-edit-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/project-right-publish-register-edit-dark.png"
+      ),
+    }}
+  />
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/project-right-publish-local-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/project-right-publish-local-dark.png"
+      ),
+    }}
+  />
+</div>
+
+You can check the publishing status of the current project here and perform publishing or exporting operations.
+
+When you click "Save as File," OOMOL Studio will save it as a `.oomol` file. You can share this file with others, and they can import the project using this file.
+
+When preparing to publish to the OOMOL Store, you will see many fields to fill out, such as:
+
+- Icon
+- Description
+- Display Name
+- Toolpack Name
+- Version
+- Release Type
+  - The release types currently available are: All, Project, and Package.
+  - When released as All, it means that this project can be used both as a project and a toolpack.
+  - When released as Project, this project can only be used as a project.
+  - When released as Package, this project can only be used as a toolpack and not as a project.
+- Platform Requirements
+  - Currently supported: All, macOS (arm64/x64), Windows (arm64/x64-Nvidia/x64-Unlimited)
+  - When released as All, it means this project/toolpack can be used on all platforms.
+  - When released as macOS (arm64/x64), this project/toolpack can only be used on specific architectures of macOS.
+  - When released as Windows (arm64/x64-Nvidia/x64-Unlimited), this project/toolpack can only be used on specific architectures of Windows or only on machines with Nvidia graphics cards.
+- Repository
+- Release Notes
+
+### Chat
+
+<div className="image-container">
+  <Image
+    style={{ width: "380px" }}
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/interface/project-right-chat-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/interface/project-right-chat-dark.png"
+      ),
+    }}
+  />
+</div>
+
+Here, you can use the AI assistant to complete various tasks. Currently, it supports the following models:
+
+- Auto
+  - Automatically selects the best model
+- Gemini2.5 Flash
+- Qwen Plus
+- Qwen2.5 Max
+- Qwen3 235B

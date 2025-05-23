@@ -179,8 +179,13 @@ $desktop-width: 1280px;
     --sibling-count: 3;
   }
 
-  & > img {
+  & > img,
+  & > div {
     width: calc(100% / var(--sibling-count));
+  }
+
+  & > div {
+    text-align: center;
   }
 }
 
@@ -189,7 +194,8 @@ $desktop-width: 1280px;
     display: grid;
     justify-items: center;
 
-    & > img {
+    & > img,
+    & > div {
       width: 100%;
     }
   }
