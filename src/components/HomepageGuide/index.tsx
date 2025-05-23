@@ -101,7 +101,7 @@ export default function HomepageGuide() {
         ))}
       </div>
       <LinkBtn
-        text="View All Projects"
+        text={translate({ message: "HOME.Guide.link-button-text" })}
         iconPos="right"
         iconType="arrow-right"
         url="https://hub.oomol.com"

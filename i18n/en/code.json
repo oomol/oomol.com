@@ -116,6 +116,9 @@
   "HOME.Guide.subtitle": {
     "message": "Explore the Community to find a workflow that fits your needs."
   },
+  "HOME.Guide.link-button-text": {
+    "message": "View All Projects"
+  },
   "HOME.Guide.project-1.title": {
     "message": "Video Translater"
   },
