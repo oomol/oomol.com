@@ -35,17 +35,17 @@
     "@docusaurus/module-type-aliases": "^3.7.0",
     "@docusaurus/tsconfig": "^3.7.0",
     "@docusaurus/types": "^3.7.0",
-    "@iconify/json": "^2.2.239",
+    "@iconify/json": "^2.2.340",
     "@types/mdx-js__react": "^1.5.8",
     "@types/react": "^18.2.29",
-    "@unocss/webpack": "^0.62.2",
+    "@unocss/webpack": "^66.1.2",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
     "prettier": "^3.2.5",
     "tailwindcss": "^3.4.16",
     "ts-node": "^10.9.1",
     "typescript": "~5.2.2",
-    "unocss": "^0.62.2"
+    "unocss": "^66.1.2"
   },
   "browserslist": {
     "production": [
