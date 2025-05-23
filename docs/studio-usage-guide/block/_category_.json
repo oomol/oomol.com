@@ -1,9 +1,9 @@
 {
-  "label": "Block",
-  "position": 6,
+  "label": "Block Usage",
+  "position": 1,
   "link": {
     "type": "generated-index",
-    "description": "detail of block."
+    "description": "A block is the most basic unit for executing tasks in OOMOL Studio."
   },
   "collapsed": false,
   "className": "sidebar-submenu-item"

@@ -59,12 +59,16 @@
     "message": "OOMOL Studio 界面",
     "description": "The label for category OOMOL Studio Interface in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Block": {
-    "message": "区块",
-    "description": "The label for category Block in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.Block Usage": {
+    "message": "区块使用",
+    "description": "The label for category Block Usage in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Block.link.generated-index.description": {
     "message": "区块是 OOMOL Studio 中执行任务的最基础单元。",
     "description": "The generated-index page description for category Bloc in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Block Usage.link.generated-index.description": {
+    "message": "区块是 OOMOL Studio 中执行任务的最基础单元",
+    "description": "The generated-index page description for category Block Usage in sidebar tutorialSidebar"
   }
 }

@@ -22,5 +22,33 @@
   "sidebar.tutorialSidebar.category.Share and Deploy.link.generated-index.description": {
     "message": "Reference of block, node, flow and so on",
     "description": "The generated-index page description for category Share and Deploy in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Introduction": {
+    "message": "Introduction",
+    "description": "The label for category Introduction in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Get Started": {
+    "message": "Get Started",
+    "description": "The label for category Get Started in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.OOMOL Studio Interface": {
+    "message": "OOMOL Studio Interface",
+    "description": "The label for category OOMOL Studio Interface in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Block Usage": {
+    "message": "Block Usage",
+    "description": "The label for category Block Usage in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Block Usage.link.generated-index.description": {
+    "message": "A block is the most basic unit for executing tasks in OOMOL Studio",
+    "description": "The generated-index page description for category Block Usage in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Cloud": {
+    "message": "Cloud",
+    "description": "The label for category Cloud in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Cloud.link.generated-index.description": {
+    "message": "Reference of block, node, flow and so on",
+    "description": "The generated-index page description for category Cloud in sidebar tutorialSidebar"
   }
 }

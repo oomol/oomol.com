@@ -2,7 +2,6 @@
   "Theme.Navbar.go-to-hub-flow": {
     "message": "Go to FlowHub"
   },
-
   "HOME.FirstScreen.slogan": {
     "message": "AI Workflow Platform"
   },
@@ -24,7 +23,6 @@
   "HOME.FirstScreen.download-windows-subtitle": {
     "message": "only supports x64"
   },
-
   "HOME.BrandAssets.title": {
     "message": "Brand Assets"
   },
@@ -49,7 +47,6 @@
   "HOME.BrandAssets.download-btn-text": {
     "message": "Download"
   },
-
   "HOME.Scenes.title": {
     "message": "Use Case Gallery"
   },
@@ -200,11 +197,9 @@
   "HOME.Built-in.subtitle": {
     "message": "Built-in LLM blocks for improved AI workflow efficiency."
   },
-
   "HOME.Pricing.title": {
     "message": "Pricing"
   },
-
   "HOME.Downloads.title": {
     "message": "Downloads"
   },
@@ -229,7 +224,6 @@
   "HOME.Downloads.Nightly.subtitle": {
     "message": "Overnight build version, less stable"
   },
-
   "HOME.Community.title": {
     "message": "Community"
   },
@@ -254,7 +248,6 @@
   "HOME.Community.slogan-4": {
     "message": "Every Voice Shapes the Future"
   },
-
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"
@@ -692,5 +685,12 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "HOME.BrandAssets.description": {
+    "message": "HOME.BrandAssets.description"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "This author has not written any posts yet.",
+    "description": "The text for authors with 0 blog post"
   }
 }
