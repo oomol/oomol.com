@@ -110,6 +110,9 @@
   "HOME.Guide.subtitle": {
     "message": "探索社区，寻找适合你需求的工作流"
   },
+  "HOME.Guide.link-button-text": {
+    "message": "查看全部"
+  },
   "HOME.Guide.project-1.title": {
     "message": "Video Translater"
   },
