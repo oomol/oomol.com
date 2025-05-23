@@ -2,4 +2,128 @@
 sidebar_position: 2
 ---
 
-# 💡 共享区块
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# 共享区块
+
+`共享区块`是从`小脚本区块`转换而来的，可以重用的区块。
+
+当一个`小脚本区块`的功能具有通用性，开发者想要将其抽象成一个工具重复使用时，就可以将`小脚本区块`转换成一个`共享区块`。
+
+## 生成
+
+你可以通过`小脚本区块`的右上角的按钮转化成`共享区块`。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/shared-block-generate.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/shared-block-generate.png"
+    ),
+  }}
+  width="720"
+/>
+
+也可以在左侧工具栏创建一个新的`共享区块`。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/shared-block-create.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/shared-block-create.png"
+    ),
+  }}
+  width="720"
+/>
+
+## 使用
+
+生成的`共享区块`会出现在左侧共享区块栏中，你可以拖出来并使用它。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/shared-block-use.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/shared-block-use.png"
+    ),
+  }}
+  width="720"
+/>
+
+## 配置
+
+你可以单击共享块来配置输入和输出参数，这里的交互与`小脚本区块`相同。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/shared-block-setting.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/shared-block-setting.png"
+    ),
+  }}
+  width="720"
+/>
+
+## 编辑代码
+
+从`小脚本区块`转换来的`共享区块`会保留原来的设置和代码，只是代码会隐藏起来。
+
+你可以通过以下两种区块菜单查看并编辑代码。
+
+> 在流程编辑器中的区块菜单
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/shared-block-code.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/shared-block-code.png"
+    ),
+  }}
+  width="720"
+/>
+
+> 在区块工具栏中的区块菜单
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/shared-block-code2.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/shared-block-code2.png"
+    ),
+  }}
+  width="720"
+/>
+
+## 运行和结果
+
+你可以选择图中所示的两种运行方式：
+
+1. 启动流程中的所有区块
+2. 仅启动对应的区块
+
+在启动后，可以在下方的日志栏中观察到所有区块的运行情况和输入输出内容
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/shared-block-run.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/studio-usage-guide/block/shared-block-run.png"
+    ),
+  }}
+  width="720"
+/>
