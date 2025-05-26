@@ -211,7 +211,7 @@
     "message": "价格"
   },
   "HOME.Downloads.title": {
-    "message": "下载"
+    "message": "下载 OOMOL"
   },
   "HOME.Downloads.subtitle": {
     "message": "下载或使用 OOMOL 应用程序，即表示您同意我们的服务条款和隐私政策。"
@@ -227,6 +227,9 @@
   },
   "HOME.Downloads.Stable.subtitle": {
     "message": "经过全面测试的版本"
+  },
+  "HOME.Downloads.mostRecommended": {
+    "message": "最推荐"
   },
   "HOME.Downloads.Canary.subtitle": {
     "message": "具有新功能但未经全面测试的版本"
