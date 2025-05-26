@@ -194,8 +194,14 @@
   "HOME.Built-in.subtitle": {
     "message": "内置可直接调用的 LLM 模块，大幅提升 AI 工作流效率"
   },
+  "HOME.GetStartedPrompt.title": {
+    "message": "准备开始体验了吗？"
+  },
+  "HOME.GetStartedPrompt.subtitle": {
+    "message": "准备开始体验了吗？"
+  },
   "Easily connect code and services": {
-    "message": "便捷地连接代码和服务"
+    "message": "OOMOL Studio 通过直观的视觉交互轻松连接代码片段和 API 服务，帮助用户缩短从想法到产品的距离"
   },
   "OOMOL is a workflow authoring and orchestration tool. Provides a variety of programming language operating environments, built-in rich tool suites, and supports containers and cloud-native.": {
     "message": "OOMOL Studio 是一个工作流编写与编排软件。提供多种编程语言的运行环境，内置丰富的工具套件，支持容器和云原生。"
