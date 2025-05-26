@@ -6,13 +6,12 @@
   align-items: center;
   justify-content: center;
   padding-top: 80px;
-  padding-bottom: 40px;
 }
 
 .image {
   width: 120px;
   height: 120px;
-  margin-bottom: 40px;
+  margin-bottom: 14px;
 }
 
 .icon-canary {
@@ -46,10 +45,14 @@
 }
 
 .sub-title {
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 400;
+  vertical-align: middle;
+  text-align: center;
   margin: 0;
-  padding: 0 20px 14px 20px;
+  @include linearGradientColor;
 }
 
 .download-button {
@@ -59,29 +62,31 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding-bottom: 24px;
+  gap: 14px;
+  padding-bottom: 64px;
 }
 
 .type {
-  font-size: 20px;
-  font-weight: 900;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 800;
   color: #f0f6fc;
-  margin: 0;
 }
 
 .description {
-  font-size: 14px;
+  max-height: 24px;
+  font-size: 16px;
   margin: 0;
-
-  @include linearGradientColor;
+  color: #656c76;
 }
 
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 40px;
-  padding: 40px 0;
+  gap: 20px;
+  padding: 80px 0;
   max-width: 100%;
 
   @media (max-width: 800px) {
@@ -90,46 +95,27 @@
 }
 
 .card {
-  position: relative;
+  width: 413px;
+  height: 306px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  padding: 24px;
+  padding: 40px;
   text-align: left;
   transition: transform 0.3s ease;
-  background-color: #0d1116;
-  border: 1.5px solid #3d444d;
+  background-color: rgba(13, 17, 23, 0.5);
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
 
-.stable::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 8px;
-  padding: 1.5px;
-  background: linear-gradient(
-    105.32deg,
-    #0d1116 -6.87%,
-    #987de9 10.42%,
-    #7d7fe9 38.09%,
-    #ffffff 64.61%,
-    #7da6e9 92.28%,
-    #0d1116 108.42%
-  );
-  mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
-  mask-composite: exclude;
-  pointer-events: none;
-  box-sizing: border-box;
+.stable {
+  background-color: #0d1117;
+}
+
+.canary,
+.nightly {
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .downloads {
@@ -140,8 +126,8 @@
   > a {
     display: flex;
     align-items: center;
-    gap: 4px;
-    font-size: 14px;
+    gap: 12px;
+    font-size: 16px;
 
     &:hover {
       color: #a4a5f0;
@@ -151,4 +137,18 @@
       color: #5859a3;
     }
   }
+}
+
+.most-recommended {
+  display: flex;
+  align-items: center;
+  height: 24px;
+  border-radius: 24px;
+  font-weight: 400;
+  padding: 3.5px 12px;
+  font-size: 14px;
+  margin-left: 14px;
+  line-height: 100%;
+  color: #f0f6fc;
+  background-color: #454680;
 }

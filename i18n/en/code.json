@@ -207,10 +207,10 @@
     "message": "Pricing"
   },
   "HOME.Downloads.title": {
-    "message": "Downloads"
+    "message": "OOMOL Desktop"
   },
   "HOME.Downloads.subtitle": {
-    "message": "By downloading an OOMOL application, You agree that our Terms of Service & Privacy Policy apply to your use of that application."
+    "message": "By Downloading OOMOL, You Agree That Our Terms of Service & Privacy Policy Apply To Your Use Of That Application."
   },
   "HOME.Downloads.Stable.title": {
     "message": "Stable"
@@ -222,13 +222,16 @@
     "message": "Nightly"
   },
   "HOME.Downloads.Stable.subtitle": {
-    "message": "Fully tested version"
+    "message": "Fully Tested Version"
+  },
+  "HOME.Downloads.mostRecommended": {
+    "message": "Most Recommended"
   },
   "HOME.Downloads.Canary.subtitle": {
-    "message": "Versions with new features but not fully tested"
+    "message": "Versions With New Features But Not Fully Tested"
   },
   "HOME.Downloads.Nightly.subtitle": {
-    "message": "Overnight build version, less stable"
+    "message": "Overnight Build Version, Less Stable"
   },
   "HOME.Community.title": {
     "message": "Community"

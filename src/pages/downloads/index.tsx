@@ -9,32 +9,6 @@ import CanarySVG from "@site/static/img/canary.svg";
 
 const downloadData = [
   {
-    icon: "i-codicon-verified-filled",
-    type: translate({
-      message: "HOME.Downloads.Stable.title",
-    }),
-    subTitle: translate({
-      message: "HOME.Downloads.Stable.subtitle",
-    }),
-    downloads: [
-      {
-        text: "Download for Windows x64",
-        url: DownloadUrl.Stable.Windows.x64,
-      },
-      {
-        text: "Download for macOS Apple Silicon",
-        url: DownloadUrl.Stable.MacOS.AppleSilicon,
-      },
-      {
-        text: "Download for macOS Intel Chip",
-        url: DownloadUrl.Stable.MacOS.Intel,
-      },
-    ],
-    className: styles.stable,
-  },
-  {
-    icon: "./img/canary.svg",
-    iconType: "svg",
     type: translate({
       message: "HOME.Downloads.Canary.title",
     }),
@@ -43,21 +17,44 @@ const downloadData = [
     }),
     downloads: [
       {
-        text: "Download for Windows x64",
-        url: DownloadUrl.Canary.Windows.x64,
-      },
-      {
-        text: "Download for macOS Apple Silicon",
+        text: "Download For MacOS Apple Silicon",
         url: DownloadUrl.Canary.MacOS.AppleSilicon,
       },
       {
-        text: "Download for macOS Intel Chip",
+        text: "Download For MacOS Intel Chip",
         url: DownloadUrl.Canary.MacOS.Intel,
+      },
+      {
+        text: "Download For Windows X64",
+        url: DownloadUrl.Canary.Windows.x64,
       },
     ],
   },
   {
-    icon: "i-codicon-color-mode",
+    type: translate({
+      message: "HOME.Downloads.Stable.title",
+    }),
+    subTitle: translate({
+      message: "HOME.Downloads.Stable.subtitle",
+    }),
+    downloads: [
+      {
+        text: "Download For MacOS Apple Silicon",
+        url: DownloadUrl.Stable.MacOS.AppleSilicon,
+      },
+      {
+        text: "Download For MacOS Intel Chip",
+        url: DownloadUrl.Stable.MacOS.Intel,
+      },
+      {
+        text: "Download For Windows X64",
+        url: DownloadUrl.Stable.Windows.x64,
+      },
+    ],
+    className: styles.stable,
+    mostRecommended: true,
+  },
+  {
     type: translate({
       message: "HOME.Downloads.Nightly.title",
     }),
@@ -66,16 +63,16 @@ const downloadData = [
     }),
     downloads: [
       {
-        text: "Download for Windows x64",
-        url: DownloadUrl.Nightly.Windows.x64,
-      },
-      {
-        text: "Download for macOS Apple Silicon",
+        text: "Download For MacOS Apple Silicon",
         url: DownloadUrl.Nightly.MacOS.AppleSilicon,
       },
       {
-        text: "Download for macOS Intel Chip",
+        text: "Download For MacOS Intel Chip",
         url: DownloadUrl.Nightly.MacOS.Intel,
+      },
+      {
+        text: "Download For Windows X64",
+        url: DownloadUrl.Nightly.Windows.x64,
       },
     ],
   },
@@ -107,13 +104,17 @@ export default function Downloads() {
                 key={`download-${index}`}
               >
                 <div className={styles.content}>
-                  {item?.iconType ? (
-                    <CanarySVG className={styles["icon-canary"]} />
-                  ) : (
-                    <i className={`${styles.icon} ${item.icon}`} />
-                  )}
-                  <p className={styles.type}>{item.type}</p>
-                  <p className={styles.description}>{item.subTitle}</p>
+                  <div className={styles.type}>
+                    {item.type}
+                    {item.mostRecommended && (
+                      <span className={styles["most-recommended"]}>
+                        {translate({
+                          message: "HOME.Downloads.mostRecommended",
+                        })}
+                      </span>
+                    )}
+                  </div>
+                  <span className={styles.description}>{item.subTitle}</span>
                 </div>
                 <div className={styles.downloads}>
                   {item.downloads.map((download, i) => {
