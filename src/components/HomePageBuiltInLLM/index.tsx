@@ -30,10 +30,10 @@ const llmData = [
     defaultIcon: <OpenAISVG />,
     hoverIcon: <OpenAILightHighSVG />,
   },
-  {
-    defaultIcon: <CopilotSVG />,
-    hoverIcon: <CopilotLightHighSVG />,
-  },
+  // {
+  //   defaultIcon: <CopilotSVG />,
+  //   hoverIcon: <CopilotLightHighSVG />,
+  // },
   {
     defaultIcon: <DoubaoSVG />,
     hoverIcon: <DoubaoLightHighSVG />,
@@ -50,10 +50,10 @@ const llmData = [
     defaultIcon: <QwenSVG />,
     hoverIcon: <QwenLightHighSVG />,
   },
-  {
-    defaultIcon: <SiliconCloudSVG />,
-    hoverIcon: <SiliconCloudLightHighSVG />,
-  },
+  // {
+  //   defaultIcon: <SiliconCloudSVG />,
+  //   hoverIcon: <SiliconCloudLightHighSVG />,
+  // },
 ];
 
 export const LLMItem = memo(
