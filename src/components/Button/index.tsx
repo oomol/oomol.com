@@ -66,10 +66,13 @@ export const Button = ({
   return (
     <button
       onClick={onClick}
-      className={clsx(disabled ? styles.btnDisable : styles.btn, className)}
+      className={clsx(
+        disabled ? styles.btnDisable : styles["oo-btn"],
+        className
+      )}
     >
       <a target={target} href={href}>
-        <div className={styles.btnContent}>{renderBtnContent()}</div>
+        {renderBtnContent()}
       </a>
     </button>
   );

@@ -25,13 +25,13 @@ function detectOSAndArchitecture(): OS {
 const content = (
   <div className={styles.popoverBox}>
     <a download href={DownloadUrl.Stable.MacOS.AppleSilicon}>
-      <div className={styles.popoverBtn}>
+      <div className={styles.popoverLink}>
         <div className={`${styles.icon} i-ic-baseline-apple`} />
         <span style={{ marginLeft: 8 }}>Apple Silicon</span>
       </div>
     </a>
     <a download href={DownloadUrl.Stable.MacOS.Intel}>
-      <div className={styles.popoverBtn}>
+      <div className={styles.popoverLink}>
         <div className={`${styles.icon} i-file-icons-intel`} />
         <span style={{ marginLeft: 8 }}>Intel Chip</span>
       </div>
@@ -60,8 +60,8 @@ export const DownloadButton = ({ stableTag }: DownloadButtonProps) => {
             >
               {translate({
                 message: stableTag
-                  ? "HOME.FirstScreen.download-macos"
-                  : "HOME.FirstScreen.download-macos-stable",
+                  ? "HOME.FirstScreen.download-macos-stable"
+                  : "HOME.FirstScreen.download-macos",
               })}
             </Button>
           }
@@ -81,8 +81,8 @@ export const DownloadButton = ({ stableTag }: DownloadButtonProps) => {
           >
             {translate({
               message: stableTag
-                ? "HOME.FirstScreen.download-windows"
-                : "HOME.FirstScreen.download-windows-stable",
+                ? "HOME.FirstScreen.download-windows-stable"
+                : "HOME.FirstScreen.download-windows",
             })}
           </Button>
           <span className={styles.windowsSubtitle}>

@@ -10,6 +10,7 @@ import HomepagePricing from "../components/HomePagePricing";
 import Head from "@docusaurus/Head";
 import HomepageGuide from "../components/HomepageGuide";
 import HomePageBuiltInLLM from "../components/HomePageBuiltInLLM";
+import { GetStartedPrompt } from "../components/GetStartedPrompt";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
         {/* <HomepagePricing /> */}
         <HomePageBuiltInLLM />
         <HomepageDownloads />
+        <GetStartedPrompt />
         {/* <HomepageStarter /> */}
         <Analytics />
       </main>

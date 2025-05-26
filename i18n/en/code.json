@@ -197,6 +197,12 @@
   "HOME.Built-in.subtitle": {
     "message": "Built-in LLM blocks for improved AI workflow efficiency."
   },
+  "HOME.GetStartedPrompt.title": {
+    "message": "Ready to get started?"
+  },
+  "HOME.GetStartedPrompt.subtitle": {
+    "message": "Oomol Studio makes it easy to build workflows by visually connecting code and APIs."
+  },
   "HOME.Pricing.title": {
     "message": "Pricing"
   },

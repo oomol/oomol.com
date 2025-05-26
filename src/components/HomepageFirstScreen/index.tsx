@@ -11,8 +11,8 @@ import { DownloadUrl } from "@site/src/download_url";
 import { Button } from "../Button";
 import { GradualSpacing } from "../magic-ui/GradualSpacing";
 import { BlurFade } from "../magic-ui/BlurFade";
-import { Popover } from "../Popover";
 import clsx from "clsx";
+import { DownloadButton } from "../DownloadButton";
 
 enum OS {
   Windows = "Windows",
@@ -89,50 +89,7 @@ export default function HomepageFirstScreen() {
                   {translate({ message: "Theme.Navbar.go-to-hub-flow" })}
                 </div>
               </Button>
-              <div className={styles["button-box"]}>
-                {detectOSAndArchitecture() === OS.MacOS ? (
-                  <Popover
-                    trigger={
-                      <Button
-                        className={styles.download}
-                        icon={
-                          <div
-                            className="i-codicon-desktop-download"
-                            style={{ fontSize: 18 }}
-                          />
-                        }
-                      >
-                        {translate({
-                          message: "HOME.FirstScreen.download-macos",
-                        })}
-                      </Button>
-                    }
-                    content={content}
-                  />
-                ) : (
-                  <div className={styles.windowsBox}>
-                    <Button
-                      className={styles.download}
-                      href={DownloadUrl.Stable.Windows.x64}
-                      icon={
-                        <div
-                          className="i-codicon-desktop-download"
-                          style={{ fontSize: 18 }}
-                        />
-                      }
-                    >
-                      {translate({
-                        message: "HOME.FirstScreen.download-windows",
-                      })}
-                    </Button>
-                    <span className={styles.windowsSubtitle}>
-                      {translate({
-                        message: "HOME.FirstScreen.download-windows-subtitle",
-                      })}
-                    </span>
-                  </div>
-                )}
-              </div>
+              <DownloadButton />
             </div>
           </div>
         </div>

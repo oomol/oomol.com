@@ -1,0 +1,71 @@
+@import "../../css/custom.scss";
+
+.container {
+  min-height: 365px;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  border-radius: 20px;
+  padding: 0 40px;
+  background: linear-gradient(90deg, #0d1117 0%, #010409 100%);
+}
+
+.textBox {
+  flex: 1;
+  padding: 80px 0;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 800;
+  color: #f0f6fc;
+  margin-bottom: 14px;
+}
+
+.subtitle {
+  display: inline-block;
+  max-width: 640px;
+  font-size: 20px;
+  padding-bottom: 40px;
+
+  @include linearGradientColor;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 420px;
+  height: 334px;
+  padding-top: 31px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    // width: 680px;
+    height: 680px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #212830;
+    border-radius: 50%;
+    filter: blur(500px);
+  }
+}
+
+.image {
+  width: 420px;
+  height: 334px;
+}
+
+@media screen and (max-width: 996px) {
+  .imageWrapper {
+    display: none;
+  }
+}
