@@ -63,12 +63,20 @@
     "message": "区块使用",
     "description": "The label for category Block Usage in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Block.link.generated-index.description": {
-    "message": "区块是 OOMOL Studio 中执行任务的最基础单元。",
-    "description": "The generated-index page description for category Bloc in sidebar tutorialSidebar"
-  },
   "sidebar.tutorialSidebar.category.Block Usage.link.generated-index.description": {
     "message": "区块是 OOMOL Studio 中执行任务的最基础单元",
     "description": "The generated-index page description for category Block Usage in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Advanced Guide": {
+    "message": "进阶指南",
+    "description": "The label for category Advanced Guide in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Advanced Guide.link.generated-index.description": {
+    "message": "OOMOL Studio 更高级的使用方法和技巧",
+    "description": "The generated-index page description for category Bloc in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Block Advanced Usage": {
+    "message": "区块进阶用法",
+    "description": "The label for category Block Advanced Usage in sidebar tutorialSidebar"
   }
 }
