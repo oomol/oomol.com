@@ -4,7 +4,6 @@
 }
 
 .download {
-  width: 239px;
   height: 43px;
   border-radius: 40px;
   background-color: inherit;
@@ -18,6 +17,7 @@
     background-color: #f6f8fa;
     color: #212830;
     border: solid #f0f6fc;
+    border-width: 2px 0.5px;
   }
 
   &:active {
