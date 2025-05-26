@@ -11,7 +11,6 @@ import { DownloadUrl } from "@site/src/download_url";
 import { Button } from "../Button";
 import { GradualSpacing } from "../magic-ui/GradualSpacing";
 import { BlurFade } from "../magic-ui/BlurFade";
-import { Popover } from "../Popover";
 import clsx from "clsx";
 import { DownloadButton } from "../DownloadButton";
 
