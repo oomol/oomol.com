@@ -76,13 +76,10 @@
 }
 
 .description {
-  max-width: 333.33px;
   max-height: 24px;
   font-size: 16px;
   margin: 0;
   color: #656c76;
-
-  // @include linearGradientColor;
 }
 
 .cards {
@@ -98,8 +95,7 @@
 }
 
 .card {
-  // position: relative;
-  width: 413.33px;
+  width: 413px;
   height: 306px;
   display: flex;
   flex-direction: column;
