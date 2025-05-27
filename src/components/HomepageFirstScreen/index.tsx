@@ -75,7 +75,7 @@ export default function HomepageFirstScreen() {
             </div>
             <div className={styles.buttons}>
               <LinkBtn
-                text={"Go To Flowhub"}
+                text={translate({ message: "Theme.Navbar.go-to-hub-flow" })}
                 iconPos="left"
                 iconType="globe"
                 url="https://hub.oomol.com/"
