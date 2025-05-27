@@ -1,17 +1,15 @@
 import styles from "./styles.module.scss";
-import LogoENSvg from "@site/static/img/logo-en.svg";
-import LogoZHSvg from "@site/static/img/logo-zh.svg";
 
-import React, { memo, useCallback, useEffect, useMemo, useState } from "react";
+import NavbarItem from "@theme/NavbarItem";
+import React, { memo, useEffect, useMemo, useState } from "react";
 import type { ComponentProps } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useLocation } from "@docusaurus/router";
-import NavbarItem from "@theme/NavbarItem";
 import SearchBar from "@theme/SearchBar";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
-import { Button } from "@site/src/components/Button";
-import { translate } from "@docusaurus/Translate";
+import { useNavbarMobileSidebar } from "@docusaurus/theme-common/internal";
+import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
 
 interface NavbarProps {}
 
@@ -34,6 +32,8 @@ function splitNavItemsByPosition(
 }
 
 const Navbar: React.FC<NavbarProps> = memo(() => {
+  const mobileSidebar = useNavbarMobileSidebar();
+
   const {
     siteConfig: {
       themeConfig: {
@@ -45,7 +45,6 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
   const locale = i18n.currentLocale;
   const location = useLocation();
 
-  const [sidebarShown, setSidebarShown] = useState(false);
   const [hideNavbar, setHideNavbar] = useState(false);
 
   const isDocumentPath = useMemo(() => {
@@ -59,13 +58,6 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
     () => splitNavItemsByPosition(items),
     [items]
   );
-
-  const showSidebar = useCallback(() => {
-    setSidebarShown(true);
-  }, []);
-  const hideSidebar = useCallback(() => {
-    setSidebarShown(false);
-  }, []);
 
   const prevScrollPosRef = React.useRef(0);
 
@@ -114,7 +106,7 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
   return (
     <header
       className={clsx("navbar", styles.navbar, {
-        "navbar-sidebar--show": sidebarShown,
+        "navbar-sidebar--show": mobileSidebar.shown,
         [styles.navbarHidden]: hideNavbar,
       })}
     >
@@ -152,8 +144,8 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
           className="navbar__toggle"
           role="button"
           tabIndex={0}
-          onClick={showSidebar}
-          onKeyDown={showSidebar}
+          onClick={mobileSidebar.toggle}
+          onKeyDown={mobileSidebar.toggle}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -163,7 +155,6 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
             role="img"
             focusable="false"
           >
-            <title>An icon showing a hamburger menu</title>
             <path
               stroke="currentColor"
               strokeLinecap="round"
@@ -177,34 +168,9 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
       <div
         role="presentation"
         className="navbar-sidebar__backdrop"
-        onClick={hideSidebar}
+        onClick={mobileSidebar.toggle}
       />
-      <div className="navbar-sidebar">
-        <div className="navbar-sidebar__brand">
-          <Link className={styles.brand} to="/" onClick={hideSidebar}>
-            <img
-              width={24}
-              alt="logo"
-              src={locale === "en" ? "/img/logo-en.svg" : "/img/logo-zh.svg"}
-              loading="lazy"
-            />
-          </Link>
-        </div>
-        <div className="navbar-sidebar__items">
-          <div className="navbar-sidebar__item menu">
-            <ul className="menu__list">
-              {items.map((item, i) => (
-                <NavbarItem
-                  mobile
-                  {...item}
-                  {...(item.type !== "search" && { onClick: hideSidebar })} // Search type def does not accept onClick
-                  key={i}
-                />
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
+      <NavbarMobileSidebar />
     </header>
   );
 });
