@@ -159,6 +159,7 @@ const config = {
         respectPrefersColorScheme: false,
       },
       navbar: {
+        title: "OOMOL",
         logo: {
           alt: "OOMOL Logo",
           src: "img/logo.svg",
@@ -170,11 +171,11 @@ const config = {
             position: "left",
             label: "Docs",
           },
-          // { to: "/blog", label: "Blog", position: "left" },
-          // { to: "/pricing", label: "Pricing", position: "left" },
           { to: "/updates", label: "Updates", position: "left" },
           { to: "/downloads", label: "Downloads", position: "left" },
           { to: "/community", label: "Community", position: "left" },
+          // { to: "/blog", label: "Blog", position: "left" },
+          // { to: "/pricing", label: "Pricing", position: "left" },
         ],
       },
       footer: {

@@ -6,6 +6,8 @@
   margin-top: 72px;
 }
 
-// .wrapper {
-//   height: 100vh;
-// }
+@media screen and (max-width: 996px) {
+  .wrapper {
+    margin-top: 0;
+  }
+}
