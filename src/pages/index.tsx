@@ -26,7 +26,7 @@ export default function Home() {
         {/* TODO: 等订阅业务上线后恢复 */}
         {/* <HomepagePricing /> */}
         <HomePageBuiltInLLM />
-        <HomepageDownloads />
+        {/* <HomepageDownloads /> */}
         <GetStartedPrompt />
         {/* <HomepageStarter /> */}
         <Analytics />

@@ -3,11 +3,8 @@ import styles from "./styles.module.scss";
 import React from "react";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-
 import { translate } from "@docusaurus/Translate";
-
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { Button } from "../Button";
 import { GradualSpacing } from "../magic-ui/GradualSpacing";
 import { BlurFade } from "../magic-ui/BlurFade";
 import clsx from "clsx";
@@ -32,11 +29,11 @@ export default function HomepageFirstScreen() {
             />
           </div>
           <div className={styles["intro-box"]}>
-            <div className={styles.overview}>
+            <span className={styles.overview}>
               {translate({
                 message: "HOME.FirstScreen.script",
               })}
-            </div>
+            </span>
             <div className={styles.buttons}>
               <LinkBtn
                 text={translate({ message: "Theme.Navbar.go-to-hub-flow" })}
@@ -51,16 +48,15 @@ export default function HomepageFirstScreen() {
       </div>
       <BlurFade>
         <div className={styles["image-box"]}>
-          <div className={styles["image-bg"]}>
-            <img fetchPriority="high" src={useBaseUrl("/img/background.svg")} />
+          <div className={styles.halo}>
+            <Image
+              className={styles.image}
+              sources={{
+                light: useBaseUrl("/img/pages/home/first-screen.webp"),
+                dark: useBaseUrl("/img/pages/home/first-screen.webp"),
+              }}
+            />
           </div>
-          <Image
-            className={styles.image}
-            sources={{
-              light: useBaseUrl("/img/first-screen.png"),
-              dark: useBaseUrl("/img/first-screen.png"),
-            }}
-          />
         </div>
       </BlurFade>
     </section>
