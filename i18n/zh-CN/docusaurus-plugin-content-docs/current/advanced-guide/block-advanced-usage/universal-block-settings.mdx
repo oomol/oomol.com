@@ -7,3 +7,797 @@ import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 # 通用区块设置
+
+这篇文章将详细描述所有区块都共有的一些设置项和使用方法。
+
+## 节点菜单
+
+当一个区块在工作流之内使用时，它就会作为工作流的一个节点被引用，这时候区块就会出现节点菜单。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/node-menu.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/node-menu.png"
+    ),
+  }}
+  width="720"
+/>
+
+### 运行
+
+节点菜单中有两个执行方式，用户可以选择是否运行时使用上一次运行时的缓存。这两种方式都会启动工作流，然后运行到当前节点为止。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/node-run-button.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/node-run-button.png"
+    ),
+  }}
+  width="720"
+/>
+
+区别在于是否使用上一次节点运行的结果作为下游节点的输入。
+
+#### 缓存机制
+
+考虑到区块可能执行了高资源消耗或者时间非常长的任务，用户可能不想要重复这些任务，因此我们设计了节点的缓存机制。
+
+在任意节点执行成功之后，除了类型为[变量](/zh-CN/docs/advanced-guide/block-advanced-usage/universal-block-settings#变量)的接口以外，所有节点的输出接口都会保留上一次执行的输出值，这样下游节点在选择执行的时候就会自动采用缓存值，不会触发上游节点的运行。
+
+用户也可以选择"清除缓存并执行"，这样会让当次运行不使用缓存，触发上游节点的运行，获得最新的输出值。
+
+:::info
+如果当前节点的上游输出接口有变量类型，那么无论如何运行一定都会触发上游节点的运行，因为我们无法缓存代码执行环境下的变量。
+:::
+
+### 拷贝
+
+将当前节点在工作流之中复制一份，也可以使用快捷键 `ctrl + c`(Windows) / `cmd + c`(MacOS) 复制，`ctrl + v`(Windows) / `cmd + v`(MacOS) 粘贴。
+
+如果使用快捷键可以跨不同的工作流进行复制粘贴。
+
+拷贝行为对于小脚本区块和共享区块有不同的行为：
+
+- 小脚本区块
+
+  拷贝会复制一个新的区块到工作流内，包括区块的配置文件和代码，会出现两个互相不影响的小脚本区块。
+
+- 共享区块
+
+  拷贝只会复制一份共享区块的引用到工作流内作为新的节点，两个节点指向的区块是同一个，代码也是同一份，因此对共享区块进行[配置](/zh-CN/docs/advanced-guide/block-advanced-usage/universal-block-settings#区块配置)会同时影响两个节点。
+
+### 节点配置
+
+节点配置仅会在当前工作流内生效，每个节点的配置独立于其他节点，不会互相影响。
+
+#### 基本信息
+
+对于图标和标题，可以在菜单内或者节点头中进行配置，双击标题可以输入新的标题。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/node-base-config.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/node-base-config.png"
+    ),
+  }}
+  width="720"
+/>
+
+节点 ID 应该保证在当前工作流内唯一。
+
+节点描述可以在配置菜单中输入，也可以选中节点后，双击下方的“添加描述”以输入节点描述。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/node-config-description.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/node-config-description.png"
+    ),
+  }}
+  width="720"
+/>
+
+#### 超时时间
+
+用于限制当前节点的最大运行时间，未设置的情况下默认不超时。
+
+### 忽略
+
+点击“忽略此节点”可以将节点设置为忽略状态。此时运行当前 flow 将会略过此节点和之后的节点。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/node-ignore.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/node-ignore.png"
+    ),
+  }}
+  width="720"
+/>
+
+忽略功能可以用于调试工作流在不同运行路径下的运行情况，例如：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/node-ignore-flow.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/node-ignore-flow.png"
+    ),
+  }}
+  width="720"
+/>
+
+用户可以切换节点的忽略状态来限制工作流一定在某个条件下运行。
+
+### 删除
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/node-delete.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/node-delete.png"
+    ),
+  }}
+  width="720"
+/>
+
+删除功能可以删除当前节点，可以使用菜单按钮或者快捷键 `ctrl + shift + delete`(Windows) / `cmd + shift + delete`(MacOS)，该功能对于和共享区块有不同的行为逻辑：
+
+- 小脚本区块
+
+会删除节点以及小脚本区块，包括区块配置和代码文件。
+
+- 共享区块
+
+仅会删除工作流内的节点，共享区块本身不会被删除。
+
+## 区块配置
+
+因为小脚本区块只能在工作流中创建并使用，因此小脚本的区块同时拥有节点和区块两种属性，导致小脚本的节点配置和区块配置合并到了一起。
+
+区块配置对于小脚本区块和共享区块来说入口不一样，但是效果是相同的。
+
+通用区块配置包括执行器与接口配置两部分
+
+### 执行器
+
+执行器用于指定当前区块在运行时的入口文件以及调用方式。
+
+每种代码的语言环境都有一种执行器用于运行代码。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-config-executor.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-config-executor.png"
+    ),
+  }}
+  width="720"
+/>
+
+#### 名称
+
+目前执行器由 oomol 团队内部实现，可支持 python 以及 nodejs 运行环境，因此有对应的两个可选项。
+
+#### 入口
+
+选择代码的入口文件，默认文件时在用户创建小脚本区块时生成。如果没有特殊需要不需要变动，用户也可以随意指定文件，但需要确保按照代码模板进行实现，否则无法正常运行。
+
+参考 [nodejs 模板](/zh-CN/docs/workflow-engine/nodejs-sdk-api#21-scriptlet-%E6%A8%A1%E6%9D%BF) 以及 [python 模板](/zh-CN/docs/workflow-engine/python-sdk-api#21-scriptlet-%E6%A8%A1%E6%9D%BF)
+
+#### 方法名
+
+指定代码入口方法名，默认为入口文件的 main 方法 (python 代码) 或 default export function (nodejs 代码)，如有特殊需要可以自行指定，但必须要包含模板代码中的方法参数。
+
+#### 独立进程
+
+oomol studio 在运行工作流时会进行自动检测，如果上下游是相同代码语言实现的区块（对于共享区块还要属于同一个包），内部调度器会将两个区块代码放在同一个进程中进行调用，这样做的好处有：
+
+1. 节省资源
+2. 让上下游可以直接传递代码变量，省去将输出接口的值进行序列化和反序列化的步骤，简化代码。
+
+考虑到用户可能有特殊情况，我们也允许用户自行选择是否让区块在独立进程中运行。
+
+### 接口配置
+
+接口配置分为输入接口和输出接口配置，输出接口除无法指定接口值以外其余配置项与输入配置相同。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config.png"
+    ),
+  }}
+  width="720"
+/>
+
+#### 接口名称
+
+输入或者输出接口的名称，用户可以自行指定，当名称修改后，代码中的对应输入或输出参数的类型也会自动进行更新。
+
+#### null 值传递
+
+配置该接口是否允许传递 `null` (nodejs 代码) / `None` (python 代码) 作为值， 该选项主要用于限制输入或者输出的类型。
+
+该选项会影响代码中自动生成的类型和上下游连线的行为。
+
+如果上游允许输出 `null` / `None` 值，下游不允许，那么连线会报错。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-null.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-null.png"
+    ),
+  }}
+  width="720"
+/>
+
+#### 自定义类型名称
+
+用于用户自定义限制接口连线的校验规则，如果用户设置了该值，那么连接该接口的所有其他接口必须要设置相同的值，否则连线会失败。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-custom-type.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-custom-type.png"
+    ),
+  }}
+  width="720"
+/>
+
+#### 描述
+
+对于接口的描述不会显示出来，只能在接口设置中看到
+
+#### 预设类型
+
+对于接口可以配置预设类型，用于限制可以连接的其他接口，同时也会在代码中自动生成配置的类型。
+
+选择不同的类型会让预设类型的子配置项和数据输入栏也发生改变。
+
+- 无约束
+
+接口不设任何限制条件，可以连接任意的其他接口。
+
+在选择无约束类型后，右侧数据输入栏会多一个数据类型按钮，用于选择输入值的类型，不会影响接口的类型限制。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-any.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-any.png"
+    ),
+  }}
+  width="720"
+/>
+
+- 字符串
+
+接口值是字符串类型。
+
+子配置项可以配置字符串的格式，如果选择格式可以为值增加规则，也可以自行指定正则表达式。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-string.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-string.png"
+    ),
+  }}
+  width="720"
+/>
+
+- 变量
+
+接口值是变量类型。
+
+对于变量类型的接口，连接的另一个接口必须是相同语言而且是变量类型，如果有一边是共享区块，那么另外一边需要是同一个包中的区块。
+
+设置为变量类型后，接口可以传递复杂格式的代码对象，比如 python 语言下的 `DataFrame` 或者 `pandas` 实例等对象。
+
+在一些场景下对象无法转换为字符串或者简单类型，可以通过这种方式传递，同时传递对象可以省去序列化和反序列化的步骤，提高性能。
+
+但是由于存在连接限制，变量类型的接口可能会降低区块的普适性，请慎用。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-var.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-var.png"
+    ),
+  }}
+  width="720"
+/>
+
+- 数字
+
+接口值是数字类型。
+
+数字类型可以是浮点数或者整数，只要是数字类型都被允许。
+
+子配置项可以设置数字范围限制，同时在区块的数据控件内可以通过按钮来调整数值大小，子配置项中的步长用于配置每次按钮点击增加或者减少的数值。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-string.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-string.png"
+    ),
+  }}
+  width="720"
+/>
+
+- 路径
+
+接口值是地址字符串类型，可以连接其他字符串类型的接口。
+
+子选项有`目录` / `文件` / `另存为`，其中`目录` / `文件`选项需要保证对应地址存在才能在数据控件中选择，而`另存为`选项可以创建一个不存在的文件或者文件夹。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-path.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-path.png"
+    ),
+  }}
+  width="720"
+/>
+
+- 秘钥
+
+接口值是加密后的字符串类型，可以连接其他字符串类型的接口。
+
+考虑到用户可能在某些场景下使用诸如 API Key 之类的私密字符串，我们提供了秘钥功能以防止用户的敏感信息泄露。
+
+用户可以在首页的[秘钥管理页面](/zh-CN/docs/get-started/interface/home/#密钥页面)或者[项目界面内秘钥管理页面](/zh-CN/docs/get-started/interface/project#密钥)中添加秘钥。
+
+然后可以在秘钥类型的接口下选择使用。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-secret.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-secret.png"
+    ),
+  }}
+  width="720"
+/>
+
+- 布尔值
+
+接口值是布尔类型，仅有 `True` / 'False' 两个值可以设置，可以用开关切换。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-bool.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-bool.png"
+    ),
+  }}
+  width="720"
+/>
+
+- 整数
+
+接口值是整数的数字类型。
+
+子配置项与数字类型的一致，但是无法连接数字类型的接口，因为数字类型可能是浮点数。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-int.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-int.png"
+    ),
+  }}
+  width="720"
+/>
+
+- 颜色
+
+接口值是颜色格式的字符串类型，可以连接其他字符串类型的接口。
+
+选择颜色类型后可以在数据输入栏中使用颜色选择控件，在子配置项中我们提供了 `HEX8` / `HSV` / `RGB` 三种格式的颜色选择。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-color.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-color.png"
+    ),
+  }}
+  width="720"
+/>
+
+- 多行文本
+
+接口值是字符串类型，可以连接其他字符串类型的接口。
+
+该类型主要是方便用户在数据输入栏中输入大段的文本，避免文本折叠导致观察不方便。
+
+拖动文本框右下角的按钮可以改变文本框高度。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-text.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-text.png"
+    ),
+  }}
+  width="720"
+/>
+
+- 字典
+
+接口值是字典类型。
+
+对于 `nodejs` 来说等价于 plain object，对于 `python` 来说等价于字典对象。
+
+可以对字典类型的接口设置每一个字典元素的类型，右侧的加减号可以添加或者删除子元素。
+
+在子配置项中有一项`允许额外属性`的配置，表示当前接口是否允许除了接口类型上写明的子元素意外的元素，例如：
+
+在打开`允许额外属性`的情况下,如果接口的类型为
+
+```
+{
+  field1: number,
+  field2: string
+}
+```
+
+那么传递值
+
+```
+{
+  field1: 1,
+  field2: "2",
+  field3: {}
+}
+```
+
+是被允许的，同时 `field3` 作为额外属性没有任何类型限制。
+
+如果`允许额外属性`是关闭状态则不允许任何额外属性。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-dict.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-dict.png"
+    ),
+  }}
+  width="720"
+/>
+
+- 数组
+
+接口值是数组类型。
+
+对于 `nodejs` 来说等价于数组对象，对于 `python` 来说等价于 list 对象。
+
+在数据输入栏中选择子类型或者在子配置项中选择`项类型`可以将所有的数组元素约束为同一个类型，如果选择的是`无约束`类型，那么数组中的每一个元素都可以是不同的类型。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-array.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-array.png"
+    ),
+  }}
+  width="720"
+/>
+
+- 选择
+
+如果是单选，接口值枚举的字符串类型，如果是多选，则是项为字符串类型的数组类型。
+
+使用选择类型时需要先在子配置项中配置预设的选项，然后数据输入栏才会出现供选择的内容
+
+> 单选
+
+<Image
+  sources={{
+
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-single-select.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-single-select.png"
+    ),
+
+}}
+width="720"
+/>
+
+> 多选
+
+<Image
+  sources={{
+
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-multi-select.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-multi-select.png"
+    ),
+
+}}
+width="720"
+/>
+
+- 日期
+
+接口值是日期格式的字符串。
+
+日期的格式为 'YYYY-MM-DD hh:mm:ss'
+
+子配置项中可以选择 `date` / `time` / `date-time`， 分别对应只选择日期，只选择时间，日期加时间。不同的选项会导致选择界面也会有变化。
+
+<Image
+  sources={{
+
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-date.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-date.png"
+    ),
+
+}}
+width="720"
+/>
+
+- 二进制
+
+接口值是二进制类型。
+
+这种类型的值虽然可以序列化，但是无法被有意义地展示出来，所以在界面上没有响应的表现和配置。这种类型的接口只能连线，而无法通过数据输入栏设置值。
+
+可以用于一些特殊场景，比如上游读取了一个文件传递到下游，或者是上游输出了内存中的一段内存数据到下游。由下游来决定是将二进制序列化还是作为文件存储。
+
+<Image
+  sources={{
+
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-binary.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-binary.png"
+    ),
+
+}}
+width="720"
+/>
+
+- Null
+
+接口值固定是 null(对于 nodejs) / None(对于 python) 值。
+
+类型选择后无法设置其他类型的值，一般用于调试等特殊场景。
+
+<Image
+  sources={{
+
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-null.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-null.png"
+    ),
+
+}}
+width="720"
+/>
+
+- 组合器
+
+接口值需要满足设置的组合条件。
+
+目前支持的组合器是`任意一个`，即接口值只需要满足条件中的任意一项就可以。
+
+选择组合器后需要在子配置项中配置需要满足的条件，例如:
+
+配置条件 1 类型为数字，条件 2 类型为字符串，那么输入的值是数字或者字符串都是合法的。
+
+<Image
+  sources={{
+
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-combine.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-combine.png"
+    ),
+
+}}
+width="720"
+/>
+
+- LLM
+
+一个特殊的接口类型，提供两个子选项 `model` / `message`。
+
+这个接口类型是为了给用户提供一系列在代码中方便使用 AI 模型的参数。
+
+<Image
+  sources={{
+
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-LLM.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-LLM.png"
+    ),
+
+}}
+width="720"
+/>
+
+当选择 `model` 后，输入接口将会被转换为 AI 模型选择接口，此接口无法连线，输入值固定为用户选择和配置的模型参数。
+
+选择 `model` 后可以看到输出接口类型改变，用户此时可以在 input 接口中获取在界面上配置的模型参数。
+
+:::info
+用户要在代码中接入 AI 仍然需要自己创建模型调用的客户端，这个接口只提供一些可供配置的参数，以便于区块在使用的时候可以通过界面修改参数并生效，避免修改代码。
+:::
+
+<Image
+  sources={{
+
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-LLM-model.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-LLM-model.png"
+    ),
+
+}}
+width="720"
+/>
+
+当选择 `message` 后，输入接口将会转换为 AI 提示词输入，此接口无法连线。
+
+选择 `message` 后可以看到输出接口类型改变，用户此时可以在 input 接口中获取在界面上配置的提示词参数。
+
+<Image
+  sources={{
+
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-LLM-message.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-LLM-message.png"
+    ),
+
+}}
+width="720"
+/>
+
+用户可以在输入接口上配置多个提示词。
+
+当用户想要将 LLM 类型的输入接口变回到普通接口时，需要在接口的配置栏中选择其他的类型：
+
+<Image
+  sources={{
+
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-LLM-return.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-LLM-return.png"
+    ),
+
+}}
+width="720"
+/>
+
+#### JsonSchema
+
+当用户不满足于页面上创建的接口约束条件时，可以自行编辑接口的 [JsonSchema](https://json-schema.org/understanding-json-schema/reference) 约束文件，点击配置栏右上角的切换按钮：
+
+<Image
+  sources={{
+
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-LLM-return.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-config-type-LLM-return.png"
+    ),
+
+}}
+width="720"
+/>
+
+可以切换到 [JsonSchema](https://json-schema.org/understanding-json-schema/reference) 编辑模式。
+
+JsonSchema 修改后会尽量反应到接口配置栏，配置栏的改动也会反应到 JsonSchema 编辑器中。
+
+### 快捷创建节点
+
+用户可以直接从输入或者输出接口拖动到任意空白位置来快速创建新的节点。
+
+<Image
+  sources={{
+
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-quick-create-node.gif"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-quick-create-node.gif"
+    ),
+
+}}
+width="720"
+/>
+
+### 接口顺序
+
+指针悬浮在接口上后可以看到接口的左侧有按钮，拖动即可调整接口顺序
+
+<Image
+  sources={{
+
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-order.gif"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/block-handle-order.gif"
+    ),
+
+}}
+width="720"
+/>
