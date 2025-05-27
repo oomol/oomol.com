@@ -130,8 +130,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 40px;
   gap: 40px;
+  padding: 80px 0;
 
   @include desktop {
     padding: 0 24px;
