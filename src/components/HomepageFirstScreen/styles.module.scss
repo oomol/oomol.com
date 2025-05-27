@@ -139,11 +139,11 @@
 
 .container {
   position: relative;
-  padding: 80px 0;
   display: flex;
   justify-content: center;
   z-index: 1;
   padding-top: 40px;
+  padding-bottom: 120px;
 }
 
 .header {
@@ -186,10 +186,12 @@
 }
 
 .overview {
-  size: 18px;
+  max-width: 600px;
+  font-size: 20px;
   font-weight: 400;
-  line-height: 27px;
-  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  line-height: 30px;
+  @include linearGradientColor;
 
   @media (max-width: 1024px) {
     text-align: center;
@@ -212,24 +214,49 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  margin-bottom: 120px;
 }
 
-.image-bg {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 110%;
-  z-index: -1;
-  pointer-events: none;
+.halo {
+  position: relative;
+  display: flex;
+  justify-content: center;
 
-  > img {
-    width: 100%;
+  &::before {
+    content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     z-index: -1;
+    width: 50%;
+    height: 500px;
+    left: 85px;
+    bottom: -85px;
+    background: linear-gradient(270deg, #7d7fe9 0%, #7d7fe9 100%);
+    border-radius: 50%;
+    filter: blur(500px);
+    opacity: 0.35;
+
+    @media screen and (max-width: 996px) {
+      display: none;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 50%;
+    height: 500px;
+    right: 85px;
+    bottom: -85px;
+    background: linear-gradient(270deg, #7dc7e9 0%, #7dc7e9 100%);
+
+    border-radius: 50%;
+    filter: blur(500px);
+    opacity: 0.35;
+
+    @media screen and (max-width: 996px) {
+      display: none;
+    }
   }
 }
 
