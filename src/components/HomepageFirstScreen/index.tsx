@@ -13,6 +13,7 @@ import { GradualSpacing } from "../magic-ui/GradualSpacing";
 import { BlurFade } from "../magic-ui/BlurFade";
 import clsx from "clsx";
 import { DownloadButton } from "../DownloadButton";
+import LinkBtn from "../Button/LinkBtn";
 
 enum OS {
   Windows = "Windows",
@@ -73,22 +74,12 @@ export default function HomepageFirstScreen() {
               })}
             </div>
             <div className={styles.buttons}>
-              <Button
-                className={styles["go-to-hub"]}
-                target="_blank"
-                iconPosition="end"
-                icon={
-                  <div
-                    className="i-codicon:arrow-right"
-                    style={{ fontSize: 18 }}
-                  />
-                }
-                href="https://hub.oomol.com/"
-              >
-                <div className={styles["btn-nav-text"]}>
-                  {translate({ message: "Theme.Navbar.go-to-hub-flow" })}
-                </div>
-              </Button>
+              <LinkBtn
+                text={"Go To Flowhub"}
+                iconPos="left"
+                iconType="globe"
+                url="https://hub.oomol.com/"
+              />
               <DownloadButton />
             </div>
           </div>
