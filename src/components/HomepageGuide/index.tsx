@@ -103,7 +103,7 @@ export default function HomepageGuide() {
       <LinkBtn
         text={translate({ message: "HOME.Guide.link-button-text" })}
         iconPos="right"
-        iconType="arrow-right"
+        icon="i-codicon:arrow-right"
         url="https://hub.oomol.com"
       />
     </section>

@@ -4,13 +4,13 @@ import styles from "./LinkBtn.module.scss";
 export interface LinkBtnProps {
   text: string;
   iconPos: "left" | "right";
-  iconType: string;
+  icon: string;
   url: string;
 }
 export default function LinkBtn({
   text,
   iconPos = "left",
-  iconType,
+  icon,
   url,
 }: LinkBtnProps) {
   return (
@@ -23,7 +23,7 @@ export default function LinkBtn({
         ${iconPos === "left" ? styles.left : styles.right}`}
       >
         <div className={styles.linkText}>{text}</div>
-        <i className={`${styles.linkIcon} i-codicon:${iconType}`} />
+        <i className={`${styles.linkIcon} ${icon}`} />
       </div>
     </button>
   );

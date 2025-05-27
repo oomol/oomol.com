@@ -7,7 +7,6 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
 
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { DownloadUrl } from "@site/src/download_url";
 import { Button } from "../Button";
 import { GradualSpacing } from "../magic-ui/GradualSpacing";
 import { BlurFade } from "../magic-ui/BlurFade";
@@ -15,44 +14,9 @@ import clsx from "clsx";
 import { DownloadButton } from "../DownloadButton";
 import LinkBtn from "../Button/LinkBtn";
 
-enum OS {
-  Windows = "Windows",
-  MacOS = "MacOS",
-}
-
-function detectOSAndArchitecture(): OS {
-  const userAgent = navigator.userAgent;
-  let os = OS.Windows;
-
-  if (userAgent.indexOf("Win") !== -1) {
-    os = OS.Windows;
-  } else if (userAgent.indexOf("Mac") !== -1) {
-    os = OS.MacOS;
-  }
-
-  return os;
-}
-
 export default function HomepageFirstScreen() {
   const context: any = useDocusaurusContext();
   const { i18n } = context;
-
-  const content = (
-    <div className={styles.popoverBox}>
-      <a download href={DownloadUrl.Stable.MacOS.AppleSilicon}>
-        <div className={styles.popoverBtn}>
-          <div className={`${styles.icon} i-ic-baseline-apple`} />
-          <span style={{ marginLeft: 8 }}>Apple Silicon</span>
-        </div>
-      </a>
-      <a download href={DownloadUrl.Stable.MacOS.Intel}>
-        <div className={styles.popoverBtn}>
-          <div className={`${styles.icon} i-file-icons-intel`} />
-          <span style={{ marginLeft: 8 }}>Intel Chip</span>
-        </div>
-      </a>
-    </div>
-  );
 
   return (
     <section className={styles.section}>
@@ -77,7 +41,7 @@ export default function HomepageFirstScreen() {
               <LinkBtn
                 text={translate({ message: "Theme.Navbar.go-to-hub-flow" })}
                 iconPos="left"
-                iconType="globe"
+                icon="i-codicon-globe"
                 url="https://hub.oomol.com/"
               />
               <DownloadButton />
