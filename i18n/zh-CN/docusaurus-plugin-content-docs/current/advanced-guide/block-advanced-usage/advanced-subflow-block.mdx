@@ -7,3 +7,167 @@ import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 # 子流区块进阶用法
+
+在创建一个子流区块后我们可以通过点击左侧共享区块栏中的子流区块进入到子流区块的编辑页面。
+
+我们可以看到编辑页面下方有区块模式和工作流模式。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/subflow-block-view.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/subflow-block-view.png"
+    ),
+  }}
+  width="720"
+/>
+
+在区块模式中的配置与[通用区块设置](/zh-CN/docs/advanced-guide/block-advanced-usage/universal-block-settings) 中的配置基本一致，这里主要介绍工作流模式下的用法。
+
+## 输入输出节点
+
+在进入到工作流模式后，可以看到工作流界面中多了两个特殊节点：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/subflow-flow-view.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/subflow-flow-view.png"
+    ),
+  }}
+  width="720"
+/>
+
+这两个节点其实对应的是区块模式下的输入和输入接口，如果你的子流没有接入到输入和输入接口，那么子流就无法从外部获取到输入并产生输出。
+
+输入输出节点的使用方法与区块模式下的输入和输出接口基本一致，只是多了一个快捷创建接口的操作：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/subflow-block-quick-create-handle.gif"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/subflow-block-quick-create-handle.gif"
+    ),
+  }}
+  width="720"
+/>
+
+快捷创建的接口会复制连接接口的名称和类型。
+
+在输入和输出节点创建的接口也会反应到区块模式下的输入输入输出接口下，反之也会同步。
+
+输入输出节点无法删除，如果用户不需要输入或者输出可以选择不连线。
+
+## 插槽
+
+插槽是一个专用于子流区块的共享区块，仅有在子流区块的工作流编辑模式下才会出现在右侧系统区块栏中。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/subflow-block-slot-position.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/subflow-block-slot-position.png"
+    ),
+  }}
+  width="720"
+/>
+
+### 插槽的意义
+
+考虑到子流区块的开发者需要某一些区块的功能，但是并不关心区块如何实现（或者需要用户自行实现），这种情况下使用子流的人可以自己实现功能区块并接入到子流中，让整个工作流正常运行，这样就将一部分功能实现的自由度给到了用户。
+
+> 例如：子流区块开发者需要通过 AI 分析数据，所以开发者定义了一个插槽，插槽的输入是数据内容，输出是分析结果的字符串。然后用户可以根据自己拥有的 AI 秘钥来实现不同的 AI 分析区块，使用用户自己的 token。
+
+或者子流区块将一些可能会频繁变化修改的部分提取出来作为插槽，在使用的地方可以任意更更换，减少关键代码区块的改动。
+
+> 例如：开发者依赖了一个更新十分频繁的第三方库，他可以定义一个插槽，插槽的输入是传递给三方库的输入，输出是三方库的输出，然后将子流发布。这样可以在外部将三方库接入到子流，在三方库更新的时候仅更新外部区块，而子流不需要更新。
+
+插槽本身是一个区块，但是仅有输入和输出接口可以配置
+
+### 使用方式
+
+插槽与普通共享区块的使用方式类似，可以拖入到工作流中进行连线：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/subflow-block-slot-use.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/subflow-block-slot-use.png"
+    ),
+  }}
+  width="720"
+/>
+
+不同之处是可以直接在插槽区块上修改接口的名称和参数。
+
+在添加并连接插槽后，回到区块模式可以看到子流区块多了一个插槽栏：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/subflow-block-slot-ui.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/subflow-block-slot-ui.png"
+    ),
+  }}
+  width="720"
+/>
+
+这里的插槽栏仅有展示功能。
+
+当子流区块在工作流中被使用时，你可以点击插槽的设置按钮来进入插槽的编辑界面：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/subflow-block-slot-inflow.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/subflow-block-slot-inflow.png"
+    ),
+  }}
+  width="720"
+/>
+
+插槽的编辑界面与子流的编辑界面基本一致，或者说插槽就是子流的一种：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/subflow-block-slot-edit.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/subflow-block-slot-edit.png"
+    ),
+  }}
+  width="720"
+/>
+
+插槽内也有输入输出节点，你可以在插槽内插入一个或多个节点，这点与子流的编辑方法一致。
+
+编辑完成后，回到工作流界面就可以运行子流区块：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/subflow-block-run.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/subflow-block-run.png"
+    ),
+  }}
+  width="720"
+/>
+
+子流区块的运行与一般区块相同，不同点仅在于必须要编辑插槽内容，否则无法满足运行条件。

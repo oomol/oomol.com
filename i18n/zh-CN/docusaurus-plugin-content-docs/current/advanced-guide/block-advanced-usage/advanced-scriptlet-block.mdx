@@ -83,3 +83,23 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
   }}
   width="720"
 />
+
+## 预览
+
+你可以在代码中调用 [nodejs 预览 API](/zh-CN/docs/workflow-engine/nodejs-sdk-api#3-contextpreview-types) 或 [python 预览 API](/zh-CN/docs/workflow-engine/python-sdk-api#3-contextpreview-%E7%B1%BB%E5%9E%8B) 来观察多种类型的数据。
+
+在代码中使用 `context.preview()` 方法可以在区块运行后将各种类型的数据渲染在区块下方。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/scriptlet-preview.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/scriptlet-preview.png"
+    ),
+  }}
+  width="720"
+/>
+
+请确保 `context.preview()` 方法在默认方法的范围内进行调用。

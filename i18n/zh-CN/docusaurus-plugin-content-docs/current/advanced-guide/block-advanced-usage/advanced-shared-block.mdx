@@ -10,4 +10,245 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ## 值区块
 
+值区块是 OOMOL Studio 内置的一个特殊的共享区块，设计初衷是为用户提供一个可以复用的常量输入框。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/value-block.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/value-block.png"
+    ),
+  }}
+  width="720"
+/>
+
+这里值区块的作用等价于为两个 Python 区块的 input 输入填入同一个值。
+
 ## 自定义渲染
+
+:::info
+使用自定义渲染需要你有一定的 [React](https://react.dev/) 前端技术基础。
+:::
+
+共享区块节点会有一个`配置共享区块`的菜单项，点击后进入共享区块配置。
+
+你也可以直接点击左侧共享区块面板中的设置进入配置。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-enter-config.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-enter-config.png"
+    ),
+  }}
+  width="720"
+/>
+
+共享区块的配置除了`自定义 UI`意外其余均与[通用区块设置](/zh-CN/docs/advanced-guide/block-advanced-usage/universal-block-settings)中一致。
+
+由于 OOMOL Studio 提供的[nodejs 预览](/zh-CN/docs/workflow-engine/nodejs-sdk-api#3-contextpreview-types) / [python 预览](/zh-CN/docs/workflow-engine/nodejs-sdk-api#3-contextpreview-types)功能场景有限，因此我们提供了自定义 UI 用于让用户自行决定区块可以渲染或者预览的内容。
+
+在区块配置界面中点击`自定义 UI`下的`创建`按钮后，等待一段时间后，OOMOL Studio 会自动初始化一套 UI 模板代码。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-custom-UI.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-custom-UI.png"
+    ),
+  }}
+  width="720"
+/>
+
+你可以在左侧的文件浏览器中找到模板代码的文件夹，同时`自定义 UI`配置项下会出现代码的入口文件。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-custom-UI-files.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-custom-UI-files.png"
+    ),
+  }}
+  width="720"
+/>
+
+### 代码开发
+
+在自动生成的代码中可以找到一个 `src` 文件夹，这个文件夹里的内容就是自定义 UI 的代码。
+
+自定义 UI 的代码编辑入口在 `oo-render/src/render.tsx` 内，我们可以看到自定义 UI 是通过监听 `message` 事件来获取外部属性的：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-custom-UI-render-tsx.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-custom-UI-render-tsx.png"
+    ),
+  }}
+  width="720"
+/>
+
+所以我们可以在**区块代码**中调用 `context.send_message()` 方法来将数据发送到自定义 UI：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-custom-UI-send-message.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-custom-UI-send-message.png"
+    ),
+  }}
+  width="720"
+/>
+
+这里我们发送了一条带有输入内容的字符串。
+
+然后我们可以编辑 `oo-render/src/App.tsx` 的代码，这里我们将直接打印数据的代码替换为一个按钮，点击后会弹出提示框显示数据：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-custom-UI-code.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-custom-UI-code.png"
+    ),
+  }}
+  width="720"
+/>
+
+然后在终端下进入自定义 UI 的目录：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-custom-UI-enter-oo-render.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-custom-UI-enter-oo-render.png"
+    ),
+  }}
+  width="720"
+/>
+
+运行
+
+```shell
+pnpm build
+```
+
+构建代码。
+
+然后重新运行区块，你就可以看到自定义的 UI 样式：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-custom-UI-run-in-block.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-custom-UI-run-in-block.png"
+    ),
+  }}
+  width="720"
+/>
+
+点击按钮会提示区块代码中发送的内容：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-custom-UI-alert.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-custom-UI-alert.png"
+    ),
+  }}
+  width="720"
+/>
+
+### 本地调试
+
+在自定义 UI 的开发过程中，我们可以单独进行 UI 的调试工作而不用每次重新运行区块，这样可以提高我们的开发效率。
+
+在自动生成的代码中可以找到一个 `dev` 文件夹，这个文件夹里的内容用于本地调试自定义 UI。
+
+首先我们进入自定义 UI 的目录下：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-custom-UI-enter-oo-render.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-custom-UI-enter-oo-render.png"
+    ),
+  }}
+  width="720"
+/>
+
+然后在终端中执行:
+
+```shell
+pnpm dev
+```
+
+就可以在本地浏览器中打开一个调试窗口，你可以看到自定义 UI 的预览：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-custom-UI-local-dev.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-custom-UI-local-dev.png"
+    ),
+  }}
+  width="360"
+/>
+
+当我们修改自定义 UI 代码并保存后就可以实时在这个调试窗口看到变化，不用运行区块。
+
+:::info
+在调试窗口运行的样式可能会与 OOMOL Studio 中运行的样式不一致，但是不会影响功能，这是因为 VSCode 在全局注册了样式表，而浏览器环境没有这些样式表。
+因此自定义 UI 的样式请以 OOMOL Studio 中展示的为准。
+:::
+
+你可以在 `dev/dev.main.tsx` 文件中模拟区块在运行时通过 `context.send_message()` 方法发送的内容。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-custom-UI-fake-data.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-custom-UI-fake-data.png"
+    ),
+  }}
+  width="720"
+/>
+
+这样在调试窗口就可以进行功能测试：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-custom-UI-dev-run.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/shared-block-custom-UI-dev-run.png"
+    ),
+  }}
+  width="720"
+/>
