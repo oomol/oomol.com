@@ -137,6 +137,10 @@
   color: #838b95;
 }
 
+:global(.navbar__link--active) {
+  color: var(--ifm-navbar-link-hover-color);
+}
+
 .themeToggleInSidebar {
   display: none;
   margin: 0 1rem 0 auto;
