@@ -7,3 +7,97 @@ import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 # Scriptlet Block Advanced Usage
+
+## Quick Interface Creation
+
+You can quickly create a new interface by moving the wire end above or below an interface while connecting. The newly created interface will maintain the same name and type as the connected interface, eliminating the need for additional configuration.
+
+This method works for both input and output interfaces, but is only available for scriptlet blocks.
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/scriptlet-quickly-create-handle.gif"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/scriptlet-quickly-create-handle.gif"
+    ),
+  }}
+  width="720"
+/>
+
+## Automatic Interface Type Updates
+
+In the scriptlet code, you can see comments like:
+
+```
+#region generated meta
+...
+#endregion
+```
+
+These comments are used to automatically generate the name and type code for input and output interfaces. Deleting them may cause a mismatch between the types in the code and the block settings.
+
+Every time you modify the interface name and type on the node, the code within these comments will be updated, so don't write your own code inside these comments.
+
+If you need to import dependencies, make sure to write import statements below:
+
+```
+#endregion
+```
+
+:::info
+You can also choose to delete these comments and manually write the type code. After deleting the comments, interface types will not be automatically updated, and you need to ensure that the code remains consistent with the interface configuration on the node.
+:::
+
+## AI-Assisted Editing
+
+When editing code, you can try having AI help you implement functionality. In the menu bar of the scriptlet code box, click the `Add Chat to Context` button to open the AI chat box on the right side.
+
+Then select `edit` mode at the bottom of the AI chat box to give AI permission to modify files for you.
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/advanced-scriptlet-code-chat.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/advanced-scriptlet-code-chat.png"
+    ),
+  }}
+  width="720"
+/>
+
+Next, you can describe your purpose and wait for the code to be automatically generated:
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/scriptlet-auto-edit-code.gif"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/scriptlet-auto-edit-code.gif"
+    ),
+  }}
+  width="720"
+/>
+
+## Preview
+
+You can call the [nodejs preview API](/docs/workflow-engine/nodejs-sdk-api#3-contextpreview-types) or [python preview API](/docs/workflow-engine/python-sdk-api#3-contextpreview-类型) in your code to observe various types of data.
+
+Using the `context.preview()` method in your code allows you to render various types of data below the block after the block runs.
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/scriptlet-preview.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/advanced-guide/advanced-block-usage/scriptlet-preview.png"
+    ),
+  }}
+  width="720"
+/>
+
+Please ensure that the `context.preview()` method is called within the scope of the default method.
