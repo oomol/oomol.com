@@ -8,11 +8,11 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 # Universal Block Settings
 
-This article will describe in detail the common settings and usage methods shared by all blocks.
+This article will describe in detail the common settings and usage methods shared by all Blocks.
 
 ## Node Menu
 
-When a block is used within a workflow, it is referenced as a node in the workflow, and the block will display a node menu.
+When a Block is used within a workflow, it is referenced as a Node in the workflow, and the Block will display a Node menu.
 
 <Image
   sources={{
@@ -26,9 +26,9 @@ When a block is used within a workflow, it is referenced as a node in the workfl
   width="720"
 />
 
-### Run
+### Execution
 
-There are two execution methods in the node menu. Users can choose whether to use the cache from the previous run. Both methods will start the workflow and run up to the current node.
+There are two execution methods in the Node menu. Users can choose whether to use the cache from the previous run. Both methods will start the workflow and run up to the current Node.
 
 <Image
   sources={{
@@ -42,43 +42,43 @@ There are two execution methods in the node menu. Users can choose whether to us
   width="720"
 />
 
-The difference is whether to use the results from the previous node execution as input for downstream nodes.
+The difference is whether to use the results from the previous Node execution as input for downstream Nodes.
 
 #### Cache Mechanism
 
-Considering that blocks may execute high resource-consuming or very time-consuming tasks, users may not want to repeat these tasks. Therefore, we designed a node caching mechanism.
+Considering that Blocks may execute high resource-consuming or very time-consuming tasks, users may not want to repeat these tasks. Therefore, we designed a Node caching mechanism.
 
-After any node executes successfully, except for interfaces of type [variable](/docs/advanced-guide/block-advanced-usage/universal-block-settings#variable), all node output interfaces will retain the output values from the previous execution. This way, when downstream nodes choose to execute, they will automatically use cached values without triggering upstream node execution.
+After any Node executes successfully, except for Handles of type [variable](/docs/advanced-guide/block-advanced-usage/universal-block-settings#variable), all Node output Handles will retain the output values from the previous execution. This way, when downstream Nodes choose to execute, they will automatically use cached values without triggering upstream Node execution.
 
-Users can also choose "Clear cache and execute", which will make the current run not use cache, trigger upstream node execution, and get the latest output values.
+Users can also choose "Clear cache and execute", which will make the current run not use cache, trigger upstream Node execution, and get the latest output values.
 
 :::info
-If the current node's upstream output interface has variable types, running will always trigger upstream node execution regardless, because we cannot cache variables in the code execution environment.
+If the current Node's upstream output Handle has variable types, running will always trigger upstream Node execution regardless, because we cannot cache variables in the code execution environment.
 :::
 
-### Copy
+### Duplicate
 
-Copy the current node within the workflow. You can also use shortcuts `ctrl + c`(Windows) / `cmd + c`(MacOS) to copy, `ctrl + v`(Windows) / `cmd + v`(MacOS) to paste.
+Duplicate the current Node within the workflow. You can also use shortcuts `ctrl + c`(Windows) / `cmd + c`(MacOS) to copy, `ctrl + v`(Windows) / `cmd + v`(MacOS) to paste.
 
 Using shortcuts allows copying and pasting across different workflows.
 
-Copy behavior differs for scriptlet blocks and shared blocks:
+Duplicate behavior differs for scriptlet Blocks and shared Blocks:
 
-- Scriptlet blocks
+- Scriptlet Blocks
 
-  Copying will create a new block in the workflow, including the block's configuration files and code, resulting in two independent scriptlet blocks that don't affect each other.
+  Duplicating will create a new Block in the workflow, including the Block's configuration files and code, resulting in two independent scriptlet Blocks that don't affect each other.
 
-- Shared blocks
+- Shared Blocks
 
-  Copying only creates a reference to the shared block in the workflow as a new node. Both nodes point to the same block with the same code, so [configuring](/docs/advanced-guide/block-advanced-usage/universal-block-settings#block-configuration) the shared block will affect both nodes simultaneously.
+  Duplicating only creates a reference to the shared Block in the workflow as a new Node. Both Nodes point to the same Block with the same code, so [configuring](/docs/advanced-guide/block-advanced-usage/universal-block-settings#block-configuration) the shared Block will affect both Nodes simultaneously.
 
-### Node Configuration
+### Node Settings
 
-Node configuration only takes effect within the current workflow. Each node's configuration is independent and doesn't affect other nodes.
+Node Settings only takes effect within the current workflow. Each Node's settings is independent and doesn't affect other Nodes.
 
-#### Basic Information
+#### Metadata
 
-For icons and titles, you can configure them in the menu or in the node header. Double-click the title to enter a new title.
+For icons and titles, you can configure them in the menu or in the Node header. Double-click the title to enter a new title.
 
 <Image
   sources={{
@@ -94,7 +94,7 @@ For icons and titles, you can configure them in the menu or in the node header. 
 
 Node ID should be unique within the current workflow.
 
-Node description can be entered in the configuration menu, or you can select the node and double-click "Add description" below to enter the node description.
+Node description can be entered in the configuration menu, or you can select the Node and double-click "Add description" below to enter the Node description.
 
 <Image
   sources={{
@@ -110,11 +110,11 @@ Node description can be entered in the configuration menu, or you can select the
 
 #### Timeout
 
-Used to limit the maximum runtime of the current node. If not set, there is no timeout by default.
+Used to limit the maximum runtime of the current Node. If not set, there is no timeout by default.
 
 ### Ignore
 
-Click "Ignore this node" to set the node to ignore status. When running the current flow, this node and subsequent nodes will be skipped.
+Click "Ignore this Node" to set the Node to ignore status. When running the current flow, this Node and subsequent Nodes will be skipped.
 
 <Image
   sources={{
@@ -142,7 +142,7 @@ The ignore function can be used to debug workflow execution under different exec
   width="720"
 />
 
-Users can toggle the ignore status of nodes to restrict the workflow to run under certain conditions.
+Users can toggle the ignore status of Nodes to restrict the workflow to run under certain conditions.
 
 ### Delete
 
@@ -158,27 +158,27 @@ Users can toggle the ignore status of nodes to restrict the workflow to run unde
   width="720"
 />
 
-The delete function can remove the current node. You can use the menu button or shortcut `ctrl + shift + delete`(Windows) / `cmd + shift + delete`(MacOS). This function has different behavioral logic for scriptlet blocks and shared blocks:
+The delete function can remove the current Node. You can use the menu button or shortcut `ctrl + shift + delete`(Windows) / `cmd + shift + delete`(MacOS). This function has different behavioral logic for scriptlet Blocks and shared Blocks:
 
-- Scriptlet blocks
+- Scriptlet Blocks
 
-Will delete the node and the scriptlet block, including block configuration and code files.
+Will delete the Node and the scriptlet Block, including Block configuration and code files.
 
-- Shared blocks
+- Shared Blocks
 
-Will only delete the node within the workflow; the shared block itself will not be deleted.
+Will only delete the Node within the workflow; the shared Block itself will not be deleted.
 
 ## Block Configuration
 
-Since scriptlet blocks can only be created and used within workflows, scriptlet blocks have both node and block attributes, causing the node configuration and block configuration of scriptlets to be merged together.
+Since scriptlet Blocks can only be created and used within workflows, scriptlet Blocks have both Node and Block attributes, causing the Node configuration and Block configuration of scriptlets to be merged together.
 
-Block configuration has different entry points for scriptlet blocks and shared blocks, but the effects are the same.
+Block configuration has different entry points for scriptlet Blocks and shared Blocks, but the effects are the same.
 
-Universal block configuration includes executor and interface configuration.
+Universal Block configuration includes executor and Handle configuration.
 
 ### Executor
 
-The executor is used to specify the entry file and invocation method when the current block runs.
+The executor is used to specify the entry file and invocation method when the current Block runs.
 
 Each code language environment has an executor for running code.
 
@@ -196,30 +196,30 @@ Each code language environment has an executor for running code.
 
 #### Name
 
-Currently, executors are implemented internally by the oomol team and support python and nodejs runtime environments, so there are two corresponding options.
+Currently, executors are implemented internally by the oomol team and support Python and Node.js runtime environments, so there are two corresponding options.
 
 #### Entry
 
-Select the code entry file. The default file is generated when users create scriptlet blocks. If there are no special requirements, no changes are needed. Users can also specify any file, but must ensure implementation according to the code template, otherwise it won't run properly.
+Select the code entry file. The default file is generated when users create scriptlet Blocks. If there are no special requirements, no changes are needed. Users can also specify any file, but must ensure implementation according to the code template, otherwise it won't run properly.
 
-Refer to [nodejs template](/docs/workflow-engine/nodejs-sdk-api#21-scriptlet-template) and [python template](/docs/workflow-engine/python-sdk-api#21-scriptlet-template)
+Refer to [Node.js template](/docs/workflow-engine/nodejs-sdk-api#21-scriptlet-template) and [Python template](/docs/workflow-engine/python-sdk-api#21-scriptlet-template)
 
-#### Method Name
+#### Function
 
-Specify the code entry method name. Default is the main method of the entry file (python code) or default export function (nodejs code). You can specify custom methods if needed, but must include method parameters from the template code.
+Specify the code entry method name. Default is the main method of the entry file (Python code) or default export function (Node.js code). You can specify custom methods if needed, but must include method parameters from the template code.
 
-#### Independent Process
+#### Spawn
 
-When oomol studio runs workflows, it performs automatic detection. If upstream and downstream blocks are implemented in the same code language (for shared blocks, they must also belong to the same package), the internal scheduler will place both block codes in the same process for invocation. The benefits are:
+When oomol studio runs workflows, it performs automatic detection. If upstream and downstream Blocks are implemented in the same code language (for shared Blocks, they must also belong to the same package), the internal scheduler will place both Block codes in the same process for invocation. The benefits are:
 
 1. Resource saving
-2. Allows upstream and downstream to directly pass code variables, eliminating serialization and deserialization steps for output interface values, simplifying code.
+2. Allows upstream and downstream to directly pass code variables, eliminating serialization and deserialization steps for output Handle values, simplifying code.
 
-Considering users may have special situations, we also allow users to choose whether to run blocks in independent processes.
+Considering users may have special situations, we also allow users to choose whether to run Blocks in independent processes.
 
-### Interface Configuration
+### Handle Configuration
 
-Interface configuration is divided into input interface and output interface configuration. Output interfaces have the same configuration items as input configuration except they cannot specify interface values.
+Handle configuration is divided into input Handles and output Handles configuration. Output Handles have the same configuration items as input configuration except they cannot specify Handle values.
 
 <Image
   sources={{
@@ -233,13 +233,13 @@ Interface configuration is divided into input interface and output interface con
   width="720"
 />
 
-#### Interface Name
+#### Handle
 
-The name of the input or output interface. Users can specify custom names. When the name is modified, the corresponding input or output parameter types in the code will also be automatically updated.
+The name of the input or output Handle. Users can specify custom names. When the name is modified, the corresponding input or output parameter types in the code will also be automatically updated.
 
-#### Null Value Passing
+#### Nullable
 
-Configure whether this interface allows passing `null` (nodejs code) / `None` (python code) as values. This option is mainly used to restrict input or output types.
+Configure whether this Handle allows passing `null` (Node.js code) / `None` (Python code) as values. This option is mainly used to restrict input or output types.
 
 This option affects automatically generated types in code and upstream-downstream connection behavior.
 
@@ -259,7 +259,7 @@ If upstream allows outputting `null` / `None` values but downstream doesn't allo
 
 #### Custom Type Name
 
-Used for users to customize interface connection validation rules. If users set this value, all other interfaces connecting to this interface must set the same value, otherwise the connection will fail.
+Used for users to customize Handle connection validation rules. If users set this value, all other Handle connecting to this Handle must set the same value, otherwise the connection will fail.
 
 <Image
   sources={{
@@ -275,19 +275,19 @@ Used for users to customize interface connection validation rules. If users set 
 
 #### Description
 
-Interface descriptions are not displayed and can only be seen in interface settings.
+Handle descriptions are not displayed and can only be seen in Handle settings.
 
 #### Preset Type
 
-Interfaces can be configured with preset types to restrict connectable interfaces and automatically generate configured types in code.
+Handle can be configured with preset types to restrict connectable Handles and automatically generate configured types in code.
 
 Selecting different types will change the preset type sub-configuration items and data input fields.
 
-- No Constraints
+##### Any
 
-The interface has no restrictions and can connect to any other interface.
+The Handle has no restrictions and can connect to any other Handle.
 
-After selecting no constraints type, the right data input field will have a data type button for selecting input value types, which doesn't affect interface type restrictions.
+After selecting `Any` type, the right data input field will have a data type button for selecting input value types, which doesn't affect Handle type restrictions.
 
 <Image
   sources={{
@@ -301,9 +301,9 @@ After selecting no constraints type, the right data input field will have a data
   width="720"
 />
 
-- String
+##### String
 
-Interface value is string type.
+Handle value is string type.
 
 Sub-configuration items can configure string format. If a format is selected, rules can be added to values, or you can specify custom regular expressions.
 
@@ -319,17 +319,17 @@ Sub-configuration items can configure string format. If a format is selected, ru
   width="720"
 />
 
-- Variable
+##### Variable
 
-Interface value is variable type.
+Handle value is variable type.
 
-For variable type interfaces, the connected interface must be the same language and variable type. If one side is a shared block, the other side needs to be a block from the same package.
+For variable type Handles, the connected Handle must be the same language and variable type. If one side is a shared Block, the other side needs to be a Block from the same package.
 
-After setting to variable type, the interface can pass complex format code objects, such as `DataFrame` or `pandas` instances in python.
+After setting to variable type, the Handle can pass complex format code objects, such as `DataFrame` or `pandas` instances in Python.
 
 In some scenarios where objects cannot be converted to strings or simple types, this method can be used for passing, and passing objects can eliminate serialization and deserialization steps, improving performance.
 
-However, due to connection restrictions, variable type interfaces may reduce block universality, so use with caution.
+However, due to connection restrictions, variable type Handles may reduce Block universality, so use with caution.
 
 <Image
   sources={{
@@ -343,13 +343,13 @@ However, due to connection restrictions, variable type interfaces may reduce blo
   width="720"
 />
 
-- Number
+##### Number
 
-Interface value is number type.
+Handle value is number type.
 
 Number type can be floating point or integer, any number type is allowed.
 
-Sub-configuration items can set number range restrictions. In the block's data control, buttons can adjust numerical values. The step size in sub-configuration items is used to configure the numerical increase or decrease per button click.
+Sub-configuration items can set number range restrictions. In the Block's data control, buttons can adjust numerical values. The step size in sub-configuration items is used to configure the numerical increase or decrease per button click.
 
 <Image
   sources={{
@@ -363,9 +363,9 @@ Sub-configuration items can set number range restrictions. In the block's data c
   width="720"
 />
 
-- Path
+##### Path
 
-Interface value is address string type, can connect to other string type interfaces.
+Handle value is address string type, can connect to other string type Handles.
 
 Sub-options include `directory` / `file` / `save as`. The `directory` / `file` options require the corresponding address to exist before selection in data controls, while `save as` option can create non-existent files or folders.
 
@@ -381,15 +381,15 @@ Sub-options include `directory` / `file` / `save as`. The `directory` / `file` o
   width="720"
 />
 
-- Secret
+##### Secret
 
-Interface value is encrypted string type, can connect to other string type interfaces.
+Handle value is encrypted string type, can connect to other string type Handles.
 
 Considering users may use private strings like API Keys in certain scenarios, we provide secret functionality to prevent user sensitive information leakage.
 
-Users can add secrets in the [secret management page](/docs/get-started/interface/home/#secrets-page) on the homepage or [secret management page within project interface](/docs/get-started/interface/project#secrets).
+Users can add secrets in the [secret management page](/docs/get-started/interface/home/#secrets-page) on the homepage or [secret management page within project interface](/docs/get-started/interface/project#keys).
 
-Then they can select and use them in secret type interfaces.
+Then they can select and use them in secret type Handles.
 
 <Image
   sources={{
@@ -403,9 +403,9 @@ Then they can select and use them in secret type interfaces.
   width="720"
 />
 
-- Boolean
+##### Boolean
 
-Interface value is boolean type, only has `True` / `False` two values that can be set, can be toggled with a switch.
+Handle value is boolean type, only has `True` / `False` two values that can be set, can be toggled with a switch.
 
 <Image
   sources={{
@@ -419,11 +419,11 @@ Interface value is boolean type, only has `True` / `False` two values that can b
   width="720"
 />
 
-- Integer
+##### Integer
 
-Interface value is integer number type.
+Handle value is integer number type.
 
-Sub-configuration items are the same as number type, but cannot connect to number type interfaces because number type might be floating point.
+Sub-configuration items are the same as number type, but cannot connect to number type Handles because number type might be floating point.
 
 <Image
   sources={{
@@ -437,9 +437,9 @@ Sub-configuration items are the same as number type, but cannot connect to numbe
   width="720"
 />
 
-- Color
+##### Color
 
-Interface value is color format string type, can connect to other string type interfaces.
+Handle value is color format string type, can connect to other string type Handles.
 
 After selecting color type, you can use color selection controls in the data input field. In sub-configuration items, we provide `HEX` / `HEX8` / `HSV` / `RGB` four color format options.
 
@@ -455,11 +455,11 @@ After selecting color type, you can use color selection controls in the data inp
   width="720"
 />
 
-- Multiline Text
+##### TextArea
 
-Interface value is string type, can connect to other string type interfaces.
+Handle value is string type, can connect to other string type Handles.
 
-This type mainly facilitates users entering large text blocks in data input fields, avoiding text folding that makes observation inconvenient.
+This type mainly facilitates users entering large text Blocks in data input fields, avoiding text folding that makes observation inconvenient.
 
 Drag the button in the bottom right corner of the text box to change text box height.
 
@@ -475,17 +475,17 @@ Drag the button in the bottom right corner of the text box to change text box he
   width="720"
 />
 
-- Dictionary
+##### Object
 
-Interface value is dictionary type.
+Handle value is object type.
 
-For `nodejs`, equivalent to plain object; for `python`, equivalent to dictionary object.
+For `Node.js`, equivalent to plain object; for `Python`, equivalent to dictionary object.
 
-You can set the type of each dictionary element for dictionary type interfaces. The plus and minus buttons on the right can add or delete sub-elements.
+You can set the type of each object element for object type Handles. The plus and minus buttons on the right can add or delete sub-elements.
 
-In sub-configuration items, there's an `Allow additional properties` configuration, indicating whether the current interface allows elements other than those specified in the interface type. For example:
+In sub-configuration items, there's an `additional properties` configuration, indicating whether the current Handle allows elements other than those specified in the Handle type. For example:
 
-With `Allow additional properties` enabled, if the interface type is:
+With `additional properties` enabled, if the Handle type is:
 
 ```
 {
@@ -506,7 +506,7 @@ Then passing the value:
 
 is allowed, and `field3` as an additional property has no type restrictions.
 
-If `Allow additional properties` is disabled, no additional properties are allowed.
+If `additional properties` is disabled, no additional properties are allowed.
 
 <Image
   sources={{
@@ -520,11 +520,11 @@ If `Allow additional properties` is disabled, no additional properties are allow
   width="720"
 />
 
-- Array
+##### Array
 
-Interface value is array type.
+Handle value is array type.
 
-For `nodejs`, equivalent to array object; for `python`, equivalent to list object.
+For `Node.js`, equivalent to array object; for `Python`, equivalent to list object.
 
 Selecting sub-type in the data input field or selecting `Item type` in sub-configuration items can constrain all array elements to the same type. If `No constraints` type is selected, each element in the array can be different types.
 
@@ -540,9 +540,9 @@ Selecting sub-type in the data input field or selecting `Item type` in sub-confi
   width="720"
 />
 
-- Select
+##### Select
 
-If single select, interface value is enumerated string type; if multi-select, it's an array type with string type items.
+If single select, Handle value is enumerated string type; if multi-select, it's an array type with string type items.
 
 When using select type, you need to configure preset options in sub-configuration items first, then selectable content will appear in the data input field.
 
@@ -574,13 +574,13 @@ When using select type, you need to configure preset options in sub-configuratio
   width="720"
 />
 
-- Date
+##### Date
 
-Interface value is date format string.
+Handle value is date format string.
 
 Date format is 'YYYY-MM-DD hh:mm:ss'
 
-Sub-configuration items can select `date` / `time` / `date-time`, corresponding to date only, time only, and date plus time respectively. Different options will cause changes in the selection interface.
+Sub-configuration items can select `date` / `time` / `date-time`, corresponding to date only, time only, and date plus time respectively. Different options will cause changes in the selection Handle.
 
 <Image
   sources={{
@@ -594,11 +594,11 @@ Sub-configuration items can select `date` / `time` / `date-time`, corresponding 
   width="720"
 />
 
-- Binary
+##### Binary
 
-Interface value is binary type.
+Handle value is binary type.
 
-Although this type of value can be serialized, it cannot be meaningfully displayed, so there's no corresponding representation and configuration in the interface. This type of interface can only be connected and cannot set values through data input fields.
+Although this type of value can be serialized, it cannot be meaningfully displayed, so there's no corresponding representation and configuration in the Handle. This type of Handle can only be connected and cannot set values through data input fields.
 
 Can be used for special scenarios, such as upstream reading a file and passing it to downstream, or upstream outputting memory data to downstream. Downstream decides whether to serialize the binary or store it as a file.
 
@@ -614,9 +614,9 @@ Can be used for special scenarios, such as upstream reading a file and passing i
   width="720"
 />
 
-- Null
+##### Null
 
-Interface value is fixed as null(for nodejs) / None(for python) value.
+Handle value is fixed as null(for Node.js) / None(for Python) value.
 
 After type selection, no other type values can be set, generally used for debugging and other special scenarios.
 
@@ -632,13 +632,13 @@ After type selection, no other type values can be set, generally used for debugg
   width="720"
 />
 
-- Combiner
+##### Applicators
 
-Interface value needs to meet set combination conditions.
+Handle value needs to meet set applicator conditions.
 
-Currently supported combiner is `Any one`, meaning interface value only needs to meet any one of the conditions.
+Currently supported applicator is `Any one`, meaning Handle value only needs to meet any one of the conditions.
 
-After selecting combiner, you need to configure conditions to be met in sub-configuration items. For example:
+After selecting applicator, you need to configure conditions to be met in sub-configuration items. For example:
 
 Configure condition 1 type as number, condition 2 type as string, then input values that are numbers or strings are both legal.
 
@@ -654,11 +654,11 @@ Configure condition 1 type as number, condition 2 type as string, then input val
   width="720"
 />
 
-- LLM
+##### LLM
 
-A special interface type providing two sub-options: `model` / `message`.
+A special Handle type providing two sub-options: `model` / `message`.
 
-This interface type provides users with a series of parameters convenient for using AI models in code.
+This Handle type provides users with a series of parameters convenient for using AI models in code.
 
 <Image
   sources={{
@@ -672,12 +672,12 @@ This interface type provides users with a series of parameters convenient for us
   width="720"
 />
 
-When selecting `model`, the input interface will be converted to an AI model selection interface. This interface cannot be connected, and input values are fixed to user-selected and configured model parameters.
+When selecting `model`, the input Handle will be converted to an AI model selection Handle. This Handle cannot be connected, and input values are fixed to user-selected and configured model parameters.
 
-After selecting `model`, you can see the output interface type changes. Users can now get model parameters configured in the interface through the input interface.
+After selecting `model`, you can see the output Handle type changes. Users can now get model parameters configured in the Handle through the input Handle.
 
 :::info
-Users still need to create model invocation clients themselves to integrate AI in code. This interface only provides configurable parameters to allow blocks to modify parameters through the interface during use and take effect, avoiding code modification.
+Users still need to create model invocation clients themselves to integrate AI in code. This Handle only provides configurable parameters to allow Blocks to modify parameters through the Handle during use and take effect, avoiding code modification.
 :::
 
 <Image
@@ -692,9 +692,9 @@ Users still need to create model invocation clients themselves to integrate AI i
   width="720"
 />
 
-When selecting `message`, the input interface will be converted to AI prompt input. This interface cannot be connected.
+When selecting `message`, the input Handle will be converted to AI prompt input. This Handle cannot be connected.
 
-After selecting `message`, you can see the output interface type changes. Users can now get prompt parameters configured in the interface through the input interface.
+After selecting `message`, you can see the output Handle type changes. Users can now get prompt parameters configured in the Handle through the input Handle.
 
 <Image
   sources={{
@@ -708,9 +708,9 @@ After selecting `message`, you can see the output interface type changes. Users 
   width="720"
 />
 
-Users can configure multiple prompts on input interfaces.
+Users can configure multiple prompts on input Handles.
 
-When users want to change LLM type input interfaces back to normal interfaces, they need to select other types in the interface configuration panel:
+When users want to change LLM type input Handles back to normal Handles, they need to select other types in the Handle configuration panel:
 
 <Image
   sources={{
@@ -726,7 +726,7 @@ When users want to change LLM type input interfaces back to normal interfaces, t
 
 #### JsonSchema
 
-When users are not satisfied with interface constraint conditions created on the page, they can edit the interface's [JsonSchema](https://json-schema.org/understanding-json-schema/reference) constraint file themselves. Click the toggle button in the upper right corner of the configuration panel:
+When users are not satisfied with Handle constraint conditions created on the page, they can edit the Handle's [JsonSchema](https://json-schema.org/understanding-json-schema/reference) constraint file themselves. Click the toggle button in the upper right corner of the configuration panel:
 
 <Image
   sources={{
@@ -742,11 +742,11 @@ When users are not satisfied with interface constraint conditions created on the
 
 You can switch to [JsonSchema](https://json-schema.org/understanding-json-schema/reference) editing mode.
 
-JsonSchema modifications will be reflected in the interface configuration panel as much as possible, and configuration panel changes will also be reflected in the JsonSchema editor.
+JsonSchema modifications will be reflected in the Handle configuration panel as much as possible, and configuration panel changes will also be reflected in the JsonSchema editor.
 
 ### Quick Create Node
 
-Users can drag directly from input or output interfaces to any blank area to quickly create new nodes.
+Users can drag directly from input or output Handles to any blank area to quickly create new Nodes.
 
 <Image
   sources={{
@@ -760,9 +760,9 @@ Users can drag directly from input or output interfaces to any blank area to qui
   width="720"
 />
 
-### Interface Order
+### Handle Order
 
-When hovering over an interface, you can see buttons on the left side of the interface. Drag to adjust interface order.
+When hovering over an Handle, you can see buttons on the left side of the Handle. Drag to adjust Handle order.
 
 <Image
   sources={{

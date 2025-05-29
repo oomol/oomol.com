@@ -8,9 +8,9 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 #  Subflow Block Advanced Usage
 
-After creating a subflow block, we can click on the subflow block in the left shared block panel to enter the subflow block's editing page.
+After creating a subflow Block, we can click on the subflow Block in the left shared Block panel to enter the subflow Block's editing page.
 
-We can see that there are block mode and workflow mode at the bottom of the editing page.
+We can see that there are Block mode and workflow mode at the bottom of the editing page.
 
 <Image
   sources={{
@@ -24,11 +24,11 @@ We can see that there are block mode and workflow mode at the bottom of the edit
   width="720"
 />
 
-The configuration in block mode is basically consistent with the configuration in [Universal Block Settings](/docs/advanced-guide/block-advanced-usage/universal-block-settings). Here we mainly introduce the usage in workflow mode.
+The configuration in Block mode is basically consistent with the configuration in [Universal Block Settings](/docs/advanced-guide/block-advanced-usage/universal-block-settings). Here we mainly introduce the usage in workflow mode.
 
 ## Input and Output Nodes
 
-After entering workflow mode, you can see two special nodes added to the workflow interface:
+After entering workflow mode, you can see two special Nodes added to the subflow interface:
 
 <Image
   sources={{
@@ -42,9 +42,9 @@ After entering workflow mode, you can see two special nodes added to the workflo
   width="720"
 />
 
-These two nodes actually correspond to the input and output interfaces in block mode. If your subflow is not connected to the input and output interfaces, the subflow cannot receive input from the outside and produce output.
+These two Nodes actually correspond to the input and output Handles in Block mode. If your subflow is not connected to the input and output Handles, the subflow cannot receive input from the outside and produce output.
 
-The usage of input and output nodes is basically consistent with the input and output interfaces in block mode, except that there is an additional quick interface creation operation:
+The usage of input and output Nodes is basically consistent with the input and output Handles in Block mode, except that there is an additional quick Handle creation operation:
 
 <Image
   sources={{
@@ -58,15 +58,15 @@ The usage of input and output nodes is basically consistent with the input and o
   width="720"
 />
 
-The quickly created interface will copy the name and type of the connected interface.
+The quickly created Handle will copy the name and type of the connected Handle.
 
-The interfaces created on the input and output nodes will also be reflected in the input and output interfaces in block mode, and vice versa.
+The Handles created on the input and output Nodes will also be reflected in the input and output Handles in Block mode, and vice versa.
 
-Input and output nodes cannot be deleted. If users don't need input or output, they can choose not to connect wires.
+Input and output Nodes cannot be deleted. If users don't need input or output, they can choose not to connect wires.
 
 ## Slots
 
-Slots are shared blocks dedicated to subflow blocks, which only appear in the right system block panel when in the workflow editing mode of subflow blocks.
+Slots are shared Blocks dedicated to subflow Blocks, which only appear in the right system Block panel when in the workflow editing mode of subflow Blocks.
 
 <Image
   sources={{
@@ -82,19 +82,19 @@ Slots are shared blocks dedicated to subflow blocks, which only appear in the ri
 
 ### The Significance of Slots
 
-Considering that subflow block developers need the functionality of certain blocks but don't care about how the blocks are implemented (or need users to implement them themselves), in this case, users of the subflow can implement their own functional blocks and integrate them into the subflow, allowing the entire workflow to run normally. This gives users the freedom to implement part of the functionality.
+Considering that subflow Block developers need the functionality of certain Blocks but don't care about how the Blocks are implemented (or need users to implement them themselves), in this case, users of the subflow can implement their own functional Blocks and integrate them into the subflow, allowing the entire workflow to run normally. This gives users the freedom to implement part of the functionality.
 
-> For example: A subflow block developer needs to analyze data through AI, so the developer defines a slot where the input is data content and the output is a string of analysis results. Then users can implement different AI analysis blocks based on their own AI keys, using their own tokens.
+> For example: A subflow Block developer needs to analyze data through AI, so the developer defines a slot where the input is data content and the output is a string of analysis results. Then users can implement different AI analysis Blocks based on their own AI keys, using their own tokens.
 
-Or subflow blocks extract parts that may frequently change and modify as slots, which can be arbitrarily replaced at the point of use, reducing modifications to key code blocks.
+Or subflow Blocks extract parts that may frequently change and modify as slots, which can be arbitrarily replaced at the point of use, reducing modifications to key code Blocks.
 
-> For example: A developer relies on a third-party library that updates very frequently. They can define a slot where the input is the input passed to the third-party library and the output is the output of the third-party library, then publish the subflow. This way, the third-party library can be integrated into the subflow externally, and when the third-party library updates, only the external block needs to be updated, while the subflow doesn't need to be updated.
+> For example: A developer relies on a third-party library that updates very frequently. They can define a slot where the input is the input passed to the third-party library and the output is the output of the third-party library, then publish the subflow. This way, the third-party library can be integrated into the subflow externally, and when the third-party library updates, only the external Block needs to be updated, while the subflow doesn't need to be updated.
 
-The slot itself is a block, but only input and output interfaces can be configured.
+The slot itself is a Block, but only input and output Handles can be configured.
 
 ### Usage
 
-Slots are used similarly to regular shared blocks and can be dragged into the workflow for wiring:
+Slots are used similarly to regular shared Blocks and can be dragged into the workflow for wiring:
 
 <Image
   sources={{
@@ -108,9 +108,9 @@ Slots are used similarly to regular shared blocks and can be dragged into the wo
   width="720"
 />
 
-The difference is that you can directly modify the interface names and parameters on the slot block.
+The difference is that you can directly modify the Handle names and parameters on the slot Block.
 
-After adding and connecting slots, returning to block mode shows that the subflow block has an additional slot panel:
+After adding and connecting slots, returning to Block mode shows that the subflow Block has an additional slot panel:
 
 <Image
   sources={{
@@ -126,7 +126,7 @@ After adding and connecting slots, returning to block mode shows that the subflo
 
 This slot panel here only has display functionality.
 
-When the subflow block is used in a workflow, you can click the slot's settings button to enter the slot's editing interface:
+When the subflow Block is used in a workflow, you can click the slot's settings button to enter the slot's editing interface:
 
 <Image
   sources={{
@@ -154,9 +154,9 @@ The slot editing interface is basically consistent with the subflow editing inte
   width="720"
 />
 
-Slots also have input and output nodes, and you can insert one or more nodes within the slot. This is consistent with the subflow editing method.
+Slots also have input and output Nodes, and you can insert one or more Nodes within the slot. This is consistent with the subflow editing method.
 
-After editing is complete, return to the workflow interface to run the subflow block:
+After editing is complete, return to the workflow interface to run the subflow Block:
 
 <Image
   sources={{
@@ -170,4 +170,4 @@ After editing is complete, return to the workflow interface to run the subflow b
   width="720"
 />
 
-The execution of subflow blocks is the same as regular blocks, with the only difference being that slot content must be edited, otherwise the running conditions cannot be met.
+The execution of subflow Blocks is the same as regular Blocks, with the only difference being that slot content must be edited, otherwise the running conditions cannot be met.
