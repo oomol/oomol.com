@@ -1,0 +1,254 @@
+---
+sidebar_position: 3
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# Shared Block Advanced Usage
+
+## Value Block
+
+The Value Block is a special built-in shared Block in OOMOL Studio, designed to provide users with a reusable constant input box.
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/value-block.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/value-block.png"
+    ),
+  }}
+  width="720"
+/>
+
+Here, the Value Block's function is equivalent to filling the input of two Python Blocks with the same value.
+
+## Custom Rendering
+
+:::info
+Using custom rendering requires some [React](https://react.dev/) frontend technology foundation.
+:::
+
+Shared Block Nodes have a `Configure Shared Block` menu item. Click it to enter the shared Block configuration.
+
+You can also directly click the settings in the left shared Block panel to enter the configuration.
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-enter-config.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-enter-config.png"
+    ),
+  }}
+  width="720"
+/>
+
+The shared Block configuration is consistent with [Universal Block Settings](/docs/advanced-guide/block-advanced-usage/universal-block-settings) except for the `Custom UI`.
+
+Since the [Node.js preview](/docs/workflow-engine/nodejs-sdk-api#3-contextpreview-types) / [Python preview](/docs/workflow-engine/nodejs-sdk-api#3-contextpreview-types) functionality provided by OOMOL Studio has limited scenarios, we provide custom UI to let users decide what content the Block can render or preview.
+
+After clicking the `Create` button under `Custom UI` in the Block configuration panel, wait for a moment, and OOMOL Studio will automatically initialize a set of UI template code.
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-custom-UI.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-custom-UI.png"
+    ),
+  }}
+  width="720"
+/>
+
+You can find the template code folder in the file explorer on the left, and the code entry file will appear under the `Custom UI` configuration item.
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-custom-UI-files.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-custom-UI-files.png"
+    ),
+  }}
+  width="720"
+/>
+
+### Code Development
+
+In the automatically generated code, you can find a `src` folder, which contains the custom UI code.
+
+The custom UI code editing entry is in `oo-render/src/render.tsx`. We can see that the custom UI obtains external properties by listening to `message` events:
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-custom-UI-render-tsx.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-custom-UI-render-tsx.png"
+    ),
+  }}
+  width="720"
+/>
+
+So we can call the `context.send_message()` method in the **Block code** to send data to the custom UI:
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-custom-UI-send-message.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-custom-UI-send-message.png"
+    ),
+  }}
+  width="720"
+/>
+
+Here we sent a string with the input content.
+
+Then we can edit the code in `oo-render/src/App.tsx`. Here we replace the code that directly prints data with a button that will show an alert with the data when clicked:
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-custom-UI-code.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-custom-UI-code.png"
+    ),
+  }}
+  width="720"
+/>
+
+Then enter the custom UI directory in the terminal:
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-custom-UI-enter-oo-render.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-custom-UI-enter-oo-render.png"
+    ),
+  }}
+  width="720"
+/>
+
+Run
+
+```shell
+pnpm build
+```
+
+to build the code.
+
+Then re-run the Block, and you can see the custom UI style:
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-custom-UI-run-in-block.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-custom-UI-run-in-block.png"
+    ),
+  }}
+  width="720"
+/>
+
+Clicking the button will show the content sent by the Block code:
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-custom-UI-alert.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-custom-UI-alert.png"
+    ),
+  }}
+  width="720"
+/>
+
+### Local Debugging
+
+During the development of custom UI, we can debug the UI separately without re-running the Block each time, which can improve our development efficiency.
+
+In the automatically generated code, you can find a `dev` folder, which contains content for local debugging of the custom UI.
+
+First, we enter the custom UI directory:
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-custom-UI-enter-oo-render.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-custom-UI-enter-oo-render.png"
+    ),
+  }}
+  width="720"
+/>
+
+Then execute in the terminal:
+
+```shell
+pnpm dev
+```
+
+This will open a debug window in your local browser where you can see the custom UI preview:
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-custom-UI-local-dev.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-custom-UI-local-dev.png"
+    ),
+  }}
+  width="360"
+/>
+
+When we modify the custom UI code and save it, we can see the changes in real-time in this debug window without running the Block.
+
+:::info
+The styles running in the debug window may not be consistent with those running in OOMOL Studio, but this won't affect functionality. This is because VSCode registers stylesheets globally, while the browser environment doesn't have these stylesheets.
+Therefore, the custom UI styles should be based on what's displayed in OOMOL Studio.
+:::
+
+You can simulate the content sent by the Block through the `context.send_message()` method at runtime in the `dev/dev.main.tsx` file.
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-custom-UI-fake-data.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-custom-UI-fake-data.png"
+    ),
+  }}
+  width="720"
+/>
+
+This way you can perform functional testing in the debug window:
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-custom-UI-dev-run.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/shared-block-custom-UI-dev-run.png"
+    ),
+  }}
+  width="720"
+/>
+

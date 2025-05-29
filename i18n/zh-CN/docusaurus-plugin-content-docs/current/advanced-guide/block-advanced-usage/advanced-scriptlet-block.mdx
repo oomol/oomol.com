@@ -1,0 +1,106 @@
+---
+sidebar_position: 2
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# 小脚本区块进阶用法
+
+## 快速创建接口
+
+你可以在连线的时候将线头移动至接口的上方或者下方，这样可以快速创建一个新的接口，新创建的接口与连接的接口名称和类型都保持一致，不用再次设定。
+
+这个方法对于输入和输出接口都有效，不过仅有小脚本区块可以这么做。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/scriptlet-quickly-create-handle.gif"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/scriptlet-quickly-create-handle.gif"
+    ),
+  }}
+  width="720"
+/>
+
+## 接口类型自动更新
+
+在小脚本代码中，你可以看见
+
+```
+#region generated meta
+...
+#endregion
+```
+
+这样的注释，这些注释用于自动生成输入输出接口的名称和类型代码，如果删除可能会导致代码中的类型与区块设置不匹配。
+
+每次你在节点上修改了接口的名称和类型都会导致这个注释中间的代码被更新，所以不要在这个注释内写你自己的代码。
+
+如果要导入依赖请确保在
+
+```
+#endregion
+```
+
+下方写导入语句。
+
+:::info
+你也可以选择删除这些注释然后手动编写类型代码。删除注释后接口类型不会自动更新，你需要确保代码和节点上的接口配置保持一致。
+:::
+
+## AI 辅助编辑
+
+在编辑代码的时候，你可以尝试让 AI 来帮你实现功能，在小脚本代码框的菜单栏上，点击`添加聊天到上下文`按钮，会打开右侧 AI 聊天框。
+
+我们在这里新增了一个输入接口。
+
+然后在 AI 聊天框下方选择 `edit` 模式，让 AI 有权限替你修改文件。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/advanced-scriptlet-code-chat.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/advanced-scriptlet-code-chat.png"
+    ),
+  }}
+  width="720"
+/>
+
+接下来就可以描述你的目的，然后等待代码自动生成：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/scriptlet-auto-edit-code.gif"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/scriptlet-auto-edit-code.gif"
+    ),
+  }}
+  width="720"
+/>
+
+## 预览
+
+你可以在代码中调用 [nodejs 预览 API](/zh-CN/docs/workflow-engine/nodejs-sdk-api#3-contextpreview-types) 或 [python 预览 API](/zh-CN/docs/workflow-engine/python-sdk-api#3-contextpreview-%E7%B1%BB%E5%9E%8B) 来观察多种类型的数据。
+
+在代码中使用 `context.preview()` 方法可以在区块运行后将各种类型的数据渲染在区块下方。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/scriptlet-preview.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/scriptlet-preview.png"
+    ),
+  }}
+  width="720"
+/>
+
+请确保 `context.preview()` 方法在默认方法的范围内进行调用。

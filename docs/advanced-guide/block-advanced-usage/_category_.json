@@ -1,0 +1,10 @@
+{
+  "label": "Block Advanced Usage",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Advanced Block usage methods and techniques."
+  },
+  "collapsed": false,
+  "className": "sidebar-submenu-item"
+}
