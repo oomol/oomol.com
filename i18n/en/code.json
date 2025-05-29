@@ -257,6 +257,59 @@
   "HOME.Community.slogan-4": {
     "message": "Every Voice Shapes the Future"
   },
+
+  "FEATURES.title": {
+    "message": "All the features that you need"
+  },
+  "FEATURES.description": {
+    "message": "Easy drag-and-drop workflows, professional code editor, and elegant data visualization."
+  },
+  "FEATURES.sceneOne.title": {
+    "message": "Intuitive interaction"
+  },
+  "FEATURES.sceneTwo.title": {
+    "message": "Developer-friendly"
+  },
+  "FEATURES.sceneOne.content-1": {
+    "message": "Build workflows with simple drag-and-drop Blocks to fit your needs."
+  },
+  "FEATURES.sceneOne.content-2": {
+    "message": "Automatically offer UI components based on parameter types for easier use."
+  },
+  "FEATURES.sceneOne.content-3": {
+    "message": "An intuitive UI helps users clearly understand the system’s status."
+  },
+  "FEATURES.sceneOne.content-4": {
+    "message": "Readable logs with clear sequence and explicit status."
+  },
+  "FEATURES.sceneTwo.content-5": {
+    "message": "Built-in Python and Node.js with support for open-source library installation."
+  },
+  "FEATURES.sceneTwo.content-6": {
+    "message": "Based on Visual Studio Code with code completion, highlighting, and AI tips."
+  },
+  "FEATURES.sceneTwo.content-7": {
+    "message": "Each node is a function—customize them easily if you know programming."
+  },
+  "FEATURES.block-1.title": {
+    "message": "Containerized development environment for seamless cross-system workflow sharing."
+  },
+  "FEATURES.block-2.title": {
+    "message": "Protect local environment and data security through secure isolation."
+  },
+  "FEATURES.block-3.title": {
+    "message": "Unified Linux environment, easy image deployment to cloud."
+  },
+  "FEATURES.block-4.title": {
+    "message": "Share workflow templates for easy scenario application and secondary development."
+  },
+  "FEATURES.block-5.title": {
+    "message": "Share Block library with connectable, ready-to-use functions."
+  },
+  "FEATURES.block-6.title": {
+    "message": "Code synced to GitHub for collaborative development and upkeep."
+  },
+
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"

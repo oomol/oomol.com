@@ -166,6 +166,11 @@ const config = {
         },
         items: [
           {
+            to: "/features",
+            label: "Features",
+            position: "left",
+          },
+          {
             type: "doc",
             docId: "get-started/quickstarts",
             position: "left",

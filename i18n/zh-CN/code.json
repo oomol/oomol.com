@@ -266,6 +266,59 @@
   "HOME.Community.slogan-4": {
     "message": "每个提议都会被认真倾听"
   },
+
+  "FEATURES.title": {
+    "message": "涵盖你所需的全部功能"
+  },
+  "FEATURES.description": {
+    "message": "方便的拖放式工作流、专业的代码编辑器、精美的数据可视化展示"
+  },
+  "FEATURES.sceneOne.title": {
+    "message": "直观交互"
+  },
+  "FEATURES.sceneTwo.title": {
+    "message": "编程友好"
+  },
+  "FEATURES.sceneOne.content-1": {
+    "message": "简单的拖放 Block 即可构建工作流，定制自己需要的业务"
+  },
+  "FEATURES.sceneOne.content-2": {
+    "message": "根据输入的参数类型提供各种 UI 组件，帮助用户更简单地使用"
+  },
+  "FEATURES.sceneOne.content-3": {
+    "message": "直观 UI 方便用户清晰了解运行状况"
+  },
+  "FEATURES.sceneOne.content-4": {
+    "message": "日志易读，时序结构清晰，状态明确"
+  },
+  "FEATURES.sceneTwo.content-5": {
+    "message": "内置 Python 和 Node.js，支持开源库安装"
+  },
+  "FEATURES.sceneTwo.content-6": {
+    "message": "基于 Visual Studio Code，提供代码补全、高亮和 AI 提示"
+  },
+  "FEATURES.sceneTwo.content-7": {
+    "message": "节点就是函数，只要会编程就可以自定义节点"
+  },
+  "FEATURES.block-1.title": {
+    "message": "使用容器统一开发环境，支持跨系统共享工作流"
+  },
+  "FEATURES.block-2.title": {
+    "message": "通过安全隔离保护本地环境和数据安全"
+  },
+  "FEATURES.block-3.title": {
+    "message": "本地云端皆为 Linux，镜像轻松部署上云"
+  },
+  "FEATURES.block-4.title": {
+    "message": "分享工作流模板，便于场景应用与二次开发"
+  },
+  "FEATURES.block-5.title": {
+    "message": "分享 Block 库，功能可连接编排即用"
+  },
+  "FEATURES.block-6.title": {
+    "message": "GitHub 同步源码，支持协作开发与维护"
+  },
+
   "theme.ErrorPageContent.title": {
     "message": "页面已崩溃。",
     "description": "The title of the fallback page when the page crashed"
