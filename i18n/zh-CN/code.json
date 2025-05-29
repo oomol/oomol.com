@@ -318,6 +318,72 @@
   "FEATURES.block-6.title": {
     "message": "GitHub 同步源码，支持协作开发与维护"
   },
+  "PRICING.title": {
+    "message": "简单、可预测的定价"
+  },
+  "PRICING.subtitle": {
+    "message": "免费使用 OOMOL。升级以获得每月免费积分、邀请他人协作以及使用 API 密钥。"
+  },
+  "PRICING.free.title": {
+    "message": "免费计划"
+  },
+  "PRICING.free.subtitle": {
+    "message": "注册即可获取，每月提供免费积分。"
+  },
+  "PRICING.free.text": {
+    "message": "免费"
+  },
+  "PRICING.list.text1": {
+    "message": "注册即可获取"
+  },
+  "PRICING.list.text2": {
+    "message": "每月免费 100 万积分"
+  },
+  "PRICING.standard.title": {
+    "message": "标准计划"
+  },
+  "PRICING.standard.subtitle": {
+    "message": "适合个人用户，提供积分和支持服务。"
+  },
+  "PRICING.standard.price.before": {
+    "message": "$5.00"
+  },
+  "PRICING.standard.price.after": {
+    "message": "/月"
+  },
+  "PRICING.standard.list.text1": {
+    "message": "每月免费 500 万积分"
+  },
+  "PRICING.standard.list.text2": {
+    "message": "邀请其他用户协作"
+  },
+  "PRICING.standard.list.text3": {
+    "message": "允许使用 API 密钥"
+  },
+  "PRICING.question.title": {
+    "message": "常见问题"
+  },
+  "PRICING.question.subtitle": {
+    "message": "如果您有其他疑问，请"
+  },
+  "PRICING.question.link": {
+    "message": "联系我们"
+  },
+  "PRICING.question.text1": {
+    "message": "OOMOL 积分会过期吗？"
+  },
+  "PRICING.question.text1.answer": {
+    "message": "积分包不会过期，仅在用完后不可用"
+  },
+  "PRICING.question.text2": {
+    "message": "OOMOL 如何优先使用积分？"
+  },
+  "PRICING.question.text2.answer": {
+    "message": "优先使用免费积分"
+  },
+  "PRICING.buttonText": {
+    "message": "开始体验"
+  },
 
   "theme.ErrorPageContent.title": {
     "message": "页面已崩溃。",
