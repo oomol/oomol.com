@@ -1,0 +1,123 @@
+---
+sidebar_position: 3
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# 环境和依赖
+
+当你打开了一个项目后，OOMOL Studio 会后台启动一个 Linux 容器，你的项目将会运行在这个容器内，与你的计算机实际环境隔离。
+
+每一个项目都会有自己独立的环境，这样就保证了项目之间的代码和依赖不会相互影响，也不会影响你计算机的运行环境。
+
+当你删除掉项目后，容器会被移除，你的计算机和其他项目仍然不受影响。
+
+## 容器环境
+
+新建项目后创建的容器是一个最小化的容器，为了保证启动运行速度我们只在容器内安装了必要的软件。因此假如你需要用到某些系统的命令或者一些软件（例如 netcat），你就需要自行在容器中安装。
+
+容器在第一次加载时会运行 `package.oo.yaml` 中的 `script.bootstrap` 属性下的脚本：
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/env-and-lib/package-oo-yaml.png"),
+    dark: useBaseUrl("/img/docs/get-started/env-and-lib/package-oo-yaml.png"),
+  }}
+/>
+
+所以你可以在这个脚本内添加你想要安装的系统依赖，这个脚本使用的是 `shell` 脚本进行编写。
+
+:::info
+默认的脚本用于安装 Node.js 和 Python 代码的依赖，请不要删除，否则会导致代码无法运行。
+:::
+
+在编写完启动脚本后，你可以在底部面板的`项目初始化`栏中找到重启初始化脚本的按钮，点击后将会重新运行 `package.oo.yaml` 中的 `script.bootstrap` 下的脚本：
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/env-and-lib/bootstrap-retry.png"),
+    dark: useBaseUrl("/img/docs/get-started/env-and-lib/bootstrap-retry.png"),
+  }}
+/>
+
+你编写的初始化脚本也会随着包的发布被其他人下载引用，当其他人在使用你的项目时也会启动同样的初始化脚本，完成环境准备。
+
+当初始化脚本执行完成后，代表你的项目环境已经准备完成，可以开始编写你的工作流了。
+
+## 代码依赖
+
+当你在编写代码时会经常需要依赖第三方库，这种时候你可以有几种方式引入代码依赖：
+
+### 代码依赖管理
+
+在底部面板的`代码依赖管理`栏中，搜索对应语言的依赖并安装
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/env-and-lib/search-lib.png"),
+    dark: useBaseUrl("/img/docs/get-started/env-and-lib/search-lib.png"),
+  }}
+/>
+
+使用这种方式安装的依赖会将依赖版本信息自动记录在文件中。
+
+Python 依赖会记录在 `poetry.toml` 下：
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/env-and-lib/python-lib-lock.png"),
+    dark: useBaseUrl("/img/docs/get-started/env-and-lib/python-lib-lock.png"),
+  }}
+/>
+
+Node.js 依赖会记录在 `package.json` 下：
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/env-and-lib/nodejs-lib-lock.png"),
+    dark: useBaseUrl("/img/docs/get-started/env-and-lib/nodejs-lib-lock.png"),
+  }}
+/>
+
+由于该方式只能在依赖搜索中搜索到最新版本，如果你想要安装历史版本请在终端中通过命令安装。
+
+### 在终端中输入安装语句
+
+在终端中直接安装依赖可以自定指定安装的版本。
+
+Python 语言依赖可以使用 [Poetry](https://python-poetry.org/docs/) 命令进行安装：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/get-started/env-and-lib/python-install-lib.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/get-started/env-and-lib/python-install-lib.png"
+    ),
+  }}
+/>
+
+Node.js 语言依赖可以使用 [Npm](https://docs.npmjs.com/) 命令进行安装：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/get-started/env-and-lib/nodejs-install-lib.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/get-started/env-and-lib/nodejs-install-lib.png"
+    ),
+  }}
+/>
+
+:::info
+OOMOL Studio 并没有限制用户一定要使用文档中描述的依赖管理软件，文档描述的是 OOMOL Studio 的默认实现。
+
+用户可以自行选择依赖管理软件，但注意一定要实现版本管理机制，否则无法保证用户在下载包时安装的依赖与开发者安装的版本相同，可能会导致工作流无法正常运行。
+:::
+
+:::info
+由于每个项目是一个容器，你在项目中安装的代码依赖可以在项目内所有地方引用。
+:::
