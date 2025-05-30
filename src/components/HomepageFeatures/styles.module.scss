@@ -7,22 +7,8 @@
   text-align: center;
   gap: 14px;
   font-size: 48px;
+  line-height: 48px;
   font-weight: 800;
-
-  @include phone {
-    font-size: 36px;
-    padding: 50px 24px;
-  }
-
-  @include phone-middle {
-    font-size: 36px;
-    padding: 50px 24px;
-  }
-
-  @include phone-large {
-    font-size: 36px;
-    padding: 50px 24px;
-  }
 }
 
 .feature {
@@ -114,6 +100,10 @@
   & > *:nth-child(5) {
     grid-column: span 2;
     max-height: 406px;
+
+    @media (max-width: 1024px) {
+      grid-column: span 3;
+    }
   }
 
   @media (max-width: 1024px) {
