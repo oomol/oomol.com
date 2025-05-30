@@ -1,0 +1,58 @@
+---
+sidebar_position: 2
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# 流
+
+流是具体实现的一个业务目的。
+
+在创建项目后，就可以开始实现你的业务目的了。
+
+## 创建
+
+在你创建好项目后，OOMOL Studio 会为你创建一个默认的流，你也可以通过左侧流面板的创建按钮创建一个新的流。
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/concepts/create-flow.png"),
+    dark: useBaseUrl("/img/docs/concepts/create-flow.png"),
+  }}
+  width="720"
+/>
+
+在选择流之后，可以看到中央的面板进入了流编辑窗口。
+
+## 编辑
+
+流本身是由一个或多个[节点](/zh-CN/docs/concepts/node)组合而成，你可以从右侧区块面版找到各式各样的[区块](/zh-CN/docs/concepts/block)，将他们加入到流后，就会变成流的节点。
+
+流必须要有至少一个节点才有意义，我们这里为流新增两个节点，一个是创建邮件客户端，一个是发送邮件，然后我们将节点连接起来：
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/concepts/new-flow.png"),
+    dark: useBaseUrl("/img/docs/concepts/new-flow.png"),
+  }}
+  width="720"
+/>
+
+这样流就实现了一个发送邮件的业务，业务分为了两个步骤，先创建邮件客户端，然后利用客户端发送邮件。
+
+## 运行
+
+在 OOMOL Studio 中只有流是可以运行的概念，我们可以运行整个流，也可以运行流中的节点：
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/concepts/run-flow.png"),
+    dark: useBaseUrl("/img/docs/concepts/run-flow.png"),
+  }}
+  width="720"
+/>
+
+流的运行顺序会根据节点的连线为线索，OOMOL Studio 在运行前会进行一次搜索，寻找**输入接口没有连接**的节点作为运行的开始节点。如果有多个开始节点，那么这些开始节点都会同时开始运行。
+
+然后按照输入 -> 输入接口的连线顺序运行节点直到结束。

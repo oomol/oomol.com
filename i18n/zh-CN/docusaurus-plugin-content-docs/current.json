@@ -78,5 +78,9 @@
   "sidebar.tutorialSidebar.category.Block Advanced Usage": {
     "message": "区块进阶用法",
     "description": "The label for category Block Advanced Usage in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Concepts": {
+    "message": "概念",
+    "description": "The label for category Concepts in sidebar tutorialSidebar"
   }
 }

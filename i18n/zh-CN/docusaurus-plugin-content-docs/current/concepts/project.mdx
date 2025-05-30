@@ -1,0 +1,69 @@
+---
+sidebar_position: 1
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# 项目
+
+项目是一切的开始。
+
+当你想要通过代码实现某个目标（比如发一封邮件给你的朋友）的时候，你就可以创建一个项目，然后通过你的代码能力或者社区其他人的工作成果来达成目的。
+
+你可以从零开始创建项目：
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/concepts/create-project.png"),
+    dark: useBaseUrl("/img/docs/concepts/create-project.png"),
+  }}
+  width="720"
+/>
+
+也许社区已经实现了你想要做的事，你可以直接从社区项目开始：
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/concepts/clone-project.png"),
+    dark: useBaseUrl("/img/docs/concepts/clone-project.png"),
+  }}
+  width="720"
+/>
+
+区别在于从社区打开的项目已经包含了工作流，可以直接运行或者稍作修改就可以达到你想要的目的。
+
+## 项目结构
+
+不管你以哪种方式创建项目，你都会进入到项目编辑页面，然后你可以看到左下角的文件列表：
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/concepts/new-project.png"),
+    dark: useBaseUrl("/img/docs/concepts/new-project.png"),
+  }}
+  width="720"
+/>
+
+这里所有的文件就是项目的具体内容，项目的根目录下一定会有一个 `package.oo.yaml` 文件，用于描述当前项目的版本、初始化脚本等信息。
+
+OOMOL Studio 也是基于 `package.oo.yaml` 文件来判断当前文件夹是否属于一个 OOMOL 项目。
+
+项目内的文件夹有几个 OOMOL Studio 专用文件夹：
+
+### flows
+
+用于存放[流](/zh-CN/docs/concepts/flow)的描述文件，一个项目可以有多个流存在，每个流会以流名称作为名字单独存放于一个文件夹内。
+
+### tasks
+
+用于存放[任务区块](/zh-CN/docs/concepts/block#任务区块)的相关文件，一个项目可以包含多个任务区块，每个任务区块会以区块名称作为名字单独存放于一个文件夹内。
+
+### subflows
+
+用于存放[子流区块](/zh-CN/docs/concepts/block#子流区块)的相关文件，一个项目可以包含多个子流区块，每个子流区块会以区块名称作为名字单独存放于一个文件夹内。
+
+:::info
+你在 OOMOL Studio 面板内的一切操作基本都可以自动保存到这些文件中，而不用你手动修改。
+因此我们不建议你直接删除项目内的文件，除非你清楚自己在做什么，否则直接对文件进行操作可能会造成应用的崩溃。
+:::

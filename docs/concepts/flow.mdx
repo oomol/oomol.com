@@ -1,0 +1,58 @@
+---
+sidebar_position: 2
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# Flow
+
+A Flow is a specific implementation of a business purpose.
+
+After creating a project, you can start implementing your business purpose.
+
+## Creation
+
+After you create a project, OOMOL Studio will create a default Flow for you. You can also create a new Flow through the create button in the left Flow panel.
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/concepts/create-flow.png"),
+    dark: useBaseUrl("/img/docs/concepts/create-flow.png"),
+  }}
+  width="720"
+/>
+
+After selecting a Flow, you can see that the central panel enters the Flow editing window.
+
+## Editing
+
+A Flow itself is composed of one or more [Nodes](/docs/concepts/node). You can find various [Blocks](/docs/concepts/block) from the right Block panel, and after adding them to the Flow, they become Nodes of the Flow.
+
+A Flow must have at least one Node to be meaningful. Here we add two Nodes to the Flow: one for creating an email client and one for sending emails. Then we connect the Nodes:
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/concepts/new-flow.png"),
+    dark: useBaseUrl("/img/docs/concepts/new-flow.png"),
+  }}
+  width="720"
+/>
+
+This way, the Flow implements an email sending business, which is divided into two steps: first create an email client, then use the client to send emails.
+
+## Execution
+
+In OOMOL Studio, only Flows are executable concepts. We can run the entire Flow or run Nodes within the Flow:
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/concepts/run-flow.png"),
+    dark: useBaseUrl("/img/docs/concepts/run-flow.png"),
+  }}
+  width="720"
+/>
+
+The execution order of a Flow follows the connections between Nodes. Before execution, OOMOL Studio performs a search to find Nodes with **unconnected input Handles** as the starting Nodes for execution. If there are multiple starting Nodes, all these starting Nodes will start running simultaneously.
+
+Then Nodes are executed in the order of input -> input Handle connections until completion.

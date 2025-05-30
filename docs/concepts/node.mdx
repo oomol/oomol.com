@@ -1,0 +1,32 @@
+---
+sidebar_position: 4
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# Node
+
+A Node is a Block that composes a Flow. It is the name for a Block in a specific usage environment.
+
+When you place one or more Blocks in the Flow editor:
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/concepts/flow-node.png"),
+    dark: useBaseUrl("/img/docs/concepts/flow-node.png"),
+  }}
+  width="720"
+/>
+
+These Blocks **in the Flow** are called Nodes. A Block itself can be seen as an encapsulated functionality, but it has no meaning and cannot be executed if it is not used in a specific working environment.
+
+Therefore, Blocks in a Flow take on the functionality of a specific part of the business process, and at this point they become executable Nodes.
+
+Except for script Nodes, editing Nodes in a Flow does not directly affect the properties and code of the Block itself. Each Node can be considered as a copy that references the Block, and does not affect the original Block definition.
+
+:::info
+Only script Blocks are special. Script Blocks, as a means to quickly start editing code, are created and used directly in the Flow, so they have both Node and Block configuration properties.
+
+Editing the properties of a script Node is editing the Block itself, and each script Node is independent of each other.
+:::

@@ -1,0 +1,80 @@
+---
+sidebar_position: 3
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# 区块
+
+区块是组成一切的基础。
+
+区块是最基本的运行单位，它本质上就是一串代码，OOMOL Studio 将这些代码以区块的形式封装起来，方便用户可以随意组织和复用。
+
+区块本身实现了整体业务的一部分功能，用户可以通过组织区块的排列顺序，调整区块代码来组成一个流，以实现业务目的。
+
+如果区块本身实现的功能足够简单和原子化，那么可以不受限制地用在任何流中，这就达成了代码复用的目的。
+
+区块本身是独立于流的一个概念，它可以独立开发和发布，不必与流共存。当区块处于流之中后，它就变为了流的一个[节点](/zh-CN/docs/concepts/node)。
+
+## 接口
+
+区块可以接受输入参数，经过代码执行后产生输出参数，由于区块本质上是一串代码，所以输入输出都不是必要的。
+
+输入输出接口就等价于代码方法定义时的输入输出参数。
+
+### 输入接口
+
+输入接口可以设置或者从另外的输出接口读取数据，传递给区块代码运行使用。输入接口只能连接输出接口。
+
+### 输出接口
+
+输出接口只能从区块代码中获取运行结果，无法设置数据。输出接口只能连接输入接口。
+
+:::info
+输入输出都不存在的区块与外界完全是隔离的，不会被环境影响也不会影响环境，因此我们认为这样的区块没有意义。
+:::
+
+## 小脚本区块
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/concepts/scriptlet-block.png"),
+    dark: useBaseUrl("/img/docs/concepts/scriptlet-block.png"),
+  }}
+  width="720"
+/>
+
+小脚本区块的核心是其中的代码，运行的所有流最终都会根据顺序执行这些代码，通过代码来实现功能。
+
+关于小脚本的更多介绍请参考[小脚本用法](/zh-CN/docs/studio-usage-guide/block/scriptlet-block)和[小脚本进阶用法](/zh-CN/docs/advanced-guide/block-advanced-usage/advanced-scriptlet-block)
+
+## 共享区块
+
+当你使用小脚本区块或者流实现了一个可复用的功能，你想要在不同的流之中使用这个功能，或者想要将这个功能分享给其他用户使用，那么你就可以将这些区块或者流转换为一个共享区块。
+
+从使用的角度来说，共享区块与小脚本区块相比除了不用编写代码以外，都只需要输入参数或者连上线就可以。
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/concepts/shared-block.png"),
+    dark: useBaseUrl("/img/docs/concepts/shared-block.png"),
+  }}
+  width="720"
+/>
+
+你可以在右侧面板中找到大量社区用户已经做好的共享区块，或者你可以自己将小脚本区块或者流转换为共享区块放在左侧共享区块栏中。
+
+### 任务区块
+
+你可以将小脚本区块转换为一个共享的任务区块，任务区块将小脚本区块的代码（或者说功能）和输入输出格式固定了下来，这样使用者只需要填入参数，运行起来就可以获得输出。
+
+关于任务区块的更多介绍请参考[共享区块用法](/zh-CN/docs/studio-usage-guide/block/shared-block)和[共享区块进阶用法](/zh-CN/docs/advanced-guide/block-advanced-usage/advanced-shared-block)。
+
+### 子流区块
+
+当你用多个区块实现了一个相对复杂的功能，你也可以像小脚本区块转换为任务区块一样，将流转换为一个子流区块。
+
+这样就将流的内容和输入输出固定下来，方便在不同的其他流之中使用，或者分享给其他用户。
+
+关于子流期刊的更多介绍请参考[子流区块用法](/zh-CN/docs/studio-usage-guide/block/subflow-block)和[子流区块进阶用法](/zh-CN/docs/advanced-guide/block-advanced-usage/advanced-subflow-block)。
