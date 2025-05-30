@@ -1,92 +1,178 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import Layout from "../../theme/Layout";
 import styles from "./styles.module.scss";
-import HomepageStarter from "@site/src/components/HomepageStarter";
+import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
+import { DownloadButton } from "@site/src/components/DownloadButton";
+import LinkBtn from "@site/src/components/Button/LinkBtn";
+import clsx from "clsx";
+import { translate } from "@docusaurus/Translate";
 
-export const PricingData = [
-  {
-    meta: {
-      type: "FREE",
-      sub_title: "The basics for individuals",
-      value: "$0",
-    },
-    inner: [
-      "Browse, download, and share workflows and components with the community",
-      "Store workflows in private spaces",
-      "Collaborate with others",
-      "Version history of workflows and components",
-    ],
-    button: {
-      text: "Sign up for free",
-      type: "default",
-    },
-  },
-  {
-    meta: {
-      type: "PRO",
-      sub_title: "Advanced features for teams",
-      value: "$20",
-    },
-    inner: [
-      "Browse, download, and share workflows and components with the community",
-      "Store workflows in private spaces",
-      "Collaborate with team members in public spaces or private spaces",
-      "Centralized billing, on team level",
-      "Option to extend disk space for your spaces",
-      "Run and automate workflows (starting at 0.10 $ / min)",
-    ],
-    button: {
-      text: "Subscribe",
-      type: "primary",
-    },
-  },
-];
+interface QnABoxProps {
+  question: string;
+  answer: string;
+}
+const QnABox = ({ question, answer }: QnABoxProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className={styles.dropdownBox}>
+      <div
+        className={styles.dropdownHeader}
+        onClick={e => {
+          e.stopPropagation(); // 防止冒泡触发父级 click
+          setIsOpen(!isOpen);
+        }}
+      >
+        <div className={styles.mainText}>{question}</div>
+        <i
+          className={`${styles.icon} ${isOpen ? "i-codicon:chevron-up" : "i-codicon:chevron-down"}`}
+          onClick={e => {
+            e.stopPropagation(); // 防止冒泡触发父级 click
+            setIsOpen(!isOpen);
+          }}
+        />
+      </div>
+      <div
+        className={clsx(styles.dropdownContent, {
+          [styles.active]: isOpen,
+        })}
+      >
+        {answer}
+      </div>
+    </div>
+  );
+};
 
 export default function Index() {
-  const planNode = PricingData.map((data, index) => {
-    const planCell = data.inner.map((data, index) => {
-      return (
-        <div className={styles.planCell} key={`cell-${index}`}>
-          <div className={styles.planIcon}>
-            {/* TODO: 重构组件后删除此注释 */}
-            {/* <IconCheckCircleFill /> */}
-          </div>
-          <div className={styles.inner}>{data}</div>
-        </div>
-      );
-    });
-    const isTeam = data.meta.type === "PRO ";
-    return (
-      <div
-        className={styles.plan}
-        style={{
-          borderColor: isTeam ? "#7D7FE9" : "#d9d9d9",
-        }}
-        key={`plan-${index}`}
-      >
-        <div>
-          {isTeam && <div className={styles.tag}>RECOMMENDED</div>}
-          <div className={styles.meta}>
-            <div className={styles.type}>{data.meta.type}</div>
-            <div className={styles.subTitle}>{data.meta.sub_title}</div>
-            <div className={styles.price}>{data.meta.value}</div>
-            <div className={styles.month}>per user/month</div>
-          </div>
-          {planCell}
-        </div>
-        <button className={styles.btn} type={data.button.type as any}>
-          {data.button.text}
-        </button>
-      </div>
-    );
-  });
+  const QAData = [
+    {
+      question: translate({
+        message: "PRICING.question.text1",
+      }),
+      answer: translate({
+        message: "PRICING.question.text1.answer",
+      }),
+    },
+    {
+      question: translate({
+        message: "PRICING.question.text2",
+      }),
+      answer: translate({
+        message: "PRICING.question.text2.answer",
+      }),
+    },
+  ];
+
   return (
     <Layout>
-      <div className={styles.box}>
-        <div className={styles.title}>Find a plan to power your projects</div>
-        <div className={styles.planBox}>{planNode}</div>
+      <div className={styles.container}>
+        <div className={styles.titleBox}>
+          <div className={styles.title}>
+            {translate({ message: "PRICING.title" })}
+          </div>
+          <div className={styles.subTitle}>
+            {translate({ message: "PRICING.subtitle" })}
+          </div>
+        </div>
+        <div className={styles.planBox}>
+          <div className={styles.freePlan}>
+            <div className={styles.freePlanTitle}>
+              {translate({ message: "PRICING.free.title" })}
+            </div>
+            <div className={styles.freePlanSubtitle}>
+              {translate({ message: "PRICING.free.subtitle" })}
+            </div>
+            <div className={styles.freeText}>
+              {translate({ message: "PRICING.free.text" })}
+            </div>
+            <DownloadButton />
+            <div className={styles.listBox}>
+              <div className={styles.listItem}>
+                <i className={`${styles["listIcon"]} i-codicon-check`} />
+                <div className={styles.listText}>
+                  {translate({ message: "PRICING.list.text1" })}
+                </div>
+              </div>
+              <div className={styles.listItem}>
+                <i className={`${styles["listIcon"]} i-codicon:check`} />
+                <div className={styles.listText}>
+                  {translate({ message: "PRICING.list.text2" })}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.standardPlan}>
+            <div className={styles.standardPlanTitle}>
+              {translate({ message: "PRICING.standard.title" })}
+            </div>
+            <div className={styles.standardPlanSubtitle}>
+              {translate({ message: "PRICING.standard.subtitle" })}
+            </div>
+            <div className={styles.standardPrice}>
+              <div className={styles.priceBefore}>
+                {translate({ message: "PRICING.standard.price.before" })}
+              </div>
+              <div className={styles.priceAfter}>
+                {translate({ message: "PRICING.standard.price.after" })}
+              </div>
+            </div>
+            <LinkBtn
+              text={translate({ message: "PRICING.buttonText" })}
+              iconPos="left"
+              icon="i-codicon:credit-card"
+              url="https://console.oomol.com/"
+              className={styles.modifyBtn}
+            />
+            <div className={styles.listBox}>
+              <div className={styles.listItem}>
+                <i className={`${styles["listIcon"]} i-codicon-check`} />
+                <div className={styles.listText}>
+                  {translate({ message: "PRICING.standard.list.text1" })}
+                </div>
+              </div>
+              <div className={styles.listItem}>
+                <i className={`${styles["listIcon"]} i-codicon-check`} />
+                <div className={styles.listText}>
+                  {translate({ message: "PRICING.standard.list.text2" })}
+                </div>
+              </div>
+              <div className={styles.listItem}>
+                <i className={`${styles["listIcon"]} i-codicon-check`} />
+                <div className={styles.listText}>
+                  {translate({ message: "PRICING.standard.list.text3" })}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={styles.questionTitleBox}>
+          <div className={styles.questionTitle}>
+            {translate({ message: "PRICING.question.title" })}
+          </div>
+          <div className={styles.questionSubtitleBox}>
+            <div className={styles.questionSubtitle}>
+              {translate({ message: "PRICING.question.subtitle" })}
+            </div>
+            <a
+              href="https://oomol.com/community"
+              className={styles.contactLink}
+            >
+              {translate({ message: "PRICING.question.link" })}
+            </a>
+          </div>
+        </div>
+        <div className={styles.questionBox}>
+          <div className={styles.QABox}>
+            {QAData.map((item, index) => (
+              <div key={index}>
+                <QnABox question={item.question} answer={item.answer} />
+                {index !== QAData.length - 1 && <div className={styles.line} />}
+              </div>
+            ))}
+          </div>
+          <GetStartedPrompt />
+        </div>
       </div>
-      <HomepageStarter />
     </Layout>
   );
 }

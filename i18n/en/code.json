@@ -310,6 +310,75 @@
     "message": "Code synced to GitHub for collaborative development and upkeep."
   },
 
+  "PRICING.title": {
+    "message": "Simple, Predictable Pricing"
+  },
+
+  "PRICING.subtitle": {
+    "message": "Use OOMOL For Free. Upgrade To Get Free Credits Per Month, Invite Others To Collaborate, And Use An API Key."
+  },
+
+  "PRICING.free.title": {
+    "message": "Free Plan"
+  },
+  "PRICING.free.subtitle": {
+    "message": "Get By Registry, Providing Free Credits Monthly."
+  },
+  "PRICING.free.text": {
+    "message": "Free"
+  },
+  "PRICING.list.text1": {
+    "message": "Get By Registry"
+  },
+  "PRICING.list.text2": {
+    "message": "Free 1M Credits Per Month"
+  },
+  "PRICING.standard.title": {
+    "message": "Standard Plan"
+  },
+  "PRICING.standard.subtitle": {
+    "message": "Suitable For Individual Users, Providing Credits And Support."
+  },
+  "PRICING.standard.price.before": {
+    "message": "$5.00"
+  },
+  "PRICING.standard.price.after": {
+    "message": "/month"
+  },
+  "PRICING.standard.list.text1": {
+    "message": "Free 5M Credits Per Month"
+  },
+  "PRICING.standard.list.text2": {
+    "message": "Invite Other Users To Collaborate"
+  },
+  "PRICING.standard.list.text3": {
+    "message": "Allow Use Of API-Key"
+  },
+  "PRICING.question.title": {
+    "message": "Questions & Answers"
+  },
+  "PRICING.question.subtitle": {
+    "message": "If You Have Any Other Questions, Please\u00A0"
+  },
+  "PRICING.question.link": {
+    "message": "Contact Us"
+  },
+  "PRICING.question.text1": {
+    "message": "Do OOMOL Credits Expire?"
+  },
+  "PRICING.question.text1.answer": {
+    "message": "The Credits Package Does Not Expire, It Is Unavailable Only When It Is Used Up"
+  },
+  "PRICING.question.text2": {
+    "message": "How Does OOMOL Prioritize Credit Usage?"
+  },
+  "PRICING.question.text2.answer": {
+    "message": "Prioritize The Use Of Free Credits"
+  },
+  "PRICING.buttonText": {
+    "message": "Get Started"
+  },
+
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"

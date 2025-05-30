@@ -22,5 +22,9 @@
   "item.label.Features": {
     "message": "功能",
     "description": "Navbar item with label Features"
+  },
+  "item.label.Pricing": {
+    "message": "价格",
+    "description": "Navbar item with label Pricing"
   }
 }

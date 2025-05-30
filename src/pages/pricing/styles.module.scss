@@ -1,108 +1,329 @@
-.box {
+@import "../../css/custom.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+}
+.titleBox {
   width: 100%;
+  min-height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 80px 0;
+  gap: 14px;
+  margin: 0 auto;
 }
 
 .title {
-  font-size: 64px;
-  font-weight: bolder;
-  width: 720px;
+  max-width: 600px;
+  min-height: 116px;
+  font-size: 58px;
+  line-height: 58px;
+  font-weight: 800;
+  color: #f0f6fc;
   text-align: center;
-  margin-top: 54px;
-  margin-bottom: 54px;
-}
-
-.planBox {
-  width: 720px;
-  margin-bottom: 64px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.plan {
-  width: 300px;
-  min-height: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  border-style: solid;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  border-radius: 8px;
-  box-sizing: border-box;
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-.type {
-  font-weight: bolder;
-  font-size: 24px;
 }
 
 .subTitle {
-  font-size: 14px;
-  color: #8c8c8c;
+  max-width: 600px;
+  min-height: 60px;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: center;
+  @include linearGradientColor;
 }
 
-.tag {
-  width: 180px;
-  height: 32px;
-  background-color: #7d7fe9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 18px;
-  position: absolute;
-  margin-top: -48px;
-  margin-left: 42.5px;
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.meta {
+.planBox {
   width: 100%;
-  height: 160px;
+  max-width: 1280px;
+  min-height: 593px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 80px 0;
+  gap: 20px;
+  margin: 0 auto;
+}
+
+.freePlan {
+  width: 100%;
+  max-width: 630px;
+  min-height: 401px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: flex-start;
+  padding: 40px;
+  border-radius: 20px;
+  background-color: rgba(13, 17, 23, 0.5);
+}
+
+.freePlanTitle {
+  min-height: 24px;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 800;
+  vertical-align: middle;
+  color: #f0f6fc;
+  margin-bottom: 14px;
+}
+
+.freePlanSubtitle {
+  min-height: 24px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  vertical-align: middle;
+  color: #656c76;
+  margin-bottom: 40px;
+}
+
+.freeText {
+  min-height: 24px;
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 800;
+  vertical-align: middle;
+  color: #f0f6fc;
+  margin-bottom: 40px;
+}
+
+.listBox {
+  margin-top: 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: flex-start;
+}
+.listItem {
+  height: 32px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.listIcon {
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+  color: #8dc149;
+}
+.listText {
+  height: 24px;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #838b95;
+}
+
+.standardPlan {
+  width: 100%;
+  min-height: 433px;
+  max-width: 630px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: left;
+  justify-content: flex-start;
+  padding: 40px;
+  border-radius: 20px;
+  background-color: rgba(13, 17, 23, 1);
+}
+
+.standardPlanTitle {
+  min-height: 24px;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 800;
+  vertical-align: middle;
+  color: #f0f6fc;
+  margin-bottom: 14px;
+}
+.standardPlanSubtitle {
+  min-height: 24px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  vertical-align: middle;
+  color: #656c76;
+  margin-bottom: 40px;
+}
+
+.standardPrice {
+  height: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.priceBefore {
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 800;
+  vertical-align: middle;
+  color: #f0f6fc;
+}
+
+.priceAfter {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  vertical-align: middle;
+  display: inline-block;
+  color: #838b95;
+}
+
+.modifyBtn {
+  width: 165px !important;
+  background-color: #454680 !important;
+  border-color: #454680 !important;
+}
+
+.questionTitleBox {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 24px;
+  padding: 80px 0;
+}
+.questionTitle {
+  min-height: 48px;
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 800;
+  color: #f0f6fc;
+  text-align: center;
+  margin-bottom: 14px;
+}
+.questionSubtitleBox {
+  max-width: 600px;
+  min-height: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
-.btn {
-  width: 100%;
-  margin-top: 28px;
+.questionSubtitle {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: center;
+  @include linearGradientColor;
 }
 
-.month {
-  font-size: 14px;
-  color: #8c8c8c;
+.contactLink {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: center;
+  color: #7d7fe9;
+
+  &:hover {
+    text-decoration: none;
+    color: #9092ec;
+  }
+  &:active {
+    text-decoration: none;
+    color: #a4a5f0;
+  }
 }
 
-.price {
-  font-weight: bolder;
-  font-size: 32px;
-  margin-right: 8px;
-}
-
-.planCell {
+.questionBox {
   width: 100%;
   display: flex;
-  margin-bottom: 8px;
-  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 80px 0;
 }
 
-.planIcon {
-  padding-right: 8px;
-  color: green;
-  font-size: 18px;
+.dropdownBox {
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
-.inner {
-  font-size: 14px;
+.dropdownHeader {
+  max-width: 1280px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: normal;
+  justify-content: space-between;
+  cursor: pointer;
+  color: #f0f6fc;
+  padding-bottom: 14px;
+}
+
+.mainText {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 24px;
+  vertical-align: middle;
+  color: #f0f6fc;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  font-size: 24px;
+  color: #f0f6fc;
+  transition: transform 0.3s ease;
+}
+
+.dropdownContent {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.3s ease-out,
+    opacity 0.3s ease-out;
+  opacity: 0;
+  font-size: 16px;
+  line-height: 24px;
+  @include linearGradientColor;
+
+  &.active {
+    max-height: 200px;
+    opacity: 1;
+    transition:
+      max-height 0.3s ease-in,
+      opacity 0.3s ease-in;
+  }
+}
+
+.QABox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 80px;
+
+  @media (max-width: 966px) {
+    padding: 0 16px;
+  }
+}
+
+.line {
+  max-width: 1280px;
+  height: 1px;
+  background-color: #212830;
+  margin: 40px auto;
 }

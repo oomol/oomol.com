@@ -1,21 +1,25 @@
 import React from "react";
 import styles from "./LinkBtn.module.scss";
+import clsx from "clsx";
 
 export interface LinkBtnProps {
   text: string;
   iconPos: "left" | "right";
   icon: string;
   url: string;
+  className?: string;
 }
 export default function LinkBtn({
   text,
   iconPos = "left",
   icon,
   url,
+  className,
 }: LinkBtnProps) {
   return (
     <button
-      className={styles.container}
+      // className={styles.container}
+      className={clsx(styles.container, className)}
       onClick={() => window.open(url, "_blank")}
     >
       <div

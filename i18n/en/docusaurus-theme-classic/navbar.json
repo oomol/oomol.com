@@ -22,5 +22,9 @@
   "item.label.Features": {
     "message": "Features",
     "description": "Navbar item with label Features"
+  },
+  "item.label.Pricing": {
+    "message": "Pricing",
+    "description": "Navbar item with label Pricing"
   }
 }

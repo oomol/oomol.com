@@ -177,6 +177,7 @@ const config = {
             label: "Docs",
           },
           { to: "/updates", label: "Updates", position: "left" },
+          { to: "/pricing", label: "Pricing", position: "left" },
           { to: "/downloads", label: "Downloads", position: "left" },
           { to: "/community", label: "Community", position: "left" },
           // { to: "/blog", label: "Blog", position: "left" },
