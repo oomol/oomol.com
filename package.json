@@ -5,7 +5,7 @@
   "scripts": {
     "format": "prettier --write .",
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
+    "start": "npm run build-unocss && docusaurus start",
     "start:zh-cn": "npm run start -- --locale zh-CN",
     "build": "npm run build-unocss && docusaurus build",
     "swizzle": "docusaurus swizzle",
