@@ -5,6 +5,8 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
 import { BlurFade } from "../magic-ui/BlurFade";
 import clsx from "clsx";
+import LinkBtn from "../Button/LinkBtn";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 type SuperiorityType = {
   imageUrl: string;
@@ -80,6 +82,8 @@ export const FeatureItem = ({
 };
 
 export default function HomepageFeatures() {
+  const context: any = useDocusaurusContext();
+  const { i18n } = context;
   return (
     <section className={styles.container}>
       <div className={styles.titleBox}>
@@ -107,6 +111,16 @@ export default function HomepageFeatures() {
           );
         })}
       </div>
+      <LinkBtn
+        text={translate({ message: "HOME.Features.linkBtn-text" })}
+        iconPos="right"
+        icon="i-codicon-arrow-right"
+        url={
+          i18n.currentLocale === "zh-CN"
+            ? "https://oomol.com/zh-CN/features"
+            : "https://oomol.com/features"
+        }
+      />
     </section>
   );
 }
