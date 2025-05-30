@@ -42,7 +42,6 @@
 .imageWrapper {
   position: relative;
   width: 420px;
-  height: 334px;
   padding-top: 31px;
 
   &::after {
@@ -63,7 +62,6 @@
 
 .image {
   width: 420px;
-  height: 334px;
 }
 
 @media screen and (max-width: 996px) {

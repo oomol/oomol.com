@@ -148,9 +148,6 @@
 
 .header {
   display: grid;
-  // grid-template-columns: 1fr 1fr;
-  // gap: 37px;
-  // max-width: 1280px;
   gap: 14px;
   padding: 0 30px;
   align-items: center;
@@ -311,6 +308,11 @@
   gap: 12px;
   flex-wrap: wrap;
   justify-content: center;
+
+  @media (max-width: 996px) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 }
 
 // TODO: 统一放 custom.scss 中处理
