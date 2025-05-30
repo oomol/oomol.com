@@ -6,6 +6,7 @@ import { DownloadButton } from "@site/src/components/DownloadButton";
 import LinkBtn from "@site/src/components/Button/LinkBtn";
 import clsx from "clsx";
 import { translate } from "@docusaurus/Translate";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 interface QnABoxProps {
   question: string;
@@ -44,6 +45,8 @@ const QnABox = ({ question, answer }: QnABoxProps) => {
 };
 
 export default function Index() {
+  const context: any = useDocusaurusContext();
+  const { i18n } = context;
   const QAData = [
     {
       question: translate({
@@ -154,7 +157,11 @@ export default function Index() {
               {translate({ message: "PRICING.question.subtitle" })}
             </div>
             <a
-              href="https://oomol.com/community"
+              href={
+                i18n.currentLocale === "zh-CN"
+                  ? "https://oomol.com/zh-CN/community"
+                  : "https://oomol.com/community"
+              }
               className={styles.contactLink}
             >
               {translate({ message: "PRICING.question.link" })}
