@@ -138,7 +138,18 @@ const FeaturesBlock = ({
           );
         })}
       </div>
-      <img className={styles.image} src={features[currentIndex].image} />
+      <div className={styles.imageWrapper}>
+        {features.map((feature, index) => (
+          <img
+            key={index}
+            className={clsx(
+              styles.image,
+              index === currentIndex && styles.imageVisible
+            )}
+            src={feature.image}
+          />
+        ))}
+      </div>
     </div>
   );
 };
