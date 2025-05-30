@@ -1,8 +1,15 @@
 @import "../../css/custom.scss";
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+}
 .titleBox {
   width: 100%;
-  height: 350px;
+  min-height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,8 +20,8 @@
 }
 
 .title {
-  width: 600px;
-  height: 116px;
+  max-width: 600px;
+  min-height: 116px;
   font-size: 58px;
   line-height: 58px;
   font-weight: 800;
@@ -23,8 +30,8 @@
 }
 
 .subTitle {
-  width: 600px;
-  height: 60px;
+  max-width: 600px;
+  min-height: 60px;
   font-size: 20px;
   line-height: 30px;
   font-weight: 400;
@@ -34,20 +41,23 @@
 }
 
 .planBox {
-  width: 100%;
+  // width: 100%;
+  max-width: 1280px;
+  min-height: 593px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 593px;
   display: flex;
   padding: 80px 0;
   gap: 20px;
+  margin: 0 auto;
 }
 
 .freePlan {
-  width: 630px;
-  height: 401px;
+  max-width: 630px;
+  min-height: 401px;
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -60,8 +70,8 @@
 }
 
 .freePlanTitle {
-  width: 550px;
-  height: 24px;
+  // max-width: 550px;
+  min-height: 24px;
   font-size: 24px;
   line-height: 24px;
   font-weight: 800;
@@ -72,8 +82,8 @@
 }
 
 .freePlanSubtitle {
-  width: 550px;
-  height: 24px;
+  // max-width: 550px;
+  min-height: 24px;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -84,8 +94,8 @@
 }
 
 .freeText {
-  width: 550px;
-  height: 24px;
+  // max-width: 550px;
+  min-height: 24px;
   font-size: 32px;
   line-height: 32px;
   font-weight: 800;
@@ -97,7 +107,7 @@
 
 .listBox {
   margin-top: 40px;
-  width: 550px;
+  // max-width: 550px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -105,10 +115,10 @@
   justify-content: flex-start;
 }
 .listItem {
-  width: 550px;
+  // max-width: 550px;
   height: 32px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: flex-start;
   gap: 20px;
@@ -120,7 +130,7 @@
   color: #8dc149;
 }
 .listText {
-  width: 514px;
+  // width: 514px;
   height: 24px;
   font-size: 14px;
   line-height: 24px;
@@ -130,9 +140,10 @@
 }
 
 .standardPlan {
-  width: 630px;
-  height: 433px;
+  max-width: 630px;
+  min-height: 433px;
   display: flex;
+  flex-wrap: nowrap;
   flex-direction: column;
   align-items: left;
   justify-content: flex-start;
@@ -142,8 +153,8 @@
 }
 
 .standardPlanTitle {
-  width: 550px;
-  height: 24px;
+  // max-width: 550px;
+  min-height: 24px;
   font-size: 24px;
   line-height: 24px;
   font-weight: 800;
@@ -152,8 +163,8 @@
   margin-bottom: 14px;
 }
 .standardPlanSubtitle {
-  width: 550px;
-  height: 24px;
+  // max-width: 550px;
+  min-height: 24px;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -163,7 +174,7 @@
 }
 
 .standardPrice {
-  width: 550px;
+  // max-width: 550px;
   height: 32px;
   display: flex;
   flex-wrap: wrap;
@@ -203,8 +214,8 @@
   padding: 80px 0;
 }
 .questionTitle {
-  width: 600px;
-  height: 48px;
+  // max-width: 600px;
+  min-height: 48px;
   font-size: 48px;
   line-height: 48px;
   font-weight: 800;
@@ -213,8 +224,8 @@
   margin-bottom: 14px;
 }
 .questionSubtitleBox {
-  width: 600px;
-  height: 30px;
+  max-width: 600px;
+  min-height: 30px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -262,15 +273,16 @@
 .dropdownBox {
   display: flex;
   flex-direction: column;
-  width: 1280px;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .dropdownHeader {
-  width: 1280px;
+  max-width: 1280px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-wrap: nowrap;
+  align-items: normal;
   justify-content: space-between;
   cursor: pointer;
   color: #f0f6fc;
@@ -286,6 +298,9 @@
 }
 
 .icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
   font-size: 24px;
   color: #f0f6fc;
   transition: transform 0.3s ease;
@@ -308,20 +323,23 @@
     transition:
       max-height 0.3s ease-in,
       opacity 0.3s ease-in;
-    // margin-bottom: 40px;
   }
 }
 
 .QABox {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  // gap: 40px;
   margin-bottom: 80px;
+
+  @media (max-width: 966px) {
+    padding: 0 16px;
+  }
 }
 
 .line {
-  width: 1280px;
+  max-width: 1280px;
   height: 1px;
   background-color: #212830;
-  margin: 40px 0;
+  margin: 40px auto;
 }

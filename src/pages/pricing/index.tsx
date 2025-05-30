@@ -65,100 +65,103 @@ export default function Index() {
 
   return (
     <Layout>
-      <div className={styles.titleBox}>
-        <div className={styles.title}>
-          {translate({ message: "PRICING.title" })}
-        </div>
-        <div className={styles.subTitle}>
-          {translate({ message: "PRICING.subtitle" })}
-        </div>
-      </div>
-      <div className={styles.planBox}>
-        <div className={styles.freePlan}>
-          <div className={styles.freePlanTitle}>
-            {translate({ message: "PRICING.free.title" })}
+      <div className={styles.container}>
+        <div className={styles.titleBox}>
+          <div className={styles.title}>
+            {translate({ message: "PRICING.title" })}
           </div>
-          <div className={styles.freePlanSubtitle}>
-            {translate({ message: "PRICING.free.subtitle" })}
-          </div>
-          <div className={styles.freeText}>
-            {translate({ message: "PRICING.free.text" })}
-          </div>
-          <DownloadButton />
-          <div className={styles.listBox}>
-            <div className={styles.listItem}>
-              <i className={`${styles["listIcon"]} i-codicon-check`} />
-              <div className={styles.listText}>
-                {translate({ message: "PRICING.list.text1" })}
-              </div>
-            </div>
-            <div className={styles.listItem}>
-              <i className={`${styles["listIcon"]} i-codicon:check`} />
-              <div className={styles.listText}>
-                {translate({ message: "PRICING.list.text2" })}
-              </div>
-            </div>
+          <div className={styles.subTitle}>
+            {translate({ message: "PRICING.subtitle" })}
           </div>
         </div>
-        <div className={styles.standardPlan}>
-          <div className={styles.standardPlanTitle}>
-            {translate({ message: "PRICING.standard.title" })}
-          </div>
-          <div className={styles.standardPlanSubtitle}>
-            {translate({ message: "PRICING.standard.subtitle" })}
-          </div>
-          <div className={styles.standardPrice}>
-            <div className={styles.priceBefore}>
-              {translate({ message: "PRICING.standard.price.before" })}
+        <div className={styles.planBox}>
+          <div className={styles.freePlan}>
+            <div className={styles.freePlanTitle}>
+              {translate({ message: "PRICING.free.title" })}
             </div>
-            <div className={styles.priceAfter}>
-              {translate({ message: "PRICING.standard.price.after" })}
+            <div className={styles.freePlanSubtitle}>
+              {translate({ message: "PRICING.free.subtitle" })}
             </div>
-          </div>
-          <LinkBtn
-            text={translate({ message: "PRICING.buttonText" })}
-            iconPos="left"
-            icon="i-codicon:credit-card"
-            url="https://console.oomol.com/"
-            className={styles.modifyBtn}
-          />
-          <div className={styles.listBox}>
-            <div className={styles.listItem}>
-              <i className={`${styles["listIcon"]} i-codicon-check`} />
-              <div className={styles.listText}>
-                {translate({ message: "PRICING.standard.list.text1" })}
+            <div className={styles.freeText}>
+              {translate({ message: "PRICING.free.text" })}
+            </div>
+            <DownloadButton />
+            <div className={styles.listBox}>
+              <div className={styles.listItem}>
+                <i className={`${styles["listIcon"]} i-codicon-check`} />
+                <div className={styles.listText}>
+                  {translate({ message: "PRICING.list.text1" })}
+                </div>
               </div>
-            </div>
-            <div className={styles.listItem}>
-              <i className={`${styles["listIcon"]} i-codicon-check`} />
-              <div className={styles.listText}>
-                {translate({ message: "PRICING.standard.list.text2" })}
-              </div>
-            </div>
-            <div className={styles.listItem}>
-              <i className={`${styles["listIcon"]} i-codicon-check`} />
-              <div className={styles.listText}>
-                {translate({ message: "PRICING.standard.list.text3" })}
+              <div className={styles.listItem}>
+                <i className={`${styles["listIcon"]} i-codicon:check`} />
+                <div className={styles.listText}>
+                  {translate({ message: "PRICING.list.text2" })}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div className={styles.questionTitleBox}>
-        <div className={styles.questionTitle}>
-          {translate({ message: "PRICING.question.title" })}
-        </div>
-        <div className={styles.questionSubtitleBox}>
-          <div className={styles.questionSubtitle}>
-            {translate({ message: "PRICING.question.subtitle" })}
+          <div className={styles.standardPlan}>
+            <div className={styles.standardPlanTitle}>
+              {translate({ message: "PRICING.standard.title" })}
+            </div>
+            <div className={styles.standardPlanSubtitle}>
+              {translate({ message: "PRICING.standard.subtitle" })}
+            </div>
+            <div className={styles.standardPrice}>
+              <div className={styles.priceBefore}>
+                {translate({ message: "PRICING.standard.price.before" })}
+              </div>
+              <div className={styles.priceAfter}>
+                {translate({ message: "PRICING.standard.price.after" })}
+              </div>
+            </div>
+            <LinkBtn
+              text={translate({ message: "PRICING.buttonText" })}
+              iconPos="left"
+              icon="i-codicon:credit-card"
+              url="https://console.oomol.com/"
+              className={styles.modifyBtn}
+            />
+            <div className={styles.listBox}>
+              <div className={styles.listItem}>
+                <i className={`${styles["listIcon"]} i-codicon-check`} />
+                <div className={styles.listText}>
+                  {translate({ message: "PRICING.standard.list.text1" })}
+                </div>
+              </div>
+              <div className={styles.listItem}>
+                <i className={`${styles["listIcon"]} i-codicon-check`} />
+                <div className={styles.listText}>
+                  {translate({ message: "PRICING.standard.list.text2" })}
+                </div>
+              </div>
+              <div className={styles.listItem}>
+                <i className={`${styles["listIcon"]} i-codicon-check`} />
+                <div className={styles.listText}>
+                  {translate({ message: "PRICING.standard.list.text3" })}
+                </div>
+              </div>
+            </div>
           </div>
-          <a href="https://oomol.com/community" className={styles.contactLink}>
-            {translate({ message: "PRICING.question.link" })}
-          </a>
         </div>
-      </div>
-      <div className={styles.questionBox}>
-        <div className={styles.QABox}>
+        <div className={styles.questionTitleBox}>
+          <div className={styles.questionTitle}>
+            {translate({ message: "PRICING.question.title" })}
+          </div>
+          <div className={styles.questionSubtitleBox}>
+            <div className={styles.questionSubtitle}>
+              {translate({ message: "PRICING.question.subtitle" })}
+            </div>
+            <a
+              href="https://oomol.com/community"
+              className={styles.contactLink}
+            >
+              {translate({ message: "PRICING.question.link" })}
+            </a>
+          </div>
+        </div>
+        <div className={styles.questionBox}>
           <div className={styles.QABox}>
             {QAData.map((item, index) => (
               <div key={index}>
@@ -167,8 +170,8 @@ export default function Index() {
               </div>
             ))}
           </div>
+          <GetStartedPrompt />
         </div>
-        <GetStartedPrompt />
       </div>
     </Layout>
   );

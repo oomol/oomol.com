@@ -83,16 +83,18 @@ export default function Downloads() {
     <Layout>
       <div className={styles.container}>
         <img className={styles.image} src={"/img/logo2x.png"} />
-        <h1 className={styles.title}>
-          {translate({
-            message: "HOME.Downloads.title",
-          })}
-        </h1>
-        <p className={styles["sub-title"]}>
-          {translate({
-            message: "HOME.Downloads.subtitle",
-          })}
-        </p>
+        <div className={styles.titleBox}>
+          <h1 className={styles.title}>
+            {translate({
+              message: "HOME.Downloads.title",
+            })}
+          </h1>
+          <p className={styles["sub-title"]}>
+            {translate({
+              message: "HOME.Downloads.subtitle",
+            })}
+          </p>
+        </div>
         {/* <div className={styles["download-button"]}>
           <DownloadButton />
         </div> */}
