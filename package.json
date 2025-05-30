@@ -7,7 +7,7 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "start:zh-cn": "npm run start -- --locale zh-CN",
-    "build": "docusaurus build && npm run build-unocss",
+    "build": "npm run build-unocss && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
