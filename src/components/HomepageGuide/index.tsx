@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import React from "react";
 import { translate } from "@docusaurus/Translate";
 import LinkBtn from "../Button/LinkBtn";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 type ProjectsData = {
   imgUrl: string;
@@ -86,6 +87,8 @@ const ProjectItem = ({ imgUrl, url, itemIndex }: ProjectItemProps) => {
 };
 
 export default function HomepageGuide() {
+  const context: any = useDocusaurusContext();
+  const { i18n } = context;
   return (
     <section className={styles.container}>
       <h2 className={styles["section-title"]}>
@@ -104,7 +107,11 @@ export default function HomepageGuide() {
         text={translate({ message: "HOME.Guide.link-button-text" })}
         iconPos="right"
         icon="i-codicon:arrow-right"
-        url="https://hub.oomol.com"
+        url={
+          i18n.currentLocale === "zh-CN"
+            ? "https://hub.oomol.com/zh-CN"
+            : "https://hub.oomol.com/en"
+        }
       />
     </section>
   );

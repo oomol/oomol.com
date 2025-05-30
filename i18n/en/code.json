@@ -107,6 +107,9 @@
   "HOME.Features.block-sharing.inner": {
     "message": "Publish as a block for easy use by others, like the npm community."
   },
+  "HOME.Features.linkBtn-text": {
+    "message": "View All Features"
+  },
   "HOME.Guide.title": {
     "message": "Start With A Project"
   },

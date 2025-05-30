@@ -104,6 +104,9 @@
   "HOME.Features.block-sharing.inner": {
     "message": "以区块的方式共享，类似于npm社区。方便他人直接基于当前区块直接使用"
   },
+  "HOME.Features.linkBtn-text": {
+    "message": "查看全部"
+  },
   "HOME.Guide.title": {
     "message": "开启你的项目"
   },
