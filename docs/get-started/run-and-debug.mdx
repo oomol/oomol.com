@@ -1,0 +1,161 @@
+---
+sidebar_position: 4
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# Run and Debug
+
+After the [Environment and Dependencies](/docs/get-started/env-and-lib) are prepared, you can start writing Flows and running them.
+
+## Run Preparation
+
+Before running, ensure the following issues are resolved:
+
+### Initialization Errors
+
+Ensure your initialization script runs successfully, indicating that your environment and dependencies are properly prepared:
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/run-and-debug/run-bootstrap.png"),
+    dark: useBaseUrl("/img/docs/get-started/run-and-debug/run-bootstrap.png"),
+  }}
+/>
+
+### Flow Errors
+
+Ensure the Flow has no issues, such as parameter or connection problems. You can hover over the error area to get hints:
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/run-and-debug/run-flow-error.png"),
+    dark: useBaseUrl("/img/docs/get-started/run-and-debug/run-flow-error.png"),
+  }}
+/>
+
+## Running
+
+After resolving issues, you can run the Flow using the following methods:
+
+### Run All
+
+In the top menu of the central panel, click the leftmost run button to run the entire Flow.
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/run-and-debug/run-all.png"),
+    dark: useBaseUrl("/img/docs/get-started/run-and-debug/run-all.png"),
+  }}
+/>
+
+This method clears all previous run records and does not use caching, ensuring a complete run.
+
+### Run Selected
+
+In the top menu of the central panel, click the second run button from the left to run the selected Nodes.
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/run-and-debug/run-selected.png"),
+    dark: useBaseUrl("/img/docs/get-started/run-and-debug/run-selected.png"),
+  }}
+/>
+
+OOMOL Studio will search upstream Nodes of the selected Nodes and run from the upstream to the selected Nodes.
+
+### Run to Node
+
+In the Node menu, click the run button to run up to the current Node. If the upstream Nodes have successfully run before, the Node's input will use [cache](/docs/advanced-guide/block-advanced-usage/universal-block-settings#cache-mechanism) and will not trigger upstream runs.
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/run-and-debug/run-to-node.png"),
+    dark: useBaseUrl("/img/docs/get-started/run-and-debug/run-to-node.png"),
+  }}
+/>
+
+### Run to Node Without Cache
+
+In the Node menu, click `Run Without Cache` to search all upstream Nodes of the current Node and execute them, running up to the current Node.
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/get-started/run-and-debug/run-to-node-no-cache.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/get-started/run-and-debug/run-to-node-no-cache.png"
+    ),
+  }}
+/>
+
+## Logs
+
+After running the Flow using any method, the log panel at the bottom will display the run logs. Each run will record the latest logs, overwriting the previous logs.
+
+Logs record the input and output results of each Node run, as well as content printed to standard output in the code.
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/run-and-debug/run-log.png"),
+    dark: useBaseUrl("/img/docs/get-started/run-and-debug/run-log.png"),
+  }}
+/>
+
+### Features
+
+#### Filtering
+
+All Nodes run will be displayed in the left sidebar. Clicking a Node will filter its logs.
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/run-and-debug/run-log-filter.png"),
+    dark: useBaseUrl("/img/docs/get-started/run-and-debug/run-log-filter.png"),
+  }}
+/>
+
+#### Searching
+
+The search feature allows you to search log content by keywords. Search is case-sensitive.
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/run-and-debug/run-log-search.png"),
+    dark: useBaseUrl("/img/docs/get-started/run-and-debug/run-log-search.png"),
+  }}
+/>
+
+#### Uncaptured Logs
+
+Switch the menu next to the search bar to `Studio` to display uncaptured logs inside OOMOL Studio.
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/run-and-debug/run-log-studio.png"),
+    dark: useBaseUrl("/img/docs/get-started/run-and-debug/run-log-studio.png"),
+  }}
+/>
+
+Generally, these logs only appear in extreme cases where internal exceptions cannot be captured.
+
+#### Export
+
+You can export the full logs of the current run to a specified folder.
+
+Exported logs include logs from internal schedulers and executors, typically used for diagnosing application exceptions.
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/run-and-debug/run-log-export.png"),
+    dark: useBaseUrl("/img/docs/get-started/run-and-debug/run-log-export.png"),
+  }}
+/>
+
+:::info
+If the log content is too long, OOMOL Studio will not print these logs to avoid application crashes. You can still view these logs using the export log feature.
+:::
+
+If you encounter unresolved exceptions after running the Flow, try exporting the run logs and sending them to OOMOL Studio's official support at `support@oomol.com` for assistance.

@@ -1,0 +1,161 @@
+---
+sidebar_position: 4
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# 运行和调试
+
+在[环境和依赖](/zh-CN/docs/get-started/env-and-lib)准备完成后，就可以编写流并运行了。
+
+## 运行准备
+
+运行的前提是需要排除以下情况：
+
+### 初始化异常
+
+确保你的初始化脚本运行成功，这代表你的环境和依赖准备没有问题：
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/run-and-debug/run-bootstrap.png"),
+    dark: useBaseUrl("/img/docs/get-started/run-and-debug/run-bootstrap.png"),
+  }}
+/>
+
+### 流的异常
+
+确保流没有问题，比如参数问题和连接问题，你可以将指针移动到异常区域获得提示：
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/run-and-debug/run-flow-error.png"),
+    dark: useBaseUrl("/img/docs/get-started/run-and-debug/run-flow-error.png"),
+  }}
+/>
+
+## 运行
+
+在问题排除后，你可以用以下几种方式运行流：
+
+### 全部运行
+
+在中央面板顶部的菜单，点击最左侧的运行按钮，可以运行整个流。
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/run-and-debug/run-all.png"),
+    dark: useBaseUrl("/img/docs/get-started/run-and-debug/run-all.png"),
+  }}
+/>
+
+这个运行方式会清空所有上次运行的记录，不会使用缓存，是完整的运行。
+
+### 部分运行
+
+在中央面板顶部的菜单，点击最左侧第二个运行按钮，可以运行选中部分的节点。
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/run-and-debug/run-selected.png"),
+    dark: useBaseUrl("/img/docs/get-started/run-and-debug/run-selected.png"),
+  }}
+/>
+
+OOMOL Studio 会在运行前搜索选中节点的上游，从上游开始运行直到选中的节点为止。
+
+### 运行到节点
+
+在节点菜单上，点击运行按钮可以运行到当前节点为止，如果这个节点的上游之前运行成功过，那么节点的输入将会有[缓存](/zh-CN/docs/advanced-guide/block-advanced-usage/universal-block-settings#缓存机制)，不会触发上游的运行。
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/run-and-debug/run-to-node.png"),
+    dark: useBaseUrl("/img/docs/get-started/run-and-debug/run-to-node.png"),
+  }}
+/>
+
+### 不用缓存运行到节点
+
+在节点菜单内，点击`不使用缓存运行`可以搜索当前节点的全部上游并全部执行，一直到当前节点为止。
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/get-started/run-and-debug/run-to-node-no-cache.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/get-started/run-and-debug/run-to-node-no-cache.png"
+    ),
+  }}
+/>
+
+## 日志
+
+在以任意方式运行流后，底部的日志面板都会出现运行日志。在每次运行后就会记录最新一次运行的日志，上一次运行的日志会被刷新掉。
+
+日志会记录每个节点运行的输入输出结果，以及在代码中打印到标准输出的内容。
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/run-and-debug/run-log.png"),
+    dark: useBaseUrl("/img/docs/get-started/run-and-debug/run-log.png"),
+  }}
+/>
+
+### 功能
+
+#### 筛选
+
+所有运行后的节点都会显示在左侧栏中，点击对应的节点会筛选出节点的日志。
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/run-and-debug/run-log-filter.png"),
+    dark: useBaseUrl("/img/docs/get-started/run-and-debug/run-log-filter.png"),
+  }}
+/>
+
+#### 搜索
+
+搜索功能可以按照关键词搜索日志内容，搜索字符是大小写敏感的。
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/run-and-debug/run-log-search.png"),
+    dark: useBaseUrl("/img/docs/get-started/run-and-debug/run-log-search.png"),
+  }}
+/>
+
+#### 未捕获日志
+
+将搜索栏右侧菜单切换为 `Studio` 后，日志栏将会显示 OOMOL Studio 内部未捕获的日志。
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/run-and-debug/run-log-studio.png"),
+    dark: useBaseUrl("/img/docs/get-started/run-and-debug/run-log-studio.png"),
+  }}
+/>
+
+一般来说这种日志只会出现在一些极端情况下，内部无法捕获导致异常。
+
+#### 导出
+
+可以将当次运行的全量日志导出到指定的文件夹内。
+
+导出的日志包括内部调度器，执行器的日志，一般用于定位应用异常使用。
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/run-and-debug/run-log-export.png"),
+    dark: useBaseUrl("/img/docs/get-started/run-and-debug/run-log-export.png"),
+  }}
+/>
+
+:::info
+如果日志内容过长，OOMOL Studio 会不会将这些日志打印出来以避免应用崩溃。你仍然可以通过导出日志的功能看到这些日志。
+:::
+
+如果你在运行流之后发现无法处理的异常情况，可以尝试将运行日志导出后发送到 OOMOL Studio 的官方支持 `support@oomol.com` 获取支持。
