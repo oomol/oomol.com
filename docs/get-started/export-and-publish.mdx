@@ -1,0 +1,109 @@
+---
+sidebar_position: 5
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# Export and Publish
+
+In the same project, you can reuse functionality and logic through [Shared Blocks](/docs/studio-usage-guide/block/shared-block). If you want to share functionality and logic across different projects, you need to publish the project as a [Package](/docs/concepts/package).
+
+You can publish a Package through the publishing panel on the right. There are two ways to publish a Package:
+
+## Local Publishing
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/publish/publish-local.png"),
+    dark: useBaseUrl("/img/docs/get-started/publish/publish-local.png"),
+  }}
+/>
+
+### Export as File
+
+Clicking `Save as File` will package the entire project into a `.oomol` file. You can share this file with anyone, and it can be imported using the `Import` feature in the project interface.
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/publish/publish-import-file.png"),
+    dark: useBaseUrl("/img/docs/get-started/publish/publish-import-file.png"),
+  }}
+/>
+
+The imported project will restore all the contents of the original project.
+
+### Publish as Local Package
+
+Clicking the `Publish` button will publish the project as a Package locally. After publishing, you can find the Package in the `Toolbox` panel, and it can be used directly in any project on the same computer through the `Toolbar`.
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/publish/publish-local-use.png"),
+    dark: useBaseUrl("/img/docs/get-started/publish/publish-local-use.png"),
+  }}
+/>
+
+The usage of local Packages is the same as other shared Packages in the community, except that they are not published online and cannot be searched by others.
+
+## Online Publishing
+
+If you want other OOMOL users to be able to search for your Package in the community, you can publish it online.
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/publish/publish-online-start.png"),
+    dark: useBaseUrl("/img/docs/get-started/publish/publish-online-start.png"),
+  }}
+/>
+
+Clicking the `Edit New Version` button will take you to the publishing interface:
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/publish/publish-online.png"),
+    dark: useBaseUrl("/img/docs/get-started/publish/publish-online.png"),
+  }}
+/>
+
+There are two required fields: `Package Name` and `Version Number`:
+
+You need to ensure that the Package name does not conflict with any existing online Package names, and the version number does not conflict with already published versions.
+
+The online publishing panel also includes a `Save as File` button, which functions the same as the local Package publishing feature, exporting a `.oomol` file for sharing.
+
+### Documentation
+
+Clicking the `Edit README` button will open the documentation file for the project. If you haven't created a documentation file before, clicking the button will create a new one.
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/publish/publish-online.png"),
+    dark: useBaseUrl("/img/docs/get-started/publish/publish-online.png"),
+  }}
+/>
+
+The documentation will be displayed on the Package details page in the community.
+
+### Publish Without Template
+
+The default publishing method will replace the addresses of Shared Blocks referenced in the Flow with the online addresses of the published Blocks.
+
+When users open this Package, they will only see the Flow in the project, and the Blocks that the Flow depends on will be online Blocks.
+
+Considering that most users only care about the business logic implemented by the Flow and not the specific implementation details, this publishing method hides the details and allows users to run the Package in the simplest way.
+
+### Publish as Template
+
+When the `Publish as Template` option is selected, the project will be published as-is. Users opening this project from the community will see the same project structure and details as the publisher.
+
+For users, this is equivalent to creating a new project based on this template.
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/publish/publish-template.png"),
+    dark: useBaseUrl("/img/docs/get-started/publish/publish-template.png"),
+  }}
+/>
+
+This publishing method is suitable for projects that require users to perform secondary development.

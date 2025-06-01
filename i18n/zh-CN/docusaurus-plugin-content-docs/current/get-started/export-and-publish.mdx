@@ -1,0 +1,109 @@
+---
+sidebar_position: 5
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# 导出和发布
+
+在同个项目中可以通过[共享区块](/zh-CN/docs/studio-usage-guide/block/shared-block)来复用功能和逻辑，如果想在不同项目之间共享功能和逻辑就需要将项目发布为[包](/zh-CN/docs/concepts/package)。
+
+你可以在右侧发布面板中发布包，发布包有两种方式：
+
+## 本地发布
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/publish/publish-local.png"),
+    dark: useBaseUrl("/img/docs/get-started/publish/publish-local.png"),
+  }}
+/>
+
+### 导出为文件
+
+点击`保存为文件`后，整个项目会被打包为一个 `.oomol` 后缀的文件，你可以将这个文件发给任何想要分享的人，该文件可以使用项目界面的`导入`功能导入。
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/publish/publish-import-file.png"),
+    dark: useBaseUrl("/img/docs/get-started/publish/publish-import-file.png"),
+  }}
+/>
+
+导入文件后生成的项目会还原原项目的所有内容。
+
+### 发布为本地包
+
+点击`发布`按钮会将项目作为一个包发布到本地，发布完成后在`工具箱`栏内可以找到这个包，此时可以在当前计算机下的任何项目中直接通过`工具栏`使用这个包。
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/publish/publish-local-use.png"),
+    dark: useBaseUrl("/img/docs/get-started/publish/publish-local-use.png"),
+  }}
+/>
+
+本地包的使用方式与社区的其他共享包使用方式一致，区别仅在与没有发布到线上，其他人无法搜索到。
+
+## 线上发布
+
+如果你想让其他的 OOMOL 用户可以在社区内搜索到你的包，你可以通过线上方式进行发布。
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/publish/publish-online-start.png"),
+    dark: useBaseUrl("/img/docs/get-started/publish/publish-online-start.png"),
+  }}
+/>
+
+点击`编辑新版本`按钮可以进入发布界面：
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/publish/publish-online.png"),
+    dark: useBaseUrl("/img/docs/get-started/publish/publish-online.png"),
+  }}
+/>
+
+其中有两个必填项 `包名` 和 `版本号`：
+
+你需要保证你发布的包名与任何线上包名不冲突，同时版本好不能与已经发布的版本号冲突。
+
+在线上发布栏中也有一个`保存为文件`按钮，这个功能与本地发布包的功能一致，也会导出一个 `.oomol` 后缀文件以供分享。
+
+### 说明文档
+
+点击 `编辑 README` 按钮可以打开该该项目的说明文件。如果你没有创建过说明文件，点击按钮也会新建一个。
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/publish/publish-online.png"),
+    dark: useBaseUrl("/img/docs/get-started/publish/publish-online.png"),
+  }}
+/>
+
+在社区内进入到包的详情页就会显示这个说明文档。
+
+### 不作为模版发布
+
+默认的发布方式，这种发布方式会将流中引用的同项目的共享区块地址改为发布后的线上地址。
+
+这样用户在打开这个包后只会看到项目中的流，流依赖的共享区块都是线上的区块。
+
+考虑到大多数用户只会关心流实现的业务，不会在意具体实现细节，这种发布方式会将具体细节隐藏起来，让用户可以以最简单的方式运行起来。
+
+### 作为模板发布
+
+当勾选了`作为模板`的选项后，项目将会以原样发布，用户从社区中打开这个项目后，会与发布者看到的项目结构和细节一样。
+
+对于用户来说，就是以这个项目为模板创建了一个一样的项目。
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/get-started/publish/publish-template.png"),
+    dark: useBaseUrl("/img/docs/get-started/publish/publish-template.png"),
+  }}
+/>
+
+这样的发布方式适合于需要用户进行二次开发的项目。
