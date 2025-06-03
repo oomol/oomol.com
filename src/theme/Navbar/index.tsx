@@ -59,49 +59,49 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
     [items]
   );
 
-  const prevScrollPosRef = React.useRef(0);
+  // const prevScrollPosRef = React.useRef(0);
 
-  useEffect(() => {
-    let ticking = false;
+  // useEffect(() => {
+  //   let ticking = false;
 
-    const handleEvents = () => {
-      const currentScrollPos = window.pageYOffset;
-      const viewportWidth = window.innerWidth;
+  //   const handleEvents = () => {
+  //     const currentScrollPos = window.pageYOffset;
+  //     const viewportWidth = window.innerWidth;
 
-      if (viewportWidth < 996) {
-        setHideNavbar(false);
-        prevScrollPosRef.current = currentScrollPos;
-        return;
-      }
+  //     if (viewportWidth < 996) {
+  //       setHideNavbar(false);
+  //       prevScrollPosRef.current = currentScrollPos;
+  //       return;
+  //     }
 
-      const isScrollingDown = prevScrollPosRef.current < currentScrollPos;
-      setHideNavbar(isScrollingDown && currentScrollPos > 50);
-      prevScrollPosRef.current = currentScrollPos;
-      ticking = false;
-    };
+  //     const isScrollingDown = prevScrollPosRef.current < currentScrollPos;
+  //     setHideNavbar(isScrollingDown && currentScrollPos > 50);
+  //     prevScrollPosRef.current = currentScrollPos;
+  //     ticking = false;
+  //   };
 
-    const throttledHandler = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          handleEvents();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
+  //   const throttledHandler = () => {
+  //     if (!ticking) {
+  //       window.requestAnimationFrame(() => {
+  //         handleEvents();
+  //         ticking = false;
+  //       });
+  //       ticking = true;
+  //     }
+  //   };
 
-    prevScrollPosRef.current = window.pageYOffset;
+  //   prevScrollPosRef.current = window.pageYOffset;
 
-    handleEvents();
+  //   handleEvents();
 
-    window.addEventListener("scroll", throttledHandler, { passive: true });
-    window.addEventListener("resize", throttledHandler, { passive: true });
+  //   window.addEventListener("scroll", throttledHandler, { passive: true });
+  //   window.addEventListener("resize", throttledHandler, { passive: true });
 
-    return () => {
-      window.removeEventListener("scroll", throttledHandler);
-      window.removeEventListener("resize", throttledHandler);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("scroll", throttledHandler);
+  //     window.removeEventListener("resize", throttledHandler);
+  //   };
+  // }, []);
 
   return (
     <header
