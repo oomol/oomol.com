@@ -19,12 +19,8 @@
     "message": "Community",
     "description": "Navbar item with label Community"
   },
-  "item.label.Features": {
-    "message": "Features",
-    "description": "Navbar item with label Features"
-  },
-  "item.label.Pricing": {
-    "message": "Pricing",
-    "description": "Navbar item with label Pricing"
+  "title": {
+    "message": "OOMOL",
+    "description": "The title in the navbar"
   }
 }

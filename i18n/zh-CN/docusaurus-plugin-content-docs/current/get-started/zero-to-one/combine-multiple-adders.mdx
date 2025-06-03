@@ -1,0 +1,79 @@
+---
+sidebar_position: 20
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# 计算直角三角形的斜边长度
+
+在上一节中，我们创建了一个加法器和幂运算器，现在我们希望将这两个区块变得更有用，比如计算直角三角形的斜边长度。为此，我们需要将其转换为一个可以在多个工作流中使用的任务区块。
+
+## 转换为任务区块
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/get-started/zero-to-one/scriptlet-to-task-block-light.gif"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/get-started/zero-to-one/scriptlet-to-task-block-dark.gif"
+    )
+  }}
+/>
+
+点击小脚本区块的右上角设置，选择“转换为任务区块”后，会弹出一个对话框，其中“区块 ID”需要具备唯一性，用于程序区分不同的区块。“展示名”是区块在工作流中显示的名称，用于用户识别。
+
+当转换完成后，你会发现左边的[共享区块](/zh-CN/docs/get-started/interface/project#共享区块--shared-blocks)中出现了刚刚转换完成的任务区块。
+
+在工作流中，你可以看到小脚本区块也被替换成了任务区块，并且代码编辑器也消失不见了。
+
+<div className="image-container">
+  <Image
+    style={{ width: "450px" }}
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/cn/get-started/zero-to-one/scriptlet-to-task-block-in-workflow-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/cn/get-started/zero-to-one/scriptlet-to-task-block-in-workflow-dark.png"
+      )
+    }}
+  />
+</div>
+
+虽然长得不太一样，但实际上它们的功能是一样的。你可以在工作流中使用这个任务区块，就像使用小脚本区块一样。同时，你也可以在其他工作流中使用这个任务区块。以及在同一个工作流中使用多次。就像下面这样：
+
+<div className="image-container">
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/cn/get-started/zero-to-one/task-block-in-workflow-multiple-light.gif"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/cn/get-started/zero-to-one/task-block-in-workflow-multiple-dark.gif"
+      )
+    }}
+  />
+</div>
+
+:::info
+因为操作基本一致，这里就不再赘述幂运算器的转换过程了。
+:::
+
+现在我们拖动两个幂运算器和一个加法器到工作流中，并将前面两个幂运算器的输出连接到加法器的输入上，这样就可以计算直角三角形斜边长度的平方了。就像下面的例子中，我们将第一个幂运算器的输入设置为 `3`，第二个幂运算器的输入设置为 `4`，那么斜边平方的结果就是: `3^2 + 4^2 = 25`。
+
+此时我们再拖动一个 Python 小脚本区块到工作流中，用于计算平方根。如图:
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/get-started/zero-to-one/mutiple-task-block-combination-run-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/get-started/zero-to-one/mutiple-task-block-combination-run-dark.png"
+    )
+  }}
+/>
+
+可以看到，工作流中有多个任务区块被组合在一起，形成了一个完整的计算直角三角形斜边长度的工作流。并且每个任务区块都可以独立运行和测试。以及可以在其他工作流中复用。同时也可以跨语言进行组合。

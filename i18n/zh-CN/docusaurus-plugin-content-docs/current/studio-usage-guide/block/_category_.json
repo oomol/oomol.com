@@ -1,9 +1,0 @@
-{
-  "label": "Block Usage",
-  "position": 1,
-  "link": {
-    "type": "generated-index",
-    "description": "区块是 OOMOL Studio 中执行任务的最基础单元"
-  },
-  "collapsed": false
-}

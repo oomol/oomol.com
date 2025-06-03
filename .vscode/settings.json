@@ -48,6 +48,9 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[mdx]": {
+    "editor.defaultFormatter": null
+  },
   "cSpell.words": [
     "clsx",
     "Flowhub",

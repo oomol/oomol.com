@@ -50,5 +50,9 @@
   "sidebar.tutorialSidebar.category.Cloud.link.generated-index.description": {
     "message": "Reference of block, node, flow and so on",
     "description": "The generated-index page description for category Cloud in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Zero to One": {
+    "message": "Zero to One",
+    "description": "The label for category Zero to One in sidebar tutorialSidebar"
   }
 }
