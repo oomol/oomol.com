@@ -1,0 +1,100 @@
+---
+sidebar_position: 1
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# Introduction
+
+In the `Community` section of the application homepage, you can find all packages [published online by everyone](/docs/get-started/export-and-publish#online-publishing).
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/community/community-page.png"),
+    dark: useBaseUrl("/img/docs/community/community-page.png"),
+  }}
+  width="720"
+/>
+
+After clicking on any package, you can view the detailed information of the package.
+
+The content includes a preview of the flows in the package, package documentation, description, version information, etc.
+
+Depending on the publishing method of the package, the open button here will be different.
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/community/community-detail.png"),
+    dark: useBaseUrl("/img/docs/community/community-detail.png"),
+  }}
+  width="720"
+/>
+
+Clicking the button will open the project locally. If it's a package [published as a template](/docs/get-started/export-and-publish#publish-as-template), it will contain all project details after opening, and you can perform secondary development based on it. Otherwise, the project will only contain flows.
+
+## Github Publisher
+
+In actual engineering development, a more common way to update and publish is to publish automatically after code updates.
+
+OOMOL Studio supports configuring Github Actions to monitor code changes and automatically trigger publishing behavior when code changes occur.
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/community/community-publisher.png"),
+    dark: useBaseUrl("/img/docs/community/community-publisher.png"),
+  }}
+  width="720"
+/>
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/community/community-publisher-config.png"),
+    dark: useBaseUrl("/img/docs/community/community-publisher-config.png"),
+  }}
+  width="720"
+/>
+
+The Github repository is your repository name. After configuring the publisher, everyone will see that the publisher is this user after the package is published.
+
+You need to configure the relevant Actions in your Github repository. For configuration, you can refer to the [example project](https://github.com/oomol-lab/oopm-publish-action).
+
+## Collaboration
+
+:::info
+This is a feature that can only be used by standard subscription users. You can enter [OOMOL Console](https://console.oomol.com/) through the button at the bottom left of the application homepage. Then modify your subscription plan in the Console.
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/community/community-console-entry.png"),
+    dark: useBaseUrl("/img/docs/community/community-console-entry.png"),
+  }}
+  width="720"
+/>
+:::
+
+By default, if you have already published a package, only you can publish new versions of that package.
+
+If you need to allow other users to have publishing permissions, you can invite other users to become maintainers.
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/community/community-maintainer.png"),
+    dark: useBaseUrl("/img/docs/community/community-maintainer.png"),
+  }}
+  width="720"
+/>
+
+After clicking the `Invite` button, you can search for users and generate an invitation link. Send the invitation link to the specified user to let them accept becoming a maintainer.
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/community/community-maintainer-invite.png"),
+    dark: useBaseUrl("/img/docs/community/community-maintainer-invite.png"),
+  }}
+  width="720"
+/>
+
+:::info
+All maintainers have the same permissions. Please make sure you invite the correct users.
+:::
