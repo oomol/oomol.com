@@ -86,5 +86,9 @@
   "sidebar.tutorialSidebar.category.Zero to One": {
     "message": "从 0 到 1",
     "description": "The label for category Zero to One in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Community": {
+    "message": "社区",
+    "description": "The label for category Community in sidebar tutorialSidebar"
   }
 }

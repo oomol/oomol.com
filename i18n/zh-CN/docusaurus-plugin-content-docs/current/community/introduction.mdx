@@ -1,0 +1,100 @@
+---
+sidebar_position: 1
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# 介绍
+
+在应用主页的`社区`中，你可以找到所有人[发布到线上的包](/zh-CN/docs/get-started/export-and-publish#线上发布)。
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/community/community-page.png"),
+    dark: useBaseUrl("/img/docs/community/community-page.png"),
+  }}
+  width="720"
+/>
+
+在点击任意包后可以查看包的详细信息。
+
+内容包括包中流的预览、包的说明文档、描述、版本信息等。
+
+根据包的发布方式的不同，这里的打开按钮会有区别。
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/community/community-detail.png"),
+    dark: useBaseUrl("/img/docs/community/community-detail.png"),
+  }}
+  width="720"
+/>
+
+点击按钮会将项目在本地打开，如果是[以模板发布](/zh-CN/docs/get-started/export-and-publish#作为模板发布)的包，打开后包含有所有项目的细节，你可以基于此进行二次开发。否则项目将会只包含流。
+
+## Github 发布者
+
+在实际工程开发中，比较常见的更新发布方式是在代码更新后，通过自动化的方式进行发布。
+
+OOMOL Studio 支持配置 Github Action 来监听代码变化，当代码有变化的时候自动触发发布行为。
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/community/community-publisher.png"),
+    dark: useBaseUrl("/img/docs/community/community-publisher.png"),
+  }}
+  width="720"
+/>
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/community/community-publisher-config.png"),
+    dark: useBaseUrl("/img/docs/community/community-publisher-config.png"),
+  }}
+  width="720"
+/>
+
+其中 Github 仓库是你的仓库名。配置发布用户后，在包发布后所有人会看到发布者是这个用户。
+
+你需要在你的 Github 仓库中配置相关的 Action，配置可以参考[示例项目](https://github.com/oomol-lab/oopm-publish-action)。
+
+## 合作
+
+:::info
+这是标准订阅用户才可以使用的功能，你可以通过应用主页左下方的按钮进入 [OOMOL Console](https://console.oomol.com/)。然后在 Console 中修改你的订阅计划。
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/community/community-console-entry.png"),
+    dark: useBaseUrl("/img/docs/community/community-console-entry.png"),
+  }}
+  width="720"
+/>
+:::
+
+在默认情况下，如果你已经发布过一个包，那么仅有你自己才能够发布这个包的新版本。
+
+如果你需要允许其他用户有发布权限，那么你可以邀请其他用户成为维护者。
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/community/community-maintainer.png"),
+    dark: useBaseUrl("/img/docs/community/community-maintainer.png"),
+  }}
+  width="720"
+/>
+
+点击`邀请`按钮后可以搜索用户并生成邀请连接，将邀请连接发送给指定用户让其接受成为维护者。
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/community/community-maintainer-invite.png"),
+    dark: useBaseUrl("/img/docs/community/community-maintainer-invite.png"),
+  }}
+  width="720"
+/>
+
+:::info
+所有的维护者拥有同样的权限，请确保邀请了正确的用户。
+:::
