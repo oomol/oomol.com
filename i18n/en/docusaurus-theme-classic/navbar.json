@@ -26,5 +26,9 @@
   "item.label.Pricing": {
     "message": "Pricing",
     "description": "Navbar item with label Pricing"
+  },
+  "title": {
+    "message": "OOMOL",
+    "description": "The title in the navbar"
   }
 }

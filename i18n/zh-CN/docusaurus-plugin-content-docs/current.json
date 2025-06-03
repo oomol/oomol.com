@@ -82,5 +82,9 @@
   "sidebar.tutorialSidebar.category.Concepts": {
     "message": "概念",
     "description": "The label for category Concepts in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Zero to One": {
+    "message": "从 0 到 1",
+    "description": "The label for category Zero to One in sidebar tutorialSidebar"
   }
 }

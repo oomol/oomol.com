@@ -1,0 +1,79 @@
+---
+sidebar_position: 20
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# Calculate the Length of the Hypotenuse of a Right Triangle
+
+In the last section, we created an adder and a exponentiation. Now, we want to make these two blocks more useful, for example, to calculate the length of the hypotenuse of a right triangle. For this, we need to convert them into a task block that can be used in multiple Flows.
+
+## Convert to Task Block
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/get-started/zero-to-one/scriptlet-to-task-block-light.gif"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/get-started/zero-to-one/scriptlet-to-task-block-dark.gif"
+    )
+  }}
+/>
+
+After clicking the settings in the upper right corner of the scriptlet block and selecting "Convert to Task Block," a dialog box will pop up. Here, the "Block ID" needs to be unique for the program to distinguish different blocks. The "Display Name" is the name that the block will show in the Flow for user recognition.
+
+Once the conversion is complete, you will notice that the newly converted task block appears in the left [Shared Blocks](/zh-CN/docs/get-started/interface/project#共享区块--shared-blocks).
+
+In the Flow, you can see that the scriptlet block has also been replaced by the task block, and the code editor has disappeared.
+
+<div className="image-container">
+  <Image
+    style={{ width: "450px" }}
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/zero-to-one/scriptlet-to-task-block-in-workflow-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/zero-to-one/scriptlet-to-task-block-in-workflow-dark.png"
+      )
+    }}
+  />
+</div>
+
+Although they look different, their functions are actually the same. You can use this task block in the Flow just like you did with the scriptlet block. You can also use this task block in other Flows and the same Flow multiple times, as shown below:
+
+<div className="image-container">
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/get-started/zero-to-one/task-block-in-workflow-multiple-light.gif"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/get-started/zero-to-one/task-block-in-workflow-multiple-dark.gif"
+      )
+    }}
+  />
+</div>
+
+:::info
+Since the operation is basically the same, we will not elaborate on the conversion process of the exponentiation here.
+:::
+
+Now, we will drag two exponentiations and one adder into the Flow and connect the outputs of the first two exponentiations to the inputs of the adder. This way, we can calculate the square of the hypotenuse of the right triangle. In the example below, we set the input of the first exponentiation to `3` and the input of the second exponentiation to `4`, so the result of the square of the hypotenuse will be: `3^2 + 4^2 = 25`.
+
+At this point, we will drag another Python scriptlet block into the Flow to calculate the square root, as shown in the diagram:
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/get-started/zero-to-one/mutiple-task-block-combination-run-light.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/get-started/zero-to-one/mutiple-task-block-combination-run-dark.png"
+    )
+  }}
+/>
+
+You can see that multiple blocks are combined together in the Flow, forming a complete Flow to calculate the length of the hypotenuse of a right triangle. Each task block can run and be tested independently. They can be reused in other Flows and can also be combined across different programming languages.

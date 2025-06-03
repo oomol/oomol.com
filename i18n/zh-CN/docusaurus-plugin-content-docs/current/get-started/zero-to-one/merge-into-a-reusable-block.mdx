@@ -1,0 +1,30 @@
+---
+sidebar_position: 30
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import { ThemedComponent } from '@docusaurus/theme-common';
+
+# 合并为一个可复用的区块
+
+在上一节中，我们基于加法器创建了一个幂运算器，创建了一个计算直角三角形斜边长度的工作流。现在我们希望将这个工作流转换为一个可复用的区块，以便在其他工作流中使用。否则每次都需要重新创建这个工作流，显然不太方便。
+
+## 转换为子流区块
+
+ <ThemedComponent>
+  {({theme}) => {
+    const url = useBaseUrl(
+      theme === "dark"
+        ? "/img/docs/cn/get-started/zero-to-one/merge-into-a-reusable-block-dark.mp4"
+        : "/img/docs/cn/get-started/zero-to-one/merge-into-a-reusable-block-light.mp4"
+    );
+    return (
+      <video controls muted autoPlay loop style={{ width: "100%" }}>
+        <source src={url} type="video/mp4" />
+      </video>
+    )
+  }}
+</ThemedComponent>
+
+如上所示，我们将上节中的工作流转成了一个子流区块，以便在其他工作流中复用。极大的提高了工作流的可复用性。

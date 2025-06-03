@@ -1,0 +1,152 @@
+---
+sidebar_position: 10
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# 创建一个加法器和幂运算器
+
+在编程语言的世界里，打印一个“Hello, World!”是一个传统的开始。而在 OOMOL 中，我们将从创建一个简单的加法器和幂运算器开始。
+
+## 创建一个加法器
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/cn/get-started/zero-to-one/scriptlet-drag-light.gif"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/cn/get-started/zero-to-one/scriptlet-drag-dark.gif"
+    ),
+  }}
+/>
+
+OOMOL Studio 有一些内置的系统区块，而小脚本区块就包含在里面，如: _Python_、_TypeScript_、_JavaScript_
+
+如上图，我们将从右侧的[工具箱](/zh-CN/docs/get-started/interface/project#工具箱)中拖动 _JavaScript_ 小脚本区块到工作流中。
+
+我们将在这个小脚本区块中编写加法器的代码。
+
+### 配置输入
+
+<div className="image-container">
+  <Image
+    style={{ width: "450px" }}
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/cn/get-started/zero-to-one/scriptlet-set-input-light.gif"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/cn/get-started/zero-to-one/scriptlet-set-input-dark.gif"
+      ),
+    }}
+  />
+</div>
+
+当你拖动完成后，OOMOL Studio 会创建一个最基础的小脚本区块，所以我们需要在这个区块中添加一些输入定义，以便来符合我们的需求。
+
+### 编写代码
+
+当你拖动完成后，你会发现在区块的下方已经存在了一些代码，这些代码是 OOMOL Studio 预先生成的。包含了输入输出的类型定义和程序的入口函数。
+
+```javascript {20-23} showLineNumbers
+//#region generated meta
+/**
+ * @import { Context } from "@oomol/types/oocana";
+ * @typedef {{
+ *   a: number;
+ *   b: number;
+ * }} Inputs;
+ * @typedef {{
+ *   output: any;
+ * }} Outputs;
+ */
+//#endregion
+
+/**
+ * @param {Inputs} params
+ * @param {Context<Inputs, Outputs>} context
+ * @returns {Promise<Outputs>}
+ */
+export default async function (params, context) {
+
+  // your code
+
+  return { output: "output_value" };
+}
+```
+
+关于这些代码的介绍，我们将在以后的章节中，进行详细讲解。现在我们只需要关注第 **20-23** 行就好。
+
+我们将其改为如下代码：
+
+```javascript
+return { output: params.a + params.b };
+```
+
+至此，我们的加法器就完成了。它将接收两个数字输入 `a` 和 `b`，并返回它们的和作为输出。
+
+### 执行
+
+<div className="image-container">
+  <Image
+    style={{ width: "600px" }}
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/cn/get-started/zero-to-one/scriptlet-run-block-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/cn/get-started/zero-to-one/scriptlet-run-block-dark.png"
+      ),
+    }}
+  />
+</div>
+
+我们将参数 a 修改为 `1`，参数 b 修改为 `2`，然后点击区块右上角的按钮，即可在下方[工具流日志](/zh-CN/docs/get-started/interface/project#工作流日志)中查看输出的结果
+
+## 创建一个幂运算器
+
+<div className="image-container">
+  <Image
+    style={{ width: "600px" }}
+    sources={{
+      light: useBaseUrl(
+        "/img/docs/cn/get-started/zero-to-one/run-power-calculator-light.png"
+      ),
+      dark: useBaseUrl(
+        "/img/docs/cn/get-started/zero-to-one/run-power-calculator-dark.png"
+      ),
+    }}
+  />
+</div>
+
+接下来，我们将创建一个幂运算器，它接收两个输入，一个是底数(base)，一个是指数(exponent)，返回底数的指数次幂。
+
+我们可以通过复制之前的加法器区块，然后修改输入和输出的逻辑来实现这个功能。
+
+```javascript
+//#region generated meta
+/**
+ * @import { Context } from "@oomol/types/oocana";
+ * @typedef {{
+ *   base: number;
+ *   exponent: number;
+ * }} Inputs;
+ * @typedef {{
+ *   output: any;
+ * }} Outputs;
+ */
+//#endregion
+
+/**
+ * @param {Inputs} params
+ * @param {Context<Inputs, Outputs>} context
+ * @returns {Promise<Outputs>}
+ */
+export default async function (params, context) {
+  return { output: Math.pow(params.base, params.exponent) };
+}
+```
+
+至此，我们的幂运算器就完成了。它将接收两个数字输入 `base` 和 `exponent`，并返回 `base` 的 `exponent` 次幂作为输出。
