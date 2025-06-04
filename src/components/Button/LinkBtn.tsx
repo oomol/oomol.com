@@ -1,12 +1,12 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styles from "./LinkBtn.module.scss";
 import clsx from "clsx";
 
 export interface LinkBtnProps {
   text: string;
   iconPos: "left" | "right";
-  icon: string;
-  url: string;
+  icon: ReactNode | string;
+  url?: string;
   className?: string;
 }
 export default function LinkBtn({
@@ -18,16 +18,19 @@ export default function LinkBtn({
 }: LinkBtnProps) {
   return (
     <button
-      // className={styles.container}
       className={clsx(styles.container, className)}
-      onClick={() => window.open(url, "_blank")}
+      onClick={() => url && window.open(url, "_blank")}
     >
       <div
         className={`${styles.linkBtn}
         ${iconPos === "left" ? styles.left : styles.right}`}
       >
         <div className={styles.linkText}>{text}</div>
-        <i className={`${styles.linkIcon} ${icon}`} />
+        {typeof icon === "string" ? (
+          <i className={`${icon} styles.linkIcon`} />
+        ) : (
+          icon
+        )}
       </div>
     </button>
   );

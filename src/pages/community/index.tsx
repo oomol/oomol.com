@@ -1,40 +1,49 @@
 import styles from "./styles.module.scss";
-import XSVG from "@site/static/img/community-x.svg";
-import GitHubSVG from "@site/static/img/community-github.svg";
-import DiscordSVG from "@site/static/img/community-discord.svg";
-import YoutubeSVG from "@site/static/img/community-youtube.svg";
-import WeComSVG from "@site/static/img/community-we-com.svg";
-import DiscussionSVG from "@site/static/img/community-discussion.svg";
+import XSVG from "@site/static/img/pages/community/x.svg";
+import GitHubSVG from "@site/static/img/pages/community/github.svg";
+import DiscordSVG from "@site/static/img/pages/community/discord.svg";
+import YoutubeSVG from "@site/static/img/pages/community/youtube.svg";
+import WeComSVG from "@site/static/img/pages/community/wecom.svg";
+import DiscussionSVG from "@site/static/img/pages/community/github_discussion.svg";
 
 import Layout from "@theme/Layout";
 import { translate } from "@docusaurus/Translate";
 import { Popover } from "@site/src/components/Popover";
+import LinkBtn from "@site/src/components/Button/LinkBtn";
+import { Button } from "@site/src/components/Button";
+import i18n from "@generated/i18n";
+import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 
 const contentData = [
-  {
-    icon: <XSVG className={styles.logo} />,
-    name: "X",
-    href: "https://twitter.com/OomolStudio",
-  },
   {
     icon: <DiscordSVG className={styles.logo} />,
     name: "Discord",
     href: "https://discord.gg/W3evr2kJDa",
+    text: "Discord",
   },
   {
     icon: <YoutubeSVG className={styles.logo} />,
     name: "Youtube",
     href: "https://www.youtube.com/@oomolstudio",
+    text: "YouTube",
+  },
+  {
+    icon: <XSVG className={styles.logo} />,
+    name: "X",
+    href: "https://twitter.com/OomolStudio",
+    text: "X",
   },
   {
     icon: <GitHubSVG className={styles.logo} />,
     name: "GitHub",
     href: "https://github.com/oomol-lab",
+    text: "GitHub",
   },
   {
     icon: <DiscussionSVG className={styles.logo} />,
     name: "Discussion",
     href: "https://github.com/orgs/oomol-lab/discussions",
+    text: "Discussions",
   },
 ];
 
@@ -69,69 +78,67 @@ export default function Community() {
   return (
     <Layout>
       <div className={styles.container}>
-        <h1 className={styles.title}>
-          {translate({
-            message: "HOME.Community.title",
-          })}
-        </h1>
-        <span className={styles["sub-title"]}>
-          {translate({
-            message: "HOME.Community.subtitle",
-          })}
-        </span>
-        <div className={styles.middle}>
-          <span className={styles["contact-title"]}>
-            {translate({
-              message: "HOME.Community.contact-title",
-            })}
-          </span>
-          <div className={styles["contact-list"]}>
-            {contentData.map((item, index) => {
-              return (
-                <button key={`contact-${index}`} className={styles.item}>
-                  <a
-                    className={styles.content}
-                    href={item.href}
-                    target="_blank"
-                  >
-                    {item.icon}
-                    <span className={styles.name}>{item.name}</span>
-                  </a>
-                </button>
-              );
-            })}
-            <Popover
-              trigger={
-                <button className={styles.item}>
-                  <a className={styles.content}>
-                    <WeComSVG className={styles.logo} />
-                    <span className={styles.name}>
-                      {translate({ message: "HOME.Community.contact-we-com" })}
-                    </span>
-                  </a>
-                </button>
-              }
-              position="top"
-              content={
-                <img
-                  alt="qrcode"
-                  className={styles.qrcode}
-                  src={"/img/qrcode@3x.png"}
-                />
-              }
-            />
+        <div className={styles.headBox}>
+          <div className={styles.titleBox}>
+            <div className={styles.title}>
+              {translate({
+                message: "HOME.Community.title",
+              })}
+            </div>
+            <div className={styles.subTitle}>
+              {translate({
+                message: "HOME.Community.subtitle",
+              })}
+            </div>
+          </div>
+          <div className={styles.contactBox}>
+            <div className={styles["contactList"]}>
+              {contentData.map((item, index) => {
+                return (
+                  <LinkBtn
+                    key={item.name}
+                    text={item.text}
+                    iconPos="left"
+                    icon={item.icon}
+                    url={item.href}
+                  />
+                );
+              })}
+              <Popover
+                trigger={
+                  <LinkBtn
+                    text={translate({
+                      message: "HOME.Community.contact-we-com",
+                    })}
+                    iconPos="left"
+                    icon={<WeComSVG className={styles.logo} />}
+                  />
+                }
+                position="top"
+                className="popoverCentered"
+                content={
+                  <img
+                    alt="qrcode"
+                    className={styles.qrcode}
+                    src={"/img/qrcode@3x.png"}
+                  />
+                }
+              />
+            </div>
           </div>
         </div>
-        <div className={styles.slogans}>
+
+        <div className={styles.sloganBox}>
           {sloganData.map((item, index) => {
             return (
-              <div key={`slogan-${index}`} className={styles.slogan}>
-                <i className={`${item.icon} ${styles.icon}`} />
-                <span className={styles["slogan-text"]}>{item.text}</span>
+              <div className={styles.slogan} key={index}>
+                <i className={`${styles.sloganIcon} ${item.icon}`} />
+                <span className={styles.sloganText}>{item.text}</span>
               </div>
             );
           })}
         </div>
+        <GetStartedPrompt />
       </div>
     </Layout>
   );

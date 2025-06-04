@@ -237,19 +237,16 @@
     "message": "Overnight Build Version, Less Stable"
   },
   "HOME.Community.title": {
-    "message": "Community"
+    "message": "Connecting With People"
   },
   "HOME.Community.subtitle": {
-    "message": "Connecting with people working on OOMOL Studio"
-  },
-  "HOME.Community.contact-title": {
-    "message": "Follow us on"
+    "message": "Share, Explore, Create, and Building Together."
   },
   "HOME.Community.contact-we-com": {
     "message": "WeCom"
   },
   "HOME.Community.slogan-1": {
-    "message": "Stay in the Loop"
+    "message": "Stay In The Loop"
   },
   "HOME.Community.slogan-2": {
     "message": "Real Talk, No Ticket ID"
