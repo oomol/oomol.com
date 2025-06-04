@@ -92,10 +92,11 @@ export default function Community() {
             </div>
           </div>
           <div className={styles.contactBox}>
-            <div className={styles["contact-list"]}>
+            <div className={styles["contactList"]}>
               {contentData.map((item, index) => {
                 return (
                   <LinkBtn
+                    key={item.name}
                     text={item.text}
                     iconPos="left"
                     icon={item.icon}

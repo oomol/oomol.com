@@ -16,21 +16,21 @@ export default function LinkBtn({
   url,
   className,
 }: LinkBtnProps) {
-  const handleClick = () => {
-    if (url) {
-      window.open(url, "_blank");
-    }
-  };
   return (
-    <button className={clsx(styles.container, className)} onClick={handleClick}>
+    <button
+      className={clsx(styles.container, className)}
+      onClick={() => url && window.open(url, "_blank")}
+    >
       <div
         className={`${styles.linkBtn}
         ${iconPos === "left" ? styles.left : styles.right}`}
       >
         <div className={styles.linkText}>{text}</div>
-        <span className={styles.linkIcon}>
-          {typeof icon === "string" ? <i className={`${icon}`} /> : icon}
-        </span>
+        {typeof icon === "string" ? (
+          <i className={`${icon} styles.linkIcon`} />
+        ) : (
+          icon
+        )}
       </div>
     </button>
   );
