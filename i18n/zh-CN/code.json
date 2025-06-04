@@ -246,13 +246,10 @@
     "message": "隔夜构建版本，较不稳定"
   },
   "HOME.Community.title": {
-    "message": "社区"
-  },
-  "HOME.Community.subtitle": {
     "message": "与悟墨使用者建立联系"
   },
-  "HOME.Community.contact-title": {
-    "message": "在这些平台上关注我们"
+  "HOME.Community.subtitle": {
+    "message": "分享、探索、创造，携手共建。"
   },
   "HOME.Community.contact-we-com": {
     "message": "企业微信"
