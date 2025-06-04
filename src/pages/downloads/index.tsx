@@ -95,9 +95,6 @@ export default function Downloads() {
             })}
           </p>
         </div>
-        {/* <div className={styles["download-button"]}>
-          <DownloadButton />
-        </div> */}
         <div className={styles.cards}>
           {downloadData.map((item, index) => {
             return (
