@@ -60,6 +60,31 @@ Then restart your computer and try opening OOMOL Studio again.
 In addition to the above methods, you can also try: _disabling the firewall_, _exiting antivirus software_, or manually searching for: `WSL2 cannot connect to the internet` for more solutions.
 :::
 
+## Docker Desktop for Windows Throw an Error `wsl distro proxy in ovm-oomol-studio distro has exited with an error: exit status 1`
+
+OOMOL Studio creates a WSL2 distribution named `ovm-oomol-studio` and runs the OOMOL Studio virtual machine within it.
+
+At times, Docker Desktop for Windows performs **automatic** integration for WSL2 distributions.
+
+When OOMOL Studio exits, we also shut down the `ovm-oomol-studio` distribution. At this point, Docker Desktop for Windows detects that the integrated WSL2 distribution has exited and throws this error.
+
+The solution is: Open the settings of Docker Desktop for Windows, go to `Resources` -> `WSL Integration`, then uncheck the `ovm-oomol-studio` distribution -> Click the `Apply & restart` button.
+
+If the above solutions still do not resolve the issue, you can try the following methods:
+
+1. Use the command `wsl --set-default <distribution name>` to set another Linux distribution as the default WSL distribution. (After setting, you need to restart Docker Desktop for Windows)
+2. Disable the `WSL Integration` feature in Docker Desktop for Windows.
+3. Disable the `Resource Server` feature in Docker Desktop for Windows.
+
+:::info
+For more information on this issue, please refer to: https://github.com/docker/for-win/issues/14187
+:::
+
+In addition to the errors mentioned above, Docker Desktop for Windows may also throw the following errors (the solutions are the same):
+
+1. `configuring docker in ovm-oomol-studio: docker cli config: failed to write file: exit status Oxffffffff`
+2. `running wsl distro proxy in ovm-oomol-studio distro: exit status 1`
+
 ## Getting Logs
 
 When encountering other problems, you can try to retrieve the logs from OOMOL Studio to help us identify the issues.
