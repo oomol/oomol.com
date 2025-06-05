@@ -42,3 +42,17 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 **我们建议在发布前将所有小脚本区块转换为共享区块，这样就可以避免上述问题。**
 
 如果你一定要使用小脚本区块，那么请记住你只能使用代码语言内置的模块。
+
+## 如何在 OOMOL Studio 内部连用户计算机上的服务（MySQL、Redis 等）
+
+### 答案
+
+OOMOL Studio 应用内是一个容器环境，它与用户的计算机是相互隔离的。
+
+但是你可以通过容器提供的特殊域名 `host.docker.internal` 访问计算机上的服务。
+
+参考 [Docker 容器连接宿主机服务](https://docs.docker.com/desktop/features/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host)。
+
+例如：
+
+你在计算机上启动了一个 Mysql 服务，在本机上可以通过 `http://127.0.0.1:3306` 连接，在 OOMOL Studio 内你可以通过 `http://host.docker.internal:3306` 连接。

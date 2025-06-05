@@ -42,3 +42,17 @@ Therefore, we choose to prohibit developers from using script blocks that depend
 **We recommend converting all script blocks to shared blocks before publishing, which can avoid the above problems.**
 
 If you must use script blocks, please remember that you can only use built-in modules of the programming language.
+
+## How to connect to services on the user's computer (MySQL, Redis, etc.) within OOMOL Studio
+
+### Answer
+
+OOMOL Studio application runs in a container environment, which is isolated from the user's computer.
+
+However, you can access services on the computer through the special domain name `host.docker.internal` provided by the container.
+
+Refer to [Docker container connecting to host services](https://docs.docker.com/desktop/features/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host).
+
+For example:
+
+If you start a MySQL service on your computer, you can connect through `http://127.0.0.1:3306` on the local machine. In OOMOL Studio, you can connect through `http://host.docker.internal:3306`.
