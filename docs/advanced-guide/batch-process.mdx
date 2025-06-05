@@ -1,0 +1,140 @@
+---
+sidebar_position: 2
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# Batch Processing
+
+In some scenarios, if you need to process a series of data of the same type, you can use the built-in array package in OOMOL Studio:
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-array-block.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-array-block.png"
+    ),
+  }}
+  width="720"
+/>
+
+This package has two main functional blocks: Map and Filter.
+
+## Map Block
+
+The Map block itself is a subflow block. Its input is an array and an additional specified parameter, and it has a slot.
+
+The Map block internally iterates through each element of the input array, then passes each element as a parameter to the block connected to the slot. The slot block processes the element and outputs a result. Finally, the Map block combines all the processing results of all elements into an array and outputs it.
+
+The additional specified parameter is passed to the slot block when each element is iterated.
+
+For detailed information about subflow blocks, please refer to [Subflow Block](/docs/advanced-guide/block-advanced-usage/advanced-subflow-block).
+
+### Use Case
+
+Here we implement an example where we want to add a numbered prefix to each element of a string array.
+
+First, we prepare the input and parameters for the Map block. The `args` input here is the parameter passed to the slot each time the slot block is called:
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-map-use.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-map-use.png"
+    ),
+  }}
+  width="720"
+/>
+
+After preparing the input, we click the slot button below to enter the slot configuration interface. Here we use a small script block to concatenate each array element, element index, and `args` parameter together and then output:
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-map-slot.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-map-slot.png"
+    ),
+  }}
+  width="720"
+/>
+
+Return to the Map block's flow and run it:
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-map-run.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-map-run.png"
+    ),
+  }}
+  width="720"
+/>
+
+Finally, we get a processed array. From the input log, we can see that all array elements have been added with a sequence number and separator.
+
+## Filter Block
+
+The Filter block itself is a subflow block. Its input is an array and an additional specified parameter, and it has a slot.
+
+The Filter block internally iterates through each element of the input array, then passes each element as a parameter to the block connected to the slot. The slot block determines whether the current element should be selected. Finally, the Filter block combines all selected elements into an array and outputs it.
+
+The additional specified parameter is passed to the slot block when each element is iterated.
+
+For detailed information about subflow blocks, please refer to [Subflow Block](/docs/advanced-guide/block-advanced-usage/advanced-subflow-block).
+
+### Use Case
+
+Here we implement an example where we want to remove elements that meet specified conditions from a string array.
+
+First, we prepare the input and parameters for the Filter block:
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-filter-use.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-filter-use.png"
+    ),
+  }}
+  width="720"
+/>
+
+After preparing the input, we click the slot button below to enter the slot configuration interface. Here we use a small script block to write conditions, and elements that meet the conditions will be removed:
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-filter-slot.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-filter-slot.png"
+    ),
+  }}
+  width="720"
+/>
+
+Return to the Filter block's flow and run it:
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-filter-run.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-filter-run.png"
+    ),
+  }}
+  width="720"
+/>
+
+Finally, we get a processed array. From the input log, we can see that the data meeting the conditions has been removed.

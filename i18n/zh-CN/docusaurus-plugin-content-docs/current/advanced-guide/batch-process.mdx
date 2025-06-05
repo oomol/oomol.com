@@ -1,0 +1,140 @@
+---
+sidebar_position: 2
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# 批处理
+
+在某些场景下，如果需要将一系列同样类型的数据进行处理，那么你可以使用 OOMOL Studio 内置的数组包：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-array-block.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-array-block.png"
+    ),
+  }}
+  width="720"
+/>
+
+该包主要的功能区块有两个：Map 和 Filter。
+
+## Map 区块
+
+Map 区块本身是一个子流区块，它的输入是一个数组和一个额外指定参数，同时有一个插槽。
+
+Map 区块在内部会遍历输入数组的每个元素，然后将每个元素作为参数传递给连接插槽的区块，插槽区块会处理元素输出一个结果，最终 Map 区块会将所有元素的处理结果合并为一个数组后输出。
+
+额外指定参数在每一个元素被遍历时传入到插槽区块中。
+
+关于子流区块的详细说明可以参考[子流区块](/zh-CN/docs/advanced-guide/block-advanced-usage/advanced-subflow-block)。
+
+### 用例
+
+这里我们实现一个例子，我们要为一个字符串数组的每个元素加上一个编号前缀。
+
+我们先将 Map 区块的输入和参数准备好，这里的 `args` 输入是每一次调用插槽区块是传递给插槽的参数：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-map-use.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-map-use.png"
+    ),
+  }}
+  width="720"
+/>
+
+输入准备完成后我们点击下方插槽的按钮进入插槽设置界面，我们这里使用一个小脚本区块将每个数组元素、元素索引、`args` 参数拼接起来然后输出：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-map-slot.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-map-slot.png"
+    ),
+  }}
+  width="720"
+/>
+
+回到 Map 区块的流然后运行：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-map-run.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-map-run.png"
+    ),
+  }}
+  width="720"
+/>
+
+最终我们得到了一个处理后的数组，从输入日志可以看到所有的数组元素被添加上了一个序号和分隔符。
+
+## Filter 区块
+
+Filter 区块本身是一个子流区块，它的输入是一个数组和一个额外指定参数，同时有一个插槽。
+
+Filter 区块在内部会遍历输入数组的每个元素，然后将每个元素作为参数传递给连接插槽的区块，插槽区块会判断当前元素是否应该选取，最终 Filter 区块会将所有选取的元素合并为一个数组输出。
+
+额外指定参数在每一个元素被遍历时传入到插槽区块中。
+
+关于子流区块的详细说明可以参考[子流区块](/zh-CN/docs/advanced-guide/block-advanced-usage/advanced-subflow-block)。
+
+### 用例
+
+这里我们实现一个例子，我们要删除一个字符串数组中符合指定条件的元素。
+
+我们先将 Filter 区块的输入和参数准备好：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-filter-use.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-filter-use.png"
+    ),
+  }}
+  width="720"
+/>
+
+输入准备完成后我们点击下方插槽的按钮进入插槽设置界面，我们这里使用一个小脚本区块编写条件，符合条件的元素将被删除：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-filter-slot.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-filter-slot.png"
+    ),
+  }}
+  width="720"
+/>
+
+回到 Filter 区块的流然后运行：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-filter-run.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/batch-process/batch-filter-run.png"
+    ),
+  }}
+  width="720"
+/>
+
+最终我们得到了一个处理后的数组，从输入日志可以看到符合条件的数据已经被删除。
