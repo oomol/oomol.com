@@ -5,25 +5,7 @@ sidebar_position: 3
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-# Shared Block Advanced Usage
-
-## Value Block
-
-The Value Block is a special built-in shared Block in OOMOL Studio, designed to provide users with a reusable constant input box.
-
-<Image
-  sources={{
-    light: useBaseUrl(
-      "/img/docs/advanced-guide/advanced-block-usage/value-block.png"
-    ),
-    dark: useBaseUrl(
-      "/img/docs/advanced-guide/advanced-block-usage/value-block.png"
-    ),
-  }}
-  width="720"
-/>
-
-Here, the Value Block's function is equivalent to filling the input of two Python Blocks with the same value.
+# Task Block Advanced Usage
 
 ## Custom Rendering
 
@@ -31,7 +13,7 @@ Here, the Value Block's function is equivalent to filling the input of two Pytho
 Using custom rendering requires some [React](https://react.dev/) frontend technology foundation.
 :::
 
-Shared Block Nodes have a `Configure Shared Block` menu item. Click it to enter the shared Block configuration.
+Task Block Nodes have a `Configure Shared Block` menu item. Click it to enter the shared Block configuration.
 
 You can also directly click the settings in the left shared Block panel to enter the configuration.
 
@@ -47,7 +29,7 @@ You can also directly click the settings in the left shared Block panel to enter
   width="720"
 />
 
-The shared Block configuration is consistent with [Universal Block Settings](/docs/advanced-guide/block-advanced-usage/universal-block-settings) except for the `Custom UI`.
+The Task Block configuration is consistent with [Universal Block Settings](/docs/advanced-guide/block-advanced-usage/universal-block-settings) except for the `Custom UI`.
 
 Since the [Node.js preview](/docs/workflow-engine/nodejs-sdk-api#3-contextpreview-types) / [Python preview](/docs/workflow-engine/nodejs-sdk-api#3-contextpreview-types) functionality provided by OOMOL Studio has limited scenarios, we provide custom UI to let users decide what content the Block can render or preview.
 

@@ -5,25 +5,7 @@ sidebar_position: 3
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-# 共享区块进阶用法
-
-## 值区块
-
-值区块是 OOMOL Studio 内置的一个特殊的共享区块，设计初衷是为用户提供一个可以复用的常量输入框。
-
-<Image
-  sources={{
-    light: useBaseUrl(
-      "/img/docs/advanced-guide/advanced-block-usage/value-block.png"
-    ),
-    dark: useBaseUrl(
-      "/img/docs/advanced-guide/advanced-block-usage/value-block.png"
-    ),
-  }}
-  width="720"
-/>
-
-这里值区块的作用等价于为两个 Python 区块的 input 输入填入同一个值。
+# 任务区块进阶用法
 
 ## 自定义渲染
 
@@ -31,7 +13,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 使用自定义渲染需要你有一定的 [React](https://react.dev/) 前端技术基础。
 :::
 
-共享区块节点会有一个`配置共享区块`的菜单项，点击后进入共享区块配置。
+任务区块节点会有一个`配置共享区块`的菜单项，点击后进入共享区块配置。
 
 你也可以直接点击左侧共享区块面板中的设置进入配置。
 
@@ -47,7 +29,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
   width="720"
 />
 
-共享区块的配置除了`自定义 UI`意外其余均与[通用区块设置](/zh-CN/docs/advanced-guide/block-advanced-usage/universal-block-settings)中一致。
+任务区块的配置除了`自定义 UI`意外其余均与[通用区块设置](/zh-CN/docs/advanced-guide/block-advanced-usage/universal-block-settings)中一致。
 
 由于 OOMOL Studio 提供的[nodejs 预览](/zh-CN/docs/workflow-engine/nodejs-sdk-api#3-contextpreview-types) / [python 预览](/zh-CN/docs/workflow-engine/nodejs-sdk-api#3-contextpreview-types)功能场景有限，因此我们提供了自定义 UI 用于让用户自行决定区块可以渲染或者预览的内容。
 
