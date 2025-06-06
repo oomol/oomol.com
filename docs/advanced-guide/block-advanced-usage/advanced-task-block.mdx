@@ -5,11 +5,11 @@ sidebar_position: 3
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-# 共享区块进阶用法
+# Task Block Advanced Usage
 
-## 值区块
+## Value Block
 
-值区块是 OOMOL Studio 内置的一个特殊的共享区块，设计初衷是为用户提供一个可以复用的常量输入框。
+The Value Block is a special built-in shared Block in OOMOL Studio, designed to provide users with a reusable constant input box.
 
 <Image
   sources={{
@@ -23,17 +23,17 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
   width="720"
 />
 
-这里值区块的作用等价于为两个 Python 区块的 input 输入填入同一个值。
+Here, the Value Block's function is equivalent to filling the input of two Python Blocks with the same value.
 
-## 自定义渲染
+## Custom Rendering
 
 :::info
-使用自定义渲染需要你有一定的 [React](https://react.dev/) 前端技术基础。
+Using custom rendering requires some [React](https://react.dev/) frontend technology foundation.
 :::
 
-共享区块节点会有一个`配置共享区块`的菜单项，点击后进入共享区块配置。
+Task Block Nodes have a `Configure Shared Block` menu item. Click it to enter the shared Block configuration.
 
-你也可以直接点击左侧共享区块面板中的设置进入配置。
+You can also directly click the settings in the left shared Block panel to enter the configuration.
 
 <Image
   sources={{
@@ -47,11 +47,11 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
   width="720"
 />
 
-共享区块的配置除了`自定义 UI`意外其余均与[通用区块设置](/zh-CN/docs/advanced-guide/block-advanced-usage/universal-block-settings)中一致。
+The Task Block configuration is consistent with [Universal Block Settings](/docs/advanced-guide/block-advanced-usage/universal-block-settings) except for the `Custom UI`.
 
-由于 OOMOL Studio 提供的[nodejs 预览](/zh-CN/docs/workflow-engine/nodejs-sdk-api#3-contextpreview-types) / [python 预览](/zh-CN/docs/workflow-engine/nodejs-sdk-api#3-contextpreview-types)功能场景有限，因此我们提供了自定义 UI 用于让用户自行决定区块可以渲染或者预览的内容。
+Since the [Node.js preview](/docs/workflow-engine/nodejs-sdk-api#3-contextpreview-types) / [Python preview](/docs/workflow-engine/nodejs-sdk-api#3-contextpreview-types) functionality provided by OOMOL Studio has limited scenarios, we provide custom UI to let users decide what content the Block can render or preview.
 
-在区块配置界面中点击`自定义 UI`下的`创建`按钮后，等待一段时间后，OOMOL Studio 会自动初始化一套 UI 模板代码。
+After clicking the `Create` button under `Custom UI` in the Block configuration panel, wait for a moment, and OOMOL Studio will automatically initialize a set of UI template code.
 
 <Image
   sources={{
@@ -65,7 +65,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
   width="720"
 />
 
-你可以在左侧的文件浏览器中找到模板代码的文件夹，同时`自定义 UI`配置项下会出现代码的入口文件。
+You can find the template code folder in the file explorer on the left, and the code entry file will appear under the `Custom UI` configuration item.
 
 <Image
   sources={{
@@ -79,11 +79,11 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
   width="720"
 />
 
-### 代码开发
+### Code Development
 
-在自动生成的代码中可以找到一个 `src` 文件夹，这个文件夹里的内容就是自定义 UI 的代码。
+In the automatically generated code, you can find a `src` folder, which contains the custom UI code.
 
-自定义 UI 的代码编辑入口在 `oo-render/src/render.tsx` 内，我们可以看到自定义 UI 是通过监听 `message` 事件来获取外部属性的：
+The custom UI code editing entry is in `oo-render/src/render.tsx`. We can see that the custom UI obtains external properties by listening to `message` events:
 
 <Image
   sources={{
@@ -97,7 +97,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
   width="720"
 />
 
-所以我们可以在**区块代码**中调用 `context.send_message()` 方法来将数据发送到自定义 UI：
+So we can call the `context.send_message()` method in the **Block code** to send data to the custom UI:
 
 <Image
   sources={{
@@ -111,9 +111,9 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
   width="720"
 />
 
-这里我们发送了一条带有输入内容的字符串。
+Here we sent a string with the input content.
 
-然后我们可以编辑 `oo-render/src/App.tsx` 的代码，这里我们将直接打印数据的代码替换为一个按钮，点击后会弹出提示框显示数据：
+Then we can edit the code in `oo-render/src/App.tsx`. Here we replace the code that directly prints data with a button that will show an alert with the data when clicked:
 
 <Image
   sources={{
@@ -127,7 +127,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
   width="720"
 />
 
-然后在终端下进入自定义 UI 的目录：
+Then enter the custom UI directory in the terminal:
 
 <Image
   sources={{
@@ -141,15 +141,15 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
   width="720"
 />
 
-运行
+Run
 
 ```shell
 pnpm build
 ```
 
-构建代码。
+to build the code.
 
-然后重新运行区块，你就可以看到自定义的 UI 样式：
+Then re-run the Block, and you can see the custom UI style:
 
 <Image
   sources={{
@@ -163,7 +163,7 @@ pnpm build
   width="720"
 />
 
-点击按钮会提示区块代码中发送的内容：
+Clicking the button will show the content sent by the Block code:
 
 <Image
   sources={{
@@ -177,13 +177,13 @@ pnpm build
   width="720"
 />
 
-### 本地调试
+### Local Debugging
 
-在自定义 UI 的开发过程中，我们可以单独进行 UI 的调试工作而不用每次重新运行区块，这样可以提高我们的开发效率。
+During the development of custom UI, we can debug the UI separately without re-running the Block each time, which can improve our development efficiency.
 
-在自动生成的代码中可以找到一个 `dev` 文件夹，这个文件夹里的内容用于本地调试自定义 UI。
+In the automatically generated code, you can find a `dev` folder, which contains content for local debugging of the custom UI.
 
-首先我们进入自定义 UI 的目录下：
+First, we enter the custom UI directory:
 
 <Image
   sources={{
@@ -197,13 +197,13 @@ pnpm build
   width="720"
 />
 
-然后在终端中执行:
+Then execute in the terminal:
 
 ```shell
 pnpm dev
 ```
 
-就可以在本地浏览器中打开一个调试窗口，你可以看到自定义 UI 的预览：
+This will open a debug window in your local browser where you can see the custom UI preview:
 
 <Image
   sources={{
@@ -217,14 +217,14 @@ pnpm dev
   width="360"
 />
 
-当我们修改自定义 UI 代码并保存后就可以实时在这个调试窗口看到变化，不用运行区块。
+When we modify the custom UI code and save it, we can see the changes in real-time in this debug window without running the Block.
 
 :::info
-在调试窗口运行的样式可能会与 OOMOL Studio 中运行的样式不一致，但是不会影响功能，这是因为 VSCode 在全局注册了样式表，而浏览器环境没有这些样式表。
-因此自定义 UI 的样式请以 OOMOL Studio 中展示的为准。
+The styles running in the debug window may not be consistent with those running in OOMOL Studio, but this won't affect functionality. This is because VSCode registers stylesheets globally, while the browser environment doesn't have these stylesheets.
+Therefore, the custom UI styles should be based on what's displayed in OOMOL Studio.
 :::
 
-你可以在 `dev/dev.main.tsx` 文件中模拟区块在运行时通过 `context.send_message()` 方法发送的内容。
+You can simulate the content sent by the Block through the `context.send_message()` method at runtime in the `dev/dev.main.tsx` file.
 
 <Image
   sources={{
@@ -238,7 +238,7 @@ pnpm dev
   width="720"
 />
 
-这样在调试窗口就可以进行功能测试：
+This way you can perform functional testing in the debug window:
 
 <Image
   sources={{
@@ -251,3 +251,4 @@ pnpm dev
   }}
   width="720"
 />
+
