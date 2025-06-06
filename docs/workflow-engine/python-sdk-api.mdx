@@ -6,17 +6,17 @@ import python_df from "@site/static/img/docs/python_df.png";
 import python_plt from "@site/static/img/docs/python_plt.png";
 import python_plotly from "@site/static/img/docs/python_plotly.png";
 
-# 📙 Python API
+# Python API
 
-## 1. Introduction
+## Introduction
 
 Developers will call our SDK in the Scriptlet Block to interact with the `OOCANA` workflow engine. This document provides detailed instructions on how to use the related APIs.
 
-## 2. Quick Start
+## Quick Start
 
 How to use the SDK in the Scriptlet Block. You need to import the `Context` object and use it to call the related APIs.
 
-### 2.1 `Scriptlet` Template
+### `Scriptlet` Template
 
 Below is the template function for a Scriptlet. You need to write your execution code within the function body. The input and output types can be customized, and third-party libraries are supported.
 
@@ -31,7 +31,7 @@ def main(params: dict, context: Context):
 
 ```
 
-### 2.2 Common APIs
+### Common APIs
 
 ```python
     # Report block completion
@@ -50,11 +50,11 @@ def main(params: dict, context: Context):
     def host_info(self) -> HostInfo:
 ```
 
-## 3. `Context.preview` Types
+## `Context.preview` Types
 
 `context.preview` is a core API. Its main function is to help developers preview data. We support previews for almost all common data types.
 
-### 3.1 `PreviewPayload` Types
+### `PreviewPayload` Types
 
 Function name: `context.preview`
 
@@ -124,7 +124,7 @@ Parameter type: `PreviewPayload`
 
 ```
 
-### 3.2 `Preview` Examples
+### `Preview` Examples
 
 ```python
   context.preview({
@@ -173,7 +173,7 @@ Only supports Python
 
 <img src={python_plotly} width="720" />
 
-## 4. `Context` Types
+## `Context` Types
 
 API type descriptions provided by the `OOCANA` SDK to help users understand how to use these APIs accurately.
 

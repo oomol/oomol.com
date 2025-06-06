@@ -4,17 +4,17 @@ sidebar_position: 2
 
 import node_preview from "@site/static/img/docs/node_preview.png";
 
-# 📗 Nodejs API
+# Nodejs API
 
-## 1. 简介
+## 简介
 
 开发者需要在 Scriptlet Block 中调用 SDK 与 `OOCANA` 工作流引擎进行交互。本文档详细介绍了相关 API 的使用方法。
 
-## 2. 快速开始
+## 快速开始
 
 在 Scriptlet Block 中使用 SDK 时，需要导入 `Context` 对象，并通过该对象调用相关 API。
 
-### 2.1 `Scriptlet` 模板
+### `Scriptlet` 模板
 
 下面是 Scriptlet 的模板函数，需要在函数体内编写执行代码。函数的输入和输出类型可自定义，并且支持导入第三方库。
 
@@ -38,7 +38,7 @@ export default async function (
 }
 ```
 
-### 2.2 常用 API
+### 常用 API
 
 常用的 API 列表如下：
 
@@ -59,11 +59,11 @@ export default async function (
   readonly hostInfo: HostInfo;
 ```
 
-## 3. `Context.preview` Types
+## `Context.preview` Types
 
 `context.preview` 是核心 API 。它的主要功能是帮助开发人员预览数据。我们支持几乎所有常用数据的预览。
 
-### 3.1 `PreviewPayload` Types
+### `PreviewPayload` Types
 
 函数名称：`context.preview`
 
@@ -97,7 +97,7 @@ type PreviewPayload =
     };
 ```
 
-### 3.2 `Preview` 例子
+### `Preview` 例子
 
 ```typescript
 await context.preview({
@@ -108,7 +108,7 @@ await context.preview({
 
 <img src={node_preview} width="720" />
 
-## 4. `Context` 对象类型的详细类型，
+## `Context` 对象类型的详细类型，
 
 `OOCANA` SDK 提供的 API 类型描述，帮助用户了解如何准确使用这些 API。可以在编辑器中打开看到详细的类型提示。
 
@@ -163,7 +163,7 @@ interface Context<
 }
 ```
 
-## 5. 更多用例
+## 更多用例
 
 请参考项目[Node.js 用例](https://github.com/oomol-flows/nodejs-samples/tree/main/basic)。
 

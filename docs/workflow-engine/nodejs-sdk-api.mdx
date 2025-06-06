@@ -4,17 +4,17 @@ sidebar_position: 2
 
 import node_preview from "@site/static/img/docs/node_preview.png";
 
-# 📗 Nodejs API
+# Nodejs API
 
-## 1. Introduction
+## Introduction
 
 Developers will call our SDK in the Scriptlet Block to interact with the `OOCANA` workflow engine. This document provides a detailed introduction to the API usage.
 
-## 2. Quick Start
+## Quick Start
 
 When using the SDK in the Scriptlet Block, you need to import the `Context` object and call the relevant APIs through it.
 
-### 2.1 `Scriptlet` Template
+### `Scriptlet` Template
 
 Below is the template function for Scriptlet, where you should write your execution code. The input and output types can be customized, and third-party libraries can be imported.
 
@@ -38,7 +38,7 @@ export default async function (
 }
 ```
 
-### 2.2 Common APIs
+### Common APIs
 
 Here's a list of commonly used APIs:
 
@@ -59,11 +59,11 @@ Here's a list of commonly used APIs:
   readonly hostInfo: HostInfo;
 ```
 
-## 3. `Context.preview` Types
+## `Context.preview` Types
 
 `context.preview` is a core API. Its main function is to help developers preview data. We support previews for almost all common data types.
 
-### 3.1 `PreviewPayload` Types
+### `PreviewPayload` Types
 
 Function name: `context.preview`
 
@@ -97,7 +97,7 @@ type PreviewPayload =
     };
 ```
 
-### 3.2 `Preview` Example
+### `Preview` Example
 
 ```typescript
 await context.preview({
@@ -108,7 +108,7 @@ await context.preview({
 
 <img src={node_preview} width="720" />
 
-## 4. Detailed Types of `Context` Object
+## Detailed Types of `Context` Object
 
 The API type descriptions provided by the `OOCANA` SDK help users understand how to use these APIs accurately. You can open the editor to see detailed type hints.
 
@@ -163,7 +163,7 @@ interface Context<
 }
 ```
 
-## 5. More Use Cases
+## More Use Cases
 
 Please refer to the project [Node.js Use Cases](https://github.com/oomol-flows/nodejs-samples/tree/main/basic).
 
