@@ -24,3 +24,9 @@ The Value Block is a special built-in Shared Block in OOMOL Studio, designed to 
 />
 
 Here, the Value Block's function is equivalent to filling the input of two Python Blocks with the same value.
+
+The Value Block itself is not an executable Block, so its output will not trigger the execution of downstream Nodes.
+
+For Flows, the Value Block Node will not be the starting Node of the Flow; it merely has an assignment function.
+
+Therefore, we use special connections to represent this mechanism.
