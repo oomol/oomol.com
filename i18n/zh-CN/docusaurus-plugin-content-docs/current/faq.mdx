@@ -1,30 +1,31 @@
 ---
-sidebar_position: 2
+sidebar_position: 6
 ---
 
-# 故障排除
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
-## 已知可能的问题
+# 常见问题
 
-在有些时候运行 OOMOL Studio 可能会遇到一些问题，下面是一些常见问题的排查方法。
+在有些时候运行 OOMOL Studio 可能会遇到一些问题，下面是一些常见问题的排查和处理方法。
 
-### 无法启动 OOMOL Studio
+## 无法启动 OOMOL Studio
 
 如果你是 **Windows** 用户，请确保你的操作系统大于等于 Windows 19044(Windows 21H2) 版本，这是因为 OOMOL Studio 在 Windows 系统中使用了 `WSL2` 作为虚拟机的基座。而低于这个版本的 Windows 系统有时遇到 WSL2 无法正常启动的问题。
 
 而如果是 **macOS** 用户，请确保你的操作系统大于等于 13.1(Ventura) 版本，这是因为 OOMOL Studio 在 macOS (Intel) 系统中使用了 `Virtualization.framework`，而低于这个版本的 macOS 系统缺失了一些必要的 API，会导致 OOMOL Studio 无法正常启动。
 
-### 出现 `The OOMOL Studio must be single instance` 警告
+## 出现 `The OOMOL Studio must be single instance` 警告
 
 由于目前 OOMOL Studio 暂不支持多实例启动，因此如果你尝试启动多个实例，就会弹出这个警告窗口。
 
 如果你认为你没有启动另一个实例，那可能是进程残留所导致的，你可以在任务管理器中结束其他实例的进程，然后重新打开 OOMOL Studio。
 
-### 出现 `The OOMOL Studio is running under ARM64 translation mode. Please download the ARM64 architecture version.` 警告
+## 出现 `The OOMOL Studio is running under ARM64 translation mode. Please download the ARM64 architecture version.` 警告
 
 这个警告是因为目前 OOMOL Studio 暂时不支持在 **Apple Silicon** 的 ARM64 架构下运行 x86_64 架构的 OOMOL Studio，因此你需要重新下载并安装 ARM64 架构版本的 OOMOL Studio。
 
-### 无法在 OOMOL Studio 中下载依赖、安装插件等
+## 无法在 OOMOL Studio 中下载依赖、安装插件等
 
 当你遇到这种情况时，极大的概率是由于网络问题所导致的。因为像 npm、pip、系统源大多数都是在国外的服务器上，所以可能会无法连接。
 
@@ -67,7 +68,7 @@ OOMOL Studio 会创建一个名为 `ovm-oomol-studio` 的 WSL2 发行版，并�
 
 而 Docker Desktop for Windows 在有些时候会为 WSL2 中的发行版进行**自动**集成。
 
-当 OOMOL Studio 退出时，我们也会让 `ovm-oomol-studio` 发行版关机，此时 Docker Desktop for Windows 发现集成的 WSL2 发行版已经退出，就会报出这个错误。 
+当 OOMOL Studio 退出时，我们也会让 `ovm-oomol-studio` 发行版关机，此时 Docker Desktop for Windows 发现集成的 WSL2 发行版已经退出，就会报出这个错误。
 
 解决方案为: 打开 Docker Desktop for Windows 的设置，进入 `Resources` -> `WSL Integration`，然后取消勾选 `ovm-oomol-studio` 发行版 -> 点击 `Apply & restart` 按钮即可。
 
@@ -85,6 +86,48 @@ Docker Desktop for Windows 除了上面的错误外，还有可能会抛出下�
 
 1. `configuring docker in ovm-oomol-studio: docker cli config: failed to write file: exit status Oxffffffff`
 2. `running wsl distro proxy in ovm-oomol-stuio distro: exit status 1`
+
+## 打开的项目中的小脚本区块的依赖无法安装
+
+用户在打开了一个社区项目后，发现其中的流使用了小脚本，在运行时却发现小脚本区块依赖的模块找不到。
+
+<Image
+  sources={{
+    light: useBaseUrl("/img/docs/fqa/fqa-lib-not-found.png"),
+    dark: useBaseUrl("/img/docs/fqa/fqa-lib-not-found.png"),
+  }}
+  width="720"
+/>
+
+假设开发者们在流的小脚本区块中依赖了第三方模块，这种情况下，如果是 Node.js 代码会使用 `package.json` 文件，如果是 Python 代码会使用 `requirements.txt` 或者之类的其他文件来锁定第三方模块的版本。
+
+那么当用户将流克隆到本地（锁定模块版本的文件一定也被克隆，否则无法保证代码一定可以执行）并开始使用后，如果开发者此时更新了依赖模块的版本，用户也要同步更新只有两种选择：
+
+1. 删掉本地的项目，重新拉取开发者最新的项目然后安装所有的东西，再运行。
+
+2. 查看开发者的改动，自己在本地进行同样的操作。
+
+这两种选择对于用户都是很繁琐的，尤其是对于不懂代码的用户来说。
+
+另一种情况，用户也许会将包作为基础进行二次开发，那么当用户在某些代码上用到的模块与原包的模块有了版本冲突，将会无法处理。
+
+因此我们选择禁止开发者们在发布到线上的流中使用依赖了第三方模块的小脚本区块。
+
+**我们建议在发布前将所有小脚本区块转换为共享区块，这样就可以避免上述问题。**
+
+如果你一定要使用小脚本区块，那么请记住你只能使用代码语言内置的模块。
+
+## 如何在 OOMOL Studio 内部连用户计算机上的服务（MySQL、Redis 等）
+
+OOMOL Studio 应用内是一个容器环境，它与用户的计算机是相互隔离的。
+
+但是你可以通过容器提供的特殊域名 `host.docker.internal` 访问计算机上的服务。
+
+参考 [Docker 容器连接宿主机服务](https://docs.docker.com/desktop/features/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host)。
+
+例如：
+
+你在计算机上启动了一个 Mysql 服务，在本机上可以通过 `http://127.0.0.1:3306` 连接，在 OOMOL Studio 内你可以通过 `http://host.docker.internal:3306` 连接。
 
 ## 获取日志
 

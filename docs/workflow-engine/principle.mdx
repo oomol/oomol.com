@@ -2,11 +2,11 @@
 sidebar_position: 1
 ---
 
-# 📚 Architecture Principles
+# Architecture Principles
 
 `OOCANA` is OOMOL's core workflow engine, providing the foundational runtime support for the entire `OOMOL Studio`.
 
-## 1. OOCANA Overview
+## OOCANA Overview
 
 `OOCANA` is an orchestration tool designed for scheduling and executing sequences of task units. The architecture consists of:
 - Scheduling logic stored in `flow.oo.yaml` files (referred to as `flow`)
@@ -21,17 +21,17 @@ The function should return a dictionary object (or in `Nodejs`, a `Promise` that
 
 The `flow` file defines the triggering sequence and data transfer relationships between `blocks`.
 
-## 2. Block Orchestration and Execution
+## Block Orchestration and Execution
 
 The execution sequence of `blocks` is determined by connections defined in the `flow`, following a data-flow driven model — when required data is ready, the corresponding `block` is automatically triggered for execution. This differs from event-driven step triggering in GitHub Actions (where the next step is triggered after the previous one completes), which is primarily used in CI/CD scenarios like compilation and packaging.
 
 Currently, `blocks` support `Nodejs` and `Python` runtime environments. Blocks of the same language run in the same environment. Data between different language environments is transferred via JSON, while blocks in the same language environment can transfer data through JSON or directly via variables. Note that variables follow pass-by-reference principles, so modifying a variable value in one `block` affects the same variable in other `blocks`.
 
-## 3. Block Data Transfer Specifications
+## Block Data Transfer Specifications
 
 Data formats are defined separately in `block` and `flow`. Currently, `OOCANA` runtime does not validate these data formats (some GUI components handle this validation). During execution, the actual data format returned by a `block` is not yet validated. Therefore, developers must ensure that returned data formats conform to the specifications defined by both `flow` and `block`.
 
-## 4. Block Debugging and Acceleration Strategies
+## Block Debugging and Acceleration Strategies
 
 When a `flow` contains numerous `blocks` with time-consuming execution, debugging can be accelerated by specifying block execution strategies. Two acceleration methods are supported:
 

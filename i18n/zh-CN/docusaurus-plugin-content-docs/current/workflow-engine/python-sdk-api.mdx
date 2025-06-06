@@ -6,17 +6,17 @@ import python_df from "@site/static/img/docs/cn/python_df.png";
 import python_plt from "@site/static/img/docs/cn/python_plt.png";
 import python_plotly from "@site/static/img/docs/cn/python_plotly.png";
 
-# 📙 Python API
+# Python API
 
-## 1. 简介
+## 简介
 
 开发者需要在 Scriptlet Block 中调用 SDK 与 `OOCANA` 工作流引擎进行交互。本文档详细介绍了相关 API 的使用方法。
 
-## 2. 快速开始
+## 快速开始
 
 在 Scriptlet Block 中使用 SDK 时，需要导入 `Context` 对象，并通过该对象调用相关 API。
 
-### 2.1 `Scriptlet` 模板
+### `Scriptlet` 模板
 
 下面是 Scriptlet 的模板函数，需要在函数体内编写执行代码。函数的输入和输出类型可自定义，并且支持导入第三方库。
 
@@ -31,7 +31,7 @@ def main(params: dict, context: Context):
 
 ```
 
-### 2.2 核心 API
+### 核心 API
 
 ```python
     # 标记当前块已完成执行
@@ -50,11 +50,11 @@ def main(params: dict, context: Context):
     def host_info(self) -> HostInfo:
 ```
 
-## 3. `Context.preview` 类型
+## `Context.preview` 类型
 
 `context.preview` 是一个核心 API，用于预览各种类型的数据。该 API 支持几乎所有常见数据格式的预览。
 
-### 3.1 `PreviewPayload` 类型定义
+### `PreviewPayload` 类型定义
 
 函数签名：`context.preview`
 
@@ -124,7 +124,7 @@ def main(params: dict, context: Context):
 
 ```
 
-### 3.2 `Preview` 使用示例
+### `Preview` 使用示例
 
 ```python
   context.preview({
@@ -173,7 +173,7 @@ def main(params: dict, context: Context):
 
 <img src={python_plotly} width="720" />
 
-## 4. `Context` 类型定义
+## `Context` 类型定义
 
 `OOCANA` SDK 提供的完整 API 类型描述，帮助开发者准确理解和使用这些接口。
 
