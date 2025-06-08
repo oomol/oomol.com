@@ -19,6 +19,7 @@ How to use the SDK in the Scriptlet Block. You need to import the `Context` obje
 ### `Scriptlet` Template
 
 Below is the template function for a Scriptlet. You need to write your execution code within the function body. The input and output types can be customized, and third-party libraries are supported.
+To pass data to subsequent blocks, simply return a dictionary as you would in a normal function. OOCANA will use the top-level keys as the corresponding output handles, and the values as the output for those handles.
 
 ```python
 from oocana import Context
