@@ -43,20 +43,40 @@ export default async function (
 Here's a list of commonly used APIs:
 
 ```typescript
-  /** Report block completion */
-  readonly done: (err?: any) => Promise<void>;
-  /** Report an error */
-  readonly error: (error: unknown) => Promise<void>;
+  readonly output: {
+    /**
+     * @param handle Output handle
+     * @param output Output value
+     */
+    <THandle extends Extract<keyof TOutputs, string>>(
+      handle: THandle,
+      output: TOutputs[THandle]
+    ): Promise<void>;
+  };
+
+  /**
+   * Report block outputs. it can report multiple output at once.
+   * @param map map can be a partial object of TOutputs
+   * @returns
+   */
+  readonly outputs: (map: Partial<TOutputs>) => Promise<void>;
+
+  /**
+   * reporter block finish. it can contain error or result.
+   * if contains error, it will be treated as block failed and ignore result argument
+   * if contains result, it will be treated as success
+   * otherwise, it will be treated as success and no result will be reported.
+   */
+  readonly finish: (
+    arg?: { result?: any; error?: never } | { result?: never; error?: unknown }
+  ) => Promise<void>;
+
   /** Enable preview */
   readonly preview: (payload: PreviewPayload) => Promise<void>;
   /** Temporary directory for the entire session, users can use it to store temporary files */
   readonly sessionDir: string;
   /** Report progress, progress 0~100, this function is throttled to trigger every 300ms. */
   readonly reportProgress: (progress: number) => Promise<void>;
-  /** oomol environment variables for LLM, you can get base_url api-key model-list */
-  readonly OOMOL_LLM_ENV: OOMOL_LLM_ENV;
-  /** Get GPU information of the local device, so that the corresponding hardware acceleration library can be called */
-  readonly hostInfo: HostInfo;
 ```
 
 ## `Context.preview` Types
