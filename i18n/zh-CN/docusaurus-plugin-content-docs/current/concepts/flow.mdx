@@ -56,3 +56,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 流的运行顺序会根据节点的连线为线索，OOMOL Studio 在运行前会进行一次搜索，寻找**输入接口没有连接**的节点作为运行的开始节点。如果有多个开始节点，那么这些开始节点都会同时开始运行。
 
 然后按照输入 -> 输入接口的连线顺序运行节点直到结束。
+
+:::info
+这里有一个特殊情况的连线，[值区块](/zh-CN/docs/advanced-guide/reusable-constants)的连线只视为赋值，不会影响该节点是否为开始节点判断结果。
+:::
