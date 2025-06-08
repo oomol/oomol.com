@@ -17,6 +17,7 @@ import node_preview from "@site/static/img/docs/node_preview.png";
 ### `Scriptlet` 模板
 
 下面是 Scriptlet 的模板函数，需要在函数体内编写执行代码。函数的输入和输出类型可自定义，并且支持导入第三方库。
+向后续 block 传递数据，可以像普通函数一样 return 一个字典即可。oocana 会将第一级的 key 作为对应的 handle 输出，value 做为这个 handle 的值进行输出。
 
 ```typescript
 import type { Context } from "@oomol/types/oocana";
@@ -34,6 +35,7 @@ export default async function (
 ): Promise<Outputs> {
   // 你的代码写在此处，会被执行
 
+  # oocana 会向后续 block 传递一个 output 数据，值为 null (注意 undefined 会被 JSON 过滤，相当于这个 key 都不会传递)
   return { output: null };
 }
 ```
@@ -43,10 +45,14 @@ export default async function (
 常用的 API 列表如下：
 
 ```typescript
-  /** 报告区块已完成 */
-  readonly done: (err?: any) => Promise<void>;
-  /** 报告错误 */
-  readonly error: (error: unknown) => Promise<void>;
+  /** 报告区块已完成，同时发送数据，或者错误信息。 */
+  readonly finish: (
+    arg?: { result?: any; error?: never } | { result?: never; error?: unknown }
+  ) => Promise<void>;
+  /** 报告单个数据 */
+  readonly output: (handle: string, value: any) => Promise<void>;
+  /** 一次性发送多个数据，参数结构为 key value，key 就是对应的输出数据名称 */
+  readonly outputs: (map: Partial<TOutputs>) => Promise<void>;
   /** 启用预览 */
   readonly preview: (payload: PreviewPayload) => Promise<void>;
   /** 每次任务的临时目录， 用户可以用来存储临时文件 */
@@ -118,48 +124,63 @@ interface Context<
   TOutputs = Record<string, any>,
 > {
   readonly sessionId: string;
-  readonly jobId: string;
-  readonly block_path: string;
-  readonly stacks: readonly BlockJobStackLevel[];
-  readonly inputs: TInputs;
-  readonly output: {
-    <THandle extends Extract<keyof TOutputs, string>>(
-      handle: THandle,
-      output: TOutputs[THandle]
-    ): Promise<void>;
+    readonly jobId: string;
+    readonly block_path: string;
+    readonly stacks: readonly BlockJobStackLevel[];
+    readonly inputs: TInputs;
+
+    /** 报告单个区块输出数据 */
+    readonly output: {
+      /**
+       * @param handle 输出数据名
+       * @param output 输出值
+       */
+      <THandle extends Extract<keyof TOutputs, string>>(
+        handle: THandle,
+        output: TOutputs[THandle]
+      ): Promise<void>;
+    };
+
     /**
-     * @deprecated 此方法将在未来移除。请使用不带 done 参数的函数。如果您想报告块完成，请使用 context.done()。
-     * 报告块输出。
-     * @param handle 输出句柄
-     * @param output 输出值
-     * @param done 将被移除。报告块完成。
+     * 报告区块输出，可以一次性报告多个输出。
+     * @param map map 可以是 TOutputs 的部分对象
+     * @returns
      */
-    <THandle extends Extract<keyof TOutputs, string>>(
-      handle: THandle,
-      output: TOutputs[THandle],
-      done: boolean
-    ): Promise<void>;
-  };
-  /** 报告块已完成 */
-  readonly done: (err?: any) => Promise<void>;
-  /** 报告日志 */
-  readonly logJSON: (jsonValue: unknown) => Promise<void>;
-  /** 报告错误 */
-  readonly error: (error: unknown) => Promise<void>;
-  /** 报告额外的块消息 */
-  readonly sendMessage: (payload: unknown) => Promise<void>;
-  /** 发送到预览 */
-  readonly preview: (payload: PreviewPayload) => Promise<void>;
-  /** 报告块的 stdio 和 stdout 消息 */
-  readonly reportLog: (
-    payload: string,
-    stdio: "stdout" | "stderr"
-  ) => Promise<void>;
-  /** 整个会话的临时目录，所有块在一个会话中将共享同一个目录 */
-  readonly sessionDir: string;
-  /** 报告进度，进度 0 ~ 100，该函数有节流效果，每 300ms 触发一次 */
-  readonly reportProgress: (progress: number) => Promise<void>;
-  readonly keepAlive: KeepAlive;
+    readonly outputs: (map: Partial<TOutputs>) => Promise<void>;
+
+    /**
+     * 报告区块完成，可以包含错误或结果。
+     * 如果包含 error，则视为区块失败并忽略 result 参数；
+     * 如果包含 result，则视为成功；
+     * 否则视为成功但不报告结果。
+     */
+    readonly finish: (
+      arg?: { result?: any; error?: never } | { result?: never; error?: unknown }
+    ) => Promise<void>;
+
+    /** 报告日志 */
+    readonly logJSON: (jsonValue: unknown) => Promise<void>;
+
+    /** 报告错误 */
+    readonly error: (error: unknown) => Promise<void>;
+
+    /** 报告额外的区块消息 */
+    readonly sendMessage: (payload: unknown) => Promise<void>;
+
+    /** 发送预览数据 */
+    readonly preview: (payload: PreviewPayload) => Promise<void>;
+
+    /** 报告区块的 stdio 和 stdout 消息 */
+    readonly reportLog: (
+      payload: string,
+      stdio: "stdout" | "stderr"
+    ) => Promise<void>;
+
+    /** 整个会话的临时目录，所有区块共享同一个目录 */
+    readonly sessionDir: string;
+
+    /** 报告进度，进度范围 0 ~ 100，该函数有节流效果，每 300ms 触发一次 */
+    readonly reportProgress: (progress: number) => Promise<void>;
 }
 ```
 
