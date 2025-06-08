@@ -55,4 +55,8 @@ In OOMOL Studio, only Flows are executable concepts. We can run the entire Flow 
 
 The execution order of a Flow follows the connections between Nodes. Before execution, OOMOL Studio performs a search to find Nodes with **unconnected input Handles** as the starting Nodes for execution. If there are multiple starting Nodes, all these starting Nodes will start running simultaneously.
 
-Then Nodes are executed in the order of input -> input Handle connections until completion.
+Then Nodes are executed in the order of output Handle -> input Handle connections until completion.
+
+:::info
+There is a special case of wiring here. The wiring of the [Value Block](/docs/advanced-guide/reusable-constants) is only considered as assignment and will not affect the result of judging whether the Node is the start Node.
+:::
