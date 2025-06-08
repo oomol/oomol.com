@@ -17,6 +17,7 @@ import node_preview from "@site/static/img/docs/node_preview.png";
 ### `Scriptlet` 模板
 
 下面是 Scriptlet 的模板函数，需要在函数体内编写执行代码。函数的输入和输出类型可自定义，并且支持导入第三方库。
+向后续 block 传递数据，可以像普通函数一样 return 一个字典即可。oocana 会将第一级的 key 作为对应的 handle 输出，value 做为这个 handle 的值进行输出。
 
 ```typescript
 import type { Context } from "@oomol/types/oocana";
@@ -34,6 +35,7 @@ export default async function (
 ): Promise<Outputs> {
   // 你的代码写在此处，会被执行
 
+  # oocana 会向后续 block 传递一个 output 数据，值为 null (注意 undefined 会被 JSON 过滤，相当于这个 key 都不会传递)
   return { output: null };
 }
 ```
