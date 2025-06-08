@@ -35,20 +35,35 @@ def main(params: dict, context: Context):
 ### 核心 API
 
 ```python
-    # 标记当前块已完成执行
-    def done(self, error: str | None = None):
-    # 报告错误并终止执行
-    def error(self, error: str):
+    def finish(self, *, result: Dict[str, Any] | None = None, error: str | None = None):
+        """
+        结束当前块的执行，并将结果发送给 oocana。
+        如果 error 不为 None，则以错误状态结束当前块。
+        如果 result 不为 None，则以指定结果结束当前块。
+        如果 error 和 result 均为 None，则正常结束当前块且不返回结果。
+        """
+
+    def output(self, key: str, value: Any):
+        """
+        将数据输出到下游块。
+
+        key: str，输出的键名，需在块的输出定义（handle 字段）中声明
+        value: Any，输出的值
+        """
+
+    def outputs(self, outputs: Dict[str, Any]):
+        """
+        批量将数据输出到下游块。
+
+        outputs: Dict[str, Any]，输出的键值对，键需在块的输出定义（handle 字段）中声明
+        """
+
     # 启用数据预览功能
     def preview(self, payload: PreviewPayload):
     # 获取会话临时目录路径，可用于存储临时文件
     def session_dir(self) -> str:
     # 报告执行进度（0-100），内置节流机制，每300ms触发一次
     def report_progress(self, progress: float | int):
-    # 获取 OOMOL 内置大模型配置，包括 base_url、api-key、model-list
-    def oomol_llm_env(self) -> OOMOL_LLM_ENV:
-    # 获取本地设备的 GPU 信息，以便调用相应的硬件加速库
-    def host_info(self) -> HostInfo:
 ```
 
 ## `Context.preview` 类型
@@ -179,272 +194,88 @@ def main(params: dict, context: Context):
 `OOCANA` SDK 提供的完整 API 类型描述，帮助开发者准确理解和使用这些接口。
 
 ```python
+class OOMOL_LLM_ENV(TypedDict):
+    base_url: str
+    base_url_v1: str
+    api_key: str
+    models: list[str]
+
+class HostInfo(TypedDict):
+    gpu_vendor: str
+    gpu_renderer: str
+
 class Context:
-    __inputs: Dict[str, Any]
-
-    __block_info: BlockInfo
-    __outputs_def: Dict[str, HandleDef]
-    __store: Any
-    __is_done: bool = False
-    __keep_alive: OnlyEqualSelf = OnlyEqualSelf()
-    __session_dir: str
-
-    def __init__(
-        self, inputs: Dict[str, Any], blockInfo: BlockInfo, mainframe: Mainframe, store, outputs, session_dir: str
-    ) -> None:
-
-        self.__block_info = blockInfo
-
-        self.__mainframe = mainframe
-        self.__store = store
-        self.__inputs = inputs
-
-        outputs_defs = {}
-        if outputs is not None:
-            for k, v in outputs.items():
-                outputs_defs[k] = HandleDef(**v)
-        self.__outputs_def = outputs_defs
-        self.__session_dir = session_dir
-
+    def __init__(self, inputs: dict[str, Any], blockInfo: BlockInfo, mainframe: Mainframe, store, outputs, session_dir: str, tmp_dir: str, package_name: str, pkg_dir: str) -> None: ...
     @property
-    def session_dir(self) -> str:
-        """当前会话的临时目录，所有块在一个会话中将共享同一个目录。"""
-        return self.__session_dir
-
+    def logger(self) -> logging.Logger: ...
     @property
-    def keepAlive(self):
-        return self.__keep_alive
-
+    def session_dir(self) -> str: ...
     @property
-    def inputs(self):
-        return self.__inputs
-
+    def tmp_dir(self) -> str: ...
     @property
-    def session_id(self):
-        return self.__block_info.session_id
-
+    def tmp_pkg_dir(self) -> str: ...
     @property
-    def job_id(self):
-        return self.__block_info.job_id
-
+    def pkg_dir(self) -> str: ...
     @property
-    def job_info(self) -> JobDict:
-        return self.__block_info.job_info()
-
+    def keepAlive(self): ...
     @property
-    def block_info(self) -> BlockDict:
-        return self.__block_info.block_dict()
-
+    def inputs(self): ...
     @property
-    def node_id(self) -> str:
-        return self.__block_info.stacks[-1].get("node_id", None)
-
-    def __store_ref(self, handle: str):
-        return StoreKey(
-            executor=EXECUTOR_NAME,
-            handle=handle,
-            job_id=self.job_id,
-            session_id=self.session_id,
-        )
-
-    def __is_basic_type(self, value: Any) -> bool:
-        return isinstance(value, (int, float, str, bool))
-
-    def output(self, key: str, value: Any, done: bool = False):
+    def session_id(self): ...
+    @property
+    def job_id(self): ...
+    @property
+    def job_info(self) -> JobDict: ...
+    @property
+    def block_info(self) -> BlockDict: ...
+    @property
+    def node_id(self) -> str: ...
+    @property
+    def oomol_llm_env(self) -> OOMOL_LLM_ENV: ...
+    @property
+    def host_info(self) -> HostInfo: ...
+    @property
+    def host_endpoint(self) -> str | None: ...
+    def output(self, key: str, value: Any): ...
         """
-        将数据输出到下游节点
+        将数据输出到下游块
 
-        key: str, 输出键名，必须在块输出定义中已声明，字段名为 handle
-        value: Any, 输出值
-        done: bool, 是否标记当前块执行完成
+        key: str，输出的键名，需在块的输出定义（handle 字段）中声明
+        value: Any，输出的值
         """
+    def outputs(self, outputs: dict[str, Any]): ...
+        """
+        批量将数据输出到下游块
 
-        v = value
+        outputs: Dict[str, Any]，输出的键值对，键需在块的输出定义（handle 字段）中声明
+        """
+    def finish(self, *, result: dict[str, Any] | None = None, error: str | None = None): ...
+        """
+        结束当前块的执行，并将结果发送给 oocana。
+        如果 error 不为 None，则以错误状态结束当前块。
+        如果 result 不为 None，则以指定结果结束当前块。
+        如果 error 和 result 均为 None，则正常结束当前块且不返回结果。
+        """
+    def send_message(self, payload) -> None: ...
+    def preview(self, payload: PreviewPayload): ...
+    def report_progress(self, progress: float | int): ...
+        """报告进度
 
-        if self.__outputs_def is not None:
-            output_def = self.__outputs_def.get(key)
-            if (
-                output_def is not None and output_def.is_var_handle() and not self.__is_basic_type(value) # 基础类型即使是变量也不放进 store，直接作为 json 内容传递
-            ):
-                ref = self.__store_ref(key)
-                self.__store[ref] = value
-                v = asdict(ref)
-            elif output_def is not None and output_def.is_bin_handle():
-                if not isinstance(value, bytes):
-                    self.send_warning(
-                        f"输出键 [{key}] 被定义为二进制类型，但提供的值不是 bytes 类型"
-                    )
-                    return
+        此 API 用于报告块的执行进度，仅影响 UI 进度条，不影响实际进度。
+        此 API 内置节流机制，最小间隔为 0.3 秒。
+        第一次调用时会立即上报进度，之后每隔节流周期结束时才会上报一次。
 
-                bin_file = f"{self.session_dir}/binary/{self.session_id}/{key}"
-                os.makedirs(os.path.dirname(bin_file), exist_ok=True)
-                try:
-                    with open(bin_file, "wb") as f:
-                        f.write(value)
-                except IOError as e:
-                    self.send_warning(
-                        f"输出键 [{key}] 被定义为二进制类型，但写入文件失败: {e}"
-                    )
-                    return
-
-                if os.path.exists(bin_file):
-                    v = bin_file
-                else:
-                    self.send_warning(
-                        f"输出键 [{key}] 被定义为二进制类型，但文件未成功写入"
-                    )
-                    return
-
-        # 如果传入的键名在输出定义中不存在，将忽略该数据，但 done 参数仍会生效
-        if self.__outputs_def is not None and self.__outputs_def.get(key) is None:
-            self.send_warning(
-                f"输出键 [{key}] 未在块输出定义中声明"
-            )
-            if done:
-                self.done()
-            return
-
-        node_result = {
-            "type": "BlockOutput",
-            "handle": key,
-            "output": v,
-            "done": done,
-        }
-        self.__mainframe.send(self.job_info, node_result)
-
-        if done:
-            self.done()
-
-    def done(self, error: str | None = None):
-        if self.__is_done:
-            self.send_warning("done 方法已被多次调用，重复调用将被忽略")
-            return
-        self.__is_done = True
-        if error is None:
-            self.__mainframe.send(self.job_info, {"type": "BlockFinished"})
-        else:
-            self.__mainframe.send(
-                self.job_info, {"type": "BlockFinished", "error": error}
-            )
-
-    def send_message(self, payload):
-        self.__mainframe.report(
-            self.block_info,
-            {
-                "type": "BlockMessage",
-                "payload": payload,
-            },
-        )
-
-    def __dataframe(self, payload: PreviewPayload) -> PreviewPayload:
-        if isinstance(payload, DataFrame):
-            payload = { "type": "table", "data": payload }
-
-        if isinstance(payload, dict) and payload.get("type") == "table":
-            df = payload.get("data")
-            if isinstance(df, ShapeDataFrame):
-                row_count = df.shape[0]
-                if row_count <= 10:
-                    data = df.to_dict(orient='split')
-                    columns = data.get("columns", [])
-                    rows = data.get("data", [])
-                elif isinstance(df, PartialDataFrame):
-                    data_columns = loads(df.head(5).to_json(orient='split'))
-                    columns = data_columns.get("columns", [])
-                    rows_head = data_columns.get("data", [])
-                    data_tail = loads(df.tail(5).to_json(orient='split'))
-                    rows_tail = data_tail.get("data", [])
-                    rows_dots = [["..."] * len(columns)]
-                    rows = rows_head + rows_dots + rows_tail
-                else:
-                    print("dataframe 超过 10 行但不支持 head 和 tail 不支持")
-                    return payload
-                data: TablePreviewData = { "rows": rows, "columns": columns, "row_count": row_count }
-                payload = { "type": "table", "data": data }
-            else:
-                print("dataframe 不支持 shape 属性")
-
-        return payload
-
-    def __matplotlib(self, payload: PreviewPayload) -> PreviewPayload:
-        # payload 是一个 matplotlib Figure
-        if hasattr(payload, 'savefig'):
-            fig: Any = payload
-            buffer = BytesIO()
-            fig.savefig(buffer, format='png')
-            buffer.seek(0)
-            png = buffer.getvalue()
-            buffer.close()
-            url = f'data:image/png;base64,{b64encode(png).decode("utf-8")}'
-            payload = { "type": "image", "data": url }
-
-        return payload
-
-    def preview(self, payload: PreviewPayload):
-        payload = self.__dataframe(payload)
-        payload = self.__matplotlib(payload)
-
-        self.__mainframe.report(
-            self.block_info,
-            {
-                "type": "BlockPreview",
-                "payload": payload,
-            },
-        )
-
-    @throttle(0.3)
-    def report_progress(self, progress: float | int):
-        """报告执行进度
-
-        此方法用于更新块的执行进度，仅影响 UI 显示而非实际执行状态。
-        内置节流机制，最小调用间隔为 0.3 秒。
-        首次调用会立即生效，之后的调用将在节流周期结束时统一处理。
-
-        |       0.25 s        |   0.2 s  |
-        首次调用         第二次调用    第三次调用  4 5 6 7 次调用
+        |       0.25 秒        |   0.2 秒  |
+        第一次调用    第二次调用    第三次调用  第四五六七次调用
         |                     |          |          | | | |
-        | -------- 0.3 s -------- | -------- 0.3 s -------- |
-        触发                  触发                    触发
-
-        :param float | int progress: 执行进度值，范围应在 [0, 100]
+        | -------- 0.3 秒 -------- | -------- 0.3 秒 -------- |
+        上报                  上报                    上报
+        :param float | int progress: 块的进度值，取值范围应为 [0, 100]。
         """
-        self.__mainframe.report(
-            self.block_info,
-            {
-                "type": "BlockProgress",
-                "rate": progress,
-            }
-        )
+    def report_log(self, line: str, stdio: str = 'stdout'): ...
+    def log_json(self, payload) -> None: ...
+    def send_warning(self, warning: str): ...
+    def send_error(self, error: str): ...
+    def error(self, error: str): ...
 
-    def report_log(self, line: str, stdio: str = "stdout"):
-        self.__mainframe.report(
-            self.block_info,
-            {
-                "type": "BlockLog",
-                "log": line,
-                stdio: stdio,
-            },
-        )
-
-    def log_json(self, payload):
-        self.__mainframe.report(
-            self.block_info,
-            {
-                "type": "BlockLogJSON",
-                "json": payload,
-            },
-        )
-
-    def send_warning(self, warning: str):
-        self.__mainframe.report(self.block_info, {"type": "BlockWarning", "warning": warning})
-
-    def send_error(self, error: str):
-        '''
-        已弃用，请使用 error(error) 替代。
-        此方法将在未来版本中移除。
-        '''
-        self.error(error)
-
-    def error(self, error: str):
-        self.__mainframe.send(self.job_info, {"type": "BlockError", "error": error})
 ```
