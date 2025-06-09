@@ -147,7 +147,7 @@
 
 .header {
   display: grid;
-  gap: 14px;
+  gap: 8px;
   padding: 0 30px;
   align-items: center;
   justify-items: center;
@@ -182,7 +182,6 @@
 }
 
 .overview {
-  max-width: 600px;
   font-size: 20px;
   font-weight: 400;
   text-align: center;
@@ -197,7 +196,7 @@
 .intro-box {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 40px;
   align-items: center;
 
   // TODO: 统一放 custom.scss 中处理

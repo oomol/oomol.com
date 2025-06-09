@@ -27,7 +27,7 @@ export const GradualSpacing = memo(
     const words = useMemo(() => text.split(" "), [text]);
 
     return (
-      <h1 className={`${styles.container} flex flex-wrap `}>
+      <h1 className={`${styles.container} flex flex-wrap justify-center`}>
         <AnimatePresence>
           {words.map((word, wordIndex) => (
             <span key={wordIndex} className="flex">
