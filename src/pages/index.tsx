@@ -1,5 +1,4 @@
 import React from "react";
-import { Analytics } from "@vercel/analytics/react";
 import Layout from "../theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import HomepageDownloads from "@site/src/components/HomepageDownloads";
@@ -29,7 +28,6 @@ export default function Home() {
         {/* <HomepageDownloads /> */}
         <GetStartedPrompt />
         {/* <HomepageStarter /> */}
-        <Analytics />
       </main>
     </Layout>
   );
