@@ -1,0 +1,92 @@
+---
+slug: OOMOL_Studio_1.2.0
+title: OOMOL Studio 1.2.0
+date: 2025-06-09
+---
+
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# OOMOL Studio
+
+## 通用
+
+### 支持连线自增 handle
+
+在之前的版本中，每次创建新的连接线时，都必须重新输入名称和类型，这在一定程度上影响了整体的使用体验。现在，我们支持在你拖动一条新的连接线时，自动生成这些 Key，从而使操作更加流畅！
+
+<video controls muted autoPlay loop style={{ width: "100%" }}>
+  <source src={useBaseUrl("/img/release/1.2.0/support-auto-add-handle.mp4")} type="video/mp4" />
+</video>
+
+### 支持 subflow
+
+我们收到了很多用户的反馈，在之前，我们仅支持 Block 方式的复用。但是一个工作流可能会非常复杂，如果仅支持 Block 级别的复用，那么后期的维护成本会非常高。为此我们推出 `subflow`！此功能将支持把 Flow 封装成一个 Block，这样一来，就可以非常方便的复用 Flow 的功能，也可以减少在图上的展示区域。
+
+  <video controls muted autoPlay loop style={{ width: "100%" }}>
+    <source src={useBaseUrl("/img/release/1.2.0/support-subflow.mp4")} type="video/mp4" />
+  </video>
+
+### 支持批处理
+
+我们发现一些开发者在使用 OOMOL Studio 开发一些工作流时，经常遇到：将原本已经写好的工作流，修改为支持多个任务的需求。
+即：原本的工作流是处理单张图片，想要调整位同时处理多张图片时，改动非常大。
+为此，我们新增了：批处理功能。将功能可以将数据通过类似 Map 函数等方式来遍历，使用此功能可以让单次处理模块转为批量处理模块。
+
+<video controls muted autoPlay loop style={{ width: "100%" }}>
+  <source src={useBaseUrl("/img/release/1.2.0/support-batch.mp4")} type="video/mp4" />
+</video>
+
+### 支持网络代理
+
+我们发现一些用户非常依赖代理来访问一些网络资源，为此我们新增了网络代理功能！
+
+<img
+  src={useBaseUrl("/img/release/1.2.0/support-proxy.png")}
+  alt="Support Proxy"
+/>
+
+### 默认 Python 安装库由 pip 改为 poetry
+
+我们注意到 pip 在依赖版本锁定上不是特别可靠，所以我们将其替换为 poetry，避免库版本更替导致的不可用。
+
+<img
+  src={useBaseUrl("/img/release/1.2.0/use-poetry.png")}
+  alt="Use Poetry"
+/>
+
+## Windows
+
+### 优化了 WSL 中的操作并修复了一些边界问题
+
+- 修复 WSL 新版本修改了错误码导致 ovm 判断失误的问题 [ovm-win#106](https://github.com/oomol-lab/ovm-win/pull/106)
+- 新增了对 WSL 配置中的 localhostForwarding 的检测和自动修复功能的支持 [ovm-win#107](https://github.com/oomol-lab/ovm-win/pull/107)
+- 完善 BIOS 虚拟化检测的准确率 [ovm-win#108](https://github.com/oomol-lab/ovm-win/pull/108)
+- 修复了虚拟机在某些情况下启动失败时，没有报告错误的问题 [ovm-win#109](https://github.com/oomol-lab/ovm-win/pull/109)
+- 修复 Docker Desktop for Windows 意外冻结 OOMOL Studio 虚拟机的问题 [ovm-builder#61](https://github.com/oomol-lab/ovm-builder/pull/61)
+
+## 其他
+
+### VSCode 从 1.98.2 升级到 1.100.3
+
+我们一直在关注 VSCode 的更新，这次我们将 VSCode 从 1.98.2 升级到了 1.100.3。
+
+对比: [v1.100.3...v1.98.2]
+
+发版说明: https://code.visualstudio.com/updates/v1_100
+
+### 开源
+
+在这段时间内，我们除了对 OOMOL Studio 本身的更新迭代之外，还对开源社区做出了一些贡献:
+
+#### 开源的新项目
+
+- sysproxy: https://github.com/oomol-lab/sysproxy
+  - 用于获取系统代理的一个 Golang 库
+
+### 感谢
+
+自上个版本发布以来，许多人提出了建设性的建议，还有一些人协助我们排查和解决复杂问题。在此，我们向他们致以感谢：
+
+luck、Bravo!、见束
+
+[v1.100.3...v1.98.2]: https://github.com/microsoft/vscode/compare/1.100.3...1.98.2

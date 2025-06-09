@@ -1,0 +1,90 @@
+---
+slug: OOMOL_Studio_1.2.0
+title: OOMOL Studio 1.2.0
+date: 2025-06-09
+---
+
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# OOMOL Studio
+
+## General
+
+### Support adding handles automatically when connecting
+
+In previous versions, every time a new connection line was created, it required re-entering the name and type, which affected the overall user experience. Now, we support the automatic generation of these keys when you drag a new connection line, making the operation smoother!
+
+<video controls muted autoPlay loop style={{ width: "100%" }}>
+  <source src={useBaseUrl("/img/release/1.2.0/support-auto-add-handle.mp4")} type="video/mp4" />
+</video>
+
+### Support Subflow
+
+We've received a lot of feedback from users. Previously, we only supported reuse at the Block level. However, workflows can be very complex, and only supporting Block-level reuse can significantly increase maintenance costs later. Therefore, we've introduced `subflow`! This feature allows you to encapsulate a Flow into a Block, making it easy to reuse Flow functionalities and reducing the display area on the diagram.
+
+<video controls muted autoPlay loop style={{ width: "100%" }}>
+  <source src={useBaseUrl("/img/release/1.2.0/support-subflow.mp4")} type="video/mp4" />
+</video>
+
+### Support Batch Processing
+
+We found that some developers frequently encounter the need to modify existing workflows to support multiple tasks when using OOMOL Studio. For example, a workflow that originally processes a single image might need significant changes to handle multiple images simultaneously. To address this, we've added a batch processing feature that allows data to be traversed using a method similar to the Map function, enabling single-instance processing modules to convert into batch processing modules.
+
+<video controls muted autoPlay loop style={{ width: "100%" }}>
+  <source src={useBaseUrl("/img/release/1.2.0/support-batch.mp4")} type="video/mp4" />
+</video>
+
+### Support Network Proxy
+
+We've noticed that some users heavily rely on proxies to access certain online resources. Therefore, we've added network proxy functionality!
+
+<img
+  src={useBaseUrl("/img/release/1.2.0/support-proxy.png")}
+  alt="Support Proxy"
+/>
+
+### Default Python Library Installation Changed from pip to poetry
+
+We've observed that pip is not particularly reliable for version locking of dependencies, so we have replaced it with poetry to avoid issues due to library version changes.
+
+<img
+  src={useBaseUrl("/img/release/1.2.0/use-poetry.png")}
+  alt="Use Poetry"
+/>
+
+## Windows
+
+### Optimized Operations in WSL and Fixed Some Boundary Issues
+
+- Fixed an issue where the WSL new version modified the error code causing ovm to misjudge [ovm-win#106](https://github.com/oomol-lab/ovm-win/pull/106)
+- Added support for detection and automatic repair of localhostForwarding in WSL configuration [ovm-win#107](https://github.com/oomol-lab/ovm-win/pull/107)
+- Improved the accuracy of BIOS virtualization detection [ovm-win#108](https://github.com/oomol-lab/ovm-win/pull/108)
+- Fixed an issue where the virtual machine failed to start under certain circumstances without reporting the error [ovm-win#109](https://github.com/oomol-lab/ovm-win/pull/109)
+- Fixed an issue where Docker Desktop for Windows unexpectedly froze the OOMOL Studio virtual machine [ovm-builder#61](https://github.com/oomol-lab/ovm-builder/pull/61)
+
+## Others
+
+### Upgraded VSCode from 1.98.2 to 1.100.3
+
+We have been keeping an eye on updates to VSCode, and this time we upgraded it from 1.98.2 to 1.100.3.
+
+Comparison: [v1.100.3...v1.98.2]
+
+Release Notes: https://code.visualstudio.com/updates/v1_100
+
+### Open Source
+
+During this time, in addition to updating OOMOL Studio itself, we have also contributed to the open-source community:
+
+#### New Open Source Projects
+
+- sysproxy: https://github.com/oomol-lab/sysproxy
+  - A Golang library for retrieving system proxy settings.
+
+### Thanks
+
+Since the last version release, many people have made constructive suggestions, and some assisted us in troubleshooting and resolving complex issues. We extend our gratitude to them:
+
+luck, Bravo!, 见束
+
+[v1.100.3...v1.98.2]: https://github.com/microsoft/vscode/compare/1.100.3...1.98.2
