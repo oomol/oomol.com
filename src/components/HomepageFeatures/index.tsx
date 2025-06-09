@@ -23,16 +23,17 @@ const superiorityList: SuperiorityType[] = [
   },
   {
     imageUrl: "/img/pages/home/superiority-2.webp",
-    title: translate({
-      message: "HOME.Features.pre-installed-environment.title",
-    }),
+
+    title: translate({ message: "HOME.Features.programming-friendly.title" }),
     inner: translate({
       message: "HOME.Features.pre-installed-environment.inner",
     }),
   },
   {
     imageUrl: "/img/pages/home/superiority-3.webp",
-    title: translate({ message: "HOME.Features.programming-friendly.title" }),
+    title: translate({
+      message: "HOME.Features.pre-installed-environment.title",
+    }),
     inner: translate({ message: "HOME.Features.programming-friendly.inner" }),
     contentFirst: true,
   },
