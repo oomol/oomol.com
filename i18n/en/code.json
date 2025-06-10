@@ -257,6 +257,12 @@
   "HOME.Community.slogan-4": {
     "message": "Every Voice Shapes the Future"
   },
+  "HOME.Community.open-source.title": {
+    "message": "Open Source"
+  },
+  "HOME.Community.open-source.subtitle": {
+    "message": "OOMOL is an open-source company dedicated to promoting collaboration and enhancing existing open-source tools and communities."
+  },
 
   "FEATURES.title": {
     "message": "All the features that you need"
