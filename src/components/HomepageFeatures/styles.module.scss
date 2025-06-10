@@ -74,7 +74,6 @@
 }
 
 .image {
-  border-radius: 10px 10px 0 0;
   overflow: auto;
   transition: transform 0.3s ease;
 
@@ -135,6 +134,5 @@
 .inner {
   font-size: 14px;
   margin: 0;
-
-  @include linearGradientColor;
+  color: #656c76;
 }
