@@ -266,6 +266,12 @@
   "HOME.Community.slogan-4": {
     "message": "每个提议都会被认真倾听"
   },
+  "HOME.Community.open-source.title": {
+    "message": "开源项目"
+  },
+  "HOME.Community.open-source.subtitle": {
+    "message": "OOMOL 致力于推动协作并优化现有的开源工具和社区。"
+  },
 
   "FEATURES.title": {
     "message": "涵盖你所需的全部功能"

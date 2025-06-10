@@ -151,3 +151,93 @@
   vertical-align: middle;
   color: #656c76;
 }
+
+.repositories {
+  max-width: 1280px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding-top: 160px;
+  padding-bottom: 80px;
+}
+
+.repository {
+  width: 410px;
+  height: 208px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 20px;
+  padding: 24px;
+  background-color: #0d1117;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #151b23;
+  }
+}
+
+.repo-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.repo-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.repo-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.repo-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #f0f6fc;
+}
+
+.repo-description {
+  font-size: 14px;
+  font-weight: 600;
+  color: #838b95;
+}
+
+.repo-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.repo-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #656c76;
+}
+
+.repo-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.state {
+  display: flex;
+  align-items: center;
+  color: #f0f6fc;
+}
+
+.icon {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.star-icon {
+  font-size: 16px;
+  color: #f0f6fc;
+  margin-left: 2px;
+}
