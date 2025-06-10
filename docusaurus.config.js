@@ -317,6 +317,10 @@ const config = {
         darkTheme: darkTheme,
       },
     }),
+  future: {
+    v4: true,
+    experimental_faster: true,
+  },
 };
 
 export default config;

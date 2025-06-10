@@ -1,4 +1,3 @@
-import "uno.css";
 import "../../styles/uno.css";
 import styles from "./styles.module.scss";
 
