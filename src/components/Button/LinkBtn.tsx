@@ -27,7 +27,7 @@ export default function LinkBtn({
       >
         <div className={styles.linkText}>{text}</div>
         {typeof icon === "string" ? (
-          <i className={`${icon} styles.linkIcon`} />
+          <i className={`${icon} ${styles.linkIcon}`} />
         ) : (
           icon
         )}
