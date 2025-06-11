@@ -40,6 +40,7 @@
     "@types/react": "^18.2.29",
     "@unocss/webpack": "^66.1.2",
     "autoprefixer": "^10.4.20",
+    "lucide-react": "^0.514.0",
     "postcss": "^8.4.49",
     "prettier": "^3.2.5",
     "tailwindcss": "^3.4.16",
