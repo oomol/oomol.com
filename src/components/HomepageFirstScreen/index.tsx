@@ -15,8 +15,6 @@ export default function HomepageFirstScreen() {
   const context: any = useDocusaurusContext();
   const { i18n } = context;
 
-  const [videoError, setVideoError] = useState(false);
-
   return (
     <section className={styles.section}>
       <div className={styles.container}>
