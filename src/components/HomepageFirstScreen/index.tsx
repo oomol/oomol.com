@@ -1,15 +1,15 @@
 import styles from "./styles.module.scss";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { GradualSpacing } from "../magic-ui/GradualSpacing";
-import { BlurFade } from "../magic-ui/BlurFade";
 import clsx from "clsx";
 import { DownloadButton } from "../DownloadButton";
 import LinkBtn from "../Button/LinkBtn";
+import { HeroVideoDialog } from "../magic-ui/HeroVideoDialog";
 
 export default function HomepageFirstScreen() {
   const context: any = useDocusaurusContext();
@@ -46,19 +46,21 @@ export default function HomepageFirstScreen() {
           </div>
         </div>
       </div>
-      <BlurFade>
-        <div className={styles["image-box"]}>
-          <div className={styles.halo}>
-            <Image
-              className={styles.image}
-              sources={{
-                light: useBaseUrl("/img/pages/home/first-screen.webp"),
-                dark: useBaseUrl("/img/pages/home/first-screen.webp"),
-              }}
-            />
-          </div>
+      <div className={styles["image-box"]}>
+        <div className={styles.halo}>
+          <HeroVideoDialog
+            className={styles.video}
+            animationStyle="from-center"
+            videoSrc={
+              i18n.currentLocale === "zh-CN"
+                ? "https://static.oomol.com/assets/combination-CN.webm"
+                : "https://static.oomol.com/assets/combination-EN.webm"
+            }
+            thumbnailSrc={useBaseUrl("/img/pages/home/first-screen.webp")}
+            thumbnailAlt="Hero Video"
+          />
         </div>
-      </BlurFade>
+      </div>
     </section>
   );
 }
