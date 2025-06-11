@@ -234,7 +234,7 @@ const config = {
             items: [
               {
                 label: "Documentation",
-                to: "/docs/introduction/overview",
+                to: "/docs/get-started/quickstarts",
               },
               {
                 label: "Updates",
