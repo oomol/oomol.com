@@ -34,7 +34,7 @@ export const LocalDropdown = ({ queryString = "" }: LocalDropdownProps) => {
     }
 
     if (locale !== "zh-CN") {
-      document.cookie = `OOMOL_LOCALE=; path=/; domain=.${location.host}; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+      document.cookie = `OOMOL_LOCALE=; path=/; domain=.${location.hostname}; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
     }
   };
 
