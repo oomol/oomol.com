@@ -59,7 +59,6 @@ const config = {
                   src: "./scripts/redirect-lang.js",
                 },
               },
-              ,
             ],
           };
         },
