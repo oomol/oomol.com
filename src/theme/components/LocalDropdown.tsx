@@ -28,6 +28,16 @@ export const LocalDropdown = ({ queryString = "" }: LocalDropdownProps) => {
 
   const [isShow, setIsShow] = useState(false);
 
+  const handleLocaleChange = (locale: string) => {
+    if (locale === currentLocale) {
+      return;
+    }
+
+    if (locale !== "zh-CN") {
+      document.cookie = `OOMOL_LOCALE=; path=/; domain=.${location.hostname}; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+    }
+  };
+
   const renderBtnContent = () => {
     return (
       <div className={styles["item-box"]}>
@@ -43,7 +53,7 @@ export const LocalDropdown = ({ queryString = "" }: LocalDropdownProps) => {
               key={locale}
               href={to}
               className={`${styles.item} ${locale === currentLocale ? styles.selected : ""}`}
-              onClick={() => localStorage.setItem("locale", locale)}
+              onClick={() => handleLocaleChange(locale)}
             >
               <div>{formateLocale(locale)}</div>
             </a>
