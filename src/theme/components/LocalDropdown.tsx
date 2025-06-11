@@ -29,12 +29,10 @@ export const LocalDropdown = ({ queryString = "" }: LocalDropdownProps) => {
   const [isShow, setIsShow] = useState(false);
 
   const handleLocaleChange = (locale: string) => {
+    document.cookie = `OOMOL_LOCALE=${locale}; path=/; domain=.${location.host}; max-age=31536000`;
+
     if (locale === currentLocale) {
       return;
-    }
-
-    if (locale !== "zh-CN") {
-      document.cookie = `OOMOL_LOCALE=; path=/; domain=.${location.hostname}; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
     }
   };
 
