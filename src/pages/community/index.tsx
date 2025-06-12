@@ -17,6 +17,8 @@ interface RepoInfo {
   name: string;
   url: string;
   description: string;
+  defaultStar?: number; // Optional, used for fallback
+  defaultForks?: number; // Optional, used for fallback
 }
 
 interface RepoStats {
@@ -45,16 +47,22 @@ const REPOS: RepoInfo[] = [
     url: "oomol-lab/pdf-craft",
     description:
       "PDF craft can convert PDF files into various other formats. This project will focus on processing PDF files of scanned books. The project has just started.",
+    defaultStar: 2879,
+    defaultForks: 163,
   },
   {
     name: "OVM Win",
     url: "oomol-lab/ovm-win",
     description: "Run ovm-core virtual machine on Windows WSL2",
+    defaultStar: 20,
+    defaultForks: 3,
   },
   {
     name: "Mac Power Monitor",
     url: "oomol-lab/mac-power-monitor",
     description: "macOS Sleep / Wake notifications",
+    defaultStar: 18,
+    defaultForks: 3,
   },
 ];
 
@@ -323,11 +331,13 @@ export default function Community() {
                   <div className={styles["repo-name"]}>{repo.url}</div>
                   <div className={styles["repo-status"]}>
                     <div className={styles.state}>
-                      {(githubStats && githubStats[repo.url]?.forks) || 0}
+                      {(githubStats && githubStats[repo.url]?.forks) ||
+                        repo.defaultForks}
                       <i className={`${styles.icon} i-codicon-repo-forked`} />
                     </div>
                     <div className={styles.state}>
-                      {(githubStats && githubStats[repo.url]?.stars) || 0}
+                      {(githubStats && githubStats[repo.url]?.stars) ||
+                        repo.defaultStar}
                       <i
                         className={`${styles["star-icon"]} i-codicon-star-empty`}
                       />
