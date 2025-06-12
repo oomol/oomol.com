@@ -18,7 +18,7 @@ const projectsData: ProjectsData[] = [
   },
   {
     imgUrl: "/img/pages/home/project-2.png",
-    url: "https://hub.oomol.com/package/pdf-craft-starter",
+    url: "https://hub.oomol.com/package/pdf-craft",
   },
   {
     imgUrl: "/img/pages/home/project-3.png",
