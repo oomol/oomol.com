@@ -50,25 +50,25 @@ type LogoNodeDataType = {
 const logoNodeData: LogoNodeDataType[] = [
   {
     name: "twitter",
-    src: "/img/twitter.svg",
+    src: "/img/pages/footer/x.svg",
     href: "https://twitter.com/OomolStudio",
     width: 20,
   },
   {
     name: "discord",
-    src: "/img/discord.svg",
+    src: "/img/pages/footer/discord.svg",
     href: "https://discord.gg/W3evr2kJDa",
     width: 22,
   },
   {
     name: "youtube",
-    src: "/img/youtube.svg",
+    src: "/img/pages/footer/youtube.svg",
     href: "https://www.youtube.com/@oomolstudio",
     width: 22,
   },
   {
     name: "github",
-    src: "/img/github.svg",
+    src: "/img/pages/footer/github.svg",
     href: "https://github.com/oomol-lab",
     width: 20,
   },
@@ -77,25 +77,25 @@ const logoNodeData: LogoNodeDataType[] = [
 const logoNodeDataCN: LogoNodeDataType[] = [
   {
     name: "twitter",
-    src: "/img/twitter.svg",
+    src: "/img/pages/footer/x.svg",
     href: "https://twitter.com/OomolStudio",
     width: 20,
   },
   {
     name: "discord",
-    src: "/img/discord.svg",
+    src: "/img/pages/footer/discord.svg",
     href: "https://discord.gg/W3evr2kJDa",
     width: 22,
   },
   {
     name: "youtube",
-    src: "/img/youtube.svg",
+    src: "/img/pages/footer/youtube.svg",
     href: "https://www.youtube.com/@oomolstudio",
     width: 22,
   },
   {
     name: "github",
-    src: "/img/github.svg",
+    src: "/img/pages/footer/github.svg",
     href: "https://github.com/oomol-lab",
     width: 20,
   },
@@ -152,8 +152,8 @@ const Footer: React.FC = () => {
                   className={styles["work-weixin"]}
                   src={
                     isHovered
-                      ? "/img/work-weixin-hover.svg"
-                      : "/img/work-weixin.svg"
+                      ? "/img/pages/footer/wecom-active.svg"
+                      : "/img/pages/footer/wecom.svg"
                   }
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
