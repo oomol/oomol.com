@@ -1,89 +1,194 @@
+@import "../../css/custom.scss";
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  padding: 0 16px;
+  scroll-behavior: smooth;
+}
+
+.titleBox {
+  width: 100%;
+  max-width: 600px;
+  min-height: 190px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  padding-top: 80px;
-  padding-bottom: 40px;
+  flex-direction: column;
+  gap: 14px;
+  padding: 80px 0;
+  position: relative;
 }
 
 .title {
-  font-size: 58px;
-  font-weight: 800;
-  margin: 0;
-}
-
-.description-en-box {
   display: flex;
-  flex-direction: column;
   align-items: center;
-}
-
-.description-en {
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0;
-}
-
-.description {
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.7);
-  padding-top: 14px;
-  padding-bottom: 40px;
-  margin: 0;
-}
-
-.sub-title {
-  font-size: 30px;
-  font-weight: 900;
+  font-size: 58px;
+  line-height: 58px;
+  font-weight: 800;
+  text-align: center;
   color: #f0f6fc;
-  margin: 0;
-  padding-top: 40px;
 }
 
-.cards {
-  max-width: 1280px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: 24px;
-  padding: 40px 0;
-  justify-content: center;
+.subTitle {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  @include linearGradientColor;
+}
 
-  @media (max-width: 1150px) {
-    grid-template-columns: 1fr;
-    width: 50%;
+.scrollBox {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 40px;
+  padding: 80px 0;
+
+  @media (max-width: 1199px) {
+    flex-direction: column;
+    .sidebar {
+      display: none;
+    }
+    .content {
+      width: 100%;
+      padding: 0;
+    }
   }
 }
 
-.card {
-  height: 128px;
-  display: flex;
+.sidebar {
+  position: sticky;
+  top: 80px;
+  width: 320px;
+  box-sizing: border-box;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding-top: 24px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
-  border: 1px solid #3d444d;
 }
 
-// TODO: optimize the button override
-.download {
-  width: 100%;
-  border-top: 1px solid #3d444d !important;
-  background-color: #151b23 !important;
-  border-radius: 0px 0px 10px 10px !important;
-  font-size: 12px;
+.sideBarWrapper {
+  display: block;
+  color: #f0f6fc;
+  font-size: 16px;
+  transition: color 0.3s ease;
 
   &:hover {
-    color: #ffffff !important;
-    background-color: #212830 !important;
-    border: none !important;
-    border-top: 1px solid #3d444d !important;
+    color: #7d7fe9;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: none;
   }
 }
 
-.logo {
-  height: 48px;
+.sidebarActive {
+  .sidebarText,
+  .sidebarIcon {
+    color: #7d7fe9;
+  }
+}
+
+.sidebarItem {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  height: 40px;
+  gap: 20px;
+  vertical-align: middle;
+}
+
+.sidebarIcon {
+  width: 24px;
+  height: 24px;
+  font-weight: 400;
+  margin-left: 8px;
+  vertical-align: middle;
+  color: #838b95;
+}
+
+.sidebarText {
+  height: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+  color: #838b95;
+
+  &:hover {
+    color: #f0f6fc;
+  }
+}
+
+.content {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  width: 100%;
+  scroll-margin-top: 80px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.sectionTitle {
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 32px;
+  color: #f0f6fc;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.sectionContentMultiple {
+  display: grid;
+  grid-auto-rows: min-content;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  grid-template-rows: repeat(2, min-content);
+  height: min-content;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  line-height: 24px;
+  font-weight: 400;
+  color: #f0f6fc;
+  text-align: left;
+  gap: 40px;
+
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(1, minmax(100px, 1fr));
+  }
+}
+
+.sectionContentSingle {
+  display: grid;
+  grid-auto-rows: min-content;
+  height: min-content;
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  line-height: 24px;
+  font-weight: 400;
+  color: #f0f6fc;
+  text-align: left;
+  gap: 40px;
+}
+
+i.icon {
+  cursor: pointer;
 }

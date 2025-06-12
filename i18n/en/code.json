@@ -24,29 +24,24 @@
     "message": "only supports x64"
   },
   "HOME.BrandAssets.title": {
-    "message": "Brand Assets"
+    "message": "Brand Assets & Guidelines"
   },
   "HOME.BrandAssets.subtitle": {
-    "message": "Download official OOMOL logos"
+    "message": "OOMOL Trademarks and Logos Must Not Be Modified or Used for Anything Other Than Representing OOMOL Inc."
   },
-  "HOME.BrandAssets.description-1": {
-    "message": "All OOMOL trademarks, logos, or other brand elements can never be modified or used for"
+  "HOME.BrandAssets.logos": {
+    "message": "Logos"
   },
-  "HOME.BrandAssets.description-2": {
-    "message": "any other purpose other than to represent OOMOL Inc."
+  "HOME.BrandAssets.colors": {
+    "message": "Colors"
   },
-  "HOME.BrandAssets.logo-name": {
-    "message": "OOMOL logo"
+  "HOME.BrandAssets.icons": {
+    "message": "Icons"
   },
-  "HOME.BrandAssets.scripts-1": {
-    "message": "Download OOMOL official logos, including as SVG's, in both light and dark theme."
+  "HOME.BrandAssets.typeface": {
+    "message": "Typeface"
   },
-  "HOME.BrandAssets.scripts-2": {
-    "message": "Do not use any other color for the word mark."
-  },
-  "HOME.BrandAssets.download-btn-text": {
-    "message": "Download"
-  },
+
   "HOME.Scenes.title": {
     "message": "Use Case"
   },
@@ -822,9 +817,6 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
-  },
-  "HOME.BrandAssets.description": {
-    "message": "HOME.BrandAssets.description"
   },
   "theme.blog.author.noPosts": {
     "message": "This author has not written any posts yet.",

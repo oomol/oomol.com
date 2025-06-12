@@ -24,25 +24,22 @@
     "message": "当前仅支持 x64 版本"
   },
   "HOME.BrandAssets.title": {
-    "message": "品牌资产"
+    "message": "品牌资产与指南"
   },
   "HOME.BrandAssets.subtitle": {
-    "message": "下载官方 OOMOL logo"
+    "message": "OOMOL 商标和标志不得修改或用于代表 OOMOL Inc.\n之外的任何用途。"
   },
-  "HOME.BrandAssets.description": {
-    "message": "所有悟墨商标、标识或其他品牌元素不得被修改或用于除代表悟墨之外的任何其他目的。"
+  "HOME.BrandAssets.logos": {
+    "message": "商标"
   },
-  "HOME.BrandAssets.logo-name": {
-    "message": "OOMOL logo"
+  "HOME.BrandAssets.colors": {
+    "message": "颜色"
   },
-  "HOME.BrandAssets.scripts-1": {
-    "message": "下载 OOMOL 官方 logo，包含 SVG 格式，提供浅色和深色主题。"
+  "HOME.BrandAssets.icons": {
+    "message": "图标"
   },
-  "HOME.BrandAssets.scripts-2": {
-    "message": "请勿对字标应用其它颜色。"
-  },
-  "HOME.BrandAssets.download-btn-text": {
-    "message": "下载"
+  "HOME.BrandAssets.typeface": {
+    "message": "字体"
   },
   "HOME.Scenes.title": {
     "message": "使用场景"
@@ -836,12 +833,6 @@
   "theme.contentVisibility.draftBanner.message": {
     "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
     "description": "The draft content banner message"
-  },
-  "HOME.BrandAssets.description-1": {
-    "message": "HOME.BrandAssets.description-1"
-  },
-  "HOME.BrandAssets.description-2": {
-    "message": "HOME.BrandAssets.description-2"
   },
   "theme.blog.author.noPosts": {
     "message": "This author has not written any posts yet.",
