@@ -818,9 +818,6 @@
     "message": "Tags",
     "description": "The title of the tag list page"
   },
-  "HOME.BrandAssets.description": {
-    "message": "HOME.BrandAssets.description"
-  },
   "theme.blog.author.noPosts": {
     "message": "This author has not written any posts yet.",
     "description": "The text for authors with 0 blog post"

@@ -13,7 +13,6 @@ export interface AssetBlockProps {
   centerWidth?: number | string;
   centerHeight?: number | string;
   cornerIcon: ReactNode | string;
-  linkUrl?: string;
 }
 export default function AssetBlock({
   width,
@@ -27,7 +26,6 @@ export default function AssetBlock({
   centerWidth,
   centerHeight,
   cornerIcon,
-  linkUrl,
 }: AssetBlockProps) {
   return (
     <div

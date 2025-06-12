@@ -27,7 +27,7 @@
     "message": "品牌资产与指南"
   },
   "HOME.BrandAssets.subtitle": {
-    "message": "OOMOL 商标和标志不得修改或用于代表 OOMOL Inc. 之外的任何用途。"
+    "message": "OOMOL 商标和标志不得修改或用于代表 OOMOL Inc.\n之外的任何用途。"
   },
   "HOME.BrandAssets.logos": {
     "message": "商标"
@@ -833,12 +833,6 @@
   "theme.contentVisibility.draftBanner.message": {
     "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
     "description": "The draft content banner message"
-  },
-  "HOME.BrandAssets.description-1": {
-    "message": "HOME.BrandAssets.description-1"
-  },
-  "HOME.BrandAssets.description-2": {
-    "message": "HOME.BrandAssets.description-2"
   },
   "theme.blog.author.noPosts": {
     "message": "This author has not written any posts yet.",

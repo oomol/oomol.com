@@ -2,23 +2,23 @@ import React, { useState, useEffect, useRef } from "react";
 import styles from "./styles.module.scss";
 import Layout from "@theme/Layout";
 import { translate } from "@docusaurus/Translate";
-import LogoIcon from "@site/static/img/pages/brand-assets/oomol-logo.svg";
-import ColorIcon from "@site/static/img/pages/brand-assets/color.svg";
-import IconSymbolIcon from "@site/static/img/pages/brand-assets/icon-symbol.svg";
-import TypefaceIcon from "@site/static/img/pages/brand-assets/typeface.svg";
-import LogoIconActive from "@site/static/img/pages/brand-assets/oomol-logo-1.svg";
-import ColorIconActive from "@site/static/img/pages/brand-assets/color-1.svg";
-import IconSymbolIconActive from "@site/static/img/pages/brand-assets/icon-symbol-1.svg";
-import TypefaceIconActive from "@site/static/img/pages/brand-assets/typeface-1.svg";
-import AssetBlock from "@site/src/components/AssetBlock";
-import OomolLogoB from "@site/static/img/pages/brand-assets/oomol-logo-black.svg";
-import OomolLogoW from "@site/static/img/pages/brand-assets/oomol-logo-white.svg";
-import OomolLogoEnB from "@site/static/img/pages/brand-assets/oomol-logo-en-black.svg";
-import OomolLogoEnW from "@site/static/img/pages/brand-assets/oomol-logo-en-white.svg";
-import OomolLogoCnB from "@site/static/img/pages/brand-assets/oomol-logo-cn-black.svg";
-import OomolLogoCnW from "@site/static/img/pages/brand-assets/oomol-logo-cn-white.svg";
-import OomolIcon from "@site/static/img/pages/brand-assets/oomol-icon.svg";
-import JostIcon from "@site/static/img/pages/brand-assets/typeface-jost.svg";
+import LogoIconSVG from "@site/static/img/pages/brand-assets/oomol-logo.svg";
+import ColorIconSVG from "@site/static/img/pages/brand-assets/color.svg";
+import IconSymbolIconSVG from "@site/static/img/pages/brand-assets/icon-symbol.svg";
+import TypefaceIconSVG from "@site/static/img/pages/brand-assets/typeface.svg";
+import LogoIconActiveSVG from "@site/static/img/pages/brand-assets/oomol-logo-active.svg";
+import ColorIconActiveSVG from "@site/static/img/pages/brand-assets/color-active.svg";
+import IconSymbolIconActiveSVG from "@site/static/img/pages/brand-assets/icon-symbol-active.svg";
+import TypefaceIconActiveSVG from "@site/static/img/pages/brand-assets/typeface-active.svg";
+import AssetBlockSVG from "@site/src/components/AssetBlock";
+import OomolLogoBSVG from "@site/static/img/pages/brand-assets/oomol-logo-black.svg";
+import OomolLogoWSVG from "@site/static/img/pages/brand-assets/oomol-logo-white.svg";
+import OomolLogoEnBSVG from "@site/static/img/pages/brand-assets/oomol-logo-en-black.svg";
+import OomolLogoEnWSVG from "@site/static/img/pages/brand-assets/oomol-logo-en-white.svg";
+import OomolLogoCnBSVG from "@site/static/img/pages/brand-assets/oomol-logo-cn-black.svg";
+import OomolLogoCnWSVG from "@site/static/img/pages/brand-assets/oomol-logo-cn-white.svg";
+import OomolIconSVG from "@site/static/img/pages/brand-assets/oomol-icon.svg";
+import JostIconSVG from "@site/static/img/pages/brand-assets/typeface-jost.svg";
 import clsx from "clsx";
 export default function BrandAssets() {
   const [activeSection, setActiveSection] = useState("logos");
@@ -66,7 +66,6 @@ export default function BrandAssets() {
     );
   };
 
-  // 更新 ref 值
   useEffect(() => {
     activeSectionRef.current = activeSection;
   }, [activeSection]);
@@ -188,22 +187,21 @@ export default function BrandAssets() {
         </div>
 
         <div className={styles.scrollBox}>
-          {/* 左侧导航 */}
           <div className={styles.sidebar}>
             {sections.map(section => {
               const isActive = activeSection === section.id;
               const IconComponent = isActive
                 ? {
-                    logos: LogoIconActive,
-                    colors: ColorIconActive,
-                    icons: IconSymbolIconActive,
-                    typeface: TypefaceIconActive,
+                    logos: LogoIconActiveSVG,
+                    colors: ColorIconActiveSVG,
+                    icons: IconSymbolIconActiveSVG,
+                    typeface: TypefaceIconActiveSVG,
                   }[section.id]
                 : {
-                    logos: LogoIcon,
-                    colors: ColorIcon,
-                    icons: IconSymbolIcon,
-                    typeface: TypefaceIcon,
+                    logos: LogoIconSVG,
+                    colors: ColorIconSVG,
+                    icons: IconSymbolIconSVG,
+                    typeface: TypefaceIconSVG,
                   }[section.id];
 
               return (
@@ -256,72 +254,72 @@ export default function BrandAssets() {
                 })}
               </div>
               <div className={styles.sectionContentMultiple}>
-                <AssetBlock
+                <AssetBlockSVG
                   height={259}
                   backgroundColor="#f6f8fa"
                   borderColor="#f6f8fa"
                   centerType="svg"
-                  centerIcon={<OomolLogoB />}
+                  centerIcon={<OomolLogoBSVG />}
                   centerWidth={100}
                   centerHeight={100}
                   cornerIcon={
                     <CornerDownload url="https://static.oomol.com/assets/logo-black.zip" />
                   }
                 />
-                <AssetBlock
+                <AssetBlockSVG
                   height={259}
                   backgroundColor="#010409"
                   borderColor="#212830"
                   centerType="svg"
-                  centerIcon={<OomolLogoW />}
+                  centerIcon={<OomolLogoWSVG />}
                   centerWidth={100}
                   centerHeight={100}
                   cornerIcon={
                     <CornerDownload url="https://static.oomol.com/assets/logo-white.zip" />
                   }
                 />
-                <AssetBlock
+                <AssetBlockSVG
                   height={259}
                   backgroundColor="#f6f8fa"
                   borderColor="#f6f8fa"
                   centerType="svg"
-                  centerIcon={<OomolLogoEnB />}
+                  centerIcon={<OomolLogoEnBSVG />}
                   centerWidth={175}
                   centerHeight={50}
                   cornerIcon={
                     <CornerDownload url="https://static.oomol.com/assets/logo-black-en.zip" />
                   }
                 />
-                <AssetBlock
+                <AssetBlockSVG
                   height={259}
                   backgroundColor="#010409"
                   borderColor="#212830"
                   centerType="svg"
-                  centerIcon={<OomolLogoEnW />}
+                  centerIcon={<OomolLogoEnWSVG />}
                   centerWidth={175}
                   centerHeight={50}
                   cornerIcon={
                     <CornerDownload url="https://static.oomol.com/assets/logo-white-en.zip" />
                   }
                 />
-                <AssetBlock
+                <AssetBlockSVG
                   height={259}
                   backgroundColor="#f6f8fa"
                   borderColor="#f6f8fa"
                   centerType="svg"
-                  centerIcon={<OomolLogoCnB />}
+                  centerIcon={<OomolLogoCnBSVG />}
                   centerWidth={123}
                   centerHeight={50}
                   cornerIcon={
                     <CornerDownload url="https://static.oomol.com/assets/logo-black-cn.zip" />
                   }
                 />
-                <AssetBlock
+                <AssetBlockSVG
                   height={259}
                   backgroundColor="#010409"
                   borderColor="#212830"
                   centerType="svg"
-                  centerIcon={<OomolLogoCnW />}
+                  centerIcon={<OomolLogoCnWSVG />}
                   centerWidth={123}
                   centerHeight={50}
                   cornerIcon={
@@ -338,7 +336,7 @@ export default function BrandAssets() {
                 })}
               </div>
               <div className={styles.sectionContentMultiple}>
-                <AssetBlock
+                <AssetBlockSVG
                   height={259}
                   backgroundColor="#f6f8fa"
                   borderColor="#f6f8fa"
@@ -347,7 +345,7 @@ export default function BrandAssets() {
                   centerTextColor="#252A2E"
                   cornerIcon={<CornerCopy text="#F6F8FA" />}
                 />
-                <AssetBlock
+                <AssetBlockSVG
                   height={259}
                   backgroundColor="#7d7fe9"
                   borderColor="#7d7fe9"
@@ -356,7 +354,7 @@ export default function BrandAssets() {
                   centerTextColor="#f0f6fc"
                   cornerIcon={<CornerCopy text="#7D7FE9" />}
                 />
-                <AssetBlock
+                <AssetBlockSVG
                   height={259}
                   backgroundColor="#32335D"
                   borderColor="#32335D"
@@ -365,7 +363,7 @@ export default function BrandAssets() {
                   centerTextColor="#f0f6fc"
                   cornerIcon={<CornerCopy text="#32335D" />}
                 />
-                <AssetBlock
+                <AssetBlockSVG
                   height={259}
                   backgroundColor="#0D1117"
                   borderColor="#212830"
@@ -384,12 +382,12 @@ export default function BrandAssets() {
                 })}
               </div>
               <div className={styles.sectionContentSingle}>
-                <AssetBlock
+                <AssetBlockSVG
                   height={544}
                   backgroundColor="#010409"
                   borderColor="#212830"
                   centerType="svg"
-                  centerIcon={<OomolIcon />}
+                  centerIcon={<OomolIconSVG />}
                   centerHeight={256}
                   centerWidth={256}
                   cornerIcon={
@@ -406,12 +404,12 @@ export default function BrandAssets() {
                 })}
               </div>
               <div className={styles.sectionContentSingle}>
-                <AssetBlock
+                <AssetBlockSVG
                   height={544}
                   backgroundColor="#0d1117"
                   borderColor="#212830"
                   centerType="svg"
-                  centerIcon={<JostIcon />}
+                  centerIcon={<JostIconSVG />}
                   centerHeight={100}
                   centerWidth={178}
                   centerTextColor="#f0f6fc"
