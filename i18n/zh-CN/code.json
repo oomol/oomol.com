@@ -376,7 +376,7 @@
     "message": "OOMOL 积分会过期吗？"
   },
   "PRICING.question.text1.answer": {
-    "message": "积分包不会过期，仅在用完后不可用"
+    "message": "每月赠送的免费积分仅当月可用，但是用户购买的积分包不会过期，仅在用完后不可用"
   },
   "PRICING.question.text2": {
     "message": "OOMOL 如何优先使用积分？"
