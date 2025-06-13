@@ -83,7 +83,7 @@ Slots are shared Blocks dedicated to subflow Blocks, which only appear in the ri
 
 Considering that subflow Block developers need the functionality of certain Blocks but don't care about how the Blocks are implemented (or need users to implement them themselves), in this case, users of the subflow can implement their own functional Blocks and integrate them into the subflow, allowing the entire workflow to run normally. This gives users the freedom to implement part of the functionality.
 
-> For example: A subflow Block developer needs to analyze data through AI, so the developer defines a slot where the input is data content and the output is a string of analysis results. Then users can implement different AI analysis Blocks based on their own AI keys, using their own tokens.
+> For example: A subflow Block developer needs to analyze data through AI, so the developer defines a slot where the input is data content and the output is a string of analysis results. Then users can implement different AI analysis Blocks based on their own AI keys, using their own API tokens.
 
 Or subflow Blocks extract parts that may frequently change and modify as slots, which can be arbitrarily replaced at the point of use, reducing modifications to key code Blocks.
 
