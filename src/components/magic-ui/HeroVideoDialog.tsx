@@ -127,31 +127,29 @@ export function HeroVideoDialog({
                 <XIcon className="size-5" />
               </div>
               <div className="relative isolate z-[1] size-full overflow-hidden rounded-2xl border-2 border-white">
-                {/* TODO: 以后可能添加 iframe */}
-                {/* <iframe
-                  src={videoSrc}
-                  className="size-full rounded-2xl"
-                  allowFullScreen
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                ></iframe> */}
-                <video
-                  autoPlay
-                  poster="https://static.oomol.com/assets/video-poster.webp"
-                  controls
-                  className="size-full rounded-2xl"
-                  onError={() => {
-                    console.error("Video failed to load");
-                  }}
-                >
-                  <source
-                    src={
-                      i18n.currentLocale === "zh-CN"
-                        ? "https://static.oomol.com/assets/combination-CN.webm"
-                        : "https://static.oomol.com/assets/combination-EN.webm"
-                    }
-                    type="video/webm"
-                  />
-                </video>
+                {i18n.currentLocale === "zh-CN" ? (
+                  <video
+                    autoPlay
+                    poster="https://static.oomol.com/assets/video-poster.webp"
+                    controls
+                    className="size-full rounded-2xl"
+                    onError={() => {
+                      console.error("Video failed to load");
+                    }}
+                  >
+                    <source
+                      src="https://static.oomol.com/assets/combination-CN.webm"
+                      type="video/webm"
+                    />
+                  </video>
+                ) : (
+                  <iframe
+                    src={videoSrc}
+                    className="size-full rounded-2xl"
+                    allowFullScreen
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  ></iframe>
+                )}
               </div>
             </motion.div>
           </motion.div>
