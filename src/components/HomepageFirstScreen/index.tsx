@@ -51,11 +51,7 @@ export default function HomepageFirstScreen() {
           <HeroVideoDialog
             className={styles.video}
             animationStyle="from-center"
-            videoSrc={
-              i18n.currentLocale === "zh-CN"
-                ? "https://static.oomol.com/assets/combination-CN.webm"
-                : "https://static.oomol.com/assets/combination-EN.webm"
-            }
+            videoSrc="https://www.youtube.com/embed/L3fYYybKWJE?si=gJ-r2pDJDdUtR_IM"
             thumbnailSrc={useBaseUrl("/img/pages/home/first-screen.webp")}
             thumbnailAlt="Hero Video"
           />
