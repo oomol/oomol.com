@@ -114,11 +114,11 @@ export function HeroVideoDialog({
             <motion.div
               {...selectedAnimation}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="relative mx-4 aspect-video w-full max-w-6xl md:mx-0"
+              className={`relative mx-4  w-full max-w-6xl md:mx-0 ${i18n.currentLocale === "en" && "aspect-video"}`}
               onClick={e => e.stopPropagation()}
             >
               <div
-                className="absolute cursor-pointer -top-16 right-0 size-10 flex items-center justify-center rounded-full bg-neutral-900/50 p-2 text-white ring-1 ring-white/10 backdrop-blur-md dark:bg-neutral-100/50 dark:text-black dark:ring-black/10 border-none"
+                className="absolute cursor-pointer -top-6 -right-16 size-10 flex items-center justify-center rounded-full bg-neutral-900/50 p-2 text-white ring-1 ring-white/10 backdrop-blur-md dark:bg-neutral-100/50 dark:text-black dark:ring-black/10 border-none"
                 onClick={e => {
                   e.stopPropagation();
                   setIsVideoOpen(false);
