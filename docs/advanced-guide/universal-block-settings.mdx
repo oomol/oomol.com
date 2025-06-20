@@ -47,7 +47,7 @@ The difference is whether to use the results from the previous Node execution as
 
 Considering that Blocks may execute high resource-consuming or very time-consuming tasks, users may not want to repeat these tasks. Therefore, we designed a Node caching mechanism.
 
-After any Node executes successfully, except for Handles of type [variable](/docs/advanced-guide/block-advanced-usage/universal-block-settings#variable), all Node output Handles will retain the output values from the previous execution. This way, when downstream Nodes choose to execute, they will automatically use cached values without triggering upstream Node execution.
+After any Node executes successfully, except for Handles of type [variable](/docs/advanced-guide/universal-block-settings#variable), all Node output Handles will retain the output values from the previous execution. This way, when downstream Nodes choose to execute, they will automatically use cached values without triggering upstream Node execution.
 
 Users can also choose "Clear cache and execute", which will make the current run not use cache, trigger upstream Node execution, and get the latest output values.
 
@@ -69,7 +69,7 @@ Duplicate behavior differs for scriptlet Blocks and shared Blocks:
 
 - Shared Blocks
 
-  Duplicating only creates a reference to the shared Block in the workflow as a new Node. Both Nodes point to the same Block with the same code, so [configuring](/docs/advanced-guide/block-advanced-usage/universal-block-settings#block-configuration) the shared Block will affect both Nodes simultaneously.
+  Duplicating only creates a reference to the shared Block in the workflow as a new Node. Both Nodes point to the same Block with the same code, so [configuring](/docs/advanced-guide/universal-block-settings#block-configuration) the shared Block will affect both Nodes simultaneously.
 
 ### Node Settings
 

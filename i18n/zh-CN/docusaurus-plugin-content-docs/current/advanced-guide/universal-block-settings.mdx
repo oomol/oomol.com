@@ -47,7 +47,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 考虑到区块可能执行了高资源消耗或者时间非常长的任务，用户可能不想要重复这些任务，因此我们设计了节点的缓存机制。
 
-在任意节点执行成功之后，除了类型为[变量](/zh-CN/docs/advanced-guide/block-advanced-usage/universal-block-settings#变量)的接口以外，所有节点的输出接口都会保留上一次执行的输出值，这样下游节点在选择执行的时候就会自动采用缓存值，不会触发上游节点的运行。
+在任意节点执行成功之后，除了类型为[变量](/zh-CN/docs/advanced-guide/universal-block-settings#变量)的接口以外，所有节点的输出接口都会保留上一次执行的输出值，这样下游节点在选择执行的时候就会自动采用缓存值，不会触发上游节点的运行。
 
 用户也可以选择"清除缓存并执行"，这样会让当次运行不使用缓存，触发上游节点的运行，获得最新的输出值。
 
@@ -69,7 +69,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 - 共享区块
 
-  拷贝只会复制一份共享区块的引用到工作流内作为新的节点，两个节点指向的区块是同一个，代码也是同一份，因此对共享区块进行[配置](/zh-CN/docs/advanced-guide/block-advanced-usage/universal-block-settings#区块配置)会同时影响两个节点。
+  拷贝只会复制一份共享区块的引用到工作流内作为新的节点，两个节点指向的区块是同一个，代码也是同一份，因此对共享区块进行[配置](/zh-CN/docs/advanced-guide/universal-block-settings#区块配置)会同时影响两个节点。
 
 ### 节点配置
 
