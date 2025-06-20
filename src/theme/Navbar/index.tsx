@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss";
 
 import NavbarItem from "@theme/NavbarItem";
-import React, { memo, useEffect, useMemo, useState } from "react";
+import React, { memo, useMemo, useState } from "react";
 import type { ComponentProps } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useLocation } from "@docusaurus/router";
@@ -10,6 +10,23 @@ import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import { useNavbarMobileSidebar } from "@docusaurus/theme-common/internal";
 import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
+import { translate } from "@docusaurus/Translate";
+
+const isSignedIn = () => {
+  const cookies = document.cookie.split(";").map(cookie => cookie.trim());
+  return cookies.some(cookie => cookie.includes("oomol-signed-in"));
+};
+
+const CALLBACK_URL = "https://hub.oomol.com";
+
+const handleSignin = () => {
+  if (isSignedIn()) {
+    return window.open("https://hub.oomol.com", "_self");
+  }
+
+  const redirectURL = `https://api.oomol.com/v1/auth/redirect?redirect=${encodeURIComponent(CALLBACK_URL)}`;
+  window.open(redirectURL, "_self");
+};
 
 interface NavbarProps {}
 
@@ -120,10 +137,18 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
               loading="lazy"
             />
           </Link>
-
           {leftItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
           ))}
+          <NavbarItem
+            style={{ cursor: "pointer" }}
+            label={
+              isSignedIn()
+                ? translate({ message: "Theme.Navbar.go-to-hub-flow" })
+                : translate({ message: "Theme.Navbar.sign-in" })
+            }
+            onClick={handleSignin}
+          />
         </div>
         <div className={styles.itemsRight}>
           {rightItems.map((item, i) => (
