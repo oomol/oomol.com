@@ -2,6 +2,9 @@
   "Theme.Navbar.go-to-hub-flow": {
     "message": "Go to FlowHub"
   },
+  "Theme.Navbar.sign-in": {
+    "message": "Sign in"
+  },
   "HOME.FirstScreen.slogan": {
     "message": "AI Programmable Workflow Platform"
   },

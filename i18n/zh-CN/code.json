@@ -2,6 +2,9 @@
   "Theme.Navbar.go-to-hub-flow": {
     "message": "前往工作流社区"
   },
+  "Theme.Navbar.sign-in": {
+    "message": "登录"
+  },
   "HOME.FirstScreen.slogan": {
     "message": "AI 可编程工作流平台"
   },
