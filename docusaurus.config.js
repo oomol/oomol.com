@@ -46,24 +46,18 @@ const config = {
         blogSidebarTitle: "Updates",
       },
     ],
-    // function () {
-    //   return {
-    //     name: "docusaurus-plugin-inject-html",
-    //     injectHtmlTags() {
-    //       return {
-    //         headTags: [
-    //           {
-    //             tagName: "script",
-    //             attributes: {
-    //               charset: "utf-8",
-    //               src: "./scripts/redirect-lang.js",
-    //             },
-    //           },
-    //         ],
-    //       };
-    //     },
-    //   };
-    // },
+    function () {
+      return {
+        name: "docusaurus-plugin-inject-html",
+        injectHtmlTags() {
+          return {
+            headTags: [
+              `<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "80d2394da3f3405dbada0e172278e3a0"}'></script><!-- End Cloudflare Web Analytics -->`,
+            ],
+          };
+        },
+      };
+    },
     function () {
       return {
         name: "unocss",
