@@ -1,7 +1,198 @@
 ---
-slug: OOMOL vs Zapier vs n8n
-title: OOMOL vs Zapier vs n8n
+slug: OOMOL Studio vs Zapier vs n8n
+title: OOMOL Studio vs Zapier vs n8n
 authors: [zhangli]
-tags: [zapier, oomol, code]
+tags: [zapier, oomol, n8n, coding]
 date: 2025-06-24
 ---
+
+As the most popular workflow automation platforms currently, Zapier and n8n have saved users a tremendous amount of time from repetitive tasks. They enable individuals and businesses to use numerous built-in Software-as-a-Service (SaaS) tools to expand their operations and improve productivity. They excel as traditional low-code automation platforms, with active communities continuously adding various applications to their platforms, constantly expanding the business scenarios they can accommodate.
+
+Zapier was founded in 2011, focusing on integrating various applications in the market in the simplest way possible, allowing any user to achieve their business objectives by connecting applications. Although Zapier claims to be a no-code platform, it still introduces Code nodes because the inputs and outputs of market applications are incompatible, so programming work is always needed as a glue between applications.
+
+n8n appeared later than Zapier, positioning itself as an alternative to Zapier by claiming to provide better programming support to attract users with technical backgrounds, and this strategy has proven effective. It's evident that fully no-code automated workflows always encounter problems: each user's needs are not exactly the same, existing community solutions cannot perfectly solve users' actual problems, and some fine-tuning is always needed, so both platforms have reached a consensus on introducing code.
+
+However, Zapier and n8n chose cloud-based execution, where cloud-based code editing cannot introduce third-party dependencies, or it's extremely difficult to do so. This already limits their code editing experience from ever reaching the level of freedom they desire. The n8n team may have realized this problem, so they offer self-hosting options that allow users to introduce third-party libraries for code, but their primary cloud-based execution still cannot achieve this functionality.
+
+Therefore, OOMOL Studio took this consensus a step further. As a downloadable application, it runs containers with complete code environments locally, enabling the use of complete Node.js and Python community libraries. Complete code support brings workflow development experience and extensibility to the extreme. At the same time, it limits complexity during use through good interaction design, making it easy for ordinary users to get started.
+
+OOMOL Studio, as the latest workflow platform, inherits the advantages of Zapier and n8n while attempting to approach from a completely new angle to solve the pain points currently encountered by workflow automation platforms.
+
+## TL;DR
+
+| Feature                       | OOMOL Studio                                                                                                                                              | n8n                                                                                                               | Zapier                                                                       |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| Cost                          | Free to use and run, starting tier is free subscription, paid subscription starts at $5, unlocks premium features                                         | Cloud starts at $20/month, limits 2500 tasks per month, self-hosting is free                                      | Starting tier is free, limits 750 tasks per month, paid tier starts at $20   |
+| Built-in Apps                 | 70+, but can use code ecosystem                                                                                                                           | 1000+ apps, 2000+ templates                                                                                       | 7000+ apps                                                                   |
+| Usage Method                  | Download and install app, runs locally in containers, can export images for deployment to any cloud                                                       | Primarily cloud-based, supports self-hosting but configuration is complex                                         | Cloud-only                                                                   |
+| Workflow Operations           | Complex, but allows fine-grained definition, flexible flow control                                                                                        | Moderately complex, relatively flexible flow control                                                              | Simple, can only use fixed components for flow control                       |
+| Development Experience        | Consistent with normal code development experience, can install third-party dependencies, full support for Python and Node.js execution                   | Can only introduce third-party dependencies in self-hosting mode, cumbersome configuration, only supports JS code | Cannot introduce third-party dependencies, supports basic Python and JS code |
+| Customization and Flexibility | Ultimate, can complete business through code community capabilities                                                                                       | High, can complete customization in self-hosting mode but requires configuration                                  | Cannot complete business beyond built-in apps                                |
+| Running and Debugging         | Complete execution logs, can customize print content, error information displayed on node interface, provides single-point execution and ignore functions | Provides single-point execution, ignore, rollback debugging functions, has simple log recording                   | Simple log alerts                                                            |
+| Sharing                       | Can share workflows with all users or use privately, can also export files and images                                                                     | Can choose to share workflows with specified users                                                                | Only paid plans can share                                                    |
+
+## Introduction
+
+- **Zapier**
+
+Zapier is a no-code, cloud-based workflow platform with over 7000+ built-in applications, allowing users to orchestrate these applications called `Zaps` to achieve their business objectives.
+
+Zapier's major advantage lies in its massive collection of built-in applications. Reaching this scale of applications is not easy, which has maintained its stable leading position in the workflow automation field.
+
+- **n8n**
+
+n8n is a low-code, open-source workflow platform that can be self-hosted or run in the cloud, with 1000+ built-in applications and 2000+ templates.
+
+n8n's advantage lies in introducing code in a relatively simpler way, allowing users to conveniently fine-tune workflows. Therefore, workflows produced by n8n are more extensible and flexible compared to Zapier.
+
+- **OOMOL Studio**
+
+OOMOL Studio is a core open-source workflow platform that supports local/cloud/self-hosting execution methods with perfect code support. Due to its recent release, it doesn't have many built-in applications yet.
+
+OOMOL Studio's advantage lies in its perfect support for Python and Node.js code, meaning it can introduce any Python and Node.js modules in workflows, which is impossible in Zapier and n8n.
+
+Therefore, OOMOL Studio has the highest degree of freedom and extensibility. Even when built-in applications are insufficient, users can quickly build the nodes they want using code to complete their business. After completing business, they can quickly publish code as platform applications for reuse or sharing.
+
+Additionally, OOMOL Studio's local execution method is completely free, which could save most users hundreds of dollars in monthly expenses.
+
+## Platform Characteristics and Philosophy
+
+- **Zapier**: No-code, easy-to-use, cloud-based
+
+Zapier's cloud-based and no-code characteristics position its target users as non-technical personnel. Users don't need to install applications or consider programming; they just need to break down business into detailed steps, find corresponding apps for each step, connect them, and use.
+
+Of course, it also provides limited code functionality, but this is obviously not their focus since the code here cannot reference community libraries.
+
+Zapier's goal is quick startup and execution rather than deep customization. These characteristics attract a large number of non-technical users and small business users. With AI technology continuously developing today, Zapier focuses on helping users avoid code and quickly implement user business through AI or community applications.
+
+- **n8n**: Open-source, low-code, easily extensible, self-hostable
+
+n8n has both self-hosting and cloud execution methods.
+
+As an open-source project, n8n allows users to self-host to save operational costs. It has made some progress in code compared to Zapier. In self-hosting situations, n8n can install third-party community libraries for code.
+
+Self-hosting methods can supplement insufficient built-in applications through code and improve workflow flexibility and extensibility, thus attracting quite a few users with coding backgrounds.
+
+High extensibility also facilitates users in integrating continuously updated AI applications.
+
+Cloud execution methods suit non-technical users or users with non-customized business needs, overlapping with Zapier's user base.
+
+n8n has moved one step forward from Zapier toward customizable workflows. Although it increases complexity in user experience, users with coding capabilities provide considerable vitality to the community.
+
+- **OOMOL Studio**: Containerized, perfect code support, easily extensible, multiple execution methods
+
+OOMOL Studio's goal is to attract users with coding backgrounds, use simple publishing and sharing mechanisms to gradually improve the community, then let ordinary users also enjoy the advantages of workflow automation.
+
+OOMOL Studio expects users to truly achieve workflow automation and improve productivity, so it designed image export methods, enabling user-developed workflows to be deployed to the cloud in users' expected ways.
+
+OOMOL Studio also has built-in mainstream LLMs for direct use. If it cannot meet user needs, users can directly integrate through code.
+
+## Cost
+
+- **Zapier**
+
+Starting price is free with a limit of 100 tasks per month. The free tier basically cannot meet normal production use.
+
+Paid plans require at least $20 per month. Costs increase based on task execution frequency. If there are many repetitive tasks, costs may rise considerably.
+
+- **n8n**
+
+Self-hosting is free to use. Cloud execution starts at $20 per month, allowing 2500 task executions per month.
+
+- **OOMOL Studio**
+
+Application download is free with no limits on execution frequency. LLM resource consumption incurs some costs, but pricing is transparent, and users can avoid these costs by integrating their own LLMs.
+
+Subscription fees start at $5 per month, unlocking more advanced features. Free subscription plans don't affect users' development experience.
+
+## Feature Comparison
+
+### 1. Workflow Interface
+
+- **Zapier**
+
+Orchestrates workflows in a linear manner, generally running in 'trigger' -> 'action steps' format with small operation space and simple, understandable interface.
+
+- **n8n**
+
+Orchestrates workflows through drag-and-drop, allowing free connection of each work node to specify execution order. This operation method is more complex than Zapier but can orchestrate more complex tasks with higher customization.
+
+- **OOMOL Studio**
+
+Orchestrates workflows through drag-and-drop while also orchestrating input/output types and values for each node. Compared to n8n and Zapier, it's more complex. Output node values can control workflow execution conditions. But for technical personnel, complexity brings greater flexibility and customization capabilities.
+
+Also provides sub-flow functionality, allowing complex workflows to be simplified into ordinary nodes, enabling users without technical backgrounds to use directly without concerning themselves with details.
+
+### 2. Customization and Flexibility
+
+- **Zapier**
+
+Despite having numerous integrated applications, customized use is limited and difficult to meet special requirements.
+
+- **n8n**
+
+Has good flexibility, but each node's input is treated as a whole, unable to perform fine-grained control. Customization capabilities are limited as code community libraries can only be introduced in self-hosting mode.
+
+- **OOMOL Studio**
+
+Ultimate flexibility. Special requirements can be directly implemented using code, or existing community workflows can be used as templates and directly modified to achieve business objectives.
+
+### 3. Development Experience
+
+- **Zapier**
+
+Code modules cannot introduce third-party libraries, can only use built-in language functions, with extremely limited capabilities. Additionally, sending HTTP requests requires payment.
+
+- **n8n**
+
+Code modules can only introduce third-party libraries in self-hosting mode, requiring prerequisite setup according to files with complex configuration.
+
+- **OOMOL Studio**
+
+Can directly install any Python and Node.js libraries in terminal, no different from native code development. This means Python and Node.js ecosystems can both be applied to business. Furthermore, Python and Node.js environment libraries can be used together.
+
+### 4. Running and Debugging
+
+- **Zapier**
+
+Logic-wise provides Path functionality to control workflow execution paths but cannot handle complex logical judgments.
+
+Debugging-wise provides test execution mechanisms and simple exception alert mechanisms.
+
+- **n8n**
+
+Logic-wise provides `if`/`switch` components to control workflow execution paths. Combined with code, it can implement relatively complex business logic.
+
+Debugging-wise provides single-point execution and partial execution functions, plus ignore and rollback mechanisms, basically meeting users' development debugging needs.
+
+- **OOMOL Studio**
+
+Controls workflow execution paths through node outputs. This method is more complex but allows finer-grained workflow control, with each output value processable individually.
+
+Provides individual execution and ignore debugging functions for each node. All execution logs are recorded in detail and displayed categorically in the log panel.
+
+Node exception situations are directly displayed in the interface and logs for easy user observation and modification.
+
+### 5. Collaboration and Sharing
+
+- **Zapier**
+
+Only team plans can share workflows.
+
+- **n8n**
+
+Can share and export workflows to specified users.
+
+- **OOMOL Studio**
+
+Can share workflows with the entire community while allowing export/import in multiple ways. Under paid subscriptions, workflows can be jointly published.
+
+## Summary
+
+Zapier attracts numerous users through extensive built-in integrations and simple, understandable process interfaces, while n8n focuses on users with higher customization needs. Both have done their jobs well in their respective fields.
+
+OOMOL Studio recognizes that the real pain point in workflow automation scenarios has long been that users always need some degree of freedom to adjust workflows. OOMOL Studio chooses to implement truly free development experience, as only workflows produced this way can meet various users' needs.
+
+OOMOL Studio hopes users are completely free in both development and use, allowing any scenario to be incorporated into automation scenarios through development adjustments, ultimately benefiting users without technical backgrounds and improving overall social productivity.
+
+OOMOL Studio is certainly not a perfect product, but like Zapier and n8n, it hopes to explore the most suitable way to achieve the goal of automating everything.
