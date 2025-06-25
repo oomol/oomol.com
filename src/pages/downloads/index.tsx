@@ -4,7 +4,7 @@ import React from "react";
 import Layout from "@theme/Layout";
 import { DownloadUrl } from "@site/src/download_url";
 import { translate } from "@docusaurus/Translate";
-import { gtagReportConversion } from "@site/src/lib/utils";
+import { downloadStable } from "@site/src/lib/utils";
 
 const downloadData = [
   {
@@ -122,7 +122,7 @@ export default function Downloads() {
                         href={download.url}
                         onClick={
                           item.mostRecommended
-                            ? event => gtagReportConversion(event, download.url)
+                            ? event => downloadStable(event, download.url)
                             : undefined
                         }
                       >
