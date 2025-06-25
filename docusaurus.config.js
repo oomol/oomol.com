@@ -53,6 +53,16 @@ const config = {
           return {
             headTags: [
               `<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "80d2394da3f3405dbada0e172278e3a0"}'></script><!-- End Cloudflare Web Analytics -->`,
+              // Google Analytics
+              `<script async src="https://www.googletagmanager.com/gtag/js?id=G-RN1L1NVSQK"></script>`,
+              // Google Ads 分析
+              `<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17222662466"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17222662466');
+</script>`,
             ],
           };
         },
@@ -103,9 +113,6 @@ const config = {
         },
         theme: {
           customCss: [require.resolve("./src/css/custom.scss")],
-        },
-        gtag: {
-          trackingID: "G-RN1L1NVSQK",
         },
       }),
     ],
