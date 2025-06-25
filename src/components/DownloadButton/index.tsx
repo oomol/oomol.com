@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import { Popover } from "../Popover";
 import { Button } from "../Button";
 import { translate } from "@docusaurus/Translate";
+import { downloadStable } from "@site/src/lib/utils";
 
 enum OS {
   Windows = "Windows",
@@ -25,12 +26,21 @@ function detectOSAndArchitecture(): OS {
 const content = (
   <div className={styles.popoverBox}>
     <a download href={DownloadUrl.Stable.MacOS.AppleSilicon}>
-      <div className={styles.popoverLink}>
+      <div
+        className={styles.popoverLink}
+        onClick={event =>
+          downloadStable(event, DownloadUrl.Stable.MacOS.AppleSilicon)
+        }
+      >
         <div className={`${styles.icon} i-ic-baseline-apple`} />
         <span style={{ marginLeft: 8 }}>Apple Silicon</span>
       </div>
     </a>
-    <a download href={DownloadUrl.Stable.MacOS.Intel}>
+    <a
+      download
+      href={DownloadUrl.Stable.MacOS.Intel}
+      onClick={event => downloadStable(event, DownloadUrl.Stable.MacOS.Intel)}
+    >
       <div className={styles.popoverLink}>
         <div className={`${styles.icon} i-file-icons-intel`} />
         <span style={{ marginLeft: 8 }}>Intel Chip</span>
@@ -71,6 +81,7 @@ export const DownloadButton = ({ stableTag }: DownloadButtonProps) => {
         <div className={styles.windowsBox}>
           <Button
             className={styles.download}
+            onClick={() => downloadStable(null, DownloadUrl.Stable.Windows.x64)}
             href={DownloadUrl.Stable.Windows.x64}
             icon={
               <div

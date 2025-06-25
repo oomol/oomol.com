@@ -2,10 +2,9 @@ import styles from "./styles.module.scss";
 
 import React from "react";
 import Layout from "@theme/Layout";
-// import { DownloadButton } from "@site/src/components/DownloadButton";
 import { DownloadUrl } from "@site/src/download_url";
 import { translate } from "@docusaurus/Translate";
-import CanarySVG from "@site/static/img/canary.svg";
+import { downloadStable } from "@site/src/lib/utils";
 
 const downloadData = [
   {
@@ -118,7 +117,15 @@ export default function Downloads() {
                 <div className={styles.downloads}>
                   {item.downloads.map((download, i) => {
                     return (
-                      <a key={`download-${index}-${i}`} href={download.url}>
+                      <a
+                        key={`download-${index}-${i}`}
+                        href={download.url}
+                        onClick={
+                          item.mostRecommended
+                            ? event => downloadStable(event, download.url)
+                            : undefined
+                        }
+                      >
                         <i
                           className={`${styles["download-icon"]} i-codicon-desktop-download`}
                         />
