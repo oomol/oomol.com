@@ -11,6 +11,7 @@ import Link from "@docusaurus/Link";
 import { useNavbarMobileSidebar } from "@docusaurus/theme-common/internal";
 import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
 import { translate } from "@docusaurus/Translate";
+import BrowserOnly from "@docusaurus/BrowserOnly";
 
 const isSignedIn = () => {
   const cookies = document.cookie.split(";").map(cookie => cookie.trim());
@@ -140,15 +141,28 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
           {leftItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
           ))}
-          <NavbarItem
-            style={{ cursor: "pointer" }}
-            label={
-              isSignedIn()
-                ? translate({ message: "Theme.Navbar.go-to-hub-flow" })
-                : translate({ message: "Theme.Navbar.sign-in" })
+          <BrowserOnly
+            // TODO: This is a temporary fallback element used to prevent layout issues.
+            fallback={
+              <NavbarItem
+                label={translate({ message: "Theme.Navbar.sign-in" })}
+              />
             }
-            onClick={handleSignin}
-          />
+          >
+            {() => {
+              return (
+                <NavbarItem
+                  style={{ cursor: "pointer" }}
+                  label={
+                    isSignedIn()
+                      ? translate({ message: "Theme.Navbar.go-to-hub-flow" })
+                      : translate({ message: "Theme.Navbar.sign-in" })
+                  }
+                  onClick={handleSignin}
+                />
+              );
+            }}
+          </BrowserOnly>
         </div>
         <div className={styles.itemsRight}>
           {rightItems.map((item, i) => (
