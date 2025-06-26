@@ -5,6 +5,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useAlternatePageUtils } from "@docusaurus/theme-common/internal";
 import { Button } from "@site/src/components/Button";
 import { useState } from "react";
+import BrowserOnly from "@docusaurus/BrowserOnly";
 
 export interface LocalDropdownProps {
   queryString?: string;
@@ -47,14 +48,17 @@ export const LocalDropdown = ({ queryString = "" }: LocalDropdownProps) => {
           // preserve ?search#hash suffix on locale switches
           const to = `${baseTo}${search}${hash}${queryString}`;
           return (
-            <a
-              key={locale}
-              href={to}
-              className={`${styles.item} ${locale === currentLocale ? styles.selected : ""}`}
-              onClick={() => handleLocaleChange(locale)}
-            >
-              <div>{formateLocale(locale)}</div>
-            </a>
+            <BrowserOnly key={locale}>
+              {() => (
+                <a
+                  href={to}
+                  className={`${styles.item} ${locale === currentLocale ? styles.selected : ""}`}
+                  onClick={() => handleLocaleChange(locale)}
+                >
+                  <div>{formateLocale(locale)}</div>
+                </a>
+              )}
+            </BrowserOnly>
           );
         })}
       </div>

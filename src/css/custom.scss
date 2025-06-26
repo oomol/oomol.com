@@ -148,8 +148,11 @@ $desktop-width: 1280px;
 
 @media (min-width: 997px) {
   :root {
+    // TODO: 替换为新的 Navbar 样式后再恢复该样式
     // 已经手动调整 navbar 相关的样式，为了不让默认的影响新的样式，所以设为 0
-    --ifm-navbar-height: 0px;
+    // --ifm-navbar-height: 0px;
+
+    --ifm-navbar-height: 64px;
   }
 }
 

@@ -1,12 +1,11 @@
 import "../../styles/uno.css";
 import styles from "./styles.module.scss";
 
-import React, { ReactNode, useEffect } from "react";
+import React, { ReactNode } from "react";
 import LayoutProvider from "@theme/Layout/Provider";
 import clsx from "clsx";
 import Navbar from "@theme/Navbar";
 import Footer from "@theme/Footer";
-import BrowserOnly from "@docusaurus/BrowserOnly";
 
 interface LayoutProps {
   children: ReactNode;
@@ -44,17 +43,11 @@ const Layout: React.FC<LayoutProps> = ({ children, wrapperClassName }) => {
   // }, []);
 
   return (
-    <BrowserOnly>
-      {() => (
-        <LayoutProvider>
-          <Navbar />
-          <div className={clsx(styles.wrapper, wrapperClassName)}>
-            {children}
-          </div>
-          <Footer />
-        </LayoutProvider>
-      )}
-    </BrowserOnly>
+    <LayoutProvider>
+      <Navbar />
+      <div className={clsx(styles.wrapper, wrapperClassName)}>{children}</div>
+      <Footer />
+    </LayoutProvider>
   );
 };
 

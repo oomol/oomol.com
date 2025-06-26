@@ -4,6 +4,7 @@ import { Popover } from "../Popover";
 import { Button } from "../Button";
 import { translate } from "@docusaurus/Translate";
 import { downloadStable } from "@site/src/lib/utils";
+import BrowserOnly from "@docusaurus/BrowserOnly";
 
 enum OS {
   Windows = "Windows",
@@ -55,54 +56,80 @@ export interface DownloadButtonProps {
 
 export const DownloadButton = ({ stableTag }: DownloadButtonProps) => {
   return (
-    <div className={styles["button-box"]}>
-      {detectOSAndArchitecture() === OS.MacOS ? (
-        <Popover
-          trigger={
-            <Button
-              className={styles.download}
-              icon={
-                <div
-                  className="i-codicon-desktop-download"
-                  style={{ fontSize: 18 }}
-                />
-              }
-            >
-              {translate({
-                message: stableTag
-                  ? "HOME.FirstScreen.download-macos-stable"
-                  : "HOME.FirstScreen.download-macos",
-              })}
-            </Button>
+    <BrowserOnly
+      fallback={
+        <Button
+          className={styles.download}
+          icon={
+            <div
+              className="i-codicon-desktop-download"
+              style={{ fontSize: 18 }}
+            />
           }
-          content={content}
-        />
-      ) : (
-        <div className={styles.windowsBox}>
-          <Button
-            className={styles.download}
-            onClick={() => downloadStable(null, DownloadUrl.Stable.Windows.x64)}
-            href={DownloadUrl.Stable.Windows.x64}
-            icon={
-              <div
-                className="i-codicon-desktop-download"
-                style={{ fontSize: 18 }}
+        >
+          {translate({
+            message: stableTag
+              ? "HOME.FirstScreen.download-macos-stable"
+              : "HOME.FirstScreen.download-macos",
+          })}
+        </Button>
+      }
+    >
+      {() => {
+        return (
+          <div className={styles["button-box"]}>
+            {detectOSAndArchitecture() === OS.MacOS ? (
+              <Popover
+                trigger={
+                  <Button
+                    className={styles.download}
+                    icon={
+                      <div
+                        className="i-codicon-desktop-download"
+                        style={{ fontSize: 18 }}
+                      />
+                    }
+                  >
+                    {translate({
+                      message: stableTag
+                        ? "HOME.FirstScreen.download-macos-stable"
+                        : "HOME.FirstScreen.download-macos",
+                    })}
+                  </Button>
+                }
+                content={content}
               />
-            }
-          >
-            {translate({
-              message: stableTag
-                ? "HOME.FirstScreen.download-windows-stable"
-                : "HOME.FirstScreen.download-windows",
-            })}
-          </Button>
-          <span className={styles.windowsSubtitle}>
-            {translate({
-              message: "HOME.FirstScreen.download-windows-subtitle",
-            })}
-          </span>
-        </div>
-      )}
-    </div>
+            ) : (
+              <div className={styles.windowsBox}>
+                <Button
+                  className={styles.download}
+                  onClick={() =>
+                    downloadStable(null, DownloadUrl.Stable.Windows.x64)
+                  }
+                  href={DownloadUrl.Stable.Windows.x64}
+                  icon={
+                    <div
+                      className="i-codicon-desktop-download"
+                      style={{ fontSize: 18 }}
+                    />
+                  }
+                >
+                  {translate({
+                    message: stableTag
+                      ? "HOME.FirstScreen.download-windows-stable"
+                      : "HOME.FirstScreen.download-windows",
+                  })}
+                </Button>
+                <span className={styles.windowsSubtitle}>
+                  {translate({
+                    message: "HOME.FirstScreen.download-windows-subtitle",
+                  })}
+                </span>
+              </div>
+            )}
+          </div>
+        );
+      }}
+    </BrowserOnly>
   );
 };
