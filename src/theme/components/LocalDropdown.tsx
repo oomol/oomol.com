@@ -48,10 +48,9 @@ export const LocalDropdown = ({ queryString = "" }: LocalDropdownProps) => {
           // preserve ?search#hash suffix on locale switches
           const to = `${baseTo}${search}${hash}${queryString}`;
           return (
-            <BrowserOnly>
+            <BrowserOnly key={locale}>
               {() => (
                 <a
-                  key={locale}
                   href={to}
                   className={`${styles.item} ${locale === currentLocale ? styles.selected : ""}`}
                   onClick={() => handleLocaleChange(locale)}

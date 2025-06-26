@@ -6,7 +6,6 @@ import LayoutProvider from "@theme/Layout/Provider";
 import clsx from "clsx";
 import Navbar from "@theme/Navbar";
 import Footer from "@theme/Footer";
-// import BrowserOnly from "@docusaurus/BrowserOnly";
 
 interface LayoutProps {
   children: ReactNode;
