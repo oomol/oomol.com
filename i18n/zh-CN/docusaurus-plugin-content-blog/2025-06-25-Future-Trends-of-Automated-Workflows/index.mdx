@@ -1,0 +1,162 @@
+---
+slug: What are the future trends of automated workflows?
+title: 自动化工作流的未来趋势是什么?
+authors: [zhangli]
+tags: [workflow automation, n8n, Zapier]
+date: 2025-06-25
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+## 引言
+
+在当今快速发展的数字化时代，自动化工作流已经成为提升生产力的关键工具。从简单的任务连接到复杂的业务流程自动化，各种工具层出不穷，试图满足用户不断增长的自动化需求。然而，随着业务复杂度的提升和定制化需求的增加，传统的工作流工具正在显露其局限性。
+
+在这样的背景下，OOMOL Studio 应运而生，它不仅继承了现有工具的优势，更在关键的技术突破上实现了革命性的进步。通过支持完整的代码环境、本地化运行、镜像导出和完善的开发者体验，OOMOL Studio 正在逐步接近自动化工作流工具的最终形态。
+
+本文将深入探讨自动化工作流的发展历程、当前工具的能力边界，以及 OOMOL Studio 如何通过技术创新成为目前最强大的自动化工作流解决方案。
+
+## 百花齐放的工具生态
+
+当今市面上有很多的自动化工作流工具，Zapier / n8n / Dify 等等，每个工具都有相当丰富的社区内容和大量用户。
+
+Zapier 连接 7000+ 以上的应用，n8n 有超过 2000 个模版，Dify 则在 AI 领域站稳了脚跟，还有不断出现其他的工作流工具，总体来说他们都在努力为客户减少工作量，提升工作效率。
+
+自动化工作流就像工厂流水线一样，它将所有生产中的步骤作为一个个可以重复使用的单元并串联起来并自动化运行，达到清晰可控且高效的目的，最终提高客户的生产效率，节省时间。
+
+## 自动化工作流的演进
+
+Zapier 将市面上的各种应用作为单元并串联起来，包括各种 AI Agent，对于大多数用户来说，Zapier 连接的数量足够多因此多数简单需求都可以满足，比如读取邮件然后通过 AI 回信，或者是读取一个表格然后给 AI 分析一下表现之类的。很多客户的需求也止步于此，因此 Zapier 就够用了。
+
+这是一种线性的执行过程，一步一步地把工作完成。真实环境下的工作流程可能没那么理想，每个步骤之间并不一定是严格的先后关系，他们之间的联系更加像一张网络，根据需要随时可能跳过某些节点。
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-06-25-Future-Trends-of-Automated-Workflows/zapier-flow.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-06-25-Future-Trends-of-Automated-Workflows/zapier-flow.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption style={{textAlign: "center", fontStyle: "italic",color: "#828282"}}>
+    线性的工作流编排
+  </figcaption>
+</figure>
+
+但是业务实际上是在不断发展的，真实环境下的需求总是会出现一些变化，当你的目标客户发生了变动，或者工作流中的一个环节的提供商面临倒闭，那会让你不得不调整你的工作流：要么找一家替代的提供商，要么自己实现替代的功能。
+
+大多数客户在将简单需求自动化之后，总会尝试能不能将更复杂多变的任务自动化，没有人不想把自己从重复劳动中解放出来，这种时候，只有固定应用的工作流平台就遇到了麻烦，他们只能让开发者增加一个新的功能，然后发布给用户使用，这个时间通常不会太短。因此Zapier 提供了 Code、Path 之类的功能，希望可以让用户自己解决一些特殊的问题。
+
+所以 n8n 这类工具会声称它们更加灵活，因为他们支持更好的代码编辑体验，同时他们的工作流编排会更复杂，可以应对多变的问题，在 n8n 的工作流可以以自由的方式编排，他们提供了更多的逻辑控制节点比如 if 、switch 等。这些内置工具让工作流更加灵活，各种条件可以让工作流的适用范围变得更广泛。
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-06-25-Future-Trends-of-Automated-Workflows/dify-flow.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-06-25-Future-Trends-of-Automated-Workflows/dify-flow.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption style={{textAlign: "center", fontStyle: "italic",color: "#828282"}}>
+    网状的工作流编排
+  </figcaption>
+</figure>
+
+到这一步是今天市场上大多数工作流工具能做到的极限，他们已经尽可能实现了编程中的多数概念，让流程控制变得非常自由，同时支持代码让用户可以自己满足一些小范围的定制化需求。虽然代码无法依赖第三方模块，但是毕竟在云端运行，这个问题多数人也可以接受。
+
+## OOMOL 的技术突破与新可能
+
+在这个基础上，多数用户已经完成了进一步复杂的业务，那么是不是还会有部分用户有更高阶的需求呢？答案是肯定的，数据分析工程师或者科学家们大量的心血都通过Python 代码实现，他们使用 pandas 或者 numpy 这样的模块来实现目标，所以市面上的工作流基本上无法满足他们的需求。
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-06-25-Future-Trends-of-Automated-Workflows/zapier-import-lib.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-06-25-Future-Trends-of-Automated-Workflows/zapier-import-lib.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption style={{textAlign: "center", fontStyle: "italic",color: "#828282"}}>
+    Zapier 社区关于导入代码库的问题
+  </figcaption>
+</figure>
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-06-25-Future-Trends-of-Automated-Workflows/n8n-import-lib.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-06-25-Future-Trends-of-Automated-Workflows/n8n-import-lib.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption style={{textAlign: "center", fontStyle: "italic",color: "#828282"}}>
+    n8n 社区关于导入代码库的问题
+  </figcaption>
+</figure>
+
+我们可以发现，市面上的工作流工具为了实现各种情况下的业务，他们把自己变得越来越像编程一样，毕竟程序是图灵完备的，这意味着越接近编程，可以做的事情就越多。这也是为什么现在的工作流工具都引入了代码模块。
+
+那么为什么他们不直接支持完整的编程呢？原因是这些工具在云端运行，想要在云端做到代码编译运行加上代码依赖管理是非常困难的，用户越多，需要隔离的环境就越多，从成本来说就不可能实现。
+
+那么在本地应用支持呢？n8n 在做这方面的努力，但是在各平台同时支持不同语言的运行仍然是一个很艰巨的工作，而且从客观上来说，简单需求占多数，他们只需要实现这部分需求的自动化，然后根据节省用户的时间来适当收费就已经能够盈利了，也许再投入到支持编程的研究中会入不敷出。
+
+那么为什么 OOMOL Studio 还是要做这么困难且未来不确定的事情呢？
+
+现在的工作流工具中充斥着把一个文件转换为另一个格式的文件，或者是根据搜索内容生成一段话发送到社交媒体上之类的任务，你知道这一类任务不可能是客户想要的完整的业务，他们在文件转换为另一个格式之后需要将文件分享或者分析，发送到社交媒体上的话是为了吸引用户获得某些数据或者收益，但是剩下的步骤不是现在的工作流工具可以完成的，它们太过复杂，无法用简单的 if / else 来处理。
+
+所以不是用户不想把业务自动化，而是现在做不到。
+
+因此 OOMOL Studio 支持代码是为了让用户真正实现全部业务的自动化，Python 和 Node.js 社区存在大量开源的各类问题的解决方案，我们希望用户能使用这些已经存在的工具来解决问题，或者让用户可以根据自己的需要亲手构建自动化流程。我们相信真正的高附加值工作一定是相对复杂的，客户能够赚取的利润应该取决于问题的困难程度和节省的时间。
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-06-25-Future-Trends-of-Automated-Workflows/oomol-import-lib.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-06-25-Future-Trends-of-Automated-Workflows/oomol-import-lib.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption style={{textAlign: "center", fontStyle: "italic",color: "#828282"}}>
+    OOMOL Studio 方便的安装依赖方式
+  </figcaption>
+</figure>
+
+同时本地化运行能够将用户手中的计算资源运用起来，不是所有工作流都需要强大的硬件设备，某些业务虽然复杂，但是一般的计算机完全可以胜任，本地化运行可以为用户节省这部分没有必要的成本。
+
+## 与完全使用代码实现的区别
+
+既然代码是图灵完备的，那么为什么不直接写代码而是要使用 OOMOL Studio？
+
+从灵活度上来看，代码毫无疑问是最高的，但是用户要实现的业务目的一定是有时效的，如果通过写代码来实现，那么你需要安装开发环境，选择语言和框架，构建应用，然后发布安装，整个过程作为一个工程来实现。
+这对于个人用户来说是非常巨大的工作量，而且如果出现了需求变动，那么上述流程也许要再走一遍。
+
+OOMOL Studio 内置了代码环境，工作流编写完成后，只需填写基本信息就可以直接发布并分享，大大缩短了开发到交付的时间，用户也可以随时调整其中的任意节点，作为工作流工具的优势仍然存在。可以帮助用户快速试错和交付。
+
+## 结论
+
+让我们回到自动化工作流工具的终极目标：让绝大部分可以量化的工作都由计算机自动运行，并评估运行结果输出给用户，以此节省大量时间提高人类的生产力。
+
+我们不认为社交媒体上随处可见的"我靠这个工作流自动生成 AI 视频已经赚了数万美元"的文章真的想提高所有人的生产力，他们的目标只是你的咨询费而已，或者更简单只是一个广告。这只是把一个实际问题的最简单部分的自动化流程重复分享传播，实际上他们确实提高了一部分生产力，但是真正困难的事情在于需要让用户手动参与定制的流程。
+
+OOMOL Studio 选择在这条困难的道路上探索，也许我们不是最终正确的方案，但是至少我们做出了一部分努力，就是让想要真正解决复杂问题并自动化的用户可以有机会实现目标。
