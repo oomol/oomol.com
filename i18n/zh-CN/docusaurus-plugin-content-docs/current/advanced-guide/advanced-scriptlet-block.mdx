@@ -104,3 +104,21 @@ context API 还拥有报告进度、读取内置大语言模型参数、获取�
 
 详细 API 文档参考[Node.js Context API](/zh-CN/docs/workflow-engine/nodejs-sdk-api#常用-api) 和 [Python Context API](/zh-CN/docs/workflow-engine/python-sdk-api#核心-api)。
 :::
+
+## TypeScript 模块的快捷导入
+
+对于在 TypeScript 代码我们可以通过 `~` 作为项目的根目录来导入项目中的其他模块。例如：
+
+<Image
+  sources={{
+    light: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/ts-import-mudule.png"
+    ),
+    dark: useBaseUrl(
+      "/img/docs/advanced-guide/advanced-block-usage/ts-import-mudule.png"
+    ),
+  }}
+  width="720"
+/>
+
+我们可以将通过 `~/Hello` 来找到在项目根目录下的 `Hello.ts` 模块。
