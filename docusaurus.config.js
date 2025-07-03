@@ -309,6 +309,7 @@ const config = {
       prism: {
         theme: lightTheme,
         darkTheme: darkTheme,
+        additionalLanguages: ["json"],
       },
     }),
   future: {
