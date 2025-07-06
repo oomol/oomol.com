@@ -1,0 +1,486 @@
+---
+title: 如何将工作流导出为镜像并作为服务运行？
+authors: [zhangli]
+tags: [workflow automation, OOMOL, docker, export image]
+date: 2025-07-05
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+当工作流在你的计算机上正常运行时，你是否考虑过将它运行在所有人都可以访问的服务器上，将你的工作成果与他人共享？或者让你的工作流作为一个服务运行在后台，方便你随时调用？
+
+现在你可以用 OOMOL Studio 来达到这一目的。接下来我将详细介绍如何将工作流导出为镜像并运行在后台，我将实现一个翻译 PDF 然后转换为 EPUB 电子书的工作流，这让我可以在我的移动设备上阅读各类外国作家的文献而不用收到语言限制。
+
+具体实现的工作流你可以通过 [translate-pdf-to-epub](https://github.com/oomol-flows/translate-pdf-to-epub) 下载，你可以跟随文章将本文的工作流作为服务运行在你想要的计算机或者云平台上。
+
+> 阅读该文章需要你具备基础的[镜像容器](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-an-image/)相关知识。
+
+## 工作流开发
+
+> 如果你已经有实现完成的工作流那么可以跳至[导出镜像](/zh-CN/blog/2025/07/05/Export-Workflow-as-Image#导出镜像)
+
+我们要实现功能可以拆分为以下几个步骤：
+
+1. 将 PDF 文件转换为 epub 文件。
+2. 将转换后的 epub 文件翻译。
+3. 将翻译后的 epub 文件保存在指定位置。
+
+流程很简单，我们将使用 OOMOL 社区中已有的区块来实现。
+
+首先我们创建了一个 `translate-pdf-to-epub` 的项目，然后在安装了商店中的以下包：
+
+**pdf-craft**
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/install-pdf-craft.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/install-pdf-craft.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  >
+    pdf-craft 可以将 pdf 文件转换为 epub 文件
+  </figcaption>
+</figure>
+
+**books-translator**
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/install-pdf-craft.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/install-pdf-craft.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  >
+    books-translator 可以翻译 epub 文件
+  </figcaption>
+</figure>
+
+然后我们分别使用 `pdf-craft` 包中的 `Analys PDF` 和 `Genrate EPUB` 区块，`books-translator` 包中的 `Translate epub book` 区块，`File` 包中的 `Binary save as file` 区块，串联后得到工作流。
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/pdf-craft-block.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/pdf-craft-block.png"
+      ),
+    }}
+    width="200"
+  />
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/books-translator-block.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/books-translator-block.png"
+      ),
+    }}
+    width="200"
+  />
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/file-block.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/file-block.png"
+      ),
+    }}
+    width="200"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  >
+    需要用到的区块
+  </figcaption>
+</figure>
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/flow.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/flow.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  >
+    实现的工作流
+  </figcaption>
+</figure>
+
+工作流已经实现完成，接下来我们为工作流填入参数。我们需要填写以下几个参数：
+1. 需要处理的 pdf 文件路径
+2. 最终输出 epub 文件的路径和文件格式
+
+`Translate epub book` 区块默认的输入语言是英文，输出语言是中文。如果有需要请自行调整参数。
+
+> 这里可以清空 `output_dir`，让中间产物都放在内存中，关闭应用即可释放。
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/flow-params.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/flow-params.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  >
+    需要填入的参数
+  </figcaption>
+</figure>
+
+
+由于 pdf 文件输入需要一个 pdf 地址，所以我们要将需要处理的 pdf 文件放入到 OOMOL Studio 环境中以便应用可以读取。我们在左侧面板中将文件复制到 OOMOL 空间内：
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/upload-file.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/upload-file.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  >
+    将文件放入到 OOMOL Studio 应用容器内
+  </figcaption>
+</figure>
+
+然后我们就可以选择 pdf 文件地址以及输出的 epub 文件地址和后缀名：
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/pdf-craft-block-param.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/pdf-craft-block-param.png"
+      ),
+    }}
+    width="300"
+  />
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/file-block-params.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/file-block-params.png"
+      ),
+    }}
+    width="300"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  >
+    完成的参数
+  </figcaption>
+</figure>
+
+接下来我们运行工作流，在一段时间的运行后，我们可以看到成功有文件输出，同时内容已经翻译完成。
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/output-file.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/output-file.png"
+      ),
+    }}
+    width="300"
+  />
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/output-file-content.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/output-file-content.png"
+      ),
+    }}
+    width="300"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  >
+    工作流输出结果
+  </figcaption>
+</figure>
+
+可以看到文章被翻译为了中文。
+
+到此为止我们开发并运行了一个工作流，现在工作流只能运行在 OOMOL Studio 应用内，接下来我们要将工作流脱离 OOMOL Studio 的环境并运行起来。
+
+## 导出镜像
+
+我们回到OOMOL Studio 的 Home 页面，找到刚才开发完成的工作流，右键单机并选择`导出为镜像`功能，选择导出的文件夹然后等待一段时间，就可以得到一个与工作流同名的镜像文件。
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/export-image-file.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/export-image-file.png"
+      ),
+    }}
+    width="720"
+  />
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/image-file.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/image-file.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  >
+    导出镜像文件
+  </figcaption>
+</figure>
+
+## 镜像运行
+
+在得到镜像文件后，我们使用 `docker` 命令加载镜像文件。在终端中运行
+
+```shell
+docker load -i ~/Downloads/translate-pdf-to-epub.tar.zst  # 选择你保存镜像文件的地址
+```
+
+运行完成后可以找到该镜像：
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/docker-image.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/docker-image.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  >
+    镜像文件
+  </figcaption>
+</figure>
+
+因为镜像的运行环境并不在 OOMOL Studio 内，所以我们无法分辨运行容器的用户是谁，而当前的工作流中使用到了 AI 进行翻译，OOMOL 会将翻译产生的费用折算为积分，使用 API-key 就可以将积分在对应用户的账户中扣除，让工作流正常运行。
+
+::info
+如果工作流中用户并没有使用到 AI 之类的内置服务，或者使用了自己的 AI 服务，用户在启动容器的时候仍然需要传入 API-key，但是并不会产生费用。
+
+API-key 可以在 [OOMOL Console](https://console.oomol.com/panel/api-key) 中生成一个。
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/create-api-key.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/create-api-key.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  >
+    生成 API-key
+  </figcaption>
+</figure>
+
+> API-key 展示关闭后无法再次获取，请妥善保管。
+
+获取 API-key 后我们可以执行以下命令运行容器:
+
+```shell
+docker run --privileged -p 3000:3000 -e OOMOL_API_TOKEN={OOMOL_API_TOKEN} -v $HOME/oomol-storage:/oomol-driver/oomol-storage localhost/translate-pdf-to-epub:latest
+```
+
+在运行镜像后，我们就可以通过 `http://localhost:3000` 访问启动的容器了，此时前面的工作流已经作为一个本地的服务运行了起来。
+
+### 镜像内的文件地址
+
+在这个例子中，我们工作流的起点是输入一个文件地址，但是工作流在被导出为镜像后，所有的在镜像容器内的地址都是指**在容器内的地址**，如果我们直接将宿主机的地址传给工作流，容器内的工作流是无法读取到有效文件的。
+
+这里我们将计算机上的 `$HOME/oomol-storage` 路径[挂载](https://docs.docker.com/engine/storage/bind-mounts/)到了容器内的 `/oomol-driver/oomol-storage` 路径下，这样用户在 `$HOME/oomol-storage` 路径下添加文件就相当于将文件放在容器内的 `/oomol-driver/oomol-storage` 文件夹下。这样容器内外就可以通过这个文件夹交换文件。
+
+如果你想要将该镜像部署到云服务器中，也需要满足这个要求，你必须要让容器内的工作流可以访问到真实的文件地址。如果你觉得通过挂载的方式读取文件太麻烦，那么你可以将输入文件路径改为读取一个网络地址，比如上传到 aws a3 服务等网络文件管理服务，然后在你的工作流内下载这个文件并读取。这样文件访问始终在镜像容器内进行，不会存在文件找不到的问题。
+
+## 调用工作流
+在启动镜像容器后，你就可以通过 http 请求来查询、启动、停止工作流。
+
+访问 `http://localhost:3000/ui` 你可以看到镜像容器暴露的 http 请求接口：
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/http-api.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/http-api.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  >
+    http API
+  </figcaption>
+</figure>
+
+接口的具体描述可以参考 [API 文档](/zh-CN/docs/advanced-guide/export-image/#api)。
+
+### 查询工作流
+使用 GET 方法调用 `http://localhost:3000/v1/flows` 可以查询容器镜像内的工作流列表。
+
+返回的内容包含了工作流的详细结构，包括节点信息、输入输出接口的名称和类型。
+
+### 运行任务
+
+使用 POST 方法调用 `http://localhost:3000/v1/tasks` 可以运行工作流并创建一个任务。
+
+在[工作流开发](/zh-CN/blog/2025/07/05/Export-Workflow-as-Image#工作流开发)中我们说过启动工作流前我们需要为几个节点填入参数，这里我们调用请求传入参数：
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/start-image-task.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/start-image-task.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  >
+    开始任务的参数
+  </figcaption>
+</figure>
+
+这里参数的 `flowName` / `nodeId` / `handle` 的信息我们都可以从[查询工作流](/zh-CN/blog/2025/07/05/Export-Workflow-as-Image#查询工作流)中找到。
+
+这里填写的输入文件地址为 `/oomol-driver/oomol-storage/test.pdf`，由于我们之前在[镜像运行](/zh-CN/blog/2025/07/05/Export-Workflow-as-Image#镜像运行)的时候将 `/oomol-driver/oomol-storage` 文件夹映射到了 `$HOME/oomol-storage`路径下，所以我们只要将 test.pdf 放入到`$HOME/oomol-storage` 中，工作流就可以正确读取文件，然后我们将输出文件命名为 `local-service-output`。
+
+在运行 API 调用后，我们将会得到一个任务 ID。
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/start-task-response.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/start-task-response.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  >
+    任务 ID
+  </figcaption>
+</figure>
+
+### 查询任务
+
+使用 GET 方法调用 `http://localhost:3000/v1/tasks` 可以列出所有镜像容器中的任务。
+
+使用 GET 方法调用 `http://localhost:3000/v1/tasks/{task_id}` 可以通过任务 ID 查询任务的详情。
+
+用户可以通过轮询这两个 api 来查询任务的运行情况。
+
+当任务运行完成后，我们可以查询到任务状态为完成并看到任务的输出结果：
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/image-task-finish.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/image-task-finish.png"
+      ),
+    }}
+    width="720"
+  />
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/image-task-result.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/image-task-result.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  >
+    完成的任务
+  </figcaption>
+</figure>
+
+## 总结
+
+本文介绍了如何将 OOMOL Studio 的工作流导出为镜像同时脱离 OOMOL Studio 单独运行。
+
+用户可以将镜像部署在任何环境下，成为一个持续运行的服务可以让工作流发挥出最大的作用，无论是在本地服务器、云平台还是团队协作环境中，都能实现自动化流程的高效复用和共享。
