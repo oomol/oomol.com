@@ -57,10 +57,10 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
   <Image
     sources={{
       light: useBaseUrl(
-        "/img/blogs/2025-07-05-Export-Workflow-as-Image/install-pdf-craft.png"
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/install-books-translator.png"
       ),
       dark: useBaseUrl(
-        "/img/blogs/2025-07-05-Export-Workflow-as-Image/install-pdf-craft.png"
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/install-books-translator.png"
       ),
     }}
     width="720"
@@ -72,7 +72,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
   </figcaption>
 </figure>
 
-然后我们分别使用 `pdf-craft` 包中的 `Analys PDF` 和 `Genrate EPUB` 区块，`books-translator` 包中的 `Translate epub book` 区块，`File` 包中的 `Binary save as file` 区块，串联后得到工作流。
+然后我们分别使用 `pdf-craft` 包中的 `Analys PDF` 和 `Genrate EPUB` 区块，`books-translator` 包中的 `Translate epub book` 区块，串联后得到工作流。
 
 <figure>
   <Image
@@ -93,17 +93,6 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
       ),
       dark: useBaseUrl(
         "/img/blogs/2025-07-05-Export-Workflow-as-Image/books-translator-block.png"
-      ),
-    }}
-    width="200"
-  />
-  <Image
-    sources={{
-      light: useBaseUrl(
-        "/img/blogs/2025-07-05-Export-Workflow-as-Image/file-block.png"
-      ),
-      dark: useBaseUrl(
-        "/img/blogs/2025-07-05-Export-Workflow-as-Image/file-block.png"
       ),
     }}
     width="200"
@@ -135,12 +124,13 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 </figure>
 
 工作流已经实现完成，接下来我们为工作流填入参数。我们需要填写以下几个参数：
+
 1. 需要处理的 pdf 文件路径
-2. 最终输出 epub 文件的路径和文件格式
+2. 最终输出 epub 文件的路径
 
-`Translate epub book` 区块默认的输入语言是英文，输出语言是中文。如果有需要请自行调整参数。
+`Translate epub book` 区块默认的输出语言是中文。如果有需要请自行调整参数。
 
-> 这里可以清空 `output_dir`，让中间产物都放在内存中，关闭应用即可释放。
+> 这里可以清空 `output_dir` 参数，让中间产物都放在内存中，关闭应用即可释放。
 
 <figure>
   <Image
@@ -160,7 +150,6 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
     需要填入的参数
   </figcaption>
 </figure>
-
 
 由于 pdf 文件输入需要一个 pdf 地址，所以我们要将需要处理的 pdf 文件放入到 OOMOL Studio 环境中以便应用可以读取。我们在左侧面板中将文件复制到 OOMOL 空间内：
 
@@ -200,10 +189,10 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
   <Image
     sources={{
       light: useBaseUrl(
-        "/img/blogs/2025-07-05-Export-Workflow-as-Image/file-block-params.png"
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/translate-block-params.png"
       ),
       dark: useBaseUrl(
-        "/img/blogs/2025-07-05-Export-Workflow-as-Image/file-block-params.png"
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/translate-block-params.png"
       ),
     }}
     width="300"
@@ -359,6 +348,7 @@ docker run --privileged -p 3000:3000 -e OOMOL_API_TOKEN={OOMOL_API_TOKEN} -v $HO
 如果你想要将该镜像部署到云服务器中，也需要满足这个要求，你必须要让容器内的工作流可以访问到真实的文件地址。如果你觉得通过挂载的方式读取文件太麻烦，那么你可以将输入文件路径改为读取一个网络地址，比如上传到 aws a3 服务等网络文件管理服务，然后在你的工作流内下载这个文件并读取。这样文件访问始终在镜像容器内进行，不会存在文件找不到的问题。
 
 ## 调用工作流
+
 在启动镜像容器后，你就可以通过 http 请求来查询、启动、停止工作流。
 
 访问 `http://localhost:3000/ui` 你可以看到镜像容器暴露的 http 请求接口：
@@ -385,6 +375,7 @@ docker run --privileged -p 3000:3000 -e OOMOL_API_TOKEN={OOMOL_API_TOKEN} -v $HO
 接口的具体描述可以参考 [API 文档](/zh-CN/docs/advanced-guide/export-image/#api)。
 
 ### 查询工作流
+
 使用 GET 方法调用 `http://localhost:3000/v1/flows` 可以查询容器镜像内的工作流列表。
 
 返回的内容包含了工作流的详细结构，包括节点信息、输入输出接口的名称和类型。
