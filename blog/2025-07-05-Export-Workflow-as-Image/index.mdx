@@ -8,27 +8,27 @@ date: 2025-07-05
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-When your Flow runs properly on your computer, have you ever considered running it on a server accessible to everyone, sharing your achievements with others? Or running your Flow as a background service for convenient access at any time?
+Have you ever considered running your Workflow on a server accessible to everyone, sharing your work with others, or running your Workflow as a background service for easy invocation at any time?
 
-Now you can achieve this with OOMOL Studio. Next, I will detail how to export a Flow as an image and run it in the background. I will implement a Flow that translates a PDF and converts it to an EPUB e-book, allowing me to read works by foreign authors on my mobile device without language barriers.
+Now you can achieve this with OOMOL Studio. In this article, I will detail how to export a Workflow as an image and run it in the background. I will implement a Workflow that translates a PDF and converts it to an EPUB e-book, allowing me to read literature from foreign authors on my mobile device without language barriers.
 
-You can download the actual Flow implementation from [translate-pdf-to-epub](https://github.com/oomol-flows/translate-pdf-to-epub). You can follow this article to run the Flow as a service on any computer or cloud platform you want.
+You can download the specific Workflow implementation from [translate-pdf-to-epub](https://github.com/oomol-flows/translate-pdf-to-epub). You can follow this article to run the Workflow as a service on any computer or cloud platform you want.
 
-> Reading this article requires basic knowledge of [image containers](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-an-image/).
+> To read this article, you need basic knowledge of [image containers](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-an-image/).
 
-## Flow Development
+## Workflow Development
 
-> If you already have a completed Flow, you can skip to [Export Image](/blog/2025/07/05/Export-Workflow-as-Image#export-image)
+> If you already have a completed Workflow, you can skip to [Export Image](/blog/2025/07/05/Export-Workflow-as-Image#export-image)
 
-The required functionality can be broken down into the following steps:
+The functionality can be broken down into the following steps:
 
 1. Convert a PDF file to an EPUB file.
 2. Translate the converted EPUB file.
 3. Save the translated EPUB file to a specified location.
 
-The process is simple, and we will use existing Blocks from the OOMOL community to implement it.
+The process is simple, and we will use existing Blocks from the OOMOL community.
 
-First, we create a `translate-pdf-to-epub` project and install the following Packages from the store:
+First, we create a project called `translate-pdf-to-epub`, then install the following Packages from the store:
 
 **pdf-craft**
 
@@ -57,10 +57,10 @@ First, we create a `translate-pdf-to-epub` project and install the following Pac
   <Image
     sources={{
       light: useBaseUrl(
-        "/img/blogs/2025-07-05-Export-Workflow-as-Image/install-pdf-craft.png"
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/install-books-translator.png"
       ),
       dark: useBaseUrl(
-        "/img/blogs/2025-07-05-Export-Workflow-as-Image/install-pdf-craft.png"
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/install-books-translator.png"
       ),
     }}
     width="720"
@@ -72,7 +72,7 @@ First, we create a `translate-pdf-to-epub` project and install the following Pac
   </figcaption>
 </figure>
 
-Then, we use the `Analys PDF` and `Genrate EPUB` Blocks from the `pdf-craft` Package, the `Translate epub book` Block from the `books-translator` Package, and the `Binary save as file` Block from the `File` Package, chaining them together to form the Flow.
+Then, we use the `Analys PDF` and `Genrate EPUB` Blocks from the `pdf-craft` Package, and the `Translate epub book` Block from the `books-translator` Package, chaining them together to form the Workflow.
 
 <figure>
   <Image
@@ -93,17 +93,6 @@ Then, we use the `Analys PDF` and `Genrate EPUB` Blocks from the `pdf-craft` Pac
       ),
       dark: useBaseUrl(
         "/img/blogs/2025-07-05-Export-Workflow-as-Image/books-translator-block.png"
-      ),
-    }}
-    width="200"
-  />
-  <Image
-    sources={{
-      light: useBaseUrl(
-        "/img/blogs/2025-07-05-Export-Workflow-as-Image/file-block.png"
-      ),
-      dark: useBaseUrl(
-        "/img/blogs/2025-07-05-Export-Workflow-as-Image/file-block.png"
       ),
     }}
     width="200"
@@ -130,17 +119,18 @@ Then, we use the `Analys PDF` and `Genrate EPUB` Blocks from the `pdf-craft` Pac
   <figcaption
     style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
   >
-    The implemented Flow
+    Implemented Workflow
   </figcaption>
 </figure>
 
-The Flow is now complete. Next, we fill in the parameters for the Flow. We need to provide the following parameters:
-1. The path to the PDF file to process
-2. The output path and file format for the final EPUB file
+The Workflow is now complete. Next, we need to fill in the parameters. The following parameters are required:
 
-The `Translate epub book` Block's default input language is English and output language is Chinese. Adjust the parameters as needed.
+1. The path of the PDF file to process
+2. The output path for the final EPUB file
 
-> You can clear `output_dir` to keep intermediate files in memory, which will be released when the app closes.
+The `Translate epub book` Block's default output language is Chinese. Adjust the parameters as needed.
+
+> You can clear the `output_dir` parameter to store intermediate products in memory. Closing the application will release them.
 
 <figure>
   <Image
@@ -157,11 +147,11 @@ The `Translate epub book` Block's default input language is English and output l
   <figcaption
     style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
   >
-    Parameters to fill in
+    Parameters to Fill In
   </figcaption>
 </figure>
 
-Since the PDF file input requires a PDF path, we need to place the PDF file to be processed into the OOMOL Studio environment so the app can read it. Copy the file into the OOMOL space from the left panel:
+Since the PDF file input requires a PDF address, we need to place the PDF file to be processed into the OOMOL Studio environment so the application can read it. Copy the file into the OOMOL space from the left panel:
 
 <figure>
   <Image
@@ -178,11 +168,11 @@ Since the PDF file input requires a PDF path, we need to place the PDF file to b
   <figcaption
     style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
   >
-    Place the file inside the OOMOL Studio app container
+    Place the file inside the OOMOL Studio application container
   </figcaption>
 </figure>
 
-Now you can select the PDF file path and the output EPUB file path and extension:
+Then, select the PDF file address and the output EPUB file address and extension:
 
 <figure>
   <Image
@@ -199,10 +189,10 @@ Now you can select the PDF file path and the output EPUB file path and extension
   <Image
     sources={{
       light: useBaseUrl(
-        "/img/blogs/2025-07-05-Export-Workflow-as-Image/file-block-params.png"
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/translate-block-params.png"
       ),
       dark: useBaseUrl(
-        "/img/blogs/2025-07-05-Export-Workflow-as-Image/file-block-params.png"
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/translate-block-params.png"
       ),
     }}
     width="300"
@@ -210,11 +200,11 @@ Now you can select the PDF file path and the output EPUB file path and extension
   <figcaption
     style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
   >
-    Completed parameters
+    Completed Parameters
   </figcaption>
 </figure>
 
-Next, run the Flow. After a while, you will see the output file, and the content will have been translated.
+Next, run the Workflow. After some time, you will see the output file, and the content will be translated.
 
 <figure>
   <Image
@@ -242,17 +232,17 @@ Next, run the Flow. After a while, you will see the output file, and the content
   <figcaption
     style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
   >
-    Flow output result
+    Workflow Output Result
   </figcaption>
 </figure>
 
 You can see the article has been translated into Chinese.
 
-At this point, we have developed and run a Flow, but it can only run inside the OOMOL Studio app. Next, we will run the Flow outside of OOMOL Studio.
+At this point, we have developed and run a Workflow. Currently, the Workflow can only run inside the OOMOL Studio application. Next, we will detach the Workflow from the OOMOL Studio environment and run it independently.
 
 ## Export Image
 
-Go back to the OOMOL Studio Home page, find the Flow you just developed, right-click and select `Export as Image`, choose the export folder, and after a while, you will get an image file with the same name as the Flow.
+Return to the OOMOL Studio Home page, find the Workflow you just developed, right-click and select `Export as Image`, choose the export folder, and after a while, you will get an image file with the same name as the Workflow.
 
 <figure>
   <Image
@@ -280,16 +270,16 @@ Go back to the OOMOL Studio Home page, find the Flow you just developed, right-c
   <figcaption
     style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
   >
-    Export image file
+    Exported Image File
   </figcaption>
 </figure>
 
 ## Running the Image
 
-After obtaining the image file, use the `docker` command to load the image file. In the terminal, run:
+After obtaining the image file, use the `docker` command to load the image file. In the terminal, run
 
 ```shell
-docker load -i ~/Downloads/translate-pdf-to-epub.tar.zst  # Use your image file path
+docker load -i ~/Downloads/translate-pdf-to-epub.tar.zst  # Use the path where you saved the image file
 ```
 
 After running, you can find the image:
@@ -309,16 +299,16 @@ After running, you can find the image:
   <figcaption
     style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
   >
-    Image file
+    Image File
   </figcaption>
 </figure>
 
-Because the image runtime is not inside OOMOL Studio, we cannot identify the user running the container. The current Flow uses AI for translation, and OOMOL will convert translation costs into credits. Using an API-key allows credits to be deducted from the corresponding user's account for normal operation.
+Since the image runs outside OOMOL Studio, we cannot identify the user running the container. The current Workflow uses AI for translation, and OOMOL will convert the translation cost into credits. Using an API-key allows the credits to be deducted from the corresponding user's account, enabling the Workflow to run normally.
 
 ::info
-If the Flow does not use built-in AI services, or uses your own AI service, you still need to provide an API-key when starting the container, but no cost will be incurred.
+If the Workflow does not use built-in services like AI, or uses your own AI service, you still need to pass in the API-key when starting the container, but no credits will be deducted.
 
-You can generate an API-key in [OOMOL Console](https://console.oomol.com/panel/api-key).
+You can generate an API-key in the [OOMOL Console](https://console.oomol.com/panel/api-key).
 
 <figure>
   <Image
@@ -341,27 +331,27 @@ You can generate an API-key in [OOMOL Console](https://console.oomol.com/panel/a
 
 > Once the API-key is hidden, it cannot be retrieved again. Please keep it safe.
 
-After obtaining the API-key, you can run the container with the following command:
+After obtaining the API-key, run the following command to start the container:
 
 ```shell
 docker run --privileged -p 3000:3000 -e OOMOL_API_TOKEN={OOMOL_API_TOKEN} -v $HOME/oomol-storage:/oomol-driver/oomol-storage localhost/translate-pdf-to-epub:latest
 ```
 
-After running the image, you can access the started container at `http://localhost:3000`. The previous Flow is now running as a local service.
+After running the image, you can access the started container at `http://localhost:3000`. At this point, the previous Workflow is running as a local service.
 
 ### File Paths Inside the Image
 
-In this example, the Flow starts by inputting a file path. After exporting the Flow as an image, all paths inside the image container refer to **paths inside the container**. If you pass a host path directly to the Flow, it will not be able to read the file.
+In this example, the Workflow starts by inputting a file path. However, after the Workflow is exported as an image, all paths inside the image container refer to **paths inside the container**. If you directly pass a host path to the Workflow, the Workflow inside the container cannot access the file.
 
-Here, we mount the `$HOME/oomol-storage` path on the computer to the `/oomol-driver/oomol-storage` path inside the container. This way, adding files to `$HOME/oomol-storage` is equivalent to placing them in `/oomol-driver/oomol-storage` inside the container. The container and host can exchange files through this folder.
+Here, we mount the host's `$HOME/oomol-storage` path to `/oomol-driver/oomol-storage` inside the container. This way, adding files to `$HOME/oomol-storage` on your computer is equivalent to placing files in `/oomol-driver/oomol-storage` inside the container. This allows file exchange between the host and the container.
 
-If you want to deploy the image to a cloud server, you also need to meet this requirement: the Flow inside the container must be able to access the real file path. If you find mounting files cumbersome, you can change the input file path to a network address, such as uploading to AWS S3 or other network file management services, then downloading and reading the file inside your Flow. This way, file access always happens inside the image container, and there will be no file-not-found issues.
+If you want to deploy the image to a cloud server, you also need to meet this requirement: the Workflow inside the container must be able to access the actual file path. If you find mounting files cumbersome, you can change the input file path to a network address, such as uploading to AWS S3 or other network file management services, then download and read the file inside your Workflow. This way, file access always happens inside the image container, avoiding file-not-found issues.
 
-## Calling the Flow
+## Calling the Workflow
 
-After starting the image container, you can use HTTP requests to query, start, and stop Flows.
+After starting the image container, you can use HTTP requests to query, start, and stop the Workflow.
 
-Visit `http://localhost:3000/ui` to see the HTTP Interfaces exposed by the image container:
+Visit `http://localhost:3000/ui` to see the HTTP request interfaces exposed by the image container:
 
 <figure>
   <Image
@@ -382,19 +372,19 @@ Visit `http://localhost:3000/ui` to see the HTTP Interfaces exposed by the image
   </figcaption>
 </figure>
 
-For detailed Handle descriptions, see the [API documentation](/docs/advanced-guide/export-image/#api).
+For detailed interface descriptions, refer to the [API documentation](/docs/advanced-guide/export-image/#api).
 
-### Query Flows
+### Query Workflows
 
-Use the GET method to call `http://localhost:3000/v1/flows` to query the list of Flows in the image container.
+Use the GET method to call `http://localhost:3000/v1/flows` to query the list of Workflows in the image container.
 
-The returned content includes detailed Flow structure, including Node information and the names and types of input/output Handles.
+The returned content includes detailed Workflow structures, including Node information, input/output Handle names, and types.
 
 ### Run Task
 
-Use the POST method to call `http://localhost:3000/v1/tasks` to run a Flow and create a task.
+Use the POST method to call `http://localhost:3000/v1/tasks` to run a Workflow and create a task.
 
-As mentioned in [Flow Development](/blog/2025/07/05/Export-Workflow-as-Image#flow-development), you need to provide parameters for several Nodes before starting the Flow. Here, you pass the parameters in the request:
+As mentioned in [Workflow Development](/blog/2025/07/05/Export-Workflow-as-Image#workflow-development), before starting a Workflow, we need to fill in parameters for several Nodes. Here, we pass the parameters in the request:
 
 <figure>
   <Image
@@ -411,15 +401,15 @@ As mentioned in [Flow Development](/blog/2025/07/05/Export-Workflow-as-Image#flo
   <figcaption
     style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
   >
-    Task start parameters
+    Parameters for Starting a Task
   </figcaption>
 </figure>
 
-The `flowName` / `nodeId` / `handle` information can all be found from [Query Flows](/blog/2025/07/05/Export-Workflow-as-Image#query-flows).
+The `flowName` / `nodeId` / `handle` information for the parameters can be found in [Query Workflows](/blog/2025/07/05/Export-Workflow-as-Image#query-workflows).
 
-The input file path here is `/oomol-driver/oomol-storage/test.pdf`. Since we mapped the `/oomol-driver/oomol-storage` folder to `$HOME/oomol-storage` during [Running the Image](/blog/2025/07/05/Export-Workflow-as-Image#running-the-image), you just need to put `test.pdf` into `$HOME/oomol-storage`, and the Flow can read the file correctly. We name the output file `local-service-output`.
+Here, the input file path is `/oomol-driver/oomol-storage/test.pdf`. Since we previously mapped the `/oomol-driver/oomol-storage` folder to `$HOME/oomol-storage` during [Running the Image](/blog/2025/07/05/Export-Workflow-as-Image#running-the-image), simply place `test.pdf` in `$HOME/oomol-storage`, and the Workflow can read the file. We name the output file `local-service-output`.
 
-After the API call, you will get a task ID.
+After the API call, you will receive a task ID.
 
 <figure>
   <Image
@@ -446,9 +436,9 @@ Use the GET method to call `http://localhost:3000/v1/tasks` to list all tasks in
 
 Use the GET method to call `http://localhost:3000/v1/tasks/{task_id}` to query task details by task ID.
 
-Users can poll these two APIs to check the task status.
+You can poll these two APIs to check the task status.
 
-When the task is complete, you can see the task status as finished and view the output result:
+When the task is complete, you will see the task status as completed and view the output result:
 
 <figure>
   <Image
@@ -476,12 +466,12 @@ When the task is complete, you can see the task status as finished and view the 
   <figcaption
     style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
   >
-    Completed task
+    Completed Task
   </figcaption>
 </figure>
 
 ## Summary
 
-This article introduced how to export a Flow from OOMOL Studio as an image and run it independently outside of OOMOL Studio.
+This article introduced how to export a Workflow from OOMOL Studio as an image and run it independently.
 
-Users can deploy the image in any environment, making the Flow a continuously running service that maximizes its value. Whether on a local server, cloud platform, or in a team collaboration environment, you can achieve efficient reuse and sharing of automated Flows. Image export makes deployment and maintenance more flexible and convenient, providing a solid foundation for the promotion and implementation of automation applications.
+Users can deploy the image in any environment, turning it into a continuously running service. This allows the Workflow to maximize its value, whether on a local server, cloud platform, or in a team collaboration environment, enabling efficient reuse and sharing of automated processes.

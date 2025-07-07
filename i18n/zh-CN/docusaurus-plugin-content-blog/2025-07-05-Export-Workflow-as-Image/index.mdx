@@ -126,9 +126,9 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 工作流已经实现完成，接下来我们为工作流填入参数。我们需要填写以下几个参数：
 
 1. 需要处理的 pdf 文件路径
-2. 最终输出 epub 文件的路径和文件格式
+2. 最终输出 epub 文件的路径
 
-`Translate epub book` 区块默认的输入语言是英文，输出语言是中文。如果有需要请自行调整参数。
+`Translate epub book` 区块默认的输出语言是中文。如果有需要请自行调整参数。
 
 > 这里可以清空 `output_dir` 参数，让中间产物都放在内存中，关闭应用即可释放。
 
@@ -189,10 +189,10 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
   <Image
     sources={{
       light: useBaseUrl(
-        "/img/blogs/2025-07-05-Export-Workflow-as-Image/file-block-params.png"
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/translate-block-params.png"
       ),
       dark: useBaseUrl(
-        "/img/blogs/2025-07-05-Export-Workflow-as-Image/file-block-params.png"
+        "/img/blogs/2025-07-05-Export-Workflow-as-Image/translate-block-params.png"
       ),
     }}
     width="300"
