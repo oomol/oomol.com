@@ -3,6 +3,8 @@ import styles from "./GradualSpacing.module.scss";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import { cn } from "@site/src/lib/utils";
 import { memo, useMemo } from "react";
+import { tr } from "framer-motion/client";
+import { Tag } from "lucide-react";
 
 interface GradualSpacingProps {
   text: string;
@@ -25,7 +27,6 @@ export const GradualSpacing = memo(
   }: GradualSpacingProps) => {
     let charIndex = 0;
     const words = useMemo(() => text.split(" "), [text]);
-
     return (
       <h1 className={`${styles.container} flex flex-wrap justify-center`}>
         <AnimatePresence>

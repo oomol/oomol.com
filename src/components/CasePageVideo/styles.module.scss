@@ -1,0 +1,326 @@
+@import "../../css/custom.scss";
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+@mixin remove-cover-on-phone {
+  @include phone {
+    background-image: none;
+  }
+  @include phone-middle {
+    background-image: none;
+  }
+  @include phone-large {
+    background-image: none;
+  }
+}
+
+.section {
+  position: relative;
+
+  @media (max-width: 996px) {
+    padding: 0 16px;
+  }
+}
+
+.popoverBox {
+  width: 240px;
+  background-color: #0d1116;
+  border-radius: 10px;
+  padding: 8px 0;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.popoverBtn {
+  width: 100%;
+  height: 41px;
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  transition: background-color 0.2s ease;
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #32335d;
+    transition: background-color 0.2s ease;
+  }
+}
+
+.sectionOneBtn {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.popover {
+  width: 100%;
+  position: absolute;
+  .mid {
+    background-color: black;
+    border-radius: 4px;
+    margin-top: 8px;
+  }
+}
+
+.downloadBtnBox {
+  width: 240px;
+  position: relative;
+}
+
+.windowsSubtitle {
+  font-size: 13px;
+  margin-top: 4px;
+  color: #ccccccb2;
+}
+
+.windowsBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionInner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionCell {
+  width: 375px;
+  height: 100%;
+  margin-left: 48px;
+  margin-right: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.scenes {
+  width: 100%;
+  padding-bottom: 64px;
+  background-color: rgb(249, 249, 249);
+}
+
+.scenesImage {
+  width: 100%;
+}
+
+.scenesTextTitle {
+  margin-top: 12px;
+  font-size: 18px;
+}
+
+.scenesTextInner {
+  margin-top: 8px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  padding: 80px 0;
+}
+
+.header {
+  display: grid;
+  padding: 0 30px;
+  align-items: center;
+  justify-items: center;
+
+  @include desktop {
+    padding: 0;
+  }
+}
+
+.slogan-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.slogan {
+  font-size: 58px;
+  margin-bottom: 0;
+  line-height: 50px;
+  font-weight: 800;
+
+  @include pad {
+    font-size: 45px;
+  }
+
+  @include phone-large {
+    font-size: 37px;
+  }
+}
+
+.slogan-cn {
+  line-height: 60px;
+}
+
+.overview {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 30px;
+  @include linearGradientColor;
+
+  @media (max-width: 1024px) {
+    text-align: center;
+  }
+}
+
+.intro-box {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+
+  // TODO: 统一放 custom.scss 中处理
+  @media (max-width: 1024px) {
+    align-items: center;
+  }
+}
+
+.image-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 120px;
+}
+
+.halo {
+  max-width: 1280px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 50%;
+    height: 500px;
+    left: 85px;
+    bottom: -85px;
+    background: linear-gradient(270deg, #7d7fe9 0%, #7d7fe9 100%);
+    border-radius: 50%;
+    filter: blur(500px);
+    opacity: 0.35;
+
+    @media screen and (max-width: 996px) {
+      display: none;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 50%;
+    height: 500px;
+    right: 85px;
+    bottom: -85px;
+    background: linear-gradient(270deg, #7dc7e9 0%, #7dc7e9 100%);
+
+    border-radius: 50%;
+    filter: blur(500px);
+    opacity: 0.35;
+
+    @media screen and (max-width: 996px) {
+      display: none;
+    }
+  }
+}
+
+.image {
+  max-width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.download {
+  width: 240px;
+  height: 43px;
+  border-radius: 40px;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 14px;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #ffffff;
+  }
+}
+
+.icon {
+  font-size: 20px;
+  background: linear-gradient(
+    127.66deg,
+    #0d1116 0%,
+    #987de9 15%,
+    #7d7fe9 39%,
+    #ffffff 62%,
+    #7da6e9 86%,
+    #0d1116 100%
+  );
+  padding-left: 12px;
+}
+
+.go-to-hub {
+  height: 43px;
+  font-weight: bold;
+  margin-left: 12px;
+  background-color: #0d1116 !important;
+  border: solid 1px #3d444d !important;
+  border-radius: 40px;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media (max-width: 996px) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
+// TODO: 统一放 custom.scss 中处理
+@media (max-width: 1024px) {
+  .header {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+}
+
+.video {
+  max-width: 1280px;
+  border-radius: 10px;
+}

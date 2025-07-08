@@ -1,16 +1,25 @@
 import styles from "./styles.module.scss";
 
-import React, { useState } from "react";
-import useBaseUrl from "@docusaurus/useBaseUrl";
-import { translate } from "@docusaurus/Translate";
+import React from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { GradualSpacing } from "../magic-ui/GradualSpacing";
 import clsx from "clsx";
-import { DownloadButton } from "../DownloadButton";
-import LinkBtn from "../Button/LinkBtn";
 import { HeroVideoDialog } from "../magic-ui/HeroVideoDialog";
+import { title } from "framer-motion/client";
 
-export default function HomepageFirstScreen() {
+interface CasePageVideoProps {
+  title: string;
+  subtitle: string;
+  videoSrc: string;
+  thumbnailSrc: string;
+}
+
+export default function CasePageVideo({
+  title,
+  subtitle,
+  videoSrc,
+  thumbnailSrc,
+}: CasePageVideoProps) {
   const context: any = useDocusaurusContext();
   const { i18n } = context;
 
@@ -19,8 +28,9 @@ export default function HomepageFirstScreen() {
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles["slogan-box"]}>
+            {/* <h2>{title}</h2> */}
             <GradualSpacing
-              text={translate({ message: "HOME.FirstScreen.slogan" })}
+              text={title}
               className={clsx(
                 styles["slogan"],
                 i18n.currentLocale === "zh-CN" && styles["slogan-cn"]
@@ -28,20 +38,7 @@ export default function HomepageFirstScreen() {
             />
           </div>
           <div className={styles["intro-box"]}>
-            <span className={styles.overview}>
-              {translate({
-                message: "HOME.FirstScreen.script",
-              })}
-            </span>
-            <div className={styles.buttons}>
-              <LinkBtn
-                text={translate({ message: "Theme.Navbar.go-to-hub-flow" })}
-                iconPos="left"
-                icon="i-codicon-globe"
-                url="https://hub.oomol.com/"
-              />
-              <DownloadButton />
-            </div>
+            <span className={styles.overview}>{subtitle}</span>
           </div>
         </div>
       </div>
@@ -50,8 +47,8 @@ export default function HomepageFirstScreen() {
           <HeroVideoDialog
             className={styles.video}
             animationStyle="from-center"
-            videoSrc="https://www.youtube.com/embed/L3fYYybKWJE?si=gJ-r2pDJDdUtR_IM"
-            thumbnailSrc={useBaseUrl("/img/pages/home/first-screen.webp")}
+            videoSrc={videoSrc}
+            thumbnailSrc={thumbnailSrc}
             thumbnailAlt="Hero Video"
           />
         </div>
