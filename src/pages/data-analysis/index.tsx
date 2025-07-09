@@ -44,26 +44,26 @@ import { translate } from "@docusaurus/Translate";
 
 const scenesData: ScenesDataType[] = [
   {
-    imageUrl: "/img/cases-1.png",
+    imageUrl: "/img/pages/data-analysis/python_lib.png",
     title: "支持 Python 生态",
     tag: "可编程",
     inner:
       "支持直接使用 Python 库做数据分析，支持预览 dataframe 和 matpilot 和 plotly",
-    icon: "i-codicon-graph-line",
+    icon: "i-codicon-python",
   },
   {
-    imageUrl: "/img/cases-2.png",
+    imageUrl: "/img/pages/data-analysis/block_lib.png",
     title: "支持封装复用",
     tag: "高效抽象",
     inner: "可以将常用的算法封装成 Shared Block 库，方便重复使用",
-    icon: "i-codicon-device-camera-video",
+    icon: "i-codicon-file-zip",
   },
   {
-    imageUrl: "/img/cases-2.png",
+    imageUrl: "/img/pages/data-analysis/var_link.png",
     title: "Block 支持传递变量",
     tag: "高效传递",
-    inner: "支持 block 之间传递 dataframe 对象，不需要反复序列化数据，提高效率",
-    icon: "i-codicon-device-camera-video",
+    inner: "支持 block 之间传递 DataFrame 对象，不需要反复序列化数据，提高效率",
+    icon: "i-codicon-debug-disconnect",
   },
 ];
 
