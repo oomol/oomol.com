@@ -163,6 +163,20 @@ const config = {
             to: "/features",
             label: "Features",
             position: "left",
+            items: [
+              {
+                to: "/data-analysis",
+                label: "Data Analysis",
+              },
+              {
+                to: "/agent-build",
+                label: "Agent Build",
+              },
+              {
+                to: "/workflow-automation",
+                label: "Workflow Automation",
+              },
+            ],
           },
           {
             type: "doc",
@@ -171,13 +185,6 @@ const config = {
             label: "Docs",
           },
           { to: "/updates", label: "Updates", position: "left" },
-          { to: "/data-analysis", label: "Data Analysis", position: "left" },
-          { to: "/agent-build", label: "Agent Build", position: "left" },
-          {
-            to: "/workflow-automation",
-            label: "Workflow Automation",
-            position: "left",
-          },
           { to: "/pricing", label: "Pricing", position: "left" },
           { to: "/community", label: "Community", position: "left" },
           { to: "/downloads", label: "Downloads", position: "left" },
