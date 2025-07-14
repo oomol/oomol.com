@@ -1,0 +1,80 @@
+---
+title: "PDF Craft: Convert scanned PDF books to EPUB"
+authors: [taozeyu]
+tags: [workflow automation, PDF, EPUB, AI, LLM, OCR]
+date: 2025-07-14
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+<div style={{
+  position: "relative",
+  width: 720,
+  height: 405,
+  marginTop: "12px",
+  marginBottom: "72px",
+  overflow: "hidden",
+}}>
+  <iframe
+    src="https://www.youtube.com/embed/1yYBCVry77I?si=EfPneR7SHgrZ4J7Y" 
+    title="YouTube video player" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    style={{
+      width: "100%",
+      height: "100%",
+    }}
+    border="0"
+    frameborder="no"
+    framespacing="0"
+    allowfullscreen="true"
+  />
+</div>
+
+Do you also collect a lot of scanned PDF documents? Those academic papers, e-books or work materials, although the content is precious, are very difficult to read - rigid layout, unadjustable fonts, always need to zoom in and out when reading on mobile phones.
+
+Now, these PDFs can be easily converted into comfortable EPUB format through pdf-craft. Just like organizing a pile of paper documents into a portable e-book, you can finally browse these contents in the most suitable way for you on your favorite EPUB reader: adjust the font size, switch to night mode, or even listen to AI reading.
+
+[pdf-craft](https://github.com/oomol-lab/pdf-craft) is an open source library dedicated to processing scanned book PDFs. It can accurately identify text content, headers and footers, reference annotations, etc. in PDF files. It can maintain the coherence of cross-page content and restore the correct reading order. In addition, it will use LLM to build a complete EPUB contents structure.
+
+It is very simple to use pdf-craft in oomol. First, create a blank project. Then type "pdf-craft" in the search box in the [oomol store](https://hub.oomol.com/package/pdf-craft) to find it.
+
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-14-Convert-scanned-PDF-books-to-EPUB/store.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-14-Convert-scanned-PDF-books-to-EPUB/store.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  />
+</figure>
+
+Drag the “Analyse PDF” and “Generate EPUB” blocks onto the empty flow. Then, connect their `output_dir` and `analysed_dir` fields as shown in the figure.
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-14-Convert-scanned-PDF-books-to-EPUB/flow.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-14-Convert-scanned-PDF-books-to-EPUB/flow.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  />
+</figure>
+
+Then, set the pdf field to the PDF source file to be processed, and then set the `epub_file_path` to the converted EPUB file path. Finally, click the Run button in the upper right corner to start the conversion.
