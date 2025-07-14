@@ -1,0 +1,99 @@
+---
+title: AI translation to create bilingual EPUB e-books
+authors: [taozeyu]
+tags: [workflow automation, OOMOL, AI, LLM, EPUB, Translate]
+date: 2025-07-14
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+<div style={{
+  position: "relative",
+  width: 720,
+  height: 405,
+  marginTop: "12px",
+  marginBottom: "72px",
+  overflow: "hidden",
+}}>
+  <iframe
+    src="https://www.youtube.com/embed/QsAdiskxfXI?si=v8UTDAf8ZP9x_XXb" 
+    title="YouTube video player" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    style={{
+      width: "100%",
+      height: "100%",
+    }}
+    scrolling="no"
+    border="0"
+    frameborder="no"
+    framespacing="0"
+    allowfullscreen="true"
+  />
+</div>
+
+Are you tired of the bad experience of messy formatting and no layout after e-book translation? EPUB Translator's intelligent translation technology not only perfectly preserves the exquisite layout of the original book, but also has a unique bilingual comparison function, making language learning more intuitive and efficient than ever before.
+
+Whether reading original novels or studying professional literature, you can now get precisely aligned bilingual texts, with all illustrations, chapters and special formats fully preserved. The original sentence and the translation are presented side by side, helping you to easily compare and learn, just like having a translation mentor at your side at any time, making cross-language reading a truly pleasant learning journey.
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-14-AI-translation-produces-bilingual-EPUB-e-books/multi-languages.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-14-AI-translation-produces-bilingual-EPUB-e-books/multi-languages.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  />
+</figure>
+
+[epub-translator](https://github.com/oomol-lab/epub-translator) is an open source library that uses AI big models to automatically translate EPUB e-books and 100% retains the format, illustrations, table of contents and layout of the original book. It is encapsulated as a shared block in oomol and can be found in the [oomol store](https://hub.oomol.com/package/books-translator).
+
+First, enter the Community page in the left navigation bar and search for the "books rranslator" template. This preset template contains all the necessary operating environment and configuration. Click the "Use" button to quickly initialize a new project. The system will automatically create a workspace containing all the dependencies of epub-translator, and there is no need to manually install any components.
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-14-AI-translation-produces-bilingual-EPUB-e-books/project-creation.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-14-AI-translation-produces-bilingual-EPUB-e-books/project-creation.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  />
+</figure>
+
+After the project is created, you will see a preset workflow interface. Click the source_file field on the block to upload the e-book file to be translated. The standard epub format is supported here.
+
+Next, enter the key parameter setting stage. In the language selection drop-down menu, you can specify the target translation language in the language field, such as Simplified Chinese, English, or Japanese. Then, you need to configure which large language model to use for translation. We recommend DeepSeek Chat as the default translation engine, which excels in maintaining literary and technical accuracy. In addition, you can also add prompts in the prompt field to tell the large language model how to handle considerations such as character names and terminology.
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-14-AI-translation-produces-bilingual-EPUB-e-books/flow.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-14-AI-translation-produces-bilingual-EPUB-e-books/flow.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  />
+</figure>
+
+The translation process is fully automated, and you can view the progress in real time in the log window. After processing, the system will generate a new bilingual e-book. When you open it, you will find that all the original format elements are perfectly preserved - illustrations remain in their original positions, special fonts are rendered correctly, and the directory structure is automatically generated in bilingual versions. What's more thoughtful is that the system automatically processes various metadata inside the e-book to ensure that the author, publisher and other information can be correctly displayed in the new language environment.
