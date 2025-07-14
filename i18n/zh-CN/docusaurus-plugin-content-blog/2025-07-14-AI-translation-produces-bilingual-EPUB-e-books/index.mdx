@@ -1,0 +1,74 @@
+---
+title: 跨语言阅读新体验：AI 翻译制作双语 EPUB 电子书
+authors: [taozeyu]
+tags: [workflow automation, OOMOL, AI, LLM, EPUB, Translate]
+date: 2025-07-14
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+是否厌倦了电子书翻译后格式错乱、排版全无的糟糕体验？EPUB Translator 的智能翻译技术不仅完美保留原书的精美版式，更独创双语对照功能，让语言学习变得前所未有的直观高效。
+
+无论是阅读原著小说还是学习专业文献，现在你都能获得精准对齐的双语文本，所有插图、章节和特殊格式都完整保留。原句与译文并排呈现，助你轻松对比学习，就像拥有了一位随时在侧的翻译导师，让跨语言阅读真正成为愉悦的学习之旅。
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-14-AI-translation-produces-bilingual-EPUB-e-books/multi-languages.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-14-AI-translation-produces-bilingual-EPUB-e-books/multi-languages.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  />
+</figure>
+
+[epub-translator](https://github.com/oomol-lab/epub-translator) 是一个开源库，采用 AI 大模型自动翻译 EPUB 电子书，并 100% 保留原书的格式、插图、目录和布局。它在 oomol 中封装成了共享区块，可在 [oomol 商店](https://hub.oomol.com/package/books-translator)中找到。
+
+首先在左侧导航栏进入 Community 页面，搜索 "books rranslator" 模板。这个预置模板包含了所有必要的运行环境和配置，点击 "Use" 按钮即可快速初始化一个新项目。系统会自动创建一个包含 epub-translator 所有依赖的工作空间，完全不需要手动安装任何组件。
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-14-AI-translation-produces-bilingual-EPUB-e-books/project-creation.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-14-AI-translation-produces-bilingual-EPUB-e-books/project-creation.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  />
+</figure>
+
+项目创建完成后，你会看到一个预设好的工作流界面。点击区块上的 source_file 字段，上传需要翻译的电子书文件，这里支持标准的 epub 格式。
+
+接下来进入关键的参数设置阶段。在语言选择下拉菜单中，你可以在 language 字段指定目标翻译语言，如简体中文、英文或日语等。然后，你需要配置翻译使用何种大语言模型，我们推荐使用DeepSeek Chat作为默认翻译引擎，它在保持文学性和技术准确性方面表现优异。此外，你还可以在 prompt 加入提示此，以告知大语言模型如何处理角色人名和术语之类的注意事项。
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-14-AI-translation-produces-bilingual-EPUB-e-books/flow.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-14-AI-translation-produces-bilingual-EPUB-e-books/flow.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  />
+</figure>
+
+翻译过程完全自动化进行，你可以在日志窗口实时查看进度。处理完成后，系统会生成一个全新的双语对照电子书。打开查看时会发现，所有原始格式元素都被完美保留——插图保持在原有位置，特殊字体得到正确渲染，目录结构也自动生成了双语版本。更贴心的是，系统会自动处理电子书内部的各类元数据，确保在新的语言环境下也能正确显示作者、出版社等信息。
