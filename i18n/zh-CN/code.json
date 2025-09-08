@@ -6,10 +6,10 @@
     "message": "登录"
   },
   "HOME.FirstScreen.slogan": {
-    "message": "AI 可编程工作流平台"
+    "message": "可视化创造与分享 AI 工具"
   },
   "HOME.FirstScreen.script": {
-    "message": "Oomol Studio 通过直观的视觉交互轻松连接代码片段和 API 服务，帮助用户缩短从想法到产品的距离"
+    "message": "通过简单聊天即可发现和使用工具，由社区共享的可编程 AI 工作流驱动。"
   },
   "HOME.FirstScreen.download-macos": {
     "message": "下载适用于 MacOS 的版本"
