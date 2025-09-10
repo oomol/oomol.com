@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-        <title>OOMOL - AI Programmable Workflow Platform</title>
+        <title>OOMOL - Create, Share and Use AI Tools</title>
       </Head>
       <main>
         <HomepageFirstScreen />

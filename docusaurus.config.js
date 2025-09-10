@@ -123,7 +123,7 @@ const config = {
         },
         {
           name: "description",
-          content: "AI Programmable Workflow Platform",
+          content: "Create, Share and Use AI Tools",
         },
       ],
       headTags: [
@@ -136,7 +136,7 @@ const config = {
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "OOMOL",
-            tagline: "AI Programmable Workflow Platform",
+            tagline: "Create, Share and Use AI Tools",
             favicon: "img/favicon.ico",
             url: "https://oomol.com",
             sameAs: ["https://hub.oomol.com"],

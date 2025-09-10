@@ -1,15 +1,18 @@
 {
   "Theme.Navbar.go-to-hub-flow": {
-    "message": "Go to FlowHub"
+    "message": "Go to Creation Platform"
   },
   "Theme.Navbar.sign-in": {
     "message": "Sign in"
   },
   "HOME.FirstScreen.slogan": {
-    "message": "Customize, Build and Share AI Tools, Visually"
+    "message": "Create, Share and Use AI Tools"
   },
   "HOME.FirstScreen.script": {
-    "message": "Discover and use tools through simple chat, powered by programmable, AI-friendly workflows shared by the community."
+    "message": "Build powerful AI tools without coding. Share with community. Use instantly."
+  },
+  "HOME.FirstScreen.tagline": {
+    "message": "Turn your ideas into AI-powered tools in minutes, not months."
   },
   "HOME.FirstScreen.download-macos": {
     "message": "Download for macOS"
@@ -49,79 +52,79 @@
     "message": "Use Case"
   },
   "HOME.Scenes.subtitle": {
-    "message": "OOMOL enables flexible construction of structured and unstructured data workflows through free node combination."
+    "message": "OOMOL empowers AI-driven processing for diverse content types through intuitive creation platform."
   },
   "HOME.Scenes.data-science.title": {
-    "message": "Data Science"
+    "message": "AI Video Processing"
   },
   "HOME.Scenes.data-science.tag": {
-    "message": "Structured Data"
+    "message": "Video Content"
   },
   "HOME.Scenes.data-science.inner": {
-    "message": "OOMOL natively supports Python/JS for data processing and chart generation, featuring built-in AI function nodes and large model APIs for creating modern AI analytics workflows."
+    "message": "Create powerful AI tools for video processing, including automated transcription, translation, subtitling, and content analysis using advanced AI models and intuitive visual workflows."
   },
   "HOME.Scenes.media-processing.title": {
-    "message": "Media Processing"
+    "message": "AI Image Processing"
   },
   "HOME.Scenes.media-processing.tag": {
-    "message": "Unstructured Data"
+    "message": "Image Content"
   },
   "HOME.Scenes.media-processing.inner": {
-    "message": "OOMOL allows developers to create customizable video processing nodes, enabling content creators to automate tasks like multilingual subtitling through drag-and-drop workflows."
+    "message": "Build sophisticated AI tools for image processing, including object detection, image enhancement, style transfer, OCR, and automated image analysis through easy drag-and-drop interfaces."
   },
   "HOME.Features.title": {
     "message": "Features"
   },
   "HOME.Features.subtitle": {
-    "message": "Easy drag-and-drop workflows, professional code editor, and elegant data visualization."
+    "message": "Everything you need to create, customize, and share AI tools - no coding required."
   },
   "HOME.Features.intuitive-interaction.title": {
-    "message": "Intuitive interaction"
+    "message": "Visual Creation"
   },
   "HOME.Features.pre-installed-environment.title": {
-    "message": "Pre-installed environment"
+    "message": "Ready to Use"
   },
   "HOME.Features.programming-friendly.title": {
-    "message": "Developer-friendly"
+    "message": "Zero Setup"
   },
   "HOME.Features.support-sharing.title": {
-    "message": "Community sharing"
+    "message": "Instant Sharing"
   },
   "HOME.Features.block-sharing.title": {
-    "message": "Block sharing"
+    "message": "Reusable Tools"
   },
   "HOME.Features.intuitive-interaction.inner": {
-    "message": "Easily build workflows, flexibly configure nodes, and preview data."
+    "message": "Build AI tools with simple drag-and-drop. No coding knowledge required."
   },
   "HOME.Features.pre-installed-environment.inner": {
-    "message": "Built-in Python & Node.js, VSCode-based with AI and clear logs."
+    "message": "Everything is pre-configured. Start creating AI tools immediately."
   },
   "HOME.Features.programming-friendly.inner": {
-    "message": "No installation needed; OOMOL uses containers for seamless workflow sharing."
+    "message": "Download and run. No complex setup or dependency management."
   },
   "HOME.Features.support-sharing.inner": {
-    "message": "Publish as source code for easy secondary development by others."
+    "message": "Share your AI tools with one click. Others can use them instantly."
   },
   "HOME.Features.block-sharing.inner": {
-    "message": "Publish as a block for easy use by others, like the npm community."
+    "message": "Build once, use everywhere. Create reusable AI components for the community."
   },
   "HOME.Features.linkBtn-text": {
     "message": "View All Features"
   },
   "HOME.Guide.title": {
-    "message": "Start With A Project"
+    "message": "Discover AI Tools"
   },
   "HOME.Guide.subtitle": {
-    "message": "Explore the Community to find a workflow that fits your needs."
+    "message": "Ready-to-use AI tools created by the community. Find what you need or get inspired for your own creations."
   },
   "HOME.Guide.link-button-text": {
-    "message": "View All Projects"
+    "message": "Explore All AI Tools"
   },
   "HOME.Guide.project-1.title": {
-    "message": "Video Translater"
+    "message": "AI Video Translator"
   },
   "HOME.Guide.project-1.description": {
-    "message": "Translate and add subtitles"
+    "message": "AI-powered video translation and subtitle generation"
   },
   "HOME.Guide.project-2.title": {
     "message": "PDF Craft"
@@ -154,16 +157,16 @@
     "message": "Common data conversion."
   },
   "HOME.Guide.project-7.title": {
-    "message": "Tiny PNG"
+    "message": "AI Image Compressor"
   },
   "HOME.Guide.project-7.description": {
-    "message": "Images Compression"
+    "message": "Smart image optimization and compression"
   },
   "HOME.Guide.project-8.title": {
-    "message": "Voice Recognition"
+    "message": "AI Document Parser"
   },
   "HOME.Guide.project-8.description": {
-    "message": "Convert PDFs to machine-readable formats."
+    "message": "Extract and structure data from documents with AI"
   },
   "HOME.Guide.project-9.title": {
     "message": "Whisper"
@@ -199,10 +202,10 @@
     "message": "Built-in LLM blocks for improved AI workflow efficiency."
   },
   "HOME.GetStartedPrompt.title": {
-    "message": "Ready to get started?"
+    "message": "Start Creating AI Tools Today"
   },
   "HOME.GetStartedPrompt.subtitle": {
-    "message": "Oomol Studio makes it easy to build workflows by visually connecting code and APIs."
+    "message": "Join thousands of creators building AI tools without code. Download OOMOL and turn your ideas into reality in minutes."
   },
   "HOME.Pricing.title": {
     "message": "Pricing"

@@ -1,15 +1,18 @@
 {
   "Theme.Navbar.go-to-hub-flow": {
-    "message": "前往工作流社区"
+    "message": "前往创造平台"
   },
   "Theme.Navbar.sign-in": {
     "message": "登录"
   },
   "HOME.FirstScreen.slogan": {
-    "message": "可视化创造与分享 AI 工具"
+    "message": "创造，分享和使用 AI 工具"
   },
   "HOME.FirstScreen.script": {
-    "message": "通过简单聊天即可发现和使用工具，由社区共享的可编程 AI 工作流驱动。"
+    "message": "无需编程，创建强大的 AI 工具。分享到社区，立即使用。"
+  },
+  "HOME.FirstScreen.tagline": {
+    "message": "几分钟内将创意变成 AI 工具，而非几个月。"
   },
   "HOME.FirstScreen.download-macos": {
     "message": "下载适用于 MacOS 的版本"
@@ -48,79 +51,79 @@
     "message": "使用场景"
   },
   "HOME.Scenes.subtitle": {
-    "message": "OOMOL 通过自由组合节点，灵活构建结构化与非结构化数据"
+    "message": "OOMOL 通过直观的创造平台，为多种内容类型提供强大的 AI 驱动处理能力。"
   },
   "HOME.Scenes.data-science.title": {
-    "message": "数据科学"
+    "message": "AI 视频处理"
   },
   "HOME.Scenes.data-science.tag": {
-    "message": "结构化数据"
+    "message": "视频内容"
   },
   "HOME.Scenes.data-science.inner": {
-    "message": "OOMOL 原生支持使用 Python/JS 处理数据并生成图表，且内置丰富的 AI 功能节点和大模型 API。可以通过自由组合这些节点来构建现代化的 AI 数据分析工作流。"
+    "message": "创建强大的 AI 视频处理工具，包括自动转录、翻译、字幕生成和内容分析，使用先进的 AI 模型和直观的可视化工作流。"
   },
   "HOME.Scenes.media-processing.title": {
-    "message": "多媒体处理"
+    "message": "AI 图片处理"
   },
   "HOME.Scenes.media-processing.tag": {
-    "message": "非结构化数据"
+    "message": "图片内容"
   },
   "HOME.Scenes.media-processing.inner": {
-    "message": "开发人员可通过OOMOL将视频处理库封装为可调参数的功能节点。内容创作者，如抖音用户，能通过拖放创建音视频处理工作流，自动化完成多语言字幕等任务。"
+    "message": "构建精密的 AI 图片处理工具，包括物体检测、图像增强、风格迁移、OCR识别和自动化图像分析，通过简单的拖拽界面轻松实现。"
   },
   "HOME.Features.title": {
     "message": "功能特点"
   },
   "HOME.Features.subtitle": {
-    "message": "方便的拖放式工作流、专业的代码编辑器、精美的数据可视化展示"
+    "message": "无需编程，一站式 AI 工具创造、定制和分享平台。"
   },
   "HOME.Features.intuitive-interaction.title": {
-    "message": "直观交互"
+    "message": "可视化创造"
   },
   "HOME.Features.pre-installed-environment.title": {
-    "message": "预安装环境"
+    "message": "即用即用"
   },
   "HOME.Features.programming-friendly.title": {
-    "message": "编程友好"
+    "message": "零配置"
   },
   "HOME.Features.support-sharing.title": {
-    "message": "社区共享"
+    "message": "一键分享"
   },
   "HOME.Features.block-sharing.title": {
-    "message": "模块共享"
+    "message": "可复用工具"
   },
   "HOME.Features.intuitive-interaction.inner": {
-    "message": "拖放图形组件，灵活配置节点参数，轻松构建并预览多种数据类型"
+    "message": "简单拖拽即可构建 AI 工具，无需任何编程知识。"
   },
   "HOME.Features.pre-installed-environment.inner": {
-    "message": "无需安装 Python 或 Node.js，OOMOL 使用容器统一开发环境，实现无缝工作流共享"
+    "message": "一切都已预配置，立即开始创建 AI 工具。"
   },
   "HOME.Features.programming-friendly.inner": {
-    "message": "内置 Python/Node.js，支持库安装，基于 VSCode，含代码补全与日志"
+    "message": "下载即用，无需复杂设置或依赖管理。"
   },
   "HOME.Features.support-sharing.inner": {
-    "message": "以源码的方式共享，类似开源社区。方便他人基于当前代码进行二次开发"
+    "message": "一键分享你的 AI 工具，他人可立即使用。"
   },
   "HOME.Features.block-sharing.inner": {
-    "message": "以区块的方式共享，类似于npm社区。方便他人直接基于当前区块直接使用"
+    "message": "一次构建，处处可用。为社区创建可复用的 AI 组件。"
   },
   "HOME.Features.linkBtn-text": {
     "message": "查看全部"
   },
   "HOME.Guide.title": {
-    "message": "开启你的项目"
+    "message": "发现 AI 工具"
   },
   "HOME.Guide.subtitle": {
-    "message": "探索社区，寻找适合你需求的工作流"
+    "message": "社区创建的即用型 AI 工具。找到所需或为自己的创作获取灵感。"
   },
   "HOME.Guide.link-button-text": {
-    "message": "查看全部"
+    "message": "探索所有 AI 工具"
   },
   "HOME.Guide.project-1.title": {
-    "message": "Video Translater"
+    "message": "AI 视频翻译器"
   },
   "HOME.Guide.project-1.description": {
-    "message": "翻译并添加字幕"
+    "message": "AI 驱动的视频翻译和字幕生成"
   },
   "HOME.Guide.project-2.title": {
     "message": "PDF Craft"
@@ -153,16 +156,16 @@
     "message": "常见数据转换"
   },
   "HOME.Guide.project-7.title": {
-    "message": "Tiny PNG"
+    "message": "AI 图片压缩器"
   },
   "HOME.Guide.project-7.description": {
-    "message": "图像文件压缩"
+    "message": "智能图像优化和压缩"
   },
   "HOME.Guide.project-8.title": {
-    "message": "MinerU"
+    "message": "AI 文档解析器"
   },
   "HOME.Guide.project-8.description": {
-    "message": "将 PDF 转换为机器可读格式"
+    "message": "使用 AI 从文档中提取和结构化数据"
   },
   "HOME.Guide.project-9.title": {
     "message": "Whisper"
@@ -198,10 +201,10 @@
     "message": "内置可直接调用的 LLM 模块，大幅提升 AI 工作流效率"
   },
   "HOME.GetStartedPrompt.title": {
-    "message": "准备开始体验了吗？"
+    "message": "立即开始创建 AI 工具"
   },
   "HOME.GetStartedPrompt.subtitle": {
-    "message": "OOMOL Studio 通过直观的视觉交互轻松连接代码片段和 API 服务，帮助用户缩短从想法到产品的距离"
+    "message": "加入数千名创作者，无需编程构建 AI 工具。下载 OOMOL，几分钟内将想法变成现实。"
   },
   "Easily connect code and services": {
     "message": "OOMOL Studio 通过直观的视觉交互轻松连接代码片段和 API 服务，帮助用户缩短从想法到产品的距离"

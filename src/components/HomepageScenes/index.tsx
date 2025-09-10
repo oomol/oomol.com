@@ -23,7 +23,7 @@ const scenesData: ScenesDataType[] = [
     tag: translate({ message: "HOME.Scenes.data-science.tag" }),
     color: "blue",
     inner: translate({ message: "HOME.Scenes.data-science.inner" }),
-    icon: "i-codicon-graph-line",
+    icon: "i-codicon-device-camera-video",
   },
   {
     imageUrl: "/img/cases-2.png",
@@ -32,7 +32,7 @@ const scenesData: ScenesDataType[] = [
     tag: translate({ message: "HOME.Scenes.media-processing.tag" }),
     color: "green",
     inner: translate({ message: "HOME.Scenes.media-processing.inner" }),
-    icon: "i-codicon-device-camera-video",
+    icon: "i-codicon-file-media",
   },
 ];
 

@@ -33,6 +33,10 @@ export default function HomepageFirstScreen() {
               {translate({
                 message: "HOME.FirstScreen.script",
               })}
+              <br />
+              {translate({
+                message: "HOME.FirstScreen.tagline",
+              })}
             </span>
             <div className={styles.buttons}>
               <LinkBtn
