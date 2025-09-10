@@ -1,16 +1,17 @@
 {
   "Theme.Navbar.go-to-hub-flow": {
-    "message": "前往工作流社区"
+    "message": "前往创造平台"
   },
   "Theme.Navbar.sign-in": {
     "message": "登录"
   },
   "HOME.FirstScreen.slogan": {
-    "message": "可视化创造与分享 AI 工具"
+    "message": "创造，分享和使用 AI 工具"
   },
   "HOME.FirstScreen.script": {
-    "message": "通过简单聊天即可发现和使用工具，由社区共享的可编程 AI 工作流驱动。"
+    "message": "可视化构建 AI 工具与工作流，与社区分享，并通过对话轻松使用。"
   },
+
   "HOME.FirstScreen.download-macos": {
     "message": "下载适用于 MacOS 的版本"
   },
@@ -45,82 +46,262 @@
     "message": "字体"
   },
   "HOME.Scenes.title": {
-    "message": "使用场景"
+    "message": "使用指南"
   },
   "HOME.Scenes.subtitle": {
-    "message": "OOMOL 通过自由组合节点，灵活构建结构化与非结构化数据"
+    "message": "深度理解工具本质与用户需求，提供最匹配的智能化解决方案。"
   },
   "HOME.Scenes.data-science.title": {
-    "message": "数据科学"
+    "message": "AI 视频处理"
   },
   "HOME.Scenes.data-science.tag": {
-    "message": "结构化数据"
+    "message": "视频内容"
   },
   "HOME.Scenes.data-science.inner": {
-    "message": "OOMOL 原生支持使用 Python/JS 处理数据并生成图表，且内置丰富的 AI 功能节点和大模型 API。可以通过自由组合这些节点来构建现代化的 AI 数据分析工作流。"
+    "message": "创建强大的 AI 视频处理工具，包括自动转录、翻译、字幕生成和内容分析，使用先进的 AI 模型和直观的可视化工作流。"
   },
   "HOME.Scenes.media-processing.title": {
-    "message": "多媒体处理"
+    "message": "媒体编辑和处理"
   },
   "HOME.Scenes.media-processing.tag": {
-    "message": "非结构化数据"
+    "message": "媒体处理"
   },
   "HOME.Scenes.media-processing.inner": {
-    "message": "开发人员可通过OOMOL将视频处理库封装为可调参数的功能节点。内容创作者，如抖音用户，能通过拖放创建音视频处理工作流，自动化完成多语言字幕等任务。"
+    "message": "为 OOMOL 平台提供的综合视频和音频处理工具包，提供由 FFmpeg 驱动的多媒体操作可重用模块集合。"
+  },
+  "HOME.Scenes.ai-image-edit.title": {
+    "message": "AI 图像编辑"
+  },
+  "HOME.Scenes.ai-image-edit.tag": {
+    "message": "图片内容"
+  },
+  "HOME.Scenes.ai-image-edit.inner": {
+    "message": "AI 图像编辑是一个强大的工作流工具，使用人工智能根据您的文本指令编辑和转换图像。无论您想要更改对象、修改场景还是应用创意变换，这个工具让复杂的图像编辑变得人人可用。"
+  },
+  "HOME.Scenes.ai-vibe-coding.title": {
+    "message": "AI Vibe Coding 自动生成"
+  },
+  "HOME.Scenes.ai-vibe-coding.tag": {
+    "message": "智能生成"
+  },
+  "HOME.Scenes.ai-vibe-coding.inner": {
+    "message": "通过 AI Vibe Coding 技术，只需描述您的需求，AI 将自动生成完整的工作流和节点，快速创建功能强大的 AI 工具，无需编程经验。"
+  },
+  "HOME.Scenes.drag-drop-manual.title": {
+    "message": "拖拽手动创建"
+  },
+  "HOME.Scenes.drag-drop-manual.tag": {
+    "message": "可视化编辑"
+  },
+  "HOME.Scenes.drag-drop-manual.inner": {
+    "message": "使用直观的拖拽界面手动构建工作流，精确控制每个节点和连接，适合需要定制化和精细控制的 AI 工具开发场景。"
+  },
+  "HOME.Scenes.text-processing.title": {
+    "message": "AI 文本处理"
+  },
+  "HOME.Scenes.text-processing.tag": {
+    "message": "文本内容"
+  },
+  "HOME.Scenes.text-processing.inner": {
+    "message": "智能文本分析与处理，包括情感分析、关键词提取、文本摘要、翻译和内容生成，助力高效的文档处理工作流。"
+  },
+  "HOME.Scenes.zip-archive-manipulation.title": {
+    "message": "ZIP 压缩包操作"
+  },
+  "HOME.Scenes.zip-archive-manipulation.tag": {
+    "message": "文件管理"
+  },
+  "HOME.Scenes.zip-archive-manipulation.inner": {
+    "message": "为 OOMOL 工作流平台提供的全面 ZIP 压缩包操作任务块集合。该包提供 15 个专业任务块，涵盖 ZIP 文件操作的各个方面，从基本的压缩和解压到高级功能如加密、编码转换和压缩包管理。"
+  },
+  "HOME.Scenes.txt-to-epub.title": {
+    "message": "TXT 转 EPUB"
+  },
+  "HOME.Scenes.txt-to-epub.tag": {
+    "message": "文档转换"
+  },
+  "HOME.Scenes.txt-to-epub.inner": {
+    "message": "一个将 TXT 格式文本文件转换为具有优雅排版设计的 EPUB 电子书的工具。"
+  },
+  "HOME.Scenes.pdf-processing.title": {
+    "message": "PDF 处理"
+  },
+  "HOME.Scenes.pdf-processing.tag": {
+    "message": "文档工具"
+  },
+  "HOME.Scenes.pdf-processing.inner": {
+    "message": "这个工具包将您的 OOMOL 工作空间转变为完整的 PDF 处理强力工具。拥有 15+ 个专业区块，您可以处理从合并、分割等基础操作到 OCR、表单填写和安全管理等高级功能的所有需求。"
+  },
+  "HOME.Scenes.data-analysis.title": {
+    "message": "数据分析"
+  },
+  "HOME.Scenes.data-analysis.tag": {
+    "message": "数据分析"
+  },
+  "HOME.Scenes.data-analysis.inner": {
+    "message": "此项目用于分析用户上传的表格数据，然后根据用户需求以自定义格式输出。该项目使用 AI 分析用户意图，将其转换为代码，最终执行代码生成所需的格式化数据并在图表中显示。"
+  },
+  "HOME.Scenes.audio-processing.title": {
+    "message": "AI 音频处理"
+  },
+  "HOME.Scenes.audio-processing.tag": {
+    "message": "音频内容"
+  },
+  "HOME.Scenes.audio-processing.inner": {
+    "message": "专业音频处理工具，支持语音识别、音频增强、噪音消除、音乐生成和声音分析，打造完整的音频处理解决方案。"
+  },
+  "HOME.Scenes.automation.title": {
+    "message": "流程自动化"
+  },
+  "HOME.Scenes.automation.tag": {
+    "message": "自动化"
+  },
+  "HOME.Scenes.automation.inner": {
+    "message": "构建智能自动化工作流，连接各种应用和服务，实现任务自动执行、数据同步和业务流程优化。"
+  },
+  "HOME.Scenes.web-scraping.title": {
+    "message": "网页数据采集"
+  },
+  "HOME.Scenes.web-scraping.tag": {
+    "message": "数据采集"
+  },
+  "HOME.Scenes.web-scraping.inner": {
+    "message": "智能网页数据抓取工具，支持动态内容获取、数据清洗和结构化存储，轻松获取所需的网络数据。"
+  },
+  "HOME.Scenes.api-integration.title": {
+    "message": "API 集成"
+  },
+  "HOME.Scenes.api-integration.tag": {
+    "message": "系统集成"
+  },
+  "HOME.Scenes.api-integration.inner": {
+    "message": "无缝连接各种第三方服务和API，实现系统间的数据交换、功能整合和业务协同，构建强大的集成解决方案。"
+  },
+  "HOME.Scenes.content-generation.title": {
+    "message": "内容生成"
+  },
+  "HOME.Scenes.content-generation.tag": {
+    "message": "创意内容"
+  },
+  "HOME.Scenes.content-generation.inner": {
+    "message": "AI 驱动的内容创作工具，支持文章写作、图像生成、视频制作和创意设计，释放无限创作潜能。"
+  },
+  "HOME.Scenes.link-button": {
+    "message": "查看更多案例"
+  },
+  "HOME.Create.title": {
+    "message": "创建指南"
+  },
+  "HOME.Create.subtitle": {
+    "message": "通过可视化工作流和强大的 AI 集成，轻松创建属于你的智能工具。"
+  },
+  "HOME.Create.card.title": {
+    "message": "开始创造你的 AI 工具"
+  },
+  "HOME.Create.card.description": {
+    "message": "使用 OOMOL Studio 的直观界面，通过拖拽组件、连接节点的方式构建强大的 AI 工作流。无需复杂编程，即可创建专业级的 AI 应用。"
+  },
+  "HOME.Create.card.button": {
+    "message": "立即开始创造"
+  },
+  "HOME.Create.browse-docs": {
+    "message": "浏览文档"
+  },
+  "HOME.Products.title": {
+    "message": "如何创造"
+  },
+  "HOME.Products.subtitle": {
+    "message": "探索 OOMOL 生态系统中的三大核心产品，从创造到分享再到使用，完整的 AI 工具生命周期。"
+  },
+  "CREATE.studio.description": {
+    "message": "OOMOL 推出的 AI 工具创作平台。该平台的核心优势在于：既保留了传统编程的无限创造能力，又具备低代码开发的便捷性，让用户能够高效地构建各类 AI 工具。"
+  },
+  "HOME.Products.studio.description": {
+    "message": "OOMOL 推出的 AI 工具创作平台。该平台的核心优势在于：既保留了传统编程的无限创造能力，又具备低代码开发的便捷性，让用户能够高效地构建各类 AI 工具。"
+  },
+  "HOME.Products.hub.description": {
+    "message": "AI 工具分享社区，发现、分享和获取灵感的最佳平台。"
+  },
+  "HOME.Products.chat.description": {
+    "message": "智能对话工具，通过自然语言交互使用各种 AI 功能。"
+  },
+  "HOME.CommunityShare.title": {
+    "message": "社区与分享"
+  },
+  "HOME.CommunityShare.subtitle": {
+    "message": "加入我们充满活力的社区，分享您的创作，发现精彩工具，与其他创作者协作。"
+  },
+  "HOME.CommunityShare.hub.description": {
+    "message": "与社区一起发现和分享 AI 工具，寻找灵感并展示您的创作。"
+  },
+  "HOME.CommunityShare.github.description": {
+    "message": "参与开源项目，报告问题，与全球开发者协作。"
+  },
+  "HOME.CommunityShare.discord.description": {
+    "message": "与其他创作者联系，获得实时支持，参与社区讨论。"
+  },
+  "HOME.CommunityShare.learnMore": {
+    "message": "了解更多"
   },
   "HOME.Features.title": {
     "message": "功能特点"
   },
   "HOME.Features.subtitle": {
-    "message": "方便的拖放式工作流、专业的代码编辑器、精美的数据可视化展示"
+    "message": "无需编程，一站式 AI 工具创造、定制和分享平台。"
   },
   "HOME.Features.intuitive-interaction.title": {
-    "message": "直观交互"
+    "message": "可视化创造"
   },
   "HOME.Features.pre-installed-environment.title": {
-    "message": "预安装环境"
+    "message": "即用即用"
   },
   "HOME.Features.programming-friendly.title": {
-    "message": "编程友好"
+    "message": "零配置"
   },
   "HOME.Features.support-sharing.title": {
-    "message": "社区共享"
+    "message": "一键分享"
   },
   "HOME.Features.block-sharing.title": {
-    "message": "模块共享"
+    "message": "可复用工具"
   },
   "HOME.Features.intuitive-interaction.inner": {
-    "message": "拖放图形组件，灵活配置节点参数，轻松构建并预览多种数据类型"
+    "message": "简单拖拽即可构建 AI 工具，无需任何编程知识。"
   },
   "HOME.Features.pre-installed-environment.inner": {
-    "message": "无需安装 Python 或 Node.js，OOMOL 使用容器统一开发环境，实现无缝工作流共享"
+    "message": "一切都已预配置，立即开始创建 AI 工具。"
   },
   "HOME.Features.programming-friendly.inner": {
-    "message": "内置 Python/Node.js，支持库安装，基于 VSCode，含代码补全与日志"
+    "message": "下载即用，无需复杂设置或依赖管理。"
   },
   "HOME.Features.support-sharing.inner": {
-    "message": "以源码的方式共享，类似开源社区。方便他人基于当前代码进行二次开发"
+    "message": "一键分享你的 AI 工具，他人可立即使用。"
   },
   "HOME.Features.block-sharing.inner": {
-    "message": "以区块的方式共享，类似于npm社区。方便他人直接基于当前区块直接使用"
+    "message": "一次构建，处处可用。为社区创建可复用的 AI 组件。"
   },
   "HOME.Features.linkBtn-text": {
     "message": "查看全部"
   },
+  "HOME.Video.title": {
+    "message": "产品演示"
+  },
+  "HOME.Video.subtitle": {
+    "message": "通过视频了解 OOMOL 的强大功能和使用方法"
+  },
   "HOME.Guide.title": {
-    "message": "开启你的项目"
+    "message": "发现 AI 工具"
   },
   "HOME.Guide.subtitle": {
-    "message": "探索社区，寻找适合你需求的工作流"
+    "message": "在开放社区中汲取智慧、贡献才华，与他人共同推动 AI 工具创新。"
   },
   "HOME.Guide.link-button-text": {
-    "message": "查看全部"
+    "message": "浏览开发文档"
   },
   "HOME.Guide.project-1.title": {
-    "message": "Video Translater"
+    "message": "AI 视频翻译器"
   },
   "HOME.Guide.project-1.description": {
-    "message": "翻译并添加字幕"
+    "message": "AI 驱动的视频翻译和字幕生成"
   },
   "HOME.Guide.project-2.title": {
     "message": "PDF Craft"
@@ -153,16 +334,16 @@
     "message": "常见数据转换"
   },
   "HOME.Guide.project-7.title": {
-    "message": "Tiny PNG"
+    "message": "AI 图片压缩器"
   },
   "HOME.Guide.project-7.description": {
-    "message": "图像文件压缩"
+    "message": "智能图像优化和压缩"
   },
   "HOME.Guide.project-8.title": {
-    "message": "MinerU"
+    "message": "AI 文档解析器"
   },
   "HOME.Guide.project-8.description": {
-    "message": "将 PDF 转换为机器可读格式"
+    "message": "使用 AI 从文档中提取和结构化数据"
   },
   "HOME.Guide.project-9.title": {
     "message": "Whisper"
@@ -198,10 +379,10 @@
     "message": "内置可直接调用的 LLM 模块，大幅提升 AI 工作流效率"
   },
   "HOME.GetStartedPrompt.title": {
-    "message": "准备开始体验了吗？"
+    "message": "立即开始使用 OOMOL"
   },
   "HOME.GetStartedPrompt.subtitle": {
-    "message": "OOMOL Studio 通过直观的视觉交互轻松连接代码片段和 API 服务，帮助用户缩短从想法到产品的距离"
+    "message": "立即下载 OOMOL，解锁您的终极生产力伙伴。"
   },
   "Easily connect code and services": {
     "message": "OOMOL Studio 通过直观的视觉交互轻松连接代码片段和 API 服务，帮助用户缩短从想法到产品的距离"
@@ -391,6 +572,123 @@
     "message": "开始体验"
   },
 
+  "CREATE.title": {
+    "message": "OOMOL Studio"
+  },
+  "CREATE.description": {
+    "message": "OOMOL 推出的 AI 工具创作平台。该平台的核心优势在于：既保留了传统编程的无限创造能力，又具备低代码开发的便捷性，让用户能够高效地构建各类 AI 工具。"
+  },
+  "CREATE.workflow.title": {
+    "message": "可视化工作流引擎"
+  },
+  "CREATE.workflow.description": {
+    "message": "通过拖拽式界面构建复杂的AI工作流，无需编程经验"
+  },
+  "CREATE.workflow.feature1": {
+    "message": "直观的拖拽界面，轻松连接各种AI模块和功能组件"
+  },
+  "CREATE.workflow.feature2": {
+    "message": "丰富的预置模板，快速启动常见的AI应用场景"
+  },
+  "CREATE.workflow.feature3": {
+    "message": "实时预览和调试，即时查看工作流执行效果"
+  },
+  "CREATE.workflow.feature4": {
+    "message": "版本控制和协作，支持团队共同开发和维护工作流"
+  },
+  "CREATE.ai.title": {
+    "message": "强大的AI集成模块"
+  },
+  "CREATE.ai.description": {
+    "message": "集成主流AI服务，提供丰富的AI能力支持"
+  },
+  "CREATE.ai.feature1": {
+    "message": "支持多种大语言模型，包括GPT、Claude、Gemini等"
+  },
+  "CREATE.ai.feature2": {
+    "message": "图像生成和处理能力，支持DALL-E、Midjourney等服务"
+  },
+  "CREATE.ai.feature3": {
+    "message": "语音识别和合成，实现多模态AI交互体验"
+  },
+  "SHARE.title": {
+    "message": "分享 AI 工具"
+  },
+  "SHARE.description": {
+    "message": "在Flow社区中分享您的创作，通过数据分析持续优化"
+  },
+  "SHARE.flowCommunity.title": {
+    "message": "Flow 社区生态"
+  },
+  "SHARE.flowCommunity.description": {
+    "message": "在开放的社区中分享您的创作，发现他人的优秀工作流，共同构建AI工具生态"
+  },
+  "SHARE.flowCommunity.feature1": {
+    "message": "一键发布工作流到社区，让更多人受益于您的创作"
+  },
+  "SHARE.flowCommunity.feature2": {
+    "message": "浏览和搜索社区中的优质工作流，快速找到所需功能"
+  },
+  "SHARE.flowCommunity.feature3": {
+    "message": "工作流评分和评论系统，帮助用户发现最佳实践"
+  },
+  "SHARE.flowCommunity.feature4": {
+    "message": "版本管理和更新通知，确保使用最新的工作流版本"
+  },
+  "SHARE.analytics.title": {
+    "message": "深度分析洞察"
+  },
+  "SHARE.analytics.description": {
+    "message": "通过数据分析了解工作流性能，优化使用体验"
+  },
+  "SHARE.analytics.feature1": {
+    "message": "实时使用统计，了解工作流的受欢迎程度和使用频率"
+  },
+  "SHARE.analytics.feature2": {
+    "message": "性能监控和优化建议，提升工作流执行效率"
+  },
+  "SHARE.analytics.feature3": {
+    "message": "用户反馈收集，持续改进工作流质量"
+  },
+  "USE.title": {
+    "message": "使用 AI 工具"
+  },
+  "USE.description": {
+    "message": "通过智能对话工具，享受流畅的AI工具使用体验"
+  },
+  "USE.chatTools.title": {
+    "message": "智能对话工具"
+  },
+  "USE.chatTools.description": {
+    "message": "通过直观的对话界面，轻松使用各种AI工具，无需复杂操作"
+  },
+  "USE.chatTools.feature1": {
+    "message": "自然语言交互，像聊天一样使用AI工具"
+  },
+  "USE.chatTools.feature2": {
+    "message": "多轮对话支持，保持上下文连贯性"
+  },
+  "USE.chatTools.feature3": {
+    "message": "智能提示和建议，帮助用户更好地使用工具"
+  },
+  "USE.chatTools.feature4": {
+    "message": "历史记录管理，随时回顾和重用对话内容"
+  },
+  "USE.userExperience.title": {
+    "message": "优质使用体验"
+  },
+  "USE.userExperience.description": {
+    "message": "为用户提供流畅、高效的AI工具使用体验"
+  },
+  "USE.userExperience.feature1": {
+    "message": "响应式设计，支持桌面端和移动端无缝切换"
+  },
+  "USE.userExperience.feature2": {
+    "message": "实时反馈和状态显示，让用户了解处理进度"
+  },
+  "USE.userExperience.feature3": {
+    "message": "个性化设置，根据用户偏好定制使用界面"
+  },
   "theme.ErrorPageContent.title": {
     "message": "页面已崩溃。",
     "description": "The title of the fallback page when the page crashed"

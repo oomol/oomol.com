@@ -1,16 +1,17 @@
 {
   "Theme.Navbar.go-to-hub-flow": {
-    "message": "Go to FlowHub"
+    "message": "Go to Community"
   },
   "Theme.Navbar.sign-in": {
     "message": "Sign in"
   },
   "HOME.FirstScreen.slogan": {
-    "message": "Customize, Build and Share AI Tools, Visually"
+    "message": "Create, Share and Use AI Tools"
   },
   "HOME.FirstScreen.script": {
-    "message": "Discover and use tools through simple chat, powered by programmable, AI-friendly workflows shared by the community."
+    "message": "Build AI tools and workflows visually, share with the community, and use them through simple chat."
   },
+
   "HOME.FirstScreen.download-macos": {
     "message": "Download for macOS"
   },
@@ -46,82 +47,259 @@
   },
 
   "HOME.Scenes.title": {
-    "message": "Use Case"
+    "message": "How to Use"
   },
   "HOME.Scenes.subtitle": {
-    "message": "OOMOL enables flexible construction of structured and unstructured data workflows through free node combination."
+    "message": "Deeply understand both tools and user needs to deliver perfectly matched intelligent solutions."
   },
   "HOME.Scenes.data-science.title": {
-    "message": "Data Science"
+    "message": "AI Video Processing"
   },
   "HOME.Scenes.data-science.tag": {
-    "message": "Structured Data"
+    "message": "Video Content"
   },
   "HOME.Scenes.data-science.inner": {
-    "message": "OOMOL natively supports Python/JS for data processing and chart generation, featuring built-in AI function nodes and large model APIs for creating modern AI analytics workflows."
+    "message": "Create powerful AI tools for video processing, including automated transcription, translation, subtitling, and content analysis using advanced AI models and intuitive visual workflows."
   },
   "HOME.Scenes.media-processing.title": {
-    "message": "Media Processing"
+    "message": "Media editing and processing"
   },
   "HOME.Scenes.media-processing.tag": {
-    "message": "Unstructured Data"
+    "message": "Media Processing"
   },
   "HOME.Scenes.media-processing.inner": {
-    "message": "OOMOL allows developers to create customizable video processing nodes, enabling content creators to automate tasks like multilingual subtitling through drag-and-drop workflows."
+    "message": "A comprehensive video and audio processing toolkit for OOMOL platform, providing a collection of reusable blocks for multimedia manipulation powered by FFmpeg."
+  },
+  "HOME.Scenes.ai-image-edit.title": {
+    "message": "AI Image Edit"
+  },
+  "HOME.Scenes.ai-image-edit.tag": {
+    "message": "Image Content"
+  },
+  "HOME.Scenes.ai-image-edit.inner": {
+    "message": "AI Image Edit is a powerful workflow tool that uses artificial intelligence to edit and transform images according to your text instructions. Whether you want to change objects, modify scenes, or apply creative transformations, this tool makes complex image editing accessible to everyone."
+  },
+  "HOME.Scenes.ai-vibe-coding.title": {
+    "message": "AI Vibe Coding Auto-Generation"
+  },
+  "HOME.Scenes.ai-vibe-coding.tag": {
+    "message": "Smart Generation"
+  },
+  "HOME.Scenes.ai-vibe-coding.inner": {
+    "message": "Using AI Vibe Coding technology, simply describe your requirements and AI will automatically generate complete workflows and nodes to quickly create powerful AI tools without programming experience."
+  },
+  "HOME.Scenes.drag-drop-manual.title": {
+    "message": "Drag-and-Drop Manual Creation"
+  },
+  "HOME.Scenes.drag-drop-manual.tag": {
+    "message": "Visual Editor"
+  },
+  "HOME.Scenes.drag-drop-manual.inner": {
+    "message": "Use intuitive drag-and-drop interface to manually build workflows with precise control over each node and connection, perfect for customized AI tool development scenarios."
+  },
+  "HOME.Scenes.text-processing.title": {
+    "message": "AI Text Processing"
+  },
+  "HOME.Scenes.text-processing.tag": {
+    "message": "Text Content"
+  },
+  "HOME.Scenes.text-processing.inner": {
+    "message": "Intelligent text analysis and processing, including sentiment analysis, keyword extraction, text summarization, translation, and content generation for efficient document workflows."
+  },
+  "HOME.Scenes.zip-archive-manipulation.title": {
+    "message": "ZIP Archive Manipulation"
+  },
+  "HOME.Scenes.zip-archive-manipulation.tag": {
+    "message": "File Management"
+  },
+  "HOME.Scenes.zip-archive-manipulation.inner": {
+    "message": "A comprehensive collection of ZIP archive manipulation task blocks for the OOMOL workflow platform. This package provides 15 specialized task blocks covering all aspects of ZIP file operations, from basic compression and extraction to advanced features like encryption, encoding conversion, and archive management."
+  },
+  "HOME.Scenes.txt-to-epub.title": {
+    "message": "TXT to EPUB"
+  },
+  "HOME.Scenes.txt-to-epub.tag": {
+    "message": "Document Conversion"
+  },
+  "HOME.Scenes.txt-to-epub.inner": {
+    "message": "A tool for converting TXT format text files to EPUB eBooks with elegant typography design."
+  },
+  "HOME.Scenes.pdf-processing.title": {
+    "message": "PDF Processing"
+  },
+  "HOME.Scenes.pdf-processing.tag": {
+    "message": "Document Tools"
+  },
+  "HOME.Scenes.pdf-processing.inner": {
+    "message": "This toolkit transforms your OOMOL workspace into a complete PDF processing powerhouse. With 15+ specialized blocks, you can handle everything from basic operations like merging and splitting to advanced features like OCR, form filling, and security management."
+  },
+  "HOME.Scenes.data-analysis.title": {
+    "message": "Data Analysis"
+  },
+  "HOME.Scenes.data-analysis.tag": {
+    "message": "Data Analysis"
+  },
+  "HOME.Scenes.data-analysis.inner": {
+    "message": "This project is used to analyze user-uploaded tabular data and then output it in a custom format according to user requirements. The project uses AI to analyze user intent, convert it into code, and finally execute the code to generate the required formatted data and display it in a chart."
+  },
+  "HOME.Scenes.audio-processing.title": {
+    "message": "AI Audio Processing"
+  },
+  "HOME.Scenes.audio-processing.tag": {
+    "message": "Audio Content"
+  },
+  "HOME.Scenes.audio-processing.inner": {
+    "message": "Professional audio processing tools supporting speech recognition, audio enhancement, noise reduction, music generation, and sound analysis for complete audio solutions."
+  },
+  "HOME.Scenes.automation.title": {
+    "message": "Process Automation"
+  },
+  "HOME.Scenes.automation.tag": {
+    "message": "Automation"
+  },
+  "HOME.Scenes.automation.inner": {
+    "message": "Build intelligent automation workflows connecting various applications and services for automated task execution, data synchronization, and business process optimization."
+  },
+  "HOME.Scenes.web-scraping.title": {
+    "message": "Web Data Scraping"
+  },
+  "HOME.Scenes.web-scraping.tag": {
+    "message": "Data Collection"
+  },
+  "HOME.Scenes.web-scraping.inner": {
+    "message": "Intelligent web data extraction tools supporting dynamic content retrieval, data cleaning, and structured storage for easy access to web data."
+  },
+  "HOME.Scenes.api-integration.title": {
+    "message": "API Integration"
+  },
+  "HOME.Scenes.api-integration.tag": {
+    "message": "System Integration"
+  },
+  "HOME.Scenes.api-integration.inner": {
+    "message": "Seamlessly connect various third-party services and APIs for data exchange, feature integration, and business collaboration to build powerful integration solutions."
+  },
+  "HOME.Scenes.content-generation.title": {
+    "message": "Content Generation"
+  },
+  "HOME.Scenes.content-generation.tag": {
+    "message": "Creative Content"
+  },
+  "HOME.Scenes.content-generation.inner": {
+    "message": "AI-powered content creation tools supporting article writing, image generation, video production, and creative design to unleash unlimited creative potential."
+  },
+  "HOME.Scenes.link-button": {
+    "message": "View More Examples"
+  },
+  "HOME.Create.title": {
+    "message": "How to Create"
+  },
+  "HOME.Create.subtitle": {
+    "message": "Easily create your own intelligent tools through visual workflows and powerful AI integration."
+  },
+  "HOME.Create.card.title": {
+    "message": "Start Creating Your AI Tools"
+  },
+  "HOME.Create.card.description": {
+    "message": "Use OOMOL Studio's intuitive interface to build powerful AI workflows by dragging components and connecting nodes. Create professional-grade AI applications without complex programming."
+  },
+  "HOME.Create.card.button": {
+    "message": "Start Creating Now"
+  },
+  "HOME.Create.browse-docs": {
+    "message": "Read Docs"
+  },
+  "HOME.Products.title": {
+    "message": "How to Create"
+  },
+  "HOME.Products.subtitle": {
+    "message": "Explore the three core products in the OOMOL ecosystem, covering the complete AI tool lifecycle from creation to sharing to usage."
+  },
+  "HOME.Products.studio.description": {
+    "message": "OOMOL's AI tool creation platform. The core advantage lies in: retaining the unlimited creative ability of traditional programming while having the convenience of low-code development, allowing users to efficiently build various AI tools."
+  },
+  "HOME.Products.hub.description": {
+    "message": "AI tool sharing community. The best platform to discover, share, and get inspired."
+  },
+  "HOME.Products.chat.description": {
+    "message": "Intelligent conversation tool. Use various AI features through natural language interaction."
+  },
+  "HOME.CommunityShare.title": {
+    "message": "Release and Share"
+  },
+  "HOME.CommunityShare.subtitle": {
+    "message": "Join our vibrant community to share your creations, discover amazing tools, and collaborate with fellow creators."
+  },
+  "HOME.CommunityShare.hub.description": {
+    "message": "Discover and share AI tools with the community. Find inspiration and showcase your creations."
+  },
+  "HOME.CommunityShare.github.description": {
+    "message": "Contribute to open source projects, report issues, and collaborate with developers worldwide."
+  },
+  "HOME.CommunityShare.discord.description": {
+    "message": "Connect with other creators, get real-time support, and participate in community discussions."
+  },
+  "HOME.CommunityShare.learnMore": {
+    "message": "Learn More"
   },
   "HOME.Features.title": {
     "message": "Features"
   },
   "HOME.Features.subtitle": {
-    "message": "Easy drag-and-drop workflows, professional code editor, and elegant data visualization."
+    "message": "Everything you need to create, customize, and share AI tools - no coding required."
   },
   "HOME.Features.intuitive-interaction.title": {
-    "message": "Intuitive interaction"
+    "message": "Visual Creation"
   },
   "HOME.Features.pre-installed-environment.title": {
-    "message": "Pre-installed environment"
+    "message": "Ready to Use"
   },
   "HOME.Features.programming-friendly.title": {
-    "message": "Developer-friendly"
+    "message": "Zero Setup"
   },
   "HOME.Features.support-sharing.title": {
-    "message": "Community sharing"
+    "message": "Instant Sharing"
   },
   "HOME.Features.block-sharing.title": {
-    "message": "Block sharing"
+    "message": "Reusable Tools"
   },
   "HOME.Features.intuitive-interaction.inner": {
-    "message": "Easily build workflows, flexibly configure nodes, and preview data."
+    "message": "Build AI tools with simple drag-and-drop. No coding knowledge required."
   },
   "HOME.Features.pre-installed-environment.inner": {
-    "message": "Built-in Python & Node.js, VSCode-based with AI and clear logs."
+    "message": "Everything is pre-configured. Start creating AI tools immediately."
   },
   "HOME.Features.programming-friendly.inner": {
-    "message": "No installation needed; OOMOL uses containers for seamless workflow sharing."
+    "message": "Download and run. No complex setup or dependency management."
   },
   "HOME.Features.support-sharing.inner": {
-    "message": "Publish as source code for easy secondary development by others."
+    "message": "Share your AI tools with one click. Others can use them instantly."
   },
   "HOME.Features.block-sharing.inner": {
-    "message": "Publish as a block for easy use by others, like the npm community."
+    "message": "Build once, use everywhere. Create reusable AI components for the community."
   },
   "HOME.Features.linkBtn-text": {
     "message": "View All Features"
   },
+  "HOME.Video.title": {
+    "message": "Product Demo"
+  },
+  "HOME.Video.subtitle": {
+    "message": "Learn about OOMOL's powerful features and usage through video"
+  },
   "HOME.Guide.title": {
-    "message": "Start With A Project"
+    "message": "Release and Share"
   },
   "HOME.Guide.subtitle": {
-    "message": "Explore the Community to find a workflow that fits your needs."
+    "message": "Learn from the community's collective wisdom and contribute your expertise to drive AI tool innovation together."
   },
   "HOME.Guide.link-button-text": {
-    "message": "View All Projects"
+    "message": "Explore All AI Tools"
   },
   "HOME.Guide.project-1.title": {
-    "message": "Video Translater"
+    "message": "AI Video Translator"
   },
   "HOME.Guide.project-1.description": {
-    "message": "Translate and add subtitles"
+    "message": "AI-powered video translation and subtitle generation"
   },
   "HOME.Guide.project-2.title": {
     "message": "PDF Craft"
@@ -154,16 +332,16 @@
     "message": "Common data conversion."
   },
   "HOME.Guide.project-7.title": {
-    "message": "Tiny PNG"
+    "message": "AI Image Compressor"
   },
   "HOME.Guide.project-7.description": {
-    "message": "Images Compression"
+    "message": "Smart image optimization and compression"
   },
   "HOME.Guide.project-8.title": {
-    "message": "Voice Recognition"
+    "message": "AI Document Parser"
   },
   "HOME.Guide.project-8.description": {
-    "message": "Convert PDFs to machine-readable formats."
+    "message": "Extract and structure data from documents with AI"
   },
   "HOME.Guide.project-9.title": {
     "message": "Whisper"
@@ -199,10 +377,10 @@
     "message": "Built-in LLM blocks for improved AI workflow efficiency."
   },
   "HOME.GetStartedPrompt.title": {
-    "message": "Ready to get started?"
+    "message": "Start Use OOMOL Today"
   },
   "HOME.GetStartedPrompt.subtitle": {
-    "message": "Oomol Studio makes it easy to build workflows by visually connecting code and APIs."
+    "message": "Download OOMOL now and unlock your ultimate productivity partner."
   },
   "HOME.Pricing.title": {
     "message": "Pricing"
@@ -824,5 +1002,122 @@
   "theme.blog.author.noPosts": {
     "message": "This author has not written any posts yet.",
     "description": "The text for authors with 0 blog post"
+  },
+  "CREATE.title": {
+    "message": "OOMOL Studio"
+  },
+  "CREATE.description": {
+    "message": "OOMOL's AI tool creation platform. The core advantage lies in: retaining the unlimited creative ability of traditional programming while having the convenience of low-code development, allowing users to efficiently build various AI tools."
+  },
+  "CREATE.workflow.title": {
+    "message": "Visual Workflow Engine"
+  },
+  "CREATE.workflow.description": {
+    "message": "Build complex AI workflows through drag-and-drop interface, no programming experience required"
+  },
+  "CREATE.workflow.feature1": {
+    "message": "Intuitive drag-and-drop interface, easily connect various AI modules and functional components"
+  },
+  "CREATE.workflow.feature2": {
+    "message": "Rich preset templates, quickly start common AI application scenarios"
+  },
+  "CREATE.workflow.feature3": {
+    "message": "Real-time preview and debugging, instantly view workflow execution results"
+  },
+  "CREATE.workflow.feature4": {
+    "message": "Version control and collaboration, support team development and maintenance of workflows"
+  },
+  "CREATE.ai.title": {
+    "message": "Powerful AI Integration Modules"
+  },
+  "CREATE.ai.description": {
+    "message": "Integrate mainstream AI services, providing rich AI capability support"
+  },
+  "CREATE.ai.feature1": {
+    "message": "Support multiple large language models, including GPT, Claude, Gemini, etc."
+  },
+  "CREATE.ai.feature2": {
+    "message": "Image generation and processing capabilities, support DALL-E, Midjourney and other services"
+  },
+  "CREATE.ai.feature3": {
+    "message": "Speech recognition and synthesis, enabling multimodal AI interaction experience"
+  },
+  "SHARE.title": {
+    "message": "Share AI Tools"
+  },
+  "SHARE.description": {
+    "message": "Share your creations in the Flow community and continuously optimize through data analysis"
+  },
+  "SHARE.flowCommunity.title": {
+    "message": "Flow Community Ecosystem"
+  },
+  "SHARE.flowCommunity.description": {
+    "message": "Share your creations in an open community, discover excellent workflows from others, and build AI tool ecosystem together"
+  },
+  "SHARE.flowCommunity.feature1": {
+    "message": "One-click publish workflows to community, let more people benefit from your creations"
+  },
+  "SHARE.flowCommunity.feature2": {
+    "message": "Browse and search quality workflows in the community, quickly find needed functions"
+  },
+  "SHARE.flowCommunity.feature3": {
+    "message": "Workflow rating and comment system, help users discover best practices"
+  },
+  "SHARE.flowCommunity.feature4": {
+    "message": "Version management and update notifications, ensure using the latest workflow versions"
+  },
+  "SHARE.analytics.title": {
+    "message": "Deep Analytics Insights"
+  },
+  "SHARE.analytics.description": {
+    "message": "Understand workflow performance through data analysis, optimize user experience"
+  },
+  "SHARE.analytics.feature1": {
+    "message": "Real-time usage statistics, understand workflow popularity and usage frequency"
+  },
+  "SHARE.analytics.feature2": {
+    "message": "Performance monitoring and optimization suggestions, improve workflow execution efficiency"
+  },
+  "SHARE.analytics.feature3": {
+    "message": "User feedback collection, continuously improve workflow quality"
+  },
+  "USE.title": {
+    "message": "Use AI Tools"
+  },
+  "USE.description": {
+    "message": "Enjoy smooth AI tool usage experience through intelligent chat tools"
+  },
+  "USE.chatTools.title": {
+    "message": "Intelligent Chat Tools"
+  },
+  "USE.chatTools.description": {
+    "message": "Easily use various AI tools through intuitive chat interface, no complex operations required"
+  },
+  "USE.chatTools.feature1": {
+    "message": "Natural language interaction, use AI tools like chatting"
+  },
+  "USE.chatTools.feature2": {
+    "message": "Multi-turn conversation support, maintain contextual coherence"
+  },
+  "USE.chatTools.feature3": {
+    "message": "Smart prompts and suggestions, help users better use tools"
+  },
+  "USE.chatTools.feature4": {
+    "message": "History management, review and reuse conversation content anytime"
+  },
+  "USE.userExperience.title": {
+    "message": "Quality User Experience"
+  },
+  "USE.userExperience.description": {
+    "message": "Provide smooth and efficient AI tool usage experience for users"
+  },
+  "USE.userExperience.feature1": {
+    "message": "Responsive design, support seamless switching between desktop and mobile"
+  },
+  "USE.userExperience.feature2": {
+    "message": "Real-time feedback and status display, let users understand processing progress"
+  },
+  "USE.userExperience.feature3": {
+    "message": "Personalized settings, customize usage interface according to user preferences"
   }
 }

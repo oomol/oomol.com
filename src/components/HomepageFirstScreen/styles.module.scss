@@ -141,31 +141,82 @@
   position: relative;
   display: flex;
   justify-content: center;
-  z-index: 1;
-  padding: 80px 0;
+  align-items: center;
+  z-index: 2;
+  height: 800px;
+  margin-left: 36px;
+  margin-right: 36px;
 }
 
 .header {
-  display: grid;
-  padding: 0 30px;
+  display: flex;
+  padding: 0;
   align-items: center;
-  justify-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  width: 100%;
 
-  @include desktop {
-    padding: 0;
+  @media (max-width: 1024px) {
+    margin-top: 120px;
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+    padding: 0 30px;
+  }
+}
+
+.content-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  text-align: left;
+  max-width: 600px;
+
+  @media (max-width: 1024px) {
+    text-align: center;
+  }
+}
+
+.content-right {
+  flex: 0.6;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  @media (max-width: 1024px) {
+    width: 100%;
+    justify-content: center;
+    margin-top: 40px;
   }
 }
 
 .slogan-box {
   display: flex;
   flex-direction: column;
+  min-height: 140px;
+
+  @include pad {
+    min-height: 110px;
+  }
+
+  @include phone-large {
+    min-height: 90px;
+  }
+}
+
+.description-box {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
 }
 
 .slogan {
-  font-size: 58px;
-  margin-bottom: 0;
-  line-height: 50px;
+  font-size: 55px;
+  line-height: 60px;
   font-weight: 800;
+  text-align: left;
+  max-width: 650px;
 
   @include pad {
     font-size: 45px;
@@ -174,6 +225,15 @@
   @include phone-large {
     font-size: 37px;
   }
+
+  @media (max-width: 1024px) {
+    text-align: center;
+  }
+}
+
+.ai-tool-text {
+  color: #7d7fe9;
+  display: inline;
 }
 
 .slogan-cn {
@@ -183,75 +243,13 @@
 .overview {
   font-size: 20px;
   font-weight: 400;
-  text-align: center;
+  text-align: left;
   line-height: 30px;
-  @include linearGradientColor;
+  color: #8b949e;
+  opacity: 0.9;
 
   @media (max-width: 1024px) {
     text-align: center;
-  }
-}
-
-.intro-box {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  align-items: center;
-
-  // TODO: 统一放 custom.scss 中处理
-  @media (max-width: 1024px) {
-    align-items: center;
-  }
-}
-
-.image-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 120px;
-}
-
-.halo {
-  max-width: 1280px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-
-  &::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    width: 50%;
-    height: 500px;
-    left: 85px;
-    bottom: -85px;
-    background: linear-gradient(270deg, #7d7fe9 0%, #7d7fe9 100%);
-    border-radius: 50%;
-    filter: blur(500px);
-    opacity: 0.35;
-
-    @media screen and (max-width: 996px) {
-      display: none;
-    }
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    width: 50%;
-    height: 500px;
-    right: 85px;
-    bottom: -85px;
-    background: linear-gradient(270deg, #7dc7e9 0%, #7dc7e9 100%);
-
-    border-radius: 50%;
-    filter: blur(500px);
-    opacity: 0.35;
-
-    @media screen and (max-width: 996px) {
-      display: none;
-    }
   }
 }
 
@@ -279,15 +277,6 @@
 
 .icon {
   font-size: 20px;
-  background: linear-gradient(
-    127.66deg,
-    #0d1116 0%,
-    #987de9 15%,
-    #7d7fe9 39%,
-    #ffffff 62%,
-    #7da6e9 86%,
-    #0d1116 100%
-  );
   padding-left: 12px;
 }
 
@@ -304,7 +293,12 @@
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-top: 72px;
+
+  @media (max-width: 1024px) {
+    justify-content: center;
+  }
 
   @media (max-width: 996px) {
     flex-direction: column-reverse;
@@ -312,15 +306,17 @@
   }
 }
 
-// TODO: 统一放 custom.scss 中处理
-@media (max-width: 1024px) {
-  .header {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-  }
+.screenshot-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-.video {
-  max-width: 1280px;
-  border-radius: 10px;
+.product-screenshot {
+  width: 100%;
+  height: auto;
+  position: relative;
 }
