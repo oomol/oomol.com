@@ -47,10 +47,10 @@
   },
 
   "HOME.Scenes.title": {
-    "message": "Use Case"
+    "message": "How to Use"
   },
   "HOME.Scenes.subtitle": {
-    "message": "OOMOL empowers AI-driven processing for diverse content types through intuitive creation platform."
+    "message": "Deeply understand both tools and user needs to deliver perfectly matched intelligent solutions."
   },
   "HOME.Scenes.data-science.title": {
     "message": "AI Video Processing"
@@ -70,8 +70,71 @@
   "HOME.Scenes.media-processing.inner": {
     "message": "Build sophisticated AI tools for image processing, including object detection, image enhancement, style transfer, OCR, and automated image analysis through easy drag-and-drop interfaces."
   },
+  "HOME.Scenes.text-processing.title": {
+    "message": "AI Text Processing"
+  },
+  "HOME.Scenes.text-processing.tag": {
+    "message": "Text Content"
+  },
+  "HOME.Scenes.text-processing.inner": {
+    "message": "Intelligent text analysis and processing, including sentiment analysis, keyword extraction, text summarization, translation, and content generation for efficient document workflows."
+  },
+  "HOME.Scenes.audio-processing.title": {
+    "message": "AI Audio Processing"
+  },
+  "HOME.Scenes.audio-processing.tag": {
+    "message": "Audio Content"
+  },
+  "HOME.Scenes.audio-processing.inner": {
+    "message": "Professional audio processing tools supporting speech recognition, audio enhancement, noise reduction, music generation, and sound analysis for complete audio solutions."
+  },
+  "HOME.Scenes.data-analysis.title": {
+    "message": "Data Analysis"
+  },
+  "HOME.Scenes.data-analysis.tag": {
+    "message": "Data Science"
+  },
+  "HOME.Scenes.data-analysis.inner": {
+    "message": "Powerful data analysis platform providing data cleaning, statistical analysis, machine learning modeling, and visualization charts for accessible data insights."
+  },
+  "HOME.Scenes.automation.title": {
+    "message": "Process Automation"
+  },
+  "HOME.Scenes.automation.tag": {
+    "message": "Automation"
+  },
+  "HOME.Scenes.automation.inner": {
+    "message": "Build intelligent automation workflows connecting various applications and services for automated task execution, data synchronization, and business process optimization."
+  },
+  "HOME.Scenes.web-scraping.title": {
+    "message": "Web Data Scraping"
+  },
+  "HOME.Scenes.web-scraping.tag": {
+    "message": "Data Collection"
+  },
+  "HOME.Scenes.web-scraping.inner": {
+    "message": "Intelligent web data extraction tools supporting dynamic content retrieval, data cleaning, and structured storage for easy access to web data."
+  },
+  "HOME.Scenes.api-integration.title": {
+    "message": "API Integration"
+  },
+  "HOME.Scenes.api-integration.tag": {
+    "message": "System Integration"
+  },
+  "HOME.Scenes.api-integration.inner": {
+    "message": "Seamlessly connect various third-party services and APIs for data exchange, feature integration, and business collaboration to build powerful integration solutions."
+  },
+  "HOME.Scenes.content-generation.title": {
+    "message": "Content Generation"
+  },
+  "HOME.Scenes.content-generation.tag": {
+    "message": "Creative Content"
+  },
+  "HOME.Scenes.content-generation.inner": {
+    "message": "AI-powered content creation tools supporting article writing, image generation, video production, and creative design to unleash unlimited creative potential."
+  },
   "HOME.Products.title": {
-    "message": "Our Products"
+    "message": "How to Create"
   },
   "HOME.Products.subtitle": {
     "message": "Explore the three core products in the OOMOL ecosystem, covering the complete AI tool lifecycle from creation to sharing to usage."
@@ -84,6 +147,24 @@
   },
   "HOME.Products.chat.description": {
     "message": "Intelligent conversation tool. Use various AI features through natural language interaction."
+  },
+  "HOME.CommunityShare.title": {
+    "message": "Community and Share"
+  },
+  "HOME.CommunityShare.subtitle": {
+    "message": "Join our vibrant community to share your creations, discover amazing tools, and collaborate with fellow creators."
+  },
+  "HOME.CommunityShare.hub.description": {
+    "message": "Discover and share AI tools with the community. Find inspiration and showcase your creations."
+  },
+  "HOME.CommunityShare.github.description": {
+    "message": "Contribute to open source projects, report issues, and collaborate with developers worldwide."
+  },
+  "HOME.CommunityShare.discord.description": {
+    "message": "Connect with other creators, get real-time support, and participate in community discussions."
+  },
+  "HOME.CommunityShare.learnMore": {
+    "message": "Learn More"
   },
   "HOME.Features.title": {
     "message": "Features"

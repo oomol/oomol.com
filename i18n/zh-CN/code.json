@@ -46,10 +46,10 @@
     "message": "字体"
   },
   "HOME.Scenes.title": {
-    "message": "使用场景"
+    "message": "How to Use"
   },
   "HOME.Scenes.subtitle": {
-    "message": "OOMOL 通过直观的创造平台，为多种内容类型提供强大的 AI 驱动处理能力。"
+    "message": "深度理解工具本质与用户需求，提供最匹配的智能化解决方案。"
   },
   "HOME.Scenes.data-science.title": {
     "message": "AI 视频处理"
@@ -69,8 +69,71 @@
   "HOME.Scenes.media-processing.inner": {
     "message": "构建精密的 AI 图片处理工具，包括物体检测、图像增强、风格迁移、OCR识别和自动化图像分析，通过简单的拖拽界面轻松实现。"
   },
+  "HOME.Scenes.text-processing.title": {
+    "message": "AI 文本处理"
+  },
+  "HOME.Scenes.text-processing.tag": {
+    "message": "文本内容"
+  },
+  "HOME.Scenes.text-processing.inner": {
+    "message": "智能文本分析与处理，包括情感分析、关键词提取、文本摘要、翻译和内容生成，助力高效的文档处理工作流。"
+  },
+  "HOME.Scenes.audio-processing.title": {
+    "message": "AI 音频处理"
+  },
+  "HOME.Scenes.audio-processing.tag": {
+    "message": "音频内容"
+  },
+  "HOME.Scenes.audio-processing.inner": {
+    "message": "专业音频处理工具，支持语音识别、音频增强、噪音消除、音乐生成和声音分析，打造完整的音频处理解决方案。"
+  },
+  "HOME.Scenes.data-analysis.title": {
+    "message": "数据分析"
+  },
+  "HOME.Scenes.data-analysis.tag": {
+    "message": "数据科学"
+  },
+  "HOME.Scenes.data-analysis.inner": {
+    "message": "强大的数据分析平台，提供数据清洗、统计分析、机器学习建模和可视化图表，让数据洞察触手可及。"
+  },
+  "HOME.Scenes.automation.title": {
+    "message": "流程自动化"
+  },
+  "HOME.Scenes.automation.tag": {
+    "message": "自动化"
+  },
+  "HOME.Scenes.automation.inner": {
+    "message": "构建智能自动化工作流，连接各种应用和服务，实现任务自动执行、数据同步和业务流程优化。"
+  },
+  "HOME.Scenes.web-scraping.title": {
+    "message": "网页数据采集"
+  },
+  "HOME.Scenes.web-scraping.tag": {
+    "message": "数据采集"
+  },
+  "HOME.Scenes.web-scraping.inner": {
+    "message": "智能网页数据抓取工具，支持动态内容获取、数据清洗和结构化存储，轻松获取所需的网络数据。"
+  },
+  "HOME.Scenes.api-integration.title": {
+    "message": "API 集成"
+  },
+  "HOME.Scenes.api-integration.tag": {
+    "message": "系统集成"
+  },
+  "HOME.Scenes.api-integration.inner": {
+    "message": "无缝连接各种第三方服务和API，实现系统间的数据交换、功能整合和业务协同，构建强大的集成解决方案。"
+  },
+  "HOME.Scenes.content-generation.title": {
+    "message": "内容生成"
+  },
+  "HOME.Scenes.content-generation.tag": {
+    "message": "创意内容"
+  },
+  "HOME.Scenes.content-generation.inner": {
+    "message": "AI 驱动的内容创作工具，支持文章写作、图像生成、视频制作和创意设计，释放无限创作潜能。"
+  },
   "HOME.Products.title": {
-    "message": "产品介绍"
+    "message": "如何创造"
   },
   "HOME.Products.subtitle": {
     "message": "探索 OOMOL 生态系统中的三大核心产品，从创造到分享再到使用，完整的 AI 工具生命周期。"
@@ -86,6 +149,24 @@
   },
   "HOME.Products.chat.description": {
     "message": "智能对话工具，通过自然语言交互使用各种 AI 功能。"
+  },
+  "HOME.CommunityShare.title": {
+    "message": "社区与分享"
+  },
+  "HOME.CommunityShare.subtitle": {
+    "message": "加入我们充满活力的社区，分享您的创作，发现精彩工具，与其他创作者协作。"
+  },
+  "HOME.CommunityShare.hub.description": {
+    "message": "与社区一起发现和分享 AI 工具，寻找灵感并展示您的创作。"
+  },
+  "HOME.CommunityShare.github.description": {
+    "message": "参与开源项目，报告问题，与全球开发者协作。"
+  },
+  "HOME.CommunityShare.discord.description": {
+    "message": "与其他创作者联系，获得实时支持，参与社区讨论。"
+  },
+  "HOME.CommunityShare.learnMore": {
+    "message": "了解更多"
   },
   "HOME.Features.title": {
     "message": "功能特点"

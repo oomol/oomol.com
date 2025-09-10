@@ -1,0 +1,31 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="url(#gradient4)"/>
+  <defs>
+    <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a8edea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fed6e3;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Workflow nodes -->
+  <circle cx="120" cy="100" r="25" fill="white" fill-opacity="0.9"/>
+  <rect x="110" y="90" width="20" height="20" rx="4" fill="#a8edea"/>
+  
+  <circle cx="200" cy="150" r="25" fill="white" fill-opacity="0.9"/>
+  <circle cx="200" cy="150" r="12" fill="#fed6e3"/>
+  
+  <circle cx="280" cy="100" r="25" fill="white" fill-opacity="0.9"/>
+  <polygon points="270,90 290,90 285,110 275,110" fill="#a8edea"/>
+  
+  <!-- Connection lines -->
+  <path d="M145 100 Q170 100 175 125" stroke="white" stroke-width="3" fill="none" stroke-opacity="0.8"/>
+  <path d="M225 135 Q250 135 255 110" stroke="white" stroke-width="3" fill="none" stroke-opacity="0.8"/>
+  
+  <!-- Arrows -->
+  <polygon points="170,120 175,125 170,130" fill="white" fill-opacity="0.8"/>
+  <polygon points="250,115 255,110 250,105" fill="white" fill-opacity="0.8"/>
+  
+  <!-- Gear icon -->
+  <circle cx="200" cy="220" r="20" fill="white" fill-opacity="0.9"/>
+  <path d="M200 205 L205 210 L200 215 L195 210 Z M200 225 L205 230 L200 235 L195 230 Z M185 220 L190 215 L195 220 L190 225 Z M205 220 L210 215 L215 220 L210 225 Z" fill="#a8edea"/>
+</svg>

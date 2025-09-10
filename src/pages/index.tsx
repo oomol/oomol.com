@@ -11,6 +11,7 @@ import Head from "@docusaurus/Head";
 import HomepageGuide from "../components/HomepageGuide";
 import HomePageBuiltInLLM from "../components/HomePageBuiltInLLM";
 import HomepageProducts from "../components/HomepageProducts";
+import HomepageCommunityShare from "../components/HomepageCommunityShare";
 import { GetStartedPrompt } from "../components/GetStartedPrompt";
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
         <HomepageFirstScreen />
         <HomepageScenes />
         <HomepageProducts />
+        <HomepageCommunityShare />
         <HomepageGuide />
         {/* TODO: 等订阅业务上线后恢复 */}
         {/* <HomepagePricing /> */}

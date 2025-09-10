@@ -1,0 +1,39 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="url(#gradient5)"/>
+  <defs>
+    <linearGradient id="gradient5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffecd2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fcb69f;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Browser window -->
+  <rect x="80" y="80" width="240" height="140" rx="8" fill="white" fill-opacity="0.9"/>
+  <rect x="80" y="80" width="240" height="30" rx="8" fill="#fcb69f" fill-opacity="0.8"/>
+  
+  <!-- Browser controls -->
+  <circle cx="100" cy="95" r="5" fill="white"/>
+  <circle cx="115" cy="95" r="5" fill="white"/>
+  <circle cx="130" cy="95" r="5" fill="white"/>
+  
+  <!-- URL bar -->
+  <rect x="150" y="87" width="120" height="16" rx="8" fill="white" fill-opacity="0.7"/>
+  
+  <!-- Web content -->
+  <rect x="100" y="130" width="80" height="8" rx="4" fill="#fcb69f" fill-opacity="0.6"/>
+  <rect x="100" y="145" width="60" height="6" rx="3" fill="#fcb69f" fill-opacity="0.4"/>
+  <rect x="100" y="155" width="70" height="6" rx="3" fill="#fcb69f" fill-opacity="0.4"/>
+  
+  <rect x="200" y="130" width="80" height="8" rx="4" fill="#fcb69f" fill-opacity="0.6"/>
+  <rect x="200" y="145" width="60" height="6" rx="3" fill="#fcb69f" fill-opacity="0.4"/>
+  <rect x="200" y="155" width="70" height="6" rx="3" fill="#fcb69f" fill-opacity="0.4"/>
+  
+  <!-- Data extraction arrows -->
+  <path d="M160 180 L160 200 L180 200" stroke="white" stroke-width="3" fill="none" stroke-opacity="0.8"/>
+  <polygon points="175,195 180,200 175,205" fill="white" fill-opacity="0.8"/>
+  
+  <!-- Database icon -->
+  <ellipse cx="200" cy="230" rx="30" ry="10" fill="white" fill-opacity="0.9"/>
+  <rect x="170" y="220" width="60" height="20" fill="white" fill-opacity="0.9"/>
+  <ellipse cx="200" cy="220" rx="30" ry="10" fill="white" fill-opacity="0.9"/>
+</svg>

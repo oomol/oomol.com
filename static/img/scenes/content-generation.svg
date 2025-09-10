@@ -1,0 +1,38 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="url(#gradient7)"/>
+  <defs>
+    <linearGradient id="gradient7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fa709a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fee140;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Creative elements -->
+  <!-- Paintbrush -->
+  <rect x="120" y="100" width="8" height="60" rx="4" fill="white" fill-opacity="0.9"/>
+  <ellipse cx="124" cy="95" rx="6" ry="12" fill="white" fill-opacity="0.9"/>
+  
+  <!-- Paint stroke -->
+  <path d="M140 120 Q160 110 180 125 Q200 140 220 130" stroke="white" stroke-width="6" fill="none" stroke-opacity="0.8" stroke-linecap="round"/>
+  
+  <!-- Text document -->
+  <rect x="160" y="160" width="80" height="100" rx="6" fill="white" fill-opacity="0.9"/>
+  <rect x="170" y="175" width="60" height="4" rx="2" fill="#fa709a" fill-opacity="0.7"/>
+  <rect x="170" y="185" width="50" height="4" rx="2" fill="#fa709a" fill-opacity="0.7"/>
+  <rect x="170" y="195" width="55" height="4" rx="2" fill="#fa709a" fill-opacity="0.7"/>
+  <rect x="170" y="205" width="45" height="4" rx="2" fill="#fa709a" fill-opacity="0.7"/>
+  
+  <!-- Image placeholder -->
+  <rect x="170" y="220" width="60" height="30" rx="4" fill="#fee140" fill-opacity="0.6"/>
+  <circle cx="185" cy="230" r="4" fill="white"/>
+  <polygon points="195,240 205,230 215,235 225,225 230,235 195,245" fill="white" fill-opacity="0.8"/>
+  
+  <!-- Magic wand -->
+  <rect x="260" y="80" width="4" height="40" rx="2" fill="white" fill-opacity="0.9" transform="rotate(45 262 100)"/>
+  <polygon points="270,85 275,90 270,95 265,90" fill="white" fill-opacity="0.9"/>
+  
+  <!-- Sparkles -->
+  <polygon points="280,110 282,115 287,115 283,118 285,123 280,120 275,123 277,118 273,115 278,115" fill="white" fill-opacity="0.8"/>
+  <polygon points="300,130 301,133 304,133 302,135 303,138 300,136 297,138 298,135 296,133 299,133" fill="white" fill-opacity="0.6"/>
+  <polygon points="250,140 251,143 254,143 252,145 253,148 250,146 247,148 248,145 246,143 249,143" fill="white" fill-opacity="0.7"/>
+</svg>
