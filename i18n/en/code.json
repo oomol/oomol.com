@@ -72,6 +72,21 @@
   "HOME.Scenes.media-processing.inner": {
     "message": "Build sophisticated AI tools for image processing, including object detection, image enhancement, style transfer, OCR, and automated image analysis through easy drag-and-drop interfaces."
   },
+  "HOME.Products.title": {
+    "message": "Our Products"
+  },
+  "HOME.Products.subtitle": {
+    "message": "Explore the three core products in the OOMOL ecosystem, covering the complete AI tool lifecycle from creation to sharing to usage."
+  },
+  "HOME.Products.studio.description": {
+    "message": "OOMOL's AI tool creation platform. The core advantage lies in: retaining the unlimited creative ability of traditional programming while having the convenience of low-code development, allowing users to efficiently build various AI tools."
+  },
+  "HOME.Products.hub.description": {
+    "message": "AI tool sharing community. The best platform to discover, share, and get inspired."
+  },
+  "HOME.Products.chat.description": {
+    "message": "Intelligent conversation tool. Use various AI features through natural language interaction."
+  },
   "HOME.Features.title": {
     "message": "Features"
   },
@@ -827,5 +842,122 @@
   "theme.blog.author.noPosts": {
     "message": "This author has not written any posts yet.",
     "description": "The text for authors with 0 blog post"
+  },
+  "CREATE.title": {
+    "message": "OOMOL Studio"
+  },
+  "CREATE.description": {
+    "message": "OOMOL's AI tool creation platform. The core advantage lies in: retaining the unlimited creative ability of traditional programming while having the convenience of low-code development, allowing users to efficiently build various AI tools."
+  },
+  "CREATE.workflow.title": {
+    "message": "Visual Workflow Engine"
+  },
+  "CREATE.workflow.description": {
+    "message": "Build complex AI workflows through drag-and-drop interface, no programming experience required"
+  },
+  "CREATE.workflow.feature1": {
+    "message": "Intuitive drag-and-drop interface, easily connect various AI modules and functional components"
+  },
+  "CREATE.workflow.feature2": {
+    "message": "Rich preset templates, quickly start common AI application scenarios"
+  },
+  "CREATE.workflow.feature3": {
+    "message": "Real-time preview and debugging, instantly view workflow execution results"
+  },
+  "CREATE.workflow.feature4": {
+    "message": "Version control and collaboration, support team development and maintenance of workflows"
+  },
+  "CREATE.ai.title": {
+    "message": "Powerful AI Integration Modules"
+  },
+  "CREATE.ai.description": {
+    "message": "Integrate mainstream AI services, providing rich AI capability support"
+  },
+  "CREATE.ai.feature1": {
+    "message": "Support multiple large language models, including GPT, Claude, Gemini, etc."
+  },
+  "CREATE.ai.feature2": {
+    "message": "Image generation and processing capabilities, support DALL-E, Midjourney and other services"
+  },
+  "CREATE.ai.feature3": {
+    "message": "Speech recognition and synthesis, enabling multimodal AI interaction experience"
+  },
+  "SHARE.title": {
+    "message": "Share AI Tools"
+  },
+  "SHARE.description": {
+    "message": "Share your creations in the Flow community and continuously optimize through data analysis"
+  },
+  "SHARE.flowCommunity.title": {
+    "message": "Flow Community Ecosystem"
+  },
+  "SHARE.flowCommunity.description": {
+    "message": "Share your creations in an open community, discover excellent workflows from others, and build AI tool ecosystem together"
+  },
+  "SHARE.flowCommunity.feature1": {
+    "message": "One-click publish workflows to community, let more people benefit from your creations"
+  },
+  "SHARE.flowCommunity.feature2": {
+    "message": "Browse and search quality workflows in the community, quickly find needed functions"
+  },
+  "SHARE.flowCommunity.feature3": {
+    "message": "Workflow rating and comment system, help users discover best practices"
+  },
+  "SHARE.flowCommunity.feature4": {
+    "message": "Version management and update notifications, ensure using the latest workflow versions"
+  },
+  "SHARE.analytics.title": {
+    "message": "Deep Analytics Insights"
+  },
+  "SHARE.analytics.description": {
+    "message": "Understand workflow performance through data analysis, optimize user experience"
+  },
+  "SHARE.analytics.feature1": {
+    "message": "Real-time usage statistics, understand workflow popularity and usage frequency"
+  },
+  "SHARE.analytics.feature2": {
+    "message": "Performance monitoring and optimization suggestions, improve workflow execution efficiency"
+  },
+  "SHARE.analytics.feature3": {
+    "message": "User feedback collection, continuously improve workflow quality"
+  },
+  "USE.title": {
+    "message": "Use AI Tools"
+  },
+  "USE.description": {
+    "message": "Enjoy smooth AI tool usage experience through intelligent chat tools"
+  },
+  "USE.chatTools.title": {
+    "message": "Intelligent Chat Tools"
+  },
+  "USE.chatTools.description": {
+    "message": "Easily use various AI tools through intuitive chat interface, no complex operations required"
+  },
+  "USE.chatTools.feature1": {
+    "message": "Natural language interaction, use AI tools like chatting"
+  },
+  "USE.chatTools.feature2": {
+    "message": "Multi-turn conversation support, maintain contextual coherence"
+  },
+  "USE.chatTools.feature3": {
+    "message": "Smart prompts and suggestions, help users better use tools"
+  },
+  "USE.chatTools.feature4": {
+    "message": "History management, review and reuse conversation content anytime"
+  },
+  "USE.userExperience.title": {
+    "message": "Quality User Experience"
+  },
+  "USE.userExperience.description": {
+    "message": "Provide smooth and efficient AI tool usage experience for users"
+  },
+  "USE.userExperience.feature1": {
+    "message": "Responsive design, support seamless switching between desktop and mobile"
+  },
+  "USE.userExperience.feature2": {
+    "message": "Real-time feedback and status display, let users understand processing progress"
+  },
+  "USE.userExperience.feature3": {
+    "message": "Personalized settings, customize usage interface according to user preferences"
   }
 }

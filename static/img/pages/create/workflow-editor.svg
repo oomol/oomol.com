@@ -1,0 +1,29 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#F8FAFC" rx="8"/>
+  <rect x="20" y="20" width="80" height="60" fill="#7D7FE9" rx="8"/>
+  <rect x="160" y="20" width="80" height="60" fill="#10B981" rx="8"/>
+  <rect x="300" y="20" width="80" height="60" fill="#F59E0B" rx="8"/>
+  
+  <rect x="20" y="120" width="80" height="60" fill="#EF4444" rx="8"/>
+  <rect x="160" y="120" width="80" height="60" fill="#8B5CF6" rx="8"/>
+  <rect x="300" y="120" width="80" height="60" fill="#06B6D4" rx="8"/>
+  
+  <rect x="90" y="220" width="220" height="60" fill="#64748B" rx="8"/>
+  
+  <!-- Connection lines -->
+  <line x1="100" y1="50" x2="160" y2="50" stroke="#64748B" stroke-width="2"/>
+  <line x1="240" y1="50" x2="300" y2="50" stroke="#64748B" stroke-width="2"/>
+  <line x1="60" y1="80" x2="60" y2="120" stroke="#64748B" stroke-width="2"/>
+  <line x1="200" y1="80" x2="200" y2="120" stroke="#64748B" stroke-width="2"/>
+  <line x1="340" y1="80" x2="340" y2="120" stroke="#64748B" stroke-width="2"/>
+  <line x1="200" y1="180" x2="200" y2="220" stroke="#64748B" stroke-width="2"/>
+  
+  <!-- Text labels -->
+  <text x="60" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="12">输入</text>
+  <text x="200" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="12">处理</text>
+  <text x="340" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="12">AI</text>
+  <text x="60" y="155" text-anchor="middle" fill="white" font-family="Arial" font-size="12">转换</text>
+  <text x="200" y="155" text-anchor="middle" fill="white" font-family="Arial" font-size="12">分析</text>
+  <text x="340" y="155" text-anchor="middle" fill="white" font-family="Arial" font-size="12">输出</text>
+  <text x="200" y="255" text-anchor="middle" fill="white" font-family="Arial" font-size="12">工作流引擎</text>
+</svg>

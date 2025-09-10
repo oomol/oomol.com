@@ -71,6 +71,24 @@
   "HOME.Scenes.media-processing.inner": {
     "message": "构建精密的 AI 图片处理工具，包括物体检测、图像增强、风格迁移、OCR识别和自动化图像分析，通过简单的拖拽界面轻松实现。"
   },
+  "HOME.Products.title": {
+    "message": "产品介绍"
+  },
+  "HOME.Products.subtitle": {
+    "message": "探索 OOMOL 生态系统中的三大核心产品，从创造到分享再到使用，完整的 AI 工具生命周期。"
+  },
+  "CREATE.studio.description": {
+    "message": "OOMOL 推出的 AI 工具创作平台。该平台的核心优势在于：既保留了传统编程的无限创造能力，又具备低代码开发的便捷性，让用户能够高效地构建各类 AI 工具。"
+  },
+  "HOME.Products.studio.description": {
+    "message": "OOMOL 推出的 AI 工具创作平台。该平台的核心优势在于：既保留了传统编程的无限创造能力，又具备低代码开发的便捷性，让用户能够高效地构建各类 AI 工具。"
+  },
+  "HOME.Products.hub.description": {
+    "message": "AI 工具分享社区，发现、分享和获取灵感的最佳平台。"
+  },
+  "HOME.Products.chat.description": {
+    "message": "智能对话工具，通过自然语言交互使用各种 AI 功能。"
+  },
   "HOME.Features.title": {
     "message": "功能特点"
   },
@@ -394,6 +412,123 @@
     "message": "开始体验"
   },
 
+  "CREATE.title": {
+    "message": "OOMOL Studio"
+  },
+  "CREATE.description": {
+    "message": "OOMOL 推出的 AI 工具创作平台。该平台的核心优势在于：既保留了传统编程的无限创造能力，又具备低代码开发的便捷性，让用户能够高效地构建各类 AI 工具。"
+  },
+  "CREATE.workflow.title": {
+    "message": "可视化工作流引擎"
+  },
+  "CREATE.workflow.description": {
+    "message": "通过拖拽式界面构建复杂的AI工作流，无需编程经验"
+  },
+  "CREATE.workflow.feature1": {
+    "message": "直观的拖拽界面，轻松连接各种AI模块和功能组件"
+  },
+  "CREATE.workflow.feature2": {
+    "message": "丰富的预置模板，快速启动常见的AI应用场景"
+  },
+  "CREATE.workflow.feature3": {
+    "message": "实时预览和调试，即时查看工作流执行效果"
+  },
+  "CREATE.workflow.feature4": {
+    "message": "版本控制和协作，支持团队共同开发和维护工作流"
+  },
+  "CREATE.ai.title": {
+    "message": "强大的AI集成模块"
+  },
+  "CREATE.ai.description": {
+    "message": "集成主流AI服务，提供丰富的AI能力支持"
+  },
+  "CREATE.ai.feature1": {
+    "message": "支持多种大语言模型，包括GPT、Claude、Gemini等"
+  },
+  "CREATE.ai.feature2": {
+    "message": "图像生成和处理能力，支持DALL-E、Midjourney等服务"
+  },
+  "CREATE.ai.feature3": {
+    "message": "语音识别和合成，实现多模态AI交互体验"
+  },
+  "SHARE.title": {
+    "message": "分享 AI 工具"
+  },
+  "SHARE.description": {
+    "message": "在Flow社区中分享您的创作，通过数据分析持续优化"
+  },
+  "SHARE.flowCommunity.title": {
+    "message": "Flow 社区生态"
+  },
+  "SHARE.flowCommunity.description": {
+    "message": "在开放的社区中分享您的创作，发现他人的优秀工作流，共同构建AI工具生态"
+  },
+  "SHARE.flowCommunity.feature1": {
+    "message": "一键发布工作流到社区，让更多人受益于您的创作"
+  },
+  "SHARE.flowCommunity.feature2": {
+    "message": "浏览和搜索社区中的优质工作流，快速找到所需功能"
+  },
+  "SHARE.flowCommunity.feature3": {
+    "message": "工作流评分和评论系统，帮助用户发现最佳实践"
+  },
+  "SHARE.flowCommunity.feature4": {
+    "message": "版本管理和更新通知，确保使用最新的工作流版本"
+  },
+  "SHARE.analytics.title": {
+    "message": "深度分析洞察"
+  },
+  "SHARE.analytics.description": {
+    "message": "通过数据分析了解工作流性能，优化使用体验"
+  },
+  "SHARE.analytics.feature1": {
+    "message": "实时使用统计，了解工作流的受欢迎程度和使用频率"
+  },
+  "SHARE.analytics.feature2": {
+    "message": "性能监控和优化建议，提升工作流执行效率"
+  },
+  "SHARE.analytics.feature3": {
+    "message": "用户反馈收集，持续改进工作流质量"
+  },
+  "USE.title": {
+    "message": "使用 AI 工具"
+  },
+  "USE.description": {
+    "message": "通过智能对话工具，享受流畅的AI工具使用体验"
+  },
+  "USE.chatTools.title": {
+    "message": "智能对话工具"
+  },
+  "USE.chatTools.description": {
+    "message": "通过直观的对话界面，轻松使用各种AI工具，无需复杂操作"
+  },
+  "USE.chatTools.feature1": {
+    "message": "自然语言交互，像聊天一样使用AI工具"
+  },
+  "USE.chatTools.feature2": {
+    "message": "多轮对话支持，保持上下文连贯性"
+  },
+  "USE.chatTools.feature3": {
+    "message": "智能提示和建议，帮助用户更好地使用工具"
+  },
+  "USE.chatTools.feature4": {
+    "message": "历史记录管理，随时回顾和重用对话内容"
+  },
+  "USE.userExperience.title": {
+    "message": "优质使用体验"
+  },
+  "USE.userExperience.description": {
+    "message": "为用户提供流畅、高效的AI工具使用体验"
+  },
+  "USE.userExperience.feature1": {
+    "message": "响应式设计，支持桌面端和移动端无缝切换"
+  },
+  "USE.userExperience.feature2": {
+    "message": "实时反馈和状态显示，让用户了解处理进度"
+  },
+  "USE.userExperience.feature3": {
+    "message": "个性化设置，根据用户偏好定制使用界面"
+  },
   "theme.ErrorPageContent.title": {
     "message": "页面已崩溃。",
     "description": "The title of the fallback page when the page crashed"

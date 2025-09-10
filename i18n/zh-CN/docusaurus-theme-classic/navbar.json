@@ -31,6 +31,30 @@
     "message": "博客",
     "description": "Navbar item with label Blog"
   },
+  "item.label.navbar.create": {
+    "message": "创造",
+    "description": "Navbar item with label navbar.create"
+  },
+  "item.label.navbar.share": {
+    "message": "分享",
+    "description": "Navbar item with label navbar.share"
+  },
+  "item.label.navbar.use": {
+    "message": "使用",
+    "description": "Navbar item with label navbar.use"
+  },
+  "item.label.navbar.oomol-studio": {
+    "message": "OOMOL Studio",
+    "description": "Navbar item with label navbar.oomol-studio"
+  },
+  "item.label.navbar.oomol-hub": {
+    "message": "OOMOL Hub",
+    "description": "Navbar item with label navbar.oomol-hub"
+  },
+  "item.label.navbar.oomol-chat": {
+    "message": "OOMOL Chat",
+    "description": "Navbar item with label navbar.oomol-chat"
+  },
   "title": {
     "message": "OOMOL",
     "description": "The title in the navbar"

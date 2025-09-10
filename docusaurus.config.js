@@ -160,9 +160,23 @@ const config = {
         },
         items: [
           {
-            to: "/features",
-            label: "Features",
+            type: "dropdown",
+            label: "Product",
             position: "left",
+            items: [
+              {
+                to: "/studio",
+                label: "navbar.oomol-studio",
+              },
+              {
+                to: "/hub",
+                label: "navbar.oomol-hub",
+              },
+              {
+                to: "/chat",
+                label: "navbar.oomol-chat",
+              },
+            ],
           },
           {
             type: "doc",
@@ -184,6 +198,18 @@ const config = {
           {
             title: "Product",
             items: [
+              {
+                label: "OOMOL Studio",
+                to: "/studio",
+              },
+              {
+                label: "OOMOL Hub",
+                to: "/hub",
+              },
+              {
+                label: "OOMOL Chat",
+                to: "/chat",
+              },
               {
                 label: "Roadmap",
                 href: "https://github.com/orgs/oomol-lab/projects/1/views/1",

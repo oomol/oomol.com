@@ -27,6 +27,30 @@
     "message": "Pricing",
     "description": "Navbar item with label Pricing"
   },
+  "item.label.navbar.create": {
+    "message": "Create",
+    "description": "Navbar item with label navbar.create"
+  },
+  "item.label.navbar.share": {
+    "message": "Share",
+    "description": "Navbar item with label navbar.share"
+  },
+  "item.label.navbar.use": {
+    "message": "Use",
+    "description": "Navbar item with label navbar.use"
+  },
+  "item.label.navbar.oomol-studio": {
+    "message": "OOMOL Studio",
+    "description": "Navbar item with label navbar.oomol-studio"
+  },
+  "item.label.navbar.oomol-hub": {
+    "message": "OOMOL Hub",
+    "description": "Navbar item with label navbar.oomol-hub"
+  },
+  "item.label.navbar.oomol-chat": {
+    "message": "OOMOL Chat",
+    "description": "Navbar item with label navbar.oomol-chat"
+  },
   "title": {
     "message": "OOMOL",
     "description": "The title in the navbar"

@@ -1,0 +1,37 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#FFFBEB" rx="8"/>
+  
+  <!-- Chat interface -->
+  <rect x="50" y="40" width="300" height="220" fill="white" rx="12" stroke="#F59E0B" stroke-width="2"/>
+  
+  <!-- Header -->
+  <rect x="50" y="40" width="300" height="40" fill="#F59E0B" rx="12"/>
+  <rect x="50" y="52" width="300" height="16" fill="#F59E0B"/>
+  <text x="200" y="65" text-anchor="middle" fill="white" font-family="Arial" font-size="14" font-weight="bold">AI 助手</text>
+  
+  <!-- Chat bubbles -->
+  <!-- User message -->
+  <rect x="220" y="100" width="120" height="30" fill="#3B82F6" rx="15"/>
+  <text x="280" y="120" text-anchor="middle" fill="white" font-family="Arial" font-size="12">你好，帮我处理图片</text>
+  
+  <!-- AI response -->
+  <rect x="60" y="140" width="150" height="40" fill="#E5E7EB" rx="15"/>
+  <text x="135" y="155" text-anchor="middle" fill="#374151" font-family="Arial" font-size="11">好的！请上传您的图片，</text>
+  <text x="135" y="170" text-anchor="middle" fill="#374151" font-family="Arial" font-size="11">我来帮您处理</text>
+  
+  <!-- User message -->
+  <rect x="240" y="190" width="100" height="30" fill="#3B82F6" rx="15"/>
+  <text x="290" y="210" text-anchor="middle" fill="white" font-family="Arial" font-size="12">已上传</text>
+  
+  <!-- AI response -->
+  <rect x="60" y="230" width="180" height="20" fill="#E5E7EB" rx="10"/>
+  <text x="150" y="245" text-anchor="middle" fill="#374151" font-family="Arial" font-size="11">正在处理中...</text>
+  
+  <!-- Input area -->
+  <rect x="60" y="270" width="240" height="25" fill="#F3F4F6" rx="12" stroke="#D1D5DB"/>
+  <text x="70" y="287" fill="#9CA3AF" font-family="Arial" font-size="12">输入消息...</text>
+  
+  <!-- Send button -->
+  <circle cx="320" cy="282" r="12" fill="#F59E0B"/>
+  <text x="320" y="287" text-anchor="middle" fill="white" font-family="Arial" font-size="12">→</text>
+</svg>
