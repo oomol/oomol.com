@@ -126,6 +126,12 @@
   "HOME.Features.linkBtn-text": {
     "message": "查看全部"
   },
+  "HOME.Video.title": {
+    "message": "产品演示"
+  },
+  "HOME.Video.subtitle": {
+    "message": "通过视频了解 OOMOL 的强大功能和使用方法"
+  },
   "HOME.Guide.title": {
     "message": "发现 AI 工具"
   },

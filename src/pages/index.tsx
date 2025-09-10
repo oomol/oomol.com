@@ -4,6 +4,7 @@ import Layout from "../theme/Layout";
 import HomepageDownloads from "@site/src/components/HomepageDownloads";
 import HomepageScenes from "@site/src/components/HomepageScenes";
 import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
+import HomepageVideo from "@site/src/components/HomepageVideo";
 import HomepageStarter from "@site/src/components/HomepageStarter";
 import HomepagePricing from "../components/HomePagePricing";
 import Head from "@docusaurus/Head";
@@ -20,6 +21,7 @@ export default function Home() {
       </Head>
       <main>
         <HomepageFirstScreen />
+        <HomepageVideo />
         <HomepageScenes />
         <HomepageProducts />
         <HomepageGuide />

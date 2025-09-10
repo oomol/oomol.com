@@ -1,5 +1,5 @@
 .container {
-  width: max-content;
+  width: 240px;
   height: 43px;
   border-radius: 4px;
   padding: 12px 24px;
@@ -11,11 +11,11 @@
 .container:hover {
   background-color: #f6f8fa;
   color: #212830;
-  
+
   .linkIcon {
     color: #212830;
   }
-  
+
   .linkText {
     color: #212830;
   }
@@ -23,11 +23,11 @@
 .container:active {
   background-color: #d1d9e0;
   color: #212830;
-  
+
   .linkIcon {
     color: #212830;
   }
-  
+
   .linkText {
     color: #212830;
   }
@@ -45,11 +45,12 @@
 
 .linkText {
   height: 19px;
-  font-weight: 400;
-  font-size: 16px;
+  font-weight: 500;
+  font-size: 18px;
   line-height: 100%;
   vertical-align: middle;
   color: #f0f6fc;
+  white-space: nowrap;
 }
 
 .linkBtn {

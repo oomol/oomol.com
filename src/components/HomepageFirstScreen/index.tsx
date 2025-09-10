@@ -9,7 +9,8 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import clsx from "clsx";
 import { DownloadButton } from "../DownloadButton";
 import LinkBtn from "../Button/LinkBtn";
-import { HeroVideoDialog } from "../magic-ui/HeroVideoDialog";
+
+import TypewriterText from "../TypewriterText";
 
 export default function HomepageFirstScreen() {
   const context: any = useDocusaurusContext();
@@ -29,13 +30,17 @@ export default function HomepageFirstScreen() {
               >
                 {i18n.currentLocale === "zh-CN" ? (
                   <>
-                    创造，分享和使用{" "}
-                    <span className={styles["ai-tool-text"]}>AI 工具</span>
+                    <TypewriterText text="创造，分享和使用 " speed={80} />
+                    <span className={styles["ai-tool-text"]}>
+                      <TypewriterText text="AI 工具" speed={80} delay={720} />
+                    </span>
                   </>
                 ) : (
                   <>
-                    Create, Share and Use{" "}
-                    <span className={styles["ai-tool-text"]}>AI Tools</span>
+                    <TypewriterText text="Create, Share and Use " speed={80} />
+                    <span className={styles["ai-tool-text"]}>
+                      <TypewriterText text="AI Tools" speed={80} delay={1760} />
+                    </span>
                   </>
                 )}
               </h1>
@@ -47,29 +52,25 @@ export default function HomepageFirstScreen() {
                 })}
               </span>
             </div>
-          </div>
-          <div className={styles["content-right"]}>
             <div className={styles.buttons}>
+              <DownloadButton />
               <LinkBtn
                 text={translate({ message: "Theme.Navbar.go-to-hub-flow" })}
                 iconPos="left"
                 icon="i-codicon-globe"
                 url="https://hub.oomol.com/"
               />
-              <DownloadButton />
             </div>
           </div>
-        </div>
-      </div>
-      <div className={styles["image-box"]}>
-        <div className={styles.halo}>
-          <HeroVideoDialog
-            className={styles.video}
-            animationStyle="from-center"
-            videoSrc="https://www.youtube.com/embed/L3fYYybKWJE?si=gJ-r2pDJDdUtR_IM"
-            thumbnailSrc={useBaseUrl("/img/pages/home/first-screen.webp")}
-            thumbnailAlt="Hero Video"
-          />
+          <div className={styles["content-right"]}>
+            <div className={styles["screenshot-container"]}>
+              <img
+                src={useBaseUrl("/img/pages/home/first-screen.webp")}
+                alt="OOMOL Product Screenshot"
+                className={styles["product-screenshot"]}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

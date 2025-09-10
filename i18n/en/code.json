@@ -1,6 +1,6 @@
 {
   "Theme.Navbar.go-to-hub-flow": {
-    "message": "Go to Creation Platform"
+    "message": "Go to Community"
   },
   "Theme.Navbar.sign-in": {
     "message": "Sign in"
@@ -123,6 +123,12 @@
   },
   "HOME.Features.linkBtn-text": {
     "message": "View All Features"
+  },
+  "HOME.Video.title": {
+    "message": "Product Demo"
+  },
+  "HOME.Video.subtitle": {
+    "message": "Learn about OOMOL's powerful features and usage through video"
   },
   "HOME.Guide.title": {
     "message": "Discover AI Tools"

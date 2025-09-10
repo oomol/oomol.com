@@ -1,0 +1,119 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 渐变定义 -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f1419;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a1f2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f1419;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0" />
+      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0" />
+    </linearGradient>
+    
+    <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- 网格图案 -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#3b82f6" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+    
+    <!-- 点状图案 -->
+    <pattern id="dots" width="60" height="60" patternUnits="userSpaceOnUse">
+      <circle cx="30" cy="30" r="1" fill="#3b82f6" opacity="0.2"/>
+    </pattern>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1920" height="1080" fill="url(#bgGradient)"/>
+  
+  <!-- 网格背景 -->
+  <rect width="1920" height="1080" fill="url(#grid)"/>
+  
+  <!-- 点状背景 -->
+  <rect width="1920" height="1080" fill="url(#dots)"/>
+  
+  <!-- 发光圆形 -->
+  <circle cx="300" cy="200" r="150" fill="url(#glowGradient)" opacity="0.6">
+    <animate attributeName="r" values="150;180;150" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="1600" cy="800" r="120" fill="url(#glowGradient)" opacity="0.4">
+    <animate attributeName="r" values="120;140;120" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- 几何线条 -->
+  <g opacity="0.3">
+    <!-- 水平线条 -->
+    <line x1="0" y1="300" x2="1920" y2="280" stroke="url(#lineGradient)" stroke-width="1"/>
+    <line x1="0" y1="600" x2="1920" y2="620" stroke="url(#lineGradient)" stroke-width="1"/>
+    <line x1="0" y1="900" x2="1920" y2="880" stroke="url(#lineGradient)" stroke-width="1"/>
+    
+    <!-- 对角线 -->
+    <line x1="0" y1="0" x2="400" y2="400" stroke="#3b82f6" stroke-width="0.5" opacity="0.2"/>
+    <line x1="1520" y1="0" x2="1920" y2="400" stroke="#3b82f6" stroke-width="0.5" opacity="0.2"/>
+    <line x1="0" y1="680" x2="400" y2="1080" stroke="#3b82f6" stroke-width="0.5" opacity="0.2"/>
+    <line x1="1520" y1="680" x2="1920" y2="1080" stroke="#3b82f6" stroke-width="0.5" opacity="0.2"/>
+  </g>
+  
+  <!-- 几何形状 -->
+  <g opacity="0.1">
+    <!-- 六边形 -->
+    <polygon points="200,100 250,130 250,190 200,220 150,190 150,130" 
+             fill="none" stroke="#3b82f6" stroke-width="1">
+      <animateTransform attributeName="transform" type="rotate" 
+                        values="0 200 160;360 200 160" dur="20s" repeatCount="indefinite"/>
+    </polygon>
+    
+    <!-- 三角形 -->
+    <polygon points="1700,150 1750,100 1800,150" 
+             fill="none" stroke="#3b82f6" stroke-width="1">
+      <animateTransform attributeName="transform" type="rotate" 
+                        values="0 1750 133;-360 1750 133" dur="15s" repeatCount="indefinite"/>
+    </polygon>
+    
+    <!-- 矩形 -->
+    <rect x="100" y="800" width="80" height="80" 
+          fill="none" stroke="#3b82f6" stroke-width="1" transform="rotate(45 140 840)">
+      <animateTransform attributeName="transform" type="rotate" 
+                        values="45 140 840;405 140 840" dur="25s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- 粒子效果 -->
+  <g opacity="0.6">
+    <circle cx="500" cy="400" r="2" fill="#3b82f6">
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" 
+                        values="0,0;20,-20;0,0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="800" cy="300" r="1.5" fill="#3b82f6">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+      <animateTransform attributeName="transform" type="translate" 
+                        values="0,0;-15,25;0,0" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    
+    <circle cx="1200" cy="500" r="2" fill="#3b82f6">
+      <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite" begin="1s"/>
+      <animateTransform attributeName="transform" type="translate" 
+                        values="0,0;10,30;0,0" dur="2.5s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    
+    <circle cx="1500" cy="200" r="1" fill="#3b82f6">
+      <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" begin="1.5s"/>
+      <animateTransform attributeName="transform" type="translate" 
+                        values="0,0;-25,-10;0,0" dur="4s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+  </g>
+  
+  <!-- 中央焦点光晕 -->
+  <circle cx="960" cy="540" r="300" fill="url(#glowGradient)" opacity="0.1">
+    <animate attributeName="opacity" values="0.1;0.2;0.1" dur="6s" repeatCount="indefinite"/>
+  </circle>
+</svg>
