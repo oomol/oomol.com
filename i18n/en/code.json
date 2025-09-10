@@ -9,11 +9,9 @@
     "message": "Create, Share and Use AI Tools"
   },
   "HOME.FirstScreen.script": {
-    "message": "Build powerful AI tools without coding. Share with community. Use instantly."
+    "message": "Build AI tools and workflows visually, share with the community, and use them through simple chat."
   },
-  "HOME.FirstScreen.tagline": {
-    "message": "Turn your ideas into AI-powered tools in minutes, not months."
-  },
+
   "HOME.FirstScreen.download-macos": {
     "message": "Download for macOS"
   },

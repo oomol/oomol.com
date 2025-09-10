@@ -9,11 +9,9 @@
     "message": "创造，分享和使用 AI 工具"
   },
   "HOME.FirstScreen.script": {
-    "message": "无需编程，创建强大的 AI 工具。分享到社区，立即使用。"
+    "message": "可视化构建 AI 工具与工作流，与社区分享，并通过对话轻松使用。"
   },
-  "HOME.FirstScreen.tagline": {
-    "message": "几分钟内将创意变成 AI 工具，而非几个月。"
-  },
+
   "HOME.FirstScreen.download-macos": {
     "message": "下载适用于 MacOS 的版本"
   },

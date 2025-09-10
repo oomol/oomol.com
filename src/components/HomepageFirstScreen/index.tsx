@@ -5,7 +5,7 @@ import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { GradualSpacing } from "../magic-ui/GradualSpacing";
+
 import clsx from "clsx";
 import { DownloadButton } from "../DownloadButton";
 import LinkBtn from "../Button/LinkBtn";
@@ -19,25 +19,36 @@ export default function HomepageFirstScreen() {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <div className={styles["slogan-box"]}>
-            <GradualSpacing
-              text={translate({ message: "HOME.FirstScreen.slogan" })}
-              className={clsx(
-                styles["slogan"],
-                i18n.currentLocale === "zh-CN" && styles["slogan-cn"]
-              )}
-            />
+          <div className={styles["content-left"]}>
+            <div className={styles["slogan-box"]}>
+              <h1
+                className={clsx(
+                  styles["slogan"],
+                  i18n.currentLocale === "zh-CN" && styles["slogan-cn"]
+                )}
+              >
+                {i18n.currentLocale === "zh-CN" ? (
+                  <>
+                    创造，分享和使用{" "}
+                    <span className={styles["ai-tool-text"]}>AI 工具</span>
+                  </>
+                ) : (
+                  <>
+                    Create, Share and Use{" "}
+                    <span className={styles["ai-tool-text"]}>AI Tools</span>
+                  </>
+                )}
+              </h1>
+            </div>
+            <div className={styles["description-box"]}>
+              <span className={styles.overview}>
+                {translate({
+                  message: "HOME.FirstScreen.script",
+                })}
+              </span>
+            </div>
           </div>
-          <div className={styles["intro-box"]}>
-            <span className={styles.overview}>
-              {translate({
-                message: "HOME.FirstScreen.script",
-              })}
-              <br />
-              {translate({
-                message: "HOME.FirstScreen.tagline",
-              })}
-            </span>
+          <div className={styles["content-right"]}>
             <div className={styles.buttons}>
               <LinkBtn
                 text={translate({ message: "Theme.Navbar.go-to-hub-flow" })}

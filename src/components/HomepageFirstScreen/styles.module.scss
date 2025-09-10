@@ -146,13 +146,46 @@
 }
 
 .header {
-  display: grid;
+  display: flex;
   padding: 0 30px;
   align-items: center;
-  justify-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  width: 100%;
+  gap: 60px;
 
   @include desktop {
     padding: 0;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+}
+
+.content-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: left;
+
+  @media (max-width: 1024px) {
+    text-align: center;
+  }
+}
+
+.content-right {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    justify-content: center;
   }
 }
 
@@ -161,11 +194,17 @@
   flex-direction: column;
 }
 
+.description-box {
+  display: flex;
+  flex-direction: column;
+}
+
 .slogan {
   font-size: 58px;
   margin-bottom: 0;
-  line-height: 50px;
+  line-height: 70px;
   font-weight: 800;
+  text-align: left;
 
   @include pad {
     font-size: 45px;
@@ -174,6 +213,14 @@
   @include phone-large {
     font-size: 37px;
   }
+
+  @media (max-width: 1024px) {
+    text-align: center;
+  }
+}
+
+.ai-tool-text {
+  color: #7d7fe9;
 }
 
 .slogan-cn {
@@ -183,7 +230,7 @@
 .overview {
   font-size: 20px;
   font-weight: 400;
-  text-align: center;
+  text-align: left;
   line-height: 30px;
   @include linearGradientColor;
 
@@ -192,17 +239,7 @@
   }
 }
 
-.intro-box {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  align-items: center;
 
-  // TODO: 统一放 custom.scss 中处理
-  @media (max-width: 1024px) {
-    align-items: center;
-  }
-}
 
 .image-box {
   display: flex;
@@ -312,13 +349,7 @@
   }
 }
 
-// TODO: 统一放 custom.scss 中处理
-@media (max-width: 1024px) {
-  .header {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-  }
-}
+
 
 .video {
   max-width: 1280px;
