@@ -132,6 +132,21 @@
   "HOME.Scenes.content-generation.inner": {
     "message": "AI 驱动的内容创作工具，支持文章写作、图像生成、视频制作和创意设计，释放无限创作潜能。"
   },
+  "HOME.Create.title": {
+    "message": "How to Create"
+  },
+  "HOME.Create.subtitle": {
+    "message": "通过可视化工作流和强大的 AI 集成，轻松创建属于你的智能工具。"
+  },
+  "HOME.Create.card.title": {
+    "message": "开始创造你的 AI 工具"
+  },
+  "HOME.Create.card.description": {
+    "message": "使用 OOMOL Studio 的直观界面，通过拖拽组件、连接节点的方式构建强大的 AI 工作流。无需复杂编程，即可创建专业级的 AI 应用。"
+  },
+  "HOME.Create.card.button": {
+    "message": "立即开始创造"
+  },
   "HOME.Products.title": {
     "message": "如何创造"
   },

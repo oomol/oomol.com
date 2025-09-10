@@ -133,6 +133,21 @@
   "HOME.Scenes.content-generation.inner": {
     "message": "AI-powered content creation tools supporting article writing, image generation, video production, and creative design to unleash unlimited creative potential."
   },
+  "HOME.Create.title": {
+    "message": "How to Create"
+  },
+  "HOME.Create.subtitle": {
+    "message": "Easily create your own intelligent tools through visual workflows and powerful AI integration."
+  },
+  "HOME.Create.card.title": {
+    "message": "Start Creating Your AI Tools"
+  },
+  "HOME.Create.card.description": {
+    "message": "Use OOMOL Studio's intuitive interface to build powerful AI workflows by dragging components and connecting nodes. Create professional-grade AI applications without complex programming."
+  },
+  "HOME.Create.card.button": {
+    "message": "Start Creating Now"
+  },
   "HOME.Products.title": {
     "message": "How to Create"
   },
