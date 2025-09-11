@@ -11,6 +11,7 @@ import { DownloadButton } from "../DownloadButton";
 import LinkBtn from "../Button/LinkBtn";
 
 import TypewriterText from "../TypewriterText";
+import CyclicTypewriterText from "../CyclicTypewriterText";
 
 export default function HomepageFirstScreen() {
   const context: any = useDocusaurusContext();
@@ -32,14 +33,14 @@ export default function HomepageFirstScreen() {
                   <>
                     <TypewriterText text="创造，分享和使用 " speed={80} />
                     <span className={styles["ai-tool-text"]}>
-                      <TypewriterText text="AI 工具" speed={80} delay={720} />
+                      <CyclicTypewriterText texts={["AI 工具", "AI Agents"]} speed={80} delay={720} cycleInterval={8000} />
                     </span>
                   </>
                 ) : (
                   <>
                     <TypewriterText text="Create, Share and Use " speed={80} />
                     <span className={styles["ai-tool-text"]}>
-                      <TypewriterText text="AI Tools" speed={80} delay={1760} />
+                      <CyclicTypewriterText texts={["AI Tools", "AI Agents"]} speed={80} delay={1760} cycleInterval={8000} />
                     </span>
                   </>
                 )}
