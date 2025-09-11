@@ -143,7 +143,9 @@
   justify-content: center;
   align-items: center;
   z-index: 2;
-  height: 820px;
+  height: 880px;
+  margin-left: 36px;
+  margin-right: 36px;
 }
 
 .header {
@@ -153,7 +155,6 @@
   justify-content: space-between;
   max-width: 1280px;
   width: 100%;
-  gap: 60px;
 
   @media (max-width: 1024px) {
     flex-direction: column;
@@ -169,7 +170,7 @@
   flex-direction: column;
   gap: 0;
   text-align: left;
-  max-width: 680px;
+  max-width: 600px;
 
   @media (max-width: 1024px) {
     text-align: center;
@@ -177,12 +178,11 @@
 }
 
 .content-right {
-  flex: 1;
+  flex: 0.6;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   position: relative;
-
   @media (max-width: 1024px) {
     width: 100%;
     justify-content: center;
@@ -310,14 +310,12 @@
   width: 100%;
   max-width: 600px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
 .product-screenshot {
   width: 100%;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   position: relative;
 }

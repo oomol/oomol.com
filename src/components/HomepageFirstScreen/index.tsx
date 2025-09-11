@@ -33,14 +33,24 @@ export default function HomepageFirstScreen() {
                   <>
                     <TypewriterText text="创造，分享和使用 " speed={80} />
                     <span className={styles["ai-tool-text"]}>
-                      <CyclicTypewriterText texts={["AI 工具", "AI Agents"]} speed={80} delay={720} cycleInterval={6000} />
+                      <CyclicTypewriterText
+                        texts={["AI 工具", "AI Agents"]}
+                        speed={80}
+                        delay={720}
+                        cycleInterval={6000}
+                      />
                     </span>
                   </>
                 ) : (
                   <>
                     <TypewriterText text="Create, Share and Use " speed={80} />
                     <span className={styles["ai-tool-text"]}>
-                      <CyclicTypewriterText texts={["AI Tools", "AI Agents"]} speed={80} delay={1760} cycleInterval={6000} />
+                      <CyclicTypewriterText
+                        texts={["AI Tools", "AI Agents"]}
+                        speed={80}
+                        delay={1760}
+                        cycleInterval={6000}
+                      />
                     </span>
                   </>
                 )}
