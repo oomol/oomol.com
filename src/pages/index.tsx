@@ -13,6 +13,7 @@ import HomepageGuide from "../components/HomepageGuide";
 import HomePageBuiltInLLM from "../components/HomePageBuiltInLLM";
 
 import { GetStartedPrompt } from "../components/GetStartedPrompt";
+import HomepageCreateScenes from "../components/HomepageCreateScenes";
 
 export default function Home() {
   return (
@@ -23,7 +24,7 @@ export default function Home() {
       <main>
         <HomepageFirstScreen />
         <HomepageScenes />
-        <HomepageCreate />
+        <HomepageCreateScenes />
         <HomepageGuide />
         {/* TODO: 等订阅业务上线后恢复 */}
         {/* <HomepagePricing /> */}

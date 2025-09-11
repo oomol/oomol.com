@@ -69,6 +69,24 @@
   "HOME.Scenes.media-processing.inner": {
     "message": "构建精密的 AI 图片处理工具，包括物体检测、图像增强、风格迁移、OCR识别和自动化图像分析，通过简单的拖拽界面轻松实现。"
   },
+  "HOME.Scenes.ai-vibe-coding.title": {
+    "message": "AI Vibe Coding 自动生成"
+  },
+  "HOME.Scenes.ai-vibe-coding.tag": {
+    "message": "智能生成"
+  },
+  "HOME.Scenes.ai-vibe-coding.inner": {
+    "message": "通过 AI Vibe Coding 技术，只需描述您的需求，AI 将自动生成完整的工作流和节点，快速创建功能强大的 AI 工具，无需编程经验。"
+  },
+  "HOME.Scenes.drag-drop-manual.title": {
+    "message": "拖拽手动创建"
+  },
+  "HOME.Scenes.drag-drop-manual.tag": {
+    "message": "可视化编辑"
+  },
+  "HOME.Scenes.drag-drop-manual.inner": {
+    "message": "使用直观的拖拽界面手动构建工作流，精确控制每个节点和连接，适合需要定制化和精细控制的 AI 工具开发场景。"
+  },
   "HOME.Scenes.text-processing.title": {
     "message": "AI 文本处理"
   },
