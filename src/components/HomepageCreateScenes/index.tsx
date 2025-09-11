@@ -1,11 +1,10 @@
 import React from "react";
 import styles from "./styles.module.scss";
-import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
-import { BlurFade } from "../magic-ui/BlurFade";
 import i18n from "@generated/i18n";
 import LinkBtn from "../Button/LinkBtn";
+import { HeroVideoDialog } from "../magic-ui/HeroVideoDialog";
 
 type CreateScenesDataType = {
   imageUrl: string;
@@ -41,25 +40,23 @@ const createScenesData: CreateScenesDataType[] = [
 export default function HomepageCreateScenes() {
   const createScenesNodes = createScenesData.map((data, index) => {
     return (
-      <BlurFade key={`create-scenes-${index}`}>
-        <div className={styles.sectionCell}>
-          <div className={styles.createScenesText}>
-            <span className={styles.createScenesTag}>{data.tag}</span>
-            <div className={styles.createScenesTextTitle}>
-              <i className={data.icon} />
-              {data.title}
-            </div>
-            <p className={styles.createScenesTextInner}>{data.inner}</p>
+      <div className={styles.sectionCell}>
+        <div className={styles.createScenesText}>
+          <span className={styles.createScenesTag}>{data.tag}</span>
+          <div className={styles.createScenesTextTitle}>
+            <i className={data.icon} />
+            {data.title}
           </div>
-          <Image
-            className={styles.createScenesImage}
-            sources={{
-              light: useBaseUrl(data.imageUrl),
-              dark: useBaseUrl(data.imageUrl),
-            }}
-          />
+          <p className={styles.createScenesTextInner}>{data.inner}</p>
         </div>
-      </BlurFade>
+        <HeroVideoDialog
+          className={styles["video"]}
+          animationStyle="from-center"
+          videoSrc="https://www.youtube.com/embed/L3fYYybKWJE?si=gJ-r2pDJDdUtR_IM"
+          thumbnailSrc={useBaseUrl(data.imageUrl)}
+          thumbnailAlt="Hero Video"
+        />
+      </div>
     );
   });
   return (
