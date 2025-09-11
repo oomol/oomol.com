@@ -204,6 +204,17 @@
   }
 }
 
+.linkButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 48px;
+
+  @media (max-width: 768px) {
+    margin-top: 32px;
+  }
+}
+
 .scenesTag {
   position: relative;
   display: inline-flex;

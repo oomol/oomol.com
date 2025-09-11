@@ -4,6 +4,7 @@ import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
 import { BlurFade } from "../magic-ui/BlurFade";
+import LinkBtn from "../Button/LinkBtn";
 
 type ScenesDataType = {
   imageUrl: string;
@@ -130,6 +131,14 @@ export default function HomepageScenes() {
         </span>
         <div className={styles.gridContainer}>
           {scenesNodes}
+        </div>
+        <div className={styles.linkButtonContainer}>
+          <LinkBtn
+            text={translate({ message: "HOME.Scenes.link-button" })}
+            iconPos="right"
+            icon="i-codicon-arrow-right"
+            url="/docs/get-started/quickstarts"
+          />
         </div>
       </div>
     </div>

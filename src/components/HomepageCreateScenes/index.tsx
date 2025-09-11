@@ -4,6 +4,8 @@ import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
 import { BlurFade } from "../magic-ui/BlurFade";
+import i18n from "@generated/i18n";
+import LinkBtn from "../Button/LinkBtn";
 
 type CreateScenesDataType = {
   imageUrl: string;
@@ -65,15 +67,27 @@ export default function HomepageCreateScenes() {
       <div className={styles["create-scenes-mid"]}>
         <div className={styles.sectionTitle}>
           {translate({
-            message: "HOME.Scenes.title",
+            message: "HOME.Create.title",
           })}
         </div>
         <span className={styles.sectionSubtitle}>
           {translate({
-            message: "HOME.Scenes.subtitle",
+            message: "HOME.Create.subtitle",
           })}
         </span>
         <div className={styles.sectionInner}>{createScenesNodes}</div>
+        <LinkBtn
+          text={translate({
+            message: "HOME.Create.browse-docs",
+          })}
+          iconPos="right"
+          icon="i-codicon:arrow-right"
+          url={
+            i18n.currentLocale === "zh-CN"
+              ? "https://oomol.com/zh-CN/docs/get-started/quickstarts/"
+              : "https://oomol.com/docs/get-started/quickstarts/"
+          }
+        />
       </div>
     </div>
   );

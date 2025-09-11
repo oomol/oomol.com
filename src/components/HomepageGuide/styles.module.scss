@@ -7,6 +7,7 @@
   margin-top: 40px;
   margin-bottom: 80px;
   overflow: hidden;
+  // background-color: #121314;
 
   @media (max-width: 996px) {
     padding: 0 16px;
@@ -50,6 +51,7 @@
   font-weight: 800;
   text-align: center;
   color: #f0f6fc;
+  margin-top: 64px;
 }
 
 .subtitle {
@@ -181,8 +183,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 36px;
-  margin-top: 36px;
 }
 
 .halo {
@@ -199,6 +199,7 @@
     height: 500px;
     left: 85px;
     bottom: -85px;
+    background: linear-gradient(270deg, #7d7fe9 0%, #7d7fe9 100%);
     border-radius: 50%;
     filter: blur(500px);
     opacity: 0.35;
@@ -216,6 +217,7 @@
     height: 500px;
     right: 85px;
     bottom: -85px;
+    background: linear-gradient(270deg, #7dc7e9 0%, #7dc7e9 100%);
 
     border-radius: 50%;
     filter: blur(500px);

@@ -151,6 +151,9 @@
   "HOME.Scenes.content-generation.inner": {
     "message": "AI-powered content creation tools supporting article writing, image generation, video production, and creative design to unleash unlimited creative potential."
   },
+  "HOME.Scenes.link-button": {
+    "message": "View More Examples"
+  },
   "HOME.Create.title": {
     "message": "How to Create"
   },
@@ -165,6 +168,9 @@
   },
   "HOME.Create.card.button": {
     "message": "Start Creating Now"
+  },
+  "HOME.Create.browse-docs": {
+    "message": "Read Docs"
   },
   "HOME.Products.title": {
     "message": "How to Create"
