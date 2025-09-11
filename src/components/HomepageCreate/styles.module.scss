@@ -35,8 +35,8 @@
 
 .create {
   width: 100%;
-  padding-top: 72px;
-  padding-bottom: 72px;
+  padding-top: 36px;
+  padding-bottom: 36px;
 }
 
 .create-mid {
@@ -56,112 +56,59 @@
   }
 }
 
-.createContainer {
-  max-width: 1200px;
-  width: 100%;
-  margin-top: 48px;
-  padding: 0 24px;
-
-  @media (max-width: 768px) {
-    margin-top: 32px;
-  }
-}
-
-.createCard {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 48px;
-  align-items: center;
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    border-color: rgba(255, 255, 255, 0.2);
-  }
-
-  @media (max-width: 1024px) {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    padding: 32px;
-  }
-
-  @media (max-width: 768px) {
-    padding: 24px;
-    gap: 24px;
-  }
-}
-
-.createCardContent {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-
-  @media (max-width: 1024px) {
-    order: 2;
-  }
-}
-
-.createTextTitle {
+.image-box {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 1.2;
+  justify-content: center;
+  margin-bottom: 72px;
+  margin-top: 72px;
+}
 
-  i {
-    font-size: 36px;
-    color: #3b82f6;
+.halo {
+  max-width: 1280px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 50%;
+    height: 500px;
+    left: 85px;
+    bottom: -85px;
+    background: linear-gradient(270deg, #7d7fe9 0%, #7d7fe9 100%);
+    border-radius: 50%;
+    filter: blur(500px);
+    opacity: 0.35;
+
+    @media screen and (max-width: 996px) {
+      display: none;
+    }
   }
 
-  @media (max-width: 768px) {
-    font-size: 24px;
-    
-    i {
-      font-size: 28px;
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 50%;
+    height: 500px;
+    right: 85px;
+    bottom: -85px;
+    background: linear-gradient(270deg, #7dc7e9 0%, #7dc7e9 100%);
+
+    border-radius: 50%;
+    filter: blur(500px);
+    opacity: 0.35;
+
+    @media screen and (max-width: 996px) {
+      display: none;
     }
   }
 }
 
-.createTextInner {
-  font-size: 18px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0;
-
-  @media (max-width: 768px) {
-    font-size: 16px;
-  }
-}
-
-.createCardActions {
-  margin-top: 8px;
-}
-
-.createCardImage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  @media (max-width: 1024px) {
-    order: 1;
-  }
-}
-
-.createImage {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 8px;
-
-  @media (max-width: 768px) {
-    max-width: 300px;
-  }
+.video {
+  max-width: 1280px;
+  border-radius: 10px;
 }

@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import { translate } from "@docusaurus/Translate";
-import { BlurFade } from "../magic-ui/BlurFade";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import { HeroVideoDialog } from "../magic-ui/HeroVideoDialog";
+import i18n from "@generated/i18n";
 import LinkBtn from "../Button/LinkBtn";
 
 export default function HomepageCreate() {
@@ -18,36 +20,27 @@ export default function HomepageCreate() {
             message: "HOME.Create.subtitle",
           })}
         </span>
-        <BlurFade delay={0.2}>
-          <div className={styles.createContainer}>
-            <div className={styles.createCard}>
-              <div className={styles.createCardContent}>
-                <div className={styles.createTextTitle}>
-                  <i className="i-codicon-tools" />
-                  {translate({ message: "HOME.Create.card.title" })}
-                </div>
-                <p className={styles.createTextInner}>
-                  {translate({ message: "HOME.Create.card.description" })}
-                </p>
-                <div className={styles.createCardActions}>
-                  <LinkBtn
-                    text={translate({ message: "HOME.Create.card.button" })}
-                    iconPos="right"
-                    icon="i-codicon-arrow-right"
-                    url="/studio"
-                  />
-                </div>
-              </div>
-              <div className={styles.createCardImage}>
-                <img
-                  src="/img/create-workflow.svg"
-                  alt={translate({ message: "Visual AI Workflow" })}
-                  className={styles.createImage}
-                />
-              </div>
-            </div>
+        <div className={styles["image-box"]}>
+          <div className={styles.halo}>
+            <HeroVideoDialog
+              className={styles.video}
+              animationStyle="from-center"
+              videoSrc="https://www.youtube.com/embed/L3fYYybKWJE?si=gJ-r2pDJDdUtR_IM"
+              thumbnailSrc={useBaseUrl("/img/pages/home/first-screen.webp")}
+              thumbnailAlt="Hero Video"
+            />
           </div>
-        </BlurFade>
+        </div>
+        <LinkBtn
+          text={translate({ message: "HOME.Guide.link-button-text" })}
+          iconPos="right"
+          icon="i-codicon:arrow-right"
+          url={
+            i18n.currentLocale === "zh-CN"
+              ? "https://hub.oomol.com/zh-CN"
+              : "https://hub.oomol.com/en"
+          }
+        />
       </div>
     </div>
   );
