@@ -4,6 +4,17 @@
   padding: 0 2rem;
 }
 
+.signInButton {
+  background: #7d7fe9;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+}
+
 .brand {
   display: flex;
   align-items: center;
@@ -137,9 +148,9 @@
 
 :global(.navbar__link) {
   &:hover {
-    color: #f0f6fc;
+    color: white;
   }
-  color: #838b95;
+  color: #f0f6fc;
 }
 
 :global(.navbar__link--active) {

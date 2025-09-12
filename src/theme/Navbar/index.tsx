@@ -152,6 +152,7 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
             fallback={
               <NavbarItem
                 label={translate({ message: "Theme.Navbar.sign-in" })}
+                className={styles.signInButton}
               />
             }
           >
@@ -159,6 +160,7 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
               return (
                 <NavbarItem
                   style={{ cursor: "pointer" }}
+                  className={styles.signInButton}
                   label={
                     isSignedIn()
                       ? translate({ message: "Theme.Navbar.go-to-hub-flow" })
