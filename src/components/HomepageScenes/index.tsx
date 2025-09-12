@@ -1,122 +1,102 @@
-import React from "react";
+import React, { useMemo } from "react";
 import styles from "./styles.module.scss";
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
 import LinkBtn from "../Button/LinkBtn";
+import FirstSceneCard from "./FirstSceneCard";
 import clsx from "clsx";
 
 type ScenesDataType = {
   imageUrl: string;
   title: string;
-  type: string;
-  color: string;
   inner: string;
   icon: string;
 };
 
+type SceneCardProps = {
+  data: ScenesDataType;
+  isFirst: boolean;
+};
+
 const scenesData: ScenesDataType[] = [
   {
-    imageUrl: "/img/cases-1.png",
+    imageUrl: "/img/scenes/chat.png",
     title: translate({ message: "HOME.Scenes.data-science.title" }),
-    type: "purple",
-    color: "blue",
     inner: translate({ message: "HOME.Scenes.data-science.inner" }),
     icon: "i-codicon-device-camera-video",
   },
   {
-    imageUrl: "/img/cases-2.png",
+    imageUrl: "/img/scenes/magic.png",
     title: translate({ message: "HOME.Scenes.media-processing.title" }),
-    type: "purple",
-    color: "green",
     inner: translate({ message: "HOME.Scenes.media-processing.inner" }),
     icon: "i-codicon-file-media",
   },
   {
-    imageUrl: "/img/scenes/text-processing.svg",
+    imageUrl: "/img/scenes/zip.png",
     title: translate({ message: "HOME.Scenes.text-processing.title" }),
-    type: "purple",
-    color: "purple",
     inner: translate({ message: "HOME.Scenes.text-processing.inner" }),
     icon: "i-codicon-file-text",
   },
   {
-    imageUrl: "/img/scenes/audio-processing.svg",
+    imageUrl: "/img/scenes/epub.png",
     title: translate({ message: "HOME.Scenes.audio-processing.title" }),
-    type: "purple",
-    color: "teal",
     inner: translate({ message: "HOME.Scenes.audio-processing.inner" }),
     icon: "i-codicon-unmute",
   },
   {
-    imageUrl: "/img/scenes/data-analysis.svg",
+    imageUrl: "/img/scenes/download.png",
     title: translate({ message: "HOME.Scenes.data-analysis.title" }),
-    type: "purple",
-    color: "pink",
     inner: translate({ message: "HOME.Scenes.data-analysis.inner" }),
     icon: "i-codicon-graph",
   },
   {
-    imageUrl: "/img/scenes/automation.svg",
+    imageUrl: "/img/scenes/data.png",
     title: translate({ message: "HOME.Scenes.automation.title" }),
-    type: "purple",
-    color: "cyan",
     inner: translate({ message: "HOME.Scenes.automation.inner" }),
     icon: "i-codicon-gear",
   },
-  // {
-  //   imageUrl: "/img/scenes/web-scraping.svg",
-  //   title: translate({ message: "HOME.Scenes.web-scraping.title" }),
-  //   type: "purple",
-  //   color: "orange",
-  //   inner: translate({ message: "HOME.Scenes.web-scraping.inner" }),
-  //   icon: "i-codicon-globe",
-  // },
-  // {
-  //   imageUrl: "/img/scenes/api-integration.svg",
-  //   title: translate({ message: "HOME.Scenes.api-integration.title" }),
-  //   type: "purple",
-  //   color: "indigo",
-  //   inner: translate({ message: "HOME.Scenes.api-integration.inner" }),
-  //   icon: "i-codicon-plug",
-  // },
-  // {
-  //   imageUrl: "/img/scenes/content-generation.svg",
-  //   title: translate({ message: "HOME.Scenes.content-generation.title" }),
-  //   type: "purple",
-  //   color: "yellow",
-  //   inner: translate({ message: "HOME.Scenes.content-generation.inner" }),
-  //   icon: "i-codicon-wand",
-  // },
 ];
 
-export default function HomepageScenes() {
-  const scenesNodes = scenesData.map((data, index) => {
-    return (
-      <div
-        className={clsx(styles.gridItem, {
-          [styles.gridFirstItem]: index === 0,
-        })}
-      >
-        <div className={styles.scenesCard}>
-          <Image
-            className={styles.scenesCardImage}
-            sources={{
-              light: useBaseUrl(data.imageUrl),
-              dark: useBaseUrl(data.imageUrl),
-            }}
-          />
-          <div className={styles.scenesCardContent}>
-            <div className={styles.scenesTextTitle}>
-              <i className={data.icon} />
-              {data.title}
-            </div>
-            <p className={styles.scenesTextInner}>{data.inner}</p>
-          </div>
-        </div>
+const SceneCard: React.FC<SceneCardProps> = ({ data, isFirst }) => (
+  <div
+    className={clsx(styles.gridItem, {
+      [styles.gridFirstItem]: isFirst,
+    })}
+  >
+    <div className={styles.scenesCard}>
+      <div className={styles.imageContainer}>
+        <Image
+          className={styles.scenesCardImage}
+          sources={{
+            light: useBaseUrl(data.imageUrl),
+            dark: useBaseUrl(data.imageUrl),
+          }}
+        />
       </div>
-    );
-  });
+
+      <div className={styles.scenesCardContent}>
+        <div className={styles.scenesTextTitle}>
+          <i className={data.icon} />
+          {data.title}
+        </div>
+        <p className={styles.scenesTextInner}>{data.inner}</p>
+      </div>
+    </div>
+  </div>
+);
+
+export default function HomepageScenes() {
+  const firstSceneData = scenesData[0];
+  const restScenesData = scenesData.slice(1);
+
+  const restScenesNodes = useMemo(
+    () =>
+      restScenesData.map((data, index) => (
+        <SceneCard key={index + 1} data={data} isFirst={false} />
+      )),
+    []
+  );
   return (
     <div className={styles.scenes}>
       <div className={styles["scenes-mid"]}>
@@ -130,7 +110,10 @@ export default function HomepageScenes() {
             message: "HOME.Scenes.subtitle",
           })}
         </span>
-        <div className={styles.gridContainer}>{scenesNodes}</div>
+        <div className={styles.gridContainer}>
+          <FirstSceneCard data={firstSceneData} />
+          {restScenesNodes}
+        </div>
         <div className={styles.linkButtonContainer}>
           <LinkBtn
             text={translate({ message: "HOME.Scenes.link-button" })}
