@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Play, XIcon } from "lucide-react";
 import { cn } from "@site/src/lib/utils";
@@ -88,10 +89,12 @@ export function HeroVideoDialog({
           alt={thumbnailAlt}
           className="w-full md:max-w-full lg:max-w-7xl h-auto object-cover rounded-md border transition-all duration-200 ease-out group-hover:brightness-[0.8]"
         />
-        <div className={cn(
-          "absolute inset-0 flex scale-[0.9] items-center justify-center rounded-2xl transition-all duration-200 ease-out group-hover:scale-100",
-          showPlayButtonOnHover && "opacity-0 group-hover:opacity-100"
-        )}>
+        <div
+          className={cn(
+            "absolute inset-0 flex scale-[0.9] items-center justify-center rounded-2xl transition-all duration-200 ease-out group-hover:scale-100",
+            showPlayButtonOnHover && "opacity-0 group-hover:opacity-100"
+          )}
+        >
           <div className="flex size-28 items-center justify-center rounded-full bg-primary/10 backdrop-blur-md">
             <div
               className={`relative flex size-20 scale-100 items-center justify-center rounded-full bg-gradient-to-b from-primary/30 to-primary shadow-md transition-all duration-200 ease-out group-hover:scale-[1.2]`}
@@ -107,59 +110,70 @@ export function HeroVideoDialog({
           </div>
         </div>
       </div>
-      <AnimatePresence>
-        {isVideoOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            onClick={() => setIsVideoOpen(false)}
-            exit={{ opacity: 0 }}
-            className="pt-24 fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-md "
-          >
-            <motion.div
-              {...selectedAnimation}
-              transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className={`relative mx-4  w-full max-w-6xl md:mx-0 ${i18n.currentLocale === "en" && "aspect-video"}`}
-              onClick={e => e.stopPropagation()}
-            >
-              <div
-                className="absolute cursor-pointer -top-6 -right-16 size-10 flex items-center justify-center rounded-full bg-neutral-900/50 p-2 text-white ring-1 ring-white/10 backdrop-blur-md dark:bg-neutral-100/50 dark:text-black dark:ring-black/10 border-none"
-                onClick={e => {
-                  e.stopPropagation();
-                  setIsVideoOpen(false);
+      {typeof window !== "undefined" &&
+        createPortal(
+          <AnimatePresence>
+            {isVideoOpen && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                onClick={() => setIsVideoOpen(false)}
+                exit={{ opacity: 0 }}
+                className="pt-24 fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-md"
+                style={{
+                  position: "fixed",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
                 }}
               >
-                <XIcon className="size-5" />
-              </div>
-              <div className="relative isolate z-[1] size-full overflow-hidden rounded-2xl border-2 border-white">
-                {i18n.currentLocale === "zh-CN" ? (
-                  <video
-                    autoPlay
-                    poster="https://static.oomol.com/assets/video-poster.webp"
-                    controls
-                    className="size-full rounded-2xl"
-                    onError={() => {
-                      console.error("Video failed to load");
+                <motion.div
+                  {...selectedAnimation}
+                  transition={{ type: "spring", damping: 30, stiffness: 300 }}
+                  className={`relative mx-4 w-full max-w-6xl md:mx-0 ${i18n.currentLocale === "en" && "aspect-video"}`}
+                  onClick={e => e.stopPropagation()}
+                >
+                  <div
+                    className="absolute cursor-pointer -top-6 -right-16 size-10 flex items-center justify-center rounded-full bg-neutral-900/50 p-2 text-white ring-1 ring-white/10 backdrop-blur-md dark:bg-neutral-100/50 dark:text-black dark:ring-black/10 border-none"
+                    onClick={e => {
+                      e.stopPropagation();
+                      setIsVideoOpen(false);
                     }}
                   >
-                    <source
-                      src="https://static.oomol.com/assets/combination-CN.webm"
-                      type="video/webm"
-                    />
-                  </video>
-                ) : (
-                  <iframe
-                    src={videoSrc}
-                    className="size-full rounded-2xl"
-                    allowFullScreen
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  ></iframe>
-                )}
-              </div>
-            </motion.div>
-          </motion.div>
+                    <XIcon className="size-5" />
+                  </div>
+                  <div className="relative isolate z-[1] size-full overflow-hidden rounded-2xl border-2 border-white">
+                    {i18n.currentLocale === "zh-CN" ? (
+                      <video
+                        autoPlay
+                        poster="https://static.oomol.com/assets/video-poster.webp"
+                        controls
+                        className="size-full rounded-2xl"
+                        onError={() => {
+                          console.error("Video failed to load");
+                        }}
+                      >
+                        <source
+                          src="https://static.oomol.com/assets/combination-CN.webm"
+                          type="video/webm"
+                        />
+                      </video>
+                    ) : (
+                      <iframe
+                        src={videoSrc}
+                        className="size-full rounded-2xl"
+                        allowFullScreen
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      ></iframe>
+                    )}
+                  </div>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>,
+          document.body
         )}
-      </AnimatePresence>
     </div>
   );
 }

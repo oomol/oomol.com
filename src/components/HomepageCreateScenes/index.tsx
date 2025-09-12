@@ -40,7 +40,7 @@ const createScenesData: CreateScenesDataType[] = [
 export default function HomepageCreateScenes() {
   const createScenesNodes = createScenesData.map((data, index) => {
     return (
-      <div className={styles.sectionCell}>
+      <div key={index} className={styles.sectionCell}>
         <div className={styles.createScenesText}>
           <span className={styles.createScenesTag}>{data.tag}</span>
           <div className={styles.createScenesTextTitle}>

@@ -4,9 +4,11 @@ import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
 import clsx from "clsx";
+import { HeroVideoDialog } from "../magic-ui/HeroVideoDialog";
 
 type ScenesDataType = {
   imageUrl: string;
+  videoSrc: string;
   title: string;
   inner: string;
   icon: string;
@@ -26,12 +28,13 @@ const FirstSceneCard: React.FC<FirstSceneCardProps> = ({ data }) => (
           overflow: "hidden",
         }}
       >
-        <Image
+        <HeroVideoDialog
           className={styles.scenesCardImage}
-          sources={{
-            light: useBaseUrl(data.imageUrl),
-            dark: useBaseUrl(data.imageUrl),
-          }}
+          animationStyle="from-center"
+          videoSrc={data.videoSrc}
+          thumbnailSrc={useBaseUrl(data.imageUrl)}
+          thumbnailAlt={data.title}
+          showPlayButtonOnHover={true}
         />
       </div>
       <div className={styles.scenesCardContent}>
