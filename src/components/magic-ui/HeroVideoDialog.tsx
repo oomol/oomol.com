@@ -135,7 +135,7 @@ export function HeroVideoDialog({
                 animate={{ opacity: 1 }}
                 onClick={() => setIsVideoOpen(false)}
                 exit={{ opacity: 0 }}
-                className="pt-24 fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-md"
+                className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-md"
                 style={{
                   position: "fixed",
                   top: 0,

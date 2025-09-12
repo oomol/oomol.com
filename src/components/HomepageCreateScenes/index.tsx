@@ -55,6 +55,7 @@ export default function HomepageCreateScenes() {
           videoSrc="https://www.youtube.com/embed/L3fYYybKWJE?si=gJ-r2pDJDdUtR_IM"
           thumbnailSrc={useBaseUrl(data.imageUrl)}
           thumbnailAlt="Hero Video"
+          showPlayButtonOnHover={true}
         />
       </div>
     );
