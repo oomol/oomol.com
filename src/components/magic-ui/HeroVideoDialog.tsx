@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Play, XIcon } from "lucide-react";
@@ -77,6 +77,22 @@ export function HeroVideoDialog({
 }: HeroVideoProps) {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const selectedAnimation = animationVariants[animationStyle];
+
+  // 管理页面滚动状态
+  useEffect(() => {
+    if (isVideoOpen) {
+      // 禁用页面滚动
+      document.body.style.overflow = 'hidden';
+    } else {
+      // 恢复页面滚动
+      document.body.style.overflow = 'unset';
+    }
+
+    // 清理函数：组件卸载时恢复滚动
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isVideoOpen]);
 
   return (
     <div className={cn("relative", className)}>
