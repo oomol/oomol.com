@@ -20,6 +20,7 @@ interface HeroVideoProps {
   thumbnailSrc: string;
   thumbnailAlt?: string;
   className?: string;
+  showPlayButtonOnHover?: boolean;
 }
 
 const animationVariants = {
@@ -71,6 +72,7 @@ export function HeroVideoDialog({
   thumbnailSrc,
   thumbnailAlt = "Video thumbnail",
   className,
+  showPlayButtonOnHover = false,
 }: HeroVideoProps) {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const selectedAnimation = animationVariants[animationStyle];
@@ -86,7 +88,10 @@ export function HeroVideoDialog({
           alt={thumbnailAlt}
           className="w-full md:max-w-full lg:max-w-7xl h-auto object-cover rounded-md border transition-all duration-200 ease-out group-hover:brightness-[0.8]"
         />
-        <div className="absolute inset-0 flex scale-[0.9] items-center justify-center rounded-2xl transition-all duration-200 ease-out group-hover:scale-100">
+        <div className={cn(
+          "absolute inset-0 flex scale-[0.9] items-center justify-center rounded-2xl transition-all duration-200 ease-out group-hover:scale-100",
+          showPlayButtonOnHover && "opacity-0 group-hover:opacity-100"
+        )}>
           <div className="flex size-28 items-center justify-center rounded-full bg-primary/10 backdrop-blur-md">
             <div
               className={`relative flex size-20 scale-100 items-center justify-center rounded-full bg-gradient-to-b from-primary/30 to-primary shadow-md transition-all duration-200 ease-out group-hover:scale-[1.2]`}

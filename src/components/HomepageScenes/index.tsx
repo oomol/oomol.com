@@ -114,14 +114,6 @@ export default function HomepageScenes() {
           <FirstSceneCard data={firstSceneData} />
           {restScenesNodes}
         </div>
-        <div className={styles.linkButtonContainer}>
-          <LinkBtn
-            text={translate({ message: "HOME.Scenes.link-button" })}
-            iconPos="right"
-            icon="i-codicon-arrow-right"
-            url="/docs/get-started/quickstarts"
-          />
-        </div>
       </div>
     </div>
   );

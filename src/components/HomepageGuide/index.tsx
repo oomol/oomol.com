@@ -34,11 +34,7 @@ export default function HomepageGuide() {
           text={translate({ message: "HOME.Guide.link-button-text" })}
           iconPos="right"
           icon="i-codicon:arrow-right"
-          url={
-            i18n.currentLocale === "zh-CN"
-              ? "https://oomol.com/zh-CN/docs/get-started/quickstarts"
-              : "https://oomol.com/docs/get-started/quickstarts/"
-          }
+          url={"https://hub.oomol.com/"}
         />
       </div>
     </section>
