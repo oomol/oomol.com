@@ -159,28 +159,28 @@ const config = {
           src: "img/logo.svg",
         },
         items: [
-          {
-            type: "dropdown",
-            label: "Product",
-            position: "left",
-            items: [
-              {
-                to: "/studio",
-                label: "navbar.oomol-studio",
-                className: "navbar-item-with-icon navbar-item-studio",
-              },
-              {
-                to: "/hub",
-                label: "navbar.oomol-hub",
-                className: "navbar-item-with-icon navbar-item-hub",
-              },
-              {
-                to: "/chat",
-                label: "navbar.oomol-chat",
-                className: "navbar-item-with-icon navbar-item-chat",
-              },
-            ],
-          },
+          // {
+          //   type: "dropdown",
+          //   label: "Product",
+          //   position: "left",
+          //   items: [
+          //     {
+          //       to: "/studio",
+          //       label: "navbar.oomol-studio",
+          //       className: "navbar-item-with-icon navbar-item-studio",
+          //     },
+          //     {
+          //       to: "/hub",
+          //       label: "navbar.oomol-hub",
+          //       className: "navbar-item-with-icon navbar-item-hub",
+          //     },
+          //     {
+          //       to: "/chat",
+          //       label: "navbar.oomol-chat",
+          //       className: "navbar-item-with-icon navbar-item-chat",
+          //     },
+          //   ],
+          // },
           {
             type: "doc",
             docId: "get-started/quickstarts",
