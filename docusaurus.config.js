@@ -167,14 +167,17 @@ const config = {
               {
                 to: "/studio",
                 label: "navbar.oomol-studio",
+                className: "navbar-item-with-icon navbar-item-studio",
               },
               {
                 to: "/hub",
                 label: "navbar.oomol-hub",
+                className: "navbar-item-with-icon navbar-item-hub",
               },
               {
                 to: "/chat",
                 label: "navbar.oomol-chat",
+                className: "navbar-item-with-icon navbar-item-chat",
               },
             ],
           },
