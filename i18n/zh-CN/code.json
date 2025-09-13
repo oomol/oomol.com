@@ -69,6 +69,15 @@
   "HOME.Scenes.media-processing.inner": {
     "message": "构建精密的 AI 图片处理工具，包括物体检测、图像增强、风格迁移、OCR识别和自动化图像分析，通过简单的拖拽界面轻松实现。"
   },
+  "HOME.Scenes.ai-image-edit.title": {
+    "message": "AI 图像编辑"
+  },
+  "HOME.Scenes.ai-image-edit.tag": {
+    "message": "图片内容"
+  },
+  "HOME.Scenes.ai-image-edit.inner": {
+    "message": "AI 图像编辑是一个强大的工作流工具，使用人工智能根据您的文本指令编辑和转换图像。无论您想要更改对象、修改场景还是应用创意变换，这个工具让复杂的图像编辑变得人人可用。"
+  },
   "HOME.Scenes.ai-vibe-coding.title": {
     "message": "AI Vibe Coding 自动生成"
   },
@@ -96,6 +105,42 @@
   "HOME.Scenes.text-processing.inner": {
     "message": "智能文本分析与处理，包括情感分析、关键词提取、文本摘要、翻译和内容生成，助力高效的文档处理工作流。"
   },
+  "HOME.Scenes.zip-archive-manipulation.title": {
+    "message": "ZIP 压缩包操作"
+  },
+  "HOME.Scenes.zip-archive-manipulation.tag": {
+    "message": "文件管理"
+  },
+  "HOME.Scenes.zip-archive-manipulation.inner": {
+    "message": "为 OOMOL 工作流平台提供的全面 ZIP 压缩包操作任务块集合。该包提供 15 个专业任务块，涵盖 ZIP 文件操作的各个方面，从基本的压缩和解压到高级功能如加密、编码转换和压缩包管理。"
+  },
+  "HOME.Scenes.txt-to-epub.title": {
+    "message": "TXT 转 EPUB"
+  },
+  "HOME.Scenes.txt-to-epub.tag": {
+    "message": "文档转换"
+  },
+  "HOME.Scenes.txt-to-epub.inner": {
+    "message": "一个将 TXT 格式文本文件转换为具有优雅排版设计的 EPUB 电子书的工具。"
+  },
+  "HOME.Scenes.video-downloader.title": {
+    "message": "视频下载器"
+  },
+  "HOME.Scenes.video-downloader.tag": {
+    "message": "媒体工具"
+  },
+  "HOME.Scenes.video-downloader.inner": {
+    "message": "一个简单易用的 YouTube 视频下载工具，可将您喜爱的视频保存到电脑中。无需技术知识即可离线观看视频。"
+  },
+  "HOME.Scenes.data-analysis.title": {
+    "message": "数据分析"
+  },
+  "HOME.Scenes.data-analysis.tag": {
+    "message": "数据分析"
+  },
+  "HOME.Scenes.data-analysis.inner": {
+    "message": "此项目用于分析用户上传的表格数据，然后根据用户需求以自定义格式输出。该项目使用 AI 分析用户意图，将其转换为代码，最终执行代码生成所需的格式化数据并在图表中显示。"
+  },
   "HOME.Scenes.audio-processing.title": {
     "message": "AI 音频处理"
   },
@@ -104,15 +149,6 @@
   },
   "HOME.Scenes.audio-processing.inner": {
     "message": "专业音频处理工具，支持语音识别、音频增强、噪音消除、音乐生成和声音分析，打造完整的音频处理解决方案。"
-  },
-  "HOME.Scenes.data-analysis.title": {
-    "message": "数据分析"
-  },
-  "HOME.Scenes.data-analysis.tag": {
-    "message": "数据科学"
-  },
-  "HOME.Scenes.data-analysis.inner": {
-    "message": "强大的数据分析平台，提供数据清洗、统计分析、机器学习建模和可视化图表，让数据洞察触手可及。"
   },
   "HOME.Scenes.automation.title": {
     "message": "流程自动化"

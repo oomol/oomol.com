@@ -70,6 +70,15 @@
   "HOME.Scenes.media-processing.inner": {
     "message": "Build sophisticated AI tools for image processing, including object detection, image enhancement, style transfer, OCR, and automated image analysis through easy drag-and-drop interfaces."
   },
+  "HOME.Scenes.ai-image-edit.title": {
+    "message": "AI Image Edit"
+  },
+  "HOME.Scenes.ai-image-edit.tag": {
+    "message": "Image Content"
+  },
+  "HOME.Scenes.ai-image-edit.inner": {
+    "message": "AI Image Edit is a powerful workflow tool that uses artificial intelligence to edit and transform images according to your text instructions. Whether you want to change objects, modify scenes, or apply creative transformations, this tool makes complex image editing accessible to everyone."
+  },
   "HOME.Scenes.ai-vibe-coding.title": {
     "message": "AI Vibe Coding Auto-Generation"
   },
@@ -97,6 +106,42 @@
   "HOME.Scenes.text-processing.inner": {
     "message": "Intelligent text analysis and processing, including sentiment analysis, keyword extraction, text summarization, translation, and content generation for efficient document workflows."
   },
+  "HOME.Scenes.zip-archive-manipulation.title": {
+    "message": "ZIP Archive Manipulation"
+  },
+  "HOME.Scenes.zip-archive-manipulation.tag": {
+    "message": "File Management"
+  },
+  "HOME.Scenes.zip-archive-manipulation.inner": {
+    "message": "A comprehensive collection of ZIP archive manipulation task blocks for the OOMOL workflow platform. This package provides 15 specialized task blocks covering all aspects of ZIP file operations, from basic compression and extraction to advanced features like encryption, encoding conversion, and archive management."
+  },
+  "HOME.Scenes.txt-to-epub.title": {
+    "message": "TXT to EPUB"
+  },
+  "HOME.Scenes.txt-to-epub.tag": {
+    "message": "Document Conversion"
+  },
+  "HOME.Scenes.txt-to-epub.inner": {
+    "message": "A tool for converting TXT format text files to EPUB eBooks with elegant typography design."
+  },
+  "HOME.Scenes.video-downloader.title": {
+    "message": "Video Downloader"
+  },
+  "HOME.Scenes.video-downloader.tag": {
+    "message": "Media Tools"
+  },
+  "HOME.Scenes.video-downloader.inner": {
+    "message": "A simple and user-friendly tool for downloading YouTube videos to your computer. Save your favorite videos for offline viewing without needing technical knowledge."
+  },
+  "HOME.Scenes.data-analysis.title": {
+    "message": "Data Analysis"
+  },
+  "HOME.Scenes.data-analysis.tag": {
+    "message": "Data Analysis"
+  },
+  "HOME.Scenes.data-analysis.inner": {
+    "message": "This project is used to analyze user-uploaded tabular data and then output it in a custom format according to user requirements. The project uses AI to analyze user intent, convert it into code, and finally execute the code to generate the required formatted data and display it in a chart."
+  },
   "HOME.Scenes.audio-processing.title": {
     "message": "AI Audio Processing"
   },
@@ -105,15 +150,6 @@
   },
   "HOME.Scenes.audio-processing.inner": {
     "message": "Professional audio processing tools supporting speech recognition, audio enhancement, noise reduction, music generation, and sound analysis for complete audio solutions."
-  },
-  "HOME.Scenes.data-analysis.title": {
-    "message": "Data Analysis"
-  },
-  "HOME.Scenes.data-analysis.tag": {
-    "message": "Data Science"
-  },
-  "HOME.Scenes.data-analysis.inner": {
-    "message": "Powerful data analysis platform providing data cleaning, statistical analysis, machine learning modeling, and visualization charts for accessible data insights."
   },
   "HOME.Scenes.automation.title": {
     "message": "Process Automation"
