@@ -61,13 +61,13 @@
     "message": "创建强大的 AI 视频处理工具，包括自动转录、翻译、字幕生成和内容分析，使用先进的 AI 模型和直观的可视化工作流。"
   },
   "HOME.Scenes.media-processing.title": {
-    "message": "AI 图片处理"
+    "message": "媒体编辑和处理"
   },
   "HOME.Scenes.media-processing.tag": {
-    "message": "图片内容"
+    "message": "媒体处理"
   },
   "HOME.Scenes.media-processing.inner": {
-    "message": "构建精密的 AI 图片处理工具，包括物体检测、图像增强、风格迁移、OCR识别和自动化图像分析，通过简单的拖拽界面轻松实现。"
+    "message": "为 OOMOL 平台提供的综合视频和音频处理工具包，提供由 FFmpeg 驱动的多媒体操作可重用模块集合。"
   },
   "HOME.Scenes.ai-image-edit.title": {
     "message": "AI 图像编辑"

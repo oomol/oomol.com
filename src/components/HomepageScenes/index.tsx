@@ -25,8 +25,8 @@ const scenesData: ScenesDataType[] = [
   {
     imageUrl: "/img/scenes/chat.png",
     videoSrc: "https://www.youtube.com/embed/L3fYYybKWJE?si=gJ-r2pDJDdUtR_IM",
-    title: translate({ message: "HOME.Scenes.data-science.title" }),
-    inner: translate({ message: "HOME.Scenes.data-science.inner" }),
+    title: translate({ message: "HOME.Scenes.media-processing.title" }),
+    inner: translate({ message: "HOME.Scenes.media-processing.inner" }),
     icon: "i-codicon-device-camera-video",
   },
   {

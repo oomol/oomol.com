@@ -62,13 +62,13 @@
     "message": "Create powerful AI tools for video processing, including automated transcription, translation, subtitling, and content analysis using advanced AI models and intuitive visual workflows."
   },
   "HOME.Scenes.media-processing.title": {
-    "message": "AI Image Processing"
+    "message": "Media editing and processing"
   },
   "HOME.Scenes.media-processing.tag": {
-    "message": "Image Content"
+    "message": "Media Processing"
   },
   "HOME.Scenes.media-processing.inner": {
-    "message": "Build sophisticated AI tools for image processing, including object detection, image enhancement, style transfer, OCR, and automated image analysis through easy drag-and-drop interfaces."
+    "message": "A comprehensive video and audio processing toolkit for OOMOL platform, providing a collection of reusable blocks for multimedia manipulation powered by FFmpeg."
   },
   "HOME.Scenes.ai-image-edit.title": {
     "message": "AI Image Edit"
