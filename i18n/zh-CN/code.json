@@ -379,10 +379,10 @@
     "message": "内置可直接调用的 LLM 模块，大幅提升 AI 工作流效率"
   },
   "HOME.GetStartedPrompt.title": {
-    "message": "立即开始创建 AI 工具"
+    "message": "立即开始使用 OOMOL"
   },
   "HOME.GetStartedPrompt.subtitle": {
-    "message": "加入数千名创作者，无需编程构建 AI 工具。下载 OOMOL，几分钟内将想法变成现实。"
+    "message": "立即下载 OOMOL，解锁您的终极生产力伙伴。"
   },
   "Easily connect code and services": {
     "message": "OOMOL Studio 通过直观的视觉交互轻松连接代码片段和 API 服务，帮助用户缩短从想法到产品的距离"
