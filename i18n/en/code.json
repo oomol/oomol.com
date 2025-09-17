@@ -50,7 +50,7 @@
     "message": "How to Use"
   },
   "HOME.Scenes.subtitle": {
-    "message": "Deeply understand both tools and user needs to deliver perfectly matched intelligent solutions."
+    "message": "Describe what you need, and OOMOL’s intelligent assistant will recommend the right tools for you."
   },
   "HOME.Scenes.data-science.title": {
     "message": "AI Video Processing"
@@ -62,13 +62,13 @@
     "message": "Create powerful AI tools for video processing, including automated transcription, translation, subtitling, and content analysis using advanced AI models and intuitive visual workflows."
   },
   "HOME.Scenes.media-processing.title": {
-    "message": "Media editing and processing"
+    "message": "Media Processing"
   },
   "HOME.Scenes.media-processing.tag": {
     "message": "Media Processing"
   },
   "HOME.Scenes.media-processing.inner": {
-    "message": "A comprehensive video and audio processing toolkit for OOMOL platform, providing a collection of reusable blocks for multimedia manipulation powered by FFmpeg."
+    "message": "A multimedia editing toolkit powered by FFmpeg, supporting video editing, format conversion, audio processing, and more."
   },
   "HOME.Scenes.ai-image-edit.title": {
     "message": "AI Image Edit"
@@ -77,7 +77,7 @@
     "message": "Image Content"
   },
   "HOME.Scenes.ai-image-edit.inner": {
-    "message": "AI Image Edit is a powerful workflow tool that uses artificial intelligence to edit and transform images according to your text instructions. Whether you want to change objects, modify scenes, or apply creative transformations, this tool makes complex image editing accessible to everyone."
+    "message": "Edit and transform images with text instructions using AI models. Easily change objects, adjust scenes, or add creative effects."
   },
   "HOME.Scenes.ai-vibe-coding.title": {
     "message": "AI Vibe Coding Auto-Generation"
@@ -86,7 +86,7 @@
     "message": "Smart Generation"
   },
   "HOME.Scenes.ai-vibe-coding.inner": {
-    "message": "Using AI Vibe Coding technology, simply describe your requirements and AI will automatically generate complete workflows and nodes to quickly create powerful AI tools without programming experience."
+    "message": "With AI Vibe Coding, just describe what you need — AI will automatically generate complete workflows and nodes, letting you build powerful AI tools quickly and easily, no programming required."
   },
   "HOME.Scenes.drag-drop-manual.title": {
     "message": "Drag-and-Drop Manual Creation"
@@ -95,7 +95,7 @@
     "message": "Visual Editor"
   },
   "HOME.Scenes.drag-drop-manual.inner": {
-    "message": "Use intuitive drag-and-drop interface to manually build workflows with precise control over each node and connection, perfect for customized AI tool development scenarios."
+    "message": "Easily build custom workflows with a simple drag-and-drop interface, giving you full control over every node and connection — ideal for creating tailored AI tools."
   },
   "HOME.Scenes.text-processing.title": {
     "message": "AI Text Processing"
@@ -113,7 +113,7 @@
     "message": "File Management"
   },
   "HOME.Scenes.zip-archive-manipulation.inner": {
-    "message": "A comprehensive collection of ZIP archive manipulation task blocks for the OOMOL workflow platform. This package provides 15 specialized task blocks covering all aspects of ZIP file operations, from basic compression and extraction to advanced features like encryption, encoding conversion, and archive management."
+    "message": "A professional ZIP archive toolkit covering compression, extraction, encryption, encoding conversion, and a variety of ZIP file operations."
   },
   "HOME.Scenes.txt-to-epub.title": {
     "message": "TXT to EPUB"
@@ -122,7 +122,7 @@
     "message": "Document Conversion"
   },
   "HOME.Scenes.txt-to-epub.inner": {
-    "message": "A tool for converting TXT format text files to EPUB eBooks with elegant typography design."
+    "message": "Convert TXT files into beautifully formatted EPUB eBooks."
   },
   "HOME.Scenes.pdf-processing.title": {
     "message": "PDF Processing"
@@ -131,7 +131,7 @@
     "message": "Document Tools"
   },
   "HOME.Scenes.pdf-processing.inner": {
-    "message": "This toolkit transforms your OOMOL workspace into a complete PDF processing powerhouse. With 15+ specialized blocks, you can handle everything from basic operations like merging and splitting to advanced features like OCR, form filling, and security management."
+    "message": "A comprehensive PDF toolkit that supports merging, splitting, OCR, form filling, security management, and more."
   },
   "HOME.Scenes.data-analysis.title": {
     "message": "Data Analysis"
@@ -140,7 +140,7 @@
     "message": "Data Analysis"
   },
   "HOME.Scenes.data-analysis.inner": {
-    "message": "This project is used to analyze user-uploaded tabular data and then output it in a custom format according to user requirements. The project uses AI to analyze user intent, convert it into code, and finally execute the code to generate the required formatted data and display it in a chart."
+    "message": "Analyze tabular data with AI and generate customized charts based on your needs."
   },
   "HOME.Scenes.audio-processing.title": {
     "message": "AI Audio Processing"
@@ -194,7 +194,7 @@
     "message": "How to Create"
   },
   "HOME.Create.subtitle": {
-    "message": "Easily create your own intelligent tools through visual workflows and powerful AI integration."
+    "message": "Effortlessly build your own intelligent tools with visual workflows and advanced AI integration."
   },
   "HOME.Create.card.title": {
     "message": "Start Creating Your AI Tools"
@@ -224,7 +224,7 @@
     "message": "Intelligent conversation tool. Use various AI features through natural language interaction."
   },
   "HOME.CommunityShare.title": {
-    "message": "Release and Share"
+    "message": "Publish and Share"
   },
   "HOME.CommunityShare.subtitle": {
     "message": "Join our vibrant community to share your creations, discover amazing tools, and collaborate with fellow creators."
@@ -290,7 +290,7 @@
     "message": "Release and Share"
   },
   "HOME.Guide.subtitle": {
-    "message": "Learn from the community's collective wisdom and contribute your expertise to drive AI tool innovation together."
+    "message": "Contribute your unique solutions, discover new ideas, and collaborate with the community to achieve more."
   },
   "HOME.Guide.link-button-text": {
     "message": "Explore All AI Tools"
@@ -377,7 +377,7 @@
     "message": "Built-in LLM blocks for improved AI workflow efficiency."
   },
   "HOME.GetStartedPrompt.title": {
-    "message": "Start Use OOMOL Today"
+    "message": "Start Using OOMOL Today"
   },
   "HOME.GetStartedPrompt.subtitle": {
     "message": "Download OOMOL now and unlock your ultimate productivity partner."
