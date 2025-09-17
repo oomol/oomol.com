@@ -123,7 +123,7 @@ const config = {
         },
         {
           name: "description",
-          content: "AI Programmable Workflow Platform",
+          content: "Create, Share and Use AI Tools",
         },
       ],
       headTags: [
@@ -136,7 +136,7 @@ const config = {
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "OOMOL",
-            tagline: "AI Programmable Workflow Platform",
+            tagline: "Create, Share and Use AI Tools",
             favicon: "img/favicon.ico",
             url: "https://oomol.com",
             sameAs: ["https://hub.oomol.com"],
@@ -159,11 +159,28 @@ const config = {
           src: "img/logo.svg",
         },
         items: [
-          {
-            to: "/features",
-            label: "Features",
-            position: "left",
-          },
+          // {
+          //   type: "dropdown",
+          //   label: "Product",
+          //   position: "left",
+          //   items: [
+          //     {
+          //       to: "/studio",
+          //       label: "navbar.oomol-studio",
+          //       className: "navbar-item-with-icon navbar-item-studio",
+          //     },
+          //     {
+          //       to: "/hub",
+          //       label: "navbar.oomol-hub",
+          //       className: "navbar-item-with-icon navbar-item-hub",
+          //     },
+          //     {
+          //       to: "/chat",
+          //       label: "navbar.oomol-chat",
+          //       className: "navbar-item-with-icon navbar-item-chat",
+          //     },
+          //   ],
+          // },
           {
             type: "doc",
             docId: "get-started/quickstarts",
@@ -184,6 +201,18 @@ const config = {
           {
             title: "Product",
             items: [
+              {
+                label: "OOMOL Studio",
+                to: "/studio",
+              },
+              {
+                label: "OOMOL Hub",
+                to: "/hub",
+              },
+              {
+                label: "OOMOL Chat",
+                to: "/chat",
+              },
               {
                 label: "Roadmap",
                 href: "https://github.com/orgs/oomol-lab/projects/1/views/1",

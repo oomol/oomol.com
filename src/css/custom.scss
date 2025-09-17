@@ -26,8 +26,8 @@
   --ifm-color-primary-light: #9c9dee;
   --ifm-color-primary-lighter: #abacf1;
   --ifm-color-primary-lightest: #d9d9f9;
-  --ifm-navbar-background-color: #010409;
-  --ifm-background-color: #010409 !important;
+  --ifm-navbar-background-color: #0b0b0b;
+  --ifm-background-color: #0b0b0b !important;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-menu-color-background-hover: #0d1117;
   --ifm-toc-link-color: #838b95;
@@ -206,6 +206,38 @@ $desktop-width: 1280px;
 
 $menu-link-default-color: #f0f6fc;
 $menu-link-secondary-color: #838b95;
+
+// 导航栏下拉菜单项图标样式
+.navbar-item-with-icon {
+  position: relative;
+  padding-left: 28px !important;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.navbar-item-studio::before {
+  background-image: url("/img/products/studio.svg");
+}
+
+.navbar-item-hub::before {
+  background-image: url("/img/products/hub.svg");
+}
+
+.navbar-item-chat::before {
+  background-image: url("/img/products/chat.svg");
+}
 
 // 文档页面 sidebar 样式
 .sidebar-submenu-item {

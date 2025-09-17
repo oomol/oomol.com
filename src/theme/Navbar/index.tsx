@@ -138,6 +138,12 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
               loading="lazy"
             />
           </Link>
+          {/* 当路由与文档路径匹配时，显示文档搜索框 */}
+          {isDocumentPath && (
+            <div className={styles.searchBar}>
+              <SearchBar />
+            </div>
+          )}
           {leftItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
           ))}
@@ -146,6 +152,7 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
             fallback={
               <NavbarItem
                 label={translate({ message: "Theme.Navbar.sign-in" })}
+                className={styles.signInButton}
               />
             }
           >
@@ -153,6 +160,7 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
               return (
                 <NavbarItem
                   style={{ cursor: "pointer" }}
+                  className={styles.signInButton}
                   label={
                     isSignedIn()
                       ? translate({ message: "Theme.Navbar.go-to-hub-flow" })
@@ -168,15 +176,6 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
           {rightItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
           ))}
-          {/* 当路由与文档路径匹配时，显示文档搜索框 */}
-          {isDocumentPath && (
-            <>
-              <div className={styles.searchBar}>
-                <SearchBar />
-              </div>
-              <div className={styles.cutLine} />
-            </>
-          )}
         </div>
         <div
           aria-label="Navigation bar toggle"

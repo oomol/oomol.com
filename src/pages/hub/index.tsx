@@ -1,56 +1,58 @@
-import styles from "./style.module.scss";
+import styles from "./styles.module.scss";
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import clsx from "clsx";
 import Layout from "../../theme/Layout";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { Spin } from "@site/src/components/Spin/Spin";
-import { FeatureBlockList } from "@site/src/components/FeatureBlockList/FeatureBlockList";
 import { translate } from "@docusaurus/Translate";
 
-const featuresData = {
-  sceneOne: {
-    title: translate({ message: "FEATURES.sceneOne.title" }),
+const shareData = {
+  flowCommunity: {
+    title: translate({ message: "SHARE.flowCommunity.title" }),
+    description: translate({ message: "SHARE.flowCommunity.description" }),
     features: [
       {
-        content: translate({ message: "FEATURES.sceneOne.content-1" }),
-        image: "/img/pages/features/feature-1.webp",
+        content: translate({ message: "SHARE.flowCommunity.feature1" }),
+        image: "/img/pages/share/publish-flow.svg",
       },
       {
-        content: translate({ message: "FEATURES.sceneOne.content-2" }),
-        image: "/img/pages/features/feature-2.webp",
+        content: translate({ message: "SHARE.flowCommunity.feature2" }),
+        image: "/img/pages/share/publish-flow.svg",
       },
       {
-        content: translate({ message: "FEATURES.sceneOne.content-3" }),
-        image: "/img/pages/features/feature-3.webp",
+        content: translate({ message: "SHARE.flowCommunity.feature3" }),
+        image: "/img/pages/share/publish-flow.svg",
       },
       {
-        content: translate({ message: "FEATURES.sceneOne.content-4" }),
-        image: "/img/pages/features/feature-4.webp",
+        content: translate({ message: "SHARE.flowCommunity.feature4" }),
+        image: "/img/pages/share/publish-flow.svg",
       },
     ],
   },
-  sceneTwo: {
-    title: translate({ message: "FEATURES.sceneTwo.title" }),
+  analytics: {
+    title: translate({ message: "SHARE.analytics.title" }),
+    description: translate({ message: "SHARE.analytics.description" }),
     features: [
       {
-        content: translate({ message: "FEATURES.sceneTwo.content-5" }),
-        image: "/img/pages/features/feature-5.webp",
+        content: translate({ message: "SHARE.analytics.feature1" }),
+        image: "/img/pages/share/publish-flow.svg",
       },
       {
-        content: translate({ message: "FEATURES.sceneTwo.content-6" }),
-        image: "/img/pages/features/feature-6.webp",
+        content: translate({ message: "SHARE.analytics.feature2" }),
+        image: "/img/pages/share/publish-flow.svg",
       },
       {
-        content: translate({ message: "FEATURES.sceneTwo.content-7" }),
-        image: "/img/pages/features/feature-7.webp",
+        content: translate({ message: "SHARE.analytics.feature3" }),
+        image: "/img/pages/share/publish-flow.svg",
       },
     ],
   },
 };
 
-interface FeaturesBlockProps {
+interface ShareBlockProps {
   title: string;
+  description: string;
   features: {
     content: string;
     image: string;
@@ -58,11 +60,12 @@ interface FeaturesBlockProps {
   layoutReverse?: boolean;
 }
 
-const FeaturesBlock = ({
+const ShareBlock = ({
   title,
+  description,
   features,
   layoutReverse,
-}: FeaturesBlockProps) => {
+}: ShareBlockProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const timerRef = useRef<NodeJS.Timeout | null>(null);
@@ -98,12 +101,13 @@ const FeaturesBlock = ({
 
   return (
     <div
-      className={clsx(styles.featuresBlock, {
+      className={clsx(styles.shareBlock, {
         [styles.layoutReverse]: layoutReverse,
       })}
     >
-      <div className={styles.featuresLeft}>
-        <h1 className={styles.featureTitle}>{title}</h1>
+      <div className={styles.shareLeft}>
+        <h1 className={styles.shareTitle}>{title}</h1>
+        <p className={styles.shareDescription}>{description}</p>
         {features.map((item, index) => {
           const isActive = index === currentIndex;
 
@@ -147,6 +151,7 @@ const FeaturesBlock = ({
               index === currentIndex && styles.imageVisible
             )}
             src={feature.image}
+            alt={feature.content}
           />
         ))}
       </div>
@@ -154,31 +159,32 @@ const FeaturesBlock = ({
   );
 };
 
-export default function Index() {
+export default function SharePage() {
   return (
     <Layout>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.title}>
-            {translate({ message: "FEATURES.title" })}
-          </h2>
+          <h2 className={styles.title}>{translate({ message: "SHARE.title" })}</h2>
           <span className={styles.description}>
-            {translate({ message: "FEATURES.description" })}
+            {translate({ message: "SHARE.description" })}
           </span>
+          <div className={styles.productInfo}>
+            <h3>OOMOL Hub</h3>
+            <p>{translate({ message: "SHARE.hub.description" })}</p>
+          </div>
         </div>
-        <div className={styles["features-wrapper"]}>
-          <FeaturesBlock
-            title={featuresData.sceneOne.title}
-            features={featuresData.sceneOne.features}
+        <div className={styles["share-wrapper"]}>
+          <ShareBlock
+            title={shareData.flowCommunity.title}
+            description={shareData.flowCommunity.description}
+            features={shareData.flowCommunity.features}
           />
-          <FeaturesBlock
-            title={featuresData.sceneTwo.title}
-            features={featuresData.sceneTwo.features}
+          <ShareBlock
+            title={shareData.analytics.title}
+            description={shareData.analytics.description}
+            features={shareData.analytics.features}
             layoutReverse
           />
-        </div>
-        <div className={styles.blocks}>
-          <FeatureBlockList />
         </div>
         <GetStartedPrompt />
       </div>

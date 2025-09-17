@@ -1,0 +1,7 @@
+.videoContainer {
+  max-width: 60rem;
+
+  @media screen and (max-width: 1700px) {
+    max-width: 52rem;
+  }
+}

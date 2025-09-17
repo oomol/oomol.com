@@ -1,0 +1,102 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ef4444;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="#0f172a" rx="12"/>
+  
+  <!-- Grid background -->
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1e293b" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="300" fill="url(#grid)"/>
+  
+  <!-- Node 1: Input -->
+  <g transform="translate(50, 80)">
+    <rect width="80" height="50" rx="8" fill="url(#gradient1)" opacity="0.9"/>
+    <text x="40" y="20" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">INPUT</text>
+    <text x="40" y="35" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8">Data Source</text>
+    <!-- Output port -->
+    <circle cx="85" cy="25" r="4" fill="#3b82f6" stroke="white" stroke-width="2"/>
+  </g>
+  
+  <!-- Node 2: AI Processing -->
+  <g transform="translate(180, 60)">
+    <rect width="100" height="70" rx="8" fill="url(#gradient2)" opacity="0.9"/>
+    <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">AI PROCESSING</text>
+    <text x="50" y="40" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8">Machine Learning</text>
+    <text x="50" y="55" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8">Algorithm</text>
+    <!-- Input port -->
+    <circle cx="-5" cy="35" r="4" fill="#10b981" stroke="white" stroke-width="2"/>
+    <!-- Output port -->
+    <circle cx="105" cy="35" r="4" fill="#10b981" stroke="white" stroke-width="2"/>
+  </g>
+  
+  <!-- Node 3: Output -->
+  <g transform="translate(320, 80)">
+    <rect width="80" height="50" rx="8" fill="url(#gradient3)" opacity="0.9"/>
+    <text x="40" y="20" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">OUTPUT</text>
+    <text x="40" y="35" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8">Result</text>
+    <!-- Input port -->
+    <circle cx="-5" cy="25" r="4" fill="#f59e0b" stroke="white" stroke-width="2"/>
+  </g>
+  
+  <!-- Node 4: Configuration -->
+  <g transform="translate(180, 170)">
+    <rect width="100" height="50" rx="8" fill="rgba(139, 92, 246, 0.8)" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="50" y="20" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">CONFIG</text>
+    <text x="50" y="35" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8">Parameters</text>
+    <!-- Output port -->
+    <circle cx="50" cy="-5" r="4" fill="#8b5cf6" stroke="white" stroke-width="2"/>
+  </g>
+  
+  <!-- Connections -->
+  <!-- Input to AI Processing -->
+  <path d="M 135 105 Q 150 105 175 95" stroke="#3b82f6" stroke-width="3" fill="none" opacity="0.8"/>
+  
+  <!-- AI Processing to Output -->
+  <path d="M 285 95 Q 300 95 315 105" stroke="#10b981" stroke-width="3" fill="none" opacity="0.8"/>
+  
+  <!-- Config to AI Processing -->
+  <path d="M 230 165 Q 230 150 230 130" stroke="#8b5cf6" stroke-width="3" fill="none" opacity="0.8"/>
+  
+  <!-- Flow indicators -->
+  <g>
+    <!-- Arrow 1 -->
+    <polygon points="160,100 170,95 170,105" fill="#3b82f6" opacity="0.8"/>
+    <!-- Arrow 2 -->
+    <polygon points="300,100 310,95 310,105" fill="#10b981" opacity="0.8"/>
+    <!-- Arrow 3 -->
+    <polygon points="225,145 230,135 235,145" fill="#8b5cf6" opacity="0.8"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="200" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Visual AI Workflow</text>
+  
+  <!-- Floating elements for visual appeal -->
+  <g opacity="0.6">
+    <circle cx="350" cy="40" r="3" fill="#3b82f6">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="60" cy="50" r="2" fill="#10b981">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="340" cy="250" r="2.5" fill="#f59e0b">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
