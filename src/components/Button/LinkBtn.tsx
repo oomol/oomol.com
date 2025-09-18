@@ -22,7 +22,11 @@ export default function LinkBtn({
       onClick={() => url && window.open(url, "_blank")}
     >
       <div className={styles.linkBtn}>
-        <i className={`${icon} ${styles.linkIcon}`} />
+        {typeof icon === "string" ? (
+          <i className={`${icon} ${styles.linkIcon}`} />
+        ) : (
+          <span className={styles.linkIcon}>{icon}</span>
+        )}
         <div className={styles.linkText}>{text}</div>
       </div>
     </button>
