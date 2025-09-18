@@ -202,18 +202,6 @@ const config = {
             title: "Product",
             items: [
               {
-                label: "OOMOL Studio",
-                to: "/studio",
-              },
-              {
-                label: "OOMOL Hub",
-                to: "/hub",
-              },
-              {
-                label: "OOMOL Chat",
-                to: "/chat",
-              },
-              {
                 label: "Roadmap",
                 href: "https://github.com/orgs/oomol-lab/projects/1/views/1",
               },
