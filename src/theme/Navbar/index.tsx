@@ -18,11 +18,11 @@ const isSignedIn = () => {
   return cookies.some(cookie => cookie.includes("oomol-signed-in"));
 };
 
-const CALLBACK_URL = "https://hub.oomol.com";
+const CALLBACK_URL = "https://chat.oomol.com/";
 
 const handleSignin = () => {
   if (isSignedIn()) {
-    return window.open("https://hub.oomol.com", "_self");
+    return window.open(CALLBACK_URL, "_self");
   }
 
   const redirectURL = `https://api.oomol.com/v1/auth/redirect?redirect=${encodeURIComponent(CALLBACK_URL)}`;
