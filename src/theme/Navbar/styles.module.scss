@@ -15,6 +15,28 @@
   cursor: pointer;
 }
 
+.gotoHubButton {
+  background: inherit;
+  border: 1px solid #3d444d;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+
+  margin: 0 !important;
+
+  &:hover {
+    color: #7d7fe9 !important;
+    border-color: #7d7fe9;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
 .brand {
   display: flex;
   align-items: center;
