@@ -2,6 +2,9 @@
   "Theme.Navbar.go-to-hub-flow": {
     "message": "前往创造平台"
   },
+  "Theme.Navbar.use-in-chat": {
+    "message": "在 Chat 中使用"
+  },
   "Theme.Navbar.sign-in": {
     "message": "登录"
   },
