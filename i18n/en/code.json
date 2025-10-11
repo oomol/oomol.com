@@ -2,6 +2,9 @@
   "Theme.Navbar.go-to-hub-flow": {
     "message": "Go to Community"
   },
+  "Theme.Navbar.use-in-chat": {
+    "message": "Use in Chat"
+  },
   "Theme.Navbar.sign-in": {
     "message": "Sign in"
   },

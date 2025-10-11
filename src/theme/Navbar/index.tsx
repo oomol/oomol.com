@@ -163,7 +163,7 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
                   className={styles.signInButton}
                   label={
                     isSignedIn()
-                      ? translate({ message: "Theme.Navbar.go-to-hub-flow" })
+                      ? translate({ message: "Theme.Navbar.use-in-chat" })
                       : translate({ message: "Theme.Navbar.sign-in" })
                   }
                   onClick={handleSignin}
