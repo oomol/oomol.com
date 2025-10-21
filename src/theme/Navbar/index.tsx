@@ -21,13 +21,18 @@ const isSignedIn = () => {
 
 const CALLBACK_URL = "https://chat.oomol.com/";
 
-const handleSignin = () => {
-  if (isSignedIn()) {
-    return window.open(CALLBACK_URL, "_self");
-  }
+const handleSignin = (locale: string) => {
+  // if (isSignedIn()) {
+  //   return window.open(CALLBACK_URL, "_self");
+  // }
 
-  const redirectURL = `https://api.oomol.com/v1/auth/redirect?redirect=${encodeURIComponent(CALLBACK_URL)}`;
-  window.open(redirectURL, "_self");
+  // const redirectURL = `https://api.oomol.com/v1/auth/redirect?redirect=${encodeURIComponent(CALLBACK_URL)}`;
+  // window.open(redirectURL, "_self");
+  const downloadUrl =
+    locale === "zh-CN"
+      ? "https://oomol.com/zh-CN/downloads/"
+      : "https://oomol.com/downloads/";
+  window.open(downloadUrl, "_self");
 };
 
 interface NavbarProps {}
@@ -167,12 +172,14 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
                   <NavbarItem
                     style={{ cursor: "pointer" }}
                     className={styles.signInButton}
-                    label={
-                      isSignedIn()
-                        ? translate({ message: "Theme.Navbar.use-in-chat" })
-                        : translate({ message: "Theme.Navbar.sign-in" })
-                    }
-                    onClick={handleSignin}
+                    // label={
+                    //   isSignedIn()
+                    //      ? translate({ message: "Theme.Navbar.use-in-chat" })
+                    //     : translate({ message: "Theme.Navbar.sign-in" })
+                    // }
+                    // TODO: Temporarily change to "Download Now" button
+                    label={translate({ message: "Theme.Navbar.download-now" })}
+                    onClick={() => handleSignin(locale)}
                   />
                 );
               }}
