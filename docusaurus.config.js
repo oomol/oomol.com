@@ -149,8 +149,8 @@ const config = {
       // Replace with your project's social card
       colorMode: {
         defaultMode: "dark",
-        disableSwitch: true,
-        respectPrefersColorScheme: false,
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
       },
       navbar: {
         title: "OOMOL",

@@ -14,6 +14,15 @@
     Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
     "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei",
     "Source Han Sans CN", sans-serif;
+
+  /* Light mode colors */
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-background-color: #ffffff;
+  --ifm-font-color-base: #1c1e21;
+  --ifm-menu-color-background-hover: #f5f6f7;
+  --ifm-toc-link-color: #606770;
+  --ifm-navbar-link-color: #1c1e21;
+  --ifm-footer-background-color: #ffffff;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -28,9 +37,12 @@
   --ifm-color-primary-lightest: #d9d9f9;
   --ifm-navbar-background-color: #0b0b0b;
   --ifm-background-color: #0b0b0b !important;
+  --ifm-font-color-base: #f0f6fc;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-menu-color-background-hover: #0d1117;
   --ifm-toc-link-color: #838b95;
+  --ifm-navbar-link-color: #f0f6fc;
+  --ifm-footer-background-color: #0b0b0b;
 }
 
 #__docusaurus {
@@ -54,6 +66,10 @@
   background-color: white;
   margin-top: 48px;
   margin-bottom: 48px;
+}
+
+[data-theme="dark"] .footer {
+  background-color: #0b0b0b;
 }
 
 .footer__links {
@@ -87,6 +103,27 @@
 
   .navbar__inner {
     justify-content: unset;
+  }
+}
+
+/* Light mode navbar styles */
+[data-theme="light"] .navbar {
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar link colors */
+[data-theme="light"] {
+  .navbar__link {
+    color: #1c1e21;
+
+    &:hover {
+      color: #7d7fe9;
+    }
+  }
+
+  .navbar__link--active {
+    color: #7d7fe9;
   }
 }
 

@@ -73,6 +73,14 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 12px;
+}
+
+.colorModeToggle {
+  display: flex;
+  align-items: center;
+  margin: 0 !important;
+  padding: 4px;
 }
 
 .searchBar {
