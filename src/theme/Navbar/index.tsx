@@ -157,6 +157,7 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
             <NavbarItem
               label={translate({ message: "Theme.Navbar.go-to-hub-flow" })}
               className={styles.gotoHubButton}
+              href="https://hub.oomol.com/"
             />
             <BrowserOnly
               // TODO: This is a temporary fallback element used to prevent layout issues.
