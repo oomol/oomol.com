@@ -15,7 +15,7 @@
   display: flex;
   border-radius: 20px;
   padding: 0 40px;
-  background: linear-gradient(90deg, #0d1117 0%, #010409 100%);
+  background: var(--oomol-bg-elevated);
 }
 
 .textBox {
@@ -26,7 +26,7 @@
 .title {
   font-size: 48px;
   font-weight: 800;
-  color: #f0f6fc;
+  color: var(--oomol-text-primary);
   margin-bottom: 14px;
 }
 

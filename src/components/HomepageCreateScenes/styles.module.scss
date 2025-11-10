@@ -127,7 +127,7 @@
   gap: 8px;
   font-size: 24px;
   font-weight: 900;
-  color: #f0f6fc;
+  color: var(--oomol-text-primary);
 }
 
 .createScenesTag {
@@ -138,8 +138,8 @@
   margin-bottom: 14px;
   font-size: 12px;
   font-weight: 500;
-  color: #f0f6fc;
-  background-color: #0d1116;
+  color: var(--oomol-text-primary);
+  background-color: var(--oomol-bg-elevated);
   border-radius: 100px;
   text-align: center;
   overflow: hidden;
@@ -179,7 +179,7 @@
   margin-bottom: 20px;
   font-size: 16px;
   font-weight: 400;
-  color: #8b949e;
+  color: var(--oomol-text-secondary);
 }
 
 .video {
