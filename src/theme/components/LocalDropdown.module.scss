@@ -19,6 +19,10 @@
   color: var(--oomol-text-primary);
 }
 
+:global(html[data-theme="dark"]) .language-btn {
+  color: var(--oomol-text-primary);
+}
+
 .content {
   position: absolute;
   bottom: 24px;
