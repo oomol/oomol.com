@@ -93,6 +93,8 @@ const featuresData = {
   },
 };
 
+const TRANSITION_DURATION_MS = 5 * 1000;
+
 interface CreateBlockProps {
   title: string;
   description: string;
@@ -121,8 +123,6 @@ const CreateBlock = ({
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const timerRef = useRef<NodeJS.Timeout | null>(null);
-
-  const TRANSITION_DURATION_MS = 5 * 1000;
 
   const startAutoplayTimer = useCallback(() => {
     if (timerRef.current) {
@@ -219,8 +219,6 @@ const FeaturesBlock = ({
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const timerRef = useRef<NodeJS.Timeout | null>(null);
-
-  const TRANSITION_DURATION_MS = 5 * 1000;
 
   const startAutoplayTimer = useCallback(() => {
     if (timerRef.current) {

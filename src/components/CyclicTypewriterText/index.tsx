@@ -48,11 +48,13 @@ export const CyclicTypewriterText: React.FC<CyclicTypewriterTextProps> = ({
         }, speed);
       } else {
         // 打字完成，进入等待状态，隐藏光标
-        setIsWaiting(true);
         timer = setTimeout(() => {
-          setIsWaiting(false);
-          setIsTyping(false);
-        }, cycleInterval - currentText.length * speed);
+          setIsWaiting(true);
+          setTimeout(() => {
+            setIsWaiting(false);
+            setIsTyping(false);
+          }, cycleInterval - currentText.length * speed);
+        }, 0);
       }
     } else {
       // 删除阶段
@@ -73,17 +75,23 @@ export const CyclicTypewriterText: React.FC<CyclicTypewriterTextProps> = ({
 
   // 光标闪烁效果
   useEffect(() => {
+    let cursorTimer: NodeJS.Timeout;
+
     if (isWaiting) {
       // 在等待期间隐藏光标
-      setShowCursor(false);
-      return;
+      cursorTimer = setTimeout(() => {
+        setShowCursor(false);
+      }, 0);
+    } else {
+      cursorTimer = setInterval(() => {
+        setShowCursor(prev => !prev);
+      }, 500);
     }
 
-    const cursorTimer = setInterval(() => {
-      setShowCursor(prev => !prev);
-    }, 500);
-
-    return () => clearInterval(cursorTimer);
+    return () => {
+      clearTimeout(cursorTimer);
+      clearInterval(cursorTimer);
+    };
   }, [isWaiting]);
 
   return (

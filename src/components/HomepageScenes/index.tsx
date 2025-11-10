@@ -113,7 +113,7 @@ export default function HomepageScenes() {
       restScenesData.map((data, index) => (
         <SceneCard key={index + 1} data={data} isFirst={false} />
       )),
-    []
+    [restScenesData]
   );
   return (
     <div className={styles.scenes}>

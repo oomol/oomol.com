@@ -12,7 +12,7 @@ interface GradualSpacingProps {
   className?: string;
 }
 
-export const GradualSpacing = memo(
+const GradualSpacingComponent = memo(
   ({
     text,
     duration = 0.5,
@@ -62,3 +62,7 @@ export const GradualSpacing = memo(
     );
   }
 );
+
+GradualSpacingComponent.displayName = "GradualSpacing";
+
+export const GradualSpacing = GradualSpacingComponent;

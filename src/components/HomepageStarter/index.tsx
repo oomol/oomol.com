@@ -2,10 +2,13 @@ import React, { useMemo } from "react";
 import styles from "./styles.module.scss";
 import { useColorMode } from "@docusaurus/theme-common";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import type { DocusaurusContext } from "@docusaurus/types";
 
 export default function HomepageStarter() {
   const { colorMode } = useColorMode();
-  const { i18n } = useDocusaurusContext() as any;
+  const { i18n } = useDocusaurusContext() as DocusaurusContext & {
+    i18n: { currentLocale: string };
+  };
   const locale = i18n.currentLocale;
 
   const logoSrc = useMemo(() => {

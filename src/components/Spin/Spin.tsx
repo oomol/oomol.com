@@ -35,6 +35,8 @@ const BackgroundCircle = memo(
   )
 );
 
+BackgroundCircle.displayName = "BackgroundCircle";
+
 const ProgressCircle = memo(
   ({
     cx,
@@ -74,7 +76,9 @@ const ProgressCircle = memo(
   )
 );
 
-export const Spin: React.FC<SpinProps> = memo(
+ProgressCircle.displayName = "ProgressCircle";
+
+const SpinComponent: React.FC<SpinProps> = memo(
   ({
     progress,
     size = 40,
@@ -104,11 +108,12 @@ export const Spin: React.FC<SpinProps> = memo(
         return;
       }
 
-      setInternalProgress(0);
-
       const timer = setTimeout(() => {
-        setInternalProgress(100);
-      }, 50);
+        setInternalProgress(0);
+        setTimeout(() => {
+          setInternalProgress(100);
+        }, 50);
+      }, 0);
 
       return () => clearTimeout(timer);
     }, [progress]);
@@ -152,3 +157,7 @@ export const Spin: React.FC<SpinProps> = memo(
     );
   }
 );
+
+SpinComponent.displayName = "Spin";
+
+export const Spin = SpinComponent;

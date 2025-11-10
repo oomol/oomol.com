@@ -172,7 +172,7 @@ export default function BrandAssets() {
       window.removeEventListener("scroll", handleScroll);
       if (scrollTimer) clearTimeout(scrollTimer);
     };
-  }, [sections, isManualScroll.current]);
+  }, [sections, isScrolling]);
 
   return (
     <Layout>

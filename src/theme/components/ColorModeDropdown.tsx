@@ -21,16 +21,13 @@ const modeIconMap: Record<ColorModeType, string> = {
 export const ColorModeDropdown = () => {
   const { colorMode, setColorMode } = useColorMode();
   const [isShow, setIsShow] = useState(false);
-  const [selectedMode, setSelectedMode] = useState<ColorModeType>("system");
-
-  useEffect(() => {
-    const storedMode = localStorage.getItem("theme") as ColorModeType | null;
-    if (storedMode) {
-      setSelectedMode(storedMode);
-    } else {
-      setSelectedMode("system");
+  const [selectedMode, setSelectedMode] = useState<ColorModeType>(() => {
+    if (typeof window !== 'undefined') {
+      const storedMode = localStorage.getItem("theme") as ColorModeType | null;
+      return storedMode || "system";
     }
-  }, []);
+    return "system";
+  });
 
   useEffect(() => {
     if (selectedMode !== "system") return;

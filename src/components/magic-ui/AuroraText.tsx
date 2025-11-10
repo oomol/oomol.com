@@ -9,7 +9,7 @@ interface AuroraTextProps {
   speed?: number;
 }
 
-export const AuroraText = memo(
+const AuroraTextComponent = memo(
   ({
     children,
     className = "",
@@ -39,3 +39,7 @@ export const AuroraText = memo(
     );
   }
 );
+
+AuroraTextComponent.displayName = "AuroraText";
+
+export const AuroraText = AuroraTextComponent;

@@ -2,6 +2,7 @@ import styles from "./styles.module.scss";
 
 import React, { useState, useMemo } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import type { DocusaurusContext } from "@docusaurus/types";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import clsx from "clsx";
 import { LocalDropdown } from "../components/LocalDropdown";
@@ -104,7 +105,17 @@ const logoNodeDataCN: LogoNodeDataType[] = [
 ];
 
 const Footer: React.FC = () => {
-  const { siteConfig, i18n } = useDocusaurusContext() as any;
+  const { siteConfig, i18n } = useDocusaurusContext() as DocusaurusContext & {
+    siteConfig: {
+      themeConfig: {
+        footer: {
+          copyright: string;
+          links: Array<{ title: string; items: FooterLinkProps[] }>
+        }
+      }
+    };
+    i18n: { currentLocale: string };
+  };
   const { copyright, links = [] } = siteConfig.themeConfig.footer;
   const hasFooter = !!siteConfig.themeConfig.footer;
   const currentLocale = i18n.currentLocale;

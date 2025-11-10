@@ -50,6 +50,8 @@ const useData = {
   },
 };
 
+const TRANSITION_DURATION_MS = 5 * 1000;
+
 interface UseBlockProps {
   title: string;
   description: string;
@@ -69,8 +71,6 @@ const UseBlock = ({
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const timerRef = useRef<NodeJS.Timeout | null>(null);
-
-  const TRANSITION_DURATION_MS = 5 * 1000;
 
   const startAutoplayTimer = useCallback(() => {
     if (timerRef.current) {

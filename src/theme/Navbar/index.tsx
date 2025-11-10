@@ -4,6 +4,7 @@ import NavbarItem from "@theme/NavbarItem";
 import React, { memo, useMemo } from "react";
 import type { ComponentProps } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import type { DocusaurusContext } from "@docusaurus/types";
 import { useLocation } from "@docusaurus/router";
 import SearchBar from "@theme/SearchBar";
 import clsx from "clsx";
@@ -57,7 +58,10 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
       },
     },
     i18n,
-  } = useDocusaurusContext() as any;
+  } = useDocusaurusContext() as DocusaurusContext & {
+    siteConfig: { themeConfig: { navbar: { items: Array<ComponentProps<typeof NavbarItem>> } } };
+    i18n: { currentLocale: string };
+  };
   const locale = i18n.currentLocale;
   const location = useLocation();
 

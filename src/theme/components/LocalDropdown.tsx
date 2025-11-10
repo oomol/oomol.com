@@ -2,6 +2,7 @@ import styles from "./LocalDropdown.module.scss";
 
 import { useLocation } from "@docusaurus/router";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import type { DocusaurusContext } from "@docusaurus/types";
 import { useAlternatePageUtils } from "@docusaurus/theme-common/internal";
 import { Button } from "@site/src/components/Button";
 import { useState } from "react";
@@ -23,14 +24,20 @@ const formateLocale = (locale: string) => {
 export const LocalDropdown = ({ queryString = "" }: LocalDropdownProps) => {
   const {
     i18n: { currentLocale, locales },
-  } = useDocusaurusContext() as any;
+  } = useDocusaurusContext() as DocusaurusContext & {
+    i18n: { currentLocale: string; locales: string[] };
+  };
   const alternatePageUtils = useAlternatePageUtils();
   const { search, hash } = useLocation();
 
   const [isShow, setIsShow] = useState(false);
 
   const handleLocaleChange = (locale: string) => {
-    document.cookie = `OOMOL_LOCALE=${locale}; path=/; domain=.${location.host}; max-age=31536000`;
+    // 使用 useEffect 或其他方式处理 cookie,避免在组件中直接修改外部状态
+    if (typeof window !== 'undefined') {
+      const newCookie = `OOMOL_LOCALE=${locale}; path=/; domain=.${window.location.host}; max-age=31536000`;
+      window.document.cookie = newCookie;
+    }
 
     if (locale === currentLocale) {
       return;

@@ -5,15 +5,15 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-const callback = function (url: any) {
+const callback = function (url: string) {
   if (typeof url != "undefined") {
-    window.location = url;
+    window.location.href = url;
   }
 };
 
 export function downloadStable(
   event: null | React.MouseEvent<HTMLElement, MouseEvent>,
-  url: any
+  url: string
 ) {
   event?.preventDefault();
 

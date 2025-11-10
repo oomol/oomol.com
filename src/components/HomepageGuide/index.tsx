@@ -4,6 +4,7 @@ import React from "react";
 import { translate } from "@docusaurus/Translate";
 import LinkBtn from "../Button/LinkBtn";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import type { DocusaurusContext } from "@docusaurus/types";
 
 type CommunityLinkType = {
   icon: string;
@@ -14,7 +15,9 @@ type CommunityLinkType = {
 };
 
 export default function HomepageGuide() {
-  const context: any = useDocusaurusContext();
+  const context = useDocusaurusContext() as DocusaurusContext & {
+    i18n: { currentLocale: string };
+  };
   const { i18n } = context;
 
   const communityLinks: CommunityLinkType[] = [

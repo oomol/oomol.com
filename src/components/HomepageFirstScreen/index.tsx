@@ -9,11 +9,12 @@ import clsx from "clsx";
 import { DownloadButton } from "../DownloadButton";
 import LinkBtn from "../Button/LinkBtn";
 
-import TypewriterText from "../TypewriterText";
-import CyclicTypewriterText from "../CyclicTypewriterText";
+import type { DocusaurusContext } from "@docusaurus/types";
 
 export default function HomepageFirstScreen() {
-  const context: any = useDocusaurusContext();
+  const context = useDocusaurusContext() as DocusaurusContext & {
+    i18n: { currentLocale: string };
+  };
   const { i18n } = context;
 
   return (

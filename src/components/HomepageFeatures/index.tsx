@@ -7,6 +7,7 @@ import { BlurFade } from "../magic-ui/BlurFade";
 import clsx from "clsx";
 import LinkBtn from "../Button/LinkBtn";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import type { DocusaurusContext } from "@docusaurus/types";
 
 type SuperiorityType = {
   imageUrl: string;
@@ -83,7 +84,9 @@ export const FeatureItem = ({
 };
 
 export default function HomepageFeatures() {
-  const context: any = useDocusaurusContext();
+  const context = useDocusaurusContext() as DocusaurusContext & {
+    i18n: { currentLocale: string };
+  };
   const { i18n } = context;
   return (
     <section className={styles.container}>
