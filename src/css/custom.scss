@@ -1,4 +1,5 @@
 @import "./font.scss";
+@import "./design-tokens.scss";
 
 :root {
   --ifm-color-primary: #7d7fe9;
@@ -15,14 +16,14 @@
     "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei",
     "Source Han Sans CN", sans-serif;
 
-  /* Light mode colors */
-  --ifm-navbar-background-color: #ffffff;
-  --ifm-background-color: #ffffff;
-  --ifm-font-color-base: #1c1e21;
-  --ifm-menu-color-background-hover: #f5f6f7;
-  --ifm-toc-link-color: #606770;
-  --ifm-navbar-link-color: #1c1e21;
-  --ifm-footer-background-color: #ffffff;
+  /* Light mode colors - 使用 design tokens */
+  --ifm-navbar-background-color: var(--oomol-bg-base);
+  --ifm-background-color: var(--oomol-bg-base);
+  --ifm-font-color-base: var(--oomol-text-primary);
+  --ifm-menu-color-background-hover: var(--oomol-hover-bg);
+  --ifm-toc-link-color: var(--oomol-text-secondary);
+  --ifm-navbar-link-color: var(--oomol-text-primary);
+  --ifm-footer-background-color: var(--oomol-bg-base);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -35,14 +36,14 @@
   --ifm-color-primary-light: #9c9dee;
   --ifm-color-primary-lighter: #abacf1;
   --ifm-color-primary-lightest: #d9d9f9;
-  --ifm-navbar-background-color: #0b0b0b;
-  --ifm-background-color: #0b0b0b !important;
-  --ifm-font-color-base: #f0f6fc;
+  --ifm-navbar-background-color: var(--oomol-bg-base);
+  --ifm-background-color: var(--oomol-bg-base) !important;
+  --ifm-font-color-base: var(--oomol-text-primary);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  --ifm-menu-color-background-hover: #0d1117;
-  --ifm-toc-link-color: #838b95;
-  --ifm-navbar-link-color: #f0f6fc;
-  --ifm-footer-background-color: #0b0b0b;
+  --ifm-menu-color-background-hover: var(--oomol-hover-bg);
+  --ifm-toc-link-color: var(--oomol-text-secondary);
+  --ifm-navbar-link-color: var(--oomol-text-primary);
+  --ifm-footer-background-color: var(--oomol-bg-base);
 }
 
 #__docusaurus {
@@ -63,13 +64,9 @@
 }
 
 .footer {
-  background-color: white;
+  background-color: var(--oomol-bg-base);
   margin-top: 48px;
   margin-bottom: 48px;
-}
-
-[data-theme="dark"] .footer {
-  background-color: #0b0b0b;
 }
 
 .footer__links {
@@ -109,21 +106,21 @@
 /* Light mode navbar styles */
 [data-theme="light"] .navbar {
   background: rgba(255, 255, 255, 0.9);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--oomol-border-subtle);
 }
 
 /* Navbar link colors */
 [data-theme="light"] {
   .navbar__link {
-    color: #1c1e21;
+    color: var(--oomol-text-primary);
 
     &:hover {
-      color: #7d7fe9;
+      color: var(--oomol-primary);
     }
   }
 
   .navbar__link--active {
-    color: #7d7fe9;
+    color: var(--oomol-primary);
   }
 }
 
@@ -194,7 +191,7 @@ $desktop-width: 1280px;
 }
 
 @mixin linearGradientColor {
-  background-image: linear-gradient(90deg, #656c76 0%, #bcc9dc 100%);
+  background-image: linear-gradient(90deg, var(--oomol-text-tertiary) 0%, var(--oomol-text-secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -241,9 +238,6 @@ $desktop-width: 1280px;
   }
 }
 
-$menu-link-default-color: #f0f6fc;
-$menu-link-secondary-color: #838b95;
-
 // 导航栏下拉菜单项图标样式
 .navbar-item-with-icon {
   position: relative;
@@ -280,7 +274,7 @@ $menu-link-secondary-color: #838b95;
 .sidebar-submenu-item {
   > .menu__link {
     font-size: 16px;
-    color: $menu-link-default-color;
+    color: var(--oomol-text-primary);
   }
 
   .theme-doc-sidebar-item-link-level-2,
@@ -289,10 +283,10 @@ $menu-link-secondary-color: #838b95;
     font-size: 14px;
 
     > .menu__link {
-      color: $menu-link-secondary-color !important;
+      color: var(--oomol-text-secondary) !important;
 
       &:hover {
-        color: $menu-link-default-color !important;
+        color: var(--oomol-text-primary) !important;
       }
     }
 

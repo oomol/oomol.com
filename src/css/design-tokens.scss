@@ -1,0 +1,269 @@
+/**
+ * OOMOL Design Tokens
+ * 基于 Ant Design 5.0 设计系统
+ * 提供统一的亮色/暗色模式颜色管理
+ */
+
+/* ============================================
+   亮色模式 (Light Mode)
+   ============================================ */
+:root {
+  /* ----------------------
+     背景色 (Background)
+     ---------------------- */
+  --oomol-bg-base: #ffffff;
+  --oomol-bg-container: #f5f5f5;
+  --oomol-bg-elevated: #fafafa;
+  --oomol-bg-spotlight: #f0f0f0;
+  --oomol-bg-layout: #f0f2f5;
+
+  /* ----------------------
+     文字色 (Text)
+     ---------------------- */
+  --oomol-text-primary: rgba(0, 0, 0, 0.88);
+  --oomol-text-secondary: rgba(0, 0, 0, 0.65);
+  --oomol-text-tertiary: rgba(0, 0, 0, 0.45);
+  --oomol-text-quaternary: rgba(0, 0, 0, 0.25);
+  --oomol-text-disabled: rgba(0, 0, 0, 0.25);
+  --oomol-text-inverse: #ffffff;
+
+  /* ----------------------
+     边框色 (Border)
+     ---------------------- */
+  --oomol-border-default: #d9d9d9;
+  --oomol-border-subtle: #f0f0f0;
+  --oomol-border-strong: #bfbfbf;
+
+  /* ----------------------
+     分割线 (Divider)
+     ---------------------- */
+  --oomol-divider: rgba(5, 5, 5, 0.06);
+  --oomol-divider-subtle: rgba(5, 5, 5, 0.03);
+
+  /* ----------------------
+     遮罩层 (Mask)
+     ---------------------- */
+  --oomol-mask: rgba(0, 0, 0, 0.45);
+
+  /* ----------------------
+     填充色 (Fill)
+     ---------------------- */
+  --oomol-fill-primary: rgba(0, 0, 0, 0.15);
+  --oomol-fill-secondary: rgba(0, 0, 0, 0.06);
+  --oomol-fill-tertiary: rgba(0, 0, 0, 0.04);
+  --oomol-fill-quaternary: rgba(0, 0, 0, 0.02);
+
+  /* ----------------------
+     品牌色 (Brand)
+     ---------------------- */
+  --oomol-primary: #7d7fe9;
+  --oomol-primary-bg: rgba(125, 127, 233, 0.1);
+  --oomol-primary-bg-hover: rgba(125, 127, 233, 0.15);
+  --oomol-primary-border: rgba(125, 127, 233, 0.3);
+  --oomol-primary-hover: #9c9dee;
+  --oomol-primary-active: #5e61e4;
+  --oomol-primary-text: #7d7fe9;
+  --oomol-primary-text-hover: #9c9dee;
+  --oomol-primary-text-active: #5e61e4;
+
+  /* ----------------------
+     产品色 (Product Colors)
+     ---------------------- */
+  /* Studio - 紫色 */
+  --oomol-studio: #7d7fe9;
+  --oomol-studio-light: #a855f7;
+  --oomol-studio-bg: rgba(125, 127, 233, 0.1);
+  --oomol-studio-border: rgba(125, 127, 233, 0.3);
+
+  /* Hub - 绿色 */
+  --oomol-hub: #10b981;
+  --oomol-hub-dark: #059669;
+  --oomol-hub-bg: rgba(16, 185, 129, 0.1);
+  --oomol-hub-border: rgba(16, 185, 129, 0.3);
+
+  /* Chat - 橙色 */
+  --oomol-chat: #f59e0b;
+  --oomol-chat-dark: #d97706;
+  --oomol-chat-bg: rgba(245, 158, 11, 0.1);
+  --oomol-chat-border: rgba(245, 158, 11, 0.3);
+
+  /* ----------------------
+     功能色 (Functional Colors)
+     ---------------------- */
+  --oomol-success: #52c41a;
+  --oomol-success-bg: rgba(82, 196, 26, 0.1);
+  --oomol-success-border: rgba(82, 196, 26, 0.3);
+
+  --oomol-warning: #faad14;
+  --oomol-warning-bg: rgba(250, 173, 20, 0.1);
+  --oomol-warning-border: rgba(250, 173, 20, 0.3);
+
+  --oomol-error: #ff4d4f;
+  --oomol-error-bg: rgba(255, 77, 79, 0.1);
+  --oomol-error-border: rgba(255, 77, 79, 0.3);
+
+  --oomol-info: #1890ff;
+  --oomol-info-bg: rgba(24, 144, 255, 0.1);
+  --oomol-info-border: rgba(24, 144, 255, 0.3);
+
+  /* ----------------------
+     链接色 (Link)
+     ---------------------- */
+  --oomol-link: #7d7fe9;
+  --oomol-link-hover: #9c9dee;
+  --oomol-link-active: #5e61e4;
+
+  /* ----------------------
+     悬停效果 (Hover)
+     ---------------------- */
+  --oomol-hover-bg: rgba(0, 0, 0, 0.06);
+
+  /* ----------------------
+     阴影 (Shadow)
+     ---------------------- */
+  --oomol-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02),
+    0 2px 4px 0 rgba(0, 0, 0, 0.02);
+  --oomol-shadow-md: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12),
+    0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  --oomol-shadow-lg: 0 16px 32px 0 rgba(0, 0, 0, 0.08), 0 6px 16px 0 rgba(0, 0, 0, 0.12),
+    0 9px 28px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* ============================================
+   暗色模式 (Dark Mode)
+   ============================================ */
+[data-theme="dark"] {
+  /* ----------------------
+     背景色 (Background)
+     ---------------------- */
+  --oomol-bg-base: #0b0b0b;
+  --oomol-bg-container: #141414;
+  --oomol-bg-elevated: #1f1f1f;
+  --oomol-bg-spotlight: #2a2a2a;
+  --oomol-bg-layout: #000000;
+
+  /* ----------------------
+     文字色 (Text)
+     ---------------------- */
+  --oomol-text-primary: rgba(255, 255, 255, 0.85);
+  --oomol-text-secondary: rgba(255, 255, 255, 0.65);
+  --oomol-text-tertiary: rgba(255, 255, 255, 0.45);
+  --oomol-text-quaternary: rgba(255, 255, 255, 0.25);
+  --oomol-text-disabled: rgba(255, 255, 255, 0.25);
+  --oomol-text-inverse: rgba(0, 0, 0, 0.88);
+
+  /* ----------------------
+     边框色 (Border)
+     ---------------------- */
+  --oomol-border-default: #424242;
+  --oomol-border-subtle: #303030;
+  --oomol-border-strong: #5a5a5a;
+
+  /* ----------------------
+     分割线 (Divider)
+     ---------------------- */
+  --oomol-divider: rgba(253, 253, 253, 0.12);
+  --oomol-divider-subtle: rgba(253, 253, 253, 0.06);
+
+  /* ----------------------
+     遮罩层 (Mask)
+     ---------------------- */
+  --oomol-mask: rgba(0, 0, 0, 0.65);
+
+  /* ----------------------
+     填充色 (Fill)
+     ---------------------- */
+  --oomol-fill-primary: rgba(255, 255, 255, 0.18);
+  --oomol-fill-secondary: rgba(255, 255, 255, 0.12);
+  --oomol-fill-tertiary: rgba(255, 255, 255, 0.08);
+  --oomol-fill-quaternary: rgba(255, 255, 255, 0.04);
+
+  /* ----------------------
+     品牌色 (Brand) - 保持一致
+     ---------------------- */
+  --oomol-primary: #7d7fe9;
+  --oomol-primary-bg: rgba(125, 127, 233, 0.15);
+  --oomol-primary-bg-hover: rgba(125, 127, 233, 0.25);
+  --oomol-primary-border: rgba(125, 127, 233, 0.4);
+  --oomol-primary-hover: #9c9dee;
+  --oomol-primary-active: #5e61e4;
+  --oomol-primary-text: #9c9dee;
+  --oomol-primary-text-hover: #abacf1;
+  --oomol-primary-text-active: #7d7fe9;
+
+  /* ----------------------
+     产品色 (Product Colors) - 保持一致
+     ---------------------- */
+  /* Studio - 紫色 */
+  --oomol-studio: #7d7fe9;
+  --oomol-studio-light: #a855f7;
+  --oomol-studio-bg: rgba(125, 127, 233, 0.15);
+  --oomol-studio-border: rgba(125, 127, 233, 0.4);
+
+  /* Hub - 绿色 */
+  --oomol-hub: #10b981;
+  --oomol-hub-dark: #059669;
+  --oomol-hub-bg: rgba(16, 185, 129, 0.15);
+  --oomol-hub-border: rgba(16, 185, 129, 0.4);
+
+  /* Chat - 橙色 */
+  --oomol-chat: #f59e0b;
+  --oomol-chat-dark: #d97706;
+  --oomol-chat-bg: rgba(245, 158, 11, 0.15);
+  --oomol-chat-border: rgba(245, 158, 11, 0.4);
+
+  /* ----------------------
+     功能色 (Functional Colors)
+     ---------------------- */
+  --oomol-success: #52c41a;
+  --oomol-success-bg: rgba(82, 196, 26, 0.15);
+  --oomol-success-border: rgba(82, 196, 26, 0.4);
+
+  --oomol-warning: #faad14;
+  --oomol-warning-bg: rgba(250, 173, 20, 0.15);
+  --oomol-warning-border: rgba(250, 173, 20, 0.4);
+
+  --oomol-error: #ff4d4f;
+  --oomol-error-bg: rgba(255, 77, 79, 0.15);
+  --oomol-error-border: rgba(255, 77, 79, 0.4);
+
+  --oomol-info: #1890ff;
+  --oomol-info-bg: rgba(24, 144, 255, 0.15);
+  --oomol-info-border: rgba(24, 144, 255, 0.4);
+
+  /* ----------------------
+     链接色 (Link)
+     ---------------------- */
+  --oomol-link: #9c9dee;
+  --oomol-link-hover: #abacf1;
+  --oomol-link-active: #7d7fe9;
+
+  /* ----------------------
+     悬停效果 (Hover)
+     ---------------------- */
+  --oomol-hover-bg: rgba(255, 255, 255, 0.08);
+
+  /* ----------------------
+     阴影 (Shadow)
+     ---------------------- */
+  --oomol-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.48), 0 1px 6px -1px rgba(0, 0, 0, 0.32),
+    0 2px 4px 0 rgba(0, 0, 0, 0.32);
+  --oomol-shadow-md: 0 6px 16px 0 rgba(0, 0, 0, 0.64), 0 3px 6px -4px rgba(0, 0, 0, 0.48),
+    0 9px 28px 8px rgba(0, 0, 0, 0.48);
+  --oomol-shadow-lg: 0 16px 32px 0 rgba(0, 0, 0, 0.64), 0 6px 16px 0 rgba(0, 0, 0, 0.48),
+    0 9px 28px 8px rgba(0, 0, 0, 0.56);
+}
+
+/* ============================================
+   主题切换过渡动画
+   ============================================ */
+* {
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 对于某些不需要过渡的元素 */
+*:where(img, video, canvas, svg, iframe) {
+  transition: none;
+}

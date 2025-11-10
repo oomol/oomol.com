@@ -8,6 +8,29 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // OOMOL Design Tokens
+        "oomol-bg-base": "var(--oomol-bg-base)",
+        "oomol-bg-container": "var(--oomol-bg-container)",
+        "oomol-bg-elevated": "var(--oomol-bg-elevated)",
+        "oomol-bg-spotlight": "var(--oomol-bg-spotlight)",
+        "oomol-bg-layout": "var(--oomol-bg-layout)",
+
+        "oomol-text-primary": "var(--oomol-text-primary)",
+        "oomol-text-secondary": "var(--oomol-text-secondary)",
+        "oomol-text-tertiary": "var(--oomol-text-tertiary)",
+        "oomol-text-disabled": "var(--oomol-text-disabled)",
+
+        "oomol-border": "var(--oomol-border-default)",
+        "oomol-border-subtle": "var(--oomol-border-subtle)",
+
+        "oomol-primary": "var(--oomol-primary)",
+        "oomol-primary-hover": "var(--oomol-primary-hover)",
+
+        "oomol-studio": "var(--oomol-studio)",
+        "oomol-hub": "var(--oomol-hub)",
+        "oomol-chat": "var(--oomol-chat)",
+
+        // Legacy shadcn/ui tokens
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

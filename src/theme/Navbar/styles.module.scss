@@ -5,30 +5,35 @@
 }
 
 .signInButton {
-  background: #7d7fe9;
-  color: white;
+  background: var(--oomol-primary);
+  color: var(--oomol-text-inverse);
   border: none;
   border-radius: 4px;
   padding: 4px 4px;
   font-weight: 500;
   font-size: 14px;
   cursor: pointer;
+
+  &:hover {
+    background: var(--oomol-primary-hover);
+  }
 }
 
 .gotoHubButton {
   background: inherit;
-  border: 1px solid #3d444d;
+  border: 1px solid var(--oomol-border-default);
   border-radius: 4px;
   padding: 4px 4px;
   font-weight: 500;
   font-size: 14px;
   cursor: pointer;
+  color: var(--oomol-text-primary);
 
   margin: 0 !important;
 
   &:hover {
-    color: #7d7fe9 !important;
-    border-color: #7d7fe9;
+    color: var(--oomol-primary) !important;
+    border-color: var(--oomol-primary);
   }
 }
 
@@ -53,8 +58,7 @@
 .cutLine {
   width: 1px;
   height: 18px;
-  background-color: black;
-  opacity: 0.3;
+  background-color: var(--oomol-divider);
   margin-left: 20px;
   margin-right: 8px;
 }
@@ -157,15 +161,11 @@
 }
 
 :global(.navbar__item.dropdown .navbar__link):after {
-  border: 5px solid white;
+  border: 5px solid var(--oomol-text-primary);
   border-width: 0 2px 2px 0;
   width: 6px;
   height: 6px;
   transform: translate(50%, -70%) rotateZ(45deg);
-}
-
-:global(html[data-theme="light"] .navbar__item.dropdown .navbar__link):after {
-  border-color: #000;
 }
 
 :global(.dropdown__link) {
@@ -177,14 +177,15 @@
 }
 
 :global(.navbar__link) {
+  color: var(--oomol-text-primary);
+
   &:hover {
-    color: white;
+    color: var(--oomol-primary);
   }
-  color: #f0f6fc;
 }
 
 :global(.navbar__link--active) {
-  color: #f0f6fc;
+  color: var(--oomol-primary);
 }
 
 .themeToggleInSidebar {

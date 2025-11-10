@@ -86,7 +86,7 @@
 .title {
   font-size: 14px;
   font-weight: bolder;
-  color: #f0f6fc;
+  color: var(--oomol-text-primary);
 }
 
 .item {
@@ -96,7 +96,11 @@
 
 .link {
   font-weight: normal;
-  color: #838b95;
+  color: var(--oomol-text-secondary);
+
+  &:hover {
+    color: var(--oomol-text-primary);
+  }
 }
 
 .border {
@@ -143,9 +147,14 @@
 
 .bottomInfo {
   font-size: 12px;
-  color: #838b95;
+  color: var(--oomol-text-tertiary);
   a {
     margin-left: 8px;
+    color: var(--oomol-text-secondary);
+
+    &:hover {
+      color: var(--oomol-primary);
+    }
   }
 }
 
@@ -167,7 +176,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #838b95;
+  color: var(--oomol-text-secondary);
+
+  &:hover {
+    color: var(--oomol-primary);
+  }
 }
 
 .work-weixin {
