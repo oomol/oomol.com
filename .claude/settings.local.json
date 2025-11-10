@@ -11,7 +11,12 @@
       "Bash(npm outdated:*)",
       "Bash(npm update:*)",
       "Bash(npm audit:*)",
-      "Bash(npm run build-unocss:*)"
+      "Bash(npm run build-unocss:*)",
+      "Bash(for file in logo.svg logo2x.png logo_black.svg logo-symbol-dark.svg logo-symbol-light.svg)",
+      "Bash(do)",
+      "Bash(echo:*)",
+      "Bash(done)",
+      "Bash(ls:*)"
     ],
     "deny": [],
     "ask": []
