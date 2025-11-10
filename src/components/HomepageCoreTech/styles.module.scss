@@ -1,0 +1,150 @@
+@import "../../css/custom.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 0;
+
+  @include desktop {
+    padding: 80px 24px;
+  }
+}
+
+.titleBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  max-width: 800px;
+  text-align: center;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 14px;
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 800;
+
+  @include phone {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+.sectionSubtitle {
+  max-width: 640px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 400;
+  @include linearGradientColor;
+
+  @include phone {
+    font-size: 16px;
+  }
+}
+
+.list {
+  max-width: 1280px;
+  width: 100%;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tech-blur-fade {
+  display: flex;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px;
+  border-radius: 20px;
+  background-color: var(--oomol-bg-elevated);
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: var(--oomol-primary-color);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(125, 127, 233, 0.15);
+  }
+
+  @include phone {
+    padding: 24px;
+  }
+}
+
+.highlight {
+  background: linear-gradient(
+    135deg,
+    rgba(125, 127, 233, 0.08) 0%,
+    rgba(125, 199, 233, 0.08) 100%
+  );
+  border-color: var(--oomol-primary-color);
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #7d7fe9 0%, #7dc7e9 100%);
+}
+
+.icon {
+  font-size: 28px;
+  color: white;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--oomol-text-primary);
+
+  @include phone {
+    font-size: 20px;
+  }
+}
+
+.description {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  color: var(--oomol-text-secondary);
+  flex: 1;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: var(--oomol-bg-container);
+  color: var(--oomol-primary-color);
+  border: 1px solid var(--oomol-primary-color);
+}

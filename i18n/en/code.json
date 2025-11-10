@@ -3,7 +3,7 @@
     "message": "Download Now"
   },
   "Theme.Navbar.go-to-hub-flow": {
-    "message": "Go to Hub"
+    "message": "Start Building"
   },
   "Theme.Navbar.use-in-chat": {
     "message": "Use in Chat"
@@ -12,10 +12,10 @@
     "message": "Sign in"
   },
   "HOME.FirstScreen.slogan": {
-    "message": "Create, Share and Use AI Tools"
+    "message": "Turn Your Computer into an AI Server"
   },
   "HOME.FirstScreen.script": {
-    "message": "Build AI tools and workflows visually, share with the community, and use them through simple chat."
+    "message": "Share GPU computing power, build AI workflows, and publish APIs instantly with container and FRP technology. Local computing, unlimited possibilities."
   },
 
   "HOME.FirstScreen.download-macos": {
@@ -53,10 +53,46 @@
   },
 
   "HOME.Scenes.title": {
-    "message": "How to Use"
+    "message": "Developer Use Cases"
   },
   "HOME.Scenes.subtitle": {
-    "message": "Describe what you need, and OOMOL’s intelligent assistant will recommend the right tools for you."
+    "message": "From GPU computing sharing to AI Agent toolchains, explore oomol's powerful application scenarios"
+  },
+  "HOME.Scenes.gpu-sharing.title": {
+    "message": "GPU Computing Sharing"
+  },
+  "HOME.Scenes.gpu-sharing.inner": {
+    "message": "Share your RTX 4090 at home with your team remotely via FRP protocol. Supports NVIDIA GPU access through WSL2, enables P2P computing sharing, train models at night, share computing power during the day."
+  },
+  "HOME.Scenes.mcp-server.title": {
+    "message": "Build MCP Server"
+  },
+  "HOME.Scenes.mcp-server.inner": {
+    "message": "Develop custom MCP tools for Claude Desktop. Generate functions through visual workflows, automatically support MCP protocol, let AI Agents call your services directly."
+  },
+  "HOME.Scenes.data-api.title": {
+    "message": "Data Analysis API"
+  },
+  "HOME.Scenes.data-api.inner": {
+    "message": "Turn local Python scripts into API services with one click. Combine pandas, numpy and other data analysis libraries, package with containers, automatically generate RESTful API interfaces."
+  },
+  "HOME.Scenes.ai-image-service.title": {
+    "message": "AI Image Service"
+  },
+  "HOME.Scenes.ai-image-service.inner": {
+    "message": "Deploy Stable Diffusion inference service. Utilize local GPU computing power, provide image generation API externally through FRP, support multi-model switching and custom parameters."
+  },
+  "HOME.Scenes.iot-control.title": {
+    "message": "IoT Device Control"
+  },
+  "HOME.Scenes.iot-control.inner": {
+    "message": "Remotely control Raspberry Pi and IoT devices through FRP. Build workflows to orchestrate smart home, achieve remote monitoring, data collection and automation control."
+  },
+  "HOME.Scenes.agent-toolchain.title": {
+    "message": "AI Agent Toolchain"
+  },
+  "HOME.Scenes.agent-toolchain.inner": {
+    "message": "Combine multiple MCP Tools to build expert Agents. Integrate capabilities like data query, file processing, API calls to create domain-specific intelligent assistants."
   },
   "HOME.Scenes.data-science.title": {
     "message": "AI Video Processing"
@@ -197,10 +233,37 @@
     "message": "View More Examples"
   },
   "HOME.Create.title": {
-    "message": "How to Create"
+    "message": "From Creation to Deployment, All-in-One Development Experience"
   },
   "HOME.Create.subtitle": {
-    "message": "Effortlessly build your own intelligent tools with visual workflows and advanced AI integration."
+    "message": "Create Workflow → Generate Package → Publish to Community → Flexible Deployment (Local FRP / Cloud API)"
+  },
+  "HOME.Create.dev-flow.title": {
+    "message": "Complete Development Flow"
+  },
+  "HOME.Create.dev-flow.step1": {
+    "message": "1️⃣ Create Workflow"
+  },
+  "HOME.Create.dev-flow.step1-desc": {
+    "message": "Visual editing in VSCode with AI assistance"
+  },
+  "HOME.Create.dev-flow.step2": {
+    "message": "2️⃣ Generate Package"
+  },
+  "HOME.Create.dev-flow.step2-desc": {
+    "message": "Auto-package Blocks + Flows, containerized"
+  },
+  "HOME.Create.dev-flow.step3": {
+    "message": "3️⃣ Publish to Community"
+  },
+  "HOME.Create.dev-flow.step3-desc": {
+    "message": "Share openly on oomol Hub, ecosystem collaboration"
+  },
+  "HOME.Create.dev-flow.step4": {
+    "message": "4️⃣ Flexible Deployment"
+  },
+  "HOME.Create.dev-flow.step4-desc": {
+    "message": "Local FRP P2P / Cloud API Service"
   },
   "HOME.Create.card.title": {
     "message": "Start Creating Your AI Tools"
@@ -286,6 +349,165 @@
   "HOME.Features.linkBtn-text": {
     "message": "View All Features"
   },
+  "HOME.CoreTech.title": {
+    "message": "Four Core Technologies"
+  },
+  "HOME.CoreTech.subtitle": {
+    "message": "Powerful technical platform built for developers and geeks"
+  },
+  "HOME.CoreTech.local-computing.title": {
+    "message": "Local Container + FRP Computing Sharing"
+  },
+  "HOME.CoreTech.local-computing.description": {
+    "message": "Share local computing power (especially GPU) with others using container technology and FRP protocol. Supports NVIDIA GPU access through WSL2, P2P computing sharing."
+  },
+  "HOME.CoreTech.local-computing.tag1": {
+    "message": "Docker"
+  },
+  "HOME.CoreTech.local-computing.tag2": {
+    "message": "FRP Protocol"
+  },
+  "HOME.CoreTech.local-computing.tag3": {
+    "message": "WSL2"
+  },
+  "HOME.CoreTech.local-computing.tag4": {
+    "message": "NVIDIA GPU"
+  },
+  "HOME.CoreTech.workflow.title": {
+    "message": "Visual Workflow + Auto API"
+  },
+  "HOME.CoreTech.workflow.description": {
+    "message": "Write function blocks, visually compose workflows, and automatically generate RESTful APIs. Build complex logic with low-code."
+  },
+  "HOME.CoreTech.workflow.tag1": {
+    "message": "Visual Programming"
+  },
+  "HOME.CoreTech.workflow.tag2": {
+    "message": "Function Blocks"
+  },
+  "HOME.CoreTech.workflow.tag3": {
+    "message": "Auto API"
+  },
+  "HOME.CoreTech.mcp.title": {
+    "message": "Native MCP Protocol Support"
+  },
+  "HOME.CoreTech.mcp.description": {
+    "message": "Generated functions automatically support MCP interface. AI Agents like Claude and OpenAI can call them directly. Build AI tool ecosystem."
+  },
+  "HOME.CoreTech.mcp.tag1": {
+    "message": "MCP Protocol"
+  },
+  "HOME.CoreTech.mcp.tag2": {
+    "message": "AI Agent"
+  },
+  "HOME.CoreTech.mcp.tag3": {
+    "message": "Tool Calling"
+  },
+  "HOME.CoreTech.vscode.title": {
+    "message": "VSCode Integration"
+  },
+  "HOME.CoreTech.vscode.description": {
+    "message": "Built on VSCode with Vibe Coding Block support. AI automatically matches and generates blocks, 10x development efficiency."
+  },
+  "HOME.CoreTech.vscode.tag1": {
+    "message": "VSCode Extension"
+  },
+  "HOME.CoreTech.vscode.tag2": {
+    "message": "Vibe Coding"
+  },
+  "HOME.CoreTech.vscode.tag3": {
+    "message": "AI Copilot"
+  },
+  "HOME.Ecosystem.title": {
+    "message": "oomol Product Ecosystem"
+  },
+  "HOME.Ecosystem.subtitle": {
+    "message": "From local development to cloud deployment, complete AI tool lifecycle"
+  },
+  "HOME.Ecosystem.studio.title": {
+    "message": "oomol Studio"
+  },
+  "HOME.Ecosystem.studio.subtitle": {
+    "message": "Local Development"
+  },
+  "HOME.Ecosystem.studio.description": {
+    "message": "VSCode-integrated visual editor with AI-assisted development and local container runtime."
+  },
+  "HOME.Ecosystem.studio.feature1": {
+    "message": "VSCode Integration"
+  },
+  "HOME.Ecosystem.studio.feature2": {
+    "message": "Visual Editor"
+  },
+  "HOME.Ecosystem.studio.feature3": {
+    "message": "AI-Assisted"
+  },
+  "HOME.Ecosystem.studio.feature4": {
+    "message": "Local Container"
+  },
+  "HOME.Ecosystem.hub.title": {
+    "message": "oomol Hub"
+  },
+  "HOME.Ecosystem.hub.subtitle": {
+    "message": "Community Ecosystem"
+  },
+  "HOME.Ecosystem.hub.description": {
+    "message": "Open package sharing community, publish, browse and install Blocks, one-click dependency integration."
+  },
+  "HOME.Ecosystem.hub.feature1": {
+    "message": "Publish Package"
+  },
+  "HOME.Ecosystem.hub.feature2": {
+    "message": "Browse Community"
+  },
+  "HOME.Ecosystem.hub.feature3": {
+    "message": "One-Click Install"
+  },
+  "HOME.Ecosystem.hub.feature4": {
+    "message": "Developer Collaboration"
+  },
+  "HOME.Ecosystem.cloud.title": {
+    "message": "oomol Cloud"
+  },
+  "HOME.Ecosystem.cloud.subtitle": {
+    "message": "Cloud Deployment"
+  },
+  "HOME.Ecosystem.cloud.description": {
+    "message": "One-click deployment to cloud, providing RESTful and MCP API protocols, with metering and billing support."
+  },
+  "HOME.Ecosystem.cloud.feature1": {
+    "message": "One-Click Deploy"
+  },
+  "HOME.Ecosystem.cloud.feature2": {
+    "message": "RESTful API"
+  },
+  "HOME.Ecosystem.cloud.feature3": {
+    "message": "MCP Protocol"
+  },
+  "HOME.Ecosystem.cloud.feature4": {
+    "message": "Metering & Billing"
+  },
+  "HOME.Ecosystem.chat.title": {
+    "message": "oomol Chat"
+  },
+  "HOME.Ecosystem.chat.subtitle": {
+    "message": "AI Assistant"
+  },
+  "HOME.Ecosystem.chat.description": {
+    "message": "AI chat assistant based on MCP Tools, combine Tools to build expert Agents, multi-model support."
+  },
+  "HOME.Ecosystem.chat.feature1": {
+    "message": "MCP Tool"
+  },
+  "HOME.Ecosystem.chat.feature2": {
+    "message": "Expert Agent"
+  },
+  "HOME.Ecosystem.chat.feature3": {
+    "message": "Enterprise KB"
+  },
+  "HOME.Ecosystem.chat.feature4": {
+    "message": "Multi-Model"
+  },
   "HOME.Video.title": {
     "message": "Product Demo"
   },
@@ -293,13 +515,31 @@
     "message": "Learn about OOMOL's powerful features and usage through video"
   },
   "HOME.Guide.title": {
-    "message": "Release and Share"
+    "message": "Join Developer Community"
   },
   "HOME.Guide.subtitle": {
-    "message": "Contribute your unique solutions, discover new ideas, and collaborate with the community to achieve more."
+    "message": "Build AI tool ecosystem with global developers, share experience, get support, and contribute to open source."
   },
   "HOME.Guide.link-button-text": {
-    "message": "Explore All AI Tools"
+    "message": "Visit Hub Community"
+  },
+  "HOME.Guide.github.title": {
+    "message": "GitHub Open Source"
+  },
+  "HOME.Guide.github.description": {
+    "message": "Participate in open source projects, contribute code, report issues, and collaborate with developers worldwide."
+  },
+  "HOME.Guide.discord.title": {
+    "message": "Discord Community"
+  },
+  "HOME.Guide.discord.description": {
+    "message": "Real-time communication, get technical support, share experiences, and meet like-minded developers."
+  },
+  "HOME.Guide.docs.title": {
+    "message": "Developer Documentation"
+  },
+  "HOME.Guide.docs.description": {
+    "message": "Complete API docs, sample code, best practices, get started with oomol development quickly."
   },
   "HOME.Guide.project-1.title": {
     "message": "AI Video Translator"

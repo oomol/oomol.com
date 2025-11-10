@@ -58,7 +58,123 @@
   font-size: 20px;
   text-align: center;
   max-width: 640px;
+  margin-bottom: 48px;
   @include linearGradientColor;
+}
+
+.community-grid {
+  max-width: 1280px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+
+  @media (max-width: 996px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.community-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px;
+  border-radius: 20px;
+  background-color: var(--oomol-bg-elevated);
+  border: 2px solid transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    text-decoration: none;
+
+    .card-arrow {
+      transform: translateX(4px);
+    }
+  }
+
+  @include phone {
+    padding: 24px;
+  }
+}
+
+.github {
+  border-color: #333;
+
+  &:hover {
+    box-shadow: 0 12px 32px rgba(51, 51, 51, 0.2);
+  }
+
+  .card-icon {
+    background: linear-gradient(135deg, #333 0%, #555 100%);
+  }
+}
+
+.discord {
+  border-color: #5865f2;
+
+  &:hover {
+    box-shadow: 0 12px 32px rgba(88, 101, 242, 0.2);
+  }
+
+  .card-icon {
+    background: linear-gradient(135deg, #5865f2 0%, #7289da 100%);
+  }
+}
+
+.docs {
+  border-color: #10b981;
+
+  &:hover {
+    box-shadow: 0 12px 32px rgba(16, 185, 129, 0.2);
+  }
+
+  .card-icon {
+    background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+  }
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+
+  i {
+    font-size: 28px;
+    color: white;
+  }
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--oomol-text-primary);
+
+  @include phone {
+    font-size: 20px;
+  }
+}
+
+.card-description {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  color: var(--oomol-text-secondary);
+  flex: 1;
+}
+
+.card-arrow {
+  display: flex;
+  align-items: center;
+  color: var(--oomol-primary-color);
+  font-size: 20px;
+  transition: transform 0.3s ease;
 }
 
 .content {

@@ -3,7 +3,7 @@
     "message": "立即下载"
   },
   "Theme.Navbar.go-to-hub-flow": {
-    "message": "前往创造平台"
+    "message": "开始构建"
   },
   "Theme.Navbar.use-in-chat": {
     "message": "在 Chat 中使用"
@@ -12,10 +12,10 @@
     "message": "登录"
   },
   "HOME.FirstScreen.slogan": {
-    "message": "创造，分享和使用 AI 工具"
+    "message": "将你的电脑变成 AI 服务器"
   },
   "HOME.FirstScreen.script": {
-    "message": "可视化构建 AI 工具与工作流，与社区分享，并通过对话轻松使用。"
+    "message": "基于容器和 FRP 技术，共享 GPU 算力，构建 AI 工作流，一键发布 API。本地算力，无限可能。"
   },
 
   "HOME.FirstScreen.download-macos": {
@@ -52,10 +52,46 @@
     "message": "字体"
   },
   "HOME.Scenes.title": {
-    "message": "如何使用"
+    "message": "开发者使用场景"
   },
   "HOME.Scenes.subtitle": {
-    "message": "告诉 OOMOL 你的需求，智能助手将为你匹配并推荐合适的工具。"
+    "message": "从 GPU 算力共享到 AI Agent 工具链，探索 oomol 的强大应用场景"
+  },
+  "HOME.Scenes.gpu-sharing.title": {
+    "message": "GPU 算力共享"
+  },
+  "HOME.Scenes.gpu-sharing.inner": {
+    "message": "将家里的 RTX 4090 通过 FRP 协议共享给团队远程使用。支持 WSL2 调用 NVIDIA GPU，实现 P2P 算力分享，深夜训练模型，白天共享算力。"
+  },
+  "HOME.Scenes.mcp-server.title": {
+    "message": "构建 MCP Server"
+  },
+  "HOME.Scenes.mcp-server.inner": {
+    "message": "为 Claude Desktop 开发自定义 MCP 工具。通过可视化工作流生成函数，自动支持 MCP 协议，让 AI Agent 直接调用你的服务。"
+  },
+  "HOME.Scenes.data-api.title": {
+    "message": "数据分析 API"
+  },
+  "HOME.Scenes.data-api.inner": {
+    "message": "本地 Python 脚本一键变成 API 服务。组合 pandas、numpy 等数据分析库，通过容器打包，自动生成 RESTful API 接口。"
+  },
+  "HOME.Scenes.ai-image-service.title": {
+    "message": "AI 图像服务"
+  },
+  "HOME.Scenes.ai-image-service.inner": {
+    "message": "部署 Stable Diffusion 推理服务。利用本地 GPU 算力，通过 FRP 对外提供图像生成 API，支持多模型切换和参数自定义。"
+  },
+  "HOME.Scenes.iot-control.title": {
+    "message": "IoT 设备控制"
+  },
+  "HOME.Scenes.iot-control.inner": {
+    "message": "通过 FRP 远程控制树莓派和 IoT 设备。构建工作流编排智能家居，实现远程监控、数据采集和自动化控制。"
+  },
+  "HOME.Scenes.agent-toolchain.title": {
+    "message": "AI Agent 工具链"
+  },
+  "HOME.Scenes.agent-toolchain.inner": {
+    "message": "组合多个 MCP Tool 构建专家 Agent。整合数据查询、文件处理、API 调用等能力，打造领域专属的智能助手。"
   },
   "HOME.Scenes.data-science.title": {
     "message": "AI 视频处理"
@@ -196,10 +232,37 @@
     "message": "查看更多案例"
   },
   "HOME.Create.title": {
-    "message": "创建指南"
+    "message": "从创建到部署，一站式开发体验"
   },
   "HOME.Create.subtitle": {
-    "message": "通过可视化工作流和强大的 AI 集成，轻松创建属于你的智能工具。"
+    "message": "创建工作流 → 生成 Package → 发布社区 → 灵活部署(本地 FRP / 云端 API)"
+  },
+  "HOME.Create.dev-flow.title": {
+    "message": "完整开发流程"
+  },
+  "HOME.Create.dev-flow.step1": {
+    "message": "1️⃣ 创建工作流"
+  },
+  "HOME.Create.dev-flow.step1-desc": {
+    "message": "VSCode 内可视化编辑，支持 AI 辅助生成"
+  },
+  "HOME.Create.dev-flow.step2": {
+    "message": "2️⃣ 生成 Package"
+  },
+  "HOME.Create.dev-flow.step2-desc": {
+    "message": "Blocks + Flows 自动打包，容器化封装"
+  },
+  "HOME.Create.dev-flow.step3": {
+    "message": "3️⃣ 发布社区"
+  },
+  "HOME.Create.dev-flow.step3-desc": {
+    "message": "oomol Hub 开放分享，生态协作"
+  },
+  "HOME.Create.dev-flow.step4": {
+    "message": "4️⃣ 灵活部署"
+  },
+  "HOME.Create.dev-flow.step4-desc": {
+    "message": "本地 FRP P2P / 云端 API 服务"
   },
   "HOME.Create.card.title": {
     "message": "开始创造你的 AI 工具"
@@ -288,6 +351,165 @@
   "HOME.Features.linkBtn-text": {
     "message": "查看全部"
   },
+  "HOME.CoreTech.title": {
+    "message": "四大核心技术"
+  },
+  "HOME.CoreTech.subtitle": {
+    "message": "为开发者和极客打造的强大技术平台"
+  },
+  "HOME.CoreTech.local-computing.title": {
+    "message": "本地容器 + FRP 共享算力"
+  },
+  "HOME.CoreTech.local-computing.description": {
+    "message": "基于容器技术和 FRP 协议，将本地算力(尤其是 GPU)共享给他人使用。支持 WSL2 调用 NVIDIA GPU，P2P 分享算力。"
+  },
+  "HOME.CoreTech.local-computing.tag1": {
+    "message": "Docker 容器"
+  },
+  "HOME.CoreTech.local-computing.tag2": {
+    "message": "FRP 协议"
+  },
+  "HOME.CoreTech.local-computing.tag3": {
+    "message": "WSL2"
+  },
+  "HOME.CoreTech.local-computing.tag4": {
+    "message": "NVIDIA GPU"
+  },
+  "HOME.CoreTech.workflow.title": {
+    "message": "可视化工作流 + 自动 API"
+  },
+  "HOME.CoreTech.workflow.description": {
+    "message": "编写函数 Block，可视化组合成工作流，自动生成 RESTful API。低代码构建复杂逻辑。"
+  },
+  "HOME.CoreTech.workflow.tag1": {
+    "message": "可视化编程"
+  },
+  "HOME.CoreTech.workflow.tag2": {
+    "message": "函数 Blocks"
+  },
+  "HOME.CoreTech.workflow.tag3": {
+    "message": "自动 API"
+  },
+  "HOME.CoreTech.mcp.title": {
+    "message": "原生 MCP 协议支持"
+  },
+  "HOME.CoreTech.mcp.description": {
+    "message": "生成的函数自动支持 MCP 接口，Claude、OpenAI 等 AI Agent 可直接调用。构建 AI 工具生态。"
+  },
+  "HOME.CoreTech.mcp.tag1": {
+    "message": "MCP 协议"
+  },
+  "HOME.CoreTech.mcp.tag2": {
+    "message": "AI Agent"
+  },
+  "HOME.CoreTech.mcp.tag3": {
+    "message": "Tool Calling"
+  },
+  "HOME.CoreTech.vscode.title": {
+    "message": "VSCode 集成开发"
+  },
+  "HOME.CoreTech.vscode.description": {
+    "message": "基于 VSCode 开发，支持 Vibe Coding Block。AI 自动匹配和生成 Block，开发效率提升 10 倍。"
+  },
+  "HOME.CoreTech.vscode.tag1": {
+    "message": "VSCode 扩展"
+  },
+  "HOME.CoreTech.vscode.tag2": {
+    "message": "Vibe Coding"
+  },
+  "HOME.CoreTech.vscode.tag3": {
+    "message": "AI Copilot"
+  },
+  "HOME.Ecosystem.title": {
+    "message": "oomol 产品生态"
+  },
+  "HOME.Ecosystem.subtitle": {
+    "message": "从本地开发到云端部署，完整的 AI 工具生命周期"
+  },
+  "HOME.Ecosystem.studio.title": {
+    "message": "oomol Studio"
+  },
+  "HOME.Ecosystem.studio.subtitle": {
+    "message": "本地开发"
+  },
+  "HOME.Ecosystem.studio.description": {
+    "message": "VSCode 集成的可视化编辑器，支持 AI 辅助开发和本地容器运行。"
+  },
+  "HOME.Ecosystem.studio.feature1": {
+    "message": "VSCode 集成"
+  },
+  "HOME.Ecosystem.studio.feature2": {
+    "message": "可视化编辑"
+  },
+  "HOME.Ecosystem.studio.feature3": {
+    "message": "AI 辅助开发"
+  },
+  "HOME.Ecosystem.studio.feature4": {
+    "message": "本地容器"
+  },
+  "HOME.Ecosystem.hub.title": {
+    "message": "oomol Hub"
+  },
+  "HOME.Ecosystem.hub.subtitle": {
+    "message": "社区生态"
+  },
+  "HOME.Ecosystem.hub.description": {
+    "message": "开放的 Package 分享社区，发布、浏览和安装 Blocks，一键集成依赖。"
+  },
+  "HOME.Ecosystem.hub.feature1": {
+    "message": "发布 Package"
+  },
+  "HOME.Ecosystem.hub.feature2": {
+    "message": "浏览社区"
+  },
+  "HOME.Ecosystem.hub.feature3": {
+    "message": "一键安装"
+  },
+  "HOME.Ecosystem.hub.feature4": {
+    "message": "开发者协作"
+  },
+  "HOME.Ecosystem.cloud.title": {
+    "message": "oomol Cloud"
+  },
+  "HOME.Ecosystem.cloud.subtitle": {
+    "message": "云端部署"
+  },
+  "HOME.Ecosystem.cloud.description": {
+    "message": "一键部署到云端，提供 RESTful 和 MCP 两种 API 协议，支持计量计费。"
+  },
+  "HOME.Ecosystem.cloud.feature1": {
+    "message": "一键部署"
+  },
+  "HOME.Ecosystem.cloud.feature2": {
+    "message": "RESTful API"
+  },
+  "HOME.Ecosystem.cloud.feature3": {
+    "message": "MCP 协议"
+  },
+  "HOME.Ecosystem.cloud.feature4": {
+    "message": "计量计费"
+  },
+  "HOME.Ecosystem.chat.title": {
+    "message": "oomol Chat"
+  },
+  "HOME.Ecosystem.chat.subtitle": {
+    "message": "AI 助手"
+  },
+  "HOME.Ecosystem.chat.description": {
+    "message": "基于 MCP Tool 的 AI 对话助手，组合 Tool 构建 Agent 专家，支持多模型。"
+  },
+  "HOME.Ecosystem.chat.feature1": {
+    "message": "MCP Tool"
+  },
+  "HOME.Ecosystem.chat.feature2": {
+    "message": "Agent 专家"
+  },
+  "HOME.Ecosystem.chat.feature3": {
+    "message": "企业知识库"
+  },
+  "HOME.Ecosystem.chat.feature4": {
+    "message": "多模型支持"
+  },
   "HOME.Video.title": {
     "message": "产品演示"
   },
@@ -295,13 +517,31 @@
     "message": "通过视频了解 OOMOL 的强大功能和使用方法"
   },
   "HOME.Guide.title": {
-    "message": "发现 AI 工具"
+    "message": "加入开发者社区"
   },
   "HOME.Guide.subtitle": {
-    "message": "在开放社区中汲取智慧、贡献才华，与他人共同推动 AI 工具创新。"
+    "message": "与全球开发者一起构建 AI 工具生态，分享经验，获取支持，参与开源贡献。"
   },
   "HOME.Guide.link-button-text": {
-    "message": "浏览开发文档"
+    "message": "访问 Hub 社区"
+  },
+  "HOME.Guide.github.title": {
+    "message": "GitHub 开源"
+  },
+  "HOME.Guide.github.description": {
+    "message": "参与开源项目，贡献代码，报告问题，与全球开发者协作。"
+  },
+  "HOME.Guide.discord.title": {
+    "message": "Discord 社区"
+  },
+  "HOME.Guide.discord.description": {
+    "message": "实时交流，获取技术支持，分享使用经验，结识志同道合的开发者。"
+  },
+  "HOME.Guide.docs.title": {
+    "message": "开发者文档"
+  },
+  "HOME.Guide.docs.description": {
+    "message": "完整的 API 文档、示例代码、最佳实践，快速上手 oomol 开发。"
   },
   "HOME.Guide.project-1.title": {
     "message": "AI 视频翻译器"

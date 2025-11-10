@@ -3,6 +3,8 @@ import Layout from "../theme/Layout";
 
 import HomepageScenes from "@site/src/components/HomepageScenes";
 import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
+import HomepageCoreTech from "@site/src/components/HomepageCoreTech";
+import HomepageEcosystem from "@site/src/components/HomepageEcosystem";
 
 import Head from "@docusaurus/Head";
 import HomepageGuide from "../components/HomepageGuide";
@@ -15,16 +17,18 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-        <title>OOMOL - Create, Share and Use AI Tools</title>
+        <title>OOMOL - Turn Your Computer into an AI Server</title>
       </Head>
       <main>
         <HomepageFirstScreen />
+        <HomepageCoreTech />
         <HomepageScenes />
         <HomepageCreateScenes />
+        <HomepageEcosystem />
+        <HomePageBuiltInLLM />
         <HomepageGuide />
         {/* TODO: 等订阅业务上线后恢复 */}
         {/* <HomepagePricing /> */}
-        <HomePageBuiltInLLM />
         {/* <HomepageDownloads /> */}
         <GetStartedPrompt />
         {/* <HomepageStarter /> */}
