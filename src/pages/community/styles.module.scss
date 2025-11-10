@@ -39,7 +39,7 @@
   line-height: 58px;
   font-weight: 800;
   text-align: center;
-  color: #f0f6fc;
+  color: var(--oomol-text-primary);
 }
 .subTitle {
   min-height: 30px;
@@ -79,7 +79,7 @@
   border-radius: 10px;
 
   &:hover {
-    background-color: #171b21;
+    background-color: var(--oomol-bg-elevated);
   }
 }
 
@@ -131,7 +131,7 @@
   border-radius: 20px;
   gap: 14px;
   text-align: center;
-  background-color: #0d1117;
+  background-color: var(--oomol-bg-elevated);
 }
 .sloganIcon {
   width: 32px;
@@ -140,7 +140,7 @@
   font-weight: 400;
   text-align: center;
   vertical-align: middle;
-  color: #f0f6fc;
+  color: var(--oomol-text-primary);
 }
 .sloganText {
   max-width: 245px;
@@ -149,7 +149,7 @@
   font-weight: 400;
   text-align: center;
   vertical-align: middle;
-  color: #656c76;
+  color: var(--oomol-text-tertiary);
 }
 
 .repositories {
@@ -170,11 +170,11 @@
   justify-content: space-between;
   border-radius: 20px;
   padding: 24px;
-  background-color: #0d1117;
+  background-color: var(--oomol-bg-elevated);
   cursor: pointer;
 
   &:hover {
-    background-color: #151b23;
+    background-color: var(--oomol-hover-bg);
   }
 }
 
@@ -198,13 +198,13 @@
 .repo-title {
   font-size: 16px;
   font-weight: 800;
-  color: #f0f6fc;
+  color: var(--oomol-text-primary);
 }
 
 .repo-description {
   font-size: 14px;
   font-weight: 600;
-  color: #838b95;
+  color: var(--oomol-text-secondary);
 }
 
 .repo-footer {
@@ -216,7 +216,7 @@
 .repo-name {
   font-size: 14px;
   font-weight: 600;
-  color: #656c76;
+  color: var(--oomol-text-tertiary);
 }
 
 .repo-status {
@@ -228,7 +228,7 @@
 .state {
   display: flex;
   align-items: center;
-  color: #f0f6fc;
+  color: var(--oomol-text-primary);
 }
 
 .icon {
@@ -238,6 +238,6 @@
 
 .star-icon {
   font-size: 16px;
-  color: #f0f6fc;
+  color: var(--oomol-text-primary);
   margin-left: 2px;
 }
