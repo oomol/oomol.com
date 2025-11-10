@@ -39,19 +39,29 @@
   margin: 4px 0;
   font-size: 12px;
   text-decoration: none;
-  color: var(--oomol-text-primary);
+  color: var(--oomol-text-secondary);
 
   &:hover {
     cursor: pointer;
     background-color: var(--oomol-hover-bg);
+    color: var(--oomol-text-primary);
     transition: background-color 0.2s ease;
     border-radius: 4px;
     text-decoration: none;
   }
 }
 
+:global(html[data-theme="light"]) .item {
+  color: var(--oomol-text-primary);
+}
+
 .selected {
   background-color: var(--oomol-primary-bg-hover);
   border-radius: 4px;
   color: var(--oomol-primary);
+}
+
+:global(html[data-theme="light"]) .selected {
+  background-color: var(--oomol-primary);
+  color: var(--oomol-text-inverse);
 }
