@@ -15,6 +15,10 @@
   white-space: nowrap;
 }
 
+:global(html[data-theme="light"]) .language-btn {
+  color: var(--oomol-text-primary);
+}
+
 .content {
   position: absolute;
   bottom: 24px;

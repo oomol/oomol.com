@@ -6,6 +6,8 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import clsx from "clsx";
 import { LocalDropdown } from "../components/LocalDropdown";
 import { Popover } from "@site/src/components/Popover";
+import ColorModeToggle from "@theme/ColorModeToggle";
+import { useColorMode } from "@docusaurus/theme-common";
 
 interface FooterLinkProps {
   href?: string;
@@ -107,6 +109,7 @@ const Footer: React.FC = () => {
   const hasFooter = !!siteConfig.themeConfig.footer;
   const currentLocale = i18n.currentLocale;
   const [isHovered, setIsHovered] = useState(false);
+  const { colorMode, setColorMode } = useColorMode();
 
   if (!hasFooter) {
     return null;
@@ -200,7 +203,14 @@ const Footer: React.FC = () => {
               </a>
             )}
           </div>
-          <LocalDropdown />
+          <div className={styles.controls}>
+            <ColorModeToggle
+              className={styles.colorModeToggle}
+              value={colorMode}
+              onChange={setColorMode}
+            />
+            <LocalDropdown />
+          </div>
         </div>
       </div>
     </footer>
