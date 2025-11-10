@@ -20,7 +20,8 @@
       "Bash(npm run lint:*)",
       "Bash(npm run ts-check:*)",
       "Bash(npm run:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(PORT=3001 npm run start:*)"
     ],
     "deny": [],
     "ask": []
