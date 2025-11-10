@@ -24,7 +24,7 @@
   font-size: 58px;
   line-height: 58px;
   font-weight: 800;
-  color: #f0f6fc;
+  color: var(--oomol-text-primary);
   text-align: center;
 }
 
@@ -203,7 +203,7 @@
   font-size: 48px;
   line-height: 48px;
   font-weight: 800;
-  color: #f0f6fc;
+  color: var(--oomol-text-primary);
   text-align: center;
   margin-bottom: 14px;
 }
@@ -268,7 +268,7 @@
   align-items: normal;
   justify-content: space-between;
   cursor: pointer;
-  color: #f0f6fc;
+  color: var(--oomol-text-primary);
   padding-bottom: 14px;
 }
 
@@ -277,7 +277,7 @@
   font-weight: 800;
   line-height: 24px;
   vertical-align: middle;
-  color: #f0f6fc;
+  color: var(--oomol-text-primary);
 }
 
 .icon {
@@ -285,7 +285,7 @@
   height: 24px;
   flex-shrink: 0;
   font-size: 24px;
-  color: #f0f6fc;
+  color: var(--oomol-text-primary);
   transition: transform 0.3s ease;
 }
 

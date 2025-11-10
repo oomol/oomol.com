@@ -35,7 +35,7 @@
   text-align: left;
   transition: transform 0.3s ease;
   background-color: var(--oomol-bg-elevated);
-  border: 1px solid var(--oomol-border-default);
+  border: 1px solid var(--oomol-border-subtle);
   border-radius: 10px;
   box-shadow: var(--oomol-shadow-sm);
   box-sizing: border-box;
@@ -43,7 +43,17 @@
   &:hover {
     box-shadow: var(--oomol-shadow-md);
     transform: translateY(-2px);
+    border-color: var(--oomol-border-default);
   }
+}
+
+:global(html[data-theme="light"]) .card {
+  background-color: var(--oomol-bg-base);
+  border-color: var(--oomol-border-default);
+}
+
+:global(html[data-theme="dark"]) .card {
+  background-color: var(--oomol-bg-elevated);
 }
 
 .card-title,
@@ -64,10 +74,18 @@
   display: flex;
   align-items: center;
   font-size: 12px;
-  color: var(--oomol-text-secondary);
-  border: 1px solid var(--oomol-border-default);
+  color: var(--oomol-text-inverse);
+  background-color: var(--oomol-primary);
+  border: none;
   border-radius: 100px;
   padding: 4px 16px;
+  font-weight: 500;
+}
+
+:global(html[data-theme="dark"]) .tag {
+  background-color: var(--oomol-primary-bg);
+  color: var(--oomol-primary-text);
+  border: 1px solid var(--oomol-primary-border);
 }
 
 .pro {
@@ -85,15 +103,15 @@
   right: 0;
   bottom: 0;
   border-radius: inherit;
-  padding: 1px;
+  padding: 2px;
   background: linear-gradient(
     105.32deg,
-    var(--oomol-bg-base) -6.87%,
+    transparent -6.87%,
     #987de9 10.42%,
     var(--oomol-primary) 38.09%,
-    var(--oomol-text-primary) 64.61%,
+    #9c9dee 64.61%,
     #7da6e9 92.28%,
-    var(--oomol-bg-base) 108.42%
+    transparent 108.42%
   );
   mask:
     linear-gradient(#fff 0 0) content-box,
@@ -102,6 +120,15 @@
   mask-composite: exclude;
   pointer-events: none;
   box-sizing: border-box;
+}
+
+:global(html[data-theme="light"]) .pro::before {
+  opacity: 0.8;
+}
+
+:global(html[data-theme="light"]) .pro {
+  background-color: var(--oomol-bg-container);
+  border-color: transparent;
 }
 
 .card h2 {
@@ -133,8 +160,6 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  border-radius: 10px;
-  box-shadow: var(--oomol-shadow-sm);
   text-align: center;
 }
 
