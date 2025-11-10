@@ -261,15 +261,109 @@
 }
 
 /* ============================================
+   排版系统 (Typography)
+   ============================================ */
+:root {
+  /* ----------------------
+     字体大小 (Font Size)
+     ---------------------- */
+  --oomol-font-size-xs: 12px;
+  --oomol-font-size-sm: 14px;
+  --oomol-font-size-base: 16px;
+  --oomol-font-size-lg: 18px;
+  --oomol-font-size-xl: 20px;
+  --oomol-font-size-2xl: 24px;
+  --oomol-font-size-3xl: 32px;
+  --oomol-font-size-4xl: 40px;
+  --oomol-font-size-5xl: 48px;
+  --oomol-font-size-6xl: 56px;
+
+  /* ----------------------
+     字重 (Font Weight)
+     ---------------------- */
+  --oomol-font-weight-light: 300;
+  --oomol-font-weight-normal: 400;
+  --oomol-font-weight-medium: 500;
+  --oomol-font-weight-semibold: 600;
+  --oomol-font-weight-bold: 700;
+  --oomol-font-weight-extrabold: 800;
+
+  /* ----------------------
+     行高 (Line Height)
+     ---------------------- */
+  --oomol-line-height-tight: 1.25;
+  --oomol-line-height-snug: 1.375;
+  --oomol-line-height-normal: 1.5;
+  --oomol-line-height-relaxed: 1.625;
+  --oomol-line-height-loose: 2;
+}
+
+/* ============================================
+   间距系统 (Spacing)
+   基于 8pt Grid System
+   ============================================ */
+:root {
+  /* ----------------------
+     间距 (Space)
+     ---------------------- */
+  --oomol-space-0: 0;
+  --oomol-space-1: 4px;   /* 0.5 unit */
+  --oomol-space-2: 8px;   /* 1 unit */
+  --oomol-space-3: 12px;  /* 1.5 units */
+  --oomol-space-4: 16px;  /* 2 units */
+  --oomol-space-5: 20px;  /* 2.5 units */
+  --oomol-space-6: 24px;  /* 3 units */
+  --oomol-space-8: 32px;  /* 4 units */
+  --oomol-space-10: 40px; /* 5 units */
+  --oomol-space-12: 48px; /* 6 units */
+  --oomol-space-16: 64px; /* 8 units */
+  --oomol-space-20: 80px; /* 10 units */
+  --oomol-space-24: 96px; /* 12 units */
+
+  /* ----------------------
+     圆角 (Border Radius)
+     ---------------------- */
+  --oomol-radius-none: 0;
+  --oomol-radius-sm: 2px;
+  --oomol-radius-base: 4px;
+  --oomol-radius-md: 6px;
+  --oomol-radius-lg: 8px;
+  --oomol-radius-xl: 12px;
+  --oomol-radius-2xl: 16px;
+  --oomol-radius-3xl: 20px;
+  --oomol-radius-full: 9999px;
+}
+
+/* ============================================
    主题切换过渡动画
    ============================================ */
-* {
+/* 仅对特定元素应用过渡，避免全局通配符导致的性能问题 */
+html,
+body,
+button,
+a,
+nav,
+header,
+footer,
+article,
+section,
+aside,
+div[class*="navbar"],
+div[class*="footer"],
+div[class*="card"],
+div[class*="btn"],
+div[class*="modal"],
+[class*="oomol-"] {
   transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    color 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* 对于某些不需要过渡的元素 */
-*:where(img, video, canvas, svg, iframe) {
+img,
+video,
+canvas,
+svg,
+iframe {
   transition: none;
 }

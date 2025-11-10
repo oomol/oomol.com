@@ -84,7 +84,8 @@
 
 .navbar {
   box-shadow: none;
-  background: rgba(13, 17, 22, 0.9);
+  background: var(--oomol-bg-base);
+  opacity: 0.9;
 
   position: relative;
   &::before {
@@ -105,7 +106,8 @@
 
 /* Light mode navbar styles */
 [data-theme="light"] .navbar {
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--oomol-bg-base);
+  opacity: 0.9;
   border-bottom: 1px solid var(--oomol-border-subtle);
 }
 
@@ -124,20 +126,51 @@
   }
 }
 
-$mobile-width: 375px;
+/* ============================================
+   响应式断点系统 (Responsive Breakpoints)
+   基于标准的移动优先设计
+   ============================================ */
 
+// 标准断点定义
+$breakpoint-xs: 375px;   // 小手机
+$breakpoint-sm: 640px;   // 大手机
+$breakpoint-md: 768px;   // 平板
+$breakpoint-lg: 1024px;  // 笔记本
+$breakpoint-xl: 1280px;  // 桌面
+$breakpoint-2xl: 1536px; // 大屏幕
+
+// 为了向后兼容，保留旧的变量名作为别名
+$mobile-width: $breakpoint-xs;
 $mobile-middle-width: 390px;
-
 $mobile-large-width: 430px;
-
-$tablet-width: 678px;
-
-$tablet-middle-width: 768px;
-
+$tablet-width: $breakpoint-sm;
+$tablet-middle-width: $breakpoint-md;
 $tablet-large-width: 820px;
+$desktop-width: $breakpoint-xl;
 
-$desktop-width: 1280px;
+// 推荐使用的新 mixin（标准命名）
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: $breakpoint-xs) { @content; }
+  }
+  @else if $breakpoint == sm {
+    @media (max-width: $breakpoint-sm) { @content; }
+  }
+  @else if $breakpoint == md {
+    @media (max-width: $breakpoint-md) { @content; }
+  }
+  @else if $breakpoint == lg {
+    @media (max-width: $breakpoint-lg) { @content; }
+  }
+  @else if $breakpoint == xl {
+    @media (max-width: $breakpoint-xl) { @content; }
+  }
+  @else if $breakpoint == 2xl {
+    @media (max-width: $breakpoint-2xl) { @content; }
+  }
+}
 
+// 为了向后兼容，保留旧的 mixin
 @mixin phone {
   @media (max-width: #{$mobile-width}) {
     @content;

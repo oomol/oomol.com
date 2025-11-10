@@ -139,7 +139,7 @@
 }
 
 :global(html[data-theme="dark"]) .stable {
-  background-color: #0d1117;
+  background-color: var(--oomol-bg-base);
 }
 
 .canary,
@@ -149,7 +149,7 @@
 
 :global(html[data-theme="dark"]) .canary,
 :global(html[data-theme="dark"]) .nightly {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--oomol-bg-container);
 }
 
 .downloads {
@@ -189,5 +189,6 @@
 }
 
 :global(html[data-theme="dark"]) .most-recommended {
-  background-color: #454680;
+  background-color: var(--oomol-primary);
+  opacity: 0.85;
 }

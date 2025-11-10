@@ -79,7 +79,7 @@
 }
 
 :global(html[data-theme="dark"]) .freePlan {
-  background-color: rgba(13, 17, 23, 0.5);
+  background-color: var(--oomol-bg-container);
 }
 
 .freePlanTitle {
@@ -169,7 +169,7 @@
 }
 
 :global(html[data-theme="dark"]) .standardPlan {
-  background-color: rgba(13, 17, 23, 1);
+  background-color: var(--oomol-bg-base);
 }
 
 .standardPlanTitle {
@@ -281,15 +281,15 @@
   font-weight: 400;
   line-height: 30px;
   text-align: center;
-  color: #7d7fe9;
+  color: var(--oomol-primary);
 
   &:hover {
     text-decoration: none;
-    color: #9092ec;
+    color: var(--oomol-primary-hover);
   }
   &:active {
     text-decoration: none;
-    color: #a4a5f0;
+    color: var(--oomol-primary-active);
   }
 }
 
