@@ -8,7 +8,7 @@
   height: 43px;
   border-radius: 4px;
   background-color: var(--oomol-primary);
-  color: var(--oomol-text-inverse);
+  color: var(--oomol-white);
   font-size: 18px;
   font-weight: 500;
   border: none;
@@ -17,7 +17,7 @@
 
   &:hover {
     background-color: var(--oomol-primary-hover);
-    color: var(--oomol-text-inverse);
+    color: var(--oomol-white);
   }
 
   &:active {

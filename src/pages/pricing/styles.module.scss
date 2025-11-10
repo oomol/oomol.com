@@ -228,14 +228,14 @@
 
   .linkText,
   .linkIcon {
-    color: var(--oomol-text-inverse) !important;
+    color: var(--oomol-white) !important;
   }
 }
 
 :global(html[data-theme="light"]) .modifyBtn {
   .linkText,
   .linkIcon {
-    color: #ffffff !important;
+    color: var(--oomol-white) !important;
   }
 }
 

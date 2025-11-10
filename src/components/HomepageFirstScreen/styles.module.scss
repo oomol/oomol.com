@@ -266,14 +266,14 @@
   height: 43px;
   border-radius: 40px;
   background-color: var(--oomol-primary);
-  color: var(--oomol-text-inverse);
+  color: var(--oomol-white);
   font-size: 14px;
   white-space: nowrap;
   border: 1px solid var(--oomol-primary);
 
   &:hover {
     background-color: var(--oomol-primary-hover);
-    color: var(--oomol-text-inverse);
+    color: var(--oomol-white);
     border: 1px solid var(--oomol-primary-hover);
   }
 }

@@ -74,7 +74,7 @@
   display: flex;
   align-items: center;
   font-size: 12px;
-  color: var(--oomol-text-inverse);
+  color: var(--oomol-white);
   background-color: var(--oomol-primary);
   border: none;
   border-radius: 100px;
@@ -91,7 +91,7 @@
 .pro {
   .btn {
     background-color: var(--oomol-primary);
-    color: var(--oomol-text-inverse);
+    color: var(--oomol-white);
   }
 }
 
@@ -184,7 +184,7 @@
 
   &:hover {
     background-color: var(--oomol-primary);
-    color: var(--oomol-text-inverse);
+    color: var(--oomol-white);
     border-color: var(--oomol-primary);
     transform: translateY(-1px);
   }
