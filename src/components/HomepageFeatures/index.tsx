@@ -18,12 +18,12 @@ type SuperiorityType = {
 
 const superiorityList: SuperiorityType[] = [
   {
-    imageUrl: "/img/pages/home/superiority-1.webp",
+    imageUrl: "/img/pages/home/superiority-1.svg",
     title: translate({ message: "HOME.Features.intuitive-interaction.title" }),
     inner: translate({ message: "HOME.Features.intuitive-interaction.inner" }),
   },
   {
-    imageUrl: "/img/pages/home/superiority-2.webp",
+    imageUrl: "/img/pages/home/superiority-2.svg",
 
     title: translate({ message: "HOME.Features.programming-friendly.title" }),
     inner: translate({
@@ -31,7 +31,7 @@ const superiorityList: SuperiorityType[] = [
     }),
   },
   {
-    imageUrl: "/img/pages/home/superiority-3.webp",
+    imageUrl: "/img/pages/home/superiority-3.svg",
     title: translate({
       message: "HOME.Features.pre-installed-environment.title",
     }),
@@ -39,13 +39,13 @@ const superiorityList: SuperiorityType[] = [
     contentFirst: true,
   },
   {
-    imageUrl: "/img/pages/home/superiority-4.webp",
+    imageUrl: "/img/pages/home/superiority-4.svg",
     title: translate({ message: "HOME.Features.support-sharing.title" }),
     inner: translate({ message: "HOME.Features.support-sharing.inner" }),
     contentFirst: true,
   },
   {
-    imageUrl: "/img/pages/home/superiority-5.webp",
+    imageUrl: "/img/pages/home/superiority-5.svg",
     title: translate({ message: "HOME.Features.block-sharing.title" }),
     inner: translate({ message: "HOME.Features.block-sharing.inner" }),
     contentFirst: true,

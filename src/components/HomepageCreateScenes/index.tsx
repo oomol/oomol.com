@@ -20,7 +20,7 @@ type CreateScenesDataType = {
 
 const createScenesData: CreateScenesDataType[] = [
   {
-    imageUrl: "/img/cases-1.png",
+    imageUrl: "/img/cases-1.svg",
     title: translate({ message: "HOME.Scenes.ai-vibe-coding.title" }),
     type: "purple",
     tag: translate({ message: "HOME.Scenes.ai-vibe-coding.tag" }),
@@ -31,7 +31,7 @@ const createScenesData: CreateScenesDataType[] = [
     zhCNVideoSrc: "https://static.oomol.com/assets/ai-code.webm",
   },
   {
-    imageUrl: "/img/cases-2.png",
+    imageUrl: "/img/cases-2.svg",
     title: translate({ message: "HOME.Scenes.drag-drop-manual.title" }),
     type: "purple",
     tag: translate({ message: "HOME.Scenes.drag-drop-manual.tag" }),

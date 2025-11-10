@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+  <rect width="1200" height="750" fill="#f5f5f5" stroke="#d0d0d0" stroke-width="2" stroke-dasharray="10,5"/>
+  <text x="600" y="320" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#333" text-anchor="middle">
+    📸 可视化工作流编排场景
+  </text>
+  <text x="600" y="370" font-family="Arial, sans-serif" font-size="20" fill="#666" text-anchor="middle">
+    建议内容：展示拖拽式工作流节点连接的场景
+  </text>
+  <text x="600" y="410" font-family="Arial, sans-serif" font-size="18" fill="#888" text-anchor="middle">
+    显示多个工作流节点通过连线组成的流程图
+  </text>
+  <text x="600" y="450" font-family="Arial, sans-serif" font-size="18" fill="#888" text-anchor="middle">
+    体现节点之间的数据流动和逻辑关系
+  </text>
+  <text x="600" y="490" font-family="Arial, sans-serif" font-size="18" fill="#888" text-anchor="middle">
+    推荐尺寸：1200×750px
+  </text>
+</svg>

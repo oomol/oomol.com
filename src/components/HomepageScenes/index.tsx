@@ -22,7 +22,7 @@ type SceneCardProps = {
 
 const scenesData: ScenesDataType[] = [
   {
-    imageUrl: "/img/scenes/chat.png",
+    imageUrl: "/img/scenes/chat.svg",
     videoSrc: "https://www.youtube.com/embed/rAf3ADe4Tbw?si=rTphzk-C-N69q0ex",
     title: translate({ message: "HOME.Scenes.gpu-sharing.title" }),
     inner: translate({ message: "HOME.Scenes.gpu-sharing.inner" }),
@@ -30,7 +30,7 @@ const scenesData: ScenesDataType[] = [
     zhCNVideoSrc: "https://static.oomol.com/assets/ffmpeg.webm",
   },
   {
-    imageUrl: "/img/scenes/magic.png",
+    imageUrl: "/img/scenes/magic.svg",
     videoSrc: "https://www.youtube.com/embed/AfD1fSwqihs?si=frfwFW9hSrIg4OQK",
     title: translate({ message: "HOME.Scenes.mcp-server.title" }),
     inner: translate({ message: "HOME.Scenes.mcp-server.inner" }),
@@ -38,7 +38,7 @@ const scenesData: ScenesDataType[] = [
     zhCNVideoSrc: "https://static.oomol.com/assets/ai-image.webm",
   },
   {
-    imageUrl: "/img/scenes/data.png",
+    imageUrl: "/img/scenes/data.svg",
     videoSrc: "https://www.youtube.com/embed/EnpC6dMbiSE?si=OK16pulRymGoo8JV",
     title: translate({ message: "HOME.Scenes.data-api.title" }),
     inner: translate({ message: "HOME.Scenes.data-api.inner" }),
@@ -46,7 +46,7 @@ const scenesData: ScenesDataType[] = [
     zhCNVideoSrc: "https://static.oomol.com/assets/chart.webm",
   },
   {
-    imageUrl: "/img/scenes/magic.png",
+    imageUrl: "/img/scenes/magic.svg",
     videoSrc: "https://www.youtube.com/embed/jKuKNyFmwNo?si=pOeN1pVa7JUreBGk",
     title: translate({ message: "HOME.Scenes.ai-image-service.title" }),
     inner: translate({ message: "HOME.Scenes.ai-image-service.inner" }),
@@ -55,7 +55,7 @@ const scenesData: ScenesDataType[] = [
   },
 
   {
-    imageUrl: "/img/scenes/pdf.png",
+    imageUrl: "/img/scenes/pdf.svg",
     videoSrc: "https://www.youtube.com/embed/mBhZo2SFwk0?si=8PRMDtyw49dCwGI-",
     title: translate({ message: "HOME.Scenes.iot-control.title" }),
     inner: translate({ message: "HOME.Scenes.iot-control.inner" }),
@@ -63,7 +63,7 @@ const scenesData: ScenesDataType[] = [
     zhCNVideoSrc: "https://static.oomol.com/assets/pdf.webm",
   },
   {
-    imageUrl: "/img/scenes/chat.png",
+    imageUrl: "/img/scenes/chat.svg",
     videoSrc: "https://www.youtube.com/embed/gm3TKG89PPs?si=VHhmU9zk3Ol51meX",
     title: translate({ message: "HOME.Scenes.agent-toolchain.title" }),
     inner: translate({ message: "HOME.Scenes.agent-toolchain.inner" }),

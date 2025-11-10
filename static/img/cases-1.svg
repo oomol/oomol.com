@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+  <rect width="1200" height="750" fill="#f5f5f5" stroke="#d0d0d0" stroke-width="2" stroke-dasharray="10,5"/>
+  <text x="600" y="320" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#333" text-anchor="middle">
+    📸 AI 辅助编码场景
+  </text>
+  <text x="600" y="370" font-family="Arial, sans-serif" font-size="20" fill="#666" text-anchor="middle">
+    建议内容：展示 AI Chat 与代码编辑器协同工作的场景
+  </text>
+  <text x="600" y="410" font-family="Arial, sans-serif" font-size="18" fill="#888" text-anchor="middle">
+    左侧或右侧显示 AI 对话窗口，中间显示代码编辑器
+  </text>
+  <text x="600" y="450" font-family="Arial, sans-serif" font-size="18" fill="#888" text-anchor="middle">
+    体现 AI 帮助用户生成或优化代码的过程
+  </text>
+  <text x="600" y="490" font-family="Arial, sans-serif" font-size="18" fill="#888" text-anchor="middle">
+    推荐尺寸：1200×750px
+  </text>
+</svg>

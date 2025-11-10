@@ -19,7 +19,7 @@ export default function HomepageVideo() {
               className={styles.video}
               animationStyle="from-center"
               videoSrc="https://www.youtube.com/embed/L3fYYybKWJE?si=gJ-r2pDJDdUtR_IM"
-              thumbnailSrc={useBaseUrl("/img/pages/home/first-screen.webp")}
+              thumbnailSrc={useBaseUrl("/img/pages/home/first-screen.svg")}
               thumbnailAlt="Hero Video"
             />
           </div>

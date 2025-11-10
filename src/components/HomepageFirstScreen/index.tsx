@@ -53,7 +53,7 @@ export default function HomepageFirstScreen() {
           <div className={styles["content-right"]}>
             <div className={styles["screenshot-container"]}>
               <img
-                src={useBaseUrl("/img/screen1.png")}
+                src={useBaseUrl("/img/screen1.svg")}
                 alt="OOMOL Product Screenshot"
                 className={styles["product-screenshot"]}
               />

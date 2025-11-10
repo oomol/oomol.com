@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 1000 700">
+  <rect width="1000" height="700" fill="#f5f5f5" stroke="#d0d0d0" stroke-width="2" stroke-dasharray="10,5"/>
+  <text x="500" y="280" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#333" text-anchor="middle">
+    📸 聊天/音频处理场景
+  </text>
+  <text x="500" y="320" font-family="Arial, sans-serif" font-size="18" fill="#666" text-anchor="middle">
+    建议内容：展示音频处理工作流场景
+  </text>
+  <text x="500" y="355" font-family="Arial, sans-serif" font-size="16" fill="#888" text-anchor="middle">
+    例如：裁剪音频片段、音频转文字、语音识别等场景
+  </text>
+  <text x="500" y="390" font-family="Arial, sans-serif" font-size="16" fill="#888" text-anchor="middle">
+    显示工作流节点和音频波形等元素
+  </text>
+  <text x="500" y="425" font-family="Arial, sans-serif" font-size="16" fill="#888" text-anchor="middle">
+    推荐尺寸：1000×700px
+  </text>
+</svg>

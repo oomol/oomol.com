@@ -58,19 +58,19 @@ const featuresData = {
     features: [
       {
         content: translate({ message: "FEATURES.sceneOne.content-1" }),
-        image: "/img/pages/features/feature-1.webp",
+        image: "/img/pages/features/feature-1.svg",
       },
       {
         content: translate({ message: "FEATURES.sceneOne.content-2" }),
-        image: "/img/pages/features/feature-2.webp",
+        image: "/img/pages/features/feature-2.svg",
       },
       {
         content: translate({ message: "FEATURES.sceneOne.content-3" }),
-        image: "/img/pages/features/feature-3.webp",
+        image: "/img/pages/features/feature-3.svg",
       },
       {
         content: translate({ message: "FEATURES.sceneOne.content-4" }),
-        image: "/img/pages/features/feature-4.webp",
+        image: "/img/pages/features/feature-4.svg",
       },
     ],
   },
@@ -79,15 +79,15 @@ const featuresData = {
     features: [
       {
         content: translate({ message: "FEATURES.sceneTwo.content-5" }),
-        image: "/img/pages/features/feature-5.webp",
+        image: "/img/pages/features/feature-5.svg",
       },
       {
         content: translate({ message: "FEATURES.sceneTwo.content-6" }),
-        image: "/img/pages/features/feature-6.webp",
+        image: "/img/pages/features/feature-6.svg",
       },
       {
         content: translate({ message: "FEATURES.sceneTwo.content-7" }),
-        image: "/img/pages/features/feature-7.webp",
+        image: "/img/pages/features/feature-7.svg",
       },
     ],
   },
