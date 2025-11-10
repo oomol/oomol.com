@@ -1,12 +1,13 @@
 import styles from "./styles.module.scss";
 
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import clsx from "clsx";
 import { LocalDropdown } from "../components/LocalDropdown";
 import { ColorModeDropdown } from "../components/ColorModeDropdown";
 import { Popover } from "@site/src/components/Popover";
+import { useColorMode } from "@docusaurus/theme-common";
 
 interface FooterLinkProps {
   href?: string;
@@ -108,6 +109,13 @@ const Footer: React.FC = () => {
   const hasFooter = !!siteConfig.themeConfig.footer;
   const currentLocale = i18n.currentLocale;
   const [isHovered, setIsHovered] = useState(false);
+  const { colorMode } = useColorMode();
+
+  const logoSrc = useMemo(() => {
+    const langPrefix = currentLocale === "zh-CN" ? "zh" : "en";
+    const themePrefix = colorMode === "dark" ? "dark" : "light";
+    return `/img/logo-${langPrefix}-${themePrefix}.svg`;
+  }, [currentLocale, colorMode]);
 
   if (!hasFooter) {
     return null;
@@ -136,9 +144,7 @@ const Footer: React.FC = () => {
           <div className={styles.leftBoxLogo}>
             <img
               alt="oomol"
-              src={
-                currentLocale === "en" ? "/img/logo-en.svg" : "/img/logo-zh.svg"
-              }
+              src={logoSrc}
               height={24}
               loading="lazy"
             />

@@ -13,6 +13,7 @@ import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
 import { translate } from "@docusaurus/Translate";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import LinkBtn from "@site/src/components/Button/LinkBtn";
+import { useColorMode } from "@docusaurus/theme-common";
 
 const isSignedIn = () => {
   const cookies = document.cookie.split(";").map(cookie => cookie.trim());
@@ -57,6 +58,7 @@ function splitNavItemsByPosition(
 
 const Navbar: React.FC<NavbarProps> = memo(() => {
   const mobileSidebar = useNavbarMobileSidebar();
+  const { colorMode } = useColorMode();
 
   const {
     siteConfig: {
@@ -70,6 +72,12 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
   const location = useLocation();
 
   const [hideNavbar, setHideNavbar] = useState(false);
+
+  const logoSrc = useMemo(() => {
+    const langPrefix = locale === "zh-CN" ? "zh" : "en";
+    const themePrefix = colorMode === "dark" ? "dark" : "light";
+    return `/img/logo-${langPrefix}-${themePrefix}.svg`;
+  }, [locale, colorMode]);
 
   const isDocumentPath = useMemo(() => {
     return (
@@ -140,7 +148,7 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
             <img
               height={24}
               alt="logo"
-              src={locale === "en" ? "/img/logo-en.svg" : "/img/logo-zh.svg"}
+              src={logoSrc}
               loading="lazy"
             />
           </Link>
