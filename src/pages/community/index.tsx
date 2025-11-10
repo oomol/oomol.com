@@ -1,10 +1,4 @@
 import styles from "./styles.module.scss";
-import XSVG from "@site/static/img/pages/community/x.svg";
-import GitHubSVG from "@site/static/img/pages/community/github.svg";
-import DiscordSVG from "@site/static/img/pages/community/discord.svg";
-import YoutubeSVG from "@site/static/img/pages/community/youtube.svg";
-import WeComSVG from "@site/static/img/pages/community/wecom.svg";
-import DiscussionSVG from "@site/static/img/pages/community/github_discussion.svg";
 
 import Layout from "@theme/Layout";
 import { translate } from "@docusaurus/Translate";
@@ -68,31 +62,31 @@ const REPOS: RepoInfo[] = [
 
 const contentData = [
   {
-    icon: <DiscordSVG className={styles.logo} />,
+    icon: <i className={`${styles.logo} i-bi-discord`} />,
     name: "Discord",
     href: "https://discord.gg/W3evr2kJDa",
     text: "Discord",
   },
   {
-    icon: <YoutubeSVG className={styles.logo} />,
+    icon: <i className={`${styles.logo} i-bi-youtube`} />,
     name: "Youtube",
     href: "https://www.youtube.com/@oomolstudio",
     text: "YouTube",
   },
   {
-    icon: <XSVG className={styles.logo} />,
+    icon: <i className={`${styles.logo} i-bi-twitter-x`} />,
     name: "X",
     href: "https://twitter.com/OomolStudio",
     text: "X",
   },
   {
-    icon: <GitHubSVG className={styles.logo} />,
+    icon: <i className={`${styles.logo} i-bi-github`} />,
     name: "GitHub",
     href: "https://github.com/oomol-lab",
     text: "GitHub",
   },
   {
-    icon: <DiscussionSVG className={styles.logo} />,
+    icon: <i className={`${styles.logo} i-octicon-comment-discussion-16`} />,
     name: "Discussion",
     href: "https://github.com/orgs/oomol-lab/discussions",
     text: "Discussions",
@@ -276,7 +270,7 @@ export default function Community() {
                       message: "HOME.Community.contact-we-com",
                     })}
                     iconPos="left"
-                    icon={<WeComSVG className={styles.logo} />}
+                    icon={<i className={`${styles.logo} i-simple-icons-wechat`} />}
                   />
                 }
                 position="top"
