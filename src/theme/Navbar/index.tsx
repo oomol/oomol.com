@@ -13,8 +13,6 @@ import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
 import { translate } from "@docusaurus/Translate";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import LinkBtn from "@site/src/components/Button/LinkBtn";
-import ColorModeToggle from "@theme/ColorModeToggle";
-import { useColorMode } from "@docusaurus/theme-common";
 
 const isSignedIn = () => {
   const cookies = document.cookie.split(";").map(cookie => cookie.trim());
@@ -59,7 +57,6 @@ function splitNavItemsByPosition(
 
 const Navbar: React.FC<NavbarProps> = memo(() => {
   const mobileSidebar = useNavbarMobileSidebar();
-  const { colorMode, setColorMode } = useColorMode();
 
   const {
     siteConfig: {
@@ -194,11 +191,6 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
           {rightItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
           ))}
-          <ColorModeToggle
-            className={styles.colorModeToggle}
-            value={colorMode}
-            onChange={setColorMode}
-          />
         </div>
         <div
           aria-label="Navigation bar toggle"
