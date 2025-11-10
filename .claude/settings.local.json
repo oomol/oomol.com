@@ -7,7 +7,10 @@
       "Bash(npm run build:*)",
       "Bash(rm:*)",
       "Bash(open -a \"Google Chrome\" http://localhost:3000)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(npm outdated:*)",
+      "Bash(npm update:*)",
+      "Bash(npm audit:*)"
     ],
     "deny": [],
     "ask": []
