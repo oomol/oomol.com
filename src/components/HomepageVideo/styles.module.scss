@@ -2,8 +2,8 @@
 
 .section {
   position: relative;
-  background-color: #121414;
-  
+  background-color: var(--oomol-bg-container);
+
   @media (max-width: 996px) {
     padding: 0 16px;
   }
@@ -28,9 +28,9 @@
 .title {
   font-size: 48px;
   font-weight: 800;
-  color: #f0f6fc;
+  color: var(--oomol-text-primary);
   margin-bottom: 16px;
-  
+
   @media (max-width: 768px) {
     font-size: 36px;
   }
@@ -39,9 +39,9 @@
 .subtitle {
   font-size: 20px;
   line-height: 1.5;
-  color: #838b95;
+  color: var(--oomol-text-secondary);
   margin: 0;
-  
+
   @media (max-width: 768px) {
     font-size: 18px;
   }

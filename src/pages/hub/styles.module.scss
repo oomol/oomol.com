@@ -91,11 +91,11 @@
   }
   
   &.active {
-    background-color: rgba(16, 185, 129, 0.1);
-    border-color: #10B981;
-    
+    background-color: var(--oomol-hub-bg);
+    border-color: var(--oomol-hub);
+
     .featureContent {
-      color: #059669;
+      color: var(--oomol-hub-dark);
       font-weight: 500;
     }
   }
@@ -122,9 +122,9 @@
   line-height: 1.5;
   color: var(--ifm-color-content);
   transition: all 0.3s ease;
-  
+
   &.active {
-    color: #059669;
+    color: var(--oomol-hub-dark);
     font-weight: 500;
   }
 }
