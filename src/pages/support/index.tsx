@@ -1,8 +1,6 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import Layout from "../../theme/Layout";
-import useBaseUrl from "@docusaurus/useBaseUrl";
-import Image from "@theme/ThemedImage";
 import { Button } from "@site/src/components/Button";
 export default function Support() {
   return (
@@ -12,13 +10,7 @@ export default function Support() {
         <div className={styles.supportCellBox}>
           <div className={styles.supportCell}>
             <div className={styles.title}>
-              <Image
-                style={{ width: 20 }}
-                sources={{
-                  light: useBaseUrl("/img/github.svg"),
-                  dark: useBaseUrl("/img/github.svg"),
-                }}
-              />
+              <i className="i-bi-github" style={{ fontSize: "20px" }} />
               <span className={styles["support-title"]}>Github Support</span>
             </div>
             <div className={styles.inner}>
@@ -36,12 +28,9 @@ export default function Support() {
           </div>
           <div className={styles.supportCell}>
             <div className={styles.title}>
-              <Image
-                style={{ width: 20, opacity: 0.7 }}
-                sources={{
-                  light: useBaseUrl("/img/discord_line.svg"),
-                  dark: useBaseUrl("/img/discord_line.svg"),
-                }}
+              <i
+                className="i-bi-discord"
+                style={{ fontSize: "20px", opacity: 0.7 }}
               />
               <span className={styles["support-title"]}>Discord Support</span>
             </div>

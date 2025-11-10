@@ -42,62 +42,62 @@ const FooterLink: React.FC<FooterLinkProps> = ({
 
 type LogoNodeDataType = {
   name: string;
-  src: string;
+  iconClass: string;
   href: string;
-  width: number;
+  size: number;
 };
 
 const logoNodeData: LogoNodeDataType[] = [
   {
     name: "twitter",
-    src: "/img/pages/footer/x.svg",
+    iconClass: "i-bi-twitter-x",
     href: "https://twitter.com/OomolStudio",
-    width: 20,
+    size: 20,
   },
   {
     name: "discord",
-    src: "/img/pages/footer/discord.svg",
+    iconClass: "i-bi-discord",
     href: "https://discord.gg/W3evr2kJDa",
-    width: 22,
+    size: 22,
   },
   {
     name: "youtube",
-    src: "/img/pages/footer/youtube.svg",
+    iconClass: "i-bi-youtube",
     href: "https://www.youtube.com/@oomolstudio",
-    width: 22,
+    size: 22,
   },
   {
     name: "github",
-    src: "/img/pages/footer/github.svg",
+    iconClass: "i-bi-github",
     href: "https://github.com/oomol-lab",
-    width: 20,
+    size: 20,
   },
 ];
 
 const logoNodeDataCN: LogoNodeDataType[] = [
   {
     name: "twitter",
-    src: "/img/pages/footer/x.svg",
+    iconClass: "i-bi-twitter-x",
     href: "https://twitter.com/OomolStudio",
-    width: 20,
+    size: 20,
   },
   {
     name: "discord",
-    src: "/img/pages/footer/discord.svg",
+    iconClass: "i-bi-discord",
     href: "https://discord.gg/W3evr2kJDa",
-    width: 22,
+    size: 22,
   },
   {
     name: "youtube",
-    src: "/img/pages/footer/youtube.svg",
+    iconClass: "i-bi-youtube",
     href: "https://www.youtube.com/@oomolstudio",
-    width: 22,
+    size: 22,
   },
   {
     name: "github",
-    src: "/img/pages/footer/github.svg",
+    iconClass: "i-bi-github",
     href: "https://github.com/oomol-lab",
-    width: 20,
+    size: 20,
   },
 ];
 
@@ -119,11 +119,9 @@ const Footer: React.FC = () => {
     return (
       <a target="_blank" href={data.href} key={`${index}-${data.name}`}>
         <div className={styles.iconBox}>
-          <img
-            alt={data.name}
-            src={data.src}
-            width={data.width}
-            loading="lazy"
+          <i
+            className={data.iconClass}
+            style={{ fontSize: `${data.size}px` }}
           />
         </div>
       </a>
@@ -148,16 +146,19 @@ const Footer: React.FC = () => {
             {logoNodes}
             <Popover
               trigger={
-                <img
-                  className={styles["work-weixin"]}
-                  src={
-                    isHovered
-                      ? "/img/pages/footer/wecom-active.svg"
-                      : "/img/pages/footer/wecom.svg"
-                  }
+                <div
+                  className={styles.iconBox}
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
-                />
+                >
+                  <i
+                    className="i-simple-icons-wechat"
+                    style={{
+                      fontSize: "22px",
+                      color: isHovered ? "var(--oomol-primary)" : "inherit",
+                    }}
+                  />
+                </div>
               }
               position="top"
               content={
