@@ -7,6 +7,7 @@ import LinkBtn from "@site/src/components/Button/LinkBtn";
 import clsx from "clsx";
 import { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import type { DocusaurusContext } from "@docusaurus/types";
 
 interface QnABoxProps {
   question: string;
@@ -45,7 +46,9 @@ const QnABox = ({ question, answer }: QnABoxProps) => {
 };
 
 export default function Index() {
-  const context: any = useDocusaurusContext();
+  const context = useDocusaurusContext() as unknown as DocusaurusContext & {
+    i18n: { currentLocale: string };
+  };
   const { i18n } = context;
   const QAData = [
     {

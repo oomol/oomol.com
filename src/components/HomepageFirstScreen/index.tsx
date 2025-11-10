@@ -12,7 +12,7 @@ import LinkBtn from "../Button/LinkBtn";
 import type { DocusaurusContext } from "@docusaurus/types";
 
 export default function HomepageFirstScreen() {
-  const context = useDocusaurusContext() as DocusaurusContext & {
+  const context = useDocusaurusContext() as unknown as DocusaurusContext & {
     i18n: { currentLocale: string };
   };
   const { i18n } = context;

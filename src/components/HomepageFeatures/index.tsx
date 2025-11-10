@@ -84,7 +84,7 @@ export const FeatureItem = ({
 };
 
 export default function HomepageFeatures() {
-  const context = useDocusaurusContext() as DocusaurusContext & {
+  const context = useDocusaurusContext() as unknown as DocusaurusContext & {
     i18n: { currentLocale: string };
   };
   const { i18n } = context;

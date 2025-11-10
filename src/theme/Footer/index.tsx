@@ -105,7 +105,7 @@ const logoNodeDataCN: LogoNodeDataType[] = [
 ];
 
 const Footer: React.FC = () => {
-  const { siteConfig, i18n } = useDocusaurusContext() as DocusaurusContext & {
+  const { siteConfig, i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
     siteConfig: {
       themeConfig: {
         footer: {

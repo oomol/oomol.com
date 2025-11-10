@@ -6,7 +6,7 @@ import {MDXProvider} from "@mdx-js/react";
 import Terms from "./privacy.mdx"
 
 const components = {
-    em(properties: any) {
+    em(properties: React.ComponentProps<'i'>) {
       return <i {...properties} />
     }
   }

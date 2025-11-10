@@ -5,7 +5,7 @@ import {MDXProvider} from "@mdx-js/react";
 import Terms from "./terms.mdx"
 
 const components = {
-  em(properties: any) {
+  em(properties: React.ComponentProps<'i'>) {
     return <i {...properties} />;
   },
 };

@@ -64,9 +64,11 @@ export const CyclicTypewriterText: React.FC<CyclicTypewriterTextProps> = ({
         }, speed / 2); // 删除速度比打字快一倍
       } else {
         // 删除完成，切换到下一个文本并重新开始打字
-        setCurrentTextIndex(prev => (prev + 1) % texts.length);
-        setIsTyping(true);
-        setCurrentIndex(0);
+        timer = setTimeout(() => {
+          setCurrentTextIndex(prev => (prev + 1) % texts.length);
+          setIsTyping(true);
+          setCurrentIndex(0);
+        }, 0);
       }
     }
 

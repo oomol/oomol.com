@@ -6,7 +6,7 @@ import type { DocusaurusContext } from "@docusaurus/types";
 
 export default function HomepageStarter() {
   const { colorMode } = useColorMode();
-  const { i18n } = useDocusaurusContext() as DocusaurusContext & {
+  const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
     i18n: { currentLocale: string };
   };
   const locale = i18n.currentLocale;

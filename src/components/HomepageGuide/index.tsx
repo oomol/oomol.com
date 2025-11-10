@@ -15,7 +15,7 @@ type CommunityLinkType = {
 };
 
 export default function HomepageGuide() {
-  const context = useDocusaurusContext() as DocusaurusContext & {
+  const context = useDocusaurusContext() as unknown as DocusaurusContext & {
     i18n: { currentLocale: string };
   };
   const { i18n } = context;

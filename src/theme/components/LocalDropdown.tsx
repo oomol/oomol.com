@@ -24,7 +24,7 @@ const formateLocale = (locale: string) => {
 export const LocalDropdown = ({ queryString = "" }: LocalDropdownProps) => {
   const {
     i18n: { currentLocale, locales },
-  } = useDocusaurusContext() as DocusaurusContext & {
+  } = useDocusaurusContext() as unknown as DocusaurusContext & {
     i18n: { currentLocale: string; locales: string[] };
   };
   const alternatePageUtils = useAlternatePageUtils();
@@ -33,9 +33,10 @@ export const LocalDropdown = ({ queryString = "" }: LocalDropdownProps) => {
   const [isShow, setIsShow] = useState(false);
 
   const handleLocaleChange = (locale: string) => {
-    // 使用 useEffect 或其他方式处理 cookie,避免在组件中直接修改外部状态
+    // 设置语言 cookie - 这是必要的副作用
     if (typeof window !== 'undefined') {
       const newCookie = `OOMOL_LOCALE=${locale}; path=/; domain=.${window.location.host}; max-age=31536000`;
+      // eslint-disable-next-line react-hooks/immutability
       window.document.cookie = newCookie;
     }
 

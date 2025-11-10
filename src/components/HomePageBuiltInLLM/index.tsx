@@ -56,7 +56,7 @@ const llmData = [
   },
 ];
 
-export const LLMItem = memo(
+const LLMItemComponent = memo(
   ({
     defaultIcon = <ClaudeSVG />,
     hoverIcon = <ClaudeLightHighSVG />,
@@ -76,6 +76,10 @@ export const LLMItem = memo(
     );
   }
 );
+
+LLMItemComponent.displayName = "LLMItem";
+
+export const LLMItem = LLMItemComponent;
 
 export default function HomePageBuiltInLLM() {
   return (

@@ -47,7 +47,7 @@ function splitNavItemsByPosition(
   return { leftItems, rightItems };
 }
 
-const Navbar: React.FC<NavbarProps> = memo(() => {
+const NavbarComponent: React.FC<NavbarProps> = memo(() => {
   const mobileSidebar = useNavbarMobileSidebar();
   const { colorMode } = useColorMode();
 
@@ -58,7 +58,7 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
       },
     },
     i18n,
-  } = useDocusaurusContext() as DocusaurusContext & {
+  } = useDocusaurusContext() as unknown as DocusaurusContext & {
     siteConfig: { themeConfig: { navbar: { items: Array<ComponentProps<typeof NavbarItem>> } } };
     i18n: { currentLocale: string };
   };
@@ -228,5 +228,9 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
     </header>
   );
 });
+
+NavbarComponent.displayName = "Navbar";
+
+const Navbar = NavbarComponent;
 
 export default Navbar;
