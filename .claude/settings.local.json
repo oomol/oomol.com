@@ -6,7 +6,8 @@
       "Bash(xargs kill -9)",
       "Bash(npm run build:*)",
       "Bash(rm:*)",
-      "Bash(open -a \"Google Chrome\" http://localhost:3000)"
+      "Bash(open -a \"Google Chrome\" http://localhost:3000)",
+      "Bash(npm install:*)"
     ],
     "deny": [],
     "ask": []

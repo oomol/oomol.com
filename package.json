@@ -35,7 +35,7 @@
     "@docusaurus/module-type-aliases": "^3.8.1",
     "@docusaurus/tsconfig": "^3.8.1",
     "@docusaurus/types": "^3.8.1",
-    "@iconify/json": "^2.2.340",
+    "@iconify/json": "^2.2.405",
     "@types/mdx-js__react": "^1.5.8",
     "@types/react": "^18.2.29",
     "@unocss/webpack": "^66.1.2",
