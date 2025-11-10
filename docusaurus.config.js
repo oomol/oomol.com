@@ -44,6 +44,7 @@ const config = {
         showReadingTime: true,
         blogSidebarCount: "ALL",
         blogSidebarTitle: "Updates",
+        onUntruncatedBlogPosts: 'ignore',
       },
     ],
     function () {
@@ -102,6 +103,7 @@ const config = {
           showReadingTime: true,
           blogSidebarCount: "ALL",
           blogSidebarTitle: "All posts",
+          onUntruncatedBlogPosts: 'ignore',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
         },
