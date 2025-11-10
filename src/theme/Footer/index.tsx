@@ -126,7 +126,7 @@ const Footer: React.FC = () => {
 
   const logoNodes = logoNodesArray.map((data, index) => {
     return (
-      <a target="_blank" href={data.href} key={`${index}-${data.name}`}>
+      <a target="_blank" rel="noreferrer" href={data.href} key={`${index}-${data.name}`}>
         <div className={styles.iconBox}>
           <i
             className={data.iconClass}
@@ -205,7 +205,7 @@ const Footer: React.FC = () => {
           <div className={styles.bottomInfo}>
             {copyright}
             {currentLocale === "zh-CN" && (
-              <a href="https://beian.miit.gov.cn/" target="_blank">
+              <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">
                 浙ICP备2023018874号-1
               </a>
             )}

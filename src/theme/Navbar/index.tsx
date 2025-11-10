@@ -36,6 +36,7 @@ const handleSignin = (locale: string) => {
   window.open(downloadUrl, "_self");
 };
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface NavbarProps {}
 
 const DefaultNavItemPosition = "right";

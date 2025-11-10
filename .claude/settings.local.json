@@ -16,7 +16,10 @@
       "Bash(do)",
       "Bash(echo:*)",
       "Bash(done)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(npm run lint:*)",
+      "Bash(npm run ts-check:*)",
+      "Bash(npm run:*)"
     ],
     "deny": [],
     "ask": []

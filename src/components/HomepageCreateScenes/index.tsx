@@ -44,6 +44,11 @@ const createScenesData: CreateScenesDataType[] = [
 ];
 
 export default function HomepageCreateScenes() {
+  // 在组件顶层预先获取所有图片的 URL
+  const thumbnailUrl0 = useBaseUrl(createScenesData[0].imageUrl);
+  const thumbnailUrl1 = useBaseUrl(createScenesData[1].imageUrl);
+  const thumbnailUrls = [thumbnailUrl0, thumbnailUrl1];
+
   const createScenesNodes = createScenesData.map((data, index) => {
     return (
       <div key={index} className={styles.sectionCell}>
@@ -59,7 +64,7 @@ export default function HomepageCreateScenes() {
           className={styles["video"]}
           animationStyle="from-center"
           videoSrc={data.videoSrc}
-          thumbnailSrc={useBaseUrl(data.imageUrl)}
+          thumbnailSrc={thumbnailUrls[index]}
           thumbnailAlt="Hero Video"
           showPlayButtonOnHover={true}
           zhCNVideoSrc={data.zhCNVideoSrc}
