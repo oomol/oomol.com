@@ -10,7 +10,8 @@
       "Bash(npm install:*)",
       "Bash(npm outdated:*)",
       "Bash(npm update:*)",
-      "Bash(npm audit:*)"
+      "Bash(npm audit:*)",
+      "Bash(npm run build-unocss:*)"
     ],
     "deny": [],
     "ask": []

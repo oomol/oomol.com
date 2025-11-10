@@ -27,16 +27,24 @@
 }
 
 .gotoHubButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   background: inherit;
   border: 1px solid var(--oomol-border-default);
   border-radius: 4px;
-  padding: 4px 4px;
+  padding: 4px 12px;
   font-weight: 500;
   font-size: 14px;
   cursor: pointer;
   color: var(--oomol-text-primary);
+  text-decoration: none;
 
   margin: 0 !important;
+
+  i {
+    font-size: 16px;
+  }
 
   &:hover {
     color: var(--oomol-primary) !important;
