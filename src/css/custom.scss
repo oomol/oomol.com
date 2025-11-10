@@ -111,6 +111,13 @@
   border-bottom: 1px solid var(--oomol-border-subtle);
 }
 
+/* Dark mode navbar styles */
+[data-theme="dark"] .navbar {
+  background: var(--oomol-bg-base);
+  opacity: 0.9;
+  border-bottom: 1px solid var(--oomol-border-subtle);
+}
+
 /* Navbar link colors */
 [data-theme="light"] {
   .navbar__link {
