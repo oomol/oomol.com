@@ -64,6 +64,7 @@
   display: flex;
   align-items: center;
   font-size: 12px;
+  color: var(--oomol-text-secondary);
   border: 1px solid var(--oomol-border-default);
   border-radius: 100px;
   padding: 4px 16px;
@@ -107,6 +108,11 @@
   margin-bottom: 10px;
 }
 
+.description {
+  color: var(--oomol-text-secondary);
+  margin: 10px 0;
+}
+
 .card ul {
   list-style: none;
   padding: 0;
@@ -134,6 +140,11 @@
 
 .top-up {
   height: 208px;
+
+  h2,
+  h3 {
+    color: var(--oomol-text-primary);
+  }
 }
 
 .btn {
@@ -163,6 +174,5 @@
   display: flex;
   align-items: center;
   gap: 12px;
-
-  @include linearGradientColor;
+  color: var(--oomol-text-secondary);
 }

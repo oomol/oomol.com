@@ -62,7 +62,7 @@ const HomepagePricing = () => {
                 {item.title}
                 {item.tag && <span className={styles.tag}>{item.tag}</span>}
               </h2>
-              {item.description && <p>{item.description}</p>}
+              {item.description && <p className={styles.description}>{item.description}</p>}
               <h3 className={styles.price}>{item.price}</h3>
               {item.features && (
                 <ul>
