@@ -10,6 +10,7 @@ export default defineConfig({
         codicon: () => import('@iconify/json/json/codicon.json').then(i => i.default),
         'file-icons': () => import('@iconify/json/json/file-icons.json').then(i => i.default),
         ic: () => import('@iconify/json/json/ic.json').then(i => i.default),
+        lucide: () => import('@iconify/json/json/lucide.json').then(i => i.default),
       },
       extraProperties: {
         display: "inline-block",

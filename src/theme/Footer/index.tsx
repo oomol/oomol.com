@@ -5,9 +5,8 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import clsx from "clsx";
 import { LocalDropdown } from "../components/LocalDropdown";
+import { ColorModeDropdown } from "../components/ColorModeDropdown";
 import { Popover } from "@site/src/components/Popover";
-import ColorModeToggle from "@theme/ColorModeToggle";
-import { useColorMode } from "@docusaurus/theme-common";
 
 interface FooterLinkProps {
   href?: string;
@@ -109,7 +108,6 @@ const Footer: React.FC = () => {
   const hasFooter = !!siteConfig.themeConfig.footer;
   const currentLocale = i18n.currentLocale;
   const [isHovered, setIsHovered] = useState(false);
-  const { colorMode, setColorMode } = useColorMode();
 
   if (!hasFooter) {
     return null;
@@ -195,6 +193,9 @@ const Footer: React.FC = () => {
       </div>
       <div className={styles.border}>
         <div className={styles.bottom}>
+          <div className={styles.leftControls}>
+            <ColorModeDropdown />
+          </div>
           <div className={styles.bottomInfo}>
             {copyright}
             {currentLocale === "zh-CN" && (
@@ -203,12 +204,7 @@ const Footer: React.FC = () => {
               </a>
             )}
           </div>
-          <div className={styles.controls}>
-            <ColorModeToggle
-              className={styles.colorModeToggle}
-              value={colorMode}
-              onChange={setColorMode}
-            />
+          <div className={styles.rightControls}>
             <LocalDropdown />
           </div>
         </div>

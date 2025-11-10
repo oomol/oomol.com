@@ -113,41 +113,59 @@
 }
 
 .bottom {
-  width: 1140px;
+  max-width: var(--ifm-container-width);
+  width: 100%;
   height: 48px;
   display: flex;
   align-items: center;
   padding: 0 24px;
-  justify-content: center;
+  justify-content: space-between;
   gap: 12px;
 
   @include phone {
     flex-wrap: wrap;
     padding: 0px 16px;
     margin-bottom: 16px;
+    justify-content: center;
   }
 
   @include phone-middle {
     flex-wrap: wrap;
     padding: 0px 16px;
     margin-bottom: 16px;
+    justify-content: center;
   }
 
   @include phone-large {
     flex-wrap: wrap;
     padding: 0px 16px;
     margin-bottom: 16px;
+    justify-content: center;
   }
 
   @include pad {
     flex-wrap: wrap;
     text-align: center;
+    justify-content: center;
   }
+}
+
+.leftControls {
+  display: flex;
+  align-items: center;
+}
+
+.rightControls {
+  display: flex;
+  align-items: center;
 }
 
 .bottomInfo {
   font-size: 12px;
   color: var(--oomol-text-tertiary);
+  text-align: center;
+  flex: 1;
+
   a {
     margin-left: 8px;
     color: var(--oomol-text-secondary);
@@ -192,45 +210,4 @@
   max-width: none;
   width: 160px;
   height: 160px;
-}
-
-.controls {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.colorModeToggle {
-  width: 110px;
-  height: 24px !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--oomol-border-default) !important;
-  background-color: var(--oomol-bg-elevated) !important;
-  border-radius: 4px;
-  padding: 0 8px;
-  font-size: 12px;
-
-  :global {
-    button {
-      width: 100%;
-      height: 100%;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      background: transparent !important;
-      border: none;
-
-      &:hover {
-        background: transparent !important;
-      }
-    }
-  }
-}
-
-:global(html[data-theme="light"]) .colorModeToggle {
-  color: var(--oomol-text-primary);
 }
