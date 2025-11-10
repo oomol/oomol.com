@@ -114,7 +114,6 @@ export default function HomepageFeatures() {
       </div>
       <LinkBtn
         text={translate({ message: "HOME.Features.linkBtn-text" })}
-        iconPos="right"
         icon="i-codicon-arrow-right"
         url={
           i18n.currentLocale === "zh-CN"

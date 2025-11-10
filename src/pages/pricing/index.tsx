@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Layout from "../../theme/Layout";
 import styles from "./styles.module.scss";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
@@ -121,7 +121,6 @@ export default function Index() {
             </div>
             <LinkBtn
               text={translate({ message: "PRICING.buttonText" })}
-              iconPos="left"
               icon="i-codicon:credit-card"
               url="https://console.oomol.com/"
               className={styles.modifyBtn}

@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss";
 
 import NavbarItem from "@theme/NavbarItem";
-import React, { memo, useMemo, useState } from "react";
+import React, { memo, useMemo } from "react";
 import type { ComponentProps } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useLocation } from "@docusaurus/router";
@@ -12,20 +12,9 @@ import { useNavbarMobileSidebar } from "@docusaurus/theme-common/internal";
 import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
 import { translate } from "@docusaurus/Translate";
 import BrowserOnly from "@docusaurus/BrowserOnly";
-import LinkBtn from "@site/src/components/Button/LinkBtn";
 import { useColorMode } from "@docusaurus/theme-common";
 
-const isSignedIn = () => {
-  const cookies = document.cookie.split(";").map(cookie => cookie.trim());
-  return cookies.some(cookie => cookie.includes("oomol-signed-in"));
-};
-
-const CALLBACK_URL = "https://chat.oomol.com/";
-
 const handleSignin = (locale: string) => {
-  // if (isSignedIn()) {
-  //   return window.open(CALLBACK_URL, "_self");
-  // }
 
   // const redirectURL = `https://api.oomol.com/v1/auth/redirect?redirect=${encodeURIComponent(CALLBACK_URL)}`;
   // window.open(redirectURL, "_self");
@@ -71,8 +60,6 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
   } = useDocusaurusContext() as any;
   const locale = i18n.currentLocale;
   const location = useLocation();
-
-  const [hideNavbar, setHideNavbar] = useState(false);
 
   const logoSrc = useMemo(() => {
     const langPrefix = locale === "zh-CN" ? "zh" : "en";
@@ -140,7 +127,6 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
     <header
       className={clsx("navbar", styles.navbar, {
         "navbar-sidebar--show": mobileSidebar.shown,
-        [styles.navbarHidden]: hideNavbar,
       })}
     >
       <div className={clsx("navbar__inner", styles.inner)}>

@@ -1,13 +1,9 @@
 import React from "react";
 import Layout from "../theme/Layout";
 
-import HomepageDownloads from "@site/src/components/HomepageDownloads";
 import HomepageScenes from "@site/src/components/HomepageScenes";
-import HomepageCreate from "@site/src/components/HomepageCreate";
 import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
 
-import HomepageStarter from "@site/src/components/HomepageStarter";
-import HomepagePricing from "../components/HomePagePricing";
 import Head from "@docusaurus/Head";
 import HomepageGuide from "../components/HomepageGuide";
 import HomePageBuiltInLLM from "../components/HomePageBuiltInLLM";

@@ -34,7 +34,6 @@ export default function HomepageCreate() {
         </div>
         <LinkBtn
           text={translate({ message: "HOME.Guide.link-button-text" })}
-          iconPos="right"
           icon="i-codicon:arrow-right"
           url={
             i18n.currentLocale === "zh-CN"

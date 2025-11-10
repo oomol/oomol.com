@@ -1,9 +1,7 @@
 import React, { useMemo } from "react";
 import styles from "./styles.module.scss";
-import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
-import LinkBtn from "../Button/LinkBtn";
 import FirstSceneCard from "./FirstSceneCard";
 import clsx from "clsx";
 import { HeroVideoDialog } from "../magic-ui/HeroVideoDialog";

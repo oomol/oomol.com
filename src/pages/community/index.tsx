@@ -218,7 +218,6 @@ export default function Community() {
         if (cached) {
           const { data } = JSON.parse(cached);
           setGithubStats(data);
-          console.info("use cached data as fallback");
           return true;
         }
       } catch (e) {
@@ -252,12 +251,11 @@ export default function Community() {
           </div>
           <div className={styles.contactBox}>
             <div className={styles["contactList"]}>
-              {contentData.map((item, index) => {
+              {contentData.map((item) => {
                 return (
                   <LinkBtn
                     key={item.name}
                     text={item.text}
-                    iconPos="left"
                     icon={item.icon}
                     url={item.href}
                   />
@@ -269,7 +267,6 @@ export default function Community() {
                     text={translate({
                       message: "HOME.Community.contact-we-com",
                     })}
-                    iconPos="left"
                     icon={<i className={`${styles.logo} i-simple-icons-wechat`} />}
                   />
                 }
@@ -299,7 +296,7 @@ export default function Community() {
           </div>
         </div>
         <div className={styles.repositories}>
-          {REPOS.map((repo, index) => {
+          {REPOS.map((repo) => {
             return (
               <div
                 className={styles.repository}

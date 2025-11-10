@@ -4,14 +4,12 @@ import clsx from "clsx";
 
 export interface LinkBtnProps {
   text: string;
-  iconPos: "left" | "right";
   icon: ReactNode | string;
   url?: string;
   className?: string;
 }
 export default function LinkBtn({
   text,
-  iconPos = "left",
   icon,
   url,
   className,

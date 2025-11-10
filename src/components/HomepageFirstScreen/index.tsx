@@ -1,7 +1,6 @@
 import styles from "./styles.module.scss";
 
-import React, { useState } from "react";
-import Image from "@theme/ThemedImage";
+import React from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -67,7 +66,6 @@ export default function HomepageFirstScreen() {
               <DownloadButton />
               <LinkBtn
                 text={translate({ message: "Theme.Navbar.go-to-hub-flow" })}
-                iconPos="left"
                 icon="i-codicon-globe"
                 url="https://hub.oomol.com/"
               />

@@ -90,7 +90,6 @@ export default function HomepageCreateScenes() {
           text={translate({
             message: "HOME.Create.browse-docs",
           })}
-          iconPos="right"
           icon="i-codicon:arrow-right"
           url={
             i18n.currentLocale === "zh-CN"

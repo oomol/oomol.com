@@ -19,7 +19,8 @@
       "Bash(ls:*)",
       "Bash(npm run lint:*)",
       "Bash(npm run ts-check:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []
