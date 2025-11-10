@@ -63,6 +63,22 @@
   justify-content: flex-start;
   padding: 40px;
   border-radius: 20px;
+  background-color: var(--oomol-bg-elevated);
+  border: 1px solid var(--oomol-border-subtle);
+  box-shadow: var(--oomol-shadow-sm);
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: var(--oomol-shadow-md);
+  }
+}
+
+:global(html[data-theme="light"]) .freePlan {
+  background-color: var(--oomol-bg-base);
+  border-color: var(--oomol-border-default);
+}
+
+:global(html[data-theme="dark"]) .freePlan {
   background-color: rgba(13, 17, 23, 0.5);
 }
 
@@ -72,7 +88,7 @@
   line-height: 24px;
   font-weight: 800;
   vertical-align: middle;
-  color: #f0f6fc;
+  color: var(--oomol-text-primary);
   margin-bottom: 14px;
 }
 
@@ -82,7 +98,7 @@
   line-height: 24px;
   font-weight: 400;
   vertical-align: middle;
-  color: #656c76;
+  color: var(--oomol-text-secondary);
   margin-bottom: 40px;
 }
 
@@ -92,7 +108,7 @@
   line-height: 32px;
   font-weight: 800;
   vertical-align: middle;
-  color: #f0f6fc;
+  color: var(--oomol-text-primary);
   margin-bottom: 40px;
 }
 
@@ -116,14 +132,14 @@
   width: 16px;
   height: 16px;
   font-size: 16px;
-  color: #8dc149;
+  color: var(--oomol-success);
 }
 .listText {
   height: 24px;
   font-size: 14px;
   line-height: 24px;
   font-weight: 400;
-  color: #838b95;
+  color: var(--oomol-text-secondary);
 }
 
 .standardPlan {
@@ -137,6 +153,22 @@
   justify-content: flex-start;
   padding: 40px;
   border-radius: 20px;
+  background-color: var(--oomol-bg-elevated);
+  border: 1px solid var(--oomol-border-subtle);
+  box-shadow: var(--oomol-shadow-sm);
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: var(--oomol-shadow-md);
+  }
+}
+
+:global(html[data-theme="light"]) .standardPlan {
+  background-color: var(--oomol-bg-base);
+  border-color: var(--oomol-border-default);
+}
+
+:global(html[data-theme="dark"]) .standardPlan {
   background-color: rgba(13, 17, 23, 1);
 }
 
@@ -146,7 +178,7 @@
   line-height: 24px;
   font-weight: 800;
   vertical-align: middle;
-  color: #f0f6fc;
+  color: var(--oomol-text-primary);
   margin-bottom: 14px;
 }
 .standardPlanSubtitle {
@@ -155,7 +187,7 @@
   line-height: 24px;
   font-weight: 400;
   vertical-align: middle;
-  color: #656c76;
+  color: var(--oomol-text-secondary);
   margin-bottom: 40px;
 }
 
@@ -172,7 +204,7 @@
   line-height: 32px;
   font-weight: 800;
   vertical-align: middle;
-  color: #f0f6fc;
+  color: var(--oomol-text-primary);
 }
 
 .priceAfter {
@@ -181,13 +213,30 @@
   font-weight: 400;
   vertical-align: middle;
   display: inline-block;
-  color: #838b95;
+  color: var(--oomol-text-secondary);
 }
 
 .modifyBtn {
   width: 165px !important;
-  background-color: #454680 !important;
-  border-color: #454680 !important;
+  background-color: var(--oomol-primary) !important;
+  border-color: var(--oomol-primary) !important;
+
+  &:hover {
+    background-color: var(--oomol-primary-hover) !important;
+    border-color: var(--oomol-primary-hover) !important;
+  }
+
+  .linkText,
+  .linkIcon {
+    color: var(--oomol-text-inverse) !important;
+  }
+}
+
+:global(html[data-theme="light"]) .modifyBtn {
+  .linkText,
+  .linkIcon {
+    color: #ffffff !important;
+  }
 }
 
 .questionTitleBox {
@@ -323,6 +372,6 @@
 .line {
   max-width: 1280px;
   height: 1px;
-  background-color: #212830;
+  background-color: var(--oomol-border-default);
   margin: 40px auto;
 }
