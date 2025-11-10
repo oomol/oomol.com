@@ -162,7 +162,8 @@ const config = {
         title: "OOMOL",
         logo: {
           alt: "OOMOL Logo",
-          src: "img/logo.svg",
+          src: "img/logo-en-light.svg",
+          srcDark: "img/logo-en-dark.svg",
         },
         items: [
           // {
