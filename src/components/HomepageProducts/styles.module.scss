@@ -99,6 +99,10 @@
   &.purple {
     background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
   }
+
+  &.cyan {
+    background: linear-gradient(135deg, var(--oomol-headless) 0%, var(--oomol-headless-dark) 100%);
+  }
 }
 
 .productContent {

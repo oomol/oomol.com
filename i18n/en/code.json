@@ -1371,5 +1371,71 @@
   },
   "USE.userExperience.feature3": {
     "message": "Personalized settings, customize usage interface according to user preferences"
+  },
+  "HEADLESS.title": {
+    "message": "Deploy & Manage"
+  },
+  "HEADLESS.description": {
+    "message": "Server-side Runtime Environment"
+  },
+  "HEADLESS.productName": {
+    "message": "OOMOL Headless"
+  },
+  "HEADLESS.productDescription": {
+    "message": "Run OOMOL applications on personal servers, NAS devices via Docker. Supports complete package management from installation to uninstallation, simple and easy to use. Seamlessly integrated with OOMOL Studio, making your workflows run anywhere."
+  },
+  "HEADLESS.docker.title": {
+    "message": "One-Click Docker Deployment"
+  },
+  "HEADLESS.docker.description": {
+    "message": "Simple and fast containerized deployment solution"
+  },
+  "HEADLESS.docker.feature1": {
+    "message": "Complete installation with one command, no complex configuration needed"
+  },
+  "HEADLESS.docker.feature2": {
+    "message": "Support mainstream Linux distributions and NAS systems"
+  },
+  "HEADLESS.docker.feature3": {
+    "message": "Automatic network and storage configuration, ready to use out of the box"
+  },
+  "HEADLESS.docker.feature4": {
+    "message": "Support Docker Compose for multi-service orchestration"
+  },
+  "HEADLESS.package.title": {
+    "message": "Complete Package Management"
+  },
+  "HEADLESS.package.description": {
+    "message": "Full lifecycle management from installation to uninstallation"
+  },
+  "HEADLESS.package.feature1": {
+    "message": "Develop in Studio, deploy and run in Headless"
+  },
+  "HEADLESS.package.feature2": {
+    "message": "One-click install packages shared from Hub community"
+  },
+  "HEADLESS.package.feature3": {
+    "message": "Automatic version detection and upgrade prompts"
+  },
+  "HEADLESS.package.feature4": {
+    "message": "Simple uninstallation process with clean removal"
+  },
+  "HEADLESS.remote.title": {
+    "message": "Remote Access Management"
+  },
+  "HEADLESS.remote.description": {
+    "message": "Manage your services anytime, anywhere"
+  },
+  "HEADLESS.remote.feature1": {
+    "message": "Web interface for remote management of all packages"
+  },
+  "HEADLESS.remote.feature2": {
+    "message": "Real-time monitoring of running status and logs"
+  },
+  "HEADLESS.remote.feature3": {
+    "message": "Support API interface for automated management"
+  },
+  "HOME.Products.headless.description": {
+    "message": "Run OOMOL applications on servers and NAS devices"
   }
 }

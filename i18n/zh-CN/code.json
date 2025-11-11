@@ -1390,5 +1390,71 @@
   "theme.blog.author.noPosts": {
     "message": "This author has not written any posts yet.",
     "description": "The text for authors with 0 blog post"
+  },
+  "HEADLESS.title": {
+    "message": "部署 & 管理"
+  },
+  "HEADLESS.description": {
+    "message": "服务器端运行环境"
+  },
+  "HEADLESS.productName": {
+    "message": "OOMOL Headless"
+  },
+  "HEADLESS.productDescription": {
+    "message": "通过 Docker 在个人服务器、NAS 等设备上运行 OOMOL 应用。支持完整的包管理功能,从安装到卸载,简单易用。与 OOMOL Studio 无缝集成,让你的工作流随处运行。"
+  },
+  "HEADLESS.docker.title": {
+    "message": "Docker 一键部署"
+  },
+  "HEADLESS.docker.description": {
+    "message": "简单快速的容器化部署方案"
+  },
+  "HEADLESS.docker.feature1": {
+    "message": "一条命令完成安装,无需复杂配置"
+  },
+  "HEADLESS.docker.feature2": {
+    "message": "支持主流 Linux 发行版和 NAS 系统"
+  },
+  "HEADLESS.docker.feature3": {
+    "message": "自动配置网络和存储,开箱即用"
+  },
+  "HEADLESS.docker.feature4": {
+    "message": "支持 Docker Compose 编排多服务"
+  },
+  "HEADLESS.package.title": {
+    "message": "完整包管理"
+  },
+  "HEADLESS.package.description": {
+    "message": "从安装到卸载的全流程管理"
+  },
+  "HEADLESS.package.feature1": {
+    "message": "在 Studio 中开发,在 Headless 中部署运行"
+  },
+  "HEADLESS.package.feature2": {
+    "message": "一键安装 Hub 社区分享的包"
+  },
+  "HEADLESS.package.feature3": {
+    "message": "自动检测版本并提示升级"
+  },
+  "HEADLESS.package.feature4": {
+    "message": "简单的卸载流程,清理干净"
+  },
+  "HEADLESS.remote.title": {
+    "message": "远程访问管理"
+  },
+  "HEADLESS.remote.description": {
+    "message": "随时随地管理你的服务"
+  },
+  "HEADLESS.remote.feature1": {
+    "message": "Web 界面远程管理所有包"
+  },
+  "HEADLESS.remote.feature2": {
+    "message": "实时查看运行状态和日志"
+  },
+  "HEADLESS.remote.feature3": {
+    "message": "支持 API 接口进行自动化管理"
+  },
+  "HOME.Products.headless.description": {
+    "message": "在服务器和 NAS 上运行 OOMOL 应用"
   }
 }

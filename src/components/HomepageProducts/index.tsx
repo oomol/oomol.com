@@ -21,6 +21,13 @@ const productsData: ProductDataType[] = [
     color: "blue",
   },
   {
+    title: "OOMOL Chat",
+    description: translate({ message: "HOME.Products.chat.description" }),
+    icon: "i-codicon-comment-discussion",
+    link: "/chat",
+    color: "purple",
+  },
+  {
     title: "OOMOL Hub",
     description: translate({ message: "HOME.Products.hub.description" }),
     icon: "i-codicon-globe",
@@ -28,11 +35,11 @@ const productsData: ProductDataType[] = [
     color: "green",
   },
   {
-    title: "OOMOL Chat",
-    description: translate({ message: "HOME.Products.chat.description" }),
-    icon: "i-codicon-comment-discussion",
-    link: "/chat",
-    color: "purple",
+    title: "OOMOL Headless",
+    description: translate({ message: "HOME.Products.headless.description" }),
+    icon: "i-codicon-server",
+    link: "/headless",
+    color: "cyan",
   },
 ];
 
