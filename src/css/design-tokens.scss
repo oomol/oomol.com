@@ -138,28 +138,31 @@
 [data-theme="dark"] {
   /* ----------------------
      背景色 (Background)
+     参考 Ant Design 标准,使用 #141414 作为基础背景
      ---------------------- */
-  --oomol-bg-base: #0b0b0b;
-  --oomol-bg-container: #141414;
-  --oomol-bg-elevated: #1f1f1f;
+  --oomol-bg-base: #141414;
+  --oomol-bg-container: #1f1f1f;
+  --oomol-bg-elevated: #252525;
   --oomol-bg-spotlight: #2a2a2a;
-  --oomol-bg-layout: #000000;
+  --oomol-bg-layout: #0b0b0b;
 
   /* ----------------------
      文字色 (Text)
+     根据 Ant Design 标准优化对比度,提升可读性
      ---------------------- */
   --oomol-text-primary: rgba(255, 255, 255, 0.85);
   --oomol-text-secondary: rgba(255, 255, 255, 0.65);
-  --oomol-text-tertiary: rgba(255, 255, 255, 0.45);
+  --oomol-text-tertiary: rgba(255, 255, 255, 0.50);
   --oomol-text-quaternary: rgba(255, 255, 255, 0.25);
   --oomol-text-disabled: rgba(255, 255, 255, 0.25);
   --oomol-text-inverse: rgba(0, 0, 0, 0.88);
 
   /* ----------------------
      边框色 (Border)
+     增强边框可见性,优化视觉层次
      ---------------------- */
-  --oomol-border-default: #424242;
-  --oomol-border-subtle: #303030;
+  --oomol-border-default: #434343;
+  --oomol-border-subtle: #343434;
   --oomol-border-strong: #5a5a5a;
 
   /* ----------------------
@@ -246,18 +249,20 @@
 
   /* ----------------------
      悬停效果 (Hover)
+     增强交互反馈的视觉效果
      ---------------------- */
-  --oomol-hover-bg: rgba(255, 255, 255, 0.08);
+  --oomol-hover-bg: rgba(255, 255, 255, 0.10);
 
   /* ----------------------
      阴影 (Shadow)
+     调整强度使其更柔和自然,避免视觉负担
      ---------------------- */
-  --oomol-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.48), 0 1px 6px -1px rgba(0, 0, 0, 0.32),
-    0 2px 4px 0 rgba(0, 0, 0, 0.32);
-  --oomol-shadow-md: 0 6px 16px 0 rgba(0, 0, 0, 0.64), 0 3px 6px -4px rgba(0, 0, 0, 0.48),
+  --oomol-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.40), 0 1px 6px -1px rgba(0, 0, 0, 0.28),
+    0 2px 4px 0 rgba(0, 0, 0, 0.28);
+  --oomol-shadow-md: 0 6px 16px 0 rgba(0, 0, 0, 0.56), 0 3px 6px -4px rgba(0, 0, 0, 0.42),
+    0 9px 28px 8px rgba(0, 0, 0, 0.42);
+  --oomol-shadow-lg: 0 16px 32px 0 rgba(0, 0, 0, 0.56), 0 6px 16px 0 rgba(0, 0, 0, 0.42),
     0 9px 28px 8px rgba(0, 0, 0, 0.48);
-  --oomol-shadow-lg: 0 16px 32px 0 rgba(0, 0, 0, 0.64), 0 6px 16px 0 rgba(0, 0, 0, 0.48),
-    0 9px 28px 8px rgba(0, 0, 0, 0.56);
 }
 
 /* ============================================
