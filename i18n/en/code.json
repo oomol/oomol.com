@@ -39,6 +39,69 @@
   "HOME.FirstScreen.download-windows-subtitle": {
     "message": "only supports x64"
   },
+  "HOME.FirstScreen.stat1": {
+    "message": "Stars Open Source"
+  },
+  "HOME.FirstScreen.stat2.value": {
+    "message": "One-Click"
+  },
+  "HOME.FirstScreen.stat2.label": {
+    "message": "Publish API"
+  },
+  "HOME.FirstScreen.stat3": {
+    "message": "GPU Sharing"
+  },
+  "HOME.FirstScreen.cta.secondary": {
+    "message": "Start Building"
+  },
+  "HOME.PdfCraft.title": {
+    "message": "Success Story: PDF-Craft - From Open Source to Commercial API"
+  },
+  "HOME.PdfCraft.subtitle": {
+    "message": "Transform a 3000+ Stars open source project into flexible API services with OOMOL"
+  },
+  "HOME.PdfCraft.description": {
+    "message": "PDF-Craft is a powerful PDF format conversion tool focused on processing scanned book PDFs. With OOMOL, you can easily deploy it as a local service or share it with your team."
+  },
+  "HOME.PdfCraft.feature1": {
+    "message": "Multiple PDF format conversions"
+  },
+  "HOME.PdfCraft.feature2": {
+    "message": "Specialized in scanned book processing"
+  },
+  "HOME.PdfCraft.feature3": {
+    "message": "Open source, customizable, and extensible"
+  },
+  "HOME.PdfCraft.traditional.badge": {
+    "message": "Traditional"
+  },
+  "HOME.PdfCraft.traditional.title": {
+    "message": "Paid API Service"
+  },
+  "HOME.PdfCraft.traditional.description": {
+    "message": "Use third-party paid API, pay-per-call, high cost and limited by service providers"
+  },
+  "HOME.PdfCraft.oomol.badge": {
+    "message": "Recommended"
+  },
+  "HOME.PdfCraft.oomol.title": {
+    "message": "OOMOL Multi-Mode Deployment"
+  },
+  "HOME.PdfCraft.oomol.method1": {
+    "message": "Studio local free usage"
+  },
+  "HOME.PdfCraft.oomol.method2": {
+    "message": "FRP share with friends"
+  },
+  "HOME.PdfCraft.oomol.method3": {
+    "message": "One-click deploy to OOMOL Cloud"
+  },
+  "HOME.PdfCraft.cta.primary": {
+    "message": "Try PDF-Craft"
+  },
+  "HOME.PdfCraft.cta.secondary": {
+    "message": "View Source Code"
+  },
   "HOME.BrandAssets.title": {
     "message": "Brand Assets & Guidelines"
   },
@@ -752,14 +815,29 @@
     "message": "Use OOMOL For Free. Upgrade To Get Free Credits Per Month, Invite Others To Collaborate, And Use An API Key."
   },
 
+  "PRICING.free.badge": {
+    "message": "Recommended"
+  },
   "PRICING.free.title": {
-    "message": "Free Plan"
+    "message": "Local + FRP Deployment"
   },
   "PRICING.free.subtitle": {
-    "message": "Get By Registry, Providing Free Credits Monthly."
+    "message": "Run Studio locally, share via FRP protocol, forever free"
   },
   "PRICING.free.text": {
-    "message": "Free"
+    "message": "Forever Free"
+  },
+  "PRICING.free.feature1": {
+    "message": "Studio local development and runtime"
+  },
+  "PRICING.free.feature2": {
+    "message": "FRP protocol P2P sharing"
+  },
+  "PRICING.free.feature3": {
+    "message": "Unlimited GPU compute usage"
+  },
+  "PRICING.free.feature4": {
+    "message": "Full development features and tools"
   },
   "PRICING.list.text1": {
     "message": "Get By Registry"
@@ -1404,6 +1482,69 @@
   },
   "STUDIO.techFeatures.title": {
     "message": "Technical Features"
+  },
+  "STUDIO.case.title": {
+    "message": "Case Study: Building PDF-Craft with Studio"
+  },
+  "STUDIO.case.subtitle": {
+    "message": "Complete workflow from Block development to API publishing with OOMOL Studio"
+  },
+  "STUDIO.case.process.title": {
+    "message": "Build Process"
+  },
+  "STUDIO.case.step1.title": {
+    "message": "Write PDF Processing Blocks"
+  },
+  "STUDIO.case.step1.desc": {
+    "message": "Develop core functionality Blocks for PDF parsing, OCR recognition, and format conversion in VSCode"
+  },
+  "STUDIO.case.step2.title": {
+    "message": "Visual Workflow Composition"
+  },
+  "STUDIO.case.step2.desc": {
+    "message": "Connect Blocks through drag-and-drop to build complete PDF processing workflow"
+  },
+  "STUDIO.case.step3.title": {
+    "message": "One-Click API Publishing"
+  },
+  "STUDIO.case.step3.desc": {
+    "message": "Auto-generate RESTful API and MCP interface for AI Agent integration"
+  },
+  "STUDIO.case.deploy.title": {
+    "message": "Flexible Deployment"
+  },
+  "STUDIO.case.deploy.local.title": {
+    "message": "Local Development"
+  },
+  "STUDIO.case.deploy.local.desc": {
+    "message": "Run and debug locally, completely free"
+  },
+  "STUDIO.case.deploy.local.badge": {
+    "message": "Forever Free"
+  },
+  "STUDIO.case.deploy.frp.title": {
+    "message": "FRP Sharing"
+  },
+  "STUDIO.case.deploy.frp.desc": {
+    "message": "Share with team members via FRP protocol"
+  },
+  "STUDIO.case.deploy.frp.badge": {
+    "message": "Zero Cost Sharing"
+  },
+  "STUDIO.case.deploy.cloud.title": {
+    "message": "Cloud Deployment"
+  },
+  "STUDIO.case.deploy.cloud.desc": {
+    "message": "One-click deploy to OOMOL Cloud with auto-scaling"
+  },
+  "STUDIO.case.deploy.cloud.badge": {
+    "message": "Pay as You Go"
+  },
+  "STUDIO.case.stat2": {
+    "message": "Core Blocks"
+  },
+  "STUDIO.case.stat3": {
+    "message": "Deployment Options"
   },
   "CREATE.workflow.title": {
     "message": "Visual Workflow Engine"

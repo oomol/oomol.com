@@ -41,10 +41,34 @@ export default function HomepageFirstScreen() {
                 })}
               </span>
             </div>
+            {/* 数据亮点 */}
+            <div className={styles.heroStats}>
+              <div className={styles.stat}>
+                <span className={styles.statValue}>3000+</span>
+                <span className={styles.statLabel}>
+                  {translate({ message: "HOME.FirstScreen.stat1" })}
+                </span>
+              </div>
+              <div className={styles.stat}>
+                <span className={styles.statValue}>
+                  {translate({ message: "HOME.FirstScreen.stat2.value" })}
+                </span>
+                <span className={styles.statLabel}>
+                  {translate({ message: "HOME.FirstScreen.stat2.label" })}
+                </span>
+              </div>
+              <div className={styles.stat}>
+                <span className={styles.statValue}>P2P</span>
+                <span className={styles.statLabel}>
+                  {translate({ message: "HOME.FirstScreen.stat3" })}
+                </span>
+              </div>
+            </div>
+
             <div className={styles.buttons}>
               <DownloadButton />
               <LinkBtn
-                text={translate({ message: "Theme.Navbar.go-to-hub-flow" })}
+                text={translate({ message: "HOME.FirstScreen.cta.secondary" })}
                 icon="i-codicon-globe"
                 url="https://hub.oomol.com/"
               />

@@ -194,6 +194,29 @@ const config = {
             ],
           },
           {
+            type: "dropdown",
+            label: "Use Cases",
+            position: "left",
+            items: [
+              {
+                to: "/#pdf-craft-case",
+                label: "navbar.use-case-pdf-craft",
+              },
+              {
+                to: "/studio#gpu-sharing",
+                label: "navbar.use-case-gpu-sharing",
+              },
+              {
+                to: "/studio#ai-agent",
+                label: "navbar.use-case-ai-agent",
+              },
+              {
+                href: "https://hub.oomol.com",
+                label: "navbar.use-case-explore-more",
+              },
+            ],
+          },
+          {
             type: "doc",
             docId: "get-started/quickstarts",
             position: "left",

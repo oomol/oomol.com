@@ -39,6 +39,69 @@
   "HOME.FirstScreen.download-windows-subtitle": {
     "message": "当前仅支持 x64 版本"
   },
+  "HOME.FirstScreen.stat1": {
+    "message": "Stars 开源项目"
+  },
+  "HOME.FirstScreen.stat2.value": {
+    "message": "一键"
+  },
+  "HOME.FirstScreen.stat2.label": {
+    "message": "发布 API"
+  },
+  "HOME.FirstScreen.stat3": {
+    "message": "共享 GPU 算力"
+  },
+  "HOME.FirstScreen.cta.secondary": {
+    "message": "开始构建"
+  },
+  "HOME.PdfCraft.title": {
+    "message": "明星案例:PDF-Craft - 从开源工具到商业 API"
+  },
+  "HOME.PdfCraft.subtitle": {
+    "message": "使用 OOMOL 将 3000+ Stars 开源项目转变为灵活的 API 服务"
+  },
+  "HOME.PdfCraft.description": {
+    "message": "PDF-Craft 是一个强大的 PDF 格式转换工具,专注于处理扫描书籍的 PDF 文件。通过 OOMOL,你可以轻松将其部署为本地服务或分享给团队使用。"
+  },
+  "HOME.PdfCraft.feature1": {
+    "message": "支持多种 PDF 格式转换"
+  },
+  "HOME.PdfCraft.feature2": {
+    "message": "专注扫描书籍处理"
+  },
+  "HOME.PdfCraft.feature3": {
+    "message": "开源、可定制、易扩展"
+  },
+  "HOME.PdfCraft.traditional.badge": {
+    "message": "传统方式"
+  },
+  "HOME.PdfCraft.traditional.title": {
+    "message": "付费 API 服务"
+  },
+  "HOME.PdfCraft.traditional.description": {
+    "message": "使用第三方付费 API,按调用量计费,成本高且受限于服务商"
+  },
+  "HOME.PdfCraft.oomol.badge": {
+    "message": "推荐方案"
+  },
+  "HOME.PdfCraft.oomol.title": {
+    "message": "OOMOL 多模式部署"
+  },
+  "HOME.PdfCraft.oomol.method1": {
+    "message": "Studio 本地免费使用"
+  },
+  "HOME.PdfCraft.oomol.method2": {
+    "message": "FRP 分享给朋友使用"
+  },
+  "HOME.PdfCraft.oomol.method3": {
+    "message": "一键部署到 OOMOL Cloud"
+  },
+  "HOME.PdfCraft.cta.primary": {
+    "message": "体验 PDF-Craft"
+  },
+  "HOME.PdfCraft.cta.secondary": {
+    "message": "查看源码"
+  },
   "HOME.BrandAssets.title": {
     "message": "品牌资产与指南"
   },
@@ -763,14 +826,29 @@
   "PRICING.subtitle": {
     "message": "免费使用 OOMOL。升级以获得每月免费积分、邀请他人协作以及使用 API 密钥。"
   },
+  "PRICING.free.badge": {
+    "message": "推荐"
+  },
   "PRICING.free.title": {
-    "message": "免费计划"
+    "message": "本地 + FRP 部署"
   },
   "PRICING.free.subtitle": {
-    "message": "注册即可获取，每月提供免费积分。"
+    "message": "Studio 本地运行,通过 FRP 协议分享,永久免费使用"
   },
   "PRICING.free.text": {
-    "message": "免费"
+    "message": "永久免费"
+  },
+  "PRICING.free.feature1": {
+    "message": "Studio 本地开发和运行"
+  },
+  "PRICING.free.feature2": {
+    "message": "FRP 协议 P2P 分享"
+  },
+  "PRICING.free.feature3": {
+    "message": "无限制的 GPU 算力使用"
+  },
+  "PRICING.free.feature4": {
+    "message": "完整的开发功能和工具"
   },
   "PRICING.list.text1": {
     "message": "注册即可获取"
@@ -973,6 +1051,69 @@
   },
   "STUDIO.techFeatures.title": {
     "message": "技术特性"
+  },
+  "STUDIO.case.title": {
+    "message": "实战案例:用 Studio 构建 PDF-Craft"
+  },
+  "STUDIO.case.subtitle": {
+    "message": "从 Block 编写到 API 发布,完整展示 OOMOL Studio 的开发流程"
+  },
+  "STUDIO.case.process.title": {
+    "message": "构建流程"
+  },
+  "STUDIO.case.step1.title": {
+    "message": "编写 PDF 处理 Blocks"
+  },
+  "STUDIO.case.step1.desc": {
+    "message": "在 VSCode 中编写 PDF 解析、OCR 识别、格式转换等核心功能 Block"
+  },
+  "STUDIO.case.step2.title": {
+    "message": "可视化组合工作流"
+  },
+  "STUDIO.case.step2.desc": {
+    "message": "通过拖拽方式连接各个 Block,构建完整的 PDF 处理流程"
+  },
+  "STUDIO.case.step3.title": {
+    "message": "一键发布为 API"
+  },
+  "STUDIO.case.step3.desc": {
+    "message": "自动生成 RESTful API 和 MCP 接口,支持 AI Agent 调用"
+  },
+  "STUDIO.case.deploy.title": {
+    "message": "灵活部署方式"
+  },
+  "STUDIO.case.deploy.local.title": {
+    "message": "本地开发测试"
+  },
+  "STUDIO.case.deploy.local.desc": {
+    "message": "在本地运行和调试,完全免费"
+  },
+  "STUDIO.case.deploy.local.badge": {
+    "message": "永久免费"
+  },
+  "STUDIO.case.deploy.frp.title": {
+    "message": "FRP 分享"
+  },
+  "STUDIO.case.deploy.frp.desc": {
+    "message": "通过 FRP 协议分享给团队成员使用"
+  },
+  "STUDIO.case.deploy.frp.badge": {
+    "message": "零成本分享"
+  },
+  "STUDIO.case.deploy.cloud.title": {
+    "message": "云端部署"
+  },
+  "STUDIO.case.deploy.cloud.desc": {
+    "message": "一键部署到 OOMOL Cloud,自动扩缩容"
+  },
+  "STUDIO.case.deploy.cloud.badge": {
+    "message": "按量计费"
+  },
+  "STUDIO.case.stat2": {
+    "message": "个核心 Blocks"
+  },
+  "STUDIO.case.stat3": {
+    "message": "种部署方式"
   },
   "CREATE.workflow.title": {
     "message": "可视化工作流引擎"

@@ -82,6 +82,9 @@ export default function Index() {
         </div>
         <div className={styles.planBox}>
           <div className={styles.freePlan}>
+            <div className={styles.planBadge}>
+              {translate({ message: "PRICING.free.badge" })}
+            </div>
             <div className={styles.freePlanTitle}>
               {translate({ message: "PRICING.free.title" })}
             </div>
@@ -96,13 +99,25 @@ export default function Index() {
               <div className={styles.listItem}>
                 <i className={`${styles["listIcon"]} i-codicon-check`} />
                 <div className={styles.listText}>
-                  {translate({ message: "PRICING.list.text1" })}
+                  {translate({ message: "PRICING.free.feature1" })}
                 </div>
               </div>
               <div className={styles.listItem}>
                 <i className={`${styles["listIcon"]} i-codicon:check`} />
                 <div className={styles.listText}>
-                  {translate({ message: "PRICING.list.text2" })}
+                  {translate({ message: "PRICING.free.feature2" })}
+                </div>
+              </div>
+              <div className={styles.listItem}>
+                <i className={`${styles["listIcon"]} i-codicon:check`} />
+                <div className={styles.listText}>
+                  {translate({ message: "PRICING.free.feature3" })}
+                </div>
+              </div>
+              <div className={styles.listItem}>
+                <i className={`${styles["listIcon"]} i-codicon:check`} />
+                <div className={styles.listText}>
+                  {translate({ message: "PRICING.free.feature4" })}
                 </div>
               </div>
             </div>

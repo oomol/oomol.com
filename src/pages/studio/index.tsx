@@ -5,6 +5,7 @@ import Layout from "../../theme/Layout";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { translate } from "@docusaurus/Translate";
 import { FeatureBlockList } from "@site/src/components/FeatureBlockList/FeatureBlockList";
+import StudioPdfCraftCase from "@site/src/components/StudioPdfCraftCase";
 
 // 开发者工作流数据
 const developerWorkflow = {
@@ -232,6 +233,9 @@ export default function StudioPage() {
             ))}
           </div>
         </section>
+
+        {/* PDF-Craft 实战案例 */}
+        <StudioPdfCraftCase />
 
         {/* 技术特性快览 */}
         <section className={styles.techFeaturesSection}>

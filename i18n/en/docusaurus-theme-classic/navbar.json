@@ -63,6 +63,26 @@
     "message": "Product",
     "description": "Navbar item with label Product"
   },
+  "item.label.Use Cases": {
+    "message": "Use Cases",
+    "description": "Navbar item with label Use Cases"
+  },
+  "item.label.navbar.use-case-pdf-craft": {
+    "message": "PDF-Craft Case",
+    "description": "Navbar item with label navbar.use-case-pdf-craft"
+  },
+  "item.label.navbar.use-case-gpu-sharing": {
+    "message": "GPU Sharing",
+    "description": "Navbar item with label navbar.use-case-gpu-sharing"
+  },
+  "item.label.navbar.use-case-ai-agent": {
+    "message": "AI Agent Tools",
+    "description": "Navbar item with label navbar.use-case-ai-agent"
+  },
+  "item.label.navbar.use-case-explore-more": {
+    "message": "Explore More",
+    "description": "Navbar item with label navbar.use-case-explore-more"
+  },
   "item.label.Contact Us": {
     "message": "Contact Us",
     "description": "Navbar item with label Contact Us"

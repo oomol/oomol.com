@@ -213,6 +213,44 @@
   padding: 0;
 }
 
+.heroStats {
+  display: flex;
+  gap: 48px;
+  margin-top: 48px;
+  margin-bottom: 24px;
+
+  @media (max-width: 1024px) {
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    gap: 32px;
+  }
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statValue {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--oomol-primary);
+  line-height: 1;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
+}
+
+.statLabel {
+  font-size: 14px;
+  color: var(--oomol-text-secondary);
+  font-weight: 500;
+}
+
 .slogan {
   font-size: 55px;
   line-height: 60px;
@@ -303,10 +341,11 @@
   gap: 12px;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin-top: 72px;
+  margin-top: 0;
 
   @media (max-width: 1024px) {
     justify-content: center;
+    margin-top: 24px;
   }
 
   @media (max-width: 996px) {

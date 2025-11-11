@@ -64,13 +64,29 @@
   padding: 40px;
   border-radius: 20px;
   background-color: var(--oomol-bg-elevated);
-  border: 1px solid var(--oomol-border-subtle);
-  box-shadow: var(--oomol-shadow-sm);
+  border: 2px solid var(--oomol-primary);
+  box-shadow: var(--oomol-shadow-md);
   transition: all 0.3s ease;
+  position: relative;
 
   &:hover {
-    box-shadow: var(--oomol-shadow-md);
+    box-shadow: var(--oomol-shadow-lg);
   }
+}
+
+.planBadge {
+  position: absolute;
+  top: -12px;
+  right: 40px;
+  padding: 4px 16px;
+  background: var(--oomol-primary);
+  color: white;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(var(--oomol-primary-rgb), 0.3);
 }
 
 :global(html[data-theme="light"]) .freePlan {
