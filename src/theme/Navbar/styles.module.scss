@@ -55,6 +55,7 @@
 .loginButton {
   display: inline-flex;
   align-items: center;
+  gap: 6px;
   background: var(--oomol-primary);
   border: none;
   border-radius: 4px;
@@ -65,6 +66,10 @@
   color: var(--oomol-text-inverse);
   text-decoration: none;
   margin: 0 !important;
+
+  i {
+    font-size: 16px;
+  }
 
   &:hover {
     background: var(--oomol-primary-hover);

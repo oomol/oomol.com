@@ -145,12 +145,13 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
             <NavbarItem {...item} key={i} />
           ))}
           <div className={styles.actions}>
-            <a href="https://hub.oomol.com/" className={styles.gotoHubButton}>
-              <i className="i-lucide-arrow-right" />
-              {translate({ message: "Theme.Navbar.go-to-hub-flow" })}
+            <a href="/community" className={styles.gotoHubButton}>
+              <i className="i-lucide-users" />
+              {translate({ message: "Theme.Navbar.community" })}
             </a>
-            <a href="https://hub.oomol.com/login" className={styles.loginButton}>
-              {translate({ message: "Theme.Navbar.sign-in" })}
+            <a href="/downloads" className={styles.loginButton}>
+              <i className="i-lucide-download" />
+              {translate({ message: "Theme.Navbar.download" })}
             </a>
           </div>
         </div>

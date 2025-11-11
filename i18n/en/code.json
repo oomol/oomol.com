@@ -11,6 +11,12 @@
   "Theme.Navbar.sign-in": {
     "message": "Sign in"
   },
+  "Theme.Navbar.download": {
+    "message": "Download"
+  },
+  "Theme.Navbar.community": {
+    "message": "Community"
+  },
   "HOME.FirstScreen.slogan": {
     "message": "Turn Your Computer into an AI Server"
   },
