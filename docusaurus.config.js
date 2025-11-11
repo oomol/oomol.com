@@ -166,28 +166,33 @@ const config = {
           srcDark: "img/logo-en-dark.svg",
         },
         items: [
-          // {
-          //   type: "dropdown",
-          //   label: "Product",
-          //   position: "left",
-          //   items: [
-          //     {
-          //       to: "/studio",
-          //       label: "navbar.oomol-studio",
-          //       className: "navbar-item-with-icon navbar-item-studio",
-          //     },
-          //     {
-          //       to: "/hub",
-          //       label: "navbar.oomol-hub",
-          //       className: "navbar-item-with-icon navbar-item-hub",
-          //     },
-          //     {
-          //       to: "/chat",
-          //       label: "navbar.oomol-chat",
-          //       className: "navbar-item-with-icon navbar-item-chat",
-          //     },
-          //   ],
-          // },
+          {
+            type: "dropdown",
+            label: "Product",
+            position: "left",
+            items: [
+              {
+                to: "/studio",
+                label: "navbar.oomol-studio",
+                className: "navbar-item-with-icon navbar-item-studio",
+              },
+              {
+                to: "/chat",
+                label: "navbar.oomol-chat",
+                className: "navbar-item-with-icon navbar-item-chat",
+              },
+              {
+                to: "/cloud",
+                label: "navbar.oomol-cloud",
+                className: "navbar-item-with-icon navbar-item-cloud",
+              },
+              {
+                to: "/headless",
+                label: "navbar.oomol-headless",
+                className: "navbar-item-with-icon navbar-item-headless",
+              },
+            ],
+          },
           {
             type: "doc",
             docId: "get-started/quickstarts",
@@ -196,9 +201,8 @@ const config = {
           },
           { to: "/updates", label: "Updates", position: "left" },
           { to: "/blog", label: "Blog", position: "left" },
-          { to: "/support", label: "Contact Us", position: "left" },
           { to: "/pricing", label: "Pricing", position: "left" },
-          // { to: "/pricing", label: "Pricing", position: "left" },
+          { to: "/support", label: "Contact Us", position: "left" },
         ],
       },
       footer: {
