@@ -12,19 +12,7 @@ import Link from "@docusaurus/Link";
 import { useNavbarMobileSidebar } from "@docusaurus/theme-common/internal";
 import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
 import { translate } from "@docusaurus/Translate";
-import BrowserOnly from "@docusaurus/BrowserOnly";
 import { useColorMode } from "@docusaurus/theme-common";
-
-const handleSignin = (locale: string) => {
-
-  // const redirectURL = `https://api.oomol.com/v1/auth/redirect?redirect=${encodeURIComponent(CALLBACK_URL)}`;
-  // window.open(redirectURL, "_self");
-  const downloadUrl =
-    locale === "zh-CN"
-      ? "https://oomol.com/zh-CN/downloads/"
-      : "https://oomol.com/downloads/";
-  window.open(downloadUrl, "_self");
-};
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface NavbarProps {}
@@ -59,7 +47,11 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
     },
     i18n,
   } = useDocusaurusContext() as unknown as DocusaurusContext & {
-    siteConfig: { themeConfig: { navbar: { items: Array<ComponentProps<typeof NavbarItem>> } } };
+    siteConfig: {
+      themeConfig: {
+        navbar: { items: Array<ComponentProps<typeof NavbarItem>> };
+      };
+    };
     i18n: { currentLocale: string };
   };
   const locale = i18n.currentLocale;
@@ -136,62 +128,28 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
       <div className={clsx("navbar__inner", styles.inner)}>
         <div className="navbar__items">
           <Link className={styles.brand} to="/">
-            <img
-              height={24}
-              alt="logo"
-              src={logoSrc}
-              loading="lazy"
-            />
+            <img height={24} alt="logo" src={logoSrc} loading="lazy" />
           </Link>
+          {leftItems.map((item, i) => (
+            <NavbarItem {...item} key={i} />
+          ))}
+        </div>
+        <div className={styles.itemsRight}>
           {/* 当路由与文档路径匹配时，显示文档搜索框 */}
           {isDocumentPath && (
             <div className={styles.searchBar}>
               <SearchBar />
             </div>
           )}
-          {leftItems.map((item, i) => (
-            <NavbarItem {...item} key={i} />
-          ))}
-          <div className={styles.actions}>
-            <a
-              href="https://hub.oomol.com/"
-              className={styles.gotoHubButton}
-            >
-              <i className="i-lucide-arrow-right" />
-              {translate({ message: "Theme.Navbar.go-to-hub-flow" })}
-            </a>
-            <BrowserOnly
-              // TODO: This is a temporary fallback element used to prevent layout issues.
-              fallback={
-                <NavbarItem
-                  label={translate({ message: "Theme.Navbar.sign-in" })}
-                  className={styles.signInButton}
-                />
-              }
-            >
-              {() => {
-                return (
-                  <NavbarItem
-                    style={{ cursor: "pointer" }}
-                    className={styles.signInButton}
-                    // label={
-                    //   isSignedIn()
-                    //      ? translate({ message: "Theme.Navbar.use-in-chat" })
-                    //     : translate({ message: "Theme.Navbar.sign-in" })
-                    // }
-                    // TODO: Temporarily change to "Download Now" button
-                    label={translate({ message: "Theme.Navbar.download-now" })}
-                    onClick={() => handleSignin(locale)}
-                  />
-                );
-              }}
-            </BrowserOnly>
-          </div>
-        </div>
-        <div className={styles.itemsRight}>
           {rightItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
           ))}
+          <div className={styles.actions}>
+            <a href="https://hub.oomol.com/" className={styles.gotoHubButton}>
+              <i className="i-lucide-arrow-right" />
+              {translate({ message: "Theme.Navbar.go-to-hub-flow" })}
+            </a>
+          </div>
         </div>
         <div
           aria-label="Navigation bar toggle"
