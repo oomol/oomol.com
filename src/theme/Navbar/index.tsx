@@ -128,7 +128,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
       <div className={clsx("navbar__inner", styles.inner)}>
         <div className="navbar__items">
           <Link className={styles.brand} to="/">
-            <img height={24} alt="logo" src={logoSrc} loading="lazy" />
+            <img height={32} alt="logo" src={logoSrc} loading="lazy" />
           </Link>
           {leftItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
@@ -148,6 +148,9 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
             <a href="https://hub.oomol.com/" className={styles.gotoHubButton}>
               <i className="i-lucide-arrow-right" />
               {translate({ message: "Theme.Navbar.go-to-hub-flow" })}
+            </a>
+            <a href="https://hub.oomol.com/login" className={styles.loginButton}>
+              {translate({ message: "Theme.Navbar.sign-in" })}
             </a>
           </div>
         </div>
