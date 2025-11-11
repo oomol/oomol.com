@@ -1261,6 +1261,150 @@
   "CREATE.description": {
     "message": "OOMOL's AI tool creation platform. The core advantage lies in: retaining the unlimited creative ability of traditional programming while having the convenience of low-code development, allowing users to efficiently build various AI tools."
   },
+  "STUDIO.hero.description": {
+    "message": "Visual Workflow + Full Code with VSCode, Build and Share AI Tools Fast"
+  },
+  "STUDIO.hero.stat1": {
+    "message": "AI Models"
+  },
+  "STUDIO.hero.stat2": {
+    "message": "Publish API"
+  },
+  "STUDIO.hero.stat3": {
+    "message": "Computing Share"
+  },
+  "STUDIO.hero.cta.download": {
+    "message": "Download Now"
+  },
+  "STUDIO.hero.cta.docs": {
+    "message": "View Docs"
+  },
+  "STUDIO.workflow.title": {
+    "message": "Developer Workflow"
+  },
+  "STUDIO.workflow.subtitle": {
+    "message": "Create Workflow → Generate Package → Publish to Community → Flexible Deployment"
+  },
+  "STUDIO.workflow.step1.title": {
+    "message": "Create Workflow"
+  },
+  "STUDIO.workflow.step1.description": {
+    "message": "Drag-and-drop visual editor, VSCode-based Block coding"
+  },
+  "STUDIO.workflow.step1.feature1": {
+    "message": "Drag-and-drop visual editor"
+  },
+  "STUDIO.workflow.step1.feature2": {
+    "message": "VSCode-based Block coding"
+  },
+  "STUDIO.workflow.step2.title": {
+    "message": "Generate Package"
+  },
+  "STUDIO.workflow.step2.description": {
+    "message": "Blocks + Flows auto-packaging, MCP interface support"
+  },
+  "STUDIO.workflow.step2.feature1": {
+    "message": "Blocks (function blocks) + Flows auto-packaging"
+  },
+  "STUDIO.workflow.step2.feature2": {
+    "message": "MCP interface support (AI Agent direct access)"
+  },
+  "STUDIO.workflow.step3.title": {
+    "message": "Publish to Community"
+  },
+  "STUDIO.workflow.step3.description": {
+    "message": "One-click publish workflow templates and Block libraries"
+  },
+  "STUDIO.workflow.step3.feature1": {
+    "message": "One-click publish workflow templates"
+  },
+  "STUDIO.workflow.step3.feature2": {
+    "message": "Share Block libraries to community"
+  },
+  "STUDIO.workflow.step4.title": {
+    "message": "Flexible Deployment"
+  },
+  "STUDIO.workflow.step4.description": {
+    "message": "Local deployment + FRP sharing, or one-click cloud deployment"
+  },
+  "STUDIO.workflow.step4.feature1": {
+    "message": "Local deployment + FRP protocol sharing"
+  },
+  "STUDIO.workflow.step4.feature2": {
+    "message": "OOMOL Cloud one-click deployment"
+  },
+  "STUDIO.workflow.step4.feature3": {
+    "message": "Workflow auto-publish as API service"
+  },
+  "STUDIO.advantages.title": {
+    "message": "Core Advantages"
+  },
+  "STUDIO.advantages.vscode.title": {
+    "message": "VSCode Development Experience"
+  },
+  "STUDIO.advantages.vscode.description": {
+    "message": "Professional code editor with Vibe Coding Block and AI-assisted development"
+  },
+  "STUDIO.advantages.vscode.feature1": {
+    "message": "Built-in Python/Node.js environment"
+  },
+  "STUDIO.advantages.vscode.feature2": {
+    "message": "Professional code editor"
+  },
+  "STUDIO.advantages.vscode.feature3": {
+    "message": "Nodes as functions, seamless code-visual switching"
+  },
+  "STUDIO.advantages.p2p.title": {
+    "message": "P2P Computing & Software Sharing"
+  },
+  "STUDIO.advantages.p2p.description": {
+    "message": "FRP protocol-based local deployment sharing, P2P-like computing sharing"
+  },
+  "STUDIO.advantages.p2p.feature1": {
+    "message": "Local deployment via FRP protocol sharing"
+  },
+  "STUDIO.advantages.p2p.feature2": {
+    "message": "P2P-like computing power sharing"
+  },
+  "STUDIO.advantages.p2p.feature3": {
+    "message": "Use privately or share with others"
+  },
+  "STUDIO.advantages.api.title": {
+    "message": "Workflow as API"
+  },
+  "STUDIO.advantages.api.description": {
+    "message": "Low-cost local function publishing as API service, MCP interface for AI Agent access"
+  },
+  "STUDIO.advantages.api.feature1": {
+    "message": "Low-cost local function publishing as API"
+  },
+  "STUDIO.advantages.api.feature2": {
+    "message": "MCP interface for AI Agent access"
+  },
+  "STUDIO.advantages.api.feature3": {
+    "message": "Auto-generate API documentation"
+  },
+  "STUDIO.ai.title": {
+    "message": "AI Integration Capabilities"
+  },
+  "STUDIO.ai.description": {
+    "message": "Integrate mainstream AI services with rich AI capability support"
+  },
+  "STUDIO.ai.feature1": {
+    "message": "Multiple large language models (GPT, Claude, Gemini, etc.)"
+  },
+  "STUDIO.ai.feature2": {
+    "message": "Image generation and processing (DALL-E, Midjourney, Stable Diffusion)"
+  },
+  "STUDIO.ai.feature3": {
+    "message": "Speech recognition and synthesis"
+  },
+  "STUDIO.ai.feature4": {
+    "message": "Real-time preview and debugging"
+  },
+  "STUDIO.techFeatures.title": {
+    "message": "Technical Features"
+  },
   "CREATE.workflow.title": {
     "message": "Visual Workflow Engine"
   },
@@ -1372,68 +1516,197 @@
   "USE.userExperience.feature3": {
     "message": "Personalized settings, customize usage interface according to user preferences"
   },
-  "HEADLESS.title": {
-    "message": "Deploy & Manage"
+  "CHAT.hero.description": {
+    "message": "MCP Tool-based AI chat assistant, build expert Agents by combining Tools"
   },
-  "HEADLESS.description": {
-    "message": "Server-side Runtime Environment"
+  "CHAT.hero.stat1": {
+    "message": "Protocol Support"
   },
-  "HEADLESS.productName": {
-    "message": "OOMOL Headless"
+  "CHAT.hero.stat2": {
+    "message": "Support"
   },
-  "HEADLESS.productDescription": {
-    "message": "Run OOMOL applications on personal servers, NAS devices via Docker. Supports complete package management from installation to uninstallation, simple and easy to use. Seamlessly integrated with OOMOL Studio, making your workflows run anywhere."
+  "CHAT.hero.stat3": {
+    "message": "Expert System"
   },
-  "HEADLESS.docker.title": {
-    "message": "One-Click Docker Deployment"
+  "CHAT.hero.cta.download": {
+    "message": "Download Now"
   },
-  "HEADLESS.docker.description": {
-    "message": "Simple and fast containerized deployment solution"
+  "CHAT.hero.cta.docs": {
+    "message": "View Docs"
   },
-  "HEADLESS.docker.feature1": {
-    "message": "Complete installation with one command, no complex configuration needed"
+  "CHAT.useCases.title": {
+    "message": "Use Cases"
   },
-  "HEADLESS.docker.feature2": {
-    "message": "Support mainstream Linux distributions and NAS systems"
+  "CHAT.useCases.subtitle": {
+    "message": "Complete AI tasks through natural conversation"
   },
-  "HEADLESS.docker.feature3": {
-    "message": "Automatic network and storage configuration, ready to use out of the box"
+  "CHAT.useCase.conversation.title": {
+    "message": "Natural Conversation"
   },
-  "HEADLESS.docker.feature4": {
-    "message": "Support Docker Compose for multi-service orchestration"
+  "CHAT.useCase.conversation.description": {
+    "message": "Use AI tools like chatting, multi-turn conversations maintain context coherence"
   },
-  "HEADLESS.package.title": {
-    "message": "Complete Package Management"
+  "CHAT.useCase.tools.title": {
+    "message": "MCP Tool Integration"
   },
-  "HEADLESS.package.description": {
-    "message": "Full lifecycle management from installation to uninstallation"
+  "CHAT.useCase.tools.description": {
+    "message": "Call MCP Tools created in Studio to achieve complex feature combinations"
   },
-  "HEADLESS.package.feature1": {
-    "message": "Develop in Studio, deploy and run in Headless"
+  "CHAT.useCase.knowledge.title": {
+    "message": "Enterprise Knowledge Base"
   },
-  "HEADLESS.package.feature2": {
-    "message": "One-click install packages shared from Hub community"
+  "CHAT.useCase.knowledge.description": {
+    "message": "Integrate enterprise knowledge to build domain-specific intelligent assistants"
   },
-  "HEADLESS.package.feature3": {
-    "message": "Automatic version detection and upgrade prompts"
+  "CHAT.useCase.collaboration.title": {
+    "message": "Team Collaboration"
   },
-  "HEADLESS.package.feature4": {
-    "message": "Simple uninstallation process with clean removal"
+  "CHAT.useCase.collaboration.description": {
+    "message": "Share conversations and tool configurations to improve team collaboration efficiency"
   },
-  "HEADLESS.remote.title": {
-    "message": "Remote Access Management"
+  "CHAT.features.title": {
+    "message": "Core Features"
   },
-  "HEADLESS.remote.description": {
-    "message": "Manage your services anytime, anywhere"
+  "CHAT.features.mcp.title": {
+    "message": "MCP Tool Ecosystem"
   },
-  "HEADLESS.remote.feature1": {
-    "message": "Web interface for remote management of all packages"
+  "CHAT.features.mcp.description": {
+    "message": "Native MCP protocol support, directly call various tools"
   },
-  "HEADLESS.remote.feature2": {
-    "message": "Real-time monitoring of running status and logs"
+  "CHAT.features.mcp.feature1": {
+    "message": "Auto-discover and load MCP Tools"
   },
-  "HEADLESS.remote.feature3": {
-    "message": "Support API interface for automated management"
+  "CHAT.features.mcp.feature2": {
+    "message": "Smart recommendation of tool combinations"
+  },
+  "CHAT.features.mcp.feature3": {
+    "message": "Tool invocation logging and debugging"
+  },
+  "CHAT.features.agent.title": {
+    "message": "Agent Expert System"
+  },
+  "CHAT.features.agent.description": {
+    "message": "Build domain-specific Agents by combining multiple Tools"
+  },
+  "CHAT.features.agent.feature1": {
+    "message": "Customize Agent roles and capabilities"
+  },
+  "CHAT.features.agent.feature2": {
+    "message": "Agent workflow orchestration"
+  },
+  "CHAT.features.agent.feature3": {
+    "message": "Agent sharing and reuse"
+  },
+  "CHAT.features.models.title": {
+    "message": "Multi-Model Support"
+  },
+  "CHAT.features.models.description": {
+    "message": "Support mainstream AI models, freely switch and choose"
+  },
+  "CHAT.features.models.feature1": {
+    "message": "GPT, Claude, Gemini and other mainstream models"
+  },
+  "CHAT.features.models.feature2": {
+    "message": "Model performance and cost comparison"
+  },
+  "CHAT.features.models.feature3": {
+    "message": "Auto-select the most suitable model"
+  },
+  "HEADLESS.hero.description": {
+    "message": "Docker containerized deployment to easily run OOMOL applications on servers and NAS"
+  },
+  "HEADLESS.hero.stat1": {
+    "message": "Containerized"
+  },
+  "HEADLESS.hero.stat2": {
+    "message": "Web Management"
+  },
+  "HEADLESS.hero.stat3": {
+    "message": "One-Click Install"
+  },
+  "HEADLESS.hero.cta.download": {
+    "message": "Download Now"
+  },
+  "HEADLESS.hero.cta.docs": {
+    "message": "View Docs"
+  },
+  "HEADLESS.useCases.title": {
+    "message": "Use Cases"
+  },
+  "HEADLESS.useCases.subtitle": {
+    "message": "Flexible deployment for different runtime environments"
+  },
+  "HEADLESS.useCase.docker.title": {
+    "message": "Docker Deployment"
+  },
+  "HEADLESS.useCase.docker.description": {
+    "message": "One command to install, supports mainstream Linux distributions and NAS systems"
+  },
+  "HEADLESS.useCase.cloud.title": {
+    "message": "Cloud Servers"
+  },
+  "HEADLESS.useCase.cloud.description": {
+    "message": "Easy deployment to Alibaba Cloud, AWS, Tencent Cloud and other platforms"
+  },
+  "HEADLESS.useCase.ci.title": {
+    "message": "CI/CD Integration"
+  },
+  "HEADLESS.useCase.ci.description": {
+    "message": "Integrate into automation workflows for continuous deployment and testing"
+  },
+  "HEADLESS.useCase.api.title": {
+    "message": "API Services"
+  },
+  "HEADLESS.useCase.api.description": {
+    "message": "Publish workflows as API services for other applications to call"
+  },
+  "HEADLESS.features.title": {
+    "message": "Core Features"
+  },
+  "HEADLESS.features.deploy.title": {
+    "message": "Fast Deployment"
+  },
+  "HEADLESS.features.deploy.description": {
+    "message": "Docker containerization, one-click deployment configuration"
+  },
+  "HEADLESS.features.deploy.feature1": {
+    "message": "Docker Compose one-click startup"
+  },
+  "HEADLESS.features.deploy.feature2": {
+    "message": "Auto-configure network and storage"
+  },
+  "HEADLESS.features.deploy.feature3": {
+    "message": "Multi-container orchestration support"
+  },
+  "HEADLESS.features.package.title": {
+    "message": "Package Management"
+  },
+  "HEADLESS.features.package.description": {
+    "message": "Complete package lifecycle management from installation to uninstallation"
+  },
+  "HEADLESS.features.package.feature1": {
+    "message": "Develop in Studio, deploy in Headless"
+  },
+  "HEADLESS.features.package.feature2": {
+    "message": "One-click install from Hub community"
+  },
+  "HEADLESS.features.package.feature3": {
+    "message": "Auto-detect version updates"
+  },
+  "HEADLESS.features.remote.title": {
+    "message": "Remote Management"
+  },
+  "HEADLESS.features.remote.description": {
+    "message": "Web interface management, access anytime, anywhere"
+  },
+  "HEADLESS.features.remote.feature1": {
+    "message": "Web UI unified management"
+  },
+  "HEADLESS.features.remote.feature2": {
+    "message": "Real-time running status view"
+  },
+  "HEADLESS.features.remote.feature3": {
+    "message": "RESTful API automation"
   },
   "HOME.Products.headless.description": {
     "message": "Run OOMOL applications on servers and NAS devices"

@@ -1,182 +1,90 @@
 import styles from "./styles.module.scss";
 
-import { useState, useEffect, useCallback, useRef } from "react";
-import clsx from "clsx";
 import Layout from "../../theme/Layout";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
-import { Spin } from "@site/src/components/Spin/Spin";
 import { translate } from "@docusaurus/Translate";
 
-const headlessData = {
-  docker: {
-    title: translate({ message: "HEADLESS.docker.title" }),
-    description: translate({ message: "HEADLESS.docker.description" }),
+// 使用场景数据
+const useCases = [
+  {
+    icon: "🐳",
+    title: translate({ message: "HEADLESS.useCase.docker.title" }),
+    description: translate({ message: "HEADLESS.useCase.docker.description" }),
+  },
+  {
+    icon: "☁️",
+    title: translate({ message: "HEADLESS.useCase.cloud.title" }),
+    description: translate({ message: "HEADLESS.useCase.cloud.description" }),
+  },
+  {
+    icon: "🔄",
+    title: translate({ message: "HEADLESS.useCase.ci.title" }),
+    description: translate({ message: "HEADLESS.useCase.ci.description" }),
+  },
+  {
+    icon: "🌐",
+    title: translate({ message: "HEADLESS.useCase.api.title" }),
+    description: translate({ message: "HEADLESS.useCase.api.description" }),
+  },
+];
+
+// 核心功能数据
+const coreFeatures = [
+  {
+    icon: "🚀",
+    title: translate({ message: "HEADLESS.features.deploy.title" }),
+    description: translate({ message: "HEADLESS.features.deploy.description" }),
     features: [
-      {
-        content: translate({ message: "HEADLESS.docker.feature1" }),
-        image: "/img/pages/headless/docker-deploy.svg",
-      },
-      {
-        content: translate({ message: "HEADLESS.docker.feature2" }),
-        image: "/img/pages/headless/docker-deploy.svg",
-      },
-      {
-        content: translate({ message: "HEADLESS.docker.feature3" }),
-        image: "/img/pages/headless/docker-deploy.svg",
-      },
-      {
-        content: translate({ message: "HEADLESS.docker.feature4" }),
-        image: "/img/pages/headless/docker-deploy.svg",
-      },
+      translate({ message: "HEADLESS.features.deploy.feature1" }),
+      translate({ message: "HEADLESS.features.deploy.feature2" }),
+      translate({ message: "HEADLESS.features.deploy.feature3" }),
     ],
   },
-  package: {
-    title: translate({ message: "HEADLESS.package.title" }),
-    description: translate({ message: "HEADLESS.package.description" }),
+  {
+    icon: "📦",
+    title: translate({ message: "HEADLESS.features.package.title" }),
+    description: translate({ message: "HEADLESS.features.package.description" }),
     features: [
-      {
-        content: translate({ message: "HEADLESS.package.feature1" }),
-        image: "/img/pages/headless/package-management.svg",
-      },
-      {
-        content: translate({ message: "HEADLESS.package.feature2" }),
-        image: "/img/pages/headless/package-management.svg",
-      },
-      {
-        content: translate({ message: "HEADLESS.package.feature3" }),
-        image: "/img/pages/headless/package-management.svg",
-      },
-      {
-        content: translate({ message: "HEADLESS.package.feature4" }),
-        image: "/img/pages/headless/package-management.svg",
-      },
+      translate({ message: "HEADLESS.features.package.feature1" }),
+      translate({ message: "HEADLESS.features.package.feature2" }),
+      translate({ message: "HEADLESS.features.package.feature3" }),
     ],
   },
-  remote: {
-    title: translate({ message: "HEADLESS.remote.title" }),
-    description: translate({ message: "HEADLESS.remote.description" }),
+  {
+    icon: "🔗",
+    title: translate({ message: "HEADLESS.features.remote.title" }),
+    description: translate({ message: "HEADLESS.features.remote.description" }),
     features: [
-      {
-        content: translate({ message: "HEADLESS.remote.feature1" }),
-        image: "/img/pages/headless/remote-access.svg",
-      },
-      {
-        content: translate({ message: "HEADLESS.remote.feature2" }),
-        image: "/img/pages/headless/remote-access.svg",
-      },
-      {
-        content: translate({ message: "HEADLESS.remote.feature3" }),
-        image: "/img/pages/headless/remote-access.svg",
-      },
+      translate({ message: "HEADLESS.features.remote.feature1" }),
+      translate({ message: "HEADLESS.features.remote.feature2" }),
+      translate({ message: "HEADLESS.features.remote.feature3" }),
     ],
   },
+];
+
+// 使用场景卡片组件
+const UseCaseCard = ({ useCase }: { useCase: typeof useCases[0] }) => {
+  return (
+    <div className={styles.useCaseCard}>
+      <div className={styles.useCaseIcon}>{useCase.icon}</div>
+      <h3 className={styles.useCaseTitle}>{useCase.title}</h3>
+      <p className={styles.useCaseDescription}>{useCase.description}</p>
+    </div>
+  );
 };
 
-const TRANSITION_DURATION_MS = 5 * 1000;
-
-interface FeatureBlockProps {
-  title: string;
-  description: string;
-  features: {
-    content: string;
-    image: string;
-  }[];
-  layoutReverse?: boolean;
-}
-
-const FeatureBlock = ({
-  title,
-  description,
-  features,
-  layoutReverse,
-}: FeatureBlockProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
-
-  const startAutoplayTimer = useCallback(() => {
-    if (timerRef.current) {
-      clearInterval(timerRef.current);
-    }
-
-    timerRef.current = setInterval(() => {
-      setCurrentIndex(prev => (prev + 1) % features.length);
-    }, TRANSITION_DURATION_MS);
-  }, [features.length]);
-
-  useEffect(() => {
-    startAutoplayTimer();
-    return () => {
-      if (timerRef.current) {
-        clearInterval(timerRef.current);
-      }
-    };
-  }, [startAutoplayTimer]);
-
-  const handleClick = useCallback(
-    (index: number) => {
-      setCurrentIndex(index);
-      startAutoplayTimer();
-    },
-    [startAutoplayTimer]
-  );
-
+// 核心功能卡片组件
+const FeatureCard = ({ feature }: { feature: typeof coreFeatures[0] }) => {
   return (
-    <div
-      className={clsx(styles.featureBlock, {
-        [styles.layoutReverse]: layoutReverse,
-      })}
-    >
-      <div className={styles.featureLeft}>
-        <h1 className={styles.featureTitle}>{title}</h1>
-        <p className={styles.featureDescription}>{description}</p>
-        {features.map((item, index) => {
-          const isActive = index === currentIndex;
-
-          return (
-            <div
-              key={index}
-              className={clsx(styles.feature, {
-                [styles.active]: isActive,
-              })}
-              onClick={() => handleClick(index)}
-            >
-              <div className={styles.featureIcon}>
-                {isActive ? (
-                  <Spin
-                    size={24}
-                    strokeWidth={4}
-                    color="#06b6d4"
-                    duration={TRANSITION_DURATION_MS}
-                  />
-                ) : (
-                  <i className={`${styles.icon} i-codicon-arrow-right`} />
-                )}
-              </div>
-              <div
-                className={clsx(styles.featureContent, {
-                  [styles.active]: isActive,
-                })}
-              >
-                {item.content}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      <div className={styles.imageWrapper}>
-        {features.map((feature, index) => (
-          <img
-            key={index}
-            className={clsx(
-              styles.image,
-              index === currentIndex && styles.imageVisible
-            )}
-            src={feature.image}
-            alt={feature.content}
-          />
+    <div className={styles.featureCard}>
+      <div className={styles.featureIcon}>{feature.icon}</div>
+      <h3 className={styles.featureTitle}>{feature.title}</h3>
+      <p className={styles.featureDescription}>{feature.description}</p>
+      <ul className={styles.featureList}>
+        {feature.features.map((item, idx) => (
+          <li key={idx}>{item}</li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };
@@ -185,36 +93,72 @@ export default function HeadlessPage() {
   return (
     <Layout>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <h2 className={styles.title}>
-            {translate({ message: "HEADLESS.title" })}
-          </h2>
-          <span className={styles.description}>
-            {translate({ message: "HEADLESS.description" })}
-          </span>
-          <div className={styles.productInfo}>
-            <h3>{translate({ message: "HEADLESS.productName" })}</h3>
-            <p>{translate({ message: "HEADLESS.productDescription" })}</p>
+        {/* Hero 区域 */}
+        <div className={styles.hero}>
+          <h1 className={styles.heroTitle}>OOMOL Headless</h1>
+          <p className={styles.heroDescription}>
+            {translate({ message: "HEADLESS.hero.description" })}
+          </p>
+
+          {/* 数据亮点 */}
+          <div className={styles.heroStats}>
+            <div className={styles.stat}>
+              <span className={styles.statValue}>Docker</span>
+              <span className={styles.statLabel}>{translate({ message: "HEADLESS.hero.stat1" })}</span>
+            </div>
+            <div className={styles.stat}>
+              <span className={styles.statValue}>远程访问</span>
+              <span className={styles.statLabel}>{translate({ message: "HEADLESS.hero.stat2" })}</span>
+            </div>
+            <div className={styles.stat}>
+              <span className={styles.statValue}>包管理</span>
+              <span className={styles.statLabel}>{translate({ message: "HEADLESS.hero.stat3" })}</span>
+            </div>
+          </div>
+
+          {/* 双 CTA */}
+          <div className={styles.heroCTA}>
+            <a href="/downloads" className={styles.primaryButton}>
+              {translate({ message: "HEADLESS.hero.cta.download" })}
+            </a>
+            <a href="/docs" className={styles.secondaryButton}>
+              {translate({ message: "HEADLESS.hero.cta.docs" })}
+            </a>
           </div>
         </div>
-        <div className={styles.wrapper}>
-          <FeatureBlock
-            title={headlessData.docker.title}
-            description={headlessData.docker.description}
-            features={headlessData.docker.features}
-          />
-          <FeatureBlock
-            title={headlessData.package.title}
-            description={headlessData.package.description}
-            features={headlessData.package.features}
-            layoutReverse
-          />
-          <FeatureBlock
-            title={headlessData.remote.title}
-            description={headlessData.remote.description}
-            features={headlessData.remote.features}
-          />
-        </div>
+
+        {/* 使用场景 */}
+        <section className={styles.useCasesSection}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>
+              {translate({ message: "HEADLESS.useCases.title" })}
+            </h2>
+            <p className={styles.sectionSubtitle}>
+              {translate({ message: "HEADLESS.useCases.subtitle" })}
+            </p>
+          </div>
+          <div className={styles.useCasesGrid}>
+            {useCases.map((useCase, index) => (
+              <UseCaseCard key={index} useCase={useCase} />
+            ))}
+          </div>
+        </section>
+
+        {/* 核心功能 */}
+        <section className={styles.featuresSection}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>
+              {translate({ message: "HEADLESS.features.title" })}
+            </h2>
+          </div>
+          <div className={styles.featuresGrid}>
+            {coreFeatures.map((feature, index) => (
+              <FeatureCard key={index} feature={feature} />
+            ))}
+          </div>
+        </section>
+
+        {/* CTA 区域 */}
         <GetStartedPrompt />
       </div>
     </Layout>

@@ -1,238 +1,462 @@
 @import "../../css/custom.scss";
 
+// ============================================
+// Container
+// ============================================
 .container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+  background: var(--ifm-background-color);
+}
+
+// ============================================
+// Hero 区域 - Vercel 风格极简设计
+// ============================================
+.hero {
+  text-align: center;
+  padding: 120px 32px 100px;
+  background: var(--ifm-background-color);
+  position: relative;
+}
+
+.heroTitle {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--oomol-primary);
+}
+
+.heroDescription {
+  font-size: 1.5rem;
+  color: var(--ifm-color-emphasis-700);
+  max-width: 720px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+// 数据亮点
+.heroStats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--oomol-primary);
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+// CTA 按钮
+.heroCTA {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.primaryButton,
+.secondaryButton {
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.primaryButton {
+  background: var(--oomol-primary);
+  color: white;
+  border: none;
+
+  &:hover {
+    background: var(--oomol-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--oomol-primary-bg-hover);
+    color: white;
+  }
+}
+
+.secondaryButton {
+  background: transparent;
+  color: var(--ifm-color-emphasis-800);
+  border: 1.5px solid var(--ifm-color-emphasis-300);
+
+  &:hover {
+    border-color: var(--ifm-color-primary);
+    color: var(--ifm-color-primary);
+    background: var(--ifm-color-primary-lightest);
+  }
+}
+
+// ============================================
+// Section Headers - 清晰的层次结构
+// ============================================
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.sectionTitle {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--ifm-heading-color);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: var(--ifm-color-emphasis-700);
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+// ============================================
+// 工作流步骤 - 流程化展示
+// ============================================
+.workflowSection {
+  padding: 100px 32px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--ifm-color-primary-lightest) 50%,
+    transparent 100%
+  );
+}
+
+.workflowSteps {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
 }
 
-.header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.title {
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--ifm-color-primary);
-  margin-bottom: 1rem;
-  background: linear-gradient(135deg, #7D7FE9 0%, #A855F7 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.description {
-  font-size: 1.25rem;
-  color: var(--ifm-color-secondary);
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-.create-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 6rem;
-  margin-bottom: 6rem;
-}
-
-.createBlock {
-  display: flex;
-  align-items: center;
-  gap: 4rem;
-  
-  &.layoutReverse {
-    flex-direction: row-reverse;
-  }
-  
-  @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 2rem;
-    
-    &.layoutReverse {
-      flex-direction: column;
-    }
-  }
-}
-
-.createLeft {
-  flex: 1;
-  max-width: 500px;
-}
-
-.createTitle {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: var(--ifm-heading-color);
-  margin-bottom: 1rem;
-}
-
-.createDescription {
-  font-size: 1.1rem;
-  color: var(--ifm-color-secondary);
-  margin-bottom: 2rem;
-  line-height: 1.6;
-}
-
-.feature {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: 1.5rem;
+.workflowStep {
+  position: relative;
+  padding: 32px;
+  background: var(--ifm-background-surface-color);
   border-radius: 12px;
-  cursor: pointer;
+  border: 1px solid var(--ifm-color-emphasis-200);
   transition: all 0.3s ease;
-  margin-bottom: 1rem;
-  border: 2px solid transparent;
-  
+
   &:hover {
-    background-color: var(--ifm-color-emphasis-100);
-  }
-  
-  &.active {
-    background-color: var(--ifm-color-primary-lightest);
     border-color: var(--ifm-color-primary);
-    
-    .featureContent {
-      color: var(--ifm-color-primary-dark);
-      font-weight: 500;
-    }
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.12);
+    transform: translateY(-4px);
   }
 }
 
-.featureIcon {
-  display: flex;
+.stepNumber {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
-  margin-top: 0.25rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--oomol-primary);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
 }
 
-.icon {
-  font-size: 20px;
-  color: var(--ifm-color-secondary);
-  transition: color 0.3s ease;
-}
-
-.featureContent {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: var(--ifm-color-content);
-  transition: all 0.3s ease;
-  
-  &.active {
-    color: var(--ifm-color-primary-dark);
-    font-weight: 500;
-  }
-}
-
-.imageWrapper {
-  flex: 1;
-  position: relative;
-  height: 400px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  
-  @media (max-width: 768px) {
-    height: 300px;
-  }
-}
-
-.image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  
-  &.imageVisible {
-    opacity: 1;
-  }
-}
-
-// Features page styles
-.features-wrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 80px;
-  padding: 80px 0;
-}
-
-.featuresBlock {
-  max-width: 1280px;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 80px;
-}
-
-.featuresLeft {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.featureTitle {
-  margin-bottom: 0;
-  font-size: 2.5rem;
-  font-weight: 600;
+.stepTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--ifm-heading-color);
+  margin-bottom: 12px;
+  line-height: 1.3;
 }
 
-.blocks {
-  max-width: 1280px;
-  padding: 80px 0;
-  width: 100%;
+.stepDescription {
+  font-size: 1rem;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
 
-  @media screen and (max-width: 996px) {
-    padding: 80px 16px;
+.stepFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    padding-left: 24px;
+    margin-bottom: 8px;
+    position: relative;
+    font-size: 0.95rem;
+    color: var(--ifm-color-emphasis-600);
+    line-height: 1.5;
+
+    &::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--oomol-primary);
+      font-weight: 700;
+    }
+  }
+}
+
+// ============================================
+// 核心优势 - 卡片网格
+// ============================================
+.advantagesSection {
+  padding: 100px 32px;
+}
+
+.advantagesGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+.advantageCard {
+  padding: 40px;
+  background: var(--ifm-background-surface-color);
+  border-radius: 16px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: var(--ifm-color-primary);
+    box-shadow: 0 12px 32px rgba(99, 102, 241, 0.15);
+    transform: translateY(-6px);
+  }
+}
+
+.advantageIcon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.advantageTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--ifm-heading-color);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.advantageDescription {
+  font-size: 1.05rem;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.advantageFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    padding-left: 24px;
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 0.95rem;
+    color: var(--ifm-color-emphasis-600);
+    line-height: 1.6;
+
+    &::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--oomol-primary);
+      font-weight: 700;
+    }
+  }
+}
+
+// ============================================
+// AI 能力 - 简洁网格
+// ============================================
+.aiSection {
+  padding: 100px 32px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--ifm-color-primary-lightest) 50%,
+    transparent 100%
+  );
+}
+
+.aiCapabilitiesGrid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.aiCapabilityCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  background: var(--ifm-background-surface-color);
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: var(--ifm-color-primary);
+    transform: translateX(4px);
+  }
+}
+
+.aiIcon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.aiContent {
+  font-size: 0.95rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.5;
+}
+
+// ============================================
+// 技术特性区域
+// ============================================
+.techFeaturesSection {
+  padding: 100px 32px;
+}
+
+// ============================================
+// 响应式设计
+// ============================================
+@media (max-width: 996px) {
+  .hero {
+    padding: 80px 24px 60px;
+  }
+
+  .heroTitle {
+    font-size: 3rem;
+  }
+
+  .heroDescription {
+    font-size: 1.25rem;
+  }
+
+  .heroStats {
+    gap: 32px;
+  }
+
+  .statValue {
+    font-size: 1.75rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.25rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .workflowSection,
+  .advantagesSection,
+  .aiSection,
+  .techFeaturesSection {
+    padding: 80px 24px;
+  }
+
+  .workflowSteps {
+    grid-template-columns: 1fr;
+  }
+
+  .advantagesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .aiCapabilitiesGrid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding: 1rem;
+  .hero {
+    padding: 60px 20px 40px;
   }
-  
-  .title {
+
+  .heroTitle {
     font-size: 2.5rem;
   }
-  
-  .createTitle {
-    font-size: 2rem;
+
+  .heroDescription {
+    font-size: 1.1rem;
   }
-  
-  .create-wrapper {
-    gap: 3rem;
-    margin-bottom: 3rem;
-  }
-  
-  .feature {
-    padding: 1rem;
-  }
-  
-  .featuresBlock {
+
+  .heroStats {
     flex-direction: column;
-    gap: 40px;
+    gap: 24px;
   }
-  
-  .features-wrapper {
-    gap: 40px;
-    padding: 40px 0;
+
+  .heroCTA {
+    flex-direction: column;
+    align-items: stretch;
+
+    .primaryButton,
+    .secondaryButton {
+      width: 100%;
+      text-align: center;
+    }
   }
-  
-  .featureTitle {
+
+  .sectionTitle {
     font-size: 2rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1rem;
+  }
+
+  .workflowSection,
+  .advantagesSection,
+  .aiSection,
+  .techFeaturesSection {
+    padding: 60px 20px;
+  }
+
+  .sectionHeader {
+    margin-bottom: 48px;
+  }
+
+  .stepTitle {
+    font-size: 1.35rem;
+  }
+
+  .advantageTitle {
+    font-size: 1.5rem;
   }
 }

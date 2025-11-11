@@ -830,6 +830,150 @@
   "CREATE.description": {
     "message": "OOMOL 推出的 AI 工具创作平台。该平台的核心优势在于：既保留了传统编程的无限创造能力，又具备低代码开发的便捷性，让用户能够高效地构建各类 AI 工具。"
   },
+  "STUDIO.hero.description": {
+    "message": "可视化工作流 + VSCode 全代码，快速构建并分享 AI 工具"
+  },
+  "STUDIO.hero.stat1": {
+    "message": "AI 模型"
+  },
+  "STUDIO.hero.stat2": {
+    "message": "发布 API"
+  },
+  "STUDIO.hero.stat3": {
+    "message": "算力共享"
+  },
+  "STUDIO.hero.cta.download": {
+    "message": "立即下载"
+  },
+  "STUDIO.hero.cta.docs": {
+    "message": "查看文档"
+  },
+  "STUDIO.workflow.title": {
+    "message": "开发者工作流"
+  },
+  "STUDIO.workflow.subtitle": {
+    "message": "创建工作流 → 生成 Package → 发布社区 → 灵活部署"
+  },
+  "STUDIO.workflow.step1.title": {
+    "message": "创建工作流"
+  },
+  "STUDIO.workflow.step1.description": {
+    "message": "拖拽式可视化编辑器，基于 VSCode 的 Block 编码"
+  },
+  "STUDIO.workflow.step1.feature1": {
+    "message": "拖拽式可视化编辑器"
+  },
+  "STUDIO.workflow.step1.feature2": {
+    "message": "基于 VSCode 的 Block 编码"
+  },
+  "STUDIO.workflow.step2.title": {
+    "message": "生成 Package"
+  },
+  "STUDIO.workflow.step2.description": {
+    "message": "Blocks + Flows 自动打包，支持 MCP 接口"
+  },
+  "STUDIO.workflow.step2.feature1": {
+    "message": "Blocks（函数块）+ Flows 自动打包"
+  },
+  "STUDIO.workflow.step2.feature2": {
+    "message": "支持 MCP 接口（AI Agent 直接调用）"
+  },
+  "STUDIO.workflow.step3.title": {
+    "message": "发布到社区"
+  },
+  "STUDIO.workflow.step3.description": {
+    "message": "一键发布工作流模板和 Block 库"
+  },
+  "STUDIO.workflow.step3.feature1": {
+    "message": "一键发布工作流模板"
+  },
+  "STUDIO.workflow.step3.feature2": {
+    "message": "分享 Block 库到社区"
+  },
+  "STUDIO.workflow.step4.title": {
+    "message": "灵活部署"
+  },
+  "STUDIO.workflow.step4.description": {
+    "message": "本地部署 + FRP 协议分享，或云端一键部署"
+  },
+  "STUDIO.workflow.step4.feature1": {
+    "message": "本地部署 + FRP 协议分享"
+  },
+  "STUDIO.workflow.step4.feature2": {
+    "message": "OOMOL 云端一键部署"
+  },
+  "STUDIO.workflow.step4.feature3": {
+    "message": "工作流自动发布为 API 服务"
+  },
+  "STUDIO.advantages.title": {
+    "message": "核心差异化优势"
+  },
+  "STUDIO.advantages.vscode.title": {
+    "message": "基于 VSCode 的开发体验"
+  },
+  "STUDIO.advantages.vscode.description": {
+    "message": "专业的代码编辑器，支持 Vibe Coding Block 和 AI 辅助开发"
+  },
+  "STUDIO.advantages.vscode.feature1": {
+    "message": "内置 Python/Node.js 环境"
+  },
+  "STUDIO.advantages.vscode.feature2": {
+    "message": "专业代码编辑器"
+  },
+  "STUDIO.advantages.vscode.feature3": {
+    "message": "节点即函数，代码与可视化无缝切换"
+  },
+  "STUDIO.advantages.p2p.title": {
+    "message": "P2P 算力与软件共享"
+  },
+  "STUDIO.advantages.p2p.description": {
+    "message": "基于 FRP 协议的本地部署共享方案，类似 P2P 方式共享算力"
+  },
+  "STUDIO.advantages.p2p.feature1": {
+    "message": "本地部署通过 FRP 协议分享"
+  },
+  "STUDIO.advantages.p2p.feature2": {
+    "message": "类似 P2P 方式共享算力"
+  },
+  "STUDIO.advantages.p2p.feature3": {
+    "message": "既可自用也可分享给他人"
+  },
+  "STUDIO.advantages.api.title": {
+    "message": "工作流即 API"
+  },
+  "STUDIO.advantages.api.description": {
+    "message": "低成本将本地函数发布为 API 服务，支持 MCP 接口供 AI Agent 调用"
+  },
+  "STUDIO.advantages.api.feature1": {
+    "message": "低成本将本地函数发布为 API 服务"
+  },
+  "STUDIO.advantages.api.feature2": {
+    "message": "支持 MCP 接口供 AI Agent 调用"
+  },
+  "STUDIO.advantages.api.feature3": {
+    "message": "自动生成 API 文档"
+  },
+  "STUDIO.ai.title": {
+    "message": "AI 集成能力"
+  },
+  "STUDIO.ai.description": {
+    "message": "集成主流 AI 服务，提供丰富的 AI 能力支持"
+  },
+  "STUDIO.ai.feature1": {
+    "message": "支持多种大语言模型（GPT、Claude、Gemini 等）"
+  },
+  "STUDIO.ai.feature2": {
+    "message": "图像生成和处理（DALL-E、Midjourney、Stable Diffusion）"
+  },
+  "STUDIO.ai.feature3": {
+    "message": "语音识别和合成"
+  },
+  "STUDIO.ai.feature4": {
+    "message": "实时预览和调试"
+  },
+  "STUDIO.techFeatures.title": {
+    "message": "技术特性"
+  },
   "CREATE.workflow.title": {
     "message": "可视化工作流引擎"
   },
@@ -940,6 +1084,102 @@
   },
   "USE.userExperience.feature3": {
     "message": "个性化设置，根据用户偏好定制使用界面"
+  },
+  "CHAT.hero.description": {
+    "message": "基于 MCP Tool 的 AI 对话助手，组合 Tool 构建 Agent 专家"
+  },
+  "CHAT.hero.stat1": {
+    "message": "协议支持"
+  },
+  "CHAT.hero.stat2": {
+    "message": "支持"
+  },
+  "CHAT.hero.stat3": {
+    "message": "专家系统"
+  },
+  "CHAT.hero.cta.download": {
+    "message": "立即下载"
+  },
+  "CHAT.hero.cta.docs": {
+    "message": "查看文档"
+  },
+  "CHAT.useCases.title": {
+    "message": "使用场景"
+  },
+  "CHAT.useCases.subtitle": {
+    "message": "通过自然对话，完成各类 AI 任务"
+  },
+  "CHAT.useCase.conversation.title": {
+    "message": "自然对话交互"
+  },
+  "CHAT.useCase.conversation.description": {
+    "message": "像聊天一样使用 AI 工具，多轮对话保持上下文连贯性"
+  },
+  "CHAT.useCase.tools.title": {
+    "message": "MCP Tool 集成"
+  },
+  "CHAT.useCase.tools.description": {
+    "message": "调用 Studio 创建的 MCP Tool，实现复杂功能组合"
+  },
+  "CHAT.useCase.knowledge.title": {
+    "message": "企业知识库"
+  },
+  "CHAT.useCase.knowledge.description": {
+    "message": "集成企业知识，构建专属领域的智能助手"
+  },
+  "CHAT.useCase.collaboration.title": {
+    "message": "团队协作"
+  },
+  "CHAT.useCase.collaboration.description": {
+    "message": "分享对话和工具配置，提升团队协作效率"
+  },
+  "CHAT.features.title": {
+    "message": "核心功能"
+  },
+  "CHAT.features.mcp.title": {
+    "message": "MCP Tool 生态"
+  },
+  "CHAT.features.mcp.description": {
+    "message": "原生支持 MCP 协议，直接调用各类工具"
+  },
+  "CHAT.features.mcp.feature1": {
+    "message": "自动发现和加载 MCP Tool"
+  },
+  "CHAT.features.mcp.feature2": {
+    "message": "智能推荐合适的工具组合"
+  },
+  "CHAT.features.mcp.feature3": {
+    "message": "工具调用记录和调试"
+  },
+  "CHAT.features.agent.title": {
+    "message": "Agent 专家系统"
+  },
+  "CHAT.features.agent.description": {
+    "message": "组合多个 Tool 构建专业领域 Agent"
+  },
+  "CHAT.features.agent.feature1": {
+    "message": "自定义 Agent 角色和能力"
+  },
+  "CHAT.features.agent.feature2": {
+    "message": "Agent 工作流编排"
+  },
+  "CHAT.features.agent.feature3": {
+    "message": "Agent 共享和复用"
+  },
+  "CHAT.features.models.title": {
+    "message": "多模型支持"
+  },
+  "CHAT.features.models.description": {
+    "message": "支持主流 AI 模型，自由切换选择"
+  },
+  "CHAT.features.models.feature1": {
+    "message": "GPT、Claude、Gemini 等主流模型"
+  },
+  "CHAT.features.models.feature2": {
+    "message": "模型性能和成本对比"
+  },
+  "CHAT.features.models.feature3": {
+    "message": "自动选择最适合的模型"
   },
   "theme.ErrorPageContent.title": {
     "message": "页面已崩溃。",
@@ -1391,68 +1631,101 @@
     "message": "This author has not written any posts yet.",
     "description": "The text for authors with 0 blog post"
   },
-  "HEADLESS.title": {
-    "message": "部署 & 管理"
+  "HEADLESS.hero.description": {
+    "message": "Docker 容器化部署，轻松在服务器和 NAS 上运行 OOMOL 应用"
   },
-  "HEADLESS.description": {
-    "message": "服务器端运行环境"
+  "HEADLESS.hero.stat1": {
+    "message": "容器化部署"
   },
-  "HEADLESS.productName": {
-    "message": "OOMOL Headless"
+  "HEADLESS.hero.stat2": {
+    "message": "Web 管理"
   },
-  "HEADLESS.productDescription": {
-    "message": "通过 Docker 在个人服务器、NAS 等设备上运行 OOMOL 应用。支持完整的包管理功能,从安装到卸载,简单易用。与 OOMOL Studio 无缝集成,让你的工作流随处运行。"
+  "HEADLESS.hero.stat3": {
+    "message": "一键安装"
   },
-  "HEADLESS.docker.title": {
-    "message": "Docker 一键部署"
+  "HEADLESS.hero.cta.download": {
+    "message": "立即下载"
   },
-  "HEADLESS.docker.description": {
-    "message": "简单快速的容器化部署方案"
+  "HEADLESS.hero.cta.docs": {
+    "message": "查看文档"
   },
-  "HEADLESS.docker.feature1": {
-    "message": "一条命令完成安装,无需复杂配置"
+  "HEADLESS.useCases.title": {
+    "message": "适用场景"
   },
-  "HEADLESS.docker.feature2": {
-    "message": "支持主流 Linux 发行版和 NAS 系统"
+  "HEADLESS.useCases.subtitle": {
+    "message": "灵活部署，满足不同的运行环境需求"
   },
-  "HEADLESS.docker.feature3": {
-    "message": "自动配置网络和存储,开箱即用"
+  "HEADLESS.useCase.docker.title": {
+    "message": "Docker 部署"
   },
-  "HEADLESS.docker.feature4": {
-    "message": "支持 Docker Compose 编排多服务"
+  "HEADLESS.useCase.docker.description": {
+    "message": "一条命令完成安装，支持主流 Linux 发行版和 NAS 系统"
   },
-  "HEADLESS.package.title": {
-    "message": "完整包管理"
+  "HEADLESS.useCase.cloud.title": {
+    "message": "云服务器"
   },
-  "HEADLESS.package.description": {
-    "message": "从安装到卸载的全流程管理"
+  "HEADLESS.useCase.cloud.description": {
+    "message": "轻松部署到阿里云、AWS、腾讯云等云平台"
   },
-  "HEADLESS.package.feature1": {
-    "message": "在 Studio 中开发,在 Headless 中部署运行"
+  "HEADLESS.useCase.ci.title": {
+    "message": "CI/CD 集成"
   },
-  "HEADLESS.package.feature2": {
-    "message": "一键安装 Hub 社区分享的包"
+  "HEADLESS.useCase.ci.description": {
+    "message": "集成到自动化流程，实现持续部署和测试"
   },
-  "HEADLESS.package.feature3": {
-    "message": "自动检测版本并提示升级"
+  "HEADLESS.useCase.api.title": {
+    "message": "API 服务"
   },
-  "HEADLESS.package.feature4": {
-    "message": "简单的卸载流程,清理干净"
+  "HEADLESS.useCase.api.description": {
+    "message": "将工作流发布为 API 服务，供其他应用调用"
   },
-  "HEADLESS.remote.title": {
-    "message": "远程访问管理"
+  "HEADLESS.features.title": {
+    "message": "核心功能"
   },
-  "HEADLESS.remote.description": {
-    "message": "随时随地管理你的服务"
+  "HEADLESS.features.deploy.title": {
+    "message": "快速部署"
   },
-  "HEADLESS.remote.feature1": {
-    "message": "Web 界面远程管理所有包"
+  "HEADLESS.features.deploy.description": {
+    "message": "Docker 容器化，一键完成部署配置"
   },
-  "HEADLESS.remote.feature2": {
-    "message": "实时查看运行状态和日志"
+  "HEADLESS.features.deploy.feature1": {
+    "message": "Docker Compose 一键启动"
   },
-  "HEADLESS.remote.feature3": {
-    "message": "支持 API 接口进行自动化管理"
+  "HEADLESS.features.deploy.feature2": {
+    "message": "自动配置网络和存储"
+  },
+  "HEADLESS.features.deploy.feature3": {
+    "message": "支持多容器编排部署"
+  },
+  "HEADLESS.features.package.title": {
+    "message": "包管理"
+  },
+  "HEADLESS.features.package.description": {
+    "message": "完整的包生命周期管理，从安装到卸载"
+  },
+  "HEADLESS.features.package.feature1": {
+    "message": "Studio 开发，Headless 部署"
+  },
+  "HEADLESS.features.package.feature2": {
+    "message": "Hub 社区包一键安装"
+  },
+  "HEADLESS.features.package.feature3": {
+    "message": "自动检测版本更新"
+  },
+  "HEADLESS.features.remote.title": {
+    "message": "远程管理"
+  },
+  "HEADLESS.features.remote.description": {
+    "message": "Web 界面管理，随时随地访问"
+  },
+  "HEADLESS.features.remote.feature1": {
+    "message": "Web UI 统一管理"
+  },
+  "HEADLESS.features.remote.feature2": {
+    "message": "实时查看运行状态"
+  },
+  "HEADLESS.features.remote.feature3": {
+    "message": "RESTful API 自动化"
   },
   "HOME.Products.headless.description": {
     "message": "在服务器和 NAS 上运行 OOMOL 应用"
