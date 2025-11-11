@@ -63,9 +63,16 @@
   font-weight: 500;
   font-size: 14px;
   cursor: pointer;
-  color: var(--oomol-text-inverse);
   text-decoration: none;
   margin: 0 !important;
+
+  /* 亮色模式：使用 text-inverse (白色) */
+  color: var(--oomol-text-inverse);
+
+  /* 深色模式：使用接近白色的颜色 */
+  [data-theme="dark"] & {
+    color: var(--oomol-white);
+  }
 
   i {
     font-size: 16px;
@@ -73,7 +80,14 @@
 
   &:hover {
     background: var(--oomol-primary-hover);
+
+    /* 亮色模式：hover 时保持白色 */
     color: var(--oomol-text-inverse) !important;
+
+    /* 深色模式：hover 时保持白色 */
+    [data-theme="dark"] & {
+      color: var(--oomol-white) !important;
+    }
   }
 }
 
