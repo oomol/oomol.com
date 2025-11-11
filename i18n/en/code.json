@@ -1710,5 +1710,275 @@
   },
   "HOME.Products.headless.description": {
     "message": "Run OOMOL applications on servers and NAS devices"
+  },
+  "HOME.CoreTech.blockAPI.title": {
+    "message": "Create New APIs"
+  },
+  "HOME.CoreTech.blockAPI.description": {
+    "message": "Block as Function, encapsulate code into reusable APIs"
+  },
+  "HOME.CoreTech.blockAPI.tag1": {
+    "message": "Block Encapsulation"
+  },
+  "HOME.CoreTech.blockAPI.tag2": {
+    "message": "Code to API"
+  },
+  "HOME.CoreTech.blockAPI.tag3": {
+    "message": "Function Composition"
+  },
+  "HOME.CoreTech.blockAPI.tag4": {
+    "message": "Reusable Units"
+  },
+  "HOME.CoreTech.apiComposition.title": {
+    "message": "Flexible API Composition"
+  },
+  "HOME.CoreTech.apiComposition.description": {
+    "message": "Visual orchestration, mixing custom and existing APIs"
+  },
+  "HOME.CoreTech.apiComposition.tag1": {
+    "message": "Visual Programming"
+  },
+  "HOME.CoreTech.apiComposition.tag2": {
+    "message": "API Chaining"
+  },
+  "HOME.CoreTech.apiComposition.tag3": {
+    "message": "Workflow Orchestration"
+  },
+  "HOME.CoreTech.apiComposition.tag4": {
+    "message": "Low-Code"
+  },
+  "HOME.CoreTech.codingExperience.title": {
+    "message": "Full Coding Experience"
+  },
+  "HOME.CoreTech.codingExperience.description": {
+    "message": "Deep code integration, seamless multi-language library support"
+  },
+  "HOME.CoreTech.codingExperience.tag1": {
+    "message": "Python/Node.js"
+  },
+  "HOME.CoreTech.codingExperience.tag2": {
+    "message": "VSCode IDE"
+  },
+  "HOME.CoreTech.codingExperience.tag3": {
+    "message": "AI Copilot"
+  },
+  "HOME.CoreTech.codingExperience.tag4": {
+    "message": "Open Source Libraries"
+  },
+  "HOME.CoreTech.multiDeploy.title": {
+    "message": "Multi-Mode Delivery"
+  },
+  "HOME.CoreTech.multiDeploy.description": {
+    "message": "Local/Cloud/Containerized, adapting to all deployment scenarios"
+  },
+  "HOME.CoreTech.multiDeploy.tag1": {
+    "message": "Studio + FRP"
+  },
+  "HOME.CoreTech.multiDeploy.tag2": {
+    "message": "Headless Docker"
+  },
+  "HOME.CoreTech.multiDeploy.tag3": {
+    "message": "Cloud Hosting"
+  },
+  "HOME.CoreTech.multiDeploy.tag4": {
+    "message": "MCP Protocol"
+  },
+  "HOME.Scenes.dataScience.title": {
+    "message": "Data Science Pipeline"
+  },
+  "HOME.Scenes.dataScience.inner": {
+    "message": "Build end-to-end pipelines from data cleaning to model training to visualization, supporting pandas, scikit-learn, and GPU-accelerated deep learning."
+  },
+  "HOME.Scenes.multimedia.title": {
+    "message": "Multimedia Processing Automation"
+  },
+  "HOME.Scenes.multimedia.inner": {
+    "message": "Batch video transcoding, auto multi-language subtitles, PDF generation. Leverage ffmpeg, Pillow and more to build efficient media processing pipelines."
+  },
+  "HOME.Scenes.aiAgent.title": {
+    "message": "AI Agent Toolchain"
+  },
+  "HOME.Scenes.aiAgent.inner": {
+    "message": "Convert Blocks into AI-callable tools via MCP protocol, composing specialized Agents. Integrate data querying, file processing, API calls and more."
+  },
+  "HOME.Scenes.apiPublish.title": {
+    "message": "Rapid API Publishing"
+  },
+  "HOME.Scenes.apiPublish.inner": {
+    "message": "Package workflows as RESTful APIs or Chatbot interfaces, deploy to OOMOL Cloud with one click, auto-generating API docs and test UI."
+  },
+  "HOME.Scenes.enterprise.title": {
+    "message": "Enterprise Integration"
+  },
+  "HOME.Scenes.enterprise.inner": {
+    "message": "Docker containerized deployment to private cloud or K8s clusters, supporting CI/CD pipelines for continuous delivery and operations of enterprise-grade API services."
+  },
+  "HOME.ProductComparison.title": {
+    "message": "Choose Your Deployment Mode"
+  },
+  "HOME.ProductComparison.subtitle": {
+    "message": "From local development to enterprise deployment, OOMOL offers flexible products for different scenarios"
+  },
+  "HOME.ProductComparison.dimension.header": {
+    "message": "Feature Dimension"
+  },
+  "HOME.ProductComparison.dimension.stage": {
+    "message": "Usage Stage"
+  },
+  "HOME.ProductComparison.dimension.capability": {
+    "message": "Core Capability"
+  },
+  "HOME.ProductComparison.dimension.scenario": {
+    "message": "Use Cases"
+  },
+  "HOME.ProductComparison.dimension.tech": {
+    "message": "Technical Features"
+  },
+  "HOME.ProductComparison.product.studio": {
+    "message": "Studio + FRP"
+  },
+  "HOME.ProductComparison.product.headless": {
+    "message": "Headless"
+  },
+  "HOME.ProductComparison.product.cloud": {
+    "message": "Cloud"
+  },
+  "HOME.ProductComparison.studio.stage": {
+    "message": "Local Development & Geek Sharing"
+  },
+  "HOME.ProductComparison.studio.capability": {
+    "message": "Share local computing power (especially GPU) via FRP protocol P2P connection"
+  },
+  "HOME.ProductComparison.studio.scenario": {
+    "message": "Personal projects, team rapid sharing, leveraging idle GPU resources"
+  },
+  "HOME.ProductComparison.studio.tech": {
+    "message": "FRP Protocol, VSCode IDE, Local Containers, GPU Passthrough"
+  },
+  "HOME.ProductComparison.headless.stage": {
+    "message": "Production Environment Deployment"
+  },
+  "HOME.ProductComparison.headless.capability": {
+    "message": "Docker containerized standalone deployment, supporting cloud servers and K8s clusters"
+  },
+  "HOME.ProductComparison.headless.scenario": {
+    "message": "Enterprise-grade API services, CI/CD integration, private cloud deployment"
+  },
+  "HOME.ProductComparison.headless.tech": {
+    "message": "Docker, Kubernetes support, Container orchestration, Self-hosted"
+  },
+  "HOME.ProductComparison.cloud.stage": {
+    "message": "Managed Cloud Service"
+  },
+  "HOME.ProductComparison.cloud.capability": {
+    "message": "Hosted runtime environment with auto-scaling, providing RESTful API and MCP endpoints"
+  },
+  "HOME.ProductComparison.cloud.scenario": {
+    "message": "Rapid launch for SMB teams, no infrastructure management, AI Agent integration"
+  },
+  "HOME.ProductComparison.cloud.tech": {
+    "message": "Serverless, Auto-scaling, API Gateway, MCP Protocol"
+  },
+  "CLOUD.hero.description": {
+    "message": "Managed runtime environment with RESTful API and MCP protocol endpoints, supporting auto-scaling"
+  },
+  "CLOUD.hero.stat1": {
+    "message": "Auto-Scaling"
+  },
+  "CLOUD.hero.stat2": {
+    "message": "API Service"
+  },
+  "CLOUD.hero.stat3": {
+    "message": "AI Integration"
+  },
+  "CLOUD.hero.cta.start": {
+    "message": "Get Started"
+  },
+  "CLOUD.hero.cta.docs": {
+    "message": "View Docs"
+  },
+  "CLOUD.useCases.title": {
+    "message": "Use Cases"
+  },
+  "CLOUD.useCases.subtitle": {
+    "message": "Focus on business logic without worrying about servers and operations"
+  },
+  "CLOUD.useCase.quickDeploy.title": {
+    "message": "Rapid Service Launch"
+  },
+  "CLOUD.useCase.quickDeploy.description": {
+    "message": "SMB teams deploy workflows as cloud APIs without server configuration"
+  },
+  "CLOUD.useCase.aiAgent.title": {
+    "message": "AI Agent Integration"
+  },
+  "CLOUD.useCase.aiAgent.description": {
+    "message": "Connect to Claude, ChatGPT and other AI platforms via MCP protocol, providing custom tools"
+  },
+  "CLOUD.useCase.miniapp.title": {
+    "message": "Mini-App Backend"
+  },
+  "CLOUD.useCase.miniapp.description": {
+    "message": "Provide RESTful APIs for mini-apps and mobile applications with auto-generated docs and test UI"
+  },
+  "CLOUD.useCase.noOps.title": {
+    "message": "Zero Operations"
+  },
+  "CLOUD.useCase.noOps.description": {
+    "message": "Auto-monitoring, logging, security isolation - no infrastructure management needed"
+  },
+  "CLOUD.features.title": {
+    "message": "Core Features"
+  },
+  "CLOUD.features.oneDeploy.title": {
+    "message": "One-Click Deploy"
+  },
+  "CLOUD.features.oneDeploy.description": {
+    "message": "Push directly from Studio to Cloud with auto domain and HTTPS configuration"
+  },
+  "CLOUD.features.oneDeploy.feature1": {
+    "message": "Git Push-style deployment"
+  },
+  "CLOUD.features.oneDeploy.feature2": {
+    "message": "Auto HTTPS certificate setup"
+  },
+  "CLOUD.features.oneDeploy.feature3": {
+    "message": "Zero-downtime updates"
+  },
+  "CLOUD.features.monitor.title": {
+    "message": "Auto Monitoring"
+  },
+  "CLOUD.features.monitor.description": {
+    "message": "Real-time performance monitoring, log viewing, error tracking"
+  },
+  "CLOUD.features.monitor.feature1": {
+    "message": "Real-time metrics dashboard"
+  },
+  "CLOUD.features.monitor.feature2": {
+    "message": "Centralized log search"
+  },
+  "CLOUD.features.monitor.feature3": {
+    "message": "Anomaly alerts"
+  },
+  "CLOUD.features.security.title": {
+    "message": "Security Isolation"
+  },
+  "CLOUD.features.security.description": {
+    "message": "Container-level isolation, access control, data encryption"
+  },
+  "CLOUD.features.security.feature1": {
+    "message": "Sandbox environment isolation"
+  },
+  "CLOUD.features.security.feature2": {
+    "message": "API key management"
+  },
+  "CLOUD.features.security.feature3": {
+    "message": "Data encryption in transit"
+  },
+  "STUDIO.hero.description": {
+    "message": "Local development environment for developers, VSCode-based visual programming tool with FRP protocol for P2P computing power sharing"
+  },
+  "HEADLESS.hero.description": {
+    "message": "Containerized deployment solution, packaging workflows as standalone Docker images for cloud servers, private clouds and K8s clusters"
   }
 }

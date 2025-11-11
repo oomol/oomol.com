@@ -14,47 +14,50 @@ type CoreTechItemType = {
 
 const coreTechList: CoreTechItemType[] = [
   {
-    icon: "i-codicon-server",
-    title: translate({ message: "HOME.CoreTech.local-computing.title" }),
+    icon: "i-codicon-symbol-method",
+    title: translate({ message: "HOME.CoreTech.blockAPI.title" }),
     description: translate({
-      message: "HOME.CoreTech.local-computing.description",
+      message: "HOME.CoreTech.blockAPI.description",
     }),
     tags: [
-      translate({ message: "HOME.CoreTech.local-computing.tag1" }),
-      translate({ message: "HOME.CoreTech.local-computing.tag2" }),
-      translate({ message: "HOME.CoreTech.local-computing.tag3" }),
-      translate({ message: "HOME.CoreTech.local-computing.tag4" }),
+      translate({ message: "HOME.CoreTech.blockAPI.tag1" }),
+      translate({ message: "HOME.CoreTech.blockAPI.tag2" }),
+      translate({ message: "HOME.CoreTech.blockAPI.tag3" }),
+      translate({ message: "HOME.CoreTech.blockAPI.tag4" }),
     ],
     highlight: true,
   },
   {
-    icon: "i-codicon-symbol-method",
-    title: translate({ message: "HOME.CoreTech.workflow.title" }),
-    description: translate({ message: "HOME.CoreTech.workflow.description" }),
+    icon: "i-codicon-git-merge",
+    title: translate({ message: "HOME.CoreTech.apiComposition.title" }),
+    description: translate({ message: "HOME.CoreTech.apiComposition.description" }),
     tags: [
-      translate({ message: "HOME.CoreTech.workflow.tag1" }),
-      translate({ message: "HOME.CoreTech.workflow.tag2" }),
-      translate({ message: "HOME.CoreTech.workflow.tag3" }),
-    ],
-  },
-  {
-    icon: "i-codicon-plug",
-    title: translate({ message: "HOME.CoreTech.mcp.title" }),
-    description: translate({ message: "HOME.CoreTech.mcp.description" }),
-    tags: [
-      translate({ message: "HOME.CoreTech.mcp.tag1" }),
-      translate({ message: "HOME.CoreTech.mcp.tag2" }),
-      translate({ message: "HOME.CoreTech.mcp.tag3" }),
+      translate({ message: "HOME.CoreTech.apiComposition.tag1" }),
+      translate({ message: "HOME.CoreTech.apiComposition.tag2" }),
+      translate({ message: "HOME.CoreTech.apiComposition.tag3" }),
+      translate({ message: "HOME.CoreTech.apiComposition.tag4" }),
     ],
   },
   {
     icon: "i-codicon-code",
-    title: translate({ message: "HOME.CoreTech.vscode.title" }),
-    description: translate({ message: "HOME.CoreTech.vscode.description" }),
+    title: translate({ message: "HOME.CoreTech.codingExperience.title" }),
+    description: translate({ message: "HOME.CoreTech.codingExperience.description" }),
     tags: [
-      translate({ message: "HOME.CoreTech.vscode.tag1" }),
-      translate({ message: "HOME.CoreTech.vscode.tag2" }),
-      translate({ message: "HOME.CoreTech.vscode.tag3" }),
+      translate({ message: "HOME.CoreTech.codingExperience.tag1" }),
+      translate({ message: "HOME.CoreTech.codingExperience.tag2" }),
+      translate({ message: "HOME.CoreTech.codingExperience.tag3" }),
+      translate({ message: "HOME.CoreTech.codingExperience.tag4" }),
+    ],
+  },
+  {
+    icon: "i-codicon-cloud-upload",
+    title: translate({ message: "HOME.CoreTech.multiDeploy.title" }),
+    description: translate({ message: "HOME.CoreTech.multiDeploy.description" }),
+    tags: [
+      translate({ message: "HOME.CoreTech.multiDeploy.tag1" }),
+      translate({ message: "HOME.CoreTech.multiDeploy.tag2" }),
+      translate({ message: "HOME.CoreTech.multiDeploy.tag3" }),
+      translate({ message: "HOME.CoreTech.multiDeploy.tag4" }),
     ],
   },
 ];

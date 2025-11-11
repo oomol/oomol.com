@@ -5,6 +5,7 @@ import HomepageScenes from "@site/src/components/HomepageScenes";
 import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
 import HomepageCoreTech from "@site/src/components/HomepageCoreTech";
 import HomepageEcosystem from "@site/src/components/HomepageEcosystem";
+import HomepageProductComparison from "@site/src/components/HomepageProductComparison";
 
 import Head from "@docusaurus/Head";
 import HomepageGuide from "../components/HomepageGuide";
@@ -23,6 +24,7 @@ export default function Home() {
         <HomepageFirstScreen />
         <HomepageCoreTech />
         <HomepageScenes />
+        <HomepageProductComparison />
         <HomepageCreateScenes />
         <HomepageEcosystem />
         <HomePageBuiltInLLM />

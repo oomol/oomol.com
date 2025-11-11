@@ -1,0 +1,371 @@
+@import "../../css/custom.scss";
+
+// ============================================
+// Container
+// ============================================
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+  background: var(--ifm-background-color);
+}
+
+// ============================================
+// Hero 区域 - 与 Studio 保持一致的极简风格
+// ============================================
+.hero {
+  text-align: center;
+  padding: 120px 32px 100px;
+  background: var(--ifm-background-color);
+  position: relative;
+}
+
+.heroTitle {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--oomol-primary);
+}
+
+.heroDescription {
+  font-size: 1.5rem;
+  color: var(--ifm-color-emphasis-700);
+  max-width: 720px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+// 数据亮点
+.heroStats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--oomol-primary);
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+// CTA 按钮
+.heroCTA {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.primaryButton,
+.secondaryButton {
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.primaryButton {
+  background: var(--oomol-primary);
+  color: white;
+  border: none;
+
+  &:hover {
+    background: var(--oomol-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--oomol-primary-bg-hover);
+    color: white;
+  }
+}
+
+.secondaryButton {
+  background: transparent;
+  color: var(--ifm-color-emphasis-800);
+  border: 1.5px solid var(--ifm-color-emphasis-300);
+
+  &:hover {
+    border-color: var(--oomol-primary);
+    color: var(--oomol-primary);
+    background: var(--oomol-primary-bg);
+  }
+}
+
+// ============================================
+// Section Headers
+// ============================================
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.sectionTitle {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--ifm-heading-color);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: var(--ifm-color-emphasis-700);
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+// ============================================
+// 使用场景 - 4列网格
+// ============================================
+.useCasesSection {
+  padding: 100px 32px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--ifm-color-primary-lightest) 50%,
+    transparent 100%
+  );
+}
+
+.useCasesGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.useCaseCard {
+  padding: 32px 24px;
+  background: var(--ifm-background-surface-color);
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: all 0.3s ease;
+  text-align: center;
+
+  &:hover {
+    border-color: var(--oomol-primary);
+    box-shadow: 0 8px 24px var(--oomol-primary-bg-hover);
+    transform: translateY(-4px);
+  }
+}
+
+.useCaseIcon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.useCaseTitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ifm-heading-color);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.useCaseDescription {
+  font-size: 0.95rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.6;
+  margin: 0;
+}
+
+// ============================================
+// 核心功能 - 3列卡片
+// ============================================
+.featuresSection {
+  padding: 100px 32px;
+}
+
+.featuresGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+.featureCard {
+  padding: 40px;
+  background: var(--ifm-background-surface-color);
+  border-radius: 16px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: var(--oomol-primary);
+    box-shadow: 0 12px 32px var(--oomol-primary-bg-hover);
+    transform: translateY(-6px);
+  }
+}
+
+.featureIcon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.featureTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--ifm-heading-color);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.featureDescription {
+  font-size: 1.05rem;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    padding-left: 24px;
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 0.95rem;
+    color: var(--ifm-color-emphasis-600);
+    line-height: 1.6;
+
+    &::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--oomol-primary);
+      font-weight: 700;
+    }
+  }
+}
+
+// ============================================
+// 响应式设计
+// ============================================
+@media (max-width: 996px) {
+  .hero {
+    padding: 80px 24px 60px;
+  }
+
+  .heroTitle {
+    font-size: 3rem;
+  }
+
+  .heroDescription {
+    font-size: 1.25rem;
+  }
+
+  .heroStats {
+    gap: 32px;
+  }
+
+  .statValue {
+    font-size: 1.75rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.25rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .useCasesSection,
+  .featuresSection {
+    padding: 80px 24px;
+  }
+
+  .useCasesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 20px 40px;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .heroDescription {
+    font-size: 1.1rem;
+  }
+
+  .heroStats {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .heroCTA {
+    flex-direction: column;
+    align-items: stretch;
+
+    .primaryButton,
+    .secondaryButton {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1rem;
+  }
+
+  .useCasesSection,
+  .featuresSection {
+    padding: 60px 20px;
+  }
+
+  .sectionHeader {
+    margin-bottom: 48px;
+  }
+
+  .useCasesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .useCaseTitle {
+    font-size: 1.25rem;
+  }
+
+  .featureTitle {
+    font-size: 1.5rem;
+  }
+}

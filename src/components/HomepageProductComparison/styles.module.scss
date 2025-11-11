@@ -1,0 +1,250 @@
+@import "../../css/custom.scss";
+
+// ============================================
+// Section Container
+// ============================================
+.comparisonSection {
+  padding: 100px 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--ifm-color-primary-lightest) 50%,
+    transparent 100%
+  );
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+// ============================================
+// Section Header
+// ============================================
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.sectionTitle {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--ifm-heading-color);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: var(--ifm-color-emphasis-700);
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+// ============================================
+// 桌面端表格视图
+// ============================================
+.tableWrapper {
+  display: block;
+  overflow-x: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  background: var(--ifm-background-surface-color);
+
+  @media (max-width: 996px) {
+    display: none; // 平板及以下隐藏表格
+  }
+}
+
+.comparisonTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+
+  thead {
+    background: var(--oomol-primary);
+    color: white;
+
+    tr {
+      th {
+        padding: 20px 24px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 1.1rem;
+        letter-spacing: 0.02em;
+
+        &:first-child {
+          border-top-left-radius: 16px;
+        }
+
+        &:last-child {
+          border-top-right-radius: 16px;
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid var(--ifm-color-emphasis-200);
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background: var(--ifm-color-primary-lightest);
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      td {
+        padding: 20px 24px;
+        vertical-align: top;
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+.dimensionHeader {
+  width: 20%;
+  background: var(--oomol-primary) !important;
+}
+
+.productHeader {
+  width: 26.67%;
+  text-align: center !important;
+}
+
+.dimensionCell {
+  font-weight: 700;
+  color: var(--ifm-heading-color);
+  background: var(--ifm-color-emphasis-100);
+}
+
+.valueCell {
+  color: var(--ifm-color-emphasis-700);
+}
+
+// ============================================
+// 移动端卡片视图
+// ============================================
+.cardsWrapper {
+  display: none; // 桌面端隐藏卡片
+
+  @media (max-width: 996px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.productCard {
+  background: var(--ifm-background-surface-color);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: var(--oomol-primary);
+    box-shadow: 0 8px 24px var(--oomol-primary-bg-hover);
+    transform: translateY(-4px);
+  }
+}
+
+.productCardTitle {
+  background: var(--oomol-primary);
+  color: white;
+  padding: 20px 24px;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.productCardContent {
+  padding: 8px 0;
+}
+
+.productCardRow {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.productCardDimension {
+  font-weight: 700;
+  color: var(--ifm-heading-color);
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.productCardValue {
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+// ============================================
+// 响应式优化
+// ============================================
+@media (max-width: 996px) {
+  .comparisonSection {
+    padding: 80px 0;
+  }
+
+  .container {
+    padding: 0 24px;
+  }
+
+  .sectionTitle {
+    font-size: 2.25rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .sectionHeader {
+    margin-bottom: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .comparisonSection {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1rem;
+  }
+
+  .sectionHeader {
+    margin-bottom: 40px;
+  }
+
+  .productCardTitle {
+    font-size: 1.35rem;
+    padding: 16px 20px;
+  }
+
+  .productCardRow {
+    padding: 14px 20px;
+  }
+}

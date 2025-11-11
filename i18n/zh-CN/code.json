@@ -1729,5 +1729,275 @@
   },
   "HOME.Products.headless.description": {
     "message": "在服务器和 NAS 上运行 OOMOL 应用"
+  },
+  "HOME.CoreTech.blockAPI.title": {
+    "message": "创造新 API"
+  },
+  "HOME.CoreTech.blockAPI.description": {
+    "message": "Block 即函数，封装代码为可复用 API"
+  },
+  "HOME.CoreTech.blockAPI.tag1": {
+    "message": "Block 封装"
+  },
+  "HOME.CoreTech.blockAPI.tag2": {
+    "message": "代码转 API"
+  },
+  "HOME.CoreTech.blockAPI.tag3": {
+    "message": "函数组合"
+  },
+  "HOME.CoreTech.blockAPI.tag4": {
+    "message": "可复用单元"
+  },
+  "HOME.CoreTech.apiComposition.title": {
+    "message": "灵活组合 API"
+  },
+  "HOME.CoreTech.apiComposition.description": {
+    "message": "可视化编排，混合自定义与现有 API"
+  },
+  "HOME.CoreTech.apiComposition.tag1": {
+    "message": "可视化编程"
+  },
+  "HOME.CoreTech.apiComposition.tag2": {
+    "message": "API 串联"
+  },
+  "HOME.CoreTech.apiComposition.tag3": {
+    "message": "工作流编排"
+  },
+  "HOME.CoreTech.apiComposition.tag4": {
+    "message": "低代码"
+  },
+  "HOME.CoreTech.codingExperience.title": {
+    "message": "完整编程体验"
+  },
+  "HOME.CoreTech.codingExperience.description": {
+    "message": "深度代码集成，无缝支持多语言库"
+  },
+  "HOME.CoreTech.codingExperience.tag1": {
+    "message": "Python/Node.js"
+  },
+  "HOME.CoreTech.codingExperience.tag2": {
+    "message": "VSCode IDE"
+  },
+  "HOME.CoreTech.codingExperience.tag3": {
+    "message": "AI Copilot"
+  },
+  "HOME.CoreTech.codingExperience.tag4": {
+    "message": "开源库集成"
+  },
+  "HOME.CoreTech.multiDeploy.title": {
+    "message": "多模式交付"
+  },
+  "HOME.CoreTech.multiDeploy.description": {
+    "message": "本地/云端/容器化，适配全场景部署"
+  },
+  "HOME.CoreTech.multiDeploy.tag1": {
+    "message": "Studio + FRP"
+  },
+  "HOME.CoreTech.multiDeploy.tag2": {
+    "message": "Headless Docker"
+  },
+  "HOME.CoreTech.multiDeploy.tag3": {
+    "message": "Cloud 托管"
+  },
+  "HOME.CoreTech.multiDeploy.tag4": {
+    "message": "MCP 协议"
+  },
+  "HOME.Scenes.dataScience.title": {
+    "message": "数据科学流水线"
+  },
+  "HOME.Scenes.dataScience.inner": {
+    "message": "构建数据清洗→模型训练→可视化展示的端到端流水线，支持 pandas、scikit-learn 等库，GPU 加速深度学习模型训练。"
+  },
+  "HOME.Scenes.multimedia.title": {
+    "message": "多媒体处理自动化"
+  },
+  "HOME.Scenes.multimedia.inner": {
+    "message": "批量视频转码、自动添加多语言字幕、PDF 生成等。调用 ffmpeg、Pillow 等工具，构建高效的媒体处理流水线。"
+  },
+  "HOME.Scenes.aiAgent.title": {
+    "message": "AI Agent 工具链"
+  },
+  "HOME.Scenes.aiAgent.inner": {
+    "message": "通过 MCP 协议将 Block 转化为 AI 可调用工具，组合成专项 Agent。整合数据查询、文件处理、API 调用等能力。"
+  },
+  "HOME.Scenes.apiPublish.title": {
+    "message": "API 服务快速发布"
+  },
+  "HOME.Scenes.apiPublish.inner": {
+    "message": "将工作流打包为 RESTful API 或 Chatbot 接口，一键部署到 OOMOL Cloud，自动生成 API 文档和测试界面。"
+  },
+  "HOME.Scenes.enterprise.title": {
+    "message": "企业级集成"
+  },
+  "HOME.Scenes.enterprise.inner": {
+    "message": "Docker 容器化部署到私有云或 K8s 集群，支持 CI/CD 流水线，实现企业级 API 服务的持续交付和运维。"
+  },
+  "HOME.ProductComparison.title": {
+    "message": "选择适合你的部署模式"
+  },
+  "HOME.ProductComparison.subtitle": {
+    "message": "从本地开发到企业级部署，OOMOL 提供灵活的产品形态满足不同场景需求"
+  },
+  "HOME.ProductComparison.dimension.header": {
+    "message": "功能维度"
+  },
+  "HOME.ProductComparison.dimension.stage": {
+    "message": "使用阶段"
+  },
+  "HOME.ProductComparison.dimension.capability": {
+    "message": "核心能力"
+  },
+  "HOME.ProductComparison.dimension.scenario": {
+    "message": "适用场景"
+  },
+  "HOME.ProductComparison.dimension.tech": {
+    "message": "技术特点"
+  },
+  "HOME.ProductComparison.product.studio": {
+    "message": "Studio + FRP"
+  },
+  "HOME.ProductComparison.product.headless": {
+    "message": "Headless"
+  },
+  "HOME.ProductComparison.product.cloud": {
+    "message": "Cloud"
+  },
+  "HOME.ProductComparison.studio.stage": {
+    "message": "本地开发与极客分享"
+  },
+  "HOME.ProductComparison.studio.capability": {
+    "message": "共享本地算力（尤其 GPU），通过 FRP 协议实现 P2P 连接"
+  },
+  "HOME.ProductComparison.studio.scenario": {
+    "message": "个人项目调试、团队内快速分享、利用闲置 GPU 资源"
+  },
+  "HOME.ProductComparison.studio.tech": {
+    "message": "FRP 协议、VSCode IDE、本地容器、GPU 直通"
+  },
+  "HOME.ProductComparison.headless.stage": {
+    "message": "生产环境部署"
+  },
+  "HOME.ProductComparison.headless.capability": {
+    "message": "Docker 容器化独立部署，支持云服务器和 K8s 集群"
+  },
+  "HOME.ProductComparison.headless.scenario": {
+    "message": "企业级 API 服务、CI/CD 集成、私有云部署"
+  },
+  "HOME.ProductComparison.headless.tech": {
+    "message": "Docker、Kubernetes 支持、容器编排、自托管"
+  },
+  "HOME.ProductComparison.cloud.stage": {
+    "message": "免运维云服务"
+  },
+  "HOME.ProductComparison.cloud.capability": {
+    "message": "托管式运行环境，自动扩缩容，提供 RESTful API 和 MCP 端点"
+  },
+  "HOME.ProductComparison.cloud.scenario": {
+    "message": "中小团队快速上线、无需管理基础设施、AI Agent 集成"
+  },
+  "HOME.ProductComparison.cloud.tech": {
+    "message": "Serverless、自动扩缩容、API Gateway、MCP 协议"
+  },
+  "CLOUD.hero.description": {
+    "message": "免运维的托管式运行环境，提供 RESTful API 和 MCP 协议端点，支持自动扩缩容"
+  },
+  "CLOUD.hero.stat1": {
+    "message": "弹性伸缩"
+  },
+  "CLOUD.hero.stat2": {
+    "message": "API 服务"
+  },
+  "CLOUD.hero.stat3": {
+    "message": "AI 集成"
+  },
+  "CLOUD.hero.cta.start": {
+    "message": "开始使用"
+  },
+  "CLOUD.hero.cta.docs": {
+    "message": "查看文档"
+  },
+  "CLOUD.useCases.title": {
+    "message": "适用场景"
+  },
+  "CLOUD.useCases.subtitle": {
+    "message": "无需关心服务器和运维，专注于业务逻辑开发"
+  },
+  "CLOUD.useCase.quickDeploy.title": {
+    "message": "快速上线服务"
+  },
+  "CLOUD.useCase.quickDeploy.description": {
+    "message": "中小团队无需配置服务器，一键部署工作流为云端 API 服务"
+  },
+  "CLOUD.useCase.aiAgent.title": {
+    "message": "AI Agent 集成"
+  },
+  "CLOUD.useCase.aiAgent.description": {
+    "message": "通过 MCP 协议对接 Claude、ChatGPT 等 AI 平台，提供专属工具"
+  },
+  "CLOUD.useCase.miniapp.title": {
+    "message": "小程序后端"
+  },
+  "CLOUD.useCase.miniapp.description": {
+    "message": "为小程序、移动应用提供 RESTful API，自动生成文档和测试界面"
+  },
+  "CLOUD.useCase.noOps.title": {
+    "message": "免运维管理"
+  },
+  "CLOUD.useCase.noOps.description": {
+    "message": "自动监控、日志记录、安全隔离，无需管理基础设施"
+  },
+  "CLOUD.features.title": {
+    "message": "核心功能"
+  },
+  "CLOUD.features.oneDeploy.title": {
+    "message": "一键部署"
+  },
+  "CLOUD.features.oneDeploy.description": {
+    "message": "从 Studio 直接推送到 Cloud，自动配置域名和 HTTPS"
+  },
+  "CLOUD.features.oneDeploy.feature1": {
+    "message": "Git Push 式部署体验"
+  },
+  "CLOUD.features.oneDeploy.feature2": {
+    "message": "自动 HTTPS 证书配置"
+  },
+  "CLOUD.features.oneDeploy.feature3": {
+    "message": "零停机更新部署"
+  },
+  "CLOUD.features.monitor.title": {
+    "message": "自动监控"
+  },
+  "CLOUD.features.monitor.description": {
+    "message": "实时性能监控、日志查看、错误追踪"
+  },
+  "CLOUD.features.monitor.feature1": {
+    "message": "实时性能指标展示"
+  },
+  "CLOUD.features.monitor.feature2": {
+    "message": "集中式日志查询"
+  },
+  "CLOUD.features.monitor.feature3": {
+    "message": "异常告警通知"
+  },
+  "CLOUD.features.security.title": {
+    "message": "安全隔离"
+  },
+  "CLOUD.features.security.description": {
+    "message": "容器级隔离、访问控制、数据加密"
+  },
+  "CLOUD.features.security.feature1": {
+    "message": "沙箱环境隔离"
+  },
+  "CLOUD.features.security.feature2": {
+    "message": "API 密钥管理"
+  },
+  "CLOUD.features.security.feature3": {
+    "message": "传输数据加密"
+  },
+  "STUDIO.hero.description": {
+    "message": "面向开发者的本地开发环境，基于 VSCode 的可视化编程工具，结合 FRP 协议实现 P2P 算力共享"
+  },
+  "HEADLESS.hero.description": {
+    "message": "容器化部署方案，将工作流打包为独立 Docker 镜像，适配云服务器、私有云和 K8s 集群"
   }
 }
