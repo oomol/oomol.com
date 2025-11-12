@@ -18,7 +18,7 @@
     "message": "社区"
   },
   "HOME.FirstScreen.slogan": {
-    "message": "将你的电脑变成 AI 服务器"
+    "message": "Your Computer, Now a Server."
   },
   "HOME.FirstScreen.script": {
     "message": "基于容器和 FRP 技术，共享 GPU 算力，构建 AI 工作流，一键发布 API。本地算力，无限可能。"
@@ -697,7 +697,7 @@
     "message": "立即开始使用 OOMOL"
   },
   "HOME.GetStartedPrompt.subtitle": {
-    "message": "立即下载 OOMOL，解锁您的终极生产力伙伴。"
+    "message": "下载 OOMOL Studio，探索开源 Blocks，开始以全新方式共同构建 API。"
   },
   "Easily connect code and services": {
     "message": "OOMOL Studio 通过直观的视觉交互轻松连接代码片段和 API 服务，帮助用户缩短从想法到产品的距离"

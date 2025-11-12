@@ -18,7 +18,7 @@
     "message": "Community"
   },
   "HOME.FirstScreen.slogan": {
-    "message": "Turn Your Computer into an AI Server"
+    "message": "Your Computer, Now a Server."
   },
   "HOME.FirstScreen.script": {
     "message": "Share GPU computing power, build AI workflows, and publish APIs instantly with container and FRP technology. Local computing, unlimited possibilities."
@@ -695,7 +695,7 @@
     "message": "Start Using OOMOL Today"
   },
   "HOME.GetStartedPrompt.subtitle": {
-    "message": "Download OOMOL now and unlock your ultimate productivity partner."
+    "message": "Download OOMOL Studio, explore open-source Blocks, and start contributing to a new way of building APIs together."
   },
   "HOME.Pricing.title": {
     "message": "Pricing"

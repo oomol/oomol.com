@@ -7,6 +7,11 @@ export const GetStartedPrompt = () => {
     <div className={styles.container}>
       <div className={styles.content}>
         <div className={styles.textBox}>
+          <img
+            className={styles.logo}
+            src="/img/logo2x.png"
+            alt="OOMOL Logo"
+          />
           <h2 className={styles.title}>
             {translate({ message: "HOME.GetStartedPrompt.title" })}
           </h2>
@@ -14,12 +19,6 @@ export const GetStartedPrompt = () => {
             {translate({ message: "HOME.GetStartedPrompt.subtitle" })}
           </span>
           <DownloadButton />
-        </div>
-        <div className={styles.imageWrapper}>
-          <img
-            className={styles.image}
-            src="/img/pages/home/started-card.webp"
-          />
         </div>
       </div>
     </div>
