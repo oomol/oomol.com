@@ -1,11 +1,13 @@
 import styles from "./AuroraText.module.scss";
 
 import React, { memo } from "react";
+import { useColorMode } from "@docusaurus/theme-common";
 
 interface AuroraTextProps {
   children: React.ReactNode;
   className?: string;
   colors?: string[];
+  lightColors?: string[];
   speed?: number;
 }
 
@@ -13,12 +15,24 @@ const AuroraTextComponent = memo(
   ({
     children,
     className = "",
-    colors = ["#7D7FE9", "#FFFFFF", "#7DE993", "#FFFFFF"],
+    colors,
+    lightColors,
     speed = 1,
   }: AuroraTextProps) => {
+    const { colorMode } = useColorMode();
+
+    // 默认的暗色模式颜色和亮色模式颜色
+    const defaultDarkColors = ["#7D7FE9", "#FFFFFF", "#7DE993", "#FFFFFF"];
+    const defaultLightColors = ["#4C1D95", "#1E293B", "#059669", "#1E293B"];
+
+    // 根据主题选择颜色
+    const selectedColors = colorMode === 'light'
+      ? (lightColors || defaultLightColors)
+      : (colors || defaultDarkColors);
+
     const gradientStyle = {
-      backgroundImage: `linear-gradient(135deg, ${colors.join(", ")}, ${
-        colors[0]
+      backgroundImage: `linear-gradient(135deg, ${selectedColors.join(", ")}, ${
+        selectedColors[0]
       })`,
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent",
