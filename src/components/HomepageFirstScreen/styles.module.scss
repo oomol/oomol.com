@@ -163,6 +163,9 @@
   max-width: 1280px;
   width: 100%;
   gap: 80px;
+  // background-color: yellow;
+  padding-top: 64px;
+  padding-bottom: 64px;
 
   @media (max-width: 1024px) {
     flex-direction: column;

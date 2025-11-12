@@ -3,7 +3,6 @@ import Layout from "../theme/Layout";
 
 import HomepageScenes from "@site/src/components/HomepageScenes";
 import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
-import HomepageEcosystem from "@site/src/components/HomepageEcosystem";
 import HomepageProductComparison from "@site/src/components/HomepageProductComparison";
 import HomepagePdfCraftShowcase from "@site/src/components/HomepagePdfCraftShowcase";
 
@@ -26,7 +25,6 @@ export default function Home() {
         <HomepageScenes />
         <HomepageProductComparison />
         <HomepageCreateScenes />
-        <HomepageEcosystem />
         <HomePageBuiltInLLM />
         <HomepageGuide />
         {/* TODO: 等订阅业务上线后恢复 */}
