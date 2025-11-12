@@ -7,7 +7,6 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 import clsx from "clsx";
 import { DownloadButton } from "../DownloadButton";
-import LinkBtn from "../Button/LinkBtn";
 
 import type { DocusaurusContext } from "@docusaurus/types";
 

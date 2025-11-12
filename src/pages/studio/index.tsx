@@ -1,6 +1,5 @@
 import styles from "./styles.module.scss";
 
-import clsx from "clsx";
 import Layout from "../../theme/Layout";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { translate } from "@docusaurus/Translate";
@@ -109,7 +108,7 @@ const aiCapabilities = {
 };
 
 // 工作流步骤组件
-const WorkflowStep = ({ step, index }: { step: typeof developerWorkflow.steps[0]; index: number }) => {
+const WorkflowStep = ({ step }: { step: typeof developerWorkflow.steps[0]; index: number }) => {
   return (
     <div className={styles.workflowStep}>
       <div className={styles.stepNumber}>{step.number}</div>
