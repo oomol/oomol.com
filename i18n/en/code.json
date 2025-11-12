@@ -21,7 +21,7 @@
     "message": "Your Computer, Now a Server."
   },
   "HOME.FirstScreen.script": {
-    "message": "Share GPU computing power, build AI workflows, and publish APIs instantly with container and FRP technology. Local computing, unlimited possibilities."
+    "message": "With OOMOL Studio, you can build, deploy, and share APIs right from your desktop. Free to start — powerful enough to scale."
   },
 
   "HOME.FirstScreen.download-macos": {
@@ -38,18 +38,6 @@
   },
   "HOME.FirstScreen.download-windows-subtitle": {
     "message": "only supports x64"
-  },
-  "HOME.FirstScreen.stat1": {
-    "message": "Stars Open Source"
-  },
-  "HOME.FirstScreen.stat2.value": {
-    "message": "One-Click"
-  },
-  "HOME.FirstScreen.stat2.label": {
-    "message": "Publish API"
-  },
-  "HOME.FirstScreen.stat3": {
-    "message": "GPU Sharing"
   },
   "HOME.FirstScreen.cta.secondary": {
     "message": "Start Building"

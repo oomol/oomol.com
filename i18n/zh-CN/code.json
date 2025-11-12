@@ -39,18 +39,6 @@
   "HOME.FirstScreen.download-windows-subtitle": {
     "message": "当前仅支持 x64 版本"
   },
-  "HOME.FirstScreen.stat1": {
-    "message": "Stars 开源项目"
-  },
-  "HOME.FirstScreen.stat2.value": {
-    "message": "一键"
-  },
-  "HOME.FirstScreen.stat2.label": {
-    "message": "发布 API"
-  },
-  "HOME.FirstScreen.stat3": {
-    "message": "共享 GPU 算力"
-  },
   "HOME.FirstScreen.cta.secondary": {
     "message": "开始构建"
   },
