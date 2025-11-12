@@ -142,28 +142,33 @@
 .container {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 2;
-  height: 800px;
-  margin-left: 36px;
-  margin-right: 36px;
+  padding: 80px 36px;
+  gap: 60px;
+
+  @media (max-width: 1024px) {
+    padding: 60px 36px;
+    gap: 40px;
+  }
 }
 
 .header {
   display: flex;
   padding: 0;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   max-width: 1280px;
   width: 100%;
+  gap: 80px;
 
   @media (max-width: 1024px) {
-    margin-top: 120px;
     flex-direction: column;
     gap: 40px;
     text-align: center;
-    padding: 0 30px;
+    align-items: center;
   }
 }
 
@@ -171,39 +176,35 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0;
   text-align: left;
-  max-width: 600px;
+  min-width: 0;
 
   @media (max-width: 1024px) {
     text-align: center;
+    width: 100%;
   }
 }
 
 .content-right {
-  flex: 0.6;
+  flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  min-width: 0;
+
   @media (max-width: 1024px) {
     width: 100%;
-    justify-content: center;
-    margin-top: 40px;
+    align-items: center;
   }
 }
 
 .slogan-box {
   display: flex;
   flex-direction: column;
-  min-height: 140px;
 
-  @include pad {
-    min-height: 110px;
-  }
-
-  @include phone-large {
-    min-height: 90px;
+  @media (max-width: 1024px) {
+    width: 100%;
   }
 }
 
@@ -211,6 +212,7 @@
   display: flex;
   flex-direction: column;
   padding: 0;
+  width: 100%;
 }
 
 .heroStats {
@@ -252,22 +254,23 @@
 }
 
 .slogan {
-  font-size: 55px;
-  line-height: 60px;
+  font-size: 56px;
+  line-height: 1.1;
   font-weight: 800;
   text-align: left;
-  max-width: 650px;
-
-  @include pad {
-    font-size: 45px;
-  }
-
-  @include phone-large {
-    font-size: 37px;
-  }
+  margin: 0;
 
   @media (max-width: 1024px) {
+    font-size: 48px;
     text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 40px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 32px;
   }
 }
 
@@ -281,15 +284,15 @@
 }
 
 .overview {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   text-align: left;
-  line-height: 30px;
+  line-height: 1.6;
   color: var(--oomol-text-secondary);
-  opacity: 0.9;
 
   @media (max-width: 1024px) {
     text-align: center;
+    font-size: 16px;
   }
 }
 
@@ -345,26 +348,26 @@
 
   @media (max-width: 1024px) {
     justify-content: center;
-    margin-top: 24px;
   }
 
   @media (max-width: 996px) {
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 }
 
-.screenshot-container {
-  position: relative;
+.screenshot-row {
   width: 100%;
-  max-width: 600px;
+  max-width: 1280px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 }
 
 .product-screenshot {
   width: 100%;
   height: auto;
-  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
 }

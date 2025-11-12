@@ -34,6 +34,8 @@ export default function HomepageFirstScreen() {
                 })}
               </h1>
             </div>
+          </div>
+          <div className={styles["content-right"]}>
             <div className={styles["description-box"]}>
               <span className={styles.overview}>
                 {translate({
@@ -51,15 +53,13 @@ export default function HomepageFirstScreen() {
               />
             </div>
           </div>
-          <div className={styles["content-right"]}>
-            <div className={styles["screenshot-container"]}>
-              <img
-                src={useBaseUrl("/img/screen1.svg")}
-                alt="OOMOL Product Screenshot"
-                className={styles["product-screenshot"]}
-              />
-            </div>
-          </div>
+        </div>
+        <div className={styles["screenshot-row"]}>
+          <img
+            src={useBaseUrl("/img/screen1.svg")}
+            alt="OOMOL Product Screenshot"
+            className={styles["product-screenshot"]}
+          />
         </div>
       </div>
     </section>
