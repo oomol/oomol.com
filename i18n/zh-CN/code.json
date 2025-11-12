@@ -14,6 +14,9 @@
   "Theme.Navbar.download": {
     "message": "下载"
   },
+  "Theme.Navbar.login": {
+    "message": "登录"
+  },
   "Theme.Navbar.community": {
     "message": "社区"
   },

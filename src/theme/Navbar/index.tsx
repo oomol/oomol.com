@@ -145,9 +145,12 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
             <NavbarItem {...item} key={i} />
           ))}
           <div className={styles.actions}>
-            <a href="/downloads" className={styles.loginButton}>
+            <a href="/downloads" className={styles.downloadButton}>
               <i className="i-lucide-download" />
               {translate({ message: "Theme.Navbar.download" })}
+            </a>
+            <a href="/login" className={styles.loginButton}>
+              {translate({ message: "Theme.Navbar.login" })}
             </a>
           </div>
         </div>
