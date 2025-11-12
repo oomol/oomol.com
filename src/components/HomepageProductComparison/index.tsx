@@ -1,48 +1,36 @@
 import styles from "./styles.module.scss";
 import { translate } from "@docusaurus/Translate";
 
-// 产品对比数据
-const comparisonData = {
-  headers: [
-    translate({ message: "HOME.ProductComparison.product.studio" }),
-    translate({ message: "HOME.ProductComparison.product.headless" }),
-    translate({ message: "HOME.ProductComparison.product.cloud" }),
-  ],
-  rows: [
-    {
-      dimension: translate({ message: "HOME.ProductComparison.dimension.stage" }),
-      values: [
-        translate({ message: "HOME.ProductComparison.studio.stage" }),
-        translate({ message: "HOME.ProductComparison.headless.stage" }),
-        translate({ message: "HOME.ProductComparison.cloud.stage" }),
-      ],
-    },
-    {
-      dimension: translate({ message: "HOME.ProductComparison.dimension.capability" }),
-      values: [
-        translate({ message: "HOME.ProductComparison.studio.capability" }),
-        translate({ message: "HOME.ProductComparison.headless.capability" }),
-        translate({ message: "HOME.ProductComparison.cloud.capability" }),
-      ],
-    },
-    {
-      dimension: translate({ message: "HOME.ProductComparison.dimension.scenario" }),
-      values: [
-        translate({ message: "HOME.ProductComparison.studio.scenario" }),
-        translate({ message: "HOME.ProductComparison.headless.scenario" }),
-        translate({ message: "HOME.ProductComparison.cloud.scenario" }),
-      ],
-    },
-    {
-      dimension: translate({ message: "HOME.ProductComparison.dimension.tech" }),
-      values: [
-        translate({ message: "HOME.ProductComparison.studio.tech" }),
-        translate({ message: "HOME.ProductComparison.headless.tech" }),
-        translate({ message: "HOME.ProductComparison.cloud.tech" }),
-      ],
-    },
-  ],
-};
+// 产品对比数据 - 重构为卡片式数据结构
+const products = [
+  {
+    name: translate({ message: "HOME.ProductComparison.product.studio" }),
+    stage: translate({ message: "HOME.ProductComparison.studio.stage" }),
+    capability: translate({ message: "HOME.ProductComparison.studio.capability" }),
+    scenario: translate({ message: "HOME.ProductComparison.studio.scenario" }),
+    tech: translate({ message: "HOME.ProductComparison.studio.tech" }),
+    icon: "🖥️",
+    color: "primary",
+  },
+  {
+    name: translate({ message: "HOME.ProductComparison.product.headless" }),
+    stage: translate({ message: "HOME.ProductComparison.headless.stage" }),
+    capability: translate({ message: "HOME.ProductComparison.headless.capability" }),
+    scenario: translate({ message: "HOME.ProductComparison.headless.scenario" }),
+    tech: translate({ message: "HOME.ProductComparison.headless.tech" }),
+    icon: "🐳",
+    color: "secondary",
+  },
+  {
+    name: translate({ message: "HOME.ProductComparison.product.cloud" }),
+    stage: translate({ message: "HOME.ProductComparison.cloud.stage" }),
+    capability: translate({ message: "HOME.ProductComparison.cloud.capability" }),
+    scenario: translate({ message: "HOME.ProductComparison.cloud.scenario" }),
+    tech: translate({ message: "HOME.ProductComparison.cloud.tech" }),
+    icon: "☁️",
+    color: "tertiary",
+  },
+];
 
 export default function HomepageProductComparison() {
   return (
@@ -58,48 +46,39 @@ export default function HomepageProductComparison() {
           </p>
         </div>
 
-        {/* 桌面端表格视图 */}
-        <div className={styles.tableWrapper}>
-          <table className={styles.comparisonTable}>
-            <thead>
-              <tr>
-                <th className={styles.dimensionHeader}>
-                  {translate({ message: "HOME.ProductComparison.dimension.header" })}
-                </th>
-                {comparisonData.headers.map((header, index) => (
-                  <th key={index} className={styles.productHeader}>
-                    {header}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {comparisonData.rows.map((row, rowIndex) => (
-                <tr key={rowIndex}>
-                  <td className={styles.dimensionCell}>{row.dimension}</td>
-                  {row.values.map((value, colIndex) => (
-                    <td key={colIndex} className={styles.valueCell}>
-                      {value}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        {/* 产品卡片网格 */}
+        <div className={styles.productsGrid}>
+          {products.map((product, index) => (
+            <div key={index} className={`${styles.productCard} ${styles[product.color]}`}>
+              {/* 卡片头部 */}
+              <div className={styles.cardHeader}>
+                <div className={styles.cardIcon}>{product.icon}</div>
+                <h3 className={styles.cardTitle}>{product.name}</h3>
+                <div className={styles.cardBadge}>{product.stage}</div>
+              </div>
 
-        {/* 移动端卡片视图 */}
-        <div className={styles.cardsWrapper}>
-          {comparisonData.headers.map((productName, productIndex) => (
-            <div key={productIndex} className={styles.productCard}>
-              <h3 className={styles.productCardTitle}>{productName}</h3>
-              <div className={styles.productCardContent}>
-                {comparisonData.rows.map((row, rowIndex) => (
-                  <div key={rowIndex} className={styles.productCardRow}>
-                    <div className={styles.productCardDimension}>{row.dimension}</div>
-                    <div className={styles.productCardValue}>{row.values[productIndex]}</div>
+              {/* 卡片内容 */}
+              <div className={styles.cardBody}>
+                <div className={styles.infoSection}>
+                  <div className={styles.infoLabel}>
+                    {translate({ message: "HOME.ProductComparison.dimension.capability" })}
                   </div>
-                ))}
+                  <div className={styles.infoContent}>{product.capability}</div>
+                </div>
+
+                <div className={styles.infoSection}>
+                  <div className={styles.infoLabel}>
+                    {translate({ message: "HOME.ProductComparison.dimension.scenario" })}
+                  </div>
+                  <div className={styles.infoContent}>{product.scenario}</div>
+                </div>
+
+                <div className={styles.infoSection}>
+                  <div className={styles.infoLabel}>
+                    {translate({ message: "HOME.ProductComparison.dimension.tech" })}
+                  </div>
+                  <div className={styles.infoContent}>{product.tech}</div>
+                </div>
               </div>
             </div>
           ))}
