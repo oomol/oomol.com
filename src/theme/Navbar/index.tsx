@@ -145,10 +145,6 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
             <NavbarItem {...item} key={i} />
           ))}
           <div className={styles.actions}>
-            <a href="https://hub.oomol.com/" className={styles.gotoHubButton}>
-              <i className="i-lucide-users" />
-              {translate({ message: "Theme.Navbar.community" })}
-            </a>
             <a href="/downloads" className={styles.loginButton}>
               <i className="i-lucide-download" />
               {translate({ message: "Theme.Navbar.download" })}

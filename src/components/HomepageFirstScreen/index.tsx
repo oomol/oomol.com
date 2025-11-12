@@ -46,11 +46,6 @@ export default function HomepageFirstScreen() {
 
             <div className={styles.buttons}>
               <DownloadButton />
-              <LinkBtn
-                text={translate({ message: "HOME.FirstScreen.cta.secondary" })}
-                icon="i-codicon-globe"
-                url="https://hub.oomol.com/"
-              />
             </div>
           </div>
         </div>
