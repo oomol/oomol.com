@@ -43,46 +43,46 @@
     "message": "Start Building"
   },
   "HOME.PdfCraft.title": {
-    "message": "Success Story: PDF-Craft - From Open Source to Commercial API"
+    "message": "Our Open Source Project: PDF-Craft"
   },
   "HOME.PdfCraft.subtitle": {
-    "message": "Transform a 3000+ Stars open source project into flexible API services with OOMOL"
+    "message": "Experience the power of local computing with our flagship open source project"
   },
   "HOME.PdfCraft.description": {
-    "message": "PDF-Craft is a powerful PDF format conversion tool focused on processing scanned book PDFs. With OOMOL, you can easily deploy it as a local service or share it with your team."
+    "message": "PDF-Craft is OOMOL's official open source PDF processing tool with 3000+ GitHub stars. Run it locally for free, share with friends via P2P, or deploy to the cloud — you choose how to use it."
   },
   "HOME.PdfCraft.feature1": {
-    "message": "Multiple PDF format conversions"
+    "message": "Free & open source, fully transparent"
   },
   "HOME.PdfCraft.feature2": {
-    "message": "Specialized in scanned book processing"
+    "message": "Run locally with your own computing power"
   },
   "HOME.PdfCraft.feature3": {
-    "message": "Open source, customizable, and extensible"
+    "message": "No usage limits, complete privacy control"
   },
   "HOME.PdfCraft.traditional.badge": {
-    "message": "Traditional"
+    "message": "Traditional API"
   },
   "HOME.PdfCraft.traditional.title": {
-    "message": "Paid API Service"
+    "message": "Cloud API Services"
   },
   "HOME.PdfCraft.traditional.description": {
-    "message": "Use third-party paid API, pay-per-call, high cost and limited by service providers"
+    "message": "Pay per call, recurring costs, vendor lock-in, and data privacy concerns"
   },
   "HOME.PdfCraft.oomol.badge": {
-    "message": "Recommended"
+    "message": "OOMOL Way"
   },
   "HOME.PdfCraft.oomol.title": {
-    "message": "OOMOL Multi-Mode Deployment"
+    "message": "Local Computing, Flexible Sharing"
   },
   "HOME.PdfCraft.oomol.method1": {
-    "message": "Studio local free usage"
+    "message": "Free local deployment with Studio"
   },
   "HOME.PdfCraft.oomol.method2": {
-    "message": "FRP share with friends"
+    "message": "P2P sharing with friends (coming soon)"
   },
   "HOME.PdfCraft.oomol.method3": {
-    "message": "One-click deploy to OOMOL Cloud"
+    "message": "Optional cloud deployment for teams"
   },
   "HOME.PdfCraft.cta.primary": {
     "message": "Try PDF-Craft"

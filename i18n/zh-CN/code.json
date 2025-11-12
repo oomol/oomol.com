@@ -43,46 +43,46 @@
     "message": "开始构建"
   },
   "HOME.PdfCraft.title": {
-    "message": "明星案例:PDF-Craft - 从开源工具到商业 API"
+    "message": "官方开源项目：PDF-Craft"
   },
   "HOME.PdfCraft.subtitle": {
-    "message": "使用 OOMOL 将 3000+ Stars 开源项目转变为灵活的 API 服务"
+    "message": "用我们的旗舰开源项目，体验本地算力的强大优势"
   },
   "HOME.PdfCraft.description": {
-    "message": "PDF-Craft 是一个强大的 PDF 格式转换工具,专注于处理扫描书籍的 PDF 文件。通过 OOMOL,你可以轻松将其部署为本地服务或分享给团队使用。"
+    "message": "PDF-Craft 是 OOMOL 官方开源的 PDF 处理工具，在 GitHub 上已获得 3000+ Stars。本地免费运行、P2P 分享给朋友、或部署到云端 —— 由你决定如何使用。"
   },
   "HOME.PdfCraft.feature1": {
-    "message": "支持多种 PDF 格式转换"
+    "message": "免费开源，完全透明"
   },
   "HOME.PdfCraft.feature2": {
-    "message": "专注扫描书籍处理"
+    "message": "本地运行，使用自己的算力"
   },
   "HOME.PdfCraft.feature3": {
-    "message": "开源、可定制、易扩展"
+    "message": "无使用限制，完全隐私掌控"
   },
   "HOME.PdfCraft.traditional.badge": {
-    "message": "传统方式"
+    "message": "传统 API"
   },
   "HOME.PdfCraft.traditional.title": {
-    "message": "付费 API 服务"
+    "message": "云端 API 服务"
   },
   "HOME.PdfCraft.traditional.description": {
-    "message": "使用第三方付费 API,按调用量计费,成本高且受限于服务商"
+    "message": "按次计费，持续付费，被厂商锁定，数据隐私存疑"
   },
   "HOME.PdfCraft.oomol.badge": {
-    "message": "推荐方案"
+    "message": "OOMOL 方式"
   },
   "HOME.PdfCraft.oomol.title": {
-    "message": "OOMOL 多模式部署"
+    "message": "本地算力，灵活分享"
   },
   "HOME.PdfCraft.oomol.method1": {
-    "message": "Studio 本地免费使用"
+    "message": "使用 Studio 本地免费部署"
   },
   "HOME.PdfCraft.oomol.method2": {
-    "message": "FRP 分享给朋友使用"
+    "message": "P2P 分享给朋友使用（即将推出）"
   },
   "HOME.PdfCraft.oomol.method3": {
-    "message": "一键部署到 OOMOL Cloud"
+    "message": "团队可选云端部署"
   },
   "HOME.PdfCraft.cta.primary": {
     "message": "体验 PDF-Craft"
