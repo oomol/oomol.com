@@ -194,29 +194,6 @@ const config = {
             ],
           },
           {
-            type: "dropdown",
-            label: "Use Cases",
-            position: "left",
-            items: [
-              {
-                to: "/#pdf-craft-case",
-                label: "navbar.use-case-pdf-craft",
-              },
-              {
-                to: "/studio#gpu-sharing",
-                label: "navbar.use-case-gpu-sharing",
-              },
-              {
-                to: "/studio#ai-agent",
-                label: "navbar.use-case-ai-agent",
-              },
-              {
-                href: "https://hub.oomol.com",
-                label: "navbar.use-case-explore-more",
-              },
-            ],
-          },
-          {
             type: "doc",
             docId: "get-started/quickstarts",
             position: "left",
@@ -225,7 +202,6 @@ const config = {
           { to: "/updates", label: "Updates", position: "left" },
           { to: "/blog", label: "Blog", position: "left" },
           { to: "/pricing", label: "Pricing", position: "left" },
-          { to: "/support", label: "Contact Us", position: "left" },
         ],
       },
       footer: {
@@ -305,6 +281,10 @@ const config = {
               //   label: "Blog",
               //   to: "/blog",
               // },
+              {
+                label: "Contact Us",
+                to: "/contact-us",
+              },
               {
                 label: "Terms",
                 to: "/terms",

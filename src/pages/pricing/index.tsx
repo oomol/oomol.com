@@ -176,8 +176,8 @@ export default function Index() {
             <a
               href={
                 i18n.currentLocale === "zh-CN"
-                  ? "https://oomol.com/zh-CN/community"
-                  : "https://oomol.com/community"
+                  ? "https://oomol.com/zh-CN/contact-us"
+                  : "https://oomol.com/contact-us"
               }
               className={styles.contactLink}
             >

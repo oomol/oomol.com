@@ -67,30 +67,6 @@
     "message": "产品",
     "description": "Navbar item with label Product"
   },
-  "item.label.Use Cases": {
-    "message": "使用案例",
-    "description": "Navbar item with label Use Cases"
-  },
-  "item.label.navbar.use-case-pdf-craft": {
-    "message": "PDF-Craft 案例",
-    "description": "Navbar item with label navbar.use-case-pdf-craft"
-  },
-  "item.label.navbar.use-case-gpu-sharing": {
-    "message": "GPU 算力共享",
-    "description": "Navbar item with label navbar.use-case-gpu-sharing"
-  },
-  "item.label.navbar.use-case-ai-agent": {
-    "message": "AI Agent 工具",
-    "description": "Navbar item with label navbar.use-case-ai-agent"
-  },
-  "item.label.navbar.use-case-explore-more": {
-    "message": "探索更多",
-    "description": "Navbar item with label navbar.use-case-explore-more"
-  },
-  "item.label.Contact Us": {
-    "message": "联系我们",
-    "description": "Navbar item with label Contact Us"
-  },
   "title": {
     "message": "OOMOL",
     "description": "The title in the navbar"

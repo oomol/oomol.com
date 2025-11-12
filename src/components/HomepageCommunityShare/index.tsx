@@ -31,7 +31,7 @@ const communityData: CommunityDataType[] = [
     title: "Discord",
     description: translate({ message: "HOME.CommunityShare.discord.description" }),
     icon: "i-codicon-comment-discussion",
-    link: "/community",
+    link: "/contact-us",
     color: "purple",
   },
 ];
