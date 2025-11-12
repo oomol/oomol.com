@@ -3,7 +3,6 @@ import Layout from "../theme/Layout";
 
 import HomepageScenes from "@site/src/components/HomepageScenes";
 import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
-import HomepageCoreTech from "@site/src/components/HomepageCoreTech";
 import HomepageEcosystem from "@site/src/components/HomepageEcosystem";
 import HomepageProductComparison from "@site/src/components/HomepageProductComparison";
 import HomepagePdfCraftShowcase from "@site/src/components/HomepagePdfCraftShowcase";
@@ -24,7 +23,6 @@ export default function Home() {
       <main>
         <HomepageFirstScreen />
         <HomepagePdfCraftShowcase />
-        <HomepageCoreTech />
         <HomepageScenes />
         <HomepageProductComparison />
         <HomepageCreateScenes />
