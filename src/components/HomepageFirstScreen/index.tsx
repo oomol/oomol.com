@@ -20,7 +20,7 @@ export default function HomepageFirstScreen() {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <div className={styles["content-left"]}>
+          <div className={styles["hero-content"]}>
             <div className={styles["slogan-box"]}>
               <h1
                 className={clsx(
@@ -28,13 +28,21 @@ export default function HomepageFirstScreen() {
                   i18n.currentLocale === "zh-CN" && styles["slogan-cn"]
                 )}
               >
-                {translate({
-                  message: "HOME.FirstScreen.slogan",
-                })}
+                {i18n.currentLocale === "zh-CN" ? (
+                  translate({
+                    message: "HOME.FirstScreen.slogan",
+                  })
+                ) : (
+                  <>
+                    <span style={{ whiteSpace: "nowrap" }}>
+                      Build, Deploy & Share AI-Powered Workflows
+                    </span>
+                    From Your Own Machine
+                  </>
+                )}
               </h1>
             </div>
-          </div>
-          <div className={styles["content-right"]}>
+
             <div className={styles["description-box"]}>
               <span className={styles.overview}>
                 {translate({

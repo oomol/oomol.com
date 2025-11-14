@@ -1,7 +1,6 @@
 import React from "react";
 import Layout from "../theme/Layout";
 
-import HomepageScenes from "@site/src/components/HomepageScenes";
 import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
 import HomepageProductComparison from "@site/src/components/HomepageProductComparison";
 import HomepagePdfCraftShowcase from "@site/src/components/HomepagePdfCraftShowcase";
@@ -11,7 +10,6 @@ import HomepageGuide from "../components/HomepageGuide";
 import HomePageBuiltInLLM from "../components/HomePageBuiltInLLM";
 
 import { GetStartedPrompt } from "../components/GetStartedPrompt";
-import HomepageCreateScenes from "../components/HomepageCreateScenes";
 
 export default function Home() {
   return (
@@ -22,9 +20,7 @@ export default function Home() {
       <main>
         <HomepageFirstScreen />
         <HomepagePdfCraftShowcase />
-        <HomepageScenes />
         <HomepageProductComparison />
-        <HomepageCreateScenes />
         <HomePageBuiltInLLM />
         <HomepageGuide />
         {/* TODO: 等订阅业务上线后恢复 */}
