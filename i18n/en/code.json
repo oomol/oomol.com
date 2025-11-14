@@ -45,6 +45,81 @@
   "HOME.FirstScreen.cta.secondary": {
     "message": "Start Building"
   },
+  "HOME.ValueProps.localCompute.title": {
+    "message": "Turn Local Compute Into Your Private AI Cloud"
+  },
+  "HOME.ValueProps.localCompute.description": {
+    "message": "Run workflows on your own PC or NAS. Leverage idle CPU/GPU resources, share them with others, or scale to OOMOL Cloud anytime."
+  },
+  "HOME.ValueProps.workflowAPI.title": {
+    "message": "Develop With Workflows, Deliver as APIs"
+  },
+  "HOME.ValueProps.workflowAPI.description": {
+    "message": "Create function blocks, assemble workflows, and publish them as REST or MCP APIs — automatically, with no server code required."
+  },
+  "HOME.ValueProps.aiNative.title": {
+    "message": "AI-Native Development Experience"
+  },
+  "HOME.ValueProps.aiNative.description": {
+    "message": "AI-assisted block generation, vibe coding workflow blocks, and deep VSCode integration make development fast and flexible."
+  },
+  "HOME.CoreFeatures.title": {
+    "message": "Four Core Features"
+  },
+  "HOME.CoreFeatures.container.title": {
+    "message": "Local Container + FRP: Your Computer Becomes a Server"
+  },
+  "HOME.CoreFeatures.container.description": {
+    "message": "OOMOL uses lightweight containers and FRP networking to expose your local workflows as remotely accessible services. Run on PC, NAS, WSL2 — with full NVIDIA GPU support."
+  },
+  "HOME.CoreFeatures.container.highlight1": {
+    "message": "Use it to prototype ideas locally, share workflows with friends, or turn your home machine into a P2P-style AI service node."
+  },
+  "HOME.CoreFeatures.container.highlight2": {
+    "message": "Scale later to cloud deployment without rewriting anything."
+  },
+  "HOME.CoreFeatures.workflow.title": {
+    "message": "Workflow IDE: Build & Combine Function Blocks"
+  },
+  "HOME.CoreFeatures.workflow.description": {
+    "message": "In OOMOL Studio, every block is a reusable function. Write logic, include image/PDF/AI processing, or call existing APIs — then assemble blocks into full workflows."
+  },
+  "HOME.CoreFeatures.workflow.highlight1": {
+    "message": "deployable API services"
+  },
+  "HOME.CoreFeatures.workflow.highlight2": {
+    "message": "reusable packages"
+  },
+  "HOME.CoreFeatures.workflow.highlight3": {
+    "message": "shareable local/remote endpoints"
+  },
+  "HOME.CoreFeatures.mcp.title": {
+    "message": "Native MCP Tool Generation for Agents"
+  },
+  "HOME.CoreFeatures.mcp.description": {
+    "message": "Any block or workflow can be instantly converted into an MCP tool. Your AI agents — including OOMOL Chat — can call your functions directly with no API wrapping."
+  },
+  "HOME.CoreFeatures.mcp.highlight1": {
+    "message": "Build your own tools, chain them into expert agents, and integrate them into apps or workflows."
+  },
+  "HOME.CoreFeatures.vscode.title": {
+    "message": "VSCode Native · Developer-First"
+  },
+  "HOME.CoreFeatures.vscode.description": {
+    "message": "Unlike \"no-code\" workflow tools, OOMOL is fully built on VSCode:"
+  },
+  "HOME.CoreFeatures.vscode.highlight1": {
+    "message": "Vibe Coding Blocks（Build Blocks in Code Rhythm）"
+  },
+  "HOME.CoreFeatures.vscode.highlight2": {
+    "message": "AI-assisted block scaffolding"
+  },
+  "HOME.CoreFeatures.vscode.highlight3": {
+    "message": "Local debugging & step execution"
+  },
+  "HOME.CoreFeatures.vscode.highlight4": {
+    "message": "Full Git & npm ecosystem compatibility"
+  },
   "HOME.PdfCraft.title": {
     "message": "Our Open Source Project: PDF-Craft"
   },

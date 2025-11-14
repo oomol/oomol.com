@@ -1,0 +1,221 @@
+.coreFeaturesSection {
+  padding: 100px 0;
+  background: var(--ifm-background-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.sectionTitle {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--ifm-heading-color);
+  margin: 0;
+
+  @media (max-width: 996px) {
+    font-size: 32px;
+  }
+}
+
+.featuresList {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.featureCard {
+  position: relative;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 40px;
+  padding: 48px;
+  background: var(--ifm-card-background-color);
+  border-radius: 20px;
+  border: 2px solid var(--ifm-color-emphasis-200);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--feature-gradient-start), var(--feature-gradient-end));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--feature-gradient-start), var(--feature-gradient-end));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  &:hover {
+    transform: translateX(8px);
+    border-color: transparent;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+
+    &::before {
+      opacity: 0.03;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+
+    .featureNumber {
+      transform: scale(1.1);
+      background: linear-gradient(135deg, var(--feature-gradient-start), var(--feature-gradient-end));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  // 颜色主题
+  &.blue {
+    --feature-gradient-start: #4facfe;
+    --feature-gradient-end: #00f2fe;
+  }
+
+  &.purple {
+    --feature-gradient-start: #667eea;
+    --feature-gradient-end: #764ba2;
+  }
+
+  &.pink {
+    --feature-gradient-start: #f093fb;
+    --feature-gradient-end: #f5576c;
+  }
+
+  &.green {
+    --feature-gradient-start: #43e97b;
+    --feature-gradient-end: #38f9d7;
+  }
+
+  @media (max-width: 996px) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 32px 24px;
+
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+.featureNumber {
+  position: relative;
+  font-size: 72px;
+  font-weight: 900;
+  color: var(--ifm-color-emphasis-300);
+  line-height: 1;
+  transition: all 0.4s ease;
+  z-index: 1;
+
+  @media (max-width: 996px) {
+    font-size: 56px;
+  }
+}
+
+.featureContent {
+  position: relative;
+  z-index: 1;
+}
+
+.featureTitle {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 16px;
+  color: var(--ifm-heading-color);
+
+  @media (max-width: 996px) {
+    font-size: 22px;
+  }
+}
+
+.featureDescription {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 24px;
+
+  @media (max-width: 996px) {
+    font-size: 15px;
+  }
+}
+
+.highlightsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.highlightItem {
+  position: relative;
+  padding-left: 28px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ifm-color-emphasis-800);
+
+  &::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--feature-gradient-start);
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  @media (max-width: 996px) {
+    font-size: 14px;
+    padding-left: 24px;
+  }
+}
+
+// 暗色模式适配
+[data-theme='dark'] {
+  .featureCard {
+    background: var(--ifm-background-surface-color);
+    border-color: var(--ifm-color-emphasis-300);
+
+    &::before {
+      opacity: 0;
+    }
+
+    &:hover {
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+
+      &::before {
+        opacity: 0.05;
+      }
+    }
+  }
+
+  .featureNumber {
+    color: var(--ifm-color-emphasis-400);
+  }
+}

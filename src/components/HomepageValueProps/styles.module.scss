@@ -1,0 +1,143 @@
+.valuePropsSection {
+  padding: 80px 0;
+  background: linear-gradient(180deg,
+    var(--ifm-background-color) 0%,
+    var(--ifm-background-surface-color) 100%
+  );
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.valuePropsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-top: 24px;
+
+  @media (max-width: 996px) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.valuePropCard {
+  position: relative;
+  padding: 48px 32px;
+  border-radius: 16px;
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: all 0.3s ease;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--card-gradient-start), var(--card-gradient-end));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: transparent;
+
+    &::before {
+      opacity: 1;
+    }
+
+    .icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+  }
+
+  // 颜色主题
+  &.primary {
+    --card-gradient-start: #667eea;
+    --card-gradient-end: #764ba2;
+  }
+
+  &.secondary {
+    --card-gradient-start: #f093fb;
+    --card-gradient-end: #f5576c;
+  }
+
+  &.tertiary {
+    --card-gradient-start: #4facfe;
+    --card-gradient-end: #00f2fe;
+  }
+
+  @media (max-width: 996px) {
+    padding: 36px 24px;
+  }
+}
+
+.iconWrapper {
+  margin-bottom: 24px;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  font-size: 32px;
+  background: linear-gradient(135deg, var(--card-gradient-start), var(--card-gradient-end));
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 996px) {
+    width: 56px;
+    height: 56px;
+    font-size: 28px;
+  }
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 16px;
+  color: var(--ifm-heading-color);
+
+  @media (max-width: 996px) {
+    font-size: 20px;
+  }
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+
+  @media (max-width: 996px) {
+    font-size: 15px;
+  }
+}
+
+// 暗色模式适配
+[data-theme='dark'] {
+  .valuePropCard {
+    background: var(--ifm-background-surface-color);
+    border-color: var(--ifm-color-emphasis-300);
+
+    &:hover {
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .icon {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+}

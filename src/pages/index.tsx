@@ -2,6 +2,8 @@ import React from "react";
 import Layout from "../theme/Layout";
 
 import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
+import HomepageValueProps from "@site/src/components/HomepageValueProps";
+import HomepageCoreFeatures from "@site/src/components/HomepageCoreFeatures";
 import HomepageProductComparison from "@site/src/components/HomepageProductComparison";
 import HomepagePdfCraftShowcase from "@site/src/components/HomepagePdfCraftShowcase";
 
@@ -19,6 +21,8 @@ export default function Home() {
       </Head>
       <main>
         <HomepageFirstScreen />
+        <HomepageValueProps />
+        <HomepageCoreFeatures />
         <HomepagePdfCraftShowcase />
         <HomepageProductComparison />
         <HomePageBuiltInLLM />
