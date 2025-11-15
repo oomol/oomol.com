@@ -22,7 +22,11 @@
       "Bash(npm run:*)",
       "Bash(find:*)",
       "Bash(PORT=3001 npm run start:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(comm -23:*)",
+      "Bash(sort:*)",
+      "Bash(python3:*)",
+      "Bash(/dev/null)"
     ],
     "deny": [],
     "ask": []

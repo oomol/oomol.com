@@ -496,42 +496,6 @@
   "HOME.Create.subtitle": {
     "message": "Create Workflow → Generate Package → Publish to Community → Flexible Deployment (Local FRP / Cloud API)"
   },
-  "HOME.Create.dev-flow.title": {
-    "message": "Complete Development Flow"
-  },
-  "HOME.Create.dev-flow.step1": {
-    "message": "1️⃣ Create Workflow"
-  },
-  "HOME.Create.dev-flow.step1-desc": {
-    "message": "Visual editing in VSCode with AI assistance"
-  },
-  "HOME.Create.dev-flow.step2": {
-    "message": "2️⃣ Generate Package"
-  },
-  "HOME.Create.dev-flow.step2-desc": {
-    "message": "Auto-package Blocks + Flows, containerized"
-  },
-  "HOME.Create.dev-flow.step3": {
-    "message": "3️⃣ Publish to Community"
-  },
-  "HOME.Create.dev-flow.step3-desc": {
-    "message": "Share openly on oomol Hub, ecosystem collaboration"
-  },
-  "HOME.Create.dev-flow.step4": {
-    "message": "4️⃣ Flexible Deployment"
-  },
-  "HOME.Create.dev-flow.step4-desc": {
-    "message": "Local FRP P2P / Cloud API Service"
-  },
-  "HOME.Create.card.title": {
-    "message": "Start Creating Your AI Tools"
-  },
-  "HOME.Create.card.description": {
-    "message": "Use OOMOL Studio's intuitive interface to build powerful AI workflows by dragging components and connecting nodes. Create professional-grade AI applications without complex programming."
-  },
-  "HOME.Create.card.button": {
-    "message": "Start Creating Now"
-  },
   "HOME.Create.browse-docs": {
     "message": "Read Docs"
   },
@@ -696,12 +660,6 @@
   },
   "HOME.Ecosystem.chat.feature4": {
     "message": "Multi-Model"
-  },
-  "HOME.Video.title": {
-    "message": "Product Demo"
-  },
-  "HOME.Video.subtitle": {
-    "message": "Learn about OOMOL's powerful features and usage through video"
   },
   "HOME.Guide.title": {
     "message": "Join Developer Community"
@@ -2022,12 +1980,6 @@
   },
   "HOME.ChatAgent.feature3": {
     "message": "Deliver real products"
-  },
-  "HOME.ProductComparison.dimension.header": {
-    "message": "Feature Dimension"
-  },
-  "HOME.ProductComparison.dimension.stage": {
-    "message": "Usage Stage"
   },
   "HOME.ProductComparison.dimension.capability": {
     "message": "Core Capability"

@@ -495,42 +495,6 @@
   "HOME.Create.subtitle": {
     "message": "创建工作流 → 生成 Package → 发布社区 → 灵活部署(本地 FRP / 云端 API)"
   },
-  "HOME.Create.dev-flow.title": {
-    "message": "完整开发流程"
-  },
-  "HOME.Create.dev-flow.step1": {
-    "message": "1️⃣ 创建工作流"
-  },
-  "HOME.Create.dev-flow.step1-desc": {
-    "message": "VSCode 内可视化编辑，支持 AI 辅助生成"
-  },
-  "HOME.Create.dev-flow.step2": {
-    "message": "2️⃣ 生成 Package"
-  },
-  "HOME.Create.dev-flow.step2-desc": {
-    "message": "Blocks + Flows 自动打包，容器化封装"
-  },
-  "HOME.Create.dev-flow.step3": {
-    "message": "3️⃣ 发布社区"
-  },
-  "HOME.Create.dev-flow.step3-desc": {
-    "message": "oomol Hub 开放分享，生态协作"
-  },
-  "HOME.Create.dev-flow.step4": {
-    "message": "4️⃣ 灵活部署"
-  },
-  "HOME.Create.dev-flow.step4-desc": {
-    "message": "本地 FRP P2P / 云端 API 服务"
-  },
-  "HOME.Create.card.title": {
-    "message": "开始创造你的 AI 工具"
-  },
-  "HOME.Create.card.description": {
-    "message": "使用 OOMOL Studio 的直观界面，通过拖拽组件、连接节点的方式构建强大的 AI 工作流。无需复杂编程，即可创建专业级的 AI 应用。"
-  },
-  "HOME.Create.card.button": {
-    "message": "立即开始创造"
-  },
   "HOME.Create.browse-docs": {
     "message": "浏览文档"
   },
@@ -698,12 +662,6 @@
   },
   "HOME.Ecosystem.chat.feature4": {
     "message": "多模型支持"
-  },
-  "HOME.Video.title": {
-    "message": "产品演示"
-  },
-  "HOME.Video.subtitle": {
-    "message": "通过视频了解 OOMOL 的强大功能和使用方法"
   },
   "HOME.Guide.title": {
     "message": "加入开发者社区"
@@ -2041,12 +1999,6 @@
   },
   "HOME.ChatAgent.feature3": {
     "message": "交付真实产品"
-  },
-  "HOME.ProductComparison.dimension.header": {
-    "message": "功能维度"
-  },
-  "HOME.ProductComparison.dimension.stage": {
-    "message": "使用阶段"
   },
   "HOME.ProductComparison.dimension.capability": {
     "message": "核心能力"
