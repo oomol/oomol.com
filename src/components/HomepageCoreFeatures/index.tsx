@@ -9,7 +9,6 @@ const coreFeatures = [
     description: translate({ message: "HOME.CoreFeatures.container.description" }),
     highlights: [
       translate({ message: "HOME.CoreFeatures.container.highlight1" }),
-      translate({ message: "HOME.CoreFeatures.container.highlight2" }),
     ],
     color: "blue",
   },
@@ -19,8 +18,6 @@ const coreFeatures = [
     description: translate({ message: "HOME.CoreFeatures.workflow.description" }),
     highlights: [
       translate({ message: "HOME.CoreFeatures.workflow.highlight1" }),
-      translate({ message: "HOME.CoreFeatures.workflow.highlight2" }),
-      translate({ message: "HOME.CoreFeatures.workflow.highlight3" }),
     ],
     color: "purple",
   },
@@ -39,9 +36,6 @@ const coreFeatures = [
     description: translate({ message: "HOME.CoreFeatures.vscode.description" }),
     highlights: [
       translate({ message: "HOME.CoreFeatures.vscode.highlight1" }),
-      translate({ message: "HOME.CoreFeatures.vscode.highlight2" }),
-      translate({ message: "HOME.CoreFeatures.vscode.highlight3" }),
-      translate({ message: "HOME.CoreFeatures.vscode.highlight4" }),
     ],
     color: "green",
   },

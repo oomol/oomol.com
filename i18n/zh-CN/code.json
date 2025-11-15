@@ -70,55 +70,37 @@
     "message": "Local Container + FRP: Your Computer Becomes a Server"
   },
   "HOME.CoreFeatures.container.description": {
-    "message": "OOMOL uses lightweight containers and FRP networking to expose your local workflows as remotely accessible services. Run on PC, NAS, WSL2 — with full NVIDIA GPU support."
+    "message": "轻量级容器 + FRP 网络，将本地工作流暴露为远程服务。支持 PC、NAS、WSL2 及 GPU。"
   },
   "HOME.CoreFeatures.container.highlight1": {
-    "message": "Use it to prototype ideas locally, share workflows with friends, or turn your home machine into a P2P-style AI service node."
-  },
-  "HOME.CoreFeatures.container.highlight2": {
-    "message": "Scale later to cloud deployment without rewriting anything."
+    "message": "本地原型开发、共享工作流、搭建 P2P AI 服务 — 随时扩展至云端"
   },
   "HOME.CoreFeatures.workflow.title": {
     "message": "Workflow IDE: Build & Combine Function Blocks"
   },
   "HOME.CoreFeatures.workflow.description": {
-    "message": "In OOMOL Studio, every block is a reusable function. Write logic, include image/PDF/AI processing, or call existing APIs — then assemble blocks into full workflows."
+    "message": "每个 Block 都是可复用函数。编写逻辑、添加 AI/PDF/图像处理或调用 API，然后组装成工作流。"
   },
   "HOME.CoreFeatures.workflow.highlight1": {
-    "message": "deployable API services"
-  },
-  "HOME.CoreFeatures.workflow.highlight2": {
-    "message": "reusable packages"
-  },
-  "HOME.CoreFeatures.workflow.highlight3": {
-    "message": "shareable local/remote endpoints"
+    "message": "部署为 API 服务、可复用包或可共享端点"
   },
   "HOME.CoreFeatures.mcp.title": {
     "message": "Native MCP Tool Generation for Agents"
   },
   "HOME.CoreFeatures.mcp.description": {
-    "message": "Any block or workflow can be instantly converted into an MCP tool. Your AI agents — including OOMOL Chat — can call your functions directly with no API wrapping."
+    "message": "一键将任何 Block 或工作流转换为 MCP 工具。AI Agent 可直接调用你的函数。"
   },
   "HOME.CoreFeatures.mcp.highlight1": {
-    "message": "Build your own tools, chain them into expert agents, and integrate them into apps or workflows."
+    "message": "构建工具、串联专家 Agent、集成到应用"
   },
   "HOME.CoreFeatures.vscode.title": {
     "message": "VSCode Native · Developer-First"
   },
   "HOME.CoreFeatures.vscode.description": {
-    "message": "Unlike \"no-code\" workflow tools, OOMOL is fully built on VSCode:"
+    "message": "完全基于 VSCode，支持 Vibe Coding、AI 脚手架、调试和完整生态系统。"
   },
   "HOME.CoreFeatures.vscode.highlight1": {
-    "message": "Vibe Coding Blocks（在代码节奏中构建 Block）"
-  },
-  "HOME.CoreFeatures.vscode.highlight2": {
-    "message": "AI-assisted block scaffolding"
-  },
-  "HOME.CoreFeatures.vscode.highlight3": {
-    "message": "Local debugging & step execution"
-  },
-  "HOME.CoreFeatures.vscode.highlight4": {
-    "message": "Full Git & npm ecosystem compatibility"
+    "message": "Vibe Coding + AI 辅助开发 + 本地调试 + Git/npm 兼容"
   },
   "HOME.WhyOomol.title": {
     "message": "为什么选择 OOMOL？"
