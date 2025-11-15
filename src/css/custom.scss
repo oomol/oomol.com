@@ -1,5 +1,5 @@
-@import "./font.scss";
-@import "./design-tokens.scss";
+@use "./font.scss" as *;
+@use "./design-tokens.scss" as *;
 
 :root {
   --ifm-color-primary: #7d7fe9;

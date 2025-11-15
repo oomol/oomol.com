@@ -1,4 +1,4 @@
-@import "../../css/custom.scss";
+@use "../../css/custom.scss" as *;
 
 .products {
   padding: 72px 0;

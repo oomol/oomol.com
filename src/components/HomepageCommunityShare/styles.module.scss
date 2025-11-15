@@ -1,4 +1,4 @@
-@import "../../css/custom.scss";
+@use "../../css/custom.scss" as *;
 
 .community {
   padding: 72px 0;

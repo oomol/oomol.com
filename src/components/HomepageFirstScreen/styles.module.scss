@@ -1,4 +1,4 @@
-@import "../../css/custom.scss";
+@use "../../css/custom.scss" as *;
 /**
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.

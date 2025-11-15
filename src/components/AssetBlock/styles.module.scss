@@ -1,4 +1,4 @@
-@import "../../css/custom.scss";
+@use "../../css/custom.scss" as *;
 
 .assetBlock {
   position: relative;
