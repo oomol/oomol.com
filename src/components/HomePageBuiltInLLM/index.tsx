@@ -19,6 +19,7 @@ import DeepSeekLightHighSVG from "@site/static/img/pages/home/deepseek-highlight
 
 import { memo } from "react";
 import { translate } from "@docusaurus/Translate";
+import CodeExample from "./CodeExample";
 
 const llmData = [
   {
@@ -100,6 +101,7 @@ export default function HomePageBuiltInLLM() {
           />
         ))}
       </div>
+      <CodeExample />
     </div>
   );
 }

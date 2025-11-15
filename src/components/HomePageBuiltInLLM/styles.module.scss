@@ -116,3 +116,26 @@
   opacity: 1;
   transform: scale(1.3);
 }
+
+.codeExample {
+  width: 100%;
+  max-width: 900px;
+  margin-top: 60px;
+
+  @media (max-width: 996px) {
+    margin-top: 48px;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 40px;
+  }
+
+  pre {
+    border-radius: 8px;
+    padding: 1.5rem !important;
+    overflow-x: auto;
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+}
