@@ -120,6 +120,72 @@
   "HOME.CoreFeatures.vscode.highlight4": {
     "message": "Full Git & npm ecosystem compatibility"
   },
+  "HOME.WhyOomol.title": {
+    "message": "为什么选择 OOMOL？"
+  },
+  "HOME.WhyOomol.column.feature": {
+    "message": "特性"
+  },
+  "HOME.WhyOomol.column.others": {
+    "message": "其他工具"
+  },
+  "HOME.WhyOomol.column.oomol": {
+    "message": "OOMOL"
+  },
+  "HOME.WhyOomol.feature.buildFunctions": {
+    "message": "自己构建函数"
+  },
+  "HOME.WhyOomol.others.buildFunctions": {
+    "message": "很少支持"
+  },
+  "HOME.WhyOomol.oomol.buildFunctions": {
+    "message": "Block = 函数，可生成"
+  },
+  "HOME.WhyOomol.feature.composeAPI": {
+    "message": "组合函数 → 新 API"
+  },
+  "HOME.WhyOomol.others.composeAPI": {
+    "message": "受限"
+  },
+  "HOME.WhyOomol.oomol.composeAPI": {
+    "message": "完整工作流构建"
+  },
+  "HOME.WhyOomol.feature.localGPU": {
+    "message": "本地 GPU 运行"
+  },
+  "HOME.WhyOomol.others.localGPU": {
+    "message": "不支持"
+  },
+  "HOME.WhyOomol.oomol.localGPU": {
+    "message": "支持 WSL2 + NVIDIA"
+  },
+  "HOME.WhyOomol.feature.deployment": {
+    "message": "本地部署 + 云部署"
+  },
+  "HOME.WhyOomol.others.deployment": {
+    "message": "二选一"
+  },
+  "HOME.WhyOomol.oomol.deployment": {
+    "message": "一体化"
+  },
+  "HOME.WhyOomol.feature.mcpTools": {
+    "message": "MCP 工具生成"
+  },
+  "HOME.WhyOomol.others.mcpTools": {
+    "message": "少见"
+  },
+  "HOME.WhyOomol.oomol.mcpTools": {
+    "message": "原生支持"
+  },
+  "HOME.WhyOomol.feature.devExperience": {
+    "message": "真正开发者体验"
+  },
+  "HOME.WhyOomol.others.devExperience": {
+    "message": "No-code UI"
+  },
+  "HOME.WhyOomol.oomol.devExperience": {
+    "message": "VSCode 原生 + AI"
+  },
   "HOME.PdfCraft.title": {
     "message": "官方开源项目：PDF-Craft"
   },
