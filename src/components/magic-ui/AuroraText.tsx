@@ -40,7 +40,7 @@ const AuroraTextComponent = memo(
     };
 
     return (
-      <h2 className={`relative inline-block ${className}`}>
+      <span className={`relative inline-block ${className}`}>
         <span className="sr-only">{children}</span>
         <span
           className={`relative ${styles.auroraText} bg-[length:200%_auto] bg-clip-text text-transparent`}
@@ -49,7 +49,7 @@ const AuroraTextComponent = memo(
         >
           {children}
         </span>
-      </h2>
+      </span>
     );
   }
 );
