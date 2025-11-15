@@ -2008,6 +2008,21 @@
   "HOME.ProductComparison.subtitle": {
     "message": "From local development to enterprise deployment, OOMOL provides flexible product formats to meet different scenarios. 3 Modes, One Experience."
   },
+  "HOME.ChatAgent.title": {
+    "message": "OOMOL Chat & Agent Ecosystem"
+  },
+  "HOME.ChatAgent.description": {
+    "message": "OOMOL Chat is the agent interface powered by your own blocks. Every block, workflow, or API becomes an MCP tool the agent can call."
+  },
+  "HOME.ChatAgent.feature1": {
+    "message": "Compose tools"
+  },
+  "HOME.ChatAgent.feature2": {
+    "message": "Build expert AI agents"
+  },
+  "HOME.ChatAgent.feature3": {
+    "message": "Deliver real products"
+  },
   "HOME.ProductComparison.dimension.header": {
     "message": "Feature Dimension"
   },

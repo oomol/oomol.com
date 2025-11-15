@@ -2027,6 +2027,21 @@
   "HOME.ProductComparison.subtitle": {
     "message": "从本地开发到企业级部署，OOMOL 提供灵活的产品形态满足不同场景需求。3 种形态,一套体验。"
   },
+  "HOME.ChatAgent.title": {
+    "message": "OOMOL Chat & Agent 生态"
+  },
+  "HOME.ChatAgent.description": {
+    "message": "OOMOL Chat 是由你自己的 Block 驱动的 Agent 界面。每个 Block、工作流或 API 都会成为 Agent 可调用的 MCP 工具。"
+  },
+  "HOME.ChatAgent.feature1": {
+    "message": "组合工具"
+  },
+  "HOME.ChatAgent.feature2": {
+    "message": "构建专家 AI Agent"
+  },
+  "HOME.ChatAgent.feature3": {
+    "message": "交付真实产品"
+  },
   "HOME.ProductComparison.dimension.header": {
     "message": "功能维度"
   },
