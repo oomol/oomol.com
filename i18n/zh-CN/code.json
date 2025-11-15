@@ -186,6 +186,63 @@
   "HOME.WhyOomol.oomol.devExperience": {
     "message": "VSCode 原生 + AI"
   },
+  "HOME.Lifecycle.title": {
+    "message": "完整开发生命周期"
+  },
+  "HOME.Lifecycle.subtitle": {
+    "message": "Build once, deliver in multiple formats"
+  },
+  "HOME.Lifecycle.step1.title": {
+    "message": "Create Workflow & Generate Blocks"
+  },
+  "HOME.Lifecycle.step1.description": {
+    "message": "Design logic visually or in code. Add AI/PDF/image/adapter tools as needed."
+  },
+  "HOME.Lifecycle.step1.detail1": {
+    "message": "Write blocks or let AI generate them"
+  },
+  "HOME.Lifecycle.step1.detail2": {
+    "message": "OOMOL turns them into a sharable workflow package"
+  },
+  "HOME.Lifecycle.step2.title": {
+    "message": "Publish to Community"
+  },
+  "HOME.Lifecycle.step2.description": {
+    "message": "Share your package publicly or privately. Collaborate with others or build commercial add-ons."
+  },
+  "HOME.Lifecycle.step3.title": {
+    "message": "Deploy Anywhere"
+  },
+  "HOME.Lifecycle.step3.description": {
+    "message": "Choose where and how to run your workflows:"
+  },
+  "HOME.Lifecycle.step3.detail1": {
+    "message": "Local: Run on your PC/NAS and share via FRP（P2P-like）"
+  },
+  "HOME.Lifecycle.step3.detail2": {
+    "message": "Headless: Deploy as a container in your own infra"
+  },
+  "HOME.Lifecycle.step3.detail3": {
+    "message": "Cloud: One-click deployment to OOMOL Cloud（免运维、可扩展）"
+  },
+  "HOME.Lifecycle.step4.title": {
+    "message": "Deliver as Products"
+  },
+  "HOME.Lifecycle.step4.description": {
+    "message": "Your workflow can be delivered as:"
+  },
+  "HOME.Lifecycle.step4.detail1": {
+    "message": "REST API"
+  },
+  "HOME.Lifecycle.step4.detail2": {
+    "message": "MCP agent tool"
+  },
+  "HOME.Lifecycle.step4.detail3": {
+    "message": "Chat-based app"
+  },
+  "HOME.Lifecycle.step4.detail4": {
+    "message": "Applet-style forms"
+  },
   "HOME.PdfCraft.title": {
     "message": "官方开源项目：PDF-Craft"
   },
