@@ -309,6 +309,21 @@
   line-height: 60px;
 }
 
+.aurora-slogan {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+
+  h2 {
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+    display: inline;
+  }
+}
+
 .overview {
   font-size: 19px;
   font-weight: 500;

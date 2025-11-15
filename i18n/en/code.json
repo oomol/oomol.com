@@ -806,10 +806,10 @@
     "message": "View All Projects"
   },
   "HOME.Built-in.title": {
-    "message": "Built-in LLM Module"
+    "message": "Built-in APIs & LLM Access"
   },
   "HOME.Built-in.subtitle": {
-    "message": "Built-in LLM blocks for improved AI workflow efficiency."
+    "message": "Use a single OOMOL API Token to quickly access various common APIs and mainstream LLMs. Simpler, more unified development experience."
   },
   "HOME.GetStartedPrompt.title": {
     "message": "Start Using OOMOL Today"

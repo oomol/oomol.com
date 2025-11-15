@@ -7,6 +7,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 import clsx from "clsx";
 import { DownloadButton } from "../DownloadButton";
+import { AuroraText } from "../magic-ui/AuroraText";
 
 import type { DocusaurusContext } from "@docusaurus/types";
 
@@ -37,7 +38,9 @@ export default function HomepageFirstScreen() {
                     <span style={{ whiteSpace: "nowrap" }}>
                       Build, Deploy & Share AI-Powered Workflows
                     </span>
-                    From Your Own Machine
+                    <AuroraText className={styles["aurora-slogan"]}>
+                      From Your Own Machine
+                    </AuroraText>
                   </>
                 )}
               </h1>

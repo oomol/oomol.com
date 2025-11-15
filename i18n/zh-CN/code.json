@@ -808,10 +808,10 @@
     "message": "查看全部"
   },
   "HOME.Built-in.title": {
-    "message": "内置 LLM 模块"
+    "message": "Built-in APIs & LLM Access"
   },
   "HOME.Built-in.subtitle": {
-    "message": "内置可直接调用的 LLM 模块，大幅提升 AI 工作流效率"
+    "message": "使用一个 OOMOL API Token，即可快速调用多种常用 API 与主流大模型，开发体验更简单、更统一。"
   },
   "HOME.GetStartedPrompt.title": {
     "message": "立即开始使用 OOMOL"
