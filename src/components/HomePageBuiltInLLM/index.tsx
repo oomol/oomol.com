@@ -18,7 +18,6 @@ import DeepSeekSVG from "@site/static/img/pages/home/deepseek.svg";
 import DeepSeekLightHighSVG from "@site/static/img/pages/home/deepseek-highlight.svg";
 
 import { memo } from "react";
-import { AuroraText } from "../magic-ui/AuroraText";
 import { translate } from "@docusaurus/Translate";
 
 const llmData = [
@@ -85,9 +84,9 @@ export default function HomePageBuiltInLLM() {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <AuroraText className={styles.title}>
+        <h2 className={styles.title}>
           {translate({ id: "HOME.Built-in.title" })}
-        </AuroraText>
+        </h2>
         <p className={styles.subtitle}>
           {translate({ id: "HOME.Built-in.subtitle" })}
         </p>
