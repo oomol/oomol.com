@@ -1,0 +1,166 @@
+---
+sidebar_position: 4
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+# Executor
+
+Executor is the runtime engine that executes Block code within OOMOL.
+
+## What is an Executor
+
+An Executor is a runtime component responsible for loading and executing Block code. It acts as the bridge between OOMOL's workflow orchestration system (OOCANA) and the actual code execution environment.
+
+Each code language environment has a corresponding Executor implementation. When a [Node](/docs/concepts/node) in a [Flow](/docs/concepts/flow) is triggered, the Executor loads the specified entry file and invokes the defined function to execute the Block's logic.
+
+## Position in OOMOL Architecture
+
+In the OOMOL system architecture, Executor plays a crucial role in connecting multiple components:
+
+```
+OOMOL Studio (UI Layer)
+    ↓
+OOCANA (Workflow Engine)
+    ↓
+Executor (Runtime Layer)
+    ↓
+OVM (Container Environment)
+```
+
+- **OOMOL Studio** provides the visual interface for users to design workflows
+- **OOCANA** orchestrates the execution sequence and manages data flow between Blocks
+- **Executor** loads and executes the actual code for each Block
+- **OVM** provides the isolated containerized environment where code runs
+
+## Executor Types
+
+OOMOL currently supports two types of Executors, each designed for a specific programming language:
+
+### Python Executor
+
+- Executes Python code
+- Default entry function: `main`
+- Supports standard Python libraries and packages installed via Poetry
+- Can pass complex Python objects (like DataFrame, pandas instances) between Blocks using [Variable type Handles](/docs/advanced-guide/universal-block-settings#variable)
+
+### Node.js Executor
+
+- Executes JavaScript/TypeScript code
+- Default entry function: `default export function`
+- Supports npm packages and TypeScript with full type checking
+- Can pass complex JavaScript objects between Blocks using [Variable type Handles](/docs/advanced-guide/universal-block-settings#variable)
+
+## Relationship with Other Concepts
+
+### Executor and Block
+
+Each [Block](/docs/concepts/block) is configured with an Executor that specifies:
+- Which language runtime to use (Python or Node.js)
+- The entry file containing the code
+- The function name to invoke
+- Whether to run in an independent process
+
+The Executor configuration is part of the Block's metadata and can be modified in the [Block Configuration](/docs/advanced-guide/universal-block-settings#executor) panel.
+
+### Executor and OOCANA
+
+OOCANA (the workflow engine) coordinates with Executors to manage workflow execution:
+
+1. OOCANA analyzes the Flow to determine execution order based on data dependencies
+2. When a Block is ready to execute, OOCANA prepares the input data
+3. OOCANA invokes the appropriate Executor with the Block's code and input data
+4. The Executor runs the code and returns output data to OOCANA
+5. OOCANA passes the output to downstream Blocks or caches it for future use
+
+## Process Management
+
+One of the Executor's key features is intelligent process management, which optimizes resource usage and execution performance.
+
+### Same-Process Execution
+
+When OOMOL Studio runs workflows, it automatically detects opportunities for optimization. If consecutive Blocks meet the following conditions, they will be executed in the same process:
+
+- Implemented in the same programming language
+- For shared Blocks, they must belong to the same package
+
+**Benefits of same-process execution:**
+
+1. **Resource efficiency**: Reduces memory overhead and startup time
+2. **Direct variable passing**: Upstream and downstream Blocks can pass code variables directly without serialization/deserialization
+3. **Performance improvement**: Eliminates the overhead of inter-process communication
+
+### Independent Process Execution
+
+Users can manually configure a Block to run in an independent process via the [Spawn configuration](/docs/advanced-guide/universal-block-settings#spawn). This is useful in scenarios such as:
+
+- Isolating potentially unstable code
+- Managing memory-intensive operations
+- Enforcing strict resource limits
+- Debugging specific Blocks in isolation
+
+## Data Transfer Between Executors
+
+Data transfer between Executors depends on whether they share the same process and language environment:
+
+### JSON Serialization (Cross-Language or Cross-Process)
+
+When Blocks run in different language environments or independent processes, data is transferred via JSON serialization:
+
+```
+Block A (Python) → JSON → Block B (Node.js)
+Block A (same language, independent process) → JSON → Block B
+```
+
+**Characteristics:**
+- Universal compatibility across all languages
+- All Handle types except Variable can be serialized
+- Slight performance overhead for serialization/deserialization
+- Data can be cached for subsequent runs
+
+### Direct Variable Passing (Same Language, Same Process)
+
+When Blocks share the same language and process, they can use [Variable type Handles](/docs/advanced-guide/universal-block-settings#variable) to pass data directly:
+
+```
+Block A (Python) → Variable Reference → Block B (Python)
+```
+
+**Characteristics:**
+- Maximum performance (no serialization overhead)
+- Can pass complex objects that cannot be serialized (e.g., file handles, database connections)
+- Variables follow pass-by-reference semantics (modifications affect all Blocks)
+- Cannot be cached (upstream Block will always re-execute)
+- Reduces Block portability (limited to same-language workflows)
+
+:::info
+Variable type Handles cannot be cached because they reference objects in the code execution environment that only exist during runtime. This means if a downstream Block depends on a Variable Handle, it will always trigger upstream Block execution, regardless of cache settings.
+:::
+
+## Executor Lifecycle
+
+Understanding the Executor lifecycle helps in debugging and optimizing workflow performance:
+
+1. **Initialization**: When a Block is first triggered, the Executor initializes the runtime environment
+2. **Code Loading**: The Executor loads the entry file specified in the Block configuration
+3. **Function Invocation**: The Executor calls the specified function with input parameters and the Context object
+4. **Execution**: The Block code runs, potentially accessing the file system, network, or other resources
+5. **Output Collection**: The Executor collects output values from the Block function
+6. **Cleanup**: After execution completes (or fails), the Executor performs cleanup as needed
+7. **Process Reuse or Termination**: Depending on configuration, the process may be reused for subsequent Blocks or terminated
+
+## Configuration and Best Practices
+
+For detailed information on configuring Executors, see:
+- [Universal Block Settings - Executor](/docs/advanced-guide/universal-block-settings#executor)
+- [Architecture Principles](/docs/workflow-engine/principle)
+
+**Best Practices:**
+
+1. **Use same-language Blocks together** when possible to benefit from same-process optimization
+2. **Use Variable type Handles sparingly** - they improve performance but reduce Block reusability
+3. **Enable independent process execution** for resource-intensive or potentially unstable code
+4. **Follow the code templates** provided by OOMOL to ensure proper Executor integration:
+   - [Node.js Template](/docs/workflow-engine/nodejs-sdk-api#scriptlet-template)
+   - [Python Template](/docs/workflow-engine/python-sdk-api#scriptlet-template)

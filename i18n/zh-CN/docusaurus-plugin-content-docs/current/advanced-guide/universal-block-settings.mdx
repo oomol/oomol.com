@@ -177,9 +177,11 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ### 执行器
 
-执行器用于指定当前区块在运行时的入口文件以及调用方式。
+执行器是加载和执行区块代码的运行时引擎。它充当 OOMOL 工作流编排系统与实际代码执行环境之间的桥梁。
 
-每种代码的语言环境都有一种执行器用于运行代码。
+每种代码语言环境都有相应的执行器实现。在配置区块时,您需要指定使用哪个执行器以及它应该如何调用您的代码。
+
+有关执行器的全面理解,请参阅[执行器概念](/zh-CN/docs/concepts/executor)。
 
 <Image
   sources={{
@@ -195,26 +197,92 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 #### 名称
 
-目前执行器由 oomol 团队内部实现，可支持 python 以及 nodejs 运行环境，因此有对应的两个可选项。
+目前执行器由 oomol 团队内部实现，可支持 Python 以及 Node.js 运行环境，因此有对应的两个可选项。
+
+**Python 执行器:**
+- 在 Python 运行时环境中执行 Python 代码
+- 默认入口函数名: `main`
+- 支持通过 Poetry 安装的标准 Python 库和包
+- 可以使用[变量类型接口](#变量)传递复杂的 Python 对象(DataFrame、pandas 实例等)
+
+**Node.js 执行器:**
+- 在 Node.js 运行时环境中执行 JavaScript/TypeScript 代码
+- 默认入口函数名: `default export function`
+- 支持 npm 包,完全支持 TypeScript
+- 可以使用[变量类型接口](#变量)传递复杂的 JavaScript 对象
 
 #### 入口
 
-选择代码的入口文件，默认文件时在用户创建小脚本区块时生成。如果没有特殊需要不需要变动，用户也可以随意指定文件，但需要确保按照代码模板进行实现，否则无法正常运行。
+选择代码的入口文件。默认文件在用户创建小脚本区块时生成。如果没有特殊需要不需要变动,用户也可以随意指定文件,但需要确保按照代码模板进行实现,否则无法正常运行。
 
-参考 [nodejs 模板](/zh-CN/docs/workflow-engine/nodejs-sdk-api#scriptlet-模板) 以及 [python 模板](/zh-CN/docs/workflow-engine/python-sdk-api#scriptlet-模板)
+**重要注意事项:**
+
+- 入口文件必须实现带有两个参数的必需函数签名:
+  1. 输入参数(包含接口值的字典/对象)
+  2. Context 对象(提供运行时工具)
+- 函数必须以字典/对象形式返回输出值
+- 对于 Node.js 中的异步操作,返回一个 Promise
+
+有关实现细节,请参考 [Node.js 模板](/zh-CN/docs/workflow-engine/nodejs-sdk-api#scriptlet-模板)以及[Python 模板](/zh-CN/docs/workflow-engine/python-sdk-api#scriptlet-模板)。
 
 #### 方法名
 
-指定代码入口方法名，默认为入口文件的 main 方法 (python 代码) 或 default export function (nodejs 代码)，如有特殊需要可以自行指定，但必须要包含模板代码中的方法参数。
+指定代码入口方法名。默认为入口文件的 main 方法 (Python 代码) 或 default export function (Node.js 代码)。如有特殊需要可以自行指定,但必须要包含模板代码中的方法参数。
+
+**自定义函数示例:**
+
+对于 Python:
+```python
+def custom_function_name(params: dict, context: Context):
+    # 你的实现
+    return {"output": result}
+```
+
+对于 Node.js:
+```typescript
+export async function customFunctionName(params, context) {
+    // 你的实现
+    return { output: result };
+}
+```
 
 #### 独立进程
 
-oomol studio 在运行工作流时会进行自动检测，如果上下游是相同代码语言实现的区块（对于共享区块还要属于同一个包），内部调度器会将两个区块代码放在同一个进程中进行调用，这样做的好处有：
+独立进程设置控制区块是在独立进程中运行还是与相邻区块共享进程。
 
-1. 节省资源
-2. 让上下游可以直接传递代码变量，省去将输出接口的值进行序列化和反序列化的步骤，简化代码。
+**自动优化:**
 
-考虑到用户可能有特殊情况，我们也允许用户自行选择是否让区块在独立进程中运行。
+oomol studio 在运行工作流时会进行自动检测。如果上下游区块满足以下条件,内部调度器会将两个区块代码放在同一个进程中进行调用:
+
+1. 使用相同的代码语言实现(都是 Python 或都是 Node.js)
+2. 对于共享区块,还要属于同一个包
+
+**同进程执行的好处:**
+
+1. **资源效率**: 减少内存开销并消除进程启动时间
+2. **直接变量传递**: 上下游区块可以使用[变量类型接口](#变量)直接传递代码变量,消除序列化和反序列化步骤
+3. **性能提升**: 消除进程间通信开销
+
+**何时启用独立进程:**
+
+在以下场景中,您可能希望手动启用独立进程执行:
+
+- **隔离**: 区块包含可能崩溃的潜在不稳定代码
+- **内存管理**: 区块执行内存密集型操作,应该隔离
+- **资源限制**: 您需要对此特定区块进行严格的资源限制
+- **调试**: 您想要独立于其他区块调试此区块
+- **并发**: 区块使用线程或异步操作,可能会干扰其他区块
+
+**性能影响:**
+
+- **同进程**: 执行最快,可以使用变量接口,共享内存
+- **独立进程**: 进程创建和进程间通信有轻微的性能开销,但隔离性和稳定性更好
+
+:::tip
+在大多数情况下,您可以依赖 OOMOL 的自动优化。只有在您有特定的隔离或资源管理要求时才启用独立进程。
+:::
+
+有关执行器如何管理进程和数据传递的更多详细信息,请参阅[执行器概念 - 进程管理](/zh-CN/docs/concepts/executor#进程管理)。
 
 ### 接口配置
 

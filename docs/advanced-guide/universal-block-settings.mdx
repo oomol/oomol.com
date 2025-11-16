@@ -177,9 +177,11 @@ Universal Block configuration includes executor and Handle configuration.
 
 ### Executor
 
-The executor is used to specify the entry file and invocation method when the current Block runs.
+The executor is the runtime engine that loads and executes Block code. It acts as the bridge between OOMOL's workflow orchestration system and the actual code execution environment.
 
-Each code language environment has an executor for running code.
+Each code language environment has a corresponding executor implementation. When configuring a Block, you specify which executor to use and how it should invoke your code.
+
+For a comprehensive understanding of executors, see [Executor Concepts](/docs/concepts/executor).
 
 <Image
   sources={{
@@ -197,24 +199,90 @@ Each code language environment has an executor for running code.
 
 Currently, executors are implemented internally by the oomol team and support Python and Node.js runtime environments, so there are two corresponding options.
 
+**Python Executor:**
+- Executes Python code in a Python runtime environment
+- Default entry function name: `main`
+- Supports standard Python libraries and packages installed via Poetry
+- Can pass complex Python objects (DataFrame, pandas instances, etc.) using [Variable type Handles](#variable)
+
+**Node.js Executor:**
+- Executes JavaScript/TypeScript code in a Node.js runtime environment
+- Default entry function name: `default export function`
+- Supports npm packages with full TypeScript support
+- Can pass complex JavaScript objects using [Variable type Handles](#variable)
+
 #### Entry
 
 Select the code entry file. The default file is generated when users create scriptlet Blocks. If there are no special requirements, no changes are needed. Users can also specify any file, but must ensure implementation according to the code template, otherwise it won't run properly.
 
-Refer to [Node.js template](/docs/workflow-engine/nodejs-sdk-api#scriptlet-template) and [Python template](/docs/workflow-engine/python-sdk-api#scriptlet-template)
+**Important considerations:**
+
+- The entry file must implement the required function signature with two parameters:
+  1. Input parameters (dictionary/object containing Handle values)
+  2. Context object (providing runtime utilities)
+- The function must return output values as a dictionary/object
+- For async operations in Node.js, return a Promise
+
+Refer to [Node.js template](/docs/workflow-engine/nodejs-sdk-api#scriptlet-template) and [Python template](/docs/workflow-engine/python-sdk-api#scriptlet-template) for implementation details.
 
 #### Function
 
 Specify the code entry method name. Default is the main method of the entry file (Python code) or default export function (Node.js code). You can specify custom methods if needed, but must include method parameters from the template code.
 
+**Custom function example:**
+
+For Python:
+```python
+def custom_function_name(params: dict, context: Context):
+    # Your implementation
+    return {"output": result}
+```
+
+For Node.js:
+```typescript
+export async function customFunctionName(params, context) {
+    // Your implementation
+    return { output: result };
+}
+```
+
 #### Spawn
 
-When oomol studio runs workflows, it performs automatic detection. If upstream and downstream Blocks are implemented in the same code language (for shared Blocks, they must also belong to the same package), the internal scheduler will place both Block codes in the same process for invocation. The benefits are:
+The Spawn setting controls whether a Block runs in an independent process or shares a process with adjacent Blocks.
 
-1. Resource saving
-2. Allows upstream and downstream to directly pass code variables, eliminating serialization and deserialization steps for output Handle values, simplifying code.
+**Automatic Optimization:**
 
-Considering users may have special situations, we also allow users to choose whether to run Blocks in independent processes.
+When oomol studio runs workflows, it performs automatic detection. If upstream and downstream Blocks meet the following conditions, the internal scheduler will place both Block codes in the same process for invocation:
+
+1. Implemented in the same code language (both Python or both Node.js)
+2. For shared Blocks, they must also belong to the same package
+
+**Benefits of same-process execution:**
+
+1. **Resource efficiency**: Reduces memory overhead and eliminates process startup time
+2. **Direct variable passing**: Upstream and downstream Blocks can pass code variables directly using [Variable type Handles](#variable), eliminating serialization and deserialization steps
+3. **Performance improvement**: Eliminates inter-process communication overhead
+
+**When to enable Spawn (independent process):**
+
+You may want to manually enable independent process execution in these scenarios:
+
+- **Isolation**: The Block contains potentially unstable code that might crash
+- **Memory management**: The Block performs memory-intensive operations that should be isolated
+- **Resource limits**: You need strict resource limits for this specific Block
+- **Debugging**: You want to debug this Block in isolation from others
+- **Concurrency**: The Block uses threading or async operations that might interfere with other Blocks
+
+**Performance implications:**
+
+- **Same process**: Fastest execution, can use Variable Handles, shared memory
+- **Independent process**: Slight performance overhead for process creation and inter-process communication, but better isolation and stability
+
+:::tip
+In most cases, you can rely on OOMOL's automatic optimization. Only enable Spawn if you have specific requirements for isolation or resource management.
+:::
+
+For more details on how executors manage processes and data transfer, see [Executor Concepts - Process Management](/docs/concepts/executor#process-management).
 
 ### Handle Configuration
 
