@@ -30,7 +30,7 @@
     "message": "From Your Own Machine"
   },
   "HOME.FirstScreen.script": {
-    "message": "Use your local PC or NAS as a real server with FRP + container tech. Create functions as Blocks, compose workflows, publish APIs, and turn them into tools for Agents."
+    "message": "Use your local PC or NAS as a real server with FRP + Container tech. Create functions as Blocks, compose workflows, publish APIs, and turn them into tools for Agents."
   },
 
   "HOME.FirstScreen.download-macos": {
