@@ -21,83 +21,83 @@
     "message": "社区"
   },
   "HOME.FirstScreen.slogan": {
-    "message": "Your Computer, Now a Server."
+    "message": "构建、部署和分享 AI 驱动的工作流 — 从你自己的机器出发"
   },
   "HOME.FirstScreen.script": {
-    "message": "基于容器和 FRP 技术，共享 GPU 算力，构建 AI 工作流，一键发布 API。本地算力，无限可能。"
+    "message": "使用 FRP + 容器技术，将你的本地 PC 或 NAS 变成真正的服务器。创建函数块、组合工作流、发布 API，并将它们转化为 Agent 的工具。"
   },
 
   "HOME.FirstScreen.download-macos": {
-    "message": "下载适用于 MacOS 的版本"
+    "message": "下载适用于 macOS 的版本"
   },
   "HOME.FirstScreen.download-macos-stable": {
-    "message": "下载适用于 MacOS 的版本 (稳定版)"
+    "message": "下载适用于 macOS 的版本（稳定版）"
   },
   "HOME.FirstScreen.download-windows-stable": {
-    "message": "下载适用于 Windows 的版本 (稳定版)"
+    "message": "下载适用于 Windows 的版本（稳定版）"
   },
   "HOME.FirstScreen.download-windows": {
     "message": "下载适用于 Windows 的版本"
   },
   "HOME.FirstScreen.download-windows-subtitle": {
-    "message": "当前仅支持 x64 版本"
+    "message": "仅支持 x64 版本"
   },
   "HOME.FirstScreen.cta.secondary": {
     "message": "开始构建"
   },
   "HOME.ValueProps.localCompute.title": {
-    "message": "Turn Local Compute Into Your Private AI Cloud"
+    "message": "将本地算力转化为你的私有 AI 云"
   },
   "HOME.ValueProps.localCompute.description": {
-    "message": "Run workflows on your own PC or NAS. Leverage idle CPU/GPU resources, share them with others, or scale to OOMOL Cloud anytime."
+    "message": "在你自己的 PC 或 NAS 上运行工作流。利用闲置的 CPU/GPU 资源，与他人共享，或随时扩展到 OOMOL Cloud。"
   },
   "HOME.ValueProps.workflowAPI.title": {
-    "message": "Develop With Workflows, Deliver as APIs"
+    "message": "用工作流开发，以 API 交付"
   },
   "HOME.ValueProps.workflowAPI.description": {
-    "message": "Create function blocks, assemble workflows, and publish them as REST or MCP APIs — automatically, with no server code required."
+    "message": "创建函数块、组装工作流，并将它们发布为 REST 或 MCP API — 自动化，无需编写服务器代码。"
   },
   "HOME.ValueProps.aiNative.title": {
-    "message": "AI-Native Development Experience"
+    "message": "AI 原生开发体验"
   },
   "HOME.ValueProps.aiNative.description": {
-    "message": "AI-assisted block generation, vibe coding workflow blocks, and deep VSCode integration make development fast and flexible."
+    "message": "AI 辅助的块生成、Vibe Coding 工作流块，以及深度 VSCode 集成，让开发快速而灵活。"
   },
   "HOME.CoreFeatures.title": {
     "message": "四大核心功能"
   },
   "HOME.CoreFeatures.container.title": {
-    "message": "Local Container + FRP: Your Computer Becomes a Server"
+    "message": "本地容器 + FRP：你的电脑变成服务器"
   },
   "HOME.CoreFeatures.container.description": {
-    "message": "轻量级容器 + FRP 网络，将本地工作流暴露为远程服务。支持 PC、NAS、WSL2 及 GPU。"
+    "message": "轻量级容器 + FRP 网络，将本地工作流暴露为远程服务。支持 PC、NAS、WSL2 及完整 GPU 支持。"
   },
   "HOME.CoreFeatures.container.highlight1": {
     "message": "本地原型开发、共享工作流、搭建 P2P AI 服务 — 随时扩展至云端"
   },
   "HOME.CoreFeatures.workflow.title": {
-    "message": "Workflow IDE: Build & Combine Function Blocks"
+    "message": "工作流 IDE：构建和组合函数块"
   },
   "HOME.CoreFeatures.workflow.description": {
-    "message": "每个 Block 都是可复用函数。编写逻辑、添加 AI/PDF/图像处理或调用 API，然后组装成工作流。"
+    "message": "每个块都是可复用函数。编写逻辑、添加 AI/PDF/图像处理或调用 API — 然后组装成工作流。"
   },
   "HOME.CoreFeatures.workflow.highlight1": {
     "message": "部署为 API 服务、可复用包或可共享端点"
   },
   "HOME.CoreFeatures.mcp.title": {
-    "message": "Native MCP Tool Generation for Agents"
+    "message": "原生 MCP 工具生成，供 Agent 使用"
   },
   "HOME.CoreFeatures.mcp.description": {
-    "message": "一键将任何 Block 或工作流转换为 MCP 工具。AI Agent 可直接调用你的函数。"
+    "message": "一键将任何块或工作流转换为 MCP 工具。AI Agent 可直接调用你的函数。"
   },
   "HOME.CoreFeatures.mcp.highlight1": {
     "message": "构建工具、串联专家 Agent、集成到应用"
   },
   "HOME.CoreFeatures.vscode.title": {
-    "message": "VSCode Native · Developer-First"
+    "message": "VSCode 原生 · 开发者优先"
   },
   "HOME.CoreFeatures.vscode.description": {
-    "message": "完全基于 VSCode，支持 Vibe Coding、AI 脚手架、调试和完整生态系统。"
+    "message": "完全基于 VSCode 构建，支持 Vibe Coding、AI 脚手架、调试和完整生态系统。"
   },
   "HOME.CoreFeatures.vscode.highlight1": {
     "message": "Vibe Coding + AI 辅助开发 + 本地调试 + Git/npm 兼容"
