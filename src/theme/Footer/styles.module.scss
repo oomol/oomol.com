@@ -153,11 +153,49 @@
 .leftControls {
   display: flex;
   align-items: center;
+
+  /* 确保 Shadcn Button 样式正确应用 */
+  :global(button) {
+    background: transparent;
+    border: none;
+    color: hsl(var(--foreground));
+    cursor: pointer;
+
+    &:hover {
+      background: hsl(var(--accent));
+      color: hsl(var(--accent-foreground));
+    }
+
+    &:focus-visible {
+      outline: none;
+      ring: 1px;
+      ring-color: hsl(var(--ring));
+    }
+  }
 }
 
 .rightControls {
   display: flex;
   align-items: center;
+
+  /* 确保 Shadcn Button 样式正确应用 */
+  :global(button) {
+    background: transparent;
+    border: none;
+    color: hsl(var(--foreground));
+    cursor: pointer;
+
+    &:hover {
+      background: hsl(var(--accent));
+      color: hsl(var(--accent-foreground));
+    }
+
+    &:focus-visible {
+      outline: none;
+      ring: 1px;
+      ring-color: hsl(var(--ring));
+    }
+  }
 }
 
 .bottomInfo {

@@ -136,6 +136,49 @@
     0 9px 28px 8px rgba(0, 0, 0, 0.05);
   --oomol-shadow-lg: 0 16px 32px 0 rgba(0, 0, 0, 0.08), 0 6px 16px 0 rgba(0, 0, 0, 0.12),
     0 9px 28px 8px rgba(0, 0, 0, 0.05);
+
+  /* ----------------------
+     Shadcn UI 变量 (映射到 Oomol 颜色体系)
+     ---------------------- */
+  /* 基础圆角 - 使用 Shadcn 默认值 8px */
+  --radius: 0.5rem;
+
+  /* 边框和输入框 */
+  --border: 0 0% 85%;  /* 映射到 --oomol-border-default #d9d9d9 */
+  --input: 0 0% 85%;   /* 与边框保持一致 */
+  --ring: 242 73% 71%; /* 映射到 --oomol-primary #7d7fe9 */
+
+  /* 背景和前景 */
+  --background: 0 0% 100%;    /* 白色背景 */
+  --foreground: 0 0% 9%;      /* 映射到 --oomol-text-primary */
+
+  /* 主色 - Oomol 紫色 */
+  --primary: 242 73% 71%;          /* #7d7fe9 */
+  --primary-foreground: 0 0% 100%; /* 白色文字 */
+
+  /* 次要色 */
+  --secondary: 0 0% 96%;     /* 映射到 --oomol-bg-elevated #fafafa */
+  --secondary-foreground: 0 0% 9%;
+
+  /* 危险色 */
+  --destructive: 0 100% 65%;       /* 映射到 --oomol-error #ff4d4f */
+  --destructive-foreground: 0 0% 100%;
+
+  /* 静音色 */
+  --muted: 0 0% 96%;         /* 映射到 --oomol-bg-container #f5f5f5 */
+  --muted-foreground: 0 0% 45%; /* 映射到 --oomol-text-tertiary */
+
+  /* 强调色 */
+  --accent: 0 0% 94%;        /* 映射到 --oomol-bg-spotlight #f0f0f0 */
+  --accent-foreground: 0 0% 9%;
+
+  /* 弹出层 */
+  --popover: 0 0% 100%;      /* 白色背景 */
+  --popover-foreground: 0 0% 9%;
+
+  /* 卡片 */
+  --card: 0 0% 100%;         /* 白色背景 */
+  --card-foreground: 0 0% 9%;
 }
 
 /* ============================================
@@ -275,6 +318,46 @@
     0 9px 28px 8px rgba(0, 0, 0, 0.42);
   --oomol-shadow-lg: 0 16px 32px 0 rgba(0, 0, 0, 0.56), 0 6px 16px 0 rgba(0, 0, 0, 0.42),
     0 9px 28px 8px rgba(0, 0, 0, 0.48);
+
+  /* ----------------------
+     Shadcn UI 变量 - 暗色模式 (映射到 Oomol 暗色体系)
+     ---------------------- */
+  /* 边框和输入框 */
+  --border: 0 0% 26%;  /* 映射到 --oomol-border-default #434343 */
+  --input: 0 0% 26%;
+  --ring: 242 73% 71%; /* 主色保持不变 */
+
+  /* 背景和前景 */
+  --background: 0 0% 8%;     /* 映射到 --oomol-bg-base #141414 */
+  --foreground: 0 0% 85%;    /* 映射到 --oomol-text-primary */
+
+  /* 主色 - Oomol 紫色 (保持不变) */
+  --primary: 242 73% 71%;
+  --primary-foreground: 0 0% 100%;
+
+  /* 次要色 */
+  --secondary: 0 0% 15%;     /* 映射到 --oomol-bg-elevated #252525 */
+  --secondary-foreground: 0 0% 85%;
+
+  /* 危险色 (保持不变) */
+  --destructive: 0 100% 65%;
+  --destructive-foreground: 0 0% 100%;
+
+  /* 静音色 */
+  --muted: 0 0% 12%;         /* 映射到 --oomol-bg-container #1f1f1f */
+  --muted-foreground: 0 0% 50%; /* 映射到 --oomol-text-tertiary */
+
+  /* 强调色 */
+  --accent: 0 0% 16%;        /* 映射到 --oomol-bg-spotlight #2a2a2a */
+  --accent-foreground: 0 0% 85%;
+
+  /* 弹出层 */
+  --popover: 0 0% 8%;
+  --popover-foreground: 0 0% 85%;
+
+  /* 卡片 */
+  --card: 0 0% 12%;          /* 映射到 --oomol-bg-container */
+  --card-foreground: 0 0% 85%;
 }
 
 /* ============================================
