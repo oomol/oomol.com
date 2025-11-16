@@ -30,7 +30,8 @@
       "Bash(mkdir:*)",
       "Bash(npm test:*)",
       "Bash(node -e:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(xargs:*)"
     ],
     "deny": [],
     "ask": []
