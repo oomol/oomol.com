@@ -175,58 +175,58 @@
     "message": "完整开发生命周期"
   },
   "HOME.Lifecycle.subtitle": {
-    "message": "Build once, deliver in multiple formats"
+    "message": "一次构建,多种交付方式"
   },
   "HOME.Lifecycle.step1.title": {
-    "message": "Create Workflow & Generate Blocks"
+    "message": "创建工作流 & 生成 Block"
   },
   "HOME.Lifecycle.step1.description": {
-    "message": "Design logic visually or in code. Add AI/PDF/image/adapter tools as needed."
+    "message": "通过可视化或代码设计逻辑,根据需要添加 AI/PDF/图像/适配器工具。"
   },
   "HOME.Lifecycle.step1.detail1": {
-    "message": "Write blocks or let AI generate them"
+    "message": "编写 Block 或让 AI 生成它们"
   },
   "HOME.Lifecycle.step1.detail2": {
-    "message": "OOMOL turns them into a sharable workflow package"
+    "message": "OOMOL 将它们转换为可共享的工作流包"
   },
   "HOME.Lifecycle.step2.title": {
-    "message": "Publish to Community"
+    "message": "发布到社区"
   },
   "HOME.Lifecycle.step2.description": {
-    "message": "Share your package publicly or privately. Collaborate with others or build commercial add-ons."
+    "message": "公开或私密分享您的包,与他人协作或构建商业附加组件。"
   },
   "HOME.Lifecycle.step3.title": {
-    "message": "Deploy Anywhere"
+    "message": "随处部署"
   },
   "HOME.Lifecycle.step3.description": {
-    "message": "Choose where and how to run your workflows:"
+    "message": "选择运行工作流的位置和方式:"
   },
   "HOME.Lifecycle.step3.detail1": {
-    "message": "Local: Run on your PC/NAS and share via FRP（P2P-like）"
+    "message": "本地:在 PC/NAS 上运行并通过 FRP 共享(类 P2P)"
   },
   "HOME.Lifecycle.step3.detail2": {
-    "message": "Headless: Deploy as a container in your own infra"
+    "message": "Headless:在您自己的基础设施中作为容器部署"
   },
   "HOME.Lifecycle.step3.detail3": {
-    "message": "Cloud: One-click deployment to OOMOL Cloud（免运维、可扩展）"
+    "message": "云端:一键部署到 OOMOL Cloud(托管 & 可扩展)"
   },
   "HOME.Lifecycle.step4.title": {
-    "message": "Deliver as Products"
+    "message": "作为产品交付"
   },
   "HOME.Lifecycle.step4.description": {
-    "message": "Your workflow can be delivered as:"
+    "message": "您的工作流可以交付为:"
   },
   "HOME.Lifecycle.step4.detail1": {
     "message": "REST API"
   },
   "HOME.Lifecycle.step4.detail2": {
-    "message": "MCP agent tool"
+    "message": "MCP Agent 工具"
   },
   "HOME.Lifecycle.step4.detail3": {
-    "message": "Chat-based app"
+    "message": "基于对话的应用"
   },
   "HOME.Lifecycle.step4.detail4": {
-    "message": "Applet-style forms"
+    "message": "小程序式表单"
   },
   "HOME.PdfCraft.title": {
     "message": "官方开源项目：PDF-Craft"
