@@ -6,7 +6,11 @@
       "Bash(lsof:*)",
       "Bash(xargs kill:*)",
       "Bash(npm run start:en:*)",
-      "Bash(npm run)"
+      "Bash(npm run)",
+      "Bash(npm run lint:*)",
+      "Bash(npm run type-check:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npm run typecheck:*)"
     ],
     "deny": [],
     "ask": []
