@@ -486,9 +486,6 @@
   "HOME.Products.subtitle": {
     "message": "探索 OOMOL 生态系统中的三大核心产品，从创造到分享再到使用，完整的 AI 工具生命周期。"
   },
-  "CREATE.studio.description": {
-    "message": "OOMOL 推出的 AI 工具创作平台。该平台的核心优势在于：既保留了传统编程的无限创造能力，又具备低代码开发的便捷性，让用户能够高效地构建各类 AI 工具。"
-  },
   "HOME.Products.studio.description": {
     "message": "OOMOL 推出的 AI 工具创作平台。该平台的核心优势在于：既保留了传统编程的无限创造能力，又具备低代码开发的便捷性，让用户能够高效地构建各类 AI 工具。"
   },
@@ -758,18 +755,6 @@
   },
   "HOME.GetStartedPrompt.subtitle": {
     "message": "下载 OOMOL Studio，将你的想法转化为真实的工作流、API、MCP 工具和 AI 驱动的产品。"
-  },
-  "Easily connect code and services": {
-    "message": "OOMOL Studio 通过直观的视觉交互轻松连接代码片段和 API 服务，帮助用户缩短从想法到产品的距离"
-  },
-  "OOMOL is a workflow authoring and orchestration tool. Provides a variety of programming language operating environments, built-in rich tool suites, and supports containers and cloud-native.": {
-    "message": "OOMOL Studio 是一个工作流编写与编排软件。提供多种编程语言的运行环境，内置丰富的工具套件，支持容器和云原生。"
-  },
-  "Assisting you in effortlessly accomplishing automation and data analysis tasks.": {
-    "message": "帮助你轻松完成数据处理、微服务构建和自动化云端部署。"
-  },
-  "Download": {
-    "message": "下载使用"
   },
   "HOME.Pricing.title": {
     "message": "价格"
@@ -1482,10 +1467,6 @@
     "message": "页面路径",
     "description": "The ARIA label for the breadcrumbs"
   },
-  "theme.docs.DocCard.categoryDescription": {
-    "message": "{count} 个项目",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
   "theme.docs.paginator.navAriaLabel": {
     "message": "文件选项卡",
     "description": "The ARIA label for the docs pagination"
@@ -1576,10 +1557,6 @@
   "theme.CodeBlock.wordWrapToggle": {
     "message": "切换自动换行",
     "description": "The title attribute for toggle word wrapping button of code block lines"
-  },
-  "theme.DocSidebarItem.toggleCollapsedCategoryAriaLabel": {
-    "message": "打开/收起侧边栏菜单「{label}」",
-    "description": "The ARIA label to toggle the collapsible sidebar category"
   },
   "theme.NavBar.navAriaLabel": {
     "message": "主导航",

@@ -26,7 +26,8 @@
       "Bash(comm -23:*)",
       "Bash(sort:*)",
       "Bash(python3:*)",
-      "Bash(/dev/null)"
+      "Bash(/dev/null)",
+      "Bash(mkdir:*)"
     ],
     "deny": [],
     "ask": []
