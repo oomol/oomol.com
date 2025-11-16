@@ -1,5 +1,12 @@
 import { translate } from "@docusaurus/Translate";
 import { Button } from "../ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../ui/card";
 import { BlurFade } from "../magic-ui/BlurFade";
 import styles from "./style.module.scss";
 import React from "react";
@@ -56,34 +63,47 @@ const HomepagePricing = () => {
       </h1>
       <BlurFade>
         <div className={styles.pricing}>
-          {pricingData.map((item, index) => (
-            <div key={index} className={`${styles.card} ${item.className}`}>
-              <h2 className={styles["card-title"]}>
-                {item.title}
-                {item.tag && <span className={styles.tag}>{item.tag}</span>}
-              </h2>
-              {item.description && <p className={styles.description}>{item.description}</p>}
-              <h3 className={styles.price}>{item.price}</h3>
-              {item.features && (
-                <ul>
-                  {item.features.map((feature, idx) => (
-                    <li key={idx} className={styles.option}>
-                      <i className={`${styles.check} i-codicon:check`} />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              )}
-              <Button className={styles.btn}>{item.buttonText}</Button>
-            </div>
-          ))}
+          {pricingData.map((item, index) => {
+            const cardClassName = item.className ? item.className : "";
+            return (
+              <Card key={index} className={styles.card + " " + cardClassName}>
+                <CardHeader>
+                  <CardTitle className={styles["card-title"]}>
+                    {item.title}
+                    {item.tag && <span className={styles.tag}>{item.tag}</span>}
+                  </CardTitle>
+                  {item.description && <p className={styles.description}>{item.description}</p>}
+                  <h3 className={styles.price}>{item.price}</h3>
+                </CardHeader>
+                <CardContent>
+                  {item.features && (
+                    <ul>
+                      {item.features.map((feature, idx) => (
+                        <li key={idx} className={styles.option}>
+                          <i className={styles.check + " i-codicon:check"} />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </CardContent>
+                <CardFooter>
+                  <Button className={styles.btn}>{item.buttonText}</Button>
+                </CardFooter>
+              </Card>
+            );
+          })}
           <div className={styles["top-up-box"]}>
             {pricingTopUpData.map((item, index) => (
-              <div key={index} className={`${styles.card} ${styles["top-up"]}`}>
-                <h2>{item.title}</h2>
-                <h3>{item.price}</h3>
-                <Button className={styles.btn}>{item.buttonText}</Button>
-              </div>
+              <Card key={index} className={styles.card + " " + styles["top-up"]}>
+                <CardHeader>
+                  <CardTitle>{item.title}</CardTitle>
+                  <h3>{item.price}</h3>
+                </CardHeader>
+                <CardFooter>
+                  <Button className={styles.btn}>{item.buttonText}</Button>
+                </CardFooter>
+              </Card>
             ))}
           </div>
         </div>

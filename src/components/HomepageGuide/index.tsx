@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import React from "react";
 import { translate } from "@docusaurus/Translate";
 import { Button } from "../ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import type { DocusaurusContext } from "@docusaurus/types";
 
@@ -63,16 +64,22 @@ export default function HomepageGuide() {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className={`${styles["community-card"]} ${styles[link.color]}`}
+            className={styles[link.color]}
           >
-            <div className={styles["card-icon"]}>
-              <i className={link.icon} />
-            </div>
-            <h3 className={styles["card-title"]}>{link.title}</h3>
-            <p className={styles["card-description"]}>{link.description}</p>
-            <div className={styles["card-arrow"]}>
-              <i className="i-codicon-arrow-right" />
-            </div>
+            <Card className={styles["community-card"]}>
+              <CardHeader>
+                <div className={styles["card-icon"]}>
+                  <i className={link.icon} />
+                </div>
+                <CardTitle className={styles["card-title"]}>{link.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className={styles["card-description"]}>{link.description}</p>
+                <div className={styles["card-arrow"]}>
+                  <i className="i-codicon-arrow-right" />
+                </div>
+              </CardContent>
+            </Card>
           </a>
         ))}
       </div>

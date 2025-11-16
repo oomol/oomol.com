@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 import { translate } from "@docusaurus/Translate";
 import { BlurFade } from "../magic-ui/BlurFade";
+import { Card, CardContent, CardHeader } from "../ui/card";
 import clsx from "clsx";
 
 type ProductType = {
@@ -71,8 +72,8 @@ const products: ProductType[] = [
 const ProductCard = ({ product }: { product: ProductType }) => {
   return (
     <BlurFade className={styles["product-blur-fade"]}>
-      <div className={clsx(styles["product-card"], styles[product.color])}>
-        <div className={styles["product-header"]}>
+      <Card className={clsx(styles["product-card"], styles[product.color])}>
+        <CardHeader className={styles["product-header"]}>
           <div className={styles["icon-wrapper"]}>
             <i className={clsx(product.icon, styles.icon)} />
           </div>
@@ -82,17 +83,19 @@ const ProductCard = ({ product }: { product: ProductType }) => {
               {product.subtitle}
             </span>
           </div>
-        </div>
-        <p className={styles["product-description"]}>{product.description}</p>
-        <div className={styles["product-features"]}>
-          {product.features.map((feature, index) => (
-            <span key={index} className={styles.feature}>
-              <i className="i-codicon-check" />
-              {feature}
-            </span>
-          ))}
-        </div>
-      </div>
+        </CardHeader>
+        <CardContent>
+          <p className={styles["product-description"]}>{product.description}</p>
+          <div className={styles["product-features"]}>
+            {product.features.map((feature, index) => (
+              <span key={index} className={styles.feature}>
+                <i className="i-codicon-check" />
+                {feature}
+              </span>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
     </BlurFade>
   );
 };
