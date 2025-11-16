@@ -20,8 +20,11 @@
   "Theme.Navbar.community": {
     "message": "社区"
   },
-  "HOME.FirstScreen.slogan": {
-    "message": "构建、部署和分享 AI 驱动的工作流 — 从你自己的机器出发"
+  "HOME.FirstScreen.slogan.line1": {
+    "message": "构建、部署和分享 AI 驱动的工作流"
+  },
+  "HOME.FirstScreen.slogan.line2": {
+    "message": "从你自己的机器出发"
   },
   "HOME.FirstScreen.script": {
     "message": "使用 FRP + 容器技术，将你的本地 PC 或 NAS 变成真正的服务器。创建函数块、组合工作流、发布 API，并将它们转化为 Agent 的工具。"
