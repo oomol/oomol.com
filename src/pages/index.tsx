@@ -5,7 +5,6 @@ import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
 import HomepageValueProps from "@site/src/components/HomepageValueProps";
 import HomepageCoreFeatures from "@site/src/components/HomepageCoreFeatures";
 import HomepageLifecycle from "@site/src/components/HomepageLifecycle";
-import HomepageWhyOomol from "@site/src/components/HomepageWhyOomol";
 import HomepageProductComparison from "@site/src/components/HomepageProductComparison";
 import HomepageChatAgent from "@site/src/components/HomepageChatAgent";
 import HomepagePdfCraftShowcase from "@site/src/components/HomepagePdfCraftShowcase";
@@ -27,7 +26,6 @@ export default function Home() {
         <HomepageValueProps />
         <HomepageCoreFeatures />
         <HomepageLifecycle />
-        <HomepageWhyOomol />
         <HomepagePdfCraftShowcase />
         <HomepageProductComparison />
         <HomepageChatAgent />
