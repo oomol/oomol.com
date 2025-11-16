@@ -8,6 +8,7 @@ import HomepageLifecycle from "@site/src/components/HomepageLifecycle";
 import HomepageProductComparison from "@site/src/components/HomepageProductComparison";
 import HomepageChatAgent from "@site/src/components/HomepageChatAgent";
 import HomepagePdfCraftShowcase from "@site/src/components/HomepagePdfCraftShowcase";
+import HomepageWhyOomol from "@site/src/components/HomepageWhyOomol";
 
 import Head from "@docusaurus/Head";
 import HomepageGuide from "../components/HomepageGuide";
@@ -26,6 +27,7 @@ export default function Home() {
         <HomepageValueProps />
         <HomepageCoreFeatures />
         <HomepageLifecycle />
+        <HomepageWhyOomol />
         <HomepagePdfCraftShowcase />
         <HomepageProductComparison />
         <HomepageChatAgent />

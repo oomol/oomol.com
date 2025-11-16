@@ -165,6 +165,63 @@
   "HOME.Lifecycle.step4.detail4": {
     "message": "Applet-style forms"
   },
+  "HOME.WhyOomol.title": {
+    "message": "Why Choose OOMOL"
+  },
+  "HOME.WhyOomol.subtitle": {
+    "message": "Compare with other tools and see how OOMOL redefines developer experience"
+  },
+  "HOME.WhyOomol.featureColumn": {
+    "message": "Feature"
+  },
+  "HOME.WhyOomol.othersColumn": {
+    "message": "Other Tools"
+  },
+  "HOME.WhyOomol.feature1": {
+    "message": "Build Your Own Functions"
+  },
+  "HOME.WhyOomol.oomol1": {
+    "message": "Block = Function, Generatable"
+  },
+  "HOME.WhyOomol.feature2": {
+    "message": "Compose Functions → New API"
+  },
+  "HOME.WhyOomol.oomol2": {
+    "message": "Complete Workflow Builder"
+  },
+  "HOME.WhyOomol.feature3": {
+    "message": "Local GPU Execution"
+  },
+  "HOME.WhyOomol.oomol3": {
+    "message": "WSL2 + NVIDIA Support"
+  },
+  "HOME.WhyOomol.feature4": {
+    "message": "Local + Cloud Deployment"
+  },
+  "HOME.WhyOomol.oomol4": {
+    "message": "All-in-One"
+  },
+  "HOME.WhyOomol.feature5": {
+    "message": "MCP Tool Generation"
+  },
+  "HOME.WhyOomol.oomol5": {
+    "message": "Native Support"
+  },
+  "HOME.WhyOomol.feature6": {
+    "message": "True Developer Experience"
+  },
+  "HOME.WhyOomol.oomol6": {
+    "message": "Native VSCode + AI"
+  },
+  "HOME.WhyOomol.supported": {
+    "message": "Supported"
+  },
+  "HOME.WhyOomol.limited": {
+    "message": "Limited"
+  },
+  "HOME.WhyOomol.notSupported": {
+    "message": "Rarely Supported"
+  },
   "HOME.PdfCraft.title": {
     "message": "Our Open Source Project: PDF-Craft"
   },
