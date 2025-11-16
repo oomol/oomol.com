@@ -27,7 +27,10 @@
       "Bash(sort:*)",
       "Bash(python3:*)",
       "Bash(/dev/null)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(npm test:*)",
+      "Bash(node -e:*)",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []
