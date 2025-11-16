@@ -62,7 +62,13 @@ export const LocalDropdown = ({ queryString = "" }: LocalDropdownProps) => {
               {formateLocale(currentLocale)}
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
+          <DropdownMenuContent
+            align="end"
+            style={{
+              backgroundColor: 'var(--oomol-bg-container)',
+              borderColor: 'var(--oomol-border-default)'
+            }}
+          >
             <DropdownMenuRadioGroup value={currentLocale} onValueChange={handleLocaleChange}>
               {locales.map(locale => (
                 <DropdownMenuRadioItem key={locale} value={locale}>

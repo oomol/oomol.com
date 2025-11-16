@@ -1148,6 +1148,15 @@
     "message": "Collapse sidebar category '{label}'",
     "description": "The ARIA label to collapse the sidebar category"
   },
+  "Theme.ColorMode.light": {
+    "message": "Light Mode"
+  },
+  "Theme.ColorMode.dark": {
+    "message": "Dark Mode"
+  },
+  "Theme.ColorMode.system": {
+    "message": "Follow System"
+  },
   "theme.NavBar.navAriaLabel": {
     "message": "Main",
     "description": "The ARIA label for the main navigation"

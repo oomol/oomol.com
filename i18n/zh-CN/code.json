@@ -1780,6 +1780,15 @@
     "message": "折叠侧边栏分类 '{label}'",
     "description": "The ARIA label to collapse the sidebar category"
   },
+  "Theme.ColorMode.light": {
+    "message": "浅色模式"
+  },
+  "Theme.ColorMode.dark": {
+    "message": "深色模式"
+  },
+  "Theme.ColorMode.system": {
+    "message": "跟随系统"
+  },
   "theme.blog.author.pageTitle": {
     "message": "{authorName} - {nPosts}",
     "description": "The title of the page for a blog author"

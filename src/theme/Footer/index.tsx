@@ -105,17 +105,18 @@ const logoNodeDataCN: LogoNodeDataType[] = [
 ];
 
 const Footer: React.FC = () => {
-  const { siteConfig, i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
-    siteConfig: {
-      themeConfig: {
-        footer: {
-          copyright: string;
-          links: Array<{ title: string; items: FooterLinkProps[] }>
-        }
-      }
+  const { siteConfig, i18n } =
+    useDocusaurusContext() as unknown as DocusaurusContext & {
+      siteConfig: {
+        themeConfig: {
+          footer: {
+            copyright: string;
+            links: Array<{ title: string; items: FooterLinkProps[] }>;
+          };
+        };
+      };
+      i18n: { currentLocale: string };
     };
-    i18n: { currentLocale: string };
-  };
   const { copyright, links = [] } = siteConfig.themeConfig.footer;
   const hasFooter = !!siteConfig.themeConfig.footer;
   const currentLocale = i18n.currentLocale;
@@ -137,7 +138,12 @@ const Footer: React.FC = () => {
 
   const logoNodes = logoNodesArray.map((data, index) => {
     return (
-      <a target="_blank" rel="noreferrer" href={data.href} key={`${index}-${data.name}`}>
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href={data.href}
+        key={`${index}-${data.name}`}
+      >
         <div className={styles.iconBox}>
           <i
             className={data.iconClass}
@@ -153,12 +159,7 @@ const Footer: React.FC = () => {
       <div className={clsx(styles.content, styles.center)}>
         <div className={styles.leftBox}>
           <div className={styles.leftBoxLogo}>
-            <img
-              alt="oomol"
-              src={logoSrc}
-              height={24}
-              loading="lazy"
-            />
+            <img alt="oomol" src={logoSrc} height={24} loading="lazy" />
           </div>
           <div className={styles.iconOutBox}>
             {logoNodes}
@@ -216,7 +217,11 @@ const Footer: React.FC = () => {
           <div className={styles.bottomInfo}>
             {copyright}
             {currentLocale === "zh-CN" && (
-              <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">
+              <a
+                href="https://beian.miit.gov.cn/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 浙ICP备2023018874号-1
               </a>
             )}

@@ -8,19 +8,21 @@ import {
   DropdownMenuTrigger,
 } from "@site/src/components/ui/dropdown-menu";
 import { useState, useEffect } from "react";
+import { translate } from "@docusaurus/Translate";
 
 type ColorModeType = "light" | "dark" | "system";
-
-const modeMap: Record<ColorModeType, string> = {
-  light: "浅色模式",
-  dark: "深色模式",
-  system: "跟随系统",
-};
 
 const modeIconMap: Record<ColorModeType, string> = {
   light: "i-lucide-sun",
   dark: "i-lucide-moon",
   system: "i-lucide-sun-moon",
+};
+
+const getModeText = (mode: ColorModeType) => {
+  return translate({
+    id: `Theme.ColorMode.${mode}`,
+    message: mode === "light" ? "Light Mode" : mode === "dark" ? "Dark Mode" : "Follow System",
+  });
 };
 
 export const ColorModeDropdown = () => {
@@ -70,9 +72,9 @@ export const ColorModeDropdown = () => {
 
   const getDisplayText = () => {
     if (selectedMode === "system") {
-      return modeMap.system;
+      return getModeText("system");
     }
-    return modeMap[colorMode];
+    return getModeText(colorMode);
   };
 
   return (
@@ -83,12 +85,18 @@ export const ColorModeDropdown = () => {
           {getDisplayText()}
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent
+        align="end"
+        style={{
+          backgroundColor: 'var(--oomol-bg-container)',
+          borderColor: 'var(--oomol-border-default)'
+        }}
+      >
         <DropdownMenuRadioGroup value={selectedMode} onValueChange={(value) => handleModeChange(value as ColorModeType)}>
           {modes.map(mode => (
             <DropdownMenuRadioItem key={mode} value={mode} className="gap-2">
               <i className={modeIconMap[mode]} style={{ fontSize: "14px" }} />
-              <span>{modeMap[mode]}</span>
+              <span>{getModeText(mode)}</span>
             </DropdownMenuRadioItem>
           ))}
         </DropdownMenuRadioGroup>
