@@ -32,7 +32,10 @@
       "Bash(node -e:*)",
       "Bash(curl:*)",
       "Bash(xargs:*)",
-      "Bash(test:*)"
+      "Bash(test:*)",
+      "Bash(npx shadcn@latest add:*)",
+      "Bash(for file in *.tsx)",
+      "Bash(do sed -i '' 's|from \"\"@/lib/utils\"\"|from \"\"@site/src/lib/utils\"\"|g' \"$file\")"
     ],
     "deny": [],
     "ask": []

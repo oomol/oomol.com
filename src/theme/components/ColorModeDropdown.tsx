@@ -1,7 +1,12 @@
-import styles from "./ColorModeDropdown.module.scss";
-
 import { useColorMode } from "@docusaurus/theme-common";
 import { Button } from "@site/src/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
+} from "@site/src/components/ui/dropdown-menu";
 import { useState, useEffect } from "react";
 
 type ColorModeType = "light" | "dark" | "system";
@@ -20,7 +25,6 @@ const modeIconMap: Record<ColorModeType, string> = {
 
 export const ColorModeDropdown = () => {
   const { colorMode, setColorMode } = useColorMode();
-  const [isShow, setIsShow] = useState(false);
   const [selectedMode, setSelectedMode] = useState<ColorModeType>(() => {
     if (typeof window !== 'undefined') {
       const storedMode = localStorage.getItem("theme") as ColorModeType | null;
@@ -49,33 +53,12 @@ export const ColorModeDropdown = () => {
     setSelectedMode(mode);
     if (mode === "system") {
       localStorage.removeItem("theme");
-      // 获取系统主题
       const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
       setColorMode(systemTheme);
     } else {
       localStorage.setItem("theme", mode);
       setColorMode(mode);
     }
-    setIsShow(false);
-  };
-
-  const renderModeContent = () => {
-    return (
-      <div className={styles["item-box"]}>
-        {modes.map(mode => {
-          return (
-            <div
-              key={mode}
-              className={`${styles.item} ${mode === selectedMode ? styles.selected : ""}`}
-              onClick={() => handleModeChange(mode)}
-            >
-              <i className={modeIconMap[mode]} style={{ fontSize: "14px" }} />
-              <div>{modeMap[mode]}</div>
-            </div>
-          );
-        })}
-      </div>
-    );
   };
 
   const getDisplayIcon = () => {
@@ -93,16 +76,23 @@ export const ColorModeDropdown = () => {
   };
 
   return (
-    <div
-      className={styles.container}
-      onMouseEnter={() => setIsShow(true)}
-      onMouseLeave={() => setIsShow(false)}
-    >
-      <div className={styles.content}>{isShow && renderModeContent()}</div>
-      <Button className={styles["mode-btn"]}>
-        <div className={getDisplayIcon()} />
-        {getDisplayText()}
-      </Button>
-    </div>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="ghost" className="gap-2">
+          <div className={getDisplayIcon()} />
+          {getDisplayText()}
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuRadioGroup value={selectedMode} onValueChange={(value) => handleModeChange(value as ColorModeType)}>
+          {modes.map(mode => (
+            <DropdownMenuRadioItem key={mode} value={mode} className="gap-2">
+              <i className={modeIconMap[mode]} style={{ fontSize: "14px" }} />
+              <span>{modeMap[mode]}</span>
+            </DropdownMenuRadioItem>
+          ))}
+        </DropdownMenuRadioGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };

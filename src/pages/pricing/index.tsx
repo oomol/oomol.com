@@ -1,49 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import Layout from "../../theme/Layout";
 import styles from "./styles.module.scss";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { DownloadButton } from "@site/src/components/DownloadButton";
 import { Button } from "@site/src/components/ui/button";
-import clsx from "clsx";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@site/src/components/ui/accordion";
 import { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import type { DocusaurusContext } from "@docusaurus/types";
-
-interface QnABoxProps {
-  question: string;
-  answer: string;
-}
-const QnABox = ({ question, answer }: QnABoxProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div className={styles.dropdownBox}>
-      <div
-        className={styles.dropdownHeader}
-        onClick={e => {
-          e.stopPropagation(); // 防止冒泡触发父级 click
-          setIsOpen(!isOpen);
-        }}
-      >
-        <div className={styles.mainText}>{question}</div>
-        <i
-          className={`${styles.icon} ${isOpen ? "i-codicon:chevron-up" : "i-codicon:chevron-down"}`}
-          onClick={e => {
-            e.stopPropagation(); // 防止冒泡触发父级 click
-            setIsOpen(!isOpen);
-          }}
-        />
-      </div>
-      <div
-        className={clsx(styles.dropdownContent, {
-          [styles.active]: isOpen,
-        })}
-      >
-        {answer}
-      </div>
-    </div>
-  );
-};
 
 export default function Index() {
   const context = useDocusaurusContext() as unknown as DocusaurusContext & {
@@ -187,12 +156,19 @@ export default function Index() {
         </div>
         <div className={styles.questionBox}>
           <div className={styles.QABox}>
-            {QAData.map((item, index) => (
-              <div key={index}>
-                <QnABox question={item.question} answer={item.answer} />
-                {index !== QAData.length - 1 && <div className={styles.line} />}
-              </div>
-            ))}
+            <Accordion type="single" collapsible className="w-full">
+              {QAData.map((item, index) => (
+                <AccordionItem key={index} value={`item-${index}`} className="border-none">
+                  <AccordionTrigger className={styles.dropdownHeader}>
+                    <span className={styles.mainText}>{item.question}</span>
+                  </AccordionTrigger>
+                  <AccordionContent className={styles.dropdownContent}>
+                    {item.answer}
+                  </AccordionContent>
+                  {index !== QAData.length - 1 && <div className={styles.line} />}
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
           <GetStartedPrompt />
         </div>
