@@ -1,5 +1,13 @@
 import styles from "./styles.module.scss";
 import { translate } from "@docusaurus/Translate";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@site/src/components/ui/table";
 
 // 对比数据
 const comparisonData = [
@@ -70,40 +78,40 @@ export default function HomepageWhyOomol() {
 
         {/* Comparison Table */}
         <div className={styles.tableWrapper}>
-          <table className={styles.comparisonTable}>
-            <thead>
-              <tr>
-                <th className={styles.featureColumn}>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead className={styles.featureColumn}>
                   {translate({ message: "HOME.WhyOomol.column.feature" })}
-                </th>
-                <th className={styles.othersColumn}>
+                </TableHead>
+                <TableHead className={styles.othersColumn}>
                   {translate({ message: "HOME.WhyOomol.column.others" })}
-                </th>
-                <th className={styles.oomolColumn}>
+                </TableHead>
+                <TableHead className={styles.oomolColumn}>
                   {translate({ message: "HOME.WhyOomol.column.oomol" })}
-                </th>
-              </tr>
-            </thead>
-            <tbody>
+                </TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
               {comparisonData.map((row, index) => (
-                <tr key={index} className={styles.tableRow}>
-                  <td className={styles.featureCell}>{row.feature}</td>
-                  <td className={styles.othersCell}>
+                <TableRow key={index}>
+                  <TableCell className={styles.featureCell}>{row.feature}</TableCell>
+                  <TableCell className={styles.othersCell}>
                     <div className={styles.cellContent}>
                       <StatusIcon status={row.othersStatus} />
                       <span>{row.others}</span>
                     </div>
-                  </td>
-                  <td className={styles.oomolCell}>
+                  </TableCell>
+                  <TableCell className={styles.oomolCell}>
                     <div className={styles.cellContent}>
                       <StatusIcon status={row.oomolStatus} />
                       <span>{row.oomol}</span>
                     </div>
-                  </td>
-                </tr>
+                  </TableCell>
+                </TableRow>
               ))}
-            </tbody>
-          </table>
+            </TableBody>
+          </Table>
         </div>
 
         {/* Mobile Cards View */}
