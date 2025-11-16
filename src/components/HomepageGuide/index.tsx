@@ -2,7 +2,7 @@ import styles from "./styles.module.scss";
 
 import React from "react";
 import { translate } from "@docusaurus/Translate";
-import LinkBtn from "../Button/LinkBtn";
+import { Button } from "../ui/button";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import type { DocusaurusContext } from "@docusaurus/types";
 
@@ -78,11 +78,12 @@ export default function HomepageGuide() {
       </div>
 
       <div style={{ marginTop: 40 }}>
-        <LinkBtn
-          text={translate({ message: "HOME.Guide.link-button-text" })}
-          icon="i-codicon:arrow-right"
-          url={"https://hub.oomol.com/"}
-        />
+        <Button asChild>
+          <a href="https://hub.oomol.com/" target="_blank" rel="noopener noreferrer">
+            <i className="i-codicon:arrow-right" />
+            {translate({ message: "HOME.Guide.link-button-text" })}
+          </a>
+        </Button>
       </div>
     </section>
   );

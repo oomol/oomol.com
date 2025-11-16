@@ -5,7 +5,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
 import { BlurFade } from "../magic-ui/BlurFade";
 import clsx from "clsx";
-import LinkBtn from "../Button/LinkBtn";
+import { Button } from "../ui/button";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import type { DocusaurusContext } from "@docusaurus/types";
 
@@ -115,15 +115,20 @@ export default function HomepageFeatures() {
           );
         })}
       </div>
-      <LinkBtn
-        text={translate({ message: "HOME.Features.linkBtn-text" })}
-        icon="i-codicon-arrow-right"
-        url={
-          i18n.currentLocale === "zh-CN"
-            ? "https://oomol.com/zh-CN/features"
-            : "https://oomol.com/features"
-        }
-      />
+      <Button asChild>
+        <a
+          href={
+            i18n.currentLocale === "zh-CN"
+              ? "https://oomol.com/zh-CN/features"
+              : "https://oomol.com/features"
+          }
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="i-codicon-arrow-right" />
+          {translate({ message: "HOME.Features.linkBtn-text" })}
+        </a>
+      </Button>
     </section>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import Layout from "../../theme/Layout";
-import { Button } from "@site/src/components/Button";
+import { Button } from "@site/src/components/ui/button";
 export default function Support() {
   return (
     <Layout>
@@ -18,11 +18,14 @@ export default function Support() {
                 Go to our GitHub discussions to browse for help and best
                 practices.
               </div>
-              <Button
-                target="_blank"
-                href="https://github.com/orgs/oomol-lab/discussions"
-              >
-                Github Discussions
+              <Button asChild>
+                <a
+                  target="_blank"
+                  href="https://github.com/orgs/oomol-lab/discussions"
+                  rel="noopener noreferrer"
+                >
+                  Github Discussions
+                </a>
               </Button>
             </div>
           </div>
@@ -39,8 +42,14 @@ export default function Support() {
                 If you need instant communication, please join our Discord
                 server.
               </div>
-              <Button target="_blank" href="https://discord.gg/W3evr2kJDa">
-                Join Discord
+              <Button asChild>
+                <a
+                  target="_blank"
+                  href="https://discord.gg/W3evr2kJDa"
+                  rel="noopener noreferrer"
+                >
+                  Join Discord
+                </a>
               </Button>
             </div>
           </div>
@@ -54,7 +63,9 @@ export default function Support() {
                 If you need help beyond the product, you can contact us by
                 email.
               </div>
-              <Button href="mailto:support@oomol.com">Email To Us</Button>
+              <Button asChild>
+                <a href="mailto:support@oomol.com">Email To Us</a>
+              </Button>
             </div>
           </div>
         </div>

@@ -24,6 +24,8 @@
     "@docusaurus/faster": "3.9.2",
     "@docusaurus/preset-classic": "3.9.2",
     "@mdx-js/react": "^3.0.0",
+    "@radix-ui/react-slot": "^1.2.4",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^1.2.1",
     "docusaurus-plugin-sass": "^0.2.4",
     "framer-motion": "^11.14.4",

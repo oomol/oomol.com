@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import Layout from "@theme/Layout";
 import { translate } from "@docusaurus/Translate";
 import { Popover } from "@site/src/components/Popover";
-import LinkBtn from "@site/src/components/Button/LinkBtn";
+import { Button } from "@site/src/components/ui/button";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { useEffect, useState } from "react";
 
@@ -253,22 +253,22 @@ export default function Community() {
             <div className={styles["contactList"]}>
               {contentData.map((item) => {
                 return (
-                  <LinkBtn
-                    key={item.name}
-                    text={item.text}
-                    icon={item.icon}
-                    url={item.href}
-                  />
+                  <Button key={item.name} asChild>
+                    <a href={item.href} target="_blank" rel="noopener noreferrer">
+                      {item.icon}
+                      {item.text}
+                    </a>
+                  </Button>
                 );
               })}
               <Popover
                 trigger={
-                  <LinkBtn
-                    text={translate({
+                  <Button>
+                    <i className={`${styles.logo} i-simple-icons-wechat`} />
+                    {translate({
                       message: "HOME.Community.contact-we-com",
                     })}
-                    icon={<i className={`${styles.logo} i-simple-icons-wechat`} />}
-                  />
+                  </Button>
                 }
                 position="top"
                 className="popoverCentered"

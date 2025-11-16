@@ -31,7 +31,8 @@
       "Bash(npm test:*)",
       "Bash(node -e:*)",
       "Bash(curl:*)",
-      "Bash(xargs:*)"
+      "Bash(xargs:*)",
+      "Bash(test:*)"
     ],
     "deny": [],
     "ask": []

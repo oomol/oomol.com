@@ -3,7 +3,7 @@ import Layout from "../../theme/Layout";
 import styles from "./styles.module.scss";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { DownloadButton } from "@site/src/components/DownloadButton";
-import LinkBtn from "@site/src/components/Button/LinkBtn";
+import { Button } from "@site/src/components/ui/button";
 import clsx from "clsx";
 import { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -137,12 +137,12 @@ export default function Index() {
                 {translate({ message: "PRICING.standard.price.after" })}
               </div>
             </div>
-            <LinkBtn
-              text={translate({ message: "PRICING.buttonText" })}
-              icon="i-codicon:credit-card"
-              url="https://console.oomol.com/"
-              className={styles.modifyBtn}
-            />
+            <Button asChild className={styles.modifyBtn}>
+              <a href="https://console.oomol.com/" target="_blank" rel="noopener noreferrer">
+                <i className="i-codicon:credit-card" />
+                {translate({ message: "PRICING.buttonText" })}
+              </a>
+            </Button>
             <div className={styles.listBox}>
               <div className={styles.listItem}>
                 <i className={`${styles["listIcon"]} i-codicon-check`} />

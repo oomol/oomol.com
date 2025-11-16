@@ -1,5 +1,5 @@
 import { translate } from "@docusaurus/Translate";
-import { Button } from "../Button";
+import { Button } from "../ui/button";
 import { BlurFade } from "../magic-ui/BlurFade";
 import styles from "./style.module.scss";
 import React from "react";

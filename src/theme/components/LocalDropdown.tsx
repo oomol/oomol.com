@@ -4,7 +4,7 @@ import { useLocation } from "@docusaurus/router";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import type { DocusaurusContext } from "@docusaurus/types";
 import { useAlternatePageUtils } from "@docusaurus/theme-common/internal";
-import { Button } from "@site/src/components/Button";
+import { Button } from "@site/src/components/ui/button";
 import { useState } from "react";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 
@@ -80,11 +80,8 @@ export const LocalDropdown = ({ queryString = "" }: LocalDropdownProps) => {
       onMouseLeave={() => setIsShow(false)}
     >
       <div className={styles.content}>{isShow && renderBtnContent()}</div>
-      <Button
-        className={styles["language-btn"]}
-        icon={<div className="i-codicon-globe" />}
-        iconPosition="start"
-      >
+      <Button className={styles["language-btn"]}>
+        <div className="i-codicon-globe" />
         {formateLocale(currentLocale)}
       </Button>
     </div>

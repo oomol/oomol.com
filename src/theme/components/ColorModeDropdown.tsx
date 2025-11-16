@@ -1,7 +1,7 @@
 import styles from "./ColorModeDropdown.module.scss";
 
 import { useColorMode } from "@docusaurus/theme-common";
-import { Button } from "@site/src/components/Button";
+import { Button } from "@site/src/components/ui/button";
 import { useState, useEffect } from "react";
 
 type ColorModeType = "light" | "dark" | "system";
@@ -99,11 +99,8 @@ export const ColorModeDropdown = () => {
       onMouseLeave={() => setIsShow(false)}
     >
       <div className={styles.content}>{isShow && renderModeContent()}</div>
-      <Button
-        className={styles["mode-btn"]}
-        icon={<div className={getDisplayIcon()} />}
-        iconPosition="start"
-      >
+      <Button className={styles["mode-btn"]}>
+        <div className={getDisplayIcon()} />
         {getDisplayText()}
       </Button>
     </div>
