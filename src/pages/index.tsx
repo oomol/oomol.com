@@ -11,7 +11,6 @@ import HomepagePdfCraftShowcase from "@site/src/components/HomepagePdfCraftShowc
 import HomepageWhyOomol from "@site/src/components/HomepageWhyOomol";
 
 import Head from "@docusaurus/Head";
-import HomepageGuide from "../components/HomepageGuide";
 import HomePageBuiltInLLM from "../components/HomePageBuiltInLLM";
 
 import { GetStartedPrompt } from "../components/GetStartedPrompt";
@@ -32,7 +31,6 @@ export default function Home() {
         <HomepageProductComparison />
         <HomepageChatAgent />
         <HomePageBuiltInLLM />
-        <HomepageGuide />
         {/* TODO: 等订阅业务上线后恢复 */}
         {/* <HomepagePricing /> */}
         {/* <HomepageDownloads /> */}
