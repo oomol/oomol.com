@@ -4,40 +4,9 @@ import styles from "./styles.module.scss";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { DownloadButton } from "@site/src/components/DownloadButton";
 import { Button } from "@site/src/components/ui/button";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@site/src/components/ui/accordion";
 import { translate } from "@docusaurus/Translate";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import type { DocusaurusContext } from "@docusaurus/types";
 
 export default function Index() {
-  const context = useDocusaurusContext() as unknown as DocusaurusContext & {
-    i18n: { currentLocale: string };
-  };
-  const { i18n } = context;
-  const QAData = [
-    {
-      question: translate({
-        message: "PRICING.question.text1",
-      }),
-      answer: translate({
-        message: "PRICING.question.text1.answer",
-      }),
-    },
-    {
-      question: translate({
-        message: "PRICING.question.text2",
-      }),
-      answer: translate({
-        message: "PRICING.question.text2.answer",
-      }),
-    },
-  ];
-
   return (
     <Layout>
       <div className={styles.container}>
@@ -134,44 +103,7 @@ export default function Index() {
             </div>
           </div>
         </div>
-        <div className={styles.questionTitleBox}>
-          <div className={styles.questionTitle}>
-            {translate({ message: "PRICING.question.title" })}
-          </div>
-          <div className={styles.questionSubtitleBox}>
-            <div className={styles.questionSubtitle}>
-              {translate({ message: "PRICING.question.subtitle" })}
-            </div>
-            <a
-              href={
-                i18n.currentLocale === "zh-CN"
-                  ? "https://oomol.com/zh-CN/contact-us"
-                  : "https://oomol.com/contact-us"
-              }
-              className={styles.contactLink}
-            >
-              {translate({ message: "PRICING.question.link" })}
-            </a>
-          </div>
-        </div>
-        <div className={styles.questionBox}>
-          <div className={styles.QABox}>
-            <Accordion type="single" collapsible className="w-full">
-              {QAData.map((item, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="border-none">
-                  <AccordionTrigger className={styles.dropdownHeader}>
-                    <span className={styles.mainText}>{item.question}</span>
-                  </AccordionTrigger>
-                  <AccordionContent className={styles.dropdownContent}>
-                    {item.answer}
-                  </AccordionContent>
-                  {index !== QAData.length - 1 && <div className={styles.line} />}
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-          <GetStartedPrompt />
-        </div>
+        <GetStartedPrompt />
       </div>
     </Layout>
   );
