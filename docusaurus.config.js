@@ -174,22 +174,18 @@ const config = {
               {
                 to: "/studio",
                 label: "navbar.oomol-studio",
-                className: "navbar-item-with-icon navbar-item-studio",
               },
               {
                 to: "/chat",
                 label: "navbar.oomol-chat",
-                className: "navbar-item-with-icon navbar-item-chat",
               },
               {
                 to: "/cloud",
                 label: "navbar.oomol-cloud",
-                className: "navbar-item-with-icon navbar-item-cloud",
               },
               {
                 to: "/headless",
                 label: "navbar.oomol-headless",
-                className: "navbar-item-with-icon navbar-item-headless",
               },
             ],
           },
