@@ -42,5 +42,9 @@
   "link.item.label.Privacy": {
     "message": "隐私政策",
     "description": "The label of footer link with label=Privacy linking to /privacy"
+  },
+  "link.item.label.Contact Us": {
+    "message": "联系我们",
+    "description": "The label of footer link with label=Contact Us linking to /contact-us"
   }
 }

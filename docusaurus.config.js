@@ -283,7 +283,7 @@ const config = {
               //   to: "/blog",
               // },
               {
-                label: "theme.footer.contactUs",
+                label: "Contact Us",
                 to: "/contact-us",
               },
               {

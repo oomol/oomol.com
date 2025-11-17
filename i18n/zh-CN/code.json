@@ -2117,8 +2117,5 @@
   },
   "HEADLESS.hero.description": {
     "message": "容器化部署方案，将工作流打包为独立 Docker 镜像，适配云服务器、私有云和 K8s 集群"
-  },
-  "theme.footer.contactUs": {
-    "message": "联系我们"
   }
 }

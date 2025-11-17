@@ -11,7 +11,9 @@
       "Bash(npm run type-check:*)",
       "Bash(npx tsc:*)",
       "Bash(npm run typecheck:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(i18n/zh-CN/code.json)",
+      "Bash(node -e:*)"
     ],
     "deny": [],
     "ask": []

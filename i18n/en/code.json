@@ -2124,8 +2124,5 @@
   },
   "HEADLESS.hero.description": {
     "message": "Containerized deployment solution, packaging workflows as standalone Docker images for cloud servers, private clouds and K8s clusters"
-  },
-  "theme.footer.contactUs": {
-    "message": "Contact Us"
   }
 }
