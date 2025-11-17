@@ -3,43 +3,52 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import { Highlight, themes } from 'prism-react-renderer';
 import { useColorMode } from '@docusaurus/theme-common';
+import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.scss';
 
-const pythonCode = `import oomol
+const getPythonCode = () => translate({
+  id: 'HOME.Built-in.code.python',
+  message: `import oomol
 
-# 使用单一 OOMOL Token 调用多种 LLM
+# Use a single OOMOL Token to call multiple LLMs
 client = oomol.Client(token="your-oomol-token")
 
-# 调用 Claude
+# Call Claude
 response = client.chat.completions.create(
     model="claude-3-5-sonnet",
     messages=[{"role": "user", "content": "Hello!"}]
 )
 
-# 切换到 GPT-4 只需改变 model 参数
+# Switch to GPT-4 by simply changing the model parameter
 response = client.chat.completions.create(
     model="gpt-4",
     messages=[{"role": "user", "content": "Hello!"}]
-)`;
+)`
+});
 
-const javascriptCode = `import OOMOL from 'oomol-sdk';
+const getJavaScriptCode = () => translate({
+  id: 'HOME.Built-in.code.javascript',
+  message: `import OOMOL from 'oomol-sdk';
 
-// 使用单一 OOMOL Token 调用多种 LLM
+// Use a single OOMOL Token to call multiple LLMs
 const client = new OOMOL({ token: 'your-oomol-token' });
 
-// 调用 Claude
+// Call Claude
 const response = await client.chat.completions.create({
   model: 'claude-3-5-sonnet',
   messages: [{ role: 'user', content: 'Hello!' }]
 });
 
-// 切换到 GPT-4 只需改变 model 参数
+// Switch to GPT-4 by simply changing the model parameter
 const response2 = await client.chat.completions.create({
   model: 'gpt-4',
   messages: [{ role: 'user', content: 'Hello!' }]
-});`;
+});`
+});
 
-const curlCode = `# 使用单一 OOMOL Token 调用 Claude
+const getCurlCode = () => translate({
+  id: 'HOME.Built-in.code.curl',
+  message: `# Use a single OOMOL Token to call Claude
 curl -X POST https://api.oomol.com/v1/chat/completions \\
   -H "Authorization: Bearer your-oomol-token" \\
   -H "Content-Type: application/json" \\
@@ -48,14 +57,15 @@ curl -X POST https://api.oomol.com/v1/chat/completions \\
     "messages": [{"role": "user", "content": "Hello!"}]
   }'
 
-# 切换到 GPT-4 只需改变 model 参数
+# Switch to GPT-4 by simply changing the model parameter
 curl -X POST https://api.oomol.com/v1/chat/completions \\
   -H "Authorization: Bearer your-oomol-token" \\
   -H "Content-Type: application/json" \\
   -d '{
     "model": "gpt-4",
     "messages": [{"role": "user", "content": "Hello!"}]
-  }'`;
+  }'`
+});
 
 interface CodeBlockProps {
   code: string;
@@ -87,6 +97,10 @@ function CodeBlock({ code, language }: CodeBlockProps) {
 }
 
 export default function CodeExample() {
+  const pythonCode = getPythonCode();
+  const javascriptCode = getJavaScriptCode();
+  const curlCode = getCurlCode();
+
   return (
     <div className={styles.codeExample}>
       <Tabs>

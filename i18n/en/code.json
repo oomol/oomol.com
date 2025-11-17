@@ -748,6 +748,15 @@
   "HOME.Built-in.subtitle": {
     "message": "Use a single OOMOL API Token to quickly access various common APIs and mainstream LLMs. Simpler, more unified development experience."
   },
+  "HOME.Built-in.code.python": {
+    "message": "import oomol\n\n# Use a single OOMOL Token to call multiple LLMs\nclient = oomol.Client(token=\"your-oomol-token\")\n\n# Call Claude\nresponse = client.chat.completions.create(\n    model=\"claude-3-5-sonnet\",\n    messages=[{\"role\": \"user\", \"content\": \"Hello!\"}]\n)\n\n# Switch to GPT-4 by simply changing the model parameter\nresponse = client.chat.completions.create(\n    model=\"gpt-4\",\n    messages=[{\"role\": \"user\", \"content\": \"Hello!\"}]\n)"
+  },
+  "HOME.Built-in.code.javascript": {
+    "message": "import OOMOL from 'oomol-sdk';\n\n// Use a single OOMOL Token to call multiple LLMs\nconst client = new OOMOL({ token: 'your-oomol-token' });\n\n// Call Claude\nconst response = await client.chat.completions.create({\n  model: 'claude-3-5-sonnet',\n  messages: [{ role: 'user', content: 'Hello!' }]\n});\n\n// Switch to GPT-4 by simply changing the model parameter\nconst response2 = await client.chat.completions.create({\n  model: 'gpt-4',\n  messages: [{ role: 'user', content: 'Hello!' }]\n});"
+  },
+  "HOME.Built-in.code.curl": {
+    "message": "# Use a single OOMOL Token to call Claude\ncurl -X POST https://api.oomol.com/v1/chat/completions \\\n  -H \"Authorization: Bearer your-oomol-token\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"claude-3-5-sonnet\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello!\"}]\n  }'\n\n# Switch to GPT-4 by simply changing the model parameter\ncurl -X POST https://api.oomol.com/v1/chat/completions \\\n  -H \"Authorization: Bearer your-oomol-token\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"gpt-4\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello!\"}]\n  }'"
+  },
   "HOME.GetStartedPrompt.title": {
     "message": "Start Using OOMOL Today"
   },

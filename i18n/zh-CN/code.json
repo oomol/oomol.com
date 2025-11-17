@@ -744,6 +744,15 @@
   "HOME.Built-in.subtitle": {
     "message": "使用一个 OOMOL API Token，即可快速调用多种常用 API 与主流大模型，开发体验更简单、更统一。"
   },
+  "HOME.Built-in.code.python": {
+    "message": "import oomol\n\n# 使用单一 OOMOL Token 调用多种 LLM\nclient = oomol.Client(token=\"your-oomol-token\")\n\n# 调用 Claude\nresponse = client.chat.completions.create(\n    model=\"claude-3-5-sonnet\",\n    messages=[{\"role\": \"user\", \"content\": \"Hello!\"}]\n)\n\n# 切换到 GPT-4 只需改变 model 参数\nresponse = client.chat.completions.create(\n    model=\"gpt-4\",\n    messages=[{\"role\": \"user\", \"content\": \"Hello!\"}]\n)"
+  },
+  "HOME.Built-in.code.javascript": {
+    "message": "import OOMOL from 'oomol-sdk';\n\n// 使用单一 OOMOL Token 调用多种 LLM\nconst client = new OOMOL({ token: 'your-oomol-token' });\n\n// 调用 Claude\nconst response = await client.chat.completions.create({\n  model: 'claude-3-5-sonnet',\n  messages: [{ role: 'user', content: 'Hello!' }]\n});\n\n// 切换到 GPT-4 只需改变 model 参数\nconst response2 = await client.chat.completions.create({\n  model: 'gpt-4',\n  messages: [{ role: 'user', content: 'Hello!' }]\n});"
+  },
+  "HOME.Built-in.code.curl": {
+    "message": "# 使用单一 OOMOL Token 调用 Claude\ncurl -X POST https://api.oomol.com/v1/chat/completions \\\n  -H \"Authorization: Bearer your-oomol-token\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"claude-3-5-sonnet\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello!\"}]\n  }'\n\n# 切换到 GPT-4 只需改变 model 参数\ncurl -X POST https://api.oomol.com/v1/chat/completions \\\n  -H \"Authorization: Bearer your-oomol-token\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"gpt-4\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello!\"}]\n  }'"
+  },
   "HOME.GetStartedPrompt.title": {
     "message": "立即开始使用 OOMOL"
   },
