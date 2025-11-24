@@ -3,7 +3,6 @@ import Layout from "../theme/Layout";
 import { translate } from "@docusaurus/Translate";
 
 import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
-import HomepageValueProps from "@site/src/components/HomepageValueProps";
 import HomepageCoreFeatures from "@site/src/components/HomepageCoreFeatures";
 import HomepageLifecycle from "@site/src/components/HomepageLifecycle";
 import HomepageProductComparison from "@site/src/components/HomepageProductComparison";
@@ -28,7 +27,6 @@ export default function Home() {
       </Head>
       <main>
         <HomepageFirstScreen />
-        <HomepageValueProps />
         <HomepageCoreFeatures />
         <HomepageLifecycle />
         <HomepageWhyOomol />
