@@ -20,17 +20,20 @@
   "Theme.Navbar.community": {
     "message": "Community"
   },
+  "HOME.page.title": {
+    "message": "OOMOL - AI Workflow Automation For Developers"
+  },
   "HOME.FirstScreen.slogan": {
-    "message": "Build, Deploy & Share AI-Powered Workflows — From Your Own Machine"
+    "message": "AI Workflow Automation — For Developers"
   },
   "HOME.FirstScreen.slogan.line1": {
-    "message": "Build, Deploy & Share AI-Powered Workflows"
+    "message": "AI Workflow Automation"
   },
   "HOME.FirstScreen.slogan.line2": {
-    "message": "From Your Own Machine"
+    "message": "For Developers"
   },
   "HOME.FirstScreen.script": {
-    "message": "Use your local PC or NAS as a real server with FRP + Container tech. Create functions as Blocks, compose workflows, publish APIs, and turn them into tools for Agents."
+    "message": "From your machine to the cloud — write functions as usual and generate visual workflows through drag-and-drop, deployable anywhere with container-grade reliability."
   },
 
   "HOME.FirstScreen.download-macos": {

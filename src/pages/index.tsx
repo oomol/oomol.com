@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "../theme/Layout";
+import { translate } from "@docusaurus/Translate";
 
 import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
 import HomepageValueProps from "@site/src/components/HomepageValueProps";
@@ -19,7 +20,11 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-        <title>OOMOL - Turn Your Computer into an AI Server</title>
+        <title>
+          {translate({
+            message: "HOME.page.title",
+          })}
+        </title>
       </Head>
       <main>
         <HomepageFirstScreen />

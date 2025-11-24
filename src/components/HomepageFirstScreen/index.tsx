@@ -45,10 +45,14 @@ export default function HomepageFirstScreen() {
                 ) : (
                   <>
                     <span style={{ whiteSpace: "nowrap" }}>
-                      Build, Deploy & Share AI-Powered Workflows
+                      {translate({
+                        message: "HOME.FirstScreen.slogan.line1",
+                      })}
                     </span>
                     <AuroraText className={styles["aurora-slogan"]}>
-                      From Your Own Machine
+                      {translate({
+                        message: "HOME.FirstScreen.slogan.line2",
+                      })}
                     </AuroraText>
                   </>
                 )}
