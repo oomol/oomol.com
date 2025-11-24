@@ -21,16 +21,16 @@
     "message": "社区"
   },
   "HOME.page.title": {
-    "message": "OOMOL - 面向开发者的 AI 工作流自动化"
+    "message": "OOMOL - 为开发者而生的 AI 工作流自动化"
   },
   "HOME.FirstScreen.slogan": {
-    "message": "AI 工作流自动化 — 面向开发者"
+    "message": "AI 工作流自动化 — 为开发者而生"
   },
   "HOME.FirstScreen.slogan.line1": {
     "message": "AI 工作流自动化"
   },
   "HOME.FirstScreen.slogan.line2": {
-    "message": "面向开发者"
+    "message": "为开发者而生"
   },
   "HOME.FirstScreen.script": {
     "message": "从你的机器到云端——像往常一样编写函数，通过拖放生成可视化工作流，可部署到任何地方，具备容器级可靠性。"

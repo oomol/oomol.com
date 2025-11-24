@@ -4,6 +4,7 @@ import React from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { useColorMode } from "@docusaurus/theme-common";
 
 import clsx from "clsx";
 import { DownloadButton } from "../DownloadButton";
@@ -16,6 +17,7 @@ export default function HomepageFirstScreen() {
     i18n: { currentLocale: string };
   };
   const { i18n } = context;
+  const { colorMode } = useColorMode();
 
   return (
     <section className={styles.section}>
@@ -74,7 +76,11 @@ export default function HomepageFirstScreen() {
         </div>
         <div className={styles["screenshot-row"]}>
           <img
-            src={useBaseUrl("/img/screen1.svg")}
+            src={useBaseUrl(
+              colorMode === "dark"
+                ? "/img/pages/home/hero-dark.png"
+                : "/img/pages/home/hero-light.png"
+            )}
             alt="OOMOL Product Screenshot"
             className={styles["product-screenshot"]}
           />
