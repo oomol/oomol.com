@@ -21,6 +21,7 @@ export default function HomepageFirstScreen() {
 
   return (
     <section className={styles.section}>
+      <div className={styles.background}></div>
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles["hero-content"]}>
