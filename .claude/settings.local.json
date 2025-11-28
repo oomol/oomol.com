@@ -13,7 +13,8 @@
       "Bash(npm run typecheck:*)",
       "Bash(cat:*)",
       "Bash(i18n/zh-CN/code.json)",
-      "Bash(node -e:*)"
+      "Bash(node -e:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

@@ -1,0 +1,26 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blue-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4facfe"/>
+      <stop offset="100%" stop-color="#00f2fe"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 后层容器 -->
+  <rect x="110" y="100" width="200" height="140" rx="12" fill="url(#blue-gradient)" opacity="0.2"/>
+
+  <!-- 中层容器 -->
+  <rect x="90" y="80" width="200" height="140" rx="12" fill="url(#blue-gradient)" opacity="0.4"/>
+
+  <!-- 前层容器 -->
+  <rect x="70" y="60" width="200" height="140" rx="12" fill="url(#blue-gradient)" opacity="0.8"/>
+
+  <!-- 容器内部细节 -->
+  <rect x="90" y="85" width="60" height="8" rx="4" fill="white" opacity="0.6"/>
+  <rect x="90" y="105" width="80" height="8" rx="4" fill="white" opacity="0.4"/>
+  <rect x="90" y="125" width="50" height="8" rx="4" fill="white" opacity="0.4"/>
+
+  <!-- 装饰元素 -->
+  <circle cx="310" cy="120" r="25" fill="#4facfe" opacity="0.3"/>
+  <circle cx="340" cy="180" r="18" fill="#00f2fe" opacity="0.25"/>
+</svg>

@@ -35,14 +35,15 @@
 .featureCard {
   position: relative;
   display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 32px;
-  padding: 32px;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  padding: 48px;
   background: var(--ifm-card-background-color);
   border-radius: 20px;
   border: 2px solid var(--ifm-color-emphasis-200);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
+  align-items: center;
 
   &::before {
     content: '';
@@ -89,6 +90,10 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+
+    .illustrationSvg {
+      transform: scale(1.05);
+    }
   }
 
   // 颜色主题
@@ -114,7 +119,7 @@
 
   @media (max-width: 996px) {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 32px;
     padding: 32px 24px;
 
     &:hover {
@@ -125,21 +130,30 @@
 
 .featureNumber {
   position: relative;
-  font-size: 72px;
-  font-weight: 900;
-  color: var(--ifm-color-emphasis-300);
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--feature-gradient-start);
   line-height: 1;
+  padding: 6px 12px;
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 8px;
+  margin-bottom: 16px;
   transition: all 0.4s ease;
   z-index: 1;
+  letter-spacing: 0.5px;
 
   @media (max-width: 996px) {
-    font-size: 56px;
+    font-size: 12px;
+    padding: 4px 10px;
   }
 }
 
 .featureContent {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .featureTitle {
@@ -196,6 +210,34 @@
   }
 }
 
+// 插图容器样式
+.featureIllustration {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  @media (max-width: 996px) {
+    order: 2;
+    padding: 0;
+  }
+}
+
+// SVG 插图样式
+.illustrationSvg {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  transition: transform 0.4s ease;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+
+  @media (max-width: 996px) {
+    max-width: 300px;
+  }
+}
+
 // 暗色模式适配
 [data-theme='dark'] {
   .featureCard {
@@ -216,6 +258,11 @@
   }
 
   .featureNumber {
-    color: var(--ifm-color-emphasis-400);
+    background: var(--ifm-color-emphasis-200);
+    color: var(--feature-gradient-start);
+  }
+
+  .illustrationSvg {
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
   }
 }

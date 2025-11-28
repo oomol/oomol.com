@@ -112,7 +112,7 @@ export default function HomepagePdfCraftShowcase() {
         {/* CTA 按钮 */}
         <div className={styles.ctaSection}>
           <a
-            href="https://hub.oomol.com/"
+            href="https://pdf.oomol.com"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.primaryButton}

@@ -6,9 +6,7 @@ import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
 import HomepageCoreFeatures from "@site/src/components/HomepageCoreFeatures";
 import HomepageLifecycle from "@site/src/components/HomepageLifecycle";
 import HomepageProductComparison from "@site/src/components/HomepageProductComparison";
-import HomepageChatAgent from "@site/src/components/HomepageChatAgent";
 import HomepagePdfCraftShowcase from "@site/src/components/HomepagePdfCraftShowcase";
-import HomepageWhyOomol from "@site/src/components/HomepageWhyOomol";
 
 import Head from "@docusaurus/Head";
 import HomePageBuiltInLLM from "../components/HomePageBuiltInLLM";
@@ -29,11 +27,9 @@ export default function Home() {
         <HomepageFirstScreen />
         <HomepageCoreFeatures />
         <HomepageLifecycle />
-        <HomepageWhyOomol />
-        <HomepagePdfCraftShowcase />
         <HomepageProductComparison />
-        <HomepageChatAgent />
         <HomePageBuiltInLLM />
+        <HomepagePdfCraftShowcase />
         {/* TODO: 等订阅业务上线后恢复 */}
         {/* <HomepagePricing /> */}
         {/* <HomepageDownloads /> */}

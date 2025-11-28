@@ -226,10 +226,10 @@
     "message": "很少支持"
   },
   "HOME.PdfCraft.title": {
-    "message": "官方开源项目：PDF-Craft"
+    "message": "基于 OOMOL 的开源项目：PDF-Craft"
   },
   "HOME.PdfCraft.subtitle": {
-    "message": "用我们的旗舰开源项目，体验本地算力的强大优势"
+    "message": "基于 OOMOL 构建的旗舰开源项目，体验本地算力的强大优势"
   },
   "HOME.PdfCraft.description": {
     "message": "PDF-Craft 是 OOMOL 官方开源的 PDF 处理工具，在 GitHub 上已获得 3000+ Stars。本地免费运行、P2P 分享给朋友、或部署到云端 —— 由你决定如何使用。"

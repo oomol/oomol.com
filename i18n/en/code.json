@@ -226,10 +226,10 @@
     "message": "Rarely Supported"
   },
   "HOME.PdfCraft.title": {
-    "message": "Our Open Source Project: PDF-Craft"
+    "message": "Open Source Project Built on OOMOL: PDF-Craft"
   },
   "HOME.PdfCraft.subtitle": {
-    "message": "Experience the power of local computing with our flagship open source project"
+    "message": "Experience the power of local computing with our flagship open source project built on OOMOL"
   },
   "HOME.PdfCraft.description": {
     "message": "PDF-Craft is OOMOL's official open source PDF processing tool with 3000+ GitHub stars. Run it locally for free, share with friends via P2P, or deploy to the cloud — you choose how to use it."

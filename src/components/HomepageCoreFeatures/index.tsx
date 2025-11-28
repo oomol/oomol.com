@@ -1,25 +1,33 @@
 import styles from "./styles.module.scss";
 import { translate } from "@docusaurus/Translate";
 
+// 导入 SVG 插图
+import WorkflowIllustration from "@site/static/img/pages/home/core-feature-workflow.svg";
+import ContainerIllustration from "@site/static/img/pages/home/core-feature-container.svg";
+import McpIllustration from "@site/static/img/pages/home/core-feature-mcp.svg";
+import VscodeIllustration from "@site/static/img/pages/home/core-feature-vscode.svg";
+
 // 核心功能数据
 const coreFeatures = [
   {
     number: "01",
-    title: translate({ message: "HOME.CoreFeatures.container.title" }),
-    description: translate({ message: "HOME.CoreFeatures.container.description" }),
-    highlights: [
-      translate({ message: "HOME.CoreFeatures.container.highlight1" }),
-    ],
-    color: "blue",
-  },
-  {
-    number: "02",
     title: translate({ message: "HOME.CoreFeatures.workflow.title" }),
     description: translate({ message: "HOME.CoreFeatures.workflow.description" }),
     highlights: [
       translate({ message: "HOME.CoreFeatures.workflow.highlight1" }),
     ],
     color: "purple",
+    illustration: WorkflowIllustration,
+  },
+  {
+    number: "02",
+    title: translate({ message: "HOME.CoreFeatures.container.title" }),
+    description: translate({ message: "HOME.CoreFeatures.container.description" }),
+    highlights: [
+      translate({ message: "HOME.CoreFeatures.container.highlight1" }),
+    ],
+    color: "blue",
+    illustration: ContainerIllustration,
   },
   {
     number: "03",
@@ -29,6 +37,7 @@ const coreFeatures = [
       translate({ message: "HOME.CoreFeatures.mcp.highlight1" }),
     ],
     color: "pink",
+    illustration: McpIllustration,
   },
   {
     number: "04",
@@ -38,6 +47,7 @@ const coreFeatures = [
       translate({ message: "HOME.CoreFeatures.vscode.highlight1" }),
     ],
     color: "green",
+    illustration: VscodeIllustration,
   },
 ];
 
@@ -56,12 +66,12 @@ export default function HomepageCoreFeatures() {
         <div className={styles.featuresList}>
           {coreFeatures.map((feature, index) => (
             <div key={index} className={`${styles.featureCard} ${styles[feature.color]}`}>
-              {/* Feature Number */}
-              <div className={styles.featureNumber}>{feature.number}</div>
-
-              {/* Feature Content */}
+              {/* 左侧：文字内容 */}
               <div className={styles.featureContent}>
+                {/* 标题 */}
                 <h3 className={styles.featureTitle}>{feature.title}</h3>
+
+                {/* 描述 */}
                 <p className={styles.featureDescription}>{feature.description}</p>
 
                 {/* Highlights */}
@@ -72,6 +82,11 @@ export default function HomepageCoreFeatures() {
                     </li>
                   ))}
                 </ul>
+              </div>
+
+              {/* 右侧：插图 */}
+              <div className={styles.featureIllustration}>
+                <feature.illustration className={styles.illustrationSvg} />
               </div>
             </div>
           ))}
