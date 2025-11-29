@@ -19,7 +19,10 @@
       "Bash(rm /Users/wushuang/code/oomol.com/src/components/magic-ui/GradualSpacing.tsx)",
       "Bash(rm -rf /Users/wushuang/code/oomol.com/src/components/HomepageChatAgent /Users/wushuang/code/oomol.com/src/components/HomepageCommunityShare /Users/wushuang/code/oomol.com/src/components/HomepageCoreTech /Users/wushuang/code/oomol.com/src/components/HomepageEcosystem /Users/wushuang/code/oomol.com/src/components/HomepageGuide /Users/wushuang/code/oomol.com/src/components/HomepageValueProps /Users/wushuang/code/oomol.com/src/components/HomepageVideo /Users/wushuang/code/oomol.com/src/components/HomepageWhyOomol /Users/wushuang/code/oomol.com/src/components/ResponsiveImage /Users/wushuang/code/oomol.com/src/components/TypewriterText)",
       "Bash(git checkout HEAD -- /Users/wushuang/code/oomol.com/src/components/ui/popover.tsx)",
-      "Bash(rm -rf /Users/wushuang/code/oomol.com/.docusaurus /Users/wushuang/code/oomol.com/build /Users/wushuang/code/oomol.com/node_modules/.cache)"
+      "Bash(rm -rf /Users/wushuang/code/oomol.com/.docusaurus /Users/wushuang/code/oomol.com/build /Users/wushuang/code/oomol.com/node_modules/.cache)",
+      "Bash(rm -rf /Users/wushuang/code/oomol.com/src/components/HomepageFeatures)",
+      "Bash(done)",
+      "Bash(xargs -I {} bash -c 'echo \"\"\"\"=== $(basename {}) ===\"\"\"\" && find {} -type f \\( -name \"\"\"\"*.tsx\"\"\"\" -o -name \"\"\"\"*.ts\"\"\"\" \\) 2>/dev/null')"
     ],
     "deny": [],
     "ask": []
