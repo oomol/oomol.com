@@ -22,7 +22,8 @@
       "Bash(rm -rf /Users/wushuang/code/oomol.com/.docusaurus /Users/wushuang/code/oomol.com/build /Users/wushuang/code/oomol.com/node_modules/.cache)",
       "Bash(rm -rf /Users/wushuang/code/oomol.com/src/components/HomepageFeatures)",
       "Bash(done)",
-      "Bash(xargs -I {} bash -c 'echo \"\"\"\"=== $(basename {}) ===\"\"\"\" && find {} -type f \\( -name \"\"\"\"*.tsx\"\"\"\" -o -name \"\"\"\"*.ts\"\"\"\" \\) 2>/dev/null')"
+      "Bash(xargs -I {} bash -c 'echo \"\"\"\"=== $(basename {}) ===\"\"\"\" && find {} -type f \\( -name \"\"\"\"*.tsx\"\"\"\" -o -name \"\"\"\"*.ts\"\"\"\" \\) 2>/dev/null')",
+      "Bash(mkdir -p /Users/wushuang/code/oomol.com/src/components/HomepageCoreFeatures)"
     ],
     "deny": [],
     "ask": []

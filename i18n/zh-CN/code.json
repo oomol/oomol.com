@@ -75,41 +75,41 @@
   "HOME.CoreFeatures.title": {
     "message": "四大核心功能"
   },
-  "HOME.CoreFeatures.container.title": {
-    "message": "本地容器 + FRP：你的电脑变成服务器"
-  },
-  "HOME.CoreFeatures.container.description": {
-    "message": "轻量级容器 + FRP 网络，将本地工作流暴露为远程服务。支持 PC、NAS、WSL2 及完整 GPU 支持。"
-  },
-  "HOME.CoreFeatures.container.highlight1": {
-    "message": "本地原型开发、共享工作流、搭建 P2P AI 服务 — 随时扩展至云端"
-  },
   "HOME.CoreFeatures.workflow.title": {
-    "message": "工作流 IDE：构建和组合函数块"
+    "message": "工作流系统：编写与组合函数 Blocks"
   },
   "HOME.CoreFeatures.workflow.description": {
-    "message": "每个块都是可复用函数。编写逻辑、添加 AI/PDF/图像处理或调用 API — 然后组装成工作流。"
+    "message": "使用 OOMOL 的工作流系统，可以编写函数 block，组合函数 blocks。并且可以低成本将本地函数自动发布成 API 服务。对比别的产品 OOMOL 是更加自由灵活。"
   },
   "HOME.CoreFeatures.workflow.highlight1": {
-    "message": "部署为 API 服务、可复用包或可共享端点"
+    "message": "自由编写函数 → 可视化组合 → 自动发布 API — 更加灵活自由"
+  },
+  "HOME.CoreFeatures.container.title": {
+    "message": "本地化容器 + FRP：电脑变服务器"
+  },
+  "HOME.CoreFeatures.container.description": {
+    "message": "OOMOL 基于本地化容器技术，结合网络反代技术，给设备分配域名，可以将个人电脑、NAS 变成服务器。主要使用场景是，将电脑的闲置时间作为服务器使用起来，尤其是 GPU 价值非常大闲置非常浪费。(OOMOL 可以通过 WSL2 调用到英伟达的 GPU)"
+  },
+  "HOME.CoreFeatures.container.highlight1": {
+    "message": "闲置时间变服务器 → GPU 资源不浪费 → 验证 idea 后可扩展至云端"
   },
   "HOME.CoreFeatures.mcp.title": {
-    "message": "原生 MCP 工具生成，供 Agent 使用"
+    "message": "MCP 接口支持：AI Agent 直接调用"
   },
   "HOME.CoreFeatures.mcp.description": {
-    "message": "一键将任何块或工作流转换为 MCP 工具。AI Agent 可直接调用你的函数。"
+    "message": "OOMOL 生成的函数可以支持 MCP 接口，方便 AI Agent 可以直接调用。"
   },
   "HOME.CoreFeatures.mcp.highlight1": {
-    "message": "构建工具、串联专家 Agent、集成到应用"
+    "message": "函数即工具 → MCP 接口输出 → AI Agent 无缝调用"
   },
   "HOME.CoreFeatures.vscode.title": {
-    "message": "VSCode 原生 · 开发者优先"
+    "message": "基于 VSCode · 支持 AI Vibe Coding"
   },
   "HOME.CoreFeatures.vscode.description": {
-    "message": "完全基于 VSCode 构建，支持 Vibe Coding、AI 脚手架、调试和完整生态系统。"
+    "message": "OOMOL 的工作流，不同于其他产品的是，OOMOL 基于 VSCode 开发，支持 Vibe Coding Block 和 AI 匹配生成 Block。"
   },
   "HOME.CoreFeatures.vscode.highlight1": {
-    "message": "Vibe Coding + AI 辅助开发 + 本地调试 + Git/npm 兼容"
+    "message": "VSCode 原生开发 + Vibe Coding + AI 自动生成 Block"
   },
   "HOME.Lifecycle.title": {
     "message": "完整开发生命周期"
