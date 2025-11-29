@@ -3,7 +3,6 @@ import Layout from "../theme/Layout";
 import { translate } from "@docusaurus/Translate";
 
 import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
-import HomepageCoreFeatures from "@site/src/components/HomepageCoreFeatures";
 import HomepageLifecycle from "@site/src/components/HomepageLifecycle";
 import HomepageProductComparison from "@site/src/components/HomepageProductComparison";
 import HomepagePdfCraftShowcase from "@site/src/components/HomepagePdfCraftShowcase";
@@ -25,16 +24,11 @@ export default function Home() {
       </Head>
       <main>
         <HomepageFirstScreen />
-        <HomepageCoreFeatures />
         <HomepageLifecycle />
         <HomepageProductComparison />
         <HomePageBuiltInLLM />
         <HomepagePdfCraftShowcase />
-        {/* TODO: 等订阅业务上线后恢复 */}
-        {/* <HomepagePricing /> */}
-        {/* <HomepageDownloads /> */}
         <GetStartedPrompt />
-        {/* <HomepageStarter /> */}
       </main>
     </Layout>
   );
