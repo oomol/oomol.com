@@ -9,6 +9,7 @@ import { useColorMode } from "@docusaurus/theme-common";
 import clsx from "clsx";
 import { DownloadButton } from "../DownloadButton";
 import { AuroraText } from "../magic-ui/AuroraText";
+import { GridBackground } from "./GridBackground";
 
 import type { DocusaurusContext } from "@docusaurus/types";
 
@@ -21,7 +22,9 @@ export default function HomepageFirstScreen() {
 
   return (
     <section className={styles.section}>
-      <div className={styles.background}></div>
+      <div className={styles.background}>
+        <GridBackground opacity={0.6} />
+      </div>
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles["hero-content"]}>
