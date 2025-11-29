@@ -14,7 +14,12 @@
       "Bash(cat:*)",
       "Bash(i18n/zh-CN/code.json)",
       "Bash(node -e:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(rm /Users/wushuang/code/oomol.com/src/components/ui/accordion.tsx /Users/wushuang/code/oomol.com/src/components/ui/popover.tsx /Users/wushuang/code/oomol.com/src/components/ui/tooltip.tsx /Users/wushuang/code/oomol.com/src/components/ui/dialog.tsx /Users/wushuang/code/oomol.com/src/components/ui/table.tsx)",
+      "Bash(rm /Users/wushuang/code/oomol.com/src/components/magic-ui/GradualSpacing.tsx)",
+      "Bash(rm -rf /Users/wushuang/code/oomol.com/src/components/HomepageChatAgent /Users/wushuang/code/oomol.com/src/components/HomepageCommunityShare /Users/wushuang/code/oomol.com/src/components/HomepageCoreTech /Users/wushuang/code/oomol.com/src/components/HomepageEcosystem /Users/wushuang/code/oomol.com/src/components/HomepageGuide /Users/wushuang/code/oomol.com/src/components/HomepageValueProps /Users/wushuang/code/oomol.com/src/components/HomepageVideo /Users/wushuang/code/oomol.com/src/components/HomepageWhyOomol /Users/wushuang/code/oomol.com/src/components/ResponsiveImage /Users/wushuang/code/oomol.com/src/components/TypewriterText)",
+      "Bash(git checkout HEAD -- /Users/wushuang/code/oomol.com/src/components/ui/popover.tsx)",
+      "Bash(rm -rf /Users/wushuang/code/oomol.com/.docusaurus /Users/wushuang/code/oomol.com/build /Users/wushuang/code/oomol.com/node_modules/.cache)"
     ],
     "deny": [],
     "ask": []
