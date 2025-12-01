@@ -13,6 +13,7 @@ import { useNavbarMobileSidebar } from "@docusaurus/theme-common/internal";
 import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
 import { translate } from "@docusaurus/Translate";
 import { useColorMode } from "@docusaurus/theme-common";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface NavbarProps {}
@@ -57,11 +58,13 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
   const locale = i18n.currentLocale;
   const location = useLocation();
 
-  const logoSrc = useMemo(() => {
-    const langPrefix = locale === "zh-CN" ? "zh" : "en";
-    const themePrefix = colorMode === "dark" ? "dark" : "light";
-    return `/img/logo-${langPrefix}-${themePrefix}.svg`;
-  }, [locale, colorMode]);
+  const logoSrc = useBaseUrl(
+    useMemo(() => {
+      const langPrefix = locale === "zh-CN" ? "zh" : "en";
+      const themePrefix = colorMode === "dark" ? "dark" : "light";
+      return `/img/logo-${langPrefix}-${themePrefix}.svg`;
+    }, [locale, colorMode])
+  );
 
   const isDocumentPath = useMemo(() => {
     return (
@@ -128,7 +131,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
       <div className={clsx("navbar__inner", styles.inner)}>
         <div className="navbar__items">
           <Link className={styles.brand} to="/">
-            <img height={32} alt="logo" src={logoSrc} loading="lazy" />
+            <img height={32} alt="logo" src={logoSrc} />
           </Link>
           {leftItems.map((item, i) => (
             <NavbarItem {...item} key={i} />

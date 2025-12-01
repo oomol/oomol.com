@@ -123,11 +123,13 @@ const Footer: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
   const { colorMode } = useColorMode();
 
-  const logoSrc = useMemo(() => {
-    const langPrefix = currentLocale === "zh-CN" ? "zh" : "en";
-    const themePrefix = colorMode === "dark" ? "dark" : "light";
-    return `/img/logo-${langPrefix}-${themePrefix}.svg`;
-  }, [currentLocale, colorMode]);
+  const logoSrc = useBaseUrl(
+    useMemo(() => {
+      const langPrefix = currentLocale === "zh-CN" ? "zh" : "en";
+      const themePrefix = colorMode === "dark" ? "dark" : "light";
+      return `/img/logo-${langPrefix}-${themePrefix}.svg`;
+    }, [currentLocale, colorMode])
+  );
 
   if (!hasFooter) {
     return null;
@@ -159,7 +161,7 @@ const Footer: React.FC = () => {
       <div className={clsx(styles.content, styles.center)}>
         <div className={styles.leftBox}>
           <div className={styles.leftBoxLogo}>
-            <img alt="oomol" src={logoSrc} height={24} loading="lazy" />
+            <img alt="oomol" src={logoSrc} height={24} />
           </div>
           <div className={styles.iconOutBox}>
             {logoNodes}
