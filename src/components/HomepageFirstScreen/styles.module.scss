@@ -369,6 +369,13 @@
   }
 }
 
+.highlight {
+  color: var(--oomol-primary);
+  font-weight: 600;
+  position: relative;
+  display: inline;
+}
+
 .image {
   max-width: 100%;
   border-radius: 6px;

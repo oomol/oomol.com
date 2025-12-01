@@ -13,12 +13,32 @@ import { GridBackground } from "./GridBackground";
 
 import type { DocusaurusContext } from "@docusaurus/types";
 
+// 解析带高亮标记的文本
+function parseHighlightText(text: string) {
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+  return parts.map((part, index) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      const content = part.slice(2, -2);
+      return (
+        <span key={index} className={styles.highlight}>
+          {content}
+        </span>
+      );
+    }
+    return part;
+  });
+}
+
 export default function HomepageFirstScreen() {
   const context = useDocusaurusContext() as unknown as DocusaurusContext & {
     i18n: { currentLocale: string };
   };
   const { i18n } = context;
   const { colorMode } = useColorMode();
+
+  const scriptText = translate({
+    message: "HOME.FirstScreen.script",
+  });
 
   return (
     <section className={styles.section}>
@@ -61,9 +81,7 @@ export default function HomepageFirstScreen() {
 
             <div className={styles["description-box"]}>
               <span className={styles.overview}>
-                {translate({
-                  message: "HOME.FirstScreen.script",
-                })}
+                {parseHighlightText(scriptText)}
               </span>
             </div>
 
