@@ -27,13 +27,13 @@
     "message": "AI 工作流自动化 — 为开发者而生"
   },
   "HOME.FirstScreen.slogan.line1": {
-    "message": "AI 工作流自动化"
+    "message": "为开发者而生的"
   },
   "HOME.FirstScreen.slogan.line2": {
-    "message": "为开发者而生"
+    "message": "AI 工作流平台"
   },
   "HOME.FirstScreen.script": {
-    "message": "从你的机器到云端——像往常一样编写函数，通过拖放生成可视化工作流，可部署到任何地方，具备容器级可靠性。"
+    "message": "无需学习新概念，像往常一样编写函数、引用代码库即可生成节点；拖放组合成工作流，高效创造新功能，并支持 API、MCP 工具或自动化程序对外发布，让想法瞬间变为产品。"
   },
 
   "HOME.FirstScreen.download-macos": {

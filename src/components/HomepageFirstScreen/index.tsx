@@ -36,31 +36,25 @@ export default function HomepageFirstScreen() {
                 )}
               >
                 {i18n.currentLocale === "zh-CN" ? (
-                  <>
-                    <span style={{ whiteSpace: "nowrap" }}>
-                      {translate({
-                        message: "HOME.FirstScreen.slogan.line1",
-                      })}
-                    </span>
-                    <AuroraText className={styles["aurora-slogan"]}>
-                      {translate({
-                        message: "HOME.FirstScreen.slogan.line2",
-                      })}
-                    </AuroraText>
-                  </>
+                  <AuroraText className={styles["aurora-slogan"]}>
+                    {translate({
+                      message: "HOME.FirstScreen.slogan.line1",
+                    })}
+                    <br />
+                    {translate({
+                      message: "HOME.FirstScreen.slogan.line2",
+                    })}
+                  </AuroraText>
                 ) : (
-                  <>
-                    <span style={{ whiteSpace: "nowrap" }}>
-                      {translate({
-                        message: "HOME.FirstScreen.slogan.line1",
-                      })}
-                    </span>
-                    <AuroraText className={styles["aurora-slogan"]}>
-                      {translate({
-                        message: "HOME.FirstScreen.slogan.line2",
-                      })}
-                    </AuroraText>
-                  </>
+                  <AuroraText className={styles["aurora-slogan"]}>
+                    {translate({
+                      message: "HOME.FirstScreen.slogan.line1",
+                    })}
+                    <br />
+                    {translate({
+                      message: "HOME.FirstScreen.slogan.line2",
+                    })}
+                  </AuroraText>
                 )}
               </h1>
             </div>
