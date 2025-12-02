@@ -166,7 +166,7 @@
 }
 
 .stepTitle {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: var(--ifm-heading-color);
   margin: 0;
@@ -174,33 +174,33 @@
   transition: color 0.3s ease;
 
   @media (max-width: 996px) {
-    font-size: 1.35rem;
+    font-size: 1.5rem;
   }
 
   @media (max-width: 768px) {
-    font-size: 1.2rem;
+    font-size: 1.35rem;
   }
 }
 
 .stepSubtitle {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: var(--ifm-color-emphasis-600);
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.6;
 
   @media (max-width: 768px) {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 }
 
 // 展开的步骤内容
 .stepContent {
-  margin-top: 12px;
-  animation: expandContent 0.3s ease;
+  margin-top: 20px;
+  animation: expandContent 0.4s ease;
   overflow: hidden;
 
   @media (max-width: 996px) {
-    margin-top: 10px;
+    margin-top: 16px;
   }
 }
 
@@ -208,11 +208,11 @@
   from {
     opacity: 0;
     max-height: 0;
-    transform: translateY(-5px);
+    transform: translateY(-8px);
   }
   to {
     opacity: 1;
-    max-height: 400px;
+    max-height: 500px;
     transform: translateY(0);
   }
 }
@@ -262,13 +262,13 @@
 }
 
 .stepDescription {
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 
   p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--ifm-color-emphasis-700);
-    line-height: 1.5;
-    margin-bottom: 4px;
+    line-height: 1.7;
+    margin-bottom: 8px;
 
     &:last-child {
       margin-bottom: 0;
@@ -276,10 +276,10 @@
   }
 
   @media (max-width: 768px) {
-    margin-bottom: 10px;
+    margin-bottom: 16px;
 
     p {
-      font-size: 0.85rem;
+      font-size: 0.95rem;
     }
   }
 }
