@@ -1975,7 +1975,7 @@
     "message": "技术特点"
   },
   "HOME.ProductComparison.product.studio": {
-    "message": "Studio + FRP"
+    "message": "Studio"
   },
   "HOME.ProductComparison.product.headless": {
     "message": "Headless"
@@ -1984,40 +1984,40 @@
     "message": "Cloud"
   },
   "HOME.ProductComparison.studio.stage": {
-    "message": "本地开发与极客分享"
+    "message": "Studio 软件部署"
   },
   "HOME.ProductComparison.studio.capability": {
-    "message": "共享本地算力（尤其 GPU），通过 FRP 协议实现 P2P 连接"
+    "message": "功能完善，使用便捷"
   },
   "HOME.ProductComparison.studio.scenario": {
-    "message": "个人项目调试、团队内快速分享、利用闲置 GPU 资源"
+    "message": "个人项目调试、团队内快速分享、充分利用闲置 GPU（如装有 Nvidia 4090 PC）"
   },
   "HOME.ProductComparison.studio.tech": {
-    "message": "FRP 协议、VSCode IDE、本地容器、GPU 直通"
+    "message": "本地安装即用，内置容器环境，一键开启互联功能即可作为在线服务器运行"
   },
   "HOME.ProductComparison.headless.stage": {
-    "message": "生产环境部署"
+    "message": "Headless 镜像部署"
   },
   "HOME.ProductComparison.headless.capability": {
-    "message": "Docker 容器化独立部署，支持云服务器和 K8s 集群"
+    "message": "自由与安全的企业级选择"
   },
   "HOME.ProductComparison.headless.scenario": {
-    "message": "企业级 API 服务、CI/CD 集成、私有云部署"
+    "message": "高自定义 API 服务、自动化工作流部署、私有云环境"
   },
   "HOME.ProductComparison.headless.tech": {
-    "message": "Docker、Kubernetes 支持、容器编排、自托管"
+    "message": "支持 Docker 等开源基础设施，可深度定制、灵活集成、可控安全"
   },
   "HOME.ProductComparison.cloud.stage": {
-    "message": "免运维云服务"
+    "message": "Cloud Serverless 部署"
   },
   "HOME.ProductComparison.cloud.capability": {
-    "message": "托管式运行环境，自动扩缩容，提供 RESTful API 和 MCP 端点"
+    "message": "官方提供的配套服务，性能优化到极致"
   },
   "HOME.ProductComparison.cloud.scenario": {
-    "message": "中小团队快速上线、无需管理基础设施、AI Agent 集成"
+    "message": "中小团队快速上线、无需管理基础设施。简单且无心智负担。"
   },
   "HOME.ProductComparison.cloud.tech": {
-    "message": "Serverless、自动扩缩容、API Gateway、MCP 协议"
+    "message": "按需扩缩容、零运维心智负担、极速发布到生产环境"
   },
   "CLOUD.hero.description": {
     "message": "免运维的托管式运行环境，提供 RESTful API 和 MCP 协议端点，支持自动扩缩容"

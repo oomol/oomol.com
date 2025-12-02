@@ -1979,7 +1979,7 @@
     "message": "Technical Features"
   },
   "HOME.ProductComparison.product.studio": {
-    "message": "Studio + FRP"
+    "message": "Studio"
   },
   "HOME.ProductComparison.product.headless": {
     "message": "Headless"
@@ -1988,40 +1988,40 @@
     "message": "Cloud"
   },
   "HOME.ProductComparison.studio.stage": {
-    "message": "Local Development & Geek Sharing"
+    "message": "Studio Software Deployment"
   },
   "HOME.ProductComparison.studio.capability": {
-    "message": "Share local computing power (especially GPU) via FRP protocol P2P connection"
+    "message": "Comprehensive & Convenient"
   },
   "HOME.ProductComparison.studio.scenario": {
-    "message": "Personal projects, team rapid sharing, leveraging idle GPU resources"
+    "message": "Personal project debugging, rapid team sharing, make full use of idle GPUs (e.g., PCs with Nvidia 4090)"
   },
   "HOME.ProductComparison.studio.tech": {
-    "message": "FRP Protocol, VSCode IDE, Local Containers, GPU Passthrough"
+    "message": "Ready to use with local installation, built-in container environment, one-click connectivity to run as online server"
   },
   "HOME.ProductComparison.headless.stage": {
-    "message": "Production Environment Deployment"
+    "message": "Headless Image Deployment"
   },
   "HOME.ProductComparison.headless.capability": {
-    "message": "Docker containerized standalone deployment, supporting cloud servers and K8s clusters"
+    "message": "Freedom & Security for Enterprise"
   },
   "HOME.ProductComparison.headless.scenario": {
-    "message": "Enterprise-grade API services, CI/CD integration, private cloud deployment"
+    "message": "Highly customizable API services, automated workflow deployment, private cloud environments"
   },
   "HOME.ProductComparison.headless.tech": {
-    "message": "Docker, Kubernetes support, Container orchestration, Self-hosted"
+    "message": "Supports Docker and open-source infrastructure, deeply customizable, flexible integration, controllable security"
   },
   "HOME.ProductComparison.cloud.stage": {
-    "message": "Managed Cloud Service"
+    "message": "Cloud Serverless Deployment"
   },
   "HOME.ProductComparison.cloud.capability": {
-    "message": "Hosted runtime environment with auto-scaling, providing RESTful API and MCP endpoints"
+    "message": "Officially Provided Service, Performance Optimized to the Max"
   },
   "HOME.ProductComparison.cloud.scenario": {
-    "message": "Rapid launch for SMB teams, no infrastructure management, AI Agent integration"
+    "message": "Rapid launch for SMB teams, no infrastructure management. Simple with zero mental overhead."
   },
   "HOME.ProductComparison.cloud.tech": {
-    "message": "Serverless, Auto-scaling, API Gateway, MCP Protocol"
+    "message": "On-demand scaling, zero operations overhead, instant production deployment"
   },
   "CLOUD.hero.description": {
     "message": "Managed runtime environment with RESTful API and MCP protocol endpoints, supporting auto-scaling"
