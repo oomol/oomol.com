@@ -70,7 +70,14 @@ export default function HomepageCoreFeatures() {
               {/* Text Content */}
               <div className={styles.featureContent}>
                 <h3 className={styles.featureTitle}>{feature.title}</h3>
-                <p className={styles.featureDescription}>{feature.description}</p>
+                <div className={styles.featureDescription}>
+                  {feature.description.split('\n').map((line, i) => (
+                    <React.Fragment key={i}>
+                      {line}
+                      {i < feature.description.split('\n').length - 1 && <br />}
+                    </React.Fragment>
+                  ))}
+                </div>
                 <div className={styles.featureHighlight}>
                   <span className={styles.highlightIcon}>✨</span>
                   <span className={styles.highlightText}>{feature.highlight}</span>
