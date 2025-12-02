@@ -295,8 +295,8 @@
 }
 
 .slogan {
-  font-size: 48px;
-  line-height: 1.3;
+  font-size: 64px;
+  line-height: 1.5;
   font-weight: 800;
   text-align: center;
   margin: 0;
@@ -304,20 +304,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0;
+  gap: 8px;
 
   @media (max-width: 1024px) {
-    font-size: 40px;
+    font-size: 48px;
+    line-height: 1.45;
   }
 
   @media (max-width: 768px) {
-    font-size: 32px;
-    line-height: 1.35;
+    font-size: 36px;
+    line-height: 1.4;
+    gap: 6px;
   }
 
   @media (max-width: 480px) {
-    font-size: 26px;
+    font-size: 28px;
     line-height: 1.4;
+    gap: 4px;
   }
 }
 
@@ -336,13 +339,19 @@
   margin-top: 8px;
   font-size: inherit;
   font-weight: inherit;
-  line-height: inherit;
+  line-height: 1.3;
 
   h2 {
     font-size: inherit;
     font-weight: inherit;
     margin: 0;
     display: inline;
+  }
+
+  br {
+    display: block;
+    content: "";
+    margin-bottom: 12px;
   }
 }
 
