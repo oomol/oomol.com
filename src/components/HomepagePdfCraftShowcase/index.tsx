@@ -43,15 +43,21 @@ export default function HomepagePdfCraftShowcase() {
               <div className={styles.projectFeatures}>
                 <div className={styles.feature}>
                   <span className={styles.featureIcon}>✓</span>
-                  <span>{translate({ message: "HOME.PdfCraft.feature1" })}</span>
+                  <span>
+                    {translate({ message: "HOME.PdfCraft.feature1" })}
+                  </span>
                 </div>
                 <div className={styles.feature}>
                   <span className={styles.featureIcon}>✓</span>
-                  <span>{translate({ message: "HOME.PdfCraft.feature2" })}</span>
+                  <span>
+                    {translate({ message: "HOME.PdfCraft.feature2" })}
+                  </span>
                 </div>
                 <div className={styles.feature}>
                   <span className={styles.featureIcon}>✓</span>
-                  <span>{translate({ message: "HOME.PdfCraft.feature3" })}</span>
+                  <span>
+                    {translate({ message: "HOME.PdfCraft.feature3" })}
+                  </span>
                 </div>
               </div>
             </div>
@@ -60,10 +66,10 @@ export default function HomepagePdfCraftShowcase() {
           {/* 右侧: 两种使用方式对比 */}
           <div className={styles.rightSection}>
             <div className={styles.comparisonCards}>
-              {/* 传统方式 */}
+              {/* 本地部署方式 */}
               <div className={clsx(styles.comparisonCard, styles.traditional)}>
                 <div className={styles.cardHeader}>
-                  <span className={styles.cardBadge}>
+                  <span className={clsx(styles.cardBadge, styles.buttonBadge)}>
                     {translate({ message: "HOME.PdfCraft.traditional.badge" })}
                   </span>
                 </div>
@@ -71,10 +77,38 @@ export default function HomepagePdfCraftShowcase() {
                   {translate({ message: "HOME.PdfCraft.traditional.title" })}
                 </h4>
                 <div className={styles.cardContent}>
-                  <div className={styles.priceTag}>$$$</div>
-                  <p className={styles.cardDescription}>
-                    {translate({ message: "HOME.PdfCraft.traditional.description" })}
-                  </p>
+                  <ul className={styles.methodList}>
+                    <li>
+                      <span className={styles.checkIcon}>•</span>
+                      <span>
+                        {translate({
+                          message: "HOME.PdfCraft.traditional.description",
+                        })
+                          .split("\n")[0]
+                          .replace("• ", "")}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={styles.checkIcon}>•</span>
+                      <span>
+                        {translate({
+                          message: "HOME.PdfCraft.traditional.description",
+                        })
+                          .split("\n")[1]
+                          .replace("• ", "")}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={styles.checkIcon}>•</span>
+                      <span>
+                        {translate({
+                          message: "HOME.PdfCraft.traditional.description",
+                        })
+                          .split("\n")[2]
+                          .replace("• ", "")}
+                      </span>
+                    </li>
+                  </ul>
                 </div>
               </div>
 
@@ -92,15 +126,21 @@ export default function HomepagePdfCraftShowcase() {
                   <ul className={styles.methodList}>
                     <li>
                       <span className={styles.checkIcon}>✓</span>
-                      <span>{translate({ message: "HOME.PdfCraft.oomol.method1" })}</span>
+                      <span>
+                        {translate({ message: "HOME.PdfCraft.oomol.method1" })}
+                      </span>
                     </li>
                     <li>
                       <span className={styles.checkIcon}>✓</span>
-                      <span>{translate({ message: "HOME.PdfCraft.oomol.method2" })}</span>
+                      <span>
+                        {translate({ message: "HOME.PdfCraft.oomol.method2" })}
+                      </span>
                     </li>
                     <li>
                       <span className={styles.checkIcon}>✓</span>
-                      <span>{translate({ message: "HOME.PdfCraft.oomol.method3" })}</span>
+                      <span>
+                        {translate({ message: "HOME.PdfCraft.oomol.method3" })}
+                      </span>
                     </li>
                   </ul>
                 </div>

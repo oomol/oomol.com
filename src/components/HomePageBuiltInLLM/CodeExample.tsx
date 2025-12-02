@@ -8,63 +8,55 @@ import styles from './styles.module.scss';
 
 const getPythonCode = () => translate({
   id: 'HOME.Built-in.code.python',
-  message: `import oomol
+  message: `from oocana import Context
 
-# Use a single OOMOL Token to call multiple LLMs
-client = oomol.Client(token="your-oomol-token")
+#region generated meta
+import typing
+Inputs = typing.Dict[str, typing.Any]
+Outputs = typing.Dict[str, typing.Any]
+#endregion
 
-# Call Claude
-response = client.chat.completions.create(
-    model="claude-3-5-sonnet",
-    messages=[{"role": "user", "content": "Hello!"}]
-)
+async def main(params: Inputs, context: Context) -> Outputs | None:
 
-# Switch to GPT-4 by simply changing the model parameter
-response = client.chat.completions.create(
-    model="gpt-4",
-    messages=[{"role": "user", "content": "Hello!"}]
-)`
+    # Fusion API Base URL
+    api_url = "https://fusion-api.oomol.com/v1/fal-nano-banana-edit/submit"
+
+    # LLM Base URL, can use openai sdk
+    llm_base_url = "https://llm.oomol.com/v1"
+
+    # Get OOMOL token from context (no need for manual API key input)
+    api_token = await context.oomol_token()
+
+    return {
+      # "output": "output_value"
+    }`
 });
 
-const getJavaScriptCode = () => translate({
-  id: 'HOME.Built-in.code.javascript',
-  message: `import OOMOL from 'oomol-sdk';
+const getTypeScriptCode = () => translate({
+  id: 'HOME.Built-in.code.typescript',
+  message: `//#region generated meta
+type Inputs = {
+};
+type Outputs = {
+};
+//#endregion
 
-// Use a single OOMOL Token to call multiple LLMs
-const client = new OOMOL({ token: 'your-oomol-token' });
+import type { Context } from "@oomol/types/oocana";
 
-// Call Claude
-const response = await client.chat.completions.create({
-  model: 'claude-3-5-sonnet',
-  messages: [{ role: 'user', content: 'Hello!' }]
-});
+export default async function(
+    params: Inputs,
+    context: Context<Inputs, Outputs>
+): Promise<Partial<Outputs> | undefined | void> {
+    // Fusion API Base URL
+    const api_url = "https://fusion-api.oomol.com/v1/fal-nano-banana-edit/submit"
 
-// Switch to GPT-4 by simply changing the model parameter
-const response2 = await client.chat.completions.create({
-  model: 'gpt-4',
-  messages: [{ role: 'user', content: 'Hello!' }]
-});`
-});
+    // LLM Base URL, can use openai sdk
+    const llm_base_url = "https://llm.oomol.com/v1"
 
-const getCurlCode = () => translate({
-  id: 'HOME.Built-in.code.curl',
-  message: `# Use a single OOMOL Token to call Claude
-curl -X POST https://api.oomol.com/v1/chat/completions \\
-  -H "Authorization: Bearer your-oomol-token" \\
-  -H "Content-Type: application/json" \\
-  -d '{
-    "model": "claude-3-5-sonnet",
-    "messages": [{"role": "user", "content": "Hello!"}]
-  }'
-
-# Switch to GPT-4 by simply changing the model parameter
-curl -X POST https://api.oomol.com/v1/chat/completions \\
-  -H "Authorization: Bearer your-oomol-token" \\
-  -H "Content-Type: application/json" \\
-  -d '{
-    "model": "gpt-4",
-    "messages": [{"role": "user", "content": "Hello!"}]
-  }'`
+    // Get OOMOL token from context (no need for manual API key input)
+    const api_token = await context.getOomolToken()
+    // return { output: "output_value" };
+};`
 });
 
 interface CodeBlockProps {
@@ -98,8 +90,7 @@ function CodeBlock({ code, language }: CodeBlockProps) {
 
 export default function CodeExample() {
   const pythonCode = getPythonCode();
-  const javascriptCode = getJavaScriptCode();
-  const curlCode = getCurlCode();
+  const typescriptCode = getTypeScriptCode();
 
   return (
     <div className={styles.codeExample}>
@@ -107,11 +98,8 @@ export default function CodeExample() {
         <TabItem value="python" label="Python" default>
           <CodeBlock code={pythonCode} language="python" />
         </TabItem>
-        <TabItem value="javascript" label="JavaScript">
-          <CodeBlock code={javascriptCode} language="javascript" />
-        </TabItem>
-        <TabItem value="curl" label="cURL">
-          <CodeBlock code={curlCode} language="bash" />
+        <TabItem value="typescript" label="TypeScript">
+          <CodeBlock code={typescriptCode} language="typescript" />
         </TabItem>
       </Tabs>
     </div>

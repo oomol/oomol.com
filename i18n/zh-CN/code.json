@@ -220,40 +220,40 @@
     "message": "基于 OOMOL 构建的旗舰开源项目，体验本地算力的强大优势"
   },
   "HOME.PdfCraft.description": {
-    "message": "PDF-Craft 是 OOMOL 官方开源的 PDF 处理工具，在 GitHub 上已获得 3000+ Stars。本地免费运行、P2P 分享给朋友、或部署到云端 —— 由你决定如何使用。"
+    "message": "PDF-Craft 是 OOMOL 官方开源的 PDF 转电子书工具，在 GitHub 上已获得 3000+ Stars。支持本地免费运行、通过 OOMOL  分享给朋友、或使用官方 API 服务 —— 总有适合你的服务。"
   },
   "HOME.PdfCraft.feature1": {
-    "message": "免费开源，完全透明"
+    "message": "MIT 开源，完全透明"
   },
   "HOME.PdfCraft.feature2": {
-    "message": "本地运行，使用自己的算力"
+    "message": "基于 DeepSeek OCR，模型先进"
   },
   "HOME.PdfCraft.feature3": {
-    "message": "无使用限制，完全隐私掌控"
+    "message": "专业团队维护，开源和服务并行"
   },
   "HOME.PdfCraft.traditional.badge": {
-    "message": "传统 API"
+    "message": "本地部署"
   },
   "HOME.PdfCraft.traditional.title": {
-    "message": "云端 API 服务"
+    "message": "本地算力，免费私密"
   },
   "HOME.PdfCraft.traditional.description": {
-    "message": "按次计费，持续付费，被厂商锁定，数据隐私存疑"
+    "message": "• 准备具有 3060 以上显卡的 PC\n• 安装 OOMOL Studio 本地免费部署\n• 使用小应用或者 Flow 运行"
   },
   "HOME.PdfCraft.oomol.badge": {
-    "message": "OOMOL 方式"
+    "message": "官方服务"
   },
   "HOME.PdfCraft.oomol.title": {
-    "message": "本地算力，灵活分享"
+    "message": "按量计费，开箱即用"
   },
   "HOME.PdfCraft.oomol.method1": {
-    "message": "使用 Studio 本地免费部署"
+    "message": "官方维护，品质保证"
   },
   "HOME.PdfCraft.oomol.method2": {
-    "message": "P2P 分享给朋友使用（即将推出）"
+    "message": "支持在 PDF-Craft 网站使用"
   },
   "HOME.PdfCraft.oomol.method3": {
-    "message": "团队可选云端部署"
+    "message": "支持开发者调用 API 服务"
   },
   "HOME.PdfCraft.cta.primary": {
     "message": "体验 PDF-Craft"
@@ -733,19 +733,16 @@
     "message": "查看全部"
   },
   "HOME.Built-in.title": {
-    "message": "Built-in APIs & LLM Access"
+    "message": "融合 APIs 与大模型"
   },
   "HOME.Built-in.subtitle": {
     "message": "使用一个 OOMOL API Token，即可快速调用多种常用 API 与主流大模型，开发体验更简单、更统一。"
   },
   "HOME.Built-in.code.python": {
-    "message": "import oomol\n\n# 使用单一 OOMOL Token 调用多种 LLM\nclient = oomol.Client(token=\"your-oomol-token\")\n\n# 调用 Claude\nresponse = client.chat.completions.create(\n    model=\"claude-3-5-sonnet\",\n    messages=[{\"role\": \"user\", \"content\": \"Hello!\"}]\n)\n\n# 切换到 GPT-4 只需改变 model 参数\nresponse = client.chat.completions.create(\n    model=\"gpt-4\",\n    messages=[{\"role\": \"user\", \"content\": \"Hello!\"}]\n)"
+    "message": "from oocana import Context\n\n#region generated meta\nimport typing\nInputs = typing.Dict[str, typing.Any]\nOutputs = typing.Dict[str, typing.Any]\n#endregion\n\nasync def main(params: Inputs, context: Context) -> Outputs | None:\n\n    # 融合 API 基础地址\n    api_url = \"https://fusion-api.oomol.com/v1/fal-nano-banana-edit/submit\"\n\n    # 大模型基础地址，可使用 openai sdk\n    llm_base_url = \"https://llm.oomol.com/v1\"\n\n    # 从 context 获取 OOMOL token（无需手动输入 API key）\n    api_token = await context.oomol_token()\n\n    return {\n      # \"output\": \"output_value\"\n    }"
   },
-  "HOME.Built-in.code.javascript": {
-    "message": "import OOMOL from 'oomol-sdk';\n\n// 使用单一 OOMOL Token 调用多种 LLM\nconst client = new OOMOL({ token: 'your-oomol-token' });\n\n// 调用 Claude\nconst response = await client.chat.completions.create({\n  model: 'claude-3-5-sonnet',\n  messages: [{ role: 'user', content: 'Hello!' }]\n});\n\n// 切换到 GPT-4 只需改变 model 参数\nconst response2 = await client.chat.completions.create({\n  model: 'gpt-4',\n  messages: [{ role: 'user', content: 'Hello!' }]\n});"
-  },
-  "HOME.Built-in.code.curl": {
-    "message": "# 使用单一 OOMOL Token 调用 Claude\ncurl -X POST https://api.oomol.com/v1/chat/completions \\\n  -H \"Authorization: Bearer your-oomol-token\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"claude-3-5-sonnet\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello!\"}]\n  }'\n\n# 切换到 GPT-4 只需改变 model 参数\ncurl -X POST https://api.oomol.com/v1/chat/completions \\\n  -H \"Authorization: Bearer your-oomol-token\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"gpt-4\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello!\"}]\n  }'"
+  "HOME.Built-in.code.typescript": {
+    "message": "//#region generated meta\ntype Inputs = {\n};\ntype Outputs = {\n};\n//#endregion\n\nimport type { Context } from \"@oomol/types/oocana\";\n\nexport default async function(\n    params: Inputs,\n    context: Context<Inputs, Outputs>\n): Promise<Partial<Outputs> | undefined | void> {\n    // 融合 API 基础地址\n    const api_url = \"https://fusion-api.oomol.com/v1/fal-nano-banana-edit/submit\"\n\n    // 大模型基础地址，可使用 openai sdk\n    const llm_base_url = \"https://llm.oomol.com/v1\"\n\n    // 从 context 获取 OOMOL token（无需手动输入 API key）\n    const api_token = await context.getOomolToken()\n    // return { output: \"output_value\" };\n};"
   },
   "HOME.GetStartedPrompt.title": {
     "message": "立即开始使用 OOMOL"
