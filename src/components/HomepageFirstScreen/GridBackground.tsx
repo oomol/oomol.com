@@ -1,11 +1,11 @@
-import React from "react";
+import React, { memo } from "react";
 
 interface GridBackgroundProps {
   opacity?: number;
   className?: string;
 }
 
-export function GridBackground({
+export const GridBackground = memo(function GridBackground({
   opacity = 0.6,
   className,
 }: GridBackgroundProps) {
@@ -39,24 +39,37 @@ export function GridBackground({
           />
         </mask>
         <g mask="url(#mask0_186_1134)">
-          {/* Grid Rectangles */}
-          {[...Array(35)].map((_, i) => (
-            <React.Fragment key={`row1-${i}`}>
-              {[...Array(23)].map((_, j) => (
-                <rect
-                  key={`grid-${i}-${j}`}
-                  x={-20.0891 + i * 36}
-                  y={9.2 + j * 36}
-                  width="35.6"
-                  height="35.6"
-                  stroke="var(--oomol-text-primary)"
-                  strokeOpacity="0.3"
-                  strokeWidth="0.4"
-                  strokeDasharray="2 2"
-                />
-              ))}
-            </React.Fragment>
-          ))}
+          {/* 优化: 使用 pattern 替代 805 个独立元素 */}
+          <defs>
+            <pattern
+              id="grid-pattern"
+              x="-20.0891"
+              y="9.2"
+              width="36"
+              height="36"
+              patternUnits="userSpaceOnUse"
+            >
+              <rect
+                x="0"
+                y="0"
+                width="35.6"
+                height="35.6"
+                stroke="var(--oomol-text-primary)"
+                strokeOpacity="0.3"
+                strokeWidth="0.4"
+                strokeDasharray="2 2"
+                fill="none"
+              />
+            </pattern>
+          </defs>
+          <rect
+            x="-20.0891"
+            y="9.2"
+            width="1260"
+            height="828"
+            fill="url(#grid-pattern)"
+          />
+
           {/* Specific Rectangles with fill */}
           <rect
             x="699.711"
@@ -156,6 +169,7 @@ export function GridBackground({
           />
         </g>
 
+        {/* 优化: 减少模糊强度,合并相似的渐变层 */}
         <g filter="url(#filter0_f_186_1134)">
           <path
             d="M1447.45 -87.0203V-149.03H1770V1248.85H466.158V894.269C1008.11 894.269 1447.45 454.931 1447.45 -87.0203Z"
@@ -171,24 +185,18 @@ export function GridBackground({
           />
         </g>
 
-        <g
-          style={{ mixBlendMode: "lighten" }}
-          filter="url(#filter2_f_186_1134)"
-        >
+        {/* 移除混合模式以提升性能 */}
+        <g filter="url(#filter2_f_186_1134)" opacity="0.8">
           <path
             d="M1567.45 -231.02V-293.03H1890V1104.85H586.158V750.269C1128.11 750.269 1567.45 310.931 1567.45 -231.02Z"
             fill="url(#paint3_linear_186_1134)"
           />
         </g>
 
-        <g
-          style={{ mixBlendMode: "overlay" }}
-          filter="url(#filter3_f_186_1134)"
-        >
+        <g filter="url(#filter3_f_186_1134)" opacity="0.64">
           <path
             d="M65.625 750.269H284.007C860.205 750.269 1327.31 283.168 1327.31 -293.03H1650V1104.85H65.625V750.269Z"
             fill="url(#paint4_radial_186_1134)"
-            fillOpacity="0.64"
           />
         </g>
       </g>
@@ -204,6 +212,7 @@ export function GridBackground({
       />
 
       <defs>
+        {/* 优化: 降低模糊强度以提升性能 */}
         <filter
           id="filter0_f_186_1134"
           x="147.369"
@@ -221,7 +230,7 @@ export function GridBackground({
             result="shape"
           />
           <feGaussianBlur
-            stdDeviation="159.394"
+            stdDeviation="80"
             result="effect1_foregroundBlur_186_1134"
           />
         </filter>
@@ -242,7 +251,7 @@ export function GridBackground({
             result="shape"
           />
           <feGaussianBlur
-            stdDeviation="478.182"
+            stdDeviation="240"
             result="effect1_foregroundBlur_186_1134"
           />
         </filter>
@@ -263,7 +272,7 @@ export function GridBackground({
             result="shape"
           />
           <feGaussianBlur
-            stdDeviation="79.6969"
+            stdDeviation="50"
             result="effect1_foregroundBlur_186_1134"
           />
         </filter>
@@ -284,7 +293,7 @@ export function GridBackground({
             result="shape"
           />
           <feGaussianBlur
-            stdDeviation="159.394"
+            stdDeviation="80"
             result="effect1_foregroundBlur_186_1134"
           />
         </filter>
@@ -358,4 +367,4 @@ export function GridBackground({
       </defs>
     </svg>
   );
-}
+});
