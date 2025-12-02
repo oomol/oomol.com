@@ -1,6 +1,6 @@
 import styles from "./styles.module.scss";
 import { translate } from "@docusaurus/Translate";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface Step {
   stepNumber: string;
@@ -11,6 +11,9 @@ interface Step {
 
 export default function HomepageLifecycle() {
   const [activeStep, setActiveStep] = useState(0);
+  const [progress, setProgress] = useState(0);
+  const progressRef = useRef(0);
+  const AUTO_SWITCH_DURATION = 10000; // 10秒自动切换
 
   // 检测描述是否为列表格式(中文使用列表,英文使用段落)
   const checkIsListFormat = (description: string): boolean => {
@@ -44,18 +47,38 @@ export default function HomepageLifecycle() {
     },
   ];
 
-  // 自动切换功能
+  // 自动切换功能和进度条更新
   useEffect(() => {
-    const interval = setInterval(() => {
+    // 重置进度引用
+    progressRef.current = 0;
+
+    // 更新进度条 (每50ms更新一次,实现平滑动画)
+    const progressInterval = setInterval(() => {
+      progressRef.current = Math.min(
+        progressRef.current + (50 / AUTO_SWITCH_DURATION) * 100,
+        100
+      );
+      setProgress(progressRef.current);
+    }, 50);
+
+    // 自动切换到下一步
+    const switchTimeout = setTimeout(() => {
       setActiveStep(prev => (prev + 1) % steps.length);
-    }, 10000); // 每10秒切换一次
+    }, AUTO_SWITCH_DURATION);
 
-    return () => clearInterval(interval);
-  }, [steps.length]); // 移除 activeStep 依赖,避免频繁重置定时器
+    return () => {
+      clearInterval(progressInterval);
+      clearTimeout(switchTimeout);
+    };
+  }, [activeStep, steps.length]);
 
-  // 处理用户点击，重置计时器
+  // 处理用户点击,重置计时器和进度
   const handleStepClick = (index: number) => {
-    setActiveStep(index);
+    if (index !== activeStep) {
+      setActiveStep(index);
+      progressRef.current = 0;
+      setProgress(0);
+    }
   };
 
   return (
@@ -84,7 +107,26 @@ export default function HomepageLifecycle() {
                   onClick={() => handleStepClick(index)}
                 >
                   <div className={styles.stepIndicator}>
-                    <span className={styles.stepNumber}>{step.stepNumber}</span>
+                    <div className={styles.stepNumberWrapper}>
+                      {index === activeStep && (
+                        <svg className={styles.progressRing} width="58" height="58">
+                          <circle
+                            className={styles.progressRingCircle}
+                            stroke="var(--ifm-color-primary)"
+                            strokeWidth="3"
+                            fill="transparent"
+                            r="26.5"
+                            cx="29"
+                            cy="29"
+                            style={{
+                              strokeDasharray: `${2 * Math.PI * 26.5}`,
+                              strokeDashoffset: `${2 * Math.PI * 26.5 * (1 - progress / 100)}`,
+                            }}
+                          />
+                        </svg>
+                      )}
+                      <span className={styles.stepNumber}>{step.stepNumber}</span>
+                    </div>
                     {index < steps.length - 1 && (
                       <div className={styles.stepConnector} />
                     )}

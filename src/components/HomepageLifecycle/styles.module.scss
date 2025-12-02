@@ -103,7 +103,7 @@
     .stepNumber {
       background: var(--ifm-color-primary);
       color: white;
-      transform: scale(1.1);
+      // 移除 scale 动画,数字大小已统一
     }
 
     .stepTitle {
@@ -127,16 +127,49 @@
   flex-direction: column;
   align-items: center;
   flex-shrink: 0;
+  position: relative;
+}
+
+.stepNumberWrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.progressRing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  pointer-events: none;
+
+  @media (max-width: 768px) {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.progressRingCircle {
+  transition: stroke-dashoffset 0.05s linear;
+  stroke-linecap: round;
 }
 
 .stepNumber {
   width: 48px;
   height: 48px;
-  border-radius: 12px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 700;
   background: rgba(var(--ifm-color-primary-rgb), 0.1);
   color: var(--ifm-color-primary);
@@ -145,7 +178,7 @@
   @media (max-width: 768px) {
     width: 40px;
     height: 40px;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
   }
 }
 
