@@ -13,8 +13,8 @@ const coreFeatures = [
       message: "HOME.CoreFeatures.workflow.description",
     }),
     highlight: translate({ message: "HOME.CoreFeatures.workflow.highlight1" }),
-    mediaType: "video" as const,
-    mediaSrc: "/videos/workflow-demo.mp4",
+    mediaType: "image" as const,
+    mediaSrc: "/img/pages/home/core-feature-function",
     mediaAlt: "Workflow IDE Demo",
   },
   {

@@ -31,7 +31,8 @@
       "Bash(npm --version)",
       "Bash(npm run clear)",
       "Bash(kill 74240 78577)",
-      "Bash(rm -rf .docusaurus build node_modules/.cache)"
+      "Bash(rm -rf .docusaurus build node_modules/.cache)",
+      "Bash(kill 7420 86602)"
     ],
     "deny": [],
     "ask": []
