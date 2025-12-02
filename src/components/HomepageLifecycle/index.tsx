@@ -12,6 +12,11 @@ interface Step {
 export default function HomepageLifecycle() {
   const [activeStep, setActiveStep] = useState(0);
 
+  // 检测描述是否为列表格式(中文使用列表,英文使用段落)
+  const checkIsListFormat = (description: string): boolean => {
+    return description.includes("•") && description.includes("\n");
+  };
+
   const steps: Step[] = [
     {
       stepNumber: "01",
@@ -91,11 +96,19 @@ export default function HomepageLifecycle() {
                     {/* 展开的描述内容 - 仅在激活时显示 */}
                     {index === activeStep && (
                       <div className={styles.stepContent}>
-                        <div className={styles.stepDescription}>
-                          {step.description.split("\n").map((line, idx) => (
-                            <p key={idx}>{line}</p>
-                          ))}
-                        </div>
+                        {checkIsListFormat(step.description) ? (
+                          // 中文列表格式
+                          <ul className={styles.stepList}>
+                            {step.description.split("\n").map((line, idx) => (
+                              <li key={idx}>{line.replace("• ", "")}</li>
+                            ))}
+                          </ul>
+                        ) : (
+                          // 英文段落格式
+                          <div className={styles.stepDescription}>
+                            <p>{step.description}</p>
+                          </div>
+                        )}
                       </div>
                     )}
                   </div>

@@ -127,7 +127,7 @@
     "message": "Design and implement workflows in OOMOL Studio"
   },
   "HOME.Lifecycle.step1.description": {
-    "message": "• Create projects, define functional nodes\n• Install ready-made Blocks from community, or code your own\n• Drag and drop to compose visual workflows\n• AI-assisted throughout from design to production"
+    "message": "Create projects in OOMOL Studio, define functional nodes by installing ready-made Blocks from community or coding your own, then drag and drop to compose visual workflows with full AI assistance from design to production."
   },
   "HOME.Lifecycle.step2.title": {
     "message": "Publish"
@@ -136,7 +136,7 @@
     "message": "Share with community, or manage as personal capability library"
   },
   "HOME.Lifecycle.step2.description": {
-    "message": "• Choose public or private publishing\n• Private packages for modular capability accumulation and reuse\n• Public packages participate in community building, let others use your capabilities"
+    "message": "Choose to publish your packages publicly or privately — keep private packages to build your own modular capability library for reuse, or share them publicly in the community for others to benefit from your work."
   },
   "HOME.Lifecycle.step3.title": {
     "message": "Deploy"
@@ -145,7 +145,7 @@
     "message": "Run on local, private host or cloud"
   },
   "HOME.Lifecycle.step3.description": {
-    "message": "• Local: PC/Mac, for personal use or sharing\n• Headless: NAS/server containerized for long-term running\n• Cloud Serverless: One-click hosting as API, no configuration needed"
+    "message": "Deploy locally on your PC or Mac for personal use and sharing, use headless mode on NAS or server containers for long-term running, or deploy to Cloud Serverless with one click for hassle-free API hosting."
   },
   "HOME.Lifecycle.step4.title": {
     "message": "Deliver"
@@ -154,7 +154,7 @@
     "message": "Transform into capabilities usable by both users and AI"
   },
   "HOME.Lifecycle.step4.description": {
-    "message": "• External API services and interactive user applications\n• MCP Tools for AI invocation\n• Automated workflow delivery"
+    "message": "Transform your workflows into external API services and interactive user applications, MCP Tools that AI can directly invoke, or automated workflows that run on schedules or triggers."
   },
   "HOME.WhyOomol.title": {
     "message": "Why Choose OOMOL"

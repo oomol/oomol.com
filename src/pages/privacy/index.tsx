@@ -3,7 +3,7 @@ import Layout from "../../theme/Layout";
 import styles from "./styles.module.scss";
 import {MDXProvider} from "@mdx-js/react";
 
-import Terms from "./privacy.mdx"
+import Privacy from "./_privacy.mdx"
 
 const components = {
     em(properties: React.ComponentProps<'i'>) {
@@ -16,7 +16,7 @@ export default function Index() {
             <MDXProvider components={components}>
                 <div className={styles.container}>
                     <div className={styles.box}>
-                        <Terms />
+                        <Privacy />
                     </div>
                 </div>
             </MDXProvider>

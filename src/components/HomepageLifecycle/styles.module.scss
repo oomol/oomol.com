@@ -56,7 +56,7 @@
   display: grid;
   grid-template-columns: 420px 1fr;
   gap: 60px;
-  margin-bottom: 100px;
+  // margin-bottom: 100px;
   align-items: start;
 
   @media (max-width: 996px) {
@@ -72,7 +72,8 @@
   gap: 0;
   position: sticky;
   top: 100px;
-  height: fit-content;
+  height: 580px;
+  margin-top: 20px;
 
   @media (max-width: 996px) {
     position: relative;
@@ -83,7 +84,7 @@
 .stepItem {
   display: flex;
   gap: 20px;
-  padding: 16px 20px;
+  padding: 6px 0px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -196,7 +197,7 @@
 
 // 展开的步骤内容
 .stepContent {
-  margin-top: 20px;
+  margin-top: 8px;
   animation: expandContent 0.4s ease;
   overflow: hidden;
 
@@ -229,7 +230,7 @@
   top: 100px;
   margin-top: 20px;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 11;
   background: var(--ifm-color-emphasis-100);
   border-radius: 16px;
   display: flex;
@@ -261,7 +262,7 @@
 }
 
 .stepDescription {
-  margin-bottom: 20px;
+  // margin-bottom: 8px;
 
   p {
     font-size: 1rem;
@@ -278,6 +279,40 @@
     margin-bottom: 16px;
 
     p {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+// 中文列表样式
+.stepList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    font-size: 1rem;
+    color: var(--ifm-color-emphasis-700);
+    line-height: 1.7;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--ifm-color-primary);
+      font-weight: bold;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    li {
       font-size: 0.95rem;
     }
   }
