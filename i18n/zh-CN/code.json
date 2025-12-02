@@ -115,61 +115,46 @@
     "message": "写出能力，就能被任何系统使用"
   },
   "HOME.Lifecycle.title": {
-    "message": "完整开发生命周期"
+    "message": "使用生命周期"
   },
   "HOME.Lifecycle.subtitle": {
-    "message": "一次构建,多种交付方式"
+    "message": "从构建到交付,一站式开发体验"
   },
   "HOME.Lifecycle.step1.title": {
-    "message": "创建工作流 & 生成 Block"
+    "message": "构建"
+  },
+  "HOME.Lifecycle.step1.subtitle": {
+    "message": "在 OOMOL Studio 中设计并实现工作流"
   },
   "HOME.Lifecycle.step1.description": {
-    "message": "通过可视化或代码设计逻辑,根据需要添加 AI/PDF/图像/适配器工具。"
-  },
-  "HOME.Lifecycle.step1.detail1": {
-    "message": "编写 Block 或让 AI 生成它们"
-  },
-  "HOME.Lifecycle.step1.detail2": {
-    "message": "OOMOL 将它们转换为可共享的工作流包"
+    "message": "• 创建项目,定义功能节点\n• 从社区安装现成 Block,或自己编码补充\n• 拖放组合成可视化工作流\n• 从设计到生产全程 AI 辅助"
   },
   "HOME.Lifecycle.step2.title": {
-    "message": "发布到社区"
+    "message": "发布"
+  },
+  "HOME.Lifecycle.step2.subtitle": {
+    "message": "共享给社区,或作为个人能力库版本化管理"
   },
   "HOME.Lifecycle.step2.description": {
-    "message": "公开或私密分享您的包,与他人协作或构建商业附加组件。"
+    "message": "• 选择公开或私有发布\n• 私有包用于模块化能力沉淀、便捷复用\n• 公开包参与社区共建,让你的能力被更多人使用"
   },
   "HOME.Lifecycle.step3.title": {
-    "message": "随处部署"
+    "message": "部署"
+  },
+  "HOME.Lifecycle.step3.subtitle": {
+    "message": "运行在本地、私有主机或云端"
   },
   "HOME.Lifecycle.step3.description": {
-    "message": "选择运行工作流的位置和方式:"
-  },
-  "HOME.Lifecycle.step3.detail1": {
-    "message": "本地:在 PC/NAS 上运行并通过 FRP 共享(类 P2P)"
-  },
-  "HOME.Lifecycle.step3.detail2": {
-    "message": "Headless:在您自己的基础设施中作为容器部署"
-  },
-  "HOME.Lifecycle.step3.detail3": {
-    "message": "云端:一键部署到 OOMOL Cloud(托管 & 可扩展)"
+    "message": "• 本地运行: PC/Mac,自用或共享\n• Headless 部署: NAS/服务器容器化长期运行\n• 云端 Serverless: 一键托管成 API,无需配置"
   },
   "HOME.Lifecycle.step4.title": {
-    "message": "作为产品交付"
+    "message": "交付"
+  },
+  "HOME.Lifecycle.step4.subtitle": {
+    "message": "转化成用户和 AI 都能使用的能力"
   },
   "HOME.Lifecycle.step4.description": {
-    "message": "您的工作流可以交付为:"
-  },
-  "HOME.Lifecycle.step4.detail1": {
-    "message": "REST API"
-  },
-  "HOME.Lifecycle.step4.detail2": {
-    "message": "MCP Agent 工具"
-  },
-  "HOME.Lifecycle.step4.detail3": {
-    "message": "基于对话的应用"
-  },
-  "HOME.Lifecycle.step4.detail4": {
-    "message": "小程序式表单"
+    "message": "• 对外 API 服务与用户交互应用\n• 供 AI 调用的 MCP 工具\n• 自动化工作流交付"
   },
   "HOME.WhyOomol.title": {
     "message": "为什么选择 OOMOL"

@@ -115,61 +115,46 @@
     "message": "Create capabilities that can be used by any system"
   },
   "HOME.Lifecycle.title": {
-    "message": "Complete Development Lifecycle"
+    "message": "Development Lifecycle"
   },
   "HOME.Lifecycle.subtitle": {
-    "message": "Build once, deliver in multiple formats"
+    "message": "From build to delivery, all-in-one development experience"
   },
   "HOME.Lifecycle.step1.title": {
-    "message": "Create Workflow & Generate Blocks"
+    "message": "Build"
+  },
+  "HOME.Lifecycle.step1.subtitle": {
+    "message": "Design and implement workflows in OOMOL Studio"
   },
   "HOME.Lifecycle.step1.description": {
-    "message": "Design logic visually or in code. Add AI/PDF/image/adapter tools as needed."
-  },
-  "HOME.Lifecycle.step1.detail1": {
-    "message": "Write blocks or let AI generate them"
-  },
-  "HOME.Lifecycle.step1.detail2": {
-    "message": "OOMOL turns them into a sharable workflow package"
+    "message": "• Create projects, define functional nodes\n• Install ready-made Blocks from community, or code your own\n• Drag and drop to compose visual workflows\n• AI-assisted throughout from design to production"
   },
   "HOME.Lifecycle.step2.title": {
-    "message": "Publish to Community"
+    "message": "Publish"
+  },
+  "HOME.Lifecycle.step2.subtitle": {
+    "message": "Share with community, or manage as personal capability library"
   },
   "HOME.Lifecycle.step2.description": {
-    "message": "Share your package publicly or privately. Collaborate with others or build commercial add-ons."
+    "message": "• Choose public or private publishing\n• Private packages for modular capability accumulation and reuse\n• Public packages participate in community building, let others use your capabilities"
   },
   "HOME.Lifecycle.step3.title": {
-    "message": "Deploy Anywhere"
+    "message": "Deploy"
+  },
+  "HOME.Lifecycle.step3.subtitle": {
+    "message": "Run on local, private host or cloud"
   },
   "HOME.Lifecycle.step3.description": {
-    "message": "Choose where and how to run your workflows:"
-  },
-  "HOME.Lifecycle.step3.detail1": {
-    "message": "Local: Run on your PC/NAS and share via FRP (P2P-like)"
-  },
-  "HOME.Lifecycle.step3.detail2": {
-    "message": "Headless: Deploy as a container in your own infra"
-  },
-  "HOME.Lifecycle.step3.detail3": {
-    "message": "Cloud: One-click deployment to OOMOL Cloud (managed & scalable)"
+    "message": "• Local: PC/Mac, for personal use or sharing\n• Headless: NAS/server containerized for long-term running\n• Cloud Serverless: One-click hosting as API, no configuration needed"
   },
   "HOME.Lifecycle.step4.title": {
-    "message": "Deliver as Products"
+    "message": "Deliver"
+  },
+  "HOME.Lifecycle.step4.subtitle": {
+    "message": "Transform into capabilities usable by both users and AI"
   },
   "HOME.Lifecycle.step4.description": {
-    "message": "Your workflow can be delivered as:"
-  },
-  "HOME.Lifecycle.step4.detail1": {
-    "message": "REST API"
-  },
-  "HOME.Lifecycle.step4.detail2": {
-    "message": "MCP agent tool"
-  },
-  "HOME.Lifecycle.step4.detail3": {
-    "message": "Chat-based app"
-  },
-  "HOME.Lifecycle.step4.detail4": {
-    "message": "Applet-style forms"
+    "message": "• External API services and interactive user applications\n• MCP Tools for AI invocation\n• Automated workflow delivery"
   },
   "HOME.WhyOomol.title": {
     "message": "Why Choose OOMOL"

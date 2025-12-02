@@ -23,7 +23,9 @@
       "Bash(rm -rf /Users/wushuang/code/oomol.com/src/components/HomepageFeatures)",
       "Bash(done)",
       "Bash(xargs -I {} bash -c 'echo \"\"\"\"=== $(basename {}) ===\"\"\"\" && find {} -type f \\( -name \"\"\"\"*.tsx\"\"\"\" -o -name \"\"\"\"*.ts\"\"\"\" \\) 2>/dev/null')",
-      "Bash(mkdir -p /Users/wushuang/code/oomol.com/src/components/HomepageCoreFeatures)"
+      "Bash(mkdir -p /Users/wushuang/code/oomol.com/src/components/HomepageCoreFeatures)",
+      "Bash(npm run build:zh-CN)",
+      "Bash(npm run start:zh-cn)"
     ],
     "deny": [],
     "ask": []

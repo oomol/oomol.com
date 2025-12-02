@@ -1,51 +1,53 @@
 import styles from "./styles.module.scss";
 import { translate } from "@docusaurus/Translate";
+import { useState, useEffect } from "react";
 
-// 开发生命周期步骤数据
-const lifecycleSteps = [
-  {
-    number: "01",
-    title: translate({ message: "HOME.Lifecycle.step1.title" }),
-    description: translate({ message: "HOME.Lifecycle.step1.description" }),
-    details: [
-      translate({ message: "HOME.Lifecycle.step1.detail1" }),
-      translate({ message: "HOME.Lifecycle.step1.detail2" }),
-    ],
-    icon: "🎨",
-  },
-  {
-    number: "02",
-    title: translate({ message: "HOME.Lifecycle.step2.title" }),
-    description: translate({ message: "HOME.Lifecycle.step2.description" }),
-    details: [],
-    icon: "📦",
-  },
-  {
-    number: "03",
-    title: translate({ message: "HOME.Lifecycle.step3.title" }),
-    description: translate({ message: "HOME.Lifecycle.step3.description" }),
-    details: [
-      translate({ message: "HOME.Lifecycle.step3.detail1" }),
-      translate({ message: "HOME.Lifecycle.step3.detail2" }),
-      translate({ message: "HOME.Lifecycle.step3.detail3" }),
-    ],
-    icon: "🚀",
-  },
-  {
-    number: "04",
-    title: translate({ message: "HOME.Lifecycle.step4.title" }),
-    description: translate({ message: "HOME.Lifecycle.step4.description" }),
-    details: [
-      translate({ message: "HOME.Lifecycle.step4.detail1" }),
-      translate({ message: "HOME.Lifecycle.step4.detail2" }),
-      translate({ message: "HOME.Lifecycle.step4.detail3" }),
-      translate({ message: "HOME.Lifecycle.step4.detail4" }),
-    ],
-    icon: "✨",
-  },
-];
+interface Step {
+  stepNumber: string;
+  title: string;
+  subtitle: string;
+  description: string;
+}
 
 export default function HomepageLifecycle() {
+  const [activeStep, setActiveStep] = useState(0);
+
+  const steps: Step[] = [
+    {
+      stepNumber: "01",
+      title: translate({ message: "HOME.Lifecycle.step1.title" }),
+      subtitle: translate({ message: "HOME.Lifecycle.step1.subtitle" }),
+      description: translate({ message: "HOME.Lifecycle.step1.description" }),
+    },
+    {
+      stepNumber: "02",
+      title: translate({ message: "HOME.Lifecycle.step2.title" }),
+      subtitle: translate({ message: "HOME.Lifecycle.step2.subtitle" }),
+      description: translate({ message: "HOME.Lifecycle.step2.description" }),
+    },
+    {
+      stepNumber: "03",
+      title: translate({ message: "HOME.Lifecycle.step3.title" }),
+      subtitle: translate({ message: "HOME.Lifecycle.step3.subtitle" }),
+      description: translate({ message: "HOME.Lifecycle.step3.description" }),
+    },
+    {
+      stepNumber: "04",
+      title: translate({ message: "HOME.Lifecycle.step4.title" }),
+      subtitle: translate({ message: "HOME.Lifecycle.step4.subtitle" }),
+      description: translate({ message: "HOME.Lifecycle.step4.description" }),
+    },
+  ];
+
+  // 自动切换功能
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % steps.length);
+    }, 10000); // 每10秒切换一次
+
+    return () => clearInterval(interval);
+  }, [steps.length]);
+
   return (
     <section className={styles.lifecycleSection}>
       <div className={styles.container}>
@@ -59,45 +61,55 @@ export default function HomepageLifecycle() {
           </p>
         </div>
 
-        {/* Steps Timeline */}
-        <div className={styles.timeline}>
-          {lifecycleSteps.map((step, index) => (
-            <div key={index} className={styles.stepWrapper}>
-              {/* Step Card */}
-              <div className={styles.stepCard}>
-                {/* Step Number & Icon */}
-                <div className={styles.stepHeader}>
-                  <div className={styles.stepNumber}>{step.number}</div>
-                  <div className={styles.stepIcon}>{step.icon}</div>
-                </div>
+        {/* 左右分栏布局 */}
+        <div className={styles.mainContent}>
+          {/* 左侧流程导航 */}
+          <div className={styles.stepsNavigation}>
+            {steps.map((step, index) => (
+              <div key={step.stepNumber}>
+                <button
+                  className={`${styles.stepItem} ${
+                    index === activeStep ? styles.active : ""
+                  }`}
+                  onClick={() => setActiveStep(index)}
+                >
+                  <div className={styles.stepIndicator}>
+                    <span className={styles.stepNumber}>{step.stepNumber}</span>
+                    {index < steps.length - 1 && (
+                      <div className={styles.stepConnector} />
+                    )}
+                  </div>
+                  <div className={styles.stepInfo}>
+                    <h3 className={styles.stepTitle}>{step.title}</h3>
+                    <p className={styles.stepSubtitle}>{step.subtitle}</p>
 
-                {/* Step Content */}
-                <div className={styles.stepContent}>
-                  <h3 className={styles.stepTitle}>{step.title}</h3>
-                  <p className={styles.stepDescription}>{step.description}</p>
-
-                  {/* Step Details */}
-                  {step.details.length > 0 && (
-                    <ul className={styles.stepDetails}>
-                      {step.details.map((detail, idx) => (
-                        <li key={idx} className={styles.detailItem}>
-                          {detail}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
+                    {/* 展开的描述内容 - 仅在激活时显示 */}
+                    {index === activeStep && (
+                      <div className={styles.stepContent}>
+                        <div className={styles.stepDescription}>
+                          {step.description.split("\n").map((line, idx) => (
+                            <p key={idx}>{line}</p>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </button>
               </div>
+            ))}
+          </div>
 
-              {/* Connector Arrow (except for last item) */}
-              {index < lifecycleSteps.length - 1 && (
-                <div className={styles.connector}>
-                  <div className={styles.arrow}>→</div>
-                </div>
-              )}
+          {/* 右侧内容区域 - 图片占位 */}
+          <div className={styles.contentArea}>
+            <div className={styles.imagePlaceholder}>
+              {/* 这里可以放置图片或视频 */}
+              <div className={styles.placeholderText}>
+                Step {activeStep + 1} Image/Video Placeholder
+              </div>
             </div>
-          ))}
+          </div>
         </div>
+
       </div>
     </section>
   );
