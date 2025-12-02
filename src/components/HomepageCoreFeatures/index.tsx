@@ -20,9 +20,7 @@ const coreFeatures = [
     title: translate({ message: "HOME.CoreFeatures.container.title" }),
     description: translate({ message: "HOME.CoreFeatures.container.description" }),
     highlight: translate({ message: "HOME.CoreFeatures.container.highlight1" }),
-    mediaType: "image" as const,
-    mediaSrc: "/img/features/container",
-    mediaAlt: "Container and FRP Demo",
+    mediaType: "empty" as const,
   },
   {
     id: "mcp",
@@ -96,7 +94,7 @@ export default function HomepageCoreFeatures() {
                   >
                     <source src={useBaseUrl(feature.mediaSrc)} type="video/mp4" />
                   </video>
-                ) : (
+                ) : feature.mediaType === "image" ? (
                   <img
                     src={useBaseUrl(
                       colorMode === "dark"
@@ -106,7 +104,9 @@ export default function HomepageCoreFeatures() {
                     alt={feature.mediaAlt}
                     className={styles.mediaImage}
                   />
-                )}
+                ) : feature.mediaType === "empty" ? (
+                  <div className={styles.mediaImage}></div>
+                ) : null}
               </div>
             </div>
           ))}
