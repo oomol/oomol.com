@@ -27,23 +27,33 @@
 .title {
   font-size: 48px;
   font-weight: 800;
-  margin-bottom: 16px;
-  color: var(--oomol-text-primary);
+  color: var(--ifm-heading-color);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+
+  @media (max-width: 996px) {
+    font-size: 2.25rem;
+  }
 
   @media (max-width: 768px) {
-    font-size: 32px;
+    font-size: 2rem;
   }
 }
 
 .subtitle {
-  font-size: 18px;
-  color: var(--oomol-text-secondary);
-  max-width: 700px;
+  font-size: 1.2rem;
+  color: var(--ifm-color-emphasis-700);
+  max-width: 720px;
   margin: 0 auto;
   line-height: 1.6;
 
+  @media (max-width: 996px) {
+    font-size: 1.1rem;
+  }
+
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 
