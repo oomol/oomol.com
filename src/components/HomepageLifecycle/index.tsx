@@ -51,7 +51,7 @@ export default function HomepageLifecycle() {
     }, 10000); // 每10秒切换一次
 
     return () => clearInterval(interval);
-  }, [steps.length, activeStep]); // 添加 activeStep 依赖，当用户点击时重置计时器
+  }, [steps.length]); // 移除 activeStep 依赖,避免频繁重置定时器
 
   // 处理用户点击，重置计时器
   const handleStepClick = (index: number) => {

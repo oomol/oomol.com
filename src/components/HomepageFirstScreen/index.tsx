@@ -99,6 +99,8 @@ export default function HomepageFirstScreen() {
             )}
             alt="OOMOL Product Screenshot"
             className={styles["product-screenshot"]}
+            loading="eager"
+            fetchPriority="high"
           />
         </div>
       </div>

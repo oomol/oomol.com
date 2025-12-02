@@ -2,14 +2,16 @@ import styles from "./styles.module.scss";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { useColorMode } from "@docusaurus/theme-common";
-import React from "react";
+import React, { useState, useEffect, useRef, memo } from "react";
 
 // 核心功能数据
 const coreFeatures = [
   {
     id: "workflow",
     title: translate({ message: "HOME.CoreFeatures.workflow.title" }),
-    description: translate({ message: "HOME.CoreFeatures.workflow.description" }),
+    description: translate({
+      message: "HOME.CoreFeatures.workflow.description",
+    }),
     highlight: translate({ message: "HOME.CoreFeatures.workflow.highlight1" }),
     mediaType: "video" as const,
     mediaSrc: "/videos/workflow-demo.mp4",
@@ -18,7 +20,9 @@ const coreFeatures = [
   {
     id: "container",
     title: translate({ message: "HOME.CoreFeatures.container.title" }),
-    description: translate({ message: "HOME.CoreFeatures.container.description" }),
+    description: translate({
+      message: "HOME.CoreFeatures.container.description",
+    }),
     highlight: translate({ message: "HOME.CoreFeatures.container.highlight1" }),
     mediaType: "empty" as const,
   },
@@ -42,71 +46,124 @@ const coreFeatures = [
   },
 ];
 
-// Feature Item Component
-function FeatureItem({ feature, index }: { feature: typeof coreFeatures[0], index: number }) {
-  const { colorMode } = useColorMode();
+// Feature Item Component with lazy loading
+const FeatureItem = memo(
+  ({
+    feature,
+    index,
+  }: {
+    feature: (typeof coreFeatures)[0];
+    index: number;
+  }) => {
+    const { colorMode } = useColorMode();
+    const [isVisible, setIsVisible] = useState(false);
+    const [shouldPlay, setShouldPlay] = useState(false);
+    const itemRef = useRef<HTMLDivElement>(null);
 
-  // Always call hooks unconditionally
-  const videoSrc = feature.mediaSrc || '';
-  const imageSrcLight = feature.mediaSrc ? `${feature.mediaSrc}-light.png` : '';
-  const imageSrcDark = feature.mediaSrc ? `${feature.mediaSrc}-dark.png` : '';
+    // Always call hooks unconditionally
+    const videoSrc = feature.mediaSrc || "";
+    const imageSrcLight = feature.mediaSrc
+      ? `${feature.mediaSrc}-light.png`
+      : "";
+    const imageSrcDark = feature.mediaSrc ? `${feature.mediaSrc}-dark.png` : "";
 
-  const videoUrl = useBaseUrl(videoSrc);
-  const imageUrlLight = useBaseUrl(imageSrcLight);
-  const imageUrlDark = useBaseUrl(imageSrcDark);
+    const videoUrl = useBaseUrl(videoSrc);
+    const imageUrlLight = useBaseUrl(imageSrcLight);
+    const imageUrlDark = useBaseUrl(imageSrcDark);
 
-  // Determine which URL to use based on media type and color mode
-  const imageUrl = colorMode === "dark" ? imageUrlDark : imageUrlLight;
+    // Determine which URL to use based on media type and color mode
+    const imageUrl = colorMode === "dark" ? imageUrlDark : imageUrlLight;
 
-  return (
-    <div
-      className={`${styles.featureItem} ${index % 2 === 1 ? styles.reverse : ''}`}
-    >
-      {/* Text Content */}
-      <div className={styles.featureContent}>
-        <h3 className={styles.featureTitle}>{feature.title}</h3>
-        <div className={styles.featureDescription}>
-          {feature.description.split('\n').map((line, i) => (
-            <React.Fragment key={i}>
-              {line}
-              {i < feature.description.split('\n').length - 1 && <br />}
-            </React.Fragment>
-          ))}
+    // Intersection Observer for lazy loading
+    useEffect(() => {
+      const currentRef = itemRef.current;
+      if (!currentRef) return;
+
+      const observer = new window.IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              setIsVisible(true);
+              // Delay video playback slightly to improve performance
+              setTimeout(() => setShouldPlay(true), 100);
+            } else {
+              // Pause video when out of view to save resources
+              setShouldPlay(false);
+            }
+          });
+        },
+        {
+          rootMargin: "50px", // Start loading slightly before element enters viewport
+          threshold: 0.1,
+        }
+      );
+
+      observer.observe(currentRef);
+
+      return () => {
+        observer.unobserve(currentRef);
+      };
+    }, []);
+
+    return (
+      <div
+        ref={itemRef}
+        className={`${styles.featureItem} ${index % 2 === 1 ? styles.reverse : ""}`}
+      >
+        {/* Text Content */}
+        <div className={styles.featureContent}>
+          <h3 className={styles.featureTitle}>{feature.title}</h3>
+          <div className={styles.featureDescription}>
+            {feature.description.split("\n").map((line, i) => (
+              <React.Fragment key={i}>
+                {line}
+                {i < feature.description.split("\n").length - 1 && <br />}
+              </React.Fragment>
+            ))}
+          </div>
+          <div className={styles.featureHighlight}>
+            <span className={styles.highlightIcon}>✨</span>
+            <span className={styles.highlightText}>{feature.highlight}</span>
+          </div>
         </div>
-        <div className={styles.featureHighlight}>
-          <span className={styles.highlightIcon}>✨</span>
-          <span className={styles.highlightText}>{feature.highlight}</span>
+
+        {/* Media Content - Lazy loaded */}
+        <div className={styles.featureMedia}>
+          {isVisible && feature.mediaType === "video" ? (
+            <video
+              className={styles.mediaVideo}
+              autoPlay={shouldPlay}
+              loop
+              muted
+              playsInline
+              preload="metadata"
+            >
+              <source src={videoUrl} type="video/mp4" />
+            </video>
+          ) : isVisible && feature.mediaType === "image" ? (
+            <img
+              src={imageUrl}
+              alt={feature.mediaAlt}
+              className={styles.mediaImage}
+              loading="lazy"
+            />
+          ) : feature.mediaType === "empty" ? (
+            <div className={styles.mediaImage}></div>
+          ) : (
+            <div
+              className={styles.mediaImage}
+              style={{ minHeight: "300px" }}
+            ></div>
+          )}
         </div>
       </div>
+    );
+  }
+);
 
-      {/* Media Content */}
-      <div className={styles.featureMedia}>
-        {feature.mediaType === "video" ? (
-          <video
-            className={styles.mediaVideo}
-            autoPlay
-            loop
-            muted
-            playsInline
-          >
-            <source src={videoUrl} type="video/mp4" />
-          </video>
-        ) : feature.mediaType === "image" ? (
-          <img
-            src={imageUrl}
-            alt={feature.mediaAlt}
-            className={styles.mediaImage}
-          />
-        ) : feature.mediaType === "empty" ? (
-          <div className={styles.mediaImage}></div>
-        ) : null}
-      </div>
-    </div>
-  );
-}
+FeatureItem.displayName = "FeatureItem";
 
 export default function HomepageCoreFeatures() {
-
   return (
     <section className={styles.coreFeaturesSection}>
       <div className={styles.container}>

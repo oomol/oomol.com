@@ -163,6 +163,7 @@
   transition: all 0.3s ease;
   width: 100%;
   max-width: 700px;
+  height: 480px;
 
   &:hover {
     transform: translateY(-8px);
@@ -193,7 +194,7 @@
 }
 
 // 暗色模式适配
-[data-theme='dark'] {
+[data-theme="dark"] {
   .featureMedia {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 
