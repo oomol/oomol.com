@@ -87,28 +87,28 @@
   }
 
   &.secondary {
-    border-color: #00b4d8;
+    border-color: #5d63a3;
 
     .cardHeader {
-      background: #00b4d8;
+      background: #5d63a3;
     }
 
     &:hover {
-      border-color: #00b4d8;
-      box-shadow: 0 12px 40px rgba(0, 180, 216, 0.25);
+      border-color: #5d63a3;
+      box-shadow: 0 12px 40px rgba(0, 119, 182, 0.25);
     }
   }
 
   &.tertiary {
-    border-color: #7b68ee;
+    border-color: #3d3c60;
 
     .cardHeader {
-      background: #7b68ee;
+      background: #3d3c60;
     }
 
     &:hover {
-      border-color: #7b68ee;
-      box-shadow: 0 12px 40px rgba(123, 104, 238, 0.25);
+      border-color: #3d3c60;
+      box-shadow: 0 12px 40px rgba(72, 202, 228, 0.25);
     }
   }
 }
@@ -131,7 +131,8 @@
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
