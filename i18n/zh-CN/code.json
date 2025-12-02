@@ -75,6 +75,9 @@
   "HOME.CoreFeatures.title": {
     "message": "四大核心功能"
   },
+  "HOME.CoreFeatures.subtitle": {
+    "message": "从开发到部署，全链路提效"
+  },
   "HOME.CoreFeatures.workflow.title": {
     "message": "工作流系统：编写与组合函数 Blocks"
   },

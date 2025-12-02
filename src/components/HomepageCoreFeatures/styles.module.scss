@@ -32,6 +32,22 @@
   }
 }
 
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: var(--ifm-color-emphasis-700);
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.6;
+
+  @media (max-width: 996px) {
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
 .featuresList {
   display: flex;
   flex-direction: column;

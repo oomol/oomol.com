@@ -75,6 +75,9 @@
   "HOME.CoreFeatures.title": {
     "message": "Four Core Features"
   },
+  "HOME.CoreFeatures.subtitle": {
+    "message": "Boosting efficiency across the entire development and deployment pipeline"
+  },
   "HOME.CoreFeatures.workflow.title": {
     "message": "Workflow System: Write & Compose Function Blocks"
   },

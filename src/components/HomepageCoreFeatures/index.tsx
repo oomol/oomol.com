@@ -55,6 +55,9 @@ export default function HomepageCoreFeatures() {
           <h2 className={styles.sectionTitle}>
             {translate({ message: "HOME.CoreFeatures.title" })}
           </h2>
+          <p className={styles.sectionSubtitle}>
+            {translate({ message: "HOME.CoreFeatures.subtitle" })}
+          </p>
         </div>
 
         {/* Features List */}
