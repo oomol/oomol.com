@@ -124,19 +124,19 @@
     "message": "构建"
   },
   "HOME.Lifecycle.step1.subtitle": {
-    "message": "在 OOMOL Studio 中设计并实现工作流"
+    "message": "设计和生产全程 AI 辅助完成"
   },
   "HOME.Lifecycle.step1.description": {
-    "message": "• 创建项目,定义功能节点\n• 从社区安装现成 Block,或自己编码补充\n• 拖放组合成可视化工作流\n• 从设计到生产全程 AI 辅助"
+    "message": "• 创建项目,定义功能节点\n• 从社区安装现成 Block,或自己编码补充\n• 拖放组合成可视化工作流"
   },
   "HOME.Lifecycle.step2.title": {
     "message": "发布"
   },
   "HOME.Lifecycle.step2.subtitle": {
-    "message": "共享给社区,或作为个人能力库版本化管理"
+    "message": "共享给社区或作为个人能力库"
   },
   "HOME.Lifecycle.step2.description": {
-    "message": "• 选择公开或私有发布\n• 私有包用于模块化能力沉淀、便捷复用\n• 公开包参与社区共建,让你的能力被更多人使用"
+    "message": "• 选择公开或私有发布\n• 私有包用于模块化能力沉淀、便捷复用\n• 公开包参与社区共建"
   },
   "HOME.Lifecycle.step3.title": {
     "message": "部署"
@@ -145,7 +145,7 @@
     "message": "运行在本地、私有主机或云端"
   },
   "HOME.Lifecycle.step3.description": {
-    "message": "• 本地运行: PC/Mac,自用或共享\n• Headless 部署: NAS/服务器容器化长期运行\n• 云端 Serverless: 一键托管成 API,无需配置"
+    "message": "• 本地运行: PC/Mac,自用或共享\n• Headless 部署: NAS/服务器容器化运行\n• 云端 Serverless: 一键托管成 API,无需配置"
   },
   "HOME.Lifecycle.step4.title": {
     "message": "交付"

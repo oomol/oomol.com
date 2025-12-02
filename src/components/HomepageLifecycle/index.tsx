@@ -42,11 +42,16 @@ export default function HomepageLifecycle() {
   // 自动切换功能
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveStep((prev) => (prev + 1) % steps.length);
+      setActiveStep(prev => (prev + 1) % steps.length);
     }, 10000); // 每10秒切换一次
 
     return () => clearInterval(interval);
-  }, [steps.length]);
+  }, [steps.length, activeStep]); // 添加 activeStep 依赖，当用户点击时重置计时器
+
+  // 处理用户点击，重置计时器
+  const handleStepClick = (index: number) => {
+    setActiveStep(index);
+  };
 
   return (
     <section className={styles.lifecycleSection}>
@@ -71,7 +76,7 @@ export default function HomepageLifecycle() {
                   className={`${styles.stepItem} ${
                     index === activeStep ? styles.active : ""
                   }`}
-                  onClick={() => setActiveStep(index)}
+                  onClick={() => handleStepClick(index)}
                 >
                   <div className={styles.stepIndicator}>
                     <span className={styles.stepNumber}>{step.stepNumber}</span>
@@ -109,7 +114,6 @@ export default function HomepageLifecycle() {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
