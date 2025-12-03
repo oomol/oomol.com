@@ -5,27 +5,37 @@ import Layout from "@theme/Layout";
 import { DownloadUrl } from "@site/src/download_url";
 import { translate } from "@docusaurus/Translate";
 import { downloadStable } from "@site/src/lib/utils";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 const downloadData = [
   {
     type: translate({
-      message: "HOME.Downloads.Canary.title",
+      message: "HOME.Downloads.Nightly.title",
     }),
     subTitle: translate({
-      message: "HOME.Downloads.Canary.subtitle",
+      message: "HOME.Downloads.Nightly.subtitle",
     }),
     downloads: [
       {
-        text: "Download For MacOS Apple Silicon",
-        url: DownloadUrl.Canary.MacOS.AppleSilicon,
+        text: translate({
+          message: "HOME.Downloads.download.macos.applesilicon",
+          description: "Download For MacOS Apple Silicon",
+        }),
+        url: DownloadUrl.Nightly.MacOS.AppleSilicon,
       },
       {
-        text: "Download For MacOS Intel Chip",
-        url: DownloadUrl.Canary.MacOS.Intel,
+        text: translate({
+          message: "HOME.Downloads.download.macos.intel",
+          description: "Download For MacOS Intel Chip",
+        }),
+        url: DownloadUrl.Nightly.MacOS.Intel,
       },
       {
-        text: "Download For Windows X64",
-        url: DownloadUrl.Canary.Windows.x64,
+        text: translate({
+          message: "HOME.Downloads.download.windows.x64",
+          description: "Download For Windows X64",
+        }),
+        url: DownloadUrl.Nightly.Windows.x64,
       },
     ],
   },
@@ -38,50 +48,39 @@ const downloadData = [
     }),
     downloads: [
       {
-        text: "Download For MacOS Apple Silicon",
+        text: translate({
+          message: "HOME.Downloads.download.macos.applesilicon",
+          description: "Download For MacOS Apple Silicon",
+        }),
         url: DownloadUrl.Stable.MacOS.AppleSilicon,
       },
       {
-        text: "Download For MacOS Intel Chip",
+        text: translate({
+          message: "HOME.Downloads.download.macos.intel",
+          description: "Download For MacOS Intel Chip",
+        }),
         url: DownloadUrl.Stable.MacOS.Intel,
       },
       {
-        text: "Download For Windows X64",
+        text: translate({
+          message: "HOME.Downloads.download.windows.x64",
+          description: "Download For Windows X64",
+        }),
         url: DownloadUrl.Stable.Windows.x64,
       },
     ],
     className: styles.stable,
     mostRecommended: true,
   },
-  {
-    type: translate({
-      message: "HOME.Downloads.Nightly.title",
-    }),
-    subTitle: translate({
-      message: "HOME.Downloads.Nightly.subtitle",
-    }),
-    downloads: [
-      {
-        text: "Download For MacOS Apple Silicon",
-        url: DownloadUrl.Nightly.MacOS.AppleSilicon,
-      },
-      {
-        text: "Download For MacOS Intel Chip",
-        url: DownloadUrl.Nightly.MacOS.Intel,
-      },
-      {
-        text: "Download For Windows X64",
-        url: DownloadUrl.Nightly.Windows.x64,
-      },
-    ],
-  },
 ];
 
 export default function Downloads() {
+  const logoUrl = useBaseUrl("/img/logo2x.png");
+
   return (
     <Layout>
       <div className={styles.container}>
-        <img className={styles.image} src={"/img/logo2x.png"} />
+        <img className={styles.image} src={logoUrl} />
         <div className={styles.titleBox}>
           <h1 className={styles.title}>
             {translate({

@@ -786,6 +786,15 @@
   "HOME.Downloads.Nightly.subtitle": {
     "message": "隔夜构建版本，较不稳定"
   },
+  "HOME.Downloads.download.macos.applesilicon": {
+    "message": "下载 MacOS Apple Silicon 版本"
+  },
+  "HOME.Downloads.download.macos.intel": {
+    "message": "下载 MacOS Intel 版本（旧版本）"
+  },
+  "HOME.Downloads.download.windows.x64": {
+    "message": "下载 Windows X64 版本"
+  },
   "HOME.Community.title": {
     "message": "与悟墨用户建立联系"
   },

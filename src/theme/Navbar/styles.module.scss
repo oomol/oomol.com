@@ -66,6 +66,7 @@
   color: var(--oomol-text-primary);
   text-decoration: none;
   margin: 0 !important;
+  transition: all 0.2s ease;
 
   i {
     font-size: 16px;
@@ -74,6 +75,7 @@
   &:hover {
     color: var(--oomol-primary) !important;
     border-color: var(--oomol-primary);
+    background: var(--oomol-primary-bg);
   }
 }
 
