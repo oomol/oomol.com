@@ -34,7 +34,8 @@
       "Bash(rm -rf .docusaurus build node_modules/.cache)",
       "Bash(kill 7420 86602)",
       "Bash(tree -L 3 /Users/wushuang/code/oomol.com/src/pages/terms /Users/wushuang/code/oomol.com/i18n/zh-CN/docusaurus-plugin-content-pages/terms)",
-      "Bash(mkdir -p /Users/wushuang/code/oomol.com/src/components/HomepageCommunityShare)"
+      "Bash(mkdir -p /Users/wushuang/code/oomol.com/src/components/HomepageCommunityShare)",
+      "Bash(npm run build-unocss)"
     ],
     "deny": [],
     "ask": []

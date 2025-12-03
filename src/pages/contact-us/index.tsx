@@ -6,6 +6,7 @@ import { Popover } from "@site/src/components/Popover";
 import { Button } from "@site/src/components/ui/button";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { useEffect, useState } from "react";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 interface RepoInfo {
   name: string;
@@ -125,6 +126,8 @@ export default function Community() {
     string,
     RepoStats
   > | null>(null);
+  const qrcodeUrl = useBaseUrl("/img/qrcode@3x.png");
+  const repositoryIconUrl = useBaseUrl("/img/pages/community/repository.png");
 
   useEffect(() => {
     const controller = new AbortController();
@@ -276,7 +279,7 @@ export default function Community() {
                   <img
                     alt="qrcode"
                     className={styles.qrcode}
-                    src={"/img/qrcode@3x.png"}
+                    src={qrcodeUrl}
                   />
                 }
               />
@@ -309,7 +312,7 @@ export default function Community() {
                   <div className={styles["repo-header"]}>
                     <img
                       className={styles["repo-icon"]}
-                      src={"/img/pages/community/repository.png"}
+                      src={repositoryIconUrl}
                       alt={repo.name}
                     />
                     <span className={styles["repo-title"]}>{repo.name}</span>
