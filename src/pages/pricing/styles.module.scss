@@ -391,3 +391,249 @@
   background-color: var(--oomol-border-default);
   margin: 40px auto;
 }
+
+// 新增样式
+.subscriptionSection,
+.payAsYouGoSection {
+  width: 100%;
+  max-width: 1280px;
+  margin: 80px auto;
+  padding: 0 16px;
+}
+
+.sectionTitle {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 800;
+  color: var(--oomol-text-primary);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.sectionSubtitle {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  color: var(--oomol-text-secondary);
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+// 订阅卡片样式
+.planCard {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  border-radius: 20px;
+  background-color: var(--oomol-bg-elevated);
+  border: 1px solid var(--oomol-border-default);
+  box-shadow: var(--oomol-shadow-sm);
+  transition: all 0.3s ease;
+  position: relative;
+
+  &:hover {
+    box-shadow: var(--oomol-shadow-md);
+    transform: translateY(-4px);
+  }
+
+  &.recommended {
+    border: 2px solid var(--oomol-primary);
+    box-shadow: var(--oomol-shadow-lg);
+  }
+}
+
+.badge {
+  position: absolute;
+  top: -12px;
+  right: 40px;
+  padding: 4px 16px;
+  background: var(--oomol-primary);
+  color: white;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.planHeader {
+  margin-bottom: 32px;
+}
+
+.planName {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 800;
+  color: var(--oomol-text-primary);
+  margin-bottom: 8px;
+}
+
+.planPrice {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+
+  .price {
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: 800;
+    color: var(--oomol-text-primary);
+  }
+
+  .period {
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--oomol-text-secondary);
+  }
+}
+
+.planDescription {
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--oomol-text-secondary);
+}
+
+.subscribeBtn {
+  width: 100%;
+  margin-bottom: 32px;
+  background-color: var(--oomol-primary) !important;
+  border-color: var(--oomol-primary) !important;
+  color: white !important;
+
+  &:hover {
+    background-color: var(--oomol-primary-hover) !important;
+    border-color: var(--oomol-primary-hover) !important;
+    color: white !important;
+  }
+
+  a {
+    color: white !important;
+  }
+}
+
+.downloadBtnWrapper {
+  margin-bottom: 32px;
+}
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--oomol-text-secondary);
+
+  i {
+    color: var(--oomol-success);
+    font-size: 16px;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+}
+
+// 按量计费表格样式
+.pricingTable {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow-x: auto;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--oomol-bg-elevated);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--oomol-shadow-sm);
+  }
+
+  thead {
+    background-color: var(--oomol-bg-container);
+
+    tr th {
+      padding: 20px 24px;
+      text-align: left;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--oomol-text-primary);
+      border-bottom: 2px solid var(--oomol-border-default);
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid var(--oomol-border-subtle);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &.categoryRow {
+        background-color: var(--oomol-bg-container);
+
+        td {
+          padding: 16px 24px;
+          font-size: 18px;
+          font-weight: 700;
+          color: var(--oomol-text-primary);
+        }
+      }
+    }
+
+    td {
+      padding: 16px 24px;
+      font-size: 14px;
+      line-height: 22px;
+
+      &.itemCell {
+        color: var(--oomol-text-secondary);
+        width: 60%;
+      }
+
+      &.priceCell {
+        color: var(--oomol-text-primary);
+        font-weight: 600;
+        text-align: right;
+        width: 40%;
+      }
+    }
+  }
+}
+
+// 响应式设计
+@media (max-width: 966px) {
+  .planBox {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .planCard {
+    max-width: 100%;
+  }
+
+  .sectionTitle {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .pricingTable {
+    font-size: 12px;
+
+    thead tr th,
+    tbody td {
+      padding: 12px 16px;
+    }
+  }
+}

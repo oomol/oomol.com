@@ -880,6 +880,168 @@
   "PRICING.subtitle": {
     "message": "免费起步，按需升级"
   },
+  "PRICING.subscription.title": {
+    "message": "订阅套餐"
+  },
+  "PRICING.subscription.subtitle": {
+    "message": "选择适合您的订阅计划，享受更多功能和服务"
+  },
+  "PRICING.subscription.recommended": {
+    "message": "推荐"
+  },
+  "PRICING.subscription.period": {
+    "message": "/月"
+  },
+  "PRICING.subscription.subscribe": {
+    "message": "立即订阅"
+  },
+  "PRICING.subscription.free.name": {
+    "message": "免费版"
+  },
+  "PRICING.subscription.free.price": {
+    "message": "¥0"
+  },
+  "PRICING.subscription.free.description": {
+    "message": "适合个人开发者和小型项目"
+  },
+  "PRICING.subscription.free.feature1": {
+    "message": "本地运行，无限制使用"
+  },
+  "PRICING.subscription.free.feature2": {
+    "message": "基础工作流功能"
+  },
+  "PRICING.subscription.free.feature3": {
+    "message": "社区支持"
+  },
+  "PRICING.subscription.free.feature4": {
+    "message": "FRP 协议分享"
+  },
+  "PRICING.subscription.standard.name": {
+    "message": "标准版"
+  },
+  "PRICING.subscription.standard.price": {
+    "message": "¥99"
+  },
+  "PRICING.subscription.standard.description": {
+    "message": "适合中小团队和专业开发者"
+  },
+  "PRICING.subscription.standard.feature1": {
+    "message": "每月 500 万免费积分"
+  },
+  "PRICING.subscription.standard.feature2": {
+    "message": "云端部署支持"
+  },
+  "PRICING.subscription.standard.feature3": {
+    "message": "邀请协作成员"
+  },
+  "PRICING.subscription.standard.feature4": {
+    "message": "优先技术支持"
+  },
+  "PRICING.subscription.standard.feature5": {
+    "message": "购买积分享 8 折优惠"
+  },
+  "PRICING.subscription.pro.name": {
+    "message": "专业版"
+  },
+  "PRICING.subscription.pro.price": {
+    "message": "¥299"
+  },
+  "PRICING.subscription.pro.description": {
+    "message": "适合企业和高级用户"
+  },
+  "PRICING.subscription.pro.feature1": {
+    "message": "每月 2000 万免费积分"
+  },
+  "PRICING.subscription.pro.feature2": {
+    "message": "私有部署支持"
+  },
+  "PRICING.subscription.pro.feature3": {
+    "message": "无限协作成员"
+  },
+  "PRICING.subscription.pro.feature4": {
+    "message": "7x24 专属技术支持"
+  },
+  "PRICING.subscription.pro.feature5": {
+    "message": "购买积分享 7 折优惠"
+  },
+  "PRICING.subscription.pro.feature6": {
+    "message": "企业级 SLA 保障"
+  },
+  "PRICING.payAsYouGo.title": {
+    "message": "按量计费"
+  },
+  "PRICING.payAsYouGo.subtitle": {
+    "message": "按实际使用量付费，灵活透明"
+  },
+  "PRICING.payAsYouGo.table.item": {
+    "message": "计费项"
+  },
+  "PRICING.payAsYouGo.table.price": {
+    "message": "单价"
+  },
+  "PRICING.payAsYouGo.category.execution": {
+    "message": "执行任务"
+  },
+  "PRICING.payAsYouGo.execution.workflow": {
+    "message": "工作流执行"
+  },
+  "PRICING.payAsYouGo.execution.workflow.price": {
+    "message": "10 积分/次"
+  },
+  "PRICING.payAsYouGo.execution.block": {
+    "message": "Block 执行"
+  },
+  "PRICING.payAsYouGo.execution.block.price": {
+    "message": "5 积分/次"
+  },
+  "PRICING.payAsYouGo.execution.computeTime": {
+    "message": "计算时长"
+  },
+  "PRICING.payAsYouGo.execution.computeTime.price": {
+    "message": "1 积分/秒"
+  },
+  "PRICING.payAsYouGo.category.llm": {
+    "message": "大模型"
+  },
+  "PRICING.payAsYouGo.llm.gpt4": {
+    "message": "GPT-4"
+  },
+  "PRICING.payAsYouGo.llm.gpt4.price": {
+    "message": "100 积分/1K tokens"
+  },
+  "PRICING.payAsYouGo.llm.claude": {
+    "message": "Claude"
+  },
+  "PRICING.payAsYouGo.llm.claude.price": {
+    "message": "80 积分/1K tokens"
+  },
+  "PRICING.payAsYouGo.llm.gemini": {
+    "message": "Gemini"
+  },
+  "PRICING.payAsYouGo.llm.gemini.price": {
+    "message": "60 积分/1K tokens"
+  },
+  "PRICING.payAsYouGo.category.fusionAPI": {
+    "message": "融合 API"
+  },
+  "PRICING.payAsYouGo.fusionAPI.imageGen": {
+    "message": "图像生成"
+  },
+  "PRICING.payAsYouGo.fusionAPI.imageGen.price": {
+    "message": "50 积分/张"
+  },
+  "PRICING.payAsYouGo.fusionAPI.ocr": {
+    "message": "OCR 识别"
+  },
+  "PRICING.payAsYouGo.fusionAPI.ocr.price": {
+    "message": "20 积分/张"
+  },
+  "PRICING.payAsYouGo.fusionAPI.tts": {
+    "message": "语音合成"
+  },
+  "PRICING.payAsYouGo.fusionAPI.tts.price": {
+    "message": "10 积分/分钟"
+  },
   "PRICING.free.badge": {
     "message": "推荐"
   },

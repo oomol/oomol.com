@@ -874,6 +874,168 @@
   "PRICING.subtitle": {
     "message": "Start Free, Upgrade As Needed."
   },
+  "PRICING.subscription.title": {
+    "message": "Subscription Plans"
+  },
+  "PRICING.subscription.subtitle": {
+    "message": "Choose the right plan for you and enjoy more features and services"
+  },
+  "PRICING.subscription.recommended": {
+    "message": "Recommended"
+  },
+  "PRICING.subscription.period": {
+    "message": "/month"
+  },
+  "PRICING.subscription.subscribe": {
+    "message": "Subscribe Now"
+  },
+  "PRICING.subscription.free.name": {
+    "message": "Free"
+  },
+  "PRICING.subscription.free.price": {
+    "message": "$0"
+  },
+  "PRICING.subscription.free.description": {
+    "message": "Perfect for individual developers and small projects"
+  },
+  "PRICING.subscription.free.feature1": {
+    "message": "Unlimited local usage"
+  },
+  "PRICING.subscription.free.feature2": {
+    "message": "Basic workflow features"
+  },
+  "PRICING.subscription.free.feature3": {
+    "message": "Community support"
+  },
+  "PRICING.subscription.free.feature4": {
+    "message": "FRP protocol sharing"
+  },
+  "PRICING.subscription.standard.name": {
+    "message": "Standard"
+  },
+  "PRICING.subscription.standard.price": {
+    "message": "$15"
+  },
+  "PRICING.subscription.standard.description": {
+    "message": "Ideal for small teams and professional developers"
+  },
+  "PRICING.subscription.standard.feature1": {
+    "message": "5M free credits per month"
+  },
+  "PRICING.subscription.standard.feature2": {
+    "message": "Cloud deployment support"
+  },
+  "PRICING.subscription.standard.feature3": {
+    "message": "Invite collaborators"
+  },
+  "PRICING.subscription.standard.feature4": {
+    "message": "Priority technical support"
+  },
+  "PRICING.subscription.standard.feature5": {
+    "message": "20% discount on credit purchases"
+  },
+  "PRICING.subscription.pro.name": {
+    "message": "Pro"
+  },
+  "PRICING.subscription.pro.price": {
+    "message": "$45"
+  },
+  "PRICING.subscription.pro.description": {
+    "message": "Perfect for enterprises and advanced users"
+  },
+  "PRICING.subscription.pro.feature1": {
+    "message": "20M free credits per month"
+  },
+  "PRICING.subscription.pro.feature2": {
+    "message": "Private deployment support"
+  },
+  "PRICING.subscription.pro.feature3": {
+    "message": "Unlimited collaborators"
+  },
+  "PRICING.subscription.pro.feature4": {
+    "message": "24/7 dedicated technical support"
+  },
+  "PRICING.subscription.pro.feature5": {
+    "message": "30% discount on credit purchases"
+  },
+  "PRICING.subscription.pro.feature6": {
+    "message": "Enterprise-grade SLA guarantee"
+  },
+  "PRICING.payAsYouGo.title": {
+    "message": "Pay-As-You-Go"
+  },
+  "PRICING.payAsYouGo.subtitle": {
+    "message": "Pay only for what you use, flexible and transparent"
+  },
+  "PRICING.payAsYouGo.table.item": {
+    "message": "Billing Item"
+  },
+  "PRICING.payAsYouGo.table.price": {
+    "message": "Unit Price"
+  },
+  "PRICING.payAsYouGo.category.execution": {
+    "message": "Execution Tasks"
+  },
+  "PRICING.payAsYouGo.execution.workflow": {
+    "message": "Workflow Execution"
+  },
+  "PRICING.payAsYouGo.execution.workflow.price": {
+    "message": "10 credits/run"
+  },
+  "PRICING.payAsYouGo.execution.block": {
+    "message": "Block Execution"
+  },
+  "PRICING.payAsYouGo.execution.block.price": {
+    "message": "5 credits/run"
+  },
+  "PRICING.payAsYouGo.execution.computeTime": {
+    "message": "Compute Time"
+  },
+  "PRICING.payAsYouGo.execution.computeTime.price": {
+    "message": "1 credit/second"
+  },
+  "PRICING.payAsYouGo.category.llm": {
+    "message": "Large Language Models"
+  },
+  "PRICING.payAsYouGo.llm.gpt4": {
+    "message": "GPT-4"
+  },
+  "PRICING.payAsYouGo.llm.gpt4.price": {
+    "message": "100 credits/1K tokens"
+  },
+  "PRICING.payAsYouGo.llm.claude": {
+    "message": "Claude"
+  },
+  "PRICING.payAsYouGo.llm.claude.price": {
+    "message": "80 credits/1K tokens"
+  },
+  "PRICING.payAsYouGo.llm.gemini": {
+    "message": "Gemini"
+  },
+  "PRICING.payAsYouGo.llm.gemini.price": {
+    "message": "60 credits/1K tokens"
+  },
+  "PRICING.payAsYouGo.category.fusionAPI": {
+    "message": "Fusion APIs"
+  },
+  "PRICING.payAsYouGo.fusionAPI.imageGen": {
+    "message": "Image Generation"
+  },
+  "PRICING.payAsYouGo.fusionAPI.imageGen.price": {
+    "message": "50 credits/image"
+  },
+  "PRICING.payAsYouGo.fusionAPI.ocr": {
+    "message": "OCR Recognition"
+  },
+  "PRICING.payAsYouGo.fusionAPI.ocr.price": {
+    "message": "20 credits/image"
+  },
+  "PRICING.payAsYouGo.fusionAPI.tts": {
+    "message": "Text-to-Speech"
+  },
+  "PRICING.payAsYouGo.fusionAPI.tts.price": {
+    "message": "10 credits/minute"
+  },
 
   "PRICING.free.badge": {
     "message": "Recommended"
