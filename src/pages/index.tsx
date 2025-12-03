@@ -27,9 +27,9 @@ export default function Home() {
       <main>
         <HomepageFirstScreen />
         <HomepageCoreFeatures />
-        <HomepageLifecycle />
-        <HomepageProductComparison />
+        {/* <HomepageLifecycle /> */}
         <HomepageCommunityShare />
+        <HomepageProductComparison />
         <HomePageBuiltInLLM />
         <HomepagePdfCraftShowcase />
         <GetStartedPrompt />
