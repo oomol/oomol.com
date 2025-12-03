@@ -546,12 +546,12 @@
 // 按量计费表格样式
 .pricingTable {
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
   overflow-x: auto;
 
   table {
     width: 100%;
+    min-width: 100%;
+    table-layout: fixed;
     border-collapse: collapse;
     background-color: var(--oomol-bg-elevated);
     border-radius: 12px;
@@ -564,11 +564,20 @@
 
     tr th {
       padding: 20px 24px;
-      text-align: left;
       font-size: 16px;
       font-weight: 700;
       color: var(--oomol-text-primary);
       border-bottom: 2px solid var(--oomol-border-default);
+
+      &:first-child {
+        text-align: left;
+        width: 60%;
+      }
+
+      &:last-child {
+        text-align: right;
+        width: 40%;
+      }
     }
   }
 
