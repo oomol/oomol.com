@@ -14,7 +14,7 @@ const coreFeatures = [
     }),
     highlight: translate({ message: "HOME.CoreFeatures.workflow.highlight1" }),
     mediaType: "image" as const,
-    mediaSrc: "/img/pages/home/core-feature-function",
+    mediaSrc: "/img/pages/home/code-block",
     mediaAlt: "Workflow IDE Demo",
   },
   {
@@ -24,16 +24,18 @@ const coreFeatures = [
       message: "HOME.CoreFeatures.container.description",
     }),
     highlight: translate({ message: "HOME.CoreFeatures.container.highlight1" }),
-    mediaType: "empty" as const,
+    mediaType: "image" as const,
+    mediaSrc: "/img/pages/home/ovm",
+    mediaAlt: "Container Development Demo",
   },
   {
     id: "mcp",
     title: translate({ message: "HOME.CoreFeatures.mcp.title" }),
     description: translate({ message: "HOME.CoreFeatures.mcp.description" }),
     highlight: translate({ message: "HOME.CoreFeatures.mcp.highlight1" }),
-    mediaType: "video" as const,
-    mediaSrc: "/videos/mcp-demo.mp4",
-    mediaAlt: "MCP Tool Generation Demo",
+    mediaType: "image" as const,
+    mediaSrc: "/img/pages/home/connect",
+    mediaAlt: "MCP Server Connection Demo",
   },
   {
     id: "vscode",
@@ -41,8 +43,8 @@ const coreFeatures = [
     description: translate({ message: "HOME.CoreFeatures.vscode.description" }),
     highlight: translate({ message: "HOME.CoreFeatures.vscode.highlight1" }),
     mediaType: "image" as const,
-    mediaSrc: "/img/features/vscode",
-    mediaAlt: "VSCode Development Demo",
+    mediaSrc: "/img/pages/home/publish",
+    mediaAlt: "One-Click Publish Demo",
   },
 ];
 
@@ -57,21 +59,18 @@ const FeatureItem = memo(
   }) => {
     const { colorMode } = useColorMode();
     const [isVisible, setIsVisible] = useState(false);
-    const [shouldPlay, setShouldPlay] = useState(false);
     const itemRef = useRef<HTMLDivElement>(null);
 
-    // Always call hooks unconditionally
-    const videoSrc = feature.mediaSrc || "";
+    // Image URLs based on color mode
     const imageSrcLight = feature.mediaSrc
       ? `${feature.mediaSrc}-light.png`
       : "";
     const imageSrcDark = feature.mediaSrc ? `${feature.mediaSrc}-dark.png` : "";
 
-    const videoUrl = useBaseUrl(videoSrc);
     const imageUrlLight = useBaseUrl(imageSrcLight);
     const imageUrlDark = useBaseUrl(imageSrcDark);
 
-    // Determine which URL to use based on media type and color mode
+    // Determine which URL to use based on color mode
     const imageUrl = colorMode === "dark" ? imageUrlDark : imageUrlLight;
 
     // Intersection Observer for lazy loading
@@ -84,11 +83,6 @@ const FeatureItem = memo(
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               setIsVisible(true);
-              // Delay video playback slightly to improve performance
-              setTimeout(() => setShouldPlay(true), 100);
-            } else {
-              // Pause video when out of view to save resources
-              setShouldPlay(false);
             }
           });
         },
@@ -129,26 +123,13 @@ const FeatureItem = memo(
 
         {/* Media Content - Lazy loaded */}
         <div className={styles.featureMedia}>
-          {isVisible && feature.mediaType === "video" ? (
-            <video
-              className={styles.mediaVideo}
-              autoPlay={shouldPlay}
-              loop
-              muted
-              playsInline
-              preload="metadata"
-            >
-              <source src={videoUrl} type="video/mp4" />
-            </video>
-          ) : isVisible && feature.mediaType === "image" ? (
+          {isVisible ? (
             <img
               src={imageUrl}
               alt={feature.mediaAlt}
               className={styles.mediaImage}
               loading="lazy"
             />
-          ) : feature.mediaType === "empty" ? (
-            <div className={styles.mediaImage}></div>
           ) : (
             <div
               className={styles.mediaImage}
