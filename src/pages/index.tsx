@@ -7,6 +7,7 @@ import HomepageCoreFeatures from "@site/src/components/HomepageCoreFeatures";
 import HomepageLifecycle from "@site/src/components/HomepageLifecycle";
 import HomepageProductComparison from "@site/src/components/HomepageProductComparison";
 import HomepagePdfCraftShowcase from "@site/src/components/HomepagePdfCraftShowcase";
+import HomepageCommunityShare from "@site/src/components/HomepageCommunityShare";
 
 import Head from "@docusaurus/Head";
 import HomePageBuiltInLLM from "../components/HomePageBuiltInLLM";
@@ -28,6 +29,7 @@ export default function Home() {
         <HomepageCoreFeatures />
         <HomepageLifecycle />
         <HomepageProductComparison />
+        <HomepageCommunityShare />
         <HomePageBuiltInLLM />
         <HomepagePdfCraftShowcase />
         <GetStartedPrompt />
