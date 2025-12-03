@@ -71,16 +71,59 @@
   justify-content: center;
 }
 
-.item {
-  cursor: pointer;
-  background-color: inherit;
-  border: none;
-  padding: 8px 24px;
-  border-radius: 10px;
+.cardLink {
+  text-decoration: none;
+  color: inherit;
 
   &:hover {
-    background-color: var(--oomol-bg-elevated);
+    text-decoration: none;
   }
+}
+
+.contactCard {
+  min-width: 160px;
+  background-color: var(--oomol-bg-elevated);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--oomol-hover-bg);
+    border-color: var(--oomol-border-color, rgba(255, 255, 255, 0.1));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.contactCardClickable {
+  cursor: pointer;
+}
+
+.contactCardHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px 20px;
+}
+
+.contactCardIcon {
+  font-size: 24px;
+  color: var(--oomol-text-primary);
+
+  i {
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+  }
+}
+
+.contactCardTitle {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--oomol-text-primary);
 }
 
 .logo {

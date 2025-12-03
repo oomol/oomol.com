@@ -9,7 +9,7 @@ import {
 interface PopoverProps {
   trigger: React.ReactNode;
   content: React.ReactNode;
-  position?: "top" | "bottom";
+  position?: "top" | "right" | "bottom" | "left";
   className?: string;
 }
 

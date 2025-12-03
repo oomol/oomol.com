@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import Layout from "@theme/Layout";
 import { translate } from "@docusaurus/Translate";
 import { Popover } from "@site/src/components/Popover";
-import { Button } from "@site/src/components/ui/button";
+import { Card, CardHeader, CardTitle } from "@site/src/components/ui/card";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { useEffect, useState } from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
@@ -256,25 +256,40 @@ export default function Community() {
             <div className={styles["contactList"]}>
               {contentData.map((item) => {
                 return (
-                  <Button key={item.name} asChild>
-                    <a href={item.href} target="_blank" rel="noopener noreferrer">
-                      {item.icon}
-                      {item.text}
-                    </a>
-                  </Button>
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.cardLink}
+                  >
+                    <Card className={styles.contactCard}>
+                      <CardHeader className={styles.contactCardHeader}>
+                        <div className={styles.contactCardIcon}>{item.icon}</div>
+                        <CardTitle className={styles.contactCardTitle}>
+                          {item.text}
+                        </CardTitle>
+                      </CardHeader>
+                    </Card>
+                  </a>
                 );
               })}
               <Popover
                 trigger={
-                  <Button>
-                    <i className={`${styles.logo} i-simple-icons-wechat`} />
-                    {translate({
-                      message: "HOME.Community.contact-we-com",
-                    })}
-                  </Button>
+                  <Card className={`${styles.contactCard} ${styles.contactCardClickable}`}>
+                    <CardHeader className={styles.contactCardHeader}>
+                      <div className={styles.contactCardIcon}>
+                        <i className={`${styles.logo} i-simple-icons-wechat`} />
+                      </div>
+                      <CardTitle className={styles.contactCardTitle}>
+                        {translate({
+                          message: "HOME.Community.contact-we-com",
+                        })}
+                      </CardTitle>
+                    </CardHeader>
+                  </Card>
                 }
-                position="top"
-                className="popoverCentered"
+                position="right"
                 content={
                   <img
                     alt="qrcode"
