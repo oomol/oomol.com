@@ -875,10 +875,10 @@
     "message": "GitHub 同步源码，支持协作开发与维护"
   },
   "PRICING.title": {
-    "message": "简单、可预测的定价"
+    "message": "简单、透明的定价"
   },
   "PRICING.subtitle": {
-    "message": "免费使用 OOMOL。升级以获得每月免费积分、邀请他人协作以及使用 API 密钥。"
+    "message": "免费起步，按需升级"
   },
   "PRICING.free.badge": {
     "message": "推荐"
