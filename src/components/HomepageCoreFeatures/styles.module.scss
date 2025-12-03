@@ -163,6 +163,11 @@
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .mediaVideo {
