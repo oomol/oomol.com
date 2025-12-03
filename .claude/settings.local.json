@@ -36,7 +36,8 @@
       "Bash(tree -L 3 /Users/wushuang/code/oomol.com/src/pages/terms /Users/wushuang/code/oomol.com/i18n/zh-CN/docusaurus-plugin-content-pages/terms)",
       "Bash(mkdir -p /Users/wushuang/code/oomol.com/src/components/HomepageCommunityShare)",
       "Bash(npm run build-unocss)",
-      "Bash(kill 88270 88442)"
+      "Bash(kill 88270 88442)",
+      "Bash(npm install @radix-ui/themes)"
     ],
     "deny": [],
     "ask": []

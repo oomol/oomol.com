@@ -41,7 +41,9 @@ export default function Index() {
                   </span>
                 </div>
                 <div className={styles.planDescription}>
-                  {translate({ message: "PRICING.subscription.free.description" })}
+                  {translate({
+                    message: "PRICING.subscription.free.description",
+                  })}
                 </div>
               </div>
               <div className={styles.downloadBtnWrapper}>
@@ -50,19 +52,35 @@ export default function Index() {
               <div className={styles.featureList}>
                 <div className={styles.featureItem}>
                   <i className="i-codicon:check" />
-                  <span>{translate({ message: "PRICING.subscription.free.feature1" })}</span>
+                  <span>
+                    {translate({
+                      message: "PRICING.subscription.free.feature1",
+                    })}
+                  </span>
                 </div>
                 <div className={styles.featureItem}>
                   <i className="i-codicon:check" />
-                  <span>{translate({ message: "PRICING.subscription.free.feature2" })}</span>
+                  <span>
+                    {translate({
+                      message: "PRICING.subscription.free.feature2",
+                    })}
+                  </span>
                 </div>
                 <div className={styles.featureItem}>
                   <i className="i-codicon:check" />
-                  <span>{translate({ message: "PRICING.subscription.free.feature3" })}</span>
+                  <span>
+                    {translate({
+                      message: "PRICING.subscription.free.feature3",
+                    })}
+                  </span>
                 </div>
                 <div className={styles.featureItem}>
                   <i className="i-codicon:check" />
-                  <span>{translate({ message: "PRICING.subscription.free.feature4" })}</span>
+                  <span>
+                    {translate({
+                      message: "PRICING.subscription.free.feature4",
+                    })}
+                  </span>
                 </div>
               </div>
             </div>
@@ -78,41 +96,69 @@ export default function Index() {
                 </div>
                 <div className={styles.planPrice}>
                   <span className={styles.price}>
-                    {translate({ message: "PRICING.subscription.standard.price" })}
+                    {translate({
+                      message: "PRICING.subscription.standard.price",
+                    })}
                   </span>
                   <span className={styles.period}>
                     {translate({ message: "PRICING.subscription.period" })}
                   </span>
                 </div>
                 <div className={styles.planDescription}>
-                  {translate({ message: "PRICING.subscription.standard.description" })}
+                  {translate({
+                    message: "PRICING.subscription.standard.description",
+                  })}
                 </div>
               </div>
               <Button asChild className={styles.subscribeBtn}>
-                <a href="https://console.oomol.com/" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://console.oomol.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {translate({ message: "PRICING.subscription.subscribe" })}
                 </a>
               </Button>
               <div className={styles.featureList}>
                 <div className={styles.featureItem}>
                   <i className="i-codicon:check" />
-                  <span>{translate({ message: "PRICING.subscription.standard.feature1" })}</span>
+                  <span>
+                    {translate({
+                      message: "PRICING.subscription.standard.feature1",
+                    })}
+                  </span>
                 </div>
                 <div className={styles.featureItem}>
                   <i className="i-codicon:check" />
-                  <span>{translate({ message: "PRICING.subscription.standard.feature2" })}</span>
+                  <span>
+                    {translate({
+                      message: "PRICING.subscription.standard.feature2",
+                    })}
+                  </span>
                 </div>
                 <div className={styles.featureItem}>
                   <i className="i-codicon:check" />
-                  <span>{translate({ message: "PRICING.subscription.standard.feature3" })}</span>
+                  <span>
+                    {translate({
+                      message: "PRICING.subscription.standard.feature3",
+                    })}
+                  </span>
                 </div>
                 <div className={styles.featureItem}>
                   <i className="i-codicon:check" />
-                  <span>{translate({ message: "PRICING.subscription.standard.feature4" })}</span>
+                  <span>
+                    {translate({
+                      message: "PRICING.subscription.standard.feature4",
+                    })}
+                  </span>
                 </div>
                 <div className={styles.featureItem}>
                   <i className="i-codicon:check" />
-                  <span>{translate({ message: "PRICING.subscription.standard.feature5" })}</span>
+                  <span>
+                    {translate({
+                      message: "PRICING.subscription.standard.feature5",
+                    })}
+                  </span>
                 </div>
               </div>
             </div>
@@ -132,54 +178,73 @@ export default function Index() {
                   </span>
                 </div>
                 <div className={styles.planDescription}>
-                  {translate({ message: "PRICING.subscription.pro.description" })}
+                  {translate({
+                    message: "PRICING.subscription.pro.description",
+                  })}
                 </div>
               </div>
               <Button asChild className={styles.subscribeBtn}>
-                <a href="https://console.oomol.com/" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://console.oomol.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {translate({ message: "PRICING.subscription.subscribe" })}
                 </a>
               </Button>
               <div className={styles.featureList}>
                 <div className={styles.featureItem}>
                   <i className="i-codicon:check" />
-                  <span>{translate({ message: "PRICING.subscription.pro.feature1" })}</span>
+                  <span>
+                    {translate({
+                      message: "PRICING.subscription.pro.feature1",
+                    })}
+                  </span>
                 </div>
                 <div className={styles.featureItem}>
                   <i className="i-codicon:check" />
-                  <span>{translate({ message: "PRICING.subscription.pro.feature2" })}</span>
+                  <span>
+                    {translate({
+                      message: "PRICING.subscription.pro.feature2",
+                    })}
+                  </span>
                 </div>
                 <div className={styles.featureItem}>
                   <i className="i-codicon:check" />
-                  <span>{translate({ message: "PRICING.subscription.pro.feature3" })}</span>
+                  <span>
+                    {translate({
+                      message: "PRICING.subscription.pro.feature3",
+                    })}
+                  </span>
                 </div>
                 <div className={styles.featureItem}>
                   <i className="i-codicon:check" />
-                  <span>{translate({ message: "PRICING.subscription.pro.feature4" })}</span>
+                  <span>
+                    {translate({
+                      message: "PRICING.subscription.pro.feature4",
+                    })}
+                  </span>
                 </div>
                 <div className={styles.featureItem}>
                   <i className="i-codicon:check" />
-                  <span>{translate({ message: "PRICING.subscription.pro.feature5" })}</span>
+                  <span>
+                    {translate({
+                      message: "PRICING.subscription.pro.feature5",
+                    })}
+                  </span>
                 </div>
                 <div className={styles.featureItem}>
                   <i className="i-codicon:check" />
-                  <span>{translate({ message: "PRICING.subscription.pro.feature6" })}</span>
+                  <span>
+                    {translate({
+                      message: "PRICING.subscription.pro.feature6",
+                    })}
+                  </span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        {/* 按量计费部分 */}
-        <div className={styles.payAsYouGoSection}>
-          <div className={styles.sectionTitle}>
-            {translate({ message: "PRICING.payAsYouGo.title" })}
-          </div>
-          <div className={styles.sectionSubtitle}>
-            {translate({ message: "PRICING.payAsYouGo.subtitle" })}
-          </div>
-        </div>
-
         <GetStartedPrompt />
       </div>
     </Layout>
