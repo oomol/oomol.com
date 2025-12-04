@@ -1042,6 +1042,60 @@
   "PRICING.payAsYouGo.fusionAPI.tts.price": {
     "message": "10 积分/分钟"
   },
+  "PRICING.payAsYouGo.taskExecution.name": {
+    "message": "任务调用"
+  },
+  "PRICING.payAsYouGo.taskExecution.price": {
+    "message": "¥0.01/千次"
+  },
+  "PRICING.payAsYouGo.taskExecution.description": {
+    "message": "工作流和 Block 的调用计费"
+  },
+  "PRICING.payAsYouGo.taskExecution.feature1": {
+    "message": "工作流执行：10 积分/次"
+  },
+  "PRICING.payAsYouGo.taskExecution.feature2": {
+    "message": "Block 执行：5 积分/次"
+  },
+  "PRICING.payAsYouGo.taskExecution.feature3": {
+    "message": "计算时长：1 积分/秒"
+  },
+  "PRICING.payAsYouGo.llm.name": {
+    "message": "大语言模型"
+  },
+  "PRICING.payAsYouGo.llm.price": {
+    "message": "¥0.01/1M token"
+  },
+  "PRICING.payAsYouGo.llm.description": {
+    "message": "主流大语言模型调用计费"
+  },
+  "PRICING.payAsYouGo.llm.feature1": {
+    "message": "GPT-4：100 积分/1K tokens"
+  },
+  "PRICING.payAsYouGo.llm.feature2": {
+    "message": "Claude：80 积分/1K tokens"
+  },
+  "PRICING.payAsYouGo.llm.feature3": {
+    "message": "Gemini：60 积分/1K tokens"
+  },
+  "PRICING.payAsYouGo.fusionAPI.name": {
+    "message": "融合 API"
+  },
+  "PRICING.payAsYouGo.fusionAPI.price": {
+    "message": "¥0.01/次调用"
+  },
+  "PRICING.payAsYouGo.fusionAPI.description": {
+    "message": "统一的 API 调用服务"
+  },
+  "PRICING.payAsYouGo.fusionAPI.feature1": {
+    "message": "图像生成：50 积分/张"
+  },
+  "PRICING.payAsYouGo.fusionAPI.feature2": {
+    "message": "OCR 识别：20 积分/张"
+  },
+  "PRICING.payAsYouGo.fusionAPI.feature3": {
+    "message": "语音合成：10 积分/分钟"
+  },
   "PRICING.free.badge": {
     "message": "推荐"
   },

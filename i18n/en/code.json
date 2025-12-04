@@ -1045,6 +1045,60 @@
   "PRICING.payAsYouGo.fusionAPI.tts.price": {
     "message": "10 credits/minute"
   },
+  "PRICING.payAsYouGo.taskExecution.name": {
+    "message": "Task Execution"
+  },
+  "PRICING.payAsYouGo.taskExecution.price": {
+    "message": "$0.01/1K calls"
+  },
+  "PRICING.payAsYouGo.taskExecution.description": {
+    "message": "Billing for workflow and Block executions"
+  },
+  "PRICING.payAsYouGo.taskExecution.feature1": {
+    "message": "Workflow Execution: 10 credits/run"
+  },
+  "PRICING.payAsYouGo.taskExecution.feature2": {
+    "message": "Block Execution: 5 credits/run"
+  },
+  "PRICING.payAsYouGo.taskExecution.feature3": {
+    "message": "Compute Time: 1 credit/second"
+  },
+  "PRICING.payAsYouGo.llm.name": {
+    "message": "Large Language Models"
+  },
+  "PRICING.payAsYouGo.llm.price": {
+    "message": "$0.01/1M tokens"
+  },
+  "PRICING.payAsYouGo.llm.description": {
+    "message": "Billing for mainstream LLM API calls"
+  },
+  "PRICING.payAsYouGo.llm.feature1": {
+    "message": "GPT-4: 100 credits/1K tokens"
+  },
+  "PRICING.payAsYouGo.llm.feature2": {
+    "message": "Claude: 80 credits/1K tokens"
+  },
+  "PRICING.payAsYouGo.llm.feature3": {
+    "message": "Gemini: 60 credits/1K tokens"
+  },
+  "PRICING.payAsYouGo.fusionAPI.name": {
+    "message": "Fusion APIs"
+  },
+  "PRICING.payAsYouGo.fusionAPI.price": {
+    "message": "$0.01/call"
+  },
+  "PRICING.payAsYouGo.fusionAPI.description": {
+    "message": "Unified API calling service"
+  },
+  "PRICING.payAsYouGo.fusionAPI.feature1": {
+    "message": "Image Generation: 50 credits/image"
+  },
+  "PRICING.payAsYouGo.fusionAPI.feature2": {
+    "message": "OCR Recognition: 20 credits/image"
+  },
+  "PRICING.payAsYouGo.fusionAPI.feature3": {
+    "message": "Text-to-Speech: 10 credits/minute"
+  },
 
   "PRICING.free.badge": {
     "message": "Recommended"

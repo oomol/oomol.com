@@ -19,7 +19,7 @@ export default function Index() {
           </div>
         </div>
 
-        {/* 订阅部分 */}
+        {/* 订阅套餐部分 */}
         <div className={styles.subscriptionSection}>
           <div className={styles.sectionTitle}>
             {translate({ message: "PRICING.subscription.title" })}
@@ -245,6 +245,130 @@ export default function Index() {
             </div>
           </div>
         </div>
+
+        {/* 按量计费部分 */}
+        <div className={styles.payAsYouGoSection}>
+          <div className={styles.sectionTitle}>
+            {translate({ message: "PRICING.payAsYouGo.title" })}
+          </div>
+          <div className={styles.sectionSubtitle}>
+            {translate({ message: "PRICING.payAsYouGo.subtitle" })}
+          </div>
+
+          <div className={styles.planBox}>
+            {/* 任务调用卡片 */}
+            <div className={styles.planCard}>
+              <div className={styles.planHeader}>
+                <div className={styles.planName}>
+                  {translate({ message: "PRICING.payAsYouGo.taskExecution.name" })}
+                </div>
+                <div className={styles.planPrice}>
+                  <span className={styles.price}>
+                    {translate({ message: "PRICING.payAsYouGo.taskExecution.price" })}
+                  </span>
+                </div>
+                <div className={styles.planDescription}>
+                  {translate({ message: "PRICING.payAsYouGo.taskExecution.description" })}
+                </div>
+              </div>
+              <div className={styles.featureList}>
+                <div className={styles.featureItem}>
+                  <i className="i-codicon:check" />
+                  <span>
+                    {translate({ message: "PRICING.payAsYouGo.taskExecution.feature1" })}
+                  </span>
+                </div>
+                <div className={styles.featureItem}>
+                  <i className="i-codicon:check" />
+                  <span>
+                    {translate({ message: "PRICING.payAsYouGo.taskExecution.feature2" })}
+                  </span>
+                </div>
+                <div className={styles.featureItem}>
+                  <i className="i-codicon:check" />
+                  <span>
+                    {translate({ message: "PRICING.payAsYouGo.taskExecution.feature3" })}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* 大语言模型卡片 */}
+            <div className={styles.planCard}>
+              <div className={styles.planHeader}>
+                <div className={styles.planName}>
+                  {translate({ message: "PRICING.payAsYouGo.llm.name" })}
+                </div>
+                <div className={styles.planPrice}>
+                  <span className={styles.price}>
+                    {translate({ message: "PRICING.payAsYouGo.llm.price" })}
+                  </span>
+                </div>
+                <div className={styles.planDescription}>
+                  {translate({ message: "PRICING.payAsYouGo.llm.description" })}
+                </div>
+              </div>
+              <div className={styles.featureList}>
+                <div className={styles.featureItem}>
+                  <i className="i-codicon:check" />
+                  <span>
+                    {translate({ message: "PRICING.payAsYouGo.llm.feature1" })}
+                  </span>
+                </div>
+                <div className={styles.featureItem}>
+                  <i className="i-codicon:check" />
+                  <span>
+                    {translate({ message: "PRICING.payAsYouGo.llm.feature2" })}
+                  </span>
+                </div>
+                <div className={styles.featureItem}>
+                  <i className="i-codicon:check" />
+                  <span>
+                    {translate({ message: "PRICING.payAsYouGo.llm.feature3" })}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* 融合 API 卡片 */}
+            <div className={styles.planCard}>
+              <div className={styles.planHeader}>
+                <div className={styles.planName}>
+                  {translate({ message: "PRICING.payAsYouGo.fusionAPI.name" })}
+                </div>
+                <div className={styles.planPrice}>
+                  <span className={styles.price}>
+                    {translate({ message: "PRICING.payAsYouGo.fusionAPI.price" })}
+                  </span>
+                </div>
+                <div className={styles.planDescription}>
+                  {translate({ message: "PRICING.payAsYouGo.fusionAPI.description" })}
+                </div>
+              </div>
+              <div className={styles.featureList}>
+                <div className={styles.featureItem}>
+                  <i className="i-codicon:check" />
+                  <span>
+                    {translate({ message: "PRICING.payAsYouGo.fusionAPI.feature1" })}
+                  </span>
+                </div>
+                <div className={styles.featureItem}>
+                  <i className="i-codicon:check" />
+                  <span>
+                    {translate({ message: "PRICING.payAsYouGo.fusionAPI.feature2" })}
+                  </span>
+                </div>
+                <div className={styles.featureItem}>
+                  <i className="i-codicon:check" />
+                  <span>
+                    {translate({ message: "PRICING.payAsYouGo.fusionAPI.feature3" })}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <GetStartedPrompt />
       </div>
     </Layout>
