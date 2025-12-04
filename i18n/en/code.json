@@ -787,6 +787,15 @@
   "HOME.Downloads.Nightly.subtitle": {
     "message": "Overnight Build Version, Less Stable"
   },
+  "HOME.Downloads.download.macos.applesilicon": {
+    "message": "Download for MacOS Apple Silicon"
+  },
+  "HOME.Downloads.download.macos.intel": {
+    "message": "Download for MacOS Intel (Legacy)"
+  },
+  "HOME.Downloads.download.windows.x64": {
+    "message": "Download for Windows X64"
+  },
   "HOME.Community.title": {
     "message": "Connecting With People"
   },
