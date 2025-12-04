@@ -899,73 +899,73 @@
     "message": "免费版"
   },
   "PRICING.subscription.free.price": {
-    "message": "¥0"
+    "message": "$0"
   },
   "PRICING.subscription.free.description": {
-    "message": "适合个人开发者和小型项目"
+    "message": "适合个人开发者，相关资源服务全都自己搞定"
   },
   "PRICING.subscription.free.feature1": {
-    "message": "本地运行，无限制使用"
+    "message": "调用任务，每月 200 次"
   },
   "PRICING.subscription.free.feature2": {
-    "message": "基础工作流功能"
+    "message": "LLM token 每月 1M"
   },
   "PRICING.subscription.free.feature3": {
-    "message": "社区支持"
+    "message": "融合 API，每月 50 次"
   },
   "PRICING.subscription.free.feature4": {
-    "message": "FRP 协议分享"
+    "message": "互联服务，支持（注册免费使用，3 个月）"
   },
   "PRICING.subscription.standard.name": {
     "message": "标准版"
   },
   "PRICING.subscription.standard.price": {
-    "message": "¥99"
+    "message": "$5"
   },
   "PRICING.subscription.standard.description": {
-    "message": "适合中小团队和专业开发者"
+    "message": "适合小团队，少量使用 OOMOL 配套资源"
   },
   "PRICING.subscription.standard.feature1": {
-    "message": "每月 500 万免费积分"
+    "message": "调用任务，每月 1200 次"
   },
   "PRICING.subscription.standard.feature2": {
-    "message": "云端部署支持"
+    "message": "LLM token 每月 5M"
   },
   "PRICING.subscription.standard.feature3": {
-    "message": "邀请协作成员"
+    "message": "融合 API，每月 100 次"
   },
   "PRICING.subscription.standard.feature4": {
-    "message": "优先技术支持"
+    "message": "互联服务，支持"
   },
   "PRICING.subscription.standard.feature5": {
-    "message": "购买积分享 8 折优惠"
+    "message": "包含免费版所有功能"
   },
   "PRICING.subscription.pro.name": {
     "message": "专业版"
   },
   "PRICING.subscription.pro.price": {
-    "message": "¥299"
+    "message": "$29"
   },
   "PRICING.subscription.pro.description": {
-    "message": "适合企业和高级用户"
+    "message": "适合专业用户，高频使用 OOMOL 的核心功能"
   },
   "PRICING.subscription.pro.feature1": {
-    "message": "每月 2000 万免费积分"
+    "message": "调用任务，每月 4000 次"
   },
   "PRICING.subscription.pro.feature2": {
-    "message": "私有部署支持"
+    "message": "LLM token 每月 10M"
   },
   "PRICING.subscription.pro.feature3": {
-    "message": "无限协作成员"
+    "message": "融合 API，每月 500 次"
   },
   "PRICING.subscription.pro.feature4": {
-    "message": "7x24 专属技术支持"
+    "message": "互联服务，支持"
   },
   "PRICING.subscription.pro.feature5": {
-    "message": "购买积分享 7 折优惠"
+    "message": "包含标准版所有功能"
   },
   "PRICING.subscription.pro.feature6": {
-    "message": "企业级 SLA 保障"
+    "message": "优先技术支持"
   },
   "PRICING.payAsYouGo.title": {
     "message": "按量计费"

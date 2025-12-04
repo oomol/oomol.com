@@ -905,70 +905,70 @@
     "message": "$0"
   },
   "PRICING.subscription.free.description": {
-    "message": "Perfect for individual developers and small projects"
+    "message": "Perfect for individual developers handling all resources themselves"
   },
   "PRICING.subscription.free.feature1": {
-    "message": "Unlimited local usage"
+    "message": "Task executions: 200 per month"
   },
   "PRICING.subscription.free.feature2": {
-    "message": "Basic workflow features"
+    "message": "LLM tokens: 1M per month"
   },
   "PRICING.subscription.free.feature3": {
-    "message": "Community support"
+    "message": "Fusion API: 50 calls per month"
   },
   "PRICING.subscription.free.feature4": {
-    "message": "FRP protocol sharing"
+    "message": "FRP service support (Free for 3 months after registration)"
   },
   "PRICING.subscription.standard.name": {
     "message": "Standard"
   },
   "PRICING.subscription.standard.price": {
-    "message": "$15"
+    "message": "$5"
   },
   "PRICING.subscription.standard.description": {
-    "message": "Ideal for small teams and professional developers"
+    "message": "Ideal for small teams with moderate OOMOL resource usage"
   },
   "PRICING.subscription.standard.feature1": {
-    "message": "5M free credits per month"
+    "message": "Task executions: 1,200 per month"
   },
   "PRICING.subscription.standard.feature2": {
-    "message": "Cloud deployment support"
+    "message": "LLM tokens: 5M per month"
   },
   "PRICING.subscription.standard.feature3": {
-    "message": "Invite collaborators"
+    "message": "Fusion API: 100 calls per month"
   },
   "PRICING.subscription.standard.feature4": {
-    "message": "Priority technical support"
+    "message": "FRP service support"
   },
   "PRICING.subscription.standard.feature5": {
-    "message": "20% discount on credit purchases"
+    "message": "All Free tier features included"
   },
   "PRICING.subscription.pro.name": {
     "message": "Pro"
   },
   "PRICING.subscription.pro.price": {
-    "message": "$45"
+    "message": "$29"
   },
   "PRICING.subscription.pro.description": {
-    "message": "Perfect for enterprises and advanced users"
+    "message": "Perfect for power users with frequent OOMOL core feature usage"
   },
   "PRICING.subscription.pro.feature1": {
-    "message": "20M free credits per month"
+    "message": "Task executions: 4,000 per month"
   },
   "PRICING.subscription.pro.feature2": {
-    "message": "Private deployment support"
+    "message": "LLM tokens: 10M per month"
   },
   "PRICING.subscription.pro.feature3": {
-    "message": "Unlimited collaborators"
+    "message": "Fusion API: 500 calls per month"
   },
   "PRICING.subscription.pro.feature4": {
-    "message": "24/7 dedicated technical support"
+    "message": "FRP service support"
   },
   "PRICING.subscription.pro.feature5": {
-    "message": "30% discount on credit purchases"
+    "message": "All Standard tier features included"
   },
   "PRICING.subscription.pro.feature6": {
-    "message": "Enterprise-grade SLA guarantee"
+    "message": "Priority technical support"
   },
   "PRICING.payAsYouGo.title": {
     "message": "Pay-As-You-Go"
