@@ -17,7 +17,7 @@ import type { DocusaurusContext } from "@docusaurus/types";
 function parseHighlightText(text: string) {
   const parts = text.split(/(\*\*.*?\*\*)/g);
   return parts.map((part, index) => {
-    if (part.startsWith('**') && part.endsWith('**')) {
+    if (part.startsWith("**") && part.endsWith("**")) {
       const content = part.slice(2, -2);
       return (
         <span key={index} className={styles.highlight}>
@@ -25,7 +25,7 @@ function parseHighlightText(text: string) {
         </span>
       );
     }
-    return part;
+    return <React.Fragment key={index}>{part}</React.Fragment>;
   });
 }
 

@@ -239,8 +239,14 @@
   "HOME.PdfCraft.traditional.title": {
     "message": "Local Computing, Free & Private"
   },
-  "HOME.PdfCraft.traditional.description": {
-    "message": "• Prepare a PC with RTX 3060 or higher GPU\n• Install OOMOL Studio for free local deployment\n• Use Mini App or Flow to run"
+  "HOME.PdfCraft.traditional.step1": {
+    "message": "Prepare a PC with RTX 3060 or higher GPU"
+  },
+  "HOME.PdfCraft.traditional.step2": {
+    "message": "Install OOMOL Studio for free local deployment"
+  },
+  "HOME.PdfCraft.traditional.step3": {
+    "message": "Use Mini App or Flow to run"
   },
   "HOME.PdfCraft.oomol.badge": {
     "message": "Official Service"
@@ -745,12 +751,6 @@
   },
   "HOME.Built-in.code.typescript": {
     "message": "//#region generated meta\ntype Inputs = {\n};\ntype Outputs = {\n};\n//#endregion\n\nimport type { Context } from \"@oomol/types/oocana\";\n\nexport default async function(\n    params: Inputs,\n    context: Context<Inputs, Outputs>\n): Promise<Partial<Outputs> | undefined | void> {\n    // Fusion API Base URL\n    const api_url = \"https://fusion-api.oomol.com/v1/fal-nano-banana-edit/submit\"\n\n    // LLM Base URL, can use openai sdk\n    const llm_base_url = \"https://llm.oomol.com/v1\"\n\n    // Get OOMOL token from context (no need for manual API key input)\n    const api_token = await context.getOomolToken()\n    // return { output: \"output_value\" };\n};"
-  },
-  "HOME.CommunityShare.title": {
-    "message": "Discover Community-Shared Tools"
-  },
-  "HOME.CommunityShare.subtitle": {
-    "message": "Gain wisdom from an open community, contribute your talents, and drive AI tool innovation together."
   },
   "HOME.GetStartedPrompt.title": {
     "message": "Start Using OOMOL Today"
@@ -1952,6 +1952,9 @@
   },
   "CHAT.hero.stat1": {
     "message": "Protocol Support"
+  },
+  "CHAT.hero.statValue2": {
+    "message": "Multi-Model"
   },
   "CHAT.hero.stat2": {
     "message": "Support"

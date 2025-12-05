@@ -9,7 +9,9 @@ const useCases = [
   {
     icon: "💬",
     title: translate({ message: "CHAT.useCase.conversation.title" }),
-    description: translate({ message: "CHAT.useCase.conversation.description" }),
+    description: translate({
+      message: "CHAT.useCase.conversation.description",
+    }),
   },
   {
     icon: "🔧",
@@ -24,7 +26,9 @@ const useCases = [
   {
     icon: "🤝",
     title: translate({ message: "CHAT.useCase.collaboration.title" }),
-    description: translate({ message: "CHAT.useCase.collaboration.description" }),
+    description: translate({
+      message: "CHAT.useCase.collaboration.description",
+    }),
   },
 ];
 
@@ -63,7 +67,7 @@ const coreFeatures = [
 ];
 
 // 使用场景卡片组件
-const UseCaseCard = ({ useCase }: { useCase: typeof useCases[0] }) => {
+const UseCaseCard = ({ useCase }: { useCase: (typeof useCases)[0] }) => {
   return (
     <div className={styles.useCaseCard}>
       <div className={styles.useCaseIcon}>{useCase.icon}</div>
@@ -74,7 +78,7 @@ const UseCaseCard = ({ useCase }: { useCase: typeof useCases[0] }) => {
 };
 
 // 核心功能卡片组件
-const FeatureCard = ({ feature }: { feature: typeof coreFeatures[0] }) => {
+const FeatureCard = ({ feature }: { feature: (typeof coreFeatures)[0] }) => {
   return (
     <div className={styles.featureCard}>
       <div className={styles.featureIcon}>{feature.icon}</div>
@@ -104,15 +108,23 @@ export default function ChatPage() {
           <div className={styles.heroStats}>
             <div className={styles.stat}>
               <span className={styles.statValue}>MCP</span>
-              <span className={styles.statLabel}>{translate({ message: "CHAT.hero.stat1" })}</span>
+              <span className={styles.statLabel}>
+                {translate({ message: "CHAT.hero.stat1" })}
+              </span>
             </div>
             <div className={styles.stat}>
-              <span className={styles.statValue}>多模型</span>
-              <span className={styles.statLabel}>{translate({ message: "CHAT.hero.stat2" })}</span>
+              <span className={styles.statValue}>
+                {translate({ message: "CHAT.hero.statValue2" })}
+              </span>
+              <span className={styles.statLabel}>
+                {translate({ message: "CHAT.hero.stat2" })}
+              </span>
             </div>
             <div className={styles.stat}>
               <span className={styles.statValue}>AI Agent</span>
-              <span className={styles.statLabel}>{translate({ message: "CHAT.hero.stat3" })}</span>
+              <span className={styles.statLabel}>
+                {translate({ message: "CHAT.hero.stat3" })}
+              </span>
             </div>
           </div>
 

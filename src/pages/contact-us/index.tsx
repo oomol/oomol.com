@@ -316,12 +316,12 @@ export default function Community() {
         <div className={styles.repositories}>
           {REPOS.map((repo) => {
             return (
-              <div
+              <a
                 className={styles.repository}
                 key={repo.url}
-                onClick={() => {
-                  window.open(`https://github.com/${repo.url}`, "_blank");
-                }}
+                href={`https://github.com/${repo.url}`}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <div className={styles["repo-body"]}>
                   <div className={styles["repo-header"]}>
@@ -353,7 +353,7 @@ export default function Community() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </a>
             );
           })}
         </div>

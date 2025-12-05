@@ -82,30 +82,24 @@ export default function HomepagePdfCraftShowcase() {
                       <span className={styles.checkIcon}>•</span>
                       <span>
                         {translate({
-                          message: "HOME.PdfCraft.traditional.description",
-                        })
-                          .split("\n")[0]
-                          .replace("• ", "")}
+                          message: "HOME.PdfCraft.traditional.step1",
+                        })}
                       </span>
                     </li>
                     <li>
                       <span className={styles.checkIcon}>•</span>
                       <span>
                         {translate({
-                          message: "HOME.PdfCraft.traditional.description",
-                        })
-                          .split("\n")[1]
-                          .replace("• ", "")}
+                          message: "HOME.PdfCraft.traditional.step2",
+                        })}
                       </span>
                     </li>
                     <li>
                       <span className={styles.checkIcon}>•</span>
                       <span>
                         {translate({
-                          message: "HOME.PdfCraft.traditional.description",
-                        })
-                          .split("\n")[2]
-                          .replace("• ", "")}
+                          message: "HOME.PdfCraft.traditional.step3",
+                        })}
                       </span>
                     </li>
                   </ul>

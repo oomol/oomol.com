@@ -9,43 +9,47 @@ interface Step {
   description: string;
 }
 
+const getSteps = (): Step[] => [
+  {
+    stepNumber: "01",
+    title: translate({ message: "HOME.Lifecycle.step1.title" }),
+    subtitle: translate({ message: "HOME.Lifecycle.step1.subtitle" }),
+    description: translate({ message: "HOME.Lifecycle.step1.description" }),
+  },
+  {
+    stepNumber: "02",
+    title: translate({ message: "HOME.Lifecycle.step2.title" }),
+    subtitle: translate({ message: "HOME.Lifecycle.step2.subtitle" }),
+    description: translate({ message: "HOME.Lifecycle.step2.description" }),
+  },
+  {
+    stepNumber: "03",
+    title: translate({ message: "HOME.Lifecycle.step3.title" }),
+    subtitle: translate({ message: "HOME.Lifecycle.step3.subtitle" }),
+    description: translate({ message: "HOME.Lifecycle.step3.description" }),
+  },
+  {
+    stepNumber: "04",
+    title: translate({ message: "HOME.Lifecycle.step4.title" }),
+    subtitle: translate({ message: "HOME.Lifecycle.step4.subtitle" }),
+    description: translate({ message: "HOME.Lifecycle.step4.description" }),
+  },
+];
+
+const STEPS_COUNT = 4;
+const AUTO_SWITCH_DURATION = 10000; // 10秒自动切换
+
 export default function HomepageLifecycle() {
   const [activeStep, setActiveStep] = useState(0);
   const [progress, setProgress] = useState(0);
   const progressRef = useRef(0);
-  const AUTO_SWITCH_DURATION = 10000; // 10秒自动切换
+
+  const steps = getSteps();
 
   // 检测描述是否为列表格式(中文使用列表,英文使用段落)
   const checkIsListFormat = (description: string): boolean => {
     return description.includes("•") && description.includes("\n");
   };
-
-  const steps: Step[] = [
-    {
-      stepNumber: "01",
-      title: translate({ message: "HOME.Lifecycle.step1.title" }),
-      subtitle: translate({ message: "HOME.Lifecycle.step1.subtitle" }),
-      description: translate({ message: "HOME.Lifecycle.step1.description" }),
-    },
-    {
-      stepNumber: "02",
-      title: translate({ message: "HOME.Lifecycle.step2.title" }),
-      subtitle: translate({ message: "HOME.Lifecycle.step2.subtitle" }),
-      description: translate({ message: "HOME.Lifecycle.step2.description" }),
-    },
-    {
-      stepNumber: "03",
-      title: translate({ message: "HOME.Lifecycle.step3.title" }),
-      subtitle: translate({ message: "HOME.Lifecycle.step3.subtitle" }),
-      description: translate({ message: "HOME.Lifecycle.step3.description" }),
-    },
-    {
-      stepNumber: "04",
-      title: translate({ message: "HOME.Lifecycle.step4.title" }),
-      subtitle: translate({ message: "HOME.Lifecycle.step4.subtitle" }),
-      description: translate({ message: "HOME.Lifecycle.step4.description" }),
-    },
-  ];
 
   // 自动切换功能和进度条更新
   useEffect(() => {
@@ -63,14 +67,14 @@ export default function HomepageLifecycle() {
 
     // 自动切换到下一步
     const switchTimeout = setTimeout(() => {
-      setActiveStep(prev => (prev + 1) % steps.length);
+      setActiveStep(prev => (prev + 1) % STEPS_COUNT);
     }, AUTO_SWITCH_DURATION);
 
     return () => {
       clearInterval(progressInterval);
       clearTimeout(switchTimeout);
     };
-  }, [activeStep, steps.length]);
+  }, [activeStep]);
 
   // 处理用户点击,重置计时器和进度
   const handleStepClick = (index: number) => {
@@ -109,7 +113,11 @@ export default function HomepageLifecycle() {
                   <div className={styles.stepIndicator}>
                     <div className={styles.stepNumberWrapper}>
                       {index === activeStep && (
-                        <svg className={styles.progressRing} width="58" height="58">
+                        <svg
+                          className={styles.progressRing}
+                          width="58"
+                          height="58"
+                        >
                           <circle
                             className={styles.progressRingCircle}
                             stroke="var(--ifm-color-primary)"
@@ -125,7 +133,9 @@ export default function HomepageLifecycle() {
                           />
                         </svg>
                       )}
-                      <span className={styles.stepNumber}>{step.stepNumber}</span>
+                      <span className={styles.stepNumber}>
+                        {step.stepNumber}
+                      </span>
                     </div>
                     {index < steps.length - 1 && (
                       <div className={styles.stepConnector} />

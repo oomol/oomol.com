@@ -240,8 +240,14 @@
   "HOME.PdfCraft.traditional.title": {
     "message": "本地算力，免费私密"
   },
-  "HOME.PdfCraft.traditional.description": {
-    "message": "• 准备具有 3060 以上显卡的 PC\n• 安装 OOMOL Studio 本地免费部署\n• 使用小应用或者 Flow 运行"
+  "HOME.PdfCraft.traditional.step1": {
+    "message": "准备具有 3060 以上显卡的 PC"
+  },
+  "HOME.PdfCraft.traditional.step2": {
+    "message": "安装 OOMOL Studio 本地免费部署"
+  },
+  "HOME.PdfCraft.traditional.step3": {
+    "message": "使用小应用或者 Flow 运行"
   },
   "HOME.PdfCraft.oomol.badge": {
     "message": "官方服务"
@@ -746,12 +752,6 @@
   },
   "HOME.Built-in.code.typescript": {
     "message": "//#region generated meta\ntype Inputs = {\n};\ntype Outputs = {\n};\n//#endregion\n\nimport type { Context } from \"@oomol/types/oocana\";\n\nexport default async function(\n    params: Inputs,\n    context: Context<Inputs, Outputs>\n): Promise<Partial<Outputs> | undefined | void> {\n    // 融合 API 基础地址\n    const api_url = \"https://fusion-api.oomol.com/v1/fal-nano-banana-edit/submit\"\n\n    // 大模型基础地址，可使用 openai sdk\n    const llm_base_url = \"https://llm.oomol.com/v1\"\n\n    // 从 context 获取 OOMOL token（无需手动输入 API key）\n    const api_token = await context.getOomolToken()\n    // return { output: \"output_value\" };\n};"
-  },
-  "HOME.CommunityShare.title": {
-    "message": "发现社区分享的工具"
-  },
-  "HOME.CommunityShare.subtitle": {
-    "message": "在开放社区中汲取智慧、贡献才华,与他人共同推动 AI 工具创新。"
   },
   "HOME.GetStartedPrompt.title": {
     "message": "立即开始使用"
@@ -1504,6 +1504,9 @@
   },
   "CHAT.hero.stat1": {
     "message": "协议支持"
+  },
+  "CHAT.hero.statValue2": {
+    "message": "多模型"
   },
   "CHAT.hero.stat2": {
     "message": "支持"
