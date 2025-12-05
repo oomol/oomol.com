@@ -17,6 +17,9 @@
   "Theme.Navbar.login": {
     "message": "Login"
   },
+  "Theme.Navbar.console": {
+    "message": "Console"
+  },
   "Theme.Navbar.community": {
     "message": "Community"
   },
@@ -35,7 +38,6 @@
   "HOME.FirstScreen.script": {
     "message": "No new concepts to learn—just **write functions and reference libraries** like you always do to create blocks. **Drag and drop them into workflows** to efficiently build new features. Publish as **APIs, MCP tools, or automation** to turn ideas into products instantly."
   },
-
   "HOME.FirstScreen.download-macos": {
     "message": "Download for macOS"
   },
@@ -279,7 +281,6 @@
   "HOME.BrandAssets.typeface": {
     "message": "Typeface"
   },
-
   "HOME.Scenes.title": {
     "message": "Developer Use Cases"
   },
@@ -823,7 +824,6 @@
   "HOME.Community.open-source.subtitle": {
     "message": "OOMOL is an open-source company dedicated to promoting collaboration and enhancing existing open-source tools and communities."
   },
-
   "FEATURES.title": {
     "message": "All the features that you need"
   },
@@ -875,11 +875,9 @@
   "FEATURES.block-6.title": {
     "message": "Code synced to GitHub for collaborative development and upkeep."
   },
-
   "PRICING.title": {
     "message": "Simple, Transparent Pricing"
   },
-
   "PRICING.subtitle": {
     "message": "Start Free, Upgrade As Needed."
   },
@@ -1099,7 +1097,6 @@
   "PRICING.payAsYouGo.fusionAPI.feature3": {
     "message": "Text-to-Speech: 10 credits/minute"
   },
-
   "PRICING.free.badge": {
     "message": "Recommended"
   },
@@ -1175,7 +1172,6 @@
   "PRICING.buttonText": {
     "message": "Get Started"
   },
-
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"

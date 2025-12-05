@@ -14,6 +14,7 @@ import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
 import { translate } from "@docusaurus/Translate";
 import { useColorMode } from "@docusaurus/theme-common";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import BrowserOnly from "@docusaurus/BrowserOnly";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface NavbarProps {}
@@ -77,6 +78,23 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
     () => splitNavItemsByPosition(items),
     [items]
   );
+
+  const isSignedIn = () => {
+    const cookies = document.cookie.split(";").map(cookie => cookie.trim());
+    return cookies.some(cookie => cookie.includes("oomol-signed-in"));
+  };
+
+  const CALLBACK_URL = "https://oomol.com/";
+  const CONSOLE_SERVER_URL = "https://console.oomol.com";
+
+  const handleSignin = () => {
+    if (isSignedIn()) {
+      return window.open(CONSOLE_SERVER_URL, "_self");
+    }
+
+    const redirectURL = `https://api.oomol.com/v1/auth/redirect?redirect=${encodeURIComponent(CALLBACK_URL)}`;
+    window.open(redirectURL, "_self");
+  };
 
   // const prevScrollPosRef = React.useRef(0);
 
@@ -152,9 +170,28 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
               <i className="i-lucide-download" />
               {translate({ message: "Theme.Navbar.download" })}
             </Link>
-            <a href="/login" className={styles.loginButton}>
-              {translate({ message: "Theme.Navbar.login" })}
-            </a>
+            <BrowserOnly
+              fallback={
+                <a className={styles.loginButton}>
+                  {translate({ message: "Theme.Navbar.login" })}
+                </a>
+              }
+            >
+              {() => {
+                return (
+                  <a
+                    className={styles.loginButton}
+                    onClick={() => handleSignin()}
+                  >
+                    {translate({
+                      message: isSignedIn()
+                        ? "Theme.Navbar.console"
+                        : "Theme.Navbar.login",
+                    })}
+                  </a>
+                );
+              }}
+            </BrowserOnly>
           </div>
         </div>
         <div
