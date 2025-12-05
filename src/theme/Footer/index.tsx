@@ -1,14 +1,16 @@
 import styles from "./styles.module.scss";
 
-import React, { useState, useMemo } from "react";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import type { DocusaurusContext } from "@docusaurus/types";
-import useBaseUrl from "@docusaurus/useBaseUrl";
-import clsx from "clsx";
-import { LocalDropdown } from "../components/LocalDropdown";
-import { ColorModeDropdown } from "../components/ColorModeDropdown";
-import { Popover } from "@site/src/components/Popover";
+
 import { useColorMode } from "@docusaurus/theme-common";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { Popover } from "@site/src/components/Popover";
+import { clsx } from "clsx";
+import React, { useState, useMemo } from "react";
+
+import { ColorModeDropdown } from "../components/ColorModeDropdown";
+import { LocalDropdown } from "../components/LocalDropdown";
 
 interface FooterLinkProps {
   href?: string;

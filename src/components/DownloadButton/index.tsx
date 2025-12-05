@@ -1,10 +1,12 @@
-import { DownloadUrl } from "@site/src/download_url";
 import styles from "./styles.module.scss";
+
+import BrowserOnly from "@docusaurus/BrowserOnly";
+import { translate } from "@docusaurus/Translate";
+import { DownloadUrl } from "@site/src/download_url";
+import { downloadStable } from "@site/src/lib/utils";
+
 import { Popover } from "../Popover";
 import { Button } from "../ui/button";
-import { translate } from "@docusaurus/Translate";
-import { downloadStable } from "@site/src/lib/utils";
-import BrowserOnly from "@docusaurus/BrowserOnly";
 
 enum OS {
   Windows = "Windows",

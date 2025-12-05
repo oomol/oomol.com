@@ -16,7 +16,7 @@
   font-weight: 700;
   color: var(--ifm-color-primary);
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -41,15 +41,15 @@
   display: flex;
   align-items: center;
   gap: 4rem;
-  
+
   &.layoutReverse {
     flex-direction: row-reverse;
   }
-  
+
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 2rem;
-    
+
     &.layoutReverse {
       flex-direction: column;
     }
@@ -85,11 +85,11 @@
   transition: all 0.3s ease;
   margin-bottom: 1rem;
   border: 2px solid transparent;
-  
+
   &:hover {
     background-color: var(--ifm-color-emphasis-100);
   }
-  
+
   &.active {
     background-color: var(--oomol-hub-bg);
     border-color: var(--oomol-hub);
@@ -136,7 +136,7 @@
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  
+
   @media (max-width: 768px) {
     height: 300px;
   }
@@ -151,7 +151,7 @@
   object-fit: cover;
   opacity: 0;
   transition: opacity 0.5s ease;
-  
+
   &.imageVisible {
     opacity: 1;
   }
@@ -161,20 +161,20 @@
   .container {
     padding: 1rem;
   }
-  
+
   .title {
     font-size: 2.5rem;
   }
-  
+
   .shareTitle {
     font-size: 2rem;
   }
-  
+
   .share-wrapper {
     gap: 3rem;
     margin-bottom: 3rem;
   }
-  
+
   .feature {
     padding: 1rem;
   }

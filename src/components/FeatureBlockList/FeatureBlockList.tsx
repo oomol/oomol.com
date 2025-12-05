@@ -1,5 +1,6 @@
-import { translate } from "@docusaurus/Translate";
 import styles from "./FeatureBlockList.module.scss";
+
+import { translate } from "@docusaurus/Translate";
 
 interface FeatureBlockProps {
   icon: string;

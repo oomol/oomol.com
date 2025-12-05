@@ -1,25 +1,27 @@
-import React, { useState, useEffect, useRef, useMemo } from "react";
 import styles from "./styles.module.scss";
-import Layout from "@theme/Layout";
+
 import { translate } from "@docusaurus/Translate";
-import LogoIconSVG from "@site/static/img/pages/brand-assets/oomol-logo.svg";
-import ColorIconSVG from "@site/static/img/pages/brand-assets/color.svg";
-import IconSymbolIconSVG from "@site/static/img/pages/brand-assets/icon-symbol.svg";
-import TypefaceIconSVG from "@site/static/img/pages/brand-assets/typeface.svg";
-import LogoIconActiveSVG from "@site/static/img/pages/brand-assets/oomol-logo-active.svg";
-import ColorIconActiveSVG from "@site/static/img/pages/brand-assets/color-active.svg";
-import IconSymbolIconActiveSVG from "@site/static/img/pages/brand-assets/icon-symbol-active.svg";
-import TypefaceIconActiveSVG from "@site/static/img/pages/brand-assets/typeface-active.svg";
 import AssetBlockSVG from "@site/src/components/AssetBlock";
+import ColorIconActiveSVG from "@site/static/img/pages/brand-assets/color-active.svg";
+import ColorIconSVG from "@site/static/img/pages/brand-assets/color.svg";
+import IconSymbolIconActiveSVG from "@site/static/img/pages/brand-assets/icon-symbol-active.svg";
+import IconSymbolIconSVG from "@site/static/img/pages/brand-assets/icon-symbol.svg";
+import OomolIconSVG from "@site/static/img/pages/brand-assets/oomol-icon.svg";
+import LogoIconActiveSVG from "@site/static/img/pages/brand-assets/oomol-logo-active.svg";
 import OomolLogoBSVG from "@site/static/img/pages/brand-assets/oomol-logo-black.svg";
-import OomolLogoWSVG from "@site/static/img/pages/brand-assets/oomol-logo-white.svg";
-import OomolLogoEnBSVG from "@site/static/img/pages/brand-assets/oomol-logo-en-black.svg";
-import OomolLogoEnWSVG from "@site/static/img/pages/brand-assets/oomol-logo-en-white.svg";
 import OomolLogoCnBSVG from "@site/static/img/pages/brand-assets/oomol-logo-cn-black.svg";
 import OomolLogoCnWSVG from "@site/static/img/pages/brand-assets/oomol-logo-cn-white.svg";
-import OomolIconSVG from "@site/static/img/pages/brand-assets/oomol-icon.svg";
+import OomolLogoEnBSVG from "@site/static/img/pages/brand-assets/oomol-logo-en-black.svg";
+import OomolLogoEnWSVG from "@site/static/img/pages/brand-assets/oomol-logo-en-white.svg";
+import OomolLogoWSVG from "@site/static/img/pages/brand-assets/oomol-logo-white.svg";
+import LogoIconSVG from "@site/static/img/pages/brand-assets/oomol-logo.svg";
+import TypefaceIconActiveSVG from "@site/static/img/pages/brand-assets/typeface-active.svg";
 import JostIconSVG from "@site/static/img/pages/brand-assets/typeface-jost.svg";
-import clsx from "clsx";
+import TypefaceIconSVG from "@site/static/img/pages/brand-assets/typeface.svg";
+import Layout from "@theme/Layout";
+import { clsx } from "clsx";
+import React, { useState, useEffect, useRef, useMemo } from "react";
+
 export default function BrandAssets() {
   const [activeSection, setActiveSection] = useState("logos");
   const [isScrolling, setIsScrolling] = useState(false);

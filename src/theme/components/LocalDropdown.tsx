@@ -1,7 +1,9 @@
-import { useLocation } from "@docusaurus/router";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import type { DocusaurusContext } from "@docusaurus/types";
+
+import BrowserOnly from "@docusaurus/BrowserOnly";
+import { useLocation } from "@docusaurus/router";
 import { useAlternatePageUtils } from "@docusaurus/theme-common/internal";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { Button } from "@site/src/components/ui/button";
 import {
   DropdownMenu,
@@ -10,7 +12,6 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@site/src/components/ui/dropdown-menu";
-import BrowserOnly from "@docusaurus/BrowserOnly";
 
 export interface LocalDropdownProps {
   queryString?: string;
@@ -39,8 +40,13 @@ export const LocalDropdown = ({ queryString = "" }: LocalDropdownProps) => {
       return;
     }
 
-    if (typeof window !== 'undefined') {
-      const cookieValue = "OOMOL_LOCALE=" + locale + "; path=/; domain=." + window.location.host + "; max-age=31536000";
+    if (typeof window !== "undefined") {
+      const cookieValue =
+        "OOMOL_LOCALE=" +
+        locale +
+        "; path=/; domain=." +
+        window.location.host +
+        "; max-age=31536000";
       window.document.cookie = cookieValue;
     }
 
@@ -65,11 +71,14 @@ export const LocalDropdown = ({ queryString = "" }: LocalDropdownProps) => {
           <DropdownMenuContent
             align="end"
             style={{
-              backgroundColor: 'var(--oomol-bg-container)',
-              borderColor: 'var(--oomol-border-default)'
+              backgroundColor: "var(--oomol-bg-container)",
+              borderColor: "var(--oomol-border-default)",
             }}
           >
-            <DropdownMenuRadioGroup value={currentLocale} onValueChange={handleLocaleChange}>
+            <DropdownMenuRadioGroup
+              value={currentLocale}
+              onValueChange={handleLocaleChange}
+            >
               {locales.map(locale => (
                 <DropdownMenuRadioItem key={locale} value={locale}>
                   {formateLocale(locale)}

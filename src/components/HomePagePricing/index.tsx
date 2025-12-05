@@ -1,4 +1,9 @@
+import styles from "./style.module.scss";
+
 import { translate } from "@docusaurus/Translate";
+import React from "react";
+
+import { BlurFade } from "../magic-ui/BlurFade";
 import { Button } from "../ui/button";
 import {
   Card,
@@ -7,9 +12,6 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
-import { BlurFade } from "../magic-ui/BlurFade";
-import styles from "./style.module.scss";
-import React from "react";
 
 const pricingData = [
   {
@@ -72,7 +74,9 @@ const HomepagePricing = () => {
                     {item.title}
                     {item.tag && <span className={styles.tag}>{item.tag}</span>}
                   </CardTitle>
-                  {item.description && <p className={styles.description}>{item.description}</p>}
+                  {item.description && (
+                    <p className={styles.description}>{item.description}</p>
+                  )}
                   <h3 className={styles.price}>{item.price}</h3>
                 </CardHeader>
                 <CardContent>
@@ -95,7 +99,10 @@ const HomepagePricing = () => {
           })}
           <div className={styles["top-up-box"]}>
             {pricingTopUpData.map((item, index) => (
-              <Card key={index} className={styles.card + " " + styles["top-up"]}>
+              <Card
+                key={index}
+                className={styles.card + " " + styles["top-up"]}
+              >
                 <CardHeader>
                   <CardTitle>{item.title}</CardTitle>
                   <h3>{item.price}</h3>

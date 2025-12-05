@@ -1,7 +1,10 @@
 declare module "@docusaurus/useDocusaurusContext" {
-  import { DocusaurusConfig, DocusaurusSiteMetadata } from "@docusaurus/types";
-  import NavbarItem from "@theme/NavbarItem";
-  import { ComponentProps } from "react";
+  import type {
+    DocusaurusConfig,
+    DocusaurusSiteMetadata,
+  } from "@docusaurus/types";
+  import type NavbarItem from "@theme/NavbarItem";
+  import type { ComponentProps } from "react";
 
   type Item = {
     href: string;
@@ -46,7 +49,7 @@ declare module "@docusaurus/useDocusaurusContext" {
       };
     };
     siteMetadata: DocusaurusSiteMetadata;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     globalData: Record<string, any>;
     isClient: boolean;
   };
@@ -54,9 +57,10 @@ declare module "@docusaurus/useDocusaurusContext" {
 }
 
 declare module "@docusaurus/useGlobalData" {
-  import lib, {
-    usePluginData,
-  } from "@docusaurus/core/lib/client/exports/useGlobalData";
+  import type lib from "@docusaurus/core/lib/client/exports/useGlobalData";
+
+  import { usePluginData } from "@docusaurus/core/lib/client/exports/useGlobalData";
+
   const out: typeof lib;
   export default out;
   export { usePluginData };

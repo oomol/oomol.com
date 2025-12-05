@@ -51,6 +51,9 @@
   "[mdx]": {
     "editor.defaultFormatter": null
   },
+  "prettier.enable": true,
+  "eslint.enable": true,
+  "eslint.useFlatConfig": true,
   "cSpell.words": [
     "clsx",
     "Flowhub",
@@ -61,5 +64,9 @@
     "XSVG"
   ],
   "conventionalCommits.scopes": ["project"],
-  "cSpell.enableFiletypes": ["mdx"]
+  "cSpell.enabledFileTypes": {
+    "*": true,
+    "markdown": true,
+    "mdx": true
+  }
 }

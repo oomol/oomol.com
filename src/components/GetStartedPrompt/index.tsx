@@ -1,7 +1,9 @@
 import styles from "./styles.module.scss";
-import { DownloadButton } from "../DownloadButton";
+
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+
+import { DownloadButton } from "../DownloadButton";
 
 export const GetStartedPrompt = () => {
   const logoSrc = useBaseUrl("/img/logo2x.png");
@@ -10,11 +12,7 @@ export const GetStartedPrompt = () => {
     <div className={styles.container}>
       <div className={styles.content}>
         <div className={styles.textBox}>
-          <img
-            className={styles.logo}
-            src={logoSrc}
-            alt="OOMOL Logo"
-          />
+          <img className={styles.logo} src={logoSrc} alt="OOMOL Logo" />
           <h2 className={styles.title}>
             {translate({ message: "HOME.GetStartedPrompt.title" })}
           </h2>

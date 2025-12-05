@@ -1,7 +1,8 @@
-import React from "react";
 import styles from "./styles.module.scss";
+
 import { translate } from "@docusaurus/Translate";
-import clsx from "clsx";
+import { clsx } from "clsx";
+import React from "react";
 
 export default function HomepagePdfCraftShowcase() {
   return (

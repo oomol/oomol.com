@@ -1,27 +1,27 @@
 import styles from "./styles.module.scss";
 
-import ClaudeSVG from "@site/static/img/pages/home/claude.svg";
-import ClaudeLightHighSVG from "@site/static/img/pages/home/claude-highlight.svg";
-import OpenAISVG from "@site/static/img/pages/home/openai.svg";
-import OpenAILightHighSVG from "@site/static/img/pages/home/openai-highlight.svg";
-import OpenAIDarkHighSVG from "@site/static/img/pages/home/openai-dark-highlight.svg";
-import DoubaoSVG from "@site/static/img/pages/home/doubao.svg";
-import DoubaoLightHighSVG from "@site/static/img/pages/home/doubao-highlight.svg";
-import GrokSVG from "@site/static/img/pages/home/grok.svg";
-import GrokLightHighSVG from "@site/static/img/pages/home/grok-highlight.svg";
-import GrokDarkHighSVG from "@site/static/img/pages/home/grok-dark-highlight.svg";
-import GeminiSVG from "@site/static/img/pages/home/gemini.svg";
-import GeminiLightHighSVG from "@site/static/img/pages/home/gemini-highlight.svg";
-import MistralAISVG from "@site/static/img/pages/home/mistralai.svg";
-import MistralAILightHighSVG from "@site/static/img/pages/home/mistralai-highlight.svg";
-import QwenSVG from "@site/static/img/pages/home/qwen.svg";
-import QwenLightHighSVG from "@site/static/img/pages/home/qwen-highlight.svg";
-import DeepSeekSVG from "@site/static/img/pages/home/deepseek.svg";
-import DeepSeekLightHighSVG from "@site/static/img/pages/home/deepseek-highlight.svg";
-
-import { memo } from "react";
-import { translate } from "@docusaurus/Translate";
 import { useColorMode } from "@docusaurus/theme-common";
+import { translate } from "@docusaurus/Translate";
+import ClaudeLightHighSVG from "@site/static/img/pages/home/claude-highlight.svg";
+import ClaudeSVG from "@site/static/img/pages/home/claude.svg";
+import DeepSeekLightHighSVG from "@site/static/img/pages/home/deepseek-highlight.svg";
+import DeepSeekSVG from "@site/static/img/pages/home/deepseek.svg";
+import DoubaoLightHighSVG from "@site/static/img/pages/home/doubao-highlight.svg";
+import DoubaoSVG from "@site/static/img/pages/home/doubao.svg";
+import GeminiLightHighSVG from "@site/static/img/pages/home/gemini-highlight.svg";
+import GeminiSVG from "@site/static/img/pages/home/gemini.svg";
+import GrokDarkHighSVG from "@site/static/img/pages/home/grok-dark-highlight.svg";
+import GrokLightHighSVG from "@site/static/img/pages/home/grok-highlight.svg";
+import GrokSVG from "@site/static/img/pages/home/grok.svg";
+import MistralAILightHighSVG from "@site/static/img/pages/home/mistralai-highlight.svg";
+import MistralAISVG from "@site/static/img/pages/home/mistralai.svg";
+import OpenAIDarkHighSVG from "@site/static/img/pages/home/openai-dark-highlight.svg";
+import OpenAILightHighSVG from "@site/static/img/pages/home/openai-highlight.svg";
+import OpenAISVG from "@site/static/img/pages/home/openai.svg";
+import QwenLightHighSVG from "@site/static/img/pages/home/qwen-highlight.svg";
+import QwenSVG from "@site/static/img/pages/home/qwen.svg";
+import { memo } from "react";
+
 import CodeExample from "./CodeExample";
 
 const llmData = [

@@ -1,7 +1,7 @@
 import styles from "./AuroraText.module.scss";
 
-import React, { memo } from "react";
 import { useColorMode } from "@docusaurus/theme-common";
+import React, { memo } from "react";
 
 interface AuroraTextProps {
   children: React.ReactNode;
@@ -26,9 +26,10 @@ const AuroraTextComponent = memo(
     const defaultLightColors = ["#4C1D95", "#1E293B", "#059669", "#1E293B"];
 
     // 根据主题选择颜色
-    const selectedColors = colorMode === 'light'
-      ? (lightColors || defaultLightColors)
-      : (colors || defaultDarkColors);
+    const selectedColors =
+      colorMode === "light"
+        ? lightColors || defaultLightColors
+        : colors || defaultDarkColors;
 
     const gradientStyle = {
       backgroundImage: `linear-gradient(135deg, ${selectedColors.join(", ")}, ${

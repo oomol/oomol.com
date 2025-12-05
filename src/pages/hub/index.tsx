@@ -1,11 +1,12 @@
 import styles from "./styles.module.scss";
 
-import { useState, useEffect, useCallback, useRef } from "react";
-import clsx from "clsx";
-import Layout from "../../theme/Layout";
+import { translate } from "@docusaurus/Translate";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { Spin } from "@site/src/components/Spin/Spin";
-import { translate } from "@docusaurus/Translate";
+import { clsx } from "clsx";
+import { useState, useEffect, useCallback, useRef } from "react";
+
+import Layout from "../../theme/Layout";
 
 const shareData = {
   flowCommunity: {
@@ -164,7 +165,9 @@ export default function SharePage() {
     <Layout>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.title}>{translate({ message: "SHARE.title" })}</h2>
+          <h2 className={styles.title}>
+            {translate({ message: "SHARE.title" })}
+          </h2>
           <span className={styles.description}>
             {translate({ message: "SHARE.description" })}
           </span>

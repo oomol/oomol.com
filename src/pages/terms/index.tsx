@@ -1,11 +1,13 @@
-import React from "react";
-import Layout from "../../theme/Layout";
 import styles from "./styles.module.scss";
-import {MDXProvider} from "@mdx-js/react";
-import Terms from "./_terms.mdx"
+
+import { MDXProvider } from "@mdx-js/react";
+import React from "react";
+
+import Terms from "./_terms.mdx";
+import Layout from "../../theme/Layout";
 
 const components = {
-  em(properties: React.ComponentProps<'i'>) {
+  em(properties: React.ComponentProps<"i">) {
     return <i {...properties} />;
   },
 };

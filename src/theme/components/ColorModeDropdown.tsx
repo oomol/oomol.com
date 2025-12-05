@@ -1,4 +1,5 @@
 import { useColorMode } from "@docusaurus/theme-common";
+import { translate } from "@docusaurus/Translate";
 import { Button } from "@site/src/components/ui/button";
 import {
   DropdownMenu,
@@ -8,7 +9,6 @@ import {
   DropdownMenuTrigger,
 } from "@site/src/components/ui/dropdown-menu";
 import { useState, useEffect } from "react";
-import { translate } from "@docusaurus/Translate";
 
 type ColorModeType = "light" | "dark" | "system";
 
@@ -21,14 +21,19 @@ const modeIconMap: Record<ColorModeType, string> = {
 const getModeText = (mode: ColorModeType) => {
   return translate({
     id: `Theme.ColorMode.${mode}`,
-    message: mode === "light" ? "Light Mode" : mode === "dark" ? "Dark Mode" : "Follow System",
+    message:
+      mode === "light"
+        ? "Light Mode"
+        : mode === "dark"
+          ? "Dark Mode"
+          : "Follow System",
   });
 };
 
 export const ColorModeDropdown = () => {
   const { colorMode, setColorMode } = useColorMode();
   const [selectedMode, setSelectedMode] = useState<ColorModeType>(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       const storedMode = localStorage.getItem("theme") as ColorModeType | null;
       return storedMode || "system";
     }
@@ -55,7 +60,10 @@ export const ColorModeDropdown = () => {
     setSelectedMode(mode);
     if (mode === "system") {
       localStorage.removeItem("theme");
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+        .matches
+        ? "dark"
+        : "light";
       setColorMode(systemTheme);
     } else {
       localStorage.setItem("theme", mode);
@@ -88,11 +96,14 @@ export const ColorModeDropdown = () => {
       <DropdownMenuContent
         align="end"
         style={{
-          backgroundColor: 'var(--oomol-bg-container)',
-          borderColor: 'var(--oomol-border-default)'
+          backgroundColor: "var(--oomol-bg-container)",
+          borderColor: "var(--oomol-border-default)",
         }}
       >
-        <DropdownMenuRadioGroup value={selectedMode} onValueChange={(value) => handleModeChange(value as ColorModeType)}>
+        <DropdownMenuRadioGroup
+          value={selectedMode}
+          onValueChange={value => handleModeChange(value as ColorModeType)}
+        >
           {modes.map(mode => (
             <DropdownMenuRadioItem key={mode} value={mode} className="gap-2">
               <i className={modeIconMap[mode]} style={{ fontSize: "14px" }} />

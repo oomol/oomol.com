@@ -1,8 +1,10 @@
-import React, { useMemo } from "react";
 import styles from "./styles.module.scss";
+
+import type { DocusaurusContext } from "@docusaurus/types";
+
 import { useColorMode } from "@docusaurus/theme-common";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import type { DocusaurusContext } from "@docusaurus/types";
+import React, { useMemo } from "react";
 
 export default function HomepageStarter() {
   const { colorMode } = useColorMode();

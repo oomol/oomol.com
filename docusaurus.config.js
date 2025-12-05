@@ -1,7 +1,8 @@
+import { themes } from "prism-react-renderer";
+
 const UnoCSS = require("@unocss/webpack");
 const path = require("path");
 
-import { themes } from "prism-react-renderer";
 
 const lightTheme = themes.github;
 const darkTheme = themes.dracula;

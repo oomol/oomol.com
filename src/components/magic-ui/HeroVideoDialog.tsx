@@ -1,11 +1,11 @@
 import styles from "./HeroVideoDialog.module.scss";
 
-import { useState, useEffect } from "react";
-import { createPortal } from "react-dom";
+import i18n from "@generated/i18n";
+import { cn } from "@site/src/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { Play, XIcon } from "lucide-react";
-import { cn } from "@site/src/lib/utils";
-import i18n from "@generated/i18n";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 
 type AnimationStyle =
   | "from-bottom"

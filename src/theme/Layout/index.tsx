@@ -1,11 +1,13 @@
 import "../../styles/uno.css";
 import styles from "./styles.module.scss";
 
-import React, { ReactNode } from "react";
-import LayoutProvider from "@theme/Layout/Provider";
-import clsx from "clsx";
-import Navbar from "@theme/Navbar";
+import type { ReactNode } from "react";
+
 import Footer from "@theme/Footer";
+import LayoutProvider from "@theme/Layout/Provider";
+import Navbar from "@theme/Navbar";
+import { clsx } from "clsx";
+import React from "react";
 
 interface LayoutProps {
   children: ReactNode;

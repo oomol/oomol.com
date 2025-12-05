@@ -106,7 +106,11 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--oomol-primary) 0%, var(--oomol-primary-hover) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--oomol-primary) 0%,
+    var(--oomol-primary-hover) 100%
+  );
   color: white;
   display: flex;
   align-items: center;
@@ -220,7 +224,11 @@
   justify-content: center;
   gap: 80px;
   padding: 40px;
-  background: linear-gradient(135deg, rgba(var(--oomol-primary-rgb), 0.05) 0%, rgba(var(--oomol-primary-rgb), 0.02) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(var(--oomol-primary-rgb), 0.05) 0%,
+    rgba(var(--oomol-primary-rgb), 0.02) 100%
+  );
   border-radius: 16px;
   border: 1px solid var(--oomol-border-subtle);
 

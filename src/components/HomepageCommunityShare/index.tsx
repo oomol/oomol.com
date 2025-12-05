@@ -1,8 +1,9 @@
-import React from "react";
 import styles from "./styles.module.scss";
-import { translate } from "@docusaurus/Translate";
+
 import { useColorMode } from "@docusaurus/theme-common";
+import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import React from "react";
 
 export default function HomepageCommunityShare() {
   const { colorMode } = useColorMode();

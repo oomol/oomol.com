@@ -1,12 +1,12 @@
 import styles from "./styles.module.scss";
 
-import Layout from "@theme/Layout";
 import { translate } from "@docusaurus/Translate";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { Popover } from "@site/src/components/Popover";
 import { Card, CardHeader, CardTitle } from "@site/src/components/ui/card";
-import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
+import Layout from "@theme/Layout";
 import { useEffect, useState } from "react";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 
 interface RepoInfo {
   name: string;
@@ -254,7 +254,7 @@ export default function Community() {
           </div>
           <div className={styles.contactBox}>
             <div className={styles["contactList"]}>
-              {contentData.map((item) => {
+              {contentData.map(item => {
                 return (
                   <a
                     key={item.name}
@@ -265,7 +265,9 @@ export default function Community() {
                   >
                     <Card className={styles.contactCard}>
                       <CardHeader className={styles.contactCardHeader}>
-                        <div className={styles.contactCardIcon}>{item.icon}</div>
+                        <div className={styles.contactCardIcon}>
+                          {item.icon}
+                        </div>
                         <CardTitle className={styles.contactCardTitle}>
                           {item.text}
                         </CardTitle>
@@ -276,7 +278,9 @@ export default function Community() {
               })}
               <Popover
                 trigger={
-                  <Card className={`${styles.contactCard} ${styles.contactCardClickable}`}>
+                  <Card
+                    className={`${styles.contactCard} ${styles.contactCardClickable}`}
+                  >
                     <CardHeader className={styles.contactCardHeader}>
                       <div className={styles.contactCardIcon}>
                         <i className={`${styles.logo} i-simple-icons-wechat`} />
@@ -291,11 +295,7 @@ export default function Community() {
                 }
                 position="right"
                 content={
-                  <img
-                    alt="qrcode"
-                    className={styles.qrcode}
-                    src={qrcodeUrl}
-                  />
+                  <img alt="qrcode" className={styles.qrcode} src={qrcodeUrl} />
                 }
               />
             </div>
@@ -314,7 +314,7 @@ export default function Community() {
           </div>
         </div>
         <div className={styles.repositories}>
-          {REPOS.map((repo) => {
+          {REPOS.map(repo => {
             return (
               <a
                 className={styles.repository}

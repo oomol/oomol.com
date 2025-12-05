@@ -1,22 +1,22 @@
 import styles from "./styles.module.scss";
 
-import NavbarItem from "@theme/NavbarItem";
-import React, { memo, useMemo } from "react";
-import type { ComponentProps } from "react";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import type { DocusaurusContext } from "@docusaurus/types";
-import { useLocation } from "@docusaurus/router";
-import SearchBar from "@theme/SearchBar";
-import clsx from "clsx";
-import Link from "@docusaurus/Link";
-import { useNavbarMobileSidebar } from "@docusaurus/theme-common/internal";
-import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
-import { translate } from "@docusaurus/Translate";
-import { useColorMode } from "@docusaurus/theme-common";
-import useBaseUrl from "@docusaurus/useBaseUrl";
-import BrowserOnly from "@docusaurus/BrowserOnly";
+import type { ComponentProps } from "react";
 
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+import BrowserOnly from "@docusaurus/BrowserOnly";
+import Link from "@docusaurus/Link";
+import { useLocation } from "@docusaurus/router";
+import { useColorMode } from "@docusaurus/theme-common";
+import { useNavbarMobileSidebar } from "@docusaurus/theme-common/internal";
+import { translate } from "@docusaurus/Translate";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
+import NavbarItem from "@theme/NavbarItem";
+import SearchBar from "@theme/SearchBar";
+import { clsx } from "clsx";
+import React, { memo, useMemo } from "react";
+
 interface NavbarProps {}
 
 const DefaultNavItemPosition = "right";

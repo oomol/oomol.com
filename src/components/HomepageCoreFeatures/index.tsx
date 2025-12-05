@@ -1,7 +1,8 @@
 import styles from "./styles.module.scss";
+
+import { useColorMode } from "@docusaurus/theme-common";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { useColorMode } from "@docusaurus/theme-common";
 import React, { useState, useEffect, useRef, memo } from "react";
 
 // 核心功能数据

@@ -1,10 +1,12 @@
-import React from "react";
-import Layout from "../../theme/Layout";
 import styles from "./styles.module.scss";
-import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
-import { DownloadButton } from "@site/src/components/DownloadButton";
-import { Button } from "@site/src/components/ui/button";
+
 import { translate } from "@docusaurus/Translate";
+import { DownloadButton } from "@site/src/components/DownloadButton";
+import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
+import { Button } from "@site/src/components/ui/button";
+import React from "react";
+
+import Layout from "../../theme/Layout";
 
 export default function Index() {
   return (
@@ -260,34 +262,46 @@ export default function Index() {
             <div className={styles.planCard}>
               <div className={styles.planHeader}>
                 <div className={styles.planName}>
-                  {translate({ message: "PRICING.payAsYouGo.taskExecution.name" })}
+                  {translate({
+                    message: "PRICING.payAsYouGo.taskExecution.name",
+                  })}
                 </div>
                 <div className={styles.planPrice}>
                   <span className={styles.price}>
-                    {translate({ message: "PRICING.payAsYouGo.taskExecution.price" })}
+                    {translate({
+                      message: "PRICING.payAsYouGo.taskExecution.price",
+                    })}
                   </span>
                 </div>
                 <div className={styles.planDescription}>
-                  {translate({ message: "PRICING.payAsYouGo.taskExecution.description" })}
+                  {translate({
+                    message: "PRICING.payAsYouGo.taskExecution.description",
+                  })}
                 </div>
               </div>
               <div className={styles.featureList}>
                 <div className={styles.featureItem}>
                   <i className="i-codicon:check" />
                   <span>
-                    {translate({ message: "PRICING.payAsYouGo.taskExecution.feature1" })}
+                    {translate({
+                      message: "PRICING.payAsYouGo.taskExecution.feature1",
+                    })}
                   </span>
                 </div>
                 <div className={styles.featureItem}>
                   <i className="i-codicon:check" />
                   <span>
-                    {translate({ message: "PRICING.payAsYouGo.taskExecution.feature2" })}
+                    {translate({
+                      message: "PRICING.payAsYouGo.taskExecution.feature2",
+                    })}
                   </span>
                 </div>
                 <div className={styles.featureItem}>
                   <i className="i-codicon:check" />
                   <span>
-                    {translate({ message: "PRICING.payAsYouGo.taskExecution.feature3" })}
+                    {translate({
+                      message: "PRICING.payAsYouGo.taskExecution.feature3",
+                    })}
                   </span>
                 </div>
               </div>
@@ -338,30 +352,40 @@ export default function Index() {
                 </div>
                 <div className={styles.planPrice}>
                   <span className={styles.price}>
-                    {translate({ message: "PRICING.payAsYouGo.fusionAPI.price" })}
+                    {translate({
+                      message: "PRICING.payAsYouGo.fusionAPI.price",
+                    })}
                   </span>
                 </div>
                 <div className={styles.planDescription}>
-                  {translate({ message: "PRICING.payAsYouGo.fusionAPI.description" })}
+                  {translate({
+                    message: "PRICING.payAsYouGo.fusionAPI.description",
+                  })}
                 </div>
               </div>
               <div className={styles.featureList}>
                 <div className={styles.featureItem}>
                   <i className="i-codicon:check" />
                   <span>
-                    {translate({ message: "PRICING.payAsYouGo.fusionAPI.feature1" })}
+                    {translate({
+                      message: "PRICING.payAsYouGo.fusionAPI.feature1",
+                    })}
                   </span>
                 </div>
                 <div className={styles.featureItem}>
                   <i className="i-codicon:check" />
                   <span>
-                    {translate({ message: "PRICING.payAsYouGo.fusionAPI.feature2" })}
+                    {translate({
+                      message: "PRICING.payAsYouGo.fusionAPI.feature2",
+                    })}
                   </span>
                 </div>
                 <div className={styles.featureItem}>
                   <i className="i-codicon:check" />
                   <span>
-                    {translate({ message: "PRICING.payAsYouGo.fusionAPI.feature3" })}
+                    {translate({
+                      message: "PRICING.payAsYouGo.fusionAPI.feature3",
+                    })}
                   </span>
                 </div>
               </div>

@@ -1,17 +1,17 @@
 import styles from "./styles.module.scss";
 
-import React from "react";
-import useBaseUrl from "@docusaurus/useBaseUrl";
-import { translate } from "@docusaurus/Translate";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { useColorMode } from "@docusaurus/theme-common";
+import type { DocusaurusContext } from "@docusaurus/types";
 
-import clsx from "clsx";
+import { useColorMode } from "@docusaurus/theme-common";
+import { translate } from "@docusaurus/Translate";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { clsx } from "clsx";
+import React from "react";
+
 import { DownloadButton } from "../DownloadButton";
 import { AuroraText } from "../magic-ui/AuroraText";
 import { GridBackground } from "./GridBackground";
-
-import type { DocusaurusContext } from "@docusaurus/types";
 
 // 解析带高亮标记的文本
 function parseHighlightText(text: string) {

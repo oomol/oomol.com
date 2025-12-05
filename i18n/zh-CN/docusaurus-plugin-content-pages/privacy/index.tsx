@@ -1,25 +1,26 @@
-import React from "react";
-import Layout from "@theme/Layout";
 import styles from "./styles.module.scss";
-import {MDXProvider} from "@mdx-js/react";
 
-import Privacy from "./_privacy.mdx"
+import { MDXProvider } from "@mdx-js/react";
+import Layout from "@theme/Layout";
+import React from "react";
+
+import Privacy from "./_privacy.mdx";
 
 const components = {
-    em(properties: React.ComponentProps<'i'>) {
-      return <i {...properties} />
-    }
-  }
+  em(properties: React.ComponentProps<"i">) {
+    return <i {...properties} />;
+  },
+};
 export default function Index() {
-    return (
-        <Layout>
-            <MDXProvider components={components}>
-                <div className={styles.container}>
-                    <div className={styles.box}>
-                        <Privacy />
-                    </div>
-                </div>
-            </MDXProvider>
-        </Layout>
-    );
+  return (
+    <Layout>
+      <MDXProvider components={components}>
+        <div className={styles.container}>
+          <div className={styles.box}>
+            <Privacy />
+          </div>
+        </div>
+      </MDXProvider>
+    </Layout>
+  );
 }

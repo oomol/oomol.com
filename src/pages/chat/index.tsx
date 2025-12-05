@@ -1,8 +1,9 @@
 import styles from "./styles.module.scss";
 
-import Layout from "../../theme/Layout";
-import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { translate } from "@docusaurus/Translate";
+import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
+
+import Layout from "../../theme/Layout";
 
 // 使用场景数据
 const useCases = [

@@ -11,10 +11,10 @@
   --ifm-color-primary-lightest: #d9d9f9;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --ifm-font-family-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
-    "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei",
-    "Source Han Sans CN", sans-serif;
+  --ifm-font-family-base:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu,
+    "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei UI", "Microsoft YaHei", "Source Han Sans CN", sans-serif;
 
   /* Light mode colors - 使用 design tokens */
   --ifm-navbar-background-color: var(--oomol-bg-base);
@@ -139,11 +139,11 @@
    ============================================ */
 
 // 标准断点定义
-$breakpoint-xs: 375px;   // 小手机
-$breakpoint-sm: 640px;   // 大手机
-$breakpoint-md: 768px;   // 平板
-$breakpoint-lg: 1024px;  // 笔记本
-$breakpoint-xl: 1280px;  // 桌面
+$breakpoint-xs: 375px; // 小手机
+$breakpoint-sm: 640px; // 大手机
+$breakpoint-md: 768px; // 平板
+$breakpoint-lg: 1024px; // 笔记本
+$breakpoint-xl: 1280px; // 桌面
 $breakpoint-2xl: 1536px; // 大屏幕
 
 // 为了向后兼容，保留旧的变量名作为别名
@@ -158,22 +158,29 @@ $desktop-width: $breakpoint-xl;
 // 推荐使用的新 mixin（标准命名）
 @mixin respond-to($breakpoint) {
   @if $breakpoint == xs {
-    @media (max-width: $breakpoint-xs) { @content; }
-  }
-  @else if $breakpoint == sm {
-    @media (max-width: $breakpoint-sm) { @content; }
-  }
-  @else if $breakpoint == md {
-    @media (max-width: $breakpoint-md) { @content; }
-  }
-  @else if $breakpoint == lg {
-    @media (max-width: $breakpoint-lg) { @content; }
-  }
-  @else if $breakpoint == xl {
-    @media (max-width: $breakpoint-xl) { @content; }
-  }
-  @else if $breakpoint == 2xl {
-    @media (max-width: $breakpoint-2xl) { @content; }
+    @media (max-width: $breakpoint-xs) {
+      @content;
+    }
+  } @else if $breakpoint == sm {
+    @media (max-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (max-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (max-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (max-width: $breakpoint-xl) {
+      @content;
+    }
+  } @else if $breakpoint == 2xl {
+    @media (max-width: $breakpoint-2xl) {
+      @content;
+    }
   }
 }
 
@@ -231,7 +238,11 @@ $desktop-width: $breakpoint-xl;
 }
 
 @mixin linearGradientColor {
-  background-image: linear-gradient(90deg, var(--oomol-text-tertiary) 0%, var(--oomol-text-secondary) 100%);
+  background-image: linear-gradient(
+    90deg,
+    var(--oomol-text-tertiary) 0%,
+    var(--oomol-text-secondary) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

@@ -1,10 +1,11 @@
 import styles from "./styles.module.scss";
 
-import Layout from "../../theme/Layout";
-import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { translate } from "@docusaurus/Translate";
 import { FeatureBlockList } from "@site/src/components/FeatureBlockList/FeatureBlockList";
+import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import StudioPdfCraftCase from "@site/src/components/StudioPdfCraftCase";
+
+import Layout from "../../theme/Layout";
 
 // 开发者工作流数据
 const developerWorkflow = {
@@ -108,7 +109,12 @@ const aiCapabilities = {
 };
 
 // 工作流步骤组件
-const WorkflowStep = ({ step }: { step: typeof developerWorkflow.steps[0]; index: number }) => {
+const WorkflowStep = ({
+  step,
+}: {
+  step: (typeof developerWorkflow.steps)[0];
+  index: number;
+}) => {
   return (
     <div className={styles.workflowStep}>
       <div className={styles.stepNumber}>{step.number}</div>
@@ -126,7 +132,11 @@ const WorkflowStep = ({ step }: { step: typeof developerWorkflow.steps[0]; index
 };
 
 // 核心优势卡片组件
-const AdvantageCard = ({ advantage }: { advantage: typeof coreAdvantages[0] }) => {
+const AdvantageCard = ({
+  advantage,
+}: {
+  advantage: (typeof coreAdvantages)[0];
+}) => {
   return (
     <div className={styles.advantageCard}>
       <div className={styles.advantageIcon}>{advantage.icon}</div>
@@ -142,7 +152,11 @@ const AdvantageCard = ({ advantage }: { advantage: typeof coreAdvantages[0] }) =
 };
 
 // AI 能力卡片组件
-const AICapabilityCard = ({ capability }: { capability: typeof aiCapabilities.features[0] }) => {
+const AICapabilityCard = ({
+  capability,
+}: {
+  capability: (typeof aiCapabilities.features)[0];
+}) => {
   return (
     <div className={styles.aiCapabilityCard}>
       <span className={styles.aiIcon}>{capability.icon}</span>
@@ -166,15 +180,21 @@ export default function StudioPage() {
           <div className={styles.heroStats}>
             <div className={styles.stat}>
               <span className={styles.statValue}>20+</span>
-              <span className={styles.statLabel}>{translate({ message: "STUDIO.hero.stat1" })}</span>
+              <span className={styles.statLabel}>
+                {translate({ message: "STUDIO.hero.stat1" })}
+              </span>
             </div>
             <div className={styles.stat}>
               <span className={styles.statValue}>3 分钟</span>
-              <span className={styles.statLabel}>{translate({ message: "STUDIO.hero.stat2" })}</span>
+              <span className={styles.statLabel}>
+                {translate({ message: "STUDIO.hero.stat2" })}
+              </span>
             </div>
             <div className={styles.stat}>
               <span className={styles.statValue}>P2P</span>
-              <span className={styles.statLabel}>{translate({ message: "STUDIO.hero.stat3" })}</span>
+              <span className={styles.statLabel}>
+                {translate({ message: "STUDIO.hero.stat3" })}
+              </span>
             </div>
           </div>
 
@@ -224,7 +244,9 @@ export default function StudioPage() {
         <section className={styles.aiSection}>
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>{aiCapabilities.title}</h2>
-            <p className={styles.sectionSubtitle}>{aiCapabilities.description}</p>
+            <p className={styles.sectionSubtitle}>
+              {aiCapabilities.description}
+            </p>
           </div>
           <div className={styles.aiCapabilitiesGrid}>
             {aiCapabilities.features.map((capability, index) => (

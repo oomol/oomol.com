@@ -3,3 +3,6 @@ packages/*/coverage/
 docs/
 CHANGELOG.md
 package-lock.yaml
+*.mdx
+docusaurus.config.js
+static/

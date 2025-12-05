@@ -1,11 +1,11 @@
 import styles from "@site/src/pages/downloads/styles.module.scss";
 
-import React from "react";
-import Layout from "@theme/Layout";
-import { DownloadUrl } from "@site/src/download_url";
 import { translate } from "@docusaurus/Translate";
-import { downloadStable } from "@site/src/lib/utils";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { DownloadUrl } from "@site/src/download_url";
+import { downloadStable } from "@site/src/lib/utils";
+import Layout from "@theme/Layout";
+import React from "react";
 
 const downloadData = [
   {

@@ -1,14 +1,16 @@
-import React from 'react';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import { Highlight, themes } from 'prism-react-renderer';
-import { useColorMode } from '@docusaurus/theme-common';
-import { translate } from '@docusaurus/Translate';
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
-const getPythonCode = () => translate({
-  id: 'HOME.Built-in.code.python',
-  message: `from oocana import Context
+import { useColorMode } from "@docusaurus/theme-common";
+import { translate } from "@docusaurus/Translate";
+import TabItem from "@theme/TabItem";
+import Tabs from "@theme/Tabs";
+import { Highlight, themes } from "prism-react-renderer";
+import React from "react";
+
+const getPythonCode = () =>
+  translate({
+    id: "HOME.Built-in.code.python",
+    message: `from oocana import Context
 
 #region generated meta
 import typing
@@ -29,12 +31,13 @@ async def main(params: Inputs, context: Context) -> Outputs | None:
 
     return {
       # "output": "output_value"
-    }`
-});
+    }`,
+  });
 
-const getTypeScriptCode = () => translate({
-  id: 'HOME.Built-in.code.typescript',
-  message: `//#region generated meta
+const getTypeScriptCode = () =>
+  translate({
+    id: "HOME.Built-in.code.typescript",
+    message: `//#region generated meta
 type Inputs = {
 };
 type Outputs = {
@@ -56,8 +59,8 @@ export default async function(
     // Get OOMOL token from context (no need for manual API key input)
     const api_token = await context.getOomolToken()
     // return { output: "output_value" };
-};`
-});
+};`,
+  });
 
 interface CodeBlockProps {
   code: string;
@@ -69,7 +72,7 @@ function CodeBlock({ code, language }: CodeBlockProps) {
 
   return (
     <Highlight
-      theme={colorMode === 'dark' ? themes.vsDark : themes.vsLight}
+      theme={colorMode === "dark" ? themes.vsDark : themes.vsLight}
       code={code}
       language={language}
     >

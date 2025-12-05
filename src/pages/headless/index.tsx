@@ -1,8 +1,9 @@
 import styles from "./styles.module.scss";
 
-import Layout from "../../theme/Layout";
-import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { translate } from "@docusaurus/Translate";
+import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
+
+import Layout from "../../theme/Layout";
 
 // 使用场景数据
 const useCases = [
@@ -43,7 +44,9 @@ const coreFeatures = [
   {
     icon: "📦",
     title: translate({ message: "HEADLESS.features.package.title" }),
-    description: translate({ message: "HEADLESS.features.package.description" }),
+    description: translate({
+      message: "HEADLESS.features.package.description",
+    }),
     features: [
       translate({ message: "HEADLESS.features.package.feature1" }),
       translate({ message: "HEADLESS.features.package.feature2" }),
@@ -63,7 +66,7 @@ const coreFeatures = [
 ];
 
 // 使用场景卡片组件
-const UseCaseCard = ({ useCase }: { useCase: typeof useCases[0] }) => {
+const UseCaseCard = ({ useCase }: { useCase: (typeof useCases)[0] }) => {
   return (
     <div className={styles.useCaseCard}>
       <div className={styles.useCaseIcon}>{useCase.icon}</div>
@@ -74,7 +77,7 @@ const UseCaseCard = ({ useCase }: { useCase: typeof useCases[0] }) => {
 };
 
 // 核心功能卡片组件
-const FeatureCard = ({ feature }: { feature: typeof coreFeatures[0] }) => {
+const FeatureCard = ({ feature }: { feature: (typeof coreFeatures)[0] }) => {
   return (
     <div className={styles.featureCard}>
       <div className={styles.featureIcon}>{feature.icon}</div>
@@ -104,15 +107,21 @@ export default function HeadlessPage() {
           <div className={styles.heroStats}>
             <div className={styles.stat}>
               <span className={styles.statValue}>Docker</span>
-              <span className={styles.statLabel}>{translate({ message: "HEADLESS.hero.stat1" })}</span>
+              <span className={styles.statLabel}>
+                {translate({ message: "HEADLESS.hero.stat1" })}
+              </span>
             </div>
             <div className={styles.stat}>
               <span className={styles.statValue}>远程访问</span>
-              <span className={styles.statLabel}>{translate({ message: "HEADLESS.hero.stat2" })}</span>
+              <span className={styles.statLabel}>
+                {translate({ message: "HEADLESS.hero.stat2" })}
+              </span>
             </div>
             <div className={styles.stat}>
               <span className={styles.statValue}>包管理</span>
-              <span className={styles.statLabel}>{translate({ message: "HEADLESS.hero.stat3" })}</span>
+              <span className={styles.statLabel}>
+                {translate({ message: "HEADLESS.hero.stat3" })}
+              </span>
             </div>
           </div>
 

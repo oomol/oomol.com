@@ -1,6 +1,7 @@
-import React from "react";
 import styles from "./styles.module.scss";
+
 import { translate } from "@docusaurus/Translate";
+import React from "react";
 
 export default function StudioPdfCraftCase() {
   return (

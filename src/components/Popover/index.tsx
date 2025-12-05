@@ -1,10 +1,10 @@
-import React, { useState, useRef } from "react";
-import clsx from "clsx";
 import {
   Popover as PopoverRoot,
   PopoverContent,
   PopoverTrigger,
 } from "@site/src/components/ui/popover";
+import { clsx } from "clsx";
+import React, { useState, useRef } from "react";
 
 interface PopoverProps {
   trigger: React.ReactNode;

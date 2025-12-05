@@ -1,3 +1,4 @@
+/* global module */
 /**
  * Creating a sidebar enables you to:
  - create an ordered group of docs

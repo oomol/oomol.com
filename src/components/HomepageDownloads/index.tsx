@@ -1,9 +1,11 @@
-import React from "react";
 import styles from "./styles.module.scss";
-import { DownloadUrl } from "@site/src/download_url";
-import { Button } from "../ui/button";
+
 import { translate } from "@docusaurus/Translate";
+import { DownloadUrl } from "@site/src/download_url";
+import React from "react";
+
 import { BlurFade } from "../magic-ui/BlurFade";
+import { Button } from "../ui/button";
 
 type DownloadBtnProps = {
   text: string;
