@@ -1,4 +1,4 @@
-@import "../../css/custom.scss";
+@use "../../css/custom.scss" as *;
 
 .container {
   display: flex;
@@ -29,7 +29,7 @@
   line-height: 58px;
   font-weight: 800;
   text-align: center;
-  color: #f0f6fc;
+  color: var(--oomol-text-primary);
 }
 
 .subTitle {
@@ -74,12 +74,12 @@
 
 .sideBarWrapper {
   display: block;
-  color: #f0f6fc;
+  color: var(--oomol-text-secondary);
   font-size: 16px;
   transition: color 0.3s ease;
 
   &:hover {
-    color: #7d7fe9;
+    color: var(--oomol-primary);
     text-decoration: none;
   }
 
@@ -91,7 +91,7 @@
 .sidebarActive {
   .sidebarText,
   .sidebarIcon {
-    color: #7d7fe9;
+    color: var(--oomol-primary);
   }
 }
 
@@ -111,7 +111,7 @@
   font-weight: 400;
   margin-left: 8px;
   vertical-align: middle;
-  color: #838b95;
+  color: var(--oomol-text-tertiary);
 }
 
 .sidebarText {
@@ -121,10 +121,10 @@
   display: inline-block;
   vertical-align: middle;
   text-align: left;
-  color: #838b95;
+  color: var(--oomol-text-tertiary);
 
   &:hover {
-    color: #f0f6fc;
+    color: var(--oomol-text-primary);
   }
 }
 
@@ -149,7 +149,7 @@
   font-weight: 800;
   font-size: 32px;
   line-height: 32px;
-  color: #f0f6fc;
+  color: var(--oomol-text-primary);
   vertical-align: middle;
   text-align: left;
 }
@@ -166,7 +166,7 @@
   overflow: visible;
   line-height: 24px;
   font-weight: 400;
-  color: #f0f6fc;
+  color: var(--oomol-text-primary);
   text-align: left;
   gap: 40px;
 
@@ -184,7 +184,7 @@
   overflow: visible;
   line-height: 24px;
   font-weight: 400;
-  color: #f0f6fc;
+  color: var(--oomol-text-primary);
   text-align: left;
   gap: 40px;
 }

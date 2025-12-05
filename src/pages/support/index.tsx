@@ -1,9 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import Layout from "../../theme/Layout";
-import useBaseUrl from "@docusaurus/useBaseUrl";
-import Image from "@theme/ThemedImage";
-import { Button } from "@site/src/components/Button";
+import { Button } from "@site/src/components/ui/button";
 export default function Support() {
   return (
     <Layout>
@@ -12,13 +10,7 @@ export default function Support() {
         <div className={styles.supportCellBox}>
           <div className={styles.supportCell}>
             <div className={styles.title}>
-              <Image
-                style={{ width: 20 }}
-                sources={{
-                  light: useBaseUrl("/img/github.svg"),
-                  dark: useBaseUrl("/img/github.svg"),
-                }}
-              />
+              <i className="i-bi-github" style={{ fontSize: "20px" }} />
               <span className={styles["support-title"]}>Github Support</span>
             </div>
             <div className={styles.inner}>
@@ -26,22 +18,22 @@ export default function Support() {
                 Go to our GitHub discussions to browse for help and best
                 practices.
               </div>
-              <Button
-                target="_blank"
-                href="https://github.com/orgs/oomol-lab/discussions"
-              >
-                Github Discussions
+              <Button asChild>
+                <a
+                  target="_blank"
+                  href="https://github.com/orgs/oomol-lab/discussions"
+                  rel="noopener noreferrer"
+                >
+                  Github Discussions
+                </a>
               </Button>
             </div>
           </div>
           <div className={styles.supportCell}>
             <div className={styles.title}>
-              <Image
-                style={{ width: 20, opacity: 0.7 }}
-                sources={{
-                  light: useBaseUrl("/img/discord_line.svg"),
-                  dark: useBaseUrl("/img/discord_line.svg"),
-                }}
+              <i
+                className="i-bi-discord"
+                style={{ fontSize: "20px", opacity: 0.7 }}
               />
               <span className={styles["support-title"]}>Discord Support</span>
             </div>
@@ -50,8 +42,14 @@ export default function Support() {
                 If you need instant communication, please join our Discord
                 server.
               </div>
-              <Button target="_blank" href="https://discord.gg/W3evr2kJDa">
-                Join Discord
+              <Button asChild>
+                <a
+                  target="_blank"
+                  href="https://discord.gg/W3evr2kJDa"
+                  rel="noopener noreferrer"
+                >
+                  Join Discord
+                </a>
               </Button>
             </div>
           </div>
@@ -65,7 +63,9 @@ export default function Support() {
                 If you need help beyond the product, you can contact us by
                 email.
               </div>
-              <Button href="mailto:support@oomol.com">Email To Us</Button>
+              <Button asChild>
+                <a href="mailto:support@oomol.com">Email To Us</a>
+              </Button>
             </div>
           </div>
         </div>

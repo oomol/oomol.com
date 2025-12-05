@@ -1,4 +1,5 @@
-@import "./font.scss";
+@use "./font.scss" as *;
+@use "./design-tokens.scss" as *;
 
 :root {
   --ifm-color-primary: #7d7fe9;
@@ -14,6 +15,15 @@
     Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
     "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei",
     "Source Han Sans CN", sans-serif;
+
+  /* Light mode colors - 使用 design tokens */
+  --ifm-navbar-background-color: var(--oomol-bg-base);
+  --ifm-background-color: var(--oomol-bg-base);
+  --ifm-font-color-base: var(--oomol-text-primary);
+  --ifm-menu-color-background-hover: var(--oomol-hover-bg);
+  --ifm-toc-link-color: var(--oomol-text-secondary);
+  --ifm-navbar-link-color: var(--oomol-text-primary);
+  --ifm-footer-background-color: var(--oomol-bg-base);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -26,11 +36,14 @@
   --ifm-color-primary-light: #9c9dee;
   --ifm-color-primary-lighter: #abacf1;
   --ifm-color-primary-lightest: #d9d9f9;
-  --ifm-navbar-background-color: #0b0b0b;
-  --ifm-background-color: #0b0b0b !important;
+  --ifm-navbar-background-color: var(--oomol-bg-base);
+  --ifm-background-color: var(--oomol-bg-base) !important;
+  --ifm-font-color-base: var(--oomol-text-primary);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  --ifm-menu-color-background-hover: #0d1117;
-  --ifm-toc-link-color: #838b95;
+  --ifm-menu-color-background-hover: var(--oomol-hover-bg);
+  --ifm-toc-link-color: var(--oomol-text-secondary);
+  --ifm-navbar-link-color: var(--oomol-text-primary);
+  --ifm-footer-background-color: var(--oomol-bg-base);
 }
 
 #__docusaurus {
@@ -51,7 +64,7 @@
 }
 
 .footer {
-  background-color: white;
+  background-color: var(--oomol-bg-base);
   margin-top: 48px;
   margin-bottom: 48px;
 }
@@ -71,7 +84,8 @@
 
 .navbar {
   box-shadow: none;
-  background: rgba(13, 17, 22, 0.9);
+  background: var(--oomol-bg-base);
+  opacity: 0.9;
 
   position: relative;
   &::before {
@@ -90,20 +104,80 @@
   }
 }
 
-$mobile-width: 375px;
+/* Light mode navbar styles */
+[data-theme="light"] .navbar {
+  background: var(--oomol-bg-base);
+  opacity: 0.9;
+  border-bottom: 1px solid var(--oomol-border-subtle);
+}
 
+/* Dark mode navbar styles */
+[data-theme="dark"] .navbar {
+  background: var(--oomol-bg-base);
+  opacity: 0.9;
+  border-bottom: 1px solid var(--oomol-border-subtle);
+}
+
+/* Navbar link colors */
+[data-theme="light"] {
+  .navbar__link {
+    color: var(--oomol-text-primary);
+
+    &:hover {
+      color: var(--oomol-primary);
+    }
+  }
+
+  .navbar__link--active {
+    color: var(--oomol-primary);
+  }
+}
+
+/* ============================================
+   响应式断点系统 (Responsive Breakpoints)
+   基于标准的移动优先设计
+   ============================================ */
+
+// 标准断点定义
+$breakpoint-xs: 375px;   // 小手机
+$breakpoint-sm: 640px;   // 大手机
+$breakpoint-md: 768px;   // 平板
+$breakpoint-lg: 1024px;  // 笔记本
+$breakpoint-xl: 1280px;  // 桌面
+$breakpoint-2xl: 1536px; // 大屏幕
+
+// 为了向后兼容，保留旧的变量名作为别名
+$mobile-width: $breakpoint-xs;
 $mobile-middle-width: 390px;
-
 $mobile-large-width: 430px;
-
-$tablet-width: 678px;
-
-$tablet-middle-width: 768px;
-
+$tablet-width: $breakpoint-sm;
+$tablet-middle-width: $breakpoint-md;
 $tablet-large-width: 820px;
+$desktop-width: $breakpoint-xl;
 
-$desktop-width: 1280px;
+// 推荐使用的新 mixin（标准命名）
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: $breakpoint-xs) { @content; }
+  }
+  @else if $breakpoint == sm {
+    @media (max-width: $breakpoint-sm) { @content; }
+  }
+  @else if $breakpoint == md {
+    @media (max-width: $breakpoint-md) { @content; }
+  }
+  @else if $breakpoint == lg {
+    @media (max-width: $breakpoint-lg) { @content; }
+  }
+  @else if $breakpoint == xl {
+    @media (max-width: $breakpoint-xl) { @content; }
+  }
+  @else if $breakpoint == 2xl {
+    @media (max-width: $breakpoint-2xl) { @content; }
+  }
+}
 
+// 为了向后兼容，保留旧的 mixin
 @mixin phone {
   @media (max-width: #{$mobile-width}) {
     @content;
@@ -157,7 +231,7 @@ $desktop-width: 1280px;
 }
 
 @mixin linearGradientColor {
-  background-image: linear-gradient(90deg, #656c76 0%, #bcc9dc 100%);
+  background-image: linear-gradient(90deg, var(--oomol-text-tertiary) 0%, var(--oomol-text-secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -204,9 +278,6 @@ $desktop-width: 1280px;
   }
 }
 
-$menu-link-default-color: #f0f6fc;
-$menu-link-secondary-color: #838b95;
-
 // 导航栏下拉菜单项图标样式
 .navbar-item-with-icon {
   position: relative;
@@ -243,7 +314,7 @@ $menu-link-secondary-color: #838b95;
 .sidebar-submenu-item {
   > .menu__link {
     font-size: 16px;
-    color: $menu-link-default-color;
+    color: var(--oomol-text-primary);
   }
 
   .theme-doc-sidebar-item-link-level-2,
@@ -252,10 +323,10 @@ $menu-link-secondary-color: #838b95;
     font-size: 14px;
 
     > .menu__link {
-      color: $menu-link-secondary-color !important;
+      color: var(--oomol-text-secondary) !important;
 
       &:hover {
-        color: $menu-link-default-color !important;
+        color: var(--oomol-text-primary) !important;
       }
     }
 

@@ -1,4 +1,4 @@
-@import "../../css/custom.scss";
+@use "../../css/custom.scss" as *;
 
 .container {
   display: flex;
@@ -19,7 +19,7 @@
   font-size: 20px;
   font-weight: 900;
   text-align: center;
-  color: #f0f6fc;
+  color: var(--oomol-text-primary);
   margin-bottom: 14px;
 }
 
@@ -42,9 +42,23 @@
   width: 240px;
   height: 40px;
   font-size: 14px;
-  background-color: #0d1116;
-  border: solid 1px #3d444d;
+  background-color: transparent;
+  border: solid 1px var(--oomol-border-default);
   border-radius: 8px;
+  color: var(--oomol-text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--oomol-primary);
+    color: var(--oomol-text-inverse);
+    border-color: var(--oomol-primary);
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
 }
 
 .overview-blur-fade {

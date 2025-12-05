@@ -27,6 +27,10 @@
     "message": "Pricing",
     "description": "Navbar item with label Pricing"
   },
+  "item.label.Blog": {
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
+  },
   "item.label.navbar.create": {
     "message": "Create",
     "description": "Navbar item with label navbar.create"
@@ -50,6 +54,18 @@
   "item.label.navbar.oomol-chat": {
     "message": "OOMOL Chat",
     "description": "Navbar item with label navbar.oomol-chat"
+  },
+  "item.label.navbar.oomol-cloud": {
+    "message": "OOMOL Cloud",
+    "description": "Navbar item with label navbar.oomol-cloud"
+  },
+  "item.label.navbar.oomol-headless": {
+    "message": "OOMOL Headless",
+    "description": "Navbar item with label navbar.oomol-headless"
+  },
+  "item.label.Product": {
+    "message": "Product",
+    "description": "Navbar item with label Product"
   },
   "title": {
     "message": "OOMOL",

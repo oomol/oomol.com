@@ -46,6 +46,7 @@ declare module "@docusaurus/useDocusaurusContext" {
       };
     };
     siteMetadata: DocusaurusSiteMetadata;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     globalData: Record<string, any>;
     isClient: boolean;
   };

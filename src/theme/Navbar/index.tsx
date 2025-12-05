@@ -1,9 +1,10 @@
 import styles from "./styles.module.scss";
 
 import NavbarItem from "@theme/NavbarItem";
-import React, { memo, useMemo, useState } from "react";
+import React, { memo, useMemo } from "react";
 import type { ComponentProps } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import type { DocusaurusContext } from "@docusaurus/types";
 import { useLocation } from "@docusaurus/router";
 import SearchBar from "@theme/SearchBar";
 import clsx from "clsx";
@@ -11,30 +12,11 @@ import Link from "@docusaurus/Link";
 import { useNavbarMobileSidebar } from "@docusaurus/theme-common/internal";
 import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
 import { translate } from "@docusaurus/Translate";
+import { useColorMode } from "@docusaurus/theme-common";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import BrowserOnly from "@docusaurus/BrowserOnly";
-import LinkBtn from "@site/src/components/Button/LinkBtn";
 
-const isSignedIn = () => {
-  const cookies = document.cookie.split(";").map(cookie => cookie.trim());
-  return cookies.some(cookie => cookie.includes("oomol-signed-in"));
-};
-
-const CALLBACK_URL = "https://chat.oomol.com/";
-
-const handleSignin = (locale: string) => {
-  // if (isSignedIn()) {
-  //   return window.open(CALLBACK_URL, "_self");
-  // }
-
-  // const redirectURL = `https://api.oomol.com/v1/auth/redirect?redirect=${encodeURIComponent(CALLBACK_URL)}`;
-  // window.open(redirectURL, "_self");
-  const downloadUrl =
-    locale === "zh-CN"
-      ? "https://oomol.com/zh-CN/downloads/"
-      : "https://oomol.com/downloads/";
-  window.open(downloadUrl, "_self");
-};
-
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface NavbarProps {}
 
 const DefaultNavItemPosition = "right";
@@ -55,8 +37,9 @@ function splitNavItemsByPosition(
   return { leftItems, rightItems };
 }
 
-const Navbar: React.FC<NavbarProps> = memo(() => {
+const NavbarComponent: React.FC<NavbarProps> = memo(() => {
   const mobileSidebar = useNavbarMobileSidebar();
+  const { colorMode } = useColorMode();
 
   const {
     siteConfig: {
@@ -65,11 +48,24 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
       },
     },
     i18n,
-  } = useDocusaurusContext() as any;
+  } = useDocusaurusContext() as unknown as DocusaurusContext & {
+    siteConfig: {
+      themeConfig: {
+        navbar: { items: Array<ComponentProps<typeof NavbarItem>> };
+      };
+    };
+    i18n: { currentLocale: string };
+  };
   const locale = i18n.currentLocale;
   const location = useLocation();
 
-  const [hideNavbar, setHideNavbar] = useState(false);
+  const logoSrc = useBaseUrl(
+    useMemo(() => {
+      const langPrefix = locale === "zh-CN" ? "zh" : "en";
+      const themePrefix = colorMode === "dark" ? "dark" : "light";
+      return `/img/logo-${langPrefix}-${themePrefix}.svg`;
+    }, [locale, colorMode])
+  );
 
   const isDocumentPath = useMemo(() => {
     return (
@@ -82,6 +78,23 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
     () => splitNavItemsByPosition(items),
     [items]
   );
+
+  const isSignedIn = () => {
+    const cookies = document.cookie.split(";").map(cookie => cookie.trim());
+    return cookies.some(cookie => cookie.includes("oomol-signed-in"));
+  };
+
+  const CALLBACK_URL = "https://oomol.com/";
+  const CONSOLE_SERVER_URL = "https://console.oomol.com";
+
+  const handleSignin = () => {
+    if (isSignedIn()) {
+      return window.open(CONSOLE_SERVER_URL, "_self");
+    }
+
+    const redirectURL = `https://api.oomol.com/v1/auth/redirect?redirect=${encodeURIComponent(CALLBACK_URL)}`;
+    window.open(redirectURL, "_self");
+  };
 
   // const prevScrollPosRef = React.useRef(0);
 
@@ -131,66 +144,55 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
     <header
       className={clsx("navbar", styles.navbar, {
         "navbar-sidebar--show": mobileSidebar.shown,
-        [styles.navbarHidden]: hideNavbar,
       })}
     >
       <div className={clsx("navbar__inner", styles.inner)}>
         <div className="navbar__items">
           <Link className={styles.brand} to="/">
-            <img
-              height={24}
-              alt="logo"
-              src={locale === "en" ? "/img/logo-en.svg" : "/img/logo-zh.svg"}
-              loading="lazy"
-            />
+            <img height={32} alt="logo" src={logoSrc} />
           </Link>
+          {leftItems.map((item, i) => (
+            <NavbarItem {...item} key={i} />
+          ))}
+        </div>
+        <div className={styles.itemsRight}>
           {/* 当路由与文档路径匹配时，显示文档搜索框 */}
           {isDocumentPath && (
             <div className={styles.searchBar}>
               <SearchBar />
             </div>
           )}
-          {leftItems.map((item, i) => (
+          {rightItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
           ))}
           <div className={styles.actions}>
-            <NavbarItem
-              label={translate({ message: "Theme.Navbar.go-to-hub-flow" })}
-              className={styles.gotoHubButton}
-              href="https://hub.oomol.com/"
-            />
+            <Link to="/downloads" className={styles.downloadButton}>
+              <i className="i-lucide-download" />
+              {translate({ message: "Theme.Navbar.download" })}
+            </Link>
             <BrowserOnly
-              // TODO: This is a temporary fallback element used to prevent layout issues.
               fallback={
-                <NavbarItem
-                  label={translate({ message: "Theme.Navbar.sign-in" })}
-                  className={styles.signInButton}
-                />
+                <a className={styles.loginButton}>
+                  {translate({ message: "Theme.Navbar.login" })}
+                </a>
               }
             >
               {() => {
                 return (
-                  <NavbarItem
-                    style={{ cursor: "pointer" }}
-                    className={styles.signInButton}
-                    // label={
-                    //   isSignedIn()
-                    //      ? translate({ message: "Theme.Navbar.use-in-chat" })
-                    //     : translate({ message: "Theme.Navbar.sign-in" })
-                    // }
-                    // TODO: Temporarily change to "Download Now" button
-                    label={translate({ message: "Theme.Navbar.download-now" })}
-                    onClick={() => handleSignin(locale)}
-                  />
+                  <a
+                    className={styles.loginButton}
+                    onClick={() => handleSignin()}
+                  >
+                    {translate({
+                      message: isSignedIn()
+                        ? "Theme.Navbar.console"
+                        : "Theme.Navbar.login",
+                    })}
+                  </a>
                 );
               }}
             </BrowserOnly>
           </div>
-        </div>
-        <div className={styles.itemsRight}>
-          {rightItems.map((item, i) => (
-            <NavbarItem {...item} key={i} />
-          ))}
         </div>
         <div
           aria-label="Navigation bar toggle"
@@ -227,5 +229,9 @@ const Navbar: React.FC<NavbarProps> = memo(() => {
     </header>
   );
 });
+
+NavbarComponent.displayName = "Navbar";
+
+const Navbar = NavbarComponent;
 
 export default Navbar;

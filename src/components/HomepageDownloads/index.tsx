@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import { DownloadUrl } from "@site/src/download_url";
-import { Button } from "../Button";
+import { Button } from "../ui/button";
 import { translate } from "@docusaurus/Translate";
 import { BlurFade } from "../magic-ui/BlurFade";
 
@@ -51,13 +51,15 @@ export default function HomepageDownloads() {
           {DownloadBtn.map((data, index) => {
             return (
               <Button
+                asChild
                 key={`download-${index}`}
                 className={styles["download-btn"]}
-                icon={<i className={`${data.icon} ${styles.icon}`} />}
-                href={data.downloadingUrl}
                 disabled={data.disabled}
               >
-                {data.text}
+                <a href={data.downloadingUrl}>
+                  <i className={`${data.icon} ${styles.icon}`} />
+                  {data.text}
+                </a>
               </Button>
             );
           })}

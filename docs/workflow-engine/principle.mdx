@@ -25,7 +25,38 @@ The `flow` file defines the triggering sequence and data transfer relationships 
 
 The execution sequence of `blocks` is determined by connections defined in the `flow`, following a data-flow driven model — when required data is ready, the corresponding `block` is automatically triggered for execution. This differs from event-driven step triggering in GitHub Actions (where the next step is triggered after the previous one completes), which is primarily used in CI/CD scenarios like compilation and packaging.
 
-Currently, `blocks` support `Nodejs` and `Python` runtime environments. Blocks of the same language run in the same environment. Data between different language environments is transferred via JSON, while blocks in the same language environment can transfer data through JSON or directly via variables. Note that variables follow pass-by-reference principles, so modifying a variable value in one `block` affects the same variable in other `blocks`.
+### Runtime Environments and Executors
+
+Currently, `blocks` support `Nodejs` and `Python` runtime environments. Each runtime environment has a corresponding [Executor](/docs/concepts/executor) that loads and executes the block code.
+
+**Key execution characteristics:**
+
+- **Same-language blocks** run in the same runtime environment by default
+- **Same-process optimization**: When consecutive blocks use the same language and belong to the same package, OOCANA places them in the same process to reduce overhead
+- **Independent processes**: Blocks can be configured to run in independent processes for isolation or debugging purposes
+
+For detailed information about executors and process management, see [Executor Concepts](/docs/concepts/executor).
+
+### Data Transfer Between Blocks
+
+Data transfer between different language environments is transferred via JSON, while blocks in the same language environment can transfer data through JSON or directly via variables.
+
+**JSON Serialization (Cross-Language or Cross-Process):**
+- Universal compatibility across all supported languages
+- Used when blocks run in different languages or independent processes
+- Slight performance overhead for serialization/deserialization
+- All Handle types except Variable can be cached
+
+**Direct Variable Passing (Same Language, Same Process):**
+- Maximum performance with zero serialization overhead
+- Used via [Variable type Handles](/docs/advanced-guide/universal-block-settings#variable)
+- Can pass complex objects that cannot be serialized
+- Variables follow pass-by-reference semantics - modifying a variable value in one `block` affects the same variable in other `blocks`
+- Cannot be cached (upstream blocks will always re-execute)
+
+:::info
+When using Variable type Handles for maximum performance, be aware that the blocks become tightly coupled and can only work with blocks in the same language environment. This reduces block portability but provides significant performance benefits for complex object passing.
+:::
 
 ## Block Data Transfer Specifications
 

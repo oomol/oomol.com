@@ -35,6 +35,8 @@ const BackgroundCircle = memo(
   )
 );
 
+BackgroundCircle.displayName = "BackgroundCircle";
+
 const ProgressCircle = memo(
   ({
     cx,
@@ -74,7 +76,9 @@ const ProgressCircle = memo(
   )
 );
 
-export const Spin: React.FC<SpinProps> = memo(
+ProgressCircle.displayName = "ProgressCircle";
+
+const SpinComponent: React.FC<SpinProps> = memo(
   ({
     progress,
     size = 40,
@@ -99,18 +103,25 @@ export const Spin: React.FC<SpinProps> = memo(
     }, [internalProgress, size, strokeWidth]);
 
     useEffect(() => {
-      if (progress !== undefined) {
-        setInternalProgress(progress);
-        return;
-      }
+      // 使用 requestAnimationFrame 避免同步 setState
+      let rafId: number;
+      let timer: NodeJS.Timeout;
 
-      setInternalProgress(0);
+      rafId = window.requestAnimationFrame(() => {
+        if (progress !== undefined) {
+          setInternalProgress(progress);
+        } else {
+          setInternalProgress(0);
+          timer = setTimeout(() => {
+            setInternalProgress(100);
+          }, 50);
+        }
+      });
 
-      const timer = setTimeout(() => {
-        setInternalProgress(100);
-      }, 50);
-
-      return () => clearTimeout(timer);
+      return () => {
+        window.cancelAnimationFrame(rafId);
+        if (timer) clearTimeout(timer);
+      };
     }, [progress]);
 
     const { radius, circumference, offset, center } = calculations;
@@ -152,3 +163,7 @@ export const Spin: React.FC<SpinProps> = memo(
     );
   }
 );
+
+SpinComponent.displayName = "Spin";
+
+export const Spin = SpinComponent;

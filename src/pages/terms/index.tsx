@@ -2,10 +2,10 @@ import React from "react";
 import Layout from "../../theme/Layout";
 import styles from "./styles.module.scss";
 import {MDXProvider} from "@mdx-js/react";
-import Terms from "./terms.mdx"
+import Terms from "./_terms.mdx"
 
 const components = {
-  em(properties: any) {
+  em(properties: React.ComponentProps<'i'>) {
     return <i {...properties} />;
   },
 };

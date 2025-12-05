@@ -1,4 +1,4 @@
-@import "../../css/custom.scss";
+@use "../../css/custom.scss" as *;
 
 .root {
   display: flex;
@@ -86,7 +86,7 @@
 .title {
   font-size: 14px;
   font-weight: bolder;
-  color: #f0f6fc;
+  color: var(--oomol-text-primary);
 }
 
 .item {
@@ -96,7 +96,11 @@
 
 .link {
   font-weight: normal;
-  color: #838b95;
+  color: var(--oomol-text-secondary);
+
+  &:hover {
+    color: var(--oomol-text-primary);
+  }
 }
 
 .border {
@@ -109,43 +113,104 @@
 }
 
 .bottom {
-  width: 1140px;
+  max-width: var(--ifm-container-width);
+  width: 100%;
   height: 48px;
   display: flex;
   align-items: center;
   padding: 0 24px;
-  justify-content: center;
+  justify-content: space-between;
   gap: 12px;
 
   @include phone {
     flex-wrap: wrap;
     padding: 0px 16px;
     margin-bottom: 16px;
+    justify-content: center;
   }
 
   @include phone-middle {
     flex-wrap: wrap;
     padding: 0px 16px;
     margin-bottom: 16px;
+    justify-content: center;
   }
 
   @include phone-large {
     flex-wrap: wrap;
     padding: 0px 16px;
     margin-bottom: 16px;
+    justify-content: center;
   }
 
   @include pad {
     flex-wrap: wrap;
     text-align: center;
+    justify-content: center;
+  }
+}
+
+.leftControls {
+  display: flex;
+  align-items: center;
+
+  /* 确保 Shadcn Button 样式正确应用 */
+  :global(button) {
+    background: transparent;
+    border: none;
+    color: hsl(var(--foreground));
+    cursor: pointer;
+
+    &:hover {
+      background: hsl(var(--accent));
+      color: hsl(var(--accent-foreground));
+    }
+
+    &:focus-visible {
+      outline: none;
+      ring: 1px;
+      ring-color: hsl(var(--ring));
+    }
+  }
+}
+
+.rightControls {
+  display: flex;
+  align-items: center;
+
+  /* 确保 Shadcn Button 样式正确应用 */
+  :global(button) {
+    background: transparent;
+    border: none;
+    color: hsl(var(--foreground));
+    cursor: pointer;
+
+    &:hover {
+      background: hsl(var(--accent));
+      color: hsl(var(--accent-foreground));
+    }
+
+    &:focus-visible {
+      outline: none;
+      ring: 1px;
+      ring-color: hsl(var(--ring));
+    }
   }
 }
 
 .bottomInfo {
   font-size: 12px;
-  color: #838b95;
+  color: var(--oomol-text-tertiary);
+  text-align: center;
+  flex: 1;
+
   a {
     margin-left: 8px;
+    color: var(--oomol-text-secondary);
+
+    &:hover {
+      color: var(--oomol-primary);
+    }
   }
 }
 
@@ -167,7 +232,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #838b95;
+  color: var(--oomol-text-secondary);
+
+  &:hover {
+    color: var(--oomol-primary);
+  }
 }
 
 .work-weixin {

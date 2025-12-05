@@ -1,11 +1,14 @@
 import styles from "./styles.module.scss";
 
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import type { DocusaurusContext } from "@docusaurus/types";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import clsx from "clsx";
 import { LocalDropdown } from "../components/LocalDropdown";
+import { ColorModeDropdown } from "../components/ColorModeDropdown";
 import { Popover } from "@site/src/components/Popover";
+import { useColorMode } from "@docusaurus/theme-common";
 
 interface FooterLinkProps {
   href?: string;
@@ -42,71 +45,91 @@ const FooterLink: React.FC<FooterLinkProps> = ({
 
 type LogoNodeDataType = {
   name: string;
-  src: string;
+  iconClass: string;
   href: string;
-  width: number;
+  size: number;
 };
 
 const logoNodeData: LogoNodeDataType[] = [
   {
     name: "twitter",
-    src: "/img/pages/footer/x.svg",
+    iconClass: "i-bi-twitter-x",
     href: "https://twitter.com/OomolStudio",
-    width: 20,
+    size: 20,
   },
   {
     name: "discord",
-    src: "/img/pages/footer/discord.svg",
+    iconClass: "i-bi-discord",
     href: "https://discord.gg/W3evr2kJDa",
-    width: 22,
+    size: 22,
   },
   {
     name: "youtube",
-    src: "/img/pages/footer/youtube.svg",
+    iconClass: "i-bi-youtube",
     href: "https://www.youtube.com/@oomolstudio",
-    width: 22,
+    size: 22,
   },
   {
     name: "github",
-    src: "/img/pages/footer/github.svg",
+    iconClass: "i-bi-github",
     href: "https://github.com/oomol-lab",
-    width: 20,
+    size: 20,
   },
 ];
 
 const logoNodeDataCN: LogoNodeDataType[] = [
   {
     name: "twitter",
-    src: "/img/pages/footer/x.svg",
+    iconClass: "i-bi-twitter-x",
     href: "https://twitter.com/OomolStudio",
-    width: 20,
+    size: 20,
   },
   {
     name: "discord",
-    src: "/img/pages/footer/discord.svg",
+    iconClass: "i-bi-discord",
     href: "https://discord.gg/W3evr2kJDa",
-    width: 22,
+    size: 22,
   },
   {
     name: "youtube",
-    src: "/img/pages/footer/youtube.svg",
+    iconClass: "i-bi-youtube",
     href: "https://www.youtube.com/@oomolstudio",
-    width: 22,
+    size: 22,
   },
   {
     name: "github",
-    src: "/img/pages/footer/github.svg",
+    iconClass: "i-bi-github",
     href: "https://github.com/oomol-lab",
-    width: 20,
+    size: 20,
   },
 ];
 
 const Footer: React.FC = () => {
-  const { siteConfig, i18n } = useDocusaurusContext() as any;
+  const { siteConfig, i18n } =
+    useDocusaurusContext() as unknown as DocusaurusContext & {
+      siteConfig: {
+        themeConfig: {
+          footer: {
+            copyright: string;
+            links: Array<{ title: string; items: FooterLinkProps[] }>;
+          };
+        };
+      };
+      i18n: { currentLocale: string };
+    };
   const { copyright, links = [] } = siteConfig.themeConfig.footer;
   const hasFooter = !!siteConfig.themeConfig.footer;
   const currentLocale = i18n.currentLocale;
   const [isHovered, setIsHovered] = useState(false);
+  const { colorMode } = useColorMode();
+
+  const logoSrc = useBaseUrl(
+    useMemo(() => {
+      const langPrefix = currentLocale === "zh-CN" ? "zh" : "en";
+      const themePrefix = colorMode === "dark" ? "dark" : "light";
+      return `/img/logo-${langPrefix}-${themePrefix}.svg`;
+    }, [currentLocale, colorMode])
+  );
 
   if (!hasFooter) {
     return null;
@@ -117,13 +140,16 @@ const Footer: React.FC = () => {
 
   const logoNodes = logoNodesArray.map((data, index) => {
     return (
-      <a target="_blank" href={data.href} key={`${index}-${data.name}`}>
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href={data.href}
+        key={`${index}-${data.name}`}
+      >
         <div className={styles.iconBox}>
-          <img
-            alt={data.name}
-            src={data.src}
-            width={data.width}
-            loading="lazy"
+          <i
+            className={data.iconClass}
+            style={{ fontSize: `${data.size}px` }}
           />
         </div>
       </a>
@@ -135,29 +161,25 @@ const Footer: React.FC = () => {
       <div className={clsx(styles.content, styles.center)}>
         <div className={styles.leftBox}>
           <div className={styles.leftBoxLogo}>
-            <img
-              alt="oomol"
-              src={
-                currentLocale === "en" ? "/img/logo-en.svg" : "/img/logo-zh.svg"
-              }
-              height={24}
-              loading="lazy"
-            />
+            <img alt="oomol" src={logoSrc} height={24} />
           </div>
           <div className={styles.iconOutBox}>
             {logoNodes}
             <Popover
               trigger={
-                <img
-                  className={styles["work-weixin"]}
-                  src={
-                    isHovered
-                      ? "/img/pages/footer/wecom-active.svg"
-                      : "/img/pages/footer/wecom.svg"
-                  }
+                <div
+                  className={styles.iconBox}
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
-                />
+                >
+                  <i
+                    className="i-simple-icons-wechat"
+                    style={{
+                      fontSize: "22px",
+                      color: isHovered ? "var(--oomol-primary)" : "inherit",
+                    }}
+                  />
+                </div>
               }
               position="top"
               content={
@@ -191,15 +213,24 @@ const Footer: React.FC = () => {
       </div>
       <div className={styles.border}>
         <div className={styles.bottom}>
+          <div className={styles.leftControls}>
+            <ColorModeDropdown />
+          </div>
           <div className={styles.bottomInfo}>
             {copyright}
             {currentLocale === "zh-CN" && (
-              <a href="https://beian.miit.gov.cn/" target="_blank">
+              <a
+                href="https://beian.miit.gov.cn/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 浙ICP备2023018874号-1
               </a>
             )}
           </div>
-          <LocalDropdown />
+          <div className={styles.rightControls}>
+            <LocalDropdown />
+          </div>
         </div>
       </div>
     </footer>

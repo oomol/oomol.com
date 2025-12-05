@@ -55,6 +55,18 @@
     "message": "OOMOL Chat",
     "description": "Navbar item with label navbar.oomol-chat"
   },
+  "item.label.navbar.oomol-cloud": {
+    "message": "OOMOL Cloud",
+    "description": "Navbar item with label navbar.oomol-cloud"
+  },
+  "item.label.navbar.oomol-headless": {
+    "message": "OOMOL Headless",
+    "description": "Navbar item with label navbar.oomol-headless"
+  },
+  "item.label.Product": {
+    "message": "产品",
+    "description": "Navbar item with label Product"
+  },
   "title": {
     "message": "OOMOL",
     "description": "The title in the navbar"

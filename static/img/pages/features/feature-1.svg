@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f5f5f5" stroke="#d0d0d0" stroke-width="2" stroke-dasharray="10,5"/>
+  <text x="400" y="240" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#333" text-anchor="middle">
+    📸 已安装共享块界面
+  </text>
+  <text x="400" y="280" font-family="Arial, sans-serif" font-size="18" fill="#666" text-anchor="middle">
+    建议内容：展示已安装的共享块列表界面
+  </text>
+  <text x="400" y="315" font-family="Arial, sans-serif" font-size="16" fill="#888" text-anchor="middle">
+    显示 Python、TypeScript、JavaScript 等内置模块
+  </text>
+  <text x="400" y="345" font-family="Arial, sans-serif" font-size="16" fill="#888" text-anchor="middle">
+    包含模块图标、名称、版本、描述等信息
+  </text>
+  <text x="400" y="380" font-family="Arial, sans-serif" font-size="16" fill="#888" text-anchor="middle">
+    推荐尺寸：800×600px
+  </text>
+</svg>

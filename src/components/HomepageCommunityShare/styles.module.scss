@@ -1,212 +1,103 @@
-@import "../../css/custom.scss";
+@use "../../css/custom.scss" as *;
 
-.community {
-  padding: 72px 0;
-  background: var(--ifm-background-color);
-}
-
-.community-mid {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.sectionTitle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 14px;
-  font-size: 48px;
-  line-height: 48px;
-  font-weight: 800;
-}
-
-.sectionSubtitle {
-  max-width: 640px;
-  font-size: 20px;
-  text-align: center;
-  font-weight: 400;
-  padding-top: 14px;
-  margin: 0 auto 60px auto;
-  line-height: 1.6;
-  
-  @include linearGradientColor;
-}
-
-.communityList {
+.container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0 50px;
   gap: 60px;
-  margin-top: 60px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 32px;
+  padding-right: 32px;
+
+  @media (max-width: 996px) {
+    padding: 80px 24px 50px;
+    gap: 48px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 60px 20px 50px;
+    gap: 40px;
+  }
 }
 
-.communityCard {
+.content {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 60px 40px;
-  background: var(--ifm-card-background-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 16px;
-  transition: all 0.3s ease;
-  min-height: 300px;
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    border-color: var(--ifm-color-primary);
-  }
-
-  &.evenCard {
-    flex-direction: row;
-  }
-
-  &.oddCard {
-    flex-direction: row-reverse;
-  }
+  text-align: center;
 }
 
-.communityImageContainer {
-  flex: 0 0 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
-}
-
-.communityIcon {
-  width: 120px;
-  height: 120px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-
-  i {
-    font-size: 48px;
-    color: white;
-  }
-
-  &.blue {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  }
-
-  &.green {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  }
-
-  &.purple {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  }
-}
-
-.communityContent {
-  flex: 1;
-  padding: 0 40px;
-}
-
-.communityTitle {
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 0 0 20px 0;
-  color: var(--ifm-font-color-base);
+.title {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--ifm-heading-color);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
   line-height: 1.2;
-}
 
-.communityDescription {
-  font-size: 1.125rem;
-  color: var(--ifm-color-emphasis-700);
-  margin: 0 0 30px 0;
-  line-height: 1.6;
-  max-width: 680px;
-}
-
-.communityLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
-  background: var(--ifm-color-primary);
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background: var(--ifm-color-primary-dark);
-    color: white;
-    text-decoration: none;
-    transform: translateX(4px);
+  @media (max-width: 996px) {
+    font-size: 2.25rem;
   }
 
-  i {
-    font-size: 14px;
-    transition: transform 0.3s ease;
-  }
-
-  &:hover i {
-    transform: translateX(2px);
-  }
-}
-
-@media (max-width: 768px) {
-  .community {
-    padding: 60px 0;
-  }
-
-  .sectionTitle {
+  @media (max-width: 768px) {
     font-size: 2rem;
   }
+}
 
-  .communityList {
-    gap: 40px;
-    margin-top: 40px;
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--ifm-color-emphasis-700);
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.6;
+
+  @media (max-width: 996px) {
+    font-size: 1.1rem;
   }
 
-  .communityCard {
-    padding: 40px 20px;
-    flex-direction: column !important;
-    text-align: center;
-    min-height: auto;
-
-    &.evenCard,
-    &.oddCard {
-      flex-direction: column !important;
-    }
-  }
-
-  .communityImageContainer {
-    flex: none;
-    padding: 20px;
-    order: -1;
-  }
-
-  .communityIcon {
-    width: 80px;
-    height: 80px;
-    border-radius: 16px;
-
-    i {
-      font-size: 32px;
-    }
-  }
-
-  .communityContent {
-    padding: 0 20px;
-  }
-
-  .communityTitle {
-    font-size: 1.5rem;
-  }
-
-  .communityDescription {
+  @media (max-width: 768px) {
     font-size: 1rem;
   }
+}
 
-  .communityLink {
-    padding: 10px 20px;
-    font-size: 0.9rem;
+.imagesWrapper {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  max-width: 1380px;
+
+  @media (max-width: 996px) {
+    flex-direction: column;
+    gap: 24px;
   }
+
+  @media (max-width: 768px) {
+    gap: 20px;
+  }
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  @media (max-width: 996px) {
+    width: 100%;
+  }
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }

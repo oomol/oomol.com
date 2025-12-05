@@ -1,0 +1,286 @@
+@use "../../css/custom.scss" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+}
+
+.headBox {
+  width: 100%;
+  max-width: 1280px;
+  min-height: 466px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0;
+  gap: 40px;
+  margin: 0 auto;
+}
+
+.titleBox {
+  width: 100%;
+  min-height: 160px;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 58px;
+  line-height: 58px;
+  font-weight: 800;
+  text-align: center;
+  color: var(--oomol-text-primary);
+}
+.subTitle {
+  min-height: 30px;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  @include linearGradientColor;
+}
+
+.contactBox {
+  width: 100%;
+  max-width: 640px;
+  min-height: 106px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 0 auto;
+}
+
+.contactList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 0 16px;
+  justify-content: center;
+}
+
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.contactCard {
+  min-width: 160px;
+  background-color: var(--oomol-bg-elevated);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--oomol-hover-bg);
+    border-color: var(--oomol-border-color, rgba(255, 255, 255, 0.1));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.contactCardClickable {
+  cursor: pointer;
+}
+
+.contactCardHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px 20px;
+}
+
+.contactCardIcon {
+  font-size: 24px;
+  color: var(--oomol-text-primary);
+
+  i {
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+  }
+}
+
+.contactCardTitle {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--oomol-text-primary);
+}
+
+.logo {
+  width: 18px;
+  height: 18px;
+}
+
+.qrcode {
+  max-width: none;
+  width: 200px;
+  height: 200px;
+}
+
+.popoverCentered {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.sloganBox {
+  max-width: 1280px;
+  min-height: 130px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+  gap: 20px;
+}
+.slogan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 305px;
+  min-height: 130px;
+  border-radius: 20px;
+  gap: 14px;
+  text-align: center;
+  background-color: var(--oomol-bg-elevated);
+}
+.sloganIcon {
+  width: 32px;
+  height: 32px;
+  font-size: 32px;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  color: var(--oomol-text-primary);
+}
+.sloganText {
+  max-width: 245px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  color: var(--oomol-text-tertiary);
+}
+
+.repositories {
+  max-width: 1280px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding-top: 160px;
+  padding-bottom: 80px;
+}
+
+.repository {
+  width: 410px;
+  height: 208px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 20px;
+  padding: 24px;
+  background-color: var(--oomol-bg-elevated);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--oomol-hover-bg);
+  }
+}
+
+.repo-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.repo-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.repo-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.repo-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--oomol-text-primary);
+}
+
+.repo-description {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--oomol-text-secondary);
+}
+
+.repo-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.repo-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--oomol-text-tertiary);
+}
+
+.repo-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.state {
+  display: flex;
+  align-items: center;
+  color: var(--oomol-text-primary);
+}
+
+.icon {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.star-icon {
+  font-size: 16px;
+  color: var(--oomol-text-primary);
+  margin-left: 2px;
+}

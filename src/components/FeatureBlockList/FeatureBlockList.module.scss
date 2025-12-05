@@ -9,12 +9,12 @@
   justify-content: center;
   gap: 14px;
   padding: 30px;
-  background-color: #0a0e14;
+  background-color: var(--oomol-bg-elevated);
 }
 
 .icon {
   font-size: 48px;
-  color: #7d7fe9;
+  color: var(--oomol-primary);
 }
 
 .content {
@@ -22,7 +22,7 @@
   font-weight: 400;
   line-height: 24px;
   text-align: center;
-  color: #838b95;
+  color: var(--oomol-text-secondary);
 }
 
 .list {

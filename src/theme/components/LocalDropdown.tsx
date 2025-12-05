@@ -1,10 +1,15 @@
-import styles from "./LocalDropdown.module.scss";
-
 import { useLocation } from "@docusaurus/router";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import type { DocusaurusContext } from "@docusaurus/types";
 import { useAlternatePageUtils } from "@docusaurus/theme-common/internal";
-import { Button } from "@site/src/components/Button";
-import { useState } from "react";
+import { Button } from "@site/src/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
+} from "@site/src/components/ui/dropdown-menu";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 
 export interface LocalDropdownProps {
@@ -23,62 +28,57 @@ const formateLocale = (locale: string) => {
 export const LocalDropdown = ({ queryString = "" }: LocalDropdownProps) => {
   const {
     i18n: { currentLocale, locales },
-  } = useDocusaurusContext() as any;
+  } = useDocusaurusContext() as unknown as DocusaurusContext & {
+    i18n: { currentLocale: string; locales: string[] };
+  };
   const alternatePageUtils = useAlternatePageUtils();
   const { search, hash } = useLocation();
 
-  const [isShow, setIsShow] = useState(false);
-
   const handleLocaleChange = (locale: string) => {
-    document.cookie = `OOMOL_LOCALE=${locale}; path=/; domain=.${location.host}; max-age=31536000`;
-
     if (locale === currentLocale) {
       return;
     }
-  };
 
-  const renderBtnContent = () => {
-    return (
-      <div className={styles["item-box"]}>
-        {locales.map(locale => {
-          const baseTo = `${alternatePageUtils.createUrl({
-            locale,
-            fullyQualified: false,
-          })}`;
-          // preserve ?search#hash suffix on locale switches
-          const to = `${baseTo}${search}${hash}${queryString}`;
-          return (
-            <BrowserOnly key={locale}>
-              {() => (
-                <a
-                  href={to}
-                  className={`${styles.item} ${locale === currentLocale ? styles.selected : ""}`}
-                  onClick={() => handleLocaleChange(locale)}
-                >
-                  <div>{formateLocale(locale)}</div>
-                </a>
-              )}
-            </BrowserOnly>
-          );
-        })}
-      </div>
-    );
+    if (typeof window !== 'undefined') {
+      const cookieValue = "OOMOL_LOCALE=" + locale + "; path=/; domain=." + window.location.host + "; max-age=31536000";
+      window.document.cookie = cookieValue;
+    }
+
+    const baseTo = alternatePageUtils.createUrl({
+      locale,
+      fullyQualified: false,
+    });
+    const to = baseTo + search + hash + queryString;
+    window.location.href = to;
   };
 
   return (
-    <div
-      className={styles.container}
-      onMouseEnter={() => setIsShow(true)}
-      onMouseLeave={() => setIsShow(false)}
-    >
-      <div className={styles.content}>{isShow && renderBtnContent()}</div>
-      <Button
-        className={styles["language-btn"]}
-        icon={<div className="i-codicon-globe" />}
-        iconPosition="start"
-      >
-        {formateLocale(currentLocale)}
-      </Button>
-    </div>
+    <BrowserOnly>
+      {() => (
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="ghost" className="gap-2">
+              <div className="i-codicon-globe" />
+              {formateLocale(currentLocale)}
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent
+            align="end"
+            style={{
+              backgroundColor: 'var(--oomol-bg-container)',
+              borderColor: 'var(--oomol-border-default)'
+            }}
+          >
+            <DropdownMenuRadioGroup value={currentLocale} onValueChange={handleLocaleChange}>
+              {locales.map(locale => (
+                <DropdownMenuRadioItem key={locale} value={locale}>
+                  {formateLocale(locale)}
+                </DropdownMenuRadioItem>
+              ))}
+            </DropdownMenuRadioGroup>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      )}
+    </BrowserOnly>
   );
 };

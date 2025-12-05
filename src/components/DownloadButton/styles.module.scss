@@ -7,8 +7,8 @@
   min-width: 256px;
   height: 43px;
   border-radius: 4px;
-  background-color: #7d7fe9;
-  color: #ffffff;
+  background-color: var(--oomol-primary);
+  color: var(--oomol-white);
   font-size: 18px;
   font-weight: 500;
   border: none;
@@ -16,17 +16,17 @@
   white-space: nowrap;
 
   &:hover {
-    background-color: #6b6de6;
-    color: #ffffff;
+    background-color: var(--oomol-primary-hover);
+    color: var(--oomol-white);
   }
 
   &:active {
-    background-color: #5a5ce3;
+    background-color: var(--oomol-primary-active);
   }
 
   :global(.oo-btn) {
     &:hover {
-      border: solid #f0f6fc;
+      border: solid var(--oomol-text-primary);
     }
   }
 }
@@ -41,13 +41,13 @@
 .windowsSubtitle {
   font-size: 13px;
   margin-top: 4px;
-  color: #ccccccb2;
+  color: var(--oomol-text-tertiary);
 }
 
 .icon {
   font-size: 16px;
   padding-left: 12px;
-  color: #838b95;
+  color: var(--oomol-text-secondary);
 }
 
 .popoverBox {
@@ -55,11 +55,11 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  background-color: #0d1117;
+  background-color: var(--oomol-bg-elevated);
   border-radius: 10px;
   padding: 12px 16px;
-  color: #838b95;
-  box-shadow: 0px 0px 50px 0px #01040980;
+  color: var(--oomol-text-secondary);
+  box-shadow: var(--oomol-shadow-md);
 
   a {
     text-decoration: none;
@@ -74,16 +74,16 @@
   transition: color 0.2s ease;
   font-weight: 600;
   font-size: 14px;
-  color: #838b95;
+  color: var(--oomol-text-secondary);
 
   &:hover {
     cursor: pointer;
     transition: color 0.2s ease;
 
-    color: #f0f6fc;
+    color: var(--oomol-text-primary);
 
     .icon {
-      background-color: #f0f6fc;
+      background-color: var(--oomol-text-primary);
     }
   }
 }

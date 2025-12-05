@@ -3,7 +3,7 @@
     "message": "Download Now"
   },
   "Theme.Navbar.go-to-hub-flow": {
-    "message": "Go to Hub"
+    "message": "Start Building"
   },
   "Theme.Navbar.use-in-chat": {
     "message": "Use in Chat"
@@ -11,13 +11,33 @@
   "Theme.Navbar.sign-in": {
     "message": "Sign in"
   },
+  "Theme.Navbar.download": {
+    "message": "Download"
+  },
+  "Theme.Navbar.login": {
+    "message": "Login"
+  },
+  "Theme.Navbar.console": {
+    "message": "Console"
+  },
+  "Theme.Navbar.community": {
+    "message": "Community"
+  },
+  "HOME.page.title": {
+    "message": "OOMOL - AI Workflow Automation For Developers"
+  },
   "HOME.FirstScreen.slogan": {
-    "message": "Create, Share and Use AI Tools"
+    "message": "AI Workflow Automation — For Developers"
+  },
+  "HOME.FirstScreen.slogan.line1": {
+    "message": "AI Workflow Platform"
+  },
+  "HOME.FirstScreen.slogan.line2": {
+    "message": "Built for Developers"
   },
   "HOME.FirstScreen.script": {
-    "message": "Build AI tools and workflows visually, share with the community, and use them through simple chat."
+    "message": "No new concepts to learn—just **write functions and reference libraries** like you always do to create blocks. **Drag and drop them into workflows** to efficiently build new features. Publish as **APIs, MCP tools, or automation** to turn ideas into products instantly."
   },
-
   "HOME.FirstScreen.download-macos": {
     "message": "Download for macOS"
   },
@@ -32,6 +52,222 @@
   },
   "HOME.FirstScreen.download-windows-subtitle": {
     "message": "only supports x64"
+  },
+  "HOME.FirstScreen.cta.secondary": {
+    "message": "Start Building"
+  },
+  "HOME.ValueProps.localCompute.title": {
+    "message": "Turn Local Compute Into Your Private AI Cloud"
+  },
+  "HOME.ValueProps.localCompute.description": {
+    "message": "Run workflows on your own PC or NAS. Leverage idle CPU/GPU resources, share them with others, or scale to OOMOL Cloud anytime."
+  },
+  "HOME.ValueProps.workflowAPI.title": {
+    "message": "Develop With Workflows, Deliver as APIs"
+  },
+  "HOME.ValueProps.workflowAPI.description": {
+    "message": "Create function blocks, assemble workflows, and publish them as REST or MCP APIs — automatically, with no server code required."
+  },
+  "HOME.ValueProps.aiNative.title": {
+    "message": "AI-Native Development Experience"
+  },
+  "HOME.ValueProps.aiNative.description": {
+    "message": "AI-assisted block generation, vibe coding workflow blocks, and deep VSCode integration make development fast and flexible."
+  },
+  "HOME.CoreFeatures.title": {
+    "message": "Four Core Features"
+  },
+  "HOME.CoreFeatures.subtitle": {
+    "message": "Boosting efficiency across the entire development and deployment pipeline"
+  },
+  "HOME.CoreFeatures.workflow.title": {
+    "message": "01｜Node as Function: No New Framework to Learn"
+  },
+  "HOME.CoreFeatures.workflow.description": {
+    "message": "In oomol, a node is a function. Every line of code you write can become a capability component.\n\n• Clear input/output definitions, external calls work like using an API\n• Reference any open-source library, zero bottlenecks for feature expansion\n• Native VSCode experience\n• AI auto-generates nodes + Vibe Coding Block accelerates development"
+  },
+  "HOME.CoreFeatures.workflow.highlight1": {
+    "message": "Familiar approach, unlimited capabilities"
+  },
+  "HOME.CoreFeatures.container.title": {
+    "message": "02｜Local Containerized Development: Production-Ready Deployment"
+  },
+  "HOME.CoreFeatures.container.description": {
+    "message": "IDE with built-in container environment, ready to use anytime.\n\n• No environment setup required, works out of the box\n• Strong isolation, doesn't pollute host machine\n• Local environment identical to cloud environment"
+  },
+  "HOME.CoreFeatures.container.highlight1": {
+    "message": "Write and deploy to cloud immediately, no more debugging \"environment inconsistency\" issues"
+  },
+  "HOME.CoreFeatures.mcp.title": {
+    "message": "03｜Device as Server: Put Idle Computing Power to Work"
+  },
+  "HOME.CoreFeatures.mcp.description": {
+    "message": "Combining container and reverse proxy technology to assign domain names directly to devices.\n\n• Personal computers & NAS become servers instantly\n• GPU value no longer wasted (supports WSL2 calling Nvidia GPU)\n• Private deployment + remote access anytime"
+  },
+  "HOME.CoreFeatures.mcp.highlight1": {
+    "message": "Turn all your devices into development resources"
+  },
+  "HOME.CoreFeatures.vscode.title": {
+    "message": "04｜One-Click Publishing: API / MCP / Automation"
+  },
+  "HOME.CoreFeatures.vscode.description": {
+    "message": "Workflows and nodes can both be published as callable capabilities:\n\n• Serverless API services\n• MCP tools, directly integrated with AI\n• Timer / Trigger automation processes"
+  },
+  "HOME.CoreFeatures.vscode.highlight1": {
+    "message": "Create capabilities that can be used by any system"
+  },
+  "HOME.Lifecycle.title": {
+    "message": "Development Lifecycle"
+  },
+  "HOME.Lifecycle.subtitle": {
+    "message": "From build to delivery, all-in-one development experience"
+  },
+  "HOME.Lifecycle.step1.title": {
+    "message": "Build"
+  },
+  "HOME.Lifecycle.step1.subtitle": {
+    "message": "Design and implement workflows in OOMOL Studio"
+  },
+  "HOME.Lifecycle.step1.description": {
+    "message": "Create projects in OOMOL Studio, define functional nodes by installing ready-made Blocks from community or coding your own, then drag and drop to compose visual workflows with full AI assistance from design to production."
+  },
+  "HOME.Lifecycle.step2.title": {
+    "message": "Publish"
+  },
+  "HOME.Lifecycle.step2.subtitle": {
+    "message": "Share with community, or manage as personal capability library"
+  },
+  "HOME.Lifecycle.step2.description": {
+    "message": "Choose to publish your packages publicly or privately — keep private packages to build your own modular capability library for reuse, or share them publicly in the community for others to benefit from your work."
+  },
+  "HOME.Lifecycle.step3.title": {
+    "message": "Deploy"
+  },
+  "HOME.Lifecycle.step3.subtitle": {
+    "message": "Run on local, private host or cloud"
+  },
+  "HOME.Lifecycle.step3.description": {
+    "message": "Deploy locally on your PC or Mac for personal use and sharing, use headless mode on NAS or server containers for long-term running, or deploy to Cloud Serverless with one click for hassle-free API hosting."
+  },
+  "HOME.Lifecycle.step4.title": {
+    "message": "Deliver"
+  },
+  "HOME.Lifecycle.step4.subtitle": {
+    "message": "Transform into capabilities usable by both users and AI"
+  },
+  "HOME.Lifecycle.step4.description": {
+    "message": "Transform your workflows into external API services and interactive user applications, MCP Tools that AI can directly invoke, or automated workflows that run on schedules or triggers."
+  },
+  "HOME.WhyOomol.title": {
+    "message": "Why Choose OOMOL"
+  },
+  "HOME.WhyOomol.subtitle": {
+    "message": "Compare with other tools and see how OOMOL redefines developer experience"
+  },
+  "HOME.WhyOomol.featureColumn": {
+    "message": "Feature"
+  },
+  "HOME.WhyOomol.othersColumn": {
+    "message": "Other Tools"
+  },
+  "HOME.WhyOomol.feature1": {
+    "message": "Build Your Own Functions"
+  },
+  "HOME.WhyOomol.oomol1": {
+    "message": "Block = Function, Generatable"
+  },
+  "HOME.WhyOomol.feature2": {
+    "message": "Compose Functions → New API"
+  },
+  "HOME.WhyOomol.oomol2": {
+    "message": "Complete Workflow Builder"
+  },
+  "HOME.WhyOomol.feature3": {
+    "message": "Local GPU Execution"
+  },
+  "HOME.WhyOomol.oomol3": {
+    "message": "WSL2 + NVIDIA Support"
+  },
+  "HOME.WhyOomol.feature4": {
+    "message": "Local + Cloud Deployment"
+  },
+  "HOME.WhyOomol.oomol4": {
+    "message": "All-in-One"
+  },
+  "HOME.WhyOomol.feature5": {
+    "message": "MCP Tool Generation"
+  },
+  "HOME.WhyOomol.oomol5": {
+    "message": "Native Support"
+  },
+  "HOME.WhyOomol.feature6": {
+    "message": "True Developer Experience"
+  },
+  "HOME.WhyOomol.oomol6": {
+    "message": "Native VSCode + AI"
+  },
+  "HOME.WhyOomol.supported": {
+    "message": "Supported"
+  },
+  "HOME.WhyOomol.limited": {
+    "message": "Limited"
+  },
+  "HOME.WhyOomol.notSupported": {
+    "message": "Rarely Supported"
+  },
+  "HOME.PdfCraft.title": {
+    "message": "Open Source Project Built on OOMOL: PDF-Craft"
+  },
+  "HOME.PdfCraft.subtitle": {
+    "message": "Experience the power of local computing with our flagship open source project built on OOMOL"
+  },
+  "HOME.PdfCraft.description": {
+    "message": "PDF-Craft is OOMOL's official open source PDF to eBook conversion tool with 3000+ GitHub stars. Run it locally for free, share with friends via OOMOL, or use the official API service — there's always a service that fits you."
+  },
+  "HOME.PdfCraft.feature1": {
+    "message": "MIT open source, fully transparent"
+  },
+  "HOME.PdfCraft.feature2": {
+    "message": "Built on DeepSeek OCR, advanced model"
+  },
+  "HOME.PdfCraft.feature3": {
+    "message": "Professional team maintenance, open source and service in parallel"
+  },
+  "HOME.PdfCraft.traditional.badge": {
+    "message": "Local Deployment"
+  },
+  "HOME.PdfCraft.traditional.title": {
+    "message": "Local Computing, Free & Private"
+  },
+  "HOME.PdfCraft.traditional.step1": {
+    "message": "Prepare a PC with RTX 3060 or higher GPU"
+  },
+  "HOME.PdfCraft.traditional.step2": {
+    "message": "Install OOMOL Studio for free local deployment"
+  },
+  "HOME.PdfCraft.traditional.step3": {
+    "message": "Use Mini App or Flow to run"
+  },
+  "HOME.PdfCraft.oomol.badge": {
+    "message": "Official Service"
+  },
+  "HOME.PdfCraft.oomol.title": {
+    "message": "Pay-as-you-go, Ready to Use"
+  },
+  "HOME.PdfCraft.oomol.method1": {
+    "message": "Official maintenance, quality guaranteed"
+  },
+  "HOME.PdfCraft.oomol.method2": {
+    "message": "Available on PDF-Craft website"
+  },
+  "HOME.PdfCraft.oomol.method3": {
+    "message": "API service for developers"
+  },
+  "HOME.PdfCraft.cta.primary": {
+    "message": "Try PDF-Craft"
+  },
+  "HOME.PdfCraft.cta.secondary": {
+    "message": "View Source Code"
   },
   "HOME.BrandAssets.title": {
     "message": "Brand Assets & Guidelines"
@@ -51,12 +287,47 @@
   "HOME.BrandAssets.typeface": {
     "message": "Typeface"
   },
-
   "HOME.Scenes.title": {
-    "message": "How to Use"
+    "message": "Developer Use Cases"
   },
   "HOME.Scenes.subtitle": {
-    "message": "Describe what you need, and OOMOL’s intelligent assistant will recommend the right tools for you."
+    "message": "From GPU computing sharing to AI Agent toolchains, explore oomol's powerful application scenarios"
+  },
+  "HOME.Scenes.gpu-sharing.title": {
+    "message": "GPU Computing Sharing"
+  },
+  "HOME.Scenes.gpu-sharing.inner": {
+    "message": "Share your RTX 4090 at home with your team remotely via FRP protocol. Supports NVIDIA GPU access through WSL2, enables P2P computing sharing, train models at night, share computing power during the day."
+  },
+  "HOME.Scenes.mcp-server.title": {
+    "message": "Build MCP Server"
+  },
+  "HOME.Scenes.mcp-server.inner": {
+    "message": "Develop custom MCP tools for Claude Desktop. Generate functions through visual workflows, automatically support MCP protocol, let AI Agents call your services directly."
+  },
+  "HOME.Scenes.data-api.title": {
+    "message": "Data Analysis API"
+  },
+  "HOME.Scenes.data-api.inner": {
+    "message": "Turn local Python scripts into API services with one click. Combine pandas, numpy and other data analysis libraries, package with containers, automatically generate RESTful API interfaces."
+  },
+  "HOME.Scenes.ai-image-service.title": {
+    "message": "AI Image Service"
+  },
+  "HOME.Scenes.ai-image-service.inner": {
+    "message": "Deploy Stable Diffusion inference service. Utilize local GPU computing power, provide image generation API externally through FRP, support multi-model switching and custom parameters."
+  },
+  "HOME.Scenes.iot-control.title": {
+    "message": "IoT Device Control"
+  },
+  "HOME.Scenes.iot-control.inner": {
+    "message": "Remotely control Raspberry Pi and IoT devices through FRP. Build workflows to orchestrate smart home, achieve remote monitoring, data collection and automation control."
+  },
+  "HOME.Scenes.agent-toolchain.title": {
+    "message": "AI Agent Toolchain"
+  },
+  "HOME.Scenes.agent-toolchain.inner": {
+    "message": "Combine multiple MCP Tools to build expert Agents. Integrate capabilities like data query, file processing, API calls to create domain-specific intelligent assistants."
   },
   "HOME.Scenes.data-science.title": {
     "message": "AI Video Processing"
@@ -197,19 +468,10 @@
     "message": "View More Examples"
   },
   "HOME.Create.title": {
-    "message": "How to Create"
+    "message": "From Creation to Deployment, All-in-One Development Experience"
   },
   "HOME.Create.subtitle": {
-    "message": "Effortlessly build your own intelligent tools with visual workflows and advanced AI integration."
-  },
-  "HOME.Create.card.title": {
-    "message": "Start Creating Your AI Tools"
-  },
-  "HOME.Create.card.description": {
-    "message": "Use OOMOL Studio's intuitive interface to build powerful AI workflows by dragging components and connecting nodes. Create professional-grade AI applications without complex programming."
-  },
-  "HOME.Create.card.button": {
-    "message": "Start Creating Now"
+    "message": "Create Workflow → Generate Package → Publish to Community → Flexible Deployment (Local FRP / Cloud API)"
   },
   "HOME.Create.browse-docs": {
     "message": "Read Docs"
@@ -286,20 +548,122 @@
   "HOME.Features.linkBtn-text": {
     "message": "View All Features"
   },
-  "HOME.Video.title": {
-    "message": "Product Demo"
+  "HOME.Ecosystem.title": {
+    "message": "oomol Product Ecosystem"
   },
-  "HOME.Video.subtitle": {
-    "message": "Learn about OOMOL's powerful features and usage through video"
+  "HOME.Ecosystem.subtitle": {
+    "message": "From local development to cloud deployment, complete AI tool lifecycle"
+  },
+  "HOME.Ecosystem.studio.title": {
+    "message": "oomol Studio"
+  },
+  "HOME.Ecosystem.studio.subtitle": {
+    "message": "Local Development"
+  },
+  "HOME.Ecosystem.studio.description": {
+    "message": "VSCode-integrated visual editor with AI-assisted development and local container runtime."
+  },
+  "HOME.Ecosystem.studio.feature1": {
+    "message": "VSCode Integration"
+  },
+  "HOME.Ecosystem.studio.feature2": {
+    "message": "Visual Editor"
+  },
+  "HOME.Ecosystem.studio.feature3": {
+    "message": "AI-Assisted"
+  },
+  "HOME.Ecosystem.studio.feature4": {
+    "message": "Local Container"
+  },
+  "HOME.Ecosystem.hub.title": {
+    "message": "oomol Hub"
+  },
+  "HOME.Ecosystem.hub.subtitle": {
+    "message": "Community Ecosystem"
+  },
+  "HOME.Ecosystem.hub.description": {
+    "message": "Open package sharing community, publish, browse and install Blocks, one-click dependency integration."
+  },
+  "HOME.Ecosystem.hub.feature1": {
+    "message": "Publish Package"
+  },
+  "HOME.Ecosystem.hub.feature2": {
+    "message": "Browse Community"
+  },
+  "HOME.Ecosystem.hub.feature3": {
+    "message": "One-Click Install"
+  },
+  "HOME.Ecosystem.hub.feature4": {
+    "message": "Developer Collaboration"
+  },
+  "HOME.Ecosystem.cloud.title": {
+    "message": "oomol Cloud"
+  },
+  "HOME.Ecosystem.cloud.subtitle": {
+    "message": "Cloud Deployment"
+  },
+  "HOME.Ecosystem.cloud.description": {
+    "message": "One-click deployment to cloud, providing RESTful and MCP API protocols, with metering and billing support."
+  },
+  "HOME.Ecosystem.cloud.feature1": {
+    "message": "One-Click Deploy"
+  },
+  "HOME.Ecosystem.cloud.feature2": {
+    "message": "RESTful API"
+  },
+  "HOME.Ecosystem.cloud.feature3": {
+    "message": "MCP Protocol"
+  },
+  "HOME.Ecosystem.cloud.feature4": {
+    "message": "Metering & Billing"
+  },
+  "HOME.Ecosystem.chat.title": {
+    "message": "oomol Chat"
+  },
+  "HOME.Ecosystem.chat.subtitle": {
+    "message": "AI Assistant"
+  },
+  "HOME.Ecosystem.chat.description": {
+    "message": "AI chat assistant based on MCP Tools, combine Tools to build expert Agents, multi-model support."
+  },
+  "HOME.Ecosystem.chat.feature1": {
+    "message": "MCP Tool"
+  },
+  "HOME.Ecosystem.chat.feature2": {
+    "message": "Expert Agent"
+  },
+  "HOME.Ecosystem.chat.feature3": {
+    "message": "Enterprise KB"
+  },
+  "HOME.Ecosystem.chat.feature4": {
+    "message": "Multi-Model"
   },
   "HOME.Guide.title": {
-    "message": "Release and Share"
+    "message": "Join Developer Community"
   },
   "HOME.Guide.subtitle": {
-    "message": "Contribute your unique solutions, discover new ideas, and collaborate with the community to achieve more."
+    "message": "Build AI tool ecosystem with global developers, share experience, get support, and contribute to open source."
   },
   "HOME.Guide.link-button-text": {
-    "message": "Explore All AI Tools"
+    "message": "Visit Hub Community"
+  },
+  "HOME.Guide.github.title": {
+    "message": "GitHub Open Source"
+  },
+  "HOME.Guide.github.description": {
+    "message": "Participate in open source projects, contribute code, report issues, and collaborate with developers worldwide."
+  },
+  "HOME.Guide.discord.title": {
+    "message": "Discord Community"
+  },
+  "HOME.Guide.discord.description": {
+    "message": "Real-time communication, get technical support, share experiences, and meet like-minded developers."
+  },
+  "HOME.Guide.docs.title": {
+    "message": "Developer Documentation"
+  },
+  "HOME.Guide.docs.description": {
+    "message": "Complete API docs, sample code, best practices, get started with oomol development quickly."
   },
   "HOME.Guide.project-1.title": {
     "message": "AI Video Translator"
@@ -377,16 +741,22 @@
     "message": "View All Projects"
   },
   "HOME.Built-in.title": {
-    "message": "Built-in LLM Module"
+    "message": "Fusion APIs & LLM Access"
   },
   "HOME.Built-in.subtitle": {
-    "message": "Built-in LLM blocks for improved AI workflow efficiency."
+    "message": "Use a single OOMOL API Token to quickly access various common APIs and mainstream LLMs. Simpler, more unified development experience."
+  },
+  "HOME.Built-in.code.python": {
+    "message": "from oocana import Context\n\n#region generated meta\nimport typing\nInputs = typing.Dict[str, typing.Any]\nOutputs = typing.Dict[str, typing.Any]\n#endregion\n\nasync def main(params: Inputs, context: Context) -> Outputs | None:\n\n    # Fusion API Base URL\n    api_url = \"https://fusion-api.oomol.com/v1/fal-nano-banana-edit/submit\"\n\n    # LLM Base URL, can use openai sdk\n    llm_base_url = \"https://llm.oomol.com/v1\"\n\n    # Get OOMOL token from context (no need for manual API key input)\n    api_token = await context.oomol_token()\n\n    return {\n      # \"output\": \"output_value\"\n    }"
+  },
+  "HOME.Built-in.code.typescript": {
+    "message": "//#region generated meta\ntype Inputs = {\n};\ntype Outputs = {\n};\n//#endregion\n\nimport type { Context } from \"@oomol/types/oocana\";\n\nexport default async function(\n    params: Inputs,\n    context: Context<Inputs, Outputs>\n): Promise<Partial<Outputs> | undefined | void> {\n    // Fusion API Base URL\n    const api_url = \"https://fusion-api.oomol.com/v1/fal-nano-banana-edit/submit\"\n\n    // LLM Base URL, can use openai sdk\n    const llm_base_url = \"https://llm.oomol.com/v1\"\n\n    // Get OOMOL token from context (no need for manual API key input)\n    const api_token = await context.getOomolToken()\n    // return { output: \"output_value\" };\n};"
   },
   "HOME.GetStartedPrompt.title": {
     "message": "Start Using OOMOL Today"
   },
   "HOME.GetStartedPrompt.subtitle": {
-    "message": "Download OOMOL now and unlock your ultimate productivity partner."
+    "message": "Download OOMOL Studio — Turn ideas instantly into running products."
   },
   "HOME.Pricing.title": {
     "message": "Pricing"
@@ -418,6 +788,15 @@
   "HOME.Downloads.Nightly.subtitle": {
     "message": "Overnight Build Version, Less Stable"
   },
+  "HOME.Downloads.download.macos.applesilicon": {
+    "message": "Download for MacOS Apple Silicon"
+  },
+  "HOME.Downloads.download.macos.intel": {
+    "message": "Download for MacOS Intel (Legacy)"
+  },
+  "HOME.Downloads.download.windows.x64": {
+    "message": "Download for Windows X64"
+  },
   "HOME.Community.title": {
     "message": "Connecting With People"
   },
@@ -445,7 +824,6 @@
   "HOME.Community.open-source.subtitle": {
     "message": "OOMOL is an open-source company dedicated to promoting collaboration and enhancing existing open-source tools and communities."
   },
-
   "FEATURES.title": {
     "message": "All the features that you need"
   },
@@ -497,23 +875,251 @@
   "FEATURES.block-6.title": {
     "message": "Code synced to GitHub for collaborative development and upkeep."
   },
-
   "PRICING.title": {
-    "message": "Simple, Predictable Pricing"
+    "message": "Simple, Transparent Pricing"
   },
-
   "PRICING.subtitle": {
-    "message": "Use OOMOL For Free. Upgrade To Get Free Credits Per Month, Invite Others To Collaborate, And Use An API Key."
+    "message": "Start Free, Upgrade As Needed."
   },
-
+  "PRICING.subscription.title": {
+    "message": "Subscription Plans"
+  },
+  "PRICING.subscription.subtitle": {
+    "message": "Choose the right plan for you and enjoy more features and services"
+  },
+  "PRICING.subscription.recommended": {
+    "message": "Recommended"
+  },
+  "PRICING.subscription.period": {
+    "message": "/month"
+  },
+  "PRICING.subscription.subscribe": {
+    "message": "Subscribe Now"
+  },
+  "PRICING.subscription.free.name": {
+    "message": "Free"
+  },
+  "PRICING.subscription.free.price": {
+    "message": "$0"
+  },
+  "PRICING.subscription.free.description": {
+    "message": "Perfect for individual developers handling all resources themselves"
+  },
+  "PRICING.subscription.free.feature1": {
+    "message": "Task executions: 200 per month"
+  },
+  "PRICING.subscription.free.feature2": {
+    "message": "LLM tokens: 1M per month"
+  },
+  "PRICING.subscription.free.feature3": {
+    "message": "Fusion API: 50 calls per month"
+  },
+  "PRICING.subscription.free.feature4": {
+    "message": "FRP service support (Free for 3 months after registration)"
+  },
+  "PRICING.subscription.standard.name": {
+    "message": "Standard"
+  },
+  "PRICING.subscription.standard.price": {
+    "message": "$5"
+  },
+  "PRICING.subscription.standard.description": {
+    "message": "Ideal for small teams with moderate OOMOL resource usage"
+  },
+  "PRICING.subscription.standard.feature1": {
+    "message": "Task executions: 1,200 per month"
+  },
+  "PRICING.subscription.standard.feature2": {
+    "message": "LLM tokens: 5M per month"
+  },
+  "PRICING.subscription.standard.feature3": {
+    "message": "Fusion API: 100 calls per month"
+  },
+  "PRICING.subscription.standard.feature4": {
+    "message": "FRP service support"
+  },
+  "PRICING.subscription.standard.feature5": {
+    "message": "All Free tier features included"
+  },
+  "PRICING.subscription.pro.name": {
+    "message": "Pro"
+  },
+  "PRICING.subscription.pro.price": {
+    "message": "$29"
+  },
+  "PRICING.subscription.pro.description": {
+    "message": "Perfect for power users with frequent OOMOL core feature usage"
+  },
+  "PRICING.subscription.pro.feature1": {
+    "message": "Task executions: 4,000 per month"
+  },
+  "PRICING.subscription.pro.feature2": {
+    "message": "LLM tokens: 10M per month"
+  },
+  "PRICING.subscription.pro.feature3": {
+    "message": "Fusion API: 500 calls per month"
+  },
+  "PRICING.subscription.pro.feature4": {
+    "message": "FRP service support"
+  },
+  "PRICING.subscription.pro.feature5": {
+    "message": "All Standard tier features included"
+  },
+  "PRICING.subscription.pro.feature6": {
+    "message": "Priority technical support"
+  },
+  "PRICING.payAsYouGo.title": {
+    "message": "Pay-As-You-Go"
+  },
+  "PRICING.payAsYouGo.subtitle": {
+    "message": "Pay only for what you use, flexible and transparent"
+  },
+  "PRICING.payAsYouGo.table.item": {
+    "message": "Billing Item"
+  },
+  "PRICING.payAsYouGo.table.price": {
+    "message": "Unit Price"
+  },
+  "PRICING.payAsYouGo.category.execution": {
+    "message": "Execution Tasks"
+  },
+  "PRICING.payAsYouGo.execution.workflow": {
+    "message": "Workflow Execution"
+  },
+  "PRICING.payAsYouGo.execution.workflow.price": {
+    "message": "10 credits/run"
+  },
+  "PRICING.payAsYouGo.execution.block": {
+    "message": "Block Execution"
+  },
+  "PRICING.payAsYouGo.execution.block.price": {
+    "message": "5 credits/run"
+  },
+  "PRICING.payAsYouGo.execution.computeTime": {
+    "message": "Compute Time"
+  },
+  "PRICING.payAsYouGo.execution.computeTime.price": {
+    "message": "1 credit/second"
+  },
+  "PRICING.payAsYouGo.category.llm": {
+    "message": "Large Language Models"
+  },
+  "PRICING.payAsYouGo.llm.gpt4": {
+    "message": "GPT-4"
+  },
+  "PRICING.payAsYouGo.llm.gpt4.price": {
+    "message": "100 credits/1K tokens"
+  },
+  "PRICING.payAsYouGo.llm.claude": {
+    "message": "Claude"
+  },
+  "PRICING.payAsYouGo.llm.claude.price": {
+    "message": "80 credits/1K tokens"
+  },
+  "PRICING.payAsYouGo.llm.gemini": {
+    "message": "Gemini"
+  },
+  "PRICING.payAsYouGo.llm.gemini.price": {
+    "message": "60 credits/1K tokens"
+  },
+  "PRICING.payAsYouGo.category.fusionAPI": {
+    "message": "Fusion APIs"
+  },
+  "PRICING.payAsYouGo.fusionAPI.imageGen": {
+    "message": "Image Generation"
+  },
+  "PRICING.payAsYouGo.fusionAPI.imageGen.price": {
+    "message": "50 credits/image"
+  },
+  "PRICING.payAsYouGo.fusionAPI.ocr": {
+    "message": "OCR Recognition"
+  },
+  "PRICING.payAsYouGo.fusionAPI.ocr.price": {
+    "message": "20 credits/image"
+  },
+  "PRICING.payAsYouGo.fusionAPI.tts": {
+    "message": "Text-to-Speech"
+  },
+  "PRICING.payAsYouGo.fusionAPI.tts.price": {
+    "message": "10 credits/minute"
+  },
+  "PRICING.payAsYouGo.taskExecution.name": {
+    "message": "Task Execution"
+  },
+  "PRICING.payAsYouGo.taskExecution.price": {
+    "message": "$0.01/1K calls"
+  },
+  "PRICING.payAsYouGo.taskExecution.description": {
+    "message": "Billing for workflow and Block executions"
+  },
+  "PRICING.payAsYouGo.taskExecution.feature1": {
+    "message": "Workflow Execution: 10 credits/run"
+  },
+  "PRICING.payAsYouGo.taskExecution.feature2": {
+    "message": "Block Execution: 5 credits/run"
+  },
+  "PRICING.payAsYouGo.taskExecution.feature3": {
+    "message": "Compute Time: 1 credit/second"
+  },
+  "PRICING.payAsYouGo.llm.name": {
+    "message": "Large Language Models"
+  },
+  "PRICING.payAsYouGo.llm.price": {
+    "message": "$0.01/1M tokens"
+  },
+  "PRICING.payAsYouGo.llm.description": {
+    "message": "Billing for mainstream LLM API calls"
+  },
+  "PRICING.payAsYouGo.llm.feature1": {
+    "message": "GPT-4: 100 credits/1K tokens"
+  },
+  "PRICING.payAsYouGo.llm.feature2": {
+    "message": "Claude: 80 credits/1K tokens"
+  },
+  "PRICING.payAsYouGo.llm.feature3": {
+    "message": "Gemini: 60 credits/1K tokens"
+  },
+  "PRICING.payAsYouGo.fusionAPI.name": {
+    "message": "Fusion APIs"
+  },
+  "PRICING.payAsYouGo.fusionAPI.price": {
+    "message": "$0.01/call"
+  },
+  "PRICING.payAsYouGo.fusionAPI.description": {
+    "message": "Unified API calling service"
+  },
+  "PRICING.payAsYouGo.fusionAPI.feature1": {
+    "message": "Image Generation: 50 credits/image"
+  },
+  "PRICING.payAsYouGo.fusionAPI.feature2": {
+    "message": "OCR Recognition: 20 credits/image"
+  },
+  "PRICING.payAsYouGo.fusionAPI.feature3": {
+    "message": "Text-to-Speech: 10 credits/minute"
+  },
+  "PRICING.free.badge": {
+    "message": "Recommended"
+  },
   "PRICING.free.title": {
-    "message": "Free Plan"
+    "message": "Local + FRP Deployment"
   },
   "PRICING.free.subtitle": {
-    "message": "Get By Registry, Providing Free Credits Monthly."
+    "message": "Run Studio locally, share via FRP protocol, forever free"
   },
   "PRICING.free.text": {
-    "message": "Free"
+    "message": "Forever Free"
+  },
+  "PRICING.free.feature1": {
+    "message": "Studio local development and runtime"
+  },
+  "PRICING.free.feature2": {
+    "message": "FRP protocol P2P sharing"
+  },
+  "PRICING.free.feature3": {
+    "message": "Unlimited GPU compute usage"
+  },
+  "PRICING.free.feature4": {
+    "message": "Full development features and tools"
   },
   "PRICING.list.text1": {
     "message": "Get By Registry"
@@ -566,7 +1172,6 @@
   "PRICING.buttonText": {
     "message": "Get Started"
   },
-
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"
@@ -757,6 +1362,15 @@
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
     "message": "Collapse sidebar category '{label}'",
     "description": "The ARIA label to collapse the sidebar category"
+  },
+  "Theme.ColorMode.light": {
+    "message": "Light Mode"
+  },
+  "Theme.ColorMode.dark": {
+    "message": "Dark Mode"
+  },
+  "Theme.ColorMode.system": {
+    "message": "Follow System"
   },
   "theme.NavBar.navAriaLabel": {
     "message": "Main",
@@ -1015,6 +1629,213 @@
   "CREATE.description": {
     "message": "OOMOL's AI tool creation platform. The core advantage lies in: retaining the unlimited creative ability of traditional programming while having the convenience of low-code development, allowing users to efficiently build various AI tools."
   },
+  "STUDIO.hero.description": {
+    "message": "Visual Workflow + Full Code with VSCode, Build and Share AI Tools Fast"
+  },
+  "STUDIO.hero.stat1": {
+    "message": "AI Models"
+  },
+  "STUDIO.hero.stat2": {
+    "message": "Publish API"
+  },
+  "STUDIO.hero.stat3": {
+    "message": "Computing Share"
+  },
+  "STUDIO.hero.cta.download": {
+    "message": "Download Now"
+  },
+  "STUDIO.hero.cta.docs": {
+    "message": "View Docs"
+  },
+  "STUDIO.workflow.title": {
+    "message": "Developer Workflow"
+  },
+  "STUDIO.workflow.subtitle": {
+    "message": "Create Workflow → Generate Package → Publish to Community → Flexible Deployment"
+  },
+  "STUDIO.workflow.step1.title": {
+    "message": "Create Workflow"
+  },
+  "STUDIO.workflow.step1.description": {
+    "message": "Drag-and-drop visual editor, VSCode-based Block coding"
+  },
+  "STUDIO.workflow.step1.feature1": {
+    "message": "Drag-and-drop visual editor"
+  },
+  "STUDIO.workflow.step1.feature2": {
+    "message": "VSCode-based Block coding"
+  },
+  "STUDIO.workflow.step2.title": {
+    "message": "Generate Package"
+  },
+  "STUDIO.workflow.step2.description": {
+    "message": "Blocks + Flows auto-packaging, MCP interface support"
+  },
+  "STUDIO.workflow.step2.feature1": {
+    "message": "Blocks (function blocks) + Flows auto-packaging"
+  },
+  "STUDIO.workflow.step2.feature2": {
+    "message": "MCP interface support (AI Agent direct access)"
+  },
+  "STUDIO.workflow.step3.title": {
+    "message": "Publish to Community"
+  },
+  "STUDIO.workflow.step3.description": {
+    "message": "One-click publish workflow templates and Block libraries"
+  },
+  "STUDIO.workflow.step3.feature1": {
+    "message": "One-click publish workflow templates"
+  },
+  "STUDIO.workflow.step3.feature2": {
+    "message": "Share Block libraries to community"
+  },
+  "STUDIO.workflow.step4.title": {
+    "message": "Flexible Deployment"
+  },
+  "STUDIO.workflow.step4.description": {
+    "message": "Local deployment + FRP sharing, or one-click cloud deployment"
+  },
+  "STUDIO.workflow.step4.feature1": {
+    "message": "Local deployment + FRP protocol sharing"
+  },
+  "STUDIO.workflow.step4.feature2": {
+    "message": "OOMOL Cloud one-click deployment"
+  },
+  "STUDIO.workflow.step4.feature3": {
+    "message": "Workflow auto-publish as API service"
+  },
+  "STUDIO.advantages.title": {
+    "message": "Core Advantages"
+  },
+  "STUDIO.advantages.vscode.title": {
+    "message": "VSCode Development Experience"
+  },
+  "STUDIO.advantages.vscode.description": {
+    "message": "Professional code editor with Vibe Coding Block and AI-assisted development"
+  },
+  "STUDIO.advantages.vscode.feature1": {
+    "message": "Built-in Python/Node.js environment"
+  },
+  "STUDIO.advantages.vscode.feature2": {
+    "message": "Professional code editor"
+  },
+  "STUDIO.advantages.vscode.feature3": {
+    "message": "Nodes as functions, seamless code-visual switching"
+  },
+  "STUDIO.advantages.p2p.title": {
+    "message": "P2P Computing & Software Sharing"
+  },
+  "STUDIO.advantages.p2p.description": {
+    "message": "FRP protocol-based local deployment sharing, P2P-like computing sharing"
+  },
+  "STUDIO.advantages.p2p.feature1": {
+    "message": "Local deployment via FRP protocol sharing"
+  },
+  "STUDIO.advantages.p2p.feature2": {
+    "message": "P2P-like computing power sharing"
+  },
+  "STUDIO.advantages.p2p.feature3": {
+    "message": "Use privately or share with others"
+  },
+  "STUDIO.advantages.api.title": {
+    "message": "Workflow as API"
+  },
+  "STUDIO.advantages.api.description": {
+    "message": "Low-cost local function publishing as API service, MCP interface for AI Agent access"
+  },
+  "STUDIO.advantages.api.feature1": {
+    "message": "Low-cost local function publishing as API"
+  },
+  "STUDIO.advantages.api.feature2": {
+    "message": "MCP interface for AI Agent access"
+  },
+  "STUDIO.advantages.api.feature3": {
+    "message": "Auto-generate API documentation"
+  },
+  "STUDIO.ai.title": {
+    "message": "AI Integration Capabilities"
+  },
+  "STUDIO.ai.description": {
+    "message": "Integrate mainstream AI services with rich AI capability support"
+  },
+  "STUDIO.ai.feature1": {
+    "message": "Multiple large language models (GPT, Claude, Gemini, etc.)"
+  },
+  "STUDIO.ai.feature2": {
+    "message": "Image generation and processing (DALL-E, Midjourney, Stable Diffusion)"
+  },
+  "STUDIO.ai.feature3": {
+    "message": "Speech recognition and synthesis"
+  },
+  "STUDIO.ai.feature4": {
+    "message": "Real-time preview and debugging"
+  },
+  "STUDIO.techFeatures.title": {
+    "message": "Technical Features"
+  },
+  "STUDIO.case.title": {
+    "message": "Case Study: Building PDF-Craft with Studio"
+  },
+  "STUDIO.case.subtitle": {
+    "message": "Complete workflow from Block development to API publishing with OOMOL Studio"
+  },
+  "STUDIO.case.process.title": {
+    "message": "Build Process"
+  },
+  "STUDIO.case.step1.title": {
+    "message": "Write PDF Processing Blocks"
+  },
+  "STUDIO.case.step1.desc": {
+    "message": "Develop core functionality Blocks for PDF parsing, OCR recognition, and format conversion in VSCode"
+  },
+  "STUDIO.case.step2.title": {
+    "message": "Visual Workflow Composition"
+  },
+  "STUDIO.case.step2.desc": {
+    "message": "Connect Blocks through drag-and-drop to build complete PDF processing workflow"
+  },
+  "STUDIO.case.step3.title": {
+    "message": "One-Click API Publishing"
+  },
+  "STUDIO.case.step3.desc": {
+    "message": "Auto-generate RESTful API and MCP interface for AI Agent integration"
+  },
+  "STUDIO.case.deploy.title": {
+    "message": "Flexible Deployment"
+  },
+  "STUDIO.case.deploy.local.title": {
+    "message": "Local Development"
+  },
+  "STUDIO.case.deploy.local.desc": {
+    "message": "Run and debug locally, completely free"
+  },
+  "STUDIO.case.deploy.local.badge": {
+    "message": "Forever Free"
+  },
+  "STUDIO.case.deploy.frp.title": {
+    "message": "FRP Sharing"
+  },
+  "STUDIO.case.deploy.frp.desc": {
+    "message": "Share with team members via FRP protocol"
+  },
+  "STUDIO.case.deploy.frp.badge": {
+    "message": "Zero Cost Sharing"
+  },
+  "STUDIO.case.deploy.cloud.title": {
+    "message": "Cloud Deployment"
+  },
+  "STUDIO.case.deploy.cloud.desc": {
+    "message": "One-click deploy to OOMOL Cloud with auto-scaling"
+  },
+  "STUDIO.case.deploy.cloud.badge": {
+    "message": "Pay as You Go"
+  },
+  "STUDIO.case.stat2": {
+    "message": "Core Blocks"
+  },
+  "STUDIO.case.stat3": {
+    "message": "Deployment Options"
+  },
   "CREATE.workflow.title": {
     "message": "Visual Workflow Engine"
   },
@@ -1125,5 +1946,410 @@
   },
   "USE.userExperience.feature3": {
     "message": "Personalized settings, customize usage interface according to user preferences"
+  },
+  "CHAT.hero.description": {
+    "message": "MCP Tool-based AI chat assistant, build expert Agents by combining Tools"
+  },
+  "CHAT.hero.stat1": {
+    "message": "Protocol Support"
+  },
+  "CHAT.hero.statValue2": {
+    "message": "Multi-Model"
+  },
+  "CHAT.hero.stat2": {
+    "message": "Support"
+  },
+  "CHAT.hero.stat3": {
+    "message": "Expert System"
+  },
+  "CHAT.hero.cta.download": {
+    "message": "Download Now"
+  },
+  "CHAT.hero.cta.docs": {
+    "message": "View Docs"
+  },
+  "CHAT.useCases.title": {
+    "message": "Use Cases"
+  },
+  "CHAT.useCases.subtitle": {
+    "message": "Complete AI tasks through natural conversation"
+  },
+  "CHAT.useCase.conversation.title": {
+    "message": "Natural Conversation"
+  },
+  "CHAT.useCase.conversation.description": {
+    "message": "Use AI tools like chatting, multi-turn conversations maintain context coherence"
+  },
+  "CHAT.useCase.tools.title": {
+    "message": "MCP Tool Integration"
+  },
+  "CHAT.useCase.tools.description": {
+    "message": "Call MCP Tools created in Studio to achieve complex feature combinations"
+  },
+  "CHAT.useCase.knowledge.title": {
+    "message": "Enterprise Knowledge Base"
+  },
+  "CHAT.useCase.knowledge.description": {
+    "message": "Integrate enterprise knowledge to build domain-specific intelligent assistants"
+  },
+  "CHAT.useCase.collaboration.title": {
+    "message": "Team Collaboration"
+  },
+  "CHAT.useCase.collaboration.description": {
+    "message": "Share conversations and tool configurations to improve team collaboration efficiency"
+  },
+  "CHAT.features.title": {
+    "message": "Core Features"
+  },
+  "CHAT.features.mcp.title": {
+    "message": "MCP Tool Ecosystem"
+  },
+  "CHAT.features.mcp.description": {
+    "message": "Native MCP protocol support, directly call various tools"
+  },
+  "CHAT.features.mcp.feature1": {
+    "message": "Auto-discover and load MCP Tools"
+  },
+  "CHAT.features.mcp.feature2": {
+    "message": "Smart recommendation of tool combinations"
+  },
+  "CHAT.features.mcp.feature3": {
+    "message": "Tool invocation logging and debugging"
+  },
+  "CHAT.features.agent.title": {
+    "message": "Agent Expert System"
+  },
+  "CHAT.features.agent.description": {
+    "message": "Build domain-specific Agents by combining multiple Tools"
+  },
+  "CHAT.features.agent.feature1": {
+    "message": "Customize Agent roles and capabilities"
+  },
+  "CHAT.features.agent.feature2": {
+    "message": "Agent workflow orchestration"
+  },
+  "CHAT.features.agent.feature3": {
+    "message": "Agent sharing and reuse"
+  },
+  "CHAT.features.models.title": {
+    "message": "Multi-Model Support"
+  },
+  "CHAT.features.models.description": {
+    "message": "Support mainstream AI models, freely switch and choose"
+  },
+  "CHAT.features.models.feature1": {
+    "message": "GPT, Claude, Gemini and other mainstream models"
+  },
+  "CHAT.features.models.feature2": {
+    "message": "Model performance and cost comparison"
+  },
+  "CHAT.features.models.feature3": {
+    "message": "Auto-select the most suitable model"
+  },
+  "HEADLESS.hero.description": {
+    "message": "Docker containerized deployment to easily run OOMOL applications on servers and NAS"
+  },
+  "HEADLESS.hero.stat1": {
+    "message": "Containerized"
+  },
+  "HEADLESS.hero.stat2": {
+    "message": "Web Management"
+  },
+  "HEADLESS.hero.stat3": {
+    "message": "One-Click Install"
+  },
+  "HEADLESS.hero.cta.download": {
+    "message": "Download Now"
+  },
+  "HEADLESS.hero.cta.docs": {
+    "message": "View Docs"
+  },
+  "HEADLESS.useCases.title": {
+    "message": "Use Cases"
+  },
+  "HEADLESS.useCases.subtitle": {
+    "message": "Flexible deployment for different runtime environments"
+  },
+  "HEADLESS.useCase.docker.title": {
+    "message": "Docker Deployment"
+  },
+  "HEADLESS.useCase.docker.description": {
+    "message": "One command to install, supports mainstream Linux distributions and NAS systems"
+  },
+  "HEADLESS.useCase.cloud.title": {
+    "message": "Cloud Servers"
+  },
+  "HEADLESS.useCase.cloud.description": {
+    "message": "Easy deployment to Alibaba Cloud, AWS, Tencent Cloud and other platforms"
+  },
+  "HEADLESS.useCase.ci.title": {
+    "message": "CI/CD Integration"
+  },
+  "HEADLESS.useCase.ci.description": {
+    "message": "Integrate into automation workflows for continuous deployment and testing"
+  },
+  "HEADLESS.useCase.api.title": {
+    "message": "API Services"
+  },
+  "HEADLESS.useCase.api.description": {
+    "message": "Publish workflows as API services for other applications to call"
+  },
+  "HEADLESS.features.title": {
+    "message": "Core Features"
+  },
+  "HEADLESS.features.deploy.title": {
+    "message": "Fast Deployment"
+  },
+  "HEADLESS.features.deploy.description": {
+    "message": "Docker containerization, one-click deployment configuration"
+  },
+  "HEADLESS.features.deploy.feature1": {
+    "message": "Docker Compose one-click startup"
+  },
+  "HEADLESS.features.deploy.feature2": {
+    "message": "Auto-configure network and storage"
+  },
+  "HEADLESS.features.deploy.feature3": {
+    "message": "Multi-container orchestration support"
+  },
+  "HEADLESS.features.package.title": {
+    "message": "Package Management"
+  },
+  "HEADLESS.features.package.description": {
+    "message": "Complete package lifecycle management from installation to uninstallation"
+  },
+  "HEADLESS.features.package.feature1": {
+    "message": "Develop in Studio, deploy in Headless"
+  },
+  "HEADLESS.features.package.feature2": {
+    "message": "One-click install from Hub community"
+  },
+  "HEADLESS.features.package.feature3": {
+    "message": "Auto-detect version updates"
+  },
+  "HEADLESS.features.remote.title": {
+    "message": "Remote Management"
+  },
+  "HEADLESS.features.remote.description": {
+    "message": "Web interface management, access anytime, anywhere"
+  },
+  "HEADLESS.features.remote.feature1": {
+    "message": "Web UI unified management"
+  },
+  "HEADLESS.features.remote.feature2": {
+    "message": "Real-time running status view"
+  },
+  "HEADLESS.features.remote.feature3": {
+    "message": "RESTful API automation"
+  },
+  "HOME.Products.headless.description": {
+    "message": "Run OOMOL applications on servers and NAS devices"
+  },
+  "HOME.Scenes.dataScience.title": {
+    "message": "Data Science Pipeline"
+  },
+  "HOME.Scenes.dataScience.inner": {
+    "message": "Build end-to-end pipelines from data cleaning to model training to visualization, supporting pandas, scikit-learn, and GPU-accelerated deep learning."
+  },
+  "HOME.Scenes.multimedia.title": {
+    "message": "Multimedia Processing Automation"
+  },
+  "HOME.Scenes.multimedia.inner": {
+    "message": "Batch video transcoding, auto multi-language subtitles, PDF generation. Leverage ffmpeg, Pillow and more to build efficient media processing pipelines."
+  },
+  "HOME.Scenes.aiAgent.title": {
+    "message": "AI Agent Toolchain"
+  },
+  "HOME.Scenes.aiAgent.inner": {
+    "message": "Convert Blocks into AI-callable tools via MCP protocol, composing specialized Agents. Integrate data querying, file processing, API calls and more."
+  },
+  "HOME.Scenes.apiPublish.title": {
+    "message": "Rapid API Publishing"
+  },
+  "HOME.Scenes.apiPublish.inner": {
+    "message": "Package workflows as RESTful APIs or Chatbot interfaces, deploy to OOMOL Cloud with one click, auto-generating API docs and test UI."
+  },
+  "HOME.Scenes.enterprise.title": {
+    "message": "Enterprise Integration"
+  },
+  "HOME.Scenes.enterprise.inner": {
+    "message": "Docker containerized deployment to private cloud or K8s clusters, supporting CI/CD pipelines for continuous delivery and operations of enterprise-grade API services."
+  },
+  "HOME.ProductComparison.title": {
+    "message": "Choose Your Deployment Mode"
+  },
+  "HOME.ProductComparison.subtitle": {
+    "message": "From local development to enterprise deployment, OOMOL provides flexible product formats to meet different scenarios. 3 Modes, One Experience."
+  },
+  "HOME.ChatAgent.title": {
+    "message": "OOMOL Chat & Agent Ecosystem"
+  },
+  "HOME.ChatAgent.description": {
+    "message": "OOMOL Chat is the agent interface powered by your own blocks. Every block, workflow, or API becomes an MCP tool the agent can call."
+  },
+  "HOME.ChatAgent.feature1": {
+    "message": "Compose tools"
+  },
+  "HOME.ChatAgent.feature2": {
+    "message": "Build expert AI agents"
+  },
+  "HOME.ChatAgent.feature3": {
+    "message": "Deliver real products"
+  },
+  "HOME.ProductComparison.dimension.capability": {
+    "message": "Core Capability"
+  },
+  "HOME.ProductComparison.dimension.scenario": {
+    "message": "Use Cases"
+  },
+  "HOME.ProductComparison.dimension.tech": {
+    "message": "Technical Features"
+  },
+  "HOME.ProductComparison.product.studio": {
+    "message": "Studio"
+  },
+  "HOME.ProductComparison.product.headless": {
+    "message": "Headless"
+  },
+  "HOME.ProductComparison.product.cloud": {
+    "message": "Cloud"
+  },
+  "HOME.ProductComparison.studio.stage": {
+    "message": "Studio Software Deployment"
+  },
+  "HOME.ProductComparison.studio.capability": {
+    "message": "Comprehensive & Convenient"
+  },
+  "HOME.ProductComparison.studio.scenario": {
+    "message": "Personal project debugging, rapid team sharing, make full use of idle GPUs (e.g., PCs with Nvidia 4090)"
+  },
+  "HOME.ProductComparison.studio.tech": {
+    "message": "Ready to use with local installation, built-in container environment, one-click connectivity to run as online server"
+  },
+  "HOME.ProductComparison.headless.stage": {
+    "message": "Headless Image Deployment"
+  },
+  "HOME.ProductComparison.headless.capability": {
+    "message": "Freedom & Security for Enterprise"
+  },
+  "HOME.ProductComparison.headless.scenario": {
+    "message": "Highly customizable API services, automated workflow deployment, private cloud environments"
+  },
+  "HOME.ProductComparison.headless.tech": {
+    "message": "Supports Docker and open-source infrastructure, deeply customizable, flexible integration, controllable security"
+  },
+  "HOME.ProductComparison.cloud.stage": {
+    "message": "Cloud Serverless Deployment"
+  },
+  "HOME.ProductComparison.cloud.capability": {
+    "message": "Officially Provided Service, Performance Optimized to the Max"
+  },
+  "HOME.ProductComparison.cloud.scenario": {
+    "message": "Rapid launch for SMB teams, no infrastructure management. Simple with zero mental overhead."
+  },
+  "HOME.ProductComparison.cloud.tech": {
+    "message": "On-demand scaling, zero operations overhead, instant production deployment"
+  },
+  "CLOUD.hero.description": {
+    "message": "Managed runtime environment with RESTful API and MCP protocol endpoints, supporting auto-scaling"
+  },
+  "CLOUD.hero.stat1": {
+    "message": "Auto-Scaling"
+  },
+  "CLOUD.hero.stat2": {
+    "message": "API Service"
+  },
+  "CLOUD.hero.stat3": {
+    "message": "AI Integration"
+  },
+  "CLOUD.hero.cta.start": {
+    "message": "Get Started"
+  },
+  "CLOUD.hero.cta.docs": {
+    "message": "View Docs"
+  },
+  "CLOUD.useCases.title": {
+    "message": "Use Cases"
+  },
+  "CLOUD.useCases.subtitle": {
+    "message": "Focus on business logic without worrying about servers and operations"
+  },
+  "CLOUD.useCase.quickDeploy.title": {
+    "message": "Rapid Service Launch"
+  },
+  "CLOUD.useCase.quickDeploy.description": {
+    "message": "SMB teams deploy workflows as cloud APIs without server configuration"
+  },
+  "CLOUD.useCase.aiAgent.title": {
+    "message": "AI Agent Integration"
+  },
+  "CLOUD.useCase.aiAgent.description": {
+    "message": "Connect to Claude, ChatGPT and other AI platforms via MCP protocol, providing custom tools"
+  },
+  "CLOUD.useCase.miniapp.title": {
+    "message": "Mini-App Backend"
+  },
+  "CLOUD.useCase.miniapp.description": {
+    "message": "Provide RESTful APIs for mini-apps and mobile applications with auto-generated docs and test UI"
+  },
+  "CLOUD.useCase.noOps.title": {
+    "message": "Zero Operations"
+  },
+  "CLOUD.useCase.noOps.description": {
+    "message": "Auto-monitoring, logging, security isolation - no infrastructure management needed"
+  },
+  "CLOUD.features.title": {
+    "message": "Core Features"
+  },
+  "CLOUD.features.oneDeploy.title": {
+    "message": "One-Click Deploy"
+  },
+  "CLOUD.features.oneDeploy.description": {
+    "message": "Push directly from Studio to Cloud with auto domain and HTTPS configuration"
+  },
+  "CLOUD.features.oneDeploy.feature1": {
+    "message": "Git Push-style deployment"
+  },
+  "CLOUD.features.oneDeploy.feature2": {
+    "message": "Auto HTTPS certificate setup"
+  },
+  "CLOUD.features.oneDeploy.feature3": {
+    "message": "Zero-downtime updates"
+  },
+  "CLOUD.features.monitor.title": {
+    "message": "Auto Monitoring"
+  },
+  "CLOUD.features.monitor.description": {
+    "message": "Real-time performance monitoring, log viewing, error tracking"
+  },
+  "CLOUD.features.monitor.feature1": {
+    "message": "Real-time metrics dashboard"
+  },
+  "CLOUD.features.monitor.feature2": {
+    "message": "Centralized log search"
+  },
+  "CLOUD.features.monitor.feature3": {
+    "message": "Anomaly alerts"
+  },
+  "CLOUD.features.security.title": {
+    "message": "Security Isolation"
+  },
+  "CLOUD.features.security.description": {
+    "message": "Container-level isolation, access control, data encryption"
+  },
+  "CLOUD.features.security.feature1": {
+    "message": "Sandbox environment isolation"
+  },
+  "CLOUD.features.security.feature2": {
+    "message": "API key management"
+  },
+  "CLOUD.features.security.feature3": {
+    "message": "Data encryption in transit"
+  },
+  "STUDIO.hero.description": {
+    "message": "Local development environment for developers, VSCode-based visual programming tool with FRP protocol for P2P computing power sharing"
+  },
+  "HEADLESS.hero.description": {
+    "message": "Containerized deployment solution, packaging workflows as standalone Docker images for cloud servers, private clouds and K8s clusters"
   }
 }

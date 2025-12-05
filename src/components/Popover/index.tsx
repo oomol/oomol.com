@@ -1,11 +1,15 @@
 import React, { useState, useRef } from "react";
-import styles from "./styles.module.scss";
 import clsx from "clsx";
+import {
+  Popover as PopoverRoot,
+  PopoverContent,
+  PopoverTrigger,
+} from "@site/src/components/ui/popover";
 
 interface PopoverProps {
   trigger: React.ReactNode;
   content: React.ReactNode;
-  position?: "top" | "bottom";
+  position?: "top" | "right" | "bottom" | "left";
   className?: string;
 }
 
@@ -15,7 +19,7 @@ export const Popover: React.FC<PopoverProps> = ({
   position = "bottom",
   className,
 }) => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [open, setOpen] = useState(false);
   const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleMouseEnter = () => {
@@ -23,33 +27,34 @@ export const Popover: React.FC<PopoverProps> = ({
       clearTimeout(hideTimeoutRef.current);
       hideTimeoutRef.current = null;
     }
-    setIsVisible(true);
+    setOpen(true);
   };
 
   const handleMouseLeave = () => {
     hideTimeoutRef.current = setTimeout(() => {
-      setIsVisible(false);
+      setOpen(false);
     }, 200);
   };
 
   return (
-    <div
-      className={clsx(styles.popoverContainer, className)}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      {trigger}
-      {isVisible && (
+    <PopoverRoot open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
         <div
-          className={`${styles.popoverContent} ${
-            position === "top"
-              ? styles.popoverContentTop
-              : styles.popoverContentBottom
-          }`}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className={clsx(className)}
         >
-          {content}
+          {trigger}
         </div>
-      )}
-    </div>
+      </PopoverTrigger>
+      <PopoverContent
+        side={position}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className="w-auto p-0 border-0 bg-transparent shadow-none"
+      >
+        {content}
+      </PopoverContent>
+    </PopoverRoot>
   );
 };

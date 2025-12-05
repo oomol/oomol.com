@@ -1,7 +1,7 @@
 import { DownloadUrl } from "@site/src/download_url";
 import styles from "./styles.module.scss";
 import { Popover } from "../Popover";
-import { Button } from "../Button";
+import { Button } from "../ui/button";
 import { translate } from "@docusaurus/Translate";
 import { downloadStable } from "@site/src/lib/utils";
 import BrowserOnly from "@docusaurus/BrowserOnly";
@@ -58,15 +58,11 @@ export const DownloadButton = ({ stableTag }: DownloadButtonProps) => {
   return (
     <BrowserOnly
       fallback={
-        <Button
-          className={styles.download}
-          icon={
-            <div
-              className="i-codicon-desktop-download"
-              style={{ fontSize: 18 }}
-            />
-          }
-        >
+        <Button className={styles.download}>
+          <div
+            className="i-codicon-desktop-download"
+            style={{ fontSize: 18 }}
+          />
           {translate({
             message: stableTag
               ? "HOME.FirstScreen.download-macos-stable"
@@ -81,15 +77,11 @@ export const DownloadButton = ({ stableTag }: DownloadButtonProps) => {
             {detectOSAndArchitecture() === OS.MacOS ? (
               <Popover
                 trigger={
-                  <Button
-                    className={styles.download}
-                    icon={
-                      <div
-                        className="i-codicon-desktop-download"
-                        style={{ fontSize: 18 }}
-                      />
-                    }
-                  >
+                  <Button className={styles.download}>
+                    <div
+                      className="i-codicon-desktop-download"
+                      style={{ fontSize: 18 }}
+                    />
                     {translate({
                       message: stableTag
                         ? "HOME.FirstScreen.download-macos-stable"
@@ -102,23 +94,23 @@ export const DownloadButton = ({ stableTag }: DownloadButtonProps) => {
             ) : (
               <div className={styles.windowsBox}>
                 <Button
+                  asChild
                   className={styles.download}
                   onClick={() =>
                     downloadStable(null, DownloadUrl.Stable.Windows.x64)
                   }
-                  href={DownloadUrl.Stable.Windows.x64}
-                  icon={
+                >
+                  <a href={DownloadUrl.Stable.Windows.x64}>
                     <div
                       className="i-codicon-desktop-download"
                       style={{ fontSize: 18 }}
                     />
-                  }
-                >
-                  {translate({
-                    message: stableTag
-                      ? "HOME.FirstScreen.download-windows-stable"
-                      : "HOME.FirstScreen.download-windows",
-                  })}
+                    {translate({
+                      message: stableTag
+                        ? "HOME.FirstScreen.download-windows-stable"
+                        : "HOME.FirstScreen.download-windows",
+                    })}
+                  </a>
                 </Button>
                 <span className={styles.windowsSubtitle}>
                   {translate({

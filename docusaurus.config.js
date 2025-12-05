@@ -24,7 +24,6 @@ const config = {
   projectName: "oomol.com", // Usually your repo name.
 
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -32,6 +31,11 @@ const config = {
   i18n: {
     defaultLocale: "en",
     locales: ["en", "zh-CN"],
+  },
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
   },
   plugins: [
     "docusaurus-plugin-sass",
@@ -44,6 +48,7 @@ const config = {
         showReadingTime: true,
         blogSidebarCount: "ALL",
         blogSidebarTitle: "Updates",
+        onUntruncatedBlogPosts: "ignore",
       },
     ],
     function () {
@@ -102,6 +107,7 @@ const config = {
           showReadingTime: true,
           blogSidebarCount: "ALL",
           blogSidebarTitle: "All posts",
+          onUntruncatedBlogPosts: "ignore",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
         },
@@ -149,14 +155,15 @@ const config = {
       // Replace with your project's social card
       colorMode: {
         defaultMode: "dark",
-        disableSwitch: true,
-        respectPrefersColorScheme: false,
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
       },
       navbar: {
         title: "OOMOL",
         logo: {
           alt: "OOMOL Logo",
-          src: "img/logo.svg",
+          src: "img/logo-en-light.svg",
+          srcDark: "img/logo-en-dark.svg",
         },
         items: [
           // {
@@ -167,17 +174,18 @@ const config = {
           //     {
           //       to: "/studio",
           //       label: "navbar.oomol-studio",
-          //       className: "navbar-item-with-icon navbar-item-studio",
-          //     },
-          //     {
-          //       to: "/hub",
-          //       label: "navbar.oomol-hub",
-          //       className: "navbar-item-with-icon navbar-item-hub",
           //     },
           //     {
           //       to: "/chat",
           //       label: "navbar.oomol-chat",
-          //       className: "navbar-item-with-icon navbar-item-chat",
+          //     },
+          //     {
+          //       to: "/cloud",
+          //       label: "navbar.oomol-cloud",
+          //     },
+          //     {
+          //       to: "/headless",
+          //       label: "navbar.oomol-headless",
           //     },
           //   ],
           // },
@@ -188,10 +196,8 @@ const config = {
             label: "Docs",
           },
           { to: "/updates", label: "Updates", position: "left" },
-          { to: "/pricing", label: "Pricing", position: "left" },
-          { to: "/community", label: "Community", position: "left" },
-          { to: "/downloads", label: "Downloads", position: "left" },
           { to: "/blog", label: "Blog", position: "left" },
+          { to: "/contact-us", label: "Community", position: "left" },
           // { to: "/pricing", label: "Pricing", position: "left" },
         ],
       },
@@ -272,6 +278,10 @@ const config = {
               //   label: "Blog",
               //   to: "/blog",
               // },
+              {
+                label: "Contact Us",
+                to: "/contact-us",
+              },
               {
                 label: "Terms",
                 to: "/terms",

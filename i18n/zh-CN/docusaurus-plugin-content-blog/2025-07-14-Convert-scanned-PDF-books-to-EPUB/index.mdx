@@ -1,0 +1,80 @@
+---
+title: "PDF Craft: 将扫描版 PDF 书籍转换为 EPUB"
+authors: [taozeyu]
+tags: [workflow automation, PDF, EPUB, AI, LLM, OCR]
+date: 2025-07-14
+---
+
+import Image from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+<div style={{
+  position: "relative",
+  width: 720,
+  height: 405,
+  marginTop: "12px",
+  marginBottom: "72px",
+  overflow: "hidden",
+}}>
+  <iframe
+    src="https://www.youtube.com/embed/1yYBCVry77I?si=EfPneR7SHgrZ4J7Y"
+    title="YouTube video player"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    style={{
+      width: "100%",
+      height: "100%",
+    }}
+    border="0"
+    frameborder="no"
+    framespacing="0"
+    allowfullscreen="true"
+  />
+</div>
+
+你是否也收藏了大量的扫描版 PDF 文档？那些学术论文、电子书或者工作资料，虽然内容珍贵，但阅读体验却很糟糕——僵硬的版式、无法调整的字体大小，在手机上阅读时总是需要不断缩放。
+
+现在，这些 PDF 可以通过 pdf-craft 轻松转换成舒适的 EPUB 格式。就像把一堆纸质文档整理成便携的电子书，你终于可以在自己喜欢的 EPUB 阅读器上，以最适合自己的方式浏览这些内容：调整字号、切换夜间模式，甚至可以让 AI 朗读。
+
+[pdf-craft](https://github.com/oomol-lab/pdf-craft) 是一个专门用于处理扫描版书籍 PDF 的开源库。它可以精准识别 PDF 文件中的文本内容、页眉页脚、参考注释等。能够保持跨页内容的连贯性，还原正确的阅读顺序。此外，它还会使用 LLM 来构建完整的 EPUB 目录结构。
+
+在 oomol 中使用 pdf-craft 非常简单。首先，创建一个空白项目。然后在 [oomol store](https://hub.oomol.com/package/pdf-craft) 的搜索框中输入"pdf-craft"即可找到它。
+
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-14-Convert-scanned-PDF-books-to-EPUB/store.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-14-Convert-scanned-PDF-books-to-EPUB/store.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  />
+</figure>
+
+将"Analyse PDF"和"Generate EPUB"模块拖拽到空白流程中。然后，如图所示连接它们的 `output_dir` 和 `analysed_dir` 字段。
+
+<figure>
+  <Image
+    sources={{
+      light: useBaseUrl(
+        "/img/blogs/2025-07-14-Convert-scanned-PDF-books-to-EPUB/flow.png"
+      ),
+      dark: useBaseUrl(
+        "/img/blogs/2025-07-14-Convert-scanned-PDF-books-to-EPUB/flow.png"
+      ),
+    }}
+    width="720"
+  />
+  <figcaption
+    style={{ textAlign: "center", fontStyle: "italic", color: "#828282" }}
+  />
+</figure>
+
+然后，将 pdf 字段设置为要处理的 PDF 源文件，再将 `epub_file_path` 设置为转换后的 EPUB 文件路径。最后，点击右上角的运行按钮即可开始转换。

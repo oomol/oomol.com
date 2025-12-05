@@ -1,355 +1,252 @@
 import styles from "./styles.module.scss";
 
-import { useState, useEffect, useCallback, useRef } from "react";
-import clsx from "clsx";
 import Layout from "../../theme/Layout";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
-import { Spin } from "@site/src/components/Spin/Spin";
 import { translate } from "@docusaurus/Translate";
-import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import { FeatureBlockList } from "@site/src/components/FeatureBlockList/FeatureBlockList";
+import StudioPdfCraftCase from "@site/src/components/StudioPdfCraftCase";
 
-const createData = {
-  workflowEngine: {
-    title: translate({ message: "CREATE.workflow.title" }),
-    description: translate({ message: "CREATE.workflow.description" }),
-    features: [
-      {
-        content: translate({ message: "CREATE.workflow.feature1" }),
-        image: "/img/pages/create/workflow-editor.svg",
-      },
-      {
-        content: translate({ message: "CREATE.workflow.feature2" }),
-        image: "/img/pages/create/workflow-editor.svg",
-      },
-      {
-        content: translate({ message: "CREATE.workflow.feature3" }),
-        image: "/img/pages/create/workflow-editor.svg",
-      },
-      {
-        content: translate({ message: "CREATE.workflow.feature4" }),
-        image: "/img/pages/create/workflow-editor.svg",
-      },
-    ],
-  },
-  aiIntegration: {
-    title: translate({ message: "CREATE.ai.title" }),
-    description: translate({ message: "CREATE.ai.description" }),
-    features: [
-      {
-        content: translate({ message: "CREATE.ai.feature1" }),
-        image: "/img/pages/create/workflow-editor.svg",
-      },
-      {
-        content: translate({ message: "CREATE.ai.feature2" }),
-        image: "/img/pages/create/workflow-editor.svg",
-      },
-      {
-        content: translate({ message: "CREATE.ai.feature3" }),
-        image: "/img/pages/create/workflow-editor.svg",
-      },
-    ],
-  },
-};
-
-const featuresData = {
-  sceneOne: {
-    title: translate({ message: "FEATURES.sceneOne.title" }),
-    features: [
-      {
-        content: translate({ message: "FEATURES.sceneOne.content-1" }),
-        image: "/img/pages/features/feature-1.webp",
-      },
-      {
-        content: translate({ message: "FEATURES.sceneOne.content-2" }),
-        image: "/img/pages/features/feature-2.webp",
-      },
-      {
-        content: translate({ message: "FEATURES.sceneOne.content-3" }),
-        image: "/img/pages/features/feature-3.webp",
-      },
-      {
-        content: translate({ message: "FEATURES.sceneOne.content-4" }),
-        image: "/img/pages/features/feature-4.webp",
-      },
-    ],
-  },
-  sceneTwo: {
-    title: translate({ message: "FEATURES.sceneTwo.title" }),
-    features: [
-      {
-        content: translate({ message: "FEATURES.sceneTwo.content-5" }),
-        image: "/img/pages/features/feature-5.webp",
-      },
-      {
-        content: translate({ message: "FEATURES.sceneTwo.content-6" }),
-        image: "/img/pages/features/feature-6.webp",
-      },
-      {
-        content: translate({ message: "FEATURES.sceneTwo.content-7" }),
-        image: "/img/pages/features/feature-7.webp",
-      },
-    ],
-  },
-};
-
-interface CreateBlockProps {
-  title: string;
-  description: string;
-  features: {
-    content: string;
-    image: string;
-  }[];
-  layoutReverse?: boolean;
-}
-
-interface FeaturesBlockProps {
-  title: string;
-  features: {
-    content: string;
-    image: string;
-  }[];
-  layoutReverse?: boolean;
-}
-
-const CreateBlock = ({
-  title,
-  description,
-  features,
-  layoutReverse,
-}: CreateBlockProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
-
-  const TRANSITION_DURATION_MS = 5 * 1000;
-
-  const startAutoplayTimer = useCallback(() => {
-    if (timerRef.current) {
-      clearInterval(timerRef.current);
-    }
-
-    timerRef.current = setInterval(() => {
-      setCurrentIndex(prev => (prev + 1) % features.length);
-    }, TRANSITION_DURATION_MS);
-  }, [features.length]);
-
-  useEffect(() => {
-    startAutoplayTimer();
-    return () => {
-      if (timerRef.current) {
-        clearInterval(timerRef.current);
-      }
-    };
-  }, [startAutoplayTimer]);
-
-  const handleClick = useCallback(
-    (index: number) => {
-      setCurrentIndex(index);
-      startAutoplayTimer();
+// 开发者工作流数据
+const developerWorkflow = {
+  steps: [
+    {
+      number: "1",
+      title: translate({ message: "STUDIO.workflow.step1.title" }),
+      description: translate({ message: "STUDIO.workflow.step1.description" }),
+      features: [
+        translate({ message: "STUDIO.workflow.step1.feature1" }),
+        translate({ message: "STUDIO.workflow.step1.feature2" }),
+      ],
     },
-    [startAutoplayTimer]
-  );
+    {
+      number: "2",
+      title: translate({ message: "STUDIO.workflow.step2.title" }),
+      description: translate({ message: "STUDIO.workflow.step2.description" }),
+      features: [
+        translate({ message: "STUDIO.workflow.step2.feature1" }),
+        translate({ message: "STUDIO.workflow.step2.feature2" }),
+      ],
+    },
+    {
+      number: "3",
+      title: translate({ message: "STUDIO.workflow.step3.title" }),
+      description: translate({ message: "STUDIO.workflow.step3.description" }),
+      features: [
+        translate({ message: "STUDIO.workflow.step3.feature1" }),
+        translate({ message: "STUDIO.workflow.step3.feature2" }),
+      ],
+    },
+    {
+      number: "4",
+      title: translate({ message: "STUDIO.workflow.step4.title" }),
+      description: translate({ message: "STUDIO.workflow.step4.description" }),
+      features: [
+        translate({ message: "STUDIO.workflow.step4.feature1" }),
+        translate({ message: "STUDIO.workflow.step4.feature2" }),
+        translate({ message: "STUDIO.workflow.step4.feature3" }),
+      ],
+    },
+  ],
+};
 
+// 核心优势数据
+const coreAdvantages = [
+  {
+    icon: "💻",
+    title: translate({ message: "STUDIO.advantages.vscode.title" }),
+    description: translate({ message: "STUDIO.advantages.vscode.description" }),
+    features: [
+      translate({ message: "STUDIO.advantages.vscode.feature1" }),
+      translate({ message: "STUDIO.advantages.vscode.feature2" }),
+      translate({ message: "STUDIO.advantages.vscode.feature3" }),
+    ],
+  },
+  {
+    icon: "🔗",
+    title: translate({ message: "STUDIO.advantages.p2p.title" }),
+    description: translate({ message: "STUDIO.advantages.p2p.description" }),
+    features: [
+      translate({ message: "STUDIO.advantages.p2p.feature1" }),
+      translate({ message: "STUDIO.advantages.p2p.feature2" }),
+      translate({ message: "STUDIO.advantages.p2p.feature3" }),
+    ],
+  },
+  {
+    icon: "🚀",
+    title: translate({ message: "STUDIO.advantages.api.title" }),
+    description: translate({ message: "STUDIO.advantages.api.description" }),
+    features: [
+      translate({ message: "STUDIO.advantages.api.feature1" }),
+      translate({ message: "STUDIO.advantages.api.feature2" }),
+      translate({ message: "STUDIO.advantages.api.feature3" }),
+    ],
+  },
+];
+
+// AI 集成能力数据
+const aiCapabilities = {
+  title: translate({ message: "STUDIO.ai.title" }),
+  description: translate({ message: "STUDIO.ai.description" }),
+  features: [
+    {
+      icon: "🤖",
+      content: translate({ message: "STUDIO.ai.feature1" }),
+    },
+    {
+      icon: "🎨",
+      content: translate({ message: "STUDIO.ai.feature2" }),
+    },
+    {
+      icon: "🎤",
+      content: translate({ message: "STUDIO.ai.feature3" }),
+    },
+    {
+      icon: "⚡",
+      content: translate({ message: "STUDIO.ai.feature4" }),
+    },
+  ],
+};
+
+// 工作流步骤组件
+const WorkflowStep = ({ step }: { step: typeof developerWorkflow.steps[0]; index: number }) => {
   return (
-    <div
-      className={clsx(styles.createBlock, {
-        [styles.layoutReverse]: layoutReverse,
-      })}
-    >
-      <div className={styles.createLeft}>
-        <h1 className={styles.createTitle}>{title}</h1>
-        <p className={styles.createDescription}>{description}</p>
-        {features.map((item, index) => {
-          const isActive = index === currentIndex;
-
-          return (
-            <div
-              key={index}
-              className={clsx(styles.feature, {
-                [styles.active]: isActive,
-              })}
-              onClick={() => handleClick(index)}
-            >
-              <div className={styles.featureIcon}>
-                {isActive ? (
-                  <Spin
-                    size={24}
-                    strokeWidth={4}
-                    color="#7D7FE9"
-                    duration={TRANSITION_DURATION_MS}
-                  />
-                ) : (
-                  <i className={`${styles.icon} i-codicon-arrow-right`} />
-                )}
-              </div>
-              <div
-                className={clsx(styles.featureContent, {
-                  [styles.active]: isActive,
-                })}
-              >
-                {item.content}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      <div className={styles.imageWrapper}>
-        {features.map((feature, index) => (
-          <img
-            key={index}
-            className={clsx(
-              styles.image,
-              index === currentIndex && styles.imageVisible
-            )}
-            src={feature.image}
-            alt={feature.content}
-          />
-        ))}
+    <div className={styles.workflowStep}>
+      <div className={styles.stepNumber}>{step.number}</div>
+      <div className={styles.stepContent}>
+        <h3 className={styles.stepTitle}>{step.title}</h3>
+        <p className={styles.stepDescription}>{step.description}</p>
+        <ul className={styles.stepFeatures}>
+          {step.features.map((feature, idx) => (
+            <li key={idx}>{feature}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
 };
 
-const FeaturesBlock = ({
-  title,
-  features,
-  layoutReverse,
-}: FeaturesBlockProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
-
-  const TRANSITION_DURATION_MS = 5 * 1000;
-
-  const startAutoplayTimer = useCallback(() => {
-    if (timerRef.current) {
-      clearInterval(timerRef.current);
-    }
-
-    timerRef.current = setInterval(() => {
-      setCurrentIndex(prev => (prev + 1) % features.length);
-    }, TRANSITION_DURATION_MS);
-  }, [features.length]);
-
-  useEffect(() => {
-    startAutoplayTimer();
-    return () => {
-      if (timerRef.current) {
-        clearInterval(timerRef.current);
-      }
-    };
-  }, [startAutoplayTimer]);
-
-  const handleClick = useCallback(
-    (index: number) => {
-      setCurrentIndex(index);
-      startAutoplayTimer();
-    },
-    [startAutoplayTimer]
-  );
-
+// 核心优势卡片组件
+const AdvantageCard = ({ advantage }: { advantage: typeof coreAdvantages[0] }) => {
   return (
-    <div
-      className={clsx(styles.featuresBlock, {
-        [styles.layoutReverse]: layoutReverse,
-      })}
-    >
-      <div className={styles.featuresLeft}>
-        <h1 className={styles.featureTitle}>{title}</h1>
-        {features.map((item, index) => {
-          const isActive = index === currentIndex;
-
-          return (
-            <div
-              key={index}
-              className={clsx(styles.feature, {
-                [styles.active]: isActive,
-              })}
-              onClick={() => handleClick(index)}
-            >
-              <div className={styles.featureIcon}>
-                {isActive ? (
-                  <Spin
-                    size={24}
-                    strokeWidth={4}
-                    color="#7D7FE9"
-                    duration={TRANSITION_DURATION_MS}
-                  />
-                ) : (
-                  <i className={`${styles.icon} i-codicon-arrow-right`} />
-                )}
-              </div>
-              <div
-                className={clsx(styles.featureContent, {
-                  [styles.active]: isActive,
-                })}
-              >
-                {item.content}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      <div className={styles.imageWrapper}>
-        {features.map((feature, index) => (
-          <img
-            key={index}
-            className={clsx(
-              styles.image,
-              index === currentIndex && styles.imageVisible
-            )}
-            src={feature.image}
-            alt={feature.content}
-          />
+    <div className={styles.advantageCard}>
+      <div className={styles.advantageIcon}>{advantage.icon}</div>
+      <h3 className={styles.advantageTitle}>{advantage.title}</h3>
+      <p className={styles.advantageDescription}>{advantage.description}</p>
+      <ul className={styles.advantageFeatures}>
+        {advantage.features.map((feature, idx) => (
+          <li key={idx}>{feature}</li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };
 
-export default function CreatePage() {
+// AI 能力卡片组件
+const AICapabilityCard = ({ capability }: { capability: typeof aiCapabilities.features[0] }) => {
+  return (
+    <div className={styles.aiCapabilityCard}>
+      <span className={styles.aiIcon}>{capability.icon}</span>
+      <span className={styles.aiContent}>{capability.content}</span>
+    </div>
+  );
+};
+
+export default function StudioPage() {
   return (
     <Layout>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <h2 className={styles.title}>{translate({ message: "CREATE.title" })}</h2>
-          <span className={styles.description}>
-            {translate({ message: "CREATE.description" })}
-          </span>
-          <div className={styles.productInfo}>
-            <h3>OOMOL Studio</h3>
-            <p>{translate({ message: "CREATE.studio.description" })}</p>
+        {/* Hero 区域 */}
+        <div className={styles.hero}>
+          <h1 className={styles.heroTitle}>OOMOL Studio</h1>
+          <p className={styles.heroDescription}>
+            {translate({ message: "STUDIO.hero.description" })}
+          </p>
+
+          {/* 数据亮点 */}
+          <div className={styles.heroStats}>
+            <div className={styles.stat}>
+              <span className={styles.statValue}>20+</span>
+              <span className={styles.statLabel}>{translate({ message: "STUDIO.hero.stat1" })}</span>
+            </div>
+            <div className={styles.stat}>
+              <span className={styles.statValue}>3 分钟</span>
+              <span className={styles.statLabel}>{translate({ message: "STUDIO.hero.stat2" })}</span>
+            </div>
+            <div className={styles.stat}>
+              <span className={styles.statValue}>P2P</span>
+              <span className={styles.statLabel}>{translate({ message: "STUDIO.hero.stat3" })}</span>
+            </div>
+          </div>
+
+          {/* 双 CTA */}
+          <div className={styles.heroCTA}>
+            <a href="/downloads" className={styles.primaryButton}>
+              {translate({ message: "STUDIO.hero.cta.download" })}
+            </a>
+            <a href="/docs" className={styles.secondaryButton}>
+              {translate({ message: "STUDIO.hero.cta.docs" })}
+            </a>
           </div>
         </div>
-        <div className={styles["create-wrapper"]}>
-          <CreateBlock
-            title={createData.workflowEngine.title}
-            description={createData.workflowEngine.description}
-            features={createData.workflowEngine.features}
-          />
-          <CreateBlock
-            title={createData.aiIntegration.title}
-            description={createData.aiIntegration.description}
-            features={createData.aiIntegration.features}
-            layoutReverse
-          />
-        </div>
-        <div className={styles["features-wrapper"]}>
-          <FeaturesBlock
-            title={featuresData.sceneOne.title}
-            features={featuresData.sceneOne.features}
-          />
-          <FeaturesBlock
-            title={featuresData.sceneTwo.title}
-            features={featuresData.sceneTwo.features}
-            layoutReverse
-          />
-        </div>
-        <div className={styles.blocks}>
+
+        {/* 开发者工作流 */}
+        <section className={styles.workflowSection}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>
+              {translate({ message: "STUDIO.workflow.title" })}
+            </h2>
+            <p className={styles.sectionSubtitle}>
+              {translate({ message: "STUDIO.workflow.subtitle" })}
+            </p>
+          </div>
+          <div className={styles.workflowSteps}>
+            {developerWorkflow.steps.map((step, index) => (
+              <WorkflowStep key={index} step={step} index={index} />
+            ))}
+          </div>
+        </section>
+
+        {/* 核心差异化优势 */}
+        <section className={styles.advantagesSection}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>
+              {translate({ message: "STUDIO.advantages.title" })}
+            </h2>
+          </div>
+          <div className={styles.advantagesGrid}>
+            {coreAdvantages.map((advantage, index) => (
+              <AdvantageCard key={index} advantage={advantage} />
+            ))}
+          </div>
+        </section>
+
+        {/* AI 集成能力 */}
+        <section className={styles.aiSection}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>{aiCapabilities.title}</h2>
+            <p className={styles.sectionSubtitle}>{aiCapabilities.description}</p>
+          </div>
+          <div className={styles.aiCapabilitiesGrid}>
+            {aiCapabilities.features.map((capability, index) => (
+              <AICapabilityCard key={index} capability={capability} />
+            ))}
+          </div>
+        </section>
+
+        {/* PDF-Craft 实战案例 */}
+        <StudioPdfCraftCase />
+
+        {/* 技术特性快览 */}
+        <section className={styles.techFeaturesSection}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>
+              {translate({ message: "STUDIO.techFeatures.title" })}
+            </h2>
+          </div>
           <FeatureBlockList />
-        </div>
-        <HomepageFeatures />
+        </section>
+
+        {/* CTA 区域 */}
         <GetStartedPrompt />
       </div>
     </Layout>

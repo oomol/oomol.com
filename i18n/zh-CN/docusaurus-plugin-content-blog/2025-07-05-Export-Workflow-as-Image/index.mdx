@@ -305,8 +305,9 @@ docker load -i ~/Downloads/translate-pdf-to-epub.tar.zst  # 选择你保存镜�
 
 因为镜像的运行环境并不在 OOMOL Studio 内，所以我们无法分辨运行容器的用户是谁，而当前的工作流中使用到了 AI 进行翻译，OOMOL 会将翻译产生的费用折算为积分，使用 API-key 就可以将积分在对应用户的账户中扣除，让工作流正常运行。
 
-::info
+:::info
 如果工作流中用户并没有使用到 AI 之类的内置服务，或者使用了自己的 AI 服务，用户在启动容器的时候仍然需要传入 API-key，但是并不会产生费用。
+:::
 
 API-key 可以在 [OOMOL Console](https://console.oomol.com/panel/api-key) 中生成一个。
 

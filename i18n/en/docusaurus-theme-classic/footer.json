@@ -42,5 +42,9 @@
   "link.item.label.Privacy": {
     "message": "Privacy",
     "description": "The label of footer link with label=Privacy linking to /privacy"
+  },
+  "link.item.label.Contact Us": {
+    "message": "Contact Us",
+    "description": "The label of footer link with label=Contact Us linking to /contact-us"
   }
 }

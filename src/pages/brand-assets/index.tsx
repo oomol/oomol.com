@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import styles from "./styles.module.scss";
 import Layout from "@theme/Layout";
 import { translate } from "@docusaurus/Translate";
@@ -75,36 +75,39 @@ export default function BrandAssets() {
   const iconsRef = useRef(null);
   const typefaceRef = useRef(null);
 
-  const sections = [
-    {
-      id: "logos",
-      name: translate({
-        message: "HOME.BrandAssets.logos",
-      }),
-      ref: logosRef,
-    },
-    {
-      id: "colors",
-      name: translate({
-        message: "HOME.BrandAssets.colors",
-      }),
-      ref: colorsRef,
-    },
-    {
-      id: "icons",
-      name: translate({
-        message: "HOME.BrandAssets.icons",
-      }),
-      ref: iconsRef,
-    },
-    {
-      id: "typeface",
-      name: translate({
-        message: "HOME.BrandAssets.typeface",
-      }),
-      ref: typefaceRef,
-    },
-  ];
+  const sections = useMemo(
+    () => [
+      {
+        id: "logos",
+        name: translate({
+          message: "HOME.BrandAssets.logos",
+        }),
+        ref: logosRef,
+      },
+      {
+        id: "colors",
+        name: translate({
+          message: "HOME.BrandAssets.colors",
+        }),
+        ref: colorsRef,
+      },
+      {
+        id: "icons",
+        name: translate({
+          message: "HOME.BrandAssets.icons",
+        }),
+        ref: iconsRef,
+      },
+      {
+        id: "typeface",
+        name: translate({
+          message: "HOME.BrandAssets.typeface",
+        }),
+        ref: typefaceRef,
+      },
+    ],
+    []
+  );
 
   const handleClick = id => {
     setActiveSection(id);
@@ -172,7 +175,7 @@ export default function BrandAssets() {
       window.removeEventListener("scroll", handleScroll);
       if (scrollTimer) clearTimeout(scrollTimer);
     };
-  }, [sections, isManualScroll.current]);
+  }, [sections, isScrolling]);
 
   return (
     <Layout>

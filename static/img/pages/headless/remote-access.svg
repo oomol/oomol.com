@@ -1,0 +1,98 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#0B0B0B"/>
+
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid3" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1F1F1F" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#grid3)"/>
+
+  <!-- Browser window -->
+  <g transform="translate(80, 60)">
+    <rect width="640" height="480" fill="#1F1F1F" rx="8" stroke="#06B6D4" stroke-width="2"/>
+
+    <!-- Browser header -->
+    <rect width="640" height="40" fill="#252525" rx="8"/>
+    <circle cx="20" cy="20" r="6" fill="#FF5F56"/>
+    <circle cx="45" cy="20" r="6" fill="#FFBD2E"/>
+    <circle cx="70" cy="20" r="6" fill="#27C93F"/>
+
+    <!-- URL bar -->
+    <rect x="100" y="10" width="520" height="20" fill="#1F1F1F" rx="10"/>
+    <text x="115" y="24" fill="#06B6D4" font-family="monospace" font-size="12">https://headless.oomol.local:8080</text>
+  </g>
+
+  <!-- Dashboard content -->
+  <g transform="translate(100, 120)">
+    <!-- Title -->
+    <text x="20" y="30" fill="#06B6D4" font-family="Arial, sans-serif" font-size="20" font-weight="bold">Remote Dashboard</text>
+
+    <!-- Stats cards -->
+    <g transform="translate(0, 60)">
+      <!-- CPU Card -->
+      <rect width="180" height="100" fill="#252525" rx="6"/>
+      <text x="15" y="25" fill="#999999" font-family="Arial, sans-serif" font-size="12">CPU Usage</text>
+      <text x="15" y="60" fill="#06B6D4" font-family="Arial, sans-serif" font-size="32" font-weight="bold">42%</text>
+      <rect x="15" y="75" width="150" height="8" fill="#1F1F1F" rx="4"/>
+      <rect x="15" y="75" width="63" height="8" fill="#06B6D4" rx="4"/>
+
+      <!-- Memory Card -->
+      <g transform="translate(200, 0)">
+        <rect width="180" height="100" fill="#252525" rx="6"/>
+        <text x="15" y="25" fill="#999999" font-family="Arial, sans-serif" font-size="12">Memory</text>
+        <text x="15" y="60" fill="#0891B2" font-family="Arial, sans-serif" font-size="32" font-weight="bold">6.2 GB</text>
+        <rect x="15" y="75" width="150" height="8" fill="#1F1F1F" rx="4"/>
+        <rect x="15" y="75" width="90" height="8" fill="#0891B2" rx="4"/>
+      </g>
+
+      <!-- Packages Card -->
+      <g transform="translate(400, 0)">
+        <rect width="180" height="100" fill="#252525" rx="6"/>
+        <text x="15" y="25" fill="#999999" font-family="Arial, sans-serif" font-size="12">Active Packages</text>
+        <text x="15" y="60" fill="#27C93F" font-family="Arial, sans-serif" font-size="32" font-weight="bold">8</text>
+        <circle cx="150" cy="55" r="8" fill="#27C93F"/>
+      </g>
+    </g>
+
+    <!-- Running services -->
+    <g transform="translate(0, 190)">
+      <text x="0" y="0" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16" font-weight="600">Running Services</text>
+
+      <!-- Service 1 -->
+      <g transform="translate(0, 20)">
+        <rect width="600" height="50" fill="#1F1F1F" rx="4"/>
+        <circle cx="25" cy="25" r="6" fill="#27C93F"/>
+        <text x="45" y="30" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="14">image-processor</text>
+        <text x="520" y="30" fill="#999999" font-family="Arial, sans-serif" font-size="12">Running 2h 34m</text>
+      </g>
+
+      <!-- Service 2 -->
+      <g transform="translate(0, 80)">
+        <rect width="600" height="50" fill="#1F1F1F" rx="4"/>
+        <circle cx="25" cy="25" r="6" fill="#27C93F"/>
+        <text x="45" y="30" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="14">ai-workflow</text>
+        <text x="520" y="30" fill="#999999" font-family="Arial, sans-serif" font-size="12">Running 5h 12m</text>
+      </g>
+
+      <!-- Service 3 -->
+      <g transform="translate(0, 140)">
+        <rect width="600" height="50" fill="#1F1F1F" rx="4"/>
+        <circle cx="25" cy="25" r="6" fill="#27C93F"/>
+        <text x="45" y="30" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="14">data-analyzer</text>
+        <text x="520" y="30" fill="#999999" font-family="Arial, sans-serif" font-size="12">Running 1h 08m</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Connection indicator -->
+  <g transform="translate(680, 80)">
+    <circle cx="0" cy="0" r="4" fill="#27C93F"/>
+    <circle cx="0" cy="0" r="8" fill="#27C93F" opacity="0.3">
+      <animate attributeName="r" from="8" to="16" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" from="0.3" to="0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
