@@ -9,12 +9,8 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 const downloadData = [
   {
-    type: translate({
-      message: "HOME.Downloads.Nightly.title",
-    }),
-    subTitle: translate({
-      message: "HOME.Downloads.Nightly.subtitle",
-    }),
+    type: translate({ message: "HOME.Downloads.Nightly.title" }),
+    subTitle: translate({ message: "HOME.Downloads.Nightly.subtitle" }),
     downloads: [
       {
         text: translate({
@@ -40,12 +36,8 @@ const downloadData = [
     ],
   },
   {
-    type: translate({
-      message: "HOME.Downloads.Stable.title",
-    }),
-    subTitle: translate({
-      message: "HOME.Downloads.Stable.subtitle",
-    }),
+    type: translate({ message: "HOME.Downloads.Stable.title" }),
+    subTitle: translate({ message: "HOME.Downloads.Stable.subtitle" }),
     downloads: [
       {
         text: translate({
@@ -83,14 +75,10 @@ export default function Downloads() {
         <img className={styles.image} src={logoUrl} />
         <div className={styles.titleBox}>
           <h1 className={styles.title}>
-            {translate({
-              message: "HOME.Downloads.title",
-            })}
+            {translate({ message: "HOME.Downloads.title" })}
           </h1>
           <p className={styles["sub-title"]}>
-            {translate({
-              message: "HOME.Downloads.subtitle",
-            })}
+            {translate({ message: "HOME.Downloads.subtitle" })}
           </p>
         </div>
         <div className={styles.cards}>
