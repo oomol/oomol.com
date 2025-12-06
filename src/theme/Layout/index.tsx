@@ -8,9 +8,11 @@ import Footer from "@theme/Footer";
 import LayoutProvider from "@theme/Layout/Provider";
 import Navbar from "@theme/Navbar";
 import { clsx } from "clsx";
-import React from "react";
+import React, { useEffect } from "react";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import { CookieConsentComponent } from "@site/src/components/CookieConsent/CookieConsentComponent";
+import { pluginConfig } from "@site/src/components/CookieConsent/cookieConsentConfig";
+import CookieConsent from "vanilla-cookieconsent";
 
 interface LayoutProps {
   children: ReactNode;
