@@ -2113,7 +2113,31 @@
     "description": "The text for authors with 0 blog post"
   },
   "HEADLESS.hero.description": {
-    "message": "Docker 容器化部署，轻松在服务器和 NAS 上运行 OOMOL 应用"
+    "message": "OOMOL Headless 本质上是将 OOMOL Studio 的运行环境以容器镜像的方式交付给开发者。自由部署，拒绝捆绑。"
+  },
+  "HEADLESS.philosophy.title": {
+    "message": "我们的承诺：自由与开放"
+  },
+  "HEADLESS.philosophy.subtitle": {
+    "message": "我们深知开发者对商业化捆绑的担忧。OOMOL 尊重你的意志，让技术回归纯粹。"
+  },
+  "HEADLESS.philosophy.freedom.title": {
+    "message": "部署自由"
+  },
+  "HEADLESS.philosophy.freedom.desc": {
+    "message": "你的代码，你的设备。无论是个人 NAS、私有服务器还是公有云，只要你愿意，想跑哪里就跑哪里。"
+  },
+  "HEADLESS.philosophy.opensource.title": {
+    "message": "内核开源"
+  },
+  "HEADLESS.philosophy.opensource.desc": {
+    "message": "我们将 OOMOL Runtime 核心代码开源。Code is Law，这是我们对“拒绝过度商业化”最直接的回答。"
+  },
+  "HEADLESS.philosophy.community.title": {
+    "message": "安心共建"
+  },
+  "HEADLESS.philosophy.community.desc": {
+    "message": "没有隐藏条款，没有强制升级。我们致力于构建一个让大家安心使用、开心共建的开发者生态。"
   },
   "HEADLESS.hero.stat1": {
     "message": "容器化部署"

@@ -2110,7 +2110,31 @@
     "message": "Auto-select the most suitable model"
   },
   "HEADLESS.hero.description": {
-    "message": "Docker containerized deployment to easily run OOMOL applications on servers and NAS"
+    "message": "OOMOL Headless is essentially delivering the OOMOL Studio runtime environment to developers as a container image. Deploy freely, no lock-in."
+  },
+  "HEADLESS.philosophy.title": {
+    "message": "Our Commitment: Freedom & Openness"
+  },
+  "HEADLESS.philosophy.subtitle": {
+    "message": "We understand developers' concerns about commercial lock-in. OOMOL respects your will and lets technology return to purity."
+  },
+  "HEADLESS.philosophy.freedom.title": {
+    "message": "Deployment Freedom"
+  },
+  "HEADLESS.philosophy.freedom.desc": {
+    "message": "Your code, your device. Whether it's a personal NAS, private server, or public cloud, run it wherever you want."
+  },
+  "HEADLESS.philosophy.opensource.title": {
+    "message": "Open Source Kernel"
+  },
+  "HEADLESS.philosophy.opensource.desc": {
+    "message": "We open-sourced the OOMOL Runtime core code. Code is Law—this is our direct answer to 'refusing excessive commercialization'."
+  },
+  "HEADLESS.philosophy.community.title": {
+    "message": "Build with Peace of Mind"
+  },
+  "HEADLESS.philosophy.community.desc": {
+    "message": "No hidden terms, no forced upgrades. We are committed to building a developer ecosystem where everyone can use it with peace of mind and build happily together."
   },
   "HEADLESS.hero.stat1": {
     "message": "Containerized"
