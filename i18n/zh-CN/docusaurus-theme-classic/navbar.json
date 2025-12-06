@@ -67,6 +67,10 @@
     "message": "产品",
     "description": "Navbar item with label Product"
   },
+  "item.label.navbar.download": {
+    "message": "下载",
+    "description": "Navbar item with label navbar.download"
+  },
   "title": {
     "message": "OOMOL",
     "description": "The title in the navbar"

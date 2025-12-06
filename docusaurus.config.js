@@ -207,7 +207,7 @@ const config = {
           },
           { to: "/updates", label: "Updates", position: "left" },
           { to: "/blog", label: "Blog", position: "left" },
-          { to: "/downloads", label: "Download", position: "left" },
+          { to: "/downloads", label: "navbar.download", position: "left" },
           { to: "/pricing", label: "Pricing", position: "left" },
         ],
       },

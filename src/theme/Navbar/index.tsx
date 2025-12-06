@@ -168,7 +168,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
           <div className={styles.actions}>
             <Link to="https://hub.oomol.com" className={styles.downloadButton}>
               <i className="i-lucide-globe" />
-              Community
+              {translate({ message: "Theme.Navbar.community" })}
             </Link>
             <BrowserOnly
               fallback={

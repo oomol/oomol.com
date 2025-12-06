@@ -67,6 +67,10 @@
     "message": "Product",
     "description": "Navbar item with label Product"
   },
+  "item.label.navbar.download": {
+    "message": "Download",
+    "description": "Navbar item with label navbar.download"
+  },
   "title": {
     "message": "OOMOL",
     "description": "The title in the navbar"
