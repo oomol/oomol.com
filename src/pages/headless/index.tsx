@@ -145,10 +145,7 @@ export default function HeadlessPage() {
 
         {/* Footer CTA */}
         <section className={styles.ctaSection}>
-          <a
-            href="/docs/headless"
-            className={styles.primaryBtn}
-          >
+          <a href="/docs/headless" className={styles.primaryBtn}>
             {translate({ message: "HEADLESS.hero.cta.docs" })}
           </a>
         </section>

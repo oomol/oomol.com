@@ -14,15 +14,7 @@ export default function AppPage() {
           <h1 className={styles.heroTitle}>
             {translate({ message: "APP.new.hero.title" })}
           </h1>
-          <p
-            className={styles.heroSubtitle}
-            style={{
-              fontSize: "1.8rem",
-              fontWeight: 600,
-              marginBottom: "1.5rem",
-              color: "var(--ifm-heading-color)",
-            }}
-          >
+          <p className={styles.heroSubtitle}>
             {translate({ message: "APP.new.hero.subtitle" })}
           </p>
           <p className={styles.heroDescription}>
