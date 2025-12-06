@@ -166,9 +166,9 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
             <NavbarItem {...item} key={i} />
           ))}
           <div className={styles.actions}>
-            <Link to="/downloads" className={styles.downloadButton}>
-              <i className="i-lucide-download" />
-              {translate({ message: "Theme.Navbar.download" })}
+            <Link to="https://hub.oomol.com" className={styles.downloadButton}>
+              <i className="i-lucide-globe" />
+              Community
             </Link>
             <BrowserOnly
               fallback={
