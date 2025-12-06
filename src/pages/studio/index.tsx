@@ -1,7 +1,5 @@
 import styles from "./styles.module.scss";
 
-import Link from "@docusaurus/Link";
-import { DownloadButton } from "@site/src/components/DownloadButton";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import CodeBlock from "@theme/CodeBlock";
 import Layout from "@theme/Layout";
@@ -155,26 +153,6 @@ $ apt-get install ffmpeg
 # It just works.`}
               </CodeBlock>
             </div>
-          </div>
-        </section>
-
-        {/* 4. Conclusion */}
-        <section className={styles.conclusionSection}>
-          <h2>Ready to code visually?</h2>
-          <p>
-            OOMOL Studio is the missing bridge between your code and your
-            workflows. Open source, local-first, and designed for you.
-          </p>
-          <div
-            style={{ display: "flex", justifyContent: "center", gap: "16px" }}
-          >
-            <DownloadButton />
-            <Link
-              className="button button--secondary button--lg"
-              to="https://github.com/oomol/oomol-studio"
-            >
-              Star on GitHub
-            </Link>
           </div>
         </section>
 
