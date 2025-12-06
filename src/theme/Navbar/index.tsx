@@ -173,18 +173,21 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
             <BrowserOnly
               fallback={
                 <a className={styles.loginButton}>
+                  <i className="i-lucide-log-in" />
                   {translate({ message: "Theme.Navbar.login" })}
                 </a>
               }
             >
               {() => {
+                const signedIn = isSignedIn();
                 return (
                   <a
                     className={styles.loginButton}
                     onClick={() => handleSignin()}
                   >
+                    <i className={signedIn ? "i-lucide-layout-dashboard" : "i-lucide-log-in"} />
                     {translate({
-                      message: isSignedIn()
+                      message: signedIn
                         ? "Theme.Navbar.console"
                         : "Theme.Navbar.login",
                     })}

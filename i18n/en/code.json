@@ -2420,5 +2420,92 @@
   "APP.new.applet.description": { "message": "When user needs are clear, direct execution with parameters for efficiency." },
   "APP.new.applet.devValue": { "message": "Function as App: Auto-generated UI, zero frontend code." },
   "APP.new.cta.download": { "message": "Download" },
-  "APP.new.cta.docs": { "message": "View Docs" }
+  "APP.new.cta.docs": { "message": "View Docs" },
+  "STUDIO.page.title": {
+    "message": "OOMOL Studio - Design Philosophy"
+  },
+  "STUDIO.page.description": {
+    "message": "Built by developers, for developers. Why we built OOMOL Studio the way we did."
+  },
+  "STUDIO.manifesto.title": {
+    "message": "Built by Developers, For Developers."
+  },
+  "STUDIO.manifesto.subtitle": {
+    "message": "We built OOMOL Studio because we were tired of choosing between \"easy to use\" and \"powerful enough.\""
+  },
+  "STUDIO.story.paragraph1": {
+    "message": "As engineers, we love automation. We love chaining tools together to build pipelines, agents, and data flows. But whenever we tried to use existing \"Workflow Platforms,\" we hit a wall."
+  },
+  "STUDIO.story.frustration.line1": {
+    "message": "\"Why do I have to learn a proprietary JSON syntax just to write an if/else statement?\""
+  },
+  "STUDIO.story.frustration.line2": {
+    "message": "\"Why can't I just import a library? Why do I have to wait for the platform to support it?\""
+  },
+  "STUDIO.story.frustration.line3": {
+    "message": "\"Why am I coding in a textarea with no autocomplete?\""
+  },
+  "STUDIO.story.paragraph2": {
+    "message": "We realized that Low Code often meant High Frustration for professional developers. It abstracted away the things we actually liked: control, debugging, and the ecosystem."
+  },
+  "STUDIO.story.paragraph3": {
+    "message": "So we decided to build something different. Not a \"No-Code\" toy, but a real IDE."
+  },
+  "STUDIO.principles.header": {
+    "message": "Our Design Philosophy"
+  },
+  "STUDIO.principle1.title": {
+    "message": "1. Code is the Source of Truth"
+  },
+  "STUDIO.principle1.paragraph1": {
+    "message": "We didn't invent a new visual language. We simply visualize standard code."
+  },
+  "STUDIO.principle1.paragraph2": {
+    "message": "In OOMOL, a Node is just a Function. The inputs are arguments, the outputs are return values."
+  },
+  "STUDIO.principle1.paragraph3": {
+    "message": "You don't \"configure\" a node; you write a function. The UI is just a reflection of your code's signature."
+  },
+  "STUDIO.principle1.codeComment1": {
+    "message": "// This function..."
+  },
+  "STUDIO.principle1.codeComment2": {
+    "message": "// ...Automatically becomes a Node with:"
+  },
+  "STUDIO.principle1.codeComment3": {
+    "message": "// Input port: \"text\""
+  },
+  "STUDIO.principle1.codeComment4": {
+    "message": "// Output port: \"result\""
+  },
+  "STUDIO.principle2.title": {
+    "message": "2. Respect the Tooling"
+  },
+  "STUDIO.principle2.paragraph1": {
+    "message": "We believe you shouldn't have to downgrade your environment just to use a visual tool."
+  },
+  "STUDIO.principle2.paragraph2": {
+    "message": "That's why we embedded the full Monaco Editor (VS Code) into every node."
+  },
+  "STUDIO.principle2.paragraph3": {
+    "message": "Intellisense, Type Checking, Linting, Formatting, and even full Debugging Protocol (DAP) support. It feels like home because it is home."
+  },
+  "STUDIO.principle3.title": {
+    "message": "3. No Artificial Limits"
+  },
+  "STUDIO.principle3.paragraph1": {
+    "message": "Traditional platforms run your code in a restricted, proprietary sandbox. If you need a C++ binding or a system-level tool, you're stuck."
+  },
+  "STUDIO.principle3.paragraph2": {
+    "message": "OOMOL runs on Standard Docker Containers."
+  },
+  "STUDIO.principle3.paragraph3": {
+    "message": "Need ffmpeg? apt-get install it. Need a specific Python version? Just define it. You have full root access to the runtime environment."
+  },
+  "STUDIO.principle3.codeComment": {
+    "message": "# No wrappers. Just standard tools."
+  },
+  "STUDIO.principle3.codeComment2": {
+    "message": "# It just works."
+  }
 }

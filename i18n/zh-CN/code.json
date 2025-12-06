@@ -2423,5 +2423,92 @@
   "APP.new.applet.description": { "message": "当用户需求明确时，直接填参调用，高效精准。" },
   "APP.new.applet.devValue": { "message": "Function as App：自动生成表单 UI，零前端代码" },
   "APP.new.cta.download": { "message": "下载体验" },
-  "APP.new.cta.docs": { "message": "查看文档" }
+  "APP.new.cta.docs": { "message": "查看文档" },
+  "STUDIO.page.title": {
+    "message": "OOMOL Studio - 设计哲学"
+  },
+  "STUDIO.page.description": {
+    "message": "由开发者构建，为开发者服务。为什么我们要这样构建 OOMOL Studio。"
+  },
+  "STUDIO.manifesto.title": {
+    "message": "由开发者构建，为开发者服务。"
+  },
+  "STUDIO.manifesto.subtitle": {
+    "message": "我们构建 OOMOL Studio，是因为厌倦了在「易于使用」和「足够强大」之间做选择。"
+  },
+  "STUDIO.story.paragraph1": {
+    "message": "作为工程师，我们热爱自动化。我们喜欢将工具链接在一起构建流水线、智能体和数据流。但每当我们尝试使用现有的「工作流平台」时，总会遇到障碍。"
+  },
+  "STUDIO.story.frustration.line1": {
+    "message": "「为什么我必须学习专有的 JSON 语法才能写一个 if/else 语句？」"
+  },
+  "STUDIO.story.frustration.line2": {
+    "message": "「为什么我不能直接导入一个库？为什么我必须等待平台支持它？」"
+  },
+  "STUDIO.story.frustration.line3": {
+    "message": "「为什么我要在一个没有自动补全的文本框里写代码？」"
+  },
+  "STUDIO.story.paragraph2": {
+    "message": "我们意识到，对于专业开发者来说，低代码往往意味着高度挫折。它抽象掉了我们真正喜欢的东西：控制、调试和生态系统。"
+  },
+  "STUDIO.story.paragraph3": {
+    "message": "所以我们决定构建一些不同的东西。不是一个「无代码」玩具，而是一个真正的 IDE。"
+  },
+  "STUDIO.principles.header": {
+    "message": "我们的设计理念"
+  },
+  "STUDIO.principle1.title": {
+    "message": "1. 代码是真理之源"
+  },
+  "STUDIO.principle1.paragraph1": {
+    "message": "我们没有发明新的可视化语言。我们只是将标准代码可视化。"
+  },
+  "STUDIO.principle1.paragraph2": {
+    "message": "在 OOMOL 中，节点就是函数。输入是参数，输出是返回值。"
+  },
+  "STUDIO.principle1.paragraph3": {
+    "message": "你不需要「配置」节点；你只需编写函数。UI 只是代码签名的反映。"
+  },
+  "STUDIO.principle1.codeComment1": {
+    "message": "// 这个函数..."
+  },
+  "STUDIO.principle1.codeComment2": {
+    "message": "// ...自动变成一个节点："
+  },
+  "STUDIO.principle1.codeComment3": {
+    "message": "// 输入端口: \"text\""
+  },
+  "STUDIO.principle1.codeComment4": {
+    "message": "// 输出端口: \"result\""
+  },
+  "STUDIO.principle2.title": {
+    "message": "2. 尊重工具链"
+  },
+  "STUDIO.principle2.paragraph1": {
+    "message": "我们认为，你不应该为了使用可视化工具而降级你的开发环境。"
+  },
+  "STUDIO.principle2.paragraph2": {
+    "message": "这就是为什么我们在每个节点中嵌入了完整的 Monaco 编辑器 (VS Code)。"
+  },
+  "STUDIO.principle2.paragraph3": {
+    "message": "智能感知、类型检查、代码检查、格式化，甚至完整的调试协议 (DAP) 支持。感觉像家一样，因为它就是家。"
+  },
+  "STUDIO.principle3.title": {
+    "message": "3. 没有人为限制"
+  },
+  "STUDIO.principle3.paragraph1": {
+    "message": "传统平台在受限的专有沙箱中运行你的代码。如果你需要 C++ 绑定或系统级工具，你就会被困住。"
+  },
+  "STUDIO.principle3.paragraph2": {
+    "message": "OOMOL 运行在标准 Docker 容器上。"
+  },
+  "STUDIO.principle3.paragraph3": {
+    "message": "需要 ffmpeg？apt-get install 安装它。需要特定的 Python 版本？直接定义就行。你对运行时环境有完全的 root 访问权限。"
+  },
+  "STUDIO.principle3.codeComment": {
+    "message": "# 没有封装。只有标准工具。"
+  },
+  "STUDIO.principle3.codeComment2": {
+    "message": "# 就是这么简单。"
+  }
 }
