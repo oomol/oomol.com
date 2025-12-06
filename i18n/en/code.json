@@ -2313,101 +2313,68 @@
   "HOME.ProductComparison.cloud.tech": {
     "message": "On-demand scaling, zero operations overhead, instant production deployment"
   },
+  "CLOUD.hero.title": {
+    "message": "Focus on Coding, Enjoy Programming"
+  },
   "CLOUD.hero.description": {
-    "message": "Managed runtime environment with RESTful API and MCP protocol endpoints, supporting auto-scaling"
+    "message": "You write the Function Block, leave the rest to OOMOL. Free yourself from operations and let your ideas take flight instantly."
   },
   "CLOUD.hero.stat1": {
-    "message": "Auto-Scaling"
+    "message": "Painless Gen"
   },
   "CLOUD.hero.stat2": {
-    "message": "API Service"
+    "message": "Pay-as-you-go"
   },
   "CLOUD.hero.stat3": {
-    "message": "AI Integration"
+    "message": "Save Effort"
   },
   "CLOUD.hero.cta.start": {
-    "message": "Get Started"
+    "message": "Start Building"
   },
   "CLOUD.hero.cta.docs": {
-    "message": "View Docs"
+    "message": "Learn More"
   },
-  "CLOUD.useCases.title": {
-    "message": "Use Cases"
+  "CLOUD.painPoints.title": {
+    "message": "Delivery Shouldn't Be Torture"
   },
-  "CLOUD.useCases.subtitle": {
-    "message": "Focus on business logic without worrying about servers and operations"
+  "CLOUD.painPoints.subtitle": {
+    "message": "We know the struggle as developers"
   },
-  "CLOUD.useCase.quickDeploy.title": {
-    "message": "Rapid Service Launch"
+  "CLOUD.painPoints.description": {
+    "message": "Coding is creative joy, but delivering code is often a burden. Servers, environments, deployment, UI design... these roadblocks kill many genius ideas. We want to change that."
   },
-  "CLOUD.useCase.quickDeploy.description": {
-    "message": "SMB teams deploy workflows as cloud APIs without server configuration"
+  "CLOUD.solution.title": {
+    "message": "OOMOL Cloud: Instant Launch"
   },
-  "CLOUD.useCase.aiAgent.title": {
-    "message": "AI Agent Integration"
+  "CLOUD.solution.subtitle": {
+    "message": "Write the Block, OOMOL handles the rest"
   },
-  "CLOUD.useCase.aiAgent.description": {
-    "message": "Connect to Claude, ChatGPT and other AI platforms via MCP protocol, providing custom tools"
+  "CLOUD.modes.library.title": {
+    "message": "Publish as Library"
   },
-  "CLOUD.useCase.miniapp.title": {
-    "message": "Mini-App Backend"
+  "CLOUD.modes.library.description": {
+    "message": "Share Blocks with others or compose them into new features. Let your code be the foundation of community innovation."
   },
-  "CLOUD.useCase.miniapp.description": {
-    "message": "Provide RESTful APIs for mini-apps and mobile applications with auto-generated docs and test UI"
+  "CLOUD.modes.serverless.title": {
+    "message": "Deploy as Cloud Function"
   },
-  "CLOUD.useCase.noOps.title": {
-    "message": "Zero Operations"
+  "CLOUD.modes.serverless.description": {
+    "message": "One-click deploy as Serverless API. No Ops, auto-scaling, providing stable API services for others."
   },
-  "CLOUD.useCase.noOps.description": {
-    "message": "Auto-monitoring, logging, security isolation - no infrastructure management needed"
+  "CLOUD.modes.mcp.title": {
+    "message": "Provide for AI (MCP)"
   },
-  "CLOUD.features.title": {
-    "message": "Core Features"
+  "CLOUD.modes.mcp.description": {
+    "message": "Publish via MCP (Model Context Protocol), allowing AI Agents to directly call your functions and connect to the intelligent world."
   },
-  "CLOUD.features.oneDeploy.title": {
-    "message": "One-Click Deploy"
+  "CLOUD.pricing.title": {
+    "message": "Pay Per Call, No Upfront Cost"
   },
-  "CLOUD.features.oneDeploy.description": {
-    "message": "Push directly from Studio to Cloud with auto domain and HTTPS configuration"
+  "CLOUD.pricing.description": {
+    "message": "No expensive server fees, no complex prepaid plans. We charge by call count. Save money, save effort, and focus on the joy of programming."
   },
-  "CLOUD.features.oneDeploy.feature1": {
-    "message": "Git Push-style deployment"
-  },
-  "CLOUD.features.oneDeploy.feature2": {
-    "message": "Auto HTTPS certificate setup"
-  },
-  "CLOUD.features.oneDeploy.feature3": {
-    "message": "Zero-downtime updates"
-  },
-  "CLOUD.features.monitor.title": {
-    "message": "Auto Monitoring"
-  },
-  "CLOUD.features.monitor.description": {
-    "message": "Real-time performance monitoring, log viewing, error tracking"
-  },
-  "CLOUD.features.monitor.feature1": {
-    "message": "Real-time metrics dashboard"
-  },
-  "CLOUD.features.monitor.feature2": {
-    "message": "Centralized log search"
-  },
-  "CLOUD.features.monitor.feature3": {
-    "message": "Anomaly alerts"
-  },
-  "CLOUD.features.security.title": {
-    "message": "Security Isolation"
-  },
-  "CLOUD.features.security.description": {
-    "message": "Container-level isolation, access control, data encryption"
-  },
-  "CLOUD.features.security.feature1": {
-    "message": "Sandbox environment isolation"
-  },
-  "CLOUD.features.security.feature2": {
-    "message": "API key management"
-  },
-  "CLOUD.features.security.feature3": {
-    "message": "Data encryption in transit"
+  "CLOUD.pricing.cta": {
+    "message": "View Pricing"
   },
   "STUDIO.hero.description": {
     "message": "Local development environment for developers, VSCode-based visual programming tool with FRP protocol for P2P computing power sharing"

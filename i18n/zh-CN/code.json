@@ -2316,101 +2316,68 @@
   "HOME.ProductComparison.cloud.tech": {
     "message": "按需扩缩容、零运维心智负担、极速发布到生产环境"
   },
+  "CLOUD.hero.title": {
+    "message": "专注代码，享受编程"
+  },
   "CLOUD.hero.description": {
-    "message": "免运维的托管式运行环境，提供 RESTful API 和 MCP 协议端点，支持自动扩缩容"
+    "message": "你只管写函数 Block，剩下的交给 OOMOL。从繁琐的运维中解放出来，让创意即刻落地。"
   },
   "CLOUD.hero.stat1": {
-    "message": "弹性伸缩"
+    "message": "无痛生成"
   },
   "CLOUD.hero.stat2": {
-    "message": "API 服务"
+    "message": "按量计费"
   },
   "CLOUD.hero.stat3": {
-    "message": "AI 集成"
+    "message": "省钱省力"
   },
   "CLOUD.hero.cta.start": {
-    "message": "开始使用"
+    "message": "开始构建"
   },
   "CLOUD.hero.cta.docs": {
-    "message": "查看文档"
+    "message": "了解更多"
   },
-  "CLOUD.useCases.title": {
-    "message": "适用场景"
+  "CLOUD.painPoints.title": {
+    "message": "交付代码不该是折磨"
   },
-  "CLOUD.useCases.subtitle": {
-    "message": "无需关心服务器和运维，专注于业务逻辑开发"
+  "CLOUD.painPoints.subtitle": {
+    "message": "作为开发者，我们深知你的苦恼"
   },
-  "CLOUD.useCase.quickDeploy.title": {
-    "message": "快速上线服务"
+  "CLOUD.painPoints.description": {
+    "message": "写代码本身是充满创造愉悦的，但将代码交付给用户往往枯燥乏味。购买服务器、准备环境、部署代码、可用性设计、UI 设计... 很多天才的设计都因为这些“拦路虎”，要么趴在电脑里孤芳自赏，要么做了一半无奈放弃，甚至因为产品没卖出去就背负了高昂的服务器费用。"
   },
-  "CLOUD.useCase.quickDeploy.description": {
-    "message": "中小团队无需配置服务器，一键部署工作流为云端 API 服务"
+  "CLOUD.solution.title": {
+    "message": "OOMOL Cloud：让想法即刻落地"
   },
-  "CLOUD.useCase.aiAgent.title": {
-    "message": "AI Agent 集成"
+  "CLOUD.solution.subtitle": {
+    "message": "你只管写函数 Block，剩下的交给 OOMOL"
   },
-  "CLOUD.useCase.aiAgent.description": {
-    "message": "通过 MCP 协议对接 Claude、ChatGPT 等 AI 平台，提供专属工具"
+  "CLOUD.modes.library.title": {
+    "message": "发布为函数库"
   },
-  "CLOUD.useCase.miniapp.title": {
-    "message": "小程序后端"
+  "CLOUD.modes.library.description": {
+    "message": "将 Block 分享给他人使用，或者通过工作流组合成新的功能。让你的代码成为社区创新的基石。"
   },
-  "CLOUD.useCase.miniapp.description": {
-    "message": "为小程序、移动应用提供 RESTful API，自动生成文档和测试界面"
+  "CLOUD.modes.serverless.title": {
+    "message": "部署为云函数"
   },
-  "CLOUD.useCase.noOps.title": {
-    "message": "免运维管理"
+  "CLOUD.modes.serverless.description": {
+    "message": "一键部署为 Serverless API 服务。无需运维，自动扩缩容，为他人提供稳定的 API 服务。"
   },
-  "CLOUD.useCase.noOps.description": {
-    "message": "自动监控、日志记录、安全隔离，无需管理基础设施"
+  "CLOUD.modes.mcp.title": {
+    "message": "提供给 AI 调用"
   },
-  "CLOUD.features.title": {
-    "message": "核心功能"
+  "CLOUD.modes.mcp.description": {
+    "message": "以 MCP (Model Context Protocol) 方式发布，让 AI Agent 直接调用你的函数，连接智能世界。"
   },
-  "CLOUD.features.oneDeploy.title": {
-    "message": "一键部署"
+  "CLOUD.pricing.title": {
+    "message": "按调用收费，不用预支"
   },
-  "CLOUD.features.oneDeploy.description": {
-    "message": "从 Studio 直接推送到 Cloud，自动配置域名和 HTTPS"
+  "CLOUD.pricing.description": {
+    "message": "没有昂贵的服务器租用费，没有复杂的预付费套餐。我们按调用次数收取费用，真正做到省钱省力，让你专注于享受编程的乐趣。"
   },
-  "CLOUD.features.oneDeploy.feature1": {
-    "message": "Git Push 式部署体验"
-  },
-  "CLOUD.features.oneDeploy.feature2": {
-    "message": "自动 HTTPS 证书配置"
-  },
-  "CLOUD.features.oneDeploy.feature3": {
-    "message": "零停机更新部署"
-  },
-  "CLOUD.features.monitor.title": {
-    "message": "自动监控"
-  },
-  "CLOUD.features.monitor.description": {
-    "message": "实时性能监控、日志查看、错误追踪"
-  },
-  "CLOUD.features.monitor.feature1": {
-    "message": "实时性能指标展示"
-  },
-  "CLOUD.features.monitor.feature2": {
-    "message": "集中式日志查询"
-  },
-  "CLOUD.features.monitor.feature3": {
-    "message": "异常告警通知"
-  },
-  "CLOUD.features.security.title": {
-    "message": "安全隔离"
-  },
-  "CLOUD.features.security.description": {
-    "message": "容器级隔离、访问控制、数据加密"
-  },
-  "CLOUD.features.security.feature1": {
-    "message": "沙箱环境隔离"
-  },
-  "CLOUD.features.security.feature2": {
-    "message": "API 密钥管理"
-  },
-  "CLOUD.features.security.feature3": {
-    "message": "传输数据加密"
+  "CLOUD.pricing.cta": {
+    "message": "查看详细价格"
   },
   "STUDIO.hero.description": {
     "message": "面向开发者的本地开发环境，基于 VSCode 的可视化编程工具，结合 FRP 协议实现 P2P 算力共享"

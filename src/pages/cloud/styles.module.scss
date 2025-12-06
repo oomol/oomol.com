@@ -11,7 +11,7 @@
 }
 
 // ============================================
-// Hero 区域 - 与 Studio 保持一致的极简风格
+// Hero 区域
 // ============================================
 .hero {
   text-align: center;
@@ -137,9 +137,34 @@
 }
 
 // ============================================
-// 使用场景 - 4列网格
+// Pain Points Section (New)
 // ============================================
-.useCasesSection {
+.painPointsSection {
+  padding: 100px 32px;
+  background: var(--ifm-background-surface-color);
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.painPointsContent {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.painPointsText {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--ifm-color-emphasis-800);
+  margin-top: 48px;
+  font-weight: 500;
+  white-space: pre-wrap; /* Preserve newlines if any */
+}
+
+// ============================================
+// Modes Section (Solution)
+// ============================================
+.modesSection {
   padding: 100px 32px;
   background: linear-gradient(
     180deg,
@@ -149,57 +174,7 @@
   );
 }
 
-.useCasesGrid {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-}
-
-.useCaseCard {
-  padding: 32px 24px;
-  background: var(--ifm-background-surface-color);
-  border-radius: 12px;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  transition: all 0.3s ease;
-  text-align: center;
-
-  &:hover {
-    border-color: var(--oomol-primary);
-    box-shadow: 0 8px 24px var(--oomol-primary-bg-hover);
-    transform: translateY(-4px);
-  }
-}
-
-.useCaseIcon {
-  font-size: 3rem;
-  margin-bottom: 16px;
-}
-
-.useCaseTitle {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--ifm-heading-color);
-  margin-bottom: 12px;
-  line-height: 1.3;
-}
-
-.useCaseDescription {
-  font-size: 0.95rem;
-  color: var(--ifm-color-emphasis-700);
-  line-height: 1.6;
-  margin: 0;
-}
-
-// ============================================
-// 核心功能 - 3列卡片
-// ============================================
-.featuresSection {
-  padding: 100px 32px;
-}
-
-.featuresGrid {
+.modesGrid {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
@@ -207,12 +182,13 @@
   gap: 32px;
 }
 
-.featureCard {
+.modeCard {
   padding: 40px;
   background: var(--ifm-background-surface-color);
   border-radius: 16px;
   border: 1px solid var(--ifm-color-emphasis-200);
   transition: all 0.3s ease;
+  text-align: center;
 
   &:hover {
     border-color: var(--oomol-primary);
@@ -221,93 +197,79 @@
   }
 }
 
-.featureIcon {
-  font-size: 3rem;
-  margin-bottom: 16px;
-  display: block;
+.modeIcon {
+  font-size: 4rem;
+  margin-bottom: 24px;
 }
 
-.featureTitle {
-  font-size: 1.75rem;
+.modeTitle {
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--ifm-heading-color);
-  margin-bottom: 12px;
-  line-height: 1.3;
+  margin-bottom: 16px;
 }
 
-.featureDescription {
+.modeDescription {
   font-size: 1.05rem;
   color: var(--ifm-color-emphasis-700);
-  margin-bottom: 20px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+// ============================================
+// Pricing Section
+// ============================================
+.pricingSection {
+  padding: 100px 32px;
+  text-align: center;
+}
+
+.pricingContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pricingDescription {
+  font-size: 1.25rem;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 48px;
   line-height: 1.6;
 }
 
-.featureList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.pricingButton {
+  padding: 16px 48px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: var(--oomol-primary);
+  color: white;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
 
-  li {
-    padding-left: 24px;
-    margin-bottom: 10px;
-    position: relative;
-    font-size: 0.95rem;
-    color: var(--ifm-color-emphasis-600);
-    line-height: 1.6;
-
-    &::before {
-      content: "→";
-      position: absolute;
-      left: 0;
-      color: var(--oomol-primary);
-      font-weight: 700;
-    }
+  &:hover {
+    background: var(--oomol-primary-hover);
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px var(--oomol-primary-bg-hover);
+    color: white;
   }
 }
 
 // ============================================
-// 响应式设计
+// Responsive
 // ============================================
 @media (max-width: 996px) {
   .hero {
     padding: 80px 24px 60px;
   }
-
   .heroTitle {
     font-size: 3rem;
   }
-
   .heroDescription {
     font-size: 1.25rem;
   }
-
-  .heroStats {
-    gap: 32px;
-  }
-
-  .statValue {
-    font-size: 1.75rem;
-  }
-
-  .sectionTitle {
-    font-size: 2.25rem;
-  }
-
-  .sectionSubtitle {
+  .painPointsText {
     font-size: 1.1rem;
-  }
-
-  .useCasesSection,
-  .featuresSection {
-    padding: 80px 24px;
-  }
-
-  .useCasesGrid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  }
-
-  .featuresGrid {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -315,57 +277,14 @@
   .hero {
     padding: 60px 20px 40px;
   }
-
   .heroTitle {
     font-size: 2.5rem;
   }
-
-  .heroDescription {
-    font-size: 1.1rem;
-  }
-
   .heroStats {
     flex-direction: column;
     gap: 24px;
   }
-
-  .heroCTA {
-    flex-direction: column;
-    align-items: stretch;
-
-    .primaryButton,
-    .secondaryButton {
-      width: 100%;
-      text-align: center;
-    }
-  }
-
-  .sectionTitle {
-    font-size: 2rem;
-  }
-
-  .sectionSubtitle {
-    font-size: 1rem;
-  }
-
-  .useCasesSection,
-  .featuresSection {
-    padding: 60px 20px;
-  }
-
-  .sectionHeader {
-    margin-bottom: 48px;
-  }
-
-  .useCasesGrid {
+  .modesGrid {
     grid-template-columns: 1fr;
-  }
-
-  .useCaseTitle {
-    font-size: 1.25rem;
-  }
-
-  .featureTitle {
-    font-size: 1.5rem;
   }
 }
