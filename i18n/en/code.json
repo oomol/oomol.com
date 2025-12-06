@@ -1629,7 +1629,70 @@
   "CREATE.description": {
     "message": "OOMOL's AI tool creation platform. The core advantage lies in: retaining the unlimited creative ability of traditional programming while having the convenience of low-code development, allowing users to efficiently build various AI tools."
   },
+  "STUDIO.hero.subtitle": {
+    "message": "Workflow Tools Redesigned for Developers"
+  },
   "STUDIO.hero.description": {
+    "message": "We heard developers' voices: traditional workflow platforms make simple things complicated. OOMOL Studio changes everything."
+  },
+  "STUDIO.painPoints.title": {
+    "message": "Three Pain Points of Traditional Workflow Tools"
+  },
+  "STUDIO.painPoints.subtitle": {
+    "message": "As developers, we know exactly how frustrating these problems are"
+  },
+  "STUDIO.painPoints.learningCurve.title": {
+    "message": "High Learning Curve"
+  },
+  "STUDIO.painPoints.learningCurve.description": {
+    "message": "Learning the platform's interaction and design concepts, simple if-else logic becomes complicated with drag-and-drop components. Problems that could be solved with one line of code require time to understand the platform's abstract concepts."
+  },
+  "STUDIO.painPoints.extension.title": {
+    "message": "Difficult Extension"
+  },
+  "STUDIO.painPoints.extension.description": {
+    "message": "Problems that could be solved by importing an open-source library in programming become as complex as rocket science in workflow platforms. Want to extend functionality? Check if the platform supports it first—if not, you're stuck."
+  },
+  "STUDIO.painPoints.toolSwitching.title": {
+    "message": "Leaving Familiar Tools"
+  },
+  "STUDIO.painPoints.toolSwitching.description": {
+    "message": "Even if the platform provides scripting, you have to write code in a clunky web editor instead of your familiar VSCode. You lose code completion, debugging tools, and various extensions, significantly reducing development efficiency."
+  },
+  "STUDIO.solutions.title": {
+    "message": "OOMOL Studio's Solutions"
+  },
+  "STUDIO.solutions.subtitle": {
+    "message": "We redesigned the workflow development experience based on developers' actual needs"
+  },
+  "STUDIO.solutions.functions.title": {
+    "message": "Nodes as Functions, Zero Barrier for Libraries"
+  },
+  "STUDIO.solutions.functions.description": {
+    "message": "In OOMOL Studio, nodes are functions. You don't need to learn any new concepts—write code in familiar ways and import any open-source library. Need a feature? Just npm install."
+  },
+  "STUDIO.solutions.functions.highlight": {
+    "message": "No new concepts, no ceiling. Create workflows like writing code."
+  },
+  "STUDIO.solutions.vscode.title": {
+    "message": "Built on VSCode, Inherit Your Coding Habits"
+  },
+  "STUDIO.solutions.vscode.description": {
+    "message": "OOMOL Studio is built on VSCode, so you can write node code in your familiar editor. Code completion, debugging tools, Git integration, various extensions... all your familiar development experience is here."
+  },
+  "STUDIO.solutions.vscode.highlight": {
+    "message": "Familiar editor, familiar shortcuts, zero adaptation cost."
+  },
+  "STUDIO.solutions.container.title": {
+    "message": "Built-in Container, Consistent Environment for Easy Deployment"
+  },
+  "STUDIO.solutions.container.description": {
+    "message": "Built-in container environment ensures local development is identical to server environment. Write code and run it directly without worrying about 'works on my machine'. Network proxy turns your device into a personal server, zero-cost task launching."
+  },
+  "STUDIO.solutions.container.highlight": {
+    "message": "Local is production, no deployment pitfalls. Idle devices can serve too."
+  },
+  "STUDIO.hero.description.old": {
     "message": "Visual Workflow + Full Code with VSCode, Build and Share AI Tools Fast"
   },
   "STUDIO.hero.stat1": {

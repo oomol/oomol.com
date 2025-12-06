@@ -176,29 +176,29 @@ const config = {
           srcDark: "img/logo-en-dark.svg",
         },
         items: [
-          // {
-          //   type: "dropdown",
-          //   label: "Product",
-          //   position: "left",
-          //   items: [
-          //     {
-          //       to: "/studio",
-          //       label: "navbar.oomol-studio",
-          //     },
-          //     {
-          //       to: "/chat",
-          //       label: "navbar.oomol-chat",
-          //     },
-          //     {
-          //       to: "/cloud",
-          //       label: "navbar.oomol-cloud",
-          //     },
-          //     {
-          //       to: "/headless",
-          //       label: "navbar.oomol-headless",
-          //     },
-          //   ],
-          // },
+          {
+            type: "dropdown",
+            label: "Product",
+            position: "left",
+            items: [
+              {
+                to: "/studio",
+                label: "navbar.oomol-studio",
+              },
+              {
+                to: "/chat",
+                label: "navbar.oomol-chat",
+              },
+              {
+                to: "/cloud",
+                label: "navbar.oomol-cloud",
+              },
+              {
+                to: "/headless",
+                label: "navbar.oomol-headless",
+              },
+            ],
+          },
           {
             type: "doc",
             docId: "get-started/quickstarts",
@@ -208,7 +208,7 @@ const config = {
           { to: "/updates", label: "Updates", position: "left" },
           { to: "/blog", label: "Blog", position: "left" },
           { to: "/contact-us", label: "Community", position: "left" },
-          // { to: "/pricing", label: "Pricing", position: "left" },
+          { to: "/pricing", label: "Pricing", position: "left" },
         ],
       },
       footer: {

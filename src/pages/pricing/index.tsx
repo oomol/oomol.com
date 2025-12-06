@@ -88,10 +88,7 @@ export default function Index() {
             </div>
 
             {/* 标准版 */}
-            <div className={`${styles.planCard} ${styles.recommended}`}>
-              <div className={styles.badge}>
-                {translate({ message: "PRICING.subscription.recommended" })}
-              </div>
+            <div className={styles.planCard}>
               <div className={styles.planHeader}>
                 <div className={styles.planName}>
                   {translate({ message: "PRICING.subscription.standard.name" })}
@@ -166,7 +163,10 @@ export default function Index() {
             </div>
 
             {/* 专业版 */}
-            <div className={styles.planCard}>
+            <div className={`${styles.planCard} ${styles.recommended}`}>
+              <div className={styles.badge}>
+                {translate({ message: "PRICING.subscription.recommended" })}
+              </div>
               <div className={styles.planHeader}>
                 <div className={styles.planName}>
                   {translate({ message: "PRICING.subscription.pro.name" })}

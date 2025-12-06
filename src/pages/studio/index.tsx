@@ -1,166 +1,91 @@
 import styles from "./styles.module.scss";
 
 import { translate } from "@docusaurus/Translate";
-import { FeatureBlockList } from "@site/src/components/FeatureBlockList/FeatureBlockList";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
-import StudioPdfCraftCase from "@site/src/components/StudioPdfCraftCase";
 
 import Layout from "../../theme/Layout";
 
-// 开发者工作流数据
-const developerWorkflow = {
-  steps: [
-    {
-      number: "1",
-      title: translate({ message: "STUDIO.workflow.step1.title" }),
-      description: translate({ message: "STUDIO.workflow.step1.description" }),
-      features: [
-        translate({ message: "STUDIO.workflow.step1.feature1" }),
-        translate({ message: "STUDIO.workflow.step1.feature2" }),
-      ],
-    },
-    {
-      number: "2",
-      title: translate({ message: "STUDIO.workflow.step2.title" }),
-      description: translate({ message: "STUDIO.workflow.step2.description" }),
-      features: [
-        translate({ message: "STUDIO.workflow.step2.feature1" }),
-        translate({ message: "STUDIO.workflow.step2.feature2" }),
-      ],
-    },
-    {
-      number: "3",
-      title: translate({ message: "STUDIO.workflow.step3.title" }),
-      description: translate({ message: "STUDIO.workflow.step3.description" }),
-      features: [
-        translate({ message: "STUDIO.workflow.step3.feature1" }),
-        translate({ message: "STUDIO.workflow.step3.feature2" }),
-      ],
-    },
-    {
-      number: "4",
-      title: translate({ message: "STUDIO.workflow.step4.title" }),
-      description: translate({ message: "STUDIO.workflow.step4.description" }),
-      features: [
-        translate({ message: "STUDIO.workflow.step4.feature1" }),
-        translate({ message: "STUDIO.workflow.step4.feature2" }),
-        translate({ message: "STUDIO.workflow.step4.feature3" }),
-      ],
-    },
-  ],
-};
-
-// 核心优势数据
-const coreAdvantages = [
+// 开发者痛点
+const developerPainPoints = [
   {
-    icon: "💻",
-    title: translate({ message: "STUDIO.advantages.vscode.title" }),
-    description: translate({ message: "STUDIO.advantages.vscode.description" }),
-    features: [
-      translate({ message: "STUDIO.advantages.vscode.feature1" }),
-      translate({ message: "STUDIO.advantages.vscode.feature2" }),
-      translate({ message: "STUDIO.advantages.vscode.feature3" }),
-    ],
+    id: "learning-curve",
+    icon: "🤯",
+    title: translate({ message: "STUDIO.painPoints.learningCurve.title" }),
+    description: translate({
+      message: "STUDIO.painPoints.learningCurve.description",
+    }),
   },
   {
-    icon: "🔗",
-    title: translate({ message: "STUDIO.advantages.p2p.title" }),
-    description: translate({ message: "STUDIO.advantages.p2p.description" }),
-    features: [
-      translate({ message: "STUDIO.advantages.p2p.feature1" }),
-      translate({ message: "STUDIO.advantages.p2p.feature2" }),
-      translate({ message: "STUDIO.advantages.p2p.feature3" }),
-    ],
+    id: "extension-difficulty",
+    icon: "🚧",
+    title: translate({ message: "STUDIO.painPoints.extension.title" }),
+    description: translate({
+      message: "STUDIO.painPoints.extension.description",
+    }),
   },
   {
-    icon: "🚀",
-    title: translate({ message: "STUDIO.advantages.api.title" }),
-    description: translate({ message: "STUDIO.advantages.api.description" }),
-    features: [
-      translate({ message: "STUDIO.advantages.api.feature1" }),
-      translate({ message: "STUDIO.advantages.api.feature2" }),
-      translate({ message: "STUDIO.advantages.api.feature3" }),
-    ],
+    id: "tool-switching",
+    icon: "😫",
+    title: translate({ message: "STUDIO.painPoints.toolSwitching.title" }),
+    description: translate({
+      message: "STUDIO.painPoints.toolSwitching.description",
+    }),
   },
 ];
 
-// AI 集成能力数据
-const aiCapabilities = {
-  title: translate({ message: "STUDIO.ai.title" }),
-  description: translate({ message: "STUDIO.ai.description" }),
-  features: [
-    {
-      icon: "🤖",
-      content: translate({ message: "STUDIO.ai.feature1" }),
-    },
-    {
-      icon: "🎨",
-      content: translate({ message: "STUDIO.ai.feature2" }),
-    },
-    {
-      icon: "🎤",
-      content: translate({ message: "STUDIO.ai.feature3" }),
-    },
-    {
-      icon: "⚡",
-      content: translate({ message: "STUDIO.ai.feature4" }),
-    },
-  ],
+// OOMOL 解决方案
+const oomolSolutions = [
+  {
+    id: "functions-not-nodes",
+    icon: "⚡",
+    title: translate({ message: "STUDIO.solutions.functions.title" }),
+    description: translate({
+      message: "STUDIO.solutions.functions.description",
+    }),
+    highlight: translate({ message: "STUDIO.solutions.functions.highlight" }),
+  },
+  {
+    id: "vscode-based",
+    icon: "💻",
+    title: translate({ message: "STUDIO.solutions.vscode.title" }),
+    description: translate({
+      message: "STUDIO.solutions.vscode.description",
+    }),
+    highlight: translate({ message: "STUDIO.solutions.vscode.highlight" }),
+  },
+  {
+    id: "container-support",
+    icon: "📦",
+    title: translate({ message: "STUDIO.solutions.container.title" }),
+    description: translate({
+      message: "STUDIO.solutions.container.description",
+    }),
+    highlight: translate({ message: "STUDIO.solutions.container.highlight" }),
+  },
+];
+
+// 痛点卡片组件
+const PainPointCard = ({ point }: { point: (typeof developerPainPoints)[0] }) => {
+  return (
+    <div className={styles.painPointCard}>
+      <div className={styles.painPointIcon}>{point.icon}</div>
+      <h3 className={styles.painPointTitle}>{point.title}</h3>
+      <p className={styles.painPointDescription}>{point.description}</p>
+    </div>
+  );
 };
 
-// 工作流步骤组件
-const WorkflowStep = ({
-  step,
-}: {
-  step: (typeof developerWorkflow.steps)[0];
-  index: number;
-}) => {
+// 解决方案卡片组件
+const SolutionCard = ({ solution }: { solution: (typeof oomolSolutions)[0] }) => {
   return (
-    <div className={styles.workflowStep}>
-      <div className={styles.stepNumber}>{step.number}</div>
-      <div className={styles.stepContent}>
-        <h3 className={styles.stepTitle}>{step.title}</h3>
-        <p className={styles.stepDescription}>{step.description}</p>
-        <ul className={styles.stepFeatures}>
-          {step.features.map((feature, idx) => (
-            <li key={idx}>{feature}</li>
-          ))}
-        </ul>
+    <div className={styles.solutionCard}>
+      <div className={styles.solutionIcon}>{solution.icon}</div>
+      <h3 className={styles.solutionTitle}>{solution.title}</h3>
+      <p className={styles.solutionDescription}>{solution.description}</p>
+      <div className={styles.solutionHighlight}>
+        <span className={styles.highlightIcon}>→</span>
+        <span className={styles.highlightText}>{solution.highlight}</span>
       </div>
-    </div>
-  );
-};
-
-// 核心优势卡片组件
-const AdvantageCard = ({
-  advantage,
-}: {
-  advantage: (typeof coreAdvantages)[0];
-}) => {
-  return (
-    <div className={styles.advantageCard}>
-      <div className={styles.advantageIcon}>{advantage.icon}</div>
-      <h3 className={styles.advantageTitle}>{advantage.title}</h3>
-      <p className={styles.advantageDescription}>{advantage.description}</p>
-      <ul className={styles.advantageFeatures}>
-        {advantage.features.map((feature, idx) => (
-          <li key={idx}>{feature}</li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
-// AI 能力卡片组件
-const AICapabilityCard = ({
-  capability,
-}: {
-  capability: (typeof aiCapabilities.features)[0];
-}) => {
-  return (
-    <div className={styles.aiCapabilityCard}>
-      <span className={styles.aiIcon}>{capability.icon}</span>
-      <span className={styles.aiContent}>{capability.content}</span>
     </div>
   );
 };
@@ -170,105 +95,51 @@ export default function StudioPage() {
     <Layout>
       <div className={styles.container}>
         {/* Hero 区域 */}
-        <div className={styles.hero}>
+        <section className={styles.hero}>
           <h1 className={styles.heroTitle}>OOMOL Studio</h1>
+          <p className={styles.heroSubtitle}>
+            {translate({ message: "STUDIO.hero.subtitle" })}
+          </p>
           <p className={styles.heroDescription}>
             {translate({ message: "STUDIO.hero.description" })}
           </p>
+        </section>
 
-          {/* 数据亮点 */}
-          <div className={styles.heroStats}>
-            <div className={styles.stat}>
-              <span className={styles.statValue}>20+</span>
-              <span className={styles.statLabel}>
-                {translate({ message: "STUDIO.hero.stat1" })}
-              </span>
-            </div>
-            <div className={styles.stat}>
-              <span className={styles.statValue}>3 分钟</span>
-              <span className={styles.statLabel}>
-                {translate({ message: "STUDIO.hero.stat2" })}
-              </span>
-            </div>
-            <div className={styles.stat}>
-              <span className={styles.statValue}>P2P</span>
-              <span className={styles.statLabel}>
-                {translate({ message: "STUDIO.hero.stat3" })}
-              </span>
-            </div>
-          </div>
-
-          {/* 双 CTA */}
-          <div className={styles.heroCTA}>
-            <a href="/downloads" className={styles.primaryButton}>
-              {translate({ message: "STUDIO.hero.cta.download" })}
-            </a>
-            <a href="/docs" className={styles.secondaryButton}>
-              {translate({ message: "STUDIO.hero.cta.docs" })}
-            </a>
-          </div>
-        </div>
-
-        {/* 开发者工作流 */}
-        <section className={styles.workflowSection}>
+        {/* 痛点区域 */}
+        <section className={styles.painPointsSection}>
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>
-              {translate({ message: "STUDIO.workflow.title" })}
+              {translate({ message: "STUDIO.painPoints.title" })}
             </h2>
             <p className={styles.sectionSubtitle}>
-              {translate({ message: "STUDIO.workflow.subtitle" })}
+              {translate({ message: "STUDIO.painPoints.subtitle" })}
             </p>
           </div>
-          <div className={styles.workflowSteps}>
-            {developerWorkflow.steps.map((step, index) => (
-              <WorkflowStep key={index} step={step} index={index} />
+          <div className={styles.painPointsGrid}>
+            {developerPainPoints.map(point => (
+              <PainPointCard key={point.id} point={point} />
             ))}
           </div>
         </section>
 
-        {/* 核心差异化优势 */}
-        <section className={styles.advantagesSection}>
+        {/* 解决方案区域 */}
+        <section className={styles.solutionsSection}>
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>
-              {translate({ message: "STUDIO.advantages.title" })}
+              {translate({ message: "STUDIO.solutions.title" })}
             </h2>
-          </div>
-          <div className={styles.advantagesGrid}>
-            {coreAdvantages.map((advantage, index) => (
-              <AdvantageCard key={index} advantage={advantage} />
-            ))}
-          </div>
-        </section>
-
-        {/* AI 集成能力 */}
-        <section className={styles.aiSection}>
-          <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>{aiCapabilities.title}</h2>
             <p className={styles.sectionSubtitle}>
-              {aiCapabilities.description}
+              {translate({ message: "STUDIO.solutions.subtitle" })}
             </p>
           </div>
-          <div className={styles.aiCapabilitiesGrid}>
-            {aiCapabilities.features.map((capability, index) => (
-              <AICapabilityCard key={index} capability={capability} />
+          <div className={styles.solutionsGrid}>
+            {oomolSolutions.map(solution => (
+              <SolutionCard key={solution.id} solution={solution} />
             ))}
           </div>
         </section>
 
-        {/* PDF-Craft 实战案例 */}
-        <StudioPdfCraftCase />
-
-        {/* 技术特性快览 */}
-        <section className={styles.techFeaturesSection}>
-          <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>
-              {translate({ message: "STUDIO.techFeatures.title" })}
-            </h2>
-          </div>
-          <FeatureBlockList />
-        </section>
-
-        {/* CTA 区域 */}
+        {/* CTA 下载区域 */}
         <GetStartedPrompt />
       </div>
     </Layout>

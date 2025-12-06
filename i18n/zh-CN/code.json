@@ -1181,7 +1181,70 @@
   "CREATE.description": {
     "message": "OOMOL 推出的 AI 工具创作平台。该平台的核心优势在于：既保留了传统编程的无限创造能力，又具备低代码开发的便捷性，让用户能够高效地构建各类 AI 工具。"
   },
+  "STUDIO.hero.subtitle": {
+    "message": "为开发者重新设计的工作流工具"
+  },
   "STUDIO.hero.description": {
+    "message": "我们听到了开发者的声音：传统工作流平台让简单的事情变复杂。OOMOL Studio 改变这一切。"
+  },
+  "STUDIO.painPoints.title": {
+    "message": "传统工作流工具的三大痛点"
+  },
+  "STUDIO.painPoints.subtitle": {
+    "message": "作为开发者，我们深知这些问题有多让人头疼"
+  },
+  "STUDIO.painPoints.learningCurve.title": {
+    "message": "学习成本高"
+  },
+  "STUDIO.painPoints.learningCurve.description": {
+    "message": "学习平台的交互和设计理念，简单的 if-else 逻辑被几个拖拽组件搞得复杂难用。明明一句代码能解决的问题，却要花时间理解平台的抽象概念。"
+  },
+  "STUDIO.painPoints.extension.title": {
+    "message": "扩展麻烦"
+  },
+  "STUDIO.painPoints.extension.description": {
+    "message": "编程时引用个开源库就能解决的问题，在工作流平台里却像造火箭一样复杂。想要扩展功能？先看看平台支不支持，不支持就只能干瞪眼。"
+  },
+  "STUDIO.painPoints.toolSwitching.title": {
+    "message": "离开熟悉的工具"
+  },
+  "STUDIO.painPoints.toolSwitching.description": {
+    "message": "就算平台提供了脚本功能，也要在难用的网页编辑器里写代码，而不是在熟悉的 VSCode 中。失去了代码补全、调试工具和各种插件，开发效率大打折扣。"
+  },
+  "STUDIO.solutions.title": {
+    "message": "OOMOL Studio 的解决方案"
+  },
+  "STUDIO.solutions.subtitle": {
+    "message": "我们从开发者的实际需求出发，重新设计工作流开发体验"
+  },
+  "STUDIO.solutions.functions.title": {
+    "message": "节点即函数，引用库零门槛"
+  },
+  "STUDIO.solutions.functions.description": {
+    "message": "在 OOMOL Studio 中，节点就是函数。你不需要学习任何新概念，用熟悉的方式编写代码，任意引用开源库。想要什么功能，npm install 就能搞定。"
+  },
+  "STUDIO.solutions.functions.highlight": {
+    "message": "不学新概念，不设天花板。像写代码一样创建工作流。"
+  },
+  "STUDIO.solutions.vscode.title": {
+    "message": "基于 VSCode，继承编程习惯"
+  },
+  "STUDIO.solutions.vscode.description": {
+    "message": "OOMOL Studio 基于 VSCode 开发，你可以在熟悉的编辑器中编写节点代码。代码补全、调试工具、Git 集成、各种插件...所有你习惯的开发体验都在这里。"
+  },
+  "STUDIO.solutions.vscode.highlight": {
+    "message": "熟悉的编辑器，熟悉的快捷键，零适应成本。"
+  },
+  "STUDIO.solutions.container.title": {
+    "message": "内置容器，环境一致好部署"
+  },
+  "STUDIO.solutions.container.description": {
+    "message": "软件内置容器环境，本地开发和服务器环境完全一致。写完代码直接运行，不用担心「我这能跑，服务器怎么就不行」。通过网络反代，让你的设备秒变私人服务器，零成本启动任务。"
+  },
+  "STUDIO.solutions.container.highlight": {
+    "message": "本地即生产，部署不踩坑。闲置设备也能当服务器用。"
+  },
+  "STUDIO.hero.description.old": {
     "message": "可视化工作流 + VSCode 全代码，快速构建并分享 AI 工具"
   },
   "STUDIO.hero.stat1": {
