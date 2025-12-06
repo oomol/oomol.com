@@ -59,10 +59,19 @@ const config = {
           return {
             headTags: [
               `<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "80d2394da3f3405dbada0e172278e3a0"}'></script><!-- End Cloudflare Web Analytics -->`,
-              // Google tag manager
-              `<script async src="https://www.googletagmanager.com/gtag/js?id=G-DYDQECKKB5"></script>`,
+              // Google Analytics
+              `<script type="text/plain" data-category="statistics" data-service="Google Analytics" data-src="https://www.googletagmanager.com/gtag/js?id=G-4BP2RZ6YFF"></script>`,
               // Configure Google Analytics and Google Ads
-              `<script>window.dataLayer=window.dataLayer||[]; function gtag(){dataLayer.push(arguments)} gtag('js',new Date()); gtag('config','G-DYDQECKKB5'); gtag('config','AW-17222662466');</script>`,
+              `<script type="text/plain" data-category="statistics" data-service="Google Analytics">
+                if (window === window.parent) {
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  window.gtag = gtag;
+                  gtag('js', new Date());
+                  gtag('config', 'G-4BP2RZ6YFF');
+                  gtag('config', 'AW-17222662466');
+                }
+              </script>`,
             ],
           };
         },

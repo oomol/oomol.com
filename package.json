@@ -32,17 +32,20 @@
     "clsx": "^1.2.1",
     "docusaurus-plugin-sass": "^0.2.4",
     "framer-motion": "^11.14.4",
+    "js-cookie": "^3.0.5",
     "prism-react-renderer": "^2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwind-merge": "^2.5.5",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "vanilla-cookieconsent": "^3.1.0"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.9.2",
     "@docusaurus/tsconfig": "3.9.2",
     "@docusaurus/types": "3.9.2",
     "@iconify/json": "^2.2.405",
+    "@types/js-cookie": "^3.0.6",
     "@types/mdx-js__react": "^1.5.8",
     "@types/react": "^18.2.29",
     "@unocss/webpack": "^66.1.2",
