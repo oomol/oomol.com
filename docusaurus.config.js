@@ -186,8 +186,8 @@ const config = {
                 label: "navbar.oomol-studio",
               },
               {
-                to: "/chat",
-                label: "navbar.oomol-chat",
+                to: "/app",
+                label: "navbar.oomol-app",
               },
               {
                 to: "/cloud",

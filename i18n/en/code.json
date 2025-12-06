@@ -2405,5 +2405,20 @@
   },
   "HEADLESS.hero.description": {
     "message": "Containerized deployment solution, packaging workflows as standalone Docker images for cloud servers, private clouds and K8s clusters"
-  }
+  },
+  "APP.new.hero.title": { "message": "OOMOL App" },
+  "APP.new.hero.subtitle": { "message": "The Last Mile of AI Product Delivery" },
+  "APP.new.hero.description": { "message": "Turn your Block functions into AI Chat skills and Applets instantly, without writing any UI code." },
+  "APP.new.concept.title": { "message": "Code is Product" },
+  "APP.new.concept.description": { "message": "OOMOL automatically wraps your backend logic (Blocks) into frontend products. You focus on the function; we connect it to the user." },
+  "APP.new.chat.title": { "message": "OOMOL Chat" },
+  "APP.new.chat.subtitle": { "message": "AI Assistant · Exploratory Interaction" },
+  "APP.new.chat.description": { "message": "When user intent is vague, AI intelligently orchestrates your tools to solve the problem." },
+  "APP.new.chat.devValue": { "message": "Tools as Skills: Your functions become the AI's capabilities." },
+  "APP.new.applet.title": { "message": "OOMOL Applet" },
+  "APP.new.applet.subtitle": { "message": "Form Applet · Deterministic Interaction" },
+  "APP.new.applet.description": { "message": "When user needs are clear, direct execution with parameters for efficiency." },
+  "APP.new.applet.devValue": { "message": "Function as App: Auto-generated UI, zero frontend code." },
+  "APP.new.cta.download": { "message": "Download" },
+  "APP.new.cta.docs": { "message": "View Docs" }
 }

@@ -369,3 +369,107 @@
     font-size: 1.5rem;
   }
 }
+
+// ============================================
+// Concept Section
+// ============================================
+.conceptSection {
+    padding: 80px 32px;
+    text-align: center;
+    background: var(--ifm-color-emphasis-100);
+}
+
+.sectionDescription {
+    font-size: 1.2rem;
+    color: var(--ifm-color-emphasis-700);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+// ============================================
+// Product Split Section
+// ============================================
+.productSplitSection {
+    padding: 100px 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.productCard {
+    flex: 1;
+    min-width: 300px;
+    background: var(--ifm-background-surface-color);
+    border: 1px solid var(--ifm-color-emphasis-200);
+    border-radius: 20px;
+    padding: 48px;
+    text-align: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+        border-color: var(--oomol-primary);
+        box-shadow: 0 12px 40px var(--oomol-primary-bg-hover);
+        transform: translateY(-5px);
+    }
+}
+
+.productIcon {
+    font-size: 4rem;
+    margin-bottom: 24px;
+}
+
+.productTitle {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--ifm-heading-color);
+    margin-bottom: 8px;
+}
+
+.productSubtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--oomol-primary);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.productDesc {
+    font-size: 1.1rem;
+    color: var(--ifm-color-emphasis-700);
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.devValueBox {
+    background: var(--ifm-color-emphasis-100);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.devValueLabel {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--ifm-color-emphasis-600);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.devValueBox p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--ifm-heading-color);
+}
+
+@media (max-width: 768px) {
+    .productSplitSection {
+        flex-direction: column;
+    }
+}

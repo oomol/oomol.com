@@ -2408,5 +2408,20 @@
   },
   "HEADLESS.hero.description": {
     "message": "容器化部署方案，将工作流打包为独立 Docker 镜像，适配云服务器、私有云和 K8s 集群"
-  }
+  },
+  "APP.new.hero.title": { "message": "OOMOL App" },
+  "APP.new.hero.subtitle": { "message": "交付 AI 产品的最后一公里" },
+  "APP.new.hero.description": { "message": "无需编写 UI，将你的 Block 函数直接转化为 AI Chat 技能与 Applet 小程序，瞬间交付给用户。" },
+  "APP.new.concept.title": { "message": "代码即产品" },
+  "APP.new.concept.description": { "message": "OOMOL 负责将你的后端逻辑 (Block) 自动封装为前端产品。你专注于编写函数，我们负责连接用户。" },
+  "APP.new.chat.title": { "message": "OOMOL Chat" },
+  "APP.new.chat.subtitle": { "message": "AI 助手 · 探索性交互" },
+  "APP.new.chat.description": { "message": "当用户需求模糊时，AI 智能调度你的工具来解决问题。" },
+  "APP.new.chat.devValue": { "message": "Tools as Skills：你的函数就是 AI 的手脚" },
+  "APP.new.applet.title": { "message": "OOMOL Applet" },
+  "APP.new.applet.subtitle": { "message": "表单小程序 · 确定性交互" },
+  "APP.new.applet.description": { "message": "当用户需求明确时，直接填参调用，高效精准。" },
+  "APP.new.applet.devValue": { "message": "Function as App：自动生成表单 UI，零前端代码" },
+  "APP.new.cta.download": { "message": "下载体验" },
+  "APP.new.cta.docs": { "message": "查看文档" }
 }
