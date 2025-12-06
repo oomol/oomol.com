@@ -1,0 +1,40 @@
+{
+  "consentModal": {
+    "title": "Cookie 设置",
+    "description": "本网站使用 Cookie 来增强您的浏览体验，并分析我们的流量。",
+    "acceptAllBtn": "接受全部",
+    "acceptNecessaryBtn": "拒绝全部",
+    "showPreferencesBtn": "管理偏好",
+    "privacy-link": "隐私政策",
+    "terms-link": "服务条款"
+  },
+  "preferencesModal": {
+    "title": "Cookie 设置",
+    "accept-all": "接受全部",
+    "accept-necessary": "拒绝全部",
+    "save-preferences": "保存偏好",
+    "close": "关闭",
+    "usage-explanation": {
+      "title": "我们如何使用 Cookie",
+      "description": "我们的网站使用某些 Cookie 并记录您的 IP 地址，以实现无障碍访问、安全性以及管理您对电信网络的访问。 您可以通过更改浏览器设置来禁用数据收集和 Cookie，但这可能会影响本网站的运作方式。"
+    },
+    "necessary": {
+      "title": "必要的 Cookie",
+      "description": "这些 Cookie 对网站的正常运行至关重要，不能禁用。"
+    },
+    "statistics": {
+      "title": "统计",
+      "table": {
+        "name": "名称",
+        "domain": "域名",
+        "description": "描述",
+        "expiration": "过期时间"
+      },
+      "google-analytics": "用于区分唯一用户并跟踪访问者行为"
+    },
+    "more-info": {
+      "title": "更多信息",
+      "description": "如有任何关于我们的 Cookie 政策和您的选择的疑问，请联系我们。"
+    }
+  }
+}

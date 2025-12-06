@@ -1,0 +1,40 @@
+{
+  "consentModal": {
+    "title": "Cookie Settings",
+    "description": "This website uses cookies to enhance your browsing experience, and analyze our traffic.",
+    "acceptAllBtn": "Accept all",
+    "acceptNecessaryBtn": "Reject all",
+    "showPreferencesBtn": "Manage preferences",
+    "privacy-link": "Privacy Policy",
+    "terms-link": "Terms of Service"
+  },
+  "preferencesModal": {
+    "title": "Cookie Settings",
+    "accept-all": "Accept all",
+    "accept-necessary": "Reject all",
+    "save-preferences": "Save preferences",
+    "close": "Close",
+    "usage-explanation": {
+      "title": "How we use cookies",
+      "description": "With your consent, OOMOL may also use cookies and your IP address to collect individual statistics. OOMOL may use third-party services for this purpose. You can adjust or withdraw your consent at any time by visiting the Opt-Out."
+    },
+    "necessary": {
+      "title": "Strictly necessary cookies",
+      "description": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    },
+    "statistics": {
+      "title": "Statistics",
+      "table": {
+        "name": "Name",
+        "domain": "Domain",
+        "description": "Description",
+        "expiration": "Expiration"
+      },
+      "google-analytics": "Used to distinguish unique users and track visitor behavior"
+    },
+    "more-info": {
+      "title": "More information",
+      "description": "For any queries in relation to our policy on cookies and your choices, please contact us."
+    }
+  }
+}

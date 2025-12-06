@@ -1,5 +1,6 @@
 import "../../styles/uno.css";
 import styles from "./styles.module.scss";
+import "vanilla-cookieconsent/dist/cookieconsent.css";
 
 import type { ReactNode } from "react";
 
@@ -7,7 +8,11 @@ import Footer from "@theme/Footer";
 import LayoutProvider from "@theme/Layout/Provider";
 import Navbar from "@theme/Navbar";
 import { clsx } from "clsx";
-import React from "react";
+import React, { useEffect } from "react";
+import BrowserOnly from "@docusaurus/BrowserOnly";
+import { CookieConsentComponent } from "@site/src/components/CookieConsent/CookieConsentComponent";
+import { pluginConfig } from "@site/src/components/CookieConsent/cookieConsentConfig";
+import CookieConsent from "vanilla-cookieconsent";
 
 interface LayoutProps {
   children: ReactNode;
@@ -41,14 +46,12 @@ const Layout: React.FC<LayoutProps> = ({ children, wrapperClassName }) => {
   //   });
   //   observer.observe(htmlElement, { attributes: true });
 
-  //   return () => observer.disconnect();
-  // }, []);
-
   return (
     <LayoutProvider>
       <Navbar />
       <div className={clsx(styles.wrapper, wrapperClassName)}>{children}</div>
       <Footer />
+      <BrowserOnly>{() => <CookieConsentComponent />}</BrowserOnly>
     </LayoutProvider>
   );
 };
