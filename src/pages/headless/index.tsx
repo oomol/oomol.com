@@ -17,15 +17,77 @@ export default function HeadlessPage() {
               {translate({ message: "HEADLESS.hero.description" })}
             </p>
             <div className={styles.commandBlock}>
-              <code>docker pull oomol/runtime</code>
+              <code>docker pull oomolstudio/headless:latest</code>
               <button
                 className={styles.copyBtn}
                 onClick={() => {
-                  navigator.clipboard.writeText("docker pull oomol/runtime");
+                  navigator.clipboard.writeText(
+                    "docker pull oomolstudio/headless:latest"
+                  );
                 }}
               >
                 Copy
               </button>
+            </div>
+          </div>
+        </section>
+
+        <section
+          style={{
+            padding: "0 24px",
+            maxWidth: "900px",
+            margin: "0 auto 60px",
+          }}
+        >
+          <div
+            style={{
+              background: "var(--ifm-background-surface-color)",
+              border: "1px solid var(--ifm-color-emphasis-200)",
+              borderRadius: "16px",
+              padding: "32px",
+            }}
+          >
+            <h2
+              style={{
+                marginBottom: "24px",
+                fontSize: "1.8rem",
+                textAlign: "center",
+              }}
+            >
+              Docker Deployment
+            </h2>
+            <div
+              style={{
+                background: "var(--ifm-pre-background)",
+                borderRadius: "8px",
+                padding: "16px",
+                overflowX: "auto",
+                marginBottom: "24px",
+                fontFamily: "JetBrains Mono, monospace",
+                fontSize: "0.9rem",
+                lineHeight: "1.5",
+                whiteSpace: "pre",
+              }}
+            >
+              {`docker run -d --privileged --name oomol-headless -p 4000:4000 -p 52222:52222 \\
+  --mount type=bind,src=$HOME/.oomol-studio/headless/.env,dst=/app/.env \\
+  --mount type=bind,src=$HOME/oomol-storage,dst=/oomol-driver/oomol-storage \\
+  oomolstudio/headless:latest`}
+            </div>
+            <div style={{ textAlign: "center" }}>
+              <a
+                href="/docs/headless"
+                style={{
+                  color: "var(--oomol-primary)",
+                  fontWeight: "600",
+                  fontSize: "1.1rem",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "8px",
+                }}
+              >
+                View Full Documentation →
+              </a>
             </div>
           </div>
         </section>
@@ -84,7 +146,7 @@ export default function HeadlessPage() {
         {/* Footer CTA */}
         <section className={styles.ctaSection}>
           <a
-            href="https://docs.oomol.com/headless/getting-started"
+            href="/docs/headless"
             className={styles.primaryBtn}
           >
             {translate({ message: "HEADLESS.hero.cta.docs" })}
