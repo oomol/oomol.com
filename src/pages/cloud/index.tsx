@@ -32,21 +32,25 @@ const modes = [
   },
 ];
 
-const ModeCard = ({ mode }: { mode: (typeof modes)[0] }) => {
+const ModeItem = ({ mode }: { mode: (typeof modes)[0] }) => {
   return (
-    <div className={styles.modeCard}>
-      <div className={styles.modeImageWrapper}>
-        <ThemedImage
-          sources={{
-            light: useBaseUrl(mode.imageLight),
-            dark: useBaseUrl(mode.imageDark),
-          }}
-          alt={mode.title}
-          className={styles.modeImage}
-        />
+    <div className={styles.modeItem}>
+      <div className={styles.modeText}>
+        <h3 className={styles.modeTitle}>{mode.title}</h3>
+        <p className={styles.modeDescription}>{mode.description}</p>
       </div>
-      <h3 className={styles.modeTitle}>{mode.title}</h3>
-      <p className={styles.modeDescription}>{mode.description}</p>
+      <div className={styles.modeVisual}>
+        <div className={styles.modeImageWrapper}>
+          <ThemedImage
+            sources={{
+              light: useBaseUrl(mode.imageLight),
+              dark: useBaseUrl(mode.imageDark),
+            }}
+            alt={mode.title}
+            className={styles.modeImage}
+          />
+        </div>
+      </div>
     </div>
   );
 };
@@ -123,9 +127,9 @@ export default function CloudPage() {
               {translate({ message: "CLOUD.solution.subtitle" })}
             </p>
           </div>
-          <div className={styles.modesGrid}>
+          <div className={styles.modesContainer}>
             {modes.map((mode, index) => (
-              <ModeCard key={index} mode={mode} />
+              <ModeItem key={index} mode={mode} />
             ))}
           </div>
         </section>

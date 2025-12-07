@@ -165,78 +165,73 @@
 // Modes Section (Solution)
 // ============================================
 .modesSection {
-  padding: 100px 32px;
+  padding: 120px 24px;
   background: var(--ifm-background-color);
-  border-top: 1px solid var(--ifm-color-emphasis-200);
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
 }
 
-.modesGrid {
+.modesContainer {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
 }
 
-.modeCard {
-  padding: 40px;
-  background: var(--ifm-background-surface-color);
-  border-radius: 16px;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  transition: all 0.3s ease;
-  text-align: center;
+.modeItem {
+  margin: 0 auto 160px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
 
-  &:hover {
-    border-color: var(--oomol-primary);
-    box-shadow: 0 12px 32px var(--oomol-primary-bg-hover);
-    transform: translateY(-6px);
+  &:last-child {
+    margin-bottom: 0;
   }
+
+  @media (max-width: 996px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 100px;
+  }
+}
+
+.modeText {
+  h3 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.modeTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--oomol-primary);
+  margin-bottom: 24px;
+}
+
+.modeDescription {
+  font-size: 1.15rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.7;
+}
+
+.modeVisual {
+  width: 100%;
 }
 
 .modeImageWrapper {
   width: 100%;
-  margin-bottom: 24px;
-  border-radius: 12px;
-  overflow: hidden;
-  background: var(--ifm-color-emphasis-100);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  }
 }
 
 .modeImage {
   width: 100%;
   height: auto;
   display: block;
-  transition: transform 0.3s ease;
-
-  .modeImageWrapper:hover & {
-    transform: scale(1.02);
-  }
-}
-
-.modeIcon {
-  font-size: 4rem;
-  margin-bottom: 24px;
-}
-
-.modeTitle {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--ifm-heading-color);
-  margin-bottom: 16px;
-}
-
-.modeDescription {
-  font-size: 1.05rem;
-  color: var(--ifm-color-emphasis-700);
-  line-height: 1.6;
-  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 // ============================================
@@ -306,8 +301,5 @@
   .heroStats {
     flex-direction: column;
     gap: 24px;
-  }
-  .modesGrid {
-    grid-template-columns: 1fr;
   }
 }
