@@ -2458,7 +2458,7 @@
     "message": "我们的设计理念"
   },
   "STUDIO.principle1.title": {
-    "message": "1. 代码是真理之源"
+    "message": "1. 代码是高效逻辑组织工具"
   },
   "STUDIO.principle1.paragraph1": {
     "message": "我们没有发明新的可视化语言。我们只是将标准代码可视化。"
@@ -2470,7 +2470,7 @@
     "message": "你不需要「配置」节点；你只需编写函数。UI 只是代码签名的反映。"
   },
   "STUDIO.principle1.codeComment1": {
-    "message": "// 这个函数..."
+    "message": "# Perform addition of x and y"
   },
   "STUDIO.principle1.codeComment2": {
     "message": "// ...自动变成一个节点："
@@ -2482,7 +2482,7 @@
     "message": "// 输出端口: \"result\""
   },
   "STUDIO.principle2.title": {
-    "message": "2. 尊重工具链"
+    "message": "2. 尊重编程生态工具链"
   },
   "STUDIO.principle2.paragraph1": {
     "message": "我们认为，你不应该为了使用可视化工具而降级你的开发环境。"

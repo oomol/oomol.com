@@ -2,23 +2,31 @@ import styles from "./styles.module.scss";
 
 import { translate } from "@docusaurus/Translate";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import ThemedImage from "@theme/ThemedImage";
 
 import Layout from "../../theme/Layout";
 
 // Three Modes Data
 const modes = [
   {
-    icon: "📦",
+    // Library 模式: 发布为函数库
+    imageLight: "/img/pages/cloud/publish-light.png",
+    imageDark: "/img/pages/cloud/publish-dark.png",
     title: translate({ message: "CLOUD.modes.library.title" }),
     description: translate({ message: "CLOUD.modes.library.description" }),
   },
   {
-    icon: "⚡️",
+    // Serverless 模式: 部署为云函数
+    imageLight: "/img/pages/cloud/create-api-light.png",
+    imageDark: "/img/pages/cloud/create-api-dark.png",
     title: translate({ message: "CLOUD.modes.serverless.title" }),
     description: translate({ message: "CLOUD.modes.serverless.description" }),
   },
   {
-    icon: "🤖",
+    // MCP 模式: 提供给 AI 调用
+    imageLight: "/img/pages/cloud/ai-chat-light.png",
+    imageDark: "/img/pages/cloud/ai-chat-dark.png",
     title: translate({ message: "CLOUD.modes.mcp.title" }),
     description: translate({ message: "CLOUD.modes.mcp.description" }),
   },
@@ -27,7 +35,16 @@ const modes = [
 const ModeCard = ({ mode }: { mode: (typeof modes)[0] }) => {
   return (
     <div className={styles.modeCard}>
-      <div className={styles.modeIcon}>{mode.icon}</div>
+      <div className={styles.modeImageWrapper}>
+        <ThemedImage
+          sources={{
+            light: useBaseUrl(mode.imageLight),
+            dark: useBaseUrl(mode.imageDark),
+          }}
+          alt={mode.title}
+          className={styles.modeImage}
+        />
+      </div>
       <h3 className={styles.modeTitle}>{mode.title}</h3>
       <p className={styles.modeDescription}>{mode.description}</p>
     </div>
@@ -49,18 +66,21 @@ export default function CloudPage() {
 
           <div className={styles.heroStats}>
             <div className={styles.stat}>
+              {/* 🖼️ 图片占位: 免费徽章图标 (SVG/PNG 60x60px) */}
               <span className={styles.statValue}>✨</span>
               <span className={styles.statLabel}>
                 {translate({ message: "CLOUD.hero.stat1" })}
               </span>
             </div>
             <div className={styles.stat}>
+              {/* 🖼️ 图片占位: 定价徽章图标 (SVG/PNG 60x60px) */}
               <span className={styles.statValue}>💰</span>
               <span className={styles.statLabel}>
                 {translate({ message: "CLOUD.hero.stat2" })}
               </span>
             </div>
             <div className={styles.stat}>
+              {/* 🖼️ 图片占位: 低维护徽章图标 (SVG/PNG 60x60px) */}
               <span className={styles.statValue}>☕️</span>
               <span className={styles.statLabel}>
                 {translate({ message: "CLOUD.hero.stat3" })}

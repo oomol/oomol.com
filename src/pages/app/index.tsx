@@ -2,6 +2,8 @@ import styles from "./styles.module.scss";
 
 import { translate } from "@docusaurus/Translate";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import ThemedImage from "@theme/ThemedImage";
 
 import Layout from "../../theme/Layout";
 
@@ -43,7 +45,16 @@ export default function AppPage() {
         {/* Product Split Section */}
         <section className={styles.productSplitSection}>
           <div className={styles.productCard}>
-            <div className={styles.productIcon}>🤖</div>
+            <div className={styles.productImageWrapper}>
+              <ThemedImage
+                sources={{
+                  light: useBaseUrl("/img/pages/app/chat-light.png"),
+                  dark: useBaseUrl("/img/pages/app/chat-dark.png"),
+                }}
+                alt="OOMOL Chat"
+                className={styles.productImage}
+              />
+            </div>
             <h3 className={styles.productTitle}>
               {translate({ message: "APP.new.chat.title" })}
             </h3>
@@ -60,7 +71,16 @@ export default function AppPage() {
           </div>
 
           <div className={styles.productCard}>
-            <div className={styles.productIcon}>📱</div>
+            <div className={styles.productImageWrapper}>
+              <ThemedImage
+                sources={{
+                  light: useBaseUrl("/img/pages/app/applet-light.png"),
+                  dark: useBaseUrl("/img/pages/app/applet-dark.png"),
+                }}
+                alt="OOMOL Applet"
+                className={styles.productImage}
+              />
+            </div>
             <h3 className={styles.productTitle}>
               {translate({ message: "APP.new.applet.title" })}
             </h3>

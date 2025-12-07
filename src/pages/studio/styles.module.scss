@@ -48,6 +48,42 @@
   }
 }
 
+// Hero Image Section
+.heroImageSection {
+  max-width: 1200px;
+  margin: 0 auto 100px;
+  padding: 0 24px;
+
+  @include respond-to(md) {
+    margin-bottom: 80px;
+  }
+}
+
+.heroImageWrapper {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--ifm-color-emphasis-100);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+
+  .heroImageWrapper:hover & {
+    transform: scale(1.02);
+  }
+}
+
 // 2. Story Section (The Why)
 .storySection {
   max-width: 800px;
@@ -148,6 +184,31 @@
     margin: 0;
     background: transparent;
     padding: 0;
+  }
+}
+
+.principleImageWrapper {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--ifm-color-emphasis-100);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.principleImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+
+  .principleImageWrapper:hover & {
+    transform: scale(1.02);
   }
 }
 

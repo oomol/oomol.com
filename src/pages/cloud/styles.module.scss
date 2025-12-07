@@ -166,12 +166,9 @@
 // ============================================
 .modesSection {
   padding: 100px 32px;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    var(--ifm-color-primary-lightest) 50%,
-    transparent 100%
-  );
+  background: var(--ifm-background-color);
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
 }
 
 .modesGrid {
@@ -194,6 +191,32 @@
     border-color: var(--oomol-primary);
     box-shadow: 0 12px 32px var(--oomol-primary-bg-hover);
     transform: translateY(-6px);
+  }
+}
+
+.modeImageWrapper {
+  width: 100%;
+  margin-bottom: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--ifm-color-emphasis-100);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.modeImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+
+  .modeImageWrapper:hover & {
+    transform: scale(1.02);
   }
 }
 

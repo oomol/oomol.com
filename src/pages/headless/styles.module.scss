@@ -11,11 +11,7 @@
 .heroSection {
   padding: 120px 24px 80px;
   text-align: center;
-  background: radial-gradient(
-    circle at center,
-    var(--ifm-color-primary-lightest) 0%,
-    transparent 70%
-  );
+  background: var(--ifm-background-color);
 
   @media (max-width: 768px) {
     padding: 80px 20px 60px;
@@ -32,13 +28,7 @@
   font-weight: 800;
   letter-spacing: -0.03em;
   margin-bottom: 24px;
-  background: linear-gradient(
-    135deg,
-    var(--oomol-text-primary) 0%,
-    var(--oomol-primary) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--ifm-heading-color);
 
   @media (max-width: 768px) {
     font-size: 3rem;
@@ -94,6 +84,62 @@
 
   &:active {
     transform: scale(0.95);
+  }
+}
+
+// ============================================
+// Docker Deployment Section
+// ============================================
+.deploymentSection {
+  padding: 0 24px;
+  max-width: 900px;
+  margin: 0 auto 60px;
+}
+
+.deploymentCard {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.deploymentTitle {
+  margin-bottom: 24px;
+  font-size: 1.8rem;
+  text-align: center;
+  color: var(--ifm-heading-color);
+}
+
+.deploymentCode {
+  background: var(--ifm-pre-background);
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+  margin-bottom: 24px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: pre;
+  color: var(--ifm-code-color);
+}
+
+.deploymentCTA {
+  text-align: center;
+}
+
+.deploymentLink {
+  color: var(--oomol-primary);
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    text-decoration: underline;
+    color: var(--oomol-primary-hover);
   }
 }
 

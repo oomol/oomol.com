@@ -4,6 +4,8 @@ import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { translate } from "@docusaurus/Translate";
 import CodeBlock from "@theme/CodeBlock";
 import Layout from "@theme/Layout";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import ThemedImage from "@theme/ThemedImage";
 import React from "react";
 
 export default function StudioPage() {
@@ -20,6 +22,20 @@ export default function StudioPage() {
             {translate({ message: "STUDIO.manifesto.subtitle" })}
           </p>
         </header>
+
+        {/* Hero Image */}
+        <section className={styles.heroImageSection}>
+          <div className={styles.heroImageWrapper}>
+            <ThemedImage
+              sources={{
+                light: useBaseUrl("/img/pages/studio/studio-light.png"),
+                dark: useBaseUrl("/img/pages/studio/studio-dark.png"),
+              }}
+              alt="OOMOL Studio"
+              className={styles.heroImage}
+            />
+          </div>
+        </section>
 
         {/* 2. The Story (The "Why") */}
         <section className={styles.storySection}>
@@ -68,16 +84,16 @@ export default function StudioPage() {
               </p>
             </div>
             <div className={styles.principleVisual}>
-              <CodeBlock language="typescript">
-                {`${translate({ message: "STUDIO.principle1.codeComment1" })}
-export default function summarize(text: string) {
-  return llm.summarize(text);
-}
-
-${translate({ message: "STUDIO.principle1.codeComment2" })}
-${translate({ message: "STUDIO.principle1.codeComment3" })}
-${translate({ message: "STUDIO.principle1.codeComment4" })}`}
-              </CodeBlock>
+              <div className={styles.principleImageWrapper}>
+                <ThemedImage
+                  sources={{
+                    light: useBaseUrl("/img/pages/studio/code-light.png"),
+                    dark: useBaseUrl("/img/pages/studio/code-dark.png"),
+                  }}
+                  alt="Code as Truth"
+                  className={styles.principleImage}
+                />
+              </div>
             </div>
           </div>
 
@@ -96,17 +112,16 @@ ${translate({ message: "STUDIO.principle1.codeComment4" })}`}
               </p>
             </div>
             <div className={styles.principleVisual}>
-              <CodeBlock language="json">
-                {`{
-  "editor": "VS Code (Monaco)",
-  "features": [
-    "Intellisense",
-    "Go to Definition",
-    "Breakpoints",
-    "Variable Inspection"
-  ]
-}`}
-              </CodeBlock>
+              <div className={styles.principleImageWrapper}>
+                <ThemedImage
+                  sources={{
+                    light: useBaseUrl("/img/pages/studio/edit-light.png"),
+                    dark: useBaseUrl("/img/pages/studio/edit-dark.png"),
+                  }}
+                  alt="Respect Toolchain"
+                  className={styles.principleImage}
+                />
+              </div>
             </div>
           </div>
 
@@ -125,13 +140,16 @@ ${translate({ message: "STUDIO.principle1.codeComment4" })}`}
               </p>
             </div>
             <div className={styles.principleVisual}>
-              <CodeBlock language="bash">
-                {`${translate({ message: "STUDIO.principle3.codeComment" })}
-$ pip install pandas numpy torch
-$ apt-get install ffmpeg
-
-${translate({ message: "STUDIO.principle3.codeComment2" })}`}
-              </CodeBlock>
+              <div className={styles.principleImageWrapper}>
+                <ThemedImage
+                  sources={{
+                    light: useBaseUrl("/img/pages/studio/package-light.png"),
+                    dark: useBaseUrl("/img/pages/studio/package-dark.png"),
+                  }}
+                  alt="No Artificial Limits"
+                  className={styles.principleImage}
+                />
+              </div>
             </div>
           </div>
         </section>

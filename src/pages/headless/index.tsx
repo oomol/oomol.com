@@ -32,60 +32,18 @@ export default function HeadlessPage() {
           </div>
         </section>
 
-        <section
-          style={{
-            padding: "0 24px",
-            maxWidth: "900px",
-            margin: "0 auto 60px",
-          }}
-        >
-          <div
-            style={{
-              background: "var(--ifm-background-surface-color)",
-              border: "1px solid var(--ifm-color-emphasis-200)",
-              borderRadius: "16px",
-              padding: "32px",
-            }}
-          >
-            <h2
-              style={{
-                marginBottom: "24px",
-                fontSize: "1.8rem",
-                textAlign: "center",
-              }}
-            >
-              Docker Deployment
-            </h2>
-            <div
-              style={{
-                background: "var(--ifm-pre-background)",
-                borderRadius: "8px",
-                padding: "16px",
-                overflowX: "auto",
-                marginBottom: "24px",
-                fontFamily: "JetBrains Mono, monospace",
-                fontSize: "0.9rem",
-                lineHeight: "1.5",
-                whiteSpace: "pre",
-              }}
-            >
+        {/* Docker Deployment Section */}
+        <section className={styles.deploymentSection}>
+          <div className={styles.deploymentCard}>
+            <h2 className={styles.deploymentTitle}>Docker Deployment</h2>
+            <div className={styles.deploymentCode}>
               {`docker run -d --privileged --name oomol-headless -p 4000:4000 -p 52222:52222 \\
   --mount type=bind,src=$HOME/.oomol-studio/headless/.env,dst=/app/.env \\
   --mount type=bind,src=$HOME/oomol-storage,dst=/oomol-driver/oomol-storage \\
   oomolstudio/headless:latest`}
             </div>
-            <div style={{ textAlign: "center" }}>
-              <a
-                href="/docs/headless"
-                style={{
-                  color: "var(--oomol-primary)",
-                  fontWeight: "600",
-                  fontSize: "1.1rem",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "8px",
-                }}
-              >
+            <div className={styles.deploymentCTA}>
+              <a href="/docs/headless" className={styles.deploymentLink}>
                 View Full Documentation →
               </a>
             </div>
@@ -102,6 +60,7 @@ export default function HeadlessPage() {
           <div className={styles.cardGrid}>
             {/* Freedom */}
             <div className={styles.card}>
+              {/* 🖼️ 图片占位: Freedom 图标 (建议使用开放的鸟类图标或自由主题插图, SVG/PNG 80x80px) */}
               <div className={styles.cardIcon}>🕊️</div>
               <h3>
                 {translate({ message: "HEADLESS.philosophy.freedom.title" })}
@@ -113,6 +72,7 @@ export default function HeadlessPage() {
 
             {/* Open Source */}
             <div className={styles.card}>
+              {/* 🖼️ 图片占位: 开源图标 (建议使用解锁或开源 logo, SVG/PNG 80x80px) */}
               <div className={styles.cardIcon}>🔓</div>
               <h3>
                 {translate({ message: "HEADLESS.philosophy.opensource.title" })}
@@ -132,6 +92,7 @@ export default function HeadlessPage() {
 
             {/* Community */}
             <div className={styles.card}>
+              {/* 🖼️ 图片占位: 社区图标 (建议使用握手或社区主题插图, SVG/PNG 80x80px) */}
               <div className={styles.cardIcon}>🤝</div>
               <h3>
                 {translate({ message: "HEADLESS.philosophy.community.title" })}

@@ -381,9 +381,11 @@
 // Concept Section
 // ============================================
 .conceptSection {
-    padding: 80px 32px;
-    text-align: center;
-    background: var(--ifm-color-emphasis-100);
+  padding: 80px 32px;
+  text-align: center;
+  background: var(--ifm-background-surface-color);
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
 }
 
 .sectionDescription {
@@ -424,9 +426,35 @@
     }
 }
 
+.productImageWrapper {
+  width: 100%;
+  margin-bottom: 32px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--ifm-color-emphasis-100);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.productImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+
+  .productImageWrapper:hover & {
+    transform: scale(1.02);
+  }
+}
+
 .productIcon {
-    font-size: 4rem;
-    margin-bottom: 24px;
+  font-size: 4rem;
+  margin-bottom: 24px;
 }
 
 .productTitle {
@@ -453,10 +481,11 @@
 }
 
 .devValueBox {
-    background: var(--ifm-color-emphasis-100);
-    padding: 20px;
-    border-radius: 12px;
-    text-align: left;
+  background: transparent;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: left;
 }
 
 .devValueLabel {
