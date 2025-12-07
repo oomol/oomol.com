@@ -2400,6 +2400,42 @@
   "CLOUD.pricing.cta": {
     "message": "View Pricing"
   },
+  "CLOUD.opensource.title": {
+    "message": "Open Source Infrastructure"
+  },
+  "CLOUD.opensource.subtitle": {
+    "message": "OOMOL's underlying runtime kernel is fully open source, giving you complete control over your deployment environment"
+  },
+  "CLOUD.opensource.description": {
+    "message": "We believe in the power of open source. OOMOL's virtual machine and runtime core code are completely open source, allowing you to freely view, modify, and deploy. Whether it's a personal NAS, private server, or public cloud, you have complete deployment freedom."
+  },
+  "CLOUD.opensource.projects.title": {
+    "message": "Open Source Projects"
+  },
+  "CLOUD.opensource.ovm.title": {
+    "message": "OVM"
+  },
+  "CLOUD.opensource.ovm.description": {
+    "message": "Cross-platform virtual machine manager providing unified container runtime for OOMOL"
+  },
+  "CLOUD.opensource.ovm-core.title": {
+    "message": "OVM Core"
+  },
+  "CLOUD.opensource.ovm-core.description": {
+    "message": "Core runtime library for OVM, handling container lifecycle and resource management"
+  },
+  "CLOUD.opensource.ovm-win.title": {
+    "message": "OVM Windows"
+  },
+  "CLOUD.opensource.ovm-win.description": {
+    "message": "OVM implementation for Windows platform, supporting WSL2 and Hyper-V"
+  },
+  "CLOUD.opensource.ovm-mac.title": {
+    "message": "OVM macOS"
+  },
+  "CLOUD.opensource.ovm-mac.description": {
+    "message": "OVM implementation for macOS platform, based on Apple Virtualization Framework"
+  },
   "STUDIO.hero.description": {
     "message": "Local development environment for developers, VSCode-based visual programming tool with FRP protocol for P2P computing power sharing"
   },

@@ -2403,6 +2403,42 @@
   "CLOUD.pricing.cta": {
     "message": "查看详细价格"
   },
+  "CLOUD.opensource.title": {
+    "message": "开源基础设施"
+  },
+  "CLOUD.opensource.subtitle": {
+    "message": "OOMOL 的底层运行时内核全部开源,让你完全掌控部署环境"
+  },
+  "CLOUD.opensource.description": {
+    "message": "我们坚信开源的力量。OOMOL 的虚拟机和运行时核心代码完全开源,你可以自由查看、修改和部署。无论是个人 NAS、私有服务器还是公有云,你都拥有完全的部署自由。"
+  },
+  "CLOUD.opensource.projects.title": {
+    "message": "开源项目"
+  },
+  "CLOUD.opensource.ovm.title": {
+    "message": "OVM"
+  },
+  "CLOUD.opensource.ovm.description": {
+    "message": "跨平台虚拟机管理器,为 OOMOL 提供统一的容器运行环境"
+  },
+  "CLOUD.opensource.ovm-core.title": {
+    "message": "OVM Core"
+  },
+  "CLOUD.opensource.ovm-core.description": {
+    "message": "OVM 的核心运行时库,处理容器生命周期和资源管理"
+  },
+  "CLOUD.opensource.ovm-win.title": {
+    "message": "OVM Windows"
+  },
+  "CLOUD.opensource.ovm-win.description": {
+    "message": "Windows 平台的 OVM 实现,支持 WSL2 和 Hyper-V"
+  },
+  "CLOUD.opensource.ovm-mac.title": {
+    "message": "OVM macOS"
+  },
+  "CLOUD.opensource.ovm-mac.description": {
+    "message": "macOS 平台的 OVM 实现,基于 Apple Virtualization Framework"
+  },
   "STUDIO.hero.description": {
     "message": "面向开发者的本地开发环境，基于 VSCode 的可视化编程工具，结合 FRP 协议实现 P2P 算力共享"
   },

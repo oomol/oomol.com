@@ -80,14 +80,6 @@ export default function HeadlessPage() {
               <p>
                 {translate({ message: "HEADLESS.philosophy.opensource.desc" })}
               </p>
-              <a
-                href="https://github.com/oomol/oomol-runtime"
-                target="_blank"
-                rel="noreferrer"
-                className={styles.cardLink}
-              >
-                GitHub →
-              </a>
             </div>
 
             {/* Community */}
@@ -101,6 +93,78 @@ export default function HeadlessPage() {
                 {translate({ message: "HEADLESS.philosophy.community.desc" })}
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Open Source Projects Section */}
+        <section className={styles.opensourceSection}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>
+              {translate({ message: "CLOUD.opensource.title" })}
+            </h2>
+            <p className={styles.sectionSubtitle}>
+              {translate({ message: "CLOUD.opensource.subtitle" })}
+            </p>
+          </div>
+          <div className={styles.projectsGrid}>
+            <a
+              href="https://github.com/oomol-lab/ovm"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectCard}
+            >
+              <h3 className={styles.projectTitle}>
+                {translate({ message: "CLOUD.opensource.ovm.title" })}
+              </h3>
+              <p className={styles.projectDescription}>
+                {translate({ message: "CLOUD.opensource.ovm.description" })}
+              </p>
+              <span className={styles.projectLink}>GitHub →</span>
+            </a>
+            <a
+              href="https://github.com/oomol-lab/ovm-core"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectCard}
+            >
+              <h3 className={styles.projectTitle}>
+                {translate({ message: "CLOUD.opensource.ovm-core.title" })}
+              </h3>
+              <p className={styles.projectDescription}>
+                {translate({
+                  message: "CLOUD.opensource.ovm-core.description",
+                })}
+              </p>
+              <span className={styles.projectLink}>GitHub →</span>
+            </a>
+            <a
+              href="https://github.com/oomol-lab/ovm-win"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectCard}
+            >
+              <h3 className={styles.projectTitle}>
+                {translate({ message: "CLOUD.opensource.ovm-win.title" })}
+              </h3>
+              <p className={styles.projectDescription}>
+                {translate({ message: "CLOUD.opensource.ovm-win.description" })}
+              </p>
+              <span className={styles.projectLink}>GitHub →</span>
+            </a>
+            <a
+              href="https://github.com/oomol-lab/ovm-mac"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectCard}
+            >
+              <h3 className={styles.projectTitle}>
+                {translate({ message: "CLOUD.opensource.ovm-mac.title" })}
+              </h3>
+              <p className={styles.projectDescription}>
+                {translate({ message: "CLOUD.opensource.ovm-mac.description" })}
+              </p>
+              <span className={styles.projectLink}>GitHub →</span>
+            </a>
           </div>
         </section>
 
