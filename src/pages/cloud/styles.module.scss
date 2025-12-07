@@ -71,42 +71,51 @@
 .heroCTA {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
 .primaryButton,
 .secondaryButton {
-  padding: 14px 32px;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
   text-decoration: none;
   transition: all 0.2s ease;
-  display: inline-block;
+  margin: 0 !important;
 }
 
 .primaryButton {
   background: var(--oomol-primary);
-  color: white;
+  color: var(--oomol-text-inverse);
   border: none;
+
+  [data-theme="dark"] & {
+    color: var(--oomol-white);
+  }
 
   &:hover {
     background: var(--oomol-primary-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px var(--oomol-primary-bg-hover);
-    color: white;
+    color: var(--oomol-text-inverse) !important;
+
+    [data-theme="dark"] & {
+      color: var(--oomol-white) !important;
+    }
   }
 }
 
 .secondaryButton {
-  background: transparent;
-  color: var(--ifm-color-emphasis-800);
-  border: 1.5px solid var(--ifm-color-emphasis-300);
+  background: inherit;
+  color: var(--oomol-text-primary);
+  border: 1px solid var(--oomol-border-default);
 
   &:hover {
+    color: var(--oomol-primary) !important;
     border-color: var(--oomol-primary);
-    color: var(--oomol-primary);
     background: var(--oomol-primary-bg);
   }
 }
