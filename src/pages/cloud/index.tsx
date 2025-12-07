@@ -1,8 +1,8 @@
 import styles from "./styles.module.scss";
 
 import { translate } from "@docusaurus/Translate";
-import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import ThemedImage from "@theme/ThemedImage";
 
 import Layout from "../../theme/Layout";
@@ -32,10 +32,17 @@ const modes = [
   },
 ];
 
-const ModeItem = ({ mode }: { mode: (typeof modes)[0] }) => {
+const ModeItem = ({
+  mode,
+  index,
+}: {
+  mode: (typeof modes)[0];
+  index: number;
+}) => {
   return (
     <div className={styles.modeItem}>
       <div className={styles.modeText}>
+        <div className={styles.modeNumber}>0{index + 1}</div>
         <h3 className={styles.modeTitle}>{mode.title}</h3>
         <p className={styles.modeDescription}>{mode.description}</p>
       </div>
@@ -105,12 +112,14 @@ export default function CloudPage() {
         {/* Pain Points Section (Empathy) */}
         <section className={styles.painPointsSection}>
           <div className={styles.painPointsContent}>
-            <h2 className={styles.sectionTitle}>
-              {translate({ message: "CLOUD.painPoints.title" })}
-            </h2>
-            <p className={styles.sectionSubtitle}>
-              {translate({ message: "CLOUD.painPoints.subtitle" })}
-            </p>
+            <div className={styles.painPointsHeader}>
+              <h2 className={styles.sectionTitle}>
+                {translate({ message: "CLOUD.painPoints.title" })}
+              </h2>
+              <p className={styles.sectionSubtitle}>
+                {translate({ message: "CLOUD.painPoints.subtitle" })}
+              </p>
+            </div>
             <div className={styles.painPointsText}>
               {translate({ message: "CLOUD.painPoints.description" })}
             </div>
@@ -129,7 +138,7 @@ export default function CloudPage() {
           </div>
           <div className={styles.modesContainer}>
             {modes.map((mode, index) => (
-              <ModeItem key={index} mode={mode} />
+              <ModeItem key={index} mode={mode} index={index} />
             ))}
           </div>
         </section>
