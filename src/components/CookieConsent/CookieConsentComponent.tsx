@@ -1,11 +1,12 @@
-import { useEffect, useRef } from "react";
+import type { DocusaurusContext } from "@docusaurus/types";
+
+import { useLocation } from "@docusaurus/router";
+import { useColorMode } from "@docusaurus/theme-common";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { useEffect } from "react";
 import * as CookieConsent from "vanilla-cookieconsent";
 
 import { pluginConfig } from "./cookieConsentConfig";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { DocusaurusContext } from "@docusaurus/types";
-import { useColorMode } from "@docusaurus/theme-common";
-import { useLocation } from "@docusaurus/router";
 
 export const CookieConsentComponent = () => {
   const location = useLocation();

@@ -11,7 +11,7 @@
 }
 
 // ============================================
-// Hero 区域 - 与 Studio 保持一致的极简风格
+// Hero 区域
 // ============================================
 .hero {
   text-align: center;
@@ -26,7 +26,7 @@
   margin-bottom: 1.5rem;
   letter-spacing: -0.03em;
   line-height: 1.1;
-  color: var(--oomol-primary);
+  color: var(--ifm-heading-color);
 }
 
 .heroDescription {
@@ -71,42 +71,73 @@
 .heroCTA {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
 .primaryButton,
 .secondaryButton {
-  padding: 14px 32px;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
   text-decoration: none;
   transition: all 0.2s ease;
-  display: inline-block;
+  margin: 0 !important;
+
+  // Small size
+  &.small {
+    padding: 4px 12px;
+    font-size: 12px;
+    gap: 4px;
+  }
+
+  // Medium size (default)
+  &.medium {
+    padding: 8px 20px;
+    font-size: 14px;
+    gap: 6px;
+  }
+
+  // Large size
+  &.large {
+    padding: 12px 32px;
+    font-size: 16px;
+    gap: 8px;
+    font-weight: 600;
+  }
 }
 
 .primaryButton {
   background: var(--oomol-primary);
-  color: white;
+  color: var(--oomol-text-inverse);
   border: none;
+
+  [data-theme="dark"] & {
+    color: var(--oomol-white);
+  }
 
   &:hover {
     background: var(--oomol-primary-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px var(--oomol-primary-bg-hover);
-    color: white;
+    color: var(--oomol-text-inverse) !important;
+
+    [data-theme="dark"] & {
+      color: var(--oomol-white) !important;
+    }
   }
 }
 
 .secondaryButton {
-  background: transparent;
-  color: var(--ifm-color-emphasis-800);
-  border: 1.5px solid var(--ifm-color-emphasis-300);
+  background: inherit;
+  color: var(--oomol-text-primary);
+  border: 1px solid var(--oomol-border-default);
 
   &:hover {
+    color: var(--oomol-primary) !important;
     border-color: var(--oomol-primary);
-    color: var(--oomol-primary);
     background: var(--oomol-primary-bg);
   }
 }
@@ -137,177 +168,209 @@
 }
 
 // ============================================
-// 使用场景 - 4列网格
+// Pain Points Section (New)
 // ============================================
-.useCasesSection {
-  padding: 100px 32px;
+.painPointsSection {
+  padding: 0px 24px 60px 24px;
   background: linear-gradient(
-    180deg,
-    transparent 0%,
-    var(--ifm-color-primary-lightest) 50%,
-    transparent 100%
+    135deg,
+    var(--ifm-background-color) 0%,
+    var(--ifm-background-surface-color) 100%
   );
+  position: relative;
+  overflow: hidden;
 }
 
-.useCasesGrid {
-  max-width: 1200px;
+.painPointsContent {
+  max-width: 900px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-}
-
-.useCaseCard {
-  padding: 32px 24px;
-  background: var(--ifm-background-surface-color);
-  border-radius: 12px;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  transition: all 0.3s ease;
   text-align: center;
+}
 
-  &:hover {
-    border-color: var(--oomol-primary);
-    box-shadow: 0 8px 24px var(--oomol-primary-bg-hover);
-    transform: translateY(-4px);
+.painPointsHeader {
+  margin-bottom: 64px;
+
+  .sectionTitle {
+    font-size: 3rem;
+    font-weight: 900;
+    background: linear-gradient(
+      135deg,
+      var(--ifm-heading-color) 0%,
+      var(--ifm-color-emphasis-700) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+    letter-spacing: -0.03em;
   }
-}
 
-.useCaseIcon {
-  font-size: 3rem;
-  margin-bottom: 16px;
-}
-
-.useCaseTitle {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--ifm-heading-color);
-  margin-bottom: 12px;
-  line-height: 1.3;
-}
-
-.useCaseDescription {
-  font-size: 0.95rem;
-  color: var(--ifm-color-emphasis-700);
-  line-height: 1.6;
-  margin: 0;
-}
-
-// ============================================
-// 核心功能 - 3列卡片
-// ============================================
-.featuresSection {
-  padding: 100px 32px;
-}
-
-.featuresGrid {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
-}
-
-.featureCard {
-  padding: 40px;
-  background: var(--ifm-background-surface-color);
-  border-radius: 16px;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  transition: all 0.3s ease;
-
-  &:hover {
-    border-color: var(--oomol-primary);
-    box-shadow: 0 12px 32px var(--oomol-primary-bg-hover);
-    transform: translateY(-6px);
-  }
-}
-
-.featureIcon {
-  font-size: 3rem;
-  margin-bottom: 16px;
-  display: block;
-}
-
-.featureTitle {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--ifm-heading-color);
-  margin-bottom: 12px;
-  line-height: 1.3;
-}
-
-.featureDescription {
-  font-size: 1.05rem;
-  color: var(--ifm-color-emphasis-700);
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-
-.featureList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  li {
-    padding-left: 24px;
-    margin-bottom: 10px;
-    position: relative;
-    font-size: 0.95rem;
+  .sectionSubtitle {
+    font-size: 1.3rem;
     color: var(--ifm-color-emphasis-600);
-    line-height: 1.6;
+    font-weight: 500;
+  }
+}
+
+.painPointsText {
+  font-size: 1.2rem;
+  line-height: 2;
+  color: var(--ifm-color-emphasis-800);
+  font-weight: 400;
+  text-align: left;
+  padding: 48px;
+  background: var(--ifm-background-surface-color);
+  border-radius: 20px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  position: relative;
+
+  &::before {
+    content: '"';
+    position: absolute;
+    top: 20px;
+    left: 24px;
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--oomol-primary);
+    opacity: 0.15;
+    line-height: 1;
+    font-family: Georgia, serif;
+  }
+
+  @media (max-width: 768px) {
+    padding: 32px 24px;
+    font-size: 1.1rem;
+    line-height: 1.8;
 
     &::before {
-      content: "→";
-      position: absolute;
-      left: 0;
-      color: var(--oomol-primary);
-      font-weight: 700;
+      font-size: 3.5rem;
+      top: 12px;
+      left: 16px;
     }
   }
 }
 
 // ============================================
-// 响应式设计
+// Modes Section (Solution)
+// ============================================
+.modesSection {
+  padding: 120px 24px;
+  background: var(--ifm-background-color);
+}
+
+.modesContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.modeItem {
+  margin: 0 auto 160px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 996px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 100px;
+  }
+}
+
+.modeText {
+  h3 {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.modeNumber {
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--oomol-primary);
+  opacity: 0.15;
+  line-height: 1;
+  margin-bottom: 24px;
+  letter-spacing: -0.05em;
+}
+
+.modeTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--oomol-primary);
+  margin-bottom: 24px;
+}
+
+.modeDescription {
+  font-size: 1.15rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.7;
+}
+
+.modeVisual {
+  width: 100%;
+}
+
+.modeImageWrapper {
+  width: 100%;
+}
+
+.modeImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+// ============================================
+// Pricing Section
+// ============================================
+.pricingSection {
+  padding: 100px 32px;
+  text-align: center;
+}
+
+.pricingContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pricingDescription {
+  font-size: 1.25rem;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 48px;
+  line-height: 1.6;
+}
+
+// ============================================
+// Responsive
 // ============================================
 @media (max-width: 996px) {
   .hero {
     padding: 80px 24px 60px;
   }
-
   .heroTitle {
     font-size: 3rem;
   }
-
   .heroDescription {
     font-size: 1.25rem;
   }
-
-  .heroStats {
-    gap: 32px;
-  }
-
-  .statValue {
-    font-size: 1.75rem;
-  }
-
-  .sectionTitle {
-    font-size: 2.25rem;
-  }
-
-  .sectionSubtitle {
+  .painPointsText {
     font-size: 1.1rem;
-  }
-
-  .useCasesSection,
-  .featuresSection {
-    padding: 80px 24px;
-  }
-
-  .useCasesGrid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  }
-
-  .featuresGrid {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -315,57 +378,11 @@
   .hero {
     padding: 60px 20px 40px;
   }
-
   .heroTitle {
     font-size: 2.5rem;
   }
-
-  .heroDescription {
-    font-size: 1.1rem;
-  }
-
   .heroStats {
     flex-direction: column;
     gap: 24px;
-  }
-
-  .heroCTA {
-    flex-direction: column;
-    align-items: stretch;
-
-    .primaryButton,
-    .secondaryButton {
-      width: 100%;
-      text-align: center;
-    }
-  }
-
-  .sectionTitle {
-    font-size: 2rem;
-  }
-
-  .sectionSubtitle {
-    font-size: 1rem;
-  }
-
-  .useCasesSection,
-  .featuresSection {
-    padding: 60px 20px;
-  }
-
-  .sectionHeader {
-    margin-bottom: 48px;
-  }
-
-  .useCasesGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .useCaseTitle {
-    font-size: 1.25rem;
-  }
-
-  .featureTitle {
-    font-size: 1.5rem;
   }
 }

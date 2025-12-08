@@ -51,9 +51,9 @@
     "message": "OOMOL Hub",
     "description": "Navbar item with label navbar.oomol-hub"
   },
-  "item.label.navbar.oomol-chat": {
-    "message": "OOMOL Chat",
-    "description": "Navbar item with label navbar.oomol-chat"
+  "item.label.navbar.oomol-app": {
+    "message": "OOMOL App",
+    "description": "Navbar item with label navbar.oomol-app"
   },
   "item.label.navbar.oomol-cloud": {
     "message": "OOMOL Cloud",
@@ -66,6 +66,10 @@
   "item.label.Product": {
     "message": "Product",
     "description": "Navbar item with label Product"
+  },
+  "item.label.navbar.download": {
+    "message": "Download",
+    "description": "Navbar item with label navbar.download"
   },
   "title": {
     "message": "OOMOL",

@@ -1,0 +1,31 @@
+# Headless
+
+用于本地部署（通常是在 NAS 里）的单机版无头 studio，没有 Electron，没有服务端调度。
+
+## 本地调试
+
+1. 准备 [.env](./.env.example)
+2. 打包 `pnpm build`
+3. 运行 `pnpm start`
+
+## Docker 部署
+
+1. 准备存储目录，例如：
+
+   ```bash
+   mkdir -p $HOME/oomol-storage
+   ```
+
+2. 准备环境变量文件：
+
+   将 [.env](./.env.example) 放入 `$HOME/.oomol-studio/headless/.env`，并删掉 `OOMOL_LOCAL=1`。
+
+3. 拉取并运行 Docker 镜像，绑定存储目录和环境变量文件：
+
+   ```bash
+   docker pull oomolstudio/headless:latest
+
+   docker run -d --privileged --name oomol-headless -p 4000:4000 -p 52222:52222 --mount type=bind,src=$HOME/.oomol-studio/headless/.env,dst=/app/.env --mount type=bind,src=$HOME/oomol-storage,dst=/oomol-driver/oomol-storage oomolstudio/headless:latest
+   ```
+
+4. 在 `http://localhost:4000` 访问 UI 界面。

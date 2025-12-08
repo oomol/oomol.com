@@ -1181,7 +1181,70 @@
   "CREATE.description": {
     "message": "OOMOL 推出的 AI 工具创作平台。该平台的核心优势在于：既保留了传统编程的无限创造能力，又具备低代码开发的便捷性，让用户能够高效地构建各类 AI 工具。"
   },
+  "STUDIO.hero.subtitle": {
+    "message": "为开发者重新设计的工作流工具"
+  },
   "STUDIO.hero.description": {
+    "message": "我们听到了开发者的声音：传统工作流平台让简单的事情变复杂。OOMOL Studio 改变这一切。"
+  },
+  "STUDIO.painPoints.title": {
+    "message": "传统工作流工具的三大痛点"
+  },
+  "STUDIO.painPoints.subtitle": {
+    "message": "作为开发者，我们深知这些问题有多让人头疼"
+  },
+  "STUDIO.painPoints.learningCurve.title": {
+    "message": "学习成本高"
+  },
+  "STUDIO.painPoints.learningCurve.description": {
+    "message": "学习平台的交互和设计理念，简单的 if-else 逻辑被几个拖拽组件搞得复杂难用。明明一句代码能解决的问题，却要花时间理解平台的抽象概念。"
+  },
+  "STUDIO.painPoints.extension.title": {
+    "message": "扩展麻烦"
+  },
+  "STUDIO.painPoints.extension.description": {
+    "message": "编程时引用个开源库就能解决的问题，在工作流平台里却像造火箭一样复杂。想要扩展功能？先看看平台支不支持，不支持就只能干瞪眼。"
+  },
+  "STUDIO.painPoints.toolSwitching.title": {
+    "message": "离开熟悉的工具"
+  },
+  "STUDIO.painPoints.toolSwitching.description": {
+    "message": "就算平台提供了脚本功能，也要在难用的网页编辑器里写代码，而不是在熟悉的 VSCode 中。失去了代码补全、调试工具和各种插件，开发效率大打折扣。"
+  },
+  "STUDIO.solutions.title": {
+    "message": "OOMOL Studio 的解决方案"
+  },
+  "STUDIO.solutions.subtitle": {
+    "message": "我们从开发者的实际需求出发，重新设计工作流开发体验"
+  },
+  "STUDIO.solutions.functions.title": {
+    "message": "节点即函数，引用库零门槛"
+  },
+  "STUDIO.solutions.functions.description": {
+    "message": "在 OOMOL Studio 中，节点就是函数。你不需要学习任何新概念，用熟悉的方式编写代码，任意引用开源库。想要什么功能，npm install 就能搞定。"
+  },
+  "STUDIO.solutions.functions.highlight": {
+    "message": "不学新概念，不设天花板。像写代码一样创建工作流。"
+  },
+  "STUDIO.solutions.vscode.title": {
+    "message": "基于 VSCode，继承编程习惯"
+  },
+  "STUDIO.solutions.vscode.description": {
+    "message": "OOMOL Studio 基于 VSCode 开发，你可以在熟悉的编辑器中编写节点代码。代码补全、调试工具、Git 集成、各种插件...所有你习惯的开发体验都在这里。"
+  },
+  "STUDIO.solutions.vscode.highlight": {
+    "message": "熟悉的编辑器，熟悉的快捷键，零适应成本。"
+  },
+  "STUDIO.solutions.container.title": {
+    "message": "内置容器，环境一致好部署"
+  },
+  "STUDIO.solutions.container.description": {
+    "message": "软件内置容器环境，本地开发和服务器环境完全一致。写完代码直接运行，不用担心「我这能跑，服务器怎么就不行」。通过网络反代，让你的设备秒变私人服务器，零成本启动任务。"
+  },
+  "STUDIO.solutions.container.highlight": {
+    "message": "本地即生产，部署不踩坑。闲置设备也能当服务器用。"
+  },
+  "STUDIO.hero.description.old": {
     "message": "可视化工作流 + VSCode 全代码，快速构建并分享 AI 工具"
   },
   "STUDIO.hero.stat1": {
@@ -2050,7 +2113,31 @@
     "description": "The text for authors with 0 blog post"
   },
   "HEADLESS.hero.description": {
-    "message": "Docker 容器化部署，轻松在服务器和 NAS 上运行 OOMOL 应用"
+    "message": "OOMOL Headless 本质上是将 OOMOL Studio 的运行环境以容器镜像的方式交付给开发者。自由部署，拒绝捆绑。"
+  },
+  "HEADLESS.philosophy.title": {
+    "message": "我们的承诺：自由与开放"
+  },
+  "HEADLESS.philosophy.subtitle": {
+    "message": "我们深知开发者对商业化捆绑的担忧。OOMOL 尊重你的意志，让技术回归纯粹。"
+  },
+  "HEADLESS.philosophy.freedom.title": {
+    "message": "部署自由"
+  },
+  "HEADLESS.philosophy.freedom.desc": {
+    "message": "你的代码，你的设备。无论是个人 NAS、私有服务器还是公有云，只要你愿意，想跑哪里就跑哪里。"
+  },
+  "HEADLESS.philosophy.opensource.title": {
+    "message": "内核开源"
+  },
+  "HEADLESS.philosophy.opensource.desc": {
+    "message": "我们将 OOMOL Runtime 核心代码开源。Code is Law，这是我们对“拒绝过度商业化”最直接的回答。"
+  },
+  "HEADLESS.philosophy.community.title": {
+    "message": "安心共建"
+  },
+  "HEADLESS.philosophy.community.desc": {
+    "message": "没有隐藏条款，没有强制升级。我们致力于构建一个让大家安心使用、开心共建的开发者生态。"
   },
   "HEADLESS.hero.stat1": {
     "message": "容器化部署"
@@ -2066,6 +2153,12 @@
   },
   "HEADLESS.hero.cta.docs": {
     "message": "查看文档"
+  },
+  "HEADLESS.deployment.title": {
+    "message": "Docker 部署"
+  },
+  "HEADLESS.deployment.viewDocs": {
+    "message": "查看完整文档 →"
   },
   "HEADLESS.useCases.title": {
     "message": "适用场景"
@@ -2253,106 +2346,248 @@
   "HOME.ProductComparison.cloud.tech": {
     "message": "按需扩缩容、零运维心智负担、极速发布到生产环境"
   },
+  "CLOUD.hero.title": {
+    "message": "OOMOL Cloud"
+  },
   "CLOUD.hero.description": {
-    "message": "免运维的托管式运行环境，提供 RESTful API 和 MCP 协议端点，支持自动扩缩容"
+    "message": "你只管写函数 Block，剩下的交给 OOMOL。从繁琐的运维中解放出来，让创意即刻落地。"
   },
   "CLOUD.hero.stat1": {
-    "message": "弹性伸缩"
+    "message": "无痛生成"
   },
   "CLOUD.hero.stat2": {
-    "message": "API 服务"
+    "message": "按量计费"
   },
   "CLOUD.hero.stat3": {
-    "message": "AI 集成"
+    "message": "省钱省力"
   },
   "CLOUD.hero.cta.start": {
-    "message": "开始使用"
+    "message": "开始构建"
   },
   "CLOUD.hero.cta.docs": {
-    "message": "查看文档"
+    "message": "了解更多"
   },
-  "CLOUD.useCases.title": {
-    "message": "适用场景"
+  "CLOUD.painPoints.title": {
+    "message": "交付代码不该是折磨"
   },
-  "CLOUD.useCases.subtitle": {
-    "message": "无需关心服务器和运维，专注于业务逻辑开发"
+  "CLOUD.painPoints.subtitle": {
+    "message": "作为开发者，我们深知你的苦恼"
   },
-  "CLOUD.useCase.quickDeploy.title": {
-    "message": "快速上线服务"
+  "CLOUD.painPoints.description": {
+    "message": "写代码本身是充满创造愉悦的，但将代码交付给用户往往枯燥乏味。购买服务器、准备环境、部署代码、可用性设计、UI 设计... 很多天才的设计都因为这些“拦路虎”，要么趴在电脑里孤芳自赏，要么做了一半无奈放弃，甚至因为产品没卖出去就背负了高昂的服务器费用。"
   },
-  "CLOUD.useCase.quickDeploy.description": {
-    "message": "中小团队无需配置服务器，一键部署工作流为云端 API 服务"
+  "CLOUD.solution.title": {
+    "message": "专注代码，享受编程"
   },
-  "CLOUD.useCase.aiAgent.title": {
-    "message": "AI Agent 集成"
+  "CLOUD.solution.subtitle": {
+    "message": "你只管写函数 Block，剩下的交给 OOMOL"
   },
-  "CLOUD.useCase.aiAgent.description": {
-    "message": "通过 MCP 协议对接 Claude、ChatGPT 等 AI 平台，提供专属工具"
+  "CLOUD.modes.library.title": {
+    "message": "发布为函数库"
   },
-  "CLOUD.useCase.miniapp.title": {
-    "message": "小程序后端"
+  "CLOUD.modes.library.description": {
+    "message": "将 Block 分享给他人使用，或者通过工作流组合成新的功能。让你的代码成为社区创新的基石。"
   },
-  "CLOUD.useCase.miniapp.description": {
-    "message": "为小程序、移动应用提供 RESTful API，自动生成文档和测试界面"
+  "CLOUD.modes.serverless.title": {
+    "message": "部署为云函数"
   },
-  "CLOUD.useCase.noOps.title": {
-    "message": "免运维管理"
+  "CLOUD.modes.serverless.description": {
+    "message": "一键部署为 Serverless API 服务。无需运维，自动扩缩容，为他人提供稳定的 API 服务。"
   },
-  "CLOUD.useCase.noOps.description": {
-    "message": "自动监控、日志记录、安全隔离，无需管理基础设施"
+  "CLOUD.modes.mcp.title": {
+    "message": "提供给 AI 调用"
   },
-  "CLOUD.features.title": {
-    "message": "核心功能"
+  "CLOUD.modes.mcp.description": {
+    "message": "以 MCP (Model Context Protocol) 方式发布，让 AI Agent 直接调用你的函数，连接智能世界。"
   },
-  "CLOUD.features.oneDeploy.title": {
-    "message": "一键部署"
+  "CLOUD.pricing.title": {
+    "message": "按调用收费，不用预支"
   },
-  "CLOUD.features.oneDeploy.description": {
-    "message": "从 Studio 直接推送到 Cloud，自动配置域名和 HTTPS"
+  "CLOUD.pricing.description": {
+    "message": "没有昂贵的服务器租用费，没有复杂的预付费套餐。我们按调用次数收取费用，真正做到省钱省力，让你专注于享受编程的乐趣。"
   },
-  "CLOUD.features.oneDeploy.feature1": {
-    "message": "Git Push 式部署体验"
+  "CLOUD.pricing.cta": {
+    "message": "查看详细价格"
   },
-  "CLOUD.features.oneDeploy.feature2": {
-    "message": "自动 HTTPS 证书配置"
+  "CLOUD.opensource.title": {
+    "message": "开源基础设施"
   },
-  "CLOUD.features.oneDeploy.feature3": {
-    "message": "零停机更新部署"
+  "CLOUD.opensource.subtitle": {
+    "message": "OOMOL 的底层运行时内核全部开源,让你完全掌控部署环境"
   },
-  "CLOUD.features.monitor.title": {
-    "message": "自动监控"
+  "CLOUD.opensource.description": {
+    "message": "我们坚信开源的力量。OOMOL 的虚拟机和运行时核心代码完全开源,你可以自由查看、修改和部署。无论是个人 NAS、私有服务器还是公有云,你都拥有完全的部署自由。"
   },
-  "CLOUD.features.monitor.description": {
-    "message": "实时性能监控、日志查看、错误追踪"
+  "CLOUD.opensource.projects.title": {
+    "message": "开源项目"
   },
-  "CLOUD.features.monitor.feature1": {
-    "message": "实时性能指标展示"
+  "CLOUD.opensource.ovm.title": {
+    "message": "OVM"
   },
-  "CLOUD.features.monitor.feature2": {
-    "message": "集中式日志查询"
+  "CLOUD.opensource.ovm.description": {
+    "message": "跨平台虚拟机管理器,为 OOMOL 提供统一的容器运行环境"
   },
-  "CLOUD.features.monitor.feature3": {
-    "message": "异常告警通知"
+  "CLOUD.opensource.ovm-core.title": {
+    "message": "OVM Core"
   },
-  "CLOUD.features.security.title": {
-    "message": "安全隔离"
+  "CLOUD.opensource.ovm-core.description": {
+    "message": "OVM 的核心运行时库,处理容器生命周期和资源管理"
   },
-  "CLOUD.features.security.description": {
-    "message": "容器级隔离、访问控制、数据加密"
+  "CLOUD.opensource.ovm-win.title": {
+    "message": "OVM Windows"
   },
-  "CLOUD.features.security.feature1": {
-    "message": "沙箱环境隔离"
+  "CLOUD.opensource.ovm-win.description": {
+    "message": "Windows 平台的 OVM 实现,支持 WSL2 和 Hyper-V"
   },
-  "CLOUD.features.security.feature2": {
-    "message": "API 密钥管理"
+  "CLOUD.opensource.ovm-mac.title": {
+    "message": "OVM macOS"
   },
-  "CLOUD.features.security.feature3": {
-    "message": "传输数据加密"
+  "CLOUD.opensource.ovm-mac.description": {
+    "message": "macOS 平台的 OVM 实现,基于 Apple Virtualization Framework"
   },
   "STUDIO.hero.description": {
     "message": "面向开发者的本地开发环境，基于 VSCode 的可视化编程工具，结合 FRP 协议实现 P2P 算力共享"
   },
   "HEADLESS.hero.description": {
-    "message": "容器化部署方案，将工作流打包为独立 Docker 镜像，适配云服务器、私有云和 K8s 集群"
+    "message": "用于本地部署（通常是在 NAS 里）的单机版无头 studio，没有 Electron，没有服务端调度。"
+  },
+  "APP.new.hero.title": { "message": "OOMOL App" },
+  "APP.new.hero.subtitle": { "message": "交付 AI 产品的最后一公里" },
+  "APP.new.hero.description": {
+    "message": "无需编写 UI，将你的 Block 函数直接转化为 AI Chat 技能与 Applet 小程序，瞬间交付给用户。"
+  },
+  "APP.new.concept.title": { "message": "代码即产品" },
+  "APP.new.concept.description": {
+    "message": "OOMOL 负责将你的后端逻辑 (Block) 自动封装为前端产品。你专注于编写函数，我们负责连接用户。"
+  },
+  "APP.new.chat.pill": { "message": "对话 · 工作流助手" },
+  "APP.new.chat.title": { "message": "OOMOL Chat" },
+  "APP.new.chat.subtitle": { "message": "AI 助手 · 探索性交互" },
+  "APP.new.chat.description": {
+    "message": "当用户需求模糊时，AI 智能调度你的工具来解决问题。"
+  },
+  "APP.new.chat.meta1.label": { "message": "适合谁" },
+  "APP.new.chat.meta1.value": {
+    "message": "需要把想法快速变成自动化工作流的人"
+  },
+  "APP.new.chat.meta2.label": { "message": "核心体验" },
+  "APP.new.chat.meta2.value": {
+    "message": "像和同事讨论一样，一步步对话搭建流程"
+  },
+  "APP.new.chat.devValue": { "message": "工具即技能：你的函数就是 AI 的手脚" },
+  "APP.new.applet.pill": { "message": "小程序 · 可编排应用" },
+  "APP.new.applet.title": { "message": "OOMOL Applet" },
+  "APP.new.applet.subtitle": { "message": "表单小程序 · 确定性交互" },
+  "APP.new.applet.description": {
+    "message": "当用户需求明确时，直接填参调用，高效精准。"
+  },
+  "APP.new.applet.meta1.label": { "message": "适合谁" },
+  "APP.new.applet.meta1.value": {
+    "message": "需要发布、复用、分享自动化能力的团队"
+  },
+  "APP.new.applet.meta2.label": { "message": "核心体验" },
+  "APP.new.applet.meta2.value": {
+    "message": "像搭乐高一样，把能力组件编排成产品"
+  },
+  "APP.new.applet.devValue": {
+    "message": "函数即应用：自动生成表单 UI，零前端代码"
+  },
+  "APP.new.hero.cta.web": {
+    "message": "在网页中使用"
+  },
+  "APP.new.hero.cta.studio": {
+    "message": "在 OOMOL Studio 中使用"
+  },
+  "APP.new.cta.download": { "message": "下载体验" },
+  "APP.new.cta.docs": { "message": "查看文档" },
+  "STUDIO.page.title": {
+    "message": "OOMOL Studio - 设计哲学"
+  },
+  "STUDIO.page.description": {
+    "message": "OOMOL Studio。为什么我们要这样构建 OOMOL Studio。"
+  },
+  "STUDIO.manifesto.title": {
+    "message": "OOMOL Studio"
+  },
+  "STUDIO.manifesto.subtitle": {
+    "message": "我们构建 OOMOL Studio，是因为厌倦了在「易于使用」和「足够强大」之间做选择。"
+  },
+  "STUDIO.manifesto.cta.download": {
+    "message": "下载 OOMOL Studio"
+  },
+  "STUDIO.story.paragraph1": {
+    "message": "作为工程师，我们热爱自动化。我们喜欢将工具链接在一起构建流水线、智能体和数据流。但每当我们尝试使用现有的「工作流平台」时，总会遇到障碍。"
+  },
+  "STUDIO.story.frustration.line1": {
+    "message": "「为什么我必须学习专有的 JSON 语法才能写一个 if/else 语句？」"
+  },
+  "STUDIO.story.frustration.line2": {
+    "message": "「为什么我不能直接导入一个库？为什么我必须等待平台支持它？」"
+  },
+  "STUDIO.story.frustration.line3": {
+    "message": "「为什么我要在一个没有自动补全的文本框里写代码？」"
+  },
+  "STUDIO.story.paragraph2": {
+    "message": "我们意识到，对于专业开发者来说，低代码往往意味着高度挫折。它抽象掉了我们真正喜欢的东西：控制、调试和生态系统。"
+  },
+  "STUDIO.story.paragraph3": {
+    "message": "所以我们决定构建一些不同的东西。不是一个「无代码」玩具，而是一个真正的 IDE。"
+  },
+  "STUDIO.principles.header": {
+    "message": "我们的设计理念"
+  },
+  "STUDIO.principle1.title": {
+    "message": "1. 代码是高效逻辑组织工具"
+  },
+  "STUDIO.principle1.paragraph1": {
+    "message": "我们没有发明新的可视化语言。我们只是将标准代码可视化。"
+  },
+  "STUDIO.principle1.paragraph2": {
+    "message": "在 OOMOL 中，节点就是函数。输入是参数，输出是返回值。"
+  },
+  "STUDIO.principle1.paragraph3": {
+    "message": "你不需要「配置」节点；你只需编写函数。UI 只是代码签名的反映。"
+  },
+  "STUDIO.principle1.codeComment1": {
+    "message": "# Perform addition of x and y"
+  },
+  "STUDIO.principle1.codeComment2": {
+    "message": "// ...自动变成一个节点："
+  },
+  "STUDIO.principle1.codeComment3": {
+    "message": "// 输入端口: \"text\""
+  },
+  "STUDIO.principle1.codeComment4": {
+    "message": "// 输出端口: \"result\""
+  },
+  "STUDIO.principle2.title": {
+    "message": "2. 尊重编程生态工具链"
+  },
+  "STUDIO.principle2.paragraph1": {
+    "message": "我们认为，你不应该为了使用可视化工具而降级你的开发环境。"
+  },
+  "STUDIO.principle2.paragraph2": {
+    "message": "这就是为什么我们在每个节点中嵌入了完整的 Monaco 编辑器 (VS Code)。"
+  },
+  "STUDIO.principle2.paragraph3": {
+    "message": "智能感知、类型检查、代码检查、格式化，甚至完整的调试协议 (DAP) 支持。感觉像家一样，因为它就是家。"
+  },
+  "STUDIO.principle3.title": {
+    "message": "3. 支持容器化部署,没有人为限制"
+  },
+  "STUDIO.principle3.paragraph1": {
+    "message": "传统平台在受限的专有沙箱中运行你的代码。如果你需要原生 Node.js 模块或系统级工具,你就会被困住。"
+  },
+  "STUDIO.principle3.paragraph2": {
+    "message": "OOMOL 运行在标准 Docker 容器上。"
+  },
+  "STUDIO.principle3.paragraph3": {
+    "message": "需要 ffmpeg？apt-get install 安装它。需要特定的系统依赖？直接安装就行。"
+  },
+  "STUDIO.principle3.codeComment": {
+    "message": "# 没有封装。只有标准工具。"
+  },
+  "STUDIO.principle3.codeComment2": {
+    "message": "# 就是这么简单。"
   }
 }

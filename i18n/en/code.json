@@ -1629,7 +1629,70 @@
   "CREATE.description": {
     "message": "OOMOL's AI tool creation platform. The core advantage lies in: retaining the unlimited creative ability of traditional programming while having the convenience of low-code development, allowing users to efficiently build various AI tools."
   },
+  "STUDIO.hero.subtitle": {
+    "message": "Workflow Tools Redesigned for Developers"
+  },
   "STUDIO.hero.description": {
+    "message": "We heard developers' voices: traditional workflow platforms make simple things complicated. OOMOL Studio changes everything."
+  },
+  "STUDIO.painPoints.title": {
+    "message": "Three Pain Points of Traditional Workflow Tools"
+  },
+  "STUDIO.painPoints.subtitle": {
+    "message": "As developers, we know exactly how frustrating these problems are"
+  },
+  "STUDIO.painPoints.learningCurve.title": {
+    "message": "High Learning Curve"
+  },
+  "STUDIO.painPoints.learningCurve.description": {
+    "message": "Learning the platform's interaction and design concepts, simple if-else logic becomes complicated with drag-and-drop components. Problems that could be solved with one line of code require time to understand the platform's abstract concepts."
+  },
+  "STUDIO.painPoints.extension.title": {
+    "message": "Difficult Extension"
+  },
+  "STUDIO.painPoints.extension.description": {
+    "message": "Problems that could be solved by importing an open-source library in programming become as complex as rocket science in workflow platforms. Want to extend functionality? Check if the platform supports it first—if not, you're stuck."
+  },
+  "STUDIO.painPoints.toolSwitching.title": {
+    "message": "Leaving Familiar Tools"
+  },
+  "STUDIO.painPoints.toolSwitching.description": {
+    "message": "Even if the platform provides scripting, you have to write code in a clunky web editor instead of your familiar VSCode. You lose code completion, debugging tools, and various extensions, significantly reducing development efficiency."
+  },
+  "STUDIO.solutions.title": {
+    "message": "OOMOL Studio's Solutions"
+  },
+  "STUDIO.solutions.subtitle": {
+    "message": "We redesigned the workflow development experience based on developers' actual needs"
+  },
+  "STUDIO.solutions.functions.title": {
+    "message": "Nodes as Functions, Zero Barrier for Libraries"
+  },
+  "STUDIO.solutions.functions.description": {
+    "message": "In OOMOL Studio, nodes are functions. You don't need to learn any new concepts—write code in familiar ways and import any open-source library. Need a feature? Just npm install."
+  },
+  "STUDIO.solutions.functions.highlight": {
+    "message": "No new concepts, no ceiling. Create workflows like writing code."
+  },
+  "STUDIO.solutions.vscode.title": {
+    "message": "Built on VSCode, Inherit Your Coding Habits"
+  },
+  "STUDIO.solutions.vscode.description": {
+    "message": "OOMOL Studio is built on VSCode, so you can write node code in your familiar editor. Code completion, debugging tools, Git integration, various extensions... all your familiar development experience is here."
+  },
+  "STUDIO.solutions.vscode.highlight": {
+    "message": "Familiar editor, familiar shortcuts, zero adaptation cost."
+  },
+  "STUDIO.solutions.container.title": {
+    "message": "Built-in Container, Consistent Environment for Easy Deployment"
+  },
+  "STUDIO.solutions.container.description": {
+    "message": "Built-in container environment ensures local development is identical to server environment. Write code and run it directly without worrying about 'works on my machine'. Network proxy turns your device into a personal server, zero-cost task launching."
+  },
+  "STUDIO.solutions.container.highlight": {
+    "message": "Local is production, no deployment pitfalls. Idle devices can serve too."
+  },
+  "STUDIO.hero.description.old": {
     "message": "Visual Workflow + Full Code with VSCode, Build and Share AI Tools Fast"
   },
   "STUDIO.hero.stat1": {
@@ -2047,7 +2110,31 @@
     "message": "Auto-select the most suitable model"
   },
   "HEADLESS.hero.description": {
-    "message": "Docker containerized deployment to easily run OOMOL applications on servers and NAS"
+    "message": "OOMOL Headless is essentially delivering the OOMOL Studio runtime environment to developers as a container image. Deploy freely, no lock-in."
+  },
+  "HEADLESS.philosophy.title": {
+    "message": "Our Commitment: Freedom & Openness"
+  },
+  "HEADLESS.philosophy.subtitle": {
+    "message": "We understand developers' concerns about commercial lock-in. OOMOL respects your will and lets technology return to purity."
+  },
+  "HEADLESS.philosophy.freedom.title": {
+    "message": "Deployment Freedom"
+  },
+  "HEADLESS.philosophy.freedom.desc": {
+    "message": "Your code, your device. Whether it's a personal NAS, private server, or public cloud, run it wherever you want."
+  },
+  "HEADLESS.philosophy.opensource.title": {
+    "message": "Open Source Kernel"
+  },
+  "HEADLESS.philosophy.opensource.desc": {
+    "message": "We open-sourced the OOMOL Runtime core code. Code is Law—this is our direct answer to 'refusing excessive commercialization'."
+  },
+  "HEADLESS.philosophy.community.title": {
+    "message": "Build with Peace of Mind"
+  },
+  "HEADLESS.philosophy.community.desc": {
+    "message": "No hidden terms, no forced upgrades. We are committed to building a developer ecosystem where everyone can use it with peace of mind and build happily together."
   },
   "HEADLESS.hero.stat1": {
     "message": "Containerized"
@@ -2063,6 +2150,12 @@
   },
   "HEADLESS.hero.cta.docs": {
     "message": "View Docs"
+  },
+  "HEADLESS.deployment.title": {
+    "message": "Docker Deployment"
+  },
+  "HEADLESS.deployment.viewDocs": {
+    "message": "View Full Documentation →"
   },
   "HEADLESS.useCases.title": {
     "message": "Use Cases"
@@ -2250,106 +2343,253 @@
   "HOME.ProductComparison.cloud.tech": {
     "message": "On-demand scaling, zero operations overhead, instant production deployment"
   },
+  "CLOUD.hero.title": {
+    "message": "OOMOL Cloud"
+  },
   "CLOUD.hero.description": {
-    "message": "Managed runtime environment with RESTful API and MCP protocol endpoints, supporting auto-scaling"
+    "message": "You write the Function Block, leave the rest to OOMOL. Free yourself from operations and let your ideas take flight instantly."
   },
   "CLOUD.hero.stat1": {
-    "message": "Auto-Scaling"
+    "message": "Painless Gen"
   },
   "CLOUD.hero.stat2": {
-    "message": "API Service"
+    "message": "Pay-as-you-go"
   },
   "CLOUD.hero.stat3": {
-    "message": "AI Integration"
+    "message": "Save Effort"
   },
   "CLOUD.hero.cta.start": {
-    "message": "Get Started"
+    "message": "Start Building"
   },
   "CLOUD.hero.cta.docs": {
-    "message": "View Docs"
+    "message": "Learn More"
   },
-  "CLOUD.useCases.title": {
-    "message": "Use Cases"
+  "CLOUD.painPoints.title": {
+    "message": "Delivery Shouldn't Be Torture"
   },
-  "CLOUD.useCases.subtitle": {
-    "message": "Focus on business logic without worrying about servers and operations"
+  "CLOUD.painPoints.subtitle": {
+    "message": "We know the struggle as developers"
   },
-  "CLOUD.useCase.quickDeploy.title": {
-    "message": "Rapid Service Launch"
+  "CLOUD.painPoints.description": {
+    "message": "Coding is creative joy, but delivering code is often a burden. Servers, environments, deployment, UI design... these roadblocks kill many genius ideas. We want to change that."
   },
-  "CLOUD.useCase.quickDeploy.description": {
-    "message": "SMB teams deploy workflows as cloud APIs without server configuration"
+  "CLOUD.solution.title": {
+    "message": "Focus on Coding, Enjoy Programming"
   },
-  "CLOUD.useCase.aiAgent.title": {
-    "message": "AI Agent Integration"
+  "CLOUD.solution.subtitle": {
+    "message": "Write the Block, OOMOL handles the rest"
   },
-  "CLOUD.useCase.aiAgent.description": {
-    "message": "Connect to Claude, ChatGPT and other AI platforms via MCP protocol, providing custom tools"
+  "CLOUD.modes.library.title": {
+    "message": "Publish as Library"
   },
-  "CLOUD.useCase.miniapp.title": {
-    "message": "Mini-App Backend"
+  "CLOUD.modes.library.description": {
+    "message": "Share Blocks with others or compose them into new features. Let your code be the foundation of community innovation."
   },
-  "CLOUD.useCase.miniapp.description": {
-    "message": "Provide RESTful APIs for mini-apps and mobile applications with auto-generated docs and test UI"
+  "CLOUD.modes.serverless.title": {
+    "message": "Deploy as Cloud Function"
   },
-  "CLOUD.useCase.noOps.title": {
-    "message": "Zero Operations"
+  "CLOUD.modes.serverless.description": {
+    "message": "One-click deploy as Serverless API. No Ops, auto-scaling, providing stable API services for others."
   },
-  "CLOUD.useCase.noOps.description": {
-    "message": "Auto-monitoring, logging, security isolation - no infrastructure management needed"
+  "CLOUD.modes.mcp.title": {
+    "message": "Provide for AI (MCP)"
   },
-  "CLOUD.features.title": {
-    "message": "Core Features"
+  "CLOUD.modes.mcp.description": {
+    "message": "Publish via MCP (Model Context Protocol), allowing AI Agents to directly call your functions and connect to the intelligent world."
   },
-  "CLOUD.features.oneDeploy.title": {
-    "message": "One-Click Deploy"
+  "CLOUD.pricing.title": {
+    "message": "Pay Per Call, No Upfront Cost"
   },
-  "CLOUD.features.oneDeploy.description": {
-    "message": "Push directly from Studio to Cloud with auto domain and HTTPS configuration"
+  "CLOUD.pricing.description": {
+    "message": "No expensive server fees, no complex prepaid plans. We charge by call count. Save money, save effort, and focus on the joy of programming."
   },
-  "CLOUD.features.oneDeploy.feature1": {
-    "message": "Git Push-style deployment"
+  "CLOUD.pricing.cta": {
+    "message": "View Pricing"
   },
-  "CLOUD.features.oneDeploy.feature2": {
-    "message": "Auto HTTPS certificate setup"
+  "CLOUD.opensource.title": {
+    "message": "Open Source Infrastructure"
   },
-  "CLOUD.features.oneDeploy.feature3": {
-    "message": "Zero-downtime updates"
+  "CLOUD.opensource.subtitle": {
+    "message": "OOMOL's underlying runtime kernel is fully open source, giving you complete control over your deployment environment"
   },
-  "CLOUD.features.monitor.title": {
-    "message": "Auto Monitoring"
+  "CLOUD.opensource.description": {
+    "message": "We believe in the power of open source. OOMOL's virtual machine and runtime core code are completely open source, allowing you to freely view, modify, and deploy. Whether it's a personal NAS, private server, or public cloud, you have complete deployment freedom."
   },
-  "CLOUD.features.monitor.description": {
-    "message": "Real-time performance monitoring, log viewing, error tracking"
+  "CLOUD.opensource.projects.title": {
+    "message": "Open Source Projects"
   },
-  "CLOUD.features.monitor.feature1": {
-    "message": "Real-time metrics dashboard"
+  "CLOUD.opensource.ovm.title": {
+    "message": "OVM"
   },
-  "CLOUD.features.monitor.feature2": {
-    "message": "Centralized log search"
+  "CLOUD.opensource.ovm.description": {
+    "message": "Cross-platform virtual machine manager providing unified container runtime for OOMOL"
   },
-  "CLOUD.features.monitor.feature3": {
-    "message": "Anomaly alerts"
+  "CLOUD.opensource.ovm-core.title": {
+    "message": "OVM Core"
   },
-  "CLOUD.features.security.title": {
-    "message": "Security Isolation"
+  "CLOUD.opensource.ovm-core.description": {
+    "message": "Core runtime library for OVM, handling container lifecycle and resource management"
   },
-  "CLOUD.features.security.description": {
-    "message": "Container-level isolation, access control, data encryption"
+  "CLOUD.opensource.ovm-win.title": {
+    "message": "OVM Windows"
   },
-  "CLOUD.features.security.feature1": {
-    "message": "Sandbox environment isolation"
+  "CLOUD.opensource.ovm-win.description": {
+    "message": "OVM implementation for Windows platform, supporting WSL2 and Hyper-V"
   },
-  "CLOUD.features.security.feature2": {
-    "message": "API key management"
+  "CLOUD.opensource.ovm-mac.title": {
+    "message": "OVM macOS"
   },
-  "CLOUD.features.security.feature3": {
-    "message": "Data encryption in transit"
+  "CLOUD.opensource.ovm-mac.description": {
+    "message": "OVM implementation for macOS platform, based on Apple Virtualization Framework"
   },
   "STUDIO.hero.description": {
     "message": "Local development environment for developers, VSCode-based visual programming tool with FRP protocol for P2P computing power sharing"
   },
   "HEADLESS.hero.description": {
     "message": "Containerized deployment solution, packaging workflows as standalone Docker images for cloud servers, private clouds and K8s clusters"
+  },
+  "APP.new.hero.title": { "message": "OOMOL App" },
+  "APP.new.hero.subtitle": {
+    "message": "The Last Mile of AI Product Delivery"
+  },
+  "APP.new.hero.description": {
+    "message": "Turn your Block functions into AI Chat skills and Applets instantly, without writing any UI code."
+  },
+  "APP.new.concept.title": { "message": "Code is Product" },
+  "APP.new.concept.description": {
+    "message": "OOMOL automatically wraps your backend logic (Blocks) into frontend products. You focus on the function; we connect it to the user."
+  },
+  "APP.new.chat.pill": { "message": "Chat · Workflow Copilot" },
+  "APP.new.chat.title": { "message": "OOMOL Chat" },
+  "APP.new.chat.subtitle": {
+    "message": "AI Assistant · Exploratory Interaction"
+  },
+  "APP.new.chat.description": {
+    "message": "When user intent is vague, AI intelligently orchestrates your tools to solve the problem."
+  },
+  "APP.new.chat.meta1.label": { "message": "For Whom" },
+  "APP.new.chat.meta1.value": {
+    "message": "People who need to rapidly turn ideas into automated workflows"
+  },
+  "APP.new.chat.meta2.label": { "message": "Core Experience" },
+  "APP.new.chat.meta2.value": {
+    "message": "Build workflows step-by-step through conversation, like discussing with a colleague"
+  },
+  "APP.new.chat.devValue": {
+    "message": "Tools as Skills: Your functions become the AI's capabilities."
+  },
+  "APP.new.applet.pill": { "message": "Applet · Composable Apps" },
+  "APP.new.applet.title": { "message": "OOMOL Applet" },
+  "APP.new.applet.subtitle": {
+    "message": "Form Applet · Deterministic Interaction"
+  },
+  "APP.new.applet.description": {
+    "message": "When user needs are clear, direct execution with parameters for efficiency."
+  },
+  "APP.new.applet.meta1.label": { "message": "For Whom" },
+  "APP.new.applet.meta1.value": {
+    "message": "Teams that need to publish, reuse, and share automation capabilities"
+  },
+  "APP.new.applet.meta2.label": { "message": "Core Experience" },
+  "APP.new.applet.meta2.value": {
+    "message": "Compose capability components into products, like building with LEGO"
+  },
+  "APP.new.applet.devValue": {
+    "message": "Function as App: Auto-generated UI, zero frontend code."
+  },
+  "APP.new.hero.cta.web": {
+    "message": "Use in Web"
+  },
+  "APP.new.hero.cta.studio": {
+    "message": "Use in OOMOL Studio"
+  },
+  "APP.new.cta.download": { "message": "Download" },
+  "APP.new.cta.docs": { "message": "View Docs" },
+  "STUDIO.page.title": {
+    "message": "OOMOL Studio - Design Philosophy"
+  },
+  "STUDIO.page.description": {
+    "message": "OOMOL Studio. Why we built OOMOL Studio the way we did."
+  },
+  "STUDIO.manifesto.title": {
+    "message": "OOMOL Studio"
+  },
+  "STUDIO.manifesto.subtitle": {
+    "message": "We built OOMOL Studio because we were tired of choosing between \"easy to use\" and \"powerful enough.\""
+  },
+  "STUDIO.story.paragraph1": {
+    "message": "As engineers, we love automation. We love chaining tools together to build pipelines, agents, and data flows. But whenever we tried to use existing \"Workflow Platforms,\" we hit a wall."
+  },
+  "STUDIO.story.frustration.line1": {
+    "message": "\"Why do I have to learn a proprietary JSON syntax just to write an if/else statement?\""
+  },
+  "STUDIO.story.frustration.line2": {
+    "message": "\"Why can't I just import a library? Why do I have to wait for the platform to support it?\""
+  },
+  "STUDIO.story.frustration.line3": {
+    "message": "\"Why am I coding in a textarea with no autocomplete?\""
+  },
+  "STUDIO.story.paragraph2": {
+    "message": "We realized that Low Code often meant High Frustration for professional developers. It abstracted away the things we actually liked: control, debugging, and the ecosystem."
+  },
+  "STUDIO.story.paragraph3": {
+    "message": "So we decided to build something different. Not a \"No-Code\" toy, but a real IDE."
+  },
+  "STUDIO.principles.header": {
+    "message": "Our Design Philosophy"
+  },
+  "STUDIO.principle1.title": {
+    "message": "1. Code is the Source of Truth"
+  },
+  "STUDIO.principle1.paragraph1": {
+    "message": "We didn't invent a new visual language. We simply visualize standard code."
+  },
+  "STUDIO.principle1.paragraph2": {
+    "message": "In OOMOL, a Node is just a Function. The inputs are arguments, the outputs are return values."
+  },
+  "STUDIO.principle1.paragraph3": {
+    "message": "You don't \"configure\" a node; you write a function. The UI is just a reflection of your code's signature."
+  },
+  "STUDIO.principle1.codeComment1": {
+    "message": "// This function..."
+  },
+  "STUDIO.principle1.codeComment2": {
+    "message": "// ...Automatically becomes a Node with:"
+  },
+  "STUDIO.principle1.codeComment3": {
+    "message": "// Input port: \"text\""
+  },
+  "STUDIO.principle1.codeComment4": {
+    "message": "// Output port: \"result\""
+  },
+  "STUDIO.principle2.title": {
+    "message": "2. Respect the Tooling"
+  },
+  "STUDIO.principle2.paragraph1": {
+    "message": "We believe you shouldn't have to downgrade your environment just to use a visual tool."
+  },
+  "STUDIO.principle2.paragraph2": {
+    "message": "That's why we embedded the full Monaco Editor (VS Code) into every node."
+  },
+  "STUDIO.principle2.paragraph3": {
+    "message": "Intellisense, Type Checking, Linting, Formatting, and even full Debugging Protocol (DAP) support. It feels like home because it is home."
+  },
+  "STUDIO.principle3.title": {
+    "message": "3. Containerized Deployment, No Artificial Limits"
+  },
+  "STUDIO.principle3.paragraph1": {
+    "message": "Traditional platforms run your code in a restricted, proprietary sandbox. If you need native Node.js modules or system-level tools, you're stuck."
+  },
+  "STUDIO.principle3.paragraph2": {
+    "message": "OOMOL runs on Standard Docker Containers."
+  },
+  "STUDIO.principle3.paragraph3": {
+    "message": "Need ffmpeg? apt-get install it. Need specific system dependencies? Just install them."
+  },
+  "STUDIO.principle3.codeComment": {
+    "message": "# No wrappers. Just standard tools."
+  },
+  "STUDIO.principle3.codeComment2": {
+    "message": "# It just works."
   }
 }

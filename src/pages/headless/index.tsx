@@ -1,173 +1,194 @@
 import styles from "./styles.module.scss";
 
 import { translate } from "@docusaurus/Translate";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
-
-import Layout from "../../theme/Layout";
-
-// 使用场景数据
-const useCases = [
-  {
-    icon: "🐳",
-    title: translate({ message: "HEADLESS.useCase.docker.title" }),
-    description: translate({ message: "HEADLESS.useCase.docker.description" }),
-  },
-  {
-    icon: "☁️",
-    title: translate({ message: "HEADLESS.useCase.cloud.title" }),
-    description: translate({ message: "HEADLESS.useCase.cloud.description" }),
-  },
-  {
-    icon: "🔄",
-    title: translate({ message: "HEADLESS.useCase.ci.title" }),
-    description: translate({ message: "HEADLESS.useCase.ci.description" }),
-  },
-  {
-    icon: "🌐",
-    title: translate({ message: "HEADLESS.useCase.api.title" }),
-    description: translate({ message: "HEADLESS.useCase.api.description" }),
-  },
-];
-
-// 核心功能数据
-const coreFeatures = [
-  {
-    icon: "🚀",
-    title: translate({ message: "HEADLESS.features.deploy.title" }),
-    description: translate({ message: "HEADLESS.features.deploy.description" }),
-    features: [
-      translate({ message: "HEADLESS.features.deploy.feature1" }),
-      translate({ message: "HEADLESS.features.deploy.feature2" }),
-      translate({ message: "HEADLESS.features.deploy.feature3" }),
-    ],
-  },
-  {
-    icon: "📦",
-    title: translate({ message: "HEADLESS.features.package.title" }),
-    description: translate({
-      message: "HEADLESS.features.package.description",
-    }),
-    features: [
-      translate({ message: "HEADLESS.features.package.feature1" }),
-      translate({ message: "HEADLESS.features.package.feature2" }),
-      translate({ message: "HEADLESS.features.package.feature3" }),
-    ],
-  },
-  {
-    icon: "🔗",
-    title: translate({ message: "HEADLESS.features.remote.title" }),
-    description: translate({ message: "HEADLESS.features.remote.description" }),
-    features: [
-      translate({ message: "HEADLESS.features.remote.feature1" }),
-      translate({ message: "HEADLESS.features.remote.feature2" }),
-      translate({ message: "HEADLESS.features.remote.feature3" }),
-    ],
-  },
-];
-
-// 使用场景卡片组件
-const UseCaseCard = ({ useCase }: { useCase: (typeof useCases)[0] }) => {
-  return (
-    <div className={styles.useCaseCard}>
-      <div className={styles.useCaseIcon}>{useCase.icon}</div>
-      <h3 className={styles.useCaseTitle}>{useCase.title}</h3>
-      <p className={styles.useCaseDescription}>{useCase.description}</p>
-    </div>
-  );
-};
-
-// 核心功能卡片组件
-const FeatureCard = ({ feature }: { feature: (typeof coreFeatures)[0] }) => {
-  return (
-    <div className={styles.featureCard}>
-      <div className={styles.featureIcon}>{feature.icon}</div>
-      <h3 className={styles.featureTitle}>{feature.title}</h3>
-      <p className={styles.featureDescription}>{feature.description}</p>
-      <ul className={styles.featureList}>
-        {feature.features.map((item, idx) => (
-          <li key={idx}>{item}</li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+import Layout from "@theme/Layout";
+import React from "react";
 
 export default function HeadlessPage() {
+  const { i18n } = useDocusaurusContext() as unknown as {
+    i18n: { currentLocale: string };
+  };
+  const docsUrl =
+    i18n.currentLocale === "zh-CN"
+      ? "/zh-CN/docs/headless/"
+      : "/docs/headless/";
+
   return (
     <Layout>
       <div className={styles.container}>
-        {/* Hero 区域 */}
-        <div className={styles.hero}>
-          <h1 className={styles.heroTitle}>OOMOL Headless</h1>
-          <p className={styles.heroDescription}>
-            {translate({ message: "HEADLESS.hero.description" })}
-          </p>
-
-          {/* 数据亮点 */}
-          <div className={styles.heroStats}>
-            <div className={styles.stat}>
-              <span className={styles.statValue}>Docker</span>
-              <span className={styles.statLabel}>
-                {translate({ message: "HEADLESS.hero.stat1" })}
-              </span>
-            </div>
-            <div className={styles.stat}>
-              <span className={styles.statValue}>远程访问</span>
-              <span className={styles.statLabel}>
-                {translate({ message: "HEADLESS.hero.stat2" })}
-              </span>
-            </div>
-            <div className={styles.stat}>
-              <span className={styles.statValue}>包管理</span>
-              <span className={styles.statLabel}>
-                {translate({ message: "HEADLESS.hero.stat3" })}
-              </span>
+        {/* Hero Section */}
+        <section className={styles.heroSection}>
+          <div className={styles.heroContent}>
+            <h1 className={styles.heroTitle}>OOMOL Headless</h1>
+            <p className={styles.heroSubtitle}>
+              {translate({ message: "HEADLESS.hero.description" })}
+            </p>
+            <div className={styles.commandBlock}>
+              <code>docker pull oomolstudio/headless:latest</code>
+              <button
+                className={styles.copyBtn}
+                onClick={() => {
+                  navigator.clipboard.writeText(
+                    "docker pull oomolstudio/headless:latest"
+                  );
+                }}
+              >
+                Copy
+              </button>
             </div>
           </div>
+        </section>
 
-          {/* 双 CTA */}
-          <div className={styles.heroCTA}>
-            <a href="/downloads" className={styles.primaryButton}>
-              {translate({ message: "HEADLESS.hero.cta.download" })}
-            </a>
-            <a href="/docs" className={styles.secondaryButton}>
-              {translate({ message: "HEADLESS.hero.cta.docs" })}
-            </a>
+        {/* Docker Deployment Section */}
+        <section className={styles.deploymentSection}>
+          <div className={styles.deploymentCard}>
+            <h2 className={styles.deploymentTitle}>
+              {translate({ message: "HEADLESS.deployment.title" })}
+            </h2>
+            <div className={styles.deploymentCode}>
+              {`docker run -d --privileged --name oomol-headless -p 4000:4000 -p 52222:52222 \\
+  --mount type=bind,src=$HOME/.oomol-studio/headless/.env,dst=/app/.env \\
+  --mount type=bind,src=$HOME/oomol-storage,dst=/oomol-driver/oomol-storage \\
+  oomolstudio/headless:latest`}
+            </div>
+            <div className={styles.deploymentCTA}>
+              <a href={docsUrl} className={styles.deploymentLink}>
+                {translate({ message: "HEADLESS.deployment.viewDocs" })}
+              </a>
+            </div>
           </div>
-        </div>
+        </section>
 
-        {/* 使用场景 */}
-        <section className={styles.useCasesSection}>
+        {/* Manifesto / Philosophy Section */}
+        <section className={styles.philosophySection}>
+          <div className={styles.philosophyHeader}>
+            <h2>{translate({ message: "HEADLESS.philosophy.title" })}</h2>
+            <p>{translate({ message: "HEADLESS.philosophy.subtitle" })}</p>
+          </div>
+
+          <div className={styles.cardGrid}>
+            {/* Freedom */}
+            <div className={styles.card}>
+              {/* 🖼️ 图片占位: Freedom 图标 (建议使用开放的鸟类图标或自由主题插图, SVG/PNG 80x80px) */}
+              <div className={styles.cardIcon}>🕊️</div>
+              <h3>
+                {translate({ message: "HEADLESS.philosophy.freedom.title" })}
+              </h3>
+              <p>
+                {translate({ message: "HEADLESS.philosophy.freedom.desc" })}
+              </p>
+            </div>
+
+            {/* Open Source */}
+            <div className={styles.card}>
+              {/* 🖼️ 图片占位: 开源图标 (建议使用解锁或开源 logo, SVG/PNG 80x80px) */}
+              <div className={styles.cardIcon}>🔓</div>
+              <h3>
+                {translate({ message: "HEADLESS.philosophy.opensource.title" })}
+              </h3>
+              <p>
+                {translate({ message: "HEADLESS.philosophy.opensource.desc" })}
+              </p>
+            </div>
+
+            {/* Community */}
+            <div className={styles.card}>
+              {/* 🖼️ 图片占位: 社区图标 (建议使用握手或社区主题插图, SVG/PNG 80x80px) */}
+              <div className={styles.cardIcon}>🤝</div>
+              <h3>
+                {translate({ message: "HEADLESS.philosophy.community.title" })}
+              </h3>
+              <p>
+                {translate({ message: "HEADLESS.philosophy.community.desc" })}
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Open Source Projects Section */}
+        <section className={styles.opensourceSection}>
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>
-              {translate({ message: "HEADLESS.useCases.title" })}
+              {translate({ message: "CLOUD.opensource.title" })}
             </h2>
             <p className={styles.sectionSubtitle}>
-              {translate({ message: "HEADLESS.useCases.subtitle" })}
+              {translate({ message: "CLOUD.opensource.subtitle" })}
             </p>
           </div>
-          <div className={styles.useCasesGrid}>
-            {useCases.map((useCase, index) => (
-              <UseCaseCard key={index} useCase={useCase} />
-            ))}
+          <div className={styles.projectsGrid}>
+            <a
+              href="https://github.com/oomol-lab/ovm"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectCard}
+            >
+              <h3 className={styles.projectTitle}>
+                {translate({ message: "CLOUD.opensource.ovm.title" })}
+              </h3>
+              <p className={styles.projectDescription}>
+                {translate({ message: "CLOUD.opensource.ovm.description" })}
+              </p>
+              <span className={styles.projectLink}>GitHub →</span>
+            </a>
+            <a
+              href="https://github.com/oomol-lab/ovm-core"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectCard}
+            >
+              <h3 className={styles.projectTitle}>
+                {translate({ message: "CLOUD.opensource.ovm-core.title" })}
+              </h3>
+              <p className={styles.projectDescription}>
+                {translate({
+                  message: "CLOUD.opensource.ovm-core.description",
+                })}
+              </p>
+              <span className={styles.projectLink}>GitHub →</span>
+            </a>
+            <a
+              href="https://github.com/oomol-lab/ovm-win"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectCard}
+            >
+              <h3 className={styles.projectTitle}>
+                {translate({ message: "CLOUD.opensource.ovm-win.title" })}
+              </h3>
+              <p className={styles.projectDescription}>
+                {translate({ message: "CLOUD.opensource.ovm-win.description" })}
+              </p>
+              <span className={styles.projectLink}>GitHub →</span>
+            </a>
+            <a
+              href="https://github.com/oomol-lab/ovm-mac"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectCard}
+            >
+              <h3 className={styles.projectTitle}>
+                {translate({ message: "CLOUD.opensource.ovm-mac.title" })}
+              </h3>
+              <p className={styles.projectDescription}>
+                {translate({ message: "CLOUD.opensource.ovm-mac.description" })}
+              </p>
+              <span className={styles.projectLink}>GitHub →</span>
+            </a>
           </div>
         </section>
 
-        {/* 核心功能 */}
-        <section className={styles.featuresSection}>
-          <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>
-              {translate({ message: "HEADLESS.features.title" })}
-            </h2>
-          </div>
-          <div className={styles.featuresGrid}>
-            {coreFeatures.map((feature, index) => (
-              <FeatureCard key={index} feature={feature} />
-            ))}
-          </div>
+        {/* Footer CTA */}
+        <section className={styles.ctaSection}>
+          <a
+            href={docsUrl}
+            className={`${styles.primaryButton} ${styles.large}`}
+          >
+            {translate({ message: "HEADLESS.hero.cta.docs" })}
+          </a>
         </section>
 
-        {/* CTA 区域 */}
         <GetStartedPrompt />
       </div>
     </Layout>

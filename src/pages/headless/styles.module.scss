@@ -1,126 +1,372 @@
 @use "../../css/custom.scss" as *;
 
-// ============================================
-// Container
-// ============================================
 .container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0;
-  background: var(--ifm-background-color);
+  background-color: var(--ifm-background-color);
+  min-height: calc(100vh - var(--ifm-navbar-height));
 }
 
 // ============================================
-// Hero 区域 - 与 Studio 保持一致的极简风格
+// Hero Section
 // ============================================
-.hero {
+.heroSection {
+  padding: 120px 24px 80px;
   text-align: center;
-  padding: 120px 32px 100px;
   background: var(--ifm-background-color);
-  position: relative;
+
+  @media (max-width: 768px) {
+    padding: 80px 20px 60px;
+  }
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .heroTitle {
   font-size: 4rem;
   font-weight: 800;
-  margin-bottom: 1.5rem;
   letter-spacing: -0.03em;
-  line-height: 1.1;
-  color: var(--oomol-primary);
+  margin-bottom: 24px;
+  color: var(--ifm-heading-color);
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
 }
 
-.heroDescription {
+.heroSubtitle {
   font-size: 1.5rem;
+  line-height: 1.5;
   color: var(--ifm-color-emphasis-700);
-  max-width: 720px;
-  margin: 0 auto 3rem;
-  line-height: 1.6;
-  font-weight: 400;
+  margin-bottom: 48px;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 }
 
-// 数据亮点
-.heroStats {
-  display: flex;
-  justify-content: center;
-  gap: 48px;
-  margin-bottom: 3rem;
-  flex-wrap: wrap;
+.commandBlock {
+  display: inline-flex;
+  align-items: center;
+  background: var(--ifm-pre-background);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  padding: 12px 24px;
+  border-radius: 12px;
+  gap: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  code {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.1rem;
+    color: var(--ifm-color-primary);
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
 }
 
-.stat {
-  display: flex;
-  flex-direction: column;
+.copyBtn {
+  background: var(--ifm-color-emphasis-200);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--ifm-color-emphasis-700);
+
+  &:hover {
+    background: var(--ifm-color-emphasis-300);
+    color: var(--ifm-color-emphasis-900);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+// ============================================
+// Docker Deployment Section
+// ============================================
+.deploymentSection {
+  padding: 0 24px;
+  max-width: 900px;
+  margin: 0 auto 60px;
+}
+
+.deploymentCard {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.deploymentTitle {
+  margin-bottom: 24px;
+  font-size: 1.8rem;
+  text-align: center;
+  color: var(--ifm-heading-color);
+}
+
+.deploymentCode {
+  background: var(--ifm-pre-background);
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+  margin-bottom: 24px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: pre;
+  color: var(--ifm-code-color);
+}
+
+.deploymentCTA {
+  text-align: center;
+}
+
+.deploymentLink {
+  color: var(--oomol-primary);
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
-}
-
-.statValue {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--oomol-primary);
-}
-
-.statLabel {
-  font-size: 0.9rem;
-  color: var(--ifm-color-emphasis-600);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-// CTA 按钮
-.heroCTA {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.primaryButton,
-.secondaryButton {
-  padding: 14px 32px;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 8px;
   text-decoration: none;
   transition: all 0.2s ease;
-  display: inline-block;
+
+  &:hover {
+    text-decoration: underline;
+    color: var(--oomol-primary-hover);
+  }
+}
+
+// ============================================
+// Philosophy Section
+// ============================================
+.philosophySection {
+  padding: 80px 24px 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.philosophyHeader {
+  text-align: center;
+  margin-bottom: 64px;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: var(--ifm-color-emphasis-600);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.card {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  padding: 40px 32px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: var(--oomol-primary);
+    box-shadow: 0 12px 32px var(--oomol-primary-bg-hover);
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--ifm-color-emphasis-700);
+    margin-bottom: 24px;
+  }
+}
+
+.cardIcon {
+  font-size: 3rem;
+  margin-bottom: 24px;
+}
+
+.cardLink {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--oomol-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// ============================================
+// CTA Section
+// ============================================
+.ctaSection {
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+// Button styles matching app page
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin: 0 !important;
+
+  i {
+    font-size: 16px;
+  }
+
+  // Small size
+  &.small {
+    padding: 4px 12px;
+    font-size: 12px;
+    gap: 4px;
+
+    i {
+      font-size: 14px;
+    }
+  }
+
+  // Medium size (default)
+  &.medium {
+    padding: 8px 20px;
+    font-size: 14px;
+    gap: 6px;
+
+    i {
+      font-size: 16px;
+    }
+  }
+
+  // Large size
+  &.large {
+    padding: 12px 32px;
+    font-size: 16px;
+    gap: 8px;
+    font-weight: 600;
+
+    i {
+      font-size: 20px;
+    }
+  }
 }
 
 .primaryButton {
   background: var(--oomol-primary);
-  color: white;
+  color: var(--oomol-text-inverse);
   border: none;
+
+  [data-theme="dark"] & {
+    color: var(--oomol-white);
+  }
 
   &:hover {
     background: var(--oomol-primary-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px var(--oomol-primary-bg-hover);
-    color: white;
+    color: var(--oomol-text-inverse) !important;
+
+    [data-theme="dark"] & {
+      color: var(--oomol-white) !important;
+    }
   }
 }
 
 .secondaryButton {
-  background: transparent;
-  color: var(--ifm-color-emphasis-800);
-  border: 1.5px solid var(--ifm-color-emphasis-300);
+  background: inherit;
+  color: var(--oomol-text-primary);
+  border: 1px solid var(--oomol-border-default);
 
   &:hover {
+    color: var(--oomol-primary) !important;
     border-color: var(--oomol-primary);
-    color: var(--oomol-primary);
     background: var(--oomol-primary-bg);
   }
 }
 
+.primaryBtn {
+  display: inline-block;
+  background: var(--oomol-primary);
+  color: white;
+  padding: 16px 48px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 8px 24px var(--oomol-primary-bg-hover);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px var(--oomol-primary-bg-hover);
+    color: white;
+    text-decoration: none;
+  }
+}
+
 // ============================================
-// Section Headers
+// Open Source Projects Section
 // ============================================
+.opensourceSection {
+  padding: 100px 32px;
+  background: var(--ifm-background-surface-color);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--ifm-color-emphasis-300) 50%,
+      transparent 100%
+    );
+  }
+}
+
 .sectionHeader {
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: 48px;
 }
 
 .sectionTitle {
-  font-size: 2.75rem;
+  font-size: 2.5rem;
   font-weight: 800;
   color: var(--ifm-heading-color);
   margin-bottom: 12px;
@@ -136,236 +382,110 @@
   line-height: 1.6;
 }
 
-// ============================================
-// 使用场景 - 4列网格
-// ============================================
-.useCasesSection {
-  padding: 100px 32px;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    var(--ifm-color-primary-lightest) 50%,
-    transparent 100%
-  );
-}
-
-.useCasesGrid {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-}
-
-.useCaseCard {
-  padding: 32px 24px;
-  background: var(--ifm-background-surface-color);
-  border-radius: 12px;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  transition: all 0.3s ease;
+.opensourceDescription {
+  max-width: 900px;
+  margin: 0 auto 64px;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--ifm-color-emphasis-700);
   text-align: center;
-
-  &:hover {
-    border-color: var(--oomol-primary);
-    box-shadow: 0 8px 24px var(--oomol-primary-bg-hover);
-    transform: translateY(-4px);
-  }
 }
 
-.useCaseIcon {
-  font-size: 3rem;
-  margin-bottom: 16px;
-}
-
-.useCaseTitle {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--ifm-heading-color);
-  margin-bottom: 12px;
-  line-height: 1.3;
-}
-
-.useCaseDescription {
-  font-size: 0.95rem;
-  color: var(--ifm-color-emphasis-700);
-  line-height: 1.6;
-  margin: 0;
-}
-
-// ============================================
-// 核心功能 - 3列卡片
-// ============================================
-.featuresSection {
-  padding: 100px 32px;
-}
-
-.featuresGrid {
+.projectsGrid {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 32px;
-}
 
-.featureCard {
-  padding: 40px;
-  background: var(--ifm-background-surface-color);
-  border-radius: 16px;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  transition: all 0.3s ease;
-
-  &:hover {
-    border-color: var(--oomol-primary);
-    box-shadow: 0 12px 32px var(--oomol-primary-bg-hover);
-    transform: translateY(-6px);
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 }
 
-.featureIcon {
-  font-size: 3rem;
-  margin-bottom: 16px;
-  display: block;
-}
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 
-.featureTitle {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--ifm-heading-color);
-  margin-bottom: 12px;
-  line-height: 1.3;
-}
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--oomol-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
 
-.featureDescription {
-  font-size: 1.05rem;
-  color: var(--ifm-color-emphasis-700);
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-
-.featureList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  li {
-    padding-left: 24px;
-    margin-bottom: 10px;
-    position: relative;
-    font-size: 0.95rem;
-    color: var(--ifm-color-emphasis-600);
-    line-height: 1.6;
+  &:hover {
+    border-color: var(--oomol-primary);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
 
     &::before {
-      content: "→";
-      position: absolute;
-      left: 0;
+      transform: scaleX(1);
+    }
+
+    .projectLink {
       color: var(--oomol-primary);
-      font-weight: 700;
+      transform: translateX(4px);
     }
   }
 }
 
+.projectTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ifm-heading-color);
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.projectDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.projectLink {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-600);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
 // ============================================
-// 响应式设计
+// Responsive
 // ============================================
 @media (max-width: 996px) {
-  .hero {
-    padding: 80px 24px 60px;
-  }
-
-  .heroTitle {
-    font-size: 3rem;
-  }
-
-  .heroDescription {
-    font-size: 1.25rem;
-  }
-
-  .heroStats {
-    gap: 32px;
-  }
-
-  .statValue {
-    font-size: 1.75rem;
-  }
-
-  .sectionTitle {
-    font-size: 2.25rem;
-  }
-
-  .sectionSubtitle {
-    font-size: 1.1rem;
-  }
-
-  .useCasesSection,
-  .featuresSection {
+  .opensourceSection {
     padding: 80px 24px;
-  }
-
-  .useCasesGrid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  }
-
-  .featuresGrid {
-    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
-  .hero {
-    padding: 60px 20px 40px;
+  .projectCard {
+    padding: 28px;
   }
-
-  .heroTitle {
-    font-size: 2.5rem;
-  }
-
-  .heroDescription {
+  .opensourceDescription {
     font-size: 1.1rem;
-  }
-
-  .heroStats {
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .heroCTA {
-    flex-direction: column;
-    align-items: stretch;
-
-    .primaryButton,
-    .secondaryButton {
-      width: 100%;
-      text-align: center;
-    }
-  }
-
-  .sectionTitle {
-    font-size: 2rem;
-  }
-
-  .sectionSubtitle {
-    font-size: 1rem;
-  }
-
-  .useCasesSection,
-  .featuresSection {
-    padding: 60px 20px;
-  }
-
-  .sectionHeader {
-    margin-bottom: 48px;
-  }
-
-  .useCasesGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .useCaseTitle {
-    font-size: 1.25rem;
-  }
-
-  .featureTitle {
-    font-size: 1.5rem;
   }
 }

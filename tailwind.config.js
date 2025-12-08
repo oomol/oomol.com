@@ -23,7 +23,7 @@ module.exports = {
         "oomol-primary-hover": "var(--oomol-primary-hover)",
         "oomol-studio": "var(--oomol-studio)",
         "oomol-hub": "var(--oomol-hub)",
-        "oomol-chat": "var(--oomol-chat)",
+        "oomol-app": "var(--oomol-app)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

@@ -1,173 +1,166 @@
 import styles from "./styles.module.scss";
 
 import { translate } from "@docusaurus/Translate";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
+import ThemedImage from "@theme/ThemedImage";
 
 import Layout from "../../theme/Layout";
 
-// 使用场景数据
-const useCases = [
+// import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+
+// Three Modes Data
+const modes = [
   {
-    icon: "☁️",
-    title: translate({ message: "CLOUD.useCase.quickDeploy.title" }),
-    description: translate({
-      message: "CLOUD.useCase.quickDeploy.description",
-    }),
+    // Library 模式: 发布为函数库
+    imageLight: "/img/pages/cloud/publish-light.png",
+    imageDark: "/img/pages/cloud/publish-dark.png",
+    title: translate({ message: "CLOUD.modes.library.title" }),
+    description: translate({ message: "CLOUD.modes.library.description" }),
   },
   {
-    icon: "🤖",
-    title: translate({ message: "CLOUD.useCase.aiAgent.title" }),
-    description: translate({ message: "CLOUD.useCase.aiAgent.description" }),
+    // Serverless 模式: 部署为云函数
+    imageLight: "/img/pages/cloud/create-api-light.png",
+    imageDark: "/img/pages/cloud/create-api-dark.png",
+    title: translate({ message: "CLOUD.modes.serverless.title" }),
+    description: translate({ message: "CLOUD.modes.serverless.description" }),
   },
   {
-    icon: "📱",
-    title: translate({ message: "CLOUD.useCase.miniapp.title" }),
-    description: translate({ message: "CLOUD.useCase.miniapp.description" }),
-  },
-  {
-    icon: "🚀",
-    title: translate({ message: "CLOUD.useCase.noOps.title" }),
-    description: translate({ message: "CLOUD.useCase.noOps.description" }),
+    // MCP 模式: 提供给 AI 调用
+    imageLight: "/img/pages/cloud/ai-chat-light.png",
+    imageDark: "/img/pages/cloud/ai-chat-dark.png",
+    title: translate({ message: "CLOUD.modes.mcp.title" }),
+    description: translate({ message: "CLOUD.modes.mcp.description" }),
   },
 ];
 
-// 核心功能数据
-const coreFeatures = [
-  {
-    icon: "🚀",
-    title: translate({ message: "CLOUD.features.oneDeploy.title" }),
-    description: translate({ message: "CLOUD.features.oneDeploy.description" }),
-    features: [
-      translate({ message: "CLOUD.features.oneDeploy.feature1" }),
-      translate({ message: "CLOUD.features.oneDeploy.feature2" }),
-      translate({ message: "CLOUD.features.oneDeploy.feature3" }),
-    ],
-  },
-  {
-    icon: "📊",
-    title: translate({ message: "CLOUD.features.monitor.title" }),
-    description: translate({ message: "CLOUD.features.monitor.description" }),
-    features: [
-      translate({ message: "CLOUD.features.monitor.feature1" }),
-      translate({ message: "CLOUD.features.monitor.feature2" }),
-      translate({ message: "CLOUD.features.monitor.feature3" }),
-    ],
-  },
-  {
-    icon: "🔐",
-    title: translate({ message: "CLOUD.features.security.title" }),
-    description: translate({ message: "CLOUD.features.security.description" }),
-    features: [
-      translate({ message: "CLOUD.features.security.feature1" }),
-      translate({ message: "CLOUD.features.security.feature2" }),
-      translate({ message: "CLOUD.features.security.feature3" }),
-    ],
-  },
-];
-
-// 使用场景卡片组件
-const UseCaseCard = ({ useCase }: { useCase: (typeof useCases)[0] }) => {
+const ModeItem = ({
+  mode,
+  index,
+}: {
+  mode: (typeof modes)[0];
+  index: number;
+}) => {
   return (
-    <div className={styles.useCaseCard}>
-      <div className={styles.useCaseIcon}>{useCase.icon}</div>
-      <h3 className={styles.useCaseTitle}>{useCase.title}</h3>
-      <p className={styles.useCaseDescription}>{useCase.description}</p>
-    </div>
-  );
-};
-
-// 核心功能卡片组件
-const FeatureCard = ({ feature }: { feature: (typeof coreFeatures)[0] }) => {
-  return (
-    <div className={styles.featureCard}>
-      <div className={styles.featureIcon}>{feature.icon}</div>
-      <h3 className={styles.featureTitle}>{feature.title}</h3>
-      <p className={styles.featureDescription}>{feature.description}</p>
-      <ul className={styles.featureList}>
-        {feature.features.map((item, idx) => (
-          <li key={idx}>{item}</li>
-        ))}
-      </ul>
+    <div className={styles.modeItem}>
+      <div className={styles.modeText}>
+        <div className={styles.modeNumber}>0{index + 1}</div>
+        <h3 className={styles.modeTitle}>{mode.title}</h3>
+        <p className={styles.modeDescription}>{mode.description}</p>
+      </div>
+      <div className={styles.modeVisual}>
+        <div className={styles.modeImageWrapper}>
+          <ThemedImage
+            sources={{
+              light: useBaseUrl(mode.imageLight),
+              dark: useBaseUrl(mode.imageDark),
+            }}
+            alt={mode.title}
+            className={styles.modeImage}
+          />
+        </div>
+      </div>
     </div>
   );
 };
 
 export default function CloudPage() {
+  // const { i18n } = useDocusaurusContext() as unknown as {
+  //   i18n: { currentLocale: string };
+  // };
+  // const pricingUrl =
+  //   i18n.currentLocale === "zh-CN" ? "/zh-CN/pricing" : "/pricing";
+
   return (
     <Layout>
       <div className={styles.container}>
-        {/* Hero 区域 */}
+        {/* Hero Section */}
         <div className={styles.hero}>
-          <h1 className={styles.heroTitle}>OOMOL Cloud</h1>
+          <h1 className={styles.heroTitle}>
+            {translate({ message: "CLOUD.hero.title" })}
+          </h1>
           <p className={styles.heroDescription}>
             {translate({ message: "CLOUD.hero.description" })}
           </p>
 
-          {/* 数据亮点 */}
           <div className={styles.heroStats}>
             <div className={styles.stat}>
-              <span className={styles.statValue}>自动扩缩容</span>
+              {/* 🖼️ 图片占位: 免费徽章图标 (SVG/PNG 60x60px) */}
+              <span className={styles.statValue}>✨</span>
               <span className={styles.statLabel}>
                 {translate({ message: "CLOUD.hero.stat1" })}
               </span>
             </div>
             <div className={styles.stat}>
-              <span className={styles.statValue}>RESTful API</span>
+              {/* 🖼️ 图片占位: 定价徽章图标 (SVG/PNG 60x60px) */}
+              <span className={styles.statValue}>💰</span>
               <span className={styles.statLabel}>
                 {translate({ message: "CLOUD.hero.stat2" })}
               </span>
             </div>
             <div className={styles.stat}>
-              <span className={styles.statValue}>MCP 协议</span>
+              {/* 🖼️ 图片占位: 低维护徽章图标 (SVG/PNG 60x60px) */}
+              <span className={styles.statValue}>☕️</span>
               <span className={styles.statLabel}>
                 {translate({ message: "CLOUD.hero.stat3" })}
               </span>
             </div>
           </div>
 
-          {/* 双 CTA */}
           <div className={styles.heroCTA}>
-            <a href="/downloads" className={styles.primaryButton}>
-              {translate({ message: "CLOUD.hero.cta.start" })}
-            </a>
-            <a href="/docs" className={styles.secondaryButton}>
-              {translate({ message: "CLOUD.hero.cta.docs" })}
+            <a
+              href="https://console.oomol.com/cloud-function"
+              className={`${styles.primaryButton} ${styles.large}`}
+            >
+              开始使用
             </a>
           </div>
         </div>
 
-        {/* 使用场景 */}
-        <section className={styles.useCasesSection}>
+        {/* Pain Points Section (Empathy) */}
+
+        {/* Solution / Modes Section */}
+        <section className={styles.modesSection}>
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>
-              {translate({ message: "CLOUD.useCases.title" })}
+              {translate({ message: "CLOUD.solution.title" })}
             </h2>
-            <p className={styles.sectionSubtitle}>
-              {translate({ message: "CLOUD.useCases.subtitle" })}
+          </div>
+          <section className={styles.painPointsSection}>
+            <div className={styles.painPointsContent}>
+              <div className={styles.painPointsText}>
+                {translate({ message: "CLOUD.painPoints.description" })}
+              </div>
+            </div>
+          </section>
+          <div className={styles.modesContainer}>
+            {modes.map((mode, index) => (
+              <ModeItem key={index} mode={mode} index={index} />
+            ))}
+          </div>
+        </section>
+
+        {/* Pricing Section */}
+        {/* <section className={styles.pricingSection}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>
+              {translate({ message: "CLOUD.pricing.title" })}
+            </h2>
+          </div>
+          <div className={styles.pricingContent}>
+            <p className={styles.pricingDescription}>
+              {translate({ message: "CLOUD.pricing.description" })}
             </p>
+            <a
+              href={pricingUrl}
+              className={`${styles.primaryButton} ${styles.large}`}
+            >
+              {translate({ message: "CLOUD.pricing.cta" })}
+            </a>
           </div>
-          <div className={styles.useCasesGrid}>
-            {useCases.map((useCase, index) => (
-              <UseCaseCard key={index} useCase={useCase} />
-            ))}
-          </div>
-        </section>
+        </section> */}
 
-        {/* 核心功能 */}
-        <section className={styles.featuresSection}>
-          <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>
-              {translate({ message: "CLOUD.features.title" })}
-            </h2>
-          </div>
-          <div className={styles.featuresGrid}>
-            {coreFeatures.map((feature, index) => (
-              <FeatureCard key={index} feature={feature} />
-            ))}
-          </div>
-        </section>
-
-        {/* CTA 区域 */}
+        {/* Final CTA */}
         <GetStartedPrompt />
       </div>
     </Layout>

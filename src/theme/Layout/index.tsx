@@ -4,15 +4,13 @@ import "vanilla-cookieconsent/dist/cookieconsent.css";
 
 import type { ReactNode } from "react";
 
+import BrowserOnly from "@docusaurus/BrowserOnly";
+import { CookieConsentComponent } from "@site/src/components/CookieConsent/CookieConsentComponent";
 import Footer from "@theme/Footer";
 import LayoutProvider from "@theme/Layout/Provider";
 import Navbar from "@theme/Navbar";
 import { clsx } from "clsx";
-import React, { useEffect } from "react";
-import BrowserOnly from "@docusaurus/BrowserOnly";
-import { CookieConsentComponent } from "@site/src/components/CookieConsent/CookieConsentComponent";
-import { pluginConfig } from "@site/src/components/CookieConsent/cookieConsentConfig";
-import CookieConsent from "vanilla-cookieconsent";
+import React from "react";
 
 interface LayoutProps {
   children: ReactNode;

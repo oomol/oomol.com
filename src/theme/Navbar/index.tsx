@@ -166,25 +166,34 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
             <NavbarItem {...item} key={i} />
           ))}
           <div className={styles.actions}>
-            <Link to="/downloads" className={styles.downloadButton}>
-              <i className="i-lucide-download" />
-              {translate({ message: "Theme.Navbar.download" })}
+            <Link to="https://hub.oomol.com" className={styles.downloadButton}>
+              <i className="i-lucide-globe" />
+              {translate({ message: "Theme.Navbar.community" })}
             </Link>
             <BrowserOnly
               fallback={
                 <a className={styles.loginButton}>
+                  <i className="i-lucide-log-in" />
                   {translate({ message: "Theme.Navbar.login" })}
                 </a>
               }
             >
               {() => {
+                const signedIn = isSignedIn();
                 return (
                   <a
                     className={styles.loginButton}
                     onClick={() => handleSignin()}
                   >
+                    <i
+                      className={
+                        signedIn
+                          ? "i-lucide-layout-dashboard"
+                          : "i-lucide-log-in"
+                      }
+                    />
                     {translate({
-                      message: isSignedIn()
+                      message: signedIn
                         ? "Theme.Navbar.console"
                         : "Theme.Navbar.login",
                     })}
