@@ -2,6 +2,7 @@ import styles from "./styles.module.scss";
 
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { DownloadButton } from "@site/src/components/DownloadButton";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import Layout from "@theme/Layout";
 import ThemedImage from "@theme/ThemedImage";
@@ -22,6 +23,9 @@ export default function StudioPage() {
           <p className={styles.subtitle}>
             {translate({ message: "STUDIO.manifesto.subtitle" })}
           </p>
+          <div className={styles.headerCTA}>
+            <DownloadButton />
+          </div>
         </header>
 
         {/* Hero Image */}

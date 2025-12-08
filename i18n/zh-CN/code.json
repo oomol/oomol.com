@@ -2512,6 +2512,9 @@
   "STUDIO.manifesto.subtitle": {
     "message": "我们构建 OOMOL Studio，是因为厌倦了在「易于使用」和「足够强大」之间做选择。"
   },
+  "STUDIO.manifesto.cta.download": {
+    "message": "下载 OOMOL Studio"
+  },
   "STUDIO.story.paragraph1": {
     "message": "作为工程师，我们热爱自动化。我们喜欢将工具链接在一起构建流水线、智能体和数据流。但每当我们尝试使用现有的「工作流平台」时，总会遇到障碍。"
   },
