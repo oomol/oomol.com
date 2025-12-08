@@ -1,6 +1,7 @@
 import styles from "./styles.module.scss";
 
 import { translate } from "@docusaurus/Translate";
+import Link from "@docusaurus/Link";
 
 // 产品对比数据 - 重构为卡片式数据结构
 const products = [
@@ -14,6 +15,7 @@ const products = [
     tech: translate({ message: "HOME.ProductComparison.studio.tech" }),
     icon: "🖥️",
     color: "primary",
+    link: "/studio",
   },
   {
     name: translate({ message: "HOME.ProductComparison.product.headless" }),
@@ -27,6 +29,7 @@ const products = [
     tech: translate({ message: "HOME.ProductComparison.headless.tech" }),
     icon: "🐳",
     color: "secondary",
+    link: "/headless",
   },
   {
     name: translate({ message: "HOME.ProductComparison.product.cloud" }),
@@ -38,6 +41,7 @@ const products = [
     tech: translate({ message: "HOME.ProductComparison.cloud.tech" }),
     icon: "☁️",
     color: "tertiary",
+    link: "/cloud",
   },
 ];
 
@@ -58,8 +62,9 @@ export default function HomepageProductComparison() {
         {/* 产品卡片网格 */}
         <div className={styles.productsGrid}>
           {products.map((product, index) => (
-            <div
+            <Link
               key={index}
+              to={product.link}
               className={`${styles.productCard} ${styles[product.color]}`}
             >
               {/* 卡片头部 */}
@@ -98,7 +103,7 @@ export default function HomepageProductComparison() {
                   <div className={styles.infoContent}>{product.tech}</div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
