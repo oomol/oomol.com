@@ -110,21 +110,6 @@ export default function CloudPage() {
         </div>
 
         {/* Pain Points Section (Empathy) */}
-        <section className={styles.painPointsSection}>
-          <div className={styles.painPointsContent}>
-            <div className={styles.painPointsHeader}>
-              <h2 className={styles.sectionTitle}>
-                {translate({ message: "CLOUD.painPoints.title" })}
-              </h2>
-              <p className={styles.sectionSubtitle}>
-                {translate({ message: "CLOUD.painPoints.subtitle" })}
-              </p>
-            </div>
-            <div className={styles.painPointsText}>
-              {translate({ message: "CLOUD.painPoints.description" })}
-            </div>
-          </div>
-        </section>
 
         {/* Solution / Modes Section */}
         <section className={styles.modesSection}>
@@ -132,10 +117,14 @@ export default function CloudPage() {
             <h2 className={styles.sectionTitle}>
               {translate({ message: "CLOUD.solution.title" })}
             </h2>
-            <p className={styles.sectionSubtitle}>
-              {translate({ message: "CLOUD.solution.subtitle" })}
-            </p>
           </div>
+          <section className={styles.painPointsSection}>
+            <div className={styles.painPointsContent}>
+              <div className={styles.painPointsText}>
+                {translate({ message: "CLOUD.painPoints.description" })}
+              </div>
+            </div>
+          </section>
           <div className={styles.modesContainer}>
             {modes.map((mode, index) => (
               <ModeItem key={index} mode={mode} index={index} />

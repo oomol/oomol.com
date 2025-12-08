@@ -149,7 +149,7 @@
 // Pain Points Section (New)
 // ============================================
 .painPointsSection {
-  padding: 120px 24px;
+  padding: 0px 24px 60px 24px;
   background: linear-gradient(
     135deg,
     var(--ifm-background-color) 0%,
@@ -157,21 +157,6 @@
   );
   position: relative;
   overflow: hidden;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      var(--ifm-color-emphasis-300) 50%,
-      transparent 100%
-    );
-  }
 }
 
 .painPointsContent {
