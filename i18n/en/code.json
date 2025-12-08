@@ -2563,16 +2563,16 @@
     "message": "Intellisense, Type Checking, Linting, Formatting, and even full Debugging Protocol (DAP) support. It feels like home because it is home."
   },
   "STUDIO.principle3.title": {
-    "message": "3. No Artificial Limits"
+    "message": "3. Containerized Deployment, No Artificial Limits"
   },
   "STUDIO.principle3.paragraph1": {
-    "message": "Traditional platforms run your code in a restricted, proprietary sandbox. If you need a C++ binding or a system-level tool, you're stuck."
+    "message": "Traditional platforms run your code in a restricted, proprietary sandbox. If you need native Node.js modules or system-level tools, you're stuck."
   },
   "STUDIO.principle3.paragraph2": {
     "message": "OOMOL runs on Standard Docker Containers."
   },
   "STUDIO.principle3.paragraph3": {
-    "message": "Need ffmpeg? apt-get install it. Need a specific Python version? Just define it. You have full root access to the runtime environment."
+    "message": "Need ffmpeg? apt-get install it. Need specific system dependencies? Just install them."
   },
   "STUDIO.principle3.codeComment": {
     "message": "# No wrappers. Just standard tools."

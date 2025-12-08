@@ -2558,16 +2558,16 @@
     "message": "智能感知、类型检查、代码检查、格式化，甚至完整的调试协议 (DAP) 支持。感觉像家一样，因为它就是家。"
   },
   "STUDIO.principle3.title": {
-    "message": "3. 没有人为限制"
+    "message": "3. 支持容器化部署,没有人为限制"
   },
   "STUDIO.principle3.paragraph1": {
-    "message": "传统平台在受限的专有沙箱中运行你的代码。如果你需要 C++ 绑定或系统级工具，你就会被困住。"
+    "message": "传统平台在受限的专有沙箱中运行你的代码。如果你需要原生 Node.js 模块或系统级工具,你就会被困住。"
   },
   "STUDIO.principle3.paragraph2": {
     "message": "OOMOL 运行在标准 Docker 容器上。"
   },
   "STUDIO.principle3.paragraph3": {
-    "message": "需要 ffmpeg？apt-get install 安装它。需要特定的 Python 版本？直接定义就行。你对运行时环境有完全的 root 访问权限。"
+    "message": "需要 ffmpeg？apt-get install 安装它。需要特定的系统依赖？直接安装就行。"
   },
   "STUDIO.principle3.codeComment": {
     "message": "# 没有封装。只有标准工具。"
