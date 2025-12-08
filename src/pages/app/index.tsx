@@ -40,7 +40,7 @@ export default function AppPage() {
               })}
             </a>
             <a
-              href="https://oomol.com/downloads"
+              href={useBaseUrl("/downloads")}
               className={`${styles.secondaryButton} ${styles.large}`}
             >
               {translate({
