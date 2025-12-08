@@ -31,16 +31,16 @@ export default function AppPage() {
           </p>
           <div className={styles.heroCTA}>
             <a
-              href="/downloads"
+              href="https://app.oomol.com"
               className={`${styles.primaryButton} ${styles.large}`}
             >
-              {translate({ id: "APP.new.cta.download", message: "下载体验" })}
+              开始使用 Applet
             </a>
             <a
-              href="/docs"
+              href="https://chat.oomol.com"
               className={`${styles.secondaryButton} ${styles.large}`}
             >
-              {translate({ id: "APP.new.cta.docs", message: "查看文档" })}
+              开始使用 Chat
             </a>
           </div>
         </section>
