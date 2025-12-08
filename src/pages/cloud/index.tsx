@@ -2,11 +2,12 @@ import styles from "./styles.module.scss";
 
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import ThemedImage from "@theme/ThemedImage";
 
 import Layout from "../../theme/Layout";
+
+// import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 // Three Modes Data
 const modes = [
@@ -64,11 +65,11 @@ const ModeItem = ({
 };
 
 export default function CloudPage() {
-  const { i18n } = useDocusaurusContext() as unknown as {
-    i18n: { currentLocale: string };
-  };
-  const pricingUrl =
-    i18n.currentLocale === "zh-CN" ? "/zh-CN/pricing" : "/pricing";
+  // const { i18n } = useDocusaurusContext() as unknown as {
+  //   i18n: { currentLocale: string };
+  // };
+  // const pricingUrl =
+  //   i18n.currentLocale === "zh-CN" ? "/zh-CN/pricing" : "/pricing";
 
   return (
     <Layout>
@@ -140,7 +141,7 @@ export default function CloudPage() {
         </section>
 
         {/* Pricing Section */}
-        <section className={styles.pricingSection}>
+        {/* <section className={styles.pricingSection}>
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>
               {translate({ message: "CLOUD.pricing.title" })}
@@ -157,7 +158,7 @@ export default function CloudPage() {
               {translate({ message: "CLOUD.pricing.cta" })}
             </a>
           </div>
-        </section>
+        </section> */}
 
         {/* Final CTA */}
         <GetStartedPrompt />

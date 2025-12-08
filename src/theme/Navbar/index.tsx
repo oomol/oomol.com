@@ -185,7 +185,13 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
                     className={styles.loginButton}
                     onClick={() => handleSignin()}
                   >
-                    <i className={signedIn ? "i-lucide-layout-dashboard" : "i-lucide-log-in"} />
+                    <i
+                      className={
+                        signedIn
+                          ? "i-lucide-layout-dashboard"
+                          : "i-lucide-log-in"
+                      }
+                    />
                     {translate({
                       message: signedIn
                         ? "Theme.Navbar.console"

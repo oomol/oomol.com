@@ -1,10 +1,9 @@
 import styles from "./styles.module.scss";
 
-import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { translate } from "@docusaurus/Translate";
-import CodeBlock from "@theme/CodeBlock";
-import Layout from "@theme/Layout";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
+import Layout from "@theme/Layout";
 import ThemedImage from "@theme/ThemedImage";
 import React from "react";
 
@@ -17,7 +16,9 @@ export default function StudioPage() {
       <div className={styles.container}>
         {/* 1. Header / Manifesto Title */}
         <header className={styles.manifestHeader}>
-          <h1 className={styles.title}>{translate({ message: "STUDIO.manifesto.title" })}</h1>
+          <h1 className={styles.title}>
+            {translate({ message: "STUDIO.manifesto.title" })}
+          </h1>
           <p className={styles.subtitle}>
             {translate({ message: "STUDIO.manifesto.subtitle" })}
           </p>
@@ -39,9 +40,7 @@ export default function StudioPage() {
 
         {/* 2. The Story (The "Why") */}
         <section className={styles.storySection}>
-          <p>
-            {translate({ message: "STUDIO.story.paragraph1" })}
-          </p>
+          <p>{translate({ message: "STUDIO.story.paragraph1" })}</p>
 
           <div className={styles.frustrationBlock}>
             <p>
@@ -55,12 +54,8 @@ export default function StudioPage() {
             </p>
           </div>
 
-          <p>
-            {translate({ message: "STUDIO.story.paragraph2" })}
-          </p>
-          <p>
-            {translate({ message: "STUDIO.story.paragraph3" })}
-          </p>
+          <p>{translate({ message: "STUDIO.story.paragraph2" })}</p>
+          <p>{translate({ message: "STUDIO.story.paragraph3" })}</p>
         </section>
 
         {/* 3. The Principles (The "How") */}
@@ -73,15 +68,9 @@ export default function StudioPage() {
           <div className={styles.principleItem}>
             <div className={styles.principleText}>
               <h3>{translate({ message: "STUDIO.principle1.title" })}</h3>
-              <p>
-                {translate({ message: "STUDIO.principle1.paragraph1" })}
-              </p>
-              <p>
-                {translate({ message: "STUDIO.principle1.paragraph2" })}
-              </p>
-              <p>
-                {translate({ message: "STUDIO.principle1.paragraph3" })}
-              </p>
+              <p>{translate({ message: "STUDIO.principle1.paragraph1" })}</p>
+              <p>{translate({ message: "STUDIO.principle1.paragraph2" })}</p>
+              <p>{translate({ message: "STUDIO.principle1.paragraph3" })}</p>
             </div>
             <div className={styles.principleVisual}>
               <div className={styles.principleImageWrapper}>
@@ -101,15 +90,9 @@ export default function StudioPage() {
           <div className={styles.principleItem}>
             <div className={styles.principleText}>
               <h3>{translate({ message: "STUDIO.principle2.title" })}</h3>
-              <p>
-                {translate({ message: "STUDIO.principle2.paragraph1" })}
-              </p>
-              <p>
-                {translate({ message: "STUDIO.principle2.paragraph2" })}
-              </p>
-              <p>
-                {translate({ message: "STUDIO.principle2.paragraph3" })}
-              </p>
+              <p>{translate({ message: "STUDIO.principle2.paragraph1" })}</p>
+              <p>{translate({ message: "STUDIO.principle2.paragraph2" })}</p>
+              <p>{translate({ message: "STUDIO.principle2.paragraph3" })}</p>
             </div>
             <div className={styles.principleVisual}>
               <div className={styles.principleImageWrapper}>
@@ -129,15 +112,9 @@ export default function StudioPage() {
           <div className={styles.principleItem}>
             <div className={styles.principleText}>
               <h3>{translate({ message: "STUDIO.principle3.title" })}</h3>
-              <p>
-                {translate({ message: "STUDIO.principle3.paragraph1" })}
-              </p>
-              <p>
-                {translate({ message: "STUDIO.principle3.paragraph2" })}
-              </p>
-              <p>
-                {translate({ message: "STUDIO.principle3.paragraph3" })}
-              </p>
+              <p>{translate({ message: "STUDIO.principle3.paragraph1" })}</p>
+              <p>{translate({ message: "STUDIO.principle3.paragraph2" })}</p>
+              <p>{translate({ message: "STUDIO.principle3.paragraph3" })}</p>
             </div>
             <div className={styles.principleVisual}>
               <div className={styles.principleImageWrapper}>
