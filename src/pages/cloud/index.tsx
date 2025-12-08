@@ -64,8 +64,11 @@ const ModeItem = ({
 };
 
 export default function CloudPage() {
-  const { i18n } = useDocusaurusContext() as unknown as { i18n: { currentLocale: string } };
-  const pricingUrl = i18n.currentLocale === "zh-CN" ? "/zh-CN/pricing" : "/pricing";
+  const { i18n } = useDocusaurusContext() as unknown as {
+    i18n: { currentLocale: string };
+  };
+  const pricingUrl =
+    i18n.currentLocale === "zh-CN" ? "/zh-CN/pricing" : "/pricing";
 
   return (
     <Layout>
@@ -106,7 +109,7 @@ export default function CloudPage() {
           <div className={styles.heroCTA}>
             <a
               href="https://console.oomol.com/cloud-function"
-              className={styles.primaryButton}
+              className={`${styles.primaryButton} ${styles.large}`}
             >
               开始使用
             </a>
@@ -147,7 +150,10 @@ export default function CloudPage() {
             <p className={styles.pricingDescription}>
               {translate({ message: "CLOUD.pricing.description" })}
             </p>
-            <a href={pricingUrl} className={styles.pricingButton}>
+            <a
+              href={pricingUrl}
+              className={`${styles.primaryButton} ${styles.large}`}
+            >
               {translate({ message: "CLOUD.pricing.cta" })}
             </a>
           </div>
