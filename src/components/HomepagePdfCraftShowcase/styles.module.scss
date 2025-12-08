@@ -333,13 +333,16 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 28px;
-  border-radius: 40px;
-  font-size: 15px;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-size: 14px;
   font-weight: 500;
   text-decoration: none;
   transition: all 0.2s ease;
   white-space: nowrap;
+  cursor: pointer;
+  margin: 0 !important;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -349,26 +352,31 @@
 
 .primaryButton {
   background: var(--oomol-primary);
-  color: white;
-  border: 2px solid var(--oomol-primary);
+  color: var(--oomol-text-inverse);
+  border: none;
+
+  [data-theme="dark"] & {
+    color: var(--oomol-white);
+  }
 
   &:hover {
     background: var(--oomol-primary-hover);
-    border-color: var(--oomol-primary-hover);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: var(--oomol-shadow-lg);
+    color: var(--oomol-text-inverse) !important;
+
+    [data-theme="dark"] & {
+      color: var(--oomol-white) !important;
+    }
   }
 }
 
 .secondaryButton {
-  background: transparent;
+  background: inherit;
   color: var(--oomol-text-primary);
-  border: 2px solid var(--oomol-border-default);
+  border: 1px solid var(--oomol-border-default);
 
   &:hover {
+    color: var(--oomol-primary) !important;
     border-color: var(--oomol-primary);
-    color: var(--oomol-primary);
-    background: rgba(var(--oomol-primary-rgb), 0.05);
+    background: var(--oomol-primary-bg);
   }
 }
