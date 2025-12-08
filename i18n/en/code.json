@@ -2497,6 +2497,12 @@
   "APP.new.applet.devValue": {
     "message": "Function as App: Auto-generated UI, zero frontend code."
   },
+  "APP.new.hero.cta.web": {
+    "message": "Use in Web"
+  },
+  "APP.new.hero.cta.studio": {
+    "message": "Use in OOMOL Studio"
+  },
   "APP.new.cta.download": { "message": "Download" },
   "APP.new.cta.docs": { "message": "View Docs" },
   "STUDIO.page.title": {

@@ -2492,6 +2492,12 @@
   "APP.new.applet.devValue": {
     "message": "函数即应用：自动生成表单 UI，零前端代码"
   },
+  "APP.new.hero.cta.web": {
+    "message": "在网页中使用"
+  },
+  "APP.new.hero.cta.studio": {
+    "message": "在 OOMOL Studio 中使用"
+  },
   "APP.new.cta.download": { "message": "下载体验" },
   "APP.new.cta.docs": { "message": "查看文档" },
   "STUDIO.page.title": {

@@ -34,13 +34,19 @@ export default function AppPage() {
               href="https://app.oomol.com"
               className={`${styles.primaryButton} ${styles.large}`}
             >
-              开始使用 Applet
+              {translate({
+                id: "APP.new.hero.cta.web",
+                message: "在网页中使用",
+              })}
             </a>
             <a
-              href="https://chat.oomol.com"
+              href="https://oomol.com/downloads"
               className={`${styles.secondaryButton} ${styles.large}`}
             >
-              开始使用 Chat
+              {translate({
+                id: "APP.new.hero.cta.studio",
+                message: "在 OOMOL Studio 中使用",
+              })}
             </a>
           </div>
         </section>
