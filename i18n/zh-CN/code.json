@@ -2341,7 +2341,7 @@
     "message": "按需扩缩容、零运维心智负担、极速发布到生产环境"
   },
   "CLOUD.hero.title": {
-    "message": "专注代码，享受编程"
+    "message": "OOMOL Cloud"
   },
   "CLOUD.hero.description": {
     "message": "你只管写函数 Block，剩下的交给 OOMOL。从繁琐的运维中解放出来，让创意即刻落地。"
@@ -2371,7 +2371,7 @@
     "message": "写代码本身是充满创造愉悦的，但将代码交付给用户往往枯燥乏味。购买服务器、准备环境、部署代码、可用性设计、UI 设计... 很多天才的设计都因为这些“拦路虎”，要么趴在电脑里孤芳自赏，要么做了一半无奈放弃，甚至因为产品没卖出去就背负了高昂的服务器费用。"
   },
   "CLOUD.solution.title": {
-    "message": "OOMOL Cloud：让想法即刻落地"
+    "message": "专注代码，享受编程"
   },
   "CLOUD.solution.subtitle": {
     "message": "你只管写函数 Block，剩下的交给 OOMOL"
@@ -2492,10 +2492,10 @@
     "message": "OOMOL Studio - 设计哲学"
   },
   "STUDIO.page.description": {
-    "message": "由开发者构建，为开发者服务。为什么我们要这样构建 OOMOL Studio。"
+    "message": "OOMOL Studio。为什么我们要这样构建 OOMOL Studio。"
   },
   "STUDIO.manifesto.title": {
-    "message": "由开发者构建，为开发者服务。"
+    "message": "OOMOL Studio"
   },
   "STUDIO.manifesto.subtitle": {
     "message": "我们构建 OOMOL Studio，是因为厌倦了在「易于使用」和「足够强大」之间做选择。"

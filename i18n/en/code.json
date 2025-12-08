@@ -2338,7 +2338,7 @@
     "message": "On-demand scaling, zero operations overhead, instant production deployment"
   },
   "CLOUD.hero.title": {
-    "message": "Focus on Coding, Enjoy Programming"
+    "message": "OOMOL Cloud"
   },
   "CLOUD.hero.description": {
     "message": "You write the Function Block, leave the rest to OOMOL. Free yourself from operations and let your ideas take flight instantly."
@@ -2368,7 +2368,7 @@
     "message": "Coding is creative joy, but delivering code is often a burden. Servers, environments, deployment, UI design... these roadblocks kill many genius ideas. We want to change that."
   },
   "CLOUD.solution.title": {
-    "message": "OOMOL Cloud: Instant Launch"
+    "message": "Focus on Coding, Enjoy Programming"
   },
   "CLOUD.solution.subtitle": {
     "message": "Write the Block, OOMOL handles the rest"
@@ -2497,10 +2497,10 @@
     "message": "OOMOL Studio - Design Philosophy"
   },
   "STUDIO.page.description": {
-    "message": "Built by developers, for developers. Why we built OOMOL Studio the way we did."
+    "message": "OOMOL Studio. Why we built OOMOL Studio the way we did."
   },
   "STUDIO.manifesto.title": {
-    "message": "Built by Developers, For Developers."
+    "message": "OOMOL Studio"
   },
   "STUDIO.manifesto.subtitle": {
     "message": "We built OOMOL Studio because we were tired of choosing between \"easy to use\" and \"powerful enough.\""
