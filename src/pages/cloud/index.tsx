@@ -2,6 +2,7 @@ import styles from "./styles.module.scss";
 
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import ThemedImage from "@theme/ThemedImage";
 
@@ -63,6 +64,9 @@ const ModeItem = ({
 };
 
 export default function CloudPage() {
+  const { i18n } = useDocusaurusContext() as unknown as { i18n: { currentLocale: string } };
+  const pricingUrl = i18n.currentLocale === "zh-CN" ? "/zh-CN/pricing" : "/pricing";
+
   return (
     <Layout>
       <div className={styles.container}>
@@ -100,11 +104,11 @@ export default function CloudPage() {
           </div>
 
           <div className={styles.heroCTA}>
-            <a href="/downloads" className={styles.primaryButton}>
-              {translate({ message: "CLOUD.hero.cta.start" })}
-            </a>
-            <a href="/docs" className={styles.secondaryButton}>
-              {translate({ message: "CLOUD.hero.cta.docs" })}
+            <a
+              href="https://console.oomol.com/cloud-function"
+              className={styles.primaryButton}
+            >
+              开始使用
             </a>
           </div>
         </div>
@@ -143,7 +147,7 @@ export default function CloudPage() {
             <p className={styles.pricingDescription}>
               {translate({ message: "CLOUD.pricing.description" })}
             </p>
-            <a href="/pricing" className={styles.pricingButton}>
+            <a href={pricingUrl} className={styles.pricingButton}>
               {translate({ message: "CLOUD.pricing.cta" })}
             </a>
           </div>
