@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss";
 
-import { translate } from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
+import { translate } from "@docusaurus/Translate";
 
 // 产品对比数据 - 重构为卡片式数据结构
 const products = [
