@@ -2151,6 +2151,12 @@
   "HEADLESS.hero.cta.docs": {
     "message": "View Docs"
   },
+  "HEADLESS.deployment.title": {
+    "message": "Docker Deployment"
+  },
+  "HEADLESS.deployment.viewDocs": {
+    "message": "View Full Documentation →"
+  },
   "HEADLESS.useCases.title": {
     "message": "Use Cases"
   },

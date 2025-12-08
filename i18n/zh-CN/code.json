@@ -2154,6 +2154,12 @@
   "HEADLESS.hero.cta.docs": {
     "message": "查看文档"
   },
+  "HEADLESS.deployment.title": {
+    "message": "Docker 部署"
+  },
+  "HEADLESS.deployment.viewDocs": {
+    "message": "查看完整文档 →"
+  },
   "HEADLESS.useCases.title": {
     "message": "适用场景"
   },

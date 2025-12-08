@@ -232,6 +232,90 @@
   padding-bottom: 100px;
 }
 
+// Button styles matching app page
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin: 0 !important;
+
+  i {
+    font-size: 16px;
+  }
+
+  // Small size
+  &.small {
+    padding: 4px 12px;
+    font-size: 12px;
+    gap: 4px;
+
+    i {
+      font-size: 14px;
+    }
+  }
+
+  // Medium size (default)
+  &.medium {
+    padding: 8px 20px;
+    font-size: 14px;
+    gap: 6px;
+
+    i {
+      font-size: 16px;
+    }
+  }
+
+  // Large size
+  &.large {
+    padding: 12px 32px;
+    font-size: 16px;
+    gap: 8px;
+    font-weight: 600;
+
+    i {
+      font-size: 20px;
+    }
+  }
+}
+
+.primaryButton {
+  background: var(--oomol-primary);
+  color: var(--oomol-text-inverse);
+  border: none;
+
+  [data-theme="dark"] & {
+    color: var(--oomol-white);
+  }
+
+  &:hover {
+    background: var(--oomol-primary-hover);
+    color: var(--oomol-text-inverse) !important;
+
+    [data-theme="dark"] & {
+      color: var(--oomol-white) !important;
+    }
+  }
+}
+
+.secondaryButton {
+  background: inherit;
+  color: var(--oomol-text-primary);
+  border: 1px solid var(--oomol-border-default);
+
+  &:hover {
+    color: var(--oomol-primary) !important;
+    border-color: var(--oomol-primary);
+    background: var(--oomol-primary-bg);
+  }
+}
+
 .primaryBtn {
   display: inline-block;
   background: var(--oomol-primary);
@@ -259,7 +343,6 @@
   padding: 100px 32px;
   background: var(--ifm-background-surface-color);
   position: relative;
-  margin-bottom: 60px;
 
   &::before {
     content: "";

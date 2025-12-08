@@ -1,11 +1,20 @@
 import styles from "./styles.module.scss";
 
 import { translate } from "@docusaurus/Translate";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import Layout from "@theme/Layout";
 import React from "react";
 
 export default function HeadlessPage() {
+  const { i18n } = useDocusaurusContext() as unknown as {
+    i18n: { currentLocale: string };
+  };
+  const docsUrl =
+    i18n.currentLocale === "zh-CN"
+      ? "/zh-CN/docs/headless/"
+      : "/docs/headless/";
+
   return (
     <Layout>
       <div className={styles.container}>
@@ -35,7 +44,9 @@ export default function HeadlessPage() {
         {/* Docker Deployment Section */}
         <section className={styles.deploymentSection}>
           <div className={styles.deploymentCard}>
-            <h2 className={styles.deploymentTitle}>Docker Deployment</h2>
+            <h2 className={styles.deploymentTitle}>
+              {translate({ message: "HEADLESS.deployment.title" })}
+            </h2>
             <div className={styles.deploymentCode}>
               {`docker run -d --privileged --name oomol-headless -p 4000:4000 -p 52222:52222 \\
   --mount type=bind,src=$HOME/.oomol-studio/headless/.env,dst=/app/.env \\
@@ -43,8 +54,8 @@ export default function HeadlessPage() {
   oomolstudio/headless:latest`}
             </div>
             <div className={styles.deploymentCTA}>
-              <a href="/docs/headless" className={styles.deploymentLink}>
-                View Full Documentation →
+              <a href={docsUrl} className={styles.deploymentLink}>
+                {translate({ message: "HEADLESS.deployment.viewDocs" })}
               </a>
             </div>
           </div>
@@ -170,7 +181,10 @@ export default function HeadlessPage() {
 
         {/* Footer CTA */}
         <section className={styles.ctaSection}>
-          <a href="/docs/headless" className={styles.primaryBtn}>
+          <a
+            href={docsUrl}
+            className={`${styles.primaryButton} ${styles.large}`}
+          >
             {translate({ message: "HEADLESS.hero.cta.docs" })}
           </a>
         </section>
