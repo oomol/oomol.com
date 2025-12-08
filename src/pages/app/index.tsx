@@ -30,10 +30,16 @@ export default function AppPage() {
             })}
           </p>
           <div className={styles.heroCTA}>
-            <a href="/downloads" className={styles.primaryButton}>
+            <a
+              href="/downloads"
+              className={`${styles.primaryButton} ${styles.large}`}
+            >
               {translate({ id: "APP.new.cta.download", message: "下载体验" })}
             </a>
-            <a href="/docs" className={styles.secondaryButton}>
+            <a
+              href="/docs"
+              className={`${styles.secondaryButton} ${styles.large}`}
+            >
               {translate({ id: "APP.new.cta.docs", message: "查看文档" })}
             </a>
           </div>
