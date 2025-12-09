@@ -2591,5 +2591,83 @@
   },
   "STUDIO.principle3.codeComment2": {
     "message": "# It just works."
+  },
+  "SDK.hero.title": {
+    "message": "OOMOL SDKs"
+  },
+  "SDK.hero.description": {
+    "message": "Powerful SDK suite to help you quickly build OOMOL-based applications. Support network proxy, cloud functions, MCP servers and more deployment modes."
+  },
+  "SDK.category.connect.title": {
+    "message": "OOMOL Connect SDKs"
+  },
+  "SDK.category.connect.description": {
+    "message": "Turn your computer into a remotely accessible server through network proxy technology, supports TypeScript and Python"
+  },
+  "SDK.connect.mcp.description": {
+    "message": "Use your computer as an MCP server, allowing AI to remotely call your local functions through network proxy"
+  },
+  "SDK.connect.mcp.feature1": {
+    "message": "Zero-config network proxy"
+  },
+  "SDK.connect.mcp.feature2": {
+    "message": "Native MCP protocol support"
+  },
+  "SDK.connect.mcp.feature3": {
+    "message": "Secure end-to-end encryption"
+  },
+  "SDK.connect.api.description": {
+    "message": "Use your computer as an API server, providing remote access capability through network proxy"
+  },
+  "SDK.connect.api.feature1": {
+    "message": "RESTful API support"
+  },
+  "SDK.connect.api.feature2": {
+    "message": "Automatic HTTPS certificates"
+  },
+  "SDK.connect.api.feature3": {
+    "message": "High-performance reverse proxy"
+  },
+  "SDK.category.cloud.title": {
+    "message": "OOMOL Cloud SDKs"
+  },
+  "SDK.category.cloud.description": {
+    "message": "Run your code in OOMOL cloud functions without managing servers"
+  },
+  "SDK.cloud.mcp.description": {
+    "message": "Use OOMOL cloud functions as MCP servers, allowing AI to call your Serverless functions"
+  },
+  "SDK.cloud.mcp.feature1": {
+    "message": "Serverless architecture"
+  },
+  "SDK.cloud.mcp.feature2": {
+    "message": "Auto-scaling"
+  },
+  "SDK.cloud.mcp.feature3": {
+    "message": "Pay-per-call billing"
+  },
+  "SDK.cloud.task.python.description": {
+    "message": "Develop OOMOL cloud functions with Python, supporting the rich Python ecosystem"
+  },
+  "SDK.cloud.task.ts.description": {
+    "message": "Develop OOMOL cloud functions with TypeScript, enjoy type-safe development experience"
+  },
+  "SDK.cloud.task.feature1": {
+    "message": "Full type definitions"
+  },
+  "SDK.cloud.task.feature2": {
+    "message": "Async task support"
+  },
+  "SDK.cloud.task.feature3": {
+    "message": "Built-in logging and monitoring"
+  },
+  "SDK.cta.title": {
+    "message": "Get Started with OOMOL SDKs"
+  },
+  "SDK.cta.description": {
+    "message": "View complete API documentation and sample code to quickly get started with OOMOL SDK development"
+  },
+  "SDK.cta.button": {
+    "message": "View Documentation"
   }
 }

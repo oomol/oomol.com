@@ -2589,5 +2589,83 @@
   },
   "STUDIO.principle3.codeComment2": {
     "message": "# 就是这么简单。"
+  },
+  "SDK.hero.title": {
+    "message": "OOMOL SDK"
+  },
+  "SDK.hero.description": {
+    "message": "强大的 SDK 套件,帮助你快速构建基于 OOMOL 的应用。支持网络反代、云函数、MCP 服务器等多种部署模式。"
+  },
+  "SDK.category.connect.title": {
+    "message": "OOMOL Connect SDK"
+  },
+  "SDK.category.connect.description": {
+    "message": "通过网络反代技术,将你的电脑变成可远程访问的服务器,支持 TypeScript 和 Python"
+  },
+  "SDK.connect.mcp.description": {
+    "message": "将你的电脑作为 MCP 服务器,通过网络反代让 AI 远程调用你的本地函数"
+  },
+  "SDK.connect.mcp.feature1": {
+    "message": "零配置网络反代"
+  },
+  "SDK.connect.mcp.feature2": {
+    "message": "原生 MCP 协议支持"
+  },
+  "SDK.connect.mcp.feature3": {
+    "message": "安全的端到端加密"
+  },
+  "SDK.connect.api.description": {
+    "message": "将你的电脑作为 API 服务器,通过网络反代提供远程访问能力"
+  },
+  "SDK.connect.api.feature1": {
+    "message": "RESTful API 支持"
+  },
+  "SDK.connect.api.feature2": {
+    "message": "自动 HTTPS 证书"
+  },
+  "SDK.connect.api.feature3": {
+    "message": "高性能反向代理"
+  },
+  "SDK.category.cloud.title": {
+    "message": "OOMOL Cloud SDK"
+  },
+  "SDK.category.cloud.description": {
+    "message": "在 OOMOL 云函数中运行你的代码,无需管理服务器"
+  },
+  "SDK.cloud.mcp.description": {
+    "message": "将 OOMOL 云函数作为 MCP 服务器,让 AI 调用你的 Serverless 函数"
+  },
+  "SDK.cloud.mcp.feature1": {
+    "message": "Serverless 架构"
+  },
+  "SDK.cloud.mcp.feature2": {
+    "message": "自动扩缩容"
+  },
+  "SDK.cloud.mcp.feature3": {
+    "message": "按调用计费"
+  },
+  "SDK.cloud.task.python.description": {
+    "message": "使用 Python 开发 OOMOL 云函数,支持丰富的 Python 生态"
+  },
+  "SDK.cloud.task.ts.description": {
+    "message": "使用 TypeScript 开发 OOMOL 云函数,享受类型安全的开发体验"
+  },
+  "SDK.cloud.task.feature1": {
+    "message": "完整的类型定义"
+  },
+  "SDK.cloud.task.feature2": {
+    "message": "异步任务支持"
+  },
+  "SDK.cloud.task.feature3": {
+    "message": "内置日志和监控"
+  },
+  "SDK.cta.title": {
+    "message": "开始使用 OOMOL SDK"
+  },
+  "SDK.cta.description": {
+    "message": "查看完整的 API 文档和示例代码,快速上手 OOMOL SDK 开发"
+  },
+  "SDK.cta.button": {
+    "message": "查看文档"
   }
 }
