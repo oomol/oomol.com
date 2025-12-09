@@ -84,10 +84,8 @@
 
 .navbar {
   box-shadow: none;
-  background: var(--oomol-bg-base);
-  opacity: 0.9;
-
   position: relative;
+
   &::before {
     content: "";
     position: absolute;
@@ -102,20 +100,6 @@
   .navbar__inner {
     justify-content: unset;
   }
-}
-
-/* Light mode navbar styles */
-[data-theme="light"] .navbar {
-  background: var(--oomol-bg-base);
-  opacity: 0.9;
-  border-bottom: 1px solid var(--oomol-border-subtle);
-}
-
-/* Dark mode navbar styles */
-[data-theme="dark"] .navbar {
-  background: var(--oomol-bg-base);
-  opacity: 0.9;
-  border-bottom: 1px solid var(--oomol-border-subtle);
 }
 
 /* Navbar link colors */
