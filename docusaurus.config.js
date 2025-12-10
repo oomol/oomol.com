@@ -351,6 +351,9 @@ const config = {
         darkTheme: darkTheme,
         additionalLanguages: ["json"],
       },
+      mermaid: {
+        theme: { light: "base", dark: "dark" },
+      },
     }),
   future: {
     v4: true,
