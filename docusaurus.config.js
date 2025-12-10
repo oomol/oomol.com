@@ -37,6 +37,7 @@ const config = {
     hooks: {
       onBrokenMarkdownLinks: "warn",
     },
+    mermaid: true,
   },
   plugins: [
     "docusaurus-plugin-sass",
@@ -127,6 +128,8 @@ const config = {
       }),
     ],
   ],
+
+  themes: ["@docusaurus/theme-mermaid"],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
