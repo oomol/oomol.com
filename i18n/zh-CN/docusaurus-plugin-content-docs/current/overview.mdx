@@ -2,7 +2,6 @@
 sidebar_position: 1
 ---
 
-import overview from "@site/static/img/docs/cn/overview.png";
 import desktop from "@site/static/img/docs/cn/desktop.png";
 import hub from "@site/static/img/docs/cn/hub.png";
 import hub_detail from "@site/static/img/docs/cn/hub_detail.png";
@@ -36,7 +35,28 @@ OOMOL 是一个 AI 驱动的工作流平台，专为数据分析、自动化脚�
 
 ## 产品架构
 
-<img src={overview} width="720" />
+```mermaid
+graph TB
+    subgraph Layer4["应用层"]
+        Hub["OOMOL Flowhub<br/>(项目和 Block 分享中心)"] ~~~ Cloud["OOMOL Cloud<br/>(Serverless 云函数部署)"]
+    end
+
+    subgraph Layer3["平台层"]
+        Studio["OOMOL Studio<br/>(All-in-One 桌面软件)"] ~~~ Headless["OOMOL Headless<br/>(可部署镜像)"]
+    end
+
+    subgraph Layer2["引擎层 (开源)"]
+        Oocana["OOCANA 工作流引擎"]
+    end
+
+    subgraph Layer1["基础层 (开源)"]
+        OVM["OVM 虚拟化 Linux 环境<br/>(内置 Node.js 和 Python)"]
+    end
+
+    Layer4 --> Layer3
+    Layer3 --> Layer2
+    Layer2 --> Layer1
+```
 
 ### OVM
 

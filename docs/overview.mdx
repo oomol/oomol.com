@@ -2,7 +2,6 @@
 sidebar_position: 1
 ---
 
-import overview from "@site/static/img/docs/overview.png";
 import desktop from "@site/static/img/docs/desktop.png";
 import hub from "@site/static/img/docs/hub.png";
 import hub_detail from "@site/static/img/docs/hub_detail.png";
@@ -36,7 +35,28 @@ Our core is the Scriptlet Block, which allows developers to implement custom bus
 
 ## Product Architecture
 
-<img src={overview} width="720" />
+```mermaid
+graph TB
+    subgraph Layer4["Application Layer"]
+        Hub["OOMOL Flowhub<br/>(Project & Block Sharing Hub)"] ~~~ Cloud["OOMOL Cloud<br/>(Serverless Cloud Function Deployment)"]
+    end
+
+    subgraph Layer3["Platform Layer"]
+        Studio["OOMOL Studio<br/>(All-in-One Desktop Software)"] ~~~ Headless["OOMOL Headless<br/>(Deployable Image)"]
+    end
+
+    subgraph Layer2["Engine Layer (Open Source)"]
+        Oocana["OOCANA Workflow Engine"]
+    end
+
+    subgraph Layer1["Foundation Layer (Open Source)"]
+        OVM["OVM Virtualized Linux Environment<br/>(Built-in Node.js & Python)"]
+    end
+
+    Layer4 --> Layer3
+    Layer3 --> Layer2
+    Layer2 --> Layer1
+```
 
 ### OVM
 
