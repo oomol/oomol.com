@@ -200,6 +200,10 @@ const config = {
                 to: "/headless",
                 label: "navbar.oomol-headless",
               },
+              {
+                to: "/sdk",
+                label: "navbar.oomol-sdk",
+              },
             ],
           },
           {

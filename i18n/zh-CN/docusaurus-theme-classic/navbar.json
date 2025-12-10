@@ -63,6 +63,10 @@
     "message": "OOMOL Headless",
     "description": "Navbar item with label navbar.oomol-headless"
   },
+  "item.label.navbar.oomol-sdk": {
+    "message": "OOMOL SDK",
+    "description": "Navbar item with label navbar.oomol-sdk"
+  },
   "item.label.Product": {
     "message": "产品",
     "description": "Navbar item with label Product"
