@@ -2667,5 +2667,26 @@
   },
   "SDK.cta.button": {
     "message": "查看文档"
+  },
+  "SDK.category.fusion.title": {
+    "message": "OOMOL Fusion SDK"
+  },
+  "SDK.category.fusion.description": {
+    "message": "方便地调用 OOMOL 平台提供的 Fusion API 服务,无需处理复杂的轮询策略"
+  },
+  "SDK.fusion.ts.description": {
+    "message": "使用 TypeScript 调用 OOMOL Fusion API,包括自研服务和三方服务"
+  },
+  "SDK.fusion.py.description": {
+    "message": "使用 Python 调用 OOMOL Fusion API,包括自研服务和三方服务"
+  },
+  "SDK.fusion.feature1": {
+    "message": "简化的 API 调用接口"
+  },
+  "SDK.fusion.feature2": {
+    "message": "自动处理轮询和异步流程"
+  },
+  "SDK.fusion.feature3": {
+    "message": "支持文生图、语音合成等多种服务"
   }
 }

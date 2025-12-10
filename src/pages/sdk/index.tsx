@@ -1,7 +1,6 @@
 import styles from "./styles.module.scss";
 
 import { translate } from "@docusaurus/Translate";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import Layout from "@theme/Layout";
 import React from "react";
@@ -100,6 +99,38 @@ const sdkCategories = [
       },
     ],
   },
+  {
+    title: translate({ message: "SDK.category.fusion.title" }),
+    description: translate({ message: "SDK.category.fusion.description" }),
+    sdks: [
+      {
+        name: "OOMOL Fusion SDK (TypeScript)",
+        language: "TypeScript",
+        icon: "⚡",
+        description: translate({ message: "SDK.fusion.ts.description" }),
+        features: [
+          translate({ message: "SDK.fusion.feature1" }),
+          translate({ message: "SDK.fusion.feature2" }),
+          translate({ message: "SDK.fusion.feature3" }),
+        ],
+        github: "https://github.com/oomol-lab/oomol-fusion-sdk-ts",
+        npm: "oomol-fusion-sdk",
+      },
+      {
+        name: "OOMOL Fusion SDK (Python)",
+        language: "Python",
+        icon: "🐍",
+        description: translate({ message: "SDK.fusion.py.description" }),
+        features: [
+          translate({ message: "SDK.fusion.feature1" }),
+          translate({ message: "SDK.fusion.feature2" }),
+          translate({ message: "SDK.fusion.feature3" }),
+        ],
+        github: "https://github.com/oomol-lab/oomol-fusion-sdk-py",
+        pypi: "oomol-fusion-sdk",
+      },
+    ],
+  },
 ];
 
 // SDK 卡片组件
@@ -167,11 +198,6 @@ const SDKCard = ({ sdk }: { sdk: (typeof sdkCategories)[0]["sdks"][0] }) => {
 };
 
 export default function SDKPage() {
-  const { i18n } = useDocusaurusContext() as unknown as {
-    i18n: { currentLocale: string };
-  };
-  const docsUrl = i18n.currentLocale === "zh-CN" ? "/zh-CN/docs/" : "/docs/";
-
   return (
     <Layout>
       <div className={styles.container}>
@@ -203,19 +229,6 @@ export default function SDKPage() {
             </div>
           </section>
         ))}
-
-        {/* Documentation CTA */}
-        <section className={styles.ctaSection}>
-          <h2 className={styles.ctaTitle}>
-            {translate({ message: "SDK.cta.title" })}
-          </h2>
-          <p className={styles.ctaDescription}>
-            {translate({ message: "SDK.cta.description" })}
-          </p>
-          <a href={docsUrl} className={styles.ctaButton}>
-            {translate({ message: "SDK.cta.button" })}
-          </a>
-        </section>
 
         <GetStartedPrompt />
       </div>

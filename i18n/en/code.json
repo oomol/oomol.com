@@ -2669,5 +2669,26 @@
   },
   "SDK.cta.button": {
     "message": "View Documentation"
+  },
+  "SDK.category.fusion.title": {
+    "message": "OOMOL Fusion SDKs"
+  },
+  "SDK.category.fusion.description": {
+    "message": "Easily call OOMOL Fusion API services without handling complex polling strategies"
+  },
+  "SDK.fusion.ts.description": {
+    "message": "Call OOMOL Fusion APIs with TypeScript, including proprietary and third-party services"
+  },
+  "SDK.fusion.py.description": {
+    "message": "Call OOMOL Fusion APIs with Python, including proprietary and third-party services"
+  },
+  "SDK.fusion.feature1": {
+    "message": "Simplified API calling interface"
+  },
+  "SDK.fusion.feature2": {
+    "message": "Auto-handle polling and async workflows"
+  },
+  "SDK.fusion.feature3": {
+    "message": "Support text-to-image, TTS and more services"
   }
 }
