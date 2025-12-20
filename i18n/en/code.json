@@ -2646,6 +2646,18 @@
   "SDK.cloud.mcp.feature3": {
     "message": "Pay-per-call billing"
   },
+  "SDK.block.mcp.description": {
+    "message": "Build MCP servers in Blocks, allowing AI to call your custom Block functions"
+  },
+  "SDK.block.mcp.feature1": {
+    "message": "Block functions as MCP tools"
+  },
+  "SDK.block.mcp.feature2": {
+    "message": "Full type support"
+  },
+  "SDK.block.mcp.feature3": {
+    "message": "Seamless OOMOL ecosystem integration"
+  },
   "SDK.cloud.task.python.description": {
     "message": "Develop OOMOL cloud functions with Python, supporting the rich Python ecosystem"
   },

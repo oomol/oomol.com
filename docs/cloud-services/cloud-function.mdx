@@ -1,0 +1,208 @@
+---
+sidebar_position: 1
+---
+
+# Cloud Function
+
+OOMOL Cloud Function is a serverless computing platform that allows you to deploy your OOMOL workflows as production-ready APIs without managing infrastructure. Focus on writing code, and let OOMOL handle the rest.
+
+## Overview
+
+OOMOL Cloud Function transforms your workflow blocks into scalable cloud services with just one click. You write the function blocks, and OOMOL takes care of deployment, scaling, and operations.
+
+### Key Benefits
+
+- **Painless Generation**: Deploy your workflows instantly without complex configurations
+- **Pay-as-you-go**: Only pay for actual usage, no upfront server costs
+- **Zero Maintenance**: No need to manage servers, environments, or scaling
+- **Auto-scaling**: Automatically handles traffic spikes and scaling
+
+## Three Deployment Modes
+
+### 1. Publish as Library
+
+Share your blocks with the community or compose them into more complex workflows.
+
+**Use Cases:**
+- Share reusable components with other developers
+- Build modular functionality that others can extend
+- Create building blocks for community innovation
+
+**How it Works:**
+- Package your blocks with clear inputs and outputs
+- Publish to the OOMOL community library
+- Others can discover and use your blocks in their workflows
+
+### 2. Deploy as Cloud Function
+
+One-click deployment to serverless infrastructure with automatic scaling.
+
+**Use Cases:**
+- Create REST API endpoints for your applications
+- Build backend services without managing servers
+- Provide stable, production-ready APIs to users
+
+**Features:**
+- Automatic HTTPS endpoints
+- Built-in load balancing
+- Zero-downtime deployments
+- Automatic scaling based on demand
+
+**Example:**
+```bash
+# Your workflow automatically gets a public API endpoint
+https://api.oomol.com/v1/your-function-id
+```
+
+### 3. Provide for AI (MCP)
+
+Publish your functions via Model Context Protocol (MCP) for AI agents to use.
+
+**Use Cases:**
+- Let AI assistants call your functions directly
+- Create tools that AI agents can discover and use
+- Connect your code to the intelligent world
+
+**How it Works:**
+- Your function is exposed via MCP protocol
+- AI agents can discover and call your function
+- Seamless integration with Claude, ChatGPT, and other AI assistants
+
+## Pricing
+
+OOMOL Cloud Function uses a simple pay-per-use pricing model:
+
+- **No fixed costs**: No monthly server fees or upfront payments
+- **Usage-based billing**: Pay only for actual function invocations
+- **Transparent pricing**: Clear pricing per API call
+- **Free tier available**: Get started with generous free usage limits
+
+Visit [OOMOL Console](https://console.oomol.com/cloud-function) for detailed pricing information.
+
+## Getting Started
+
+### Prerequisites
+
+- An OOMOL account
+- OOMOL Studio installed on your computer
+- A workflow ready to deploy
+
+### Deployment Steps
+
+1. **Create Your Workflow**
+   - Build your workflow in OOMOL Studio
+   - Test it locally to ensure it works correctly
+   - Define clear input and output parameters
+
+2. **Configure Deployment**
+   - Open the deployment panel in OOMOL Studio
+   - Select "Cloud Function" as deployment target
+   - Configure function settings (timeout, memory, etc.)
+
+3. **Deploy**
+   - Click "Deploy to Cloud"
+   - Wait for deployment to complete
+   - Get your function's API endpoint
+
+4. **Test Your Function**
+   - Use the provided endpoint to test your function
+   - Monitor usage and performance in OOMOL Console
+   - Share the API with your users
+
+### Example Deployment
+
+Here's a simple example of calling a deployed cloud function:
+
+```bash
+curl -X POST https://api.oomol.com/v1/your-function-id \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -d '{"input": "your data"}'
+```
+
+## Management
+
+### OOMOL Console
+
+Access [OOMOL Console](https://console.oomol.com/cloud-function) to:
+
+- View all your deployed functions
+- Monitor usage and performance metrics
+- Manage API keys and access control
+- Check billing and usage statistics
+- Update function configurations
+- View logs and debugging information
+
+### Monitoring
+
+- **Real-time metrics**: Track invocations, latency, and errors
+- **Usage analytics**: Understand how your functions are being used
+- **Error tracking**: Quickly identify and fix issues
+- **Performance insights**: Optimize function execution time
+
+## Best Practices
+
+### Function Design
+
+1. **Keep functions focused**: Each function should do one thing well
+2. **Define clear interfaces**: Document input and output parameters
+3. **Handle errors gracefully**: Return meaningful error messages
+4. **Optimize for cold starts**: Minimize initialization time
+
+### Security
+
+1. **Use API keys**: Protect your functions with authentication
+2. **Validate inputs**: Always validate and sanitize user inputs
+3. **Set rate limits**: Prevent abuse with appropriate rate limiting
+4. **Monitor usage**: Watch for unusual patterns or potential attacks
+
+### Performance
+
+1. **Optimize dependencies**: Only include necessary libraries
+2. **Cache when possible**: Reduce redundant computations
+3. **Use appropriate timeouts**: Set realistic execution time limits
+4. **Test at scale**: Verify performance under expected load
+
+## Comparison with Traditional Deployment
+
+| Feature | Traditional Server | OOMOL Cloud Function |
+|---------|-------------------|---------------------|
+| **Setup Time** | Hours to days | Minutes |
+| **Server Management** | Required | None |
+| **Scaling** | Manual | Automatic |
+| **Costs** | Fixed monthly fees | Pay per use |
+| **Maintenance** | Ongoing | Handled by OOMOL |
+| **SSL/HTTPS** | Manual setup | Built-in |
+| **Deployment** | Complex | One-click |
+
+## Use Cases
+
+### API Services
+Build RESTful APIs for mobile apps, web applications, or third-party integrations.
+
+### Data Processing
+Process files, transform data, or perform batch operations on-demand.
+
+### Integrations
+Connect different services and automate workflows between them.
+
+### AI Tools
+Create specialized tools that AI assistants can call to extend their capabilities.
+
+### Webhooks
+Respond to events from external services like GitHub, Stripe, or Slack.
+
+## Support
+
+If you encounter any issues:
+
+- Check our [Documentation Center](https://docs.oomol.com)
+- Visit [OOMOL Console](https://console.oomol.com/cloud-function)
+- Submit issues on [GitHub](https://github.com/oomol-lab)
+- Join our [Community Forum](https://community.oomol.com)
+
+## Related Links
+
+- [OOMOL Cloud Product Page](/cloud)
+- [OOMOL Console](https://console.oomol.com/cloud-function)
+- [API Documentation](https://docs.oomol.com/api)

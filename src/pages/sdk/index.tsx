@@ -8,51 +8,6 @@ import React from "react";
 // SDK 数据
 const sdkCategories = [
   {
-    title: translate({ message: "SDK.category.connect.title" }),
-    description: translate({ message: "SDK.category.connect.description" }),
-    sdks: [
-      {
-        name: "OOMOL Connect MCP SDK",
-        language: "TypeScript",
-        icon: "🔗",
-        description: translate({ message: "SDK.connect.mcp.description" }),
-        features: [
-          translate({ message: "SDK.connect.mcp.feature1" }),
-          translate({ message: "SDK.connect.mcp.feature2" }),
-          translate({ message: "SDK.connect.mcp.feature3" }),
-        ],
-        github: "https://github.com/oomol-lab/oomol-connect-mcp-sdk-ts",
-        npm: "oomol-connect-mcp-sdk",
-      },
-      {
-        name: "OOMOL Connect SDK (TypeScript)",
-        language: "TypeScript",
-        icon: "🚀",
-        description: translate({ message: "SDK.connect.api.description" }),
-        features: [
-          translate({ message: "SDK.connect.api.feature1" }),
-          translate({ message: "SDK.connect.api.feature2" }),
-          translate({ message: "SDK.connect.api.feature3" }),
-        ],
-        github: "https://github.com/oomol-lab/oomol-connect-sdk-ts",
-        npm: "oomol-connect-sdk",
-      },
-      {
-        name: "OOMOL Connect SDK (Python)",
-        language: "Python",
-        icon: "🐍",
-        description: translate({ message: "SDK.connect.api.description" }),
-        features: [
-          translate({ message: "SDK.connect.api.feature1" }),
-          translate({ message: "SDK.connect.api.feature2" }),
-          translate({ message: "SDK.connect.api.feature3" }),
-        ],
-        github: "https://github.com/oomol-lab/oomol-connect-sdk-py",
-        pypi: "oomol-connect-sdk",
-      },
-    ],
-  },
-  {
     title: translate({ message: "SDK.category.cloud.title" }),
     description: translate({ message: "SDK.category.cloud.description" }),
     sdks: [
@@ -68,6 +23,19 @@ const sdkCategories = [
         ],
         github: "https://github.com/oomol-lab/oomol-cloud-mcp-sdk-ts",
         npm: "oomol-cloud-mcp-sdk",
+      },
+      {
+        name: "OOMOL Block MCP SDK",
+        language: "TypeScript",
+        icon: "🔌",
+        description: translate({ message: "SDK.block.mcp.description" }),
+        features: [
+          translate({ message: "SDK.block.mcp.feature1" }),
+          translate({ message: "SDK.block.mcp.feature2" }),
+          translate({ message: "SDK.block.mcp.feature3" }),
+        ],
+        github: "https://github.com/oomol-lab/oomol-block-mcp-sdk-ts",
+        npm: "oomol-block-mcp-sdk",
       },
       {
         name: "OOMOL Cloud Task SDK (Python)",
@@ -128,6 +96,51 @@ const sdkCategories = [
         ],
         github: "https://github.com/oomol-lab/oomol-fusion-sdk-py",
         pypi: "oomol-fusion-sdk",
+      },
+    ],
+  },
+  {
+    title: translate({ message: "SDK.category.connect.title" }),
+    description: translate({ message: "SDK.category.connect.description" }),
+    sdks: [
+      {
+        name: "OOMOL Connect MCP SDK",
+        language: "TypeScript",
+        icon: "🔗",
+        description: translate({ message: "SDK.connect.mcp.description" }),
+        features: [
+          translate({ message: "SDK.connect.mcp.feature1" }),
+          translate({ message: "SDK.connect.mcp.feature2" }),
+          translate({ message: "SDK.connect.mcp.feature3" }),
+        ],
+        github: "https://github.com/oomol-lab/oomol-connect-mcp-sdk-ts",
+        npm: "oomol-connect-mcp-sdk",
+      },
+      {
+        name: "OOMOL Connect SDK (TypeScript)",
+        language: "TypeScript",
+        icon: "🚀",
+        description: translate({ message: "SDK.connect.api.description" }),
+        features: [
+          translate({ message: "SDK.connect.api.feature1" }),
+          translate({ message: "SDK.connect.api.feature2" }),
+          translate({ message: "SDK.connect.api.feature3" }),
+        ],
+        github: "https://github.com/oomol-lab/oomol-connect-sdk-ts",
+        npm: "oomol-connect-sdk",
+      },
+      {
+        name: "OOMOL Connect SDK (Python)",
+        language: "Python",
+        icon: "🐍",
+        description: translate({ message: "SDK.connect.api.description" }),
+        features: [
+          translate({ message: "SDK.connect.api.feature1" }),
+          translate({ message: "SDK.connect.api.feature2" }),
+          translate({ message: "SDK.connect.api.feature3" }),
+        ],
+        github: "https://github.com/oomol-lab/oomol-connect-sdk-py",
+        pypi: "oomol-connect-sdk",
       },
     ],
   },
@@ -222,7 +235,9 @@ export default function SDKPage() {
                 {category.description}
               </p>
             </div>
-            <div className={styles.sdkGrid}>
+            <div
+              className={`${styles.sdkGrid} ${catIndex === 0 ? styles.sdkGridTwoColumns : ""}`}
+            >
               {category.sdks.map((sdk, sdkIndex) => (
                 <SDKCard key={sdkIndex} sdk={sdk} />
               ))}
