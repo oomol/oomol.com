@@ -2644,6 +2644,18 @@
   "SDK.cloud.mcp.feature3": {
     "message": "按调用计费"
   },
+  "SDK.block.mcp.description": {
+    "message": "在 Block 中构建 MCP 服务器,让 AI 调用你的自定义 Block 函数"
+  },
+  "SDK.block.mcp.feature1": {
+    "message": "Block 函数转 MCP 工具"
+  },
+  "SDK.block.mcp.feature2": {
+    "message": "完整的类型支持"
+  },
+  "SDK.block.mcp.feature3": {
+    "message": "无缝集成 OOMOL 生态"
+  },
   "SDK.cloud.task.python.description": {
     "message": "使用 Python 开发 OOMOL 云函数,支持丰富的 Python 生态"
   },

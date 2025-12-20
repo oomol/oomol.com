@@ -48,7 +48,7 @@
     "description": "The label for category Cloud in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Cloud.link.generated-index.description": {
-    "message": "Reference of block, node, flow and so on",
+    "message": "Cloud services including Connect Service and Headless deployment.",
     "description": "The generated-index page description for category Cloud in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Zero to One": {

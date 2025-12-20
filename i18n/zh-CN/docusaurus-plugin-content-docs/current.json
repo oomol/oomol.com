@@ -48,7 +48,7 @@
     "description": "The label for category Introduction in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Cloud.link.generated-index.description": {
-    "message": "Reference of block, node, flow and so on",
+    "message": "云服务包括互联服务和 Headless 部署。",
     "description": "The generated-index page description for category Cloud in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Get Started": {
