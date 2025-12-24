@@ -12,8 +12,8 @@ export default function HeadlessPage() {
   };
   const docsUrl =
     i18n.currentLocale === "zh-CN"
-      ? "/zh-CN/docs/headless/"
-      : "/docs/headless/";
+      ? "/zh-CN/docs/cloud-services/headless/"
+      : "/docs/cloud-services/headless/";
 
   return (
     <Layout>
