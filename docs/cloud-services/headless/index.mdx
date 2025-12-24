@@ -4,45 +4,45 @@ sidebar_position: 3
 
 # Headless
 
-用于本地部署（通常是在 NAS 里）的单机版无头 studio，没有 Electron，没有服务端调度。
+A standalone headless studio for local deployment (typically on NAS), without Electron or server-side scheduling.
 
-## 本地调试
+## Local Development
 
-1. 准备 `.env` 文件：
+1. Prepare the `.env` file:
 
    ```bash
    OOMOL_ENV=prod
-   OOMOL_TOKEN=  # 可选，用于连接 OOMOL 服务 https://console.oomol.com/api-key
+   OOMOL_TOKEN=  # Optional, for connecting to OOMOL services https://console.oomol.com/api-key
    START_API_SERVER=true
    START_UI_SERVER=true
    OOMOL_LOCAL=1
-   ENABLE_OOMOL_CONNECT=true  # 推荐开启，支持远程操作
+   ENABLE_OOMOL_CONNECT=true  # Recommended, enables remote operations
    ```
 
-2. 打包 `pnpm build`
-3. 运行 `pnpm start`
+2. Build with `pnpm build`
+3. Run with `pnpm start`
 
-## Docker 部署
+## Docker Deployment
 
-1. 准备存储目录，例如：
+1. Prepare the storage directory, for example:
 
    ```bash
    mkdir -p $HOME/oomol-storage
    ```
 
-2. 准备环境变量文件：
+2. Prepare the environment variables file:
 
-   将 `.env` 放入 `$HOME/.oomol-studio/headless/.env`，内容如下（注意删掉 `OOMOL_LOCAL=1`）：
+   Place `.env` in `$HOME/.oomol-studio/headless/.env` with the following content (note: remove `OOMOL_LOCAL=1`):
 
    ```bash
    OOMOL_ENV=prod
-   OOMOL_TOKEN=  # 可选，用于连接 OOMOL 服务
+   OOMOL_TOKEN=  # Optional, for connecting to OOMOL services
    START_API_SERVER=true
    START_UI_SERVER=true
-   ENABLE_OOMOL_CONNECT=true  # 推荐开启，支持远程操作
+   ENABLE_OOMOL_CONNECT=true  # Recommended, enables remote operations
    ```
 
-3. 拉取并运行 Docker 镜像，绑定存储目录和环境变量文件：
+3. Pull and run the Docker image, binding the storage directory and environment variables file:
 
    ```bash
    docker pull oomolstudio/headless:latest
@@ -50,18 +50,18 @@ sidebar_position: 3
    docker run -d --privileged --name oomol-headless -p 4000:4000 -p 52222:52222 --mount type=bind,src=$HOME/.oomol-studio/headless/.env,dst=/app/.env --mount type=bind,src=$HOME/oomol-storage,dst=/oomol-driver/oomol-storage oomolstudio/headless:latest
    ```
 
-4. 在 `http://localhost:4000` 访问 UI 界面。
+4. Access the UI at `http://localhost:4000`.
 
-## 环境变量说明
+## Environment Variables
 
 ### ENABLE_OOMOL_CONNECT
 
-**推荐配置**: `ENABLE_OOMOL_CONNECT=true`
+**Recommended configuration**: `ENABLE_OOMOL_CONNECT=true`
 
-启用此选项后,你可以通过 [connect.oomol.com](https://connect.oomol.com) 远程操作 Headless 镜像,包括:
+When enabled, you can remotely operate your Headless instance through [connect.oomol.com](https://connect.oomol.com), including:
 
-- 远程调用功能
-- 远程安装功能
-- 远程管理工作流
+- Remote function calls
+- Remote package installation
+- Remote workflow management
 
-**非常建议打开此选项**,它能大大提升你的使用体验。
+**We highly recommend enabling this option** as it significantly improves your user experience.
