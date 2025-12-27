@@ -47,6 +47,11 @@ export default function HeadlessPage() {
             <h2 className={styles.deploymentTitle}>
               {translate({ message: "HEADLESS.deployment.title" })}
             </h2>
+            <div className={styles.deploymentNote}>
+              <p className={styles.deploymentNoteText}>
+                {translate({ message: "HEADLESS.deployment.recommendation" })}
+              </p>
+            </div>
             <div className={styles.deploymentCode}>
               {`docker run -d --privileged --name oomol-headless -p 4000:4000 -p 52222:52222 \\
   --mount type=bind,src=$HOME/.oomol-studio/headless/.env,dst=/app/.env \\

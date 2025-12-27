@@ -2157,6 +2157,9 @@
   "HEADLESS.deployment.title": {
     "message": "Docker 部署"
   },
+  "HEADLESS.deployment.recommendation": {
+    "message": "建议配置：2 核 4 GB 内存"
+  },
   "HEADLESS.deployment.viewDocs": {
     "message": "查看完整文档 →"
   },

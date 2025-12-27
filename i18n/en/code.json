@@ -2154,6 +2154,9 @@
   "HEADLESS.deployment.title": {
     "message": "Docker Deployment"
   },
+  "HEADLESS.deployment.recommendation": {
+    "message": "Recommended Configuration: 2 Cores, 4 GB RAM"
+  },
   "HEADLESS.deployment.viewDocs": {
     "message": "View Full Documentation →"
   },

@@ -110,6 +110,25 @@
   color: var(--ifm-heading-color);
 }
 
+.deploymentNote {
+  background: var(--oomol-primary-bg);
+  border-left: 4px solid var(--oomol-primary);
+  padding: 16px 24px;
+  margin-bottom: 24px;
+  border-radius: 8px;
+}
+
+.deploymentNoteText {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--oomol-primary);
+
+  [data-theme="dark"] & {
+    color: var(--oomol-primary-light);
+  }
+}
+
 .deploymentCode {
   background: var(--ifm-pre-background);
   border-radius: 8px;
