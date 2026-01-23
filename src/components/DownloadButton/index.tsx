@@ -5,7 +5,6 @@ import { translate } from "@docusaurus/Translate";
 import { DownloadUrl } from "@site/src/download_url";
 import { downloadStable } from "@site/src/lib/utils";
 
-import { Popover } from "../Popover";
 import { Button } from "../ui/button";
 
 enum OS {
@@ -26,32 +25,6 @@ function detectOSAndArchitecture(): OS {
   return os;
 }
 
-const content = (
-  <div className={styles.popoverBox}>
-    <a download href={DownloadUrl.Stable.MacOS.AppleSilicon}>
-      <div
-        className={styles.popoverLink}
-        onClick={event =>
-          downloadStable(event, DownloadUrl.Stable.MacOS.AppleSilicon)
-        }
-      >
-        <div className={`${styles.icon} i-ic-baseline-apple`} />
-        <span style={{ marginLeft: 8 }}>Apple Silicon</span>
-      </div>
-    </a>
-    <a
-      download
-      href={DownloadUrl.Stable.MacOS.Intel}
-      onClick={event => downloadStable(event, DownloadUrl.Stable.MacOS.Intel)}
-    >
-      <div className={styles.popoverLink}>
-        <div className={`${styles.icon} i-file-icons-intel`} />
-        <span style={{ marginLeft: 8 }}>Intel Chip</span>
-      </div>
-    </a>
-  </div>
-);
-
 export interface DownloadButtonProps {
   stableTag?: boolean;
 }
@@ -60,26 +33,39 @@ export const DownloadButton = ({ stableTag }: DownloadButtonProps) => {
   return (
     <BrowserOnly
       fallback={
-        <Button className={styles.download}>
-          <div
-            className="i-codicon-desktop-download"
-            style={{ fontSize: 18 }}
-          />
-          {translate({
-            message: stableTag
-              ? "HOME.FirstScreen.download-macos-stable"
-              : "HOME.FirstScreen.download-macos",
-          })}
-        </Button>
+        <div className={styles.downloadContainer}>
+          <Button className={styles.download}>
+            <div
+              className="i-codicon-desktop-download"
+              style={{ fontSize: 18 }}
+            />
+            {translate({
+              message: stableTag
+                ? "HOME.FirstScreen.download-macos-stable"
+                : "HOME.FirstScreen.download-macos",
+            })}
+          </Button>
+          <span className={styles.chipNote}>
+            {translate({
+              message: "HOME.FirstScreen.download-macos-chip-note",
+            })}
+          </span>
+        </div>
       }
     >
       {() => {
         return (
           <div className={styles["button-box"]}>
             {detectOSAndArchitecture() === OS.MacOS ? (
-              <Popover
-                trigger={
-                  <Button className={styles.download}>
+              <div className={styles.downloadContainer}>
+                <Button
+                  asChild
+                  className={styles.download}
+                  onClick={() =>
+                    downloadStable(null, DownloadUrl.Stable.MacOS.AppleSilicon)
+                  }
+                >
+                  <a href={DownloadUrl.Stable.MacOS.AppleSilicon}>
                     <div
                       className="i-codicon-desktop-download"
                       style={{ fontSize: 18 }}
@@ -89,10 +75,14 @@ export const DownloadButton = ({ stableTag }: DownloadButtonProps) => {
                         ? "HOME.FirstScreen.download-macos-stable"
                         : "HOME.FirstScreen.download-macos",
                     })}
-                  </Button>
-                }
-                content={content}
-              />
+                  </a>
+                </Button>
+                <span className={styles.chipNote}>
+                  {translate({
+                    message: "HOME.FirstScreen.download-macos-chip-note",
+                  })}
+                </span>
+              </div>
             ) : (
               <div className={styles.windowsBox}>
                 <Button

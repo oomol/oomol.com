@@ -42,6 +42,9 @@
   "HOME.FirstScreen.download-macos": {
     "message": "下载适用于 macOS 的版本"
   },
+  "HOME.FirstScreen.download-macos-chip-note": {
+    "message": "仅支持 Apple Silicon Mac"
+  },
   "HOME.FirstScreen.download-macos-stable": {
     "message": "下载适用于 macOS 的版本（稳定版）"
   },

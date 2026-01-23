@@ -4,7 +4,8 @@ export const DownloadUrl = {
       x64: "https://update.oomol.com/latest/win32-x64-user/stable",
     },
     MacOS: {
-      Intel: "https://update.oomol.com/latest/darwin/stable",
+      // Intel 版本暂时不再更新，以后可能恢复
+      // Intel: "https://update.oomol.com/latest/darwin/stable",
       AppleSilicon: "https://update.oomol.com/latest/darwin-arm64/stable",
     },
   },
@@ -13,17 +14,19 @@ export const DownloadUrl = {
       x64: "https://update.oomol.com/latest/win32-x64-user/canary",
     },
     MacOS: {
-      Intel: "https://update.oomol.com/latest/darwin/canary",
+      // Intel 版本暂时不再更新，以后可能恢复
+      // Intel: "https://update.oomol.com/latest/darwin/canary",
       AppleSilicon: "https://update.oomol.com/latest/darwin-arm64/canary",
     },
   },
   Nightly: {
     Windows: {
-      x64: "https://update.oomol.com/latest/win32-x64-user/insider",
+      x64: "https://update.oomol.com/latest/win32-x64-user/nightly",
     },
     MacOS: {
-      Intel: "https://update.oomol.com/latest/darwin/insider",
-      AppleSilicon: "https://update.oomol.com/latest/darwin-arm64/insider",
+      // Intel 版本暂时不再更新，以后可能恢复
+      // Intel: "https://update.oomol.com/latest/darwin/nightly",
+      AppleSilicon: "https://update.oomol.com/latest/darwin-arm64/nightly",
     },
   },
 };

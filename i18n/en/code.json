@@ -41,6 +41,9 @@
   "HOME.FirstScreen.download-macos": {
     "message": "Download for macOS"
   },
+  "HOME.FirstScreen.download-macos-chip-note": {
+    "message": "Apple Silicon Mac only"
+  },
   "HOME.FirstScreen.download-macos-stable": {
     "message": "Download for macOS (Stable)"
   },

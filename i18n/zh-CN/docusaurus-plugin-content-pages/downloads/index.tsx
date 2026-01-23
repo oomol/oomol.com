@@ -23,13 +23,14 @@ const downloadData = [
         }),
         url: DownloadUrl.Nightly.MacOS.AppleSilicon,
       },
-      {
-        text: translate({
-          message: "HOME.Downloads.download.macos.intel",
-          description: "Download For MacOS Intel Chip",
-        }),
-        url: DownloadUrl.Nightly.MacOS.Intel,
-      },
+      // Mac Intel 版本暂时不再更新
+      // {
+      //   text: translate({
+      //     message: "HOME.Downloads.download.macos.intel",
+      //     description: "Download For MacOS Intel Chip",
+      //   }),
+      //   url: DownloadUrl.Nightly.MacOS.Intel,
+      // },
       {
         text: translate({
           message: "HOME.Downloads.download.windows.x64",
@@ -54,13 +55,14 @@ const downloadData = [
         }),
         url: DownloadUrl.Stable.MacOS.AppleSilicon,
       },
-      {
-        text: translate({
-          message: "HOME.Downloads.download.macos.intel",
-          description: "Download For MacOS Intel Chip",
-        }),
-        url: DownloadUrl.Stable.MacOS.Intel,
-      },
+      // Mac Intel 版本暂时不再更新
+      // {
+      //   text: translate({
+      //     message: "HOME.Downloads.download.macos.intel",
+      //     description: "Download For MacOS Intel Chip",
+      //   }),
+      //   url: DownloadUrl.Stable.MacOS.Intel,
+      // },
       {
         text: translate({
           message: "HOME.Downloads.download.windows.x64",

@@ -25,11 +25,12 @@ const DownloadBtn: DownloadBtnProps[] = [
     icon: "i-ic-baseline-apple",
     downloadingUrl: DownloadUrl.Stable.MacOS.AppleSilicon,
   },
-  {
-    text: "macOS Intel Chip",
-    icon: "i-file-icons-intel",
-    downloadingUrl: DownloadUrl.Stable.MacOS.Intel,
-  },
+  // Mac Intel 版本暂时不再更新
+  // {
+  //   text: "macOS Intel Chip",
+  //   icon: "i-file-icons-intel",
+  //   downloadingUrl: DownloadUrl.Stable.MacOS.Intel,
+  // },
 ];
 
 export default function HomepageDownloads() {

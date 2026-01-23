@@ -31,6 +31,19 @@
   }
 }
 
+.downloadContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.chipNote {
+  font-size: 13px;
+  margin-top: 4px;
+  color: var(--oomol-text-tertiary);
+}
+
 .windowsBox {
   display: flex;
   flex-direction: column;
