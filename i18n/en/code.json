@@ -17,8 +17,8 @@
   "Theme.Navbar.login": {
     "message": "Login"
   },
-  "Theme.Navbar.console": {
-    "message": "Console"
+  "Theme.Navbar.chat": {
+    "message": "Chat"
   },
   "Theme.Navbar.community": {
     "message": "Community"

@@ -85,11 +85,11 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
   };
 
   const CALLBACK_URL = "https://oomol.com/";
-  const CONSOLE_SERVER_URL = "https://console.oomol.com";
+  const CHAT_SERVER_URL = "https://app.oomol.com";
 
   const handleSignin = () => {
     if (isSignedIn()) {
-      return window.open(CONSOLE_SERVER_URL, "_self");
+      return window.open(CHAT_SERVER_URL, "_self");
     }
 
     const redirectURL = `https://api.oomol.com/v1/auth/redirect?redirect=${encodeURIComponent(CALLBACK_URL)}`;
@@ -194,7 +194,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
                     />
                     {translate({
                       message: signedIn
-                        ? "Theme.Navbar.console"
+                        ? "Theme.Navbar.chat"
                         : "Theme.Navbar.login",
                     })}
                   </a>

@@ -17,8 +17,8 @@
   "Theme.Navbar.login": {
     "message": "登录"
   },
-  "Theme.Navbar.console": {
-    "message": "控制台"
+  "Theme.Navbar.chat": {
+    "message": "聊天"
   },
   "Theme.Navbar.community": {
     "message": "社区"
