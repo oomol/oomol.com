@@ -1,6 +1,5 @@
 import type { DocusaurusContext } from "@docusaurus/types";
 
-import { useLocation } from "@docusaurus/router";
 import { useColorMode } from "@docusaurus/theme-common";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useEffect } from "react";
@@ -9,7 +8,6 @@ import * as CookieConsent from "vanilla-cookieconsent";
 import { pluginConfig } from "./cookieConsentConfig";
 
 export const CookieConsentComponent = () => {
-  const location = useLocation();
   const { colorMode } = useColorMode();
 
   const {
@@ -26,16 +24,23 @@ export const CookieConsentComponent = () => {
     }
   }, [colorMode]);
 
+  // 首次初始化 Cookie Consent（只运行一次）
   useEffect(() => {
     try {
-      // 在 docusaurus 这个框架下需要手动重置状态以确保弹窗能在 路由/语言 切换时正确显示，否则切换路由会消失
-      CookieConsent.reset(false); // 保留用户选择
       void CookieConsent.run(pluginConfig);
-      void CookieConsent.setLanguage(currentLocale);
     } catch (error) {
       console.error("Cookie consent initialization error:", error);
     }
-  }, [currentLocale, location.pathname]);
+  }, []);
+
+  // 语言切换时更新
+  useEffect(() => {
+    try {
+      void CookieConsent.setLanguage(currentLocale);
+    } catch (error) {
+      console.error("Cookie consent language update error:", error);
+    }
+  }, [currentLocale]);
 
   return <></>;
 };
