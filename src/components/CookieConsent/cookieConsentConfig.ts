@@ -3,6 +3,28 @@ import type { CookieConsentConfig } from "vanilla-cookieconsent";
 import Cookies from "js-cookie";
 import * as CookieConsent from "vanilla-cookieconsent";
 
+const COOKIE_CONSENT_NAME = "cc_cookie";
+const OOMOL_ROOT_DOMAIN = "oomol.com";
+
+function getCookieOptions(): CookieConsentConfig["cookie"] {
+  const cookieOptions: NonNullable<CookieConsentConfig["cookie"]> = {
+    name: COOKIE_CONSENT_NAME,
+    path: "/",
+    sameSite: "Lax",
+    secure: true,
+    expiresAfterDays: 365,
+  };
+
+  if (typeof window !== "undefined") {
+    const hostname = window.location.hostname.toLowerCase();
+    if (hostname === "oomol.com" || hostname.endsWith(".oomol.com")) {
+      cookieOptions.domain = OOMOL_ROOT_DOMAIN;
+    }
+  }
+
+  return cookieOptions;
+}
+
 function handleGAConversion() {
   const COOKIE_FIRST_SIGN_IN = "oomol-first-login";
   const COOKIE_DOMAIN = "oomol.com";
@@ -12,7 +34,9 @@ function handleGAConversion() {
     return;
   }
 
-  Cookies.remove(COOKIE_FIRST_SIGN_IN, { path: "", domain: COOKIE_DOMAIN });
+  Cookies.remove(COOKIE_FIRST_SIGN_IN, { path: "/", domain: COOKIE_DOMAIN });
+  Cookies.remove(COOKIE_FIRST_SIGN_IN, { path: "/", domain: `.${COOKIE_DOMAIN}` });
+  Cookies.remove(COOKIE_FIRST_SIGN_IN, { path: "/" });
 
   // 轮询检查 gtag 是否存在
   const checkGtagAvailability = (maxAttempts = 20, interval = 100) => {
@@ -53,6 +77,8 @@ function handleGAConversion() {
   checkGtagAvailability();
 }
 export const pluginConfig: CookieConsentConfig = {
+  cookie: getCookieOptions(),
+
   guiOptions: {
     consentModal: {
       layout: "box",
