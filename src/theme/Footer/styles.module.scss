@@ -214,6 +214,20 @@
   }
 }
 
+.cookieSettingsButton {
+  margin-left: 8px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--oomol-text-secondary);
+  cursor: pointer;
+  font: inherit;
+
+  &:hover {
+    color: var(--oomol-primary);
+  }
+}
+
 .iconOutBox {
   display: flex;
   align-items: center;

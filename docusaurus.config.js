@@ -55,31 +55,6 @@ const config = {
     ],
     function () {
       return {
-        name: "docusaurus-plugin-inject-html",
-        injectHtmlTags() {
-          return {
-            headTags: [
-              `<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "80d2394da3f3405dbada0e172278e3a0"}'></script><!-- End Cloudflare Web Analytics -->`,
-              // Google Analytics
-              `<script type="text/plain" data-category="statistics" data-service="Google Analytics" data-src="https://www.googletagmanager.com/gtag/js?id=G-4BP2RZ6YFF"></script>`,
-              // Configure Google Analytics and Google Ads
-              `<script type="text/plain" data-category="statistics" data-service="Google Analytics">
-                if (window === window.parent) {
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  window.gtag = gtag;
-                  gtag('js', new Date());
-                  gtag('config', 'G-4BP2RZ6YFF');
-                  gtag('config', 'AW-17222662466');
-                }
-              </script>`,
-            ],
-          };
-        },
-      };
-    },
-    function () {
-      return {
         name: "unocss",
         configureWebpack() {
           return {

@@ -1,11 +1,9 @@
 import "../../styles/uno.css";
 import styles from "./styles.module.scss";
-import "vanilla-cookieconsent/dist/cookieconsent.css";
 
 import type { ReactNode } from "react";
 
-import BrowserOnly from "@docusaurus/BrowserOnly";
-import { CookieConsentComponent } from "@site/src/components/CookieConsent/CookieConsentComponent";
+import { CookieConsentProvider } from "@site/src/components/CookieConsent/CookieConsentProvider";
 import Footer from "@theme/Footer";
 import LayoutProvider from "@theme/Layout/Provider";
 import Navbar from "@theme/Navbar";
@@ -49,7 +47,7 @@ const Layout: React.FC<LayoutProps> = ({ children, wrapperClassName }) => {
       <Navbar />
       <div className={clsx(styles.wrapper, wrapperClassName)}>{children}</div>
       <Footer />
-      <BrowserOnly>{() => <CookieConsentComponent />}</BrowserOnly>
+      <CookieConsentProvider />
     </LayoutProvider>
   );
 };

@@ -3,6 +3,8 @@ import type { ClassValue } from "clsx";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
+import { trackDownloadConversion } from "./analytics";
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -20,9 +22,7 @@ export function downloadStable(
   event?.preventDefault();
 
   // send stable download event to Google Ads
-  gtag("event", "conversion", {
-    send_to: "AW-17222662466/zd4PCKjnmeIaEMLys5RA",
-  });
+  trackDownloadConversion();
 
   setTimeout(() => {
     callback(url);

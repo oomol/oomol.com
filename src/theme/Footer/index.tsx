@@ -106,6 +106,14 @@ const logoNodeDataCN: LogoNodeDataType[] = [
   },
 ];
 
+function showCookieConsent() {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  window.dispatchEvent(new CustomEvent("show-cookie-consent"));
+}
+
 const Footer: React.FC = () => {
   const { siteConfig, i18n } =
     useDocusaurusContext() as unknown as DocusaurusContext & {
@@ -220,6 +228,13 @@ const Footer: React.FC = () => {
           </div>
           <div className={styles.bottomInfo}>
             {copyright}
+            <button
+              className={styles.cookieSettingsButton}
+              type="button"
+              onClick={showCookieConsent}
+            >
+              {currentLocale === "zh-CN" ? "Cookie 设置" : "Cookie settings"}
+            </button>
             {currentLocale === "zh-CN" && (
               <a
                 href="https://beian.miit.gov.cn/"
