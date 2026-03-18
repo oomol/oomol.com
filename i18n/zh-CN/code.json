@@ -33,7 +33,7 @@
     "message": "AI-Native Function-to-Service"
   },
   "HOME.FirstScreen.script": {
-    "message": "在真实 coding 环境里，让 Agent 帮你生成和补全函数；用内置 Docker 在本地先跑通、先验证；再把同一份实现直接交付到 **OOMOL Cloud**，作为 **API、MCP 工具或自动化任务**。**不学新 DSL，不重搭后端**，函数不只是实现，它可以直接走向交付。"
+    "message": "在真实工程里写函数，用 Docker 本地跑通，再直接交付到 **OOMOL Cloud**。"
   },
   "HOME.FirstScreen.pill1": {
     "message": "不学新 DSL"

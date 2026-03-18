@@ -33,7 +33,7 @@
     "message": "AI-Native Function-to-Service"
   },
   "HOME.FirstScreen.script": {
-    "message": "Work in a real coding environment, let AI help you generate and complete functions, validate them locally with built-in Docker, then deliver the same implementation to **OOMOL Cloud** as an **API, MCP tool, or automation task**. **No new DSL. No backend scaffolding.** A function is not just implementation. It can move directly into delivery."
+    "message": "Write functions in a real codebase, validate locally with Docker, then ship directly to **OOMOL Cloud**."
   },
   "HOME.FirstScreen.pill1": {
     "message": "No new DSL"
