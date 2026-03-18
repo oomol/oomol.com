@@ -35,16 +35,6 @@ const proofScenarios = [
     href: "https://pdf.oomol.com/",
     cta: translate({ message: "HOME.ProofLayer.case1.cta" }),
   },
-  {
-    kicker: translate({ message: "HOME.ProofLayer.case2.kicker" }),
-    title: translate({ message: "HOME.ProofLayer.case2.title" }),
-    description: translate({ message: "HOME.ProofLayer.case2.description" }),
-  },
-  {
-    kicker: translate({ message: "HOME.ProofLayer.case3.kicker" }),
-    title: translate({ message: "HOME.ProofLayer.case3.title" }),
-    description: translate({ message: "HOME.ProofLayer.case3.description" }),
-  },
 ];
 
 export default function HomepageProofLayer() {
@@ -61,9 +51,6 @@ export default function HomepageProofLayer() {
           <p className={styles.subtitle}>
             {translate({ message: "HOME.ProofLayer.subtitle" })}
           </p>
-          <p className={styles.note}>
-            {translate({ message: "HOME.ProofLayer.note" })}
-          </p>
         </div>
 
         <div className={styles.signalGrid}>
@@ -78,7 +65,7 @@ export default function HomepageProofLayer() {
 
         <div className={styles.caseGrid}>
           {proofScenarios.map(item => (
-            <div key={item.title} className={styles.caseCard}>
+            <div key={item.title} className={`${styles.caseCard} ${styles.featuredCase}`}>
               <div className={styles.caseKicker}>{item.kicker}</div>
               <h3 className={styles.caseTitle}>{item.title}</h3>
               <p className={styles.caseDescription}>{item.description}</p>

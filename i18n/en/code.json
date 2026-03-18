@@ -47,14 +47,41 @@
   "HOME.FirstScreen.caption": {
     "message": "Code -> Validate -> Ship"
   },
+  "HOME.DeliveryGap.badge": {
+    "message": "Why Delivery Breaks"
+  },
+  "HOME.DeliveryGap.title": {
+    "message": "The Problem Is Not Implementation. It Is the Delivery Gap."
+  },
+  "HOME.DeliveryGap.subtitle": {
+    "message": "Teams usually lose time after the function already exists, when they still need to rebuild the interface layer, deployment path, runtime environment, and delivery shape around it."
+  },
+  "HOME.DeliveryGap.problem1.title": {
+    "message": "After the Function Is Done, the Backend Work Starts Again"
+  },
+  "HOME.DeliveryGap.problem1.description": {
+    "message": "The implementation already exists, but publishing it as an API or task still means rebuilding interfaces, deployment steps, and runtime wrappers."
+  },
+  "HOME.DeliveryGap.problem2.title": {
+    "message": "Running Locally Is Not the Same as Delivering Reliably"
+  },
+  "HOME.DeliveryGap.problem2.description": {
+    "message": "Development, dependency, and deployment environments drift apart. The problem is often not the code itself, but whether it still holds once it leaves your machine."
+  },
+  "HOME.DeliveryGap.problem3.title": {
+    "message": "The Same Capability Gets Repackaged Over and Over"
+  },
+  "HOME.DeliveryGap.problem3.description": {
+    "message": "Teams often wrap the same implementation separately for APIs, MCP tools, and automation tasks, multiplying delivery cost without adding capability."
+  },
   "HOME.ProofLayer.badge": {
     "message": "Live Proof"
   },
   "HOME.ProofLayer.title": {
-    "message": "Not a Concept, but a Deliverable Result"
+    "message": "Not a Concept, but a Live Delivery Result"
   },
   "HOME.ProofLayer.subtitle": {
-    "message": "There is already a live example: every PDF tool on pdf.oomol.com is backed by APIs delivered through OOMOL function services."
+    "message": "OOMOL does not only help you build functions. It already carries the same implementation all the way into live external services."
   },
   "HOME.ProofLayer.note": {
     "message": "This layer now includes one live production example plus two placeholders. Later we can replace more of it with real services, team names, and usage data."
@@ -93,7 +120,7 @@
     "message": "pdf.oomol.com"
   },
   "HOME.ProofLayer.case1.description": {
-    "message": "This site ships multiple PDF tools to end users, and the backend APIs behind those tools are not a separate reimplementation. They are delivered directly through OOMOL function services."
+    "message": "This site ships multiple PDF tools to end users, and the backend capabilities behind those tools are not rebuilt as a separate service layer. They are delivered directly through OOMOL function services."
   },
   "HOME.ProofLayer.case1.cta": {
     "message": "Open pdf.oomol.com"
@@ -156,10 +183,10 @@
     "message": "AI-assisted block generation, vibe coding workflow blocks, and deep VSCode integration make development fast and flexible."
   },
   "HOME.CoreFeatures.title": {
-    "message": "From Function to Service"
+    "message": "What Makes “Function-to-Delivery” Actually Work"
   },
   "HOME.CoreFeatures.subtitle": {
-    "message": "Build the capability first, validate it locally, then deliver the same implementation as a service."
+    "message": "This is not a new DSL. It is a delivery path that stays anchored in real code, uses AI to complete implementation, validates locally, and sends the same capability to different outputs."
   },
   "HOME.CoreFeatures.workflow.title": {
     "message": "01｜Write the Function in a Real Codebase"
@@ -2350,10 +2377,10 @@
     "message": "Docker containerized deployment to private cloud or K8s clusters, supporting CI/CD pipelines for continuous delivery and operations of enterprise-grade API services."
   },
   "HOME.ProductComparison.title": {
-    "message": "Choose Your Deployment Mode"
+    "message": "From Local Start to Production Delivery, There Is a Matching Path"
   },
   "HOME.ProductComparison.subtitle": {
-    "message": "From local development to enterprise deployment, OOMOL provides flexible product formats to meet different scenarios. 3 Modes, One Experience."
+    "message": "Three forms, one delivery path. Start locally, or carry the same capability into team deployment and production launch."
   },
   "HOME.ChatAgent.title": {
     "message": "OOMOL Chat & Agent Ecosystem"
@@ -2389,40 +2416,40 @@
     "message": "Cloud"
   },
   "HOME.ProductComparison.studio.stage": {
-    "message": "Studio Software Deployment"
+    "message": "Local development and fast start"
   },
   "HOME.ProductComparison.studio.capability": {
-    "message": "Comprehensive & Convenient"
+    "message": "Write first, run first, validate first"
   },
   "HOME.ProductComparison.studio.scenario": {
-    "message": "Personal project debugging, rapid team sharing, make full use of idle GPUs (e.g., PCs with Nvidia 4090)"
+    "message": "Best for individual development, function debugging, and local validation before deciding how far delivery should go."
   },
   "HOME.ProductComparison.studio.tech": {
-    "message": "Ready to use with local installation, built-in container environment, one-click connectivity to run as online server"
+    "message": "Install locally and use immediately, with a built-in container environment that keeps development and validation in one place."
   },
   "HOME.ProductComparison.headless.stage": {
-    "message": "Headless Image Deployment"
+    "message": "Team deployment and private runtime"
   },
   "HOME.ProductComparison.headless.capability": {
-    "message": "Freedom & Security for Enterprise"
+    "message": "More control and deeper integration"
   },
   "HOME.ProductComparison.headless.scenario": {
-    "message": "Highly customizable API services, automated workflow deployment, private cloud environments"
+    "message": "Best for containerized deployment, private cloud environments, and teams that need OOMOL to fit existing infrastructure."
   },
   "HOME.ProductComparison.headless.tech": {
-    "message": "Supports Docker and open-source infrastructure, deeply customizable, flexible integration, controllable security"
+    "message": "Works with Docker and other open infrastructure so the runtime stays customizable, integrable, and controlled."
   },
   "HOME.ProductComparison.cloud.stage": {
-    "message": "Cloud Serverless Deployment"
+    "message": "Fast launch with lower ops overhead"
   },
   "HOME.ProductComparison.cloud.capability": {
-    "message": "Officially Provided Service, Performance Optimized to the Max"
+    "message": "Ship validated capability faster"
   },
   "HOME.ProductComparison.cloud.scenario": {
-    "message": "Rapid launch for SMB teams, no infrastructure management. Simple with zero mental overhead."
+    "message": "Best for teams that want to reduce deployment and operations work and get to production quickly."
   },
   "HOME.ProductComparison.cloud.tech": {
-    "message": "On-demand scaling, zero operations overhead, instant production deployment"
+    "message": "Scale on demand with less infrastructure management, so attention stays on the capability itself."
   },
   "CLOUD.hero.title": {
     "message": "OOMOL Cloud"

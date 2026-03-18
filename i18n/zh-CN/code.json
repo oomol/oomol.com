@@ -47,14 +47,41 @@
   "HOME.FirstScreen.caption": {
     "message": "Code -> Validate -> Ship"
   },
+  "HOME.DeliveryGap.badge": {
+    "message": "Why Delivery Breaks"
+  },
+  "HOME.DeliveryGap.title": {
+    "message": "问题不在函数实现，而在交付断层"
+  },
+  "HOME.DeliveryGap.subtitle": {
+    "message": "很多团队真正浪费时间的地方，不是把函数写出来，而是写完之后还要重新搭接口、部署、运行环境和交付方式。"
+  },
+  "HOME.DeliveryGap.problem1.title": {
+    "message": "写完函数，还要再搭一套后端"
+  },
+  "HOME.DeliveryGap.problem1.description": {
+    "message": "实现已经有了，但为了对外提供 API 或任务能力，还要重新封装接口、部署流程和运行方式。"
+  },
+  "HOME.DeliveryGap.problem2.title": {
+    "message": "本地能跑，不等于交付能跑"
+  },
+  "HOME.DeliveryGap.problem2.description": {
+    "message": "开发环境、依赖环境和发布环境脱节，问题往往不是代码本身，而是它换了地方就不成立。"
+  },
+  "HOME.DeliveryGap.problem3.title": {
+    "message": "同一份能力，被重复包装很多次"
+  },
+  "HOME.DeliveryGap.problem3.description": {
+    "message": "为了 API、MCP 工具和自动化任务，团队经常围着同一份实现反复改造，交付成本被重复放大。"
+  },
   "HOME.ProofLayer.badge": {
     "message": "Live Proof"
   },
   "HOME.ProofLayer.title": {
-    "message": "不是概念，而是可交付结果"
+    "message": "不是概念，而是已经上线的交付结果"
   },
   "HOME.ProofLayer.subtitle": {
-    "message": "真实例子已经有了：pdf.oomol.com 里所有 PDF 工具的后端 API，都是由 OOMOL 的函数服务提供的。"
+    "message": "OOMOL 不只是帮你把函数做出来，而是已经把同一份能力真实地接到了对外服务。"
   },
   "HOME.ProofLayer.note": {
     "message": "这一层先用一个真实上线案例，带两个占位场景。后续可以继续替换成更多真实服务、团队名称和使用数据。"
@@ -93,7 +120,7 @@
     "message": "pdf.oomol.com"
   },
   "HOME.ProofLayer.case1.description": {
-    "message": "这个站点面向用户提供多种 PDF 工具，而这些工具背后的后端 API 不是单独再搭一套服务，而是直接由 OOMOL 的函数服务对外提供。函数写完，服务就能真实上线。"
+    "message": "这个站点面向用户提供多种 PDF 工具，而这些工具背后的后端能力不是额外再搭一套服务，而是直接由 OOMOL 的函数服务对外提供。函数写完，服务就能真实上线。"
   },
   "HOME.ProofLayer.case1.cta": {
     "message": "打开 pdf.oomol.com"
@@ -157,10 +184,10 @@
     "message": "AI 辅助的块生成、Vibe Coding 工作流块，以及深度 VSCode 集成，让开发快速而灵活。"
   },
   "HOME.CoreFeatures.title": {
-    "message": "从函数生成到服务交付"
+    "message": "让“函数即交付”成立的，是这条交付路径"
   },
   "HOME.CoreFeatures.subtitle": {
-    "message": "先把能力做出来，在本地跑通，再把同一份实现交付出去。"
+    "message": "不是换一种 DSL，而是继续写真实工程代码，让 Agent 补全实现，用 Docker 本地验证，再把同一份能力交付到不同出口。"
   },
   "HOME.CoreFeatures.workflow.title": {
     "message": "01｜写函数：在真实工程里把能力做出来"
@@ -2353,10 +2380,10 @@
     "message": "Docker 容器化部署到私有云或 K8s 集群，支持 CI/CD 流水线，实现企业级 API 服务的持续交付和运维。"
   },
   "HOME.ProductComparison.title": {
-    "message": "选择适合你的部署模式"
+    "message": "从本地起步，到正式交付，都有对应落地方式"
   },
   "HOME.ProductComparison.subtitle": {
-    "message": "从本地开发到企业级部署，OOMOL 提供灵活的产品形态满足不同场景需求。3 种形态,一套体验。"
+    "message": "3 种形态，一条交付路径。你可以先在本地跑通，也可以把同样的能力接到团队部署和正式上线。"
   },
   "HOME.ChatAgent.title": {
     "message": "OOMOL Chat & Agent 生态"
@@ -2392,40 +2419,40 @@
     "message": "Cloud"
   },
   "HOME.ProductComparison.studio.stage": {
-    "message": "Studio 软件部署"
+    "message": "本地开发与快速起步"
   },
   "HOME.ProductComparison.studio.capability": {
-    "message": "功能完善，使用便捷"
+    "message": "先写、先跑、先验证"
   },
   "HOME.ProductComparison.studio.scenario": {
-    "message": "个人项目调试、团队内快速分享、充分利用闲置 GPU（如装有 Nvidia 4090 PC）"
+    "message": "适合个人开发、函数调试和本地验证，先把能力做出来、跑通，再决定是否继续交付。"
   },
   "HOME.ProductComparison.studio.tech": {
-    "message": "本地安装即用，内置容器环境，一键开启互联功能即可作为在线服务器运行"
+    "message": "本地安装即用，内置容器环境，适合把开发和验证先收拢在一处。"
   },
   "HOME.ProductComparison.headless.stage": {
-    "message": "Headless 镜像部署"
+    "message": "团队部署与私有化运行"
   },
   "HOME.ProductComparison.headless.capability": {
-    "message": "自由与安全的企业级选择"
+    "message": "更高可控性与更深集成"
   },
   "HOME.ProductComparison.headless.scenario": {
-    "message": "高自定义 API 服务、自动化工作流部署、私有云环境"
+    "message": "适合容器化部署、私有云环境和需要接入已有基础设施的团队场景。"
   },
   "HOME.ProductComparison.headless.tech": {
-    "message": "支持 Docker 等开源基础设施，可深度定制、灵活集成、可控安全"
+    "message": "支持 Docker 等开源基础设施，可深度定制、灵活集成、可控运行。"
   },
   "HOME.ProductComparison.cloud.stage": {
-    "message": "Cloud Serverless 部署"
+    "message": "快速上线与低运维心智"
   },
   "HOME.ProductComparison.cloud.capability": {
-    "message": "官方提供的配套服务，性能优化到极致"
+    "message": "把已经跑通的能力更快交付出去"
   },
   "HOME.ProductComparison.cloud.scenario": {
-    "message": "中小团队快速上线、无需管理基础设施。简单且无心智负担。"
+    "message": "适合希望减少部署与运维负担、尽快进入生产的团队。"
   },
   "HOME.ProductComparison.cloud.tech": {
-    "message": "按需扩缩容、零运维心智负担、极速发布到生产环境"
+    "message": "按需扩缩容，减少基础设施管理，把精力留给能力本身。"
   },
   "CLOUD.hero.title": {
     "message": "OOMOL Cloud"

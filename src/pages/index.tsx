@@ -2,7 +2,9 @@ import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
 import HomepageCommunityShare from "@site/src/components/HomepageCommunityShare";
 import HomepageCoreFeatures from "@site/src/components/HomepageCoreFeatures";
+import HomepageDeliveryGap from "@site/src/components/HomepageDeliveryGap";
 import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
+import HomepageProductComparison from "@site/src/components/HomepageProductComparison";
 import HomepageProofLayer from "@site/src/components/HomepageProofLayer";
 import React from "react";
 
@@ -21,9 +23,10 @@ export default function Home() {
       </Head>
       <main>
         <HomepageFirstScreen />
-        <HomepageProofLayer />
+        <HomepageDeliveryGap />
         <HomepageCoreFeatures />
-        {/* <HomepageLifecycle /> */}
+        <HomepageProofLayer />
+        <HomepageProductComparison />
         <HomepageCommunityShare />
         <GetStartedPrompt />
       </main>
