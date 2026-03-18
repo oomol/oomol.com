@@ -121,7 +121,7 @@ const sloganData = [
   },
 ];
 
-export default function Community() {
+export default function ContactUsPage() {
   const [githubStats, setGithubStats] = useState<Record<
     string,
     RepoStats

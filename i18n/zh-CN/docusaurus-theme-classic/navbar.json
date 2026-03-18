@@ -72,7 +72,7 @@
     "description": "Navbar item with label Product"
   },
   "item.label.navbar.download": {
-    "message": "下载",
+    "message": "下载 Studio",
     "description": "Navbar item with label navbar.download"
   },
   "title": {

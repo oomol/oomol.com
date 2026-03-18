@@ -1,12 +1,8 @@
 import styles from "./styles.module.scss";
 
-import type { DocusaurusContext } from "@docusaurus/types";
-
 import { useColorMode } from "@docusaurus/theme-common";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { clsx } from "clsx";
 import React from "react";
 
 import { DownloadButton } from "../DownloadButton";
@@ -30,15 +26,16 @@ function parseHighlightText(text: string) {
 }
 
 export default function HomepageFirstScreen() {
-  const context = useDocusaurusContext() as unknown as DocusaurusContext & {
-    i18n: { currentLocale: string };
-  };
-  const { i18n } = context;
   const { colorMode } = useColorMode();
 
   const scriptText = translate({
     message: "HOME.FirstScreen.script",
   });
+  const valuePills = [
+    translate({ message: "HOME.FirstScreen.pill1" }),
+    translate({ message: "HOME.FirstScreen.pill2" }),
+    translate({ message: "HOME.FirstScreen.pill3" }),
+  ];
 
   return (
     <section className={styles.section}>
@@ -49,33 +46,17 @@ export default function HomepageFirstScreen() {
         <div className={styles.header}>
           <div className={styles["hero-content"]}>
             <div className={styles["slogan-box"]}>
-              <h1
-                className={clsx(
-                  styles["slogan"],
-                  i18n.currentLocale === "zh-CN" && styles["slogan-cn"]
-                )}
-              >
-                {i18n.currentLocale === "zh-CN" ? (
-                  <AuroraText className={styles["aurora-slogan"]}>
-                    {translate({
-                      message: "HOME.FirstScreen.slogan.line1",
-                    })}
-                    <br />
-                    {translate({
-                      message: "HOME.FirstScreen.slogan.line2",
-                    })}
-                  </AuroraText>
-                ) : (
-                  <AuroraText className={styles["aurora-slogan"]}>
-                    {translate({
-                      message: "HOME.FirstScreen.slogan.line1",
-                    })}
-                    <br />
-                    {translate({
-                      message: "HOME.FirstScreen.slogan.line2",
-                    })}
-                  </AuroraText>
-                )}
+              <div className={styles.kicker}>
+                {translate({
+                  message: "HOME.FirstScreen.kicker",
+                })}
+              </div>
+              <h1 className={styles["slogan"]}>
+                <AuroraText className={styles["aurora-slogan"]}>
+                  {translate({
+                    message: "HOME.FirstScreen.slogan",
+                  })}
+                </AuroraText>
               </h1>
             </div>
 
@@ -83,6 +64,13 @@ export default function HomepageFirstScreen() {
               <span className={styles.overview}>
                 {parseHighlightText(scriptText)}
               </span>
+              <div className={styles.pills}>
+                {valuePills.map(item => (
+                  <span key={item} className={styles.pill}>
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
 
             <div className={styles.buttons}>
@@ -102,6 +90,11 @@ export default function HomepageFirstScreen() {
             loading="eager"
             fetchPriority="high"
           />
+        </div>
+        <div className={styles.screenshotCaption}>
+          {translate({
+            message: "HOME.FirstScreen.caption",
+          })}
         </div>
       </div>
     </section>

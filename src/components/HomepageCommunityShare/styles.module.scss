@@ -28,6 +28,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  gap: 16px;
 }
 
 .title {
@@ -61,6 +62,42 @@
   @media (max-width: 768px) {
     font-size: 1rem;
   }
+}
+
+.pointsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: 1080px;
+  margin-top: 12px;
+
+  @media (max-width: 996px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pointCard {
+  text-align: left;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.pointTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ifm-heading-color);
+  margin: 0 0 8px;
+}
+
+.pointDescription {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ifm-color-emphasis-700);
 }
 
 .imagesWrapper {

@@ -1,0 +1,183 @@
+.section {
+  padding: 32px 0 24px;
+  background: var(--ifm-background-color);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  color: var(--oomol-text-secondary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: var(--ifm-heading-color);
+
+  @media (max-width: 996px) {
+    font-size: 32px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
+}
+
+.subtitle {
+  margin: 0;
+  max-width: 760px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--ifm-color-emphasis-800);
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.note {
+  margin: 0;
+  max-width: 760px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--oomol-text-secondary);
+}
+
+.signalGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+
+  @media (max-width: 996px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.signalCard {
+  padding: 24px;
+  border-radius: 16px;
+  background: linear-gradient(
+    180deg,
+    rgba(102, 126, 234, 0.08) 0%,
+    rgba(102, 126, 234, 0.02) 100%
+  );
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.signalLabel {
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--oomol-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.signalValue {
+  margin-bottom: 10px;
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 800;
+  color: var(--ifm-heading-color);
+}
+
+.signalDescription {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.caseGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+
+  @media (max-width: 996px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.caseCard {
+  padding: 20px;
+  border-radius: 16px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.caseKicker {
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--oomol-text-secondary);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.caseTitle {
+  margin: 0 0 8px;
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: var(--ifm-heading-color);
+}
+
+.caseDescription {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.caseLink {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+[data-theme="dark"] {
+  .signalCard {
+    background: linear-gradient(
+      180deg,
+      rgba(102, 126, 234, 0.14) 0%,
+      rgba(102, 126, 234, 0.04) 100%
+    );
+  }
+}
