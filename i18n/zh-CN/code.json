@@ -33,7 +33,7 @@
     "message": "AI-Native Function-to-Service"
   },
   "HOME.FirstScreen.script": {
-    "message": "在真实 coding 环境里，让 Agent 帮你生成和补全函数；用内置 Docker 在本地先跑通、先验证；再把同一份实现直接交付成 **API、MCP 工具或自动化任务**。**不学新 DSL，不重搭后端**，函数不只是实现，它可以直接走向交付。"
+    "message": "在真实 coding 环境里，让 Agent 帮你生成和补全函数；用内置 Docker 在本地先跑通、先验证；再把同一份实现直接交付到 **OOMOL Cloud**，作为 **API、MCP 工具或自动化任务**。**不学新 DSL，不重搭后端**，函数不只是实现，它可以直接走向交付。"
   },
   "HOME.FirstScreen.pill1": {
     "message": "不学新 DSL"
@@ -42,10 +42,16 @@
     "message": "本地先跑通"
   },
   "HOME.FirstScreen.pill3": {
-    "message": "直接发成服务"
+    "message": "直接发到 Cloud"
   },
   "HOME.FirstScreen.caption": {
     "message": "Code -> Validate -> Ship"
+  },
+  "HOME.FirstScreen.offer1": {
+    "message": "支持接入你自己的 AI 模型，当前推荐 GLM-5"
+  },
+  "HOME.FirstScreen.offer2": {
+    "message": "每月赠送 200 分钟 Cloud Task"
   },
   "HOME.DeliveryGap.badge": {
     "message": "Why Delivery Breaks"
@@ -208,10 +214,10 @@
     "message": "先把不确定性解决在本地"
   },
   "HOME.CoreFeatures.vscode.title": {
-    "message": "03｜发布成服务：同一份实现直接上线"
+    "message": "03｜发布到 Cloud：同一份实现直接上线"
   },
   "HOME.CoreFeatures.vscode.description": {
-    "message": "不用再拆第二套后端，也不用为了交付再重写一遍。\n\n• 直接发成 API\n• 直接发成 MCP 工具\n• 直接发成自动化任务"
+    "message": "把已经在本地跑通的函数直接交付到 OOMOL Cloud，不用再拆第二套后端，也不用为了交付再重写一遍。\n\n• 直接发成 API\n• 直接发成 MCP 工具\n• 直接发成自动化任务"
   },
   "HOME.CoreFeatures.vscode.highlight1": {
     "message": "函数写完，交付就该顺着发生"
@@ -862,7 +868,7 @@
     "message": "从下一个函数开始交付"
   },
   "HOME.GetStartedPrompt.subtitle": {
-    "message": "下载 OOMOL Studio，让 Agent 帮你把函数做出来，在本地跑通，再直接发成服务。"
+    "message": "下载 OOMOL Studio，让 Agent 帮你把函数做出来，在本地跑通，再直接交付到 OOMOL Cloud。"
   },
   "HOME.Pricing.title": {
     "message": "价格"
@@ -2380,10 +2386,10 @@
     "message": "Docker 容器化部署到私有云或 K8s 集群，支持 CI/CD 流水线，实现企业级 API 服务的持续交付和运维。"
   },
   "HOME.ProductComparison.title": {
-    "message": "从本地起步，到正式交付，都有对应落地方式"
+    "message": "把已经跑通的函数，更快交付到 OOMOL Cloud"
   },
   "HOME.ProductComparison.subtitle": {
-    "message": "3 种形态，一条交付路径。你可以先在本地跑通，也可以把同样的能力接到团队部署和正式上线。"
+    "message": "OOMOL Cloud 不是另一个开发环境，而是把你已经在本地验证过的能力，接到真实线上交付的那一层。"
   },
   "HOME.ChatAgent.title": {
     "message": "OOMOL Chat & Agent 生态"
@@ -2446,13 +2452,115 @@
     "message": "快速上线与低运维心智"
   },
   "HOME.ProductComparison.cloud.capability": {
-    "message": "把已经跑通的能力更快交付出去"
+    "message": "把已经跑通的能力更快交付出去，不必再重搭接口、运行时和扩缩容。"
   },
   "HOME.ProductComparison.cloud.scenario": {
-    "message": "适合希望减少部署与运维负担、尽快进入生产的团队。"
+    "message": "适合希望减少部署与运维负担、尽快进入生产的团队，也适合想先把真实服务发出去再继续迭代的开发者。"
   },
   "HOME.ProductComparison.cloud.tech": {
-    "message": "按需扩缩容，减少基础设施管理，把精力留给能力本身。"
+    "message": "先在本地跑通，再交付到 Cloud。运行、扩缩容和对外交付由 OOMOL 承接。"
+  },
+  "HOME.ProductComparison.cta": {
+    "message": "查看 OOMOL Cloud"
+  },
+  "HOME.ProductComparison.outputIntro": {
+    "message": "Cloud Delivery"
+  },
+  "HOME.ProductComparison.outputSummary": {
+    "message": "同一份已经验证过的函数实现，可以继续交付为不同的线上出口，而不是为每个出口再搭一套系统。"
+  },
+  "HOME.ProductComparison.output1.title": {
+    "message": "API 服务"
+  },
+  "HOME.ProductComparison.output1.description": {
+    "message": "把函数直接交付成可调用的接口，不必单独搭服务框架和运行层。"
+  },
+  "HOME.ProductComparison.output2.title": {
+    "message": "MCP 工具"
+  },
+  "HOME.ProductComparison.output2.description": {
+    "message": "让同一份实现直接进入 Agent 和 AI 应用的调用链，而不是另外维护一套工具服务。"
+  },
+  "HOME.ProductComparison.output3.title": {
+    "message": "自动化任务"
+  },
+  "HOME.ProductComparison.output3.description": {
+    "message": "把已经跑通的处理能力持续运行起来，让触发、执行和结果交付保持在同一条路径上。"
+  },
+  "HOME.ProductComparison.benefit1.label": {
+    "message": "交付心智"
+  },
+  "HOME.ProductComparison.benefit1.value": {
+    "message": "少搭后端"
+  },
+  "HOME.ProductComparison.benefit1.description": {
+    "message": "Cloud 负责承接函数对外运行的一层，让你不用为发布再补一套服务工程。"
+  },
+  "HOME.ProductComparison.benefit2.label": {
+    "message": "运行心智"
+  },
+  "HOME.ProductComparison.benefit2.value": {
+    "message": "少管运维"
+  },
+  "HOME.ProductComparison.benefit2.description": {
+    "message": "把精力放回能力本身，而不是把时间继续耗在环境、扩缩容和线上维护上。"
+  },
+  "HOME.DeveloperBenefits.badge": {
+    "message": "Developer Perks"
+  },
+  "HOME.DeveloperBenefits.title": {
+    "message": "先开始做，再决定要不要花钱"
+  },
+  "HOME.DeveloperBenefits.subtitle": {
+    "message": "我们把最容易卡住个人开发者起步的两件事先拆掉：模型成本和轻量级任务成本。"
+  },
+  "HOME.DeveloperBenefits.card1.eyebrow": {
+    "message": "Studio 福利"
+  },
+  "HOME.DeveloperBenefits.card1.tag": {
+    "message": "当前推荐"
+  },
+  "HOME.DeveloperBenefits.card1.value": {
+    "message": "GLM-5"
+  },
+  "HOME.DeveloperBenefits.card1.valueCaption": {
+    "message": "自带模型接入"
+  },
+  "HOME.DeveloperBenefits.card1.title": {
+    "message": "接入你自己的模型，客户端几乎可以零成本起步"
+  },
+  "HOME.DeveloperBenefits.card1.description": {
+    "message": "OOMOL Studio 可以配置你自己的 AI 大模型。你如果已经有自己的模型额度，就不需要再为客户端使用额外买单。目前我们更推荐开发者直接接入 GLM-5。"
+  },
+  "HOME.DeveloperBenefits.card1.note": {
+    "message": "这意味着很多个人开发者在本地开发阶段，基本可以用自己的模型配置把 Studio 跑起来。"
+  },
+  "HOME.DeveloperBenefits.card1.cta": {
+    "message": "下载 Studio 开始"
+  },
+  "HOME.DeveloperBenefits.card2.eyebrow": {
+    "message": "Cloud 福利"
+  },
+  "HOME.DeveloperBenefits.card2.tag": {
+    "message": "每月赠送"
+  },
+  "HOME.DeveloperBenefits.card2.value": {
+    "message": "200 分钟"
+  },
+  "HOME.DeveloperBenefits.card2.valueCaption": {
+    "message": "Cloud Task 免费额度"
+  },
+  "HOME.DeveloperBenefits.card2.title": {
+    "message": "每月赠送 200 分钟 Cloud Task，轻量级场景基本够用"
+  },
+  "HOME.DeveloperBenefits.card2.description": {
+    "message": "我们每个月都会给开发者赠送 200 分钟的 Cloud Task 使用时长。对定时任务、轻量自动化、个人开发验证这类场景来说，很多时候已经足够覆盖。"
+  },
+  "HOME.DeveloperBenefits.card2.note": {
+    "message": "如果你是在做个人开发或轻量级应用，完全可以先用免费额度把真实线上任务跑起来。"
+  },
+  "HOME.DeveloperBenefits.card2.cta": {
+    "message": "查看 Cloud 交付"
   },
   "CLOUD.hero.title": {
     "message": "OOMOL Cloud"

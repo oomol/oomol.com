@@ -33,7 +33,7 @@
     "message": "AI-Native Function-to-Service"
   },
   "HOME.FirstScreen.script": {
-    "message": "Work in a real coding environment, let AI help you generate and complete functions, validate them locally with built-in Docker, then deliver the same implementation as an **API, MCP tool, or automation task**. **No new DSL. No backend scaffolding.** A function is not just implementation. It can move directly into delivery."
+    "message": "Work in a real coding environment, let AI help you generate and complete functions, validate them locally with built-in Docker, then deliver the same implementation to **OOMOL Cloud** as an **API, MCP tool, or automation task**. **No new DSL. No backend scaffolding.** A function is not just implementation. It can move directly into delivery."
   },
   "HOME.FirstScreen.pill1": {
     "message": "No new DSL"
@@ -42,10 +42,16 @@
     "message": "Validate locally first"
   },
   "HOME.FirstScreen.pill3": {
-    "message": "Publish as a service"
+    "message": "Ship to Cloud"
   },
   "HOME.FirstScreen.caption": {
     "message": "Code -> Validate -> Ship"
+  },
+  "HOME.FirstScreen.offer1": {
+    "message": "Bring your own AI model, with GLM-5 recommended"
+  },
+  "HOME.FirstScreen.offer2": {
+    "message": "200 free Cloud Task minutes every month"
   },
   "HOME.DeliveryGap.badge": {
     "message": "Why Delivery Breaks"
@@ -207,10 +213,10 @@
     "message": "Resolve uncertainty locally first"
   },
   "HOME.CoreFeatures.vscode.title": {
-    "message": "03｜Deliver the Same Implementation as a Service"
+    "message": "03｜Ship to Cloud with the Same Implementation"
   },
   "HOME.CoreFeatures.vscode.description": {
-    "message": "You should not need a second backend implementation just to ship what you already built.\n\n• Publish directly as an API\n• Publish directly as an MCP tool\n• Publish directly as an automation task"
+    "message": "Send the function you already validated locally to OOMOL Cloud instead of building a second backend layer just to ship it.\n\n• Publish directly as an API\n• Publish directly as an MCP tool\n• Publish directly as an automation task"
   },
   "HOME.CoreFeatures.vscode.highlight1": {
     "message": "When the function is ready, delivery should follow naturally"
@@ -861,7 +867,7 @@
     "message": "Start with the Next Function"
   },
   "HOME.GetStartedPrompt.subtitle": {
-    "message": "Download OOMOL Studio to build the function with AI, validate it locally, and deliver it as a service."
+    "message": "Download OOMOL Studio to build the function with AI, validate it locally, and ship it directly to OOMOL Cloud."
   },
   "HOME.Pricing.title": {
     "message": "Pricing"
@@ -2377,10 +2383,10 @@
     "message": "Docker containerized deployment to private cloud or K8s clusters, supporting CI/CD pipelines for continuous delivery and operations of enterprise-grade API services."
   },
   "HOME.ProductComparison.title": {
-    "message": "From Local Start to Production Delivery, There Is a Matching Path"
+    "message": "Ship the Function You Already Validated to OOMOL Cloud"
   },
   "HOME.ProductComparison.subtitle": {
-    "message": "Three forms, one delivery path. Start locally, or carry the same capability into team deployment and production launch."
+    "message": "OOMOL Cloud is not another development environment. It is the layer that carries the capability you already validated locally into live online delivery."
   },
   "HOME.ChatAgent.title": {
     "message": "OOMOL Chat & Agent Ecosystem"
@@ -2443,13 +2449,115 @@
     "message": "Fast launch with lower ops overhead"
   },
   "HOME.ProductComparison.cloud.capability": {
-    "message": "Ship validated capability faster"
+    "message": "Ship validated capability faster without rebuilding interfaces, runtime, and scaling around it."
   },
   "HOME.ProductComparison.cloud.scenario": {
-    "message": "Best for teams that want to reduce deployment and operations work and get to production quickly."
+    "message": "Best for teams that want to reduce deployment and operations work, and for developers who want to ship a real service before iterating further."
   },
   "HOME.ProductComparison.cloud.tech": {
-    "message": "Scale on demand with less infrastructure management, so attention stays on the capability itself."
+    "message": "Validate locally first, then ship to Cloud. Runtime, scaling, and external delivery are handled by OOMOL."
+  },
+  "HOME.ProductComparison.cta": {
+    "message": "Explore OOMOL Cloud"
+  },
+  "HOME.ProductComparison.outputIntro": {
+    "message": "Cloud Delivery"
+  },
+  "HOME.ProductComparison.outputSummary": {
+    "message": "The same validated implementation can continue into multiple online outputs instead of forcing you to build a separate system for each one."
+  },
+  "HOME.ProductComparison.output1.title": {
+    "message": "API Services"
+  },
+  "HOME.ProductComparison.output1.description": {
+    "message": "Deliver the function directly as a callable interface without building a separate service framework and runtime layer."
+  },
+  "HOME.ProductComparison.output2.title": {
+    "message": "MCP Tools"
+  },
+  "HOME.ProductComparison.output2.description": {
+    "message": "Let the same implementation enter the call chain of agents and AI apps directly instead of maintaining a second tool service."
+  },
+  "HOME.ProductComparison.output3.title": {
+    "message": "Automation Tasks"
+  },
+  "HOME.ProductComparison.output3.description": {
+    "message": "Keep a working capability running continuously so trigger, execution, and result delivery stay on the same path."
+  },
+  "HOME.ProductComparison.benefit1.label": {
+    "message": "Delivery Load"
+  },
+  "HOME.ProductComparison.benefit1.value": {
+    "message": "Less backend rebuilding"
+  },
+  "HOME.ProductComparison.benefit1.description": {
+    "message": "Cloud takes over the external service layer so you do not need to rebuild delivery scaffolding around the function."
+  },
+  "HOME.ProductComparison.benefit2.label": {
+    "message": "Ops Load"
+  },
+  "HOME.ProductComparison.benefit2.value": {
+    "message": "Less operations overhead"
+  },
+  "HOME.ProductComparison.benefit2.description": {
+    "message": "Keep your attention on the capability itself instead of spending more time on environments, scaling, and production maintenance."
+  },
+  "HOME.DeveloperBenefits.badge": {
+    "message": "Developer Perks"
+  },
+  "HOME.DeveloperBenefits.title": {
+    "message": "Start Building First, Decide on Cost Later"
+  },
+  "HOME.DeveloperBenefits.subtitle": {
+    "message": "We remove two common blockers for individual developers early: model cost and lightweight task cost."
+  },
+  "HOME.DeveloperBenefits.card1.eyebrow": {
+    "message": "Studio Perk"
+  },
+  "HOME.DeveloperBenefits.card1.tag": {
+    "message": "Recommended"
+  },
+  "HOME.DeveloperBenefits.card1.value": {
+    "message": "GLM-5"
+  },
+  "HOME.DeveloperBenefits.card1.valueCaption": {
+    "message": "Bring-your-own model"
+  },
+  "HOME.DeveloperBenefits.card1.title": {
+    "message": "Bring Your Own Model and Keep Studio Nearly Free to Start"
+  },
+  "HOME.DeveloperBenefits.card1.description": {
+    "message": "OOMOL Studio lets you configure your own AI model. If you already have model quota elsewhere, you do not need extra client-side spend to get started. Right now we especially recommend GLM-5."
+  },
+  "HOME.DeveloperBenefits.card1.note": {
+    "message": "For many individual developers, local development in Studio can already run on top of their own model setup."
+  },
+  "HOME.DeveloperBenefits.card1.cta": {
+    "message": "Start with Studio"
+  },
+  "HOME.DeveloperBenefits.card2.eyebrow": {
+    "message": "Cloud Perk"
+  },
+  "HOME.DeveloperBenefits.card2.tag": {
+    "message": "Monthly Included"
+  },
+  "HOME.DeveloperBenefits.card2.value": {
+    "message": "200 Minutes"
+  },
+  "HOME.DeveloperBenefits.card2.valueCaption": {
+    "message": "Free Cloud Task quota"
+  },
+  "HOME.DeveloperBenefits.card2.title": {
+    "message": "200 Free Cloud Task Minutes Every Month Cover Many Lightweight Cases"
+  },
+  "HOME.DeveloperBenefits.card2.description": {
+    "message": "We give developers 200 minutes of Cloud Task usage every month. For scheduled jobs, lightweight automation, and personal validation flows, that is often enough to cover real usage."
+  },
+  "HOME.DeveloperBenefits.card2.note": {
+    "message": "If you are building as an individual developer or shipping a lightweight app, the free quota can often get your online tasks running before you pay anything."
+  },
+  "HOME.DeveloperBenefits.card2.cta": {
+    "message": "Explore Cloud Delivery"
   },
   "CLOUD.hero.title": {
     "message": "OOMOL Cloud"

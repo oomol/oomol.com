@@ -3,45 +3,41 @@ import styles from "./styles.module.scss";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 
-// 产品对比数据 - 重构为卡片式数据结构
-const products = [
+const deliveryOutputs = [
   {
-    name: translate({ message: "HOME.ProductComparison.product.studio" }),
-    stage: translate({ message: "HOME.ProductComparison.studio.stage" }),
-    capability: translate({
-      message: "HOME.ProductComparison.studio.capability",
+    title: translate({ message: "HOME.ProductComparison.output1.title" }),
+    description: translate({
+      message: "HOME.ProductComparison.output1.description",
     }),
-    scenario: translate({ message: "HOME.ProductComparison.studio.scenario" }),
-    tech: translate({ message: "HOME.ProductComparison.studio.tech" }),
-    icon: "🖥️",
-    color: "primary",
-    link: "/studio",
   },
   {
-    name: translate({ message: "HOME.ProductComparison.product.headless" }),
-    stage: translate({ message: "HOME.ProductComparison.headless.stage" }),
-    capability: translate({
-      message: "HOME.ProductComparison.headless.capability",
+    title: translate({ message: "HOME.ProductComparison.output2.title" }),
+    description: translate({
+      message: "HOME.ProductComparison.output2.description",
     }),
-    scenario: translate({
-      message: "HOME.ProductComparison.headless.scenario",
-    }),
-    tech: translate({ message: "HOME.ProductComparison.headless.tech" }),
-    icon: "🐳",
-    color: "secondary",
-    link: "/headless",
   },
   {
-    name: translate({ message: "HOME.ProductComparison.product.cloud" }),
-    stage: translate({ message: "HOME.ProductComparison.cloud.stage" }),
-    capability: translate({
-      message: "HOME.ProductComparison.cloud.capability",
+    title: translate({ message: "HOME.ProductComparison.output3.title" }),
+    description: translate({
+      message: "HOME.ProductComparison.output3.description",
     }),
-    scenario: translate({ message: "HOME.ProductComparison.cloud.scenario" }),
-    tech: translate({ message: "HOME.ProductComparison.cloud.tech" }),
-    icon: "☁️",
-    color: "tertiary",
-    link: "/cloud",
+  },
+];
+
+const cloudBenefits = [
+  {
+    label: translate({ message: "HOME.ProductComparison.benefit1.label" }),
+    value: translate({ message: "HOME.ProductComparison.benefit1.value" }),
+    description: translate({
+      message: "HOME.ProductComparison.benefit1.description",
+    }),
+  },
+  {
+    label: translate({ message: "HOME.ProductComparison.benefit2.label" }),
+    value: translate({ message: "HOME.ProductComparison.benefit2.value" }),
+    description: translate({
+      message: "HOME.ProductComparison.benefit2.description",
+    }),
   },
 ];
 
@@ -49,7 +45,6 @@ export default function HomepageProductComparison() {
   return (
     <section className={styles.comparisonSection}>
       <div className={styles.container}>
-        {/* Section Header */}
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>
             {translate({ message: "HOME.ProductComparison.title" })}
@@ -59,52 +54,64 @@ export default function HomepageProductComparison() {
           </p>
         </div>
 
-        {/* 产品卡片网格 */}
-        <div className={styles.productsGrid}>
-          {products.map((product, index) => (
-            <Link
-              key={index}
-              to={product.link}
-              className={`${styles.productCard} ${styles[product.color]}`}
-            >
-              {/* 卡片头部 */}
-              <div className={styles.cardHeader}>
-                <div className={styles.cardIcon}>{product.icon}</div>
-                <h3 className={styles.cardTitle}>{product.name}</h3>
-                <div className={styles.cardBadge}>{product.stage}</div>
+        <div className={styles.cloudSection}>
+          <div className={styles.cloudCard}>
+            <div className={styles.cardHeader}>
+              <div className={styles.cardIcon}>☁️</div>
+              <div className={styles.cardBadge}>
+                {translate({ message: "HOME.ProductComparison.cloud.stage" })}
               </div>
-
-              {/* 卡片内容 */}
-              <div className={styles.cardBody}>
-                <div className={styles.infoSection}>
-                  <div className={styles.infoLabel}>
-                    {translate({
-                      message: "HOME.ProductComparison.dimension.capability",
-                    })}
-                  </div>
-                  <div className={styles.infoContent}>{product.capability}</div>
-                </div>
-
-                <div className={styles.infoSection}>
-                  <div className={styles.infoLabel}>
-                    {translate({
-                      message: "HOME.ProductComparison.dimension.scenario",
-                    })}
-                  </div>
-                  <div className={styles.infoContent}>{product.scenario}</div>
-                </div>
-
-                <div className={styles.infoSection}>
-                  <div className={styles.infoLabel}>
-                    {translate({
-                      message: "HOME.ProductComparison.dimension.tech",
-                    })}
-                  </div>
-                  <div className={styles.infoContent}>{product.tech}</div>
+              <h3 className={styles.cardTitle}>
+                {translate({ message: "HOME.ProductComparison.product.cloud" })}
+              </h3>
+              <p className={styles.cardLead}>
+                {translate({ message: "HOME.ProductComparison.cloud.capability" })}
+              </p>
+              <p className={styles.cardSummary}>
+                {translate({ message: "HOME.ProductComparison.cloud.scenario" })}
+              </p>
+              <div className={styles.cardActions}>
+                <Link to="/cloud" className={styles.primaryCta}>
+                  {translate({ message: "HOME.ProductComparison.cta" })}
+                </Link>
+                <div className={styles.inlineNote}>
+                  {translate({ message: "HOME.ProductComparison.cloud.tech" })}
                 </div>
               </div>
-            </Link>
-          ))}
+            </div>
+          </div>
+
+          <div className={styles.detailPanel}>
+            <div className={styles.outputsIntro}>
+              <div className={styles.infoLabel}>
+                {translate({ message: "HOME.ProductComparison.outputIntro" })}
+              </div>
+              <p className={styles.outputsText}>
+                {translate({ message: "HOME.ProductComparison.outputSummary" })}
+              </p>
+            </div>
+
+            <div className={styles.outputsGrid}>
+              {deliveryOutputs.map(output => (
+                <div key={output.title} className={styles.outputCard}>
+                  <h4 className={styles.outputTitle}>{output.title}</h4>
+                  <p className={styles.outputDescription}>{output.description}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className={styles.benefitsGrid}>
+              {cloudBenefits.map(benefit => (
+                <div key={benefit.label} className={styles.benefitCard}>
+                  <div className={styles.benefitLabel}>{benefit.label}</div>
+                  <div className={styles.benefitValue}>{benefit.value}</div>
+                  <p className={styles.benefitDescription}>
+                    {benefit.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

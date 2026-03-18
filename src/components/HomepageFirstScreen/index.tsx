@@ -76,6 +76,19 @@ export default function HomepageFirstScreen() {
             <div className={styles.buttons}>
               <DownloadButton />
             </div>
+            <div className={styles.offerLine}>
+              <span className={styles.offerItem}>
+                {translate({
+                  message: "HOME.FirstScreen.offer1",
+                })}
+              </span>
+              <span className={styles.offerDivider}>•</span>
+              <span className={`${styles.offerItem} ${styles.offerItemStrong}`}>
+                {translate({
+                  message: "HOME.FirstScreen.offer2",
+                })}
+              </span>
+            </div>
           </div>
         </div>
         <div className={styles["screenshot-row"]}>
