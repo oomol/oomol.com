@@ -190,37 +190,37 @@
     "message": "AI 辅助的块生成、Vibe Coding 工作流块，以及深度 VSCode 集成，让开发快速而灵活。"
   },
   "HOME.CoreFeatures.title": {
-    "message": "让“函数即交付”成立的，是这条交付路径"
+    "message": "一份业务代码，直接走到交付"
   },
   "HOME.CoreFeatures.subtitle": {
-    "message": "不是换一种 DSL，而是继续写真实工程代码，让 Agent 补全实现，用容器本地验证，再把同一份能力交付到不同出口。"
+    "message": "节点就是函数，不用学新 DSL。Agent 天然擅长 Python 和 JavaScript，能全自动帮你工作；现有库、脚本和工程结构也都能直接复用。"
   },
   "HOME.CoreFeatures.workflow.title": {
-    "message": "01｜写函数：在真实工程里把能力做出来"
+    "message": "01｜写代码：节点就是函数"
   },
   "HOME.CoreFeatures.workflow.description": {
-    "message": "不用先学新 DSL，也不用先适应平台。\n\n• 继续写真实函数和项目代码\n• Agent 帮你补全实现，而不是制造新概念\n• 直接复用现有库、脚本和工程结构\n• 让每个函数都成为后续可交付的能力单元"
+    "message": "继续用熟悉的方式开发，不用先学平台规则。\n\n• 节点就是函数，不引入新概念\n• AI 天然擅长写 Python 和 JavaScript，Agent 可以全自动帮你工作\n• 现有库、脚本和工程结构都能直接复用，生态丰富"
   },
   "HOME.CoreFeatures.workflow.highlight1": {
-    "message": "先把能力做出来，再考虑它跑在哪"
+    "message": "节点就是函数，Agent 直接开工"
   },
   "HOME.CoreFeatures.container.title": {
-    "message": "02｜本地验证：交付前先把结果跑通"
+    "message": "02｜本地跑通：先把结果验证清楚"
   },
   "HOME.CoreFeatures.container.description": {
-    "message": "内置容器，让依赖、调试和运行环境先在本地闭环。\n\n• 先验证输入输出、日志和依赖\n• 尽量让本地环境接近发布环境\n• 少把时间耗在环境漂移和返工上"
+    "message": "内置容器，把依赖、调试和运行环境先收敛在本地。\n\n• 先验证输入输出、日志和依赖\n• 让开发环境尽量贴近交付环境\n• 把环境问题和返工留在发布前解决"
   },
   "HOME.CoreFeatures.container.highlight1": {
-    "message": "先把不确定性解决在本地"
+    "message": "先在本地跑通，再往外发"
   },
   "HOME.CoreFeatures.vscode.title": {
-    "message": "03｜发布到 Cloud：同一份实现直接上线"
+    "message": "03｜一键交付：同一份实现直接上线"
   },
   "HOME.CoreFeatures.vscode.description": {
-    "message": "把已经在本地跑通的函数直接交付到 OOMOL Cloud，不用再拆第二套后端，也不用为了交付再重写一遍。\n\n• 直接发成 API\n• 直接发成 MCP 工具\n• 直接发成自动化任务"
+    "message": "把已经在本地跑通的同一份实现直接交付出去，不用再拆第二套后端，也不用为不同出口重复包装。\n\n• 交付成 API\n• 交付成 MCP 工具\n• 交付成网页小程序"
   },
   "HOME.CoreFeatures.vscode.highlight1": {
-    "message": "函数写完，交付就该顺着发生"
+    "message": "代码跑通之后，交付应该顺着发生"
   },
   "HOME.Lifecycle.title": {
     "message": "使用生命周期"
@@ -2690,7 +2690,9 @@
   "APP.new.chat.meta2.value": {
     "message": "先理解意图，再调用服务，降低用户上手门槛"
   },
-  "APP.new.chat.devValue": { "message": "函数即技能：你的函数就是 AI 可调用的能力" },
+  "APP.new.chat.devValue": {
+    "message": "函数即技能：你的函数就是 AI 可调用的能力"
+  },
   "APP.new.applet.pill": { "message": "参数入口 · Applet" },
   "APP.new.applet.title": { "message": "OOMOL Applet" },
   "APP.new.applet.subtitle": { "message": "表单小程序 · 确定性交互" },
