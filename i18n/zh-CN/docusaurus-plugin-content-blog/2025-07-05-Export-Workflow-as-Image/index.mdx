@@ -1,7 +1,7 @@
 ---
 title: 如何将工作流导出为镜像并作为服务运行？
 authors: [zhangli]
-tags: [workflow automation, OOMOL, docker, export image]
+tags: [workflow automation, OOMOL, container, export image]
 date: 2025-07-05
 ---
 
@@ -276,7 +276,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ## 镜像运行
 
-在得到镜像文件后，我们使用 `docker` 命令加载镜像文件。在终端中运行
+在得到镜像文件后，我们可以使用 `docker` 这类容器运行时命令加载镜像文件。在终端中运行
 
 ```shell
 docker load -i ~/Downloads/translate-pdf-to-epub.tar.zst  # 选择你保存镜像文件的地址

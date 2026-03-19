@@ -33,7 +33,7 @@
     "message": "AI-Native Function-to-Service"
   },
   "HOME.FirstScreen.script": {
-    "message": "Write functions in a real codebase, validate locally with Docker, then ship directly to **OOMOL Cloud**."
+    "message": "Write functions in a real codebase, validate locally with containers, then ship directly to **OOMOL Cloud**."
   },
   "HOME.FirstScreen.pill1": {
     "message": "No new DSL"
@@ -207,7 +207,7 @@
     "message": "02｜Validate Locally Before Delivery"
   },
   "HOME.CoreFeatures.container.description": {
-    "message": "Built-in Docker keeps dependencies, debugging, and runtime checks inside a local loop first.\n\n• Verify inputs, outputs, logs, and dependencies locally\n• Keep local behavior close to deployment behavior\n• Lose less time to environment drift and rework"
+    "message": "Built-in containers keep dependencies, debugging, and runtime checks inside a local loop first.\n\n• Verify inputs, outputs, logs, and dependencies locally\n• Keep local behavior close to deployment behavior\n• Lose less time to environment drift and rework"
   },
   "HOME.CoreFeatures.container.highlight1": {
     "message": "Resolve uncertainty locally first"
@@ -2263,7 +2263,7 @@
     "message": "View Docs"
   },
   "HEADLESS.deployment.title": {
-    "message": "Take Over the Runtime with Docker"
+    "message": "Take Over the Runtime with Containers"
   },
   "HEADLESS.deployment.recommendation": {
     "message": "Recommended configuration: 2 CPU cores, 4 GB RAM"
@@ -2277,10 +2277,10 @@
   "HEADLESS.useCases.subtitle": {
     "message": "Flexible deployment for different runtime environments"
   },
-  "HEADLESS.useCase.docker.title": {
-    "message": "Docker Deployment"
+  "HEADLESS.useCase.container.title": {
+    "message": "Container Deployment"
   },
-  "HEADLESS.useCase.docker.description": {
+  "HEADLESS.useCase.container.description": {
     "message": "One command to install, supports mainstream Linux distributions and NAS systems"
   },
   "HEADLESS.useCase.cloud.title": {
@@ -2308,10 +2308,10 @@
     "message": "Fast Deployment"
   },
   "HEADLESS.features.deploy.description": {
-    "message": "Docker containerization, one-click deployment configuration"
+    "message": "Containerized deployment, one-click configuration"
   },
   "HEADLESS.features.deploy.feature1": {
-    "message": "Docker Compose one-click startup"
+    "message": "Compose-based one-click startup"
   },
   "HEADLESS.features.deploy.feature2": {
     "message": "Auto-configure network and storage"
@@ -2380,7 +2380,7 @@
     "message": "Enterprise Integration"
   },
   "HOME.Scenes.enterprise.inner": {
-    "message": "Docker containerized deployment to private cloud or K8s clusters, supporting CI/CD pipelines for continuous delivery and operations of enterprise-grade API services."
+    "message": "Containerized deployment to private cloud or K8s clusters, supporting CI/CD pipelines for continuous delivery and operations of enterprise-grade API services."
   },
   "HOME.ProductComparison.title": {
     "message": "Ship the Function You Already Validated to OOMOL Cloud"
@@ -2443,7 +2443,7 @@
     "message": "Best for containerized deployment, private cloud environments, and teams that need OOMOL to fit existing infrastructure."
   },
   "HOME.ProductComparison.headless.tech": {
-    "message": "Works with Docker and other open infrastructure so the runtime stays customizable, integrable, and controlled."
+    "message": "Works with containers and other open infrastructure so the runtime stays customizable, integrable, and controlled."
   },
   "HOME.ProductComparison.cloud.stage": {
     "message": "Fast launch with lower ops overhead"
@@ -2662,7 +2662,7 @@
     "message": "Local development environment for developers, VSCode-based visual programming tool with FRP protocol for P2P computing power sharing"
   },
   "HEADLESS.hero.description": {
-    "message": "Containerized deployment solution, packaging workflows as standalone Docker images for cloud servers, private clouds and K8s clusters"
+    "message": "Containerized deployment solution, packaging workflows as standalone container images for cloud servers, private clouds and K8s clusters"
   },
   "APP.new.hero.title": { "message": "OOMOL App" },
   "APP.new.hero.subtitle": {
@@ -2725,7 +2725,7 @@
     "message": "OOMOL Studio - Generate and Validate Functions in a Real Coding Environment"
   },
   "STUDIO.page.description": {
-    "message": "Generate functions in a real coding environment, validate them with local Docker, then carry the same code forward into service delivery."
+    "message": "Generate functions in a real coding environment, validate them with local containers, then carry the same code forward into service delivery."
   },
   "STUDIO.manifesto.title": {
     "message": "OOMOL Studio"
@@ -2797,7 +2797,7 @@
     "message": "The hard part of function delivery is often not writing the code, but controlling dependencies, environment, and runtime behavior."
   },
   "STUDIO.principle3.paragraph2": {
-    "message": "Studio uses standard Docker containers to hold that part in place."
+    "message": "Studio uses standard containers to hold that part in place."
   },
   "STUDIO.principle3.paragraph3": {
     "message": "Install what you need, run the result locally, then carry the same capability forward as an API, MCP tool, or automation task."

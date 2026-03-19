@@ -33,7 +33,7 @@
     "message": "AI-Native Function-to-Service"
   },
   "HOME.FirstScreen.script": {
-    "message": "在真实工程里写函数，用 Docker 本地跑通，再直接交付到 **OOMOL Cloud**。"
+    "message": "在真实工程里写函数，用容器本地跑通，再直接交付为 API，MCP 以及网页小程序。"
   },
   "HOME.FirstScreen.pill1": {
     "message": "不学新 DSL"
@@ -193,7 +193,7 @@
     "message": "让“函数即交付”成立的，是这条交付路径"
   },
   "HOME.CoreFeatures.subtitle": {
-    "message": "不是换一种 DSL，而是继续写真实工程代码，让 Agent 补全实现，用 Docker 本地验证，再把同一份能力交付到不同出口。"
+    "message": "不是换一种 DSL，而是继续写真实工程代码，让 Agent 补全实现，用容器本地验证，再把同一份能力交付到不同出口。"
   },
   "HOME.CoreFeatures.workflow.title": {
     "message": "01｜写函数：在真实工程里把能力做出来"
@@ -208,7 +208,7 @@
     "message": "02｜本地验证：交付前先把结果跑通"
   },
   "HOME.CoreFeatures.container.description": {
-    "message": "内置 Docker，让依赖、调试和运行环境先在本地闭环。\n\n• 先验证输入输出、日志和依赖\n• 尽量让本地环境接近发布环境\n• 少把时间耗在环境漂移和返工上"
+    "message": "内置容器，让依赖、调试和运行环境先在本地闭环。\n\n• 先验证输入输出、日志和依赖\n• 尽量让本地环境接近发布环境\n• 少把时间耗在环境漂移和返工上"
   },
   "HOME.CoreFeatures.container.highlight1": {
     "message": "先把不确定性解决在本地"
@@ -868,7 +868,7 @@
     "message": "从下一个函数开始交付"
   },
   "HOME.GetStartedPrompt.subtitle": {
-    "message": "下载 OOMOL Studio，让 Agent 帮你把函数做出来，在本地跑通，再直接交付到 OOMOL Cloud。"
+    "message": "下载 OOMOL Studio，让 Agent 帮你把函数做出来，在本地跑通，再直接交付为 API，MCP 以及网页小程序。"
   },
   "HOME.Pricing.title": {
     "message": "价格"
@@ -2266,7 +2266,7 @@
     "message": "查看文档"
   },
   "HEADLESS.deployment.title": {
-    "message": "用 Docker 接管运行环境"
+    "message": "用容器接管运行环境"
   },
   "HEADLESS.deployment.recommendation": {
     "message": "建议配置：2 核 CPU、4 GB 内存"
@@ -2280,10 +2280,10 @@
   "HEADLESS.useCases.subtitle": {
     "message": "灵活部署，满足不同的运行环境需求"
   },
-  "HEADLESS.useCase.docker.title": {
-    "message": "Docker 部署"
+  "HEADLESS.useCase.container.title": {
+    "message": "容器部署"
   },
-  "HEADLESS.useCase.docker.description": {
+  "HEADLESS.useCase.container.description": {
     "message": "一条命令完成安装，支持主流 Linux 发行版和 NAS 系统"
   },
   "HEADLESS.useCase.cloud.title": {
@@ -2311,10 +2311,10 @@
     "message": "快速部署"
   },
   "HEADLESS.features.deploy.description": {
-    "message": "Docker 容器化，一键完成部署配置"
+    "message": "容器化部署，一键完成部署配置"
   },
   "HEADLESS.features.deploy.feature1": {
-    "message": "Docker Compose 一键启动"
+    "message": "Compose 一键启动"
   },
   "HEADLESS.features.deploy.feature2": {
     "message": "自动配置网络和存储"
@@ -2383,7 +2383,7 @@
     "message": "企业级集成"
   },
   "HOME.Scenes.enterprise.inner": {
-    "message": "Docker 容器化部署到私有云或 K8s 集群，支持 CI/CD 流水线，实现企业级 API 服务的持续交付和运维。"
+    "message": "容器化部署到私有云或 K8s 集群，支持 CI/CD 流水线，实现企业级 API 服务的持续交付和运维。"
   },
   "HOME.ProductComparison.title": {
     "message": "把已经跑通的函数，更快交付到 OOMOL Cloud"
@@ -2446,7 +2446,7 @@
     "message": "适合容器化部署、私有云环境和需要接入已有基础设施的团队场景。"
   },
   "HOME.ProductComparison.headless.tech": {
-    "message": "支持 Docker 等开源基础设施，可深度定制、灵活集成、可控运行。"
+    "message": "支持容器等开源基础设施，可深度定制、灵活集成、可控运行。"
   },
   "HOME.ProductComparison.cloud.stage": {
     "message": "快速上线与低运维心智"
@@ -2720,7 +2720,7 @@
     "message": "OOMOL Studio - 在真实 coding 环境里生成和验证函数"
   },
   "STUDIO.page.description": {
-    "message": "在真实 coding 环境里生成函数、用本地 Docker 验证能力，再把同一份代码继续发布成服务。"
+    "message": "在真实 coding 环境里生成函数、用本地容器验证能力，再把同一份代码继续发布成服务。"
   },
   "STUDIO.manifesto.title": {
     "message": "OOMOL Studio"
@@ -2795,7 +2795,7 @@
     "message": "函数能力真正麻烦的地方，往往不是写出来，而是依赖、环境和运行结果不可控。"
   },
   "STUDIO.principle3.paragraph2": {
-    "message": "Studio 用标准 Docker 容器承接这些问题。"
+    "message": "Studio 用标准容器承接这些问题。"
   },
   "STUDIO.principle3.paragraph3": {
     "message": "先在本地把依赖装好、把结果跑通，再把同一份能力继续发布成 API、MCP 工具或自动化任务。"

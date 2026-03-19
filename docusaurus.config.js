@@ -113,7 +113,7 @@ const config = {
         {
           name: "keywords",
           content:
-            "function to service, ai-native developer tools, local validation, api publishing, mcp tools, automation tasks, docker development, function delivery, OOMOL",
+            "function to service, ai-native developer tools, local validation, api publishing, mcp tools, automation tasks, containerized development, function delivery, OOMOL",
         },
         {
           name: "description",

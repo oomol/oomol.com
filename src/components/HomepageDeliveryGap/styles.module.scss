@@ -1,12 +1,6 @@
 .section {
   padding: 88px 0 24px;
-  background:
-    radial-gradient(
-      circle at top,
-      rgba(125, 127, 233, 0.1),
-      rgba(125, 127, 233, 0) 52%
-    ),
-    var(--ifm-background-color);
+  background: var(--ifm-background-color);
 }
 
 .container {
@@ -31,9 +25,9 @@
   min-height: 32px;
   padding: 6px 12px;
   border-radius: 999px;
-  background: var(--oomol-primary-bg);
-  border: 1px solid var(--oomol-primary-border);
-  color: var(--oomol-primary-text);
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-800);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -82,15 +76,9 @@
   min-height: 240px;
   padding: 26px;
   border-radius: 20px;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0.96)
-    ),
-    var(--ifm-background-surface-color);
+  background: var(--ifm-background-surface-color);
   border: 1px solid var(--ifm-color-emphasis-200);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
 }
 
 .problemIndex {
@@ -119,13 +107,7 @@
 
 [data-theme="dark"] {
   .problemCard {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(37, 37, 37, 0.92),
-        rgba(25, 25, 25, 0.98)
-      ),
-      var(--ifm-background-surface-color);
-    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+    background: var(--ifm-background-surface-color);
+    box-shadow: none;
   }
 }

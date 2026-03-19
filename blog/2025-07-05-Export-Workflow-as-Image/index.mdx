@@ -1,7 +1,7 @@
 ---
 title: How to Export a Workflow as an Image and Run It as a Service?
 authors: [zhangli]
-tags: [workflow automation, OOMOL, docker, export image]
+tags: [workflow automation, OOMOL, container, export image]
 date: 2025-07-05
 ---
 
@@ -276,7 +276,7 @@ Return to the OOMOL Studio Home page, find the Workflow you just developed, righ
 
 ## Running the Image
 
-After obtaining the image file, use the `docker` command to load the image file. In the terminal, run
+After obtaining the image file, use a container runtime command such as `docker` to load it. In the terminal, run
 
 ```shell
 docker load -i ~/Downloads/translate-pdf-to-epub.tar.zst  # Use the path where you saved the image file

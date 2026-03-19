@@ -9,7 +9,7 @@ I will redesign the `src/pages/studio/index.tsx` page to be a "Design Philosophy
     - **The "How" (Design Decisions):**
       - **Principle 1: Code is the Source of Truth.** Explaining the `Node == Function` mapping.
       - **Principle 2: Respect the Tooling.** Why we integrated full VS Code (Monaco) and LSP, not just a text area.
-      - **Principle 3: No Artificial Limits.** Why we use real Docker containers, allowing full `npm`/`pip` access.
+      - **Principle 3: No Artificial Limits.** Why we use real containers, allowing full `npm`/`pip` access.
     - **The Result:** A brief summary of what this enables (bridging visual & code).
 3.  **Visual Style:**
     - Use a cleaner, editorial layout (more whitespace, better typography).

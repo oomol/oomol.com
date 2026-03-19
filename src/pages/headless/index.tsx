@@ -41,7 +41,7 @@ export default function HeadlessPage() {
           </div>
         </section>
 
-        {/* Docker Deployment Section */}
+        {/* Container Deployment Section */}
         <section className={styles.deploymentSection}>
           <div className={styles.deploymentCard}>
             <h2 className={styles.deploymentTitle}>
