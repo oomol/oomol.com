@@ -33,7 +33,7 @@
     "message": "AI-Native Function-to-Service"
   },
   "HOME.FirstScreen.script": {
-    "message": "在真实工程里写函数，用容器本地跑通，再直接交付为 API，MCP 以及网页小程序。"
+    "message": "函数即节点，不学新概念。本地自带容器，开发环境端云一体。Agent 全自动编程，一键交付 API、MCP 以及网页小程序。"
   },
   "HOME.FirstScreen.pill1": {
     "message": "不学新 DSL"
@@ -57,13 +57,13 @@
     "message": "Why Delivery Breaks"
   },
   "HOME.DeliveryGap.title": {
-    "message": "问题不在函数实现，而在交付断层"
+    "message": "问题不在代码实现，而在交付断层"
   },
   "HOME.DeliveryGap.subtitle": {
-    "message": "很多团队真正浪费时间的地方，不是把函数写出来，而是写完之后还要重新搭接口、部署、运行环境和交付方式。"
+    "message": "很多团队真正浪费时间的地方，不是把代码写出来，而是写完之后还要重新搭接口、部署、运行环境和交付方式。"
   },
   "HOME.DeliveryGap.problem1.title": {
-    "message": "写完函数，还要再搭一套后端"
+    "message": "写完业务，还要再搭一套后端"
   },
   "HOME.DeliveryGap.problem1.description": {
     "message": "实现已经有了，但为了对外提供 API 或任务能力，还要重新封装接口、部署流程和运行方式。"
@@ -75,7 +75,7 @@
     "message": "开发环境、依赖环境和发布环境脱节，问题往往不是代码本身，而是它换了地方就不成立。"
   },
   "HOME.DeliveryGap.problem3.title": {
-    "message": "同一份能力，被重复包装很多次"
+    "message": "同一份能力，被重复包装"
   },
   "HOME.DeliveryGap.problem3.description": {
     "message": "为了 API、MCP 工具和自动化任务，团队经常围着同一份实现反复改造，交付成本被重复放大。"

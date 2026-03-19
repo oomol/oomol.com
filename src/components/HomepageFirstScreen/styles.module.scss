@@ -398,27 +398,6 @@
   display: inline;
 }
 
-.pills {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: var(--ifm-background-surface-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  color: var(--oomol-text-secondary);
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.4;
-}
-
 .image {
   max-width: 100%;
   border-radius: 6px;

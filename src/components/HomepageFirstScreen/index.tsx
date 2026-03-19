@@ -31,11 +31,6 @@ export default function HomepageFirstScreen() {
   const scriptText = translate({
     message: "HOME.FirstScreen.script",
   });
-  const valuePills = [
-    translate({ message: "HOME.FirstScreen.pill1" }),
-    translate({ message: "HOME.FirstScreen.pill2" }),
-    translate({ message: "HOME.FirstScreen.pill3" }),
-  ];
 
   return (
     <section className={styles.section}>
@@ -64,13 +59,6 @@ export default function HomepageFirstScreen() {
               <span className={styles.overview}>
                 {parseHighlightText(scriptText)}
               </span>
-              <div className={styles.pills}>
-                {valuePills.map(item => (
-                  <span key={item} className={styles.pill}>
-                    {item}
-                  </span>
-                ))}
-              </div>
             </div>
 
             <div className={styles.buttons}>
