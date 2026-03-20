@@ -604,10 +604,10 @@
     "message": "智能对话工具，通过自然语言交互使用各种 AI 功能。"
   },
   "HOME.CommunityShare.title": {
-    "message": "交付之后，继续沉淀"
+    "message": "交付之后，还能继续复用"
   },
   "HOME.CommunityShare.subtitle": {
-    "message": "真正有价值的不是一次上线，而是这次交付能不能成为团队下一次开发的起点。"
+    "message": "重要的不只是这次上线，而是把这次交付留下来，让团队下次开发还能直接复用和扩展。"
   },
   "HOME.CommunityShare.point1.title": {
     "message": "安装现成能力"
