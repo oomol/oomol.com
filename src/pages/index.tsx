@@ -27,9 +27,9 @@ export default function Home() {
         <HomepageDeveloperBenefits />
         <HomepageDeliveryGap />
         <HomepageCoreFeatures />
-        <HomepageProofLayer />
         <HomepageProductComparison />
         <HomepageCommunityShare />
+        <HomepageProofLayer />
         <GetStartedPrompt />
       </main>
     </Layout>
