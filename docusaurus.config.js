@@ -165,10 +165,6 @@ const config = {
                 label: "navbar.oomol-studio",
               },
               {
-                to: "/app",
-                label: "navbar.oomol-app",
-              },
-              {
                 to: "/cloud",
                 label: "navbar.oomol-cloud",
               },
