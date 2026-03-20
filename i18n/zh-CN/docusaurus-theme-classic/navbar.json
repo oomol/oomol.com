@@ -59,10 +59,6 @@
     "message": "OOMOL Cloud",
     "description": "Navbar item with label navbar.oomol-cloud"
   },
-  "item.label.navbar.oomol-headless": {
-    "message": "OOMOL Headless",
-    "description": "Navbar item with label navbar.oomol-headless"
-  },
   "item.label.navbar.oomol-sdk": {
     "message": "OOMOL SDK",
     "description": "Navbar item with label navbar.oomol-sdk"

@@ -173,10 +173,6 @@ const config = {
                 label: "navbar.oomol-cloud",
               },
               {
-                to: "/headless",
-                label: "navbar.oomol-headless",
-              },
-              {
                 to: "/sdk",
                 label: "navbar.oomol-sdk",
               },

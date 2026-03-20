@@ -74,6 +74,9 @@
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   padding: 28px;
   border-radius: 20px;
   border: 1px solid var(--ifm-color-emphasis-200);
@@ -194,30 +197,36 @@
 }
 
 .cardFooter {
-  margin-top: 22px;
+  margin-top: auto;
+  padding-top: 22px;
 }
 
 .cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: fit-content;
   min-height: 42px;
   padding: 0 16px;
   border-radius: 999px;
-  background: var(--ifm-heading-color);
-  color: var(--ifm-background-color);
+  border: 1px solid transparent;
+  background: var(--oomol-primary);
+  color: var(--oomol-white);
+  box-shadow: 0 10px 24px rgba(125, 127, 233, 0.24);
   font-size: 14px;
   font-weight: 800;
   text-decoration: none;
   transition:
     transform 0.15s ease,
-    opacity 0.15s ease;
+    background-color 0.15s ease,
+    box-shadow 0.15s ease;
 
   &:hover {
     text-decoration: none;
-    color: var(--ifm-background-color);
+    color: var(--oomol-white);
+    background: var(--oomol-primary-hover);
     transform: translateY(-1px);
-    opacity: 0.9;
+    box-shadow: 0 14px 28px rgba(125, 127, 233, 0.3);
   }
 }
 
@@ -258,5 +267,9 @@
 
   .valueCaption {
     color: rgba(255, 255, 255, 0.68);
+  }
+
+  .cta {
+    box-shadow: 0 10px 24px rgba(125, 127, 233, 0.22);
   }
 }
