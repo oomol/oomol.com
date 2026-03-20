@@ -33,7 +33,7 @@
     "message": "AI-Native Function-to-Service"
   },
   "HOME.FirstScreen.script": {
-    "message": "Write functions in a real codebase, validate locally with containers, then ship directly to **OOMOL Cloud**."
+    "message": "In the AI era, functions are products that can be delivered directly to users. oomol enables developers to quickly turn functions into deployable, callable services through programming and orchestration."
   },
   "HOME.FirstScreen.pill1": {
     "message": "No new DSL"
