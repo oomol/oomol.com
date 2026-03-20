@@ -59,10 +59,6 @@
     "message": "OOMOL Cloud",
     "description": "Navbar item with label navbar.oomol-cloud"
   },
-  "item.label.navbar.oomol-headless": {
-    "message": "OOMOL Headless",
-    "description": "Navbar item with label navbar.oomol-headless"
-  },
   "item.label.navbar.oomol-sdk": {
     "message": "OOMOL SDK",
     "description": "Navbar item with label navbar.oomol-sdk"
@@ -72,7 +68,7 @@
     "description": "Navbar item with label Product"
   },
   "item.label.navbar.download": {
-    "message": "下载",
+    "message": "下载 Studio",
     "description": "Navbar item with label navbar.download"
   },
   "title": {

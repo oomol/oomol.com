@@ -1,11 +1,14 @@
 @use "../../css/custom.scss" as *;
 
-// ============================================
-// Section Container
-// ============================================
 .comparisonSection {
   padding: 100px 0;
-  background: transparent;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(125, 127, 233, 0.12),
+      rgba(125, 127, 233, 0) 38%
+    ),
+    var(--ifm-background-color);
 }
 
 .container {
@@ -14,9 +17,6 @@
   padding: 0 32px;
 }
 
-// ============================================
-// Section Header
-// ============================================
 .sectionHeader {
   text-align: center;
   margin-bottom: 64px;
@@ -34,18 +34,16 @@
 .sectionSubtitle {
   font-size: 1.2rem;
   color: var(--ifm-color-emphasis-700);
-  max-width: 720px;
+  max-width: 760px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.75;
 }
 
-// ============================================
-// 产品卡片网格
-// ============================================
-.productsGrid {
+.cloudSection {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  grid-template-columns: minmax(0, 480px) minmax(0, 1fr);
+  gap: 28px;
+  align-items: stretch;
 
   @media (max-width: 996px) {
     grid-template-columns: 1fr;
@@ -53,158 +51,205 @@
   }
 }
 
-// ============================================
-// 产品卡片
-// ============================================
-.productCard {
-  background: var(--ifm-background-surface-color);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border: 2px solid transparent;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.cloudCard {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  text-decoration: none;
-  color: inherit;
-
-  &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-    text-decoration: none;
-    color: inherit;
-  }
-
-  // 不同产品的主题色
-  &.primary {
-    border-color: var(--oomol-primary);
-
-    .cardHeader {
-      background: var(--oomol-primary);
-    }
-
-    &:hover {
-      border-color: var(--oomol-primary);
-      box-shadow: 0 12px 40px rgba(87, 82, 255, 0.25);
-    }
-  }
-
-  &.secondary {
-    border-color: #5d63a3;
-
-    .cardHeader {
-      background: #5d63a3;
-    }
-
-    &:hover {
-      border-color: #5d63a3;
-      box-shadow: 0 12px 40px rgba(0, 119, 182, 0.25);
-    }
-  }
-
-  &.tertiary {
-    border-color: #3d3c60;
-
-    .cardHeader {
-      background: #3d3c60;
-    }
-
-    &:hover {
-      border-color: #3d3c60;
-      box-shadow: 0 12px 40px rgba(72, 202, 228, 0.25);
-    }
-  }
+  min-height: 100%;
 }
 
-// ============================================
-// 卡片头部
-// ============================================
 .cardHeader {
-  padding: 32px 24px 24px;
-  text-align: center;
+  height: 100%;
+  padding: 40px 32px;
+  border-radius: 28px;
+  background: linear-gradient(160deg, #7779df 0%, #5a60a8 54%, #363a69 100%);
   color: white;
-  position: relative;
+  border: 1px solid rgba(125, 127, 233, 0.25);
+  box-shadow: 0 22px 50px rgba(67, 73, 146, 0.24);
+}
+
+.cardMetaRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
 }
 
 .cardIcon {
-  font-size: 48px;
-  margin-bottom: 16px;
-  display: inline-block;
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-.cardTitle {
-  font-size: 1.75rem;
-  font-weight: 700;
-  margin: 0 0 12px 0;
-  color: white;
+  font-size: 42px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family:
+    "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
 }
 
 .cardBadge {
-  display: inline-block;
-  padding: 6px 16px;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-// ============================================
-// 卡片内容
-// ============================================
-.cardBody {
-  padding: 28px 24px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.infoSection {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.infoLabel {
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--oomol-primary);
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
 
-  &::before {
-    content: "▸";
-    font-size: 1rem;
+.cardTitle {
+  margin: 0 0 12px;
+  font-size: 3rem;
+  line-height: 1.05;
+  font-weight: 800;
+  color: white;
+}
+
+.cardLead {
+  margin: 0 0 12px;
+  font-size: 1.35rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.96);
+  font-weight: 650;
+}
+
+.cardSummary {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.cardActions {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.primaryCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: white;
+  color: #3d4176;
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    transform 0.15s ease,
+    color 0.15s ease;
+
+  &:hover {
+    text-decoration: none;
+    color: #2f3361;
+    transform: translateY(-1px);
   }
 }
 
-.infoContent {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: var(--ifm-color-emphasis-800);
-  padding-left: 16px;
+.inlineNote {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.78);
 }
 
-// ============================================
-// 响应式优化
-// ============================================
+.detailPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.outputsIntro,
+.benefitCard,
+.outputCard {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.outputsIntro {
+  padding: 24px 24px 20px;
+  border-radius: 22px;
+}
+
+.infoLabel {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--oomol-primary);
+}
+
+.outputsText {
+  margin: 10px 0 0;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.outputsGrid,
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.outputCard {
+  padding: 22px;
+  border-radius: 20px;
+}
+
+.outputTitle {
+  margin: 0 0 8px;
+  font-size: 22px;
+  line-height: 1.35;
+  font-weight: 750;
+  color: var(--ifm-heading-color);
+}
+
+.outputDescription {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.benefitCard {
+  padding: 22px;
+  border-radius: 20px;
+}
+
+.benefitLabel {
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--oomol-text-secondary);
+}
+
+.benefitValue {
+  margin-bottom: 10px;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 850;
+  color: var(--ifm-heading-color);
+}
+
+.benefitDescription {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ifm-color-emphasis-700);
+}
+
 @media (max-width: 996px) {
   .comparisonSection {
     padding: 80px 0;
@@ -227,20 +272,11 @@
   }
 
   .cardHeader {
-    padding: 28px 20px 20px;
-  }
-
-  .cardIcon {
-    font-size: 40px;
+    padding: 32px 24px;
   }
 
   .cardTitle {
-    font-size: 1.5rem;
-  }
-
-  .cardBody {
-    padding: 24px 20px;
-    gap: 20px;
+    font-size: 2.4rem;
   }
 }
 
@@ -265,40 +301,17 @@
     margin-bottom: 40px;
   }
 
-  .productsGrid {
-    gap: 20px;
-  }
-
-  .cardHeader {
-    padding: 24px 18px 18px;
-  }
-
-  .cardIcon {
-    font-size: 36px;
-    margin-bottom: 12px;
-  }
-
   .cardTitle {
-    font-size: 1.35rem;
-    margin-bottom: 10px;
+    font-size: 2rem;
   }
 
-  .cardBadge {
-    font-size: 0.85rem;
-    padding: 5px 14px;
+  .cardLead {
+    font-size: 1.15rem;
   }
+}
 
-  .cardBody {
-    padding: 20px 18px;
-    gap: 18px;
-  }
-
-  .infoLabel {
-    font-size: 0.8rem;
-  }
-
-  .infoContent {
-    font-size: 0.9rem;
-    padding-left: 14px;
+[data-theme="dark"] {
+  .cardHeader {
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.32);
   }
 }

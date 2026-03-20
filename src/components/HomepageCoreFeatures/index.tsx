@@ -8,7 +8,7 @@ import React, { useState, useEffect, useRef, memo } from "react";
 // 核心功能数据
 const coreFeatures = [
   {
-    id: "workflow",
+    id: "function",
     title: translate({ message: "HOME.CoreFeatures.workflow.title" }),
     description: translate({
       message: "HOME.CoreFeatures.workflow.description",
@@ -16,10 +16,10 @@ const coreFeatures = [
     highlight: translate({ message: "HOME.CoreFeatures.workflow.highlight1" }),
     mediaType: "image" as const,
     mediaSrc: "/img/pages/home/code-block",
-    mediaAlt: "Workflow IDE Demo",
+    mediaAlt: "Function authoring demo",
   },
   {
-    id: "container",
+    id: "validate",
     title: translate({ message: "HOME.CoreFeatures.container.title" }),
     description: translate({
       message: "HOME.CoreFeatures.container.description",
@@ -27,25 +27,16 @@ const coreFeatures = [
     highlight: translate({ message: "HOME.CoreFeatures.container.highlight1" }),
     mediaType: "image" as const,
     mediaSrc: "/img/pages/home/ovm",
-    mediaAlt: "Container Development Demo",
+    mediaAlt: "Local validation demo",
   },
   {
-    id: "mcp",
-    title: translate({ message: "HOME.CoreFeatures.mcp.title" }),
-    description: translate({ message: "HOME.CoreFeatures.mcp.description" }),
-    highlight: translate({ message: "HOME.CoreFeatures.mcp.highlight1" }),
-    mediaType: "image" as const,
-    mediaSrc: "/img/pages/home/connect",
-    mediaAlt: "MCP Server Connection Demo",
-  },
-  {
-    id: "vscode",
+    id: "ship",
     title: translate({ message: "HOME.CoreFeatures.vscode.title" }),
     description: translate({ message: "HOME.CoreFeatures.vscode.description" }),
     highlight: translate({ message: "HOME.CoreFeatures.vscode.highlight1" }),
     mediaType: "image" as const,
     mediaSrc: "/img/pages/home/publish",
-    mediaAlt: "One-Click Publish Demo",
+    mediaAlt: "Service delivery demo",
   },
 ];
 

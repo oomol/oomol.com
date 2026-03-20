@@ -22,7 +22,7 @@ A standalone headless studio for local deployment (typically on NAS), without El
 2. Build with `pnpm build`
 3. Run with `pnpm start`
 
-## Docker Deployment
+## Container Deployment
 
 1. Prepare the storage directory, for example:
 
@@ -42,7 +42,7 @@ A standalone headless studio for local deployment (typically on NAS), without El
    ENABLE_OOMOL_CONNECT=true  # Recommended, enables remote operations
    ```
 
-3. Pull and run the Docker image, binding the storage directory and environment variables file:
+3. Pull and run the container image, binding the storage directory and environment variables file:
 
    ```bash
    docker pull oomolstudio/headless:latest

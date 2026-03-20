@@ -112,7 +112,7 @@ export default function CloudPage() {
               href="https://console.oomol.com/cloud-function"
               className={`${styles.primaryButton} ${styles.large}`}
             >
-              开始使用
+              {translate({ message: "CLOUD.hero.cta.start" })}
             </a>
           </div>
         </div>

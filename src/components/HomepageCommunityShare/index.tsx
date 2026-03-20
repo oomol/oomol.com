@@ -8,6 +8,20 @@ import React from "react";
 export default function HomepageCommunityShare() {
   const { colorMode } = useColorMode();
   const isDark = colorMode === "dark";
+  const assetPoints = [
+    {
+      title: translate({ id: "HOME.CommunityShare.point1.title" }),
+      description: translate({ id: "HOME.CommunityShare.point1.description" }),
+    },
+    {
+      title: translate({ id: "HOME.CommunityShare.point2.title" }),
+      description: translate({ id: "HOME.CommunityShare.point2.description" }),
+    },
+    {
+      title: translate({ id: "HOME.CommunityShare.point3.title" }),
+      description: translate({ id: "HOME.CommunityShare.point3.description" }),
+    },
+  ];
 
   const communityHomeLight = useBaseUrl(
     "/img/pages/home/community-home-light.png"
@@ -31,20 +45,28 @@ export default function HomepageCommunityShare() {
         <p className={styles.subtitle}>
           {translate({ id: "HOME.CommunityShare.subtitle" })}
         </p>
+        <div className={styles.pointsGrid}>
+          {assetPoints.map(point => (
+            <div key={point.title} className={styles.pointCard}>
+              <h3 className={styles.pointTitle}>{point.title}</h3>
+              <p className={styles.pointDescription}>{point.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className={styles.imagesWrapper}>
         <div className={styles.imageContainer}>
           <img
             src={isDark ? communityHomeDark : communityHomeLight}
-            alt="Community Home"
+            alt="Reusable capability catalog"
             className={styles.image}
           />
         </div>
         <div className={styles.imageContainer}>
           <img
             src={isDark ? communityDetailDark : communityDetailLight}
-            alt="Community Detail"
+            alt="Capability asset details"
             className={styles.image}
           />
         </div>

@@ -21,22 +21,139 @@
     "message": "Chat"
   },
   "Theme.Navbar.community": {
-    "message": "Community"
+    "message": "Asset Hub"
   },
   "HOME.page.title": {
-    "message": "OOMOL - AI Workflow Automation For Developers"
+    "message": "OOMOL - AI-Native Function-to-Service for Developers"
   },
   "HOME.FirstScreen.slogan": {
-    "message": "AI Workflow Automation — For Developers"
+    "message": "Code the Function. Deliver the Service."
   },
-  "HOME.FirstScreen.slogan.line1": {
-    "message": "AI Workflow Platform"
-  },
-  "HOME.FirstScreen.slogan.line2": {
-    "message": "Built for Developers"
+  "HOME.FirstScreen.kicker": {
+    "message": "AI-Native Function-to-Service"
   },
   "HOME.FirstScreen.script": {
-    "message": "No new concepts to learn—just **write functions and reference libraries** like you always do to create blocks. **Drag and drop them into workflows** to efficiently build new features. Publish as **APIs, MCP tools, or automation** to turn ideas into products instantly."
+    "message": "Write functions in a real codebase, validate locally with containers, then ship directly to **OOMOL Cloud**."
+  },
+  "HOME.FirstScreen.pill1": {
+    "message": "No new DSL"
+  },
+  "HOME.FirstScreen.pill2": {
+    "message": "Validate locally first"
+  },
+  "HOME.FirstScreen.pill3": {
+    "message": "Ship to Cloud"
+  },
+  "HOME.FirstScreen.caption": {
+    "message": "Code -> Validate -> Ship"
+  },
+  "HOME.FirstScreen.offer1": {
+    "message": "Bring your own AI model, with GLM-5 recommended"
+  },
+  "HOME.FirstScreen.offer2": {
+    "message": "200 free Cloud Task minutes every month"
+  },
+  "HOME.DeliveryGap.badge": {
+    "message": "Why Delivery Breaks"
+  },
+  "HOME.DeliveryGap.title": {
+    "message": "The Problem Is Not Implementation. It Is the Delivery Gap."
+  },
+  "HOME.DeliveryGap.subtitle": {
+    "message": "Teams usually lose time after the function already exists, when they still need to rebuild the interface layer, deployment path, runtime environment, and delivery shape around it."
+  },
+  "HOME.DeliveryGap.problem1.title": {
+    "message": "After the Function Is Done, the Backend Work Starts Again"
+  },
+  "HOME.DeliveryGap.problem1.description": {
+    "message": "The implementation already exists, but publishing it as an API or task still means rebuilding interfaces, deployment steps, and runtime wrappers."
+  },
+  "HOME.DeliveryGap.problem2.title": {
+    "message": "Running Locally Is Not the Same as Delivering Reliably"
+  },
+  "HOME.DeliveryGap.problem2.description": {
+    "message": "Development, dependency, and deployment environments drift apart. The problem is often not the code itself, but whether it still holds once it leaves your machine."
+  },
+  "HOME.DeliveryGap.problem3.title": {
+    "message": "The Same Capability Gets Repackaged Over and Over"
+  },
+  "HOME.DeliveryGap.problem3.description": {
+    "message": "Teams often wrap the same implementation separately for APIs, MCP tools, and automation tasks, multiplying delivery cost without adding capability."
+  },
+  "HOME.ProofLayer.badge": {
+    "message": "Live Proof"
+  },
+  "HOME.ProofLayer.title": {
+    "message": "Not a Concept, but a Live Delivery Result"
+  },
+  "HOME.ProofLayer.subtitle": {
+    "message": "Using pdf.oomol.com as a reference, the same OOMOL system is already being shipped into multiple user-facing tools instead of rebuilding another backend layer just for launch."
+  },
+  "HOME.ProofLayer.note": {
+    "message": "This layer now includes one live production example plus two placeholders. Later we can replace more of it with real services, team names, and usage data."
+  },
+  "HOME.ProofLayer.signal1.label": {
+    "message": "Live Project"
+  },
+  "HOME.ProofLayer.signal1.value": {
+    "message": "pdf.oomol.com"
+  },
+  "HOME.ProofLayer.signal1.description": {
+    "message": "This is not an internal demo. It is a live project that keeps shipping PDF and publishing tools to end users."
+  },
+  "HOME.ProofLayer.signal2.label": {
+    "message": "Multiple Scenarios"
+  },
+  "HOME.ProofLayer.signal2.value": {
+    "message": "Convert / Translate / Generate"
+  },
+  "HOME.ProofLayer.signal2.description": {
+    "message": "The same project already ships PDF conversion, EPUB translation, and manga translation with colorization, not just a single isolated page."
+  },
+  "HOME.ProofLayer.signal3.label": {
+    "message": "Underlying System"
+  },
+  "HOME.ProofLayer.signal3.value": {
+    "message": "OOMOL Functions / Tasks / Services"
+  },
+  "HOME.ProofLayer.signal3.description": {
+    "message": "These capabilities are not rebuilt as separate backends. They are delivered through the same OOMOL system as live, reusable services."
+  },
+  "HOME.ProofLayer.case1.kicker": {
+    "message": "Live Scenario 01"
+  },
+  "HOME.ProofLayer.case1.title": {
+    "message": "Live PDF Conversion Tool"
+  },
+  "HOME.ProofLayer.case1.description": {
+    "message": "This is a live web tool, not a showcase page. Users can upload PDFs and get EPUB or Markdown output through the same OOMOL delivery system."
+  },
+  "HOME.ProofLayer.case1.cta": {
+    "message": "View Web Tool"
+  },
+  "HOME.ProofLayer.case2.kicker": {
+    "message": "Live Scenario 02"
+  },
+  "HOME.ProofLayer.case2.title": {
+    "message": "Desktop Shelf and Library"
+  },
+  "HOME.ProofLayer.case2.description": {
+    "message": "The same project does not stop at browser conversion. It continues into a desktop app for managing a library and carrying those outputs into real usage."
+  },
+  "HOME.ProofLayer.case2.cta": {
+    "message": "View Desktop App"
+  },
+  "HOME.ProofLayer.case3.kicker": {
+    "message": "Live Scenario 03"
+  },
+  "HOME.ProofLayer.case3.title": {
+    "message": "Desktop Reading Interface"
+  },
+  "HOME.ProofLayer.case3.description": {
+    "message": "Delivery does not end at file output. The result keeps moving into a real reading interface where it can be opened, browsed, and managed."
+  },
+  "HOME.ProofLayer.case3.cta": {
+    "message": "View Reading Experience"
   },
   "HOME.FirstScreen.download-macos": {
     "message": "Download for macOS"
@@ -78,46 +195,37 @@
     "message": "AI-assisted block generation, vibe coding workflow blocks, and deep VSCode integration make development fast and flexible."
   },
   "HOME.CoreFeatures.title": {
-    "message": "Four Core Features"
+    "message": "What Makes “Function-to-Delivery” Actually Work"
   },
   "HOME.CoreFeatures.subtitle": {
-    "message": "Boosting efficiency across the entire development and deployment pipeline"
+    "message": "This is not a new DSL. It is a delivery path that stays anchored in real code, uses AI to complete implementation, validates locally, and sends the same capability to different outputs."
   },
   "HOME.CoreFeatures.workflow.title": {
-    "message": "01｜Node as Function: No New Framework to Learn"
+    "message": "01｜Write the Function in a Real Codebase"
   },
   "HOME.CoreFeatures.workflow.description": {
-    "message": "In oomol, a node is a function. Every line of code you write can become a capability component.\n\n• Clear input/output definitions, external calls work like using an API\n• Reference any open-source library, zero bottlenecks for feature expansion\n• Native VSCode experience\n• AI auto-generates nodes + Vibe Coding Block accelerates development"
+    "message": "No new DSL, and no need to adapt to a platform before the work even starts.\n\n• Keep writing real functions and project code\n• Let AI complete implementation instead of inventing abstractions\n• Reuse your existing libraries, scripts, and structure\n• Make each function a delivery-ready unit"
   },
   "HOME.CoreFeatures.workflow.highlight1": {
-    "message": "Familiar approach, unlimited capabilities"
+    "message": "Build the capability first, then decide where it should run"
   },
   "HOME.CoreFeatures.container.title": {
-    "message": "02｜Local Containerized Development: Production-Ready Deployment"
+    "message": "02｜Validate Locally Before Delivery"
   },
   "HOME.CoreFeatures.container.description": {
-    "message": "IDE with built-in container environment, ready to use anytime.\n\n• No environment setup required, works out of the box\n• Strong isolation, doesn't pollute host machine\n• Local environment identical to cloud environment"
+    "message": "Built-in containers keep dependencies, debugging, and runtime checks inside a local loop first.\n\n• Verify inputs, outputs, logs, and dependencies locally\n• Keep local behavior close to deployment behavior\n• Lose less time to environment drift and rework"
   },
   "HOME.CoreFeatures.container.highlight1": {
-    "message": "Write and deploy to cloud immediately, no more debugging \"environment inconsistency\" issues"
-  },
-  "HOME.CoreFeatures.mcp.title": {
-    "message": "03｜Device as Server: Put Idle Computing Power to Work"
-  },
-  "HOME.CoreFeatures.mcp.description": {
-    "message": "Combining container and reverse proxy technology to assign domain names directly to devices.\n\n• Personal computers & NAS become servers instantly\n• GPU value no longer wasted (supports WSL2 calling Nvidia GPU)\n• Private deployment + remote access anytime"
-  },
-  "HOME.CoreFeatures.mcp.highlight1": {
-    "message": "Turn all your devices into development resources"
+    "message": "Resolve uncertainty locally first"
   },
   "HOME.CoreFeatures.vscode.title": {
-    "message": "04｜One-Click Publishing: API / MCP / Automation"
+    "message": "03｜Ship to Cloud with the Same Implementation"
   },
   "HOME.CoreFeatures.vscode.description": {
-    "message": "Workflows and nodes can both be published as callable capabilities:\n\n• Serverless API services\n• MCP tools, directly integrated with AI\n• Timer / Trigger automation processes"
+    "message": "Send the function you already validated locally to OOMOL Cloud instead of building a second backend layer just to ship it.\n\n• Publish directly as an API\n• Publish directly as an MCP tool\n• Publish directly as an automation task"
   },
   "HOME.CoreFeatures.vscode.highlight1": {
-    "message": "Create capabilities that can be used by any system"
+    "message": "When the function is ready, delivery should follow naturally"
   },
   "HOME.Lifecycle.title": {
     "message": "Development Lifecycle"
@@ -495,22 +603,28 @@
     "message": "Intelligent conversation tool. Use various AI features through natural language interaction."
   },
   "HOME.CommunityShare.title": {
-    "message": "Publish and Share"
+    "message": "Keep the Delivery, Not Just the Launch"
   },
   "HOME.CommunityShare.subtitle": {
-    "message": "Join our vibrant community to share your creations, discover amazing tools, and collaborate with fellow creators."
+    "message": "The real value is not a one-off release. It is whether each shipped capability becomes the starting point for the next one."
   },
-  "HOME.CommunityShare.hub.description": {
-    "message": "Discover and share AI tools with the community. Find inspiration and showcase your creations."
+  "HOME.CommunityShare.point1.title": {
+    "message": "Install Proven Capabilities"
   },
-  "HOME.CommunityShare.github.description": {
-    "message": "Contribute to open source projects, report issues, and collaborate with developers worldwide."
+  "HOME.CommunityShare.point1.description": {
+    "message": "Bring already shipped function capabilities into the team environment instead of rebuilding them from scratch."
   },
-  "HOME.CommunityShare.discord.description": {
-    "message": "Connect with other creators, get real-time support, and participate in community discussions."
+  "HOME.CommunityShare.point2.title": {
+    "message": "Maintain a Team Catalog"
   },
-  "HOME.CommunityShare.learnMore": {
-    "message": "Learn More"
+  "HOME.CommunityShare.point2.description": {
+    "message": "Make existing capabilities, ownership, and usage paths visible across the team."
+  },
+  "HOME.CommunityShare.point3.title": {
+    "message": "Compose Larger Services"
+  },
+  "HOME.CommunityShare.point3.description": {
+    "message": "Extend from shipped functions so every release becomes part of a larger service layer."
   },
   "HOME.Features.title": {
     "message": "Features"
@@ -756,19 +870,19 @@
     "message": "//#region generated meta\ntype Inputs = {\n};\ntype Outputs = {\n};\n//#endregion\n\nimport type { Context } from \"@oomol/types/oocana\";\n\nexport default async function(\n    params: Inputs,\n    context: Context<Inputs, Outputs>\n): Promise<Partial<Outputs> | undefined | void> {\n    // Fusion API Base URL\n    const api_url = \"https://fusion-api.oomol.com/v1/fal-nano-banana-edit/submit\"\n\n    // LLM Base URL, can use openai sdk\n    const llm_base_url = \"https://llm.oomol.com/v1\"\n\n    // Get OOMOL token from context (no need for manual API key input)\n    const api_token = await context.getOomolToken()\n    // return { output: \"output_value\" };\n};"
   },
   "HOME.GetStartedPrompt.title": {
-    "message": "Start Using OOMOL Today"
+    "message": "Start with the Next Function"
   },
   "HOME.GetStartedPrompt.subtitle": {
-    "message": "Download OOMOL Studio — Turn ideas instantly into running products."
+    "message": "Download OOMOL Studio to build the function with AI, validate it locally, and ship it directly to OOMOL Cloud."
   },
   "HOME.Pricing.title": {
     "message": "Pricing"
   },
   "HOME.Downloads.title": {
-    "message": "OOMOL Desktop"
+    "message": "Download OOMOL Studio"
   },
   "HOME.Downloads.subtitle": {
-    "message": "By Downloading OOMOL, You Agree That Our Terms of Service & Privacy Policy Apply To Your Use Of That Application."
+    "message": "Install Studio to generate functions in a real coding environment, validate them locally, and carry them forward into service delivery."
   },
   "HOME.Downloads.Stable.title": {
     "message": "Stable"
@@ -801,31 +915,31 @@
     "message": "Download for Windows X64"
   },
   "HOME.Community.title": {
-    "message": "Connecting With People"
+    "message": "Contact the OOMOL Team"
   },
   "HOME.Community.subtitle": {
-    "message": "Share, Explore, Create, and Building Together."
+    "message": "Get updates, send direct feedback, and follow the open-source projects we keep maintaining."
   },
   "HOME.Community.contact-we-com": {
     "message": "WeCom"
   },
   "HOME.Community.slogan-1": {
-    "message": "Stay In The Loop"
+    "message": "See product and release updates early"
   },
   "HOME.Community.slogan-2": {
-    "message": "Real Talk, No Ticket ID"
+    "message": "Share problems and real usage scenarios directly"
   },
   "HOME.Community.slogan-3": {
-    "message": "Developers' Idea Exchange"
+    "message": "Track the open-source projects we maintain"
   },
   "HOME.Community.slogan-4": {
-    "message": "Every Voice Shapes the Future"
+    "message": "Every suggestion feeds product and docs improvements"
   },
   "HOME.Community.open-source.title": {
     "message": "Open Source"
   },
   "HOME.Community.open-source.subtitle": {
-    "message": "OOMOL is an open-source company dedicated to promoting collaboration and enhancing existing open-source tools and communities."
+    "message": "These projects carry OOMOL's ongoing work on runtime, deployment, and real-world developer tools."
   },
   "FEATURES.title": {
     "message": "All the features that you need"
@@ -1696,7 +1810,7 @@
     "message": "Local is production, no deployment pitfalls. Idle devices can serve too."
   },
   "STUDIO.hero.description.old": {
-    "message": "Visual Workflow + Full Code with VSCode, Build and Share AI Tools Fast"
+    "message": "Generate functions with full code, validate them locally, and carry them forward into service delivery."
   },
   "STUDIO.hero.stat1": {
     "message": "AI Models"
@@ -1936,43 +2050,43 @@
     "message": "Speech recognition and synthesis, enabling multimodal AI interaction experience"
   },
   "SHARE.title": {
-    "message": "Share AI Tools"
+    "message": "Build and Reuse Function Assets"
   },
   "SHARE.description": {
-    "message": "Share your creations in the Flow community and continuously optimize through data analysis"
+    "message": "Turn finished capabilities into installable, reusable, and composable assets for the team."
   },
   "SHARE.flowCommunity.title": {
-    "message": "Flow Community Ecosystem"
+    "message": "Capability Catalog"
   },
   "SHARE.flowCommunity.description": {
-    "message": "Share your creations in an open community, discover excellent workflows from others, and build AI tool ecosystem together"
+    "message": "Keep capabilities in one catalog so the team knows what exists, how to install it, and who maintains it."
   },
   "SHARE.flowCommunity.feature1": {
-    "message": "One-click publish workflows to community, let more people benefit from your creations"
+    "message": "Turn finished functions into installable assets instead of leaving them buried in projects"
   },
   "SHARE.flowCommunity.feature2": {
-    "message": "Browse and search quality workflows in the community, quickly find needed functions"
+    "message": "Search existing capabilities by name and purpose to avoid rebuilding the same thing"
   },
   "SHARE.flowCommunity.feature3": {
-    "message": "Workflow rating and comment system, help users discover best practices"
+    "message": "Track versions and ownership so the team knows which capability to reuse"
   },
   "SHARE.flowCommunity.feature4": {
-    "message": "Version management and update notifications, ensure using the latest workflow versions"
+    "message": "Keep composing on top of existing assets until they grow into larger services"
   },
   "SHARE.analytics.title": {
-    "message": "Deep Analytics Insights"
+    "message": "Usage and Maintenance Signals"
   },
   "SHARE.analytics.description": {
-    "message": "Understand workflow performance through data analysis, optimize user experience"
+    "message": "Know not only what was published, but what is actually installed, called, and maintained over time."
   },
   "SHARE.analytics.feature1": {
-    "message": "Real-time usage statistics, understand workflow popularity and usage frequency"
+    "message": "See which assets are installed and called most often to judge reuse value"
   },
   "SHARE.analytics.feature2": {
-    "message": "Performance monitoring and optimization suggestions, improve workflow execution efficiency"
+    "message": "Use adoption signals to improve parameters, dependencies, and delivery paths"
   },
   "SHARE.analytics.feature3": {
-    "message": "User feedback collection, continuously improve workflow quality"
+    "message": "Help maintainers decide which capabilities are worth extending further"
   },
   "USE.title": {
     "message": "Use AI Tools"
@@ -2113,31 +2227,31 @@
     "message": "Auto-select the most suitable model"
   },
   "HEADLESS.hero.description": {
-    "message": "OOMOL Headless is essentially delivering the OOMOL Studio runtime environment to developers as a container image. Deploy freely, no lock-in."
+    "message": "Bring the runtime you already validated in Studio onto your own server, NAS, or private cloud, and keep delivering through containers."
   },
   "HEADLESS.philosophy.title": {
-    "message": "Our Commitment: Freedom & Openness"
+    "message": "Why Continue Delivery with Headless"
   },
   "HEADLESS.philosophy.subtitle": {
-    "message": "We understand developers' concerns about commercial lock-in. OOMOL respects your will and lets technology return to purity."
+    "message": "Once a function is validated locally, Headless carries the same runtime into infrastructure you control."
   },
   "HEADLESS.philosophy.freedom.title": {
-    "message": "Deployment Freedom"
+    "message": "Choose Where It Runs"
   },
   "HEADLESS.philosophy.freedom.desc": {
-    "message": "Your code, your device. Whether it's a personal NAS, private server, or public cloud, run it wherever you want."
+    "message": "Whether it is a NAS, private server, or public cloud, the same capability can keep running wherever your environment allows."
   },
   "HEADLESS.philosophy.opensource.title": {
-    "message": "Open Source Kernel"
+    "message": "Keep the Runtime Standard"
   },
   "HEADLESS.philosophy.opensource.desc": {
-    "message": "We open-sourced the OOMOL Runtime core code. Code is Law—this is our direct answer to 'refusing excessive commercialization'."
+    "message": "Built on standard containers and public runtime behavior, so there is less drift between local validation and self-hosted delivery."
   },
   "HEADLESS.philosophy.community.title": {
-    "message": "Build with Peace of Mind"
+    "message": "Carry Delivery Forward"
   },
   "HEADLESS.philosophy.community.desc": {
-    "message": "No hidden terms, no forced upgrades. We are committed to building a developer ecosystem where everyone can use it with peace of mind and build happily together."
+    "message": "When you do not want managed cloud hosting, Headless keeps the same function capability running as an API, automation task, or internal service."
   },
   "HEADLESS.hero.stat1": {
     "message": "Containerized"
@@ -2155,10 +2269,10 @@
     "message": "View Docs"
   },
   "HEADLESS.deployment.title": {
-    "message": "Docker Deployment"
+    "message": "Take Over the Runtime with Containers"
   },
   "HEADLESS.deployment.recommendation": {
-    "message": "Recommended Configuration: 2 Cores, 4 GB RAM"
+    "message": "Recommended configuration: 2 CPU cores, 4 GB RAM"
   },
   "HEADLESS.deployment.viewDocs": {
     "message": "View Full Documentation →"
@@ -2169,10 +2283,10 @@
   "HEADLESS.useCases.subtitle": {
     "message": "Flexible deployment for different runtime environments"
   },
-  "HEADLESS.useCase.docker.title": {
-    "message": "Docker Deployment"
+  "HEADLESS.useCase.container.title": {
+    "message": "Container Deployment"
   },
-  "HEADLESS.useCase.docker.description": {
+  "HEADLESS.useCase.container.description": {
     "message": "One command to install, supports mainstream Linux distributions and NAS systems"
   },
   "HEADLESS.useCase.cloud.title": {
@@ -2200,10 +2314,10 @@
     "message": "Fast Deployment"
   },
   "HEADLESS.features.deploy.description": {
-    "message": "Docker containerization, one-click deployment configuration"
+    "message": "Containerized deployment, one-click configuration"
   },
   "HEADLESS.features.deploy.feature1": {
-    "message": "Docker Compose one-click startup"
+    "message": "Compose-based one-click startup"
   },
   "HEADLESS.features.deploy.feature2": {
     "message": "Auto-configure network and storage"
@@ -2272,13 +2386,13 @@
     "message": "Enterprise Integration"
   },
   "HOME.Scenes.enterprise.inner": {
-    "message": "Docker containerized deployment to private cloud or K8s clusters, supporting CI/CD pipelines for continuous delivery and operations of enterprise-grade API services."
+    "message": "Containerized deployment to private cloud or K8s clusters, supporting CI/CD pipelines for continuous delivery and operations of enterprise-grade API services."
   },
   "HOME.ProductComparison.title": {
-    "message": "Choose Your Deployment Mode"
+    "message": "Ship the Function You Already Validated to OOMOL Cloud"
   },
   "HOME.ProductComparison.subtitle": {
-    "message": "From local development to enterprise deployment, OOMOL provides flexible product formats to meet different scenarios. 3 Modes, One Experience."
+    "message": "OOMOL Cloud is not another development environment. It is the layer that carries the capability you already validated locally into live online delivery."
   },
   "HOME.ChatAgent.title": {
     "message": "OOMOL Chat & Agent Ecosystem"
@@ -2314,55 +2428,157 @@
     "message": "Cloud"
   },
   "HOME.ProductComparison.studio.stage": {
-    "message": "Studio Software Deployment"
+    "message": "Local development and fast start"
   },
   "HOME.ProductComparison.studio.capability": {
-    "message": "Comprehensive & Convenient"
+    "message": "Write first, run first, validate first"
   },
   "HOME.ProductComparison.studio.scenario": {
-    "message": "Personal project debugging, rapid team sharing, make full use of idle GPUs (e.g., PCs with Nvidia 4090)"
+    "message": "Best for individual development, function debugging, and local validation before deciding how far delivery should go."
   },
   "HOME.ProductComparison.studio.tech": {
-    "message": "Ready to use with local installation, built-in container environment, one-click connectivity to run as online server"
+    "message": "Install locally and use immediately, with a built-in container environment that keeps development and validation in one place."
   },
   "HOME.ProductComparison.headless.stage": {
-    "message": "Headless Image Deployment"
+    "message": "Team deployment and private runtime"
   },
   "HOME.ProductComparison.headless.capability": {
-    "message": "Freedom & Security for Enterprise"
+    "message": "More control and deeper integration"
   },
   "HOME.ProductComparison.headless.scenario": {
-    "message": "Highly customizable API services, automated workflow deployment, private cloud environments"
+    "message": "Best for containerized deployment, private cloud environments, and teams that need OOMOL to fit existing infrastructure."
   },
   "HOME.ProductComparison.headless.tech": {
-    "message": "Supports Docker and open-source infrastructure, deeply customizable, flexible integration, controllable security"
+    "message": "Works with containers and other open infrastructure so the runtime stays customizable, integrable, and controlled."
   },
   "HOME.ProductComparison.cloud.stage": {
-    "message": "Cloud Serverless Deployment"
+    "message": "Fast launch with lower ops overhead"
   },
   "HOME.ProductComparison.cloud.capability": {
-    "message": "Officially Provided Service, Performance Optimized to the Max"
+    "message": "Ship validated capability faster without rebuilding interfaces, runtime, and scaling around it."
   },
   "HOME.ProductComparison.cloud.scenario": {
-    "message": "Rapid launch for SMB teams, no infrastructure management. Simple with zero mental overhead."
+    "message": "Best for teams that want to reduce deployment and operations work, and for developers who want to ship a real service before iterating further."
   },
   "HOME.ProductComparison.cloud.tech": {
-    "message": "On-demand scaling, zero operations overhead, instant production deployment"
+    "message": "Validate locally first, then ship to Cloud. Runtime, scaling, and external delivery are handled by OOMOL."
+  },
+  "HOME.ProductComparison.cta": {
+    "message": "Explore OOMOL Cloud"
+  },
+  "HOME.ProductComparison.outputIntro": {
+    "message": "Cloud Delivery"
+  },
+  "HOME.ProductComparison.outputSummary": {
+    "message": "The same validated implementation can continue into multiple online outputs instead of forcing you to build a separate system for each one."
+  },
+  "HOME.ProductComparison.output1.title": {
+    "message": "API Services"
+  },
+  "HOME.ProductComparison.output1.description": {
+    "message": "Deliver the function directly as a callable interface without building a separate service framework and runtime layer."
+  },
+  "HOME.ProductComparison.output2.title": {
+    "message": "MCP Tools"
+  },
+  "HOME.ProductComparison.output2.description": {
+    "message": "Let the same implementation enter the call chain of agents and AI apps directly instead of maintaining a second tool service."
+  },
+  "HOME.ProductComparison.output3.title": {
+    "message": "Automation Tasks"
+  },
+  "HOME.ProductComparison.output3.description": {
+    "message": "Keep a working capability running continuously so trigger, execution, and result delivery stay on the same path."
+  },
+  "HOME.ProductComparison.benefit1.label": {
+    "message": "Delivery Load"
+  },
+  "HOME.ProductComparison.benefit1.value": {
+    "message": "Less backend rebuilding"
+  },
+  "HOME.ProductComparison.benefit1.description": {
+    "message": "Cloud takes over the external service layer so you do not need to rebuild delivery scaffolding around the function."
+  },
+  "HOME.ProductComparison.benefit2.label": {
+    "message": "Ops Load"
+  },
+  "HOME.ProductComparison.benefit2.value": {
+    "message": "Less operations overhead"
+  },
+  "HOME.ProductComparison.benefit2.description": {
+    "message": "Keep your attention on the capability itself instead of spending more time on environments, scaling, and production maintenance."
+  },
+  "HOME.DeveloperBenefits.badge": {
+    "message": "Developer Perks"
+  },
+  "HOME.DeveloperBenefits.title": {
+    "message": "Start Building First, Decide on Cost Later"
+  },
+  "HOME.DeveloperBenefits.subtitle": {
+    "message": "We remove two common blockers for individual developers early: model cost and lightweight task cost."
+  },
+  "HOME.DeveloperBenefits.card1.eyebrow": {
+    "message": "Studio Perk"
+  },
+  "HOME.DeveloperBenefits.card1.tag": {
+    "message": "Recommended"
+  },
+  "HOME.DeveloperBenefits.card1.value": {
+    "message": "GLM-5"
+  },
+  "HOME.DeveloperBenefits.card1.valueCaption": {
+    "message": "Bring-your-own model"
+  },
+  "HOME.DeveloperBenefits.card1.title": {
+    "message": "Bring Your Own Model and Keep Studio Nearly Free to Start"
+  },
+  "HOME.DeveloperBenefits.card1.description": {
+    "message": "OOMOL Studio lets you configure your own AI model. If you already have model quota elsewhere, you do not need extra client-side spend to get started. Right now we especially recommend GLM-5."
+  },
+  "HOME.DeveloperBenefits.card1.note": {
+    "message": "For many individual developers, local development in Studio can already run on top of their own model setup."
+  },
+  "HOME.DeveloperBenefits.card1.cta": {
+    "message": "Start with Studio"
+  },
+  "HOME.DeveloperBenefits.card2.eyebrow": {
+    "message": "Cloud Perk"
+  },
+  "HOME.DeveloperBenefits.card2.tag": {
+    "message": "Monthly Included"
+  },
+  "HOME.DeveloperBenefits.card2.value": {
+    "message": "200 Minutes"
+  },
+  "HOME.DeveloperBenefits.card2.valueCaption": {
+    "message": "Free Cloud Task quota"
+  },
+  "HOME.DeveloperBenefits.card2.title": {
+    "message": "200 Free Cloud Task Minutes Every Month Cover Many Lightweight Cases"
+  },
+  "HOME.DeveloperBenefits.card2.description": {
+    "message": "We give developers 200 minutes of Cloud Task usage every month. For scheduled jobs, lightweight automation, and personal validation flows, that is often enough to cover real usage."
+  },
+  "HOME.DeveloperBenefits.card2.note": {
+    "message": "If you are building as an individual developer or shipping a lightweight app, the free quota can often get your online tasks running before you pay anything."
+  },
+  "HOME.DeveloperBenefits.card2.cta": {
+    "message": "Explore Cloud Delivery"
   },
   "CLOUD.hero.title": {
     "message": "OOMOL Cloud"
   },
   "CLOUD.hero.description": {
-    "message": "You write the Function Block, leave the rest to OOMOL. Free yourself from operations and let your ideas take flight instantly."
+    "message": "Turn the function you already validated locally into a service, without rebuilding backend scaffolding, deployment flow, and operations from scratch."
   },
   "CLOUD.hero.stat1": {
-    "message": "Painless Gen"
+    "message": "Direct Publish"
   },
   "CLOUD.hero.stat2": {
     "message": "Pay-as-you-go"
   },
   "CLOUD.hero.stat3": {
-    "message": "Save Effort"
+    "message": "Less Ops"
   },
   "CLOUD.hero.cta.start": {
     "message": "Start Building"
@@ -2377,31 +2593,31 @@
     "message": "We know the struggle as developers"
   },
   "CLOUD.painPoints.description": {
-    "message": "Coding is creative joy, but delivering code is often a burden. Servers, environments, deployment, UI design... these roadblocks kill many genius ideas. We want to change that."
+    "message": "What slows delivery is usually not the function itself, but the repeated work required to wrap it as a service: building interfaces, preparing environments, scaling it, and keeping it available. Cloud is built to compress that part."
   },
   "CLOUD.solution.title": {
-    "message": "Focus on Coding, Enjoy Programming"
+    "message": "One Function, Three Delivery Paths"
   },
   "CLOUD.solution.subtitle": {
-    "message": "Write the Block, OOMOL handles the rest"
+    "message": "The same capability can be delivered as an API, an MCP tool, or an automation task."
   },
   "CLOUD.modes.library.title": {
-    "message": "Publish as Library"
+    "message": "Publish as Automation"
   },
   "CLOUD.modes.library.description": {
-    "message": "Share Blocks with others or compose them into new features. Let your code be the foundation of community innovation."
+    "message": "Run the same function on triggers or schedules so it keeps working as an ongoing task instead of staying local and manual."
   },
   "CLOUD.modes.serverless.title": {
-    "message": "Deploy as Cloud Function"
+    "message": "Publish as API Service"
   },
   "CLOUD.modes.serverless.description": {
-    "message": "One-click deploy as Serverless API. No Ops, auto-scaling, providing stable API services for others."
+    "message": "Deliver the function directly as a callable API without building a separate service framework, while OOMOL handles runtime and scaling."
   },
   "CLOUD.modes.mcp.title": {
-    "message": "Provide for AI (MCP)"
+    "message": "Publish as MCP Tool"
   },
   "CLOUD.modes.mcp.description": {
-    "message": "Publish via MCP (Model Context Protocol), allowing AI Agents to directly call your functions and connect to the intelligent world."
+    "message": "Expose the function as an MCP tool for agents and AI apps so the same implementation enters the call chain directly."
   },
   "CLOUD.pricing.title": {
     "message": "Pay Per Call, No Upfront Cost"
@@ -2452,56 +2668,56 @@
     "message": "Local development environment for developers, VSCode-based visual programming tool with FRP protocol for P2P computing power sharing"
   },
   "HEADLESS.hero.description": {
-    "message": "Containerized deployment solution, packaging workflows as standalone Docker images for cloud servers, private clouds and K8s clusters"
+    "message": "Containerized deployment solution, packaging workflows as standalone container images for cloud servers, private clouds and K8s clusters"
   },
   "APP.new.hero.title": { "message": "OOMOL App" },
   "APP.new.hero.subtitle": {
-    "message": "The Last Mile of AI Product Delivery"
+    "message": "Direct Product Surfaces for Your Functions"
   },
   "APP.new.hero.description": {
-    "message": "Turn your Block functions into AI Chat skills and Applets instantly, without writing any UI code."
+    "message": "Turn function capabilities directly into Chat skills or Applet entry points, without building separate UI from scratch."
   },
   "APP.new.concept.title": { "message": "Code is Product" },
   "APP.new.concept.description": {
-    "message": "OOMOL automatically wraps your backend logic (Blocks) into frontend products. You focus on the function; we connect it to the user."
+    "message": "OOMOL wraps function capabilities into usable product surfaces. You focus on the function; we connect it to the user."
   },
-  "APP.new.chat.pill": { "message": "Chat · Workflow Copilot" },
+  "APP.new.chat.pill": { "message": "Chat Surface · Skill" },
   "APP.new.chat.title": { "message": "OOMOL Chat" },
   "APP.new.chat.subtitle": {
     "message": "AI Assistant · Exploratory Interaction"
   },
   "APP.new.chat.description": {
-    "message": "When user intent is vague, AI intelligently orchestrates your tools to solve the problem."
+    "message": "When user intent is still vague, let AI choose and call your function capabilities through conversation."
   },
   "APP.new.chat.meta1.label": { "message": "For Whom" },
   "APP.new.chat.meta1.value": {
-    "message": "People who need to rapidly turn ideas into automated workflows"
+    "message": "Best when capabilities need to be exposed through conversation and intent needs clarification first"
   },
   "APP.new.chat.meta2.label": { "message": "Core Experience" },
   "APP.new.chat.meta2.value": {
-    "message": "Build workflows step-by-step through conversation, like discussing with a colleague"
+    "message": "Understand intent first, then call the right service with less user setup"
   },
   "APP.new.chat.devValue": {
-    "message": "Tools as Skills: Your functions become the AI's capabilities."
+    "message": "Functions as Skills: your functions become AI-callable capabilities."
   },
-  "APP.new.applet.pill": { "message": "Applet · Composable Apps" },
+  "APP.new.applet.pill": { "message": "Parameterized Surface · Applet" },
   "APP.new.applet.title": { "message": "OOMOL Applet" },
   "APP.new.applet.subtitle": {
     "message": "Form Applet · Deterministic Interaction"
   },
   "APP.new.applet.description": {
-    "message": "When user needs are clear, direct execution with parameters for efficiency."
+    "message": "When inputs are clear, call the function directly through structured parameters for more reliable delivery."
   },
   "APP.new.applet.meta1.label": { "message": "For Whom" },
   "APP.new.applet.meta1.value": {
-    "message": "Teams that need to publish, reuse, and share automation capabilities"
+    "message": "Best for teams delivering fixed-input function capabilities to internal or external users"
   },
   "APP.new.applet.meta2.label": { "message": "Core Experience" },
   "APP.new.applet.meta2.value": {
-    "message": "Compose capability components into products, like building with LEGO"
+    "message": "Wrap a function as a fillable, executable, and reusable product entry point"
   },
   "APP.new.applet.devValue": {
-    "message": "Function as App: Auto-generated UI, zero frontend code."
+    "message": "Function as App: auto-generated parameter UI with less frontend boilerplate."
   },
   "APP.new.hero.cta.web": {
     "message": "Use in Web"
@@ -2512,19 +2728,19 @@
   "APP.new.cta.download": { "message": "Download" },
   "APP.new.cta.docs": { "message": "View Docs" },
   "STUDIO.page.title": {
-    "message": "OOMOL Studio - Design Philosophy"
+    "message": "OOMOL Studio - Generate and Validate Functions in a Real Coding Environment"
   },
   "STUDIO.page.description": {
-    "message": "OOMOL Studio. Why we built OOMOL Studio the way we did."
+    "message": "Generate functions in a real coding environment, validate them with local containers, then carry the same code forward into service delivery."
   },
   "STUDIO.manifesto.title": {
     "message": "OOMOL Studio"
   },
   "STUDIO.manifesto.subtitle": {
-    "message": "We built OOMOL Studio because we were tired of choosing between \"easy to use\" and \"powerful enough.\""
+    "message": "A real coding environment for developers: let AI help generate functions, validate them locally, then carry them forward into service delivery."
   },
   "STUDIO.story.paragraph1": {
-    "message": "As engineers, we love automation. We love chaining tools together to build pipelines, agents, and data flows. But whenever we tried to use existing \"Workflow Platforms,\" we hit a wall."
+    "message": "What we wanted was not another workflow builder that asks developers to adapt to the platform, but a place where you can actually write functions, debug dependencies, and validate outputs."
   },
   "STUDIO.story.frustration.line1": {
     "message": "\"Why do I have to learn a proprietary JSON syntax just to write an if/else statement?\""
@@ -2536,25 +2752,25 @@
     "message": "\"Why am I coding in a textarea with no autocomplete?\""
   },
   "STUDIO.story.paragraph2": {
-    "message": "We realized that Low Code often meant High Frustration for professional developers. It abstracted away the things we actually liked: control, debugging, and the ecosystem."
+    "message": "For developers, the real problem is rarely whether something can be dragged visually. The moment delivery becomes real, you still need code, dependencies, debugging, and environment control."
   },
   "STUDIO.story.paragraph3": {
-    "message": "So we decided to build something different. Not a \"No-Code\" toy, but a real IDE."
+    "message": "So Studio has a clear role: not to replace engineering workflow, but to put function generation and local validation back inside it."
   },
   "STUDIO.principles.header": {
-    "message": "Our Design Philosophy"
+    "message": "Why Studio Fits Function Generation and Validation"
   },
   "STUDIO.principle1.title": {
-    "message": "1. Code is the Source of Truth"
+    "message": "1. Functions First, Code as Truth"
   },
   "STUDIO.principle1.paragraph1": {
-    "message": "We didn't invent a new visual language. We simply visualize standard code."
+    "message": "Studio does not introduce a new definition language. It organizes standard code into runnable capabilities."
   },
   "STUDIO.principle1.paragraph2": {
-    "message": "In OOMOL, a Node is just a Function. The inputs are arguments, the outputs are return values."
+    "message": "In OOMOL, a node is still backed by a function. Inputs are arguments, outputs are return values."
   },
   "STUDIO.principle1.paragraph3": {
-    "message": "You don't \"configure\" a node; you write a function. The UI is just a reflection of your code's signature."
+    "message": "You are not configuring a black-box platform. You are writing code that remains maintainable after delivery."
   },
   "STUDIO.principle1.codeComment1": {
     "message": "// This function..."
@@ -2569,28 +2785,28 @@
     "message": "// Output port: \"result\""
   },
   "STUDIO.principle2.title": {
-    "message": "2. Respect the Tooling"
+    "message": "2. Do Not Downgrade the Development Environment"
   },
   "STUDIO.principle2.paragraph1": {
-    "message": "We believe you shouldn't have to downgrade your environment just to use a visual tool."
+    "message": "Visual tooling should not come at the cost of a worse developer experience."
   },
   "STUDIO.principle2.paragraph2": {
-    "message": "That's why we embedded the full Monaco Editor (VS Code) into every node."
+    "message": "That is why each function unit keeps the editing, completion, typing, and debugging capabilities developers already rely on."
   },
   "STUDIO.principle2.paragraph3": {
-    "message": "Intellisense, Type Checking, Linting, Formatting, and even full Debugging Protocol (DAP) support. It feels like home because it is home."
+    "message": "AI, code, and the toolchain need to work together instead of forcing you to switch contexts."
   },
   "STUDIO.principle3.title": {
-    "message": "3. Containerized Deployment, No Artificial Limits"
+    "message": "3. Validate Locally Before Deciding How to Deliver"
   },
   "STUDIO.principle3.paragraph1": {
-    "message": "Traditional platforms run your code in a restricted, proprietary sandbox. If you need native Node.js modules or system-level tools, you're stuck."
+    "message": "The hard part of function delivery is often not writing the code, but controlling dependencies, environment, and runtime behavior."
   },
   "STUDIO.principle3.paragraph2": {
-    "message": "OOMOL runs on Standard Docker Containers."
+    "message": "Studio uses standard containers to hold that part in place."
   },
   "STUDIO.principle3.paragraph3": {
-    "message": "Need ffmpeg? apt-get install it. Need specific system dependencies? Just install them."
+    "message": "Install what you need, run the result locally, then carry the same capability forward as an API, MCP tool, or automation task."
   },
   "STUDIO.principle3.codeComment": {
     "message": "# No wrappers. Just standard tools."
@@ -2602,16 +2818,16 @@
     "message": "OOMOL SDKs"
   },
   "SDK.hero.description": {
-    "message": "Powerful SDK suite to help you quickly build OOMOL-based applications. Support network proxy, cloud functions, MCP servers and more deployment modes."
+    "message": "Development entry points for connecting your function capabilities to different delivery channels. Use SDKs to plug local code into Connect, Cloud, MCP, and Fusion services instead of rewriting glue code."
   },
   "SDK.category.connect.title": {
     "message": "OOMOL Connect SDKs"
   },
   "SDK.category.connect.description": {
-    "message": "Turn your computer into a remotely accessible server through network proxy technology, supports TypeScript and Python"
+    "message": "Expose functions or services that already run locally, so remote API access and MCP access become direct and controlled."
   },
   "SDK.connect.mcp.description": {
-    "message": "Use your computer as an MCP server, allowing AI to remotely call your local functions through network proxy"
+    "message": "Expose local functions as remotely callable MCP tools so agents use the capability exactly where it already runs."
   },
   "SDK.connect.mcp.feature1": {
     "message": "Zero-config network proxy"
@@ -2623,7 +2839,7 @@
     "message": "Secure end-to-end encryption"
   },
   "SDK.connect.api.description": {
-    "message": "Use your computer as an API server, providing remote access capability through network proxy"
+    "message": "Expose local functions or services as remote APIs, useful when you want to start locally and open access step by step."
   },
   "SDK.connect.api.feature1": {
     "message": "RESTful API support"
@@ -2638,10 +2854,10 @@
     "message": "OOMOL Cloud SDKs"
   },
   "SDK.category.cloud.description": {
-    "message": "Run your code in OOMOL cloud functions without managing servers"
+    "message": "Hand the same function capability over to OOMOL Cloud and reduce the infrastructure work behind service delivery."
   },
   "SDK.cloud.mcp.description": {
-    "message": "Use OOMOL cloud functions as MCP servers, allowing AI to call your Serverless functions"
+    "message": "Provide functions deployed on OOMOL Cloud directly as MCP tools for agent use."
   },
   "SDK.cloud.mcp.feature1": {
     "message": "Serverless architecture"
@@ -2653,7 +2869,7 @@
     "message": "Pay-per-call billing"
   },
   "SDK.block.mcp.description": {
-    "message": "Build MCP servers in Blocks, allowing AI to call your custom Block functions"
+    "message": "Wrap blocks or function capabilities as MCP tool interfaces with less boilerplate between implementation and tool delivery."
   },
   "SDK.block.mcp.feature1": {
     "message": "Block functions as MCP tools"
@@ -2665,10 +2881,10 @@
     "message": "Seamless OOMOL ecosystem integration"
   },
   "SDK.cloud.task.python.description": {
-    "message": "Develop OOMOL cloud functions with Python, supporting the rich Python ecosystem"
+    "message": "Write function tasks in Python that run directly on OOMOL Cloud."
   },
   "SDK.cloud.task.ts.description": {
-    "message": "Develop OOMOL cloud functions with TypeScript, enjoy type-safe development experience"
+    "message": "Write function tasks in TypeScript that run directly on OOMOL Cloud."
   },
   "SDK.cloud.task.feature1": {
     "message": "Full type definitions"
@@ -2692,13 +2908,13 @@
     "message": "OOMOL Fusion SDKs"
   },
   "SDK.category.fusion.description": {
-    "message": "Easily call OOMOL Fusion API services without handling complex polling strategies"
+    "message": "Call OOMOL Fusion APIs through one SDK and avoid rebuilding polling and async handling yourself."
   },
   "SDK.fusion.ts.description": {
-    "message": "Call OOMOL Fusion APIs with TypeScript, including proprietary and third-party services"
+    "message": "Call OOMOL Fusion APIs from TypeScript and plug more capabilities into your functions or services."
   },
   "SDK.fusion.py.description": {
-    "message": "Call OOMOL Fusion APIs with Python, including proprietary and third-party services"
+    "message": "Call OOMOL Fusion APIs from Python and plug more capabilities into your functions or services."
   },
   "SDK.fusion.feature1": {
     "message": "Simplified API calling interface"

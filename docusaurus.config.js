@@ -10,7 +10,7 @@ const darkTheme = themes.dracula;
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "OOMOL",
-  tagline: "Easily connect code and services",
+  tagline: "Write a function. Ship a service.",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -113,11 +113,12 @@ const config = {
         {
           name: "keywords",
           content:
-            "workflow, AI platform, workflow automation, service integration, code connector, workflow management, developer tools, AI workflow, service orchestration, automation platform, OOMOL",
+            "function to service, ai-native developer tools, local validation, api publishing, mcp tools, automation tasks, containerized development, function delivery, OOMOL",
         },
         {
           name: "description",
-          content: "Create, Share and Use AI Tools",
+          content:
+            "Generate functions in a real coding environment, validate locally, and publish the same capability as an API, MCP tool, or automation task.",
         },
       ],
       headTags: [
@@ -130,7 +131,7 @@ const config = {
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "OOMOL",
-            tagline: "Create, Share and Use AI Tools",
+            tagline: "Write a function. Ship a service.",
             favicon: "img/favicon.ico",
             url: "https://oomol.com",
             sameAs: ["https://hub.oomol.com"],
@@ -172,10 +173,6 @@ const config = {
                 label: "navbar.oomol-cloud",
               },
               {
-                to: "/headless",
-                label: "navbar.oomol-headless",
-              },
-              {
                 to: "/sdk",
                 label: "navbar.oomol-sdk",
               },
@@ -197,7 +194,7 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Product",
+            title: "Platform",
             items: [
               {
                 label: "Roadmap",
@@ -218,7 +215,7 @@ const config = {
             ],
           },
           {
-            title: "Resources",
+            title: "Support",
             items: [
               {
                 label: "Support",
