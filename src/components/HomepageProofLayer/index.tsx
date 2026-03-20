@@ -1,6 +1,9 @@
 import styles from "./styles.module.scss";
 
 import { translate } from "@docusaurus/Translate";
+import type { DocusaurusContext } from "@docusaurus/types";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import React from "react";
 
 const proofSignals = [
@@ -27,17 +30,39 @@ const proofSignals = [
   },
 ];
 
-const proofScenarios = [
-  {
-    kicker: translate({ message: "HOME.ProofLayer.case1.kicker" }),
-    title: translate({ message: "HOME.ProofLayer.case1.title" }),
-    description: translate({ message: "HOME.ProofLayer.case1.description" }),
-    href: "https://pdf.oomol.com/",
-    cta: translate({ message: "HOME.ProofLayer.case1.cta" }),
-  },
-];
-
 export default function HomepageProofLayer() {
+  const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
+    i18n: { currentLocale: string };
+  };
+  const isZh = i18n.currentLocale === "zh-CN";
+
+  const proofScenarios = [
+    {
+      kicker: translate({ message: "HOME.ProofLayer.case1.kicker" }),
+      title: translate({ message: "HOME.ProofLayer.case1.title" }),
+      description: translate({ message: "HOME.ProofLayer.case1.description" }),
+      image: useBaseUrl(isZh ? "/img/proof/pdf2epub-zh.png" : "/img/proof/pdf2epub-en.png"),
+      href: "https://pdf.oomol.com/pdf-craft",
+      cta: translate({ message: "HOME.ProofLayer.case1.cta" }),
+    },
+    {
+      kicker: translate({ message: "HOME.ProofLayer.case2.kicker" }),
+      title: translate({ message: "HOME.ProofLayer.case2.title" }),
+      description: translate({ message: "HOME.ProofLayer.case2.description" }),
+      image: useBaseUrl(isZh ? "/img/proof/reader-bookshelf-zh.jpg" : "/img/proof/reader-bookshelf-en.jpg"),
+      href: "https://pdf.oomol.com/download",
+      cta: translate({ message: "HOME.ProofLayer.case2.cta" }),
+    },
+    {
+      kicker: translate({ message: "HOME.ProofLayer.case3.kicker" }),
+      title: translate({ message: "HOME.ProofLayer.case3.title" }),
+      description: translate({ message: "HOME.ProofLayer.case3.description" }),
+      image: useBaseUrl(isZh ? "/img/proof/reader-pdf-zh.jpg" : "/img/proof/reader-pdf-en.jpg"),
+      href: "https://pdf.oomol.com/download",
+      cta: translate({ message: "HOME.ProofLayer.case3.cta" }),
+    },
+  ];
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -65,7 +90,10 @@ export default function HomepageProofLayer() {
 
         <div className={styles.caseGrid}>
           {proofScenarios.map(item => (
-            <div key={item.title} className={`${styles.caseCard} ${styles.featuredCase}`}>
+            <div key={item.title} className={styles.caseCard}>
+              <div className={styles.caseMedia}>
+                <img src={item.image} alt={item.title} className={styles.caseImage} loading="lazy" />
+              </div>
               <div className={styles.caseKicker}>{item.kicker}</div>
               <h3 className={styles.caseTitle}>{item.title}</h3>
               <p className={styles.caseDescription}>{item.description}</p>

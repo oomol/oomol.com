@@ -87,67 +87,73 @@
     "message": "Not a Concept, but a Live Delivery Result"
   },
   "HOME.ProofLayer.subtitle": {
-    "message": "OOMOL does not only help you build functions. It already carries the same implementation all the way into live external services."
+    "message": "Using pdf.oomol.com as a reference, the same OOMOL system is already being shipped into multiple user-facing tools instead of rebuilding another backend layer just for launch."
   },
   "HOME.ProofLayer.note": {
     "message": "This layer now includes one live production example plus two placeholders. Later we can replace more of it with real services, team names, and usage data."
   },
   "HOME.ProofLayer.signal1.label": {
-    "message": "Delivery Path"
+    "message": "Live Project"
   },
   "HOME.ProofLayer.signal1.value": {
-    "message": "Function -> Local Validation -> Service"
-  },
-  "HOME.ProofLayer.signal1.description": {
-    "message": "Build the function, make it work locally, then deliver the same implementation instead of moving work across disconnected systems."
-  },
-  "HOME.ProofLayer.signal2.label": {
-    "message": "Delivery Format"
-  },
-  "HOME.ProofLayer.signal2.value": {
-    "message": "API / MCP / Automation"
-  },
-  "HOME.ProofLayer.signal2.description": {
-    "message": "The same capability can move directly into an interface, an agent tool, or an automation task without rewriting the implementation."
-  },
-  "HOME.ProofLayer.signal3.label": {
-    "message": "Delivery Compounding"
-  },
-  "HOME.ProofLayer.signal3.value": {
-    "message": "Install / Manage / Compose"
-  },
-  "HOME.ProofLayer.signal3.description": {
-    "message": "A release should not end at launch. It should stay available as a reusable service asset for the next round of work."
-  },
-  "HOME.ProofLayer.case1.kicker": {
-    "message": "Live Production Example"
-  },
-  "HOME.ProofLayer.case1.title": {
     "message": "pdf.oomol.com"
   },
+  "HOME.ProofLayer.signal1.description": {
+    "message": "This is not an internal demo. It is a live project that keeps shipping PDF and publishing tools to end users."
+  },
+  "HOME.ProofLayer.signal2.label": {
+    "message": "Multiple Scenarios"
+  },
+  "HOME.ProofLayer.signal2.value": {
+    "message": "Convert / Translate / Generate"
+  },
+  "HOME.ProofLayer.signal2.description": {
+    "message": "The same project already ships PDF conversion, EPUB translation, and manga translation with colorization, not just a single isolated page."
+  },
+  "HOME.ProofLayer.signal3.label": {
+    "message": "Underlying System"
+  },
+  "HOME.ProofLayer.signal3.value": {
+    "message": "OOMOL Functions / Tasks / Services"
+  },
+  "HOME.ProofLayer.signal3.description": {
+    "message": "These capabilities are not rebuilt as separate backends. They are delivered through the same OOMOL system as live, reusable services."
+  },
+  "HOME.ProofLayer.case1.kicker": {
+    "message": "Live Scenario 01"
+  },
+  "HOME.ProofLayer.case1.title": {
+    "message": "Live PDF Conversion Tool"
+  },
   "HOME.ProofLayer.case1.description": {
-    "message": "This site ships multiple PDF tools to end users, and the backend capabilities behind those tools are not rebuilt as a separate service layer. They are delivered directly through OOMOL function services."
+    "message": "This is a live web tool, not a showcase page. Users can upload PDFs and get EPUB or Markdown output through the same OOMOL delivery system."
   },
   "HOME.ProofLayer.case1.cta": {
-    "message": "Open pdf.oomol.com"
+    "message": "View Web Tool"
   },
   "HOME.ProofLayer.case2.kicker": {
-    "message": "Placeholder Scenario"
+    "message": "Live Scenario 02"
   },
   "HOME.ProofLayer.case2.title": {
-    "message": "Business API Services"
+    "message": "Desktop Shelf and Library"
   },
   "HOME.ProofLayer.case2.description": {
-    "message": "Publish a locally validated function as an API and reduce the extra setup work between implementation and delivery."
+    "message": "The same project does not stop at browser conversion. It continues into a desktop app for managing a library and carrying those outputs into real usage."
+  },
+  "HOME.ProofLayer.case2.cta": {
+    "message": "View Desktop App"
   },
   "HOME.ProofLayer.case3.kicker": {
-    "message": "Placeholder Scenario"
+    "message": "Live Scenario 03"
   },
   "HOME.ProofLayer.case3.title": {
-    "message": "Automation Tasks"
+    "message": "Desktop Reading Interface"
   },
   "HOME.ProofLayer.case3.description": {
-    "message": "Turn a working processing flow into a task so scheduled runs, triggered execution, and result delivery stay connected."
+    "message": "Delivery does not end at file output. The result keeps moving into a real reading interface where it can be opened, browsed, and managed."
+  },
+  "HOME.ProofLayer.case3.cta": {
+    "message": "View Reading Experience"
   },
   "HOME.FirstScreen.download-macos": {
     "message": "Download for macOS"

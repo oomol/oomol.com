@@ -57,9 +57,13 @@ export default function HomepageProductComparison() {
         <div className={styles.cloudSection}>
           <div className={styles.cloudCard}>
             <div className={styles.cardHeader}>
-              <div className={styles.cardIcon}>☁️</div>
-              <div className={styles.cardBadge}>
-                {translate({ message: "HOME.ProductComparison.cloud.stage" })}
+              <div className={styles.cardMetaRow}>
+                <div className={styles.cardIcon} aria-hidden="true">
+                  ☁️
+                </div>
+                <div className={styles.cardBadge}>
+                  {translate({ message: "HOME.ProductComparison.cloud.stage" })}
+                </div>
               </div>
               <h3 className={styles.cardTitle}>
                 {translate({ message: "HOME.ProductComparison.product.cloud" })}

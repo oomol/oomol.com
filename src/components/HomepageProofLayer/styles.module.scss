@@ -109,22 +109,23 @@
 }
 
 .caseGrid {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+
+  @media (max-width: 996px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .caseCard {
+  display: flex;
+  flex-direction: column;
   padding: 20px;
   border-radius: 16px;
   background: var(--ifm-background-surface-color);
   border: 1px solid var(--ifm-color-emphasis-200);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-}
-
-.featuredCase {
-  width: 100%;
-  max-width: 900px;
-  padding: 28px;
   background:
     linear-gradient(
       180deg,
@@ -132,6 +133,29 @@
       rgba(125, 127, 233, 0.02) 100%
     ),
     var(--ifm-background-surface-color);
+  height: 100%;
+}
+
+.caseMedia {
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  aspect-ratio: 16 / 10;
+  padding: 10px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(245, 247, 255, 0.9) 100%);
+}
+
+.caseImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top center;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(31, 41, 55, 0.08);
 }
 
 .caseKicker {
@@ -156,6 +180,7 @@
   font-size: 15px;
   line-height: 1.7;
   color: var(--ifm-color-emphasis-700);
+  flex: 1;
 }
 
 .caseLink {
@@ -181,7 +206,7 @@
     );
   }
 
-  .featuredCase {
+  .caseCard {
     background:
       linear-gradient(
         180deg,
@@ -189,5 +214,15 @@
         rgba(125, 127, 233, 0.05) 100%
       ),
       var(--ifm-background-surface-color);
+  }
+
+  .caseMedia {
+    background:
+      linear-gradient(180deg, rgba(28, 33, 48, 0.92) 0%, rgba(18, 21, 32, 0.88) 100%);
+  }
+
+  .caseImage {
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
   }
 }

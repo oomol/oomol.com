@@ -87,67 +87,73 @@
     "message": "不是概念，而是已经上线的交付结果"
   },
   "HOME.ProofLayer.subtitle": {
-    "message": "OOMOL 不只是帮你把函数做出来，而是已经把同一份能力真实地接到了对外服务。"
+    "message": "以 pdf.oomol.com 为例，同一套 OOMOL 能力已经被持续发布成多个面向用户的工具入口，而不是为了上线再额外重搭一层后端。"
   },
   "HOME.ProofLayer.note": {
     "message": "这一层先用一个真实上线案例，带两个占位场景。后续可以继续替换成更多真实服务、团队名称和使用数据。"
   },
   "HOME.ProofLayer.signal1.label": {
-    "message": "交付路径"
+    "message": "真实项目"
   },
   "HOME.ProofLayer.signal1.value": {
-    "message": "函数 -> 本地验证 -> 服务"
-  },
-  "HOME.ProofLayer.signal1.description": {
-    "message": "先把函数做出来，在本地跑通，再把同一份实现发出去，而不是在多个系统之间反复搬运。"
-  },
-  "HOME.ProofLayer.signal2.label": {
-    "message": "交付形态"
-  },
-  "HOME.ProofLayer.signal2.value": {
-    "message": "API / MCP / 自动化"
-  },
-  "HOME.ProofLayer.signal2.description": {
-    "message": "同一份能力可以直接走向接口、Agent 工具或任务执行，不需要为了不同出口重写实现。"
-  },
-  "HOME.ProofLayer.signal3.label": {
-    "message": "交付沉淀"
-  },
-  "HOME.ProofLayer.signal3.value": {
-    "message": "安装 / 管理 / 继续组合"
-  },
-  "HOME.ProofLayer.signal3.description": {
-    "message": "一次交付不该只是上线结束，而应该继续沉淀为团队后续可复用的服务资产。"
-  },
-  "HOME.ProofLayer.case1.kicker": {
-    "message": "真实上线案例"
-  },
-  "HOME.ProofLayer.case1.title": {
     "message": "pdf.oomol.com"
   },
+  "HOME.ProofLayer.signal1.description": {
+    "message": "这不是内部 Demo，而是一个持续对外提供 PDF 与出版处理工具的真实项目。"
+  },
+  "HOME.ProofLayer.signal2.label": {
+    "message": "同站点多场景"
+  },
+  "HOME.ProofLayer.signal2.value": {
+    "message": "转换 / 翻译 / 生成"
+  },
+  "HOME.ProofLayer.signal2.description": {
+    "message": "同一个项目里已经上线 PDF 转换、EPUB 翻译、漫画翻译与着色等多个入口，不是只有一个孤立页面。"
+  },
+  "HOME.ProofLayer.signal3.label": {
+    "message": "背后实现"
+  },
+  "HOME.ProofLayer.signal3.value": {
+    "message": "OOMOL 函数 / 任务 / 服务"
+  },
+  "HOME.ProofLayer.signal3.description": {
+    "message": "这些能力不是分别重搭后端，而是沿着同一套 OOMOL 交付体系发布为真实可用的服务。"
+  },
+  "HOME.ProofLayer.case1.kicker": {
+    "message": "真实场景 01"
+  },
+  "HOME.ProofLayer.case1.title": {
+    "message": "在线 PDF 转换入口"
+  },
   "HOME.ProofLayer.case1.description": {
-    "message": "这个站点面向用户提供多种 PDF 工具，而这些工具背后的后端能力不是额外再搭一套服务，而是直接由 OOMOL 的函数服务对外提供。函数写完，服务就能真实上线。"
+    "message": "真实上线的网页工具，不是展示页。用户可以直接上传 PDF，生成 EPUB 或 Markdown，背后能力由同一套 OOMOL 系统承接。"
   },
   "HOME.ProofLayer.case1.cta": {
-    "message": "打开 pdf.oomol.com"
+    "message": "查看在线工具"
   },
   "HOME.ProofLayer.case2.kicker": {
-    "message": "占位场景"
+    "message": "真实场景 02"
   },
   "HOME.ProofLayer.case2.title": {
-    "message": "业务接口服务"
+    "message": "桌面书架与管理"
   },
   "HOME.ProofLayer.case2.description": {
-    "message": "把本地已经验证过的函数直接发布为 API，减少从代码实现到对外服务之间的重复搭建。"
+    "message": "同一个项目不只停留在网页转换，还把结果继续接到了桌面应用里，用来管理书库、整理内容和承接后续使用。"
+  },
+  "HOME.ProofLayer.case2.cta": {
+    "message": "查看桌面应用"
   },
   "HOME.ProofLayer.case3.kicker": {
-    "message": "占位场景"
+    "message": "真实场景 03"
   },
   "HOME.ProofLayer.case3.title": {
-    "message": "自动化处理任务"
+    "message": "桌面阅读界面"
   },
   "HOME.ProofLayer.case3.description": {
-    "message": "把跑通的处理流程直接变成任务，让周期性执行、触发执行和结果交付连在一起。"
+    "message": "导出的内容不是到文件就结束，而是继续进入真实的阅读界面。交付结果能被打开、浏览、管理，而不是只停在函数执行成功。"
+  },
+  "HOME.ProofLayer.case3.cta": {
+    "message": "查看阅读体验"
   },
 
   "HOME.FirstScreen.download-macos": {
