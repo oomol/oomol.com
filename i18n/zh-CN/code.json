@@ -33,7 +33,7 @@
     "message": "AI-Native Function-to-Service"
   },
   "HOME.FirstScreen.script": {
-    "message": "函数即节点，不学新概念。本地自带容器，开发环境端云一体。Agent 全自动编程，一键交付 API、MCP 以及网页小程序。"
+    "message": "AI 时代，函数就是可以直接交付给用户的产品。oomol 让开发者把函数快速做成可部署、可调用的服务。"
   },
   "HOME.FirstScreen.pill1": {
     "message": "不学新 DSL"
@@ -57,10 +57,10 @@
     "message": "Why Delivery Breaks"
   },
   "HOME.DeliveryGap.title": {
-    "message": "问题不在代码实现，而在交付断层"
+    "message": "代码不是阻碍，部署、运维和迭代成本才是"
   },
   "HOME.DeliveryGap.subtitle": {
-    "message": "很多团队真正浪费时间的地方，不是把代码写出来，而是写完之后还要重新搭接口、部署、运行环境和交付方式。"
+    "message": "开发者总是希望将精力集中于通过技术创造出更便利高效的产品，而不是浪费大量时间在重复的标准流程工作里。"
   },
   "HOME.DeliveryGap.problem1.title": {
     "message": "写完业务，还要再搭一套后端"
