@@ -69,10 +69,14 @@ export default function HomepageProductComparison() {
                 {translate({ message: "HOME.ProductComparison.product.cloud" })}
               </h3>
               <p className={styles.cardLead}>
-                {translate({ message: "HOME.ProductComparison.cloud.capability" })}
+                {translate({
+                  message: "HOME.ProductComparison.cloud.capability",
+                })}
               </p>
               <p className={styles.cardSummary}>
-                {translate({ message: "HOME.ProductComparison.cloud.scenario" })}
+                {translate({
+                  message: "HOME.ProductComparison.cloud.scenario",
+                })}
               </p>
               <div className={styles.cardActions}>
                 <Link to="/cloud" className={styles.primaryCta}>
@@ -99,7 +103,9 @@ export default function HomepageProductComparison() {
               {deliveryOutputs.map(output => (
                 <div key={output.title} className={styles.outputCard}>
                   <h4 className={styles.outputTitle}>{output.title}</h4>
-                  <p className={styles.outputDescription}>{output.description}</p>
+                  <p className={styles.outputDescription}>
+                    {output.description}
+                  </p>
                 </div>
               ))}
             </div>

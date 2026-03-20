@@ -143,8 +143,11 @@
   aspect-ratio: 16 / 10;
   padding: 10px;
   border: 1px solid var(--ifm-color-emphasis-200);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(245, 247, 255, 0.9) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(245, 247, 255, 0.9) 100%
+  );
 }
 
 .caseImage {
@@ -217,8 +220,11 @@
   }
 
   .caseMedia {
-    background:
-      linear-gradient(180deg, rgba(28, 33, 48, 0.92) 0%, rgba(18, 21, 32, 0.88) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(28, 33, 48, 0.92) 0%,
+      rgba(18, 21, 32, 0.88) 100%
+    );
   }
 
   .caseImage {

@@ -42,7 +42,9 @@ export default function HomepageProofLayer() {
       kicker: translate({ message: "HOME.ProofLayer.case1.kicker" }),
       title: translate({ message: "HOME.ProofLayer.case1.title" }),
       description: translate({ message: "HOME.ProofLayer.case1.description" }),
-      image: useBaseUrl(isZh ? "/img/proof/pdf2epub-zh.png" : "/img/proof/pdf2epub-en.png"),
+      image: useBaseUrl(
+        isZh ? "/img/proof/pdf2epub-zh.png" : "/img/proof/pdf2epub-en.png"
+      ),
       href: "https://pdf.oomol.com/pdf-craft",
       cta: translate({ message: "HOME.ProofLayer.case1.cta" }),
     },
@@ -50,7 +52,11 @@ export default function HomepageProofLayer() {
       kicker: translate({ message: "HOME.ProofLayer.case2.kicker" }),
       title: translate({ message: "HOME.ProofLayer.case2.title" }),
       description: translate({ message: "HOME.ProofLayer.case2.description" }),
-      image: useBaseUrl(isZh ? "/img/proof/reader-bookshelf-zh.jpg" : "/img/proof/reader-bookshelf-en.jpg"),
+      image: useBaseUrl(
+        isZh
+          ? "/img/proof/reader-bookshelf-zh.jpg"
+          : "/img/proof/reader-bookshelf-en.jpg"
+      ),
       href: "https://pdf.oomol.com/download",
       cta: translate({ message: "HOME.ProofLayer.case2.cta" }),
     },
@@ -58,7 +64,9 @@ export default function HomepageProofLayer() {
       kicker: translate({ message: "HOME.ProofLayer.case3.kicker" }),
       title: translate({ message: "HOME.ProofLayer.case3.title" }),
       description: translate({ message: "HOME.ProofLayer.case3.description" }),
-      image: useBaseUrl(isZh ? "/img/proof/reader-pdf-zh.jpg" : "/img/proof/reader-pdf-en.jpg"),
+      image: useBaseUrl(
+        isZh ? "/img/proof/reader-pdf-zh.jpg" : "/img/proof/reader-pdf-en.jpg"
+      ),
       href: "https://pdf.oomol.com/download",
       cta: translate({ message: "HOME.ProofLayer.case3.cta" }),
     },
@@ -93,7 +101,12 @@ export default function HomepageProofLayer() {
           {proofScenarios.map(item => (
             <div key={item.title} className={styles.caseCard}>
               <div className={styles.caseMedia}>
-                <img src={item.image} alt={item.title} className={styles.caseImage} loading="lazy" />
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className={styles.caseImage}
+                  loading="lazy"
+                />
               </div>
               <div className={styles.caseKicker}>{item.kicker}</div>
               <h3 className={styles.caseTitle}>{item.title}</h3>

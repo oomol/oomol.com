@@ -67,7 +67,9 @@ export default function HomepageDeveloperBenefits() {
               </div>
               <div className={styles.valueBox}>
                 <div className={styles.value}>{benefit.value}</div>
-                <div className={styles.valueCaption}>{benefit.valueCaption}</div>
+                <div className={styles.valueCaption}>
+                  {benefit.valueCaption}
+                </div>
               </div>
               <div className={styles.valueLine} />
               <h3 className={styles.cardTitle}>{benefit.title}</h3>
