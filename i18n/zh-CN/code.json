@@ -193,34 +193,34 @@
     "message": "一份业务代码，直接走到交付"
   },
   "HOME.CoreFeatures.subtitle": {
-    "message": "节点就是函数，不用学新 DSL。Agent 天然擅长 Python 和 JavaScript，能全自动帮你工作；现有库、脚本和工程结构也都能直接复用。"
+    "message": "节点就是函数，不引入新概念。AI 天然擅长 Python 和 JavaScript，Agent 全自动帮你实现；内置容器让本地与云端环境保持一致，同一份实现还能一键交付成 API、MCP 或网页小程序。"
   },
   "HOME.CoreFeatures.workflow.title": {
-    "message": "01｜写代码：节点就是函数"
+    "message": "01｜节点就是函数：继续写业务代码"
   },
   "HOME.CoreFeatures.workflow.description": {
-    "message": "继续用熟悉的方式开发，不用先学平台规则。\n\n• 节点就是函数，不引入新概念\n• AI 天然擅长写 Python 和 JavaScript，Agent 可以全自动帮你工作\n• 现有库、脚本和工程结构都能直接复用，生态丰富"
+    "message": "在 OOMOL 里，节点就是函数。继续用熟悉的方式开发，不用先学平台规则。\n\n• 节点就是函数，输入输出清晰，不引入新概念\n• AI 天然擅长 Python 和 JavaScript，Agent 全自动帮你实现\n• 现有库、脚本和工程结构都能直接复用，生态丰富"
   },
   "HOME.CoreFeatures.workflow.highlight1": {
-    "message": "节点就是函数，Agent 直接开工"
+    "message": "熟悉的写法，直接把业务做出来"
   },
   "HOME.CoreFeatures.container.title": {
-    "message": "02｜本地跑通：先把结果验证清楚"
+    "message": "02｜本地容器开发：先跑通，再交付"
   },
   "HOME.CoreFeatures.container.description": {
-    "message": "内置容器，把依赖、调试和运行环境先收敛在本地。\n\n• 先验证输入输出、日志和依赖\n• 让开发环境尽量贴近交付环境\n• 把环境问题和返工留在发布前解决"
+    "message": "IDE 内置容器环境，开箱即用。\n\n• 免环境搭建，依赖、调试和运行都能直接开始\n• 本地环境与云端环境保持一致，减少返工\n• 先把结果在本地跑通，再往外交付"
   },
   "HOME.CoreFeatures.container.highlight1": {
-    "message": "先在本地跑通，再往外发"
+    "message": "先把结果跑通，不再反复 Debug 环境"
   },
   "HOME.CoreFeatures.vscode.title": {
-    "message": "03｜一键交付：同一份实现直接上线"
+    "message": "03｜一键交付：API / MCP / 网页小程序"
   },
   "HOME.CoreFeatures.vscode.description": {
-    "message": "把已经在本地跑通的同一份实现直接交付出去，不用再拆第二套后端，也不用为不同出口重复包装。\n\n• 交付成 API\n• 交付成 MCP 工具\n• 交付成网页小程序"
+    "message": "同一份已经跑通的实现，可以直接交付到不同出口，不用再拆第二套后端，也不用重复包装。\n\n• 发布成 API 服务\n• 发布成 MCP 工具\n• 发布成网页小程序"
   },
   "HOME.CoreFeatures.vscode.highlight1": {
-    "message": "代码跑通之后，交付应该顺着发生"
+    "message": "写完、跑通、直接交付"
   },
   "HOME.Lifecycle.title": {
     "message": "使用生命周期"
