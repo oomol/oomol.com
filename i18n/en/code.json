@@ -33,7 +33,7 @@
     "message": "AI-Native Function-to-Service"
   },
   "HOME.FirstScreen.script": {
-    "message": "In the AI era, functions are products that can be delivered directly to users. oomol enables developers to quickly turn functions into deployable, callable services through programming and orchestration."
+    "message": "In the AI era, functions themselves can be products delivered directly to users. Oomol enables developers to use agent-powered coding and orchestration to automatically generate and compose functions, then quickly turn them into deployable, callable services."
   },
   "HOME.FirstScreen.pill1": {
     "message": "No new DSL"
