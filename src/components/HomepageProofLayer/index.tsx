@@ -1,7 +1,8 @@
 import styles from "./styles.module.scss";
 
-import { translate } from "@docusaurus/Translate";
 import type { DocusaurusContext } from "@docusaurus/types";
+
+import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import React from "react";
