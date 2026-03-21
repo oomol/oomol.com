@@ -5,7 +5,7 @@
   background:
     linear-gradient(
       180deg,
-      color-mix(in srgb, var(--oomol-bg-base) 92%, #d7d0ea 8%) 0%,
+      color-mix(in srgb, var(--oomol-bg-base) 92%, #d8c3a2 8%) 0%,
       var(--oomol-bg-base) 100%
     );
 }
@@ -14,14 +14,22 @@
   max-width: 1320px;
   margin: 0 auto;
   padding: 0 32px;
+  display: grid;
+  gap: clamp(2rem, 4vw, 3rem);
 }
 
 .sectionHeader {
   display: grid;
+  grid-template-columns: minmax(0, 0.74fr) minmax(0, 0.26fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: end;
+  text-align: left;
+}
+
+.headerText {
+  display: grid;
   gap: 0.9rem;
   max-width: 44rem;
-  margin-bottom: clamp(2rem, 4vw, 3rem);
-  text-align: left;
 }
 
 .sectionTitle {
@@ -41,10 +49,20 @@
   color: var(--oomol-text-secondary);
 }
 
+.headerRule {
+  height: 1px;
+  margin-bottom: 0.85rem;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--oomol-primary) 26%, transparent) 0%,
+    color-mix(in srgb, var(--oomol-divider) 100%, transparent) 100%
+  );
+}
+
 .cloudSection {
   display: grid;
   grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
-  gap: 1.5rem;
+  gap: 1.6rem;
   align-items: start;
 }
 
@@ -66,6 +84,21 @@
     linear-gradient(180deg, #1a1b28 0%, #12131d 100%);
   color: rgba(243, 239, 248, 0.94);
   box-shadow: var(--oomol-shadow-lg);
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: auto 2rem 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      rgba(215, 208, 234, 0.36) 0%,
+      rgba(215, 208, 234, 0) 100%
+    );
+    pointer-events: none;
+  }
 }
 
 .cardMetaRow {
@@ -138,8 +171,8 @@
   width: fit-content;
   align-items: center;
   justify-content: center;
-  min-height: 46px;
-  padding: 0 1rem;
+  min-height: 48px;
+  padding: 0 1.05rem;
   border-radius: 999px;
   background: var(--oomol-white);
   color: #1f2137;
@@ -147,10 +180,14 @@
   font-weight: 700;
   text-decoration: none;
   box-shadow: var(--oomol-shadow-sm);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 
   &:hover {
     text-decoration: none;
     transform: translateY(-1px);
+    box-shadow: var(--oomol-shadow-md);
   }
 }
 
@@ -163,6 +200,7 @@
 .detailPanel {
   display: grid;
   gap: 1rem;
+  padding-top: 0.35rem;
 }
 
 .outputsIntro,
@@ -174,7 +212,25 @@
 }
 
 .outputsIntro {
-  padding: 1.25rem 1.3rem;
+  padding: 1.3rem 1.35rem;
+  border-radius: 1.5rem;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 1.35rem;
+    right: 1.35rem;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--oomol-primary) 74%, white) 0%,
+      rgba(132, 138, 208, 0.12) 100%
+    );
+  }
 }
 
 .infoLabel,
@@ -193,7 +249,12 @@
   color: var(--oomol-text-secondary);
 }
 
-.outputsGrid,
+.outputsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
 .benefitsGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -202,7 +263,8 @@
 
 .outputCard,
 .benefitCard {
-  padding: 1.2rem;
+  padding: 1.15rem 1.15rem 1.2rem;
+  min-height: 100%;
 }
 
 .outputTitle,
@@ -223,6 +285,14 @@
   color: var(--oomol-text-secondary);
 }
 
+.benefitLabel {
+  margin-bottom: 0.4rem;
+}
+
+.benefitValue {
+  margin-bottom: 0.45rem;
+}
+
 @media (max-width: 996px) {
   .comparisonSection {
     padding: 4rem 0;
@@ -234,6 +304,18 @@
 
   .cloudSection {
     grid-template-columns: 1fr;
+  }
+
+  .sectionHeader {
+    grid-template-columns: 1fr;
+  }
+
+  .headerRule {
+    display: none;
+  }
+
+  .outputsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

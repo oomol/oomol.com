@@ -8,11 +8,18 @@
   padding: 0 24px;
 }
 
+.topGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: end;
+  margin-bottom: 1.35rem;
+}
+
 .header {
   display: grid;
   gap: 0.9rem;
   max-width: 44rem;
-  margin-bottom: 2rem;
   text-align: left;
 }
 
@@ -56,7 +63,6 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
-  margin-bottom: 1.25rem;
 }
 
 .signalCard {
@@ -104,6 +110,38 @@
   border: 1px solid var(--oomol-divider);
   background: color-mix(in srgb, var(--oomol-bg-elevated) 90%, white 10%);
   box-shadow: var(--oomol-shadow-sm);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--oomol-shadow-md);
+  }
+}
+
+.featuredCase {
+  padding: 1.15rem;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(132, 138, 208, 0.08) 0%,
+      rgba(132, 138, 208, 0) 38%
+    ),
+    color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%);
+
+  .caseMedia {
+    padding: 0.9rem;
+  }
+
+  .caseTitle {
+    font-size: 1.75rem;
+    line-height: 1.14;
+  }
+
+  .caseDescription {
+    max-width: 34ch;
+  }
 }
 
 .caseMedia {
@@ -113,7 +151,7 @@
   aspect-ratio: 16 / 10;
   padding: 0.8rem;
   border: 1px solid var(--oomol-divider);
-  background: linear-gradient(180deg, rgba(249, 246, 252, 0.86) 0%, rgba(236, 232, 244, 0.92) 100%);
+  background: linear-gradient(180deg, rgba(255, 250, 244, 0.86) 0%, rgba(245, 238, 226, 0.92) 100%);
 }
 
 .caseImage {
@@ -176,6 +214,7 @@
 }
 
 @media (max-width: 996px) {
+  .topGrid,
   .signalGrid,
   .caseGrid {
     grid-template-columns: 1fr;

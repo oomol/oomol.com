@@ -4,32 +4,76 @@
 }
 
 .download {
-  min-width: 256px;
-  min-height: 48px;
+  min-width: 268px;
+  min-height: 54px;
   border-radius: 999px;
   background:
     linear-gradient(
       180deg,
-      color-mix(in srgb, var(--oomol-primary) 86%, white) 0%,
+      color-mix(in srgb, var(--oomol-primary) 82%, white) 0%,
       var(--oomol-primary) 100%
     );
   color: var(--oomol-white);
   font-size: 1rem;
-  font-weight: 650;
+  font-weight: 700;
   border: 1px solid color-mix(in srgb, var(--oomol-primary) 70%, black 10%);
-  box-shadow: var(--oomol-shadow-md);
-  padding: 12px 22px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 14px 28px rgba(50, 41, 79, 0.18);
+  padding: 0;
   white-space: nowrap;
   letter-spacing: 0.01em;
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+
+  :global(a),
+  :global(button) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.72rem;
+    width: 100%;
+    min-height: inherit;
+    padding: 0 1.25rem;
+  }
+
+  :global(.i-codicon-desktop-download) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.95rem;
+    height: 1.95rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    font-size: 1rem !important;
+    flex-shrink: 0;
+  }
 
   &:hover {
-    background-color: var(--oomol-primary-hover);
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--oomol-primary-hover) 82%, white) 0%,
+        var(--oomol-primary-hover) 100%
+      );
     color: var(--oomol-white);
     transform: translateY(-1px);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.22),
+      0 18px 34px rgba(50, 41, 79, 0.22);
   }
 
   &:active {
-    background-color: var(--oomol-primary-active);
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--oomol-primary-active) 84%, white) 0%,
+        var(--oomol-primary-active) 100%
+      );
     transform: translateY(0);
   }
 
@@ -49,7 +93,8 @@
 
 .chipNote {
   font-size: 13px;
-  margin-top: 8px;
+  margin-top: 10px;
+  padding-left: 0.3rem;
   color: var(--oomol-text-tertiary);
 }
 
@@ -62,7 +107,8 @@
 
 .windowsSubtitle {
   font-size: 13px;
-  margin-top: 8px;
+  margin-top: 10px;
+  padding-left: 0.3rem;
   color: var(--oomol-text-tertiary);
 }
 

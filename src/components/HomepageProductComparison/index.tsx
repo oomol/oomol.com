@@ -46,12 +46,15 @@ export default function HomepageProductComparison() {
     <section className={styles.comparisonSection}>
       <div className={styles.container}>
         <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>
-            {translate({ message: "HOME.ProductComparison.title" })}
-          </h2>
-          <p className={styles.sectionSubtitle}>
-            {translate({ message: "HOME.ProductComparison.subtitle" })}
-          </p>
+          <div className={styles.headerText}>
+            <h2 className={styles.sectionTitle}>
+              {translate({ message: "HOME.ProductComparison.title" })}
+            </h2>
+            <p className={styles.sectionSubtitle}>
+              {translate({ message: "HOME.ProductComparison.subtitle" })}
+            </p>
+          </div>
+          <div className={styles.headerRule} aria-hidden="true" />
         </div>
 
         <div className={styles.cloudSection}>

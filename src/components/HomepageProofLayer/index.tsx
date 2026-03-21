@@ -75,31 +75,40 @@ export default function HomepageProofLayer() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <div className={styles.badge}>
-            {translate({ message: "HOME.ProofLayer.badge" })}
-          </div>
-          <h2 className={styles.title}>
-            {translate({ message: "HOME.ProofLayer.title" })}
-          </h2>
-          <p className={styles.subtitle}>
-            {translate({ message: "HOME.ProofLayer.subtitle" })}
-          </p>
-        </div>
-
-        <div className={styles.signalGrid}>
-          {proofSignals.map(signal => (
-            <div key={signal.label} className={styles.signalCard}>
-              <div className={styles.signalLabel}>{signal.label}</div>
-              <div className={styles.signalValue}>{signal.value}</div>
-              <p className={styles.signalDescription}>{signal.description}</p>
+        <div className={styles.topGrid}>
+          <div className={styles.header}>
+            <div className={styles.badge}>
+              {translate({ message: "HOME.ProofLayer.badge" })}
             </div>
-          ))}
+            <h2 className={styles.title}>
+              {translate({ message: "HOME.ProofLayer.title" })}
+            </h2>
+            <p className={styles.subtitle}>
+              {translate({ message: "HOME.ProofLayer.subtitle" })}
+            </p>
+          </div>
+
+          <div className={styles.signalGrid}>
+            {proofSignals.map(signal => (
+              <div key={signal.label} className={styles.signalCard}>
+                <div className={styles.signalLabel}>{signal.label}</div>
+                <div className={styles.signalValue}>{signal.value}</div>
+                <p className={styles.signalDescription}>
+                  {signal.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className={styles.caseGrid}>
-          {proofScenarios.map(item => (
-            <div key={item.title} className={styles.caseCard}>
+          {proofScenarios.map((item, index) => (
+            <div
+              key={item.title}
+              className={`${styles.caseCard} ${
+                index === 0 ? styles.featuredCase : ""
+              }`}
+            >
               <div className={styles.caseMedia}>
                 <img
                   src={item.image}

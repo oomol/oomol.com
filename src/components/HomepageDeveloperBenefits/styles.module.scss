@@ -1,5 +1,20 @@
 .section {
   padding: clamp(4rem, 8vw, 6rem) 0 clamp(2rem, 4vw, 3rem);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 12rem;
+    background:
+      radial-gradient(
+        circle at 8% 0%,
+        rgba(132, 138, 208, 0.1) 0%,
+        rgba(132, 138, 208, 0) 46%
+      );
+    pointer-events: none;
+  }
 }
 
 .container {
@@ -14,8 +29,9 @@
 
 .header {
   display: grid;
-  gap: 0.95rem;
+  gap: 1rem;
   text-align: left;
+  padding-top: 0.25rem;
 }
 
 .badge,
@@ -61,7 +77,7 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.75rem;
+  gap: 1.15rem;
 }
 
 .card {
@@ -69,16 +85,43 @@
   flex-direction: column;
   gap: 1.1rem;
   min-height: 100%;
-  padding: 1.4rem 0 0;
-  border-top: 2px solid var(--oomol-border-strong);
+  padding: 1.35rem 1.4rem 1.45rem;
+  border: 1px solid var(--oomol-divider);
+  border-radius: 1.7rem;
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%);
+  box-shadow: var(--oomol-shadow-sm);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 1.4rem;
+    right: 1.4rem;
+    height: 2px;
+    border-radius: 999px;
+  }
 }
 
 .modelCard {
-  border-color: color-mix(in srgb, var(--oomol-primary) 58%, var(--oomol-border-default));
+  &::before {
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--oomol-primary) 82%, white) 0%,
+      rgba(132, 138, 208, 0.18) 100%
+    );
+  }
 }
 
 .cloudCard {
-  border-color: color-mix(in srgb, var(--oomol-primary) 52%, var(--oomol-border-default));
+  &::before {
+    background: linear-gradient(
+      90deg,
+      rgba(111, 118, 191, 0.92) 0%,
+      rgba(111, 118, 191, 0.16) 100%
+    );
+  }
 }
 
 .cardTop {
@@ -86,20 +129,21 @@
   justify-content: space-between;
   gap: 1rem;
   align-items: flex-start;
+  padding-bottom: 0.35rem;
 }
 
 .tag {
   padding: 0.32rem 0.7rem;
   border-radius: 999px;
   border: 1px solid var(--oomol-divider);
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 88%, transparent);
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 82%, white 18%);
 }
 
 .valueBox {
   display: grid;
-  gap: 0.3rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--oomol-divider);
+  gap: 0.4rem;
+  padding: 0.15rem 0 0.85rem;
+  border-bottom: 1px solid var(--oomol-divider-subtle);
 }
 
 .value {
@@ -133,6 +177,17 @@
   color: var(--oomol-text-secondary);
 }
 
+.cardDescription {
+  max-width: 31ch;
+}
+
+.cardNote {
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--oomol-divider);
+  color: var(--oomol-text-tertiary);
+  font-size: 0.95rem;
+}
+
 .cardFooter {
   margin-top: auto;
   padding-top: 0.5rem;
@@ -142,6 +197,11 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
+  width: fit-content;
+  min-height: 2.5rem;
+  padding: 0 0.85rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--oomol-primary-bg) 70%, white 30%);
   font-size: 0.96rem;
   font-weight: 650;
   color: var(--oomol-primary-text);
@@ -154,6 +214,7 @@
 
   &:hover {
     text-decoration: none;
+    background: color-mix(in srgb, var(--oomol-primary-bg-hover) 76%, white 24%);
 
     &::after {
       transform: translateX(2px);
