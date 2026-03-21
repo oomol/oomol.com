@@ -12,8 +12,8 @@
   background:
     radial-gradient(
       circle at top left,
-      rgba(195, 158, 89, 0.14) 0%,
-      rgba(195, 158, 89, 0) 34%
+      rgba(129, 120, 176, 0.16) 0%,
+      rgba(129, 120, 176, 0) 36%
     ),
     radial-gradient(
       circle at 80% 18%,
@@ -31,8 +31,8 @@
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(rgba(99, 81, 52, 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(99, 81, 52, 0.06) 1px, transparent 1px);
+      linear-gradient(rgba(102, 95, 136, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(102, 95, 136, 0.06) 1px, transparent 1px);
     background-size: 8.5rem 8.5rem;
     mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75), transparent 90%);
     pointer-events: none;
@@ -207,8 +207,8 @@
     background:
       radial-gradient(
         circle at top left,
-        rgba(204, 175, 117, 0.12) 0%,
-        rgba(204, 175, 117, 0) 34%
+        rgba(155, 146, 208, 0.16) 0%,
+        rgba(155, 146, 208, 0) 36%
       ),
       radial-gradient(
         circle at 80% 18%,
@@ -217,23 +217,23 @@
       ),
       linear-gradient(
         180deg,
-        rgba(22, 25, 24, 0.92) 0%,
-        rgba(19, 21, 20, 0.98) 100%
+        rgba(20, 19, 31, 0.94) 0%,
+        rgba(13, 12, 21, 0.99) 100%
       );
   }
 
   .background::after {
     background:
-      linear-gradient(rgba(220, 208, 188, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(220, 208, 188, 0.08) 1px, transparent 1px);
+      linear-gradient(rgba(204, 196, 223, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(204, 196, 223, 0.08) 1px, transparent 1px);
   }
 
   .screenshotFrame {
     background:
       linear-gradient(
         180deg,
-        rgba(30, 34, 33, 0.96) 0%,
-        rgba(24, 28, 27, 0.98) 100%
+        rgba(31, 30, 45, 0.96) 0%,
+        rgba(21, 20, 31, 0.98) 100%
       );
     border-color: color-mix(in srgb, var(--oomol-border-default) 82%, black);
   }

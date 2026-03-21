@@ -31,7 +31,7 @@
     content: "";
     width: 0.8rem;
     height: 1px;
-    background: #84769a;
+    background: var(--oomol-primary);
   }
 }
 
@@ -113,7 +113,7 @@
   aspect-ratio: 16 / 10;
   padding: 0.8rem;
   border: 1px solid var(--oomol-divider);
-  background: linear-gradient(180deg, rgba(255, 250, 244, 0.86) 0%, rgba(245, 238, 226, 0.92) 100%);
+  background: linear-gradient(180deg, rgba(249, 246, 252, 0.86) 0%, rgba(236, 232, 244, 0.92) 100%);
 }
 
 .caseImage {
@@ -194,6 +194,6 @@
   }
 
   .caseMedia {
-    background: linear-gradient(180deg, rgba(37, 43, 40, 0.92) 0%, rgba(23, 27, 25, 0.96) 100%);
+    background: linear-gradient(180deg, rgba(37, 35, 53, 0.92) 0%, rgba(23, 22, 34, 0.96) 100%);
   }
 }

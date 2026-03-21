@@ -248,7 +248,7 @@ $desktop-width: $breakpoint-xl;
 }
 
 @mixin linearGradientColor {
-  background-image: linear-gradient(90deg, #84769a 0%, var(--oomol-primary) 100%);
+  background-image: linear-gradient(90deg, #7572a5 0%, var(--oomol-primary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

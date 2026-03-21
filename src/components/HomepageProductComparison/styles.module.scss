@@ -5,7 +5,7 @@
   background:
     linear-gradient(
       180deg,
-      color-mix(in srgb, var(--oomol-bg-base) 92%, #d8c3a2 8%) 0%,
+      color-mix(in srgb, var(--oomol-bg-base) 92%, #d7d0ea 8%) 0%,
       var(--oomol-bg-base) 100%
     );
 }
@@ -64,7 +64,7 @@
       rgba(132, 138, 208, 0) 34%
     ),
     linear-gradient(180deg, #1a1b28 0%, #12131d 100%);
-  color: rgba(248, 242, 233, 0.94);
+  color: rgba(243, 239, 248, 0.94);
   box-shadow: var(--oomol-shadow-lg);
 }
 
@@ -82,7 +82,7 @@
   min-width: 2.25rem;
   min-height: 2.25rem;
   border-radius: 999px;
-  border: 1px solid rgba(232, 223, 209, 0.18);
+  border: 1px solid rgba(221, 214, 231, 0.18);
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -95,8 +95,8 @@
   align-items: center;
   padding: 0.35rem 0.8rem;
   border-radius: 999px;
-  background: rgba(248, 242, 233, 0.08);
-  border: 1px solid rgba(248, 242, 233, 0.12);
+  background: rgba(243, 239, 248, 0.08);
+  border: 1px solid rgba(243, 239, 248, 0.12);
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -117,14 +117,14 @@
   font-size: 1.12rem;
   line-height: 1.55;
   font-weight: 600;
-  color: rgba(248, 242, 233, 0.92);
+  color: rgba(243, 239, 248, 0.92);
 }
 
 .cardSummary {
   margin: 0;
   font-size: 1rem;
   line-height: 1.8;
-  color: rgba(223, 212, 196, 0.76);
+  color: rgba(221, 214, 231, 0.76);
 }
 
 .cardActions {
@@ -157,7 +157,7 @@
 .inlineNote {
   font-size: 0.92rem;
   line-height: 1.7;
-  color: rgba(223, 212, 196, 0.72);
+  color: rgba(221, 214, 231, 0.72);
 }
 
 .detailPanel {
