@@ -33,7 +33,7 @@
     "message": "AI-Native Function-to-Service"
   },
   "HOME.FirstScreen.script": {
-    "message": "在 AI 时代，函数本身就可以成为直接交付给用户的产品。Oomol 让开发者借助 Agent 的编程与编排能力，全自动生成并组合函数，快速构建出可部署、可调用的服务。"
+    "message": "AI 时代，函数就是产品。Oomol Agent 自动生成并编排函数，让开发者快速构建可部署、可调用的服务。"
   },
   "HOME.FirstScreen.pill1": {
     "message": "不学新 DSL"
