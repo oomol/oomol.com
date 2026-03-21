@@ -2797,7 +2797,7 @@
     "message": "这样 Agent、代码和工具链才能一起工作，而不是彼此割裂。"
   },
   "STUDIO.principle3.title": {
-    "message": "3. 先在本地验证，再决定如何交付"
+    "message": "3. 端、云开发环境一致，零成本交付"
   },
   "STUDIO.principle3.paragraph1": {
     "message": "函数能力真正麻烦的地方，往往不是写出来，而是依赖、环境和运行结果不可控。"

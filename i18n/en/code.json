@@ -2797,7 +2797,7 @@
     "message": "AI, code, and the toolchain need to work together instead of forcing you to switch contexts."
   },
   "STUDIO.principle3.title": {
-    "message": "3. Validate Locally Before Deciding How to Deliver"
+    "message": "3. Local and Cloud Environments Match, Zero-Cost Delivery"
   },
   "STUDIO.principle3.paragraph1": {
     "message": "The hard part of function delivery is often not writing the code, but controlling dependencies, environment, and runtime behavior."
