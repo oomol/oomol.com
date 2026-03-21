@@ -11,52 +11,52 @@
   /* ----------------------
      背景色 (Background)
      ---------------------- */
-  --oomol-bg-base: #f6f0e6;
-  --oomol-bg-container: #eee5d8;
-  --oomol-bg-elevated: #fcf8f2;
-  --oomol-bg-spotlight: #e6dccd;
-  --oomol-bg-layout: #ece3d5;
+  --oomol-bg-base: #f3eef8;
+  --oomol-bg-container: #ebe5f3;
+  --oomol-bg-elevated: #faf7fd;
+  --oomol-bg-spotlight: #e2daec;
+  --oomol-bg-layout: #e8e1f0;
 
   /* ----------------------
      文字色 (Text)
      ---------------------- */
-  --oomol-text-primary: rgba(28, 25, 20, 0.92);
-  --oomol-text-secondary: rgba(56, 49, 39, 0.72);
-  --oomol-text-tertiary: rgba(79, 69, 55, 0.56);
+  --oomol-text-primary: rgba(30, 27, 39, 0.92);
+  --oomol-text-secondary: rgba(57, 51, 71, 0.72);
+  --oomol-text-tertiary: rgba(82, 74, 100, 0.56);
   --oomol-text-quaternary: rgba(
-    79,
-    69,
-    55,
+    82,
+    74,
+    100,
     0.46
   ); /* WCAG AA: 4.5:1 minimum for text */
-  --oomol-text-disabled: rgba(79, 69, 55, 0.46); /* WCAG AA compliant */
-  --oomol-text-inverse: #f7f2e8;
+  --oomol-text-disabled: rgba(82, 74, 100, 0.46); /* WCAG AA compliant */
+  --oomol-text-inverse: #f4effa;
 
   /* ----------------------
      边框色 (Border)
      ---------------------- */
-  --oomol-border-default: #d2c2ab;
-  --oomol-border-subtle: #e7ddcf;
-  --oomol-border-strong: #b59f80;
+  --oomol-border-default: #cfc5dd;
+  --oomol-border-subtle: #e4ddef;
+  --oomol-border-strong: #9e94b6;
 
   /* ----------------------
      分割线 (Divider)
      ---------------------- */
-  --oomol-divider: rgba(63, 53, 40, 0.12);
-  --oomol-divider-subtle: rgba(63, 53, 40, 0.06);
+  --oomol-divider: rgba(64, 56, 84, 0.12);
+  --oomol-divider-subtle: rgba(64, 56, 84, 0.06);
 
   /* ----------------------
      遮罩层 (Mask)
      ---------------------- */
-  --oomol-mask: rgba(28, 25, 20, 0.52);
+  --oomol-mask: rgba(22, 19, 31, 0.52);
 
   /* ----------------------
      填充色 (Fill)
      ---------------------- */
-  --oomol-fill-primary: rgba(41, 35, 27, 0.14);
-  --oomol-fill-secondary: rgba(41, 35, 27, 0.08);
-  --oomol-fill-tertiary: rgba(41, 35, 27, 0.05);
-  --oomol-fill-quaternary: rgba(41, 35, 27, 0.03);
+  --oomol-fill-primary: rgba(45, 38, 61, 0.14);
+  --oomol-fill-secondary: rgba(45, 38, 61, 0.08);
+  --oomol-fill-tertiary: rgba(45, 38, 61, 0.05);
+  --oomol-fill-quaternary: rgba(45, 38, 61, 0.03);
 
   /* ----------------------
      品牌色 (Brand)
@@ -72,7 +72,7 @@
   --oomol-primary-text-active: #45486f;
 
   /* 白色系主题色 - 用于主题色背景上的文字 */
-  --oomol-white: #fffaf2;
+  --oomol-white: #fdf9ff;
 
   /* ----------------------
      产品色 (Product Colors)
@@ -130,17 +130,17 @@
   /* ----------------------
      悬停效果 (Hover)
      ---------------------- */
-  --oomol-hover-bg: rgba(28, 25, 20, 0.07);
+  --oomol-hover-bg: rgba(30, 27, 39, 0.07);
 
   /* ----------------------
      阴影 (Shadow)
      ---------------------- */
   --oomol-shadow-sm:
-    0 1px 2px rgba(34, 26, 16, 0.05), 0 8px 16px rgba(34, 26, 16, 0.04);
+    0 1px 2px rgba(37, 31, 52, 0.05), 0 8px 16px rgba(37, 31, 52, 0.04);
   --oomol-shadow-md:
-    0 16px 36px rgba(34, 26, 16, 0.1), 0 6px 12px rgba(34, 26, 16, 0.06);
+    0 16px 36px rgba(37, 31, 52, 0.1), 0 6px 12px rgba(37, 31, 52, 0.06);
   --oomol-shadow-lg:
-    0 28px 60px rgba(26, 21, 14, 0.14), 0 10px 24px rgba(26, 21, 14, 0.08);
+    0 28px 60px rgba(31, 26, 47, 0.14), 0 10px 24px rgba(31, 26, 47, 0.08);
 
   /* ----------------------
      Shadcn UI 变量 (映射到 Oomol 颜色体系)
@@ -155,35 +155,35 @@
 
   /* 背景和前景 */
   --background: 0 0% 100%; /* 白色背景 */
-  --foreground: 30 17% 9%; /* 映射到 --oomol-text-primary */
+  --foreground: 259 18% 12%; /* 映射到 --oomol-text-primary */
 
   /* 主色 - Oomol 紫色 */
   --primary: 237 23% 43%;
-  --primary-foreground: 36 55% 97%;
+  --primary-foreground: 270 38% 98%;
 
   /* 次要色 */
-  --secondary: 37 34% 94%;
-  --secondary-foreground: 30 17% 9%;
+  --secondary: 266 28% 94%;
+  --secondary-foreground: 259 18% 12%;
 
   /* 危险色 */
   --destructive: 0 100% 65%; /* 映射到 --oomol-error #ff4d4f */
   --destructive-foreground: 0 0% 100%;
 
   /* 静音色 */
-  --muted: 37 30% 91%;
-  --muted-foreground: 31 18% 36%;
+  --muted: 266 24% 91%;
+  --muted-foreground: 262 15% 35%;
 
   /* 强调色 */
-  --accent: 37 27% 89%;
-  --accent-foreground: 30 17% 9%;
+  --accent: 264 26% 88%;
+  --accent-foreground: 259 18% 12%;
 
   /* 弹出层 */
-  --popover: 37 45% 97%;
-  --popover-foreground: 30 17% 9%;
+  --popover: 270 34% 97%;
+  --popover-foreground: 259 18% 12%;
 
   /* 卡片 */
-  --card: 37 45% 97%;
-  --card-foreground: 30 17% 9%;
+  --card: 270 34% 97%;
+  --card-foreground: 259 18% 12%;
 }
 
 /* ============================================
