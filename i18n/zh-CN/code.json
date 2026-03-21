@@ -87,10 +87,10 @@
     "message": "Live Proof"
   },
   "HOME.ProofLayer.title": {
-    "message": "不是概念，而是已经上线的交付结果"
+    "message": "这些能力，已经被做成真实产品"
   },
   "HOME.ProofLayer.subtitle": {
-    "message": "以 pdf.oomol.com 为例，同一套 OOMOL 能力已经被持续发布成多个面向用户的工具入口，而不是为了上线再额外重搭一层后端。"
+    "message": "以 pdf.oomol.com 为例，同一套 OOMOL 能力已经组合成多个面向用户的工具与服务，并持续稳定运行。"
   },
   "HOME.ProofLayer.note": {
     "message": "这一层先用一个真实上线案例，带两个占位场景。后续可以继续替换成更多真实服务、团队名称和使用数据。"

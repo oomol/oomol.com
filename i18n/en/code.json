@@ -87,10 +87,10 @@
     "message": "Live Proof"
   },
   "HOME.ProofLayer.title": {
-    "message": "Not a Concept, but a Live Delivery Result"
+    "message": "These Capabilities Have Already Become Real Products"
   },
   "HOME.ProofLayer.subtitle": {
-    "message": "Using pdf.oomol.com as a reference, the same OOMOL system is already being shipped into multiple user-facing tools instead of rebuilding another backend layer just for launch."
+    "message": "Using pdf.oomol.com as an example, the same OOMOL capabilities have already been combined into multiple user-facing tools and services, and continue to run reliably."
   },
   "HOME.ProofLayer.note": {
     "message": "This layer now includes one live production example plus two placeholders. Later we can replace more of it with real services, team names, and usage data."
