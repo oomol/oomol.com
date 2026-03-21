@@ -102,12 +102,6 @@
   .value {
     font-size: clamp(3.2rem, 5.4vw, 4.9rem);
   }
-
-  .valueLine {
-    width: 116px;
-    height: 4px;
-    background: var(--ifm-heading-color);
-  }
 }
 
 .cardTop {
@@ -157,14 +151,6 @@
   line-height: 1.5;
   font-weight: 700;
   color: var(--oomol-text-secondary);
-}
-
-.valueLine {
-  width: 88px;
-  height: 3px;
-  margin-bottom: 18px;
-  border-radius: 999px;
-  background: var(--ifm-color-emphasis-300);
 }
 
 .eyebrow {

@@ -71,7 +71,6 @@ export default function HomepageDeveloperBenefits() {
                   {benefit.valueCaption}
                 </div>
               </div>
-              <div className={styles.valueLine} />
               <h3 className={styles.cardTitle}>{benefit.title}</h3>
               <p className={styles.cardDescription}>{benefit.description}</p>
               <p className={styles.cardNote}>{benefit.note}</p>
