@@ -2785,7 +2785,7 @@
     "message": "// Output port: \"result\""
   },
   "STUDIO.principle2.title": {
-    "message": "2. Do Not Downgrade the Development Environment"
+    "message": "2. Do Not Downgrade Your Developer Experience"
   },
   "STUDIO.principle2.paragraph1": {
     "message": "Visual tooling should not come at the cost of a worse developer experience."
