@@ -27,13 +27,13 @@
     "message": "社区"
   },
   "HOME.page.title": {
-    "message": "OOMOL - 给开发者的 AI-Native Function-to-Service 平台"
+    "message": "OOMOL - 给开发者的函数生成与交付平台"
   },
   "HOME.FirstScreen.slogan": {
     "message": "写好函数，直接交付"
   },
   "HOME.FirstScreen.kicker": {
-    "message": "给开发者的函数交付平台"
+    "message": "给开发者的函数生成与交付平台"
   },
   "HOME.FirstScreen.script": {
     "message": "让 Agent 帮你生成和编排函数，在真实 coding 环境里先把能力跑通，再直接发布成 API、MCP 工具或自动化任务。"
@@ -45,19 +45,19 @@
     "message": "本地先跑通"
   },
   "HOME.FirstScreen.pill3": {
-    "message": "直接发到 Cloud"
+    "message": "直接交付到云端"
   },
   "HOME.FirstScreen.caption": {
-    "message": "Code -> Validate -> Ship"
+    "message": "生成 -> 验证 -> 交付"
   },
   "HOME.FirstScreen.offer1": {
-    "message": "支持接入你自己的 AI 模型，当前推荐 GLM-5"
+    "message": "支持接入自有 AI 模型，当前推荐 GLM-5"
   },
   "HOME.FirstScreen.offer2": {
     "message": "每月赠送 200 分钟 Cloud Task"
   },
   "HOME.DeliveryGap.badge": {
-    "message": "Why Delivery Breaks"
+    "message": "为什么交付会卡住"
   },
   "HOME.DeliveryGap.title": {
     "message": "代码不是阻碍，部署、运维和迭代成本才是"
@@ -84,13 +84,13 @@
     "message": "为了 API、MCP 工具和自动化任务，团队经常围着同一份实现反复改造，交付成本被重复放大。"
   },
   "HOME.ProofLayer.badge": {
-    "message": "Live Proof"
+    "message": "真实案例"
   },
   "HOME.ProofLayer.title": {
-    "message": "这些能力，已经被做成真实产品"
+    "message": "这些能力，已经被做成真实可用的产品"
   },
   "HOME.ProofLayer.subtitle": {
-    "message": "以 pdf.oomol.com 为例，同一套 OOMOL 能力已经组合成多个面向用户的工具与服务，并持续稳定运行。"
+    "message": "以 pdf.oomol.com 为例，同一套 OOMOL 能力已经组合成多个面向真实用户的工具与服务，并在持续稳定运行。"
   },
   "HOME.ProofLayer.note": {
     "message": "这一层先用一个真实上线案例，带两个占位场景。后续可以继续替换成更多真实服务、团队名称和使用数据。"
@@ -607,28 +607,28 @@
     "message": "智能对话工具，通过自然语言交互使用各种 AI 功能。"
   },
   "HOME.CommunityShare.title": {
-    "message": "发布函数即可自由组合、轻松分享"
+    "message": "发布出去的函数，还能继续组合和复用"
   },
   "HOME.CommunityShare.subtitle": {
-    "message": "发布不是终点，而是把能力沉淀为可复用的服务资产，让每一次交付都能成为后续创新的基础。"
+    "message": "发布不是终点，而是把能力沉淀成可复用的资产。每交付一次，下一次开发就能少写一点、少搭一点。"
   },
   "HOME.CommunityShare.point1.title": {
-    "message": "随时取回自己的能力"
+    "message": "随时装回自己用"
   },
   "HOME.CommunityShare.point1.description": {
-    "message": "把已经发布过的函数直接装回自己的环境，下一次开发无需从零开始。"
+    "message": "把已经发布过的函数重新装回自己的环境，下一次开发不用再从零开始。"
   },
   "HOME.CommunityShare.point2.title": {
-    "message": "沉淀自己的函数资产"
+    "message": "逐步积累自己的函数资产"
   },
   "HOME.CommunityShare.point2.description": {
     "message": "每次发布都会留下可复用的能力，逐步积累成你自己的函数资产。"
   },
   "HOME.CommunityShare.point3.title": {
-    "message": "不断组合新的服务"
+    "message": "继续拼出新的服务"
   },
   "HOME.CommunityShare.point3.description": {
-    "message": "基于已经发布的函数继续组合和扩展，把旧能力不断变成新的作品和服务。"
+    "message": "基于已经发布的函数继续组合和扩展，把已有能力不断变成新的作品和服务。"
   },
   "HOME.Features.title": {
     "message": "功能特点"
@@ -1025,7 +1025,7 @@
     "message": "$0"
   },
   "PRICING.subscription.free.description": {
-    "message": "适合个人开发者，相关资源服务全都自己搞定"
+    "message": "适合开发者个人使用，相关资源服务全都自己搞定"
   },
   "PRICING.subscription.free.feature1": {
     "message": "调用任务，每月 200 次"
@@ -2398,7 +2398,7 @@
     "message": "把已经跑通的函数直接交付成云服务"
   },
   "HOME.ProductComparison.subtitle": {
-    "message": "OOMOL Cloud 不是另一个开发环境，而是把你已经在本地验证过的能力，继续接到真实线上交付的那一层。"
+    "message": "OOMOL Cloud 不是另一个开发环境，而是把你已经在本地验证过的能力，继续接到真实线上交付的那一层服务。"
   },
   "HOME.ChatAgent.title": {
     "message": "OOMOL Chat & Agent 生态"
@@ -2458,7 +2458,7 @@
     "message": "支持容器等开源基础设施，可深度定制、灵活集成、可控运行。"
   },
   "HOME.ProductComparison.cloud.stage": {
-    "message": "更快上线，少背运维"
+    "message": "更快上线，更少运维"
   },
   "HOME.ProductComparison.cloud.capability": {
     "message": "把已经跑通的能力直接发到线上，不必再重搭接口、运行时和扩缩容。"
@@ -2473,7 +2473,7 @@
     "message": "查看 OOMOL Cloud"
   },
   "HOME.ProductComparison.outputIntro": {
-    "message": "Cloud Delivery"
+    "message": "云端交付"
   },
   "HOME.ProductComparison.outputSummary": {
     "message": "同一份已经验证过的函数实现，可以继续交付为 API、MCP 工具或自动化任务，而不是为每个出口再搭一套系统。"
@@ -2509,19 +2509,19 @@
     "message": "运维负担"
   },
   "HOME.ProductComparison.benefit2.value": {
-    "message": "少管线上"
+    "message": "少操心线上"
   },
   "HOME.ProductComparison.benefit2.description": {
     "message": "把精力放回能力本身，而不是把时间继续耗在环境、扩缩容和线上维护上。"
   },
   "HOME.DeveloperBenefits.badge": {
-    "message": "Developer Perks"
+    "message": "开发者福利"
   },
   "HOME.DeveloperBenefits.title": {
     "message": "先把东西做出来，再决定要不要花钱"
   },
   "HOME.DeveloperBenefits.subtitle": {
-    "message": "我们先拆掉独立开发者最容易卡住的两件事：模型成本，以及轻量任务的线上验证成本。"
+    "message": "我们先拆掉开发者起步时最容易卡住的两件事：模型成本，以及轻量任务的线上验证成本。"
   },
   "HOME.DeveloperBenefits.card1.eyebrow": {
     "message": "Studio 福利"
@@ -2536,13 +2536,13 @@
     "message": "支持接入自有模型"
   },
   "HOME.DeveloperBenefits.card1.title": {
-    "message": "接入你自己的模型，Studio 可以低成本起步"
+    "message": "接入你自己的模型，Studio 起步成本更低"
   },
   "HOME.DeveloperBenefits.card1.description": {
-    "message": "OOMOL Studio 支持配置你自己的 AI 模型。如果你已经有现成的模型额度，就不需要再为本地开发额外买一套客户端能力。目前我们更推荐开发者直接接入 GLM-5。"
+    "message": "OOMOL Studio 支持配置你自己的 AI 模型。如果你已经有现成的模型额度，就不需要再为本地开发额外购买一套模型服务。目前我们更推荐开发者直接接入 GLM-5。"
   },
   "HOME.DeveloperBenefits.card1.note": {
-    "message": "对很多个人开发者来说，这已经足够先把 Studio 跑起来，并完成本地验证。"
+    "message": "对很多开发者来说，这已经足够先把 Studio 跑起来，并完成本地验证。"
   },
   "HOME.DeveloperBenefits.card1.cta": {
     "message": "下载 Studio 开始"
@@ -2557,10 +2557,10 @@
     "message": "200 分钟"
   },
   "HOME.DeveloperBenefits.card2.valueCaption": {
-    "message": "Cloud Task 免费额度"
+    "message": "Cloud Task 免费时长"
   },
   "HOME.DeveloperBenefits.card2.title": {
-    "message": "每月赠送 200 分钟 Cloud Task，足够先把轻量任务跑起来"
+    "message": "每月赠送 200 分钟 Cloud Task，先把轻量任务跑起来"
   },
   "HOME.DeveloperBenefits.card2.description": {
     "message": "我们每个月都会赠送 200 分钟 Cloud Task 使用时长。对定时任务、轻量自动化、个人验证这类场景来说，通常已经够你把真实线上任务先跑起来。"
@@ -2737,13 +2737,13 @@
     "message": "为开发者提效而设计的 Studio"
   },
   "STUDIO.manifesto.subtitle": {
-    "message": "给开发者的真实 coding 环境：让 Agent 帮你生成函数，在本地验证后，直接走向 API、MCP 工具或自动化任务的交付。"
+    "message": "给开发者的真实编码环境：让 Agent 帮你生成函数，在本地验证后，直接交付为 API、MCP 工具或自动化任务。"
   },
   "STUDIO.manifesto.cta.download": {
     "message": "下载 OOMOL Studio"
   },
   "STUDIO.story.paragraph1": {
-    "message": "我们想要的，不是另一个要求开发者适应平台，而是一个能真正写函数、编排节点、调试依赖、验证结果的工作环境。"
+    "message": "我们想要的，不是另一个要求开发者迁就平台的工具，而是一个能真正写函数、编排节点、调试依赖、验证结果的工作环境。"
   },
   "STUDIO.story.frustration.line1": {
     "message": "「为什么我必须学习专有的 JSON 语法才能写一个 if/else 语句？」"
@@ -2755,10 +2755,10 @@
     "message": "「为什么我要在一个没有自动补全的文本框里写代码？」"
   },
   "STUDIO.story.paragraph2": {
-    "message": "对开发者来说，问题从来不只是“能不能拖拽”，而是只要进入真实交付，最终还是要回到代码、依赖、调试和环境。"
+    "message": "对开发者来说，问题从来不只是“能不能拖拽”，而是一旦进入真实交付，最终还是绕不开代码、依赖、调试和环境。"
   },
   "STUDIO.story.paragraph3": {
-    "message": "所以 Studio 的角色很明确：它不是为了替代工程环境，而是为了把函数生成和本地验证放回工程环境里。"
+    "message": "所以 Studio 的角色很明确：它不是为了替代工程环境，而是把函数生成、本地验证和后续交付重新放回工程环境里。"
   },
   "STUDIO.principle1.title": {
     "message": "1. 节点即函数，编排即组合"
@@ -2770,7 +2770,7 @@
     "message": "在 OOMOL 中，节点背后仍然是函数。输入是参数，输出是返回值。"
   },
   "STUDIO.principle1.paragraph3": {
-    "message": "你不是在配置一个黑盒平台，而是在写一份以后还能继续维护的代码。"
+    "message": "你不是在配置一个黑盒平台，而是在写一份之后还能继续维护和交付的代码。"
   },
   "STUDIO.principle1.codeComment1": {
     "message": "# Perform addition of x and y"
@@ -2803,7 +2803,7 @@
     "message": "函数能力真正麻烦的地方，往往不是写出来，而是依赖、环境和运行结果不可控。"
   },
   "STUDIO.principle3.paragraph2": {
-    "message": "Studio 用标准容器承接这些问题。"
+    "message": "Studio 用标准容器把这些问题收拢起来。"
   },
   "STUDIO.principle3.paragraph3": {
     "message": "先在本地把依赖装好、把结果跑通，再把同一份能力继续发布成 API、MCP 工具或自动化任务。"
