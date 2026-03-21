@@ -33,7 +33,7 @@ const benefits = [
     }),
     note: translate({ message: "HOME.DeveloperBenefits.card2.note" }),
     cta: translate({ message: "HOME.DeveloperBenefits.card2.cta" }),
-    href: "/cloud",
+    href: "/docs/cloud-services/cloud-function",
   },
 ];
 

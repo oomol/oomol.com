@@ -156,25 +156,6 @@ const config = {
         },
         items: [
           {
-            type: "dropdown",
-            label: "Product",
-            position: "left",
-            items: [
-              {
-                to: "/studio",
-                label: "navbar.oomol-studio",
-              },
-              {
-                to: "/cloud",
-                label: "navbar.oomol-cloud",
-              },
-              {
-                to: "/sdk",
-                label: "navbar.oomol-sdk",
-              },
-            ],
-          },
-          {
             type: "doc",
             docId: "get-started/quickstarts",
             position: "left",

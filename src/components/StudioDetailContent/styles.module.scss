@@ -1,5 +1,182 @@
 @use "../../css/custom.scss" as *;
 
+.homeSection {
+  padding: 36px 0 28px;
+  background: var(--ifm-background-color);
+}
+
+.homeContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.homeHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  margin-bottom: 36px;
+}
+
+.homeTitle {
+  margin: 0;
+  max-width: 980px;
+  font-size: 40px;
+  line-height: 1.16;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--ifm-heading-color);
+}
+
+.homeSubtitle {
+  margin: 0;
+  max-width: 760px;
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.homeHero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: 24px;
+  align-items: stretch;
+  margin-bottom: 24px;
+}
+
+.homeStoryCard,
+.homePreviewCard,
+.homePrincipleCard {
+  border-radius: 24px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--ifm-background-surface-color);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.homeStoryCard {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.homeStoryLead,
+.homeStorySummary p,
+.homePrincipleContent p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.homeFrustrationBlock {
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+  border-radius: 18px;
+  background: linear-gradient(
+    180deg,
+    rgba(125, 127, 233, 0.08) 0%,
+    rgba(125, 127, 233, 0.03) 100%
+  );
+  border: 1px solid rgba(125, 127, 233, 0.18);
+
+  p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ifm-color-emphasis-700);
+    font-style: italic;
+  }
+}
+
+.homeStorySummary {
+  display: grid;
+  gap: 14px;
+}
+
+.homePreviewCard {
+  padding: 18px;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(125, 127, 233, 0.16) 0%,
+      rgba(125, 127, 233, 0.02) 45%
+    ),
+    var(--ifm-background-surface-color);
+}
+
+.homePreviewFrame {
+  overflow: hidden;
+  height: 100%;
+  min-height: 420px;
+  border-radius: 18px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(245, 247, 255, 0.9) 100%
+  );
+}
+
+.homePreviewImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.homePrinciplesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.homePrincipleCard {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.homePrincipleMedia {
+  padding: 18px 18px 0;
+}
+
+.homePrincipleImage {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 16px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(245, 247, 255, 0.9) 100%
+  );
+}
+
+.homePrincipleContent {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px 22px 24px;
+
+  h3 {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.35;
+    font-weight: 800;
+    color: var(--ifm-heading-color);
+  }
+}
+
 .container {
   width: 100%;
   background: var(--ifm-background-color);
@@ -174,4 +351,97 @@
   background: var(--ifm-background-surface-color);
   border: 1px solid var(--ifm-color-emphasis-200);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 996px) {
+  .homeSection {
+    padding: 28px 0 20px;
+  }
+
+  .homeTitle {
+    font-size: 32px;
+  }
+
+  .homeSubtitle {
+    font-size: 16px;
+  }
+
+  .homeHero {
+    grid-template-columns: 1fr;
+  }
+
+  .homePreviewFrame {
+    min-height: 320px;
+  }
+
+  .homePrinciplesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .homeContainer {
+    padding: 0 20px;
+  }
+
+  .homeHeader {
+    margin-bottom: 28px;
+  }
+
+  .homeTitle {
+    font-size: 28px;
+  }
+
+  .homeStoryCard,
+  .homePreviewCard,
+  .homePrincipleCard {
+    border-radius: 20px;
+  }
+
+  .homeStoryCard {
+    padding: 22px;
+  }
+
+  .homePreviewCard {
+    padding: 14px;
+  }
+
+  .homePreviewFrame {
+    min-height: 260px;
+    border-radius: 16px;
+  }
+
+  .homePrincipleMedia {
+    padding: 14px 14px 0;
+  }
+
+  .homePrincipleContent {
+    padding: 18px 18px 22px;
+  }
+}
+
+[data-theme="dark"] {
+  .homeStoryCard,
+  .homePreviewCard,
+  .homePrincipleCard {
+    box-shadow: none;
+  }
+
+  .homeFrustrationBlock {
+    background: linear-gradient(
+      180deg,
+      rgba(125, 127, 233, 0.18) 0%,
+      rgba(125, 127, 233, 0.08) 100%
+    );
+    border-color: rgba(125, 127, 233, 0.24);
+  }
+
+  .homePreviewFrame,
+  .homePrincipleImage {
+    background: linear-gradient(
+      180deg,
+      rgba(28, 33, 48, 0.92) 0%,
+      rgba(18, 21, 32, 0.88) 100%
+    );
+  }
 }

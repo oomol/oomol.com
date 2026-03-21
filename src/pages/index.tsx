@@ -26,7 +26,7 @@ export default function Home() {
         <HomepageFirstScreen />
         <HomepageDeveloperBenefits />
         <HomepageDeliveryGap />
-        <StudioDetailContent />
+        <StudioDetailContent variant="home" />
         <HomepageProductComparison />
         <HomepageCommunityShare />
         <HomepageProofLayer />
