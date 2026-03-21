@@ -2761,7 +2761,7 @@
     "message": "所以 Studio 的角色很明确：它不是为了替代工程环境，而是为了把函数生成和本地验证放回工程环境里。"
   },
   "STUDIO.principle1.title": {
-    "message": "1. 节点是函数，编排是组合"
+    "message": "1. 节点即函数，编排即组合"
   },
   "STUDIO.principle1.paragraph1": {
     "message": "Studio 不引入新的定义语言，而是直接把标准代码组织成可运行能力。"
