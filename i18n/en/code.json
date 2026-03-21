@@ -2761,7 +2761,7 @@
     "message": "So Studio has a clear role: not to replace engineering workflow, but to put function generation and local validation back inside it."
   },
   "STUDIO.principle1.title": {
-    "message": "1. Functions First, Code as Truth"
+    "message": "1. Nodes Are Functions, Orchestration Is Composition"
   },
   "STUDIO.principle1.paragraph1": {
     "message": "Studio does not introduce a new definition language. It organizes standard code into runnable capabilities."
