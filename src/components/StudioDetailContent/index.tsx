@@ -2,7 +2,6 @@ import styles from "./styles.module.scss";
 
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { DownloadButton } from "@site/src/components/DownloadButton";
 import ThemedImage from "@theme/ThemedImage";
 import React from "react";
 
@@ -16,9 +15,6 @@ export default function StudioDetailContent() {
         <p className={styles.subtitle}>
           {translate({ message: "STUDIO.manifesto.subtitle" })}
         </p>
-        <div className={styles.headerCTA}>
-          <DownloadButton />
-        </div>
       </header>
 
       <section className={styles.heroImageSection}>
