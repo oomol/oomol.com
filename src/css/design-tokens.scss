@@ -61,15 +61,15 @@
   /* ----------------------
      品牌色 (Brand)
      ---------------------- */
-  --oomol-primary: #175e57;
-  --oomol-primary-bg: rgba(23, 94, 87, 0.1);
-  --oomol-primary-bg-hover: rgba(23, 94, 87, 0.16);
-  --oomol-primary-border: rgba(23, 94, 87, 0.28);
-  --oomol-primary-hover: #0f766e;
-  --oomol-primary-active: #0f4e48;
-  --oomol-primary-text: #175e57;
-  --oomol-primary-text-hover: #0f766e;
-  --oomol-primary-text-active: #0f4e48;
+  --oomol-primary: #545887;
+  --oomol-primary-bg: rgba(84, 88, 135, 0.1);
+  --oomol-primary-bg-hover: rgba(84, 88, 135, 0.16);
+  --oomol-primary-border: rgba(84, 88, 135, 0.28);
+  --oomol-primary-hover: #63689c;
+  --oomol-primary-active: #45486f;
+  --oomol-primary-text: #545887;
+  --oomol-primary-text-hover: #63689c;
+  --oomol-primary-text-active: #45486f;
 
   /* 白色系主题色 - 用于主题色背景上的文字 */
   --oomol-white: #fffaf2;
@@ -123,9 +123,9 @@
   /* ----------------------
      链接色 (Link)
      ---------------------- */
-  --oomol-link: #175e57;
-  --oomol-link-hover: #0f766e;
-  --oomol-link-active: #0f4e48;
+  --oomol-link: #545887;
+  --oomol-link-hover: #63689c;
+  --oomol-link-active: #45486f;
 
   /* ----------------------
      悬停效果 (Hover)
@@ -151,14 +151,14 @@
   /* 边框和输入框 */
   --border: 0 0% 85%; /* 映射到 --oomol-border-default #d9d9d9 */
   --input: 0 0% 85%; /* 与边框保持一致 */
-  --ring: 175 60% 26%; /* 映射到 --oomol-primary */
+  --ring: 237 23% 43%; /* 映射到 --oomol-primary */
 
   /* 背景和前景 */
   --background: 0 0% 100%; /* 白色背景 */
   --foreground: 30 17% 9%; /* 映射到 --oomol-text-primary */
 
   /* 主色 - Oomol 紫色 */
-  --primary: 175 60% 26%;
+  --primary: 237 23% 43%;
   --primary-foreground: 36 55% 97%;
 
   /* 次要色 */
@@ -194,72 +194,72 @@
      背景色 (Background)
      参考 Ant Design 标准,使用 #141414 作为基础背景
      ---------------------- */
-  --oomol-bg-base: #131514;
-  --oomol-bg-container: #1a1e1c;
-  --oomol-bg-elevated: #202523;
-  --oomol-bg-spotlight: #2a302d;
-  --oomol-bg-layout: #0f1110;
+  --oomol-bg-base: #121219;
+  --oomol-bg-container: #191925;
+  --oomol-bg-elevated: #22212f;
+  --oomol-bg-spotlight: #2c2a3b;
+  --oomol-bg-layout: #0d0c13;
 
   /* ----------------------
      文字色 (Text)
      根据 Ant Design 标准优化对比度,提升可读性
      ---------------------- */
-  --oomol-text-primary: rgba(246, 239, 228, 0.88);
-  --oomol-text-secondary: rgba(226, 216, 204, 0.72);
+  --oomol-text-primary: rgba(243, 239, 248, 0.9);
+  --oomol-text-secondary: rgba(221, 214, 231, 0.74);
   --oomol-text-tertiary: rgba(
-    216,
-    205,
-    190,
+    203,
+    194,
+    217,
     0.58
   ); /* WCAG AA: improved from 0.50 */
   --oomol-text-quaternary: rgba(
-    205,
-    193,
-    176,
+    190,
+    181,
+    204,
     0.48
   ); /* WCAG AA: improved from 0.25 */
-  --oomol-text-disabled: rgba(205, 193, 176, 0.48); /* WCAG AA compliant */
+  --oomol-text-disabled: rgba(190, 181, 204, 0.48); /* WCAG AA compliant */
   --oomol-text-inverse: rgba(18, 16, 13, 0.92);
 
   /* ----------------------
      边框色 (Border)
      增强边框可见性,优化视觉层次
      ---------------------- */
-  --oomol-border-default: #49514c;
-  --oomol-border-subtle: #353b38;
-  --oomol-border-strong: #62706a;
+  --oomol-border-default: #4a4860;
+  --oomol-border-subtle: #353347;
+  --oomol-border-strong: #65627e;
 
   /* ----------------------
      分割线 (Divider)
      ---------------------- */
-  --oomol-divider: rgba(236, 226, 214, 0.14);
-  --oomol-divider-subtle: rgba(236, 226, 214, 0.08);
+  --oomol-divider: rgba(223, 216, 236, 0.14);
+  --oomol-divider-subtle: rgba(223, 216, 236, 0.08);
 
   /* ----------------------
      遮罩层 (Mask)
      ---------------------- */
-  --oomol-mask: rgba(6, 8, 8, 0.7);
+  --oomol-mask: rgba(7, 7, 12, 0.72);
 
   /* ----------------------
      填充色 (Fill)
      ---------------------- */
-  --oomol-fill-primary: rgba(241, 234, 223, 0.18);
-  --oomol-fill-secondary: rgba(241, 234, 223, 0.12);
-  --oomol-fill-tertiary: rgba(241, 234, 223, 0.08);
-  --oomol-fill-quaternary: rgba(241, 234, 223, 0.04);
+  --oomol-fill-primary: rgba(234, 228, 244, 0.18);
+  --oomol-fill-secondary: rgba(234, 228, 244, 0.12);
+  --oomol-fill-tertiary: rgba(234, 228, 244, 0.08);
+  --oomol-fill-quaternary: rgba(234, 228, 244, 0.04);
 
   /* ----------------------
      品牌色 (Brand) - 保持一致
      ---------------------- */
-  --oomol-primary: #63c7b4;
-  --oomol-primary-bg: rgba(99, 199, 180, 0.16);
-  --oomol-primary-bg-hover: rgba(99, 199, 180, 0.24);
-  --oomol-primary-border: rgba(99, 199, 180, 0.36);
-  --oomol-primary-hover: #7ad5c4;
-  --oomol-primary-active: #42ac99;
-  --oomol-primary-text: #8fddcf;
-  --oomol-primary-text-hover: #a7e6db;
-  --oomol-primary-text-active: #7ad5c4;
+  --oomol-primary: #848ad0;
+  --oomol-primary-bg: rgba(132, 138, 208, 0.16);
+  --oomol-primary-bg-hover: rgba(132, 138, 208, 0.24);
+  --oomol-primary-border: rgba(132, 138, 208, 0.36);
+  --oomol-primary-hover: #979ce0;
+  --oomol-primary-active: #6b71b7;
+  --oomol-primary-text: #b6bbf1;
+  --oomol-primary-text-hover: #c5c8f6;
+  --oomol-primary-text-active: #979ce0;
 
   /* 白色系主题色 - 用于主题色背景上的文字 */
   --oomol-white: #f7f2e8;
@@ -313,9 +313,9 @@
   /* ----------------------
      链接色 (Link)
      ---------------------- */
-  --oomol-link: #8fddcf;
-  --oomol-link-hover: #a7e6db;
-  --oomol-link-active: #63c7b4;
+  --oomol-link: #b6bbf1;
+  --oomol-link-hover: #c5c8f6;
+  --oomol-link-active: #848ad0;
 
   /* ----------------------
      悬停效果 (Hover)

@@ -3,10 +3,10 @@
   background:
     radial-gradient(
       circle at top right,
-      rgba(99, 199, 180, 0.12) 0%,
-      rgba(99, 199, 180, 0) 26%
+      rgba(132, 138, 208, 0.14) 0%,
+      rgba(132, 138, 208, 0) 26%
     ),
-    linear-gradient(180deg, #171a19 0%, #101211 100%);
+    linear-gradient(180deg, #161521 0%, #0f0e16 100%);
 }
 
 .container {
@@ -77,7 +77,7 @@
   font-size: clamp(2rem, 3vw, 2.8rem);
   line-height: 1;
   letter-spacing: -0.05em;
-  color: rgba(99, 199, 180, 0.92);
+  color: rgba(182, 187, 241, 0.92);
 }
 
 .problemTitle {

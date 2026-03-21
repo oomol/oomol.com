@@ -60,10 +60,10 @@
   background:
     radial-gradient(
       circle at top left,
-      rgba(99, 199, 180, 0.26) 0%,
-      rgba(99, 199, 180, 0) 34%
+      rgba(132, 138, 208, 0.24) 0%,
+      rgba(132, 138, 208, 0) 34%
     ),
-    linear-gradient(180deg, #1b2220 0%, #121715 100%);
+    linear-gradient(180deg, #1a1b28 0%, #12131d 100%);
   color: rgba(248, 242, 233, 0.94);
   box-shadow: var(--oomol-shadow-lg);
 }
@@ -86,7 +86,7 @@
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.14em;
-  color: rgba(99, 199, 180, 0.92);
+  color: rgba(182, 187, 241, 0.92);
 }
 
 .cardBadge {
@@ -142,7 +142,7 @@
   padding: 0 1rem;
   border-radius: 999px;
   background: var(--oomol-white);
-  color: #12211e;
+  color: #1f2137;
   font-size: 0.95rem;
   font-weight: 700;
   text-decoration: none;
