@@ -2488,10 +2488,10 @@
     "message": "Let the same implementation enter the call chain of agents and AI apps directly instead of maintaining a second tool service."
   },
   "HOME.ProductComparison.output3.title": {
-    "message": "Automation Tasks"
+    "message": "CLI Tools"
   },
   "HOME.ProductComparison.output3.description": {
-    "message": "Keep a working capability running continuously so trigger, execution, and result delivery stay on the same path."
+    "message": "Package the same implementation as a command line tool so local use, script integration, and team distribution all reuse one capability."
   },
   "HOME.ProductComparison.benefit1.label": {
     "message": "Delivery Load"

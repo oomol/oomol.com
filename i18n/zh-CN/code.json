@@ -2491,10 +2491,10 @@
     "message": "让同一份实现直接进入 Agent 和 AI 应用的调用链，而不是另外维护一套工具服务。"
   },
   "HOME.ProductComparison.output3.title": {
-    "message": "自动化任务"
+    "message": "CLI 工具"
   },
   "HOME.ProductComparison.output3.description": {
-    "message": "把已经跑通的处理能力持续运行起来，让触发、执行和结果交付保持在同一条路径上。"
+    "message": "把同一份实现封装成命令行工具，让本地调用、脚本集成和团队分发都复用同一份能力。"
   },
   "HOME.ProductComparison.benefit1.label": {
     "message": "交付心智"
