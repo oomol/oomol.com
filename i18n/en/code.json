@@ -20,6 +20,9 @@
   "Theme.Navbar.chat": {
     "message": "Chat"
   },
+  "Theme.Navbar.console": {
+    "message": "Console"
+  },
   "Theme.Navbar.community": {
     "message": "Asset Hub"
   },
