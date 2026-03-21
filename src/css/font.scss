@@ -55,26 +55,37 @@
 }
 
 @mixin heading-font {
-  font-family: "Inter", sans-serif;
+  font-family:
+    "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Baskerville",
+    Georgia, serif;
   font-weight: 700;
 }
 
 @mixin body-font {
-  font-family: "Inter", sans-serif;
+  font-family:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+    Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI",
+    "Microsoft YaHei", "Source Han Sans CN", sans-serif;
   font-weight: 400;
 }
 
 @mixin light-font {
-  font-family: "Inter", sans-serif;
+  @include body-font;
   font-weight: 300;
 }
 
 @mixin extrabold-font {
-  font-family: "Inter", sans-serif;
+  @include heading-font;
   font-weight: 800;
 }
 
 @mixin black-font {
-  font-family: "Inter", sans-serif;
+  @include heading-font;
   font-weight: 900;
+}
+
+@mixin display-font {
+  font-family:
+    "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Baskerville",
+    Georgia, serif;
 }

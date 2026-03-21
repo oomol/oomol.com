@@ -56,11 +56,12 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: inherit;
+  min-height: 42px;
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 86%, transparent);
   border: 1px solid var(--oomol-border-default);
-  border-radius: 4px;
+  border-radius: 999px;
   padding: 6px 16px;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14px;
   cursor: pointer;
   color: var(--oomol-text-primary);
@@ -75,7 +76,7 @@
   &:hover {
     color: var(--oomol-primary) !important;
     border-color: var(--oomol-primary);
-    background: var(--oomol-primary-bg);
+    background: color-mix(in srgb, var(--oomol-primary-bg) 72%, var(--oomol-bg-elevated));
   }
 }
 
@@ -83,16 +84,23 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: var(--oomol-primary);
-  border: none;
-  border-radius: 4px;
+  min-height: 42px;
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--oomol-primary) 86%, white) 0%,
+      var(--oomol-primary) 100%
+    );
+  border: 1px solid color-mix(in srgb, var(--oomol-primary) 70%, black 10%);
+  border-radius: 999px;
   padding: 6px 16px;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14px;
   cursor: pointer;
   text-decoration: none;
   margin: 0 !important;
   color: var(--oomol-text-inverse);
+  box-shadow: var(--oomol-shadow-sm);
 
   [data-theme="dark"] & {
     color: var(--oomol-white);
@@ -191,7 +199,7 @@
   z-index: 100;
   transition: transform 0.3s ease;
   --ifm-navbar-padding-vertical: 0;
-  background: inherit;
+  background: transparent;
   // border-bottom-style: solid;
   // border-bottom-color: #fafafa;
   // display: flex;
@@ -216,6 +224,16 @@
   }
 }
 
+@media screen and (max-width: 480px) {
+  .downloadButton {
+    display: none;
+  }
+
+  .loginButton {
+    padding: 6px 14px;
+  }
+}
+
 :global(html[data-theme="light"] .navbar__item.header-github-link) {
   /* background: url("/img/github.svg") 0 center / 20px 20px no-repeat; */
 }
@@ -229,10 +247,10 @@
 
 :global(.navbar__item.navbar__link) {
   font-size: var(--ifm-font-size-base);
-  padding: 0.22rem 0.5rem;
-  margin: 0 0.5rem;
-  font-weight: 400;
-  font-size: 16px;
+  padding: 0.4rem 0.55rem;
+  margin: 0 0.35rem;
+  font-weight: 500;
+  font-size: 15px;
 }
 
 :global(.navbar__item.dropdown .navbar__link):after {

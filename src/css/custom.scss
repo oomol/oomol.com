@@ -2,19 +2,29 @@
 @use "./design-tokens.scss" as *;
 
 :root {
-  --ifm-color-primary: #7d7fe9;
-  --ifm-color-primary-dark: #5e61e4;
-  --ifm-color-primary-darker: #4f52e1;
-  --ifm-color-primary-darkest: #2428d6;
-  --ifm-color-primary-light: #9c9dee;
-  --ifm-color-primary-lighter: #abacf1;
-  --ifm-color-primary-lightest: #d9d9f9;
+  --ifm-color-primary: var(--oomol-primary);
+  --ifm-color-primary-dark: #114c46;
+  --ifm-color-primary-darker: #0d433e;
+  --ifm-color-primary-darkest: #082f2d;
+  --ifm-color-primary-light: #1e766d;
+  --ifm-color-primary-lighter: #2e867d;
+  --ifm-color-primary-lightest: #74b7ac;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(18, 16, 13, 0.08);
+  --oomol-font-display:
+    "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Baskerville",
+    Georgia, serif;
+  --oomol-font-body:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+    Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI",
+    "Microsoft YaHei", "Source Han Sans CN", sans-serif;
   --ifm-font-family-base:
-    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu,
-    "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB",
-    "Microsoft YaHei UI", "Microsoft YaHei", "Source Han Sans CN", sans-serif;
+    var(--oomol-font-body);
+  --ifm-heading-font-family: var(--oomol-font-display);
+  --ifm-heading-color: var(--oomol-text-primary);
+  --ifm-background-surface-color: var(--oomol-bg-elevated);
+  --ifm-font-weight-semibold: 600;
+  --ifm-global-radius: 18px;
 
   /* Light mode colors - 使用 design tokens */
   --ifm-navbar-background-color: var(--oomol-bg-base);
@@ -29,21 +39,27 @@
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 
 [data-theme="dark"] {
-  --ifm-color-primary: #7d7fe9;
-  --ifm-color-primary-dark: #5e61e4;
-  --ifm-color-primary-darker: #4f52e1;
-  --ifm-color-primary-darkest: #2428d6;
-  --ifm-color-primary-light: #9c9dee;
-  --ifm-color-primary-lighter: #abacf1;
-  --ifm-color-primary-lightest: #d9d9f9;
+  --ifm-color-primary: var(--oomol-primary);
+  --ifm-color-primary-dark: #42ac99;
+  --ifm-color-primary-darker: #379885;
+  --ifm-color-primary-darkest: #2c7a6b;
+  --ifm-color-primary-light: #7ad5c4;
+  --ifm-color-primary-lighter: #92ddd0;
+  --ifm-color-primary-lightest: #bdece4;
   --ifm-navbar-background-color: var(--oomol-bg-base);
   --ifm-background-color: var(--oomol-bg-base) !important;
   --ifm-font-color-base: var(--oomol-text-primary);
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-background-surface-color: var(--oomol-bg-elevated);
+  --docusaurus-highlighted-code-line-bg: rgba(12, 14, 14, 0.38);
   --ifm-menu-color-background-hover: var(--oomol-hover-bg);
   --ifm-toc-link-color: var(--oomol-text-secondary);
   --ifm-navbar-link-color: var(--oomol-text-primary);
   --ifm-footer-background-color: var(--oomol-bg-base);
+}
+
+html,
+body {
+  background: var(--oomol-bg-base);
 }
 
 #__docusaurus {
@@ -84,6 +100,7 @@
 
 .navbar {
   position: relative;
+  border-bottom: 1px solid var(--oomol-divider);
 
   &::before {
     content: "";
@@ -92,7 +109,13 @@
     left: 0;
     right: 0;
     bottom: 0;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--oomol-bg-base) 90%, transparent) 0%,
+        color-mix(in srgb, var(--oomol-bg-base) 82%, transparent) 100%
+      );
     z-index: -1;
   }
 
@@ -114,6 +137,10 @@
   .navbar__link--active {
     color: var(--oomol-primary);
   }
+}
+
+::selection {
+  background: color-mix(in srgb, var(--oomol-primary) 24%, transparent);
 }
 
 /* ============================================
@@ -221,11 +248,7 @@ $desktop-width: $breakpoint-xl;
 }
 
 @mixin linearGradientColor {
-  background-image: linear-gradient(
-    90deg,
-    var(--oomol-text-tertiary) 0%,
-    var(--oomol-text-secondary) 100%
-  );
+  background-image: linear-gradient(90deg, #98754c 0%, var(--oomol-primary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

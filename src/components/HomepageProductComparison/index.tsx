@@ -59,7 +59,7 @@ export default function HomepageProductComparison() {
             <div className={styles.cardHeader}>
               <div className={styles.cardMetaRow}>
                 <div className={styles.cardIcon} aria-hidden="true">
-                  ☁️
+                  01
                 </div>
                 <div className={styles.cardBadge}>
                   {translate({ message: "HOME.ProductComparison.cloud.stage" })}

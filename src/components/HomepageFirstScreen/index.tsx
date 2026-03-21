@@ -6,10 +6,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import React from "react";
 
 import { DownloadButton } from "../DownloadButton";
-import { AuroraText } from "../magic-ui/AuroraText";
-import { GridBackground } from "./GridBackground";
 
-// 解析带高亮标记的文本
 function parseHighlightText(text: string) {
   const parts = text.split(/(\*\*.*?\*\*)/g);
   return parts.map((part, index) => {
@@ -34,52 +31,42 @@ export default function HomepageFirstScreen() {
 
   return (
     <section className={styles.section}>
-      <div className={styles.background}>
-        <GridBackground opacity={0.6} />
-      </div>
+      <div className={styles.background} />
       <div className={styles.container}>
         <div className={styles.header}>
-          <div className={styles["hero-content"]}>
-            <div className={styles["slogan-box"]}>
-              <div className={styles.kicker}>
-                {translate({
-                  message: "HOME.FirstScreen.kicker",
-                })}
-              </div>
-              <h1 className={styles["slogan"]}>
-                <AuroraText className={styles["aurora-slogan"]}>
-                  {translate({
-                    message: "HOME.FirstScreen.slogan",
-                  })}
-                </AuroraText>
-              </h1>
-            </div>
-
-            <div className={styles["description-box"]}>
-              <span className={styles.overview}>
-                {parseHighlightText(scriptText)}
-              </span>
-            </div>
-
-            <div className={styles.buttons}>
-              <DownloadButton />
-            </div>
-            <div className={styles.offerLine}>
-              <span className={styles.offerItem}>
-                {translate({
-                  message: "HOME.FirstScreen.offer1",
-                })}
-              </span>
-              <span className={styles.offerDivider}>•</span>
-              <span className={`${styles.offerItem} ${styles.offerItemStrong}`}>
-                {translate({
-                  message: "HOME.FirstScreen.offer2",
-                })}
-              </span>
-            </div>
+          <div className={styles.kicker}>
+            {translate({
+              message: "HOME.FirstScreen.kicker",
+            })}
+          </div>
+          <h1 className={styles.slogan}>
+            {translate({
+              message: "HOME.FirstScreen.slogan",
+            })}
+          </h1>
+          <p className={styles.overview}>{parseHighlightText(scriptText)}</p>
+          <div className={styles.buttons}>
+            <DownloadButton />
+          </div>
+          <div className={styles.offerLine}>
+            <span className={styles.offerItem}>
+              {translate({
+                message: "HOME.FirstScreen.offer1",
+              })}
+            </span>
+            <span className={styles.offerDivider}>/</span>
+            <span className={styles.offerItemStrong}>
+              {translate({
+                message: "HOME.FirstScreen.offer2",
+              })}
+            </span>
           </div>
         </div>
-        <div className={styles["screenshot-row"]}>
+        <div className={styles.screenshotFrame}>
+          <div className={styles.screenshotMeta}>
+            <span>{translate({ message: "HOME.FirstScreen.caption" })}</span>
+            <span>{translate({ message: "HOME.FirstScreen.kicker" })}</span>
+          </div>
           <img
             src={useBaseUrl(
               colorMode === "dark"
@@ -89,7 +76,6 @@ export default function HomepageFirstScreen() {
             alt="OOMOL Product Screenshot"
             className={styles["product-screenshot"]}
             loading="eager"
-            fetchPriority="high"
           />
         </div>
         <div className={styles.screenshotCaption}>

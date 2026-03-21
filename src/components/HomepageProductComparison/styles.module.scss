@@ -1,14 +1,13 @@
 @use "../../css/custom.scss" as *;
 
 .comparisonSection {
-  padding: 100px 0;
+  padding: clamp(4rem, 8vw, 6rem) 0;
   background:
-    radial-gradient(
-      circle at top left,
-      rgba(125, 127, 233, 0.12),
-      rgba(125, 127, 233, 0) 38%
-    ),
-    var(--ifm-background-color);
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--oomol-bg-base) 92%, #d8c3a2 8%) 0%,
+      var(--oomol-bg-base) 100%
+    );
 }
 
 .container {
@@ -18,300 +17,233 @@
 }
 
 .sectionHeader {
-  text-align: center;
-  margin-bottom: 64px;
+  display: grid;
+  gap: 0.9rem;
+  max-width: 44rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  text-align: left;
 }
 
 .sectionTitle {
-  font-size: 48px;
-  font-weight: 800;
-  color: var(--ifm-heading-color);
-  margin-bottom: 12px;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  margin: 0;
+  max-width: 13ch;
+  font-family: var(--oomol-font-display);
+  font-size: clamp(2.6rem, 4.8vw, 4.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  color: var(--oomol-text-primary);
 }
 
 .sectionSubtitle {
-  font-size: 1.2rem;
-  color: var(--ifm-color-emphasis-700);
-  max-width: 760px;
-  margin: 0 auto;
-  line-height: 1.75;
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.76;
+  color: var(--oomol-text-secondary);
 }
 
 .cloudSection {
   display: grid;
-  grid-template-columns: minmax(0, 480px) minmax(0, 1fr);
-  gap: 28px;
-  align-items: stretch;
-
-  @media (max-width: 996px) {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
+  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+  gap: 1.5rem;
+  align-items: start;
 }
 
 .cloudCard {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
 }
 
 .cardHeader {
   height: 100%;
-  padding: 40px 32px;
-  border-radius: 28px;
-  background: linear-gradient(160deg, #7779df 0%, #5a60a8 54%, #363a69 100%);
-  color: white;
-  border: 1px solid rgba(125, 127, 233, 0.25);
-  box-shadow: 0 22px 50px rgba(67, 73, 146, 0.24);
+  padding: clamp(1.8rem, 4vw, 2.6rem);
+  border-radius: 2rem;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(99, 199, 180, 0.26) 0%,
+      rgba(99, 199, 180, 0) 34%
+    ),
+    linear-gradient(180deg, #1b2220 0%, #121715 100%);
+  color: rgba(248, 242, 233, 0.94);
+  box-shadow: var(--oomol-shadow-lg);
 }
 
 .cardMetaRow {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 18px;
+  gap: 0.9rem;
+  margin-bottom: 1.2rem;
 }
 
 .cardIcon {
-  font-size: 42px;
-  line-height: 1;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  font-family:
-    "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  border-radius: 999px;
+  border: 1px solid rgba(232, 223, 209, 0.18);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: rgba(99, 199, 180, 0.92);
 }
 
 .cardBadge {
   display: inline-flex;
+  width: fit-content;
   align-items: center;
-  padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.18);
+  padding: 0.35rem 0.8rem;
   border-radius: 999px;
-  font-size: 0.9rem;
+  background: rgba(248, 242, 233, 0.08);
+  border: 1px solid rgba(248, 242, 233, 0.12);
+  font-size: 0.74rem;
   font-weight: 700;
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .cardTitle {
-  margin: 0 0 12px;
-  font-size: 3rem;
-  line-height: 1.05;
-  font-weight: 800;
-  color: white;
+  margin: 0 0 0.7rem;
+  font-family: var(--oomol-font-display);
+  font-size: clamp(2.6rem, 4.4vw, 4rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  color: inherit;
 }
 
 .cardLead {
-  margin: 0 0 12px;
-  font-size: 1.35rem;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.96);
-  font-weight: 650;
+  margin: 0 0 0.9rem;
+  font-size: 1.12rem;
+  line-height: 1.55;
+  font-weight: 600;
+  color: rgba(248, 242, 233, 0.92);
 }
 
 .cardSummary {
   margin: 0;
   font-size: 1rem;
-  line-height: 1.85;
-  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.8;
+  color: rgba(223, 212, 196, 0.76);
 }
 
 .cardActions {
-  margin-top: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+  margin-top: 1.6rem;
+  display: grid;
+  gap: 0.9rem;
 }
 
 .primaryCta {
   display: inline-flex;
+  width: fit-content;
   align-items: center;
   justify-content: center;
-  width: fit-content;
   min-height: 46px;
-  padding: 0 18px;
+  padding: 0 1rem;
   border-radius: 999px;
-  background: white;
-  color: #3d4176;
-  font-size: 15px;
-  font-weight: 800;
+  background: var(--oomol-white);
+  color: #12211e;
+  font-size: 0.95rem;
+  font-weight: 700;
   text-decoration: none;
-  transition:
-    transform 0.15s ease,
-    color 0.15s ease;
+  box-shadow: var(--oomol-shadow-sm);
 
   &:hover {
     text-decoration: none;
-    color: #2f3361;
     transform: translateY(-1px);
   }
 }
 
 .inlineNote {
-  font-size: 14px;
+  font-size: 0.92rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(223, 212, 196, 0.72);
 }
 
 .detailPanel {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+  display: grid;
+  gap: 1rem;
 }
 
 .outputsIntro,
 .benefitCard,
 .outputCard {
-  background: var(--ifm-background-surface-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  border-radius: 1.2rem;
+  border: 1px solid var(--oomol-divider);
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%);
 }
 
 .outputsIntro {
-  padding: 24px 24px 20px;
-  border-radius: 22px;
+  padding: 1.25rem 1.3rem;
 }
 
-.infoLabel {
-  font-size: 0.8rem;
-  font-weight: 800;
+.infoLabel,
+.benefitLabel {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--oomol-primary);
+  color: var(--oomol-text-secondary);
 }
 
 .outputsText {
-  margin: 10px 0 0;
-  font-size: 1rem;
-  line-height: 1.75;
-  color: var(--ifm-color-emphasis-700);
+  margin: 0.65rem 0 0;
+  font-size: 0.98rem;
+  line-height: 1.72;
+  color: var(--oomol-text-secondary);
 }
 
 .outputsGrid,
 .benefitsGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
+  gap: 1rem;
 }
 
-.outputCard {
-  padding: 22px;
-  border-radius: 20px;
-}
-
-.outputTitle {
-  margin: 0 0 8px;
-  font-size: 22px;
-  line-height: 1.35;
-  font-weight: 750;
-  color: var(--ifm-heading-color);
-}
-
-.outputDescription {
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.75;
-  color: var(--ifm-color-emphasis-700);
-}
-
+.outputCard,
 .benefitCard {
-  padding: 22px;
-  border-radius: 20px;
+  padding: 1.2rem;
 }
 
-.benefitLabel {
-  margin-bottom: 10px;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--oomol-text-secondary);
-}
-
+.outputTitle,
 .benefitValue {
-  margin-bottom: 10px;
-  font-size: 28px;
-  line-height: 1.2;
-  font-weight: 850;
-  color: var(--ifm-heading-color);
+  margin: 0 0 0.65rem;
+  font-family: var(--oomol-font-display);
+  font-size: clamp(1.55rem, 2vw, 2rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  color: var(--oomol-text-primary);
 }
 
+.outputDescription,
 .benefitDescription {
   margin: 0;
-  font-size: 15px;
+  font-size: 0.95rem;
   line-height: 1.7;
-  color: var(--ifm-color-emphasis-700);
+  color: var(--oomol-text-secondary);
 }
 
 @media (max-width: 996px) {
   .comparisonSection {
-    padding: 80px 0;
+    padding: 4rem 0;
   }
 
   .container {
     padding: 0 24px;
   }
 
-  .sectionTitle {
-    font-size: 2.25rem;
-  }
-
-  .sectionSubtitle {
-    font-size: 1.1rem;
-  }
-
-  .sectionHeader {
-    margin-bottom: 48px;
-  }
-
-  .cardHeader {
-    padding: 32px 24px;
-  }
-
-  .cardTitle {
-    font-size: 2.4rem;
+  .cloudSection {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
-  .comparisonSection {
-    padding: 60px 0;
-  }
-
   .container {
     padding: 0 20px;
   }
 
-  .sectionTitle {
-    font-size: 2rem;
-  }
-
-  .sectionSubtitle {
-    font-size: 1rem;
-  }
-
-  .sectionHeader {
-    margin-bottom: 40px;
-  }
-
-  .cardTitle {
-    font-size: 2rem;
-  }
-
-  .cardLead {
-    font-size: 1.15rem;
-  }
-}
-
-[data-theme="dark"] {
-  .cardHeader {
-    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.32);
+  .outputsGrid,
+  .benefitsGrid {
+    grid-template-columns: 1fr;
   }
 }

@@ -1,8 +1,7 @@
 @use "../../css/custom.scss" as *;
 
 .homeSection {
-  padding: 36px 0 28px;
-  background: var(--ifm-background-color);
+  padding: clamp(4rem, 8vw, 6rem) 0 clamp(3rem, 6vw, 4.5rem);
 }
 
 .homeContainer {
@@ -12,113 +11,100 @@
 }
 
 .homeHeader {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 14px;
-  margin-bottom: 36px;
+  display: grid;
+  gap: 0.95rem;
+  max-width: 48rem;
+  margin-bottom: 2rem;
+  text-align: left;
 }
 
 .homeTitle {
   margin: 0;
-  max-width: 980px;
-  font-size: 40px;
-  line-height: 1.16;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  color: var(--ifm-heading-color);
+  max-width: 13ch;
+  font-family: var(--oomol-font-display);
+  font-size: clamp(2.6rem, 4.8vw, 4.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  color: var(--oomol-text-primary);
 }
 
 .homeSubtitle {
   margin: 0;
-  max-width: 760px;
-  font-size: 18px;
-  line-height: 1.75;
-  color: var(--ifm-color-emphasis-700);
+  font-size: 1rem;
+  line-height: 1.76;
+  color: var(--oomol-text-secondary);
 }
 
 .homeHero {
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-  gap: 24px;
-  align-items: stretch;
-  margin-bottom: 24px;
-}
-
-.homeStoryCard,
-.homePreviewCard,
-.homePrincipleCard {
-  border-radius: 24px;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  background: var(--ifm-background-surface-color);
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  grid-template-columns: minmax(0, 0.76fr) minmax(0, 1.24fr);
+  gap: 1.5rem;
+  align-items: start;
+  margin-bottom: 1.8rem;
 }
 
 .homeStoryCard {
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
+  display: grid;
+  gap: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 2px solid var(--oomol-primary);
 }
 
 .homeStoryLead,
 .homeStorySummary p,
 .homePrincipleContent p {
   margin: 0;
-  font-size: 16px;
-  line-height: 1.8;
-  color: var(--ifm-color-emphasis-800);
+  font-size: 1rem;
+  line-height: 1.78;
+  color: var(--oomol-text-secondary);
 }
 
 .homeFrustrationBlock {
   display: grid;
-  gap: 12px;
-  padding: 20px;
-  border-radius: 18px;
-  background: linear-gradient(
-    180deg,
-    rgba(125, 127, 233, 0.08) 0%,
-    rgba(125, 127, 233, 0.03) 100%
-  );
-  border: 1px solid rgba(125, 127, 233, 0.18);
+  gap: 0.85rem;
+  padding: 1.2rem 1.15rem;
+  border-radius: 1.3rem;
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--oomol-primary-bg) 76%, var(--oomol-bg-elevated)) 0%,
+      color-mix(in srgb, var(--oomol-primary-bg) 48%, var(--oomol-bg-elevated)) 100%
+    );
+  border: 1px solid var(--oomol-primary-border);
 
   p {
     margin: 0;
-    font-size: 15px;
-    line-height: 1.7;
-    color: var(--ifm-color-emphasis-700);
+    font-size: 0.95rem;
+    line-height: 1.68;
+    color: var(--oomol-text-secondary);
     font-style: italic;
   }
 }
 
 .homeStorySummary {
   display: grid;
-  gap: 14px;
+  gap: 0.9rem;
 }
 
 .homePreviewCard {
-  padding: 18px;
+  padding: 0.9rem;
+  border-radius: 1.8rem;
+  border: 1px solid var(--oomol-divider);
   background:
-    radial-gradient(
-      circle at top left,
-      rgba(125, 127, 233, 0.16) 0%,
-      rgba(125, 127, 233, 0.02) 45%
-    ),
-    var(--ifm-background-surface-color);
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%) 0%,
+      color-mix(in srgb, var(--oomol-bg-elevated) 100%, black 0%) 100%
+    );
+  box-shadow: var(--oomol-shadow-md);
 }
 
 .homePreviewFrame {
   overflow: hidden;
-  height: 100%;
   min-height: 420px;
-  border-radius: 18px;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.92) 0%,
-    rgba(245, 247, 255, 0.9) 100%
-  );
+  border-radius: 1.3rem;
+  border: 1px solid var(--oomol-divider);
+  background: linear-gradient(180deg, rgba(255, 251, 244, 0.88) 0%, rgba(245, 238, 226, 0.92) 100%);
 }
 
 .homePreviewImage {
@@ -131,19 +117,35 @@
 
 .homePrinciplesGrid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+  gap: 1rem;
 }
 
 .homePrincipleCard {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.68fr);
+  gap: 1.2rem;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--oomol-divider);
+
+  &:nth-child(even) {
+    grid-template-columns: minmax(300px, 0.68fr) minmax(0, 1fr);
+
+    .homePrincipleMedia {
+      order: 1;
+    }
+
+    .homePrincipleContent {
+      order: 2;
+    }
+  }
 }
 
 .homePrincipleMedia {
-  padding: 18px 18px 0;
+  border-radius: 1.4rem;
+  padding: 0.8rem;
+  border: 1px solid var(--oomol-divider);
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 96%, white 4%);
 }
 
 .homePrincipleImage {
@@ -152,28 +154,21 @@
   aspect-ratio: 16 / 10;
   object-fit: cover;
   object-position: top center;
-  border-radius: 16px;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.92) 0%,
-    rgba(245, 247, 255, 0.9) 100%
-  );
+  border-radius: 1rem;
+  border: 1px solid var(--oomol-divider);
 }
 
 .homePrincipleContent {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: 14px;
-  padding: 20px 22px 24px;
+  display: grid;
+  gap: 0.8rem;
 
   h3 {
     margin: 0;
-    font-size: 22px;
-    line-height: 1.35;
-    font-weight: 800;
-    color: var(--ifm-heading-color);
+    max-width: 18ch;
+    font-size: 1.6rem;
+    line-height: 1.24;
+    font-weight: 650;
+    color: var(--oomol-text-primary);
   }
 }
 
@@ -195,28 +190,29 @@
 }
 
 .title {
+  font-family: var(--oomol-font-display);
   font-size: 4rem;
-  font-weight: 800;
-  line-height: 1.1;
+  font-weight: 700;
+  line-height: 1;
   margin-bottom: 32px;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
   color: var(--ifm-heading-color);
 
   @include respond-to(md) {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
   }
 }
 
 .subtitle {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   color: var(--ifm-color-emphasis-600);
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.7;
   max-width: 700px;
   margin: 0 auto;
 
   @include respond-to(md) {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -238,11 +234,11 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 12px;
+  border-radius: 18px;
   overflow: hidden;
   background: var(--ifm-background-surface-color);
   border: 1px solid var(--ifm-color-emphasis-200);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--oomol-shadow-md);
 }
 
 .storySection {
@@ -255,7 +251,7 @@
   }
 
   p {
-    font-size: 1.25rem;
+    font-size: 1.12rem;
     line-height: 1.8;
     color: var(--ifm-color-emphasis-800);
     margin-bottom: 24px;
@@ -350,98 +346,61 @@
   overflow: hidden;
   background: var(--ifm-background-surface-color);
   border: 1px solid var(--ifm-color-emphasis-200);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--oomol-shadow-sm);
 }
 
 @media (max-width: 996px) {
   .homeSection {
-    padding: 28px 0 20px;
+    padding: 3.2rem 0 2.4rem;
   }
 
-  .homeTitle {
-    font-size: 32px;
+  .homeContainer {
+    padding: 0 20px;
   }
 
-  .homeSubtitle {
-    font-size: 16px;
-  }
-
-  .homeHero {
+  .homeHero,
+  .homePrincipleCard,
+  .homePrincipleCard:nth-child(even) {
     grid-template-columns: 1fr;
+  }
+
+  .homePrincipleCard:nth-child(even) {
+    .homePrincipleMedia,
+    .homePrincipleContent {
+      order: initial;
+    }
   }
 
   .homePreviewFrame {
     min-height: 320px;
   }
-
-  .homePrinciplesGrid {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 768px) {
-  .homeContainer {
-    padding: 0 20px;
-  }
-
-  .homeHeader {
-    margin-bottom: 28px;
-  }
-
   .homeTitle {
-    font-size: 28px;
+    max-width: 100%;
+    font-size: 2.35rem;
   }
 
-  .homeStoryCard,
   .homePreviewCard,
-  .homePrincipleCard {
-    border-radius: 20px;
-  }
-
-  .homeStoryCard {
-    padding: 22px;
-  }
-
-  .homePreviewCard {
-    padding: 14px;
+  .homePrincipleMedia {
+    border-radius: 1.25rem;
   }
 
   .homePreviewFrame {
     min-height: 260px;
-    border-radius: 16px;
-  }
-
-  .homePrincipleMedia {
-    padding: 14px 14px 0;
-  }
-
-  .homePrincipleContent {
-    padding: 18px 18px 22px;
+    border-radius: 1rem;
   }
 }
 
 [data-theme="dark"] {
-  .homeStoryCard,
   .homePreviewCard,
-  .homePrincipleCard {
+  .heroImage,
+  .principleImage {
     box-shadow: none;
   }
 
-  .homeFrustrationBlock {
-    background: linear-gradient(
-      180deg,
-      rgba(125, 127, 233, 0.18) 0%,
-      rgba(125, 127, 233, 0.08) 100%
-    );
-    border-color: rgba(125, 127, 233, 0.24);
-  }
-
-  .homePreviewFrame,
-  .homePrincipleImage {
-    background: linear-gradient(
-      180deg,
-      rgba(28, 33, 48, 0.92) 0%,
-      rgba(18, 21, 32, 0.88) 100%
-    );
+  .homePreviewFrame {
+    background: linear-gradient(180deg, rgba(35, 41, 39, 0.94) 0%, rgba(23, 28, 26, 0.98) 100%);
   }
 }

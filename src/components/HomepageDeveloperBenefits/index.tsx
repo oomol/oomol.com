@@ -18,7 +18,7 @@ const benefits = [
     }),
     note: translate({ message: "HOME.DeveloperBenefits.card1.note" }),
     cta: translate({ message: "HOME.DeveloperBenefits.card1.cta" }),
-    href: "#download",
+    href: "/downloads",
   },
   {
     tag: translate({ message: "HOME.DeveloperBenefits.card2.tag" }),

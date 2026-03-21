@@ -5,23 +5,32 @@
 
 .download {
   min-width: 256px;
-  height: 43px;
-  border-radius: 4px;
-  background-color: var(--oomol-primary);
+  min-height: 48px;
+  border-radius: 999px;
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--oomol-primary) 86%, white) 0%,
+      var(--oomol-primary) 100%
+    );
   color: var(--oomol-white);
-  font-size: 18px;
-  font-weight: 500;
-  border: none;
-  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 650;
+  border: 1px solid color-mix(in srgb, var(--oomol-primary) 70%, black 10%);
+  box-shadow: var(--oomol-shadow-md);
+  padding: 12px 22px;
   white-space: nowrap;
+  letter-spacing: 0.01em;
 
   &:hover {
     background-color: var(--oomol-primary-hover);
     color: var(--oomol-white);
+    transform: translateY(-1px);
   }
 
   &:active {
     background-color: var(--oomol-primary-active);
+    transform: translateY(0);
   }
 
   :global(.oo-btn) {
@@ -34,26 +43,26 @@
 .downloadContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
 .chipNote {
   font-size: 13px;
-  margin-top: 4px;
+  margin-top: 8px;
   color: var(--oomol-text-tertiary);
 }
 
 .windowsBox {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
 .windowsSubtitle {
   font-size: 13px;
-  margin-top: 4px;
+  margin-top: 8px;
   color: var(--oomol-text-tertiary);
 }
 

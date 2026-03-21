@@ -1,134 +1,86 @@
 @use "../../css/custom.scss" as *;
 
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 100px 0 50px;
-  gap: 60px;
-  max-width: 1440px;
+  max-width: 1360px;
   margin: 0 auto;
-  padding-left: 32px;
-  padding-right: 32px;
-
-  @media (max-width: 996px) {
-    padding: 80px 24px 50px;
-    gap: 48px;
-  }
-
-  @media (max-width: 768px) {
-    padding: 60px 20px 50px;
-    gap: 40px;
-  }
+  padding: clamp(4rem, 8vw, 6rem) 32px clamp(3rem, 6vw, 4.5rem);
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+  gap: clamp(2rem, 4vw, 3rem);
+  align-items: start;
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 16px;
+  display: grid;
+  gap: 1rem;
+  text-align: left;
 }
 
 .title {
-  font-size: 48px;
-  font-weight: 800;
-  color: var(--ifm-heading-color);
-  margin-bottom: 12px;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-
-  @media (max-width: 996px) {
-    font-size: 2.25rem;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
+  margin: 0;
+  max-width: 11ch;
+  font-family: var(--oomol-font-display);
+  font-size: clamp(2.5rem, 4.8vw, 4rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  color: var(--oomol-text-primary);
 }
 
 .subtitle {
-  font-size: 1.2rem;
-  color: var(--ifm-color-emphasis-700);
-  max-width: 720px;
-  margin: 0 auto;
-  line-height: 1.6;
-
-  @media (max-width: 996px) {
-    font-size: 1.1rem;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
-  }
+  margin: 0;
+  max-width: 32rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--oomol-text-secondary);
 }
 
 .pointsGrid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  width: 100%;
-  max-width: 1080px;
-  margin-top: 12px;
-
-  @media (max-width: 996px) {
-    grid-template-columns: 1fr;
-  }
+  gap: 1rem;
+  margin-top: 0.5rem;
 }
 
 .pointCard {
+  padding-top: 1rem;
+  border-top: 1px solid var(--oomol-divider);
   text-align: left;
-  background: var(--ifm-background-surface-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
 .pointTitle {
+  margin: 0 0 0.45rem;
   font-size: 1rem;
-  font-weight: 700;
-  color: var(--ifm-heading-color);
-  margin: 0 0 8px;
+  font-weight: 650;
+  color: var(--oomol-text-primary);
 }
 
 .pointDescription {
   margin: 0;
   font-size: 0.95rem;
-  line-height: 1.6;
-  color: var(--ifm-color-emphasis-700);
+  line-height: 1.68;
+  color: var(--oomol-text-secondary);
 }
 
 .imagesWrapper {
-  display: flex;
-  gap: 32px;
-  width: 100%;
-  max-width: 1380px;
-
-  @media (max-width: 996px) {
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  @media (max-width: 768px) {
-    gap: 20px;
-  }
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+  align-items: start;
 }
 
 .imageContainer {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
   overflow: hidden;
-  background: var(--ifm-background-surface-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 1.6rem;
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--oomol-bg-elevated) 90%, white 10%) 0%,
+      color-mix(in srgb, var(--oomol-bg-elevated) 98%, black 2%) 100%
+    );
+  border: 1px solid var(--oomol-divider);
+  box-shadow: var(--oomol-shadow-md);
 
-  @media (max-width: 996px) {
-    width: 100%;
+  &:last-child {
+    margin-top: 3rem;
   }
 }
 
@@ -137,4 +89,32 @@
   height: auto;
   display: block;
   object-fit: cover;
+}
+
+@media (max-width: 996px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    max-width: 100%;
+  }
+
+  .imagesWrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 3.5rem 20px 3rem;
+  }
+
+  .imagesWrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .imageContainer:last-child {
+    margin-top: 0;
+  }
 }
