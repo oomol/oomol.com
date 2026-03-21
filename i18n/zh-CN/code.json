@@ -2392,7 +2392,7 @@
     "message": "容器化部署到私有云或 K8s 集群，支持 CI/CD 流水线，实现企业级 API 服务的持续交付和运维。"
   },
   "HOME.ProductComparison.title": {
-    "message": "把已经跑通的函数，更快交付到 OOMOL Cloud"
+    "message": "将函数一键发布为云服务"
   },
   "HOME.ProductComparison.subtitle": {
     "message": "OOMOL Cloud 不是另一个开发环境，而是把你已经在本地验证过的能力，接到真实线上交付的那一层。"

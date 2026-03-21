@@ -2389,7 +2389,7 @@
     "message": "Containerized deployment to private cloud or K8s clusters, supporting CI/CD pipelines for continuous delivery and operations of enterprise-grade API services."
   },
   "HOME.ProductComparison.title": {
-    "message": "Ship the Function You Already Validated to OOMOL Cloud"
+    "message": "One-Click Publish Functions as Cloud Services"
   },
   "HOME.ProductComparison.subtitle": {
     "message": "OOMOL Cloud is not another development environment. It is the layer that carries the capability you already validated locally into live online delivery."
