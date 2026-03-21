@@ -50,10 +50,6 @@ export default function StudioDetailContent() {
       </section>
 
       <section className={styles.principlesSection}>
-        <div className={styles.principlesHeader}>
-          <h2>{translate({ message: "STUDIO.principles.header" })}</h2>
-        </div>
-
         <div className={styles.principleItem}>
           <div className={styles.principleText}>
             <h3>{translate({ message: "STUDIO.principle1.title" })}</h3>

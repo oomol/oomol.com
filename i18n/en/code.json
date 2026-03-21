@@ -2737,13 +2737,13 @@
     "message": "Generate functions in a real coding environment, validate them with local containers, then carry the same code forward into service delivery."
   },
   "STUDIO.manifesto.title": {
-    "message": "OOMOL Studio"
+    "message": "A Studio Designed for Developer Productivity"
   },
   "STUDIO.manifesto.subtitle": {
     "message": "A real coding environment for developers: let AI help generate functions, validate them locally, then carry them forward into service delivery."
   },
   "STUDIO.story.paragraph1": {
-    "message": "What we wanted was not another workflow builder that asks developers to adapt to the platform, but a place where you can actually write functions, debug dependencies, and validate outputs."
+    "message": "What we want is not another platform that asks developers to adapt, but a working environment where you can truly write functions, orchestrate nodes, debug dependencies, and validate results."
   },
   "STUDIO.story.frustration.line1": {
     "message": "\"Why do I have to learn a proprietary JSON syntax just to write an if/else statement?\""
@@ -2759,9 +2759,6 @@
   },
   "STUDIO.story.paragraph3": {
     "message": "So Studio has a clear role: not to replace engineering workflow, but to put function generation and local validation back inside it."
-  },
-  "STUDIO.principles.header": {
-    "message": "Why Studio Fits Function Generation and Validation"
   },
   "STUDIO.principle1.title": {
     "message": "1. Functions First, Code as Truth"

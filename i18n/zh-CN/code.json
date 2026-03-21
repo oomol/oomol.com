@@ -2734,7 +2734,7 @@
     "message": "在真实 coding 环境里生成函数、用本地容器验证能力，再把同一份代码继续发布成服务。"
   },
   "STUDIO.manifesto.title": {
-    "message": "OOMOL Studio"
+    "message": "为开发者提效而设计的 Studio"
   },
   "STUDIO.manifesto.subtitle": {
     "message": "给开发者的真实 coding 环境：让 Agent 帮你生成函数，在本地验证后，继续走向服务交付。"
@@ -2743,7 +2743,7 @@
     "message": "下载 OOMOL Studio"
   },
   "STUDIO.story.paragraph1": {
-    "message": "我们想要的，不是另一个要求开发者适应平台的 workflow builder，而是一个能真正写函数、调试依赖、验证结果的工作环境。"
+    "message": "我们想要的，不是另一个要求开发者适应平台，而是一个能真正写函数、编排节点、调试依赖、验证结果的工作环境。"
   },
   "STUDIO.story.frustration.line1": {
     "message": "「为什么我必须学习专有的 JSON 语法才能写一个 if/else 语句？」"
@@ -2759,9 +2759,6 @@
   },
   "STUDIO.story.paragraph3": {
     "message": "所以 Studio 的角色很明确：它不是为了替代工程环境，而是为了把函数生成和本地验证放回工程环境里。"
-  },
-  "STUDIO.principles.header": {
-    "message": "Studio 为什么适合生成和验证函数"
   },
   "STUDIO.principle1.title": {
     "message": "1. 函数优先，代码为真"
