@@ -612,22 +612,22 @@
     "message": "Publishing is not the end. It turns capabilities into reusable service assets, so every delivery becomes a foundation for future innovation."
   },
   "HOME.CommunityShare.point1.title": {
-    "message": "Install Proven Capabilities"
+    "message": "Reuse Published Capabilities"
   },
   "HOME.CommunityShare.point1.description": {
-    "message": "Bring already shipped function capabilities into the team environment instead of rebuilding them from scratch."
+    "message": "Bring published functions back into your own environment instead of rebuilding them from scratch every time."
   },
   "HOME.CommunityShare.point2.title": {
-    "message": "Maintain a Team Catalog"
+    "message": "Build Your Own Capability Library"
   },
   "HOME.CommunityShare.point2.description": {
-    "message": "Make existing capabilities, ownership, and usage paths visible across the team."
+    "message": "Keep track of what you have already published so you can find, call, and improve it whenever needed."
   },
   "HOME.CommunityShare.point3.title": {
-    "message": "Compose Larger Services"
+    "message": "Compose New Services"
   },
   "HOME.CommunityShare.point3.description": {
-    "message": "Extend from shipped functions so every release becomes part of a larger service layer."
+    "message": "Compose and extend from published functions so each release becomes the starting point for the next service."
   },
   "HOME.Features.title": {
     "message": "Features"

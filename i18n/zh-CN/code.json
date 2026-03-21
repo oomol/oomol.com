@@ -613,22 +613,22 @@
     "message": "发布不是终点，而是把能力沉淀为可复用的服务资产，让每一次交付都能成为后续创新的基础。"
   },
   "HOME.CommunityShare.point1.title": {
-    "message": "安装现成能力"
+    "message": "复用已发布能力"
   },
   "HOME.CommunityShare.point1.description": {
-    "message": "把已经交付过的函数能力装进团队环境，不再每次从零重写。"
+    "message": "把已经发布过的函数直接装回自己的环境，不再每次从零重写。"
   },
   "HOME.CommunityShare.point2.title": {
-    "message": "形成团队能力目录"
+    "message": "积累个人能力库"
   },
   "HOME.CommunityShare.point2.description": {
-    "message": "让团队知道哪些能力已经存在、谁在维护、应该怎么调用。"
+    "message": "让你清楚知道自己已经发布了哪些能力，随时查找、调用和继续完善。"
   },
   "HOME.CommunityShare.point3.title": {
-    "message": "继续拼成更大的服务"
+    "message": "继续组合新服务"
   },
   "HOME.CommunityShare.point3.description": {
-    "message": "基于已经交付的函数继续扩展，让每次上线都变成服务资产的一部分。"
+    "message": "基于已经发布的函数继续组合和扩展，让每次发布都成为下一次创新的起点。"
   },
   "HOME.Features.title": {
     "message": "功能特点"
