@@ -55,24 +55,24 @@
 
 .cloudSection {
   display: grid;
-  gap: 1.4rem;
+  gap: 1.2rem;
 }
 
 .topPair {
   display: grid;
-  grid-template-columns: minmax(320px, 0.84fr) minmax(0, 1.16fr);
+  grid-template-columns: minmax(320px, 0.8fr) minmax(0, 1.2fr);
   gap: 1.4rem;
   align-items: stretch;
 
   &:hover,
   &:focus-within {
-    .mediaStage,
+    .outputsPanel,
     .cardHeader {
       transform: translateY(-2px);
       box-shadow: var(--oomol-shadow-lg);
     }
 
-    .mediaStage {
+    .outputsPanel {
       border-color: color-mix(
         in srgb,
         var(--oomol-primary) 28%,
@@ -90,7 +90,6 @@
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  order: 1;
 }
 
 .cardHeader {
@@ -236,11 +235,11 @@
   color: rgba(221, 214, 231, 0.72);
 }
 
-.mediaStage {
+.outputsPanel {
   display: grid;
   align-content: start;
   gap: 1rem;
-  padding: 1.1rem;
+  padding: 1.2rem;
   border-radius: 1.8rem;
   border: 1px solid var(--oomol-divider);
   background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%);
@@ -250,32 +249,10 @@
     transform 0.24s ease,
     box-shadow 0.24s ease,
     border-color 0.24s ease;
-  order: 2;
-}
-
-.outputsPanel {
-  display: grid;
-  gap: 1rem;
-}
-
-.mediaStageHeader {
-  display: grid;
-  gap: 0.65rem;
-}
-
-.mediaStageCopy {
-  margin: 0;
-  max-width: 48rem;
-  font-size: 0.97rem;
-  line-height: 1.72;
-  color: var(--oomol-text-secondary);
-}
-
-.mediaPreview {
-  display: block;
 }
 
 .outputsIntro,
+.benefitsPanel,
 .benefitCard,
 .outputCard {
   border-radius: 1.2rem;
@@ -323,8 +300,13 @@
 
 .outputsGrid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
+}
+
+.benefitsPanel {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
 }
 
 .benefitsGrid {
@@ -337,6 +319,33 @@
 .benefitCard {
   padding: 1.15rem 1.15rem 1.2rem;
   min-height: 100%;
+}
+
+.outputCard {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.95rem;
+  align-items: start;
+}
+
+.outputIndex {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.35rem;
+  min-height: 2.35rem;
+  border-radius: 999px;
+  border: 1px solid var(--oomol-divider);
+  background: color-mix(in srgb, var(--oomol-primary-bg) 65%, white 35%);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--oomol-primary-text);
+}
+
+.outputContent {
+  display: grid;
+  gap: 0.4rem;
 }
 
 .outputTitle,
@@ -382,17 +391,8 @@
     grid-template-columns: 1fr;
   }
 
-  .cloudCard,
-  .mediaStage {
-    order: initial;
-  }
-
   .sectionHeader {
     grid-template-columns: 1fr;
-  }
-
-  .outputsGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

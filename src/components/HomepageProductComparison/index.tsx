@@ -2,7 +2,6 @@ import styles from "./styles.module.scss";
 
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
-import MediaRequirementPlaceholder from "@site/src/components/MediaRequirementPlaceholder";
 
 const deliveryOutputs = [
   {
@@ -60,65 +59,6 @@ export default function HomepageProductComparison() {
 
         <div className={styles.cloudSection}>
           <div className={styles.topPair}>
-            <div className={styles.mediaStage}>
-              <div className={styles.mediaStageHeader}>
-                <div className={styles.infoLabel}>
-                  {translate({ message: "Primary Demo Slot" })}
-                </div>
-                <p className={styles.mediaStageCopy}>
-                  {translate({
-                    message:
-                      "This should become the homepage's main product demo. Show one validated capability being published to multiple delivery targets in a single flow.",
-                  })}
-                </p>
-              </div>
-
-              <MediaRequirementPlaceholder
-                className={styles.mediaPreview}
-                badge={translate({ message: "VIDEO PREFERRED" })}
-                titleLines={[
-                  translate({ message: "One Function" }),
-                  translate({ message: "Multiple Outputs" }),
-                ]}
-                summary={translate({
-                  message:
-                    "10-15s loop. 16:10. Publish to API, MCP, and Tasks.",
-                })}
-                chips={[
-                  translate({ message: "16:10" }),
-                  translate({ message: "10-15s" }),
-                  translate({ message: "Video" }),
-                ]}
-                steps={[
-                  {
-                    index: "01",
-                    title: translate({ message: "Select validated flow" }),
-                    detail: translate({
-                      message: "Begin from something already proven locally.",
-                    }),
-                  },
-                  {
-                    index: "02",
-                    title: translate({ message: "Switch delivery target" }),
-                    detail: translate({
-                      message: "Move between API, MCP, and automation output.",
-                    }),
-                  },
-                  {
-                    index: "03",
-                    title: translate({ message: "Show live result" }),
-                    detail: translate({
-                      message: "End with endpoint, tool entry, or task status.",
-                    }),
-                  },
-                ]}
-                footnote={translate({
-                  message:
-                    "Replace with real capture: publish-to-api-mcp-task.mp4",
-                })}
-              />
-            </div>
-
             <div className={styles.cloudCard}>
               <div className={styles.cardHeader}>
                 <div className={styles.cardMetaRow}>
@@ -161,29 +101,38 @@ export default function HomepageProductComparison() {
                 </div>
               </div>
             </div>
+
+            <div className={styles.outputsPanel}>
+              <div className={styles.outputsIntro}>
+                <div className={styles.infoLabel}>
+                  {translate({ message: "HOME.ProductComparison.outputIntro" })}
+                </div>
+                <p className={styles.outputsText}>
+                  {translate({
+                    message: "HOME.ProductComparison.outputSummary",
+                  })}
+                </p>
+              </div>
+
+              <div className={styles.outputsGrid}>
+                {deliveryOutputs.map((output, index) => (
+                  <div key={output.title} className={styles.outputCard}>
+                    <div className={styles.outputIndex} aria-hidden="true">
+                      {String(index + 1).padStart(2, "0")}
+                    </div>
+                    <div className={styles.outputContent}>
+                      <h4 className={styles.outputTitle}>{output.title}</h4>
+                      <p className={styles.outputDescription}>
+                        {output.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
-          <div className={styles.outputsPanel}>
-            <div className={styles.outputsIntro}>
-              <div className={styles.infoLabel}>
-                {translate({ message: "HOME.ProductComparison.outputIntro" })}
-              </div>
-              <p className={styles.outputsText}>
-                {translate({ message: "HOME.ProductComparison.outputSummary" })}
-              </p>
-            </div>
-
-            <div className={styles.outputsGrid}>
-              {deliveryOutputs.map(output => (
-                <div key={output.title} className={styles.outputCard}>
-                  <h4 className={styles.outputTitle}>{output.title}</h4>
-                  <p className={styles.outputDescription}>
-                    {output.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-
+          <div className={styles.benefitsPanel}>
             <div className={styles.benefitsGrid}>
               {cloudBenefits.map(benefit => (
                 <div key={benefit.label} className={styles.benefitCard}>
