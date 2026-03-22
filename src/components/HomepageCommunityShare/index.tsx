@@ -56,14 +56,14 @@ export default function HomepageCommunityShare() {
       </div>
 
       <div className={styles.imagesWrapper}>
-        <div className={styles.imageContainer}>
+        <div className={`${styles.imageContainer} ${styles.primaryImage}`}>
           <img
             src={isDark ? communityHomeDark : communityHomeLight}
             alt="Reusable capability catalog"
             className={styles.image}
           />
         </div>
-        <div className={styles.imageContainer}>
+        <div className={`${styles.imageContainer} ${styles.secondaryImage}`}>
           <img
             src={isDark ? communityDetailDark : communityDetailLight}
             alt="Capability asset details"
