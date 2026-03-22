@@ -42,13 +42,13 @@
 .container {
   position: relative;
   z-index: 1;
-  max-width: 1280px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 0 32px;
   display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
-  gap: clamp(2rem, 4vw, 4.5rem);
-  align-items: start;
+  grid-template-columns: minmax(0, 0.74fr) minmax(0, 1.06fr);
+  gap: clamp(1.75rem, 3.5vw, 3.75rem);
+  align-items: center;
 }
 
 .header {
@@ -78,7 +78,8 @@
     height: 0.38rem;
     border-radius: 999px;
     background: color-mix(in srgb, var(--oomol-primary) 76%, white);
-    box-shadow: 0 0 0 5px color-mix(in srgb, var(--oomol-primary-bg) 55%, transparent);
+    box-shadow: 0 0 0 5px
+      color-mix(in srgb, var(--oomol-primary-bg) 55%, transparent);
   }
 }
 
@@ -136,18 +137,17 @@
 }
 
 .screenshotFrame {
-  padding: 1.15rem;
+  padding: 0.9rem;
   border: 1px solid color-mix(in srgb, var(--oomol-border-default) 82%, white);
   border-radius: 2rem;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(252, 254, 255, 0.94) 0%,
-      rgba(244, 247, 252, 0.92) 100%
-    );
+  background: linear-gradient(
+    180deg,
+    rgba(252, 254, 255, 0.94) 0%,
+    rgba(244, 247, 252, 0.92) 100%
+  );
   box-shadow: var(--oomol-shadow-lg);
   position: relative;
-  margin-top: clamp(0rem, 3vw, 2rem);
+  margin-top: clamp(-0.25rem, 2vw, 1rem);
 
   &::before {
     content: "";
@@ -174,7 +174,7 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 1.25rem;
+  border-radius: 1.15rem;
   border: 1px solid color-mix(in srgb, var(--oomol-border-default) 72%, white);
   background: var(--ifm-background-surface-color);
 }
@@ -248,12 +248,11 @@
   }
 
   .screenshotFrame {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(31, 30, 45, 0.96) 0%,
-        rgba(21, 20, 31, 0.98) 100%
-      );
+    background: linear-gradient(
+      180deg,
+      rgba(31, 30, 45, 0.96) 0%,
+      rgba(21, 20, 31, 0.98) 100%
+    );
     border-color: color-mix(in srgb, var(--oomol-border-default) 82%, black);
 
     &::before {
