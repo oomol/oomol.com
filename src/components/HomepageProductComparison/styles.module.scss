@@ -20,16 +20,16 @@
 
 .sectionHeader {
   display: grid;
-  grid-template-columns: minmax(0, 0.74fr) minmax(0, 0.26fr);
-  gap: clamp(1.5rem, 3vw, 3rem);
-  align-items: end;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
+  align-items: start;
   text-align: left;
 }
 
 .headerText {
   display: grid;
   gap: 0.9rem;
-  max-width: 44rem;
+  max-width: 60rem;
 }
 
 .sectionTitle {
@@ -44,31 +44,30 @@
 
 .sectionSubtitle {
   margin: 0;
+  max-width: 48rem;
   font-size: 1.02rem;
   line-height: 1.76;
   color: var(--oomol-text-secondary);
 }
 
 .headerRule {
-  height: 1px;
-  margin-bottom: 0.85rem;
-  background: linear-gradient(
-    90deg,
-    color-mix(in srgb, var(--oomol-primary) 26%, transparent) 0%,
-    color-mix(in srgb, var(--oomol-divider) 100%, transparent) 100%
-  );
+  display: none;
 }
 
 .cloudSection {
   display: grid;
-  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
-  gap: 1.6rem;
+  grid-template-columns: minmax(0, 1.16fr) minmax(340px, 0.84fr);
+  gap: 1.4rem;
   align-items: start;
+  grid-template-areas:
+    "media cloud"
+    "outputs outputs";
 }
 
 .cloudCard {
   display: flex;
   flex-direction: column;
+  grid-area: cloud;
 }
 
 .cardHeader {
@@ -197,20 +196,21 @@
   color: rgba(221, 214, 231, 0.72);
 }
 
-.detailPanel {
-  display: grid;
-  gap: 1rem;
-  padding-top: 0.35rem;
-}
-
 .mediaStage {
+  grid-area: media;
   display: grid;
   gap: 1rem;
-  padding: 1rem;
-  border-radius: 1.6rem;
+  padding: 1.1rem;
+  border-radius: 1.8rem;
   border: 1px solid var(--oomol-divider);
   background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%);
-  box-shadow: var(--oomol-shadow-sm);
+  box-shadow: var(--oomol-shadow-md);
+}
+
+.outputsPanel {
+  grid-area: outputs;
+  display: grid;
+  gap: 1rem;
 }
 
 .mediaStageHeader {
@@ -327,14 +327,14 @@
 
   .cloudSection {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "cloud"
+      "media"
+      "outputs";
   }
 
   .sectionHeader {
     grid-template-columns: 1fr;
-  }
-
-  .headerRule {
-    display: none;
   }
 
   .outputsGrid {

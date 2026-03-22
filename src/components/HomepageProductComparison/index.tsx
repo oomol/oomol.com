@@ -96,63 +96,63 @@ export default function HomepageProductComparison() {
             </div>
           </div>
 
-          <div className={styles.detailPanel}>
-            <div className={styles.mediaStage}>
-              <div className={styles.mediaStageHeader}>
-                <div className={styles.infoLabel}>
-                  {translate({ message: "Primary Demo Slot" })}
-                </div>
-                <p className={styles.mediaStageCopy}>
-                  {translate({
-                    message:
-                      "This should become the homepage's main product demo. Show one validated capability being published to multiple delivery targets in a single flow.",
-                  })}
-                </p>
+          <div className={styles.mediaStage}>
+            <div className={styles.mediaStageHeader}>
+              <div className={styles.infoLabel}>
+                {translate({ message: "Primary Demo Slot" })}
               </div>
-
-              <MediaRequirementPlaceholder
-                badge={translate({ message: "VIDEO PREFERRED" })}
-                titleLines={[
-                  translate({ message: "One Function" }),
-                  translate({ message: "Multiple Outputs" }),
-                ]}
-                summary={translate({
-                  message: "10-15s loop. 16:10. Publish to API, MCP, and Tasks.",
+              <p className={styles.mediaStageCopy}>
+                {translate({
+                  message:
+                    "This should become the homepage's main product demo. Show one validated capability being published to multiple delivery targets in a single flow.",
                 })}
-                chips={[
-                  translate({ message: "16:10" }),
-                  translate({ message: "10-15s" }),
-                  translate({ message: "Video" }),
-                ]}
-                steps={[
-                  {
-                    index: "01",
-                    title: translate({ message: "Select validated flow" }),
-                    detail: translate({
-                      message: "Begin from something already proven locally.",
-                    }),
-                  },
-                  {
-                    index: "02",
-                    title: translate({ message: "Switch delivery target" }),
-                    detail: translate({
-                      message: "Move between API, MCP, and automation output.",
-                    }),
-                  },
-                  {
-                    index: "03",
-                    title: translate({ message: "Show live result" }),
-                    detail: translate({
-                      message: "End with endpoint, tool entry, or task status.",
-                    }),
-                  },
-                ]}
-                footnote={translate({
-                  message: "Replace with real capture: publish-to-api-mcp-task.mp4",
-                })}
-              />
+              </p>
             </div>
 
+            <MediaRequirementPlaceholder
+              badge={translate({ message: "VIDEO PREFERRED" })}
+              titleLines={[
+                translate({ message: "One Function" }),
+                translate({ message: "Multiple Outputs" }),
+              ]}
+              summary={translate({
+                message: "10-15s loop. 16:10. Publish to API, MCP, and Tasks.",
+              })}
+              chips={[
+                translate({ message: "16:10" }),
+                translate({ message: "10-15s" }),
+                translate({ message: "Video" }),
+              ]}
+              steps={[
+                {
+                  index: "01",
+                  title: translate({ message: "Select validated flow" }),
+                  detail: translate({
+                    message: "Begin from something already proven locally.",
+                  }),
+                },
+                {
+                  index: "02",
+                  title: translate({ message: "Switch delivery target" }),
+                  detail: translate({
+                    message: "Move between API, MCP, and automation output.",
+                  }),
+                },
+                {
+                  index: "03",
+                  title: translate({ message: "Show live result" }),
+                  detail: translate({
+                    message: "End with endpoint, tool entry, or task status.",
+                  }),
+                },
+              ]}
+              footnote={translate({
+                message: "Replace with real capture: publish-to-api-mcp-task.mp4",
+              })}
+            />
+          </div>
+
+          <div className={styles.outputsPanel}>
             <div className={styles.outputsIntro}>
               <div className={styles.infoLabel}>
                 {translate({ message: "HOME.ProductComparison.outputIntro" })}

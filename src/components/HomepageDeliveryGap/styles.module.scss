@@ -68,38 +68,45 @@
 
 .problemGrid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  gap: 1rem;
 }
 
 .problemCard {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 1.35rem;
+  row-gap: 0.5rem;
+  align-items: start;
   min-height: 100%;
-  padding: 1.5rem 1.25rem 0 0;
+  padding: 1.25rem 0 0;
   border-top: 1px solid rgba(221, 214, 231, 0.16);
 }
 
 .problemIndex {
-  margin-bottom: 1rem;
+  grid-row: 1 / span 2;
+  margin-bottom: 0;
   font-family: var(--oomol-font-display);
-  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-size: clamp(2.2rem, 3vw, 2.8rem);
   line-height: 1;
   letter-spacing: -0.05em;
   color: rgba(182, 187, 241, 0.92);
 }
 
 .problemTitle {
-  margin: 0 0 0.8rem;
-  max-width: 17ch;
-  font-size: 1.35rem;
-  line-height: 1.34;
+  margin: 0;
+  max-width: 22ch;
+  font-size: 1.42rem;
+  line-height: 1.32;
   font-weight: 650;
   color: rgba(243, 239, 248, 0.94);
 }
 
 .problemDescription {
   margin: 0;
-  font-size: 0.98rem;
-  line-height: 1.74;
+  max-width: 42rem;
+  font-size: 1rem;
+  line-height: 1.76;
   color: rgba(221, 214, 231, 0.72);
 }
 
@@ -159,5 +166,14 @@
 
   .section {
     padding: 3.6rem 0;
+  }
+
+  .problemCard {
+    grid-template-columns: 1fr;
+    row-gap: 0.7rem;
+  }
+
+  .problemIndex {
+    grid-row: auto;
   }
 }
