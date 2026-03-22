@@ -10,10 +10,10 @@
 
 .topGrid {
   display: grid;
-  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
-  gap: clamp(1.75rem, 4vw, 3.5rem);
-  align-items: end;
-  margin-bottom: 1.35rem;
+  grid-template-columns: minmax(0, 0.76fr) minmax(0, 1.24fr);
+  gap: clamp(2rem, 4vw, 3.75rem);
+  align-items: start;
+  margin-bottom: 1.6rem;
 }
 
 .header {
@@ -62,16 +62,22 @@
 .signalGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 0.9rem;
 }
 
 .signalCard {
-  padding: 1rem 0.2rem 0;
-  border-top: 1px solid var(--oomol-divider);
+  display: grid;
+  align-content: start;
+  min-height: 100%;
+  padding: 1.1rem 1.15rem 1.2rem;
+  border: 1px solid var(--oomol-divider);
+  border-radius: 1.35rem;
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%);
+  box-shadow: var(--oomol-shadow-sm);
 }
 
 .signalLabel {
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.65rem;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -80,25 +86,30 @@
 }
 
 .signalValue {
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.7rem;
   font-family: var(--oomol-font-display);
-  font-size: clamp(1.75rem, 2.6vw, 2.5rem);
-  line-height: 1;
-  letter-spacing: -0.04em;
+  font-size: clamp(1.5rem, 2.15vw, 2.15rem);
+  line-height: 1.04;
+  letter-spacing: -0.045em;
   color: var(--oomol-text-primary);
 }
 
 .signalDescription {
   margin: 0;
-  font-size: 0.94rem;
-  line-height: 1.68;
+  font-size: 0.96rem;
+  line-height: 1.72;
   color: var(--oomol-text-secondary);
+}
+
+.signalCard:first-child .signalValue {
+  font-size: clamp(1.45rem, 2vw, 1.95rem);
+  overflow-wrap: anywhere;
 }
 
 .caseGrid {
   display: grid;
   grid-template-columns: 1.2fr 0.9fr 0.9fr;
-  gap: 1rem;
+  gap: 1.1rem;
 }
 
 .caseCard {
@@ -130,10 +141,6 @@
     ),
     color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%);
 
-  .caseMedia {
-    padding: 0.9rem;
-  }
-
   .caseTitle {
     font-size: 1.75rem;
     line-height: 1.14;
@@ -145,13 +152,9 @@
 }
 
 .caseMedia {
-  overflow: hidden;
-  border-radius: 1rem;
   margin-bottom: 1rem;
   aspect-ratio: 16 / 10;
-  padding: 0.8rem;
-  border: 1px solid var(--oomol-divider);
-  background: linear-gradient(180deg, rgba(251, 253, 255, 0.9) 0%, rgba(239, 244, 251, 0.94) 100%);
+  overflow: visible;
 }
 
 .caseImage {
@@ -160,8 +163,10 @@
   height: 100%;
   object-fit: contain;
   object-position: top center;
-  border-radius: 0.75rem;
+  border-radius: 1rem;
+  border: 1px solid color-mix(in srgb, var(--oomol-divider) 86%, white 14%);
   background: var(--oomol-white);
+  box-shadow: var(--oomol-shadow-md);
 }
 
 .caseKicker {
@@ -230,9 +235,5 @@
 [data-theme="dark"] {
   .caseCard {
     background: color-mix(in srgb, var(--oomol-bg-elevated) 92%, black 8%);
-  }
-
-  .caseMedia {
-    background: linear-gradient(180deg, rgba(37, 35, 53, 0.92) 0%, rgba(23, 22, 34, 0.96) 100%);
   }
 }
