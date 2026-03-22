@@ -1,3 +1,5 @@
+import styles from "./styles.module.scss";
+
 import type { DocusaurusContext } from "@docusaurus/types";
 
 import { useColorMode } from "@docusaurus/theme-common";
@@ -237,6 +239,20 @@ const AnalyticsConsentBridge = () => {
   return null;
 };
 
+const CookieConsentOpenBridge = ({ requestKey }: { requestKey: number }) => {
+  const { openPreferencesModal } = useCookieConsent();
+
+  useEffect(() => {
+    if (requestKey <= 0) {
+      return;
+    }
+
+    openPreferencesModal();
+  }, [openPreferencesModal, requestKey]);
+
+  return null;
+};
+
 export const CookieConsentProvider = () => {
   const {
     i18n: { currentLocale },
@@ -247,13 +263,114 @@ export const CookieConsentProvider = () => {
   const privacyPolicyUrl = useBaseUrl("/privacy");
   const translations =
     translationsByLocale[currentLocale] ?? translationsByLocale.en;
+  const [showCookieManager, setShowCookieManager] = React.useState(() => {
+    if (typeof window === "undefined") {
+      return false;
+    }
+
+    return Boolean(readCookie(COOKIE_KEY));
+  });
+  const [openRequestKey, setOpenRequestKey] = React.useState(0);
 
   migrateLegacyConsentCookie();
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const hasStoredConsent = Boolean(readCookie(COOKIE_KEY));
+
+    if (hasStoredConsent) {
+      setShowCookieManager(true);
+      return;
+    }
+
+    let initialDelayTimer: number | undefined;
+    let scrollIdleTimer: number | undefined;
+
+    const revealManager = () => {
+      setShowCookieManager(true);
+    };
+
+    const scheduleReveal = (delay: number) => {
+      window.clearTimeout(initialDelayTimer);
+      window.clearTimeout(scrollIdleTimer);
+
+      if (window.scrollY <= 96) {
+        initialDelayTimer = window.setTimeout(revealManager, delay);
+        return;
+      }
+
+      scrollIdleTimer = window.setTimeout(revealManager, 900);
+    };
+
+    const handleScroll = () => {
+      if (showCookieManager) {
+        return;
+      }
+
+      scheduleReveal(1400);
+    };
+
+    scheduleReveal(1400);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.clearTimeout(initialDelayTimer);
+      window.clearTimeout(scrollIdleTimer);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [showCookieManager]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const handleShowCookieConsent = () => {
+      setShowCookieManager(true);
+      setOpenRequestKey(current => current + 1);
+    };
+
+    window.addEventListener("show-cookie-consent", handleShowCookieConsent);
+
+    return () => {
+      window.removeEventListener(
+        "show-cookie-consent",
+        handleShowCookieConsent
+      );
+    };
+  }, []);
+
+  if (!showCookieManager) {
+    return null;
+  }
 
   return (
     <CookieManager
       cookieKey={COOKIE_KEY}
       cookieCategories={{ Analytics: true, Social: false, Advertising: true }}
+      classNames={{
+        popupContainer: styles.popupContainer,
+        popupContent: styles.popupContent,
+        popupTitle: styles.popupTitle,
+        popupMessage: styles.popupMessage,
+        acceptButton: styles.acceptButton,
+        declineButton: styles.declineButton,
+        privacyPolicyLink: styles.privacyPolicyLink,
+        manageCookieContainer: styles.manageCookieContainer,
+        manageCookieTitle: styles.manageCookieTitle,
+        manageCookieMessage: styles.manageCookieMessage,
+        manageCookieCategory: styles.manageCookieCategory,
+        manageCookieCategoryTitle: styles.manageCookieCategoryTitle,
+        manageCookieCategorySubtitle: styles.manageCookieCategorySubtitle,
+        manageCookieStatusText: styles.manageCookieStatusText,
+        manageCookieToggle: styles.manageCookieToggle,
+        manageCookieToggleChecked: styles.manageCookieToggleChecked,
+        manageCancelButton: styles.manageCancelButton,
+        manageSaveButton: styles.manageSaveButton,
+      }}
       disableAutomaticBlocking
       disableGeolocation
       displayType="popup"
@@ -265,6 +382,7 @@ export const CookieConsentProvider = () => {
       translations={translations}
     >
       <AnalyticsConsentBridge />
+      <CookieConsentOpenBridge requestKey={openRequestKey} />
     </CookieManager>
   );
 };
