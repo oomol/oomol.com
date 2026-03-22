@@ -39,6 +39,10 @@
     "message": "云服务",
     "description": "The label for category Cloud in sidebar tutorialSidebar"
   },
+  "sidebar.tutorialSidebar.category.Cloud Services": {
+    "message": "云服务",
+    "description": "The label for category Cloud Services in sidebar tutorialSidebar"
+  },
   "sidebar.tutorialSidebar.category.Share and Deploy.link.generated-index.description": {
     "message": "Block、Node、Flow 等参考",
     "description": "The generated-index page description for category Share and Deploy in sidebar tutorialSidebar"
@@ -71,6 +75,10 @@
     "message": "进阶指南",
     "description": "The label for category Advanced Guide in sidebar tutorialSidebar"
   },
+  "sidebar.tutorialSidebar.category.Advanced Usage": {
+    "message": "进阶使用",
+    "description": "The label for category Advanced Usage in sidebar tutorialSidebar"
+  },
   "sidebar.tutorialSidebar.category.Advanced Guide.link.generated-index.description": {
     "message": "OOMOL Studio 更高级的使用方法和技巧",
     "description": "The generated-index page description for category Bloc in sidebar tutorialSidebar"
@@ -83,6 +91,10 @@
     "message": "概念",
     "description": "The label for category Concepts in sidebar tutorialSidebar"
   },
+  "sidebar.tutorialSidebar.category.Core Concepts": {
+    "message": "核心概念",
+    "description": "The label for category Core Concepts in sidebar tutorialSidebar"
+  },
   "sidebar.tutorialSidebar.category.Zero to One": {
     "message": "从 0 到 1",
     "description": "The label for category Zero to One in sidebar tutorialSidebar"
@@ -90,5 +102,17 @@
   "sidebar.tutorialSidebar.category.Community": {
     "message": "社区",
     "description": "The label for category Community in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Support": {
+    "message": "支持",
+    "description": "The label for category Support in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.SDKs": {
+    "message": "SDK",
+    "description": "The label for category SDKs in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Workflow Engine & SDK": {
+    "message": "工作流引擎与 SDK",
+    "description": "The label for category Workflow Engine & SDK in sidebar tutorialSidebar"
   }
 }

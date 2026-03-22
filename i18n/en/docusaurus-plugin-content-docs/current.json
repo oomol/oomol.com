@@ -43,9 +43,17 @@
     "message": "A block is the most basic unit for executing tasks in OOMOL Studio",
     "description": "The generated-index page description for category Block Usage in sidebar tutorialSidebar"
   },
+  "sidebar.tutorialSidebar.category.Core Concepts": {
+    "message": "Core Concepts",
+    "description": "The label for category Core Concepts in sidebar tutorialSidebar"
+  },
   "sidebar.tutorialSidebar.category.Cloud": {
     "message": "Cloud",
     "description": "The label for category Cloud in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Cloud Services": {
+    "message": "Cloud Services",
+    "description": "The label for category Cloud Services in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Cloud.link.generated-index.description": {
     "message": "Cloud services including Connect Service and Headless deployment.",
@@ -54,5 +62,21 @@
   "sidebar.tutorialSidebar.category.Zero to One": {
     "message": "Zero to One",
     "description": "The label for category Zero to One in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Advanced Usage": {
+    "message": "Advanced Usage",
+    "description": "The label for category Advanced Usage in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Support": {
+    "message": "Support",
+    "description": "The label for category Support in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.SDKs": {
+    "message": "SDKs",
+    "description": "The label for category SDKs in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Workflow Engine & SDK": {
+    "message": "Workflow Engine & SDK",
+    "description": "The label for category Workflow Engine & SDK in sidebar tutorialSidebar"
   }
 }
