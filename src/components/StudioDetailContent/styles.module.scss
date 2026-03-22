@@ -117,33 +117,33 @@
 
 .homePrinciplesGrid {
   display: grid;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .homePrincipleCard {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.68fr);
-  gap: 1.2rem;
+  grid-template-columns: minmax(420px, 1.18fr) minmax(320px, 0.82fr);
+  gap: 1.6rem;
   align-items: center;
   padding-top: 1rem;
   border-top: 1px solid var(--oomol-divider);
 
   &:nth-child(even) {
-    grid-template-columns: minmax(300px, 0.68fr) minmax(0, 1fr);
+    grid-template-columns: minmax(320px, 0.82fr) minmax(420px, 1.18fr);
 
     .homePrincipleMedia {
-      order: 1;
+      order: 2;
     }
 
     .homePrincipleContent {
-      order: 2;
+      order: 1;
     }
   }
 }
 
 .homePrincipleMedia {
   border-radius: 1.4rem;
-  padding: 0.8rem;
+  padding: 0.65rem;
   border: 1px solid var(--oomol-divider);
   background: color-mix(in srgb, var(--oomol-bg-elevated) 96%, white 4%);
 }
@@ -161,6 +161,7 @@
 .homePrincipleContent {
   display: grid;
   gap: 0.8rem;
+  max-width: 34rem;
 
   h3 {
     margin: 0;

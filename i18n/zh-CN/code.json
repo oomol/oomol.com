@@ -83,6 +83,90 @@
   "HOME.DeliveryGap.problem3.description": {
     "message": "为了 API、MCP 工具和自动化任务，团队经常围着同一份实现反复改造，交付成本被重复放大。"
   },
+  "Suggested Media Slot": {
+    "message": "建议素材位"
+  },
+  "Use motion here to explain why delivery work expands after the function already works. This slot should show process change, not UI detail alone.": {
+    "message": "这里更适合用动态素材解释函数已经跑通之后，为什么交付工作还会继续膨胀。这一位要讲“流程变化”，而不是单纯展示界面细节。"
+  },
+  "GIF OR SHORT VIDEO": {
+    "message": "GIF 或短视频"
+  },
+  "Delivery Gap": {
+    "message": "交付断层"
+  },
+  "Flow Demo": {
+    "message": "流程演示"
+  },
+  "6-10s loop. 16:9. Show delivery work multiplying.": {
+    "message": "建议 6-10 秒循环，16:9 横向，重点展示交付工作如何不断叠加。"
+  },
+  "Loop": {
+    "message": "循环"
+  },
+  "Function works": {
+    "message": "函数已跑通"
+  },
+  "Start from a validated local run.": {
+    "message": "从本地已经验证成功的运行开始。"
+  },
+  "Delivery work appears": {
+    "message": "交付工作开始出现"
+  },
+  "Show wrappers, deploy, env, scheduling.": {
+    "message": "展示接口包装、部署、环境与调度配置。"
+  },
+  "Outputs split": {
+    "message": "交付出口分叉"
+  },
+  "End at API, MCP, and Task branches.": {
+    "message": "最后落到 API、MCP 和任务三个分支。"
+  },
+  "Replace with real capture: code-to-delivery-gap.mp4": {
+    "message": "后续替换真实素材：code-to-delivery-gap.mp4"
+  },
+  "Primary Demo Slot": {
+    "message": "主演示位"
+  },
+  "This should become the homepage's main product demo. Show one validated capability being published to multiple delivery targets in a single flow.": {
+    "message": "这里应该成为首页的主演示。建议用一段完整流程，展示同一个已验证能力如何被发布到多个交付出口。"
+  },
+  "VIDEO PREFERRED": {
+    "message": "视频优先"
+  },
+  "One Function": {
+    "message": "一份函数"
+  },
+  "Multiple Outputs": {
+    "message": "多个出口"
+  },
+  "10-15s loop. 16:10. Publish to API, MCP, and Tasks.": {
+    "message": "建议 10-15 秒循环，16:10，展示如何发布成 API、MCP 和自动化任务。"
+  },
+  "Video": {
+    "message": "视频"
+  },
+  "Select validated flow": {
+    "message": "选中已验证流程"
+  },
+  "Begin from something already proven locally.": {
+    "message": "从已经在本地验证过的能力开始。"
+  },
+  "Switch delivery target": {
+    "message": "切换交付目标"
+  },
+  "Move between API, MCP, and automation output.": {
+    "message": "在 API、MCP 与自动化任务之间切换。"
+  },
+  "Show live result": {
+    "message": "看到线上结果"
+  },
+  "End with endpoint, tool entry, or task status.": {
+    "message": "结尾落到接口地址、工具入口或任务状态。"
+  },
+  "Replace with real capture: publish-to-api-mcp-task.mp4": {
+    "message": "后续替换真实素材：publish-to-api-mcp-task.mp4"
+  },
   "HOME.ProofLayer.badge": {
     "message": "真实案例"
   },

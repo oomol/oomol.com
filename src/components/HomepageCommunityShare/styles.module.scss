@@ -62,9 +62,9 @@
 
 .imagesWrapper {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
   gap: 1.1rem;
-  align-items: start;
+  align-items: center;
 }
 
 .imageContainer {
@@ -79,8 +79,14 @@
   border: 1px solid var(--oomol-divider);
   box-shadow: var(--oomol-shadow-md);
 
+  &:first-child {
+    transform: translateY(-0.8rem);
+  }
+
   &:last-child {
-    margin-top: 3rem;
+    margin-top: 2.4rem;
+    width: 92%;
+    justify-self: end;
   }
 }
 

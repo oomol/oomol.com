@@ -203,6 +203,29 @@
   padding-top: 0.35rem;
 }
 
+.mediaStage {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 1.6rem;
+  border: 1px solid var(--oomol-divider);
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%);
+  box-shadow: var(--oomol-shadow-sm);
+}
+
+.mediaStageHeader {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.mediaStageCopy {
+  margin: 0;
+  max-width: 48rem;
+  font-size: 0.97rem;
+  line-height: 1.72;
+  color: var(--oomol-text-secondary);
+}
+
 .outputsIntro,
 .benefitCard,
 .outputCard {
