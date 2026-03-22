@@ -88,7 +88,11 @@
       linear-gradient(rgba(100, 112, 148, 0.05) 1px, transparent 1px),
       linear-gradient(90deg, rgba(100, 112, 148, 0.05) 1px, transparent 1px);
     background-size: 7rem 7rem;
-    mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.72), transparent 92%);
+    mask-image: radial-gradient(
+      circle at center,
+      rgba(0, 0, 0, 0.72),
+      transparent 92%
+    );
     pointer-events: none;
   }
 }
@@ -97,12 +101,11 @@
   position: absolute;
   overflow: hidden;
   border-radius: 1.6rem;
-  background:
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--oomol-bg-elevated) 90%, white 10%) 0%,
-      color-mix(in srgb, var(--oomol-bg-elevated) 98%, black 2%) 100%
-    );
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--oomol-bg-elevated) 90%, white 10%) 0%,
+    color-mix(in srgb, var(--oomol-bg-elevated) 98%, black 2%) 100%
+  );
   border: 1px solid var(--oomol-divider);
   box-shadow: var(--oomol-shadow-md);
   z-index: 1;
