@@ -11,11 +11,11 @@
   /* ----------------------
      背景色 (Background)
      ---------------------- */
-  --oomol-bg-base: #f2f4f8;
-  --oomol-bg-container: #e9eef5;
-  --oomol-bg-elevated: #f8fbff;
-  --oomol-bg-spotlight: #e1e7f3;
-  --oomol-bg-layout: #eaeff6;
+  --oomol-bg-base: #f4f6fa;
+  --oomol-bg-container: #edf1f7;
+  --oomol-bg-elevated: #fafcff;
+  --oomol-bg-spotlight: #e6ebf5;
+  --oomol-bg-layout: #eef2f8;
 
   /* ----------------------
      文字色 (Text)
@@ -154,7 +154,7 @@
   --ring: 237 23% 43%; /* 映射到 --oomol-primary */
 
   /* 背景和前景 */
-  --background: 220 27% 96%; /* 更接近桌面应用底板 */
+  --background: 220 33% 98%; /* 冷中性亮色背景 */
   --foreground: 226 24% 13%; /* 映射到 --oomol-text-primary */
 
   /* 主色 - Oomol 紫色 */
@@ -162,7 +162,7 @@
   --primary-foreground: 220 43% 98%;
 
   /* 次要色 */
-  --secondary: 224 28% 94%;
+  --secondary: 225 32% 95%;
   --secondary-foreground: 226 24% 13%;
 
   /* 危险色 */
@@ -170,19 +170,19 @@
   --destructive-foreground: 0 0% 100%;
 
   /* 静音色 */
-  --muted: 223 22% 92%;
+  --muted: 224 26% 93%;
   --muted-foreground: 224 14% 38%;
 
   /* 强调色 */
-  --accent: 224 23% 90%;
+  --accent: 226 26% 91%;
   --accent-foreground: 226 24% 13%;
 
   /* 弹出层 */
-  --popover: 220 33% 98%;
+  --popover: 220 40% 99%;
   --popover-foreground: 226 24% 13%;
 
   /* 卡片 */
-  --card: 220 33% 98%;
+  --card: 220 40% 99%;
   --card-foreground: 226 24% 13%;
 }
 
