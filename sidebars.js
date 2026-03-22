@@ -38,7 +38,7 @@ const sidebars = {
         },
         {
           type: "category",
-          label: "Getting Started",
+          label: "Get Started",
           collapsible: true,
           collapsed: false,
           items: [
@@ -55,7 +55,7 @@ const sidebars = {
             },
             {
               type: "category",
-              label: "Zero to One",
+              label: "Build Your First Workflow",
               collapsible: true,
               collapsed: true,
               items: [

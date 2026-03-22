@@ -95,9 +95,9 @@
     "message": "核心概念",
     "description": "The label for category Core Concepts in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Zero to One": {
-    "message": "从 0 到 1",
-    "description": "The label for category Zero to One in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.Build Your First Workflow": {
+    "message": "第一个工作流",
+    "description": "The label for category Build Your First Workflow in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Community": {
     "message": "社区",
