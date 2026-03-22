@@ -30,15 +30,18 @@ export interface DownloadButtonProps {
 }
 
 export const DownloadButton = ({ stableTag }: DownloadButtonProps) => {
+  const downloadIcon = (
+    <span className={styles.downloadIconWrap} aria-hidden="true">
+      <span className={`i-codicon-desktop-download ${styles.downloadIcon}`} />
+    </span>
+  );
+
   return (
     <BrowserOnly
       fallback={
         <div className={styles.downloadContainer}>
           <Button className={styles.download}>
-            <div
-              className="i-codicon-desktop-download"
-              style={{ fontSize: 18 }}
-            />
+            {downloadIcon}
             {translate({
               message: stableTag
                 ? "HOME.FirstScreen.download-macos-stable"
@@ -66,10 +69,7 @@ export const DownloadButton = ({ stableTag }: DownloadButtonProps) => {
                   }
                 >
                   <a href={DownloadUrl.Stable.MacOS.AppleSilicon}>
-                    <div
-                      className="i-codicon-desktop-download"
-                      style={{ fontSize: 18 }}
-                    />
+                    {downloadIcon}
                     {translate({
                       message: stableTag
                         ? "HOME.FirstScreen.download-macos-stable"
@@ -93,10 +93,7 @@ export const DownloadButton = ({ stableTag }: DownloadButtonProps) => {
                   }
                 >
                   <a href={DownloadUrl.Stable.Windows.x64}>
-                    <div
-                      className="i-codicon-desktop-download"
-                      style={{ fontSize: 18 }}
-                    />
+                    {downloadIcon}
                     {translate({
                       message: stableTag
                         ? "HOME.FirstScreen.download-windows-stable"
