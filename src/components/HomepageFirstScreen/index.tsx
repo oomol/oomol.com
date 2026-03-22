@@ -63,10 +63,6 @@ export default function HomepageFirstScreen() {
           </div>
         </div>
         <div className={styles.screenshotFrame}>
-          <div className={styles.screenshotMeta}>
-            <span>{translate({ message: "HOME.FirstScreen.caption" })}</span>
-            <span>{translate({ message: "HOME.FirstScreen.kicker" })}</span>
-          </div>
           <img
             src={useBaseUrl(
               colorMode === "dark"
@@ -77,11 +73,6 @@ export default function HomepageFirstScreen() {
             className={styles["product-screenshot"]}
             loading="eager"
           />
-        </div>
-        <div className={styles.screenshotCaption}>
-          {translate({
-            message: "HOME.FirstScreen.caption",
-          })}
         </div>
       </div>
     </section>
