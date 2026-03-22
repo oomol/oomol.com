@@ -1,0 +1,268 @@
+---
+sidebar_position: 4
+---
+
+# MCP SDK
+
+`oomol-cloud-mcp-sdk` is an MCP Server SDK aligned with the OOMOL Cloud Task TypeScript SDK.
+
+It serves two roles at the same time:
+
+- It re-exports `oomol-cloud-task-sdk`, so you can use it directly as a Cloud Task TypeScript SDK
+- It adds an MCP Server wrapper that exposes Cloud Task capabilities as MCP tools
+
+## Install
+
+```bash
+npm install oomol-cloud-mcp-sdk
+```
+
+## Runtime Requirements
+
+- Node.js `>=18`
+- Authentication provided through constructor options or environment variables
+- Optional default package configuration for task-creation tools
+
+:::note
+The `upload_file` tool reuses the Cloud Task SDK upload implementation, which depends on browser-style `File` and `XMLHttpRequest`. In pure Node.js, use it only if your runtime provides compatible globals or polyfills.
+:::
+
+## Start An MCP Server From CLI
+
+```bash
+export OOMOL_API_KEY="your-api-key"
+oomol-mcp-server
+```
+
+If you want task tools to default to one package:
+
+```bash
+export OOMOL_PACKAGE_NAME="@oomol/your-package"
+export OOMOL_PACKAGE_VERSION="1.0.0"
+```
+
+## MCP Client Configuration
+
+```json
+{
+  "mcpServers": {
+    "oomol-cloud": {
+      "command": "npx",
+      "args": ["-y", "oomol-cloud-mcp-sdk"],
+      "env": {
+        "OOMOL_API_KEY": "your-api-key-here",
+        "OOMOL_PACKAGE_NAME": "@oomol/your-package",
+        "OOMOL_PACKAGE_VERSION": "1.0.0"
+      }
+    }
+  }
+}
+```
+
+## Use It As A Cloud Task SDK
+
+```ts
+import { OomolTaskClient } from "oomol-cloud-mcp-sdk";
+
+const client = new OomolTaskClient({
+  apiKey: process.env.OOMOL_API_KEY,
+});
+
+const { taskID, result } = await client.createAndWait({
+  packageName: "@oomol/my-package",
+  packageVersion: "1.0.0",
+  blockName: "main",
+  inputValues: {
+    text: "hello",
+  },
+});
+```
+
+## Start A Server In Code
+
+```ts
+import { OomolMcpServer } from "oomol-cloud-mcp-sdk";
+
+const server = new OomolMcpServer({
+  apiKey: process.env.OOMOL_API_KEY,
+  packageName: process.env.OOMOL_PACKAGE_NAME,
+  packageVersion: process.env.OOMOL_PACKAGE_VERSION,
+  name: "my-oomol-server",
+  version: "1.0.0",
+});
+
+await server.run();
+```
+
+`server.taskClient` gives you the underlying `OomolTaskClient` instance.
+
+## MCP Tools
+
+| Tool | Description |
+| --- | --- |
+| `create_task` | Create a `serverless` task |
+| `execute_task` | Create a task and wait for the terminal result |
+| `list_tasks` | List the current user's tasks |
+| `get_latest_tasks` | Get the latest task for one or more workloads |
+| `get_task` | Get task details |
+| `get_task_result` | Get the current task result state |
+| `await_result` | Poll until the task succeeds or fails |
+| `get_dashboard` | Get limits, queue counts, and pause state |
+| `set_tasks_pause` | Pause or resume the current user's queue |
+| `pause_user_queue` | Pause the current user's queue |
+| `resume_user_queue` | Resume the current user's queue |
+| `upload_file` | Upload a base64-encoded file and return a URL |
+| `create_block_task` | Alias of `create_task` |
+| `execute_block_task` | Alias of `execute_task` |
+
+### `create_task`
+
+`packageName` and `packageVersion` can come from tool arguments or server defaults.
+
+```json
+{
+  "name": "create_task",
+  "arguments": {
+    "blockName": "main",
+    "inputValues": {
+      "text": "hello"
+    }
+  }
+}
+```
+
+### `execute_task`
+
+Supports the same task arguments as `create_task`, plus polling controls:
+
+```json
+{
+  "name": "execute_task",
+  "arguments": {
+    "blockName": "main",
+    "inputValues": {
+      "text": "hello"
+    },
+    "intervalMs": 2000,
+    "timeoutMs": 300000
+  }
+}
+```
+
+### `list_tasks`
+
+```json
+{
+  "name": "list_tasks",
+  "arguments": {
+    "size": 20,
+    "status": "running",
+    "taskType": "user"
+  }
+}
+```
+
+### `await_result`
+
+```json
+{
+  "name": "await_result",
+  "arguments": {
+    "taskID": "019234a5-b678-7def-8123-456789abcdef",
+    "intervalMs": 2000,
+    "timeoutMs": 300000
+  }
+}
+```
+
+### `set_tasks_pause`
+
+```json
+{
+  "name": "set_tasks_pause",
+  "arguments": {
+    "paused": true
+  }
+}
+```
+
+### `upload_file`
+
+Pass base64-encoded file content:
+
+```json
+{
+  "name": "upload_file",
+  "arguments": {
+    "fileName": "example.txt",
+    "fileData": "SGVsbG8gd29ybGQ=",
+    "mimeType": "text/plain",
+    "retries": 3
+  }
+}
+```
+
+## Configuration
+
+### Environment Variables
+
+| Variable | Description | Required |
+| --- | --- | --- |
+| `OOMOL_API_KEY` | OOMOL Cloud API key | Usually yes |
+| `OOMOL_BASE_URL` | Task API base URL | No |
+| `OOMOL_PACKAGE_NAME` | Default package name for task tools | No |
+| `OOMOL_PACKAGE_VERSION` | Default package version for task tools | No |
+| `MCP_SERVER_NAME` | MCP Server name | No |
+| `MCP_SERVER_VERSION` | MCP Server version | No |
+
+### `ServerOptions`
+
+`ServerOptions` extends the Cloud Task SDK `ClientOptions` and adds:
+
+```ts
+interface ServerOptions extends ClientOptions {
+  name?: string;
+  version?: string;
+  packageName?: string;
+  packageVersion?: string;
+  maxPollIntervalMs?: number;
+}
+```
+
+`maxPollIntervalMs` limits the exponential polling backoff used by tools such as `execute_task` and `await_result`.
+
+## Tool Response Shape
+
+Every MCP tool returns a `ToolResponse`:
+
+```ts
+interface ToolResponse {
+  content: Array<{
+    type: "text";
+    text: string;
+  }>;
+  isError?: boolean;
+}
+```
+
+Successful results serialize JSON into `content[0].text`.
+
+Error results set `isError: true` and include the error name, message, and enumerable fields from the thrown object.
+
+## Exports
+
+This package exports:
+
+- `OomolMcpServer`
+- `ServerOptions`
+- `ToolResponse`
+- everything from `oomol-cloud-task-sdk`
+
+That means you can import `OomolTaskClient`, Cloud Task types, `BackoffStrategy`, and error classes such as `ApiError`, `TaskFailedError`, `TimeoutError`, and `UploadError` from the same package.
+
+## Related Docs
+
+- [Cloud Task Overview](./overview)
+- [TypeScript / JavaScript SDK](./typescript-sdk)
+- [Python SDK](./python-sdk)
+- [HTTP with curl](./curl-api)

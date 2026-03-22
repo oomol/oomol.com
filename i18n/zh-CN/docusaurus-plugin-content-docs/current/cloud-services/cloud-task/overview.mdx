@@ -1,0 +1,63 @@
+---
+sidebar_position: 1
+---
+
+# Cloud Task 概览
+
+OOMOL Cloud Task 是 OOMOL 云服务里面向开发者的任务执行 API。你可以用它提交 `serverless` 区块任务、轮询任务状态、读取结果、管理队列，以及上传输入文件。
+
+## 可以用来做什么
+
+- 在你自己的应用里触发已发布的 block
+- 轮询长任务直到完成
+- 先上传文件，再把返回的 URL 填进 `inputValues`
+- 暂停或恢复当前用户队列
+- 通过 MCP 把 Cloud Task 能力暴露给 AI Agent
+
+## 当前支持范围
+
+当前仓库中的 SDK 对接的是 Cloud Task API v3，聚焦一种 workload：
+
+- `serverless`
+
+创建任务时核心参数是：
+
+- `packageName`
+- `packageVersion`
+- `blockName`
+- 可选的 `inputValues`
+
+## 怎么选接入方式
+
+| 方式 | 适合场景 | 安装命令 |
+| --- | --- | --- |
+| [TypeScript / JavaScript SDK](./typescript-sdk) | Web 应用、Node.js 服务、浏览器侧集成 | `npm install oomol-cloud-task-sdk` |
+| [Python SDK](./python-sdk) | Python 后端、脚本、数据工具 | `pip install oomol-cloud-task-sdk` |
+| [MCP SDK](./mcp-sdk) | 给 AI 工具或 Agent 提供 MCP Server | `npm install oomol-cloud-mcp-sdk` |
+| [HTTP + curl](./curl-api) | 极简接入、调试、非 SDK 场景 | 不需要 SDK |
+
+## 鉴权
+
+Cloud Task v3 支持两种鉴权方式：
+
+- Bearer Token：在 SDK 里传 API Key，或手动发送 `Authorization: Bearer <apiKey>`
+- Cookie：请求里携带 `oomol-token`
+
+## 典型调用流程
+
+1. 创建任务。
+2. 记录返回的 `taskID`。
+3. 轮询任务结果直到进入 `success` 或 `failed`。
+4. 成功后读取 `resultURL` 或 `resultData`。
+
+## 常见任务状态
+
+- 进行中：`queued`、`scheduling`、`scheduled`、`running`
+- 终态：`success`、`failed`
+
+## 相关文档
+
+- [TypeScript / JavaScript SDK](./typescript-sdk)
+- [Python SDK](./python-sdk)
+- [MCP SDK](./mcp-sdk)
+- [HTTP + curl](./curl-api)

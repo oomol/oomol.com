@@ -1,0 +1,10 @@
+{
+  "label": "Cloud Task",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Cloud Task docs for TypeScript, Python, MCP, and direct HTTP usage."
+  },
+  "collapsed": true,
+  "className": "sidebar-submenu-item"
+}

@@ -1,0 +1,261 @@
+---
+sidebar_position: 2
+---
+
+# TypeScript / JavaScript SDK
+
+`oomol-cloud-task-sdk` 是面向 OOMOL Cloud Task API v3 的 TypeScript / JavaScript 客户端。
+
+## 安装
+
+```bash
+npm install oomol-cloud-task-sdk
+```
+
+## 运行环境
+
+- 推荐 Node.js `>=18`
+- 运行时需要原生 `fetch`，或者你自行传入自定义 `fetch`
+- `uploadFile()` 额外依赖 `File` 和 `XMLHttpRequest`
+
+:::note
+`uploadFile()` 是按浏览器式运行时设计的。在纯 Node.js 环境中，只有当你提供兼容的 `File` 和 `XMLHttpRequest` 全局能力或 polyfill 时才适合使用。
+:::
+
+## 鉴权
+
+```ts
+import { OomolTaskClient } from "oomol-cloud-task-sdk";
+
+const client = new OomolTaskClient({
+  apiKey: process.env.OOMOL_API_KEY,
+  credentials: "include",
+  defaultHeaders: {
+    "x-client": "my-app",
+  },
+});
+```
+
+- 传入 `apiKey` 时，SDK 会附加 `Authorization: Bearer <apiKey>`
+- 不传 `apiKey` 时，可以结合 `credentials: "include"` 走 Cookie 鉴权
+
+## 快速开始
+
+```ts
+import { OomolTaskClient } from "oomol-cloud-task-sdk";
+
+const client = new OomolTaskClient({
+  apiKey: process.env.OOMOL_API_KEY,
+});
+
+const { taskID, result } = await client.createAndWait(
+  {
+    packageName: "@oomol/my-package",
+    packageVersion: "1.0.0",
+    blockName: "main",
+    inputValues: {
+      text: "hello",
+    },
+  },
+  {
+    intervalMs: 2000,
+    timeoutMs: 10 * 60 * 1000,
+    onProgress: (progress, status) => {
+      console.log("progress:", progress, "status:", status);
+    },
+  }
+);
+
+console.log("taskID:", taskID);
+
+if (result.status === "success") {
+  console.log("resultURL:", result.resultURL);
+  console.log("resultData:", result.resultData);
+}
+```
+
+## API 总览
+
+| 方法 | 说明 |
+| --- | --- |
+| `createTask(request)` | 创建任务 |
+| `createAndWait(request, awaitOptions?)` | 创建任务并等待完成 |
+| `listTasks(query?)` | 获取当前用户任务列表 |
+| `getLatestTasks(workloadIDs)` | 获取一个或多个 workload 的最新任务 |
+| `getTask(taskID)` | 获取任务详情 |
+| `getTaskDetail(taskID)` | `getTask(taskID)` 的别名 |
+| `getTaskResult(taskID, signal?)` | 获取任务当前结果状态 |
+| `awaitResult(taskID, options?)` | 轮询直到任务成功或失败 |
+| `getDashboard()` | 获取配额、队列计数和暂停状态 |
+| `setTasksPause(paused)` | 暂停或恢复当前用户任务队列 |
+| `pauseUserQueue()` | 暂停当前用户任务队列 |
+| `resumeUserQueue()` | 恢复当前用户任务队列 |
+| `uploadFile(file, options?)` | 上传文件并返回远端 URL |
+
+## 常用用法
+
+### 创建任务
+
+```ts
+await client.createTask({
+  packageName: "@oomol/my-package",
+  packageVersion: "1.0.0",
+  blockName: "main",
+  inputValues: {
+    foo: "bar",
+  },
+});
+```
+
+SDK 会统一把任务创建请求规范化为 `type: "serverless"`。
+
+`webhookUrl` 和 `metadata` 仍然保留在请求类型里，仅用于兼容旧代码；真正发请求时会被忽略。
+
+### 查询任务
+
+```ts
+const page = await client.listTasks({
+  size: 20,
+  status: "running",
+  taskType: "user",
+});
+
+const latest = await client.getLatestTasks([
+  "550e8400-e29b-41d4-a716-446655440022",
+  "550e8400-e29b-41d4-a716-446655440023",
+]);
+
+const detail = await client.getTask("019234a5-b678-7def-8123-456789abcdef");
+const result = await client.getTaskResult("019234a5-b678-7def-8123-456789abcdef");
+```
+
+### 暂停或恢复队列
+
+```ts
+await client.pauseUserQueue();
+await client.resumeUserQueue();
+
+await client.setTasksPause(true);
+await client.setTasksPause(false);
+```
+
+### 上传文件
+
+```ts
+const url = await client.uploadFile(file, {
+  retries: 3,
+  onProgress: (progress) => {
+    console.log("upload:", progress);
+  },
+});
+```
+
+## 请求与轮询行为
+
+### `listTasks(query?)`
+
+- `size` 必须是 `1` 到 `100` 的整数
+- 支持的筛选参数：`nextToken`、`status`、`taskType`、`workload`、`workloadID`、`packageID`
+
+### `getLatestTasks(workloadIDs)`
+
+- 支持 `string[]` 或逗号分隔的 `string`
+- 数组长度必须在 `1` 到 `50` 之间
+- 空字符串或空项会在发请求前直接报错
+
+### `awaitResult(taskID, options?)`
+
+- 默认轮询间隔：`3000ms`
+- 默认退避策略：`BackoffStrategy.Exponential`
+- 默认最大轮询间隔：`3000ms`
+- 不传 `timeoutMs` 时，会持续轮询直到成功、失败或外部中止
+- 轮询中的短暂请求失败会自动重试
+- 任务明确失败时抛出 `TaskFailedError`
+- 超时时抛出 `TimeoutError`
+- 如果超时前轮询请求出过错，超时错误消息会附带最近一次轮询错误
+
+## 关键类型
+
+### `CreateTaskRequest`
+
+当前只支持 `serverless` 任务：
+
+```ts
+type CreateTaskRequest = {
+  type?: "serverless";
+  packageName: string;
+  packageVersion: string;
+  blockName: string;
+  inputValues?: Record<string, unknown>;
+  webhookUrl?: string;
+  metadata?: Record<string, unknown>;
+};
+```
+
+### `TaskResultResponse<T>`
+
+```ts
+type TaskResultResponse<T = TaskResultData> =
+  | { status: "queued" | "scheduling" | "scheduled" | "running"; progress: number }
+  | { status: "success"; resultURL: string | null; resultData?: T }
+  | { status: "failed"; error: string | null };
+```
+
+其中默认的 `TaskResultData` 类型是 `Record<string, unknown>[]`。
+
+### `ClientOptions`
+
+| 参数 | 说明 |
+| --- | --- |
+| `apiKey` | Bearer Token |
+| `baseUrl` | Task API 基础地址，默认 `https://cloud-task.oomol.com` |
+| `fetch` | 自定义 fetch 实现 |
+| `defaultHeaders` | 附加到所有请求的请求头 |
+| `credentials` | fetch 的 credentials 模式，默认 `"include"` |
+
+### `AwaitOptions`
+
+| 参数 | 说明 |
+| --- | --- |
+| `intervalMs` | 轮询基础间隔，单位毫秒 |
+| `timeoutMs` | 可选的 SDK 侧超时 |
+| `signal` | 用于取消轮询的 AbortSignal |
+| `onProgress` | 每次拿到进行中状态时触发的回调 |
+| `backoff.strategy` | `BackoffStrategy.Fixed` 或 `BackoffStrategy.Exponential` |
+| `backoff.maxIntervalMs` | 轮询间隔上限 |
+
+## 错误处理
+
+```ts
+import {
+  ApiError,
+  RunTaskErrorCode,
+  TaskFailedError,
+  TimeoutError,
+  UploadError,
+} from "oomol-cloud-task-sdk";
+
+try {
+  const result = await client.awaitResult(taskID, { timeoutMs: 60_000 });
+  console.log(result);
+} catch (error) {
+  if (error instanceof TaskFailedError) {
+    console.error(error.taskID, error.code, error.statusCode, error.message, error.detail);
+  } else if (error instanceof TimeoutError) {
+    console.error(error.message);
+  } else if (error instanceof ApiError) {
+    console.error(error.status, error.body);
+  } else if (error instanceof UploadError) {
+    console.error(error.statusCode, error.code, error.message);
+  }
+}
+
+console.log(RunTaskErrorCode.INSUFFICIENT_QUOTA);
+```
+
+## 相关文档
+
+- [Cloud Task 概览](./overview)
+- [Python SDK](./python-sdk)
+- [MCP SDK](./mcp-sdk)
+- [HTTP + curl](./curl-api)

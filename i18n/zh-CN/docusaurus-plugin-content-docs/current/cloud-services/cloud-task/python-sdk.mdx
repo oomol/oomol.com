@@ -1,0 +1,264 @@
+---
+sidebar_position: 3
+---
+
+# Python SDK
+
+`oomol-cloud-task-sdk` 提供了面向 OOMOL Cloud Task API v3 的 Python 客户端。
+
+## 安装
+
+```bash
+pip install oomol-cloud-task-sdk
+```
+
+## 环境要求
+
+- Python `>=3.7`
+- `requests>=2.25.0`
+- Python 3.7 额外需要 `typing_extensions>=4.0.0`
+
+## 鉴权
+
+```python
+from oomol_cloud_task import OomolTaskClient
+
+client = OomolTaskClient(
+    api_key="your-api-key",
+    default_headers={"x-client": "my-app"},
+)
+```
+
+- 传入 `api_key` 时，客户端会附加 `Authorization: Bearer <api_key>`
+- 不传 `api_key` 时，可以通过自定义 `requests.Session` 挂载 Cookie
+
+## 快速开始
+
+```python
+from oomol_cloud_task import BackoffStrategy, OomolTaskClient
+
+client = OomolTaskClient(api_key="YOUR_API_KEY")
+
+response = client.create_and_wait(
+    {
+        "packageName": "@oomol/my-package",
+        "packageVersion": "1.0.0",
+        "blockName": "main",
+        "inputValues": {"text": "hello"},
+    },
+    interval_ms=2000,
+    timeout_ms=10 * 60 * 1000,
+    backoff_strategy=BackoffStrategy.EXPONENTIAL,
+    max_interval_ms=10000,
+    on_progress=lambda progress, status: print("progress:", progress, "status:", status),
+)
+
+print("taskID:", response.taskID)
+
+if response.result["status"] == "success":
+    print("resultURL:", response.result.get("resultURL"))
+    print("resultData:", response.result.get("resultData"))
+```
+
+## API 总览
+
+| 方法 | 说明 |
+| --- | --- |
+| `create_task(request)` | 创建任务 |
+| `create_and_wait(request, ...)` | 创建任务并等待完成 |
+| `list_tasks(query=None)` | 获取当前用户任务列表 |
+| `get_latest_tasks(workload_ids)` | 获取一个或多个 workload 的最新任务 |
+| `get_task(task_id)` | 获取任务详情 |
+| `get_task_detail(task_id)` | `get_task(task_id)` 的别名 |
+| `get_task_result(task_id)` | 获取任务当前结果状态 |
+| `await_result(task_id, ...)` | 轮询直到任务成功或失败 |
+| `get_dashboard()` | 获取配额、队列计数和暂停状态 |
+| `set_tasks_pause(paused)` | 暂停或恢复当前用户任务队列 |
+| `pause_user_queue()` | 暂停当前用户任务队列 |
+| `resume_user_queue()` | 恢复当前用户任务队列 |
+| `upload_file(file, ...)` | 上传文件并返回远端 URL |
+
+## 常用用法
+
+### 创建任务
+
+```python
+client.create_task(
+    {
+        "packageName": "@oomol/my-package",
+        "packageVersion": "1.0.0",
+        "blockName": "main",
+        "inputValues": {"foo": "bar"},
+    }
+)
+```
+
+客户端会统一把任务创建请求规范化为 `type: "serverless"`。
+
+`webhookUrl` 和 `metadata` 仍保留在请求类型里，仅用于兼容旧代码；真正发请求时会被忽略。
+
+### 查询任务
+
+```python
+page = client.list_tasks(
+    {
+        "size": 20,
+        "status": "running",
+        "taskType": "user",
+    }
+)
+
+latest = client.get_latest_tasks(
+    [
+        "550e8400-e29b-41d4-a716-446655440022",
+        "550e8400-e29b-41d4-a716-446655440023",
+    ]
+)
+
+detail = client.get_task("019234a5-b678-7def-8123-456789abcdef")
+result = client.get_task_result("019234a5-b678-7def-8123-456789abcdef")
+dashboard = client.get_dashboard()
+```
+
+### 暂停或恢复队列
+
+```python
+client.pause_user_queue()
+client.resume_user_queue()
+
+client.set_tasks_pause(True)
+client.set_tasks_pause(False)
+```
+
+### 上传文件
+
+```python
+url = client.upload_file(
+    "/path/to/file.pdf",
+    retries=3,
+    on_progress=lambda progress: print("upload:", progress),
+)
+```
+
+`upload_file()` 支持：
+
+- 文件系统路径
+- 可 seek 的二进制文件对象
+
+## 请求与轮询行为
+
+### `list_tasks(query=None)`
+
+- `size` 必须是 `1` 到 `100` 之间的整数
+- 支持的筛选参数：`nextToken`、`status`、`taskType`、`workload`、`workloadID`、`packageID`
+
+### `get_latest_tasks(workload_ids)`
+
+- 支持 `list[str]` 或逗号分隔的 `str`
+- 数组长度必须在 `1` 到 `50` 之间
+- 空字符串或空项会在发请求前直接报错
+
+### `await_result(task_id, ...)`
+
+- 默认轮询间隔：`3000ms`
+- 默认退避策略：`BackoffStrategy.EXPONENTIAL`
+- 默认最大轮询间隔：`3000ms`
+- 不传 `timeout_ms` 时，会持续轮询直到成功或失败
+- 轮询中的短暂请求失败会自动重试
+- 任务明确失败时抛出 `TaskFailedError`
+- 超时时抛出 `TimeoutError`
+- 如果超时前轮询请求出过错，超时错误消息会附带最近一次轮询错误
+
+### `create_and_wait(request, ...)`
+
+- 返回 `CreateAndWaitResponse` 命名元组
+- 可通过 `response.taskID` 和 `response.result` 访问结果
+- 也支持元组解包：`task_id, result = response`
+
+## 关键类型
+
+### `CreateTaskRequest`
+
+当前只支持 `serverless` 任务：
+
+```python
+CreateTaskRequest = {
+    "type": "serverless",          # optional
+    "packageName": str,
+    "packageVersion": str,
+    "blockName": str,
+    "inputValues": dict,           # optional
+    "webhookUrl": str,             # optional, ignored by the client
+    "metadata": dict,              # optional, ignored by the client
+}
+```
+
+### `TaskResultResponse`
+
+可能出现三种结果结构：
+
+- `{"status": "queued" | "scheduling" | "scheduled" | "running", "progress": float}`
+- `{"status": "success", "resultURL": str | None, "resultData": list}`
+- `{"status": "failed", "error": str | None}`
+
+### 构造参数
+
+| 参数 | 说明 |
+| --- | --- |
+| `api_key` | Bearer Token |
+| `base_url` | Task API 基础地址，默认 `https://cloud-task.oomol.com` |
+| `default_headers` | 附加到所有请求的请求头 |
+| `session` | 自定义 `requests.Session` |
+
+### 公开类型辅助
+
+包里还会导出：
+
+- `AwaitOptions`
+- `BackoffOptions`
+- `BackoffStrategy`
+- `ClientOptions`
+- `UploadOptions`
+- `TaskStatus`
+- `TaskTerminalStatus`
+- `RunTaskErrorCode`
+
+## 错误处理
+
+```python
+from oomol_cloud_task import (
+    ApiError,
+    RunTaskErrorCode,
+    TaskFailedError,
+    TimeoutError,
+    UploadError,
+)
+
+try:
+    response = client.create_and_wait(
+        {
+            "packageName": "@oomol/my-package",
+            "packageVersion": "1.0.0",
+            "blockName": "main",
+        },
+        timeout_ms=60_000,
+    )
+    print(response)
+except TaskFailedError as error:
+    print(error.task_id, error.code, error.status_code, error.message, error.detail)
+except TimeoutError as error:
+    print(error)
+except ApiError as error:
+    print(error.status, error.body)
+except UploadError as error:
+    print(error.status_code, error.code, error)
+
+print(RunTaskErrorCode.INSUFFICIENT_QUOTA)
+```
+
+## 相关文档
+
+- [Cloud Task 概览](./overview)
+- [TypeScript / JavaScript SDK](./typescript-sdk)
+- [MCP SDK](./mcp-sdk)
+- [HTTP + curl](./curl-api)

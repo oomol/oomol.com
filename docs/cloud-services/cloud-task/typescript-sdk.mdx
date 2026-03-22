@@ -1,0 +1,261 @@
+---
+sidebar_position: 2
+---
+
+# TypeScript / JavaScript SDK
+
+`oomol-cloud-task-sdk` is the TypeScript and JavaScript client for OOMOL Cloud Task API v3.
+
+## Install
+
+```bash
+npm install oomol-cloud-task-sdk
+```
+
+## Runtime Requirements
+
+- Recommended Node.js `>=18`
+- Native `fetch`, or a custom `fetch` implementation passed into the client
+- `uploadFile()` additionally requires `File` and `XMLHttpRequest`
+
+:::note
+`uploadFile()` is designed around a browser-like runtime. In pure Node.js, use it only if you provide compatible `File` and `XMLHttpRequest` globals or polyfills.
+:::
+
+## Authentication
+
+```ts
+import { OomolTaskClient } from "oomol-cloud-task-sdk";
+
+const client = new OomolTaskClient({
+  apiKey: process.env.OOMOL_API_KEY,
+  credentials: "include",
+  defaultHeaders: {
+    "x-client": "my-app",
+  },
+});
+```
+
+- If `apiKey` is set, the SDK sends `Authorization: Bearer <apiKey>`
+- If `apiKey` is omitted, the SDK can rely on cookie-based auth with `credentials: "include"`
+
+## Quick Start
+
+```ts
+import { OomolTaskClient } from "oomol-cloud-task-sdk";
+
+const client = new OomolTaskClient({
+  apiKey: process.env.OOMOL_API_KEY,
+});
+
+const { taskID, result } = await client.createAndWait(
+  {
+    packageName: "@oomol/my-package",
+    packageVersion: "1.0.0",
+    blockName: "main",
+    inputValues: {
+      text: "hello",
+    },
+  },
+  {
+    intervalMs: 2000,
+    timeoutMs: 10 * 60 * 1000,
+    onProgress: (progress, status) => {
+      console.log("progress:", progress, "status:", status);
+    },
+  }
+);
+
+console.log("taskID:", taskID);
+
+if (result.status === "success") {
+  console.log("resultURL:", result.resultURL);
+  console.log("resultData:", result.resultData);
+}
+```
+
+## API Overview
+
+| Method | Description |
+| --- | --- |
+| `createTask(request)` | Create a task |
+| `createAndWait(request, awaitOptions?)` | Create a task and wait for completion |
+| `listTasks(query?)` | List the current user's tasks |
+| `getLatestTasks(workloadIDs)` | Get the latest task for one or more workloads |
+| `getTask(taskID)` | Get task details |
+| `getTaskDetail(taskID)` | Alias of `getTask(taskID)` |
+| `getTaskResult(taskID, signal?)` | Get the current task result state |
+| `awaitResult(taskID, options?)` | Poll until the task succeeds or fails |
+| `getDashboard()` | Get limits, queue counts, and pause state |
+| `setTasksPause(paused)` | Pause or resume the current user's queue |
+| `pauseUserQueue()` | Pause the current user's queue |
+| `resumeUserQueue()` | Resume the current user's queue |
+| `uploadFile(file, options?)` | Upload a file and return a remote URL |
+
+## Common Patterns
+
+### Create a task
+
+```ts
+await client.createTask({
+  packageName: "@oomol/my-package",
+  packageVersion: "1.0.0",
+  blockName: "main",
+  inputValues: {
+    foo: "bar",
+  },
+});
+```
+
+The SDK normalizes task creation requests to `type: "serverless"`.
+
+`webhookUrl` and `metadata` are still accepted in the request type only for backward compatibility. They are ignored before the request is sent.
+
+### Query tasks
+
+```ts
+const page = await client.listTasks({
+  size: 20,
+  status: "running",
+  taskType: "user",
+});
+
+const latest = await client.getLatestTasks([
+  "550e8400-e29b-41d4-a716-446655440022",
+  "550e8400-e29b-41d4-a716-446655440023",
+]);
+
+const detail = await client.getTask("019234a5-b678-7def-8123-456789abcdef");
+const result = await client.getTaskResult("019234a5-b678-7def-8123-456789abcdef");
+```
+
+### Pause or resume the queue
+
+```ts
+await client.pauseUserQueue();
+await client.resumeUserQueue();
+
+await client.setTasksPause(true);
+await client.setTasksPause(false);
+```
+
+### Upload a file
+
+```ts
+const url = await client.uploadFile(file, {
+  retries: 3,
+  onProgress: (progress) => {
+    console.log("upload:", progress);
+  },
+});
+```
+
+## Request And Polling Behavior
+
+### `listTasks(query?)`
+
+- `size` must be an integer from `1` to `100`
+- Supported filters: `nextToken`, `status`, `taskType`, `workload`, `workloadID`, `packageID`
+
+### `getLatestTasks(workloadIDs)`
+
+- Accepts `string[]` or a comma-separated `string`
+- Arrays must contain `1` to `50` workload IDs
+- Empty strings or empty items are rejected before the request is sent
+
+### `awaitResult(taskID, options?)`
+
+- Default polling interval: `3000ms`
+- Default backoff strategy: `BackoffStrategy.Exponential`
+- Default max polling interval: `3000ms`
+- If `timeoutMs` is omitted, polling continues until success, failure, or external abort
+- Temporary request failures during polling are retried automatically
+- Task failure raises `TaskFailedError`
+- Timeout raises `TimeoutError`
+- If polling had request errors before timeout, the timeout message includes the latest polling error
+
+## Key Types
+
+### `CreateTaskRequest`
+
+Only `serverless` tasks are supported:
+
+```ts
+type CreateTaskRequest = {
+  type?: "serverless";
+  packageName: string;
+  packageVersion: string;
+  blockName: string;
+  inputValues?: Record<string, unknown>;
+  webhookUrl?: string;
+  metadata?: Record<string, unknown>;
+};
+```
+
+### `TaskResultResponse<T>`
+
+```ts
+type TaskResultResponse<T = TaskResultData> =
+  | { status: "queued" | "scheduling" | "scheduled" | "running"; progress: number }
+  | { status: "success"; resultURL: string | null; resultData?: T }
+  | { status: "failed"; error: string | null };
+```
+
+The default `TaskResultData` type is `Record<string, unknown>[]`.
+
+### `ClientOptions`
+
+| Option | Description |
+| --- | --- |
+| `apiKey` | Bearer token |
+| `baseUrl` | Task API base URL, default `https://cloud-task.oomol.com` |
+| `fetch` | Custom fetch implementation |
+| `defaultHeaders` | Extra headers attached to every request |
+| `credentials` | Fetch credentials mode, default `"include"` |
+
+### `AwaitOptions`
+
+| Option | Description |
+| --- | --- |
+| `intervalMs` | Base polling interval in milliseconds |
+| `timeoutMs` | Optional SDK-side timeout |
+| `signal` | AbortSignal used to cancel polling |
+| `onProgress` | Called when an in-progress task result is received |
+| `backoff.strategy` | `BackoffStrategy.Fixed` or `BackoffStrategy.Exponential` |
+| `backoff.maxIntervalMs` | Max polling interval |
+
+## Error Handling
+
+```ts
+import {
+  ApiError,
+  RunTaskErrorCode,
+  TaskFailedError,
+  TimeoutError,
+  UploadError,
+} from "oomol-cloud-task-sdk";
+
+try {
+  const result = await client.awaitResult(taskID, { timeoutMs: 60_000 });
+  console.log(result);
+} catch (error) {
+  if (error instanceof TaskFailedError) {
+    console.error(error.taskID, error.code, error.statusCode, error.message, error.detail);
+  } else if (error instanceof TimeoutError) {
+    console.error(error.message);
+  } else if (error instanceof ApiError) {
+    console.error(error.status, error.body);
+  } else if (error instanceof UploadError) {
+    console.error(error.statusCode, error.code, error.message);
+  }
+}
+
+console.log(RunTaskErrorCode.INSUFFICIENT_QUOTA);
+```
+
+## Related Docs
+
+- [Cloud Task Overview](./overview)
+- [Python SDK](./python-sdk)
+- [MCP SDK](./mcp-sdk)
+- [HTTP with curl](./curl-api)

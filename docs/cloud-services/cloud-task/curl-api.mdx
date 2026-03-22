@@ -1,0 +1,275 @@
+---
+sidebar_position: 5
+---
+
+# HTTP API With curl
+
+This guide mirrors the current Cloud Task SDK request behavior and is useful when you want to call the HTTP API directly without adopting an SDK.
+
+## Base URLs
+
+- Task API base URL: `https://cloud-task.oomol.com`
+- Upload base URL: `https://llm.oomol.com/api/tasks/files/remote-cache`
+
+Covered operations:
+
+- create a task
+- list tasks
+- get the latest task for one or more workloads
+- get task details
+- get task result
+- get dashboard
+- pause or resume the current user's queue
+- upload a file in parts
+
+## Authentication
+
+Cloud Task v3 supports:
+
+1. Bearer Token
+2. Cookie auth with `oomol-token`
+
+The examples below use Bearer Token. If you use cookies, replace the `Authorization` header with `-b "oomol-token=..."`.
+
+## Environment Variables
+
+```bash
+export OOMOL_BASE_URL="https://cloud-task.oomol.com"
+export OOMOL_UPLOAD_BASE_URL="https://llm.oomol.com/api/tasks/files/remote-cache"
+export OOMOL_API_KEY="your-api-key"
+```
+
+```bash
+AUTH_HEADER="Authorization: Bearer ${OOMOL_API_KEY}"
+JSON_HEADER="Content-Type: application/json"
+```
+
+## Create A Task
+
+Only `serverless` task creation is supported.
+
+- `POST /v3/users/me/tasks`
+
+```bash
+curl --request POST \
+  "${OOMOL_BASE_URL}/v3/users/me/tasks" \
+  --header "${AUTH_HEADER}" \
+  --header "${JSON_HEADER}" \
+  --data '{
+    "type": "serverless",
+    "packageName": "@oomol/my-package",
+    "packageVersion": "1.0.0",
+    "blockName": "main",
+    "inputValues": {
+      "text": "hello"
+    }
+  }'
+```
+
+Typical response:
+
+```json
+{
+  "taskID": "019234a5-b678-7def-8123-456789abcdef"
+}
+```
+
+## List Tasks
+
+- `GET /v3/users/me/tasks`
+
+Supported query parameters:
+
+- `size`: `1 ~ 100`
+- `nextToken`
+- `status`
+- `taskType`: `user` or `shared`
+- `workload`: currently only `serverless`
+- `workloadID`
+- `packageID`
+
+```bash
+curl --request GET \
+  "${OOMOL_BASE_URL}/v3/users/me/tasks?size=20&status=running&taskType=user" \
+  --header "${AUTH_HEADER}"
+```
+
+## Get The Latest Task For Workloads
+
+- `GET /v3/users/me/tasks/latest`
+
+Request parameter:
+
+- `workloadIDs`: comma-separated string
+
+```bash
+curl --request GET \
+  "${OOMOL_BASE_URL}/v3/users/me/tasks/latest?workloadIDs=550e8400-e29b-41d4-a716-446655440022,550e8400-e29b-41d4-a716-446655440023" \
+  --header "${AUTH_HEADER}"
+```
+
+## Get Task Details
+
+- `GET /v3/users/me/tasks/{taskID}`
+
+```bash
+TASK_ID="019234a5-b678-7def-8123-456789abcdef"
+
+curl --request GET \
+  "${OOMOL_BASE_URL}/v3/users/me/tasks/${TASK_ID}" \
+  --header "${AUTH_HEADER}"
+```
+
+The response usually includes:
+
+- `taskID`
+- `taskType`
+- `status`
+- `progress`
+- `workload` and `workloadID`
+- `schedulerPayload`
+- `resultURL`
+- `failedMessage`
+- `createdAt`, `startTime`, `endTime`
+
+## Get Task Result
+
+- `GET /v3/users/me/tasks/{taskID}/result`
+
+```bash
+TASK_ID="019234a5-b678-7def-8123-456789abcdef"
+
+curl --request GET \
+  "${OOMOL_BASE_URL}/v3/users/me/tasks/${TASK_ID}/result" \
+  --header "${AUTH_HEADER}"
+```
+
+Possible result shapes:
+
+In progress:
+
+```json
+{
+  "status": "running",
+  "progress": 72
+}
+```
+
+Success:
+
+```json
+{
+  "status": "success",
+  "resultURL": "https://example.com/result.json",
+  "resultData": [
+    {
+      "ok": true
+    }
+  ]
+}
+```
+
+Failure:
+
+```json
+{
+  "status": "failed",
+  "error": "Insufficient quota"
+}
+```
+
+Status values:
+
+- In progress: `queued`, `scheduling`, `scheduled`, `running`
+- Final: `success`, `failed`
+
+## Poll With curl Until Completion
+
+If you want behavior similar to `createAndWait()` or `awaitResult()`, a simple shell loop is enough:
+
+```bash
+CREATE_RESPONSE=$(curl --silent --request POST \
+  "${OOMOL_BASE_URL}/v3/users/me/tasks" \
+  --header "${AUTH_HEADER}" \
+  --header "${JSON_HEADER}" \
+  --data '{
+    "type": "serverless",
+    "packageName": "@oomol/my-package",
+    "packageVersion": "1.0.0",
+    "blockName": "main"
+  }')
+
+TASK_ID=$(echo "${CREATE_RESPONSE}" | jq -r '.taskID')
+
+while true; do
+  RESULT=$(curl --silent --request GET \
+    "${OOMOL_BASE_URL}/v3/users/me/tasks/${TASK_ID}/result" \
+    --header "${AUTH_HEADER}")
+
+  STATUS=$(echo "${RESULT}" | jq -r '.status')
+  echo "status=${STATUS}"
+
+  if [ "${STATUS}" = "success" ] || [ "${STATUS}" = "failed" ]; then
+    echo "${RESULT}"
+    break
+  fi
+
+  sleep 3
+done
+```
+
+## Dashboard And Queue Control
+
+Get dashboard:
+
+- `GET /v3/users/me/dashboard`
+
+```bash
+curl --request GET \
+  "${OOMOL_BASE_URL}/v3/users/me/dashboard" \
+  --header "${AUTH_HEADER}"
+```
+
+Pause the current user's queue:
+
+- `POST /v3/user/pause`
+
+```bash
+curl --request POST \
+  "${OOMOL_BASE_URL}/v3/user/pause" \
+  --header "${AUTH_HEADER}" \
+  --header "${JSON_HEADER}" \
+  --data '{}'
+```
+
+Resume the current user's queue:
+
+- `POST /v3/user/resume`
+
+```bash
+curl --request POST \
+  "${OOMOL_BASE_URL}/v3/user/resume" \
+  --header "${AUTH_HEADER}" \
+  --header "${JSON_HEADER}" \
+  --data '{}'
+```
+
+## File Upload
+
+The SDK uses a three-step upload flow:
+
+1. Initialize upload
+2. Upload each part with a presigned URL
+3. Finalize upload and get the file URL
+
+The exact HTTP details are already wrapped by the SDK. If you need file uploads from application code, prefer:
+
+- [TypeScript / JavaScript SDK](./typescript-sdk)
+- [Python SDK](./python-sdk)
+
+## Related Docs
+
+- [Cloud Task Overview](./overview)
+- [TypeScript / JavaScript SDK](./typescript-sdk)
+- [Python SDK](./python-sdk)
+- [MCP SDK](./mcp-sdk)

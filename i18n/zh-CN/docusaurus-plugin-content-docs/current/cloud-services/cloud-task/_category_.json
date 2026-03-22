@@ -1,0 +1,10 @@
+{
+  "label": "Cloud Task",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Cloud Task 的 TypeScript、Python、MCP 和 HTTP 调用文档。"
+  },
+  "collapsed": true,
+  "className": "sidebar-submenu-item"
+}

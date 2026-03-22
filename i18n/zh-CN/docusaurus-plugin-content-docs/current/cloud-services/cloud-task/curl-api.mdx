@@ -1,0 +1,275 @@
+---
+sidebar_position: 5
+---
+
+# HTTP API 与 curl
+
+这份文档对齐当前 Cloud Task SDK 的实际请求行为，适合在不接入 SDK 的场景下直接调用 HTTP API。
+
+## 基础地址
+
+- Task API Base URL：`https://cloud-task.oomol.com`
+- 上传 Base URL：`https://llm.oomol.com/api/tasks/files/remote-cache`
+
+覆盖的主要操作：
+
+- 创建任务
+- 查询任务列表
+- 查询一个或多个 workload 的最新任务
+- 查询任务详情
+- 查询任务结果
+- 查询 dashboard
+- 暂停或恢复当前用户任务队列
+- 分片上传文件
+
+## 鉴权
+
+Cloud Task v3 支持：
+
+1. Bearer Token
+2. 基于 `oomol-token` 的 Cookie 鉴权
+
+下面的示例默认使用 Bearer Token。若你使用 Cookie，可把 `Authorization` 请求头替换为 `-b "oomol-token=..."`。
+
+## 环境变量
+
+```bash
+export OOMOL_BASE_URL="https://cloud-task.oomol.com"
+export OOMOL_UPLOAD_BASE_URL="https://llm.oomol.com/api/tasks/files/remote-cache"
+export OOMOL_API_KEY="your-api-key"
+```
+
+```bash
+AUTH_HEADER="Authorization: Bearer ${OOMOL_API_KEY}"
+JSON_HEADER="Content-Type: application/json"
+```
+
+## 创建任务
+
+当前只支持 `serverless` 任务创建。
+
+- `POST /v3/users/me/tasks`
+
+```bash
+curl --request POST \
+  "${OOMOL_BASE_URL}/v3/users/me/tasks" \
+  --header "${AUTH_HEADER}" \
+  --header "${JSON_HEADER}" \
+  --data '{
+    "type": "serverless",
+    "packageName": "@oomol/my-package",
+    "packageVersion": "1.0.0",
+    "blockName": "main",
+    "inputValues": {
+      "text": "hello"
+    }
+  }'
+```
+
+典型响应：
+
+```json
+{
+  "taskID": "019234a5-b678-7def-8123-456789abcdef"
+}
+```
+
+## 查询任务列表
+
+- `GET /v3/users/me/tasks`
+
+支持的查询参数：
+
+- `size`：`1 ~ 100`
+- `nextToken`
+- `status`
+- `taskType`：`user` 或 `shared`
+- `workload`：当前只有 `serverless`
+- `workloadID`
+- `packageID`
+
+```bash
+curl --request GET \
+  "${OOMOL_BASE_URL}/v3/users/me/tasks?size=20&status=running&taskType=user" \
+  --header "${AUTH_HEADER}"
+```
+
+## 查询 workload 的最新任务
+
+- `GET /v3/users/me/tasks/latest`
+
+请求参数：
+
+- `workloadIDs`：逗号分隔字符串
+
+```bash
+curl --request GET \
+  "${OOMOL_BASE_URL}/v3/users/me/tasks/latest?workloadIDs=550e8400-e29b-41d4-a716-446655440022,550e8400-e29b-41d4-a716-446655440023" \
+  --header "${AUTH_HEADER}"
+```
+
+## 查询任务详情
+
+- `GET /v3/users/me/tasks/{taskID}`
+
+```bash
+TASK_ID="019234a5-b678-7def-8123-456789abcdef"
+
+curl --request GET \
+  "${OOMOL_BASE_URL}/v3/users/me/tasks/${TASK_ID}" \
+  --header "${AUTH_HEADER}"
+```
+
+返回中通常会包含：
+
+- `taskID`
+- `taskType`
+- `status`
+- `progress`
+- `workload` 和 `workloadID`
+- `schedulerPayload`
+- `resultURL`
+- `failedMessage`
+- `createdAt`、`startTime`、`endTime`
+
+## 查询任务结果
+
+- `GET /v3/users/me/tasks/{taskID}/result`
+
+```bash
+TASK_ID="019234a5-b678-7def-8123-456789abcdef"
+
+curl --request GET \
+  "${OOMOL_BASE_URL}/v3/users/me/tasks/${TASK_ID}/result" \
+  --header "${AUTH_HEADER}"
+```
+
+可能返回三类结果：
+
+进行中：
+
+```json
+{
+  "status": "running",
+  "progress": 72
+}
+```
+
+成功：
+
+```json
+{
+  "status": "success",
+  "resultURL": "https://example.com/result.json",
+  "resultData": [
+    {
+      "ok": true
+    }
+  ]
+}
+```
+
+失败：
+
+```json
+{
+  "status": "failed",
+  "error": "Insufficient quota"
+}
+```
+
+状态值：
+
+- 进行中：`queued`、`scheduling`、`scheduled`、`running`
+- 终态：`success`、`failed`
+
+## 用 curl 轮询直到完成
+
+如果你想模拟 `createAndWait()` 或 `awaitResult()`，一个简单的 shell 循环就够了：
+
+```bash
+CREATE_RESPONSE=$(curl --silent --request POST \
+  "${OOMOL_BASE_URL}/v3/users/me/tasks" \
+  --header "${AUTH_HEADER}" \
+  --header "${JSON_HEADER}" \
+  --data '{
+    "type": "serverless",
+    "packageName": "@oomol/my-package",
+    "packageVersion": "1.0.0",
+    "blockName": "main"
+  }')
+
+TASK_ID=$(echo "${CREATE_RESPONSE}" | jq -r '.taskID')
+
+while true; do
+  RESULT=$(curl --silent --request GET \
+    "${OOMOL_BASE_URL}/v3/users/me/tasks/${TASK_ID}/result" \
+    --header "${AUTH_HEADER}")
+
+  STATUS=$(echo "${RESULT}" | jq -r '.status')
+  echo "status=${STATUS}"
+
+  if [ "${STATUS}" = "success" ] || [ "${STATUS}" = "failed" ]; then
+    echo "${RESULT}"
+    break
+  fi
+
+  sleep 3
+done
+```
+
+## Dashboard 与队列控制
+
+查询 dashboard：
+
+- `GET /v3/users/me/dashboard`
+
+```bash
+curl --request GET \
+  "${OOMOL_BASE_URL}/v3/users/me/dashboard" \
+  --header "${AUTH_HEADER}"
+```
+
+暂停当前用户队列：
+
+- `POST /v3/user/pause`
+
+```bash
+curl --request POST \
+  "${OOMOL_BASE_URL}/v3/user/pause" \
+  --header "${AUTH_HEADER}" \
+  --header "${JSON_HEADER}" \
+  --data '{}'
+```
+
+恢复当前用户队列：
+
+- `POST /v3/user/resume`
+
+```bash
+curl --request POST \
+  "${OOMOL_BASE_URL}/v3/user/resume" \
+  --header "${AUTH_HEADER}" \
+  --header "${JSON_HEADER}" \
+  --data '{}'
+```
+
+## 文件上传
+
+SDK 里的上传流程分成三步：
+
+1. 初始化上传
+2. 使用预签名 URL 逐片上传
+3. 完成上传并拿到文件 URL
+
+这部分 HTTP 细节 SDK 已经封装好了。如果你是在应用代码里做上传，优先推荐：
+
+- [TypeScript / JavaScript SDK](./typescript-sdk)
+- [Python SDK](./python-sdk)
+
+## 相关文档
+
+- [Cloud Task 概览](./overview)
+- [TypeScript / JavaScript SDK](./typescript-sdk)
+- [Python SDK](./python-sdk)
+- [MCP SDK](./mcp-sdk)
