@@ -59,97 +59,108 @@ export default function HomepageProductComparison() {
         </div>
 
         <div className={styles.cloudSection}>
-          <div className={styles.cloudCard}>
-            <div className={styles.cardHeader}>
-              <div className={styles.cardMetaRow}>
-                <div className={styles.cardIcon} aria-hidden="true">
-                  01
+          <div className={styles.topPair}>
+            <div className={styles.mediaStage}>
+              <div className={styles.mediaStageHeader}>
+                <div className={styles.infoLabel}>
+                  {translate({ message: "Primary Demo Slot" })}
                 </div>
-                <div className={styles.cardBadge}>
-                  {translate({ message: "HOME.ProductComparison.cloud.stage" })}
-                </div>
+                <p className={styles.mediaStageCopy}>
+                  {translate({
+                    message:
+                      "This should become the homepage's main product demo. Show one validated capability being published to multiple delivery targets in a single flow.",
+                  })}
+                </p>
               </div>
-              <h3 className={styles.cardTitle}>
-                {translate({ message: "HOME.ProductComparison.product.cloud" })}
-              </h3>
-              <p className={styles.cardLead}>
-                {translate({
-                  message: "HOME.ProductComparison.cloud.capability",
-                })}
-              </p>
-              <p className={styles.cardSummary}>
-                {translate({
-                  message: "HOME.ProductComparison.cloud.scenario",
-                })}
-              </p>
-              <div className={styles.cardActions}>
-                <Link
-                  to="/docs/cloud-services/cloud-function"
-                  className={styles.primaryCta}
-                >
-                  {translate({ message: "HOME.ProductComparison.cta" })}
-                </Link>
-                <div className={styles.inlineNote}>
-                  {translate({ message: "HOME.ProductComparison.cloud.tech" })}
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div className={styles.mediaStage}>
-            <div className={styles.mediaStageHeader}>
-              <div className={styles.infoLabel}>
-                {translate({ message: "Primary Demo Slot" })}
-              </div>
-              <p className={styles.mediaStageCopy}>
-                {translate({
+              <MediaRequirementPlaceholder
+                className={styles.mediaPreview}
+                badge={translate({ message: "VIDEO PREFERRED" })}
+                titleLines={[
+                  translate({ message: "One Function" }),
+                  translate({ message: "Multiple Outputs" }),
+                ]}
+                summary={translate({
                   message:
-                    "This should become the homepage's main product demo. Show one validated capability being published to multiple delivery targets in a single flow.",
+                    "10-15s loop. 16:10. Publish to API, MCP, and Tasks.",
                 })}
-              </p>
+                chips={[
+                  translate({ message: "16:10" }),
+                  translate({ message: "10-15s" }),
+                  translate({ message: "Video" }),
+                ]}
+                steps={[
+                  {
+                    index: "01",
+                    title: translate({ message: "Select validated flow" }),
+                    detail: translate({
+                      message: "Begin from something already proven locally.",
+                    }),
+                  },
+                  {
+                    index: "02",
+                    title: translate({ message: "Switch delivery target" }),
+                    detail: translate({
+                      message: "Move between API, MCP, and automation output.",
+                    }),
+                  },
+                  {
+                    index: "03",
+                    title: translate({ message: "Show live result" }),
+                    detail: translate({
+                      message: "End with endpoint, tool entry, or task status.",
+                    }),
+                  },
+                ]}
+                footnote={translate({
+                  message:
+                    "Replace with real capture: publish-to-api-mcp-task.mp4",
+                })}
+              />
             </div>
 
-            <MediaRequirementPlaceholder
-              badge={translate({ message: "VIDEO PREFERRED" })}
-              titleLines={[
-                translate({ message: "One Function" }),
-                translate({ message: "Multiple Outputs" }),
-              ]}
-              summary={translate({
-                message: "10-15s loop. 16:10. Publish to API, MCP, and Tasks.",
-              })}
-              chips={[
-                translate({ message: "16:10" }),
-                translate({ message: "10-15s" }),
-                translate({ message: "Video" }),
-              ]}
-              steps={[
-                {
-                  index: "01",
-                  title: translate({ message: "Select validated flow" }),
-                  detail: translate({
-                    message: "Begin from something already proven locally.",
-                  }),
-                },
-                {
-                  index: "02",
-                  title: translate({ message: "Switch delivery target" }),
-                  detail: translate({
-                    message: "Move between API, MCP, and automation output.",
-                  }),
-                },
-                {
-                  index: "03",
-                  title: translate({ message: "Show live result" }),
-                  detail: translate({
-                    message: "End with endpoint, tool entry, or task status.",
-                  }),
-                },
-              ]}
-              footnote={translate({
-                message: "Replace with real capture: publish-to-api-mcp-task.mp4",
-              })}
-            />
+            <div className={styles.cloudCard}>
+              <div className={styles.cardHeader}>
+                <div className={styles.cardMetaRow}>
+                  <div className={styles.cardIcon} aria-hidden="true">
+                    01
+                  </div>
+                  <div className={styles.cardBadge}>
+                    {translate({
+                      message: "HOME.ProductComparison.cloud.stage",
+                    })}
+                  </div>
+                </div>
+                <h3 className={styles.cardTitle}>
+                  {translate({
+                    message: "HOME.ProductComparison.product.cloud",
+                  })}
+                </h3>
+                <p className={styles.cardLead}>
+                  {translate({
+                    message: "HOME.ProductComparison.cloud.capability",
+                  })}
+                </p>
+                <p className={styles.cardSummary}>
+                  {translate({
+                    message: "HOME.ProductComparison.cloud.scenario",
+                  })}
+                </p>
+                <div className={styles.cardActions}>
+                  <Link
+                    to="/docs/cloud-services/cloud-function"
+                    className={styles.primaryCta}
+                  >
+                    {translate({ message: "HOME.ProductComparison.cta" })}
+                  </Link>
+                  <div className={styles.inlineNote}>
+                    {translate({
+                      message: "HOME.ProductComparison.cloud.tech",
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className={styles.outputsPanel}>

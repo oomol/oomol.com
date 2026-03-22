@@ -63,7 +63,7 @@
 .imagesWrapper {
   position: relative;
   min-height: 34rem;
-  padding: 1.4rem;
+  padding: 1.2rem;
   border-radius: 2.2rem;
   border: 1px solid var(--oomol-divider);
   background:
@@ -79,15 +79,6 @@
     );
   box-shadow: var(--oomol-shadow-lg);
   overflow: hidden;
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 1rem;
-    border-radius: 1.7rem;
-    border: 1px solid color-mix(in srgb, var(--oomol-divider) 86%, white 14%);
-    pointer-events: none;
-  }
 
   &::after {
     content: "";
