@@ -12,18 +12,18 @@
   background:
     radial-gradient(
       circle at top left,
-      rgba(195, 158, 89, 0.14) 0%,
-      rgba(195, 158, 89, 0) 34%
+      rgba(161, 191, 235, 0.22) 0%,
+      rgba(161, 191, 235, 0) 36%
     ),
     radial-gradient(
       circle at 80% 18%,
-      rgba(84, 88, 135, 0.1) 0%,
-      rgba(84, 88, 135, 0) 24%
+      rgba(127, 138, 231, 0.14) 0%,
+      rgba(127, 138, 231, 0) 28%
     ),
     linear-gradient(
       180deg,
-      rgba(255, 251, 244, 0.84) 0%,
-      rgba(246, 240, 230, 0.72) 100%
+      rgba(251, 253, 255, 0.94) 0%,
+      rgba(244, 247, 251, 0.88) 100%
     );
 
   &::after {
@@ -31,8 +31,8 @@
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(rgba(99, 81, 52, 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(99, 81, 52, 0.06) 1px, transparent 1px);
+      linear-gradient(rgba(92, 108, 141, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(92, 108, 141, 0.06) 1px, transparent 1px);
     background-size: 8.5rem 8.5rem;
     mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75), transparent 90%);
     pointer-events: none;
@@ -144,8 +144,8 @@
   background:
     linear-gradient(
       180deg,
-      rgba(255, 252, 247, 0.94) 0%,
-      rgba(251, 246, 237, 0.9) 100%
+      rgba(252, 254, 255, 0.94) 0%,
+      rgba(244, 247, 252, 0.92) 100%
     );
   box-shadow: var(--oomol-shadow-lg);
   position: relative;
@@ -160,7 +160,7 @@
     background: linear-gradient(
       135deg,
       rgba(255, 255, 255, 0.84) 0%,
-      rgba(190, 167, 124, 0.2) 52%,
+      rgba(173, 188, 233, 0.22) 52%,
       rgba(255, 255, 255, 0.32) 100%
     );
     -webkit-mask:
