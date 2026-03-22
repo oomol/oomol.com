@@ -48,7 +48,7 @@
     "description": "The label for category Introduction in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Cloud.link.generated-index.description": {
-    "message": "云服务包括互联服务和 Headless 部署。",
+    "message": "云服务包括 Cloud Function 和 Cloud Task API。",
     "description": "The generated-index page description for category Cloud in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Get Started": {

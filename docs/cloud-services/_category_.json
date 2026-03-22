@@ -3,7 +3,7 @@
   "position": 5,
   "link": {
     "type": "generated-index",
-    "description": "Cloud services including Cloud Function, Connect Service, Headless deployment, and Cloud Task APIs."
+    "description": "Cloud services including Cloud Function and Cloud Task APIs."
   },
   "collapsed": true,
   "className": "sidebar-submenu-item"
