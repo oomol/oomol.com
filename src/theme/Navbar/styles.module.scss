@@ -82,7 +82,11 @@
   &:hover {
     color: var(--oomol-primary) !important;
     border-color: var(--oomol-primary);
-    background: color-mix(in srgb, var(--oomol-primary-bg) 72%, var(--oomol-bg-elevated));
+    background: color-mix(
+      in srgb,
+      var(--oomol-primary-bg) 72%,
+      var(--oomol-bg-elevated)
+    );
     transform: translateY(-1px);
   }
 }
@@ -92,12 +96,11 @@
   align-items: center;
   gap: 6px;
   min-height: 42px;
-  background:
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--oomol-primary) 86%, white) 0%,
-      var(--oomol-primary) 100%
-    );
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--oomol-primary) 86%, white) 0%,
+    var(--oomol-primary) 100%
+  );
   border: 1px solid color-mix(in srgb, var(--oomol-primary) 70%, black 10%);
   border-radius: 999px;
   padding: 6px 17px;
@@ -113,8 +116,8 @@
     0 10px 20px rgba(46, 39, 74, 0.12);
   transition:
     transform 0.2s ease,
-    background 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 
   [data-theme="dark"] & {
     color: var(--oomol-white);
@@ -125,7 +128,12 @@
   }
 
   &:hover {
-    background: var(--oomol-primary-hover);
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--oomol-primary-hover) 86%, white) 0%,
+      var(--oomol-primary-hover) 100%
+    );
+    border-color: color-mix(in srgb, var(--oomol-primary-hover) 70%, black 10%);
     color: var(--oomol-text-inverse) !important;
     transform: translateY(-1px);
     box-shadow:
