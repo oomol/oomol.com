@@ -103,6 +103,7 @@ const sidebars = {
           collapsed: true,
           items: [
             "workflow-engine/third-party-api-services/overview",
+            "workflow-engine/third-party-api-services/pricing-reference",
             "workflow-engine/third-party-api-services/typescript-sdk",
             "workflow-engine/third-party-api-services/python-sdk",
           ],
