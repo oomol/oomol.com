@@ -77,9 +77,9 @@ GET https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
   }}
 />
 
-这是错误是因为 NASA 的 `DEMO_KEY` 有请求限制。你可以通过申请一个免费的 API Key 来解决这个问题。
+这个错误是因为 NASA 的 `DEMO_KEY` 有请求限制。你可以通过申请一个免费的 API Key 来解决这个问题。
 
-在 OOMOL Studio 中，我们可以使用 `密钥` 来存储 API Key。你可以在左侧的菜单中找到 `OOMOL 密钥`，然后点击 `添加密钥` 按钮，添加一个新的密钥。如图
+在 OOMOL Studio 中，我们可以使用 `密钥` 来存储 API Key。你可以在左侧菜单中找到 `OOMOL 密钥`，然后点击 `添加密钥` 按钮来添加新的密钥，如图所示。
 
 <Image
   sources={{
@@ -92,7 +92,7 @@ GET https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
   }}
 />
 
-然后在 Block 中，添加一个 `输入接口`，并将类型修改为 `密钥`，然后选择你刚刚添加的密钥。并将代码中使用的 `DEMO_KEY` 替换为 `${params.input}`接口
+然后在 Block 中添加一个 `输入接口`，将类型修改为 `密钥`，再选择你刚刚添加的密钥。接着把代码中的 `DEMO_KEY` 替换为 `${params.input}` 这个接口值。
 
 <Image
   sources={{

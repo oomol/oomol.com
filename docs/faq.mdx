@@ -31,7 +31,8 @@ If you encounter this situation, it is most likely caused by network issues. Sin
 
 You can try the following methods to resolve this issue:
 
-1. Ensure the current system time is accurate. Large discrepancies may lead to SSL certificate verification failures.
+1. If you are in mainland China, enable the China mirror source in `Settings -> Preferences -> China Mirror Source`.
+2. Ensure the current system time is accurate. Large discrepancies may lead to SSL certificate verification failures.
 
 If neither of the above methods solves the problem, you can try using proxy software and enable the following options:
 
@@ -61,7 +62,7 @@ Then restart your computer and try opening OOMOL Studio again.
 In addition to the above methods, you can also try: _disabling the firewall_, _exiting antivirus software_, or manually searching for: `WSL2 cannot connect to the internet` for more solutions.
 :::
 
-## Docker Desktop for Windows Throw an Error `wsl distro proxy in ovm-oomol-studio distro has exited with an error: exit status 1`
+## Docker Desktop for Windows Throws This Error `wsl distro proxy in ovm-oomol-studio distro has exited with an error: exit status 1`
 
 OOMOL Studio creates a WSL2 distribution named `ovm-oomol-studio` and runs the OOMOL Studio virtual machine within it.
 
@@ -83,7 +84,7 @@ For more information on this issue, please refer to: https://github.com/docker/f
 
 In addition to the errors mentioned above, Docker Desktop for Windows may also throw the following errors (the solutions are the same):
 
-1. `configuring docker in ovm-oomol-studio: docker cli config: failed to write file: exit status Oxffffffff`
+1. `configuring docker in ovm-oomol-studio: docker cli config: failed to write file: exit status 0xffffffff`
 2. `running wsl distro proxy in ovm-oomol-studio distro: exit status 1`
 
 ## Dependencies in script blocks of opened projects cannot be installed
@@ -112,7 +113,7 @@ In another scenario, users might use the package as a foundation for secondary d
 
 Therefore, we choose to prohibit developers from using script blocks that depend on third-party modules in flows published online.
 
-**We recommend converting all script blocks to shared blocks before publishing, which can avoid the above problems.**
+**We recommend converting these script blocks into shared task blocks before publishing. That avoids the dependency-sync problems described above.**
 
 If you must use script blocks, please remember that you can only use built-in modules of the programming language.
 
@@ -145,7 +146,7 @@ Refer to [Docker container connecting to host services](https://docs.docker.com/
 
 For example:
 
-If you start a MySQL service on your computer, you can connect through `http://127.0.0.1:3306` on the local machine. In OOMOL Studio, you can connect through `http://host.docker.internal:3306`.
+If you start a MySQL service on your computer, you can connect to `127.0.0.1:3306` on the host machine. In OOMOL Studio, connect to `host.docker.internal:3306`.
 
 ## Getting Logs
 

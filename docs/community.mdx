@@ -33,11 +33,11 @@ Depending on the publishing method of the package, the open button here will be 
 
 Clicking the button will open the project locally. If it's a package [published as a template](/docs/get-started/export-and-publish#publish-as-template), it will contain all project details after opening, and you can perform secondary development based on it. Otherwise, the project will only contain flows.
 
-## Github Publisher
+## GitHub Publisher
 
 In actual engineering development, a more common way to update and publish is to publish automatically after code updates.
 
-OOMOL Studio supports configuring Github Actions to monitor code changes and automatically trigger publishing behavior when code changes occur.
+OOMOL Studio supports GitHub Actions, so you can publish automatically when code changes.
 
 <Image
   sources={{
@@ -55,9 +55,9 @@ OOMOL Studio supports configuring Github Actions to monitor code changes and aut
   width="720"
 />
 
-The Github repository is your repository name. After configuring the publisher, everyone will see that the publisher is this user after the package is published.
+The GitHub repository field should contain your repository name. After you configure the publisher account, published packages will show that user as the publisher.
 
-You need to configure the relevant Actions in your Github repository. For configuration, you can refer to the [example project](https://github.com/oomol-lab/oopm-publish-action).
+You also need to configure the corresponding workflow in your GitHub repository. You can use the [example project](https://github.com/oomol-lab/oopm-publish-action) as a reference.
 
 ## Collaboration
 
