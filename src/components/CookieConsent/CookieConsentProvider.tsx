@@ -49,6 +49,7 @@ type CookieManagerTranslations = {
 
 const COOKIE_KEY = "cc_cookie";
 const COOKIE_EXPIRATION_DAYS = 365;
+const COOKIE_POPUP_INITIAL_DELAY_MS = 1200;
 const OOMOL_ROOT_DOMAIN = "oomol.com";
 
 const translationsByLocale: Record<string, CookieManagerTranslations> = {
@@ -286,40 +287,33 @@ export const CookieConsentProvider = () => {
       return;
     }
 
-    let initialDelayTimer: number | undefined;
-    let scrollIdleTimer: number | undefined;
+    let revealTimer: number | undefined;
 
-    const revealManager = () => {
-      setShowCookieManager(true);
+    const scheduleReveal = () => {
+      window.clearTimeout(revealTimer);
+      revealTimer = window.setTimeout(() => {
+        setShowCookieManager(true);
+      }, COOKIE_POPUP_INITIAL_DELAY_MS);
     };
 
-    const scheduleReveal = (delay: number) => {
-      window.clearTimeout(initialDelayTimer);
-      window.clearTimeout(scrollIdleTimer);
-
-      if (window.scrollY <= 96) {
-        initialDelayTimer = window.setTimeout(revealManager, delay);
+    const handleVisibilityChange = () => {
+      if (document.visibilityState !== "visible") {
+        window.clearTimeout(revealTimer);
         return;
       }
 
-      scrollIdleTimer = window.setTimeout(revealManager, 900);
+      scheduleReveal();
     };
 
-    const handleScroll = () => {
-      if (showCookieManager) {
-        return;
-      }
+    if (document.visibilityState === "visible") {
+      scheduleReveal();
+    }
 
-      scheduleReveal(1400);
-    };
-
-    scheduleReveal(1400);
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
-      window.clearTimeout(initialDelayTimer);
-      window.clearTimeout(scrollIdleTimer);
-      window.removeEventListener("scroll", handleScroll);
+      window.clearTimeout(revealTimer);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, [showCookieManager]);
 

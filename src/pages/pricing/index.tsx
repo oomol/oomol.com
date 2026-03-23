@@ -114,7 +114,7 @@ function PriceTable<T extends PricingRowBase>({
     <div className={styles.tableWrap}>
       <Table<T>
         border={{
-          cell: true,
+          cell: false,
           wrapper: false,
         }}
         columns={columns}
