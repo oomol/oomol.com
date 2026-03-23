@@ -35,10 +35,6 @@
     "message": "三方 API 服务",
     "description": "The label for category Third-Party API Services in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Cloud Services": {
-    "message": "云服务",
-    "description": "The label for category Cloud Services in sidebar tutorialSidebar"
-  },
   "sidebar.tutorialSidebar.category.Cloud Function": {
     "message": "云函数",
     "description": "The label for category Cloud Function in sidebar tutorialSidebar"
@@ -46,10 +42,6 @@
   "sidebar.tutorialSidebar.category.API & SDK": {
     "message": "API 与 SDK",
     "description": "The label for category API & SDK in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.SDKs": {
-    "message": "SDK",
-    "description": "The label for category SDKs in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Support": {
     "message": "支持",
