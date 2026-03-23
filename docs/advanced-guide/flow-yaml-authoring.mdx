@@ -7,6 +7,8 @@ sidebar_label: Flow YAML Authoring
 
 Most users can build Flows entirely through the OOMOL Studio UI. This page is for cases where you want to understand or edit the underlying YAML model directly.
 
+For authoring rules about secrets, OOMOL auth, Fusion-first decisions, and `sessionDir` fallback patterns, see [Secrets, Auth, and Runtime Paths](/docs/advanced-guide/secrets-auth-and-runtime-paths).
+
 ## Where Reusable Units Live
 
 The most common authoring units are stored in these directories:
@@ -55,6 +57,20 @@ flowchart LR
 ```
 
 ## Core Fields
+
+### `long_running`
+
+Used mainly in `task.oo.yaml` to indicate that a task is expected to run much longer than ordinary tasks.
+
+```yaml
+long_running: true
+```
+
+Recommended rule of thumb:
+
+- Default is to omit the field, or keep it `false`.
+- Use `true` only for clearly long-running work, usually 10+ minute or strongly input-scaled processing.
+- Do not use it for one-shot API calls, short conversions, or ordinary quick tasks.
 
 ### `inputs_def`
 
@@ -109,6 +125,23 @@ outputs_from:
 ```
 
 Without root-level `outputs_from`, a subflow may complete internally but still expose no usable public output.
+
+### `forward_previews`
+
+Used in `subflow.oo.yaml` to forward selected internal previews to the caller Flow.
+
+```yaml
+forward_previews:
+  - files-downloader#1
+```
+
+This lets a subflow stay internally complex while still surfacing the most useful previews externally.
+
+Recommended rule of thumb:
+
+- Forward only the 1-2 previews that matter most to the caller.
+- Prefer artifact previews or progress-relevant previews.
+- Do not forward every internal preview by default.
 
 ## Common Wiring Patterns
 

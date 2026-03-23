@@ -218,6 +218,25 @@ flowchart TB
 
 This is what makes subflows reusable without hard-coding every internal decision.
 
+## Forwarding Previews
+
+Subflows may contain many internal Nodes, and several of them may emit previews. In most reusable subflows, callers do not need to see every internal preview. Instead, subflows can selectively forward the previews that matter most to the outside.
+
+```yaml
+forward_previews:
+  - files-downloader#1
+```
+
+This is especially useful when a subflow wraps a larger internal graph but you still want the caller Flow to see one or two meaningful user-facing previews.
+
+Good practice:
+
+- Forward only the 1-2 previews that are most useful to end users.
+- Prefer previews that explain progress or expose the most important artifact.
+- Avoid forwarding every internal preview, otherwise the subflow stops feeling encapsulated.
+
+For the preview API itself, see [Node.js SDK API](/docs/workflow-engine/nodejs-sdk-api#contextpreview-types) or [Python SDK API](/docs/workflow-engine/python-sdk-api#contextpreview-types).
+
 ## Data Routing Model
 
 If you edit subflows through YAML or want to reason precisely about how data moves, the following terms are the key ones:

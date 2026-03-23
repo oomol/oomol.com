@@ -8,6 +8,29 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 # Task Block Advanced Usage
 
+## Long-Running Tasks
+
+Some task Blocks are expected to take much longer than ordinary executions. In YAML, this is typically expressed with `long_running`.
+
+```yaml
+long_running: true
+```
+
+Use this only when the task is genuinely long-running, for example:
+
+- The task often takes 10 minutes or more.
+- The runtime clearly scales with input size and may become very long for larger inputs.
+- The task represents background-style processing rather than a short synchronous call.
+
+Do not mark a task as long-running just because one execution happened to be slow once. One-shot API calls, short conversions, and ordinary file operations are usually better left as the default behavior.
+
+If you are editing YAML directly, keep the rule simple:
+
+- Omit `long_running`, or use `false`, by default.
+- Use `true` only for clearly long or input-scaled work.
+
+For nearby authoring rules such as secrets, OOMOL auth, Fusion-first choices, and runtime path fallback, see [Secrets, Auth, and Runtime Paths](/docs/advanced-guide/secrets-auth-and-runtime-paths).
+
 ## View Source Code
 
 After converting a Scriptlet Block to a Task Block, the code will be hidden, but the code file itself still exists.

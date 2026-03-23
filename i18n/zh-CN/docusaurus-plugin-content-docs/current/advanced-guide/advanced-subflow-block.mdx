@@ -218,6 +218,25 @@ flowchart TB
 
 这也是子流既能复用整体结构，又不需要把所有内部策略都写死的原因。
 
+## 转发预览
+
+一个子流内部可能有很多节点，其中多个节点都可能产生预览。但对于可复用子流来说，调用方通常不需要看到所有内部预览。更常见的做法是把最重要的预览选择性地转发到外部。
+
+```yaml
+forward_previews:
+  - files-downloader#1
+```
+
+这在“内部图比较复杂，但仍希望调用方流能看到 1 到 2 个关键预览”的场景里尤其有用。
+
+比较好的实践是：
+
+- 只转发对最终用户最有价值的 1 到 2 个预览。
+- 优先转发能体现进度、或能展示关键产物的预览。
+- 不要默认把所有内部预览都转发出去，否则子流的封装边界会变得很弱。
+
+关于预览 API 本身，可以继续参考 [Node.js SDK API](/zh-CN/docs/workflow-engine/nodejs-sdk-api#contextpreview-types) 或 [Python SDK API](/zh-CN/docs/workflow-engine/python-sdk-api#contextpreview-类型)。
+
 ## 数据路由模型
 
 如果你通过 YAML 直接编写子流，或者想更精确地理解数据是如何流动的，下面这些概念最关键：

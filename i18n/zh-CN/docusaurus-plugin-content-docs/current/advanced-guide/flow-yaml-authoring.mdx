@@ -7,6 +7,8 @@ sidebar_label: Flow YAML 编写
 
 大多数用户完全可以只通过 OOMOL Studio 的图形界面构建流。这一页面向的是希望直接理解或编辑底层 YAML 模型的用户。
 
+如果你想看 secret、OOMOL 认证、Fusion 优先以及 `sessionDir` 回退模式的编写规则，可以继续参考 [Secrets、认证与运行路径](/zh-CN/docs/advanced-guide/secrets-auth-and-runtime-paths)。
+
 ## 复用单元存放在哪里
 
 最常见的几类编写单元通常放在这些目录里：
@@ -55,6 +57,20 @@ flowchart LR
 ```
 
 ## 核心字段
+
+### `long_running`
+
+主要用于 `task.oo.yaml`，表示这个任务预期会比普通任务运行更久。
+
+```yaml
+long_running: true
+```
+
+推荐使用规则：
+
+- 默认省略这个字段，或保持为 `false`。
+- 只有在任务明确属于长时任务时才使用 `true`，通常指 10 分钟以上，或者明显受输入规模影响的处理。
+- 不要把一次性 API 调用、短格式转换或普通快速任务标成 `long_running`。
 
 ### `inputs_def`
 
@@ -109,6 +125,23 @@ outputs_from:
 ```
 
 如果根级别没有 `outputs_from`，那么一个子流即使内部运行完成，也可能对外没有可用输出。
+
+### `forward_previews`
+
+用于 `subflow.oo.yaml`，表示把子流内部选定节点的预览转发给调用方 Flow。
+
+```yaml
+forward_previews:
+  - files-downloader#1
+```
+
+这能让一个内部实现较复杂的子流，在外部仍只暴露最有价值的预览结果。
+
+推荐使用规则：
+
+- 只转发对调用方最重要的 1 到 2 个预览。
+- 优先选择产物预览或进度相关预览。
+- 不要默认转发所有内部预览。
 
 ## 常见接线模式
 
