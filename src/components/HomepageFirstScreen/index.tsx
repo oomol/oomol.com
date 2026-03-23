@@ -1,9 +1,9 @@
 import styles from "./styles.module.scss";
 
 import Link from "@docusaurus/Link";
-import { useColorMode } from "@docusaurus/theme-common";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
 import React from "react";
 
 import { DownloadButton } from "../DownloadButton";
@@ -24,7 +24,7 @@ function parseHighlightText(text: string) {
 }
 
 export default function HomepageFirstScreen() {
-  const { colorMode } = useColorMode();
+  const { colorMode } = useHydratedColorMode();
 
   const scriptText = translate({
     message: "HOME.FirstScreen.script",

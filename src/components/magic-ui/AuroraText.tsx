@@ -1,6 +1,6 @@
 import styles from "./AuroraText.module.scss";
 
-import { useColorMode } from "@docusaurus/theme-common";
+import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
 import React, { memo } from "react";
 
 interface AuroraTextProps {
@@ -19,7 +19,7 @@ const AuroraTextComponent = memo(
     lightColors,
     speed = 1,
   }: AuroraTextProps) => {
-    const { colorMode } = useColorMode();
+    const { colorMode } = useHydratedColorMode();
 
     // 默认的暗色模式颜色和亮色模式颜色
     const defaultDarkColors = ["#7D7FE9", "#FFFFFF", "#7DE993", "#FFFFFF"];

@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss";
 
-import { useColorMode } from "@docusaurus/theme-common";
 import { translate } from "@docusaurus/Translate";
+import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
 import TabItem from "@theme/TabItem";
 import Tabs from "@theme/Tabs";
 import { Highlight, themes } from "prism-react-renderer";
@@ -68,7 +68,7 @@ interface CodeBlockProps {
 }
 
 function CodeBlock({ code, language }: CodeBlockProps) {
-  const { colorMode } = useColorMode();
+  const { colorMode } = useHydratedColorMode();
 
   return (
     <Highlight

@@ -1,7 +1,7 @@
-import { useColorMode } from "@docusaurus/theme-common";
 import { translate } from "@docusaurus/Translate";
 import { Dropdown, Menu } from "@arco-design/web-react";
 import { Button } from "@site/src/components/ui/button";
+import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
 import styles from "./ColorModeDropdown.module.scss";
 import { useState, useEffect } from "react";
 
@@ -26,17 +26,20 @@ const getModeText = (mode: ColorModeType) => {
 };
 
 export const ColorModeDropdown = () => {
-  const { colorMode, setColorMode } = useColorMode();
-  const [selectedMode, setSelectedMode] = useState<ColorModeType>(() => {
-    if (typeof window !== "undefined") {
-      const storedMode = localStorage.getItem("theme") as ColorModeType | null;
-      return storedMode || "system";
-    }
-    return "system";
-  });
+  const { colorMode, setColorMode, isHydrated } = useHydratedColorMode();
+  const [selectedMode, setSelectedMode] = useState<ColorModeType>("system");
 
   useEffect(() => {
-    if (selectedMode !== "system") return;
+    if (!isHydrated) {
+      return;
+    }
+
+    const storedMode = localStorage.getItem("theme") as ColorModeType | null;
+    setSelectedMode(storedMode || "system");
+  }, [isHydrated]);
+
+  useEffect(() => {
+    if (!isHydrated || selectedMode !== "system") return;
 
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const handleSystemThemeChange = (e: MediaQueryListEvent) => {
@@ -47,7 +50,7 @@ export const ColorModeDropdown = () => {
     return () => {
       mediaQuery.removeEventListener("change", handleSystemThemeChange);
     };
-  }, [selectedMode, setColorMode]);
+  }, [isHydrated, selectedMode, setColorMode]);
 
   const modes: ColorModeType[] = ["light", "dark", "system"];
 

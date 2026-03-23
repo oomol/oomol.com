@@ -2,10 +2,10 @@ import styles from "./styles.module.scss";
 
 import type { DocusaurusContext } from "@docusaurus/types";
 
-import { useColorMode } from "@docusaurus/theme-common";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { Popover } from "@site/src/components/Popover";
+import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
 import { clsx } from "clsx";
 import React, { useState, useMemo } from "react";
 
@@ -131,7 +131,7 @@ const Footer: React.FC = () => {
   const hasFooter = !!siteConfig.themeConfig.footer;
   const currentLocale = i18n.currentLocale;
   const [isHovered, setIsHovered] = useState(false);
-  const { colorMode } = useColorMode();
+  const { colorMode } = useHydratedColorMode();
 
   const logoSrc = useBaseUrl(
     useMemo(() => {

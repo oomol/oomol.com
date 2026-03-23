@@ -2,12 +2,12 @@ import styles from "./styles.module.scss";
 
 import type { DocusaurusContext } from "@docusaurus/types";
 
-import { useColorMode } from "@docusaurus/theme-common";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
 import React, { useMemo } from "react";
 
 export default function HomepageStarter() {
-  const { colorMode } = useColorMode();
+  const { colorMode } = useHydratedColorMode();
   const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
     i18n: { currentLocale: string };
   };

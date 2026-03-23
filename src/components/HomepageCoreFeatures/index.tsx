@@ -1,8 +1,8 @@
 import styles from "./styles.module.scss";
 
-import { useColorMode } from "@docusaurus/theme-common";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
 import React, { useState, useEffect, useRef, memo } from "react";
 
 // 核心功能数据
@@ -49,7 +49,7 @@ const FeatureItem = memo(
     feature: (typeof coreFeatures)[0];
     index: number;
   }) => {
-    const { colorMode } = useColorMode();
+    const { colorMode } = useHydratedColorMode();
     const [isVisible, setIsVisible] = useState(false);
     const itemRef = useRef<HTMLDivElement>(null);
 

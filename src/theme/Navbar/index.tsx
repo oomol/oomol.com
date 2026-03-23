@@ -6,11 +6,11 @@ import type { ComponentProps } from "react";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import Link from "@docusaurus/Link";
 import { useLocation } from "@docusaurus/router";
-import { useColorMode } from "@docusaurus/theme-common";
 import { useNavbarMobileSidebar } from "@docusaurus/theme-common/internal";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
 import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
 import NavbarItem from "@theme/NavbarItem";
 import SearchBar from "@theme/SearchBar";
@@ -39,7 +39,7 @@ function splitNavItemsByPosition(
 
 const NavbarComponent: React.FC<NavbarProps> = memo(() => {
   const mobileSidebar = useNavbarMobileSidebar();
-  const { colorMode } = useColorMode();
+  const { colorMode } = useHydratedColorMode();
 
   const {
     siteConfig: {

@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss";
 
-import { useColorMode } from "@docusaurus/theme-common";
 import { translate } from "@docusaurus/Translate";
+import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
 import ClaudeLightHighSVG from "@site/static/img/pages/home/claude-highlight.svg";
 import ClaudeSVG from "@site/static/img/pages/home/claude.svg";
 import DeepSeekLightHighSVG from "@site/static/img/pages/home/deepseek-highlight.svg";
@@ -79,7 +79,7 @@ const LLMItemComponent = memo(
     darkHoverIcon?: React.ReactNode;
     className?: string;
   }) => {
-    const { colorMode } = useColorMode();
+    const { colorMode } = useHydratedColorMode();
     const hoverIcon = colorMode === "dark" ? darkHoverIcon : lightHoverIcon;
 
     return (

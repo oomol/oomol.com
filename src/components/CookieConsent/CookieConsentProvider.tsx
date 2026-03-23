@@ -2,9 +2,9 @@ import styles from "./styles.module.scss";
 
 import type { DocusaurusContext } from "@docusaurus/types";
 
-import { useColorMode } from "@docusaurus/theme-common";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
 import {
   clearGoogleAnalyticsCookies,
   clearTrackingConsentState,
@@ -260,25 +260,19 @@ export const CookieConsentProvider = () => {
   } = useDocusaurusContext() as unknown as DocusaurusContext & {
     i18n: { currentLocale: string };
   };
-  const { colorMode } = useColorMode();
+  const { colorMode } = useHydratedColorMode();
   const privacyPolicyUrl = useBaseUrl("/privacy");
   const translations =
     translationsByLocale[currentLocale] ?? translationsByLocale.en;
-  const [showCookieManager, setShowCookieManager] = React.useState(() => {
-    if (typeof window === "undefined") {
-      return false;
-    }
-
-    return Boolean(readCookie(COOKIE_KEY));
-  });
+  const [showCookieManager, setShowCookieManager] = React.useState(false);
   const [openRequestKey, setOpenRequestKey] = React.useState(0);
-
-  migrateLegacyConsentCookie();
 
   useEffect(() => {
     if (typeof window === "undefined") {
       return;
     }
+
+    migrateLegacyConsentCookie();
 
     const hasStoredConsent = Boolean(readCookie(COOKIE_KEY));
 

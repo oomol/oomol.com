@@ -1,12 +1,12 @@
 import styles from "./styles.module.scss";
 
-import { useColorMode } from "@docusaurus/theme-common";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
 import React from "react";
 
 export default function HomepageCommunityShare() {
-  const { colorMode } = useColorMode();
+  const { colorMode } = useHydratedColorMode();
   const isDark = colorMode === "dark";
   const assetPoints = [
     {
