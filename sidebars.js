@@ -45,7 +45,7 @@ const sidebars = {
             "get-started/quickstarts",
             {
               type: "category",
-              label: "OOMOL Studio Interface",
+              label: "Interface Tour",
               collapsible: true,
               collapsed: false,
               items: [

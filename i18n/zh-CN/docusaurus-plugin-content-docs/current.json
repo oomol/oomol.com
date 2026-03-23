@@ -59,9 +59,9 @@
     "message": "开始使用",
     "description": "The label for category Get Started in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.OOMOL Studio Interface": {
-    "message": "OOMOL Studio 界面",
-    "description": "The label for category OOMOL Studio Interface in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.Interface Tour": {
+    "message": "界面导览",
+    "description": "The label for category Interface Tour in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Block Usage": {
     "message": "区块使用",
