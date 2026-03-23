@@ -26,6 +26,23 @@ We can see that there are Block mode and workflow mode at the bottom of the edit
 
 The configuration in Block mode is basically consistent with the configuration in [Universal Block Settings](/docs/advanced-guide/universal-block-settings). Here we mainly introduce the usage in workflow mode.
 
+## Position in the Reuse Model
+
+Subflow Blocks sit between ordinary Flows and task Blocks:
+
+| Concept | Best used for | File form |
+| --- | --- | --- |
+| Flow | Final runnable logic, experiments, tests, and debugging | `flow.oo.yaml` |
+| Task Block | One stable operation | `task.oo.yaml` |
+| Subflow Block | Reusable multi-step logic | `subflow.oo.yaml` |
+| Slotflow | The implementation of one slot inside a subflow usage | `slotflow.oo.yaml` |
+
+A common pattern is:
+
+1. Build and verify logic in a normal Flow.
+2. Extract the repeated multi-step section into a subflow Block.
+3. Keep changeable behavior as slots so different callers can provide different implementations.
+
 ## Input and Output Nodes
 
 After entering workflow mode, you can see two special Nodes added to the subflow interface:
@@ -63,6 +80,16 @@ The quickly created Handle will copy the name and type of the connected Handle.
 The Handles created on the input and output Nodes will also be reflected in the input and output Handles in Block mode, and vice versa.
 
 Input and output Nodes cannot be deleted. If users don't need input or output, they can choose not to connect wires.
+
+In authoring terms, these Nodes are the public boundary of the subflow. Everything connected between them is internal implementation detail. Everything exposed on them becomes part of the subflow's contract to the outside world.
+
+```mermaid
+flowchart LR
+    Caller["Caller Flow"] --> In["Subflow Input Node"]
+    In --> Inner["Internal Nodes"]
+    Inner --> Out["Subflow Output Node"]
+    Out --> CallerNext["Next Node in Caller Flow"]
+```
 
 ## Slots
 
@@ -171,3 +198,85 @@ After editing is complete, return to the workflow interface to run the subflow B
 />
 
 The execution of subflow Blocks is the same as regular Blocks, with the only difference being that slot content must be edited, otherwise the running conditions cannot be met.
+
+## Slotflow
+
+When a subflow containing slots is used in a caller Flow, each slot is implemented by a small workflow. This workflow is often called a `slotflow`.
+
+You can think of the relationship like this:
+
+```mermaid
+flowchart TB
+    Sub["Subflow Block"] --> Slot["Slot Node<br/>behavior contract"]
+    Slot --> Slotflow["Slotflow<br/>actual implementation"]
+    Slotflow --> Result["Return data to the subflow"]
+```
+
+- The slot defines what inputs it will send out and what outputs it expects back.
+- The slotflow provides the concrete implementation for that contract.
+- Different caller Flows can provide different slotflows for the same subflow.
+
+This is what makes subflows reusable without hard-coding every internal decision.
+
+## Data Routing Model
+
+If you edit subflows through YAML or want to reason precisely about how data moves, the following terms are the key ones:
+
+| Field | Meaning |
+| --- | --- |
+| `inputs_def` | Public inputs accepted by a task, subflow, or slot |
+| `outputs_def` | Public outputs declared by a task, subflow, or slot |
+| `inputs_from` | Where a Node receives each input from |
+| `outputs_from` | How a subflow or slotflow exposes internal results outward |
+| `from_flow` | Read data from the outer boundary of the current subflow or slotflow |
+| `from_node` | Read data from another internal Node |
+
+In UI terms, this is just wiring. In authoring terms, it is the contract that determines what can enter and leave the reusable unit.
+
+```mermaid
+flowchart LR
+    FI["from_flow<br/>public input"] --> N["Internal Node"]
+    U["Upstream Node"] -->|from_node| N
+    N --> OR["outputs_from<br/>public output"]
+```
+
+Two rules are especially important:
+
+1. A public output of a subflow must be routed from an internal result.
+2. Slot output names and slotflow output names must match exactly, otherwise the subflow cannot receive the expected result.
+
+## Authoring Rules
+
+The UI hides much of the file structure, but the underlying model still follows a few stable rules:
+
+- Root-level `outputs_from` is required for a subflow to expose outputs to its caller.
+- A slot Node still needs upstream input wiring. Defining slot Handles alone is not enough.
+- Extra parameters passed into a slot need both a declared Handle and actual wiring in the caller Flow.
+- Slotflow outputs should match the slot contract exactly.
+- If a subflow can finish through multiple valid branches, its public output can route from multiple internal sources.
+
+This is commonly used for short-circuit cases such as empty arrays.
+
+## Canonical Array Pattern
+
+The built-in `Map` and `Filter` style subflows are good examples of the standard array-processing pattern:
+
+```mermaid
+flowchart LR
+    A["Input array"] --> S["switch-by-length"]
+    S -->|"0"| O["outputs_from<br/>empty array short-circuit"]
+    S -->|">0"| E["each"]
+    E --> SL["slot"]
+    E --> R["reducer / collector"]
+    SL --> R
+    R --> O2["outputs_from"]
+```
+
+This pattern exists for a reason:
+
+- `switch-by-length` handles the empty-array branch early.
+- `each` emits one item at a time together with metadata such as index and length.
+- `slot` leaves the per-item behavior replaceable.
+- `reducer` or collector Nodes accumulate the final result.
+
+If you are designing reusable multi-item processing, this pattern is usually easier to maintain than putting all logic into one large script Node.
