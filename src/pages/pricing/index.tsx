@@ -1,8 +1,9 @@
 import styles from "./styles.module.scss";
 
-import { translate } from "@docusaurus/Translate";
-import { Alert, Table, Tabs } from "@arco-design/web-react";
 import type { ColumnProps } from "@arco-design/web-react/es/Table";
+
+import { Alert, Table, Tabs } from "@arco-design/web-react";
+import { translate } from "@docusaurus/Translate";
 import { DownloadButton } from "@site/src/components/DownloadButton";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { Button } from "@site/src/components/ui/button";
@@ -114,9 +115,8 @@ function PriceTable<T extends PricingRowBase>({
       <Table<T>
         border={{
           cell: true,
-          wrapper: true,
+          wrapper: false,
         }}
-        className={styles.pricingTable}
         columns={columns}
         data={rows}
         loading={loading}
@@ -197,35 +197,35 @@ export default function Index() {
       key: "channel",
       render: renderIdentifierBadge,
       title: tPricing("PRICING.tables.llm.channel", "Channel"),
-      className: styles.channelColumn,
+      width: 180,
     },
     {
       dataIndex: "model",
       key: "model",
       render: value => <span className={styles.modelName}>{value}</span>,
       title: tPricing("PRICING.tables.llm.model", "Model"),
-      className: styles.modelColumn,
+      width: 260,
     },
     {
       dataIndex: "inputPrice",
       key: "inputPrice",
       render: renderSinglePriceValue,
       title: `${tPricing("PRICING.tables.llm.inputPrice", "Input Price")} (${tPricing("PRICING.tables.llm.unit", "Credits/M Token")})`,
-      className: styles.numberColumn,
+      width: 180,
     },
     {
       dataIndex: "cachePrice",
       key: "cachePrice",
       render: renderSinglePriceValue,
       title: `${tPricing("PRICING.tables.llm.cachePrice", "Cache Price")} (${tPricing("PRICING.tables.llm.unit", "Credits/M Token")})`,
-      className: styles.numberColumn,
+      width: 180,
     },
     {
       dataIndex: "outputPrice",
       key: "outputPrice",
       render: renderSinglePriceValue,
       title: `${tPricing("PRICING.tables.llm.outputPrice", "Output Price")} (${tPricing("PRICING.tables.llm.unit", "Credits/M Token")})`,
-      className: styles.numberColumn,
+      width: 180,
     },
   ];
 
@@ -235,7 +235,7 @@ export default function Index() {
       key: "service",
       render: renderIdentifierBadge,
       title: tPricing("PRICING.tables.cloudTask.service", "Service"),
-      className: styles.modelColumn,
+      width: 260,
     },
     {
       dataIndex: "price",
@@ -245,7 +245,7 @@ export default function Index() {
         "PRICING.tables.cloudTask.price",
         "Price (Credits/Minute)"
       ),
-      className: styles.numberColumn,
+      width: 220,
     },
     {
       dataIndex: "note",
@@ -284,13 +284,14 @@ export default function Index() {
       key: "service",
       render: renderIdentifierBadge,
       title: tPricing("PRICING.tables.fusionApi.service", "Service"),
-      className: styles.modelColumn,
+      width: 260,
     },
     {
       dataIndex: "price",
       key: "price",
       render: renderMultiLinePriceValue,
       title: tPricing("PRICING.tables.fusionApi.price", "Price (Credits)"),
+      width: 340,
     },
     {
       dataIndex: "description",
@@ -787,6 +788,8 @@ export default function Index() {
             <Tabs
               activeTab={activePricingTable}
               className={styles.tableTabs}
+              type="line"
+              size="large"
               onChange={key => setActivePricingTable(key as PricingTableKey)}
             >
               {tableTabs.map(tab => (

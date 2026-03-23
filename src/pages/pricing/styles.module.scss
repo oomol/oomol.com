@@ -64,6 +64,28 @@
   max-width: 1280px;
   margin: 80px auto;
   padding: 0 16px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -40px 16px auto;
+    height: 220px;
+    border-radius: 36px;
+    background:
+      radial-gradient(
+        circle at top left,
+        color-mix(in srgb, var(--oomol-primary) 10%, transparent) 0%,
+        transparent 58%
+      ),
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--oomol-bg-elevated) 78%, white 22%) 0%,
+        transparent 100%
+      );
+    pointer-events: none;
+    z-index: 0;
+  }
 }
 
 .sectionTitle {
@@ -213,108 +235,136 @@
 }
 
 .priceTablesSection {
+  position: relative;
+  z-index: 1;
   margin-top: 8px;
   overflow: visible;
 }
 
 .tableSectionHeader {
-  padding: 40px 40px 28px;
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--oomol-primary) 7%, transparent) 0%,
-    transparent 48%
-  );
+  display: grid;
+  gap: 14px;
+  width: min(1100px, 100%);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 0 18px;
 }
 
 .tableSectionTitle {
-  font-size: 28px;
-  line-height: 36px;
-  font-weight: 800;
+  margin: 0;
+  max-width: 14ch;
+  font-family: var(--oomol-font-display);
+  font-size: clamp(2.3rem, 3.8vw, 3.45rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  font-weight: 700;
   color: var(--oomol-text-primary);
 }
 
 .tableSectionSubtitle {
-  margin-top: 10px;
+  margin: 0;
   max-width: 760px;
   font-size: 16px;
-  line-height: 26px;
+  line-height: 1.8;
   color: var(--oomol-text-secondary);
 }
 
 .tableSyncNote {
   display: inline-flex;
   align-items: center;
-  margin-top: 18px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--oomol-primary) 10%, transparent);
-  color: var(--oomol-text-primary);
+  width: fit-content;
+  gap: 10px;
+  padding-left: 14px;
+  border-left: 2px solid color-mix(in srgb, var(--oomol-primary) 56%, white);
+  color: var(--oomol-text-secondary);
   font-size: 13px;
-  line-height: 20px;
+  line-height: 1.6;
   font-weight: 600;
+
+  &::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--oomol-primary) 78%, white);
+    box-shadow: 0 0 0 5px
+      color-mix(in srgb, var(--oomol-primary-bg) 46%, transparent);
+    flex-shrink: 0;
+  }
 }
 
 .tableTabs {
-  padding: 28px 40px 0;
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding-top: 6px;
 
   :global(.arco-tabs-header) {
     margin-bottom: 0;
   }
 
   :global(.arco-tabs-header-nav::before) {
-    display: none;
+    background-color: color-mix(
+      in srgb,
+      var(--oomol-border-default) 78%,
+      transparent
+    );
   }
 
-  :global(.arco-tabs-nav-tab-list) {
-    gap: 12px;
-    justify-content: center;
+  :global(.arco-tabs-content) {
+    padding-top: 18px;
   }
 
-  :global(.arco-tabs-tab) {
-    border-radius: 999px;
-    border: 1px solid
-      color-mix(in srgb, var(--oomol-border-default) 80%, transparent);
-    background: color-mix(in srgb, var(--oomol-bg-base) 75%, transparent);
+  :global(.arco-tabs-header-title) {
+    padding: 0 0 14px;
+    margin-right: 28px;
     color: var(--oomol-text-secondary);
     font-size: 14px;
-    line-height: 20px;
+    line-height: 22px;
     font-weight: 600;
     transition:
-      background-color 0.2s ease,
       color 0.2s ease,
-      border-color 0.2s ease,
       transform 0.2s ease;
   }
 
-  :global(.arco-tabs-tab:hover) {
+  :global(.arco-tabs-header-title:hover) {
     color: var(--oomol-text-primary);
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-primary) 25%,
-      var(--oomol-border-default)
-    );
     transform: translateY(-1px);
   }
 
-  :global(.arco-tabs-tab-active) {
-    background: color-mix(in srgb, var(--oomol-primary) 10%, white);
-    border-color: color-mix(in srgb, var(--oomol-primary) 28%, transparent);
+  :global(.arco-tabs-header-title-active),
+  :global(.arco-tabs-header-title-active:hover) {
     color: var(--oomol-primary);
+  }
+
+  :global(.arco-tabs-header-ink) {
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--oomol-primary) 84%, white) 0%,
+      var(--oomol-primary) 100%
+    );
   }
 }
 
 .tablePanel {
-  padding: 22px 28px 30px;
+  display: grid;
+  gap: 18px;
 }
 
 .tableAlert {
   max-width: 1100px;
-  margin: 0 auto 18px;
+  margin: 0 auto;
 
   :global(.arco-alert) {
-    border-radius: 16px;
-    border: 1px solid color-mix(in srgb, var(--oomol-primary) 16%, transparent);
-    background: color-mix(in srgb, var(--oomol-primary) 8%, transparent);
+    border-radius: 14px;
+    border: 1px solid color-mix(in srgb, var(--oomol-primary) 12%, transparent);
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--oomol-primary-bg) 70%, white 30%) 0%,
+      color-mix(in srgb, var(--oomol-bg-elevated) 96%, white 4%) 100%
+    );
+    box-shadow: none;
   }
 
   :global(.arco-alert-content) {
@@ -339,58 +389,21 @@
 }
 
 .tableWrap {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.pricingTable {
   width: 100%;
   max-width: 1100px;
-
-  :global(.arco-table-container) {
-    overflow: hidden;
-    border-radius: 24px;
-    border: 1px solid
-      color-mix(in srgb, var(--oomol-border-default) 60%, transparent);
-    box-shadow: var(--oomol-shadow-sm);
-  }
-
-  :global(.arco-table-th) {
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 700;
-    color: var(--oomol-text-secondary);
-  }
-
-  :global(.arco-table-td) {
-    color: var(--oomol-text-primary);
-    vertical-align: top;
-  }
-}
-
-.channelColumn {
-  width: 18%;
-}
-
-.modelColumn {
-  width: 30%;
-}
-
-.numberColumn {
-  white-space: nowrap;
+  margin: 0 auto;
 }
 
 .identifierBadge {
   display: inline-flex;
   align-items: center;
   max-width: 100%;
-  padding: 6px 12px;
+  padding: 7px 14px;
   border-radius: 999px;
-  background: color-mix(in srgb, var(--oomol-primary) 7%, white);
+  background: color-mix(in srgb, var(--oomol-primary-bg) 62%, white 38%);
   border: 1px solid
-    color-mix(in srgb, var(--oomol-border-default) 68%, transparent);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+    color-mix(in srgb, var(--oomol-primary) 14%, var(--oomol-border-default));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.64);
   color: var(--oomol-text-primary);
   font-size: 13px;
   line-height: 18px;
@@ -440,7 +453,7 @@
   }
 
   .tableSectionHeader {
-    padding: 28px 24px 24px;
+    padding: 22px 0 14px;
   }
 
   .tableSectionTitle {
@@ -449,27 +462,13 @@
   }
 
   .tableTabs {
-    padding: 20px 24px 0;
-    gap: 10px;
-  }
-
-  .tableTab {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .tablePanel {
-    padding: 16px;
-  }
-
-  .pricingTable {
-    :global(.arco-table-content) {
-      min-width: 680px;
+    :global(.arco-tabs-header-title) {
+      margin-right: 20px;
+      padding-bottom: 12px;
     }
   }
 
-  .pricingTable :global(.arco-table-th),
-  .pricingTable :global(.arco-table-td) {
-    padding: 16px 16px;
+  .tablePanel {
+    gap: 14px;
   }
 }
