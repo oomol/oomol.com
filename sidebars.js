@@ -82,7 +82,6 @@ const sidebars = {
             "advanced-guide/advanced-subflow-block",
             "advanced-guide/batch-process",
             "advanced-guide/reusable-constants",
-            "advanced-guide/export-image",
           ],
         },
         {
