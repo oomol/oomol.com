@@ -20,7 +20,7 @@ const sidebars = {
       type: "category",
       label: "OOMOL Studio",
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       items: [
         {
           type: "category",
@@ -40,14 +40,14 @@ const sidebars = {
           type: "category",
           label: "Get Started",
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           items: [
             "get-started/quickstarts",
             {
               type: "category",
               label: "Interface Tour",
               collapsible: true,
-              collapsed: false,
+              collapsed: true,
               items: [
                 "get-started/interface/home",
                 "get-started/interface/project",
@@ -113,14 +113,14 @@ const sidebars = {
       type: "category",
       label: "Cloud Function",
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       items: [
         "cloud-services/cloud-function",
         {
           type: "category",
           label: "API & SDK",
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           items: [
             "cloud-services/cloud-task/overview",
             "cloud-services/cloud-task/typescript-sdk",
