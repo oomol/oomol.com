@@ -31,6 +31,23 @@ If you are editing YAML directly, keep the rule simple:
 
 For nearby authoring rules such as secrets, OOMOL auth, Fusion-first choices, and runtime path fallback, see [Secrets, Auth, and Runtime Paths](/docs/advanced-guide/secrets-auth-and-runtime-paths).
 
+## Using Fusion in Task Blocks
+
+Task Blocks commonly package a Fusion call into a stable reusable interface for other users.
+
+This is usually the right pattern when:
+
+- the capability is already provided by OOMOL Fusion
+- you want users to fill in business inputs instead of configuring external model keys
+- you want auth to follow the OOMOL token flow
+
+In Studio, initialize the SDK from runtime context:
+
+- TypeScript: `token: await context.getOomolToken()`, `baseUrl: context.fusionApiUrl`
+- Python: `token=await context.oomol_token()`, `base_url=context.fusion_api_url`
+
+For concrete SDK usage, see [Fusion SDK Overview](/docs/workflow-engine/fusion-sdk-overview), [Fusion SDK for TypeScript](/docs/workflow-engine/fusion-sdk-typescript), and [Fusion SDK for Python](/docs/workflow-engine/fusion-sdk-python).
+
 ## View Source Code
 
 After converting a Scriptlet Block to a Task Block, the code will be hidden, but the code file itself still exists.

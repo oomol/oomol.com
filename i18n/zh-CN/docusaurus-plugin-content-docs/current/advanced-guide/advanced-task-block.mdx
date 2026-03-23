@@ -31,6 +31,23 @@ long_running: true
 
 如果你还想看 secret、OOMOL 认证、Fusion 优先以及运行时路径回退这类相邻规则，可以继续参考 [Secrets、认证与运行路径](/zh-CN/docs/advanced-guide/secrets-auth-and-runtime-paths)。
 
+## 在任务区块中使用 Fusion
+
+很多任务区块的实际作用，就是把一次 Fusion 调用封装成一个稳定、可复用的输入输出接口。
+
+通常下面这些场景都适合这样做：
+
+- 目标能力已经由 OOMOL Fusion 提供
+- 你希望用户只填写业务参数，而不是再配置外部模型 key
+- 你希望认证直接走 OOMOL token 流程
+
+在 Studio 里，建议直接从运行时 `context` 初始化 SDK：
+
+- TypeScript: `token: await context.getOomolToken()`，`baseUrl: context.fusionApiUrl`
+- Python: `token=await context.oomol_token()`，`base_url=context.fusion_api_url`
+
+具体 SDK 用法可继续参考 [Fusion SDK 概览](/zh-CN/docs/workflow-engine/fusion-sdk-overview)、[Fusion SDK TypeScript 文档](/zh-CN/docs/workflow-engine/fusion-sdk-typescript) 和 [Fusion SDK Python 文档](/zh-CN/docs/workflow-engine/fusion-sdk-python)。
+
 ## 查看源代码
 
 在小脚本区块转换为任务区块后，代码将会被隐藏，但是代码文件本身仍然存在。

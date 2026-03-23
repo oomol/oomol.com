@@ -1,0 +1,210 @@
+---
+sidebar_position: 3
+sidebar_label: Fusion SDK (TS)
+---
+
+# Fusion SDK for TypeScript
+
+This page documents `oomol-fusion-sdk` for TypeScript and JavaScript.
+
+## Install
+
+```bash
+npm install oomol-fusion-sdk
+```
+
+Runtime requirements:
+
+- Node.js 18+
+- global `fetch`, or a custom `fetch` passed into the client options
+
+## Use Inside OOMOL Studio Blocks
+
+This is the primary usage mode.
+
+When your block needs to call a Fusion-hosted capability, create the client from the runtime `context` instead of hardcoding credentials or URLs.
+
+```ts
+import type { Context } from "@oomol/types/oocana";
+import { FusionClient } from "oomol-fusion-sdk";
+
+type Inputs = { url: string };
+type Outputs = { markdown: string };
+
+export default async function (
+  params: Inputs,
+  context: Context<Inputs, Outputs>
+): Promise<Outputs> {
+  const client = new FusionClient({
+    token: await context.getOomolToken(),
+    baseUrl: context.fusionApiUrl,
+  });
+
+  const response = await client.jinaReader.read({
+    URL: params.url,
+    format: "markdown",
+  });
+
+  const markdown = response.data?.trim();
+  if (!markdown) {
+    throw new Error("Fusion API returned empty markdown");
+  }
+
+  return { markdown };
+}
+```
+
+For longer-running task endpoints, `runData()` is usually the simplest choice:
+
+```ts
+const markdown = await client.pdfTransformMarkdown.runData({
+  pdfURL: params.pdf_url,
+});
+```
+
+Prefer this Studio pattern:
+
+- `token: await context.getOomolToken()`
+- `baseUrl: context.fusionApiUrl`
+
+Avoid asking users for a separate third-party secret if Fusion already covers the capability.
+
+## Use Outside Studio
+
+When you are calling Fusion from a normal Node.js service or script, initialize the client with an API key or token directly.
+
+```ts
+import { FusionClient } from "oomol-fusion-sdk";
+
+const client = new FusionClient({
+  apiKey: process.env.FUSION_API_KEY,
+});
+```
+
+Supported options:
+
+- `apiKey?: string`
+- `token?: string`
+- `baseUrl?: string`
+- `fetch?: typeof fetch`
+- `defaultHeaders?: Record<string, string>`
+- `pollIntervalMs?: number`
+- `timeoutMs?: number`
+
+Defaults:
+
+- `baseUrl`: `https://fusion-api.oomol.com`
+- `pollIntervalMs`: `2000`
+- `timeoutMs`: `300000`
+
+## Task APIs
+
+All async task services share the same method set:
+
+- `submit(payload)`
+- `state(sessionID)`
+- `result(sessionID)`
+- `wait(sessionID, options)`
+- `run(payload, options)`
+- `waitData(sessionID, options)`
+- `runData(payload, options)`
+
+Typical choices:
+
+- Use `runData()` for the common "submit and wait for the final data" case.
+- Use `submit()` + `waitData()` when you need to keep the `sessionID`.
+- Use `run()` when you want the full completed response instead of only the data payload.
+
+Example:
+
+```ts
+const { sessionID } = await client.pdfTransformMarkdown.submit({
+  pdfURL: "https://example.com/book.pdf",
+});
+
+const markdown = await client.pdfTransformMarkdown.waitData(sessionID);
+```
+
+## Action APIs
+
+You can call action endpoints in two ways.
+
+Grouped shortcut:
+
+```ts
+const page = await client.jinaReader.read({
+  URL: "https://example.com/article",
+  format: "markdown",
+});
+```
+
+Raw action key:
+
+```ts
+const response = await client.action("jina-reader/search", {
+  content: "Fusion API SDK",
+  jsonResponse: true,
+});
+```
+
+## Fallback and Runtime Extension
+
+Use `request(...)` when the backend already added an endpoint but the SDK has not exposed a shortcut yet.
+
+```ts
+const response = await client.request({
+  method: "POST",
+  path: "/v1/new-service/submit",
+  body: {
+    prompt: "hello",
+  },
+});
+```
+
+If the new endpoint still follows the standard task pattern:
+
+```ts
+client.registerTask("new-service");
+
+const result = await client.task("new-service").runData({
+  prompt: "hello",
+});
+```
+
+If you need to register a custom action:
+
+```ts
+client.registerAction({
+  key: "custom-service/custom-action",
+  method: "POST",
+  path: "/v1/custom-service/action/custom-action",
+});
+```
+
+## Error Handling
+
+The SDK normalizes errors into `OomolFusionSdkError`.
+
+```ts
+import { OomolFusionSdkError } from "oomol-fusion-sdk";
+
+try {
+  await client.doubaoTts.runData({
+    text: "hello",
+    voice: "zh_female_vv_uranus_bigtts",
+  });
+} catch (error) {
+  const sdkError = OomolFusionSdkError.fromUnknown(error);
+  console.log(sdkError.code);
+  console.log(sdkError.message);
+  console.log(sdkError.status);
+  console.log(sdkError.retryable);
+  console.log(sdkError.details);
+}
+```
+
+## Related Docs
+
+- [Fusion SDK Overview](./fusion-sdk-overview)
+- [Fusion SDK for Python](./fusion-sdk-python)
+- [Node.js Context API](./nodejs-sdk-api)

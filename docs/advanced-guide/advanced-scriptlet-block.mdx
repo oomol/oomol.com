@@ -106,6 +106,28 @@ The context API also has functions such as reporting progress, reading built-in 
 For detailed API documentation, refer to [Node.js Context API](/docs/workflow-engine/nodejs-sdk-api#common-apis) and [Python Context API](/docs/workflow-engine/python-sdk-api#common-apis).
 :::
 
+## Calling Fusion SDK
+
+Many Scriptlet Blocks primarily exist to wrap a Fusion-hosted capability into a reusable block.
+
+In that case:
+
+- keep block orchestration, outputs, preview, and progress on `context`
+- call Fusion itself through `oomol-fusion-sdk`
+- read auth and base URL from runtime `context`, not from hardcoded literals
+
+TypeScript uses:
+
+- `token: await context.getOomolToken()`
+- `baseUrl: context.fusionApiUrl`
+
+Python uses:
+
+- `token=await context.oomol_token()`
+- `base_url=context.fusion_api_url`
+
+See [Fusion SDK Overview](/docs/workflow-engine/fusion-sdk-overview), [Fusion SDK for TypeScript](/docs/workflow-engine/fusion-sdk-typescript), and [Fusion SDK for Python](/docs/workflow-engine/fusion-sdk-python).
+
 ## Streamlined Module Import in TypeScript
 
 Developers can leverage the `~` alias as a root directory designator for simplified module imports within TypeScript projects. For instance:

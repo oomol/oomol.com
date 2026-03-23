@@ -1,0 +1,230 @@
+---
+sidebar_position: 4
+sidebar_label: Fusion SDK (Python)
+---
+
+# Fusion SDK for Python
+
+This page documents `oomol-fusion-sdk` for Python.
+
+## Install
+
+```bash
+pip install oomol-fusion-sdk
+```
+
+Runtime requirements:
+
+- Python 3.8+
+- `requests`
+
+## Use Inside OOMOL Studio Blocks
+
+This is the primary usage mode.
+
+When your block needs to call a Fusion-hosted capability, create the client from the runtime `context` instead of hardcoding credentials or URLs.
+
+```python
+from oocana import Context
+from oomol_fusion_sdk import FusionClient
+
+async def main(params: dict, context: Context) -> dict:
+    client = FusionClient(
+        token=await context.oomol_token(),
+        base_url=context.fusion_api_url,
+    )
+
+    response = client.jina_reader.read(
+        {
+            "URL": params["url"],
+            "format": "markdown",
+        }
+    )
+
+    markdown = response["data"].strip()
+    if not markdown:
+        raise RuntimeError("Fusion API returned empty markdown")
+
+    return {"markdown": markdown}
+```
+
+For longer-running task endpoints, `run_data()` is usually the simplest choice:
+
+```python
+markdown = client.pdf_transform_markdown.run_data(
+    {
+        "pdfURL": params["pdf_url"],
+    }
+)
+```
+
+Prefer this Studio pattern:
+
+- `token=await context.oomol_token()`
+- `base_url=context.fusion_api_url`
+
+Avoid asking users for a separate third-party secret if Fusion already covers the capability.
+
+## Use Outside Studio
+
+When you are calling Fusion from a normal Python service or script, initialize the client with an API key or token directly.
+
+```python
+from oomol_fusion_sdk import FusionClient
+
+client = FusionClient(
+    api_key="your-api-key",
+)
+```
+
+Supported options:
+
+- `api_key: Optional[str]`
+- `token: Optional[str]`
+- `base_url: str`
+- `default_headers: Optional[Dict[str, str]]`
+- `poll_interval_ms: int`
+- `timeout_ms: int`
+- `session: Optional[requests.Session]`
+
+The Python SDK also accepts TypeScript-style aliases:
+
+- `apiKey`
+- `baseUrl`
+- `defaultHeaders`
+- `pollIntervalMs`
+- `timeoutMs`
+
+Defaults:
+
+- `base_url`: `https://fusion-api.oomol.com`
+- `poll_interval_ms`: `2000`
+- `timeout_ms`: `300000`
+
+## Task APIs
+
+All async task services share the same method set:
+
+- `submit(payload, options=None)`
+- `state(session_id, options=None)`
+- `result(session_id, options=None)`
+- `wait(session_id, options=None)`
+- `run(payload, options=None)`
+- `wait_data(session_id, options=None)`
+- `run_data(payload, options=None)`
+
+The Python SDK also provides camelCase aliases such as `waitData()` and `runData()`.
+
+Typical choices:
+
+- Use `run_data()` for the common "submit and wait for the final data" case.
+- Use `submit()` + `wait_data()` when you need to keep the `sessionID`.
+- Use `run()` when you want the full completed response instead of only the data payload.
+
+Example:
+
+```python
+submit_response = client.pdf_transform_markdown.submit(
+    {
+        "pdfURL": "https://example.com/book.pdf",
+    }
+)
+
+markdown = client.pdf_transform_markdown.wait_data(submit_response["sessionID"])
+```
+
+## Action APIs
+
+You can call action endpoints in two ways.
+
+Grouped shortcut:
+
+```python
+page = client.jina_reader.read(
+    {
+        "URL": "https://example.com/article",
+        "format": "markdown",
+    }
+)
+```
+
+Raw action key:
+
+```python
+response = client.action(
+    "jina-reader/search",
+    {
+        "content": "Fusion API SDK",
+        "jsonResponse": True,
+    },
+)
+```
+
+## Fallback and Runtime Extension
+
+Use `request(...)` when the backend already added an endpoint but the SDK has not exposed a shortcut yet.
+
+```python
+response = client.request(
+    path="/v1/new-service/submit",
+    method="POST",
+    body={
+        "prompt": "hello",
+    },
+)
+```
+
+If the new endpoint still follows the standard task pattern:
+
+```python
+client.register_task("new-service")
+
+result = client.task("new-service").run_data(
+    {
+        "prompt": "hello",
+    }
+)
+```
+
+If you need to register a custom action:
+
+```python
+client.register_action(
+    {
+        "key": "custom-service/custom-action",
+        "method": "POST",
+        "path": "/v1/custom-service/action/custom-action",
+    }
+)
+```
+
+The SDK also accepts `registerTask(...)` and `registerAction(...)`.
+
+## Error Handling
+
+The SDK normalizes errors into `OomolFusionSdkError`.
+
+```python
+from oomol_fusion_sdk import OomolFusionSdkError
+
+try:
+    client.doubao_tts.run_data(
+        {
+            "text": "hello",
+            "voice": "zh_female_vv_uranus_bigtts",
+        }
+    )
+except Exception as error:
+    sdk_error = OomolFusionSdkError.from_unknown(error)
+    print(sdk_error.code)
+    print(sdk_error)
+    print(sdk_error.status)
+    print(sdk_error.retryable)
+    print(sdk_error.details)
+```
+
+## Related Docs
+
+- [Fusion SDK Overview](./fusion-sdk-overview)
+- [Fusion SDK for TypeScript](./fusion-sdk-typescript)
+- [Python Context API](./python-sdk-api)

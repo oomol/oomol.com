@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 5
 sidebar_label: Node.js SDK
 ---
 
@@ -10,6 +10,12 @@ import node_preview from "@site/static/img/docs/node_preview.png";
 ## 简介
 
 开发者需要在 Scriptlet Block 中调用 SDK 与 `OOCANA` 工作流引擎进行交互。本文档详细介绍了相关 API 的使用方法。
+
+:::tip
+如果你的 block 需要调用 Fusion 托管能力，应该使用 `oomol-fusion-sdk`，并通过 `token: await context.getOomolToken()` 和 `baseUrl: context.fusionApiUrl` 初始化。
+
+可继续参考 [Fusion SDK 概览](./fusion-sdk-overview) 和 [Fusion SDK TypeScript 文档](./fusion-sdk-typescript)。
+:::
 
 ## 快速开始
 
@@ -60,6 +66,10 @@ export default async function (
   readonly sessionDir: string;
   /** 报告进度，进度0~100，该函数有节流效果，每300ms触发一次。 */
   readonly reportProgress: (progress: number) => Promise<void>;
+  /** 获取当前 OOMOL token，用于调用 Fusion 等 OOMOL 自有服务 */
+  readonly getOomolToken: () => Promise<string>;
+  /** 当前运行时的 Fusion API base URL */
+  readonly fusionApiUrl: string;
   /** 获取 OOMOL 内置大模型，可以获取 base_url api-key model-list */
   readonly OOMOL_LLM_ENV: OOMOL_LLM_ENV;
   /** 获取本地设备的 GPU 信息，以便调用相应的硬件加速库 */
@@ -182,6 +192,10 @@ interface Context<
 
     /** 报告进度，进度范围 0 ~ 100，该函数有节流效果，每 300ms 触发一次 */
     readonly reportProgress: (progress: number) => Promise<void>;
+    /** 获取当前 OOMOL token，用于调用 Fusion 等 OOMOL 自有服务 */
+    readonly getOomolToken: () => Promise<string>;
+    /** 当前运行时的 Fusion API base URL */
+    readonly fusionApiUrl: string;
 }
 ```
 

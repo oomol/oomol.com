@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 6
 sidebar_label: Python SDK
 ---
 
@@ -12,6 +12,12 @@ import python_plotly from "@site/static/img/docs/python_plotly.png";
 ## Introduction
 
 Developers use the SDK inside a Scriptlet Block to interact with the `OOCANA` workflow engine. This document explains how to use the related APIs.
+
+:::tip
+If your block needs to call Fusion-hosted services, use `oomol-fusion-sdk` with `token=await context.oomol_token()` and `base_url=context.fusion_api_url`.
+
+See [Fusion SDK Overview](./fusion-sdk-overview) and [Fusion SDK for Python](./fusion-sdk-python).
+:::
 
 ## Quick Start
 
@@ -65,6 +71,10 @@ def main(params: dict, context: Context):
     def session_dir(self) -> str:
     # Report progress (0-100). A throttle is built in and triggers every 300 ms.
     def report_progress(self, progress: float | int):
+    # Read the current OOMOL token for calling OOMOL-owned services such as Fusion
+    async def oomol_token(self) -> str:
+    # Runtime Fusion API base URL
+    fusion_api_url: str
 ```
 
 ## `Context.preview` Types
@@ -237,6 +247,9 @@ class Context:
     def host_info(self) -> HostInfo: ...
     @property
     def host_endpoint(self) -> str | None: ...
+    @property
+    def fusion_api_url(self) -> str: ...
+    async def oomol_token(self) -> str: ...
     def output(self, key: str, value: Any): ...
         """
         Output data to downstream blocks

@@ -1,0 +1,113 @@
+---
+sidebar_position: 2
+sidebar_label: Fusion SDK
+---
+
+# Fusion SDK 概览
+
+`oomol-fusion-sdk` 是用于调用 Fusion API 的 SDK。
+
+大多数情况下，它会在 OOMOL Studio 里被用来制作 block，把 OOMOL 托管的能力封装成可复用区块。除此之外，你也可以在自己的 Node.js 或 Python 服务里直接调用它。
+
+## 什么时候用它
+
+当代码需要做下面这些事情时，使用 **Context API**：
+
+- 读取 block 输入
+- 向下游输出结果
+- 上报进度
+- 在 Studio 里渲染预览
+
+当代码需要做下面这些事情时，使用 **Fusion SDK**：
+
+- 调用 Fusion 托管的模型、媒体或文档能力
+- 复用 Fusion 的任务型接口 `submit -> state/result`
+- 调用 Fusion 的 action 接口 `/action/{name}`
+
+## 主路径：在 Studio 的 Block 里使用
+
+如果你是在 Studio 里写 Scriptlet Block 或 Task Block，推荐按下面的模式使用：
+
+1. 给项目安装 `oomol-fusion-sdk`。
+2. 从 `context` 读取 OOMOL token。
+3. 从 `context` 读取 Fusion base URL。
+4. 创建 `FusionClient` 并调用对应的服务快捷入口。
+
+TypeScript：
+
+```ts
+import type { Context } from "@oomol/types/oocana";
+import { FusionClient } from "oomol-fusion-sdk";
+
+type Inputs = { pdf_url: string };
+type Outputs = { markdown: string };
+
+export default async function (
+  params: Inputs,
+  context: Context<Inputs, Outputs>
+): Promise<Outputs> {
+  const client = new FusionClient({
+    token: await context.getOomolToken(),
+    baseUrl: context.fusionApiUrl,
+  });
+
+  const markdown = await client.pdfTransformMarkdown.runData({
+    pdfURL: params.pdf_url,
+  });
+
+  return { markdown };
+}
+```
+
+Python：
+
+```python
+from oocana import Context
+from oomol_fusion_sdk import FusionClient
+
+async def main(params: dict, context: Context) -> dict:
+    client = FusionClient(
+        token=await context.oomol_token(),
+        base_url=context.fusion_api_url,
+    )
+
+    markdown = client.pdf_transform_markdown.run_data(
+        {
+            "pdfURL": params["pdf_url"],
+        }
+    )
+
+    return {"markdown": markdown}
+```
+
+这样可以让认证走 OOMOL token 流程。如果 Fusion 已经覆盖对应能力，就不需要再让最终用户额外配置第三方 API key。
+
+## 在 Studio 外直接调用
+
+你也可以在自己的应用、后端或脚本里直接使用同一个 SDK。
+
+- Node.js / TypeScript：用 `FusionClient({ apiKey })` 或 `FusionClient({ token })`
+- Python：用 `FusionClient(api_key=...)` 或 `FusionClient(token=...)`
+
+这种模式适合不在 Studio 运行、也拿不到运行时 `context` 的场景。
+
+## 两种 API 形态
+
+Fusion SDK 主要围绕 Fusion API 里两类稳定接口形态设计：
+
+- 任务型接口：`submit`、`state`、`result`、`wait`、`run`、`waitData`、`runData`
+- Action 接口：按分组的快捷方法，例如 `client.jinaReader.read(...)`，或者原始调用 `client.action("jina-reader/search", ...)`
+
+大多数情况下：
+
+- 任务型接口优先用 `runData()` / `run_data()`
+- action 接口优先用分组快捷入口
+- 只有在后端已经新增接口、但 SDK 还没有快捷封装时，才用 `request(...)`
+
+## 相关文档
+
+- [Fusion SDK TypeScript 文档](./fusion-sdk-typescript)
+- [Fusion SDK Python 文档](./fusion-sdk-python)
+- [Node.js Context API](./nodejs-sdk-api)
+- [Python Context API](./python-sdk-api)
+- [Secrets、认证与运行路径](/zh-CN/docs/advanced-guide/secrets-auth-and-runtime-paths)

@@ -1,0 +1,230 @@
+---
+sidebar_position: 4
+sidebar_label: Fusion SDK (Python)
+---
+
+# Fusion SDK Python 文档
+
+这一页说明 `oomol-fusion-sdk` 在 Python 里的使用方式。
+
+## 安装
+
+```bash
+pip install oomol-fusion-sdk
+```
+
+运行要求：
+
+- Python 3.8+
+- `requests`
+
+## 在 OOMOL Studio 的 Block 里使用
+
+这是最主要的使用方式。
+
+当 block 需要调用 Fusion 托管能力时，推荐从运行时 `context` 创建 client，而不是自己硬编码 URL 或凭据。
+
+```python
+from oocana import Context
+from oomol_fusion_sdk import FusionClient
+
+async def main(params: dict, context: Context) -> dict:
+    client = FusionClient(
+        token=await context.oomol_token(),
+        base_url=context.fusion_api_url,
+    )
+
+    response = client.jina_reader.read(
+        {
+            "URL": params["url"],
+            "format": "markdown",
+        }
+    )
+
+    markdown = response["data"].strip()
+    if not markdown:
+        raise RuntimeError("Fusion API returned empty markdown")
+
+    return {"markdown": markdown}
+```
+
+对于更典型的长任务接口，`run_data()` 往往是最省事的写法：
+
+```python
+markdown = client.pdf_transform_markdown.run_data(
+    {
+        "pdfURL": params["pdf_url"],
+    }
+)
+```
+
+在 Studio 里建议固定采用这个模式：
+
+- `token=await context.oomol_token()`
+- `base_url=context.fusion_api_url`
+
+如果 Fusion 已经覆盖对应能力，就不要再额外要求用户配置第三方 secret。
+
+## 在 Studio 外直接使用
+
+如果是在普通 Python 服务或脚本里调用 Fusion，可以直接传 API key 或 token 初始化 client。
+
+```python
+from oomol_fusion_sdk import FusionClient
+
+client = FusionClient(
+    api_key="your-api-key",
+)
+```
+
+支持的初始化参数：
+
+- `api_key: Optional[str]`
+- `token: Optional[str]`
+- `base_url: str`
+- `default_headers: Optional[Dict[str, str]]`
+- `poll_interval_ms: int`
+- `timeout_ms: int`
+- `session: Optional[requests.Session]`
+
+Python SDK 也兼容 TypeScript 风格参数名：
+
+- `apiKey`
+- `baseUrl`
+- `defaultHeaders`
+- `pollIntervalMs`
+- `timeoutMs`
+
+默认值：
+
+- `base_url`: `https://fusion-api.oomol.com`
+- `poll_interval_ms`: `2000`
+- `timeout_ms`: `300000`
+
+## 任务型接口
+
+所有异步任务服务都支持同一套方法：
+
+- `submit(payload, options=None)`
+- `state(session_id, options=None)`
+- `result(session_id, options=None)`
+- `wait(session_id, options=None)`
+- `run(payload, options=None)`
+- `wait_data(session_id, options=None)`
+- `run_data(payload, options=None)`
+
+Python SDK 还提供了 `waitData()`、`runData()` 这类 camelCase 别名。
+
+常见选择方式：
+
+- 普通场景优先用 `run_data()`
+- 需要自己持有 `sessionID` 时，用 `submit()` + `wait_data()`
+- 需要完整完成态响应结构时，用 `run()`
+
+示例：
+
+```python
+submit_response = client.pdf_transform_markdown.submit(
+    {
+        "pdfURL": "https://example.com/book.pdf",
+    }
+)
+
+markdown = client.pdf_transform_markdown.wait_data(submit_response["sessionID"])
+```
+
+## Action 接口
+
+Action 接口可以通过两种方式调用。
+
+分组快捷入口：
+
+```python
+page = client.jina_reader.read(
+    {
+        "URL": "https://example.com/article",
+        "format": "markdown",
+    }
+)
+```
+
+原始 action key：
+
+```python
+response = client.action(
+    "jina-reader/search",
+    {
+        "content": "Fusion API SDK",
+        "jsonResponse": True,
+    },
+)
+```
+
+## 兜底调用与运行时扩展
+
+当后端已经新增接口，但 SDK 还没有提供快捷入口时，可以直接用 `request(...)`。
+
+```python
+response = client.request(
+    path="/v1/new-service/submit",
+    method="POST",
+    body={
+        "prompt": "hello",
+    },
+)
+```
+
+如果新接口仍然符合标准任务模式：
+
+```python
+client.register_task("new-service")
+
+result = client.task("new-service").run_data(
+    {
+        "prompt": "hello",
+    }
+)
+```
+
+如果需要注册自定义 action：
+
+```python
+client.register_action(
+    {
+        "key": "custom-service/custom-action",
+        "method": "POST",
+        "path": "/v1/custom-service/action/custom-action",
+    }
+)
+```
+
+同时也兼容 `registerTask(...)` 和 `registerAction(...)`。
+
+## 错误处理
+
+SDK 会把错误统一归一化成 `OomolFusionSdkError`。
+
+```python
+from oomol_fusion_sdk import OomolFusionSdkError
+
+try:
+    client.doubao_tts.run_data(
+        {
+            "text": "hello",
+            "voice": "zh_female_vv_uranus_bigtts",
+        }
+    )
+except Exception as error:
+    sdk_error = OomolFusionSdkError.from_unknown(error)
+    print(sdk_error.code)
+    print(sdk_error)
+    print(sdk_error.status)
+    print(sdk_error.retryable)
+    print(sdk_error.details)
+```
+
+## 相关文档
+
+- [Fusion SDK 概览](./fusion-sdk-overview)
+- [Fusion SDK TypeScript 文档](./fusion-sdk-typescript)
+- [Python Context API](./python-sdk-api)

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 6
 sidebar_label: Python SDK
 ---
 
@@ -12,6 +12,12 @@ import python_plotly from "@site/static/img/docs/cn/python_plotly.png";
 ## 简介
 
 开发者需要在 Scriptlet Block 中调用 SDK 与 `OOCANA` 工作流引擎进行交互。本文档详细介绍了相关 API 的使用方法。
+
+:::tip
+如果你的 block 需要调用 Fusion 托管能力，应该使用 `oomol-fusion-sdk`，并通过 `token=await context.oomol_token()` 和 `base_url=context.fusion_api_url` 初始化。
+
+可继续参考 [Fusion SDK 概览](./fusion-sdk-overview) 和 [Fusion SDK Python 文档](./fusion-sdk-python)。
+:::
 
 ## 快速开始
 
@@ -65,6 +71,10 @@ def main(params: dict, context: Context):
     def session_dir(self) -> str:
     # 报告执行进度（0-100），内置节流机制，每300ms触发一次
     def report_progress(self, progress: float | int):
+    # 获取当前 OOMOL token，用于调用 Fusion 等 OOMOL 自有服务
+    async def oomol_token(self) -> str:
+    # 当前运行时的 Fusion API base URL
+    fusion_api_url: str
 ```
 
 ## `Context.preview` 类型
@@ -237,6 +247,9 @@ class Context:
     def host_info(self) -> HostInfo: ...
     @property
     def host_endpoint(self) -> str | None: ...
+    @property
+    def fusion_api_url(self) -> str: ...
+    async def oomol_token(self) -> str: ...
     def output(self, key: str, value: Any): ...
         """
         将数据输出到下游块

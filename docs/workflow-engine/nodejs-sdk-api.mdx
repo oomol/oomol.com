@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 5
 sidebar_label: Node.js SDK
 ---
 
@@ -10,6 +10,12 @@ import node_preview from "@site/static/img/docs/node_preview.png";
 ## Introduction
 
 Developers will call our SDK in the Scriptlet Block to interact with the `OOCANA` workflow engine. This document provides a detailed introduction to the API usage.
+
+:::tip
+If your block needs to call Fusion-hosted services, use `oomol-fusion-sdk` with `token: await context.getOomolToken()` and `baseUrl: context.fusionApiUrl`.
+
+See [Fusion SDK Overview](./fusion-sdk-overview) and [Fusion SDK for TypeScript](./fusion-sdk-typescript).
+:::
 
 ## Quick Start
 
@@ -81,6 +87,10 @@ Here's a list of commonly used APIs:
   readonly sessionDir: string;
   /** Report progress, progress 0~100, this function is throttled to trigger every 300ms. */
   readonly reportProgress: (progress: number) => Promise<void>;
+  /** Read the current OOMOL token for calling OOMOL-owned services such as Fusion */
+  readonly getOomolToken: () => Promise<string>;
+  /** Runtime Fusion API base URL */
+  readonly fusionApiUrl: string;
 ```
 
 ## `Context.preview` Types
@@ -183,6 +193,10 @@ interface Context<
   readonly sessionDir: string;
   /** Report progress, progress 0 ~ 100, this function is throttled to trigger every 300ms */
   readonly reportProgress: (progress: number) => Promise<void>;
+  /** Read the current OOMOL token for calling OOMOL-owned services such as Fusion */
+  readonly getOomolToken: () => Promise<string>;
+  /** Runtime Fusion API base URL */
+  readonly fusionApiUrl: string;
   readonly keepAlive: KeepAlive;
 }
 ```

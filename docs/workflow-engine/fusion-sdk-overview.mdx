@@ -1,0 +1,113 @@
+---
+sidebar_position: 2
+sidebar_label: Fusion SDK
+---
+
+# Fusion SDK Overview
+
+`oomol-fusion-sdk` is the SDK for calling Fusion API.
+
+Most of the time, you use it inside OOMOL Studio to turn OOMOL-hosted capabilities into reusable blocks. You can also call the same SDK directly from your own Node.js or Python services.
+
+## When To Use It
+
+Use the **Context API** when your code needs to:
+
+- read block inputs
+- write outputs to downstream blocks
+- report progress
+- render preview data in Studio
+
+Use the **Fusion SDK** when your code needs to:
+
+- call Fusion-hosted model and media capabilities
+- reuse Fusion task APIs such as `submit -> state/result`
+- call Fusion action APIs such as `/action/{name}`
+
+## The Main Path: Use It Inside Studio Blocks
+
+If you are building a Scriptlet Block or Task Block in Studio, this is the preferred pattern:
+
+1. Add `oomol-fusion-sdk` to the project dependencies.
+2. Read the OOMOL token from `context`.
+3. Read the Fusion base URL from `context`.
+4. Create a `FusionClient` and call the service shortcut you need.
+
+TypeScript:
+
+```ts
+import type { Context } from "@oomol/types/oocana";
+import { FusionClient } from "oomol-fusion-sdk";
+
+type Inputs = { pdf_url: string };
+type Outputs = { markdown: string };
+
+export default async function (
+  params: Inputs,
+  context: Context<Inputs, Outputs>
+): Promise<Outputs> {
+  const client = new FusionClient({
+    token: await context.getOomolToken(),
+    baseUrl: context.fusionApiUrl,
+  });
+
+  const markdown = await client.pdfTransformMarkdown.runData({
+    pdfURL: params.pdf_url,
+  });
+
+  return { markdown };
+}
+```
+
+Python:
+
+```python
+from oocana import Context
+from oomol_fusion_sdk import FusionClient
+
+async def main(params: dict, context: Context) -> dict:
+    client = FusionClient(
+        token=await context.oomol_token(),
+        base_url=context.fusion_api_url,
+    )
+
+    markdown = client.pdf_transform_markdown.run_data(
+        {
+            "pdfURL": params["pdf_url"],
+        }
+    )
+
+    return {"markdown": markdown}
+```
+
+This keeps auth on the OOMOL token flow and avoids asking end users for an extra third-party API key when Fusion already covers the capability.
+
+## Direct SDK Usage Outside Studio
+
+You can also use the same SDK directly in your own app, backend, or script.
+
+- Node.js / TypeScript: initialize `FusionClient({ apiKey })` or `FusionClient({ token })`
+- Python: initialize `FusionClient(api_key=...)` or `FusionClient(token=...)`
+
+This mode is suitable when you are not running inside Studio and do not have a runtime `context` object.
+
+## Two API Shapes
+
+Fusion SDK is designed around two stable interface shapes in Fusion API:
+
+- Task APIs: `submit`, `state`, `result`, `wait`, `run`, `waitData`, `runData`
+- Action APIs: grouped shortcuts such as `client.jinaReader.read(...)`, or raw calls such as `client.action("jina-reader/search", ...)`
+
+In most cases:
+
+- prefer `runData()` / `run_data()` for task APIs
+- prefer grouped action shortcuts for action APIs
+- use `request(...)` only when the backend already added a new endpoint but the SDK shortcut is not available yet
+
+## Related Docs
+
+- [Fusion SDK for TypeScript](./fusion-sdk-typescript)
+- [Fusion SDK for Python](./fusion-sdk-python)
+- [Node.js Context API](./nodejs-sdk-api)
+- [Python Context API](./python-sdk-api)
+- [Secrets, Auth, and Runtime Paths](/docs/advanced-guide/secrets-auth-and-runtime-paths)

@@ -346,7 +346,7 @@
     "message": "运行在本地、私有主机或云端"
   },
   "HOME.Lifecycle.step3.description": {
-    "message": "• 本地运行: PC/Mac,自用或共享\n• Headless 部署: NAS/服务器容器化运行\n• 云端 Serverless: 一键托管成 API,无需配置"
+    "message": "• 本地运行: PC/Mac,自用或共享\n• 云端 Serverless: 一键托管成 API,无需配置"
   },
   "HOME.Lifecycle.step4.title": {
     "message": "交付"
@@ -2319,138 +2319,6 @@
     "message": "This author has not written any posts yet.",
     "description": "The text for authors with 0 blog post"
   },
-  "HEADLESS.hero.description": {
-    "message": "把你已经在 Studio 里验证过的运行环境带到自己的服务器、NAS 或私有云中，以容器方式继续交付。"
-  },
-  "HEADLESS.philosophy.title": {
-    "message": "为什么用 Headless 继续交付"
-  },
-  "HEADLESS.philosophy.subtitle": {
-    "message": "当函数已经在本地验证完成，Headless 负责把同一套运行环境带到你可控的基础设施里。"
-  },
-  "HEADLESS.philosophy.freedom.title": {
-    "message": "部署位置由你决定"
-  },
-  "HEADLESS.philosophy.freedom.desc": {
-    "message": "无论是个人 NAS、私有服务器还是公有云，只要环境允许，就可以继续运行同一份能力。"
-  },
-  "HEADLESS.philosophy.opensource.title": {
-    "message": "运行环境保持标准"
-  },
-  "HEADLESS.philosophy.opensource.desc": {
-    "message": "基于标准容器和公开运行时能力，减少从本地验证到自托管部署之间的偏差。"
-  },
-  "HEADLESS.philosophy.community.title": {
-    "message": "继续承接函数交付"
-  },
-  "HEADLESS.philosophy.community.desc": {
-    "message": "当你不想走托管云服务时，Headless 让同一份函数能力继续以 API、自动化或内部服务形式运行。"
-  },
-  "HEADLESS.hero.stat1": {
-    "message": "容器化部署"
-  },
-  "HEADLESS.hero.stat2": {
-    "message": "Web 管理"
-  },
-  "HEADLESS.hero.stat3": {
-    "message": "一键安装"
-  },
-  "HEADLESS.hero.cta.download": {
-    "message": "立即下载"
-  },
-  "HEADLESS.hero.cta.docs": {
-    "message": "查看文档"
-  },
-  "HEADLESS.deployment.title": {
-    "message": "用容器接管运行环境"
-  },
-  "HEADLESS.deployment.recommendation": {
-    "message": "建议配置：2 核 CPU、4 GB 内存"
-  },
-  "HEADLESS.deployment.viewDocs": {
-    "message": "查看完整文档 →"
-  },
-  "HEADLESS.useCases.title": {
-    "message": "适用场景"
-  },
-  "HEADLESS.useCases.subtitle": {
-    "message": "灵活部署，满足不同的运行环境需求"
-  },
-  "HEADLESS.useCase.container.title": {
-    "message": "容器部署"
-  },
-  "HEADLESS.useCase.container.description": {
-    "message": "一条命令完成安装，支持主流 Linux 发行版和 NAS 系统"
-  },
-  "HEADLESS.useCase.cloud.title": {
-    "message": "云服务器"
-  },
-  "HEADLESS.useCase.cloud.description": {
-    "message": "轻松部署到阿里云、AWS、腾讯云等云平台"
-  },
-  "HEADLESS.useCase.ci.title": {
-    "message": "CI/CD 集成"
-  },
-  "HEADLESS.useCase.ci.description": {
-    "message": "集成到自动化流程，实现持续部署和测试"
-  },
-  "HEADLESS.useCase.api.title": {
-    "message": "API 服务"
-  },
-  "HEADLESS.useCase.api.description": {
-    "message": "将工作流发布为 API 服务，供其他应用调用"
-  },
-  "HEADLESS.features.title": {
-    "message": "核心功能"
-  },
-  "HEADLESS.features.deploy.title": {
-    "message": "快速部署"
-  },
-  "HEADLESS.features.deploy.description": {
-    "message": "容器化部署，一键完成部署配置"
-  },
-  "HEADLESS.features.deploy.feature1": {
-    "message": "Compose 一键启动"
-  },
-  "HEADLESS.features.deploy.feature2": {
-    "message": "自动配置网络和存储"
-  },
-  "HEADLESS.features.deploy.feature3": {
-    "message": "支持多容器编排部署"
-  },
-  "HEADLESS.features.package.title": {
-    "message": "包管理"
-  },
-  "HEADLESS.features.package.description": {
-    "message": "完整的包生命周期管理，从安装到卸载"
-  },
-  "HEADLESS.features.package.feature1": {
-    "message": "Studio 开发，Headless 部署"
-  },
-  "HEADLESS.features.package.feature2": {
-    "message": "Hub 社区包一键安装"
-  },
-  "HEADLESS.features.package.feature3": {
-    "message": "自动检测版本更新"
-  },
-  "HEADLESS.features.remote.title": {
-    "message": "远程管理"
-  },
-  "HEADLESS.features.remote.description": {
-    "message": "Web 界面管理，随时随地访问"
-  },
-  "HEADLESS.features.remote.feature1": {
-    "message": "Web UI 统一管理"
-  },
-  "HEADLESS.features.remote.feature2": {
-    "message": "实时查看运行状态"
-  },
-  "HEADLESS.features.remote.feature3": {
-    "message": "RESTful API 自动化"
-  },
-  "HOME.Products.headless.description": {
-    "message": "在服务器和 NAS 上运行 OOMOL 应用"
-  },
   "HOME.Scenes.dataScience.title": {
     "message": "数据科学流水线"
   },
@@ -2514,9 +2382,6 @@
   "HOME.ProductComparison.product.studio": {
     "message": "Studio"
   },
-  "HOME.ProductComparison.product.headless": {
-    "message": "Headless"
-  },
   "HOME.ProductComparison.product.cloud": {
     "message": "Cloud"
   },
@@ -2531,18 +2396,6 @@
   },
   "HOME.ProductComparison.studio.tech": {
     "message": "本地安装即用，内置容器环境，适合把开发和验证先收拢在一处。"
-  },
-  "HOME.ProductComparison.headless.stage": {
-    "message": "团队部署与私有化运行"
-  },
-  "HOME.ProductComparison.headless.capability": {
-    "message": "更高可控性与更深集成"
-  },
-  "HOME.ProductComparison.headless.scenario": {
-    "message": "适合容器化部署、私有云环境和需要接入已有基础设施的团队场景。"
-  },
-  "HOME.ProductComparison.headless.tech": {
-    "message": "支持容器等开源基础设施，可深度定制、灵活集成、可控运行。"
   },
   "HOME.ProductComparison.cloud.stage": {
     "message": "更快上线，更少运维"
@@ -2759,9 +2612,6 @@
   },
   "STUDIO.hero.description": {
     "message": "面向开发者的本地开发环境，基于 VSCode 的可视化编程工具，结合 FRP 协议实现 P2P 算力共享"
-  },
-  "HEADLESS.hero.description": {
-    "message": "用于本地部署（通常是在 NAS 里）的单机版无头 studio，没有 Electron，没有服务端调度。"
   },
   "APP.new.hero.title": { "message": "OOMOL App" },
   "APP.new.hero.subtitle": { "message": "把函数直接交付给用户" },

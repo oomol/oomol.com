@@ -261,7 +261,7 @@
     "message": "Run on local, private host or cloud"
   },
   "HOME.Lifecycle.step3.description": {
-    "message": "Deploy locally on your PC or Mac for personal use and sharing, use headless mode on NAS or server containers for long-term running, or deploy to Cloud Serverless with one click for hassle-free API hosting."
+    "message": "Deploy locally on your PC or Mac for personal use and sharing, or deploy to Cloud Serverless with one click for hassle-free API hosting."
   },
   "HOME.Lifecycle.step4.title": {
     "message": "Deliver"
@@ -2232,138 +2232,6 @@
   "CHAT.features.models.feature3": {
     "message": "Auto-select the most suitable model"
   },
-  "HEADLESS.hero.description": {
-    "message": "Bring the runtime you already validated in Studio onto your own server, NAS, or private cloud, and keep delivering through containers."
-  },
-  "HEADLESS.philosophy.title": {
-    "message": "Why Continue Delivery with Headless"
-  },
-  "HEADLESS.philosophy.subtitle": {
-    "message": "Once a function is validated locally, Headless carries the same runtime into infrastructure you control."
-  },
-  "HEADLESS.philosophy.freedom.title": {
-    "message": "Choose Where It Runs"
-  },
-  "HEADLESS.philosophy.freedom.desc": {
-    "message": "Whether it is a NAS, private server, or public cloud, the same capability can keep running wherever your environment allows."
-  },
-  "HEADLESS.philosophy.opensource.title": {
-    "message": "Keep the Runtime Standard"
-  },
-  "HEADLESS.philosophy.opensource.desc": {
-    "message": "Built on standard containers and public runtime behavior, so there is less drift between local validation and self-hosted delivery."
-  },
-  "HEADLESS.philosophy.community.title": {
-    "message": "Carry Delivery Forward"
-  },
-  "HEADLESS.philosophy.community.desc": {
-    "message": "When you do not want managed cloud hosting, Headless keeps the same function capability running as an API, automation task, or internal service."
-  },
-  "HEADLESS.hero.stat1": {
-    "message": "Containerized"
-  },
-  "HEADLESS.hero.stat2": {
-    "message": "Web Management"
-  },
-  "HEADLESS.hero.stat3": {
-    "message": "One-Click Install"
-  },
-  "HEADLESS.hero.cta.download": {
-    "message": "Download Now"
-  },
-  "HEADLESS.hero.cta.docs": {
-    "message": "View Docs"
-  },
-  "HEADLESS.deployment.title": {
-    "message": "Take Over the Runtime with Containers"
-  },
-  "HEADLESS.deployment.recommendation": {
-    "message": "Recommended configuration: 2 CPU cores, 4 GB RAM"
-  },
-  "HEADLESS.deployment.viewDocs": {
-    "message": "View Full Documentation →"
-  },
-  "HEADLESS.useCases.title": {
-    "message": "Use Cases"
-  },
-  "HEADLESS.useCases.subtitle": {
-    "message": "Flexible deployment for different runtime environments"
-  },
-  "HEADLESS.useCase.container.title": {
-    "message": "Container Deployment"
-  },
-  "HEADLESS.useCase.container.description": {
-    "message": "One command to install, supports mainstream Linux distributions and NAS systems"
-  },
-  "HEADLESS.useCase.cloud.title": {
-    "message": "Cloud Servers"
-  },
-  "HEADLESS.useCase.cloud.description": {
-    "message": "Easy deployment to Alibaba Cloud, AWS, Tencent Cloud and other platforms"
-  },
-  "HEADLESS.useCase.ci.title": {
-    "message": "CI/CD Integration"
-  },
-  "HEADLESS.useCase.ci.description": {
-    "message": "Integrate into automation workflows for continuous deployment and testing"
-  },
-  "HEADLESS.useCase.api.title": {
-    "message": "API Services"
-  },
-  "HEADLESS.useCase.api.description": {
-    "message": "Publish workflows as API services for other applications to call"
-  },
-  "HEADLESS.features.title": {
-    "message": "Core Features"
-  },
-  "HEADLESS.features.deploy.title": {
-    "message": "Fast Deployment"
-  },
-  "HEADLESS.features.deploy.description": {
-    "message": "Containerized deployment, one-click configuration"
-  },
-  "HEADLESS.features.deploy.feature1": {
-    "message": "Compose-based one-click startup"
-  },
-  "HEADLESS.features.deploy.feature2": {
-    "message": "Auto-configure network and storage"
-  },
-  "HEADLESS.features.deploy.feature3": {
-    "message": "Multi-container orchestration support"
-  },
-  "HEADLESS.features.package.title": {
-    "message": "Package Management"
-  },
-  "HEADLESS.features.package.description": {
-    "message": "Complete package lifecycle management from installation to uninstallation"
-  },
-  "HEADLESS.features.package.feature1": {
-    "message": "Develop in Studio, deploy in Headless"
-  },
-  "HEADLESS.features.package.feature2": {
-    "message": "One-click install from Hub community"
-  },
-  "HEADLESS.features.package.feature3": {
-    "message": "Auto-detect version updates"
-  },
-  "HEADLESS.features.remote.title": {
-    "message": "Remote Management"
-  },
-  "HEADLESS.features.remote.description": {
-    "message": "Web interface management, access anytime, anywhere"
-  },
-  "HEADLESS.features.remote.feature1": {
-    "message": "Web UI unified management"
-  },
-  "HEADLESS.features.remote.feature2": {
-    "message": "Real-time running status view"
-  },
-  "HEADLESS.features.remote.feature3": {
-    "message": "RESTful API automation"
-  },
-  "HOME.Products.headless.description": {
-    "message": "Run OOMOL applications on servers and NAS devices"
-  },
   "HOME.Scenes.dataScience.title": {
     "message": "Data Science Pipeline"
   },
@@ -2427,9 +2295,6 @@
   "HOME.ProductComparison.product.studio": {
     "message": "Studio"
   },
-  "HOME.ProductComparison.product.headless": {
-    "message": "Headless"
-  },
   "HOME.ProductComparison.product.cloud": {
     "message": "Cloud"
   },
@@ -2444,18 +2309,6 @@
   },
   "HOME.ProductComparison.studio.tech": {
     "message": "Install locally and use immediately, with a built-in container environment that keeps development and validation in one place."
-  },
-  "HOME.ProductComparison.headless.stage": {
-    "message": "Team deployment and private runtime"
-  },
-  "HOME.ProductComparison.headless.capability": {
-    "message": "More control and deeper integration"
-  },
-  "HOME.ProductComparison.headless.scenario": {
-    "message": "Best for containerized deployment, private cloud environments, and teams that need OOMOL to fit existing infrastructure."
-  },
-  "HOME.ProductComparison.headless.tech": {
-    "message": "Works with containers and other open infrastructure so the runtime stays customizable, integrable, and controlled."
   },
   "HOME.ProductComparison.cloud.stage": {
     "message": "Launch faster, manage less"
@@ -2672,9 +2525,6 @@
   },
   "STUDIO.hero.description": {
     "message": "Local development environment for developers, VSCode-based visual programming tool with FRP protocol for P2P computing power sharing"
-  },
-  "HEADLESS.hero.description": {
-    "message": "Containerized deployment solution, packaging workflows as standalone container images for cloud servers, private clouds and K8s clusters"
   },
   "APP.new.hero.title": { "message": "OOMOL App" },
   "APP.new.hero.subtitle": {
