@@ -1109,19 +1109,19 @@
     "message": "$0"
   },
   "PRICING.subscription.free.description": {
-    "message": "适合开发者个人使用，相关资源服务全都自己搞定"
+    "message": "可免费使用 Studio，并按需接入你自己的模型服务"
   },
   "PRICING.subscription.free.feature1": {
-    "message": "调用任务，每月 200 次"
+    "message": "可使用 OOMOL Studio"
   },
   "PRICING.subscription.free.feature2": {
-    "message": "LLM token 每月 1M"
+    "message": "注册即送 1 credit"
   },
   "PRICING.subscription.free.feature3": {
-    "message": "融合 API，每月 50 次"
+    "message": "可配置自己的 LLM 服务使用 Studio"
   },
   "PRICING.subscription.free.feature4": {
-    "message": "互联服务，支持（注册免费使用，3 个月）"
+    "message": "每月赠送 200 分钟 Cloud Task"
   },
   "PRICING.subscription.standard.name": {
     "message": "标准版"
@@ -1130,22 +1130,22 @@
     "message": "$5"
   },
   "PRICING.subscription.standard.description": {
-    "message": "适合小团队，少量使用 OOMOL 配套资源"
+    "message": "适合希望用订阅价长期使用 OOMOL 配套资源，并享受全部按量项目 8 折的小团队"
   },
   "PRICING.subscription.standard.feature1": {
-    "message": "调用任务，每月 1200 次"
+    "message": "价格表所列按量项目，订阅后统一按原价 8 折计费"
   },
   "PRICING.subscription.standard.feature2": {
-    "message": "LLM token 每月 5M"
+    "message": "LLM 使用按原价 8 折"
   },
   "PRICING.subscription.standard.feature3": {
-    "message": "融合 API，每月 100 次"
+    "message": "Cloud Task 使用按原价 8 折"
   },
   "PRICING.subscription.standard.feature4": {
-    "message": "互联服务，支持"
+    "message": "Fusion API 使用按原价 8 折"
   },
   "PRICING.subscription.standard.feature5": {
-    "message": "包含免费版所有功能"
+    "message": "包含免费版所有权益"
   },
   "PRICING.subscription.pro.name": {
     "message": "专业版"
@@ -1310,7 +1310,7 @@
     "message": "以下价格结构与 OOMOL Console 价格页保持一致，方便直接核对按量计费明细。"
   },
   "PRICING.tables.syncNote": {
-    "message": "LLM 价格实时读取 Console，Cloud Task 和 Fusion API 按当前价格表展示"
+    "message": "LLM 价格实时读取 Console，Cloud Task 和 Fusion API 按当前价格表展示。订阅用户按展示价格的 8 折计费。"
   },
   "PRICING.tables.tab.llm": {
     "message": "大模型价格"

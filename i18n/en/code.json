@@ -1023,19 +1023,19 @@
     "message": "$0"
   },
   "PRICING.subscription.free.description": {
-    "message": "Best for developers who handle the supporting resources themselves"
+    "message": "Use Studio for free and connect your own model service as needed"
   },
   "PRICING.subscription.free.feature1": {
-    "message": "Task executions: 200 per month"
+    "message": "Use OOMOL Studio"
   },
   "PRICING.subscription.free.feature2": {
-    "message": "LLM tokens: 1M per month"
+    "message": "1 free credit when you sign up"
   },
   "PRICING.subscription.free.feature3": {
-    "message": "Fusion API: 50 calls per month"
+    "message": "Use Studio with your own LLM service"
   },
   "PRICING.subscription.free.feature4": {
-    "message": "FRP service support (Free for 3 months after registration)"
+    "message": "200 Cloud Task minutes included every month"
   },
   "PRICING.subscription.standard.name": {
     "message": "Standard"
@@ -1044,22 +1044,22 @@
     "message": "$5"
   },
   "PRICING.subscription.standard.description": {
-    "message": "Ideal for small teams with moderate OOMOL resource usage"
+    "message": "Best for teams that want a predictable subscription plus 20% off all listed usage"
   },
   "PRICING.subscription.standard.feature1": {
-    "message": "Task executions: 1,200 per month"
+    "message": "All listed usage is billed at 80% of the original price"
   },
   "PRICING.subscription.standard.feature2": {
-    "message": "LLM tokens: 5M per month"
+    "message": "LLM usage at 20% off"
   },
   "PRICING.subscription.standard.feature3": {
-    "message": "Fusion API: 100 calls per month"
+    "message": "Cloud Task usage at 20% off"
   },
   "PRICING.subscription.standard.feature4": {
-    "message": "FRP service support"
+    "message": "Fusion API usage at 20% off"
   },
   "PRICING.subscription.standard.feature5": {
-    "message": "All Free tier features included"
+    "message": "All Free tier benefits included"
   },
   "PRICING.subscription.pro.name": {
     "message": "Pro"
@@ -1224,7 +1224,7 @@
     "message": "These tables mirror the pricing structure shown in OOMOL Console so you can verify pay-as-you-go charges directly from the website."
   },
   "PRICING.tables.syncNote": {
-    "message": "LLM pricing is fetched live from console; Cloud Task and Fusion API rows reflect the current console table"
+    "message": "LLM pricing is fetched live from console; Cloud Task and Fusion API rows reflect the current console table. Active subscribers are billed at 80% of the listed rates."
   },
   "PRICING.tables.tab.llm": {
     "message": "LLM Pricing"

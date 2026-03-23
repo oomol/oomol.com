@@ -13,7 +13,6 @@ import Layout from "../../theme/Layout";
 
 const LLM_PRICING_ENDPOINT =
   "https://console-server.oomol.com/api/models/models_with_config";
-const ENABLE_LIVE_LLM_PRICING = true;
 
 type PricingTableKey = "llm" | "cloud-task" | "fusion-api";
 
@@ -56,205 +55,6 @@ interface FusionApiPricingRow extends PricingRowBase {
   price: string | string[];
   description: string;
 }
-
-const LLM_PRICING_SAMPLE_RESPONSE: LLMPricingResponse = {
-  success: true,
-  message: "OK",
-  data: [
-    {
-      model_name: "360GPT_S2_V9",
-      model_display_name: "",
-      channel_name: "sf",
-      ratio: 1,
-      input_ratio: 1,
-      output_ratio: 1,
-    },
-    {
-      model_name: "55",
-      model_display_name: "",
-      channel_name: "33",
-      ratio: 1,
-      input_ratio: 1,
-      output_ratio: 1,
-    },
-    {
-      model_name: "FunAudioLLM/CosyVoice2-0.5B",
-      model_display_name: "",
-      channel_name: "硅基流动",
-      ratio: 1,
-      input_ratio: 1,
-      output_ratio: 1,
-    },
-    {
-      model_name: "FunAudioLLM/SenseVoiceSmall",
-      model_display_name: "",
-      channel_name: "硅基流动",
-      ratio: 1,
-      input_ratio: 1,
-      output_ratio: 1,
-    },
-    {
-      model_name: "Pro/deepseek-ai/DeepSeek-V3.2",
-      model_display_name: "",
-      channel_name: "硅基流动",
-      ratio: 1,
-      input_ratio: 1,
-      output_ratio: 1,
-    },
-    {
-      model_name: "dc",
-      model_display_name: "",
-      channel_name: "deep seek",
-      ratio: 0.05,
-      input_ratio: 0.2,
-      output_ratio: 0.6,
-    },
-    {
-      model_name: "deepseek-ai/DeepSeek-OCR/cm1j2x59p00szlycxsjhrj9oa",
-      model_display_name: "pdf-craft",
-      channel_name: "硅基流动",
-      ratio: 1,
-      input_ratio: 1,
-      output_ratio: 1,
-    },
-    {
-      model_name: "deepseek-chat",
-      model_display_name: "",
-      channel_name: "deep seek",
-      ratio: 0.03,
-      input_ratio: 0.19,
-      output_ratio: 0.6,
-    },
-    {
-      model_name: "deepseek-coder",
-      model_display_name: "",
-      channel_name: "deep seek",
-      ratio: 0.0072,
-      input_ratio: 0.0711,
-      output_ratio: 0.1421,
-    },
-    {
-      model_name: "deepseek-ocr",
-      model_display_name: "",
-      channel_name: "baidu",
-      ratio: 1,
-      input_ratio: 0.5,
-      output_ratio: 1,
-    },
-    {
-      model_name: "deepseek-v3.2",
-      model_display_name: "",
-      channel_name: "baidu",
-      ratio: 0.1,
-      input_ratio: 1.1,
-      output_ratio: 1,
-    },
-    {
-      model_name: "doubao-seedream-3-0-t2i-250415",
-      model_display_name: "qwd",
-      channel_name: "huoshan",
-      ratio: 1,
-      input_ratio: 1,
-      output_ratio: 1,
-    },
-    {
-      model_name: "dss",
-      model_display_name: "",
-      channel_name: "oomol",
-      ratio: 1.2,
-      input_ratio: 1.2,
-      output_ratio: 1.2,
-    },
-    {
-      model_name: "embedding_s1_v1",
-      model_display_name: "",
-      channel_name: "sf",
-      ratio: 0.0715,
-      input_ratio: 0.0715,
-      output_ratio: 0.0715,
-    },
-    {
-      model_name: "epub-translator",
-      model_display_name: "",
-      channel_name: "oomol",
-      ratio: 1,
-      input_ratio: 1,
-      output_ratio: 1,
-    },
-    {
-      model_name: "gpt-3.5-turbo",
-      model_display_name: "",
-      channel_name: "1",
-      ratio: 1,
-      input_ratio: 1,
-      output_ratio: 1,
-    },
-    {
-      model_name: "gpt-3.5-turbo-0301",
-      model_display_name: "",
-      channel_name: "1",
-      ratio: 1,
-      input_ratio: 1,
-      output_ratio: 1,
-    },
-    {
-      model_name: "jina-deepsearch-v1",
-      model_display_name: "",
-      channel_name: "jina",
-      ratio: 1,
-      input_ratio: 1,
-      output_ratio: 1,
-    },
-    {
-      model_name: "meta-llama/Llama-3.3-70B-Instruct",
-      model_display_name: "",
-      channel_name: "sf",
-      ratio: 1,
-      input_ratio: 1,
-      output_ratio: 1,
-    },
-    {
-      model_name: "oomol-chat",
-      model_display_name: "",
-      channel_name: "oomol",
-      ratio: 1.2,
-      input_ratio: 1.2,
-      output_ratio: 1.2,
-    },
-    {
-      model_name: "oomol-video",
-      model_display_name: "",
-      channel_name: "oomol",
-      ratio: 10,
-      input_ratio: 10,
-      output_ratio: 10,
-    },
-    {
-      model_name: "qwen-deep-research",
-      model_display_name: "",
-      channel_name: "Alibaba-deepResearch",
-      ratio: 1,
-      input_ratio: 1,
-      output_ratio: 1,
-    },
-    {
-      model_name: "qwen2.5-vl-7b-instruct",
-      model_display_name: "",
-      channel_name: "alibaba",
-      ratio: 1,
-      input_ratio: 1,
-      output_ratio: 1,
-    },
-    {
-      model_name: "qwen3-max",
-      model_display_name: "",
-      channel_name: "alibaba",
-      ratio: 1,
-      input_ratio: 1,
-      output_ratio: 1,
-    },
-  ],
-};
 
 function tPricing(id: string, message: string) {
   return translate({ id, message });
@@ -353,23 +153,14 @@ function PriceTable<T extends PricingRowBase>({
 export default function Index() {
   const [activePricingTable, setActivePricingTable] =
     useState<PricingTableKey>("llm");
-  const [llmRows, setLlmRows] = useState<LLMPricingRow[]>(() =>
-    buildLLMPricingRows(LLM_PRICING_SAMPLE_RESPONSE.data)
-  );
-  const [isLLMLoading, setIsLLMLoading] = useState(ENABLE_LIVE_LLM_PRICING);
+  const [llmRows, setLlmRows] = useState<LLMPricingRow[]>([]);
+  const [isLLMLoading, setIsLLMLoading] = useState(true);
   const [llmLoadFailed, setLlmLoadFailed] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
 
     async function loadLLMPricing() {
-      if (!ENABLE_LIVE_LLM_PRICING) {
-        setLlmRows(buildLLMPricingRows(LLM_PRICING_SAMPLE_RESPONSE.data));
-        setIsLLMLoading(false);
-        setLlmLoadFailed(false);
-        return;
-      }
-
       setIsLLMLoading(true);
       setLlmLoadFailed(false);
 
@@ -391,8 +182,7 @@ export default function Index() {
         }
       } catch {
         if (!cancelled) {
-          setLlmRows(buildLLMPricingRows(LLM_PRICING_SAMPLE_RESPONSE.data));
-          setLlmLoadFailed(false);
+          setLlmLoadFailed(true);
         }
       } finally {
         if (!cancelled) {
@@ -692,15 +482,10 @@ export default function Index() {
     const isLLMTable = tableKey === "llm";
     const isCloudTaskTable = tableKey === "cloud-task";
     const tableAlert = isLLMTable
-      ? ENABLE_LIVE_LLM_PRICING
-        ? tPricing(
-            "PRICING.tables.llm.note",
-            "LLM rates update with the model configuration in console. Units are credits per M token."
-          )
-        : tPricing(
-            "PRICING.tables.llm.note.mock",
-            "LLM pricing is currently rendered from the latest backend sample response. Live console sync will be re-enabled after the API contract is confirmed."
-          )
+      ? tPricing(
+          "PRICING.tables.llm.note",
+          "LLM rates update with the model configuration in console. Units are credits per M token."
+        )
       : isCloudTaskTable
         ? tPricing(
             "PRICING.tables.cloudTask.alert",
@@ -908,89 +693,6 @@ export default function Index() {
               </div>
             </div>
 
-            {/* 专业版 */}
-            <div className={`${styles.planCard} ${styles.recommended}`}>
-              <div className={styles.badge}>
-                {translate({ message: "PRICING.subscription.recommended" })}
-              </div>
-              <div className={styles.planHeader}>
-                <div className={styles.planName}>
-                  {translate({ message: "PRICING.subscription.pro.name" })}
-                </div>
-                <div className={styles.planPrice}>
-                  <span className={styles.price}>
-                    {translate({ message: "PRICING.subscription.pro.price" })}
-                  </span>
-                  <span className={styles.period}>
-                    {translate({ message: "PRICING.subscription.period" })}
-                  </span>
-                </div>
-                <div className={styles.planDescription}>
-                  {translate({
-                    message: "PRICING.subscription.pro.description",
-                  })}
-                </div>
-              </div>
-              <Button asChild className={styles.subscribeBtn}>
-                <a
-                  href="https://console.oomol.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {translate({ message: "PRICING.subscription.subscribe" })}
-                </a>
-              </Button>
-              <div className={styles.featureList}>
-                <div className={styles.featureItem}>
-                  <i className="i-codicon:check" />
-                  <span>
-                    {translate({
-                      message: "PRICING.subscription.pro.feature1",
-                    })}
-                  </span>
-                </div>
-                <div className={styles.featureItem}>
-                  <i className="i-codicon:check" />
-                  <span>
-                    {translate({
-                      message: "PRICING.subscription.pro.feature2",
-                    })}
-                  </span>
-                </div>
-                <div className={styles.featureItem}>
-                  <i className="i-codicon:check" />
-                  <span>
-                    {translate({
-                      message: "PRICING.subscription.pro.feature3",
-                    })}
-                  </span>
-                </div>
-                <div className={styles.featureItem}>
-                  <i className="i-codicon:check" />
-                  <span>
-                    {translate({
-                      message: "PRICING.subscription.pro.feature4",
-                    })}
-                  </span>
-                </div>
-                <div className={styles.featureItem}>
-                  <i className="i-codicon:check" />
-                  <span>
-                    {translate({
-                      message: "PRICING.subscription.pro.feature5",
-                    })}
-                  </span>
-                </div>
-                <div className={styles.featureItem}>
-                  <i className="i-codicon:check" />
-                  <span>
-                    {translate({
-                      message: "PRICING.subscription.pro.feature6",
-                    })}
-                  </span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
