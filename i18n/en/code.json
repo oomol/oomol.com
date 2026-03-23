@@ -2058,6 +2058,9 @@
   "SHARE.description": {
     "message": "Turn finished capabilities into installable, reusable, and composable assets for the team."
   },
+  "SHARE.hub.description": {
+    "message": "Install, reuse, and extend function assets from a shared team catalog."
+  },
   "SHARE.flowCommunity.title": {
     "message": "Capability Catalog"
   },

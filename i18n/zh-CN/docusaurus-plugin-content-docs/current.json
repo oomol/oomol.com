@@ -3,57 +3,13 @@
     "message": "Next",
     "description": "The label for version current"
   },
-  "sidebar.tutorialSidebar.category.Tutorial - Basics": {
-    "message": "Tutorial - Basics",
-    "description": "The label for category Tutorial - Basics in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.OOMOL Studio": {
+    "message": "OOMOL Studio",
+    "description": "The label for category OOMOL Studio in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Tutorial - Basics.link.generated-index.description": {
-    "message": "5 minutes to learn the most important Docusaurus concepts.",
-    "description": "The generated-index page description for category Tutorial - Basics in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.Tutorial - Extras": {
-    "message": "Tutorial - Extras",
-    "description": "The label for category Tutorial - Extras in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.References": {
-    "message": "References",
-    "description": "The label for category References in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.References.link.generated-index.description": {
-    "message": "Reference of block, node, flow and so on",
-    "description": "The generated-index page description for category References in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.Studio Usage Guide": {
-    "message": "Studio 使用指南",
-    "description": "The label for category Studio Usage Guide in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.Studio Usage Guide.link.generated-index.description": {
-    "message": "5 分钟了解最重要的 OOMOL 概念。",
-    "description": "The generated-index page description for category Studio Usage Guide in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.Workflow Engine": {
-    "message": "工作流引擎",
-    "description": "The label for category Workflow Engine in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.Cloud": {
-    "message": "云服务",
-    "description": "The label for category Cloud in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.Cloud Services": {
-    "message": "云服务",
-    "description": "The label for category Cloud Services in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.Share and Deploy.link.generated-index.description": {
-    "message": "Block、Node、Flow 等参考",
-    "description": "The generated-index page description for category Share and Deploy in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.Introduction": {
-    "message": "介绍",
-    "description": "The label for category Introduction in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.Cloud.link.generated-index.description": {
-    "message": "云服务包括 Cloud Function 和 Cloud Task API。",
-    "description": "The generated-index page description for category Cloud in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.Core Concepts": {
+    "message": "核心概念",
+    "description": "The label for category Core Concepts in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Get Started": {
     "message": "开始使用",
@@ -63,56 +19,32 @@
     "message": "界面导览",
     "description": "The label for category Interface Tour in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Block Usage": {
-    "message": "区块使用",
-    "description": "The label for category Block Usage in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.Block Usage.link.generated-index.description": {
-    "message": "区块是 OOMOL Studio 中执行任务的最基础单元",
-    "description": "The generated-index page description for category Block Usage in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.Advanced Guide": {
-    "message": "进阶指南",
-    "description": "The label for category Advanced Guide in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.Build Your First Workflow": {
+    "message": "构建你的第一个工作流",
+    "description": "The label for category Build Your First Workflow in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Advanced Usage": {
     "message": "进阶使用",
     "description": "The label for category Advanced Usage in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Advanced Guide.link.generated-index.description": {
-    "message": "OOMOL Studio 更高级的使用方法和技巧",
-    "description": "The generated-index page description for category Bloc in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.Workflow Engine & SDK": {
+    "message": "工作流引擎与 SDK",
+    "description": "The label for category Workflow Engine & SDK in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Block Advanced Usage": {
-    "message": "区块进阶用法",
-    "description": "The label for category Block Advanced Usage in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.Cloud Services": {
+    "message": "云服务",
+    "description": "The label for category Cloud Services in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Concepts": {
-    "message": "概念",
-    "description": "The label for category Concepts in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.Core Concepts": {
-    "message": "核心概念",
-    "description": "The label for category Core Concepts in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.Build Your First Workflow": {
-    "message": "第一个工作流",
-    "description": "The label for category Build Your First Workflow in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.Community": {
-    "message": "社区",
-    "description": "The label for category Community in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.Support": {
-    "message": "支持",
-    "description": "The label for category Support in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.Cloud Task": {
+    "message": "Cloud Task",
+    "description": "The label for category Cloud Task in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.SDKs": {
     "message": "SDK",
     "description": "The label for category SDKs in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Workflow Engine & SDK": {
-    "message": "工作流引擎与 SDK",
-    "description": "The label for category Workflow Engine & SDK in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.Support": {
+    "message": "支持",
+    "description": "The label for category Support in sidebar tutorialSidebar"
   }
 }

@@ -1694,6 +1694,9 @@
   "SHARE.description": {
     "message": "把做好的函数能力沉淀成可安装、可复用、可继续组合的团队资产。"
   },
+  "SHARE.hub.description": {
+    "message": "从团队共享目录中安装、复用并继续扩展函数资产。"
+  },
   "SHARE.flowCommunity.title": {
     "message": "函数资产目录"
   },
