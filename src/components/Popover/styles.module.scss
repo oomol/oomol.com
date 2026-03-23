@@ -1,22 +1,25 @@
-.popoverContainer {
-  position: relative;
-  display: flex;
+.trigger {
+  display: inline-flex;
 }
 
-.popoverContent {
-  width: 100%;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 99;
-  padding-top: 8px;
-  border-radius: 10px;
-}
+.popover {
+  :global(.arco-trigger-popup) {
+    border-radius: 18px;
+    border: 1px solid color-mix(
+      in srgb,
+      var(--oomol-border-default) 72%,
+      transparent
+    );
+    background: color-mix(in srgb, var(--oomol-bg-elevated) 96%, white);
+    box-shadow: var(--oomol-shadow-md);
+  }
 
-.popoverContentTop {
-  bottom: 100%;
-}
+  :global(.arco-popover-content) {
+    padding: 0;
+    background: transparent;
+  }
 
-.popoverContentBottom {
-  top: 100%;
+  :global(.arco-popover-popup-content) {
+    padding: 0;
+  }
 }

@@ -1,10 +1,7 @@
-import {
-  Popover as PopoverRoot,
-  PopoverContent,
-  PopoverTrigger,
-} from "@site/src/components/ui/popover";
+import { Popover as ArcoPopover } from "@arco-design/web-react";
 import { clsx } from "clsx";
-import React, { useState, useRef } from "react";
+import React from "react";
+import styles from "./styles.module.scss";
 
 interface PopoverProps {
   trigger: React.ReactNode;
@@ -19,42 +16,14 @@ export const Popover: React.FC<PopoverProps> = ({
   position = "bottom",
   className,
 }) => {
-  const [open, setOpen] = useState(false);
-  const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  const handleMouseEnter = () => {
-    if (hideTimeoutRef.current) {
-      clearTimeout(hideTimeoutRef.current);
-      hideTimeoutRef.current = null;
-    }
-    setOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    hideTimeoutRef.current = setTimeout(() => {
-      setOpen(false);
-    }, 200);
-  };
-
   return (
-    <PopoverRoot open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
-        <div
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          className={clsx(className)}
-        >
-          {trigger}
-        </div>
-      </PopoverTrigger>
-      <PopoverContent
-        side={position}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        className="w-auto p-0 border-0 bg-transparent shadow-none"
-      >
-        {content}
-      </PopoverContent>
-    </PopoverRoot>
+    <ArcoPopover
+      className={styles.popover}
+      content={content}
+      position={position}
+      trigger="hover"
+    >
+      <div className={clsx(styles.trigger, className)}>{trigger}</div>
+    </ArcoPopover>
   );
 };

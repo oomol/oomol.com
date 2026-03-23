@@ -52,9 +52,14 @@
   margin: 0 auto;
 }
 
-// 新增样式
-.subscriptionSection,
-.payAsYouGoSection {
+.subscriptionSection {
+  width: 100%;
+  max-width: 1280px;
+  margin: 80px auto;
+  padding: 0 16px;
+}
+
+.tableSectionWrapper {
   width: 100%;
   max-width: 1280px;
   margin: 80px auto;
@@ -209,21 +214,11 @@
 
 .priceTablesSection {
   margin-top: 8px;
-  border: 1px solid var(--oomol-border-default);
-  border-radius: 28px;
-  background:
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--oomol-bg-elevated) 92%, white) 0%,
-      var(--oomol-bg-elevated) 100%
-    );
-  box-shadow: var(--oomol-shadow-sm);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .tableSectionHeader {
   padding: 40px 40px 28px;
-  border-bottom: 1px solid color-mix(in srgb, var(--oomol-border-default) 70%, transparent);
   background:
     linear-gradient(
       135deg,
@@ -261,59 +256,81 @@
 }
 
 .tableTabs {
-  display: flex;
-  gap: 12px;
-  padding: 24px 40px 0;
-  flex-wrap: wrap;
-}
+  padding: 28px 40px 0;
 
-.tableTab {
-  display: inline-flex;
-  align-items: center;
-  border: 1px solid color-mix(in srgb, var(--oomol-border-default) 80%, transparent);
-  background: color-mix(in srgb, var(--oomol-bg-base) 75%, transparent);
-  color: var(--oomol-text-secondary);
-  border-radius: 999px;
-  padding: 10px 18px;
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 600;
-  cursor: pointer;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
+  :global(.arco-tabs-header) {
+    margin-bottom: 0;
+  }
 
-  &:hover {
+  :global(.arco-tabs-header-nav::before) {
+    display: none;
+  }
+
+  :global(.arco-tabs-nav-tab-list) {
+    gap: 12px;
+    justify-content: center;
+  }
+
+  :global(.arco-tabs-tab) {
+    border-radius: 999px;
+    border: 1px solid color-mix(
+      in srgb,
+      var(--oomol-border-default) 80%,
+      transparent
+    );
+    background: color-mix(in srgb, var(--oomol-bg-base) 75%, transparent);
+    color: var(--oomol-text-secondary);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  :global(.arco-tabs-tab:hover) {
     color: var(--oomol-text-primary);
-    border-color: color-mix(in srgb, var(--oomol-primary) 25%, var(--oomol-border-default));
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-primary) 25%,
+      var(--oomol-border-default)
+    );
     transform: translateY(-1px);
+  }
+
+  :global(.arco-tabs-tab-active) {
+    background: color-mix(in srgb, var(--oomol-primary) 10%, white);
+    border-color: color-mix(in srgb, var(--oomol-primary) 28%, transparent);
+    color: var(--oomol-primary);
   }
 }
 
-.tableTabActive {
-  background: var(--oomol-primary);
-  border-color: var(--oomol-primary);
-  color: white;
-}
-
 .tablePanel {
-  padding: 20px 24px 24px;
+  padding: 22px 28px 30px;
 }
 
 .tableAlert {
-  margin: 0 16px 16px;
-  padding: 14px 16px;
-  border-radius: 16px;
-  background: color-mix(in srgb, var(--oomol-primary) 8%, transparent);
-  color: var(--oomol-text-primary);
-  font-size: 14px;
-  line-height: 22px;
+  max-width: 1100px;
+  margin: 0 auto 18px;
+
+  :global(.arco-alert) {
+    border-radius: 16px;
+    border: 1px solid color-mix(in srgb, var(--oomol-primary) 16%, transparent);
+    background: color-mix(in srgb, var(--oomol-primary) 8%, transparent);
+  }
+
+  :global(.arco-alert-content) {
+    color: var(--oomol-text-primary);
+    font-size: 14px;
+    line-height: 22px;
+  }
 }
 
 .tableStatus {
-  margin: 0 16px;
+  max-width: 1100px;
+  margin: 0 auto;
   padding: 28px 24px;
   border: 1px dashed color-mix(in srgb, var(--oomol-border-default) 78%, transparent);
   border-radius: 20px;
@@ -325,68 +342,112 @@
 }
 
 .tableWrap {
-  overflow-x: auto;
-  margin: 0 16px;
-  border: 1px solid color-mix(in srgb, var(--oomol-border-default) 72%, transparent);
-  border-radius: 20px;
-  background: var(--oomol-bg-base);
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .pricingTable {
   width: 100%;
-  min-width: 760px;
-  border-collapse: collapse;
+  max-width: 1100px;
 
-  thead {
-    background: color-mix(in srgb, var(--oomol-bg-elevated) 88%, white);
+  :global(.arco-table-container) {
+    overflow: hidden;
+    border-radius: 24px;
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--oomol-bg-base) 82%, white) 0%,
+        color-mix(in srgb, var(--oomol-bg-elevated) 94%, white) 100%
+      );
+    border: 1px solid
+      color-mix(in srgb, var(--oomol-border-default) 60%, transparent);
   }
 
-  th,
-  td {
-    padding: 16px 18px;
-    border-bottom: 1px solid color-mix(in srgb, var(--oomol-border-default) 68%, transparent);
-    text-align: left;
+  :global(.arco-table-th),
+  :global(.arco-table-td) {
+    padding: 20px 22px;
+    border-right: 1px solid
+      color-mix(in srgb, var(--oomol-border-default) 60%, transparent);
+    border-bottom: 1px solid
+      color-mix(in srgb, var(--oomol-border-default) 60%, transparent);
+    background: color-mix(in srgb, var(--oomol-bg-base) 92%, white);
     vertical-align: top;
+    text-align: left;
   }
 
-  th {
+  :global(.arco-table-th) {
     font-size: 13px;
     line-height: 18px;
     font-weight: 700;
     color: var(--oomol-text-secondary);
     white-space: nowrap;
+    background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white);
   }
 
-  td {
-    font-size: 14px;
-    line-height: 22px;
+  :global(.arco-table-td) {
     color: var(--oomol-text-primary);
   }
 
-  tbody tr:last-child td {
+  :global(.arco-table-th:last-child),
+  :global(.arco-table-td:last-child) {
+    border-right: 0;
+  }
+
+  :global(.arco-table-tr:last-child .arco-table-td) {
     border-bottom: 0;
   }
 
-  tbody tr:hover {
-    background: color-mix(in srgb, var(--oomol-primary) 3%, transparent);
+  :global(.arco-table-tr:hover .arco-table-td) {
+    background: color-mix(in srgb, var(--oomol-primary-bg) 58%, white);
   }
 }
 
 .channelColumn {
-  min-width: 160px;
+  width: 18%;
 }
 
 .modelColumn {
-  min-width: 220px;
+  width: 30%;
 }
 
 .numberColumn {
   white-space: nowrap;
 }
 
-.multilineCell {
+.identifierBadge {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--oomol-primary) 7%, white);
+  border: 1px solid color-mix(in srgb, var(--oomol-border-default) 68%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  color: var(--oomol-text-primary);
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modelName {
+  display: inline-block;
+  font-weight: 650;
+  color: var(--oomol-text-primary);
+}
+
+.priceValue,
+.multilinePriceValue {
+  color: var(--oomol-text-primary);
+  font-weight: 600;
+}
+
+.multilinePriceValue {
   white-space: pre-line;
-  min-width: 220px;
+  line-height: 1.75;
 }
 
 .emptyCell {
@@ -434,18 +495,14 @@
     padding: 16px;
   }
 
-  .tableAlert,
-  .tableStatus,
-  .tableWrap {
-    margin: 0;
+  .pricingTable {
+    :global(.arco-table-content) {
+      min-width: 680px;
+    }
   }
 
-  .table {
-    font-size: 12px;
-
-    thead tr th,
-    tbody tr td {
-      padding: 12px 16px;
-    }
+  .pricingTable :global(.arco-table-th),
+  .pricingTable :global(.arco-table-td) {
+    padding: 16px 16px;
   }
 }

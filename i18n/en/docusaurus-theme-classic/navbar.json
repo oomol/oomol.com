@@ -71,6 +71,10 @@
     "message": "Download Studio",
     "description": "Navbar item with label navbar.download"
   },
+  "item.label.navbar.pricing": {
+    "message": "Pricing",
+    "description": "Navbar item with label navbar.pricing"
+  },
   "title": {
     "message": "OOMOL",
     "description": "The title in the navbar"

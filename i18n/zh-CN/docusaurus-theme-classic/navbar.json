@@ -71,6 +71,10 @@
     "message": "下载 Studio",
     "description": "Navbar item with label navbar.download"
   },
+  "item.label.navbar.pricing": {
+    "message": "价格",
+    "description": "Navbar item with label navbar.pricing"
+  },
   "title": {
     "message": "OOMOL",
     "description": "The title in the navbar"

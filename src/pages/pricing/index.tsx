@@ -1,6 +1,7 @@
 import styles from "./styles.module.scss";
 
 import { translate } from "@docusaurus/Translate";
+import { Alert, Table, Tabs } from "@arco-design/web-react";
 import { DownloadButton } from "@site/src/components/DownloadButton";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { Button } from "@site/src/components/ui/button";
@@ -38,6 +39,30 @@ interface PricingRow {
   [key: string]: React.ReactNode;
 }
 
+function tPricing(id: string, message: string) {
+  return translate({ id, message });
+}
+
+function IdentifierBadge({ children }: { children: React.ReactNode }) {
+  return <span className={styles.identifierBadge}>{children}</span>;
+}
+
+function PriceValue({
+  children,
+  multiline = false,
+}: {
+  children: React.ReactNode;
+  multiline?: boolean;
+}) {
+  return (
+    <div
+      className={multiline ? styles.multilinePriceValue : styles.priceValue}
+    >
+      {children}
+    </div>
+  );
+}
+
 function formatPricingValue(value: number) {
   if (Number.isInteger(value)) {
     return String(value);
@@ -50,43 +75,34 @@ function PriceTable({
   columns,
   rows,
   emptyState,
+  loading = false,
 }: {
   columns: PricingColumn[];
   rows: PricingRow[];
   emptyState: string;
+  loading?: boolean;
 }) {
   return (
     <div className={styles.tableWrap}>
-      <table className={styles.pricingTable}>
-        <thead>
-          <tr>
-            {columns.map((column) => (
-              <th key={column.key} className={column.className}>
-                {column.label}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.length > 0 ? (
-            rows.map((row) => (
-              <tr key={row.key}>
-                {columns.map((column) => (
-                  <td key={column.key} className={column.className}>
-                    {row[column.key]}
-                  </td>
-                ))}
-              </tr>
-            ))
-          ) : (
-            <tr>
-              <td colSpan={columns.length} className={styles.emptyCell}>
-                {emptyState}
-              </td>
-            </tr>
-          )}
-        </tbody>
-      </table>
+      <Table
+        border={{
+          cell: true,
+          wrapper: true,
+        }}
+        className={styles.pricingTable}
+        columns={columns.map((column) => ({
+          className: column.className,
+          dataIndex: column.key,
+          title: column.label,
+        }))}
+        data={rows}
+        loading={loading}
+        noDataElement={<div className={styles.emptyCell}>{emptyState}</div>}
+        pagination={false}
+        rowKey="key"
+        scroll={{ x: 960 }}
+        tableLayoutFixed
+      />
     </div>
   );
 }
@@ -116,20 +132,24 @@ export default function Index() {
           throw new Error(result.message || "Failed to fetch LLM pricing");
         }
 
-        const rows = result.data
-          .map((item) => ({
-            key: `${item.channel_name}-${item.model_name}`,
-            channel: item.channel_name,
-            model: item.model_name,
-            inputPrice: formatPricingValue(item.input_ratio),
-            cachePrice: formatPricingValue(item.ratio),
-            outputPrice: formatPricingValue(item.output_ratio),
-          }))
+        const rows = [...result.data]
           .sort(
             (left, right) =>
-              left.channel.localeCompare(right.channel) ||
-              left.model.localeCompare(right.model),
-          );
+              left.channel_name.localeCompare(right.channel_name) ||
+              left.model_name.localeCompare(right.model_name),
+          )
+          .map((item) => ({
+            key: `${item.channel_name}-${item.model_name}`,
+            channel: <IdentifierBadge>{item.channel_name}</IdentifierBadge>,
+            model: <span className={styles.modelName}>{item.model_name}</span>,
+            inputPrice: (
+              <PriceValue>{formatPricingValue(item.input_ratio)}</PriceValue>
+            ),
+            cachePrice: <PriceValue>{formatPricingValue(item.ratio)}</PriceValue>,
+            outputPrice: (
+              <PriceValue>{formatPricingValue(item.output_ratio)}</PriceValue>
+            ),
+          }));
 
         if (!cancelled) {
           setLlmRows(rows);
@@ -155,33 +175,27 @@ export default function Index() {
   const llmColumns: PricingColumn[] = [
     {
       key: "channel",
-      label: translate({ message: "PRICING.tables.llm.channel" }),
+      label: tPricing("PRICING.tables.llm.channel", "Channel"),
       className: styles.channelColumn,
     },
     {
       key: "model",
-      label: translate({ message: "PRICING.tables.llm.model" }),
+      label: tPricing("PRICING.tables.llm.model", "Model"),
       className: styles.modelColumn,
     },
     {
       key: "inputPrice",
-      label: `${translate({
-        message: "PRICING.tables.llm.inputPrice",
-      })} (${translate({ message: "PRICING.tables.llm.unit" })})`,
+      label: `${tPricing("PRICING.tables.llm.inputPrice", "Input Price")} (${tPricing("PRICING.tables.llm.unit", "Credits/M Token")})`,
       className: styles.numberColumn,
     },
     {
       key: "cachePrice",
-      label: `${translate({
-        message: "PRICING.tables.llm.cachePrice",
-      })} (${translate({ message: "PRICING.tables.llm.unit" })})`,
+      label: `${tPricing("PRICING.tables.llm.cachePrice", "Cache Price")} (${tPricing("PRICING.tables.llm.unit", "Credits/M Token")})`,
       className: styles.numberColumn,
     },
     {
       key: "outputPrice",
-      label: `${translate({
-        message: "PRICING.tables.llm.outputPrice",
-      })} (${translate({ message: "PRICING.tables.llm.unit" })})`,
+      label: `${tPricing("PRICING.tables.llm.outputPrice", "Output Price")} (${tPricing("PRICING.tables.llm.unit", "Credits/M Token")})`,
       className: styles.numberColumn,
     },
   ];
@@ -189,256 +203,306 @@ export default function Index() {
   const cloudTaskColumns: PricingColumn[] = [
     {
       key: "service",
-      label: translate({ message: "PRICING.tables.cloudTask.service" }),
+      label: tPricing("PRICING.tables.cloudTask.service", "Service"),
       className: styles.modelColumn,
     },
     {
       key: "price",
-      label: translate({ message: "PRICING.tables.cloudTask.price" }),
+      label: tPricing(
+        "PRICING.tables.cloudTask.price",
+        "Price (Credits/Minute)",
+      ),
       className: styles.numberColumn,
     },
     {
       key: "note",
-      label: translate({ message: "PRICING.tables.cloudTask.remark" }),
+      label: tPricing("PRICING.tables.cloudTask.remark", "Note"),
     },
   ];
 
   const cloudTaskRows: PricingRow[] = [
     {
       key: "cloud-task",
-      service: "Cloud Task",
-      price: "0.01",
-      note: translate({ message: "PRICING.tables.cloudTask.noteText" }),
+      service: <IdentifierBadge>Cloud Task</IdentifierBadge>,
+      price: <PriceValue>0.01</PriceValue>,
+      note: tPricing(
+        "PRICING.tables.cloudTask.noteText",
+        "Anything under one minute is billed as one minute",
+      ),
     },
   ];
 
-  const unitImage = translate({ message: "PRICING.tables.fusionApi.unit.image" });
-  const unitSecond = translate({
-    message: "PRICING.tables.fusionApi.unit.second",
-  });
-  const unitMToken = translate({
-    message: "PRICING.tables.fusionApi.unit.mToken",
-  });
-  const unitTenThousandChars = translate({
-    message: "PRICING.tables.fusionApi.unit.tenThousandChars",
-  });
-  const unitHour = translate({ message: "PRICING.tables.fusionApi.unit.hour" });
+  const unitImage = tPricing("PRICING.tables.fusionApi.unit.image", "Image");
+  const unitSecond = tPricing("PRICING.tables.fusionApi.unit.second", "Second");
+  const unitMToken = tPricing("PRICING.tables.fusionApi.unit.mToken", "M Token");
+  const unitTenThousandChars = tPricing(
+    "PRICING.tables.fusionApi.unit.tenThousandChars",
+    "10K Characters",
+  );
+  const unitHour = tPricing("PRICING.tables.fusionApi.unit.hour", "Hour");
 
   const fusionApiColumns: PricingColumn[] = [
     {
       key: "service",
-      label: translate({ message: "PRICING.tables.fusionApi.service" }),
+      label: tPricing("PRICING.tables.fusionApi.service", "Service"),
       className: styles.modelColumn,
     },
     {
       key: "price",
-      label: translate({ message: "PRICING.tables.fusionApi.price" }),
+      label: tPricing("PRICING.tables.fusionApi.price", "Price (Credits)"),
     },
     {
       key: "description",
-      label: translate({ message: "PRICING.tables.fusionApi.description" }),
+      label: tPricing("PRICING.tables.fusionApi.description", "Description"),
     },
   ];
 
   const fusionApiRows: PricingRow[] = [
     {
       key: "fal-nano-banana",
-      service: "fal-nano-banana",
-      price: <div className={styles.multilineCell}>{`0.047 / ${unitImage}`}</div>,
-      description: translate({
-        message: "PRICING.tables.fusionApi.description.nanoBanana",
-      }),
+      service: <IdentifierBadge>fal-nano-banana</IdentifierBadge>,
+      price: <PriceValue>{`0.047 / ${unitImage}`}</PriceValue>,
+      description: tPricing(
+        "PRICING.tables.fusionApi.description.nanoBanana",
+        "Nano Banana image generation or editing",
+      ),
     },
     {
       key: "fal-nano-banana-pro",
-      service: "fal-nano-banana-pro",
-      price: <div className={styles.multilineCell}>{`0.18 / ${unitImage}`}</div>,
-      description: translate({
-        message: "PRICING.tables.fusionApi.description.nanoBananaPro",
-      }),
+      service: <IdentifierBadge>fal-nano-banana-pro</IdentifierBadge>,
+      price: <PriceValue>{`0.18 / ${unitImage}`}</PriceValue>,
+      description: tPricing(
+        "PRICING.tables.fusionApi.description.nanoBananaPro",
+        "Nano Banana Pro image generation or editing",
+      ),
     },
     {
       key: "wanx-kf2v-video",
-      service: "wanx-kf2v-video",
+      service: <IdentifierBadge>wanx-kf2v-video</IdentifierBadge>,
       price: (
-        <div className={styles.multilineCell}>
+        <PriceValue multiline>
           {[
             `wan2.2-kf2v-flash 480p: 0.017 / ${unitSecond}`,
             `wan2.2-kf2v-flash 720p: 0.034 / ${unitSecond}`,
             `wan2.2-kf2v-flash 1080p: 0.085 / ${unitSecond}`,
             `wanx2.1-kf2v-plus 720p: 0.119 / ${unitSecond}`,
           ].join("\n")}
-        </div>
+        </PriceValue>
       ),
-      description: translate({
-        message: "PRICING.tables.fusionApi.description.wanxKf2v",
-      }),
+      description: tPricing(
+        "PRICING.tables.fusionApi.description.wanxKf2v",
+        "Wanx keyframe to video",
+      ),
     },
     {
       key: "fal-sora2-text-to-video",
-      service: "fal-sora2-text-to-video",
+      service: <IdentifierBadge>fal-sora2-text-to-video</IdentifierBadge>,
       price: (
-        <div className={styles.multilineCell}>
+        <PriceValue multiline>
           {[`720p: 0.36 / ${unitSecond}`, `1080p: 0.6 / ${unitSecond}`].join(
             "\n",
           )}
-        </div>
+        </PriceValue>
       ),
-      description: translate({
-        message: "PRICING.tables.fusionApi.description.soraTextToVideo",
-      }),
+      description: tPricing(
+        "PRICING.tables.fusionApi.description.soraTextToVideo",
+        "Sora2 text to video",
+      ),
     },
     {
       key: "fal-sora2-image-to-video",
-      service: "fal-sora2-image-to-video",
+      service: <IdentifierBadge>fal-sora2-image-to-video</IdentifierBadge>,
       price: (
-        <div className={styles.multilineCell}>
+        <PriceValue multiline>
           {[`720p: 0.36 / ${unitSecond}`, `1080p: 0.6 / ${unitSecond}`].join(
             "\n",
           )}
-        </div>
+        </PriceValue>
       ),
-      description: translate({
-        message: "PRICING.tables.fusionApi.description.soraImageToVideo",
-      }),
+      description: tPricing(
+        "PRICING.tables.fusionApi.description.soraImageToVideo",
+        "Sora2 image to video",
+      ),
     },
     {
       key: "wanx-image",
-      service: "wanx-image",
-      price: <div className={styles.multilineCell}>{`0.035 / ${unitImage}`}</div>,
-      description: translate({
-        message: "PRICING.tables.fusionApi.description.wanxImage",
-      }),
+      service: <IdentifierBadge>wanx-image</IdentifierBadge>,
+      price: <PriceValue>{`0.035 / ${unitImage}`}</PriceValue>,
+      description: tPricing(
+        "PRICING.tables.fusionApi.description.wanxImage",
+        "Wanx image generation or editing",
+      ),
     },
     {
       key: "tinify-png-shrink",
-      service: "tinify-png-shrink",
-      price: <div className={styles.multilineCell}>{`0.009 / ${unitImage}`}</div>,
-      description: translate({
-        message: "PRICING.tables.fusionApi.description.imageCompress",
-      }),
+      service: <IdentifierBadge>tinify-png-shrink</IdentifierBadge>,
+      price: <PriceValue>{`0.009 / ${unitImage}`}</PriceValue>,
+      description: tPricing(
+        "PRICING.tables.fusionApi.description.imageCompress",
+        "Image compression",
+      ),
     },
     {
       key: "qwen-mt-image",
-      service: "qwen-mt-image",
-      price: (
-        <div className={styles.multilineCell}>{`0.0005 / ${unitImage}`}</div>
+      service: <IdentifierBadge>qwen-mt-image</IdentifierBadge>,
+      price: <PriceValue>{`0.0005 / ${unitImage}`}</PriceValue>,
+      description: tPricing(
+        "PRICING.tables.fusionApi.description.qwenImageTranslate",
+        "Qwen image translation",
       ),
-      description: translate({
-        message: "PRICING.tables.fusionApi.description.qwenImageTranslate",
-      }),
     },
     {
       key: "qwen-image-edit-plus",
-      service: "qwen-image-edit-plus",
-      price: <div className={styles.multilineCell}>{`0.017 / ${unitImage}`}</div>,
-      description: translate({
-        message: "PRICING.tables.fusionApi.description.qwenImageEdit",
-      }),
+      service: <IdentifierBadge>qwen-image-edit-plus</IdentifierBadge>,
+      price: <PriceValue>{`0.017 / ${unitImage}`}</PriceValue>,
+      description: tPricing(
+        "PRICING.tables.fusionApi.description.qwenImageEdit",
+        "Qwen image editing",
+      ),
     },
     {
       key: "jina-reader",
-      service: "jina-reader",
+      service: <IdentifierBadge>jina-reader</IdentifierBadge>,
       price: (
-        <div className={styles.multilineCell}>
+        <PriceValue multiline>
           {[
             `search: 0.05 / ${unitMToken}`,
             `read: 0.05 / ${unitMToken}`,
           ].join("\n")}
-        </div>
+        </PriceValue>
       ),
       description: "Jina Reader",
     },
     {
       key: "fal-remove-background",
-      service: "fal-remove-background",
-      price: <div className={styles.multilineCell}>{`0.021 / ${unitImage}`}</div>,
-      description: translate({
-        message: "PRICING.tables.fusionApi.description.removeBackground",
-      }),
+      service: <IdentifierBadge>fal-remove-background</IdentifierBadge>,
+      price: <PriceValue>{`0.021 / ${unitImage}`}</PriceValue>,
+      description: tPricing(
+        "PRICING.tables.fusionApi.description.removeBackground",
+        "Background removal",
+      ),
     },
     {
       key: "fal-flux-pro-kontext",
-      service: "fal-flux-pro-kontext",
-      price: <div className={styles.multilineCell}>{`0.048 / ${unitImage}`}</div>,
-      description: translate({
-        message: "PRICING.tables.fusionApi.description.kontextImageEdit",
-      }),
+      service: <IdentifierBadge>fal-flux-pro-kontext</IdentifierBadge>,
+      price: <PriceValue>{`0.048 / ${unitImage}`}</PriceValue>,
+      description: tPricing(
+        "PRICING.tables.fusionApi.description.kontextImageEdit",
+        "Kontext image editing",
+      ),
     },
     {
       key: "fal-aura-sr",
-      service: "fal-aura-sr",
-      price: (
-        <div className={styles.multilineCell}>{`0.0012 / ${unitImage}`}</div>
+      service: <IdentifierBadge>fal-aura-sr</IdentifierBadge>,
+      price: <PriceValue>{`0.0012 / ${unitImage}`}</PriceValue>,
+      description: tPricing(
+        "PRICING.tables.fusionApi.description.qualityEnhance",
+        "Quality enhancement",
       ),
-      description: translate({
-        message: "PRICING.tables.fusionApi.description.qualityEnhance",
-      }),
     },
     {
       key: "doubao-text-to-image-seedream",
-      service: "doubao-text-to-image-seedream",
-      price: <div className={styles.multilineCell}>{`0.043 / ${unitImage}`}</div>,
-      description: translate({
-        message: "PRICING.tables.fusionApi.description.doubaoTextToImage",
-      }),
+      service: <IdentifierBadge>doubao-text-to-image-seedream</IdentifierBadge>,
+      price: <PriceValue>{`0.043 / ${unitImage}`}</PriceValue>,
+      description: tPricing(
+        "PRICING.tables.fusionApi.description.doubaoTextToImage",
+        "Doubao text to image",
+      ),
     },
     {
       key: "doubao-tts",
-      service: "doubao-tts",
-      price: (
-        <div className={styles.multilineCell}>
-          {`0.77 / ${unitTenThousandChars}`}
-        </div>
+      service: <IdentifierBadge>doubao-tts</IdentifierBadge>,
+      price: <PriceValue>{`0.77 / ${unitTenThousandChars}`}</PriceValue>,
+      description: tPricing(
+        "PRICING.tables.fusionApi.description.doubaoTts",
+        "Doubao text to speech",
       ),
-      description: translate({
-        message: "PRICING.tables.fusionApi.description.doubaoTts",
-      }),
     },
     {
       key: "doubao-stt",
-      service: "doubao-stt",
-      price: <div className={styles.multilineCell}>{`0.34 / ${unitHour}`}</div>,
-      description: translate({
-        message: "PRICING.tables.fusionApi.description.doubaoStt",
-      }),
+      service: <IdentifierBadge>doubao-stt</IdentifierBadge>,
+      price: <PriceValue>{`0.34 / ${unitHour}`}</PriceValue>,
+      description: tPricing(
+        "PRICING.tables.fusionApi.description.doubaoStt",
+        "Doubao speech to text",
+      ),
     },
   ];
 
   const tableTabs = [
     {
       key: "llm" as const,
-      label: translate({ message: "PRICING.tables.tab.llm" }),
+      label: tPricing("PRICING.tables.tab.llm", "LLM Pricing"),
     },
     {
       key: "cloud-task" as const,
-      label: translate({ message: "PRICING.tables.tab.cloudTask" }),
+      label: tPricing("PRICING.tables.tab.cloudTask", "Cloud Task Pricing"),
     },
     {
       key: "fusion-api" as const,
-      label: translate({ message: "PRICING.tables.tab.fusionApi" }),
+      label: tPricing("PRICING.tables.tab.fusionApi", "Fusion API Pricing"),
     },
   ];
 
-  let activeTableAlert = translate({ message: "PRICING.tables.llm.note" });
-  let activeTableColumns = llmColumns;
-  let activeTableRows: PricingRow[] = llmRows;
-  let activeEmptyState = translate({ message: "PRICING.tables.llm.empty" });
+  function renderPricingTable(tableKey: PricingTableKey) {
+    const isLLMTable = tableKey === "llm";
+    const isCloudTaskTable = tableKey === "cloud-task";
+    const tableAlert = isLLMTable
+      ? tPricing(
+          "PRICING.tables.llm.note",
+          "LLM rates update with the model configuration in console. Units are credits per M token.",
+        )
+      : isCloudTaskTable
+        ? tPricing(
+            "PRICING.tables.cloudTask.alert",
+            "Running Blocks locally in OOMOL Studio does not trigger Cloud Task billing. Running Blocks in Chat or hub.oomol.com does.",
+          )
+        : tPricing(
+            "PRICING.tables.fusionApi.alert",
+            "Some official Blocks provided by OOMOL use these services. Users can also call these APIs directly, and credits are deducted on invocation.",
+          );
+    const tableColumns = isLLMTable
+      ? llmColumns
+      : isCloudTaskTable
+        ? cloudTaskColumns
+        : fusionApiColumns;
+    const tableRows = isLLMTable
+      ? llmRows
+      : isCloudTaskTable
+        ? cloudTaskRows
+        : fusionApiRows;
+    const tableEmptyState = isLLMTable
+      ? tPricing(
+          "PRICING.tables.llm.empty",
+          "No LLM pricing data is available right now.",
+        )
+      : isCloudTaskTable
+        ? tPricing(
+            "PRICING.tables.cloudTask.noteText",
+            "Anything under one minute is billed as one minute",
+          )
+        : tPricing("PRICING.tables.fusionApi.description", "Description");
 
-  if (activePricingTable === "cloud-task") {
-    activeTableAlert = translate({ message: "PRICING.tables.cloudTask.alert" });
-    activeTableColumns = cloudTaskColumns;
-    activeTableRows = cloudTaskRows;
-    activeEmptyState = translate({ message: "PRICING.tables.cloudTask.noteText" });
-  }
-
-  if (activePricingTable === "fusion-api") {
-    activeTableAlert = translate({ message: "PRICING.tables.fusionApi.alert" });
-    activeTableColumns = fusionApiColumns;
-    activeTableRows = fusionApiRows;
-    activeEmptyState = translate({
-      message: "PRICING.tables.fusionApi.description",
-    });
+    return (
+      <div className={styles.tablePanel}>
+        <Alert banner className={styles.tableAlert} content={tableAlert} />
+        {isLLMTable && llmLoadFailed ? (
+          <div className={styles.tableStatus}>
+            {tPricing(
+              "PRICING.tables.llm.error",
+              "LLM pricing is temporarily unavailable. Please refresh later or check console directly.",
+            )}
+          </div>
+        ) : (
+          <PriceTable
+            columns={tableColumns}
+            emptyState={tableEmptyState}
+            loading={isLLMTable && isLLMLoading}
+            rows={tableRows}
+          />
+        )}
+      </div>
+    );
   }
 
   return (
@@ -680,207 +744,37 @@ export default function Index() {
           </div>
         </div>
 
-        {/* 按量计费部分 */}
-        <div className={styles.payAsYouGoSection}>
-          <div className={styles.sectionTitle}>
-            {translate({ message: "PRICING.payAsYouGo.title" })}
-          </div>
-          <div className={styles.sectionSubtitle}>
-            {translate({ message: "PRICING.payAsYouGo.subtitle" })}
-          </div>
-
-          <div className={styles.planBox}>
-            {/* 任务调用卡片 */}
-            <div className={styles.planCard}>
-              <div className={styles.planHeader}>
-                <div className={styles.planName}>
-                  {translate({
-                    message: "PRICING.payAsYouGo.taskExecution.name",
-                  })}
-                </div>
-                <div className={styles.planPrice}>
-                  <span className={styles.price}>
-                    {translate({
-                      message: "PRICING.payAsYouGo.taskExecution.price",
-                    })}
-                  </span>
-                </div>
-                <div className={styles.planDescription}>
-                  {translate({
-                    message: "PRICING.payAsYouGo.taskExecution.description",
-                  })}
-                </div>
-              </div>
-              <div className={styles.featureList}>
-                <div className={styles.featureItem}>
-                  <i className="i-codicon:check" />
-                  <span>
-                    {translate({
-                      message: "PRICING.payAsYouGo.taskExecution.feature1",
-                    })}
-                  </span>
-                </div>
-                <div className={styles.featureItem}>
-                  <i className="i-codicon:check" />
-                  <span>
-                    {translate({
-                      message: "PRICING.payAsYouGo.taskExecution.feature2",
-                    })}
-                  </span>
-                </div>
-                <div className={styles.featureItem}>
-                  <i className="i-codicon:check" />
-                  <span>
-                    {translate({
-                      message: "PRICING.payAsYouGo.taskExecution.feature3",
-                    })}
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* 大语言模型卡片 */}
-            <div className={styles.planCard}>
-              <div className={styles.planHeader}>
-                <div className={styles.planName}>
-                  {translate({ message: "PRICING.payAsYouGo.llm.name" })}
-                </div>
-                <div className={styles.planPrice}>
-                  <span className={styles.price}>
-                    {translate({ message: "PRICING.payAsYouGo.llm.price" })}
-                  </span>
-                </div>
-                <div className={styles.planDescription}>
-                  {translate({ message: "PRICING.payAsYouGo.llm.description" })}
-                </div>
-              </div>
-              <div className={styles.featureList}>
-                <div className={styles.featureItem}>
-                  <i className="i-codicon:check" />
-                  <span>
-                    {translate({ message: "PRICING.payAsYouGo.llm.feature1" })}
-                  </span>
-                </div>
-                <div className={styles.featureItem}>
-                  <i className="i-codicon:check" />
-                  <span>
-                    {translate({ message: "PRICING.payAsYouGo.llm.feature2" })}
-                  </span>
-                </div>
-                <div className={styles.featureItem}>
-                  <i className="i-codicon:check" />
-                  <span>
-                    {translate({ message: "PRICING.payAsYouGo.llm.feature3" })}
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* 融合 API 卡片 */}
-            <div className={styles.planCard}>
-              <div className={styles.planHeader}>
-                <div className={styles.planName}>
-                  {translate({ message: "PRICING.payAsYouGo.fusionAPI.name" })}
-                </div>
-                <div className={styles.planPrice}>
-                  <span className={styles.price}>
-                    {translate({
-                      message: "PRICING.payAsYouGo.fusionAPI.price",
-                    })}
-                  </span>
-                </div>
-                <div className={styles.planDescription}>
-                  {translate({
-                    message: "PRICING.payAsYouGo.fusionAPI.description",
-                  })}
-                </div>
-              </div>
-              <div className={styles.featureList}>
-                <div className={styles.featureItem}>
-                  <i className="i-codicon:check" />
-                  <span>
-                    {translate({
-                      message: "PRICING.payAsYouGo.fusionAPI.feature1",
-                    })}
-                  </span>
-                </div>
-                <div className={styles.featureItem}>
-                  <i className="i-codicon:check" />
-                  <span>
-                    {translate({
-                      message: "PRICING.payAsYouGo.fusionAPI.feature2",
-                    })}
-                  </span>
-                </div>
-                <div className={styles.featureItem}>
-                  <i className="i-codicon:check" />
-                  <span>
-                    {translate({
-                      message: "PRICING.payAsYouGo.fusionAPI.feature3",
-                    })}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
+        <div className={styles.tableSectionWrapper}>
           <div className={styles.priceTablesSection}>
             <div className={styles.tableSectionHeader}>
               <div className={styles.tableSectionTitle}>
-                {translate({ message: "PRICING.tables.title" })}
+                {tPricing("PRICING.tables.title", "Detailed Pricing Tables")}
               </div>
               <div className={styles.tableSectionSubtitle}>
-                {translate({ message: "PRICING.tables.subtitle" })}
+                {tPricing(
+                  "PRICING.tables.subtitle",
+                  "These tables mirror the pricing structure shown in OOMOL Console so you can verify pay-as-you-go charges directly from the website.",
+                )}
               </div>
               <div className={styles.tableSyncNote}>
-                {translate({ message: "PRICING.tables.syncNote" })}
+                {tPricing(
+                  "PRICING.tables.syncNote",
+                  "LLM pricing is fetched live from console; Cloud Task and Fusion API rows reflect the current console table",
+                )}
               </div>
             </div>
 
-            <div className={styles.tableTabs} role="tablist">
+            <Tabs
+              activeTab={activePricingTable}
+              className={styles.tableTabs}
+              onChange={key => setActivePricingTable(key as PricingTableKey)}
+            >
               {tableTabs.map((tab) => (
-                <button
-                  key={tab.key}
-                  type="button"
-                  role="tab"
-                  aria-selected={activePricingTable === tab.key}
-                  className={`${styles.tableTab} ${
-                    activePricingTable === tab.key ? styles.tableTabActive : ""
-                  }`}
-                  onClick={() => setActivePricingTable(tab.key)}
-                >
-                  {tab.label}
-                </button>
+                <Tabs.TabPane key={tab.key} title={tab.label}>
+                  {renderPricingTable(tab.key)}
+                </Tabs.TabPane>
               ))}
-            </div>
-
-            <div className={styles.tablePanel}>
-              <div className={styles.tableAlert}>{activeTableAlert}</div>
-
-              {activePricingTable === "llm" ? (
-                isLLMLoading ? (
-                  <div className={styles.tableStatus}>
-                    {translate({ message: "PRICING.tables.llm.loading" })}
-                  </div>
-                ) : llmLoadFailed ? (
-                  <div className={styles.tableStatus}>
-                    {translate({ message: "PRICING.tables.llm.error" })}
-                  </div>
-                ) : (
-                  <PriceTable
-                    columns={activeTableColumns}
-                    rows={activeTableRows}
-                    emptyState={activeEmptyState}
-                  />
-                )
-              ) : (
-                <PriceTable
-                  columns={activeTableColumns}
-                  rows={activeTableRows}
-                  emptyState={activeEmptyState}
-                />
-              )}
-            </div>
+            </Tabs>
           </div>
         </div>
 

@@ -1,0 +1,44 @@
+.card {
+  overflow: hidden;
+  border-radius: 20px;
+  border-color: color-mix(
+    in srgb,
+    var(--oomol-border-default) 72%,
+    transparent
+  ) !important;
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white);
+  box-shadow: var(--oomol-shadow-sm);
+
+  :global(.arco-card-body) {
+    padding: 0;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 24px;
+}
+
+.title {
+  color: var(--oomol-text-primary);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.description {
+  color: var(--oomol-text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.content {
+  padding: 0 24px 24px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  padding: 0 24px 24px;
+}

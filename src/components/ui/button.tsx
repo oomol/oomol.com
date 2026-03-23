@@ -1,55 +1,108 @@
-import type { VariantProps } from "class-variance-authority";
+import type { ButtonProps as ArcoButtonProps } from "@arco-design/web-react";
 
-import { Slot } from "@radix-ui/react-slot";
+import { Button as ArcoButton } from "@arco-design/web-react";
 import { cn } from "@site/src/lib/utils";
-import { cva } from "class-variance-authority";
 import * as React from "react";
+import styles from "./button.module.scss";
 
-const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
-  {
-    variants: {
-      variant: {
-        default:
-          "bg-primary text-primary-foreground shadow hover:bg-primary/90",
-        destructive:
-          "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
-        outline:
-          "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
-        secondary:
-          "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-      },
-      size: {
-        default: "h-9 px-4 py-2",
-        sm: "h-8 rounded-md px-3 text-xs",
-        lg: "h-10 rounded-md px-8",
-        icon: "h-9 w-9",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
-  }
-);
+type ButtonVariant =
+  | "default"
+  | "destructive"
+  | "outline"
+  | "secondary"
+  | "ghost"
+  | "link";
+type ButtonSize = "default" | "sm" | "lg" | "icon";
+
+const variantClassMap: Record<ButtonVariant, string> = {
+  default: styles.variantDefault,
+  destructive: styles.variantDestructive,
+  outline: styles.variantOutline,
+  secondary: styles.variantSecondary,
+  ghost: styles.variantGhost,
+  link: styles.variantLink,
+};
+
+const sizeClassMap: Record<ButtonSize, string> = {
+  default: styles.sizeDefault,
+  sm: styles.sizeSm,
+  lg: styles.sizeLg,
+  icon: styles.sizeIcon,
+};
+
+const variantMap: Record<
+  ButtonVariant,
+  Pick<ArcoButtonProps, "status" | "type">
+> = {
+  default: { type: "primary" },
+  destructive: { status: "danger", type: "primary" },
+  outline: { type: "outline" },
+  secondary: { type: "secondary" },
+  ghost: { type: "text" },
+  link: { type: "text" },
+};
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+  extends Omit<ArcoButtonProps, "children" | "size" | "status" | "type"> {
   asChild?: boolean;
+  children?: React.ReactNode;
+  size?: ButtonSize;
+  variant?: ButtonVariant;
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+const buttonVariants = ({
+  className,
+  size = "default",
+  variant = "default",
+}: Pick<ButtonProps, "className" | "size" | "variant">) =>
+  cn(styles.button, variantClassMap[variant], sizeClassMap[size], className);
+
+const Button = React.forwardRef<HTMLElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button";
+    const child = asChild
+      ? (React.Children.only(props.children) as React.ReactElement<{
+          children?: React.ReactNode;
+          className?: string;
+          href?: string;
+          rel?: string;
+          target?: string;
+        }>)
+      : null;
+    const childProps = child?.props;
+    const mergedVariant = variant ?? "default";
+    const mergedSize = size ?? "default";
+    const mergedClassName = buttonVariants({
+      className: cn(className, childProps?.className),
+      size: mergedSize,
+      variant: mergedVariant,
+    });
+    const { href, rel, target } = childProps ?? {};
+    const anchorProps = href
+      ? {
+          ...(props.anchorProps ?? {}),
+          ...(rel ? { rel } : {}),
+        }
+      : props.anchorProps;
+
     return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
+      <ArcoButton
+        {...variantMap[mergedVariant]}
+        anchorProps={anchorProps}
+        className={mergedClassName}
+        href={href ?? props.href}
+        ref={ref as never}
+        size={
+          mergedSize === "sm"
+            ? "small"
+            : mergedSize === "lg"
+              ? "large"
+              : "default"
+        }
+        target={target ?? props.target}
         {...props}
-      />
+      >
+        {childProps?.children ?? props.children}
+      </ArcoButton>
     );
   }
 );

@@ -3,15 +3,10 @@ import type { DocusaurusContext } from "@docusaurus/types";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import { useLocation } from "@docusaurus/router";
 import { useAlternatePageUtils } from "@docusaurus/theme-common/internal";
+import { Dropdown, Menu } from "@arco-design/web-react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { Button } from "@site/src/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuTrigger,
-} from "@site/src/components/ui/dropdown-menu";
+import styles from "./LocalDropdown.module.scss";
 
 export interface LocalDropdownProps {
   queryString?: string;
@@ -61,32 +56,28 @@ export const LocalDropdown = ({ queryString = "" }: LocalDropdownProps) => {
   return (
     <BrowserOnly>
       {() => (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="gap-2">
-              <div className="i-codicon-globe" />
-              {formateLocale(currentLocale)}
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent
-            align="end"
-            style={{
-              backgroundColor: "var(--oomol-bg-container)",
-              borderColor: "var(--oomol-border-default)",
-            }}
-          >
-            <DropdownMenuRadioGroup
-              value={currentLocale}
-              onValueChange={handleLocaleChange}
+        <Dropdown
+          droplist={
+            <Menu
+              className={styles.menu}
+              onClickMenuItem={handleLocaleChange}
+              selectedKeys={[currentLocale]}
             >
               {locales.map(locale => (
-                <DropdownMenuRadioItem key={locale} value={locale}>
+                <Menu.Item className={styles.menuItem} key={locale}>
                   {formateLocale(locale)}
-                </DropdownMenuRadioItem>
+                </Menu.Item>
               ))}
-            </DropdownMenuRadioGroup>
-          </DropdownMenuContent>
-        </DropdownMenu>
+            </Menu>
+          }
+          position="top"
+          trigger="click"
+        >
+          <Button className={styles.triggerButton} variant="ghost">
+            <div className="i-codicon-globe" />
+            {formateLocale(currentLocale)}
+          </Button>
+        </Dropdown>
       )}
     </BrowserOnly>
   );

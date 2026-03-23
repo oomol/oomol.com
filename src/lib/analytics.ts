@@ -5,11 +5,7 @@ type TrackingConsentState = {
   analytics: boolean;
 };
 
-type GtagFunction = (
-  command: GtagCommand,
-  target: string | Date,
-  params?: Record<string, unknown>
-) => void;
+type GtagFunction = Gtag.Gtag;
 
 declare global {
   interface Window {
@@ -123,7 +119,7 @@ function isAdvertisingEnabled(): boolean {
     : false;
 }
 
-function ensureGtag() {
+function ensureGtag(): Promise<boolean> {
   if (typeof window === "undefined" || typeof document === "undefined") {
     return Promise.resolve(false);
   }
@@ -136,7 +132,7 @@ function ensureGtag() {
     return window.__oomolGoogleTagLoadingPromise;
   }
 
-  window.__oomolGoogleTagLoadingPromise = new Promise(resolve => {
+  window.__oomolGoogleTagLoadingPromise = new Promise<boolean>(resolve => {
     const existingScript = document.querySelector<HTMLScriptElement>(
       `script[src*="googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}"]`
     );
@@ -171,9 +167,9 @@ function initializeGtag() {
   window.dataLayer = window.dataLayer || [];
 
   if (typeof window.gtag !== "function") {
-    window.gtag = function gtag(...args: unknown[]) {
+    window.gtag = ((...args: unknown[]) => {
       window.dataLayer?.push(args);
-    } as GtagFunction;
+    }) as unknown as NonNullable<Window["gtag"]>;
   }
 
   if (!window.__oomolGoogleTagConfigured) {
@@ -183,7 +179,7 @@ function initializeGtag() {
       ad_storage: "denied",
       ad_user_data: "denied",
       analytics_storage: "denied",
-    });
+    } as unknown as Gtag.ConsentParams);
     window.__oomolGoogleTagConfigured = {
       ads: false,
       analytics: false,
@@ -243,7 +239,7 @@ export function updateGoogleConsent(
     ad_user_data: consentState.advertising ? "granted" : "denied",
     ad_personalization: consentState.advertising ? "granted" : "denied",
     analytics_storage: consentState.analytics ? "granted" : "denied",
-  });
+  } as unknown as Gtag.ConsentParams);
 
   return true;
 }

@@ -28,18 +28,20 @@
   width: 320px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /*background-color: yellow;*/
-  padding-top: 36px;
-  padding-bottom: 36px;
+  justify-content: space-between;
+  min-height: 240px;
   border-style: solid;
   border-color: var(--oomol-border-default);
-  border-radius: 8px;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white);
+}
+
+.supportHeader {
+  padding-bottom: 8px;
 }
 
 .title {
-  width: 260px;
+  width: 100%;
   font-weight: bolder;
   font-size: 18px;
   display: flex;
@@ -51,11 +53,12 @@
 }
 
 .inner {
-  width: 260px;
-  margin-top: 12px;
+  width: 100%;
+  margin-top: 0;
 }
 
 .text {
   margin-bottom: 42px;
   font-size: 14px;
+  color: var(--oomol-text-secondary);
 }

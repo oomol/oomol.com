@@ -1303,6 +1303,141 @@
   "PRICING.payAsYouGo.fusionAPI.feature3": {
     "message": "语音合成：10 积分/分钟"
   },
+  "PRICING.tables.title": {
+    "message": "详细价格表"
+  },
+  "PRICING.tables.subtitle": {
+    "message": "以下价格结构与 OOMOL Console 价格页保持一致，方便直接核对按量计费明细。"
+  },
+  "PRICING.tables.syncNote": {
+    "message": "LLM 价格实时读取 Console，Cloud Task 和 Fusion API 按当前价格表展示"
+  },
+  "PRICING.tables.tab.llm": {
+    "message": "大模型价格"
+  },
+  "PRICING.tables.tab.cloudTask": {
+    "message": "Cloud Task 价格"
+  },
+  "PRICING.tables.tab.fusionApi": {
+    "message": "Fusion API 价格"
+  },
+  "PRICING.tables.llm.note": {
+    "message": "大模型价格会随 Console 中的模型配置变化而更新，单位为点数 / M Token。"
+  },
+  "PRICING.tables.llm.loading": {
+    "message": "正在从 OOMOL Console 加载最新大模型价格..."
+  },
+  "PRICING.tables.llm.error": {
+    "message": "暂时无法加载大模型价格，请稍后刷新页面或前往 Console 查看。"
+  },
+  "PRICING.tables.llm.empty": {
+    "message": "当前没有可展示的大模型价格数据。"
+  },
+  "PRICING.tables.llm.channel": {
+    "message": "渠道"
+  },
+  "PRICING.tables.llm.model": {
+    "message": "模型"
+  },
+  "PRICING.tables.llm.inputPrice": {
+    "message": "输入价格"
+  },
+  "PRICING.tables.llm.cachePrice": {
+    "message": "缓存价格"
+  },
+  "PRICING.tables.llm.outputPrice": {
+    "message": "输出价格"
+  },
+  "PRICING.tables.llm.unit": {
+    "message": "点数 / M Token"
+  },
+  "PRICING.tables.cloudTask.service": {
+    "message": "服务名"
+  },
+  "PRICING.tables.cloudTask.price": {
+    "message": "价格（点数 / 分钟）"
+  },
+  "PRICING.tables.cloudTask.remark": {
+    "message": "说明"
+  },
+  "PRICING.tables.cloudTask.noteText": {
+    "message": "不满一分钟按 1 分钟计费"
+  },
+  "PRICING.tables.cloudTask.alert": {
+    "message": "仅使用 OOMOL Studio 本地运行 Block 不会触发 Cloud Task 计费。在 Chat 或 hub.oomol.com 上运行 Block 会触发 Cloud Task 并扣费。"
+  },
+  "PRICING.tables.fusionApi.service": {
+    "message": "服务名"
+  },
+  "PRICING.tables.fusionApi.price": {
+    "message": "价格（点数）"
+  },
+  "PRICING.tables.fusionApi.description": {
+    "message": "说明"
+  },
+  "PRICING.tables.fusionApi.alert": {
+    "message": "OOMOL 提供的部分官方 Block 会使用这些服务，用户也可以自行调用这些服务的 API。调用后会扣除相应点数。"
+  },
+  "PRICING.tables.fusionApi.unit.image": {
+    "message": "张图片"
+  },
+  "PRICING.tables.fusionApi.unit.second": {
+    "message": "秒"
+  },
+  "PRICING.tables.fusionApi.unit.mToken": {
+    "message": "M Token"
+  },
+  "PRICING.tables.fusionApi.unit.tenThousandChars": {
+    "message": "万字"
+  },
+  "PRICING.tables.fusionApi.unit.hour": {
+    "message": "小时"
+  },
+  "PRICING.tables.fusionApi.description.nanoBanana": {
+    "message": "Nano Banana 图片生成或编辑"
+  },
+  "PRICING.tables.fusionApi.description.nanoBananaPro": {
+    "message": "Nano Banana Pro 图片生成或编辑"
+  },
+  "PRICING.tables.fusionApi.description.wanxKf2v": {
+    "message": "万象关键帧生成视频"
+  },
+  "PRICING.tables.fusionApi.description.soraTextToVideo": {
+    "message": "Sora2 文生视频"
+  },
+  "PRICING.tables.fusionApi.description.soraImageToVideo": {
+    "message": "Sora2 图生视频"
+  },
+  "PRICING.tables.fusionApi.description.wanxImage": {
+    "message": "万象图片生成或编辑"
+  },
+  "PRICING.tables.fusionApi.description.imageCompress": {
+    "message": "图片压缩"
+  },
+  "PRICING.tables.fusionApi.description.qwenImageTranslate": {
+    "message": "千问图片翻译"
+  },
+  "PRICING.tables.fusionApi.description.qwenImageEdit": {
+    "message": "千问图片编辑"
+  },
+  "PRICING.tables.fusionApi.description.removeBackground": {
+    "message": "背景删除"
+  },
+  "PRICING.tables.fusionApi.description.kontextImageEdit": {
+    "message": "Kontext 图片编辑"
+  },
+  "PRICING.tables.fusionApi.description.qualityEnhance": {
+    "message": "画质提升"
+  },
+  "PRICING.tables.fusionApi.description.doubaoTextToImage": {
+    "message": "豆包文生图"
+  },
+  "PRICING.tables.fusionApi.description.doubaoTts": {
+    "message": "豆包文字转语音"
+  },
+  "PRICING.tables.fusionApi.description.doubaoStt": {
+    "message": "豆包语音转文字"
+  },
   "PRICING.free.badge": {
     "message": "推荐"
   },

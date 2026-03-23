@@ -1,13 +1,8 @@
 import { useColorMode } from "@docusaurus/theme-common";
 import { translate } from "@docusaurus/Translate";
+import { Dropdown, Menu } from "@arco-design/web-react";
 import { Button } from "@site/src/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuTrigger,
-} from "@site/src/components/ui/dropdown-menu";
+import styles from "./ColorModeDropdown.module.scss";
 import { useState, useEffect } from "react";
 
 type ColorModeType = "light" | "dark" | "system";
@@ -86,32 +81,28 @@ export const ColorModeDropdown = () => {
   };
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="gap-2">
-          <div className={getDisplayIcon()} />
-          {getDisplayText()}
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent
-        align="end"
-        style={{
-          backgroundColor: "var(--oomol-bg-container)",
-          borderColor: "var(--oomol-border-default)",
-        }}
-      >
-        <DropdownMenuRadioGroup
-          value={selectedMode}
-          onValueChange={value => handleModeChange(value as ColorModeType)}
+    <Dropdown
+      droplist={
+        <Menu
+          className={styles.menu}
+          onClickMenuItem={key => handleModeChange(key as ColorModeType)}
+          selectedKeys={[selectedMode]}
         >
           {modes.map(mode => (
-            <DropdownMenuRadioItem key={mode} value={mode} className="gap-2">
-              <i className={modeIconMap[mode]} style={{ fontSize: "14px" }} />
+            <Menu.Item className={styles.menuItem} key={mode}>
+              <i className={modeIconMap[mode]} />
               <span>{getModeText(mode)}</span>
-            </DropdownMenuRadioItem>
+            </Menu.Item>
           ))}
-        </DropdownMenuRadioGroup>
-      </DropdownMenuContent>
-    </DropdownMenu>
+        </Menu>
+      }
+      position="top"
+      trigger="click"
+    >
+      <Button className={styles.triggerButton} variant="ghost">
+        <div className={getDisplayIcon()} />
+        {getDisplayText()}
+      </Button>
+    </Dropdown>
   );
 };

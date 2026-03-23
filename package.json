@@ -20,6 +20,7 @@
     "lint:fix": "eslint --fix && prettier --write ."
   },
   "dependencies": {
+    "@arco-design/web-react": "^2.66.12",
     "@docusaurus/core": "3.9.2",
     "@docusaurus/faster": "3.9.2",
     "@docusaurus/preset-classic": "3.9.2",

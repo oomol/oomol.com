@@ -1,5 +1,6 @@
 import styles from "./styles.module.scss";
 
+import { Card, CardContent, CardHeader, CardTitle } from "@site/src/components/ui/card";
 import { Button } from "@site/src/components/ui/button";
 import React from "react";
 
@@ -11,12 +12,16 @@ export default function Support() {
       <div className={styles.supportBox}>
         <div className={styles.supportTitle}>Support</div>
         <div className={styles.supportCellBox}>
-          <div className={styles.supportCell}>
-            <div className={styles.title}>
-              <i className="i-bi-github" style={{ fontSize: "20px" }} />
-              <span className={styles["support-title"]}>Github Support</span>
-            </div>
-            <div className={styles.inner}>
+          <Card className={styles.supportCell}>
+            <CardHeader className={styles.supportHeader}>
+              <div className={styles.title}>
+                <i className="i-bi-github" style={{ fontSize: "20px" }} />
+                <CardTitle className={styles["support-title"]}>
+                  Github Support
+                </CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className={styles.inner}>
               <div className={styles.text}>
                 Go to our GitHub discussions to browse for help and best
                 practices.
@@ -30,17 +35,21 @@ export default function Support() {
                   Github Discussions
                 </a>
               </Button>
-            </div>
-          </div>
-          <div className={styles.supportCell}>
-            <div className={styles.title}>
-              <i
-                className="i-bi-discord"
-                style={{ fontSize: "20px", opacity: 0.7 }}
-              />
-              <span className={styles["support-title"]}>Discord Support</span>
-            </div>
-            <div className={styles.inner}>
+            </CardContent>
+          </Card>
+          <Card className={styles.supportCell}>
+            <CardHeader className={styles.supportHeader}>
+              <div className={styles.title}>
+                <i
+                  className="i-bi-discord"
+                  style={{ fontSize: "20px", opacity: 0.7 }}
+                />
+                <CardTitle className={styles["support-title"]}>
+                  Discord Support
+                </CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className={styles.inner}>
               <div className={styles.text}>
                 If you need instant communication, please join our Discord
                 server.
@@ -54,14 +63,18 @@ export default function Support() {
                   Join Discord
                 </a>
               </Button>
-            </div>
-          </div>
-          <div className={styles.supportCell}>
-            <div className={styles.title}>
-              <div className="i-codicon-mail" />
-              <span className={styles["support-title"]}>Email Support</span>
-            </div>
-            <div className={styles.inner}>
+            </CardContent>
+          </Card>
+          <Card className={styles.supportCell}>
+            <CardHeader className={styles.supportHeader}>
+              <div className={styles.title}>
+                <div className="i-codicon-mail" />
+                <CardTitle className={styles["support-title"]}>
+                  Email Support
+                </CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className={styles.inner}>
               <div className={styles.text}>
                 If you need help beyond the product, you can contact us by
                 email.
@@ -69,8 +82,8 @@ export default function Support() {
               <Button asChild>
                 <a href="mailto:support@oomol.com">Email To Us</a>
               </Button>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </Layout>

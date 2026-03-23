@@ -62,6 +62,52 @@ body {
   background: var(--oomol-bg-base);
 }
 
+body {
+  color: var(--oomol-text-primary);
+  font-family: var(--oomol-font-body);
+}
+
+[data-theme="light"],
+[data-theme="dark"] {
+  :global(.arco-btn),
+  :global(.arco-card),
+  :global(.arco-menu),
+  :global(.arco-trigger-popup),
+  :global(.arco-table),
+  :global(.arco-tabs),
+  :global(.arco-alert) {
+    font-family: var(--oomol-font-body);
+  }
+
+  :global(.arco-card) {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-border-default) 72%,
+      transparent
+    );
+    background: color-mix(in srgb, var(--oomol-bg-elevated) 96%, white);
+    box-shadow: var(--oomol-shadow-sm);
+  }
+
+  :global(.arco-menu-light),
+  :global(.arco-menu-pop),
+  :global(.arco-trigger-popup) {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-border-default) 72%,
+      transparent
+    );
+    background: color-mix(in srgb, var(--oomol-bg-elevated) 96%, white);
+    box-shadow: var(--oomol-shadow-md);
+  }
+
+  :global(.arco-menu-selected),
+  :global(.arco-tabs-tab-active),
+  :global(.arco-link) {
+    color: var(--oomol-primary);
+  }
+}
+
 #__docusaurus {
   display: flex;
   flex-direction: column;

@@ -1217,6 +1217,141 @@
   "PRICING.payAsYouGo.fusionAPI.feature3": {
     "message": "Text-to-Speech: 10 credits/minute"
   },
+  "PRICING.tables.title": {
+    "message": "Detailed Pricing Tables"
+  },
+  "PRICING.tables.subtitle": {
+    "message": "These tables mirror the pricing structure shown in OOMOL Console so you can verify pay-as-you-go charges directly from the website."
+  },
+  "PRICING.tables.syncNote": {
+    "message": "LLM pricing is fetched live from console; Cloud Task and Fusion API rows reflect the current console table"
+  },
+  "PRICING.tables.tab.llm": {
+    "message": "LLM Pricing"
+  },
+  "PRICING.tables.tab.cloudTask": {
+    "message": "Cloud Task Pricing"
+  },
+  "PRICING.tables.tab.fusionApi": {
+    "message": "Fusion API Pricing"
+  },
+  "PRICING.tables.llm.note": {
+    "message": "LLM rates update with the model configuration in console. Units are credits per M token."
+  },
+  "PRICING.tables.llm.loading": {
+    "message": "Loading the latest LLM pricing from OOMOL Console..."
+  },
+  "PRICING.tables.llm.error": {
+    "message": "LLM pricing is temporarily unavailable. Please refresh later or check console directly."
+  },
+  "PRICING.tables.llm.empty": {
+    "message": "No LLM pricing data is available right now."
+  },
+  "PRICING.tables.llm.channel": {
+    "message": "Channel"
+  },
+  "PRICING.tables.llm.model": {
+    "message": "Model"
+  },
+  "PRICING.tables.llm.inputPrice": {
+    "message": "Input Price"
+  },
+  "PRICING.tables.llm.cachePrice": {
+    "message": "Cache Price"
+  },
+  "PRICING.tables.llm.outputPrice": {
+    "message": "Output Price"
+  },
+  "PRICING.tables.llm.unit": {
+    "message": "Credits/M Token"
+  },
+  "PRICING.tables.cloudTask.service": {
+    "message": "Service"
+  },
+  "PRICING.tables.cloudTask.price": {
+    "message": "Price (Credits/Minute)"
+  },
+  "PRICING.tables.cloudTask.remark": {
+    "message": "Note"
+  },
+  "PRICING.tables.cloudTask.noteText": {
+    "message": "Anything under one minute is billed as one minute"
+  },
+  "PRICING.tables.cloudTask.alert": {
+    "message": "Running Blocks locally in OOMOL Studio does not trigger Cloud Task billing. Running Blocks in Chat or hub.oomol.com does."
+  },
+  "PRICING.tables.fusionApi.service": {
+    "message": "Service"
+  },
+  "PRICING.tables.fusionApi.price": {
+    "message": "Price (Credits)"
+  },
+  "PRICING.tables.fusionApi.description": {
+    "message": "Description"
+  },
+  "PRICING.tables.fusionApi.alert": {
+    "message": "Some official Blocks provided by OOMOL use these services. Users can also call these APIs directly, and credits are deducted on invocation."
+  },
+  "PRICING.tables.fusionApi.unit.image": {
+    "message": "Image"
+  },
+  "PRICING.tables.fusionApi.unit.second": {
+    "message": "Second"
+  },
+  "PRICING.tables.fusionApi.unit.mToken": {
+    "message": "M Token"
+  },
+  "PRICING.tables.fusionApi.unit.tenThousandChars": {
+    "message": "10K Characters"
+  },
+  "PRICING.tables.fusionApi.unit.hour": {
+    "message": "Hour"
+  },
+  "PRICING.tables.fusionApi.description.nanoBanana": {
+    "message": "Nano Banana image generation or editing"
+  },
+  "PRICING.tables.fusionApi.description.nanoBananaPro": {
+    "message": "Nano Banana Pro image generation or editing"
+  },
+  "PRICING.tables.fusionApi.description.wanxKf2v": {
+    "message": "Wanx keyframe to video"
+  },
+  "PRICING.tables.fusionApi.description.soraTextToVideo": {
+    "message": "Sora2 text to video"
+  },
+  "PRICING.tables.fusionApi.description.soraImageToVideo": {
+    "message": "Sora2 image to video"
+  },
+  "PRICING.tables.fusionApi.description.wanxImage": {
+    "message": "Wanx image generation or editing"
+  },
+  "PRICING.tables.fusionApi.description.imageCompress": {
+    "message": "Image compression"
+  },
+  "PRICING.tables.fusionApi.description.qwenImageTranslate": {
+    "message": "Qwen image translation"
+  },
+  "PRICING.tables.fusionApi.description.qwenImageEdit": {
+    "message": "Qwen image editing"
+  },
+  "PRICING.tables.fusionApi.description.removeBackground": {
+    "message": "Background removal"
+  },
+  "PRICING.tables.fusionApi.description.kontextImageEdit": {
+    "message": "Kontext image editing"
+  },
+  "PRICING.tables.fusionApi.description.qualityEnhance": {
+    "message": "Quality enhancement"
+  },
+  "PRICING.tables.fusionApi.description.doubaoTextToImage": {
+    "message": "Doubao text to image"
+  },
+  "PRICING.tables.fusionApi.description.doubaoTts": {
+    "message": "Doubao text to speech"
+  },
+  "PRICING.tables.fusionApi.description.doubaoStt": {
+    "message": "Doubao speech to text"
+  },
   "PRICING.free.badge": {
     "message": "Recommended"
   },
