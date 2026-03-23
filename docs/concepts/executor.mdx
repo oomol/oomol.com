@@ -7,7 +7,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 # Executor
 
-Executor is the runtime engine that executes Block code within OOMOL.
+An Executor is the runtime engine that executes Block code inside OOMOL.
 
 ## What is an Executor
 
@@ -17,7 +17,7 @@ Each code language environment has a corresponding Executor implementation. When
 
 ## Position in OOMOL Architecture
 
-In the OOMOL system architecture, Executor plays a crucial role in connecting multiple components:
+In the OOMOL architecture, the Executor connects several layers of the system:
 
 ```
 OOMOL Studio (UI Layer)
@@ -36,7 +36,7 @@ OVM (Container Environment)
 
 ## Executor Types
 
-OOMOL currently supports two types of Executors, each designed for a specific programming language:
+OOMOL currently supports two Executor types, one for each supported programming language:
 
 ### Python Executor
 
@@ -62,11 +62,11 @@ Each [Block](/docs/concepts/block) is configured with an Executor that specifies
 - The function name to invoke
 - Whether to run in an independent process
 
-The Executor configuration is part of the Block's metadata and can be modified in the [Block Configuration](/docs/advanced-guide/universal-block-settings#executor) panel.
+Executor configuration is part of the Block metadata and can be changed in the [Block Configuration](/docs/advanced-guide/universal-block-settings#executor) panel.
 
 ### Executor and OOCANA
 
-OOCANA (the workflow engine) coordinates with Executors to manage workflow execution:
+OOCANA, the workflow engine, coordinates with Executors during workflow execution:
 
 1. OOCANA analyzes the Flow to determine execution order based on data dependencies
 2. When a Block is ready to execute, OOCANA prepares the input data
@@ -76,7 +76,7 @@ OOCANA (the workflow engine) coordinates with Executors to manage workflow execu
 
 ## Process Management
 
-One of the Executor's key features is intelligent process management, which optimizes resource usage and execution performance.
+One of the Executor's key responsibilities is process management, which affects both resource usage and performance.
 
 ### Same-Process Execution
 
@@ -93,7 +93,7 @@ When OOMOL Studio runs workflows, it automatically detects opportunities for opt
 
 ### Independent Process Execution
 
-Users can manually configure a Block to run in an independent process via the [Spawn configuration](/docs/advanced-guide/universal-block-settings#spawn). This is useful in scenarios such as:
+You can manually configure a Block to run in an independent process via the [Spawn configuration](/docs/advanced-guide/universal-block-settings#spawn). This is useful in scenarios such as:
 
 - Isolating potentially unstable code
 - Managing memory-intensive operations
@@ -102,7 +102,7 @@ Users can manually configure a Block to run in an independent process via the [S
 
 ## Data Transfer Between Executors
 
-Data transfer between Executors depends on whether they share the same process and language environment:
+Data transfer behavior depends on whether the participating Blocks share the same process and language runtime:
 
 ### JSON Serialization (Cross-Language or Cross-Process)
 

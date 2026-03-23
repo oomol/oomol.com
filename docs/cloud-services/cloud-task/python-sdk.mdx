@@ -5,7 +5,7 @@ sidebar_label: Python SDK
 
 # Python SDK
 
-`oomol-cloud-task-sdk` provides the Python client for OOMOL Cloud Task API v3.
+`oomol-cloud-task-sdk` is the Python client for OOMOL Cloud Task API v3.
 
 ## Install
 
@@ -96,7 +96,7 @@ client.create_task(
 
 The client normalizes task creation requests to `type: "serverless"`.
 
-`webhookUrl` and `metadata` remain in the request type only for backward compatibility. They are ignored before the request is sent.
+`webhookUrl` and `metadata` remain in the request type only for backward compatibility. The client ignores them before sending the request.
 
 ### Query tasks
 

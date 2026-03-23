@@ -14,11 +14,15 @@ sidebar_label: Principles
 - Task execution content stored in `block.oo.yaml` files (referred to as `block`)
 - `block.oo.yaml` contains references to execution code, which we call block functions
 
-Block functions can be written in either `Nodejs` or `Python`, with a mandatory function name `main`. This function accepts two parameters:
-1. Input data
-2. Auxiliary functions provided by the block runtime
+Block functions can be written in either `Node.js` or `Python`. Each runtime has its own entry convention:
+1. Python usually uses a `main` function
+2. Node.js usually uses the module's default exported function
 
-The function should return a dictionary object (or in `Nodejs`, a `Promise` that resolves to a dictionary), which becomes the block's output data.
+In both cases, the callable receives two parameters:
+1. Input data
+2. Runtime helpers provided by the block context
+
+The function should return a dictionary/object. In `Node.js`, that can be a `Promise` that resolves to an object. The returned top-level fields become the block's output data.
 
 The `flow` file defines the triggering sequence and data transfer relationships between `blocks`.
 
@@ -28,7 +32,7 @@ The execution sequence of `blocks` is determined by connections defined in the `
 
 ### Runtime Environments and Executors
 
-Currently, `blocks` support `Nodejs` and `Python` runtime environments. Each runtime environment has a corresponding [Executor](/docs/concepts/executor) that loads and executes the block code.
+Currently, `blocks` support `Node.js` and `Python` runtime environments. Each runtime environment has a corresponding [Executor](/docs/concepts/executor) that loads and executes the block code.
 
 **Key execution characteristics:**
 
@@ -40,7 +44,7 @@ For detailed information about executors and process management, see [Executor C
 
 ### Data Transfer Between Blocks
 
-Data transfer between different language environments is transferred via JSON, while blocks in the same language environment can transfer data through JSON or directly via variables.
+Blocks running in different language environments exchange data through JSON. Blocks in the same language environment can exchange data either through JSON or by passing variables directly.
 
 **JSON Serialization (Cross-Language or Cross-Process):**
 - Universal compatibility across all supported languages

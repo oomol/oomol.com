@@ -5,12 +5,12 @@ sidebar_label: MCP SDK
 
 # MCP SDK
 
-`oomol-cloud-mcp-sdk` is an MCP Server SDK aligned with the OOMOL Cloud Task TypeScript SDK.
+`oomol-cloud-mcp-sdk` is an MCP server SDK built on top of the OOMOL Cloud Task TypeScript SDK.
 
-It serves two roles at the same time:
+It serves two purposes:
 
-- It re-exports `oomol-cloud-task-sdk`, so you can use it directly as a Cloud Task TypeScript SDK
-- It adds an MCP Server wrapper that exposes Cloud Task capabilities as MCP tools
+- It re-exports `oomol-cloud-task-sdk`, so you can also use it directly as a Cloud Task TypeScript SDK
+- It adds an MCP server wrapper that exposes Cloud Task capabilities as MCP tools
 
 ## Install
 
@@ -35,7 +35,7 @@ export OOMOL_API_KEY="your-api-key"
 oomol-mcp-server
 ```
 
-If you want task tools to default to one package:
+If you want task-related tools to default to one package:
 
 ```bash
 export OOMOL_PACKAGE_NAME="@oomol/your-package"
@@ -118,7 +118,7 @@ await server.run();
 
 ### `create_task`
 
-`packageName` and `packageVersion` can come from tool arguments or server defaults.
+`packageName` and `packageVersion` can come either from tool arguments or from the server defaults.
 
 ```json
 {

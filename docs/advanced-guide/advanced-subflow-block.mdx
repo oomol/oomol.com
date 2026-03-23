@@ -6,11 +6,11 @@ sidebar_label: Subflow Block
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-#  Subflow Block Advanced Usage
+# Subflow Block Advanced Usage
 
-After creating a subflow Block, we can click on the subflow Block in the left shared Block panel to enter the subflow Block's editing page.
+After creating a subflow Block, click it in the left shared Block panel to open its editing page.
 
-We can see that there are Block mode and workflow mode at the bottom of the editing page.
+At the bottom of that page, you will see two modes: Block mode and workflow mode.
 
 <Image
   sources={{
@@ -109,15 +109,15 @@ Slots are shared Blocks dedicated to subflow Blocks, which only appear in the ri
 
 ### The Significance of Slots
 
-Considering that subflow Block developers need the functionality of certain Blocks but don't care about how the Blocks are implemented (or need users to implement them themselves), in this case, users of the subflow can implement their own functional Blocks and integrate them into the subflow, allowing the entire workflow to run normally. This gives users the freedom to implement part of the functionality.
+Sometimes a subflow author needs a capability but does not want to hard-code its implementation, or explicitly wants callers to provide that implementation themselves. Slots solve this by letting the caller supply part of the behavior while keeping the rest of the subflow stable.
 
 > For example: A subflow Block developer needs to analyze data through AI, so the developer defines a slot where the input is data content and the output is a string of analysis results. Then users can implement different AI analysis Blocks based on their own AI keys, using their own API tokens.
 
-Or subflow Blocks extract parts that may frequently change and modify as slots, which can be arbitrarily replaced at the point of use, reducing modifications to key code Blocks.
+Slots are also useful when part of the implementation changes frequently. Instead of editing the core subflow every time, you can extract that changing section into a slot and replace it at the call site.
 
 > For example: A developer relies on a third-party library that updates very frequently. They can define a slot where the input is the input passed to the third-party library and the output is the output of the third-party library, then publish the subflow. This way, the third-party library can be integrated into the subflow externally, and when the third-party library updates, only the external Block needs to be updated, while the subflow doesn't need to be updated.
 
-The slot itself is a Block, but only input and output Handles can be configured.
+The slot itself is a Block, but only its input and output Handles are configurable.
 
 ### Usage
 
@@ -135,7 +135,7 @@ Slots are used similarly to regular shared Blocks and can be dragged into the wo
   width="720"
 />
 
-The difference is that you can directly modify the Handle names and parameters on the slot Block.
+The main difference is that you can edit Handle names and parameters directly on the slot Block itself.
 
 After adding and connecting slots, returning to Block mode shows that the subflow Block has an additional slot panel:
 
@@ -151,7 +151,7 @@ After adding and connecting slots, returning to Block mode shows that the subflo
   width="720"
 />
 
-This slot panel here only has display functionality.
+This slot panel is display-only.
 
 When the subflow Block is used in a workflow, you can click the slot's settings button to enter the slot's editing interface:
 
@@ -167,7 +167,7 @@ When the subflow Block is used in a workflow, you can click the slot's settings 
   width="720"
 />
 
-The slot editing interface is basically consistent with the subflow editing interface, or rather, slots are a type of subflow:
+The slot editing interface is mostly the same as the subflow editing interface. In practice, you can think of a slot as a specialized kind of subflow:
 
 <Image
   sources={{
@@ -197,7 +197,7 @@ After editing is complete, return to the workflow interface to run the subflow B
   width="720"
 />
 
-The execution of subflow Blocks is the same as regular Blocks, with the only difference being that slot content must be edited, otherwise the running conditions cannot be met.
+Subflow Blocks run like ordinary Blocks, except that any required slot content must be implemented first. Otherwise, the subflow does not have enough information to run.
 
 ## Slotflow
 

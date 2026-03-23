@@ -20,7 +20,7 @@ npm install oomol-cloud-task-sdk
 - `uploadFile()` additionally requires `File` and `XMLHttpRequest`
 
 :::note
-`uploadFile()` is designed around a browser-like runtime. In pure Node.js, use it only if you provide compatible `File` and `XMLHttpRequest` globals or polyfills.
+`uploadFile()` is designed for a browser-like runtime. In pure Node.js, use it only if you provide compatible `File` and `XMLHttpRequest` globals or polyfills.
 :::
 
 ## Authentication
@@ -108,7 +108,7 @@ await client.createTask({
 });
 ```
 
-The SDK normalizes task creation requests to `type: "serverless"`.
+The SDK normalizes task-creation requests to `type: "serverless"`.
 
 `webhookUrl` and `metadata` are still accepted in the request type only for backward compatibility. They are ignored before the request is sent.
 

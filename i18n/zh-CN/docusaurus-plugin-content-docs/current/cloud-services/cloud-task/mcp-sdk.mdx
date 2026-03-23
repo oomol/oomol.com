@@ -5,12 +5,12 @@ sidebar_label: MCP SDK
 
 # MCP SDK
 
-`oomol-cloud-mcp-sdk` 是与 OOMOL Cloud Task TypeScript SDK 对齐的 MCP Server SDK。
+`oomol-cloud-mcp-sdk` 是构建在 OOMOL Cloud Task TypeScript SDK 之上的 MCP Server SDK。
 
-它同时承担两类角色：
+它主要承担两类角色：
 
-- 完整 re-export `oomol-cloud-task-sdk`，可以直接当作 Cloud Task TypeScript SDK 使用
-- 在此基础上提供一个 MCP Server 封装，把 Cloud Task 能力暴露成 MCP tools
+- 完整 re-export `oomol-cloud-task-sdk`，因此也可以直接当作 Cloud Task TypeScript SDK 使用
+- 在此基础上提供 MCP Server 封装，把 Cloud Task 能力暴露成 MCP tools
 
 ## 安装
 
@@ -35,7 +35,7 @@ export OOMOL_API_KEY="your-api-key"
 oomol-mcp-server
 ```
 
-如果希望任务类 tools 默认使用某个 package，再额外设置：
+如果希望任务类 tools 默认使用某个 package，可以再额外设置：
 
 ```bash
 export OOMOL_PACKAGE_NAME="@oomol/your-package"
@@ -118,7 +118,7 @@ await server.run();
 
 ### `create_task`
 
-`packageName` 和 `packageVersion` 可以来自 tool 参数，也可以来自 server 默认配置。
+`packageName` 和 `packageVersion` 可以来自 tool 参数，也可以直接使用 server 的默认配置。
 
 ```json
 {

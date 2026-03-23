@@ -5,11 +5,11 @@ sidebar_label: Node.js SDK
 
 import node_preview from "@site/static/img/docs/node_preview.png";
 
-# Nodejs API
+# Node.js API
 
 ## Introduction
 
-Developers will call our SDK in the Scriptlet Block to interact with the `OOCANA` workflow engine. This document provides a detailed introduction to the API usage.
+Developers use this SDK inside Scriptlet Blocks to interact with the `OOCANA` workflow engine. This document explains the most important APIs and how to use them.
 
 :::tip
 If your block needs to call Fusion-hosted services, use `oomol-fusion-sdk` with `token: await context.getOomolToken()` and `baseUrl: context.fusionApiUrl`.
@@ -23,9 +23,9 @@ When using the SDK in the Scriptlet Block, you need to import the `Context` obje
 
 ### `Scriptlet` Template
 
-Below is the template function for a Scriptlet, where you should write your execution code. The input and output types can be customized, and third-party libraries can be imported.
+Below is the standard Scriptlet template. Write your execution logic inside the function body. You can customize input and output types and import third-party libraries as needed.
 
-To pass data to subsequent blocks, simply return a dictionary as you would in a normal function. OOCANA will use the top-level keys as the corresponding output handles, and the values as the output for those handles.
+To pass data to downstream blocks, return an object just as you would in a normal function. OOCANA uses the top-level keys as output handles and the corresponding values as the outputs for those handles.
 
 
 ```typescript
@@ -42,7 +42,7 @@ export default async function (
   params: Inputs,
   context: Context<Inputs, Outputs>
 ): Promise<Outputs> {
-  // Your code will be executed here
+  // Your code runs here
 
   return { output: null };
 }
@@ -142,9 +142,9 @@ await context.preview({
 
 <img src={node_preview} width="720" />
 
-## Detailed Types of `Context` Object
+## Detailed Types of the `Context` Object
 
-The API type descriptions provided by the `OOCANA` SDK help users understand how to use these APIs accurately. You can open the editor to see detailed type hints.
+The `OOCANA` SDK exposes the type definitions below so you can use these APIs precisely. In practice, the editor's inline type hints are often the easiest reference.
 
 ```typescript
 interface Context<

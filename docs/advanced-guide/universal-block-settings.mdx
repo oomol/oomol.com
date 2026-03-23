@@ -8,11 +8,11 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 # Universal Block Settings
 
-This article will describe in detail the common settings and usage methods shared by all Blocks.
+This article describes the settings and behaviors shared by all Blocks.
 
 ## Node Menu
 
-When a Block is used within a workflow, it is referenced as a Node in the workflow, and the Block will display a Node menu.
+When a Block is used inside a workflow, it appears there as a Node, and the Node menu becomes available.
 
 <Image
   sources={{
@@ -28,7 +28,7 @@ When a Block is used within a workflow, it is referenced as a Node in the workfl
 
 ### Execution
 
-There are two execution methods in the Node menu. Users can choose whether to use the cache from the previous run. Both methods will start the workflow and run up to the current Node.
+The Node menu provides two execution methods. The main difference is whether the current run reuses cache from a previous successful run. Both methods start from the necessary upstream graph and execute up to the current Node.
 
 <Image
   sources={{
@@ -46,11 +46,11 @@ The difference is whether to use the results from the previous Node execution as
 
 #### Cache Mechanism
 
-Considering that Blocks may execute high resource-consuming or very time-consuming tasks, users may not want to repeat these tasks. Therefore, we designed a Node caching mechanism.
+Some Blocks can be expensive or slow to execute, so rerunning them every time would be wasteful. That is why OOMOL provides a Node-level cache mechanism.
 
 After any Node executes successfully, except for Handles of type [variable](/docs/advanced-guide/universal-block-settings#variable), all Node output Handles will retain the output values from the previous execution. This way, when downstream Nodes choose to execute, they will automatically use cached values without triggering upstream Node execution.
 
-Users can also choose "Clear cache and execute", which will make the current run not use cache, trigger upstream Node execution, and get the latest output values.
+Users can also choose "Clear cache and execute", which skips cache reuse for the current run, triggers upstream execution again, and refreshes the output values.
 
 :::info
 If the current Node's upstream output Handle has variable types, running will always trigger upstream Node execution regardless, because we cannot cache variables in the code execution environment.
@@ -74,7 +74,7 @@ Duplicate behavior differs for scriptlet Blocks and shared Blocks:
 
 ### Node Settings
 
-Node Settings only takes effect within the current workflow. Each Node's settings is independent and doesn't affect other Nodes.
+Node Settings only affect the current workflow. Each Node's settings are independent and do not affect other Nodes.
 
 #### Metadata
 

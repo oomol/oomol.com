@@ -11,7 +11,7 @@ import python_plotly from "@site/static/img/docs/python_plotly.png";
 
 ## Introduction
 
-Developers use the SDK inside a Scriptlet Block to interact with the `OOCANA` workflow engine. This document explains how to use the related APIs.
+Developers use this SDK inside Scriptlet Blocks to interact with the `OOCANA` workflow engine. This document covers the most important APIs and how to use them.
 
 :::tip
 If your block needs to call Fusion-hosted services, use `oomol-fusion-sdk` with `token=await context.oomol_token()` and `base_url=context.fusion_api_url`.
@@ -25,8 +25,8 @@ To use the SDK in a Scriptlet Block, import the `Context` object and call the re
 
 ### `Scriptlet` Template
 
-Below is the template function for a Scriptlet. Write your execution logic inside the function body. The input and output types can be customized, and third-party libraries are supported.
-To pass data to downstream blocks, just return a dictionary as you would in a normal function. OOCANA uses the first-level keys as output handles, and the corresponding values as the outputs for those handles.
+Below is the standard Scriptlet template. Write your execution logic inside the function body. The input and output types can be customized, and third-party libraries are supported.
+To pass data to downstream blocks, return a dictionary as you would in a normal function. OOCANA uses the top-level keys as output handles, and the corresponding values as the outputs for those handles.
 
 ```python
 from oocana import Context

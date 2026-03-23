@@ -10,7 +10,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ## Quick Handle Creation
 
-You can quickly create a new Handle by moving the wire end above or below an Handle while connecting. The newly created Handle will maintain the same name and type as the connected Handle, eliminating the need for additional configuration.
+You can quickly create a new Handle by dragging a wire endpoint just above or below an existing Handle while connecting. The new Handle copies the connected Handle's name and type, so you do not need to configure it again.
 
 This method works for both input and output Handles, but is only available for scriptlet Blocks.
 
@@ -36,9 +36,9 @@ In the scriptlet code, you can see comments like:
 #endregion
 ```
 
-These comments are used to automatically generate the name and type code for input and output Handles. Deleting them may cause a mismatch between the types in the code and the Block settings.
+These comments are used to generate the type declarations for input and output Handles automatically. Deleting them can cause the code types and Block configuration to drift apart.
 
-Every time you modify the Handle name and type on the Node, the code within these comments will be updated, so don't write your own code inside these comments.
+Whenever you modify a Handle's name or type on the Node, OOMOL Studio updates the generated code inside this region. Do not put your own code inside it.
 
 If you need to import dependencies, please make sure to write the import statements outside of these two comment ranges.
 
@@ -98,10 +98,10 @@ Using the `context.preview()` method in your code allows you to render various t
   width="720"
 />
 
-Please ensure that the `context.preview()` method is called within the scope of the default method.
+Make sure `context.preview()` is called inside the exported entry function.
 
 :::info
-The context API also has functions such as reporting progress, reading built-in large language model parameters, and obtaining local hardware information.
+The Context API also includes functions for reporting progress, reading built-in model configuration, and obtaining local hardware information.
 
 For detailed API documentation, refer to [Node.js Context API](/docs/workflow-engine/nodejs-sdk-api#common-apis) and [Python Context API](/docs/workflow-engine/python-sdk-api#common-apis).
 :::
@@ -130,7 +130,7 @@ See [Fusion SDK Overview](/docs/workflow-engine/third-party-api-services/overvie
 
 ## Streamlined Module Import in TypeScript
 
-Developers can leverage the `~` alias as a root directory designator for simplified module imports within TypeScript projects. For instance:
+In TypeScript projects, you can use the `~` alias to reference the project root for simpler module imports. For example:
 
 <Image
   sources={{
@@ -144,4 +144,4 @@ Developers can leverage the `~` alias as a root directory designator for simplif
   width="720"
 />
 
-We can find the `Hello.ts` module in the project root directory through `~/Hello`.
+`~/Hello` resolves to the `Hello.ts` module in the project root.

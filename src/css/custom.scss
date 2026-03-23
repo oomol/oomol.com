@@ -379,11 +379,11 @@ $desktop-width: $breakpoint-xl;
   .docs-overview-hero {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.98fr);
-    gap: clamp(1.5rem, 2vw, 2.5rem);
-    align-items: center;
+    grid-template-columns: minmax(0, 0.8fr) minmax(420px, 1.2fr);
+    gap: clamp(1.25rem, 2vw, 2.25rem);
+    align-items: start;
     margin: 0 0 2.5rem;
-    padding: clamp(1.3rem, 1rem + 1vw, 2rem);
+    padding: clamp(1.2rem, 1rem + 1vw, 1.8rem);
     border: 1px solid color-mix(in srgb, var(--oomol-primary) 14%, var(--oomol-border-subtle));
     border-radius: 30px;
     background:
@@ -405,6 +405,7 @@ $desktop-width: $breakpoint-xl;
   .docs-overview-copy {
     position: relative;
     z-index: 1;
+    padding-block: 0.25rem;
   }
 
   .docs-overview-kicker {
@@ -423,34 +424,34 @@ $desktop-width: $breakpoint-xl;
   }
 
   .docs-overview-title {
-    max-width: 14ch;
+    max-width: 10ch;
     margin: 0;
     color: var(--oomol-text-primary);
-    font-size: clamp(2rem, 1.55rem + 1.8vw, 3.25rem);
+    font-size: clamp(2.2rem, 1.7rem + 2vw, 3.7rem);
     font-weight: 800;
-    line-height: 1.05;
+    line-height: 1.02;
     letter-spacing: -0.04em;
     text-wrap: balance;
   }
 
   .docs-overview-lead {
-    max-width: 58ch;
-    margin: 1rem 0 0;
+    max-width: 28ch;
+    margin: 0.9rem 0 0;
     color: var(--oomol-text-secondary);
-    font-size: clamp(1rem, 0.95rem + 0.22vw, 1.08rem);
-    line-height: 1.8;
+    font-size: 0.98rem;
+    line-height: 1.6;
   }
 
   .docs-overview-quick-actions {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.9rem;
-    margin-top: 1.35rem;
+    gap: 0.8rem;
+    margin-top: 1.1rem;
   }
 
   .docs-overview-quick-action {
     min-width: 0;
-    padding: 1rem 1.05rem;
+    padding: 0.9rem 0.95rem;
     border: 1px solid var(--oomol-divider);
     border-radius: 22px;
     background:
@@ -465,24 +466,24 @@ $desktop-width: $breakpoint-xl;
       display: block;
       margin: 0;
       color: var(--oomol-text-primary);
-      font-size: 1.02rem;
+      font-size: 1rem;
       font-weight: 700;
       line-height: 1.35;
     }
 
     .docs-overview-quick-copy {
-      margin: 0.4rem 0 0;
+      margin: 0.3rem 0 0;
       color: var(--oomol-text-secondary);
-      font-size: 0.94rem;
-      line-height: 1.65;
+      font-size: 0.9rem;
+      line-height: 1.5;
     }
   }
 
   .docs-overview-quick-label {
     display: inline-block;
-    margin-bottom: 0.45rem;
+    margin-bottom: 0.35rem;
     color: var(--oomol-text-tertiary);
-    font-size: 0.82rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -491,7 +492,7 @@ $desktop-width: $breakpoint-xl;
   .docs-overview-video-card {
     position: relative;
     min-width: 0;
-    padding: 1rem;
+    padding: 0.9rem;
     border: 1px solid color-mix(in srgb, var(--oomol-primary) 10%, var(--oomol-border-subtle));
     border-radius: 26px;
     background:
@@ -508,17 +509,17 @@ $desktop-width: $breakpoint-xl;
     justify-content: space-between;
     gap: 0.75rem;
     align-items: baseline;
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.7rem;
 
     span {
       color: var(--oomol-text-primary);
-      font-size: 1rem;
+      font-size: 0.98rem;
       font-weight: 700;
     }
 
     small {
       color: var(--oomol-text-tertiary);
-      font-size: 0.8rem;
+      font-size: 0.76rem;
       line-height: 1.4;
       text-align: right;
     }
@@ -527,7 +528,7 @@ $desktop-width: $breakpoint-xl;
   .docs-overview-video {
     display: block;
     width: 100%;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 9;
     border: 1px solid color-mix(in srgb, var(--oomol-primary) 12%, var(--oomol-divider));
     border-radius: 18px;
     background: #0f1220;
