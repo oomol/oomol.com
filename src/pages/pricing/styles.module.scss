@@ -219,12 +219,11 @@
 
 .tableSectionHeader {
   padding: 40px 40px 28px;
-  background:
-    linear-gradient(
-      135deg,
-      color-mix(in srgb, var(--oomol-primary) 7%, transparent) 0%,
-      transparent 48%
-    );
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--oomol-primary) 7%, transparent) 0%,
+    transparent 48%
+  );
 }
 
 .tableSectionTitle {
@@ -273,11 +272,8 @@
 
   :global(.arco-tabs-tab) {
     border-radius: 999px;
-    border: 1px solid color-mix(
-      in srgb,
-      var(--oomol-border-default) 80%,
-      transparent
-    );
+    border: 1px solid
+      color-mix(in srgb, var(--oomol-border-default) 80%, transparent);
     background: color-mix(in srgb, var(--oomol-bg-base) 75%, transparent);
     color: var(--oomol-text-secondary);
     font-size: 14px;
@@ -332,7 +328,8 @@
   max-width: 1100px;
   margin: 0 auto;
   padding: 28px 24px;
-  border: 1px dashed color-mix(in srgb, var(--oomol-border-default) 78%, transparent);
+  border: 1px dashed
+    color-mix(in srgb, var(--oomol-border-default) 78%, transparent);
   border-radius: 20px;
   background: color-mix(in srgb, var(--oomol-bg-base) 88%, transparent);
   color: var(--oomol-text-secondary);
@@ -354,26 +351,9 @@
   :global(.arco-table-container) {
     overflow: hidden;
     border-radius: 24px;
-    background:
-      linear-gradient(
-        180deg,
-        color-mix(in srgb, var(--oomol-bg-base) 82%, white) 0%,
-        color-mix(in srgb, var(--oomol-bg-elevated) 94%, white) 100%
-      );
     border: 1px solid
       color-mix(in srgb, var(--oomol-border-default) 60%, transparent);
-  }
-
-  :global(.arco-table-th),
-  :global(.arco-table-td) {
-    padding: 20px 22px;
-    border-right: 1px solid
-      color-mix(in srgb, var(--oomol-border-default) 60%, transparent);
-    border-bottom: 1px solid
-      color-mix(in srgb, var(--oomol-border-default) 60%, transparent);
-    background: color-mix(in srgb, var(--oomol-bg-base) 92%, white);
-    vertical-align: top;
-    text-align: left;
+    box-shadow: var(--oomol-shadow-sm);
   }
 
   :global(.arco-table-th) {
@@ -381,25 +361,11 @@
     line-height: 18px;
     font-weight: 700;
     color: var(--oomol-text-secondary);
-    white-space: nowrap;
-    background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white);
   }
 
   :global(.arco-table-td) {
     color: var(--oomol-text-primary);
-  }
-
-  :global(.arco-table-th:last-child),
-  :global(.arco-table-td:last-child) {
-    border-right: 0;
-  }
-
-  :global(.arco-table-tr:last-child .arco-table-td) {
-    border-bottom: 0;
-  }
-
-  :global(.arco-table-tr:hover .arco-table-td) {
-    background: color-mix(in srgb, var(--oomol-primary-bg) 58%, white);
+    vertical-align: top;
   }
 }
 
@@ -422,7 +388,8 @@
   padding: 6px 12px;
   border-radius: 999px;
   background: color-mix(in srgb, var(--oomol-primary) 7%, white);
-  border: 1px solid color-mix(in srgb, var(--oomol-border-default) 68%, transparent);
+  border: 1px solid
+    color-mix(in srgb, var(--oomol-border-default) 68%, transparent);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
   color: var(--oomol-text-primary);
   font-size: 13px;
