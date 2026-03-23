@@ -116,26 +116,34 @@ const sidebars = {
       collapsible: true,
       collapsed: true,
       items: [
-        "cloud-services/cloud-function",
         {
           type: "category",
-          label: "Cloud Task",
+          label: "Cloud Function",
           collapsible: true,
           collapsed: false,
           items: [
-            "cloud-services/cloud-task/overview",
+            "cloud-services/cloud-function",
             {
               type: "category",
-              label: "SDKs",
+              label: "API & SDK",
               collapsible: true,
               collapsed: false,
               items: [
-                "cloud-services/cloud-task/typescript-sdk",
-                "cloud-services/cloud-task/python-sdk",
-                "cloud-services/cloud-task/mcp-sdk",
+                "cloud-services/cloud-task/overview",
+                {
+                  type: "category",
+                  label: "SDKs",
+                  collapsible: true,
+                  collapsed: false,
+                  items: [
+                    "cloud-services/cloud-task/typescript-sdk",
+                    "cloud-services/cloud-task/python-sdk",
+                    "cloud-services/cloud-task/mcp-sdk",
+                  ],
+                },
+                "cloud-services/cloud-task/curl-api",
               ],
             },
-            "cloud-services/cloud-task/curl-api",
           ],
         },
       ],

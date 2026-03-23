@@ -1,9 +1,9 @@
 {
-  "label": "Cloud",
+  "label": "Cloud Services",
   "position": 5,
   "link": {
     "type": "generated-index",
-    "description": "Cloud services including Cloud Function and Cloud Task APIs."
+    "description": "Cloud Function guides and direct integration docs."
   },
   "collapsed": true,
   "className": "sidebar-submenu-item"

@@ -1,9 +1,9 @@
 {
-  "label": "Cloud Task",
+  "label": "API & SDK",
   "position": 4,
   "link": {
     "type": "generated-index",
-    "description": "Cloud Task docs for TypeScript, Python, MCP, and direct HTTP usage."
+    "description": "Direct integration docs for Cloud Function, including the current Cloud Task v3 API and SDKs."
   },
   "collapsed": true,
   "className": "sidebar-submenu-item"

@@ -39,9 +39,13 @@
     "message": "Cloud Services",
     "description": "The label for category Cloud Services in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Cloud Task": {
-    "message": "Cloud Task",
-    "description": "The label for category Cloud Task in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.Cloud Function": {
+    "message": "Cloud Function",
+    "description": "The label for category Cloud Function in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.API & SDK": {
+    "message": "API & SDK",
+    "description": "The label for category API & SDK in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.SDKs": {
     "message": "SDKs",

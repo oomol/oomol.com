@@ -1,9 +1,9 @@
 {
-  "label": "Cloud Task",
+  "label": "API 与 SDK",
   "position": 4,
   "link": {
     "type": "generated-index",
-    "description": "Cloud Task 的 TypeScript、Python、MCP 和 HTTP 调用文档。"
+    "description": "云函数的直接接入文档，包括当前的 Cloud Task v3 API 和各类 SDK。"
   },
   "collapsed": true,
   "className": "sidebar-submenu-item"

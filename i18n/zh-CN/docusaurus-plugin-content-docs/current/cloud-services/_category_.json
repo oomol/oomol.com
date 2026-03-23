@@ -1,9 +1,9 @@
 {
-  "label": "Cloud",
+  "label": "云服务",
   "position": 5,
   "link": {
     "type": "generated-index",
-    "description": "云服务包括 Cloud Function 和 Cloud Task API。"
+    "description": "云函数介绍和直接接入文档。"
   },
   "collapsed": true,
   "className": "sidebar-submenu-item"
