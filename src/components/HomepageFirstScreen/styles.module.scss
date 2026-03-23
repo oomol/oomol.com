@@ -127,6 +127,19 @@
   color: var(--oomol-text-secondary);
 }
 
+.offerLink {
+  text-decoration: none;
+  transition:
+    color 0.18s ease,
+    text-decoration-color 0.18s ease;
+
+  &:hover {
+    color: var(--oomol-primary-text);
+    text-decoration: underline;
+    text-underline-offset: 0.18rem;
+  }
+}
+
 .offerItemStrong {
   color: var(--oomol-primary-text);
   font-weight: 650;

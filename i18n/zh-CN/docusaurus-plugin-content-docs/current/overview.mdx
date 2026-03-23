@@ -10,59 +10,40 @@ import hub from "@site/static/img/docs/cn/hub.png";
 import hub_detail from "@site/static/img/docs/cn/hub_detail.png";
 import desktop_detail from "@site/static/img/docs/cn/desktop_detail.png";
 
-<h1 className="docs-overview-sr-only">概述</h1>
-
-<div className="docs-overview-hero">
-  <div className="docs-overview-copy">
-    <div className="docs-overview-kicker">先做，再查</div>
-    <div className="docs-overview-title">
-      有问题，问 Agent。<br />
-      有任务，让 Agent 直接做。
-    </div>
-    <div className="docs-overview-lead">
-      文档只在你要查细节时再看。
-    </div>
-
-    <div className="docs-overview-quick-actions">
-      <div className="docs-overview-quick-action">
-        <span className="docs-overview-quick-label">不会做</span>
-        <strong>直接问 Agent</strong>
-        <div className="docs-overview-quick-copy">
-          让它告诉你下一步。
-        </div>
-      </div>
-      <div className="docs-overview-quick-action">
-        <span className="docs-overview-quick-label">知道目标</span>
-        <strong>直接让 Agent 执行</strong>
-        <div className="docs-overview-quick-copy">
-          让它直接搭流程、改参数、补代码。
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div className="docs-overview-video-card">
-    <div className="docs-overview-video-header">
-      <span>演示视频</span>
-      <small>先看一遍，再决定查什么</small>
-    </div>
-    <video
-      className="docs-overview-video"
-      controls
-      autoPlay
-      muted
-      loop
-      playsInline
-      preload="metadata"
-      poster={desktop}
-    >
-      <source
-        src="https://cloud-storage.oomol.com/users/019343aa-ff25-727c-a449-9017313539b0/chat-uploads/2026-03-23/4gxes_hu5_ua-OOMOL_Studio.webm"
-        type="video/webm"
-      />
-    </video>
-  </div>
+<div
+  style={{
+    marginBottom: "0.9rem",
+    color: "var(--oomol-text-primary)",
+    fontSize: "clamp(1.6rem, 1.45rem + 0.7vw, 2rem)",
+    fontWeight: 700,
+    lineHeight: 1.18,
+    letterSpacing: "-0.02em",
+  }}
+>
+  有问题，问 Agent。有任务，让 Agent 直接做。
 </div>
+
+文档主要是提供给开发者查询，以及提供给搜索引擎了解产品功能。
+
+<video
+  controls
+  autoPlay
+  muted
+  loop
+  playsInline
+  preload="metadata"
+  poster={desktop}
+  style={{
+    width: "100%",
+    borderRadius: "16px",
+    background: "#000",
+  }}
+>
+  <source
+    src="https://cloud-storage.oomol.com/users/019343aa-ff25-727c-a449-9017313539b0/chat-uploads/2026-03-23/4gxes_hu5_ua-OOMOL_Studio.webm"
+    type="video/webm"
+  />
+</video>
 
 ## 核心特点
 

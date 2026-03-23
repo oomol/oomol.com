@@ -2482,10 +2482,10 @@
     "message": "OOMOL Studio 支持配置你自己的 AI 模型。如果你已经有现成的模型额度，就不需要再为本地开发额外购买一套模型服务。目前我们更推荐开发者直接接入 GLM-5。"
   },
   "HOME.DeveloperBenefits.card1.note": {
-    "message": "对很多开发者来说，这已经足够先把 Studio 跑起来，并完成本地验证。"
+    "message": "如果你已经有现成模型额度，按教程配好之后，通常就够先把 Studio 跑起来并完成本地验证。"
   },
   "HOME.DeveloperBenefits.card1.cta": {
-    "message": "下载 Studio 开始"
+    "message": "查看配置教程"
   },
   "HOME.DeveloperBenefits.card2.eyebrow": {
     "message": "Cloud 福利"

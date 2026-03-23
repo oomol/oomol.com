@@ -1,5 +1,6 @@
 import styles from "./styles.module.scss";
 
+import Link from "@docusaurus/Link";
 import { useColorMode } from "@docusaurus/theme-common";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
@@ -49,11 +50,14 @@ export default function HomepageFirstScreen() {
             <DownloadButton />
           </div>
           <div className={styles.offerLine}>
-            <span className={styles.offerItem}>
+            <Link
+              to="/docs/get-started/use-your-own-model"
+              className={`${styles.offerItem} ${styles.offerLink}`}
+            >
               {translate({
                 message: "HOME.FirstScreen.offer1",
               })}
-            </span>
+            </Link>
             <span className={styles.offerDivider}>/</span>
             <span className={styles.offerItemStrong}>
               {translate({

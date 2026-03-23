@@ -2395,10 +2395,10 @@
     "message": "OOMOL Studio lets you configure your own AI model. If you already have model quota elsewhere, you do not need another paid model service just to get local development running. We currently recommend GLM-5."
   },
   "HOME.DeveloperBenefits.card1.note": {
-    "message": "For many developers, that is enough to get Studio running and finish local validation."
+    "message": "If you already have model quota, the setup guide is usually enough to get Studio running and finish local validation."
   },
   "HOME.DeveloperBenefits.card1.cta": {
-    "message": "Start with Studio"
+    "message": "View Setup Guide"
   },
   "HOME.DeveloperBenefits.card2.eyebrow": {
     "message": "Cloud Benefit"

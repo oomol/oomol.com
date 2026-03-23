@@ -67,6 +67,7 @@ const sidebars = {
             "get-started/env-and-lib",
             "get-started/run-and-debug",
             "get-started/export-and-publish",
+            "get-started/use-your-own-model",
             "get-started/metering-and-billing",
           ],
         },

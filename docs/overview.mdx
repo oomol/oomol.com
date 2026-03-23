@@ -10,59 +10,40 @@ import hub from "@site/static/img/docs/hub.png";
 import hub_detail from "@site/static/img/docs/hub_detail.png";
 import desktop_detail from "@site/static/img/docs/desktop_detail.png";
 
-<h1 className="docs-overview-sr-only">Overview</h1>
-
-<div className="docs-overview-hero">
-  <div className="docs-overview-copy">
-    <div className="docs-overview-kicker">Do first. Read later.</div>
-    <div className="docs-overview-title">
-      Have a question? Ask Agent.<br />
-      Have a task? Let Agent do it.
-    </div>
-    <div className="docs-overview-lead">
-      Open the docs only when you need exact details.
-    </div>
-
-    <div className="docs-overview-quick-actions">
-      <div className="docs-overview-quick-action">
-        <span className="docs-overview-quick-label">Need help</span>
-        <strong>Ask Agent directly</strong>
-        <div className="docs-overview-quick-copy">
-          Let it tell you the next step.
-        </div>
-      </div>
-      <div className="docs-overview-quick-action">
-        <span className="docs-overview-quick-label">Know the goal</span>
-        <strong>Let Agent execute</strong>
-        <div className="docs-overview-quick-copy">
-          Let it build the workflow and handle the edits.
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div className="docs-overview-video-card">
-    <div className="docs-overview-video-header">
-      <span>Demo Video</span>
-      <small>Watch first. Read later if needed.</small>
-    </div>
-    <video
-      className="docs-overview-video"
-      controls
-      autoPlay
-      muted
-      loop
-      playsInline
-      preload="metadata"
-      poster={desktop}
-    >
-      <source
-        src="https://cloud-storage.oomol.com/users/019343aa-ff25-727c-a449-9017313539b0/chat-uploads/2026-03-23/4gxes_hu5_ua-OOMOL_Studio.webm"
-        type="video/webm"
-      />
-    </video>
-  </div>
+<div
+  style={{
+    marginBottom: "0.9rem",
+    color: "var(--oomol-text-primary)",
+    fontSize: "clamp(1.6rem, 1.45rem + 0.7vw, 2rem)",
+    fontWeight: 700,
+    lineHeight: 1.18,
+    letterSpacing: "-0.02em",
+  }}
+>
+  Have a question? Ask Agent. Have a task? Let Agent do it.
 </div>
+
+The docs are mainly for developers to look things up and for search engines to understand the product's capabilities.
+
+<video
+  controls
+  autoPlay
+  muted
+  loop
+  playsInline
+  preload="metadata"
+  poster={desktop}
+  style={{
+    width: "100%",
+    borderRadius: "16px",
+    background: "#000",
+  }}
+>
+  <source
+    src="https://cloud-storage.oomol.com/users/019343aa-ff25-727c-a449-9017313539b0/chat-uploads/2026-03-23/4gxes_hu5_ua-OOMOL_Studio.webm"
+    type="video/webm"
+  />
+</video>
 
 ## Core Features
 
