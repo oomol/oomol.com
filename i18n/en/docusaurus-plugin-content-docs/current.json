@@ -20,7 +20,7 @@
     "description": "The label for category Interface Tour in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Build Your First Workflow": {
-    "message": "Build Your First Workflow",
+    "message": "First Workflow",
     "description": "The label for category Build Your First Workflow in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Advanced Usage": {
@@ -28,7 +28,7 @@
     "description": "The label for category Advanced Usage in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Workflow Engine & SDK": {
-    "message": "Workflow Engine & SDK",
+    "message": "Workflow Engine",
     "description": "The label for category Workflow Engine & SDK in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Cloud Services": {

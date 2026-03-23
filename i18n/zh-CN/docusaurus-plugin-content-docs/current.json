@@ -20,7 +20,7 @@
     "description": "The label for category Interface Tour in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Build Your First Workflow": {
-    "message": "构建你的第一个工作流",
+    "message": "第一个工作流",
     "description": "The label for category Build Your First Workflow in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Advanced Usage": {
@@ -28,7 +28,7 @@
     "description": "The label for category Advanced Usage in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Workflow Engine & SDK": {
-    "message": "工作流引擎与 SDK",
+    "message": "工作流引擎",
     "description": "The label for category Workflow Engine & SDK in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Cloud Services": {

@@ -55,7 +55,7 @@ const sidebars = {
             },
             {
               type: "category",
-              label: "Build Your First Workflow",
+              label: "First Workflow",
               collapsible: true,
               collapsed: true,
               items: [
@@ -87,7 +87,7 @@ const sidebars = {
         },
         {
           type: "category",
-          label: "Workflow Engine & SDK",
+          label: "Workflow Engine",
           collapsible: true,
           collapsed: true,
           items: [
