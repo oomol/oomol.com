@@ -50,8 +50,7 @@ Start here:
 ## Product Architecture
 
 ```mermaid
-%%{init: { "flowchart": { "htmlLabels": false } }}%%
-flowchart TB
+graph TB
     subgraph Layer4["Application Layer"]
         Hub["OOMOL Hub<br/>(Project & Block Sharing Hub)"] ~~~ Cloud["OOMOL Cloud<br/>(Serverless Cloud Function Deployment)"]
     end

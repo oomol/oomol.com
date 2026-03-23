@@ -441,23 +441,6 @@ $desktop-width: $breakpoint-xl;
       margin-bottom: 0.6rem;
     }
 
-    .mermaid {
-      overflow: visible;
-    }
-
-    .mermaid svg {
-      height: auto;
-      overflow: visible;
-    }
-
-    .mermaid :is(.nodeLabel, .edgeLabel, .label) p {
-      margin: 0;
-      line-height: 1.35;
-    }
-
-    .mermaid foreignObject {
-      overflow: visible;
-    }
   }
 
   .theme-doc-breadcrumbs,
