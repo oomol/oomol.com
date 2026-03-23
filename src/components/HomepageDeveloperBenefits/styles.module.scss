@@ -244,6 +244,19 @@
     padding: 0 20px;
   }
 
+  .title {
+    max-width: 100%;
+    font-size: clamp(2.15rem, 9.4vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    text-wrap: pretty;
+  }
+
+  .value {
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
   .grid {
     grid-template-columns: 1fr;
     gap: 2rem;

@@ -401,6 +401,24 @@
     padding: 0 20px;
   }
 
+  .sectionTitle {
+    font-size: clamp(2.2rem, 10vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    text-wrap: pretty;
+  }
+
+  .cardTitle {
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+  }
+
+  .outputTitle,
+  .benefitValue {
+    line-height: 1.14;
+    letter-spacing: -0.025em;
+  }
+
   .outputsGrid,
   .benefitsGrid {
     grid-template-columns: 1fr;

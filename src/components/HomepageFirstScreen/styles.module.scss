@@ -215,6 +215,13 @@
     padding: 0 20px;
   }
 
+  .slogan {
+    font-size: clamp(2.8rem, 12vw, 4rem);
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+    text-wrap: pretty;
+  }
+
   .screenshotFrame {
     padding: 0.85rem;
     border-radius: 1.4rem;

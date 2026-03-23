@@ -70,4 +70,12 @@
     width: 48px;
     height: 48px;
   }
+
+  .title {
+    max-width: 100%;
+    font-size: clamp(2.2rem, 9.6vw, 3rem);
+    line-height: 1.06;
+    letter-spacing: -0.03em;
+    text-wrap: pretty;
+  }
 }

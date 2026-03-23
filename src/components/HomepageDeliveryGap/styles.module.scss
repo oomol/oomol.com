@@ -148,6 +148,19 @@
     row-gap: 0.55rem;
   }
 
+  .title {
+    max-width: 100%;
+    font-size: clamp(2.2rem, 9.8vw, 3.1rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    text-wrap: pretty;
+  }
+
+  .problemIndex {
+    line-height: 1.06;
+    letter-spacing: -0.035em;
+  }
+
   .problemIndex {
     margin-bottom: 0.1rem;
   }

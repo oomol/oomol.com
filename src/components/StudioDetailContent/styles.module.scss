@@ -173,6 +173,51 @@
   }
 }
 
+@media (max-width: 996px) {
+  .homeHero,
+  .homePrincipleCard,
+  .homePrincipleCard:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+
+  .homePrincipleCard:nth-child(even) {
+    .homePrincipleMedia,
+    .homePrincipleContent {
+      order: initial;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .homeContainer {
+    padding: 0 20px;
+  }
+
+  .homeTitle {
+    max-width: 100%;
+    font-size: clamp(2.15rem, 9.4vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    text-wrap: pretty;
+  }
+
+  .homeHeader {
+    margin-bottom: 1.5rem;
+  }
+
+  .homeHero {
+    gap: 1.1rem;
+  }
+
+  .homePrincipleCard {
+    gap: 1rem;
+  }
+
+  .homePrincipleContent h3 {
+    line-height: 1.3;
+  }
+}
+
 .container {
   width: 100%;
   background: var(--ifm-background-color);

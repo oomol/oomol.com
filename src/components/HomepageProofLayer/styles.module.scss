@@ -230,6 +230,19 @@
   .container {
     padding: 0 20px;
   }
+
+  .title {
+    max-width: 100%;
+    font-size: clamp(2.15rem, 9.4vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    text-wrap: pretty;
+  }
+
+  .signalValue {
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
 }
 
 [data-theme="dark"] {

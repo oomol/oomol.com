@@ -162,6 +162,13 @@
     padding: 3.5rem 20px 3rem;
   }
 
+  .title {
+    font-size: clamp(2.15rem, 9.4vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    text-wrap: pretty;
+  }
+
   .imagesWrapper {
     min-height: auto;
     padding: 1rem;
