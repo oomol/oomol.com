@@ -157,7 +157,7 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "get-started/quickstarts",
+            docId: "overview",
             position: "left",
             label: "Docs",
           },
@@ -217,7 +217,7 @@ const config = {
             items: [
               {
                 label: "Documentation",
-                to: "/docs/get-started/quickstarts",
+                to: "/docs/overview",
               },
               {
                 label: "Updates",
