@@ -7,17 +7,17 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 # Environment & Dependencies
 
-When you open a project, OOMOL Studio will start a Linux container in the background, and your project will run inside this container, isolated from your computer's actual environment.
+When you open a project, OOMOL Studio starts a Linux container in the background. Your project runs inside that container, isolated from your host machine.
 
-Each project has its own independent environment, ensuring that the code and dependencies of different projects do not affect each other or your computer's operating environment.
+Each project has its own environment, so code and dependencies from different projects do not interfere with one another or with your computer.
 
-When you delete a project, the container will be removed, and your computer and other projects will remain unaffected.
+When you delete a project, its container is removed as well. Your computer and other projects remain unaffected.
 
 ## Container Environment
 
-The container created for a new project is a minimal container. To ensure startup speed, only necessary software is installed in the container. Therefore, if you need certain system commands or software (e.g., netcat), you will need to install them yourself in the container.
+The container created for a new project is intentionally minimal. To keep startup fast, only required software is installed by default. If you need extra system commands or utilities, such as `netcat`, install them yourself inside the container.
 
-The container runs the script under the `script.bootstrap` property in `package.oo.yaml` during its first load:
+On first load, the container runs the script defined under `script.bootstrap` in `package.oo.yaml`:
 
 <Image
   sources={{
@@ -26,13 +26,13 @@ The container runs the script under the `script.bootstrap` property in `package.
   }}
 />
 
-You can add the system dependencies you want to install in this script, which is written in `shell` script.
+You can install system-level dependencies in that script. The script itself is written in `shell`.
 
 :::info
 The default script is used to install dependencies for Node.js and Python code. Please do not delete it, as doing so will cause the code to fail to run.
 :::
 
-After writing the startup script, you can find the button to restart the initialization script in the `Project Initialization` section of the bottom panel. Clicking it will rerun the script under `script.bootstrap` in `package.oo.yaml`:
+After editing the bootstrap script, use the restart button in the `Project Initialization` section of the bottom panel to run `script.bootstrap` again:
 
 <Image
   sources={{
@@ -41,19 +41,19 @@ After writing the startup script, you can find the button to restart the initial
   }}
 />
 
-The initialization script you write will also be downloaded and referenced by others when the Package is published. When others use your project, the same initialization script will be executed to prepare the environment.
+When you publish a package, this bootstrap script is distributed with it. Other users who open your project will run the same script to prepare the environment.
 
-Once the initialization script is executed successfully, your project environment is ready, and you can start writing your workflows.
+Once that bootstrap step succeeds, the project environment is ready and you can start authoring workflows.
 
 ## Code Dependencies
 
-When writing code, you often need to rely on third-party libraries. There are several ways to introduce code dependencies:
+When writing code, you will often need third-party libraries. There are several ways to add them:
 
 ## Built-In Fusion SDK
 
 `oomol-fusion-sdk` is integrated into OOMOL Studio by default.
 
-That means when you are building Scriptlet Blocks or Task Blocks inside Studio, you can usually use the Fusion SDK directly without manually installing it first.
+That means when you build Scriptlet Blocks or Task Blocks inside Studio, you can usually use the Fusion SDK directly without installing it first.
 
 This is the recommended path when:
 
@@ -61,7 +61,7 @@ This is the recommended path when:
 - you want to package those calls into reusable blocks
 - you want authentication to use the OOMOL runtime token flow
 
-If you are running outside Studio, or if you need an explicitly managed package version in your own app, then install the SDK in the normal way.
+If you are running outside Studio, or if your own app needs an explicitly managed SDK version, install it like a normal dependency instead.
 
 Related docs:
 
@@ -71,7 +71,7 @@ Related docs:
 
 ### Code Dependency Management
 
-In the `Code Dependency Management` section of the bottom panel, search for dependencies for the corresponding language and install them.
+In the `Code Dependency Management` section of the bottom panel, search for dependencies for the relevant language and install them.
 
 <Image
   sources={{
@@ -80,7 +80,7 @@ In the `Code Dependency Management` section of the bottom panel, search for depe
   }}
 />
 
-Dependencies installed this way will automatically record version information in files.
+Dependencies installed this way automatically record version information in project files.
 
 Python dependencies will be recorded in `poetry.toml`:
 
@@ -100,11 +100,11 @@ Node.js dependencies will be recorded in `package.json`:
   }}
 />
 
-Since this method can only search for the latest version of dependencies, if you want to install a historical version, you need to install it via commands in the terminal.
+Because this search UI only exposes the latest version, install older versions through terminal commands instead.
 
-### Enter Installation Commands in the Terminal
+### Install Dependencies in the Terminal
 
-You can directly install dependencies in the terminal and specify the version to install.
+You can also install dependencies directly in the terminal and specify an exact version.
 
 Python dependencies can be installed using [Poetry](https://python-poetry.org/docs/) commands:
 

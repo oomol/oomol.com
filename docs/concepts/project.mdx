@@ -7,9 +7,9 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 # Project
 
-Project is the beginning of everything.
+A project is where work begins in OOMOL.
 
-When you want to achieve a certain goal through code (such as sending an email to your friend), you can create a project and then achieve your purpose through your coding abilities or the work of others in the community.
+When you want to accomplish something with code, such as sending an email automatically, you start by creating a project. From there, you can build it yourself or build on work shared by the community.
 
 You can create a project from scratch:
 
@@ -21,7 +21,7 @@ You can create a project from scratch:
   width="720"
 />
 
-Perhaps the community has already implemented what you want to do, and you can start directly from a community project:
+Sometimes the community has already built something close to what you need, so you can start from a community project:
 
 <Image
   sources={{
@@ -31,11 +31,11 @@ Perhaps the community has already implemented what you want to do, and you can s
   width="720"
 />
 
-The difference is that projects opened from the community already contain workflows that can be run directly or slightly modified to achieve your desired purpose.
+The difference is that a project opened from the community already contains runnable workflows, so you can either use them directly or adapt them with small changes.
 
 ## Project Structure
 
-Regardless of which way you create a project, you will enter the project editing page, and then you can see the file list in the lower left corner:
+No matter how you create a project, you will end up on the project editing page. The lower-left area shows the file list:
 
 <Image
   sources={{
@@ -45,7 +45,7 @@ Regardless of which way you create a project, you will enter the project editing
   width="720"
 />
 
-All files here are the specific content of the project. There must be a `package.oo.yaml` file in the root directory of the project, which is used to describe the version, initialization script and other information of the current project.
+These files are the actual contents of the project. Every project must have a `package.oo.yaml` file at its root. That file describes the project version, bootstrap script, and other metadata.
 
 OOMOL Studio also determines whether the current folder belongs to an OOMOL project based on the `package.oo.yaml` file.
 
@@ -70,6 +70,6 @@ Used to store workflow files created for slot implementations. A slotflow is usu
 If your project uses subflow slots heavily, this directory is where those per-slot implementations will appear.
 
 :::info
-All your operations in the OOMOL Studio panel can basically be automatically saved to these files without manual modification.
-Therefore, we do not recommend that you directly delete files in the project unless you know what you are doing, otherwise direct file operations may cause the application to crash.
+Most actions you perform in the OOMOL Studio UI are saved back to these files automatically.
+For that reason, we do not recommend manually deleting project files unless you know exactly what you are doing. Direct file edits can leave the application in an inconsistent state.
 :::

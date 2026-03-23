@@ -11,11 +11,11 @@ After the [Environment & Dependencies](/docs/get-started/env-and-lib) are prepar
 
 ## Run Preparation
 
-Before running, ensure the following issues are resolved:
+Before running a Flow, check the following:
 
 ### Initialization Errors
 
-Ensure your initialization script runs successfully, indicating that your environment and dependencies are properly prepared:
+Make sure the initialization script runs successfully. That confirms the environment and dependencies are ready:
 
 <Image
   sources={{
@@ -26,7 +26,7 @@ Ensure your initialization script runs successfully, indicating that your enviro
 
 ### Flow Errors
 
-Ensure the Flow has no issues, such as parameter or connection problems. You can hover over the error area to get hints:
+Make sure the Flow has no obvious issues, such as parameter or wiring problems. You can hover over the highlighted error area to see hints:
 
 <Image
   sources={{
@@ -60,7 +60,7 @@ If you intentionally need iterative behavior over arrays, prefer built-in array 
 
 ## Running
 
-After resolving issues, you can run the Flow using the following methods:
+Once those issues are resolved, you can run the Flow in several ways:
 
 ### Run All
 
@@ -73,7 +73,7 @@ In the top menu of the central panel, click the leftmost run button to run the e
   }}
 />
 
-This method clears all previous run records and does not use caching, ensuring a complete run.
+This clears previous run records and avoids cache reuse, so it behaves like a full fresh run.
 
 ### Run Selected
 
@@ -86,11 +86,11 @@ In the top menu of the central panel, click the second run button from the left 
   }}
 />
 
-OOMOL Studio will search upstream Nodes of the selected Nodes and run from the upstream to the selected Nodes.
+OOMOL Studio resolves the selected Nodes' upstream dependencies and runs from upstream to the selected Nodes.
 
 ### Run to Node
 
-In the Node menu, click the run button to run up to the current Node. If the upstream Nodes have successfully run before, the Node's input will use [cache](/docs/advanced-guide/universal-block-settings#cache-mechanism) and will not trigger upstream runs.
+In the Node menu, click the run button to run up to the current Node. If upstream Nodes have already run successfully, this mode can reuse [cache](/docs/advanced-guide/universal-block-settings#cache-mechanism) and skip those upstream executions.
 
 <Image
   sources={{
@@ -101,7 +101,7 @@ In the Node menu, click the run button to run up to the current Node. If the ups
 
 ### Run to Node Without Cache
 
-In the Node menu, click `Run Without Cache` to search all upstream Nodes of the current Node and execute them, running up to the current Node.
+In the Node menu, click `Run Without Cache` to execute all upstream Nodes again and continue up to the current Node.
 
 <Image
   sources={{
@@ -116,9 +116,9 @@ In the Node menu, click `Run Without Cache` to search all upstream Nodes of the 
 
 ## Logs
 
-After running the Flow using any method, the log panel at the bottom will display the run logs. Each run will record the latest logs, overwriting the previous logs.
+After any run, the log panel at the bottom shows the logs for the latest run. New runs replace the previously displayed run logs.
 
-Logs record the input and output results of each Node run, as well as content printed to standard output in the code.
+Logs include each Node's inputs and outputs, along with anything written to standard output by your code.
 
 <Image
   sources={{
@@ -131,7 +131,7 @@ Logs record the input and output results of each Node run, as well as content pr
 
 #### Filtering
 
-All Nodes run will be displayed in the left sidebar. Clicking a Node will filter its logs.
+All Nodes involved in the run appear in the left sidebar. Clicking a Node filters the log view to that Node.
 
 <Image
   sources={{
@@ -142,7 +142,7 @@ All Nodes run will be displayed in the left sidebar. Clicking a Node will filter
 
 #### Searching
 
-The search feature allows you to search log content by keywords. Search is case-sensitive.
+The search box lets you search log content by keyword. Search is case-sensitive.
 
 <Image
   sources={{
@@ -153,7 +153,7 @@ The search feature allows you to search log content by keywords. Search is case-
 
 #### Uncaptured Logs
 
-Switch the menu next to the search bar to `Studio` to display uncaptured logs inside OOMOL Studio.
+Switch the menu next to the search bar to `Studio` to show uncaptured internal logs from OOMOL Studio.
 
 <Image
   sources={{
@@ -162,13 +162,13 @@ Switch the menu next to the search bar to `Studio` to display uncaptured logs in
   }}
 />
 
-Generally, these logs only appear in extreme cases where internal exceptions cannot be captured.
+These logs usually appear only in edge cases where an internal exception was not captured in the normal workflow log.
 
 #### Export
 
 You can export the full logs of the current run to a specified folder.
 
-Exported logs include logs from internal schedulers and executors, typically used for diagnosing application exceptions.
+Exported logs include internal scheduler and executor logs, which are mainly useful when diagnosing application-level failures.
 
 <Image
   sources={{
@@ -178,7 +178,7 @@ Exported logs include logs from internal schedulers and executors, typically use
 />
 
 :::info
-If the log content is too long, OOMOL Studio will not print these logs to avoid application crashes. You can still view these logs using the export log feature.
+If the log output is too large, OOMOL Studio may avoid rendering all of it directly to prevent UI instability. You can still inspect the full output through log export.
 :::
 
 If you encounter unresolved exceptions after running the Flow, try exporting the run logs and sending them to OOMOL Studio's official support at `support@oomol.com` for assistance.

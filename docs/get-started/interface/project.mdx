@@ -8,7 +8,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 # Project Interface
 
-After opening any Project, you can see a global view of the Project.
+After opening any project, you see the full project workspace.
 
 <Image
   sources={{
@@ -21,11 +21,11 @@ After opening any Project, you can see a global view of the Project.
   }}
 />
 
-We temporarily divide it into four areas:
+For explanation, we divide it into four areas:
 
 ## Left Sidebar
 
-In the left sidebar, OOMOL Studio will show "Explorer" by default. You can also switch to other subviews as needed, such as: Search, Source Control (git), Extensions, OOMOL Storage, OOMOL Secrets.
+By default, the left sidebar opens to **Explorer**. You can switch to other views such as Search, Source Control (`git`), Extensions, OOMOL Storage, and OOMOL Secrets.
 
 ### Explorer
 
@@ -69,19 +69,19 @@ Here you can view all workflows, shared blocks, and files in the current project
   </div>
 </div>
 
-This area shows which Flows are available in the current project; you can add, delete, rename, and copy them here.
+This area shows the Flows in the current project. You can add, delete, rename, and duplicate them here.
 
 Clicking the left icon allows you to change the icon of this workflow, and clicking the gear icon in the lower right corner allows you to copy and delete it. The function of "Convert to Subflow Block" will be introduced in later sections.
 
-Each Flow has a name and an ID, where the ID must be unique, and the name can be duplicated. The purpose of the ID is reflected in disk storage; we will use the ID as the directory name, while the name is for user recognition.
+Each Flow has both a name and an ID. The ID must be unique, while the name does not need to be. The ID is used on disk as the directory name; the name is mainly for display.
 
-Currently, the sorting of multiple Flows is done in dictionary order by ID, and we will provide drag-and-drop sorting functionality in the future.
+Today, multiple Flows are sorted lexicographically by ID. Drag-and-drop ordering may be added later.
 
 > By default, if you do not fill in the Flow name, the system will automatically name it as the ID.
 
 #### Shared Blocks
 
-This area displays all shared blocks in the current project, and the UI interaction is basically the same as the workflows mentioned above. It is primarily used to store reusable blocks, such as commonly used functions and data processing logic.
+This area displays all shared blocks in the current project. The interaction model is mostly the same as for Flows. It is mainly used for reusable logic such as utility functions and data-processing blocks.
 
 We will introduce the usage of shared blocks in detail in subsequent sections.
 
@@ -105,7 +105,7 @@ All files for this project are stored here. You can perform create, delete, modi
   />
 </div>
 
-This will search through all file contents in the current project and supports regular expression searching.
+This searches across all file contents in the current project and supports regular expressions.
 
 ### Source Control
 
@@ -134,7 +134,7 @@ This will search through all file contents in the current project and supports r
   />
 </div>
 
-Here you can view the git status of the current project and perform operations such as commit, push, and pull. We have built-in an SSH Agent for macOS, which proxies your local SSH keys, avoiding the need for password input or SSH configuration. It integrates well with the local 1Password.
+Here you can inspect the current Git status and perform operations such as commit, push, and pull. On macOS, OOMOL Studio includes a built-in SSH agent bridge that forwards your local SSH keys, so you usually do not need extra password prompts or manual SSH setup. It also works well with local 1Password integration.
 
 :::info
 Regarding the SSH Agent, we have open-sourced it: [ssh-forward](https://github.com/oomol-lab/ssh-forward), [ovm-ssh-agent](https://github.com/oomol-lab/ovm-ssh-agent).
@@ -144,9 +144,9 @@ This feature currently only supports macOS.
 :::
 
 :::warning
-It is important to note that the git status may not always be timely; if you leave OOMOL Studio to modify the project's files (add, delete, rename, etc.), the git status will not be updated. You can manually refresh by clicking the refresh button in the upper left corner.
+Git status is not always refreshed immediately. If you modify project files outside OOMOL Studio, such as adding, deleting, or renaming files, the Source Control view may not update automatically. You can refresh it manually with the button in the upper-left corner.
 
-This issue occurs due to problems with the Linux kernel's inotify mechanism on virtiofs. More details can be found at: https://github.com/containers/podman/issues/22343.
+This happens because of known issues with the Linux kernel `inotify` mechanism on `virtiofs`. More details: https://github.com/containers/podman/issues/22343.
 
 This issue is currently only present on macOS, and we will fix it in future versions.
 :::
@@ -198,7 +198,7 @@ Currently, the extension source used by OOMOL Studio is [OpenVSX](https://open-v
   />
 </div>
 
-This is basically equivalent to the [Home - Space](/docs/get-started/interface/home/#space-page), just adapted to a narrower width.
+This is essentially the same as [Home - Space](/docs/get-started/interface/home/#space-page), but adapted to a narrower layout.
 
 :::info
 You cannot create new mount points on the current page. If you want to create new mount points, please go to the [Home - Space](/docs/get-started/interface/home/#space-page) to create them.
@@ -231,7 +231,7 @@ You cannot create new mount points on the current page. If you want to create ne
   />
 </div>
 
-This is equivalent to [Home - Secrets](/docs/get-started/interface/home/#secrets-page), just adapted to a narrower width.
+This is equivalent to [Home - Secrets](/docs/get-started/interface/home/#secrets-page), but adapted to a narrower layout.
 
 ## Center Main Area
 
@@ -256,21 +256,21 @@ This is equivalent to [Home - Secrets](/docs/get-started/interface/home/#secrets
   }}
 />
 
-This area will display the current workflow, which is the most frequently used area. You can edit the workflow here, including running, debugging, and connecting.
+This is the main workflow editing area, and it is where you will spend most of your time. Here you can edit the workflow, run it, debug it, and connect blocks.
 
 The four icons in the upper right represent:
 
 - Run
 - Debug
 - Toggle between UI and YAML
-  - The underlying workflow is a YAML file, but by default, we convert it to a UI form.
+  - The workflow is stored as YAML, but OOMOL Studio shows it as a visual editor by default.
 - Split Editor
 
 The four icons in the lower left represent:
 
 - Zoom In
 - Zoom Out
-- Fit to Current View Dimensions
+- Fit to current view
 - Auto Layout
   - When there are many blocks and connections, auto layout can reduce visual clutter.
 
@@ -305,7 +305,7 @@ In this area, you can observe runtime logs and manage third-party dependencies n
   />
 </div>
 
-This area will automatically collect some code issues and errors so you can promptly locate problems and errors.
+This area automatically collects validation issues and code errors so you can locate problems quickly.
 
 ### Output
 
@@ -322,7 +322,7 @@ This area will automatically collect some code issues and errors so you can prom
   />
 </div>
 
-This area will display some log information from OOMOL Studio itself and output logs from plugins. Generally, you do not need to pay attention to this area.
+This area shows logs from OOMOL Studio itself and from extensions. In normal usage, you usually do not need to watch it closely.
 
 ### Terminal
 
@@ -339,7 +339,7 @@ This area will display some log information from OOMOL Studio itself and output 
   />
 </div>
 
-This area allows you to use a terminal within OOMOL Studio, where you can execute some Linux commands. The project runs in a container, not in your local environment, so commands executed here **will generally not** affect your local environment.
+This area gives you a terminal inside OOMOL Studio, where you can run Linux commands. The project runs in a container rather than directly on your host machine, so commands executed here **usually do not** affect your local environment.
 
 :::info
 Although the environment is isolated, do not perform dangerous operations, such as `rm -rf /`, as mounting certain directories may lead to files being deleted from your local machine.
@@ -360,7 +360,7 @@ Although the environment is isolated, do not perform dangerous operations, such 
   />
 </div>
 
-Here, you can install some npm / PyPI dependencies into the current project so you can include and call them in scriptlets.
+Here you can install npm or PyPI dependencies into the current project so they can be imported from scriptlets and other project code.
 
 ### Flow Logs
 
@@ -377,7 +377,7 @@ Here, you can install some npm / PyPI dependencies into the current project so y
   />
 </div>
 
-When you run a workflow, any output from the workflow will be displayed here. If you do not care about event logs, you can click in the upper right corner to switch to "Stdio" which will only show `stdout` and `stderr` from the workflow.
+When you run a workflow, its output appears here. If you do not need event-level logs, switch to `Stdio` in the upper-right corner to show only the workflow's `stdout` and `stderr`.
 
 ### Project Bootstrap
 
@@ -394,12 +394,12 @@ When you run a workflow, any output from the workflow will be displayed here. If
   />
 </div>
 
-When you import a new project, OOMOL Studio will automatically initialize the project, including:
+When you import a new project, OOMOL Studio automatically initializes it, including:
 
 - Downloading Toolpack
 - Installing Toolpack
-- Executing Project Bootstrap Script
-  - Defined by the `scripts.bootstrap` field in the current project's `package.oo.yaml` file.
+- Executing the project bootstrap script
+  - Defined by the `script.bootstrap` field in the current project's `package.oo.yaml` file.
 
 ### Toolpack Install
 
@@ -416,11 +416,11 @@ When you import a new project, OOMOL Studio will automatically initialize the pr
   />
 </div>
 
-When you install third-party toolpack, logs of the toolpack installation will be displayed here.
+When you install a third-party toolpack, its installation logs appear here.
 
 ## Right Sidebar
 
-In this area, you can install and use toolpack, or publish the current project to the OOMOL Store. You can also use the AI assistant to complete certain tasks.
+In this area, you can install and use toolpacks, publish the current project, and use the AI assistant for editing tasks.
 
 ### Toolpack
 
@@ -438,9 +438,9 @@ In this area, you can install and use toolpack, or publish the current project t
   />
 </div>
 
-Each toolpack may contain one or more blocks; the package name is displayed above, and the block list is displayed below. Except for some built-in system blocks in OOMOL Studio, you can delete all others.
+Each toolpack may contain one or more blocks. The package name is shown at the top, and the block list appears below it. Except for built-in system blocks, installed toolpacks can be removed.
 
-Each toolpack may have different versions, and you can click the version number of the toolpack below to upgrade or downgrade.
+Toolpacks can have multiple versions, and you can click the displayed version number to upgrade or downgrade.
 
 :::info
 When you install Tool-1 in the Proj-A project, you can also use Tool-1 directly in the Proj-B project without needing to reinstall it.
@@ -464,9 +464,9 @@ Only when you actually use Tool-1 in the workflow will it be included when publi
   />
 </div>
 
-Here, you can browse all toolpack in the OOMOL Store and install them. If there are some installed packages that are not the latest version, you can also upgrade them in one click.
+Here you can browse all toolpacks in the OOMOL Store and install them. If some installed packages are outdated, you can also upgrade them with one click.
 
-When you click any toolpack, we will display the usage instructions (README) for that toolpack in the central area.
+When you click any toolpack, its README is shown in the center area.
 
 ### Publish
 
