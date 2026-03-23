@@ -356,3 +356,128 @@ $desktop-width: $breakpoint-xl;
     }
   }
 }
+
+// 文档页统一使用无衬线字体，提升中英文阅读一致性
+.docs-wrapper {
+  --ifm-font-family-base: var(--oomol-font-body);
+  --ifm-heading-font-family: var(--oomol-font-body);
+  --ifm-font-size-base: 1rem;
+  --ifm-leading: 1.75;
+
+  .theme-doc-markdown,
+  .theme-doc-breadcrumbs,
+  .theme-doc-sidebar-container,
+  .theme-doc-toc-desktop,
+  .theme-doc-toc-mobile,
+  .pagination-nav,
+  .table-of-contents,
+  .breadcrumbs,
+  .menu__link {
+    font-family: var(--oomol-font-body);
+  }
+
+  .theme-doc-markdown :is(h1, h2, h3, h4, h5, h6),
+  .pagination-nav__label,
+  .pagination-nav__sublabel,
+  .table-of-contents__link,
+  .breadcrumbs__link {
+    font-family: var(--oomol-font-body);
+  }
+
+  .theme-doc-markdown {
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+
+    > :where(p, ul, ol, blockquote) {
+      max-width: 72ch;
+    }
+
+    > :where(p, ul, ol, blockquote, table, pre, .theme-admonition, .tabs-container) {
+      margin-bottom: 1.1rem;
+    }
+
+    :where(p, li) {
+      line-height: 1.78;
+    }
+
+    :where(ul, ol) {
+      padding-inline-start: 1.25rem;
+    }
+
+    li + li {
+      margin-top: 0.35rem;
+    }
+
+    :is(h1, h2, h3, h4, h5, h6) {
+      font-family: var(--oomol-font-body);
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 1.9rem + 1.4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 1.45rem + 0.7vw, 2rem);
+      margin-top: 2.75rem;
+      margin-bottom: 0.9rem;
+    }
+
+    h3 {
+      font-size: clamp(1.28rem, 1.2rem + 0.35vw, 1.5rem);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h4,
+    h5,
+    h6 {
+      letter-spacing: -0.01em;
+      margin-top: 1.5rem;
+      margin-bottom: 0.6rem;
+    }
+  }
+
+  .theme-doc-breadcrumbs,
+  .table-of-contents,
+  .pagination-nav,
+  .theme-doc-sidebar-container {
+    line-height: 1.55;
+  }
+
+  .breadcrumbs__link,
+  .table-of-contents__link {
+    font-size: 0.95rem;
+  }
+
+  .pagination-nav__label {
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  .pagination-nav__sublabel {
+    font-size: 0.82rem;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+  }
+
+  .menu__link {
+    line-height: 1.45;
+  }
+
+  @media screen and (max-width: 996px) {
+    .theme-doc-markdown {
+      > :where(p, ul, ol, blockquote) {
+        max-width: none;
+      }
+
+      h1 {
+        font-size: clamp(1.9rem, 1.65rem + 1.2vw, 2.35rem);
+      }
+    }
+  }
+}
