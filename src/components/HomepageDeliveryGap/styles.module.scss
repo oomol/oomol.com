@@ -114,6 +114,35 @@
   color: rgba(221, 214, 231, 0.72);
 }
 
+:global(html[lang="en"]) .contentGrid {
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(2.2rem, 4.6vw, 4rem);
+}
+
+:global(html[lang="en"]) .title {
+  max-width: 13.5ch;
+  font-size: clamp(2.35rem, 4.3vw, 4rem);
+  line-height: 1.02;
+}
+
+:global(html[lang="en"]) .problemCard {
+  grid-template-columns: minmax(4.4rem, 5rem) minmax(0, 1fr);
+  column-gap: clamp(1.15rem, 2.2vw, 2rem);
+  row-gap: 0.7rem;
+}
+
+:global(html[lang="en"]) .problemTitle {
+  max-width: 20ch;
+  line-height: 1.28;
+}
+
+:global(html[lang="en"]) .problemDescription {
+  grid-column: 2;
+  max-width: 36rem;
+  padding-top: 0;
+  line-height: 1.78;
+}
+
 @media (max-width: 996px) {
   .contentGrid,
   .problemGrid {

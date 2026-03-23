@@ -225,6 +225,49 @@
   }
 }
 
+:global(html[lang="en"]) .container {
+  grid-template-columns: 1fr;
+  gap: 1.6rem;
+}
+
+:global(html[lang="en"]) .header {
+  max-width: 42rem;
+}
+
+:global(html[lang="en"]) .title {
+  max-width: 14ch;
+  font-size: clamp(2.35rem, 4.2vw, 3.75rem);
+  line-height: 1.02;
+}
+
+:global(html[lang="en"]) .subtitle {
+  max-width: 34rem;
+}
+
+:global(html[lang="en"]) .grid {
+  gap: 1.1rem;
+}
+
+:global(html[lang="en"]) .card {
+  gap: 1.2rem;
+  padding: 1.5rem 1.55rem 1.6rem;
+}
+
+:global(html[lang="en"]) .cardTitle {
+  max-width: 20ch;
+  font-size: 1.34rem;
+  line-height: 1.32;
+}
+
+:global(html[lang="en"]) .cardDescription {
+  max-width: 42ch;
+  line-height: 1.78;
+}
+
+:global(html[lang="en"]) .valueCaption {
+  max-width: 18ch;
+}
+
 @media (max-width: 996px) {
   .container {
     grid-template-columns: 1fr;

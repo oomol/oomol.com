@@ -142,6 +142,17 @@
   object-fit: cover;
 }
 
+:global(html[lang="en"]) .container {
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(2.1rem, 4vw, 3.4rem);
+}
+
+:global(html[lang="en"]) .title {
+  max-width: 18ch;
+  font-size: clamp(2.2rem, 4vw, 3.65rem);
+  line-height: 1.03;
+}
+
 @media (max-width: 996px) {
   .container {
     grid-template-columns: 1fr;

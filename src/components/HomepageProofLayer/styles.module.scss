@@ -218,6 +218,42 @@
   }
 }
 
+:global(html[lang="en"]) .topGrid {
+  grid-template-columns: 1fr;
+  gap: 1.8rem;
+}
+
+:global(html[lang="en"]) .header {
+  max-width: 58rem;
+}
+
+:global(html[lang="en"]) .title {
+  max-width: 18ch;
+  font-size: clamp(2.2rem, 4vw, 3.65rem);
+  line-height: 1.03;
+}
+
+:global(html[lang="en"]) .subtitle {
+  max-width: 56rem;
+}
+
+:global(html[lang="en"]) .signalCard {
+  padding: 1.2rem 1.25rem 1.3rem;
+}
+
+:global(html[lang="en"]) .signalValue {
+  font-size: clamp(1.36rem, 1.85vw, 1.95rem);
+  line-height: 1.08;
+}
+
+:global(html[lang="en"]) .featuredCase .caseTitle {
+  font-size: 1.6rem;
+}
+
+:global(html[lang="en"]) .caseTitle {
+  line-height: 1.24;
+}
+
 @media (max-width: 996px) {
   .topGrid,
   .signalGrid,

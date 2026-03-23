@@ -374,6 +374,29 @@
   margin-bottom: 0.45rem;
 }
 
+:global(html[lang="en"]) .sectionTitle {
+  max-width: 18ch;
+  font-size: clamp(2.2rem, 4vw, 3.65rem);
+  line-height: 1.03;
+}
+
+:global(html[lang="en"]) .headerText {
+  max-width: 64rem;
+}
+
+:global(html[lang="en"]) .sectionSubtitle {
+  max-width: 54rem;
+}
+
+:global(html[lang="en"]) .topPair {
+  grid-template-columns: minmax(340px, 0.76fr) minmax(0, 1.24fr);
+  gap: 1.5rem;
+}
+
+:global(html[lang="en"]) .cardTitle {
+  font-size: clamp(2.35rem, 4vw, 3.5rem);
+}
+
 @media (max-width: 996px) {
   .comparisonSection {
     padding: 4rem 0;

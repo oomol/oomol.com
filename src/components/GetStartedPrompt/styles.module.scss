@@ -59,6 +59,16 @@
   display: none;
 }
 
+:global(html[lang="en"]) .textBox {
+  max-width: 46rem;
+}
+
+:global(html[lang="en"]) .title {
+  max-width: 16ch;
+  font-size: clamp(2.2rem, 4vw, 3.55rem);
+  line-height: 1.03;
+}
+
 @media (max-width: 768px) {
   .content {
     width: min(100%, calc(100% - 40px));

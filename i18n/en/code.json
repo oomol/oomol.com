@@ -66,19 +66,19 @@
     "message": "Most time is not spent writing the function itself. It goes into interface wrapping, deployment, environment alignment, and the repetitive work that follows."
   },
   "HOME.DeliveryGap.problem1.title": {
-    "message": "Once the Function Is Done, Backend Work Starts Again"
+    "message": "Function Done. Backend Work Begins."
   },
   "HOME.DeliveryGap.problem1.description": {
     "message": "The implementation already exists, but publishing it as an API or task still means rebuilding interfaces, deployment steps, and runtime wrappers."
   },
   "HOME.DeliveryGap.problem2.title": {
-    "message": "Running Locally Is Not the Same as Delivering Reliably"
+    "message": "Local Runs Do Not Guarantee Delivery"
   },
   "HOME.DeliveryGap.problem2.description": {
     "message": "Development, dependency, and deployment environments drift apart. The problem is often not the code itself, but whether it still holds once it leaves your machine."
   },
   "HOME.DeliveryGap.problem3.title": {
-    "message": "The Same Capability Gets Repackaged Over and Over"
+    "message": "One Capability Gets Wrapped Repeatedly"
   },
   "HOME.DeliveryGap.problem3.description": {
     "message": "Teams often wrap the same implementation separately for APIs, MCP tools, and automation tasks, multiplying delivery cost without adding capability."
@@ -87,10 +87,10 @@
     "message": "Real Use Cases"
   },
   "HOME.ProofLayer.title": {
-    "message": "These Capabilities Already Power Real Products"
+    "message": "These Capabilities Already Run in Real Products"
   },
   "HOME.ProofLayer.subtitle": {
-    "message": "Using pdf.oomol.com as an example, the same OOMOL capabilities have already been combined into multiple tools and services for real users, and they continue to run reliably."
+    "message": "Using pdf.oomol.com as an example, the same OOMOL capabilities already power multiple tools and services for real users."
   },
   "HOME.ProofLayer.note": {
     "message": "This layer now includes one live production example plus two placeholders. Later we can replace more of it with real services, team names, and usage data."
@@ -609,7 +609,7 @@
     "message": "What You Publish Stays Reusable"
   },
   "HOME.CommunityShare.subtitle": {
-    "message": "Publishing is not the end. It turns capabilities into reusable building blocks, so each delivery makes the next one easier."
+    "message": "Publishing is not the end. It turns capabilities into reusable building blocks and makes the next delivery easier."
   },
   "HOME.CommunityShare.point1.title": {
     "message": "Reuse What You Already Built"
@@ -2263,10 +2263,10 @@
     "message": "Containerized deployment to private cloud or K8s clusters, supporting CI/CD pipelines for continuous delivery and operations of enterprise-grade API services."
   },
   "HOME.ProductComparison.title": {
-    "message": "Turn Validated Functions into Cloud Services"
+    "message": "Turn Validated Functions into Services"
   },
   "HOME.ProductComparison.subtitle": {
-    "message": "OOMOL Cloud is not another development environment. It is the service layer that carries what you already validated locally into real online delivery."
+    "message": "OOMOL Cloud is the service layer that takes what you already validated locally and puts it online."
   },
   "HOME.ChatAgent.title": {
     "message": "OOMOL Chat & Agent Ecosystem"
@@ -2314,10 +2314,10 @@
     "message": "Launch faster, manage less"
   },
   "HOME.ProductComparison.cloud.capability": {
-    "message": "Get validated capabilities online faster without rebuilding interfaces, runtime layers, or scaling logic around them."
+    "message": "Get validated capabilities online without rebuilding interfaces, runtime layers, or scaling logic."
   },
   "HOME.ProductComparison.cloud.scenario": {
-    "message": "Best for developers who want to ship a real service quickly, and for small teams that want less deployment and operations overhead."
+    "message": "Best for developers who want to ship quickly and teams that want less deployment and operations overhead."
   },
   "HOME.ProductComparison.cloud.tech": {
     "message": "Validate locally first, then deliver to Cloud. OOMOL handles runtime, scaling, and external delivery."
@@ -2329,7 +2329,7 @@
     "message": "Delivery Targets"
   },
   "HOME.ProductComparison.outputSummary": {
-    "message": "The same validated implementation can continue as an API, MCP tool, or automation task instead of forcing you to build a separate system for each output."
+    "message": "The same validated implementation can continue as an API, MCP tool, or automation task instead of becoming three separate systems."
   },
   "HOME.ProductComparison.output1.title": {
     "message": "API Services"
@@ -2356,7 +2356,7 @@
     "message": "Less backend rebuilding"
   },
   "HOME.ProductComparison.benefit1.description": {
-    "message": "Cloud takes over the external service layer so you do not need to build a second delivery stack around the function."
+    "message": "Cloud takes over the external service layer, so you do not need a second delivery stack around the function."
   },
   "HOME.ProductComparison.benefit2.label": {
     "message": "Ops Overhead"
@@ -2365,7 +2365,7 @@
     "message": "Less production maintenance"
   },
   "HOME.ProductComparison.benefit2.description": {
-    "message": "Keep your attention on the capability itself instead of spending more time on environments, scaling, and production maintenance."
+    "message": "Stay focused on the capability itself instead of spending more time on environments, scaling, and production maintenance."
   },
   "HOME.DeveloperBenefits.badge": {
     "message": "Developer Benefits"
@@ -2374,7 +2374,7 @@
     "message": "Build First. Decide on Cost Later."
   },
   "HOME.DeveloperBenefits.subtitle": {
-    "message": "We remove two common early blockers: model cost and the cost of validating lightweight tasks online."
+    "message": "We remove two early blockers: model cost and the cost of getting lightweight tasks online."
   },
   "HOME.DeveloperBenefits.card1.eyebrow": {
     "message": "Studio Benefit"
@@ -2389,13 +2389,13 @@
     "message": "Use your own model"
   },
   "HOME.DeveloperBenefits.card1.title": {
-    "message": "Use Your Own Model and Keep Getting Started Costs Lower"
+    "message": "Use Your Own Model and Start at Lower Cost"
   },
   "HOME.DeveloperBenefits.card1.description": {
-    "message": "OOMOL Studio lets you configure your own AI model. If you already have model quota elsewhere, you do not need to pay for another model service just to get local development running. Right now we especially recommend GLM-5."
+    "message": "OOMOL Studio lets you configure your own AI model. If you already have model quota elsewhere, you do not need another paid model service just to get local development running. We currently recommend GLM-5."
   },
   "HOME.DeveloperBenefits.card1.note": {
-    "message": "For many developers, that is already enough to get Studio running and finish local validation."
+    "message": "For many developers, that is enough to get Studio running and finish local validation."
   },
   "HOME.DeveloperBenefits.card1.cta": {
     "message": "Start with Studio"
@@ -2413,13 +2413,13 @@
     "message": "Free Cloud Task time"
   },
   "HOME.DeveloperBenefits.card2.title": {
-    "message": "200 Free Cloud Task Minutes Each Month Help You Get Lightweight Tasks Running"
+    "message": "200 Free Cloud Task Minutes Each Month for Lightweight Jobs"
   },
   "HOME.DeveloperBenefits.card2.description": {
     "message": "We give developers 200 minutes of Cloud Task usage every month. For scheduled jobs, lightweight automation, and validation flows, that is often enough to get real online tasks running."
   },
   "HOME.DeveloperBenefits.card2.note": {
-    "message": "If you are shipping a lightweight app or workflow, the free quota is often enough to get your tasks running before you pay anything."
+    "message": "For a lightweight app or workflow, the free quota is often enough to get tasks running before you pay anything."
   },
   "HOME.DeveloperBenefits.card2.cta": {
     "message": "Explore OOMOL Cloud"
@@ -2590,10 +2590,10 @@
     "message": "Generate functions in a real coding environment, validate them with local containers, then carry the same code forward into service delivery."
   },
   "STUDIO.manifesto.title": {
-    "message": "A Studio Designed for Developer Productivity"
+    "message": "A Studio Built for Real Developer Work"
   },
   "STUDIO.manifesto.subtitle": {
-    "message": "A real coding environment for developers: let AI help generate functions, validate them locally, then deliver them directly as APIs, MCP tools, or automation tasks."
+    "message": "A real coding environment where AI helps generate functions, validate them locally, and deliver them as APIs, MCP tools, or automation tasks."
   },
   "STUDIO.story.paragraph1": {
     "message": "What we want is not another tool that asks developers to adapt to the platform, but a working environment where you can actually write functions, orchestrate nodes, debug dependencies, and validate results."
@@ -2614,7 +2614,7 @@
     "message": "So Studio has a clear role: not to replace engineering workflow, but to bring function generation, local validation, and delivery back inside it."
   },
   "STUDIO.principle1.title": {
-    "message": "1. Nodes Are Functions, Orchestration Is Composition"
+    "message": "1. Nodes Are Functions. Flows Are Composition."
   },
   "STUDIO.principle1.paragraph1": {
     "message": "Studio does not introduce a new definition language. It organizes standard code into runnable capabilities."
@@ -2650,7 +2650,7 @@
     "message": "AI, code, and the toolchain need to work together instead of forcing you to switch contexts."
   },
   "STUDIO.principle3.title": {
-    "message": "3. Local and Cloud Environments Match, Delivery Gets Easier"
+    "message": "3. Match Local and Cloud Environments Early"
   },
   "STUDIO.principle3.paragraph1": {
     "message": "The hard part of function delivery is often not writing the code, but controlling dependencies, environment, and runtime behavior."

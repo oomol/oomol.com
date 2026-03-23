@@ -64,12 +64,12 @@
   gap: 0.85rem;
   padding: 1.2rem 1.15rem;
   border-radius: 1.3rem;
-  background:
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--oomol-primary-bg) 76%, var(--oomol-bg-elevated)) 0%,
-      color-mix(in srgb, var(--oomol-primary-bg) 48%, var(--oomol-bg-elevated)) 100%
-    );
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--oomol-primary-bg) 76%, var(--oomol-bg-elevated)) 0%,
+    color-mix(in srgb, var(--oomol-primary-bg) 48%, var(--oomol-bg-elevated))
+      100%
+  );
   border: 1px solid var(--oomol-primary-border);
 
   p {
@@ -90,12 +90,11 @@
   padding: 0.9rem;
   border-radius: 1.8rem;
   border: 1px solid var(--oomol-divider);
-  background:
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%) 0%,
-      color-mix(in srgb, var(--oomol-bg-elevated) 100%, black 0%) 100%
-    );
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%) 0%,
+    color-mix(in srgb, var(--oomol-bg-elevated) 100%, black 0%) 100%
+  );
   box-shadow: var(--oomol-shadow-md);
 }
 
@@ -104,7 +103,11 @@
   min-height: 420px;
   border-radius: 1.3rem;
   border: 1px solid var(--oomol-divider);
-  background: linear-gradient(180deg, rgba(251, 253, 255, 0.9) 0%, rgba(239, 244, 251, 0.94) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(251, 253, 255, 0.9) 0%,
+    rgba(239, 244, 251, 0.94) 100%
+  );
 }
 
 .homePreviewImage {
@@ -171,6 +174,27 @@
     font-weight: 650;
     color: var(--oomol-text-primary);
   }
+}
+
+:global(html[lang="en"]) .homeHeader {
+  max-width: 60rem;
+}
+
+:global(html[lang="en"]) .homeTitle {
+  max-width: 17ch;
+  font-size: clamp(2.2rem, 4vw, 3.65rem);
+  line-height: 1.03;
+}
+
+:global(html[lang="en"]) .homeHero {
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+  gap: 1.8rem;
+}
+
+:global(html[lang="en"]) .homePrincipleContent h3 {
+  max-width: 22ch;
+  font-size: 1.5rem;
+  line-height: 1.28;
 }
 
 @media (max-width: 996px) {
@@ -447,6 +471,10 @@
   }
 
   .homePreviewFrame {
-    background: linear-gradient(180deg, rgba(35, 41, 39, 0.94) 0%, rgba(23, 28, 26, 0.98) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(35, 41, 39, 0.94) 0%,
+      rgba(23, 28, 26, 0.98) 100%
+    );
   }
 }
