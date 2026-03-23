@@ -245,6 +245,20 @@ Two rules are especially important:
 1. A public output of a subflow must be routed from an internal result.
 2. Slot output names and slotflow output names must match exactly, otherwise the subflow cannot receive the expected result.
 
+If a public output is routed from multiple internal sources, the first valid completed source becomes the outward-facing result. This is useful for short-circuit branches such as empty-array handling.
+
+## Reference Forms in YAML
+
+If you edit reusable units through YAML, the most common local reference forms are:
+
+| Use case | Form |
+| --- | --- |
+| Reference a local task | `task: self::{name}` |
+| Reference a local subflow | `subflow: self::{name}` |
+| Reference a local slotflow | `slotflow: self::+slotflow#N` |
+
+When a reusable unit comes from another package, use that package namespace instead of `self::`.
+
 ## Authoring Rules
 
 The UI hides much of the file structure, but the underlying model still follows a few stable rules:
@@ -254,6 +268,7 @@ The UI hides much of the file structure, but the underlying model still follows 
 - Extra parameters passed into a slot need both a declared Handle and actual wiring in the caller Flow.
 - Slotflow outputs should match the slot contract exactly.
 - If a subflow can finish through multiple valid branches, its public output can route from multiple internal sources.
+- Optional Handles can be modeled with `nullable`, and when a default is intentionally empty, leaving the value empty is often clearer than inventing a placeholder value.
 
 This is commonly used for short-circuit cases such as empty arrays.
 
@@ -274,9 +289,13 @@ flowchart LR
 
 This pattern exists for a reason:
 
+- `self::switch-by-length` cleanly separates empty and non-empty arrays.
+- `self::each` emits item-by-item iteration data.
 - `switch-by-length` handles the empty-array branch early.
 - `each` emits one item at a time together with metadata such as index and length.
 - `slot` leaves the per-item behavior replaceable.
 - `reducer` or collector Nodes accumulate the final result.
 
 If you are designing reusable multi-item processing, this pattern is usually easier to maintain than putting all logic into one large script Node.
+
+For a field-by-field reference of YAML forms such as `inputs_def`, `outputs_from`, and `self::` references, see [Flow YAML Authoring](/docs/advanced-guide/flow-yaml-authoring).

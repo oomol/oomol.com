@@ -120,6 +120,21 @@ If you must use script blocks, please remember that you can only use built-in mo
 We will address this issue in future versions.
 :::
 
+## Common Flow Authoring Errors
+
+If a Flow cannot run because of validation or wiring errors, the following problems are the most common:
+
+| Problem | Typical cause | What to check |
+| --- | --- | --- |
+| Unknown Handle | The Handle name is misspelled or uses different capitalization | Check that the connected Handle names match exactly |
+| Required input missing | A required Handle is not connected | Wire the input, or mark it nullable only when it is truly optional |
+| Task or subflow reference not found | The YAML reference form is wrong | For local reusable units, use forms such as `task: self::{name}` or `subflow: self::{name}` |
+| Slot output does not arrive | The slot contract and slotflow output do not use the same Handle name | Check that the slot output name and slotflow output name are identical |
+| No public output from a subflow | The subflow exposes no outward routing | Check whether the subflow has a root-level `outputs_from` |
+| Circular dependency | A downstream Node is wired back into an upstream Node | Remove the direct cycle and redesign the data flow |
+
+If your issue is specifically about subflows, slots, or slotflows, see [Subflow Block Advanced Usage](/docs/advanced-guide/advanced-subflow-block).
+
 ## How to connect to services on the user's computer (MySQL, Redis, etc.) within OOMOL Studio
 
 OOMOL Studio application runs in a container environment, which is isolated from the user's computer.

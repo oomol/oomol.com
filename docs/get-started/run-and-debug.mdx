@@ -35,6 +35,29 @@ Ensure the Flow has no issues, such as parameter or connection problems. You can
   }}
 />
 
+The most common Flow authoring issues are:
+
+- A Handle name does not match the upstream or downstream declaration exactly.
+- A required input is still unconnected, or its nullable setting does not match the intended usage.
+- A task, subflow, or slotflow reference uses the wrong namespace or syntax.
+- The graph accidentally contains a direct circular dependency.
+
+```mermaid
+flowchart LR
+    A["Node A"] --> B["Node B"]
+    B --> C["Node C"]
+    C -. "invalid direct cycle" .-> A
+```
+
+Before running, it is worth checking this short list:
+
+1. Verify that connected Handle names match exactly.
+2. Verify that required inputs are wired, or intentionally marked nullable.
+3. Verify local reusable references such as `task: self::{name}` and `subflow: self::{name}`.
+4. Verify that the graph is still a forward data flow, instead of looping back to an upstream Node.
+
+If you intentionally need iterative behavior over arrays, prefer built-in array patterns such as `Map` and `Filter`, or design a reusable subflow, instead of creating a direct cycle in an ordinary Flow.
+
 ## Running
 
 After resolving issues, you can run the Flow using the following methods:
