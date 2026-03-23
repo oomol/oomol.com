@@ -419,6 +419,17 @@
   color: var(--oomol-text-primary);
 }
 
+.modelCell {
+  display: grid;
+  gap: 4px;
+}
+
+.modelAlias {
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--oomol-text-secondary);
+}
+
 .priceValue,
 .multilinePriceValue {
   color: var(--oomol-text-primary);

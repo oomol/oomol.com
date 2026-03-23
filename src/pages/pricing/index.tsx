@@ -13,11 +13,13 @@ import Layout from "../../theme/Layout";
 
 const LLM_PRICING_ENDPOINT =
   "https://console-server.oomol.com/api/models/models_with_config";
+const ENABLE_LIVE_LLM_PRICING = true;
 
 type PricingTableKey = "llm" | "cloud-task" | "fusion-api";
 
 interface LLMModelConfig {
   model_name: string;
+  model_display_name: string;
   channel_name: string;
   input_ratio: number;
   output_ratio: number;
@@ -37,6 +39,7 @@ interface PricingRowBase {
 interface LLMPricingRow extends PricingRowBase {
   channel: string;
   model: string;
+  modelDisplayName?: string;
   inputPrice: string;
   cachePrice: string;
   outputPrice: string;
@@ -53,6 +56,205 @@ interface FusionApiPricingRow extends PricingRowBase {
   price: string | string[];
   description: string;
 }
+
+const LLM_PRICING_SAMPLE_RESPONSE: LLMPricingResponse = {
+  success: true,
+  message: "OK",
+  data: [
+    {
+      model_name: "360GPT_S2_V9",
+      model_display_name: "",
+      channel_name: "sf",
+      ratio: 1,
+      input_ratio: 1,
+      output_ratio: 1,
+    },
+    {
+      model_name: "55",
+      model_display_name: "",
+      channel_name: "33",
+      ratio: 1,
+      input_ratio: 1,
+      output_ratio: 1,
+    },
+    {
+      model_name: "FunAudioLLM/CosyVoice2-0.5B",
+      model_display_name: "",
+      channel_name: "硅基流动",
+      ratio: 1,
+      input_ratio: 1,
+      output_ratio: 1,
+    },
+    {
+      model_name: "FunAudioLLM/SenseVoiceSmall",
+      model_display_name: "",
+      channel_name: "硅基流动",
+      ratio: 1,
+      input_ratio: 1,
+      output_ratio: 1,
+    },
+    {
+      model_name: "Pro/deepseek-ai/DeepSeek-V3.2",
+      model_display_name: "",
+      channel_name: "硅基流动",
+      ratio: 1,
+      input_ratio: 1,
+      output_ratio: 1,
+    },
+    {
+      model_name: "dc",
+      model_display_name: "",
+      channel_name: "deep seek",
+      ratio: 0.05,
+      input_ratio: 0.2,
+      output_ratio: 0.6,
+    },
+    {
+      model_name: "deepseek-ai/DeepSeek-OCR/cm1j2x59p00szlycxsjhrj9oa",
+      model_display_name: "pdf-craft",
+      channel_name: "硅基流动",
+      ratio: 1,
+      input_ratio: 1,
+      output_ratio: 1,
+    },
+    {
+      model_name: "deepseek-chat",
+      model_display_name: "",
+      channel_name: "deep seek",
+      ratio: 0.03,
+      input_ratio: 0.19,
+      output_ratio: 0.6,
+    },
+    {
+      model_name: "deepseek-coder",
+      model_display_name: "",
+      channel_name: "deep seek",
+      ratio: 0.0072,
+      input_ratio: 0.0711,
+      output_ratio: 0.1421,
+    },
+    {
+      model_name: "deepseek-ocr",
+      model_display_name: "",
+      channel_name: "baidu",
+      ratio: 1,
+      input_ratio: 0.5,
+      output_ratio: 1,
+    },
+    {
+      model_name: "deepseek-v3.2",
+      model_display_name: "",
+      channel_name: "baidu",
+      ratio: 0.1,
+      input_ratio: 1.1,
+      output_ratio: 1,
+    },
+    {
+      model_name: "doubao-seedream-3-0-t2i-250415",
+      model_display_name: "qwd",
+      channel_name: "huoshan",
+      ratio: 1,
+      input_ratio: 1,
+      output_ratio: 1,
+    },
+    {
+      model_name: "dss",
+      model_display_name: "",
+      channel_name: "oomol",
+      ratio: 1.2,
+      input_ratio: 1.2,
+      output_ratio: 1.2,
+    },
+    {
+      model_name: "embedding_s1_v1",
+      model_display_name: "",
+      channel_name: "sf",
+      ratio: 0.0715,
+      input_ratio: 0.0715,
+      output_ratio: 0.0715,
+    },
+    {
+      model_name: "epub-translator",
+      model_display_name: "",
+      channel_name: "oomol",
+      ratio: 1,
+      input_ratio: 1,
+      output_ratio: 1,
+    },
+    {
+      model_name: "gpt-3.5-turbo",
+      model_display_name: "",
+      channel_name: "1",
+      ratio: 1,
+      input_ratio: 1,
+      output_ratio: 1,
+    },
+    {
+      model_name: "gpt-3.5-turbo-0301",
+      model_display_name: "",
+      channel_name: "1",
+      ratio: 1,
+      input_ratio: 1,
+      output_ratio: 1,
+    },
+    {
+      model_name: "jina-deepsearch-v1",
+      model_display_name: "",
+      channel_name: "jina",
+      ratio: 1,
+      input_ratio: 1,
+      output_ratio: 1,
+    },
+    {
+      model_name: "meta-llama/Llama-3.3-70B-Instruct",
+      model_display_name: "",
+      channel_name: "sf",
+      ratio: 1,
+      input_ratio: 1,
+      output_ratio: 1,
+    },
+    {
+      model_name: "oomol-chat",
+      model_display_name: "",
+      channel_name: "oomol",
+      ratio: 1.2,
+      input_ratio: 1.2,
+      output_ratio: 1.2,
+    },
+    {
+      model_name: "oomol-video",
+      model_display_name: "",
+      channel_name: "oomol",
+      ratio: 10,
+      input_ratio: 10,
+      output_ratio: 10,
+    },
+    {
+      model_name: "qwen-deep-research",
+      model_display_name: "",
+      channel_name: "Alibaba-deepResearch",
+      ratio: 1,
+      input_ratio: 1,
+      output_ratio: 1,
+    },
+    {
+      model_name: "qwen2.5-vl-7b-instruct",
+      model_display_name: "",
+      channel_name: "alibaba",
+      ratio: 1,
+      input_ratio: 1,
+      output_ratio: 1,
+    },
+    {
+      model_name: "qwen3-max",
+      model_display_name: "",
+      channel_name: "alibaba",
+      ratio: 1,
+      input_ratio: 1,
+      output_ratio: 1,
+    },
+  ],
+};
 
 function tPricing(id: string, message: string) {
   return translate({ id, message });
@@ -99,6 +301,24 @@ function renderMultiLinePriceValue(value: string | string[]) {
   );
 }
 
+function buildLLMPricingRows(data: LLMModelConfig[]) {
+  return [...data]
+    .sort(
+      (left, right) =>
+        left.channel_name.localeCompare(right.channel_name) ||
+        left.model_name.localeCompare(right.model_name)
+    )
+    .map(item => ({
+      key: `${item.channel_name}-${item.model_name}`,
+      channel: item.channel_name,
+      model: item.model_name,
+      modelDisplayName: item.model_display_name || undefined,
+      inputPrice: formatPricingValue(item.input_ratio),
+      cachePrice: formatPricingValue(item.ratio),
+      outputPrice: formatPricingValue(item.output_ratio),
+    }));
+}
+
 function PriceTable<T extends PricingRowBase>({
   columns,
   rows,
@@ -133,14 +353,23 @@ function PriceTable<T extends PricingRowBase>({
 export default function Index() {
   const [activePricingTable, setActivePricingTable] =
     useState<PricingTableKey>("llm");
-  const [llmRows, setLlmRows] = useState<LLMPricingRow[]>([]);
-  const [isLLMLoading, setIsLLMLoading] = useState(true);
+  const [llmRows, setLlmRows] = useState<LLMPricingRow[]>(() =>
+    buildLLMPricingRows(LLM_PRICING_SAMPLE_RESPONSE.data)
+  );
+  const [isLLMLoading, setIsLLMLoading] = useState(ENABLE_LIVE_LLM_PRICING);
   const [llmLoadFailed, setLlmLoadFailed] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
 
     async function loadLLMPricing() {
+      if (!ENABLE_LIVE_LLM_PRICING) {
+        setLlmRows(buildLLMPricingRows(LLM_PRICING_SAMPLE_RESPONSE.data));
+        setIsLLMLoading(false);
+        setLlmLoadFailed(false);
+        return;
+      }
+
       setIsLLMLoading(true);
       setLlmLoadFailed(false);
 
@@ -155,27 +384,15 @@ export default function Index() {
           throw new Error(result.message || "Failed to fetch LLM pricing");
         }
 
-        const rows = [...result.data]
-          .sort(
-            (left, right) =>
-              left.channel_name.localeCompare(right.channel_name) ||
-              left.model_name.localeCompare(right.model_name)
-          )
-          .map(item => ({
-            key: `${item.channel_name}-${item.model_name}`,
-            channel: item.channel_name,
-            model: item.model_name,
-            inputPrice: formatPricingValue(item.input_ratio),
-            cachePrice: formatPricingValue(item.ratio),
-            outputPrice: formatPricingValue(item.output_ratio),
-          }));
+        const rows = buildLLMPricingRows(result.data);
 
         if (!cancelled) {
           setLlmRows(rows);
         }
       } catch {
         if (!cancelled) {
-          setLlmLoadFailed(true);
+          setLlmRows(buildLLMPricingRows(LLM_PRICING_SAMPLE_RESPONSE.data));
+          setLlmLoadFailed(false);
         }
       } finally {
         if (!cancelled) {
@@ -202,7 +419,14 @@ export default function Index() {
     {
       dataIndex: "model",
       key: "model",
-      render: value => <span className={styles.modelName}>{value}</span>,
+      render: (_, record) => (
+        <div className={styles.modelCell}>
+          <span className={styles.modelName}>{record.model}</span>
+          {record.modelDisplayName ? (
+            <span className={styles.modelAlias}>{record.modelDisplayName}</span>
+          ) : null}
+        </div>
+      ),
       title: tPricing("PRICING.tables.llm.model", "Model"),
       width: 260,
     },
@@ -468,10 +692,15 @@ export default function Index() {
     const isLLMTable = tableKey === "llm";
     const isCloudTaskTable = tableKey === "cloud-task";
     const tableAlert = isLLMTable
-      ? tPricing(
-          "PRICING.tables.llm.note",
-          "LLM rates update with the model configuration in console. Units are credits per M token."
-        )
+      ? ENABLE_LIVE_LLM_PRICING
+        ? tPricing(
+            "PRICING.tables.llm.note",
+            "LLM rates update with the model configuration in console. Units are credits per M token."
+          )
+        : tPricing(
+            "PRICING.tables.llm.note.mock",
+            "LLM pricing is currently rendered from the latest backend sample response. Live console sync will be re-enabled after the API contract is confirmed."
+          )
       : isCloudTaskTable
         ? tPricing(
             "PRICING.tables.cloudTask.alert",
