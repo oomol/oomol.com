@@ -1,0 +1,9 @@
+{
+  "label": "三方 API 服务",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "在 block 或你自己的应用中使用 OOMOL 托管的三方 API 能力。"
+  },
+  "collapsed": true
+}

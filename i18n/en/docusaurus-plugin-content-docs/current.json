@@ -31,6 +31,10 @@
     "message": "Workflow Engine",
     "description": "The label for category Workflow Engine in sidebar tutorialSidebar"
   },
+  "sidebar.tutorialSidebar.category.Third-Party API Services": {
+    "message": "Third-Party API Services",
+    "description": "The label for category Third-Party API Services in sidebar tutorialSidebar"
+  },
   "sidebar.tutorialSidebar.category.Cloud Services": {
     "message": "Cloud Services",
     "description": "The label for category Cloud Services in sidebar tutorialSidebar"

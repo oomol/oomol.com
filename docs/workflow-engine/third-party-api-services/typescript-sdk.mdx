@@ -1,28 +1,32 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 sidebar_label: Fusion SDK (TS)
 ---
 
-# Fusion SDK TypeScript 文档
+# Fusion SDK for TypeScript
 
-这一页说明 `oomol-fusion-sdk` 在 TypeScript / JavaScript 里的使用方式。
+This page documents `oomol-fusion-sdk` for TypeScript and JavaScript.
 
-## 安装
+## Install
+
+If you are using Fusion SDK inside OOMOL Studio block development, it is usually already available by default and does not need a separate manual install.
+
+Install it explicitly when you are using it outside Studio, or when you want to manage it as a normal dependency in your own project:
 
 ```bash
 npm install oomol-fusion-sdk
 ```
 
-运行要求：
+Runtime requirements:
 
 - Node.js 18+
-- 全局 `fetch`，或者在 client options 里传入自定义 `fetch`
+- global `fetch`, or a custom `fetch` passed into the client options
 
-## 在 OOMOL Studio 的 Block 里使用
+## Use Inside OOMOL Studio Blocks
 
-这是最主要的使用方式。
+This is the primary usage mode.
 
-当 block 需要调用 Fusion 托管能力时，推荐从运行时 `context` 创建 client，而不是自己硬编码 URL 或凭据。
+When your block needs to call a Fusion-hosted capability, create the client from the runtime `context` instead of hardcoding credentials or URLs.
 
 ```ts
 import type { Context } from "@oomol/types/oocana";
@@ -54,7 +58,7 @@ export default async function (
 }
 ```
 
-对于更典型的长任务接口，`runData()` 往往是最省事的写法：
+For longer-running task endpoints, `runData()` is usually the simplest choice:
 
 ```ts
 const markdown = await client.pdfTransformMarkdown.runData({
@@ -62,16 +66,16 @@ const markdown = await client.pdfTransformMarkdown.runData({
 });
 ```
 
-在 Studio 里建议固定采用这个模式：
+Prefer this Studio pattern:
 
 - `token: await context.getOomolToken()`
 - `baseUrl: context.fusionApiUrl`
 
-如果 Fusion 已经覆盖对应能力，就不要再额外要求用户配置第三方 secret。
+Avoid asking users for a separate third-party secret if Fusion already covers the capability.
 
-## 在 Studio 外直接使用
+## Use Outside Studio
 
-如果是在普通 Node.js 服务或脚本里调用 Fusion，可以直接传 API key 或 token 初始化 client。
+When you are calling Fusion from a normal Node.js service or script, initialize the client with an API key or token directly.
 
 ```ts
 import { FusionClient } from "oomol-fusion-sdk";
@@ -81,7 +85,7 @@ const client = new FusionClient({
 });
 ```
 
-支持的初始化参数：
+Supported options:
 
 - `apiKey?: string`
 - `token?: string`
@@ -91,15 +95,15 @@ const client = new FusionClient({
 - `pollIntervalMs?: number`
 - `timeoutMs?: number`
 
-默认值：
+Defaults:
 
 - `baseUrl`: `https://fusion-api.oomol.com`
 - `pollIntervalMs`: `2000`
 - `timeoutMs`: `300000`
 
-## 任务型接口
+## Task APIs
 
-所有异步任务服务都支持同一套方法：
+All async task services share the same method set:
 
 - `submit(payload)`
 - `state(sessionID)`
@@ -109,13 +113,13 @@ const client = new FusionClient({
 - `waitData(sessionID, options)`
 - `runData(payload, options)`
 
-常见选择方式：
+Typical choices:
 
-- 普通场景优先用 `runData()`
-- 需要自己持有 `sessionID` 时，用 `submit()` + `waitData()`
-- 需要完整完成态响应结构时，用 `run()`
+- Use `runData()` for the common "submit and wait for the final data" case.
+- Use `submit()` + `waitData()` when you need to keep the `sessionID`.
+- Use `run()` when you want the full completed response instead of only the data payload.
 
-示例：
+Example:
 
 ```ts
 const { sessionID } = await client.pdfTransformMarkdown.submit({
@@ -125,11 +129,11 @@ const { sessionID } = await client.pdfTransformMarkdown.submit({
 const markdown = await client.pdfTransformMarkdown.waitData(sessionID);
 ```
 
-## Action 接口
+## Action APIs
 
-Action 接口可以通过两种方式调用。
+You can call action endpoints in two ways.
 
-分组快捷入口：
+Grouped shortcut:
 
 ```ts
 const page = await client.jinaReader.read({
@@ -138,7 +142,7 @@ const page = await client.jinaReader.read({
 });
 ```
 
-原始 action key：
+Raw action key:
 
 ```ts
 const response = await client.action("jina-reader/search", {
@@ -147,9 +151,9 @@ const response = await client.action("jina-reader/search", {
 });
 ```
 
-## 兜底调用与运行时扩展
+## Fallback and Runtime Extension
 
-当后端已经新增接口，但 SDK 还没有提供快捷入口时，可以直接用 `request(...)`。
+Use `request(...)` when the backend already added an endpoint but the SDK has not exposed a shortcut yet.
 
 ```ts
 const response = await client.request({
@@ -161,7 +165,7 @@ const response = await client.request({
 });
 ```
 
-如果新接口仍然符合标准任务模式：
+If the new endpoint still follows the standard task pattern:
 
 ```ts
 client.registerTask("new-service");
@@ -171,7 +175,7 @@ const result = await client.task("new-service").runData({
 });
 ```
 
-如果需要注册自定义 action：
+If you need to register a custom action:
 
 ```ts
 client.registerAction({
@@ -181,9 +185,9 @@ client.registerAction({
 });
 ```
 
-## 错误处理
+## Error Handling
 
-SDK 会把错误统一归一化成 `OomolFusionSdkError`。
+The SDK normalizes errors into `OomolFusionSdkError`.
 
 ```ts
 import { OomolFusionSdkError } from "oomol-fusion-sdk";
@@ -203,8 +207,8 @@ try {
 }
 ```
 
-## 相关文档
+## Related Docs
 
-- [Fusion SDK 概览](./fusion-sdk-overview)
-- [Fusion SDK Python 文档](./fusion-sdk-python)
-- [Node.js Context API](./nodejs-sdk-api)
+- [Fusion SDK Overview](./overview)
+- [Fusion SDK for Python](./python-sdk)
+- [Node.js Context API](/docs/workflow-engine/nodejs-sdk-api)

@@ -1,28 +1,32 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 sidebar_label: Fusion SDK (Python)
 ---
 
-# Fusion SDK Python 文档
+# Fusion SDK for Python
 
-这一页说明 `oomol-fusion-sdk` 在 Python 里的使用方式。
+This page documents `oomol-fusion-sdk` for Python.
 
-## 安装
+## Install
+
+If you are using Fusion SDK inside OOMOL Studio block development, it is usually already available by default and does not need a separate manual install.
+
+Install it explicitly when you are using it outside Studio, or when you want to manage it as a normal dependency in your own project:
 
 ```bash
 pip install oomol-fusion-sdk
 ```
 
-运行要求：
+Runtime requirements:
 
 - Python 3.8+
 - `requests`
 
-## 在 OOMOL Studio 的 Block 里使用
+## Use Inside OOMOL Studio Blocks
 
-这是最主要的使用方式。
+This is the primary usage mode.
 
-当 block 需要调用 Fusion 托管能力时，推荐从运行时 `context` 创建 client，而不是自己硬编码 URL 或凭据。
+When your block needs to call a Fusion-hosted capability, create the client from the runtime `context` instead of hardcoding credentials or URLs.
 
 ```python
 from oocana import Context
@@ -48,7 +52,7 @@ async def main(params: dict, context: Context) -> dict:
     return {"markdown": markdown}
 ```
 
-对于更典型的长任务接口，`run_data()` 往往是最省事的写法：
+For longer-running task endpoints, `run_data()` is usually the simplest choice:
 
 ```python
 markdown = client.pdf_transform_markdown.run_data(
@@ -58,16 +62,16 @@ markdown = client.pdf_transform_markdown.run_data(
 )
 ```
 
-在 Studio 里建议固定采用这个模式：
+Prefer this Studio pattern:
 
 - `token=await context.oomol_token()`
 - `base_url=context.fusion_api_url`
 
-如果 Fusion 已经覆盖对应能力，就不要再额外要求用户配置第三方 secret。
+Avoid asking users for a separate third-party secret if Fusion already covers the capability.
 
-## 在 Studio 外直接使用
+## Use Outside Studio
 
-如果是在普通 Python 服务或脚本里调用 Fusion，可以直接传 API key 或 token 初始化 client。
+When you are calling Fusion from a normal Python service or script, initialize the client with an API key or token directly.
 
 ```python
 from oomol_fusion_sdk import FusionClient
@@ -77,7 +81,7 @@ client = FusionClient(
 )
 ```
 
-支持的初始化参数：
+Supported options:
 
 - `api_key: Optional[str]`
 - `token: Optional[str]`
@@ -87,7 +91,7 @@ client = FusionClient(
 - `timeout_ms: int`
 - `session: Optional[requests.Session]`
 
-Python SDK 也兼容 TypeScript 风格参数名：
+The Python SDK also accepts TypeScript-style aliases:
 
 - `apiKey`
 - `baseUrl`
@@ -95,15 +99,15 @@ Python SDK 也兼容 TypeScript 风格参数名：
 - `pollIntervalMs`
 - `timeoutMs`
 
-默认值：
+Defaults:
 
 - `base_url`: `https://fusion-api.oomol.com`
 - `poll_interval_ms`: `2000`
 - `timeout_ms`: `300000`
 
-## 任务型接口
+## Task APIs
 
-所有异步任务服务都支持同一套方法：
+All async task services share the same method set:
 
 - `submit(payload, options=None)`
 - `state(session_id, options=None)`
@@ -113,15 +117,15 @@ Python SDK 也兼容 TypeScript 风格参数名：
 - `wait_data(session_id, options=None)`
 - `run_data(payload, options=None)`
 
-Python SDK 还提供了 `waitData()`、`runData()` 这类 camelCase 别名。
+The Python SDK also provides camelCase aliases such as `waitData()` and `runData()`.
 
-常见选择方式：
+Typical choices:
 
-- 普通场景优先用 `run_data()`
-- 需要自己持有 `sessionID` 时，用 `submit()` + `wait_data()`
-- 需要完整完成态响应结构时，用 `run()`
+- Use `run_data()` for the common "submit and wait for the final data" case.
+- Use `submit()` + `wait_data()` when you need to keep the `sessionID`.
+- Use `run()` when you want the full completed response instead of only the data payload.
 
-示例：
+Example:
 
 ```python
 submit_response = client.pdf_transform_markdown.submit(
@@ -133,11 +137,11 @@ submit_response = client.pdf_transform_markdown.submit(
 markdown = client.pdf_transform_markdown.wait_data(submit_response["sessionID"])
 ```
 
-## Action 接口
+## Action APIs
 
-Action 接口可以通过两种方式调用。
+You can call action endpoints in two ways.
 
-分组快捷入口：
+Grouped shortcut:
 
 ```python
 page = client.jina_reader.read(
@@ -148,7 +152,7 @@ page = client.jina_reader.read(
 )
 ```
 
-原始 action key：
+Raw action key:
 
 ```python
 response = client.action(
@@ -160,9 +164,9 @@ response = client.action(
 )
 ```
 
-## 兜底调用与运行时扩展
+## Fallback and Runtime Extension
 
-当后端已经新增接口，但 SDK 还没有提供快捷入口时，可以直接用 `request(...)`。
+Use `request(...)` when the backend already added an endpoint but the SDK has not exposed a shortcut yet.
 
 ```python
 response = client.request(
@@ -174,7 +178,7 @@ response = client.request(
 )
 ```
 
-如果新接口仍然符合标准任务模式：
+If the new endpoint still follows the standard task pattern:
 
 ```python
 client.register_task("new-service")
@@ -186,7 +190,7 @@ result = client.task("new-service").run_data(
 )
 ```
 
-如果需要注册自定义 action：
+If you need to register a custom action:
 
 ```python
 client.register_action(
@@ -198,11 +202,11 @@ client.register_action(
 )
 ```
 
-同时也兼容 `registerTask(...)` 和 `registerAction(...)`。
+The SDK also accepts `registerTask(...)` and `registerAction(...)`.
 
-## 错误处理
+## Error Handling
 
-SDK 会把错误统一归一化成 `OomolFusionSdkError`。
+The SDK normalizes errors into `OomolFusionSdkError`.
 
 ```python
 from oomol_fusion_sdk import OomolFusionSdkError
@@ -223,8 +227,8 @@ except Exception as error:
     print(sdk_error.details)
 ```
 
-## 相关文档
+## Related Docs
 
-- [Fusion SDK 概览](./fusion-sdk-overview)
-- [Fusion SDK TypeScript 文档](./fusion-sdk-typescript)
-- [Python Context API](./python-sdk-api)
+- [Fusion SDK Overview](./overview)
+- [Fusion SDK for TypeScript](./typescript-sdk)
+- [Python Context API](/docs/workflow-engine/python-sdk-api)

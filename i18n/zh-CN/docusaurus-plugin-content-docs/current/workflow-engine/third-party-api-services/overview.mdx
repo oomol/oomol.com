@@ -1,13 +1,13 @@
 ---
-sidebar_position: 2
-sidebar_label: Fusion SDK
+sidebar_position: 1
+sidebar_label: 使用场景
 ---
 
 # Fusion SDK 概览
 
 `oomol-fusion-sdk` 是用于调用 Fusion API 的 SDK。
 
-大多数情况下，它会在 OOMOL Studio 里被用来制作 block，把 OOMOL 托管的能力封装成可复用区块。除此之外，你也可以在自己的 Node.js 或 Python 服务里直接调用它。
+它默认已经集成在 OOMOL Studio 里。大多数情况下，它会在 Studio 里被用来制作 block，把 OOMOL 托管的能力封装成可复用区块。除此之外，你也可以在自己的 Node.js 或 Python 服务里直接调用它。
 
 ## 什么时候用它
 
@@ -28,7 +28,7 @@ sidebar_label: Fusion SDK
 
 如果你是在 Studio 里写 Scriptlet Block 或 Task Block，推荐按下面的模式使用：
 
-1. 给项目安装 `oomol-fusion-sdk`。
+1. 直接使用 Studio 内置的 Fusion SDK。
 2. 从 `context` 读取 OOMOL token。
 3. 从 `context` 读取 Fusion base URL。
 4. 创建 `FusionClient` 并调用对应的服务快捷入口。
@@ -82,6 +82,8 @@ async def main(params: dict, context: Context) -> dict:
 
 这样可以让认证走 OOMOL token 流程。如果 Fusion 已经覆盖对应能力，就不需要再让最终用户额外配置第三方 API key。
 
+换句话说，对于 Studio 里的常规 block 开发，通常不需要先手动安装 `oomol-fusion-sdk`。
+
 ## 在 Studio 外直接调用
 
 你也可以在自己的应用、后端或脚本里直接使用同一个 SDK。
@@ -89,7 +91,7 @@ async def main(params: dict, context: Context) -> dict:
 - Node.js / TypeScript：用 `FusionClient({ apiKey })` 或 `FusionClient({ token })`
 - Python：用 `FusionClient(api_key=...)` 或 `FusionClient(token=...)`
 
-这种模式适合不在 Studio 运行、也拿不到运行时 `context` 的场景。
+这种模式适合不在 Studio 运行、也拿不到运行时 `context` 的场景。在这种情况下，再把 SDK 当作普通依赖安装到你自己的项目里即可。
 
 ## 两种 API 形态
 
@@ -106,8 +108,8 @@ Fusion SDK 主要围绕 Fusion API 里两类稳定接口形态设计：
 
 ## 相关文档
 
-- [Fusion SDK TypeScript 文档](./fusion-sdk-typescript)
-- [Fusion SDK Python 文档](./fusion-sdk-python)
-- [Node.js Context API](./nodejs-sdk-api)
-- [Python Context API](./python-sdk-api)
+- [Fusion SDK TypeScript 文档](./typescript-sdk)
+- [Fusion SDK Python 文档](./python-sdk)
+- [Node.js Context API](/zh-CN/docs/workflow-engine/nodejs-sdk-api)
+- [Python Context API](/zh-CN/docs/workflow-engine/python-sdk-api)
 - [Secrets、认证与运行路径](/zh-CN/docs/advanced-guide/secrets-auth-and-runtime-paths)

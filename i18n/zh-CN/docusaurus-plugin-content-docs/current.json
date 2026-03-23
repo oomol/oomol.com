@@ -31,6 +31,10 @@
     "message": "工作流引擎",
     "description": "The label for category Workflow Engine in sidebar tutorialSidebar"
   },
+  "sidebar.tutorialSidebar.category.Third-Party API Services": {
+    "message": "三方 API 服务",
+    "description": "The label for category Third-Party API Services in sidebar tutorialSidebar"
+  },
   "sidebar.tutorialSidebar.category.Cloud Services": {
     "message": "云服务",
     "description": "The label for category Cloud Services in sidebar tutorialSidebar"

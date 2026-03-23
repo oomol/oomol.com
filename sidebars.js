@@ -96,6 +96,17 @@ const sidebars = {
             "workflow-engine/python-sdk-api",
           ],
         },
+        {
+          type: "category",
+          label: "Third-Party API Services",
+          collapsible: true,
+          collapsed: true,
+          items: [
+            "workflow-engine/third-party-api-services/overview",
+            "workflow-engine/third-party-api-services/typescript-sdk",
+            "workflow-engine/third-party-api-services/python-sdk",
+          ],
+        },
       ],
     },
     {

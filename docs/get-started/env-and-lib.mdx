@@ -49,6 +49,26 @@ Once the initialization script is executed successfully, your project environmen
 
 When writing code, you often need to rely on third-party libraries. There are several ways to introduce code dependencies:
 
+## Built-In Fusion SDK
+
+`oomol-fusion-sdk` is integrated into OOMOL Studio by default.
+
+That means when you are building Scriptlet Blocks or Task Blocks inside Studio, you can usually use the Fusion SDK directly without manually installing it first.
+
+This is the recommended path when:
+
+- you want to call third-party capabilities already exposed through OOMOL Fusion
+- you want to package those calls into reusable blocks
+- you want authentication to use the OOMOL runtime token flow
+
+If you are running outside Studio, or if you need an explicitly managed package version in your own app, then install the SDK in the normal way.
+
+Related docs:
+
+- [Fusion SDK Overview](/docs/workflow-engine/third-party-api-services/overview)
+- [Fusion SDK for TypeScript](/docs/workflow-engine/third-party-api-services/typescript-sdk)
+- [Fusion SDK for Python](/docs/workflow-engine/third-party-api-services/python-sdk)
+
 ### Code Dependency Management
 
 In the `Code Dependency Management` section of the bottom panel, search for dependencies for the corresponding language and install them.

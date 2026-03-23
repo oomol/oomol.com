@@ -1,13 +1,13 @@
 ---
-sidebar_position: 2
-sidebar_label: Fusion SDK
+sidebar_position: 1
+sidebar_label: Use Cases
 ---
 
 # Fusion SDK Overview
 
 `oomol-fusion-sdk` is the SDK for calling Fusion API.
 
-Most of the time, you use it inside OOMOL Studio to turn OOMOL-hosted capabilities into reusable blocks. You can also call the same SDK directly from your own Node.js or Python services.
+It is integrated into OOMOL Studio by default. In most cases, you use it inside Studio to turn OOMOL-hosted capabilities into reusable blocks. You can also call the same SDK directly from your own Node.js or Python services.
 
 ## When To Use It
 
@@ -28,7 +28,7 @@ Use the **Fusion SDK** when your code needs to:
 
 If you are building a Scriptlet Block or Task Block in Studio, this is the preferred pattern:
 
-1. Add `oomol-fusion-sdk` to the project dependencies.
+1. Use the built-in Fusion SDK that comes with Studio.
 2. Read the OOMOL token from `context`.
 3. Read the Fusion base URL from `context`.
 4. Create a `FusionClient` and call the service shortcut you need.
@@ -82,6 +82,8 @@ async def main(params: dict, context: Context) -> dict:
 
 This keeps auth on the OOMOL token flow and avoids asking end users for an extra third-party API key when Fusion already covers the capability.
 
+In other words, for normal block authoring inside Studio, you usually do not need to install `oomol-fusion-sdk` manually first.
+
 ## Direct SDK Usage Outside Studio
 
 You can also use the same SDK directly in your own app, backend, or script.
@@ -89,7 +91,7 @@ You can also use the same SDK directly in your own app, backend, or script.
 - Node.js / TypeScript: initialize `FusionClient({ apiKey })` or `FusionClient({ token })`
 - Python: initialize `FusionClient(api_key=...)` or `FusionClient(token=...)`
 
-This mode is suitable when you are not running inside Studio and do not have a runtime `context` object.
+This mode is suitable when you are not running inside Studio and do not have a runtime `context` object. In this case, install the SDK as a normal dependency in your own project.
 
 ## Two API Shapes
 
@@ -106,8 +108,8 @@ In most cases:
 
 ## Related Docs
 
-- [Fusion SDK for TypeScript](./fusion-sdk-typescript)
-- [Fusion SDK for Python](./fusion-sdk-python)
-- [Node.js Context API](./nodejs-sdk-api)
-- [Python Context API](./python-sdk-api)
+- [Fusion SDK for TypeScript](./typescript-sdk)
+- [Fusion SDK for Python](./python-sdk)
+- [Node.js Context API](/docs/workflow-engine/nodejs-sdk-api)
+- [Python Context API](/docs/workflow-engine/python-sdk-api)
 - [Secrets, Auth, and Runtime Paths](/docs/advanced-guide/secrets-auth-and-runtime-paths)

@@ -49,6 +49,26 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 当你在编写代码时会经常需要依赖第三方库，这种时候你可以有几种方式引入代码依赖：
 
+## Studio 内置的 Fusion SDK
+
+`oomol-fusion-sdk` 默认已经集成在 OOMOL Studio 里。
+
+这意味着如果你是在 Studio 里制作 Scriptlet Block 或 Task Block，通常可以直接使用 Fusion SDK，而不需要先手动安装。
+
+这也是更推荐的使用方式，尤其是在下面这些场景里：
+
+- 你要调用的是已经通过 OOMOL Fusion 暴露出来的第三方能力
+- 你想把这些调用封装成可复用 block
+- 你希望认证直接走 OOMOL 的运行时 token 流程
+
+只有在不通过 Studio 运行，或者你在自己的应用里需要显式管理 SDK 版本时，才更适合按普通依赖的方式手动安装。
+
+相关文档：
+
+- [Fusion SDK 概览](/zh-CN/docs/workflow-engine/third-party-api-services/overview)
+- [Fusion SDK TypeScript 文档](/zh-CN/docs/workflow-engine/third-party-api-services/typescript-sdk)
+- [Fusion SDK Python 文档](/zh-CN/docs/workflow-engine/third-party-api-services/python-sdk)
+
 ### 代码依赖管理
 
 在底部面板的`代码依赖管理`栏中，搜索对应语言的依赖并安装
