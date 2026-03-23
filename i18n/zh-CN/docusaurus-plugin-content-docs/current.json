@@ -19,17 +19,17 @@
     "message": "界面导览",
     "description": "The label for category Interface Tour in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Build Your First Workflow": {
+  "sidebar.tutorialSidebar.category.First Workflow": {
     "message": "第一个工作流",
-    "description": "The label for category Build Your First Workflow in sidebar tutorialSidebar"
+    "description": "The label for category First Workflow in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Advanced Usage": {
     "message": "进阶使用",
     "description": "The label for category Advanced Usage in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Workflow Engine & SDK": {
+  "sidebar.tutorialSidebar.category.Workflow Engine": {
     "message": "工作流引擎",
-    "description": "The label for category Workflow Engine & SDK in sidebar tutorialSidebar"
+    "description": "The label for category Workflow Engine in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Cloud Services": {
     "message": "云服务",

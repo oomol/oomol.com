@@ -19,17 +19,17 @@
     "message": "Interface Tour",
     "description": "The label for category Interface Tour in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Build Your First Workflow": {
+  "sidebar.tutorialSidebar.category.First Workflow": {
     "message": "First Workflow",
-    "description": "The label for category Build Your First Workflow in sidebar tutorialSidebar"
+    "description": "The label for category First Workflow in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Advanced Usage": {
     "message": "Advanced Usage",
     "description": "The label for category Advanced Usage in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Workflow Engine & SDK": {
+  "sidebar.tutorialSidebar.category.Workflow Engine": {
     "message": "Workflow Engine",
-    "description": "The label for category Workflow Engine & SDK in sidebar tutorialSidebar"
+    "description": "The label for category Workflow Engine in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Cloud Services": {
     "message": "Cloud Services",
