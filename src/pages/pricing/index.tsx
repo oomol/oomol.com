@@ -198,6 +198,11 @@ export default function Index() {
     "PRICING.subscription.max.highlight1",
     "PRICING.subscription.max.highlight2",
   ];
+  // Keep paid-plan CTAs disabled until self-serve checkout is ready on the site.
+  const paidPlanCtaLabel = tPricing(
+    "PRICING.subscription.comingSoon",
+    "Coming Soon"
+  );
 
   useEffect(() => {
     let cancelled = false;
@@ -756,14 +761,12 @@ export default function Index() {
                 </div>
               </div>
               <div className={styles.planActionArea}>
-                <Button asChild className={styles.subscribeBtn}>
-                  <a
-                    href="https://console.oomol.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {translate({ message: "PRICING.subscription.subscribe" })}
-                  </a>
+                <Button
+                  className={styles.subscribeBtn}
+                  disabled
+                  aria-label={paidPlanCtaLabel}
+                >
+                  {paidPlanCtaLabel}
                 </Button>
                 <div className={styles.planActionMeta} aria-hidden="true" />
               </div>
@@ -839,14 +842,12 @@ export default function Index() {
                 </div>
               </div>
               <div className={styles.planActionArea}>
-                <Button asChild className={styles.subscribeBtn}>
-                  <a
-                    href="https://console.oomol.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {translate({ message: "PRICING.subscription.subscribe" })}
-                  </a>
+                <Button
+                  className={styles.subscribeBtn}
+                  disabled
+                  aria-label={paidPlanCtaLabel}
+                >
+                  {paidPlanCtaLabel}
                 </Button>
                 <div className={styles.planActionMeta} aria-hidden="true" />
               </div>
