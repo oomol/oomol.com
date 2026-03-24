@@ -39,6 +39,46 @@ const config = {
     },
     mermaid: true,
   },
+  headTags: [
+    {
+      tagName: "style",
+      attributes: {},
+      innerHTML: `
+        [class*="themedComponent"] {
+          display: none;
+        }
+
+        html[data-theme="light"] [class*="themedComponent--light"] {
+          display: initial;
+        }
+
+        html[data-theme="dark"] [class*="themedComponent--dark"] {
+          display: initial;
+        }
+
+        html:not([data-theme]) [class*="themedComponent--light"] {
+          display: initial;
+        }
+      `,
+    },
+    {
+      tagName: "script",
+      attributes: {
+        type: "application/ld+json",
+      },
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: "OOMOL",
+        tagline: "Write a function. Ship a service.",
+        favicon: "img/favicon.ico",
+        url: "https://oomol.com",
+        sameAs: ["https://hub.oomol.com"],
+        // TODO: add logo to the website
+        // logo: "https://oomol.com/logo.svg",
+      }),
+    },
+  ],
   plugins: [
     "docusaurus-plugin-sass",
     [
@@ -121,25 +161,6 @@ const config = {
             "Generate functions in a real coding environment, validate locally, and publish the same capability as an API, MCP tool, or automation task.",
         },
       ],
-      headTags: [
-        {
-          tagName: "script",
-          attributes: {
-            type: "application/ld+json",
-          },
-          innerHTML: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "OOMOL",
-            tagline: "Write a function. Ship a service.",
-            favicon: "img/favicon.ico",
-            url: "https://oomol.com",
-            sameAs: ["https://hub.oomol.com"],
-            // TODO: add logo to the website
-            // logo: "https://oomol.com/logo.svg",
-          }),
-        },
-      ],
 
       // Replace with your project's social card
       colorMode: {
@@ -161,10 +182,10 @@ const config = {
             position: "left",
             label: "Docs",
           },
-          { to: "/updates", label: "Updates", position: "left" },
-          { to: "/blog", label: "Blog", position: "left" },
           { to: "/downloads", label: "navbar.download", position: "left" },
           { to: "/pricing", label: "navbar.pricing", position: "left" },
+          { to: "/updates", label: "Updates", position: "left" },
+          { to: "/blog", label: "Blog", position: "left" },
         ],
       },
       footer: {

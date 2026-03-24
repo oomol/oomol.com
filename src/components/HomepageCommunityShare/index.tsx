@@ -2,12 +2,10 @@ import styles from "./styles.module.scss";
 
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
+import ThemedImage from "@theme/ThemedImage";
 import React from "react";
 
 export default function HomepageCommunityShare() {
-  const { colorMode } = useHydratedColorMode();
-  const isDark = colorMode === "dark";
   const assetPoints = [
     {
       title: translate({ id: "HOME.CommunityShare.point1.title" }),
@@ -57,15 +55,21 @@ export default function HomepageCommunityShare() {
 
       <div className={styles.imagesWrapper}>
         <div className={`${styles.imageContainer} ${styles.primaryImage}`}>
-          <img
-            src={isDark ? communityHomeDark : communityHomeLight}
+          <ThemedImage
+            sources={{
+              light: communityHomeLight,
+              dark: communityHomeDark,
+            }}
             alt="Reusable capability catalog"
             className={styles.image}
           />
         </div>
         <div className={`${styles.imageContainer} ${styles.secondaryImage}`}>
-          <img
-            src={isDark ? communityDetailDark : communityDetailLight}
+          <ThemedImage
+            sources={{
+              light: communityDetailLight,
+              dark: communityDetailDark,
+            }}
             alt="Capability asset details"
             className={styles.image}
           />

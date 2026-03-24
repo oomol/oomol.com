@@ -8,7 +8,7 @@
     "description": "Navbar item with label Docs"
   },
   "item.label.Updates": {
-    "message": "Updates",
+    "message": "Changelog",
     "description": "Navbar item with label Updates"
   },
   "item.label.Downloads": {
@@ -68,7 +68,7 @@
     "description": "Navbar item with label Product"
   },
   "item.label.navbar.download": {
-    "message": "Download Studio",
+    "message": "Download",
     "description": "Navbar item with label navbar.download"
   },
   "item.label.navbar.pricing": {

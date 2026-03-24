@@ -54,6 +54,21 @@ const principles = [
 export default function StudioDetailContent({
   variant = "page",
 }: StudioDetailContentProps) {
+  const studioPreviewLight = useBaseUrl("/img/pages/studio/studio-light.png");
+  const studioPreviewDark = useBaseUrl("/img/pages/studio/studio-dark.png");
+  const principle1Light = useBaseUrl("/img/pages/studio/code-light.png");
+  const principle1Dark = useBaseUrl("/img/pages/studio/code-dark.png");
+  const principle2Light = useBaseUrl("/img/pages/studio/edit-light.png");
+  const principle2Dark = useBaseUrl("/img/pages/studio/edit-dark.png");
+  const principle3Light = useBaseUrl("/img/pages/studio/package-light.png");
+  const principle3Dark = useBaseUrl("/img/pages/studio/package-dark.png");
+
+  const principleImageSources = [
+    { light: principle1Light, dark: principle1Dark },
+    { light: principle2Light, dark: principle2Dark },
+    { light: principle3Light, dark: principle3Dark },
+  ];
+
   if (variant === "home") {
     return (
       <section className={styles.homeSection}>
@@ -89,8 +104,8 @@ export default function StudioDetailContent({
               <div className={styles.homePreviewFrame}>
                 <ThemedImage
                   sources={{
-                    light: useBaseUrl("/img/pages/studio/studio-light.png"),
-                    dark: useBaseUrl("/img/pages/studio/studio-dark.png"),
+                    light: studioPreviewLight,
+                    dark: studioPreviewDark,
                   }}
                   alt="OOMOL Studio"
                   className={styles.homePreviewImage}
@@ -100,17 +115,14 @@ export default function StudioDetailContent({
           </div>
 
           <div className={styles.homePrinciplesGrid}>
-            {principles.map(principle => (
+            {principles.map((principle, index) => (
               <article
                 key={principle.titleKey}
                 className={styles.homePrincipleCard}
               >
                 <div className={styles.homePrincipleMedia}>
                   <ThemedImage
-                    sources={{
-                      light: useBaseUrl(principle.image.light),
-                      dark: useBaseUrl(principle.image.dark),
-                    }}
+                    sources={principleImageSources[index]}
                     alt={principle.alt}
                     className={styles.homePrincipleImage}
                   />
@@ -152,8 +164,8 @@ export default function StudioDetailContent({
         <div className={styles.heroImageWrapper}>
           <ThemedImage
             sources={{
-              light: useBaseUrl("/img/pages/studio/studio-light.png"),
-              dark: useBaseUrl("/img/pages/studio/studio-dark.png"),
+              light: studioPreviewLight,
+              dark: studioPreviewDark,
             }}
             alt="OOMOL Studio"
             className={styles.heroImage}
@@ -181,7 +193,7 @@ export default function StudioDetailContent({
       </section>
 
       <section className={styles.principlesSection}>
-        {principles.map(principle => (
+        {principles.map((principle, index) => (
           <div key={principle.titleKey} className={styles.principleItem}>
             <div className={styles.principleText}>
               <h3>{translate({ message: principle.titleKey })}</h3>
@@ -192,10 +204,7 @@ export default function StudioDetailContent({
             <div className={styles.principleVisual}>
               <div className={styles.principleImageWrapper}>
                 <ThemedImage
-                  sources={{
-                    light: useBaseUrl(principle.image.light),
-                    dark: useBaseUrl(principle.image.dark),
-                  }}
+                  sources={principleImageSources[index]}
                   alt={principle.alt}
                   className={styles.principleImage}
                 />

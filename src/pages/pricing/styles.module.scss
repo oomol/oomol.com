@@ -55,8 +55,91 @@
 .subscriptionSection {
   width: 100%;
   max-width: 1280px;
-  margin: 80px auto;
+  margin: 40px auto 80px;
   padding: 0 16px;
+}
+
+.pricingModelSection {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.pricingModelAlert {
+  max-width: 1100px;
+  margin: 0 auto 20px;
+
+  :global(.arco-alert) {
+    border-radius: 18px;
+    border: 1px solid
+      color-mix(in srgb, var(--oomol-primary) 16%, var(--oomol-border-default));
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--oomol-primary-bg) 74%, white 26%) 0%,
+      color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%) 100%
+    );
+    box-shadow: none;
+  }
+
+  :global(.arco-alert-content) {
+    color: var(--oomol-text-primary);
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 600;
+  }
+}
+
+.pricingModelGrid {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.pricingModelCard {
+  display: grid;
+  gap: 10px;
+  padding: 24px;
+  border-radius: 22px;
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%) 0%,
+      color-mix(in srgb, var(--oomol-bg-base) 92%, white 8%) 100%
+    );
+  border: 1px solid color-mix(in srgb, var(--oomol-border-default) 86%, white);
+  box-shadow: var(--oomol-shadow-sm);
+}
+
+.pricingModelLabel {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--oomol-primary-bg) 58%, white 42%);
+  color: var(--oomol-primary);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.pricingModelTitle {
+  color: var(--oomol-text-primary);
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 750;
+}
+
+.pricingModelText {
+  margin: 0;
+  color: var(--oomol-text-secondary);
+  font-size: 15px;
+  line-height: 25px;
 }
 
 .tableSectionWrapper {
@@ -449,6 +532,10 @@
 
 // 响应式设计
 @media (max-width: 966px) {
+  .pricingModelGrid {
+    grid-template-columns: 1fr;
+  }
+
   .planBox {
     flex-direction: column;
     align-items: stretch;

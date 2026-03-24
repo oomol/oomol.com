@@ -36,15 +36,22 @@ export default function HomepageProofLayer() {
     i18n: { currentLocale: string };
   };
   const isZh = i18n.currentLocale === "zh-CN";
+  const case1Image = useBaseUrl(
+    isZh ? "/img/proof/pdf2epub-zh.png" : "/img/proof/pdf2epub-en.png"
+  );
+  const case2Image = useBaseUrl(
+    isZh ? "/img/proof/reader-bookshelf-zh.jpg" : "/img/proof/reader-bookshelf-en.jpg"
+  );
+  const case3Image = useBaseUrl(
+    isZh ? "/img/proof/reader-pdf-zh.jpg" : "/img/proof/reader-pdf-en.jpg"
+  );
 
   const proofScenarios = [
     {
       kicker: translate({ message: "HOME.ProofLayer.case1.kicker" }),
       title: translate({ message: "HOME.ProofLayer.case1.title" }),
       description: translate({ message: "HOME.ProofLayer.case1.description" }),
-      image: useBaseUrl(
-        isZh ? "/img/proof/pdf2epub-zh.png" : "/img/proof/pdf2epub-en.png"
-      ),
+      image: case1Image,
       href: "https://pdf.oomol.com/pdf-craft",
       cta: translate({ message: "HOME.ProofLayer.case1.cta" }),
     },
@@ -52,11 +59,7 @@ export default function HomepageProofLayer() {
       kicker: translate({ message: "HOME.ProofLayer.case2.kicker" }),
       title: translate({ message: "HOME.ProofLayer.case2.title" }),
       description: translate({ message: "HOME.ProofLayer.case2.description" }),
-      image: useBaseUrl(
-        isZh
-          ? "/img/proof/reader-bookshelf-zh.jpg"
-          : "/img/proof/reader-bookshelf-en.jpg"
-      ),
+      image: case2Image,
       href: "https://pdf.oomol.com/download",
       cta: translate({ message: "HOME.ProofLayer.case2.cta" }),
     },
@@ -64,9 +67,7 @@ export default function HomepageProofLayer() {
       kicker: translate({ message: "HOME.ProofLayer.case3.kicker" }),
       title: translate({ message: "HOME.ProofLayer.case3.title" }),
       description: translate({ message: "HOME.ProofLayer.case3.description" }),
-      image: useBaseUrl(
-        isZh ? "/img/proof/reader-pdf-zh.jpg" : "/img/proof/reader-pdf-en.jpg"
-      ),
+      image: case3Image,
       href: "https://pdf.oomol.com/download",
       cta: translate({ message: "HOME.ProofLayer.case3.cta" }),
     },

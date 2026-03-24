@@ -10,7 +10,7 @@ import { useNavbarMobileSidebar } from "@docusaurus/theme-common/internal";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
+import ThemedImage from "@theme/ThemedImage";
 import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
 import NavbarItem from "@theme/NavbarItem";
 import SearchBar from "@theme/SearchBar";
@@ -39,7 +39,6 @@ function splitNavItemsByPosition(
 
 const NavbarComponent: React.FC<NavbarProps> = memo(() => {
   const mobileSidebar = useNavbarMobileSidebar();
-  const { colorMode } = useHydratedColorMode();
 
   const {
     siteConfig: {
@@ -59,12 +58,19 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
   const locale = i18n.currentLocale;
   const location = useLocation();
 
-  const logoSrc = useBaseUrl(
-    useMemo(() => {
-      const langPrefix = locale === "zh-CN" ? "zh" : "en";
-      const themePrefix = colorMode === "dark" ? "dark" : "light";
-      return `/img/logo-${langPrefix}-${themePrefix}.svg`;
-    }, [locale, colorMode])
+  const logoLight = useBaseUrl(
+    `/img/logo-${locale === "zh-CN" ? "zh" : "en"}-light.svg`
+  );
+  const logoDark = useBaseUrl(
+    `/img/logo-${locale === "zh-CN" ? "zh" : "en"}-dark.svg`
+  );
+
+  const logoSources = useMemo(
+    () => ({
+      light: logoLight,
+      dark: logoDark,
+    }),
+    [logoDark, logoLight]
   );
 
   const isDocumentPath = useMemo(() => {
@@ -149,7 +155,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
       <div className={clsx("navbar__inner", styles.inner)}>
         <div className="navbar__items">
           <Link className={styles.brand} to="/">
-            <img height={32} alt="logo" src={logoSrc} />
+            <ThemedImage sources={logoSources} alt="logo" height={32} />
           </Link>
           {leftItems.map((item, i) => (
             <NavbarItem {...item} key={i} />

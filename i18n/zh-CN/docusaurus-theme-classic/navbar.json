@@ -8,7 +8,7 @@
     "description": "Navbar item with label Docs"
   },
   "item.label.Updates": {
-    "message": "更新",
+    "message": "更新日志",
     "description": "Navbar item with label Updates"
   },
   "item.label.Downloads": {
@@ -68,7 +68,7 @@
     "description": "Navbar item with label Product"
   },
   "item.label.navbar.download": {
-    "message": "下载 Studio",
+    "message": "下载",
     "description": "Navbar item with label navbar.download"
   },
   "item.label.navbar.pricing": {

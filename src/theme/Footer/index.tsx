@@ -5,7 +5,7 @@ import type { DocusaurusContext } from "@docusaurus/types";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { Popover } from "@site/src/components/Popover";
-import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
+import ThemedImage from "@theme/ThemedImage";
 import { clsx } from "clsx";
 import React, { useState, useMemo } from "react";
 
@@ -131,14 +131,19 @@ const Footer: React.FC = () => {
   const hasFooter = !!siteConfig.themeConfig.footer;
   const currentLocale = i18n.currentLocale;
   const [isHovered, setIsHovered] = useState(false);
-  const { colorMode } = useHydratedColorMode();
+  const logoLight = useBaseUrl(
+    `/img/logo-${currentLocale === "zh-CN" ? "zh" : "en"}-light.svg`
+  );
+  const logoDark = useBaseUrl(
+    `/img/logo-${currentLocale === "zh-CN" ? "zh" : "en"}-dark.svg`
+  );
 
-  const logoSrc = useBaseUrl(
-    useMemo(() => {
-      const langPrefix = currentLocale === "zh-CN" ? "zh" : "en";
-      const themePrefix = colorMode === "dark" ? "dark" : "light";
-      return `/img/logo-${langPrefix}-${themePrefix}.svg`;
-    }, [currentLocale, colorMode])
+  const logoSources = useMemo(
+    () => ({
+      light: logoLight,
+      dark: logoDark,
+    }),
+    [logoDark, logoLight]
   );
 
   if (!hasFooter) {
@@ -171,7 +176,7 @@ const Footer: React.FC = () => {
       <div className={clsx(styles.content, styles.center)}>
         <div className={styles.leftBox}>
           <div className={styles.leftBoxLogo}>
-            <img alt="oomol" src={logoSrc} height={24} />
+            <ThemedImage sources={logoSources} alt="oomol" height={24} />
           </div>
           <div className={styles.iconOutBox}>
             {logoNodes}

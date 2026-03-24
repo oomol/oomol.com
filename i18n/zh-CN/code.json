@@ -1085,13 +1085,34 @@
     "message": "简单、透明的定价"
   },
   "PRICING.subtitle": {
-    "message": "免费起步，按需升级"
+    "message": "本地开发永久免费。只有当你需要 OOMOL 承接线上交付和托管用量时才开始付费。"
+  },
+  "PRICING.model.summary": {
+    "message": "OOMOL Studio 的本地开发是免费的。只有当你要发布到线上、运行托管任务或使用托管 AI 服务时，才进入付费。"
+  },
+  "PRICING.model.local.label": {
+    "message": "本地"
+  },
+  "PRICING.model.local.title": {
+    "message": "在 Studio 里免费构建和验证"
+  },
+  "PRICING.model.local.text": {
+    "message": "完整使用本地开发环境，按自己的依赖和工具链去验证结果；如果不想使用托管 AI，也可以直接接入你自己的模型服务。"
+  },
+  "PRICING.model.online.label": {
+    "message": "线上"
+  },
+  "PRICING.model.online.title": {
+    "message": "需要上线交付时再订阅"
+  },
+  "PRICING.model.online.text": {
+    "message": "当你希望把已经验证过的函数继续发布成 API、MCP 工具或自动化任务，并由 OOMOL 承接线上运行层时，再使用 Pro。"
   },
   "PRICING.subscription.title": {
-    "message": "订阅套餐"
+    "message": "选择你使用 OOMOL 的方式"
   },
   "PRICING.subscription.subtitle": {
-    "message": "选择适合您的订阅计划，享受更多功能和服务"
+    "message": "Free 覆盖本地开发，Pro 面向要继续线上发布和托管运行的开发者。"
   },
   "PRICING.subscription.recommended": {
     "message": "推荐"
@@ -1109,19 +1130,19 @@
     "message": "$0"
   },
   "PRICING.subscription.free.description": {
-    "message": "可免费使用 Studio，并按需接入你自己的模型服务"
+    "message": "适合本地开发、结果验证，以及自带模型服务的使用方式"
   },
   "PRICING.subscription.free.feature1": {
-    "message": "可使用 OOMOL Studio"
+    "message": "完整使用 OOMOL Studio 本地开发环境"
   },
   "PRICING.subscription.free.feature2": {
-    "message": "注册即送 1 credit"
+    "message": "不想走托管 AI 计费时，可接入自己的模型服务"
   },
   "PRICING.subscription.free.feature3": {
-    "message": "可配置自己的 LLM 服务使用 Studio"
+    "message": "在 Studio 内本地运行不触发 Cloud Task 计费"
   },
   "PRICING.subscription.free.feature4": {
-    "message": "每月赠送 200 分钟 Cloud Task"
+    "message": "赠送少量体验积分，用于试用托管服务"
   },
   "PRICING.subscription.standard.name": {
     "message": "标准版"
@@ -1148,31 +1169,28 @@
     "message": "包含免费版所有权益"
   },
   "PRICING.subscription.pro.name": {
-    "message": "专业版"
+    "message": "Pro"
   },
   "PRICING.subscription.pro.price": {
-    "message": "$29"
+    "message": "$12"
   },
   "PRICING.subscription.pro.description": {
-    "message": "适合专业用户，高频使用 OOMOL 的核心功能"
+    "message": "适合希望把本地已经跑通的函数继续发布成 API、MCP 工具或自动化任务，而不想再单独搭一层后端和运行时的开发者"
   },
   "PRICING.subscription.pro.feature1": {
-    "message": "调用任务，每月 4000 次"
+    "message": "使用 OOMOL 承接线上发布、运行和交付这一层"
   },
   "PRICING.subscription.pro.feature2": {
-    "message": "LLM token 每月 10M"
+    "message": "包含比 Free 更多的每月积分额度"
   },
   "PRICING.subscription.pro.feature3": {
-    "message": "融合 API，每月 500 次"
+    "message": "更高的 Cloud Task 托管运行额度"
   },
   "PRICING.subscription.pro.feature4": {
-    "message": "互联服务，支持"
+    "message": "购买积分包时可获得更优价格"
   },
   "PRICING.subscription.pro.feature5": {
-    "message": "包含标准版所有功能"
-  },
-  "PRICING.subscription.pro.feature6": {
-    "message": "优先技术支持"
+    "message": "包含 Free 全部权益，并把本地验证后的能力更顺畅地接到线上"
   },
   "PRICING.payAsYouGo.title": {
     "message": "按量计费"
@@ -1304,13 +1322,13 @@
     "message": "语音合成：10 积分/分钟"
   },
   "PRICING.tables.title": {
-    "message": "详细价格表"
+    "message": "按量计费价格"
   },
   "PRICING.tables.subtitle": {
-    "message": "以下价格结构与 OOMOL Console 价格页保持一致，方便直接核对按量计费明细。"
+    "message": "当你使用托管 AI、Cloud Task 或其他托管服务调用时，会按照 Credits 计费。下面的价格与 OOMOL Console 保持一致。"
   },
   "PRICING.tables.syncNote": {
-    "message": "LLM 价格实时读取 Console，Cloud Task 和 Fusion API 按当前价格表展示。订阅用户按展示价格的 8 折计费。"
+    "message": "LLM 价格实时读取 Console；Cloud Task 和 Fusion API 按当前价格表展示。Pro 的角色是提供包含额度，并让你在持续增长时拿到更好的单位成本。"
   },
   "PRICING.tables.tab.llm": {
     "message": "大模型价格"

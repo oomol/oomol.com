@@ -999,13 +999,34 @@
     "message": "Simple, Transparent Pricing"
   },
   "PRICING.subtitle": {
-    "message": "Start Free, Upgrade As Needed."
+    "message": "Build locally for free. Subscribe only when you want OOMOL to host delivery and managed usage."
+  },
+  "PRICING.model.summary": {
+    "message": "OOMOL Studio is free for local development. Paid plans start when you want to publish online, run managed tasks, or use hosted AI services."
+  },
+  "PRICING.model.local.label": {
+    "message": "Local"
+  },
+  "PRICING.model.local.title": {
+    "message": "Build and validate in Studio for free"
+  },
+  "PRICING.model.local.text": {
+    "message": "Use the full local authoring environment, test with your own dependencies, and bring your own model service when needed."
+  },
+  "PRICING.model.online.label": {
+    "message": "Online"
+  },
+  "PRICING.model.online.title": {
+    "message": "Subscribe when you want to ship and host"
+  },
+  "PRICING.model.online.text": {
+    "message": "Use Pro when you want OOMOL to take on the online delivery layer for the same validated function as an API, MCP tool, or automation task."
   },
   "PRICING.subscription.title": {
-    "message": "Subscription Plans"
+    "message": "Choose How You Use OOMOL"
   },
   "PRICING.subscription.subtitle": {
-    "message": "Choose the right plan for you and enjoy more features and services"
+    "message": "Free covers local development. Pro is for developers who want to publish online and keep the cost model predictable."
   },
   "PRICING.subscription.recommended": {
     "message": "Recommended"
@@ -1023,19 +1044,19 @@
     "message": "$0"
   },
   "PRICING.subscription.free.description": {
-    "message": "Use Studio for free and connect your own model service as needed"
+    "message": "For local development, validation, and bring-your-own-model usage"
   },
   "PRICING.subscription.free.feature1": {
-    "message": "Use OOMOL Studio"
+    "message": "Full OOMOL Studio local development environment"
   },
   "PRICING.subscription.free.feature2": {
-    "message": "1 free credit when you sign up"
+    "message": "Bring your own model service when you do not want managed AI billing"
   },
   "PRICING.subscription.free.feature3": {
-    "message": "Use Studio with your own LLM service"
+    "message": "No charge for local runs inside Studio"
   },
   "PRICING.subscription.free.feature4": {
-    "message": "200 Cloud Task minutes included every month"
+    "message": "A small amount of free credits to try hosted services"
   },
   "PRICING.subscription.standard.name": {
     "message": "Standard"
@@ -1065,28 +1086,25 @@
     "message": "Pro"
   },
   "PRICING.subscription.pro.price": {
-    "message": "$29"
+    "message": "$12"
   },
   "PRICING.subscription.pro.description": {
-    "message": "Perfect for power users with frequent OOMOL core feature usage"
+    "message": "For developers who want to publish the same validated function as an API, MCP tool, or automation task without rebuilding the backend layer"
   },
   "PRICING.subscription.pro.feature1": {
-    "message": "Task executions: 4,000 per month"
+    "message": "Publish online with OOMOL-managed delivery and runtime"
   },
   "PRICING.subscription.pro.feature2": {
-    "message": "LLM tokens: 10M per month"
+    "message": "More monthly credits included than Free"
   },
   "PRICING.subscription.pro.feature3": {
-    "message": "Fusion API: 500 calls per month"
+    "message": "Higher Cloud Task allowance for hosted runs"
   },
   "PRICING.subscription.pro.feature4": {
-    "message": "FRP service support"
+    "message": "Credits packages purchased at a lower effective price"
   },
   "PRICING.subscription.pro.feature5": {
-    "message": "All Standard tier features included"
-  },
-  "PRICING.subscription.pro.feature6": {
-    "message": "Priority technical support"
+    "message": "Everything in Free, plus a smoother path from local validation to online delivery"
   },
   "PRICING.payAsYouGo.title": {
     "message": "Pay-As-You-Go"
@@ -1218,13 +1236,13 @@
     "message": "Text-to-Speech: 10 credits/minute"
   },
   "PRICING.tables.title": {
-    "message": "Detailed Pricing Tables"
+    "message": "Usage Pricing"
   },
   "PRICING.tables.subtitle": {
-    "message": "These tables mirror the pricing structure shown in OOMOL Console so you can verify pay-as-you-go charges directly from the website."
+    "message": "When you use managed AI, Cloud Task, or hosted service calls, usage is billed in credits with the same rates shown in OOMOL Console."
   },
   "PRICING.tables.syncNote": {
-    "message": "LLM pricing is fetched live from console; Cloud Task and Fusion API rows reflect the current console table. Active subscribers are billed at 80% of the listed rates."
+    "message": "LLM pricing is fetched live from console. Cloud Task and Fusion API rows reflect the current console table. Pro is designed to give you included usage plus a better price when you keep growing."
   },
   "PRICING.tables.tab.llm": {
     "message": "LLM Pricing"

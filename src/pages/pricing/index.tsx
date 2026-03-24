@@ -156,6 +156,19 @@ export default function Index() {
   const [llmRows, setLlmRows] = useState<LLMPricingRow[]>([]);
   const [isLLMLoading, setIsLLMLoading] = useState(true);
   const [llmLoadFailed, setLlmLoadFailed] = useState(false);
+  const freeFeatures = [
+    "PRICING.subscription.free.feature1",
+    "PRICING.subscription.free.feature2",
+    "PRICING.subscription.free.feature3",
+    "PRICING.subscription.free.feature4",
+  ];
+  const proFeatures = [
+    "PRICING.subscription.pro.feature1",
+    "PRICING.subscription.pro.feature2",
+    "PRICING.subscription.pro.feature3",
+    "PRICING.subscription.pro.feature4",
+    "PRICING.subscription.pro.feature5",
+  ];
 
   useEffect(() => {
     let cancelled = false;
@@ -552,7 +565,53 @@ export default function Index() {
           </div>
         </div>
 
-        {/* 订阅套餐部分 */}
+        <div className={styles.pricingModelSection}>
+          <Alert
+            banner
+            className={styles.pricingModelAlert}
+            content={tPricing(
+              "PRICING.model.summary",
+              "Studio is free for local development. You only pay when OOMOL hosts the online delivery layer or managed AI usage."
+            )}
+          />
+          <div className={styles.pricingModelGrid}>
+            <div className={styles.pricingModelCard}>
+              <div className={styles.pricingModelLabel}>
+                {tPricing("PRICING.model.local.label", "Local")}
+              </div>
+              <div className={styles.pricingModelTitle}>
+                {tPricing(
+                  "PRICING.model.local.title",
+                  "Build and validate in Studio for free"
+                )}
+              </div>
+              <p className={styles.pricingModelText}>
+                {tPricing(
+                  "PRICING.model.local.text",
+                  "Use the full local authoring experience, bring your own model if needed, and only move to paid plans when you want OOMOL to take on online delivery."
+                )}
+              </p>
+            </div>
+            <div className={styles.pricingModelCard}>
+              <div className={styles.pricingModelLabel}>
+                {tPricing("PRICING.model.online.label", "Online")}
+              </div>
+              <div className={styles.pricingModelTitle}>
+                {tPricing(
+                  "PRICING.model.online.title",
+                  "Subscribe when you want to ship and host"
+                )}
+              </div>
+              <p className={styles.pricingModelText}>
+                {tPricing(
+                  "PRICING.model.online.text",
+                  "Use Pro when you publish the same validated function as an API, MCP tool, or automation task, then pay usage by credits as your traffic grows."
+                )}
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div className={styles.subscriptionSection}>
           <div className={styles.sectionTitle}>
             {translate({ message: "PRICING.subscription.title" })}
@@ -583,51 +642,31 @@ export default function Index() {
                 <DownloadButton />
               </div>
               <div className={styles.featureList}>
-                <div className={styles.featureItem}>
-                  <i className="i-codicon:check" />
-                  <span>
-                    {translate({
-                      message: "PRICING.subscription.free.feature1",
-                    })}
-                  </span>
-                </div>
-                <div className={styles.featureItem}>
-                  <i className="i-codicon:check" />
-                  <span>
-                    {translate({
-                      message: "PRICING.subscription.free.feature2",
-                    })}
-                  </span>
-                </div>
-                <div className={styles.featureItem}>
-                  <i className="i-codicon:check" />
-                  <span>
-                    {translate({
-                      message: "PRICING.subscription.free.feature3",
-                    })}
-                  </span>
-                </div>
-                <div className={styles.featureItem}>
-                  <i className="i-codicon:check" />
-                  <span>
-                    {translate({
-                      message: "PRICING.subscription.free.feature4",
-                    })}
-                  </span>
-                </div>
+                {freeFeatures.map(featureKey => (
+                  <div key={featureKey} className={styles.featureItem}>
+                    <i className="i-codicon:check" />
+                    <span>
+                      {translate({
+                        message: featureKey,
+                      })}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
 
-            {/* 标准版 */}
-            <div className={styles.planCard}>
+            <div className={`${styles.planCard} ${styles.recommended}`}>
+              <div className={styles.badge}>
+                {translate({ message: "PRICING.subscription.recommended" })}
+              </div>
               <div className={styles.planHeader}>
                 <div className={styles.planName}>
-                  {translate({ message: "PRICING.subscription.standard.name" })}
+                  {translate({ message: "PRICING.subscription.pro.name" })}
                 </div>
                 <div className={styles.planPrice}>
                   <span className={styles.price}>
                     {translate({
-                      message: "PRICING.subscription.standard.price",
+                      message: "PRICING.subscription.pro.price",
                     })}
                   </span>
                   <span className={styles.period}>
@@ -636,7 +675,7 @@ export default function Index() {
                 </div>
                 <div className={styles.planDescription}>
                   {translate({
-                    message: "PRICING.subscription.standard.description",
+                    message: "PRICING.subscription.pro.description",
                   })}
                 </div>
               </div>
@@ -650,49 +689,18 @@ export default function Index() {
                 </a>
               </Button>
               <div className={styles.featureList}>
-                <div className={styles.featureItem}>
-                  <i className="i-codicon:check" />
-                  <span>
-                    {translate({
-                      message: "PRICING.subscription.standard.feature1",
-                    })}
-                  </span>
-                </div>
-                <div className={styles.featureItem}>
-                  <i className="i-codicon:check" />
-                  <span>
-                    {translate({
-                      message: "PRICING.subscription.standard.feature2",
-                    })}
-                  </span>
-                </div>
-                <div className={styles.featureItem}>
-                  <i className="i-codicon:check" />
-                  <span>
-                    {translate({
-                      message: "PRICING.subscription.standard.feature3",
-                    })}
-                  </span>
-                </div>
-                <div className={styles.featureItem}>
-                  <i className="i-codicon:check" />
-                  <span>
-                    {translate({
-                      message: "PRICING.subscription.standard.feature4",
-                    })}
-                  </span>
-                </div>
-                <div className={styles.featureItem}>
-                  <i className="i-codicon:check" />
-                  <span>
-                    {translate({
-                      message: "PRICING.subscription.standard.feature5",
-                    })}
-                  </span>
-                </div>
+                {proFeatures.map(featureKey => (
+                  <div key={featureKey} className={styles.featureItem}>
+                    <i className="i-codicon:check" />
+                    <span>
+                      {translate({
+                        message: featureKey,
+                      })}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
-
           </div>
         </div>
 
