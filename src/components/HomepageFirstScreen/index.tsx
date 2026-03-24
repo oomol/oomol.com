@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
+import ThemedImage from "@theme/ThemedImage";
 import React from "react";
 
 import { DownloadButton } from "../DownloadButton";
@@ -24,8 +24,6 @@ function parseHighlightText(text: string) {
 }
 
 export default function HomepageFirstScreen() {
-  const { colorMode } = useHydratedColorMode();
-
   const scriptText = translate({
     message: "HOME.FirstScreen.script",
   });
@@ -67,12 +65,11 @@ export default function HomepageFirstScreen() {
           </div>
         </div>
         <div className={styles.screenshotFrame}>
-          <img
-            src={useBaseUrl(
-              colorMode === "dark"
-                ? "/img/pages/home/hero-dark.png"
-                : "/img/pages/home/hero-light.png"
-            )}
+          <ThemedImage
+            sources={{
+              light: useBaseUrl("/img/pages/home/hero-light.png"),
+              dark: useBaseUrl("/img/pages/home/hero-dark.png"),
+            }}
             alt="OOMOL Product Screenshot"
             className={styles["product-screenshot"]}
             loading="eager"
