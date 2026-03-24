@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .center {
@@ -110,6 +111,7 @@
   width: 100%;
   height: 72px;
   margin-bottom: 16px;
+  border-top: 1px solid var(--oomol-divider-subtle);
 }
 
 .bottom {
@@ -123,24 +125,39 @@
   gap: 12px;
 
   @include phone {
-    flex-wrap: wrap;
-    padding: 0px 16px;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    row-gap: 10px;
+    column-gap: 10px;
+    padding: 0px 16px 12px;
     margin-bottom: 16px;
-    justify-content: center;
+    justify-content: stretch;
   }
 
   @include phone-middle {
-    flex-wrap: wrap;
-    padding: 0px 16px;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    row-gap: 10px;
+    column-gap: 10px;
+    padding: 0px 16px 12px;
     margin-bottom: 16px;
-    justify-content: center;
+    justify-content: stretch;
   }
 
   @include phone-large {
-    flex-wrap: wrap;
-    padding: 0px 16px;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    row-gap: 10px;
+    column-gap: 10px;
+    padding: 0px 16px 12px;
     margin-bottom: 16px;
-    justify-content: center;
+    justify-content: stretch;
   }
 
   @include pad {
@@ -156,10 +173,17 @@
 
   /* 确保 Shadcn Button 样式正确应用 */
   :global(button) {
+    min-height: 36px;
+    padding: 0 12px;
+    border-radius: 999px;
     background: transparent;
-    border: none;
+    border: 1px solid transparent;
     color: hsl(var(--foreground));
     cursor: pointer;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease;
 
     &:hover {
       background: hsl(var(--accent));
@@ -180,10 +204,17 @@
 
   /* 确保 Shadcn Button 样式正确应用 */
   :global(button) {
+    min-height: 36px;
+    padding: 0 12px;
+    border-radius: 999px;
     background: transparent;
-    border: none;
+    border: 1px solid transparent;
     color: hsl(var(--foreground));
     cursor: pointer;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease;
 
     &:hover {
       background: hsl(var(--accent));
@@ -211,6 +242,60 @@
     &:hover {
       color: var(--oomol-primary);
     }
+  }
+}
+
+@media (max-width: 430px) {
+  .bottom {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    row-gap: 10px;
+    column-gap: 10px;
+    justify-content: stretch;
+  }
+
+  .leftControls,
+  .rightControls {
+    width: 100%;
+  }
+
+  .leftControls {
+    order: 1;
+    grid-column: 1;
+    justify-content: flex-start;
+  }
+
+  .rightControls {
+    order: 2;
+    grid-column: 2;
+    justify-content: flex-end;
+  }
+
+  .leftControls :global(button),
+  .rightControls :global(button) {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .bottomInfo {
+    order: 3;
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-top: 2px;
+  }
+
+  .bottomInfo a {
+    display: block;
+    margin-left: 0;
+    margin-top: 6px;
+  }
+
+  .cookieSettingsButton {
+    display: block;
+    margin-left: 0;
+    margin-top: 6px;
+    width: 100%;
   }
 }
 
@@ -242,11 +327,17 @@
 }
 
 .iconBox {
+  min-width: 40px;
   height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--oomol-text-secondary);
+  border-radius: 999px;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
 
   &:hover {
     color: var(--oomol-primary);
@@ -262,4 +353,65 @@
   max-width: none;
   width: 160px;
   height: 160px;
+}
+
+[data-theme="dark"] {
+  .root {
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--oomol-bg-base) 92%, var(--oomol-bg-container) 8%)
+        0%,
+      color-mix(in srgb, var(--oomol-bg-layout) 74%, var(--oomol-bg-base) 26%)
+        100%
+    );
+  }
+
+  .border {
+    border-top-color: color-mix(in srgb, var(--oomol-divider) 84%, white 16%);
+  }
+
+  .leftControls :global(button),
+  .rightControls :global(button) {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-border-default) 72%,
+      transparent
+    );
+    background: var(--oomol-surface-float);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    &:hover {
+      background: color-mix(
+        in srgb,
+        var(--oomol-primary-bg) 60%,
+        var(--oomol-bg-elevated) 40%
+      );
+      border-color: color-mix(
+        in srgb,
+        var(--oomol-primary-border) 72%,
+        transparent
+      );
+    }
+  }
+
+  .iconBox {
+    color: color-mix(in srgb, var(--oomol-text-secondary) 92%, white 8%);
+    background: var(--oomol-surface-float);
+    border: 1px solid
+      color-mix(in srgb, var(--oomol-border-default) 72%, transparent);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    &:hover {
+      background: color-mix(
+        in srgb,
+        var(--oomol-primary-bg) 60%,
+        var(--oomol-bg-elevated) 40%
+      );
+      border-color: color-mix(
+        in srgb,
+        var(--oomol-primary-border) 72%,
+        transparent
+      );
+    }
+  }
 }

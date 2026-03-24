@@ -5,6 +5,7 @@ date: 2025-06-09
 ---
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import ResponsiveVideo from "@site/src/components/mdx/ResponsiveVideo";
 
 # OOMOL Studio
 
@@ -14,25 +15,43 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 In previous versions, every time a new connection line was created, it required re-entering the name and type, which affected the overall user experience. Now, we support the automatic generation of these keys when you drag a new connection line, making the operation smoother!
 
-<video controls muted autoPlay loop style={{ width: "100%" }}>
-  <source src={useBaseUrl("/img/release/1.2.0/support-auto-add-handle.mp4")} type="video/mp4" />
-</video>
+<ResponsiveVideo
+  src="/img/release/1.2.0/support-auto-add-handle.mp4"
+  type="video/mp4"
+  controls
+  muted
+  autoPlay
+  loop
+  style={{ borderRadius: 0 }}
+/>
 
 ### Support Subflow
 
 We've received a lot of feedback from users. Previously, we only supported reuse at the Block level. However, workflows can be very complex, and only supporting Block-level reuse can significantly increase maintenance costs later. Therefore, we've introduced `subflow`! This feature allows you to encapsulate a Flow into a Block, making it easy to reuse Flow functionalities and reducing the display area on the diagram.
 
-<video controls muted autoPlay loop style={{ width: "100%" }}>
-  <source src={useBaseUrl("/img/release/1.2.0/support-subflow.mp4")} type="video/mp4" />
-</video>
+<ResponsiveVideo
+  src="/img/release/1.2.0/support-subflow.mp4"
+  type="video/mp4"
+  controls
+  muted
+  autoPlay
+  loop
+  style={{ borderRadius: 0 }}
+/>
 
 ### Support Batch Processing
 
 We found that some developers frequently encounter the need to modify existing workflows to support multiple tasks when using OOMOL Studio. For example, a workflow that originally processes a single image might need significant changes to handle multiple images simultaneously. To address this, we've added a batch processing feature that allows data to be traversed using a method similar to the Map function, enabling single-instance processing modules to convert into batch processing modules.
 
-<video controls muted autoPlay loop style={{ width: "100%" }}>
-  <source src={useBaseUrl("/img/release/1.2.0/support-batch.mp4")} type="video/mp4" />
-</video>
+<ResponsiveVideo
+  src="/img/release/1.2.0/support-batch.mp4"
+  type="video/mp4"
+  controls
+  muted
+  autoPlay
+  loop
+  style={{ borderRadius: 0 }}
+/>
 
 ### Support Network Proxy
 

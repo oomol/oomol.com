@@ -3,9 +3,7 @@ sidebar_position: 30
 sidebar_label: Reusable Block
 ---
 
-import Image from "@theme/ThemedImage";
-import useBaseUrl from "@docusaurus/useBaseUrl";
-import { ThemedComponent } from '@docusaurus/theme-common';
+import ThemedResponsiveVideo from "@site/src/components/mdx/ThemedResponsiveVideo";
 
 # Merge into a Reusable Block
 
@@ -13,19 +11,14 @@ In the previous section, we created a exponentiation based on the adder and deve
 
 ## Convert to Subflow Block
 
- <ThemedComponent>
-  {({theme}) => {
-    const url = useBaseUrl(
-      theme === "dark"
-        ? "/img/docs/get-started/zero-to-one/merge-into-a-reusable-block-dark.mp4"
-        : "/img/docs/get-started/zero-to-one/merge-into-a-reusable-block-light.mp4"
-    );
-    return (
-      <video controls muted autoPlay loop style={{ width: "100%" }}>
-        <source src={url} type="video/mp4" />
-      </video>
-    )
-  }}
-</ThemedComponent>
+<ThemedResponsiveVideo
+  lightSrc="/img/docs/get-started/zero-to-one/merge-into-a-reusable-block-light.mp4"
+  darkSrc="/img/docs/get-started/zero-to-one/merge-into-a-reusable-block-dark.mp4"
+  type="video/mp4"
+  controls
+  muted
+  autoPlay
+  loop
+/>
 
 As shown above, we have transformed the Flow from the previous section into a subflow block for reuse in other Flows. This greatly enhances the reusability of the Flow.

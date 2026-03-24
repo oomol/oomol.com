@@ -7,6 +7,7 @@ date: 2025-07-14
 
 import Image from "@theme/ThemedImage";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import ResponsiveVideoEmbed from "@site/src/components/mdx/ResponsiveVideoEmbed";
 
 作为开发者，我们每天都在忍受着这样的折磨。明明一个简单的正则表达式就能搞定数据清洗，但工具偏偏只提供基础筛选。想要在流程中插入一个API调用，却发现工具只允许使用预设的集成服务。遇到特殊文件格式处理时，只能眼睁睁看着流程卡死。
 
@@ -18,24 +19,8 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 我在视频中完整演示了如何用代码插槽快速构建自定义图片处理流程。
 
-<div style={{
-  position: "relative",
-  width: 720,
-  height: 405,
-  marginTop: "12px",
-  marginBottom: "72px",
-  overflow: "hidden",
-}}>
-  <iframe
-    src="//player.bilibili.com/player.html?isOutside=true&aid=114714885558292&bvid=BV1MmKwzDEY6&cid=30598892330&p=1"
-    style={{
-      width: "100%",
-      height: "100%",
-    }}
-    scrolling="no"
-    border="0"
-    frameborder="no"
-    framespacing="0"
-    allowfullscreen="true"
-  />
-</div>
+<ResponsiveVideoEmbed
+  src="//player.bilibili.com/player.html?isOutside=true&aid=114714885558292&bvid=BV1MmKwzDEY6&cid=30598892330&p=1"
+  title="在工作流中畅写代码视频"
+  scrolling="no"
+/>

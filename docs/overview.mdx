@@ -9,6 +9,7 @@ import desktop from "@site/static/img/docs/desktop.png";
 import hub from "@site/static/img/docs/hub.png";
 import hub_detail from "@site/static/img/docs/hub_detail.png";
 import desktop_detail from "@site/static/img/docs/desktop_detail.png";
+import ResponsiveVideo from "@site/src/components/mdx/ResponsiveVideo";
 
 <div
   style={{
@@ -25,7 +26,9 @@ import desktop_detail from "@site/static/img/docs/desktop_detail.png";
 
 The docs are mainly for developers to look things up and for search engines to understand the product's capabilities.
 
-<video
+<ResponsiveVideo
+  src="https://cloud-storage.oomol.com/users/019343aa-ff25-727c-a449-9017313539b0/chat-uploads/2026-03-23/4gxes_hu5_ua-OOMOL_Studio.webm"
+  type="video/webm"
   controls
   autoPlay
   muted
@@ -33,17 +36,7 @@ The docs are mainly for developers to look things up and for search engines to u
   playsInline
   preload="metadata"
   poster={desktop}
-  style={{
-    width: "100%",
-    borderRadius: "16px",
-    background: "#000",
-  }}
->
-  <source
-    src="https://cloud-storage.oomol.com/users/019343aa-ff25-727c-a449-9017313539b0/chat-uploads/2026-03-23/4gxes_hu5_ua-OOMOL_Studio.webm"
-    type="video/webm"
-  />
-</video>
+/>
 
 ## Core Features
 

@@ -18,8 +18,7 @@
     "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
     Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI",
     "Microsoft YaHei", "Source Han Sans CN", sans-serif;
-  --ifm-font-family-base:
-    var(--oomol-font-body);
+  --ifm-font-family-base: var(--oomol-font-body);
   --ifm-heading-font-family: var(--oomol-font-display);
   --ifm-heading-color: var(--oomol-text-primary);
   --ifm-background-surface-color: var(--oomol-bg-elevated);
@@ -85,7 +84,7 @@ body {
       var(--oomol-border-default) 72%,
       transparent
     );
-    background: color-mix(in srgb, var(--oomol-bg-elevated) 96%, white);
+    background: var(--oomol-surface-float);
     box-shadow: var(--oomol-shadow-sm);
   }
 
@@ -97,7 +96,7 @@ body {
       var(--oomol-border-default) 72%,
       transparent
     );
-    background: color-mix(in srgb, var(--oomol-bg-elevated) 96%, white);
+    background: var(--oomol-surface-float);
     box-shadow: var(--oomol-shadow-md);
   }
 
@@ -156,12 +155,11 @@ body {
     right: 0;
     bottom: 0;
     backdrop-filter: blur(12px);
-    background:
-      linear-gradient(
-        180deg,
-        color-mix(in srgb, var(--oomol-bg-base) 90%, transparent) 0%,
-        color-mix(in srgb, var(--oomol-bg-base) 82%, transparent) 100%
-      );
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--oomol-bg-base) 90%, transparent) 0%,
+      color-mix(in srgb, var(--oomol-bg-base) 82%, transparent) 100%
+    );
     z-index: -1;
   }
 
@@ -294,7 +292,11 @@ $desktop-width: $breakpoint-xl;
 }
 
 @mixin linearGradientColor {
-  background-image: linear-gradient(90deg, #7572a5 0%, var(--oomol-primary) 100%);
+  background-image: linear-gradient(
+    90deg,
+    #7572a5 0%,
+    var(--oomol-primary) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -438,7 +440,16 @@ $desktop-width: $breakpoint-xl;
       max-width: 72ch;
     }
 
-    > :where(p, ul, ol, blockquote, table, pre, .theme-admonition, .tabs-container) {
+    > :where(
+      p,
+      ul,
+      ol,
+      blockquote,
+      table,
+      pre,
+      .theme-admonition,
+      .tabs-container
+    ) {
       margin-bottom: 1.1rem;
     }
 
@@ -486,7 +497,6 @@ $desktop-width: $breakpoint-xl;
       margin-top: 1.5rem;
       margin-bottom: 0.6rem;
     }
-
   }
 
   .theme-doc-breadcrumbs,

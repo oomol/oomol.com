@@ -225,6 +225,72 @@
   }
 }
 
+[data-theme="dark"] {
+  .section {
+    background: linear-gradient(
+      180deg,
+      color-mix(
+          in srgb,
+          var(--oomol-bg-base) 88%,
+          var(--oomol-bg-container) 12%
+        )
+        0%,
+      color-mix(in srgb, var(--oomol-bg-base) 95%, black 5%) 100%
+    );
+    box-shadow:
+      inset 0 1px 0 var(--oomol-divider-subtle),
+      inset 0 -1px 0 var(--oomol-divider-subtle);
+  }
+
+  .card {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-border-default) 72%,
+      var(--oomol-divider)
+    );
+    background: linear-gradient(
+      180deg,
+      color-mix(
+          in srgb,
+          var(--oomol-bg-container) 84%,
+          var(--oomol-bg-elevated) 16%
+        )
+        0%,
+      color-mix(in srgb, var(--oomol-bg-elevated) 88%, black 12%) 100%
+    );
+    box-shadow: var(--oomol-shadow-md);
+  }
+
+  .tag {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-border-default) 68%,
+      var(--oomol-divider)
+    );
+    background: color-mix(
+      in srgb,
+      var(--oomol-fill-secondary) 74%,
+      var(--oomol-bg-elevated) 26%
+    );
+  }
+
+  .cardNote {
+    border-left-color: color-mix(
+      in srgb,
+      var(--oomol-divider) 84%,
+      var(--oomol-primary-border) 16%
+    );
+  }
+
+  .cta {
+    background: color-mix(
+      in srgb,
+      var(--oomol-primary-bg) 78%,
+      var(--oomol-bg-elevated) 22%
+    );
+  }
+}
+
 :global(html[lang="en"]) .container {
   grid-template-columns: 1fr;
   gap: 1.6rem;
@@ -280,7 +346,7 @@
 
 @media (max-width: 768px) {
   .section {
-    padding-top: 3.2rem;
+    padding: 2.9rem 0 2.2rem;
   }
 
   .container {
@@ -296,12 +362,57 @@
   }
 
   .value {
+    font-size: clamp(2.4rem, 11vw, 3.35rem);
     line-height: 1;
     letter-spacing: -0.04em;
   }
 
+  .subtitle {
+    line-height: 1.68;
+  }
+
   .grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1rem;
+  }
+
+  .card {
+    gap: 0.95rem;
+    padding: 1.1rem 1.1rem 1.2rem;
+    border-radius: 1.35rem;
+  }
+
+  .cardTop {
+    gap: 0.75rem;
+  }
+
+  .valueBox {
+    gap: 0.3rem;
+    padding-bottom: 0.7rem;
+  }
+
+  .valueCaption {
+    font-size: 0.84rem;
+    line-height: 1.45;
+  }
+
+  .cardTitle {
+    font-size: 1.2rem;
+    line-height: 1.28;
+  }
+
+  .cardDescription,
+  .cardNote {
+    font-size: 0.94rem;
+    line-height: 1.62;
+  }
+
+  .cardNote {
+    padding-left: 0.75rem;
+  }
+
+  .cta {
+    min-height: 2.35rem;
+    font-size: 0.92rem;
   }
 }

@@ -89,3 +89,29 @@
     text-wrap: pretty;
   }
 }
+
+[data-theme="dark"] {
+  .content {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-primary-border) 44%,
+      var(--oomol-divider)
+    );
+    background:
+      radial-gradient(
+        circle at top left,
+        rgba(132, 138, 208, 0.18) 0%,
+        rgba(132, 138, 208, 0) 34%
+      ),
+      linear-gradient(
+        180deg,
+        color-mix(
+            in srgb,
+            var(--oomol-bg-container) 82%,
+            var(--oomol-bg-spotlight) 18%
+          )
+          0%,
+        color-mix(in srgb, var(--oomol-bg-elevated) 88%, black 12%) 100%
+      );
+  }
+}

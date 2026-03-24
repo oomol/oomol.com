@@ -1,5 +1,9 @@
 @use "../../css/custom.scss" as *;
 
+.section {
+  padding: 0;
+}
+
 .container {
   max-width: 1360px;
   margin: 0 auto;
@@ -158,6 +162,11 @@
     grid-template-columns: 1fr;
   }
 
+  :global(html[lang="en"]) .container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
   .title {
     max-width: 100%;
   }
@@ -173,6 +182,10 @@
     padding: 3.5rem 20px 3rem;
   }
 
+  :global(html[lang="en"]) .container {
+    grid-template-columns: 1fr;
+  }
+
   .title {
     font-size: clamp(2.15rem, 9.4vw, 3rem);
     line-height: 1.08;
@@ -180,9 +193,28 @@
     text-wrap: pretty;
   }
 
+  .content {
+    gap: 0.85rem;
+  }
+
+  .subtitle,
+  .pointDescription {
+    font-size: 0.94rem;
+    line-height: 1.6;
+  }
+
+  .pointsGrid {
+    gap: 0.75rem;
+  }
+
+  .pointCard {
+    padding-top: 0.8rem;
+  }
+
   .imagesWrapper {
     min-height: auto;
-    padding: 1rem;
+    padding: 0.8rem;
+    border-radius: 1.3rem;
   }
 
   .imageContainer {
@@ -190,9 +222,84 @@
     inset: auto;
     width: 100%;
     transform: none;
+    border-radius: 1.1rem;
   }
 
   .primaryImage {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+[data-theme="dark"] {
+  .section {
+    background: linear-gradient(
+      180deg,
+      color-mix(
+          in srgb,
+          var(--oomol-bg-base) 88%,
+          var(--oomol-bg-container) 12%
+        )
+        0%,
+      color-mix(in srgb, var(--oomol-bg-base) 94%, black 6%) 100%
+    );
+    box-shadow:
+      inset 0 1px 0 var(--oomol-divider-subtle),
+      inset 0 -1px 0 var(--oomol-divider-subtle);
+  }
+
+  .pointCard {
+    border-top-color: color-mix(in srgb, var(--oomol-divider) 84%, white 16%);
+  }
+
+  .imagesWrapper {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-border-default) 74%,
+      var(--oomol-divider)
+    );
+    background:
+      radial-gradient(
+        circle at 20% 10%,
+        color-mix(in srgb, var(--oomol-primary-bg) 62%, transparent) 0%,
+        transparent 36%
+      ),
+      linear-gradient(
+        180deg,
+        color-mix(
+            in srgb,
+            var(--oomol-bg-container) 82%,
+            var(--oomol-bg-elevated) 18%
+          )
+          0%,
+        color-mix(in srgb, var(--oomol-bg-elevated) 88%, black 12%) 100%
+      );
+  }
+
+  .imagesWrapper::after {
+    background:
+      linear-gradient(rgba(192, 184, 214, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(192, 184, 214, 0.06) 1px, transparent 1px);
+  }
+
+  .imageContainer {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-border-default) 72%,
+      var(--oomol-divider)
+    );
+    background: linear-gradient(
+      180deg,
+      color-mix(
+          in srgb,
+          var(--oomol-bg-elevated) 76%,
+          var(--oomol-bg-container) 24%
+        )
+        0%,
+      color-mix(in srgb, var(--oomol-bg-container) 88%, black 12%) 100%
+    );
+
+    &::after {
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    }
   }
 }

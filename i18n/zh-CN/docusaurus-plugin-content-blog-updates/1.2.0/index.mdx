@@ -5,6 +5,7 @@ date: 2025-06-09
 ---
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import ResponsiveVideo from "@site/src/components/mdx/ResponsiveVideo";
 
 # OOMOL Studio
 
@@ -14,17 +15,29 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 在之前的版本中，每次创建新的连接线时，都必须重新输入名称和类型，这在一定程度上影响了整体的使用体验。现在，我们支持在你拖动一条新的连接线时，自动生成这些 Key，从而使操作更加流畅！
 
-<video controls muted autoPlay loop style={{ width: "100%" }}>
-  <source src={useBaseUrl("/img/release/1.2.0/support-auto-add-handle.mp4")} type="video/mp4" />
-</video>
+<ResponsiveVideo
+  src="/img/release/1.2.0/support-auto-add-handle.mp4"
+  type="video/mp4"
+  controls
+  muted
+  autoPlay
+  loop
+  style={{ borderRadius: 0 }}
+/>
 
 ### 支持 subflow
 
 我们收到了很多用户的反馈，在之前，我们仅支持 Block 方式的复用。但是一个工作流可能会非常复杂，如果仅支持 Block 级别的复用，那么后期的维护成本会非常高。为此我们推出 `subflow`！此功能将支持把 Flow 封装成一个 Block，这样一来，就可以非常方便的复用 Flow 的功能，也可以减少在图上的展示区域。
 
-  <video controls muted autoPlay loop style={{ width: "100%" }}>
-    <source src={useBaseUrl("/img/release/1.2.0/support-subflow.mp4")} type="video/mp4" />
-  </video>
+<ResponsiveVideo
+  src="/img/release/1.2.0/support-subflow.mp4"
+  type="video/mp4"
+  controls
+  muted
+  autoPlay
+  loop
+  style={{ borderRadius: 0 }}
+/>
 
 ### 支持批处理
 
@@ -32,9 +45,15 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 即：原本的工作流是处理单张图片，想要调整位同时处理多张图片时，改动非常大。
 为此，我们新增了：批处理功能。将功能可以将数据通过类似 Map 函数等方式来遍历，使用此功能可以让单次处理模块转为批量处理模块。
 
-<video controls muted autoPlay loop style={{ width: "100%" }}>
-  <source src={useBaseUrl("/img/release/1.2.0/support-batch.mp4")} type="video/mp4" />
-</video>
+<ResponsiveVideo
+  src="/img/release/1.2.0/support-batch.mp4"
+  type="video/mp4"
+  controls
+  muted
+  autoPlay
+  loop
+  style={{ borderRadius: 0 }}
+/>
 
 ### 支持网络代理
 

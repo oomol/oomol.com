@@ -35,46 +35,48 @@ export default function HomepageCommunityShare() {
   );
 
   return (
-    <div className={styles.container}>
-      <div className={styles.content}>
-        <h2 className={styles.title}>
-          {translate({ id: "HOME.CommunityShare.title" })}
-        </h2>
-        <p className={styles.subtitle}>
-          {translate({ id: "HOME.CommunityShare.subtitle" })}
-        </p>
-        <div className={styles.pointsGrid}>
-          {assetPoints.map(point => (
-            <div key={point.title} className={styles.pointCard}>
-              <h3 className={styles.pointTitle}>{point.title}</h3>
-              <p className={styles.pointDescription}>{point.description}</p>
-            </div>
-          ))}
+    <section className={styles.section}>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <h2 className={styles.title}>
+            {translate({ id: "HOME.CommunityShare.title" })}
+          </h2>
+          <p className={styles.subtitle}>
+            {translate({ id: "HOME.CommunityShare.subtitle" })}
+          </p>
+          <div className={styles.pointsGrid}>
+            {assetPoints.map(point => (
+              <div key={point.title} className={styles.pointCard}>
+                <h3 className={styles.pointTitle}>{point.title}</h3>
+                <p className={styles.pointDescription}>{point.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
 
-      <div className={styles.imagesWrapper}>
-        <div className={`${styles.imageContainer} ${styles.primaryImage}`}>
-          <ThemedImage
-            sources={{
-              light: communityHomeLight,
-              dark: communityHomeDark,
-            }}
-            alt="Reusable capability catalog"
-            className={styles.image}
-          />
-        </div>
-        <div className={`${styles.imageContainer} ${styles.secondaryImage}`}>
-          <ThemedImage
-            sources={{
-              light: communityDetailLight,
-              dark: communityDetailDark,
-            }}
-            alt="Capability asset details"
-            className={styles.image}
-          />
+        <div className={styles.imagesWrapper}>
+          <div className={`${styles.imageContainer} ${styles.primaryImage}`}>
+            <ThemedImage
+              sources={{
+                light: communityHomeLight,
+                dark: communityHomeDark,
+              }}
+              alt="Reusable capability catalog"
+              className={styles.image}
+            />
+          </div>
+          <div className={`${styles.imageContainer} ${styles.secondaryImage}`}>
+            <ThemedImage
+              sources={{
+                light: communityDetailLight,
+                dark: communityDetailDark,
+              }}
+              alt="Capability asset details"
+              className={styles.image}
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

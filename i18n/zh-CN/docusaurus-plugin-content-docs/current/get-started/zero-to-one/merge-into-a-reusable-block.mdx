@@ -3,9 +3,7 @@ sidebar_position: 30
 sidebar_label: 合并为可复用区块
 ---
 
-import Image from "@theme/ThemedImage";
-import useBaseUrl from "@docusaurus/useBaseUrl";
-import { ThemedComponent } from '@docusaurus/theme-common';
+import ThemedResponsiveVideo from "@site/src/components/mdx/ThemedResponsiveVideo";
 
 # 合并为一个可复用的区块
 
@@ -13,19 +11,14 @@ import { ThemedComponent } from '@docusaurus/theme-common';
 
 ## 转换为子流区块
 
- <ThemedComponent>
-  {({theme}) => {
-    const url = useBaseUrl(
-      theme === "dark"
-        ? "/img/docs/cn/get-started/zero-to-one/merge-into-a-reusable-block-dark.mp4"
-        : "/img/docs/cn/get-started/zero-to-one/merge-into-a-reusable-block-light.mp4"
-    );
-    return (
-      <video controls muted autoPlay loop style={{ width: "100%" }}>
-        <source src={url} type="video/mp4" />
-      </video>
-    )
-  }}
-</ThemedComponent>
+<ThemedResponsiveVideo
+  lightSrc="/img/docs/cn/get-started/zero-to-one/merge-into-a-reusable-block-light.mp4"
+  darkSrc="/img/docs/cn/get-started/zero-to-one/merge-into-a-reusable-block-dark.mp4"
+  type="video/mp4"
+  controls
+  muted
+  autoPlay
+  loop
+/>
 
 如上所示，我们将上节中的工作流转成了一个子流区块，以便在其他工作流中复用。极大的提高了工作流的可复用性。

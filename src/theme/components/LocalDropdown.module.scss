@@ -8,11 +8,8 @@
   min-width: 140px;
   padding: 6px;
   border-radius: 16px;
-  border: 1px solid color-mix(
-    in srgb,
-    var(--oomol-border-default) 72%,
-    transparent
-  );
+  border: 1px solid
+    color-mix(in srgb, var(--oomol-border-default) 72%, transparent);
   background: color-mix(in srgb, var(--oomol-bg-elevated) 96%, white);
   box-shadow: var(--oomol-shadow-md);
 
@@ -29,4 +26,26 @@
 .menuItem {
   border-radius: 10px;
   color: var(--oomol-text-primary);
+}
+
+[data-theme="dark"] {
+  .menu {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-border-default) 76%,
+      transparent
+    );
+    background: var(--oomol-surface-float);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      var(--oomol-shadow-md);
+  }
+}
+
+@media (max-width: 430px) {
+  .triggerButton {
+    min-width: 0;
+    width: 100%;
+    justify-content: center;
+  }
 }

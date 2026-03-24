@@ -226,6 +226,11 @@
     grid-template-columns: 1fr;
   }
 
+  :global(html[lang="en"]) .container {
+    grid-template-columns: 1fr;
+    gap: clamp(1.75rem, 4vw, 2.5rem);
+  }
+
   .section {
     padding-top: 5rem;
   }
@@ -250,11 +255,15 @@
 
 @media (max-width: 768px) {
   .section {
-    padding-top: 4.5rem;
+    padding: 4rem 0 2.6rem;
   }
 
   .container {
     padding: 0 20px;
+  }
+
+  :global(html[lang="en"]) .container {
+    grid-template-columns: 1fr;
   }
 
   .slogan {
@@ -264,52 +273,110 @@
     text-wrap: pretty;
   }
 
+  .header {
+    gap: 1rem;
+  }
+
+  .overview {
+    font-size: 1rem;
+    line-height: 1.64;
+  }
+
+  .buttons {
+    margin-top: 0.3rem;
+  }
+
+  .offerLine {
+    gap: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
   .screenshotFrame {
-    padding: 0.85rem;
-    border-radius: 1.4rem;
+    padding: 0.72rem;
+    border-radius: 1.2rem;
   }
 }
 
 [data-theme="dark"] {
+  .section {
+    box-shadow: inset 0 -1px 0 var(--oomol-divider-subtle);
+  }
+
   .background {
     background:
       radial-gradient(
         circle at top left,
-        rgba(155, 146, 208, 0.16) 0%,
-        rgba(155, 146, 208, 0) 36%
+        rgba(155, 146, 208, 0.2) 0%,
+        rgba(155, 146, 208, 0) 38%
       ),
       radial-gradient(
         circle at 80% 18%,
-        rgba(132, 138, 208, 0.12) 0%,
-        rgba(132, 138, 208, 0) 24%
+        rgba(132, 138, 208, 0.16) 0%,
+        rgba(132, 138, 208, 0) 26%
       ),
       linear-gradient(
         180deg,
-        rgba(20, 19, 31, 0.94) 0%,
-        rgba(13, 12, 21, 0.99) 100%
+        color-mix(
+            in srgb,
+            var(--oomol-bg-container) 78%,
+            var(--oomol-bg-spotlight) 22%
+          )
+          0%,
+        color-mix(in srgb, var(--oomol-bg-base) 76%, var(--oomol-bg-layout) 24%)
+          100%
       );
   }
 
   .background::after {
     background:
-      linear-gradient(rgba(204, 196, 223, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(204, 196, 223, 0.08) 1px, transparent 1px);
+      linear-gradient(rgba(204, 196, 223, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(204, 196, 223, 0.07) 1px, transparent 1px);
+  }
+
+  .kicker {
+    color: color-mix(in srgb, var(--oomol-text-secondary) 88%, white 12%);
+  }
+
+  .overview {
+    color: color-mix(in srgb, var(--oomol-text-secondary) 92%, white 8%);
+  }
+
+  .offerLine,
+  .offerItem {
+    color: color-mix(in srgb, var(--oomol-text-secondary) 86%, white 14%);
+  }
+
+  .offerDivider {
+    color: color-mix(in srgb, var(--oomol-text-tertiary) 88%, white 12%);
   }
 
   .screenshotFrame {
     background: linear-gradient(
       180deg,
-      rgba(31, 30, 45, 0.96) 0%,
-      rgba(21, 20, 31, 0.98) 100%
+      color-mix(
+          in srgb,
+          var(--oomol-bg-elevated) 72%,
+          var(--oomol-bg-container) 28%
+        )
+        0%,
+      color-mix(in srgb, var(--oomol-bg-container) 84%, black 16%) 100%
     );
-    border-color: color-mix(in srgb, var(--oomol-border-default) 82%, black);
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-border-default) 78%,
+      var(--oomol-divider)
+    );
+    box-shadow:
+      0 24px 56px rgba(0, 0, 0, 0.22),
+      0 10px 24px rgba(0, 0, 0, 0.14);
 
     &::before {
       background: linear-gradient(
         135deg,
-        rgba(214, 205, 236, 0.26) 0%,
-        rgba(132, 138, 208, 0.24) 46%,
-        rgba(214, 205, 236, 0.14) 100%
+        rgba(214, 205, 236, 0.2) 0%,
+        rgba(132, 138, 208, 0.28) 46%,
+        rgba(214, 205, 236, 0.1) 100%
       );
     }
   }

@@ -46,6 +46,7 @@
 .homeStoryCard {
   display: grid;
   gap: 1.2rem;
+  min-width: 0;
   padding-top: 1.2rem;
   border-top: 2px solid var(--oomol-primary);
 }
@@ -87,6 +88,7 @@
 }
 
 .homePreviewCard {
+  min-width: 0;
   padding: 0.9rem;
   border-radius: 1.8rem;
   border: 1px solid var(--oomol-divider);
@@ -204,6 +206,11 @@
     grid-template-columns: 1fr;
   }
 
+  :global(html[lang="en"]) .homeHero {
+    grid-template-columns: 1fr;
+    gap: 1.35rem;
+  }
+
   .homePrincipleCard:nth-child(even) {
     .homePrincipleMedia,
     .homePrincipleContent {
@@ -213,6 +220,10 @@
 }
 
 @media (max-width: 768px) {
+  .homeSection {
+    padding: 3rem 0 2.5rem;
+  }
+
   .homeContainer {
     padding: 0 20px;
   }
@@ -229,16 +240,82 @@
     margin-bottom: 1.5rem;
   }
 
+  .homeSubtitle {
+    line-height: 1.68;
+  }
+
   .homeHero {
     gap: 1.1rem;
   }
 
+  :global(html[lang="en"]) .homeHero {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+
   .homePrincipleCard {
+    gap: 0.9rem;
+    padding-top: 0.85rem;
+  }
+
+  .homeStoryCard {
     gap: 1rem;
+    padding-top: 0.8rem;
+  }
+
+  .homeStoryLead,
+  .homeStorySummary p,
+  .homePrincipleContent p {
+    font-size: 0.96rem;
+    line-height: 1.68;
+  }
+
+  .homeFrustrationBlock {
+    gap: 0.65rem;
+    padding: 0.95rem 1rem;
+
+    p {
+      font-size: 0.92rem;
+      line-height: 1.58;
+    }
+  }
+
+  .homePreviewCard {
+    padding: 0.7rem;
+    border-radius: 1.25rem;
+  }
+
+  .homePreviewFrame {
+    min-height: 220px;
+    aspect-ratio: 16 / 10;
+    border-radius: 1rem;
+  }
+
+  .homePrinciplesGrid {
+    gap: 0.85rem;
+  }
+
+  .homePrincipleMedia {
+    padding: 0.45rem;
+    border-radius: 1.1rem;
+  }
+
+  .homePrincipleImage {
+    aspect-ratio: 16 / 9;
   }
 
   .homePrincipleContent h3 {
+    font-size: 1.28rem;
     line-height: 1.3;
+  }
+
+  .homePrincipleContent {
+    gap: 0.55rem;
+  }
+
+  .homePrincipleContent p {
+    font-size: 0.93rem;
+    line-height: 1.58;
   }
 }
 
@@ -458,12 +535,74 @@
   }
 
   .homePreviewFrame {
-    min-height: 260px;
+    min-height: 220px;
     border-radius: 1rem;
   }
 }
 
 [data-theme="dark"] {
+  .homeSection {
+    background: linear-gradient(
+      180deg,
+      color-mix(
+          in srgb,
+          var(--oomol-bg-base) 90%,
+          var(--oomol-bg-container) 10%
+        )
+        0%,
+      color-mix(in srgb, var(--oomol-bg-base) 96%, black 4%) 100%
+    );
+    box-shadow:
+      inset 0 1px 0 var(--oomol-divider-subtle),
+      inset 0 -1px 0 var(--oomol-divider-subtle);
+  }
+
+  .homeFrustrationBlock {
+    background: linear-gradient(
+      180deg,
+      color-mix(
+          in srgb,
+          var(--oomol-primary-bg) 58%,
+          var(--oomol-bg-elevated) 42%
+        )
+        0%,
+      color-mix(
+          in srgb,
+          var(--oomol-primary-bg) 34%,
+          var(--oomol-bg-container) 66%
+        )
+        100%
+    );
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-primary-border) 72%,
+      var(--oomol-divider)
+    );
+  }
+
+  .homePreviewCard,
+  .homePrincipleMedia {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-border-default) 72%,
+      var(--oomol-divider)
+    );
+    background: linear-gradient(
+      180deg,
+      color-mix(
+          in srgb,
+          var(--oomol-bg-elevated) 82%,
+          var(--oomol-bg-container) 18%
+        )
+        0%,
+      color-mix(in srgb, var(--oomol-bg-container) 88%, black 12%) 100%
+    );
+  }
+
+  .homePrincipleCard {
+    border-top-color: color-mix(in srgb, var(--oomol-divider) 84%, white 16%);
+  }
+
   .homePreviewCard,
   .heroImage,
   .principleImage {
@@ -473,8 +612,13 @@
   .homePreviewFrame {
     background: linear-gradient(
       180deg,
-      rgba(35, 41, 39, 0.94) 0%,
-      rgba(23, 28, 26, 0.98) 100%
+      color-mix(
+          in srgb,
+          var(--oomol-bg-container) 80%,
+          var(--oomol-bg-spotlight) 20%
+        )
+        0%,
+      color-mix(in srgb, var(--oomol-bg-elevated) 82%, black 18%) 100%
     );
   }
 }

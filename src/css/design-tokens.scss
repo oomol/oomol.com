@@ -16,6 +16,21 @@
   --oomol-bg-elevated: #fafcff;
   --oomol-bg-spotlight: #e6ebf5;
   --oomol-bg-layout: #eef2f8;
+  --oomol-surface-float: color-mix(
+    in srgb,
+    var(--oomol-bg-elevated) 96%,
+    white 4%
+  );
+  --oomol-surface-panel: color-mix(
+    in srgb,
+    var(--oomol-bg-container) 86%,
+    var(--oomol-bg-elevated) 14%
+  );
+  --oomol-surface-panel-strong: color-mix(
+    in srgb,
+    var(--oomol-bg-spotlight) 72%,
+    var(--oomol-bg-container) 28%
+  );
 
   /* ----------------------
      文字色 (Text)
@@ -193,6 +208,21 @@
   --oomol-bg-elevated: #22212f;
   --oomol-bg-spotlight: #2c2a3b;
   --oomol-bg-layout: #0d0c13;
+  --oomol-surface-float: color-mix(
+    in srgb,
+    var(--oomol-bg-elevated) 82%,
+    var(--oomol-bg-container) 18%
+  );
+  --oomol-surface-panel: color-mix(
+    in srgb,
+    var(--oomol-bg-container) 84%,
+    var(--oomol-bg-elevated) 16%
+  );
+  --oomol-surface-panel-strong: color-mix(
+    in srgb,
+    var(--oomol-bg-spotlight) 68%,
+    var(--oomol-bg-container) 32%
+  );
 
   /* ----------------------
      文字色 (Text)
