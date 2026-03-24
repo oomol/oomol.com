@@ -1106,13 +1106,13 @@
     "message": "需要上线交付时再订阅"
   },
   "PRICING.model.online.text": {
-    "message": "当你希望把已经验证过的函数继续发布成 API、MCP 工具或自动化任务，并由 OOMOL 承接线上运行层时，再使用 Pro。"
+    "message": "当你希望把已经验证过的函数继续发布成 API、MCP 工具或自动化任务，并由 OOMOL 承接线上运行层时，再使用 Pro 或 Max。"
   },
   "PRICING.subscription.title": {
     "message": "选择你使用 OOMOL 的方式"
   },
   "PRICING.subscription.subtitle": {
-    "message": "Free 覆盖本地开发，Pro 面向要继续线上发布和托管运行的开发者。"
+    "message": "Free 用于本地开发和托管能力试用。Pro 与 Max 面向线上发布、托管运行，以及更可预期的 Cloud Task 成本。"
   },
   "PRICING.subscription.recommended": {
     "message": "推荐"
@@ -1123,6 +1123,12 @@
   "PRICING.subscription.subscribe": {
     "message": "立即订阅"
   },
+  "PRICING.subscription.showDetails": {
+    "message": "查看完整权益"
+  },
+  "PRICING.subscription.hideDetails": {
+    "message": "收起"
+  },
   "PRICING.subscription.free.name": {
     "message": "免费版"
   },
@@ -1130,7 +1136,7 @@
     "message": "$0"
   },
   "PRICING.subscription.free.description": {
-    "message": "适合本地开发、结果验证，以及自带模型服务的使用方式"
+    "message": "适合本地开发、结果验证，\n以及接入自有模型服务时的\n日常使用方式"
   },
   "PRICING.subscription.free.feature1": {
     "message": "完整使用 OOMOL Studio 本地开发环境"
@@ -1142,31 +1148,19 @@
     "message": "在 Studio 内本地运行不触发 Cloud Task 计费"
   },
   "PRICING.subscription.free.feature4": {
-    "message": "赠送少量体验积分，用于试用托管服务"
+    "message": "每月包含 200 分钟 Cloud Task 额度"
   },
-  "PRICING.subscription.standard.name": {
-    "message": "标准版"
+  "PRICING.subscription.free.feature5": {
+    "message": "注册即送 1 credit，用于试用 LLM 与 Fusion API"
   },
-  "PRICING.subscription.standard.price": {
-    "message": "$5"
+  "PRICING.subscription.free.feature6": {
+    "message": "可发布 20 个包（公有/私有合计）"
   },
-  "PRICING.subscription.standard.description": {
-    "message": "适合希望用订阅价长期使用 OOMOL 配套资源，并享受全部按量项目 8 折的小团队"
+  "PRICING.subscription.free.highlight1": {
+    "message": "200 分钟/月"
   },
-  "PRICING.subscription.standard.feature1": {
-    "message": "价格表所列按量项目，订阅后统一按原价 8 折计费"
-  },
-  "PRICING.subscription.standard.feature2": {
-    "message": "LLM 使用按原价 8 折"
-  },
-  "PRICING.subscription.standard.feature3": {
-    "message": "Cloud Task 使用按原价 8 折"
-  },
-  "PRICING.subscription.standard.feature4": {
-    "message": "Fusion API 使用按原价 8 折"
-  },
-  "PRICING.subscription.standard.feature5": {
-    "message": "包含免费版所有权益"
+  "PRICING.subscription.free.highlight2": {
+    "message": "20 个包"
   },
   "PRICING.subscription.pro.name": {
     "message": "Pro"
@@ -1175,22 +1169,64 @@
     "message": "$12"
   },
   "PRICING.subscription.pro.description": {
-    "message": "适合希望把本地已经跑通的函数继续发布成 API、MCP 工具或自动化任务，而不想再单独搭一层后端和运行时的开发者"
+    "message": "适合把本地已跑通的函数\n发布成 API、MCP 工具或自动化任务，\n并稳定使用 OOMOL 托管运行层"
   },
   "PRICING.subscription.pro.feature1": {
-    "message": "使用 OOMOL 承接线上发布、运行和交付这一层"
+    "message": "使用 OOMOL 承接线上发布、运行和交付"
   },
   "PRICING.subscription.pro.feature2": {
-    "message": "包含比 Free 更多的每月积分额度"
+    "message": "每月包含 1800 分钟 Cloud Task 额度"
   },
   "PRICING.subscription.pro.feature3": {
-    "message": "更高的 Cloud Task 托管运行额度"
+    "message": "每月包含价值 $3 的通用 credits"
   },
   "PRICING.subscription.pro.feature4": {
-    "message": "购买积分包时可获得更优价格"
+    "message": "适合从本地验证切换到正式线上托管"
   },
   "PRICING.subscription.pro.feature5": {
-    "message": "包含 Free 全部权益，并把本地验证后的能力更顺畅地接到线上"
+    "message": "超出包含额度后按标准价格继续充值使用"
+  },
+  "PRICING.subscription.pro.feature6": {
+    "message": "可发布 100 个包（公有/私有合计）"
+  },
+  "PRICING.subscription.pro.highlight1": {
+    "message": "1800 分钟/月"
+  },
+  "PRICING.subscription.pro.highlight2": {
+    "message": "100 个包"
+  },
+  "PRICING.subscription.max.name": {
+    "message": "Max"
+  },
+  "PRICING.subscription.max.price": {
+    "message": "$79"
+  },
+  "PRICING.subscription.max.description": {
+    "message": "适合已有稳定线上调用量，\n希望用更高月度托管额度\n持续承接运行需求的用户"
+  },
+  "PRICING.subscription.max.feature1": {
+    "message": "包含 Pro 全部权益"
+  },
+  "PRICING.subscription.max.feature2": {
+    "message": "每月包含 14400 分钟 Cloud Task 额度"
+  },
+  "PRICING.subscription.max.feature3": {
+    "message": "每月包含价值 $8 的通用 credits"
+  },
+  "PRICING.subscription.max.feature4": {
+    "message": "适合稳定高用量的托管运行场景"
+  },
+  "PRICING.subscription.max.feature5": {
+    "message": "超出包含额度后按标准价格继续充值使用"
+  },
+  "PRICING.subscription.max.feature6": {
+    "message": "可发布 300 个包（公有/私有合计）"
+  },
+  "PRICING.subscription.max.highlight1": {
+    "message": "14400 分钟/月"
+  },
+  "PRICING.subscription.max.highlight2": {
+    "message": "300 个包"
   },
   "PRICING.payAsYouGo.title": {
     "message": "按量计费"

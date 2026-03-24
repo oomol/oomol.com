@@ -6,6 +6,7 @@
 # Generated files
 .docusaurus
 .cache-loader
+price_docs
 # unocss
 src/styles/uno.css
 # Misc

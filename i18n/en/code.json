@@ -1020,13 +1020,13 @@
     "message": "Subscribe when you want to ship and host"
   },
   "PRICING.model.online.text": {
-    "message": "Use Pro when you want OOMOL to take on the online delivery layer for the same validated function as an API, MCP tool, or automation task."
+    "message": "Use Pro or Max when you want OOMOL to take on the online delivery layer for the same validated function as an API, MCP tool, or automation task."
   },
   "PRICING.subscription.title": {
     "message": "Choose How You Use OOMOL"
   },
   "PRICING.subscription.subtitle": {
-    "message": "Free covers local development. Pro is for developers who want to publish online and keep the cost model predictable."
+    "message": "Free covers local development and hosted trials. Pro and Max are for online publishing, hosted runs, and predictable Cloud Task costs."
   },
   "PRICING.subscription.recommended": {
     "message": "Recommended"
@@ -1037,6 +1037,12 @@
   "PRICING.subscription.subscribe": {
     "message": "Subscribe Now"
   },
+  "PRICING.subscription.showDetails": {
+    "message": "View full benefits"
+  },
+  "PRICING.subscription.hideDetails": {
+    "message": "Collapse"
+  },
   "PRICING.subscription.free.name": {
     "message": "Free"
   },
@@ -1044,7 +1050,7 @@
     "message": "$0"
   },
   "PRICING.subscription.free.description": {
-    "message": "For local development, validation, and bring-your-own-model usage"
+    "message": "For local development,\nvalidation, and everyday work\nwith your own model services"
   },
   "PRICING.subscription.free.feature1": {
     "message": "Full OOMOL Studio local development environment"
@@ -1056,31 +1062,19 @@
     "message": "No charge for local runs inside Studio"
   },
   "PRICING.subscription.free.feature4": {
-    "message": "A small amount of free credits to try hosted services"
+    "message": "200 Cloud Task minutes included each month"
   },
-  "PRICING.subscription.standard.name": {
-    "message": "Standard"
+  "PRICING.subscription.free.feature5": {
+    "message": "1 sign-up credit to try LLM and Fusion API usage"
   },
-  "PRICING.subscription.standard.price": {
-    "message": "$5"
+  "PRICING.subscription.free.feature6": {
+    "message": "Publish up to 20 packages total, public and private combined"
   },
-  "PRICING.subscription.standard.description": {
-    "message": "Best for teams that want a predictable subscription plus 20% off all listed usage"
+  "PRICING.subscription.free.highlight1": {
+    "message": "200 min/month"
   },
-  "PRICING.subscription.standard.feature1": {
-    "message": "All listed usage is billed at 80% of the original price"
-  },
-  "PRICING.subscription.standard.feature2": {
-    "message": "LLM usage at 20% off"
-  },
-  "PRICING.subscription.standard.feature3": {
-    "message": "Cloud Task usage at 20% off"
-  },
-  "PRICING.subscription.standard.feature4": {
-    "message": "Fusion API usage at 20% off"
-  },
-  "PRICING.subscription.standard.feature5": {
-    "message": "All Free tier benefits included"
+  "PRICING.subscription.free.highlight2": {
+    "message": "20 packages"
   },
   "PRICING.subscription.pro.name": {
     "message": "Pro"
@@ -1089,22 +1083,64 @@
     "message": "$12"
   },
   "PRICING.subscription.pro.description": {
-    "message": "For developers who want to publish the same validated function as an API, MCP tool, or automation task without rebuilding the backend layer"
+    "message": "For publishing validated functions\nas APIs, MCP tools, or automation tasks,\nwith OOMOL-managed hosting"
   },
   "PRICING.subscription.pro.feature1": {
     "message": "Publish online with OOMOL-managed delivery and runtime"
   },
   "PRICING.subscription.pro.feature2": {
-    "message": "More monthly credits included than Free"
+    "message": "1,800 Cloud Task minutes included each month"
   },
   "PRICING.subscription.pro.feature3": {
-    "message": "Higher Cloud Task allowance for hosted runs"
+    "message": "$3 in general credits included each month"
   },
   "PRICING.subscription.pro.feature4": {
-    "message": "Credits packages purchased at a lower effective price"
+    "message": "Built for moving from local validation to hosted delivery"
   },
   "PRICING.subscription.pro.feature5": {
-    "message": "Everything in Free, plus a smoother path from local validation to online delivery"
+    "message": "Top up at the standard rate after the included allowance"
+  },
+  "PRICING.subscription.pro.feature6": {
+    "message": "Publish up to 100 packages total, public and private combined"
+  },
+  "PRICING.subscription.pro.highlight1": {
+    "message": "1,800 min/month"
+  },
+  "PRICING.subscription.pro.highlight2": {
+    "message": "100 packages"
+  },
+  "PRICING.subscription.max.name": {
+    "message": "Max"
+  },
+  "PRICING.subscription.max.price": {
+    "message": "$79"
+  },
+  "PRICING.subscription.max.description": {
+    "message": "For steady online traffic that needs\na larger monthly hosted allowance\nfor ongoing hosted runs"
+  },
+  "PRICING.subscription.max.feature1": {
+    "message": "Everything in Pro"
+  },
+  "PRICING.subscription.max.feature2": {
+    "message": "14,400 Cloud Task minutes included each month"
+  },
+  "PRICING.subscription.max.feature3": {
+    "message": "$8 in general credits included each month"
+  },
+  "PRICING.subscription.max.feature4": {
+    "message": "Better fit for steady high-volume hosted runs"
+  },
+  "PRICING.subscription.max.feature5": {
+    "message": "Top up at the standard rate after the included allowance"
+  },
+  "PRICING.subscription.max.feature6": {
+    "message": "Publish up to 300 packages total, public and private combined"
+  },
+  "PRICING.subscription.max.highlight1": {
+    "message": "14,400 min/month"
+  },
+  "PRICING.subscription.max.highlight2": {
+    "message": "300 packages"
   },
   "PRICING.payAsYouGo.title": {
     "message": "Pay-As-You-Go"

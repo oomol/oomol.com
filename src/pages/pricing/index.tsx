@@ -159,15 +159,44 @@ export default function Index() {
   const freeFeatures = [
     "PRICING.subscription.free.feature1",
     "PRICING.subscription.free.feature2",
-    "PRICING.subscription.free.feature3",
     "PRICING.subscription.free.feature4",
+    "PRICING.subscription.free.feature6",
+  ];
+  const freeMoreFeatures = [
+    "PRICING.subscription.free.feature3",
+    "PRICING.subscription.free.feature5",
   ];
   const proFeatures = [
     "PRICING.subscription.pro.feature1",
     "PRICING.subscription.pro.feature2",
     "PRICING.subscription.pro.feature3",
+    "PRICING.subscription.pro.feature6",
+  ];
+  const proMoreFeatures = [
     "PRICING.subscription.pro.feature4",
     "PRICING.subscription.pro.feature5",
+  ];
+  const maxFeatures = [
+    "PRICING.subscription.max.feature1",
+    "PRICING.subscription.max.feature2",
+    "PRICING.subscription.max.feature3",
+    "PRICING.subscription.max.feature6",
+  ];
+  const maxMoreFeatures = [
+    "PRICING.subscription.max.feature4",
+    "PRICING.subscription.max.feature5",
+  ];
+  const freeHighlights = [
+    "PRICING.subscription.free.highlight1",
+    "PRICING.subscription.free.highlight2",
+  ];
+  const proHighlights = [
+    "PRICING.subscription.pro.highlight1",
+    "PRICING.subscription.pro.highlight2",
+  ];
+  const maxHighlights = [
+    "PRICING.subscription.max.highlight1",
+    "PRICING.subscription.max.highlight2",
   ];
 
   useEffect(() => {
@@ -622,7 +651,7 @@ export default function Index() {
 
           <div className={styles.planBox}>
             {/* 免费版 */}
-            <div className={styles.planCard}>
+            <div className={`${styles.planCard} ${styles.freePlan}`}>
               <div className={styles.planHeader}>
                 <div className={styles.planName}>
                   {translate({ message: "PRICING.subscription.free.name" })}
@@ -637,25 +666,65 @@ export default function Index() {
                     message: "PRICING.subscription.free.description",
                   })}
                 </div>
+                <div className={styles.planHighlights}>
+                  {freeHighlights.map(highlightKey => (
+                    <span key={highlightKey} className={styles.planHighlight}>
+                      {translate({ message: highlightKey })}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <div className={styles.downloadBtnWrapper}>
-                <DownloadButton />
+              <div className={styles.planActionArea}>
+                <div className={styles.downloadBtnWrapper}>
+                  <DownloadButton />
+                </div>
               </div>
-              <div className={styles.featureList}>
-                {freeFeatures.map(featureKey => (
-                  <div key={featureKey} className={styles.featureItem}>
-                    <i className="i-codicon:check" />
-                    <span>
+              <div className={styles.planDetails}>
+                <div className={styles.featureList}>
+                  {freeFeatures.map(featureKey => (
+                    <div key={featureKey} className={styles.featureItem}>
+                      <i className="i-codicon:check" />
+                      <span>
+                        {translate({
+                          message: featureKey,
+                        })}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <details className={styles.featureDisclosure}>
+                  <summary className={styles.featureDisclosureTrigger}>
+                    <span className={styles.featureDisclosureOpenLabel}>
                       {translate({
-                        message: featureKey,
+                        message: "PRICING.subscription.showDetails",
                       })}
                     </span>
+                    <span className={styles.featureDisclosureCloseLabel}>
+                      {translate({
+                        message: "PRICING.subscription.hideDetails",
+                      })}
+                    </span>
+                    <i className="i-codicon:chevron-down" />
+                  </summary>
+                  <div className={styles.featureDisclosureContent}>
+                    {freeMoreFeatures.map(featureKey => (
+                      <div key={featureKey} className={styles.featureItem}>
+                        <i className="i-codicon:check" />
+                        <span>
+                          {translate({
+                            message: featureKey,
+                          })}
+                        </span>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </details>
               </div>
             </div>
 
-            <div className={`${styles.planCard} ${styles.recommended}`}>
+            <div
+              className={`${styles.planCard} ${styles.recommended} ${styles.proPlan}`}
+            >
               <div className={styles.badge}>
                 {translate({ message: "PRICING.subscription.recommended" })}
               </div>
@@ -678,27 +747,149 @@ export default function Index() {
                     message: "PRICING.subscription.pro.description",
                   })}
                 </div>
+                <div className={styles.planHighlights}>
+                  {proHighlights.map(highlightKey => (
+                    <span key={highlightKey} className={styles.planHighlight}>
+                      {translate({ message: highlightKey })}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <Button asChild className={styles.subscribeBtn}>
-                <a
-                  href="https://console.oomol.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {translate({ message: "PRICING.subscription.subscribe" })}
-                </a>
-              </Button>
-              <div className={styles.featureList}>
-                {proFeatures.map(featureKey => (
-                  <div key={featureKey} className={styles.featureItem}>
-                    <i className="i-codicon:check" />
-                    <span>
+              <div className={styles.planActionArea}>
+                <Button asChild className={styles.subscribeBtn}>
+                  <a
+                    href="https://console.oomol.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {translate({ message: "PRICING.subscription.subscribe" })}
+                  </a>
+                </Button>
+                <div className={styles.planActionMeta} aria-hidden="true" />
+              </div>
+              <div className={styles.planDetails}>
+                <div className={styles.featureList}>
+                  {proFeatures.map(featureKey => (
+                    <div key={featureKey} className={styles.featureItem}>
+                      <i className="i-codicon:check" />
+                      <span>
+                        {translate({
+                          message: featureKey,
+                        })}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <details className={styles.featureDisclosure}>
+                  <summary className={styles.featureDisclosureTrigger}>
+                    <span className={styles.featureDisclosureOpenLabel}>
                       {translate({
-                        message: featureKey,
+                        message: "PRICING.subscription.showDetails",
                       })}
                     </span>
+                    <span className={styles.featureDisclosureCloseLabel}>
+                      {translate({
+                        message: "PRICING.subscription.hideDetails",
+                      })}
+                    </span>
+                    <i className="i-codicon:chevron-down" />
+                  </summary>
+                  <div className={styles.featureDisclosureContent}>
+                    {proMoreFeatures.map(featureKey => (
+                      <div key={featureKey} className={styles.featureItem}>
+                        <i className="i-codicon:check" />
+                        <span>
+                          {translate({
+                            message: featureKey,
+                          })}
+                        </span>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </details>
+              </div>
+            </div>
+
+            <div className={`${styles.planCard} ${styles.maxPlan}`}>
+              <div className={styles.planHeader}>
+                <div className={styles.planName}>
+                  {translate({ message: "PRICING.subscription.max.name" })}
+                </div>
+                <div className={styles.planPrice}>
+                  <span className={styles.price}>
+                    {translate({
+                      message: "PRICING.subscription.max.price",
+                    })}
+                  </span>
+                  <span className={styles.period}>
+                    {translate({ message: "PRICING.subscription.period" })}
+                  </span>
+                </div>
+                <div className={styles.planDescription}>
+                  {translate({
+                    message: "PRICING.subscription.max.description",
+                  })}
+                </div>
+                <div className={styles.planHighlights}>
+                  {maxHighlights.map(highlightKey => (
+                    <span key={highlightKey} className={styles.planHighlight}>
+                      {translate({ message: highlightKey })}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className={styles.planActionArea}>
+                <Button asChild className={styles.subscribeBtn}>
+                  <a
+                    href="https://console.oomol.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {translate({ message: "PRICING.subscription.subscribe" })}
+                  </a>
+                </Button>
+                <div className={styles.planActionMeta} aria-hidden="true" />
+              </div>
+              <div className={styles.planDetails}>
+                <div className={styles.featureList}>
+                  {maxFeatures.map(featureKey => (
+                    <div key={featureKey} className={styles.featureItem}>
+                      <i className="i-codicon:check" />
+                      <span>
+                        {translate({
+                          message: featureKey,
+                        })}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <details className={styles.featureDisclosure}>
+                  <summary className={styles.featureDisclosureTrigger}>
+                    <span className={styles.featureDisclosureOpenLabel}>
+                      {translate({
+                        message: "PRICING.subscription.showDetails",
+                      })}
+                    </span>
+                    <span className={styles.featureDisclosureCloseLabel}>
+                      {translate({
+                        message: "PRICING.subscription.hideDetails",
+                      })}
+                    </span>
+                    <i className="i-codicon:chevron-down" />
+                  </summary>
+                  <div className={styles.featureDisclosureContent}>
+                    {maxMoreFeatures.map(featureKey => (
+                      <div key={featureKey} className={styles.featureItem}>
+                        <i className="i-codicon:check" />
+                        <span>
+                          {translate({
+                            message: featureKey,
+                          })}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </details>
               </div>
             </div>
           </div>
