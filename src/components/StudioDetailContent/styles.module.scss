@@ -178,6 +178,15 @@
   }
 }
 
+.homePrincipleExtra {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.homePrincipleToggle {
+  display: none;
+}
+
 :global(html[lang="en"]) .homeHeader {
   max-width: 60rem;
 }
@@ -316,6 +325,40 @@
   .homePrincipleContent p {
     font-size: 0.93rem;
     line-height: 1.58;
+  }
+
+  .homePrincipleExtra {
+    gap: 0.5rem;
+  }
+
+  .homePrincipleExtraCollapsed {
+    display: none;
+  }
+
+  .homePrincipleToggle {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.15rem 0;
+    border: none;
+    background: transparent;
+    color: var(--oomol-primary-text);
+    font-size: 0.88rem;
+    font-weight: 650;
+    line-height: 1.4;
+    cursor: pointer;
+
+    &::after {
+      content: "→";
+      font-size: 0.8rem;
+      transform: rotate(90deg);
+      transition: transform 0.2s ease;
+    }
+
+    &[aria-expanded="true"]::after {
+      transform: rotate(-90deg);
+    }
   }
 }
 

@@ -1,9 +1,11 @@
 import styles from "./styles.module.scss";
 
 import { translate } from "@docusaurus/Translate";
+import type { DocusaurusContext } from "@docusaurus/types";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import ThemedImage from "@theme/ThemedImage";
-import React from "react";
+import React, { useState } from "react";
 
 type StudioDetailContentProps = {
   variant?: "page" | "home";
@@ -54,6 +56,13 @@ const principles = [
 export default function StudioDetailContent({
   variant = "page",
 }: StudioDetailContentProps) {
+  const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
+    i18n: { currentLocale: string };
+  };
+  const isZh = i18n.currentLocale === "zh-CN";
+  const [expandedPrinciple, setExpandedPrinciple] = useState<number | null>(
+    null
+  );
   const studioPreviewLight = useBaseUrl("/img/pages/studio/studio-light.png");
   const studioPreviewDark = useBaseUrl("/img/pages/studio/studio-dark.png");
   const principle1Light = useBaseUrl("/img/pages/studio/code-light.png");
@@ -115,34 +124,69 @@ export default function StudioDetailContent({
           </div>
 
           <div className={styles.homePrinciplesGrid}>
-            {principles.map((principle, index) => (
-              <article
-                key={principle.titleKey}
-                className={styles.homePrincipleCard}
-              >
-                <div className={styles.homePrincipleMedia}>
-                  <ThemedImage
-                    sources={principleImageSources[index]}
-                    alt={principle.alt}
-                    className={styles.homePrincipleImage}
-                  />
-                </div>
-                <div className={styles.homePrincipleContent}>
-                  <h3>
-                    {translate({
-                      message: principle.titleKey,
-                    })}
-                  </h3>
-                  {principle.paragraphKeys.map(key => (
-                    <p key={key}>
+            {principles.map((principle, index) => {
+              const [firstParagraph, ...extraParagraphs] =
+                principle.paragraphKeys;
+              const isExpanded = expandedPrinciple === index;
+
+              return (
+                <article
+                  key={principle.titleKey}
+                  className={styles.homePrincipleCard}
+                >
+                  <div className={styles.homePrincipleMedia}>
+                    <ThemedImage
+                      sources={principleImageSources[index]}
+                      alt={principle.alt}
+                      className={styles.homePrincipleImage}
+                    />
+                  </div>
+                  <div className={styles.homePrincipleContent}>
+                    <h3>
                       {translate({
-                        message: key,
+                        message: principle.titleKey,
+                      })}
+                    </h3>
+                    <p>
+                      {translate({
+                        message: firstParagraph,
                       })}
                     </p>
-                  ))}
-                </div>
-              </article>
-            ))}
+                    <div
+                      className={`${styles.homePrincipleExtra} ${
+                        !isExpanded ? styles.homePrincipleExtraCollapsed : ""
+                      }`}
+                    >
+                      {extraParagraphs.map(key => (
+                        <p key={key}>
+                          {translate({
+                            message: key,
+                          })}
+                        </p>
+                      ))}
+                    </div>
+                    <button
+                      type="button"
+                      className={styles.homePrincipleToggle}
+                      aria-expanded={isExpanded}
+                      onClick={() => {
+                        setExpandedPrinciple(current =>
+                          current === index ? null : index
+                        );
+                      }}
+                    >
+                      {isExpanded
+                        ? isZh
+                          ? "收起"
+                          : "Show less"
+                        : isZh
+                          ? "展开更多"
+                          : "Show more"}
+                    </button>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
