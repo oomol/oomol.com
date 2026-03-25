@@ -192,6 +192,10 @@
   background: var(--ifm-background-surface-color);
 }
 
+:global(html[lang="zh-CN"]) .container {
+  grid-template-columns: minmax(32rem, 0.9fr) minmax(0, 0.9fr);
+}
+
 :global(html[lang="en"]) .container {
   max-width: 1360px;
   grid-template-columns: minmax(0, 0.88fr) minmax(0, 0.92fr);
