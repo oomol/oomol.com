@@ -3,7 +3,6 @@ import { Dropdown, Menu } from "@arco-design/web-react";
 import { Button } from "@site/src/components/ui/button";
 import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
 import styles from "./ColorModeDropdown.module.scss";
-import { useState, useEffect } from "react";
 
 type ColorModeType = "light" | "dark" | "system";
 
@@ -26,45 +25,15 @@ const getModeText = (mode: ColorModeType) => {
 };
 
 export const ColorModeDropdown = () => {
-  const { colorMode, setColorMode, isHydrated } = useHydratedColorMode();
-  const [selectedMode, setSelectedMode] = useState<ColorModeType>("system");
-
-  useEffect(() => {
-    if (!isHydrated) {
-      return;
-    }
-
-    const storedMode = localStorage.getItem("theme") as ColorModeType | null;
-    setSelectedMode(storedMode || "system");
-  }, [isHydrated]);
-
-  useEffect(() => {
-    if (!isHydrated || selectedMode !== "system") return;
-
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const handleSystemThemeChange = (e: MediaQueryListEvent) => {
-      setColorMode(e.matches ? "dark" : "light");
-    };
-
-    mediaQuery.addEventListener("change", handleSystemThemeChange);
-    return () => {
-      mediaQuery.removeEventListener("change", handleSystemThemeChange);
-    };
-  }, [isHydrated, selectedMode, setColorMode]);
+  const { colorMode, colorModeChoice, setColorMode } = useHydratedColorMode();
+  const selectedMode: ColorModeType = colorModeChoice ?? "system";
 
   const modes: ColorModeType[] = ["light", "dark", "system"];
 
   const handleModeChange = (mode: ColorModeType) => {
-    setSelectedMode(mode);
     if (mode === "system") {
-      localStorage.removeItem("theme");
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
-      setColorMode(systemTheme);
+      setColorMode(null);
     } else {
-      localStorage.setItem("theme", mode);
       setColorMode(mode);
     }
   };

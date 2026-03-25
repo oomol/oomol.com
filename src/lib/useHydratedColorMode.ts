@@ -6,7 +6,7 @@ type ResolvedColorMode = "light" | "dark";
 export function useHydratedColorMode(
   fallbackColorMode: ResolvedColorMode = "dark"
 ) {
-  const { colorMode, setColorMode } = useColorMode();
+  const { colorMode, colorModeChoice, setColorMode } = useColorMode();
   const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
@@ -15,6 +15,7 @@ export function useHydratedColorMode(
 
   return {
     colorMode: isHydrated ? colorMode : fallbackColorMode,
+    colorModeChoice: isHydrated ? colorModeChoice : null,
     isHydrated,
     setColorMode,
   };
