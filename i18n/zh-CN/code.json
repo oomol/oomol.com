@@ -1205,7 +1205,7 @@
     "message": "适合已有稳定线上调用量，\n希望用更高月度托管额度\n持续承接运行需求的用户"
   },
   "PRICING.subscription.max.feature1": {
-    "message": "包含 Pro 全部权益"
+    "message": "包含全部 Pro 功能，额度更高"
   },
   "PRICING.subscription.max.feature2": {
     "message": "每月包含 14400 分钟 Cloud Task 额度"
