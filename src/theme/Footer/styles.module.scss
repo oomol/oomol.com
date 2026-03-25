@@ -85,18 +85,18 @@
 }
 
 .title {
-  font-size: 14px;
-  font-weight: bolder;
+  font-size: var(--oomol-text-support);
+  font-weight: 700;
   color: var(--oomol-text-primary);
 }
 
 .item {
-  font-size: 14px;
+  font-size: var(--oomol-text-support);
   line-height: 36px;
 }
 
 .link {
-  font-weight: normal;
+  font-weight: 400;
   color: var(--oomol-text-secondary);
 
   &:hover {
@@ -230,7 +230,7 @@
 }
 
 .bottomInfo {
-  font-size: 12px;
+  font-size: var(--oomol-text-eyebrow);
   color: var(--oomol-text-tertiary);
   text-align: center;
   flex: 1;

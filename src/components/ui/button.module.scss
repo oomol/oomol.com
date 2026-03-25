@@ -91,7 +91,7 @@
 .sizeSm {
   min-height: 34px;
   padding-inline: 0.8rem;
-  font-size: 13px;
+  font-size: var(--oomol-text-label);
 }
 
 .sizeLg {

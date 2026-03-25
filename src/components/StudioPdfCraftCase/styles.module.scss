@@ -35,14 +35,14 @@
 }
 
 .subtitle {
-  font-size: 18px;
+  font-size: var(--oomol-font-size-lg);
   color: var(--oomol-text-secondary);
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
 
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: var(--oomol-text-body);
   }
 }
 
@@ -125,18 +125,18 @@
 }
 
 .stepTitle {
-  font-size: 18px;
+  font-size: var(--oomol-font-size-lg);
   font-weight: 600;
   margin: 0 0 8px 0;
   color: var(--oomol-text-primary);
 
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: var(--oomol-text-body);
   }
 }
 
 .stepDesc {
-  font-size: 14px;
+  font-size: var(--oomol-text-support);
   color: var(--oomol-text-secondary);
   line-height: 1.6;
   margin: 0 0 12px 0;
@@ -154,7 +154,7 @@
   background: var(--oomol-bg-subtle);
   color: var(--oomol-text-secondary);
   border-radius: 12px;
-  font-size: 12px;
+  font-size: var(--oomol-text-eyebrow);
   font-weight: 500;
   border: 1px solid var(--oomol-border-subtle);
 }
@@ -196,14 +196,14 @@
 }
 
 .optionTitle {
-  font-size: 16px;
+  font-size: var(--oomol-text-body);
   font-weight: 600;
   margin: 0 0 8px 0;
   color: var(--oomol-text-primary);
 }
 
 .optionDesc {
-  font-size: 14px;
+  font-size: var(--oomol-text-support);
   color: var(--oomol-text-secondary);
   line-height: 1.5;
   margin: 0 0 12px 0;
@@ -215,7 +215,7 @@
   background: var(--oomol-primary);
   color: white;
   border-radius: 12px;
-  font-size: 12px;
+  font-size: var(--oomol-text-eyebrow);
   font-weight: 600;
 }
 
@@ -256,7 +256,7 @@
 }
 
 .statLabel {
-  font-size: 14px;
+  font-size: var(--oomol-text-support);
   color: var(--oomol-text-secondary);
   font-weight: 500;
   text-transform: uppercase;

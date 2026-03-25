@@ -118,7 +118,7 @@
   margin: 0;
 
   @media (max-width: 996px) {
-    font-size: 16px;
+    font-size: var(--oomol-text-body);
   }
 }
 
@@ -144,13 +144,13 @@
 }
 
 .highlightText {
-  font-size: 16px;
+  font-size: var(--oomol-text-body);
   line-height: 1.6;
   color: var(--ifm-color-emphasis-800);
   font-weight: 500;
 
   @media (max-width: 996px) {
-    font-size: 15px;
+    font-size: var(--oomol-text-body-compact);
   }
 }
 

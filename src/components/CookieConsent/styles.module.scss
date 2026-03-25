@@ -19,7 +19,7 @@
     padding: 0 16px;
     border-radius: 10px;
     border: 1px solid transparent;
-    font-size: 13px;
+    font-size: var(--oomol-text-label);
     font-weight: 700;
     line-height: 1;
     transition:
@@ -90,7 +90,7 @@
 
 .popupTitle {
   margin: 0;
-  font-size: 15px;
+  font-size: var(--oomol-text-body-compact);
   font-weight: 700;
   line-height: 1.3;
   color: var(--oomol-text-primary);
@@ -98,14 +98,14 @@
 
 .popupMessage {
   margin: 0;
-  font-size: 13px;
+  font-size: var(--oomol-text-label);
   line-height: 1.6;
   color: var(--oomol-text-secondary);
 }
 
 .privacyPolicyLink {
   align-self: flex-end;
-  font-size: 12px;
+  font-size: var(--oomol-text-eyebrow);
   font-weight: 600;
   color: var(--oomol-text-tertiary);
   transition: color 0.2s ease;
@@ -130,7 +130,7 @@
 
 .manageCookieMessage {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--oomol-text-support);
   line-height: 1.65;
   color: var(--oomol-text-secondary);
 }
@@ -143,20 +143,20 @@
 
 .manageCookieCategoryTitle {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--oomol-text-support);
   font-weight: 700;
   color: var(--oomol-text-primary);
 }
 
 .manageCookieCategorySubtitle {
   margin-top: 4px;
-  font-size: 13px;
+  font-size: var(--oomol-text-label);
   line-height: 1.55;
   color: var(--oomol-text-secondary);
 }
 
 .manageCookieStatusText {
-  font-size: 12px;
+  font-size: var(--oomol-text-eyebrow);
   font-weight: 600;
   color: var(--oomol-text-tertiary);
 }

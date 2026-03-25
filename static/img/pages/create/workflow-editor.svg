@@ -19,11 +19,11 @@
   <line x1="200" y1="180" x2="200" y2="220" stroke="#64748B" stroke-width="2"/>
   
   <!-- Text labels -->
-  <text x="60" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="12">输入</text>
-  <text x="200" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="12">处理</text>
-  <text x="340" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="12">AI</text>
-  <text x="60" y="155" text-anchor="middle" fill="white" font-family="Arial" font-size="12">转换</text>
-  <text x="200" y="155" text-anchor="middle" fill="white" font-family="Arial" font-size="12">分析</text>
-  <text x="340" y="155" text-anchor="middle" fill="white" font-family="Arial" font-size="12">输出</text>
-  <text x="200" y="255" text-anchor="middle" fill="white" font-family="Arial" font-size="12">工作流引擎</text>
+  <text x="60" y="55" text-anchor="middle" fill="white" font-family="'Jost', 'Inter', 'Noto Sans', 'Noto Sans SC', 'Source Han Sans CN', sans-serif" font-size="12">输入</text>
+  <text x="200" y="55" text-anchor="middle" fill="white" font-family="'Jost', 'Inter', 'Noto Sans', 'Noto Sans SC', 'Source Han Sans CN', sans-serif" font-size="12">处理</text>
+  <text x="340" y="55" text-anchor="middle" fill="white" font-family="'Jost', 'Inter', 'Noto Sans', 'Noto Sans SC', 'Source Han Sans CN', sans-serif" font-size="12">AI</text>
+  <text x="60" y="155" text-anchor="middle" fill="white" font-family="'Jost', 'Inter', 'Noto Sans', 'Noto Sans SC', 'Source Han Sans CN', sans-serif" font-size="12">转换</text>
+  <text x="200" y="155" text-anchor="middle" fill="white" font-family="'Jost', 'Inter', 'Noto Sans', 'Noto Sans SC', 'Source Han Sans CN', sans-serif" font-size="12">分析</text>
+  <text x="340" y="155" text-anchor="middle" fill="white" font-family="'Jost', 'Inter', 'Noto Sans', 'Noto Sans SC', 'Source Han Sans CN', sans-serif" font-size="12">输出</text>
+  <text x="200" y="255" text-anchor="middle" fill="white" font-family="'Jost', 'Inter', 'Noto Sans', 'Noto Sans SC', 'Source Han Sans CN', sans-serif" font-size="12">工作流引擎</text>
 </svg>

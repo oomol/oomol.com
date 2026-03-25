@@ -129,7 +129,7 @@
   border-radius: 20px;
   text-decoration: none;
   color: var(--oomol-text-primary);
-  font-size: 14px;
+  font-size: var(--oomol-text-support);
   font-weight: 600;
   transition: all 0.2s ease;
 
@@ -148,7 +148,7 @@
 }
 
 .projectDescription {
-  font-size: 16px;
+  font-size: var(--oomol-text-body);
   line-height: 1.6;
   color: var(--oomol-text-secondary);
   margin-bottom: 24px;
@@ -164,7 +164,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 15px;
+  font-size: var(--oomol-text-body-compact);
   color: var(--oomol-text-primary);
 }
 
@@ -229,7 +229,7 @@
   background: var(--oomol-bg-muted);
   color: var(--oomol-text-secondary);
   border-radius: 12px;
-  font-size: 12px;
+  font-size: var(--oomol-text-eyebrow);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -241,7 +241,7 @@
   border: 1px solid var(--oomol-primary);
   padding: 6px 16px;
   border-radius: 20px;
-  font-size: 13px;
+  font-size: var(--oomol-text-label);
   transition: all 0.2s ease;
 
   &:hover {
@@ -256,7 +256,7 @@
   border: 1px solid var(--oomol-border-default);
   padding: 6px 16px;
   border-radius: 20px;
-  font-size: 13px;
+  font-size: var(--oomol-text-label);
   transition: all 0.2s ease;
 
   &:hover {
@@ -284,7 +284,7 @@
 }
 
 .cardDescription {
-  font-size: 14px;
+  font-size: var(--oomol-text-support);
   color: var(--oomol-text-secondary);
   line-height: 1.5;
   margin: 0;
@@ -302,7 +302,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 15px;
+    font-size: var(--oomol-text-body-compact);
     color: var(--oomol-text-primary);
     line-height: 1.5;
   }
@@ -336,7 +336,7 @@
   gap: 6px;
   padding: 8px 20px;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: var(--oomol-text-support);
   font-weight: 500;
   text-decoration: none;
   transition: all 0.2s ease;
@@ -347,21 +347,21 @@
   // Small size
   &.small {
     padding: 4px 12px;
-    font-size: 12px;
+    font-size: var(--oomol-text-eyebrow);
     gap: 4px;
   }
 
   // Medium size (default)
   &.medium {
     padding: 8px 20px;
-    font-size: 14px;
+    font-size: var(--oomol-text-support);
     gap: 6px;
   }
 
   // Large size
   &.large {
     padding: 12px 32px;
-    font-size: 16px;
+    font-size: var(--oomol-text-body);
     gap: 8px;
     font-weight: 600;
   }

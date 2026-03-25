@@ -101,7 +101,7 @@
   max-width: 12ch;
   font-size: 1.42rem;
   line-height: 1.32;
-  font-weight: 650;
+  font-weight: 700;
   color: rgba(243, 239, 248, 0.94);
 }
 
@@ -217,7 +217,7 @@
 
   .subtitle,
   .problemDescription {
-    font-size: 0.95rem;
+    font-size: var(--oomol-text-body-compact);
     line-height: 1.62;
   }
 

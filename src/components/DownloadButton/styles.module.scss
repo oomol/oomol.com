@@ -132,7 +132,7 @@
 }
 
 .chipNote {
-  font-size: 13px;
+  font-size: var(--oomol-text-label);
   margin-top: 10px;
   padding-left: 0.3rem;
   color: var(--oomol-text-tertiary);
@@ -146,14 +146,14 @@
 }
 
 .windowsSubtitle {
-  font-size: 13px;
+  font-size: var(--oomol-text-label);
   margin-top: 10px;
   padding-left: 0.3rem;
   color: var(--oomol-text-tertiary);
 }
 
 .icon {
-  font-size: 16px;
+  font-size: var(--oomol-text-body);
   padding-left: 12px;
   color: var(--oomol-text-secondary);
 }
@@ -181,7 +181,7 @@
   align-items: center;
   transition: color 0.2s ease;
   font-weight: 600;
-  font-size: 14px;
+  font-size: var(--oomol-text-support);
   color: var(--oomol-text-secondary);
 
   &:hover {

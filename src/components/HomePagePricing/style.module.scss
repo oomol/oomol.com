@@ -58,7 +58,7 @@
 
 .card-title,
 .price {
-  font-size: 20px;
+  font-size: var(--oomol-font-size-xl);
   font-weight: 900;
   color: var(--oomol-text-primary);
 }
@@ -73,7 +73,7 @@
   height: 22px;
   display: flex;
   align-items: center;
-  font-size: 12px;
+  font-size: var(--oomol-text-eyebrow);
   color: var(--oomol-white);
   background-color: var(--oomol-primary);
   border: none;

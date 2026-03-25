@@ -24,7 +24,7 @@
 }
 
 .description {
-  font-size: 14px;
+  font-size: var(--oomol-text-support);
   font-weight: 400;
   margin: 0;
   padding: 0 24px;
@@ -41,7 +41,7 @@
 .download-btn {
   width: 240px;
   height: 40px;
-  font-size: 14px;
+  font-size: var(--oomol-text-support);
   background-color: transparent;
   border: solid 1px var(--oomol-border-default);
   border-radius: 8px;

@@ -40,7 +40,7 @@
   width: fit-content;
   align-items: center;
   gap: 0.55rem;
-  font-size: 0.74rem;
+  font-size: var(--oomol-text-eyebrow);
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -164,7 +164,7 @@
   margin: 0;
   font-size: 1.55rem;
   line-height: 1.24;
-  font-weight: 650;
+  font-weight: 700;
   color: var(--oomol-text-primary);
 }
 
@@ -184,7 +184,7 @@
   padding-left: 0.9rem;
   border-left: 2px solid var(--oomol-divider);
   color: var(--oomol-text-tertiary);
-  font-size: 0.95rem;
+  font-size: var(--oomol-text-body-compact);
 }
 
 .cardFooter {
@@ -201,8 +201,8 @@
   padding: 0 0.85rem;
   border-radius: 999px;
   background: color-mix(in srgb, var(--oomol-primary-bg) 70%, white 30%);
-  font-size: 0.96rem;
-  font-weight: 650;
+  font-size: var(--oomol-text-body-compact);
+  font-weight: 600;
   color: var(--oomol-primary-text);
   text-decoration: none;
 
@@ -407,12 +407,12 @@
   }
 
   .valueCaption {
-    font-size: 0.84rem;
+    font-size: var(--oomol-text-support);
     line-height: 1.45;
   }
 
   .cta {
     min-height: 2.35rem;
-    font-size: 0.92rem;
+    font-size: var(--oomol-text-body-compact);
   }
 }

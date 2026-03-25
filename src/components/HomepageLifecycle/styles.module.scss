@@ -312,7 +312,7 @@
     margin-bottom: 16px;
 
     p {
-      font-size: 0.95rem;
+      font-size: var(--oomol-text-body-compact);
     }
   }
 }
@@ -336,7 +336,7 @@
       position: absolute;
       left: 0;
       color: var(--ifm-color-primary);
-      font-weight: bold;
+      font-weight: 700;
     }
 
     &:last-child {
@@ -346,7 +346,7 @@
 
   @media (max-width: 768px) {
     li {
-      font-size: 0.95rem;
+      font-size: var(--oomol-text-body-compact);
     }
   }
 }
@@ -362,7 +362,7 @@
   border-radius: 6px;
 
   p {
-    font-size: 0.85rem;
+    font-size: var(--oomol-text-support);
     font-weight: 600;
     color: var(--ifm-color-primary-darker);
     line-height: 1.5;
@@ -377,7 +377,7 @@
     padding: 10px 14px;
 
     p {
-      font-size: 0.8rem;
+      font-size: var(--oomol-text-label);
     }
   }
 }

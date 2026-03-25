@@ -1,7 +1,7 @@
 .triggerButton {
   min-width: 124px;
   justify-content: space-between;
-  font-size: 12px;
+  font-size: var(--oomol-text-eyebrow);
 }
 
 .menu {
@@ -31,7 +31,7 @@
   color: var(--oomol-text-primary);
 
   i {
-    font-size: 14px;
+    font-size: var(--oomol-text-support);
     color: var(--oomol-text-secondary);
   }
 }

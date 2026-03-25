@@ -400,16 +400,27 @@
   /* ----------------------
      字体大小 (Font Size)
      ---------------------- */
-  --oomol-font-size-xs: 12px;
-  --oomol-font-size-sm: 14px;
-  --oomol-font-size-base: 16px;
-  --oomol-font-size-lg: 18px;
-  --oomol-font-size-xl: 20px;
-  --oomol-font-size-2xl: 24px;
-  --oomol-font-size-3xl: 32px;
-  --oomol-font-size-4xl: 40px;
-  --oomol-font-size-5xl: 48px;
-  --oomol-font-size-6xl: 56px;
+  --oomol-font-size-2xs: 0.75rem;
+  --oomol-font-size-xs: 0.8125rem;
+  --oomol-font-size-sm: 0.875rem;
+  --oomol-font-size-md: 0.9375rem;
+  --oomol-font-size-base: 1rem;
+  --oomol-font-size-lg: 1.125rem;
+  --oomol-font-size-xl: 1.25rem;
+  --oomol-font-size-2xl: 1.5rem;
+  --oomol-font-size-3xl: 2rem;
+  --oomol-font-size-4xl: 2.5rem;
+  --oomol-font-size-5xl: 3rem;
+  --oomol-font-size-6xl: 3.5rem;
+
+  /* ----------------------
+     语义字号 (Semantic Type)
+     ---------------------- */
+  --oomol-text-eyebrow: var(--oomol-font-size-2xs);
+  --oomol-text-label: var(--oomol-font-size-xs);
+  --oomol-text-support: var(--oomol-font-size-sm);
+  --oomol-text-body-compact: var(--oomol-font-size-md);
+  --oomol-text-body: var(--oomol-font-size-base);
 
   /* ----------------------
      字重 (Font Weight)
