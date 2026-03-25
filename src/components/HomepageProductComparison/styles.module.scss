@@ -213,7 +213,7 @@
   padding: 0 1.05rem;
   border-radius: 999px;
   background: var(--oomol-white);
-  color: var(--oomol-text-inverse);
+  color: var(--oomol-text-primary);
   font-size: 0.95rem;
   font-weight: 700;
   text-decoration: none;
@@ -233,7 +233,7 @@
       var(--oomol-primary-bg) 8%
     );
     box-shadow: var(--oomol-shadow-md);
-    color: var(--oomol-text-inverse);
+    color: var(--oomol-text-primary);
   }
 }
 
@@ -451,6 +451,7 @@
       var(--oomol-white) 88%,
       var(--oomol-primary-bg) 12%
     );
+    color: var(--oomol-text-inverse);
   }
 }
 
