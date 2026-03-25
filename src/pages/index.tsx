@@ -1,5 +1,6 @@
 import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
+import HomepageCliEntry from "@site/src/components/HomepageCliEntry";
 import HomepageCommunityShare from "@site/src/components/HomepageCommunityShare";
 import HomepageDeliveryGap from "@site/src/components/HomepageDeliveryGap";
 import HomepageDeveloperBenefits from "@site/src/components/HomepageDeveloperBenefits";
@@ -25,6 +26,7 @@ export default function Home() {
       <main>
         <HomepageFirstScreen />
         <HomepageDeveloperBenefits />
+        <HomepageCliEntry />
         <HomepageDeliveryGap />
         <StudioDetailContent variant="home" />
         <HomepageProductComparison />

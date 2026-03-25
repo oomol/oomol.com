@@ -961,7 +961,7 @@
     "message": "从下一个函数开始交付"
   },
   "HOME.GetStartedPrompt.subtitle": {
-    "message": "下载 OOMOL Studio，让 Agent 帮你生成函数，在本地跑通后，再直接发布成 API、MCP 工具或自动化任务。"
+    "message": "下载 OOMOL Studio，让 Agent 帮你生成函数，在本地跑通后，再发布为包、通过 CLI 直接消费，或继续交付成 API、MCP 工具和自动化任务。"
   },
   "HOME.Pricing.title": {
     "message": "价格"
@@ -1001,6 +1001,21 @@
   },
   "HOME.Downloads.download.windows.x64": {
     "message": "下载 Windows X64 版本"
+  },
+  "HOME.Downloads.cli.eyebrow": {
+    "message": "CLI"
+  },
+  "HOME.Downloads.cli.title": {
+    "message": "更想直接在终端里用？通过 oo-cli 直接消费云函数。"
+  },
+  "HOME.Downloads.cli.subtitle": {
+    "message": "在 Codex、Claude Code 或任意本地终端中安装 oo-cli，就可以先搜包、看输入、执行云函数，再拿结果，不必一开始就接 API 或 MCP。"
+  },
+  "HOME.Downloads.cli.action.guide": {
+    "message": "打开 CLI 指南"
+  },
+  "HOME.Downloads.cli.action.github": {
+    "message": "查看 oo-cli GitHub"
   },
   "HOME.Community.title": {
     "message": "联系 OOMOL 团队"
@@ -2699,6 +2714,45 @@
   },
   "HOME.DeveloperBenefits.card2.cta": {
     "message": "查看 Cloud 交付"
+  },
+  "HOME.CliEntry.badge": {
+    "message": "CLI 消费"
+  },
+  "HOME.CliEntry.title": {
+    "message": "安装 oo-cli，让已发布的 Package 立刻变成可直接运行的能力。"
+  },
+  "HOME.CliEntry.subtitle": {
+    "message": "对很多团队来说，发布 Package 之后最直接的交付方式就是 CLI。它既适合在 Codex 和 Claude Code 中使用，也足够简单，能让终端用户直接运行云函数。"
+  },
+  "HOME.CliEntry.step1.title": {
+    "message": "先把能力发布成可复用的包"
+  },
+  "HOME.CliEntry.step1.description": {
+    "message": "Package 仍然是分发单位。同一份能力之后可以继续通过 CLI、API 或 MCP 被消费，而不需要重写逻辑。"
+  },
+  "HOME.CliEntry.step2.title": {
+    "message": "在终端里搜包并查看信息"
+  },
+  "HOME.CliEntry.step2.description": {
+    "message": "用户可以先搜索包、查看包元数据和输入要求，再决定要执行什么，不必一开始就做更深的集成。"
+  },
+  "HOME.CliEntry.step3.title": {
+    "message": "执行云函数并直接拿结果"
+  },
+  "HOME.CliEntry.step3.description": {
+    "message": "oo-cli 已经覆盖主路径：登录、搜包、执行云任务、等待完成，再把结果读回来。"
+  },
+  "HOME.CliEntry.action.primary": {
+    "message": "打开 CLI 指南"
+  },
+  "HOME.CliEntry.action.secondary": {
+    "message": "查看云函数文档"
+  },
+  "HOME.CliEntry.terminal.title": {
+    "message": "终端工作流"
+  },
+  "HOME.CliEntry.terminal.note": {
+    "message": "如果你希望已发布的 OOMOL 函数不仅能被接 API 的开发者消费，也能被 AI 编程工具和普通终端用户直接使用，就应该重点突出这条交付路径。"
   },
   "CLOUD.hero.title": {
     "message": "OOMOL Cloud"

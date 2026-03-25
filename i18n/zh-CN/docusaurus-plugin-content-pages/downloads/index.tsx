@@ -78,6 +78,7 @@ const downloadData = [
 
 export default function Downloads() {
   const logoUrl = useBaseUrl("/img/logo2x.png");
+  const cliGuideUrl = useBaseUrl("/docs/cloud-services/cli");
 
   return (
     <Layout>
@@ -138,6 +139,42 @@ export default function Downloads() {
               </div>
             );
           })}
+        </div>
+        <div className={styles.cliPanel}>
+          <div className={styles.cliContent}>
+            <span className={styles.cliEyebrow}>
+              {translate({
+                message: "HOME.Downloads.cli.eyebrow",
+              })}
+            </span>
+            <h2 className={styles.cliTitle}>
+              {translate({
+                message: "HOME.Downloads.cli.title",
+              })}
+            </h2>
+            <p className={styles.cliSubtitle}>
+              {translate({
+                message: "HOME.Downloads.cli.subtitle",
+              })}
+            </p>
+          </div>
+          <div className={styles.cliActions}>
+            <a className={styles.cliPrimaryAction} href={cliGuideUrl}>
+              {translate({
+                message: "HOME.Downloads.cli.action.guide",
+              })}
+            </a>
+            <a
+              className={styles.cliSecondaryAction}
+              href="https://github.com/oomol-lab/oo-cli"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {translate({
+                message: "HOME.Downloads.cli.action.github",
+              })}
+            </a>
+          </div>
         </div>
       </div>
     </Layout>

@@ -1,6 +1,5 @@
 import styles from "./styles.module.scss";
 
-import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import ThemedImage from "@theme/ThemedImage";
@@ -46,22 +45,6 @@ export default function HomepageFirstScreen() {
           <p className={styles.overview}>{parseHighlightText(scriptText)}</p>
           <div className={styles.buttons}>
             <DownloadButton />
-          </div>
-          <div className={styles.offerLine}>
-            <Link
-              to="/docs/get-started/use-your-own-model"
-              className={`${styles.offerItem} ${styles.offerLink}`}
-            >
-              {translate({
-                message: "HOME.FirstScreen.offer1",
-              })}
-            </Link>
-            <span className={styles.offerDivider}>/</span>
-            <span className={styles.offerItemStrong}>
-              {translate({
-                message: "HOME.FirstScreen.offer2",
-              })}
-            </span>
           </div>
         </div>
         <div className={styles.screenshotFrame}>

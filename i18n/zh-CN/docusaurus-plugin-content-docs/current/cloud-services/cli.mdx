@@ -1,0 +1,102 @@
+---
+sidebar_position: 2
+sidebar_label: CLI
+---
+
+# CLI
+
+`oo-cli` 是 OOMOL 的命令行工具，也是从终端环境消费已发布 OOMOL 包和云函数能力的最快方式。
+
+它适合这些场景：
+
+- Codex
+- Claude Code
+- 本地终端
+- 不需要自己做应用集成的个人用户工作流
+
+如果你的目标是快速完成“搜包、看包、执行云函数、拿结果”这条链路，应该优先使用 `oo-cli`，而不是一开始就接 API 或 MCP。
+
+## 为什么优先用 CLI
+
+- **最快上手**：安装后登录即可开始运行包
+- **更适合 AI 编程工具**：在 Codex 和 Claude Code 里使用很自然
+- **个人用户也能直接消费**：不需要先做应用或后端集成
+- **比 MCP 接入成本更低**：不需要额外搭 MCP Server
+- **比原始 API 更高层**：搜包、查看详情、执行任务、等待结果这些流程都已经封装成命令
+
+## 典型使用流程
+
+1. 安装 CLI。
+2. 登录 OOMOL 账户。
+3. 用自然语言搜索包。
+4. 查看你要使用的包信息。
+5. 执行某个 block 对应的云任务。
+6. 等待结果，或者稍后再读取结果。
+
+## 安装
+
+当前 `oo-cli` README 中给出的安装方式是使用 Bun：
+
+```bash
+bun install -g @oomol-lab/oo-cli
+```
+
+然后登录：
+
+```bash
+oo login
+```
+
+## 搜包、看包、执行
+
+搜索包：
+
+```bash
+oo search "generate a QR code"
+```
+
+查看包信息：
+
+```bash
+oo package info foo/bar@latest
+```
+
+执行云函数 block：
+
+```bash
+oo cloud-task run foo/bar@1.2.3 --block-id main --data '{"text":"OOMOL"}'
+```
+
+等待任务完成：
+
+```bash
+oo cloud-task wait <task-id>
+```
+
+稍后读取结果：
+
+```bash
+oo cloud-task result <task-id>
+```
+
+## Codex 和 Claude Code
+
+`oo-cli` 本身就是为 AI 编程环境准备的高效消费入口。项目 README 里展示的主路径是：
+
+1. 安装 `oo-cli`
+2. 运行 `oo login`
+3. 在 Codex 里用 `$oo ...`
+
+这个 CLI 还内置了 Codex skill。在首次运行，或者执行 `oo skills install` 后，只要本机存在 Codex 目录，就会把受管的 `oo` skill 安装到本地 Codex skills 目录中。
+
+## 什么时候该用 API 或 MCP
+
+如果你要把云函数调用嵌入自己的应用、后端服务或自动化代码里，请看 [API 与 SDK](/zh-CN/docs/cloud-services/cloud-task/overview)。
+
+如果你需要把 OOMOL 能力作为标准 MCP Server 暴露给外部 Agent 框架或工具生态，请使用 MCP。
+
+## 参考链接
+
+- [oo-cli GitHub 仓库](https://github.com/oomol-lab/oo-cli)
+- [oo-cli 命令参考](https://github.com/oomol-lab/oo-cli/blob/main/docs/commands.md)
+- [云函数 API 概览](/zh-CN/docs/cloud-services/cloud-task/overview)

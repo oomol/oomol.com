@@ -1,0 +1,102 @@
+---
+sidebar_position: 2
+sidebar_label: CLI
+---
+
+# CLI
+
+`oo-cli` is OOMOL's command-line interface and the fastest way to consume published OOMOL packages and Cloud Function workloads from terminal-based environments.
+
+It works well in:
+
+- Codex
+- Claude Code
+- Local terminal sessions
+- Individual user workflows that do not need a custom app integration
+
+If you want to search for a package, inspect what it does, run a cloud function, and get the result back quickly, start with `oo-cli` before considering API or MCP integration.
+
+## Why Start With CLI
+
+- **Fastest path to value**: install once, log in, and start running packages
+- **Better for AI coding tools**: works naturally inside Codex and Claude Code
+- **Good for end users too**: no need to build an app or wire a backend first
+- **Lower setup cost than MCP**: no server wrapper or protocol setup required
+- **Higher-level than raw API**: common flows such as search, inspection, task run, and waiting for results are already packaged as commands
+
+## Typical Workflow
+
+1. Install the CLI.
+2. Log in to your OOMOL account.
+3. Search packages with natural language.
+4. Inspect the package you want to use.
+5. Run a block as a cloud task.
+6. Wait for the result or fetch it later.
+
+## Install
+
+The current `oo-cli` README documents installation with Bun:
+
+```bash
+bun install -g @oomol-lab/oo-cli
+```
+
+Then sign in:
+
+```bash
+oo login
+```
+
+## Search, Inspect, Run
+
+Search for a package:
+
+```bash
+oo search "generate a QR code"
+```
+
+Inspect a package:
+
+```bash
+oo package info foo/bar@latest
+```
+
+Run a cloud function block:
+
+```bash
+oo cloud-task run foo/bar@1.2.3 --block-id main --data '{"text":"OOMOL"}'
+```
+
+Wait for the task to finish:
+
+```bash
+oo cloud-task wait <task-id>
+```
+
+Read the result later:
+
+```bash
+oo cloud-task result <task-id>
+```
+
+## Codex And Claude Code
+
+`oo-cli` is designed to work well with AI coding environments. The project README shows the primary usage pattern as:
+
+1. install `oo-cli`
+2. run `oo login`
+3. use `$oo ...` from Codex
+
+The CLI also bundles a Codex skill. On first launch, or after `oo skills install`, it installs the managed `oo` skill into the local Codex skills directory when Codex is available.
+
+## When To Use API Or MCP Instead
+
+Use [API & SDK](/docs/cloud-services/cloud-task/overview) when you are embedding Cloud Function calls into your own application, backend service, or automation code.
+
+Use MCP when you need to expose OOMOL capabilities through a standard MCP server for external agent frameworks or tool ecosystems.
+
+## References
+
+- [oo-cli on GitHub](https://github.com/oomol-lab/oo-cli)
+- [oo-cli command reference](https://github.com/oomol-lab/oo-cli/blob/main/docs/commands.md)
+- [Cloud Function API Overview](/docs/cloud-services/cloud-task/overview)

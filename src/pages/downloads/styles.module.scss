@@ -103,6 +103,105 @@
   }
 }
 
+.cliPanel {
+  width: 100%;
+  max-width: 1280px;
+  margin-bottom: 96px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.9fr);
+  gap: 24px;
+  padding: 32px;
+  border-radius: 18px;
+  border: 1px solid var(--oomol-border-subtle);
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(125, 127, 233, 0.16) 0%,
+      rgba(125, 127, 233, 0) 42%
+    ),
+    var(--oomol-bg-elevated);
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    margin-bottom: 72px;
+    padding: 24px;
+  }
+}
+
+.cliContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cliEyebrow {
+  display: inline-flex;
+  width: fit-content;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--oomol-primary);
+  background: color-mix(in srgb, var(--oomol-primary) 10%, transparent);
+}
+
+.cliTitle {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.06;
+  color: var(--oomol-text-primary);
+}
+
+.cliSubtitle {
+  margin: 0;
+  max-width: 42rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--oomol-text-secondary);
+}
+
+.cliActions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.cliPrimaryAction,
+.cliSecondaryAction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 18px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.cliPrimaryAction {
+  color: var(--oomol-white);
+  background: linear-gradient(135deg, #635bff 0%, #4f46e5 100%);
+}
+
+.cliSecondaryAction {
+  color: var(--oomol-text-primary);
+  border: 1px solid var(--oomol-border-subtle);
+  background: var(--oomol-bg-container);
+}
+
 .card {
   height: 306px;
   display: flex;
@@ -191,4 +290,18 @@
 :global(html[data-theme="dark"]) .most-recommended {
   background-color: var(--oomol-primary);
   opacity: 0.85;
+}
+
+:global(html[data-theme="dark"]) .cliPanel {
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(125, 127, 233, 0.2) 0%,
+      rgba(125, 127, 233, 0) 40%
+    ),
+    color-mix(in srgb, var(--oomol-bg-base) 88%, black 12%);
+}
+
+:global(html[data-theme="dark"]) .cliSecondaryAction {
+  background: color-mix(in srgb, var(--oomol-bg-container) 80%, black 20%);
 }

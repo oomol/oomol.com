@@ -876,7 +876,7 @@
     "message": "Ship Your Next Function"
   },
   "HOME.GetStartedPrompt.subtitle": {
-    "message": "Download OOMOL Studio, generate functions with AI, validate them locally, then publish them as APIs, MCP tools, or automation tasks."
+    "message": "Download OOMOL Studio, generate functions with AI, validate them locally, then publish them as packages, consume them with CLI, or ship them as APIs, MCP tools, or automation tasks."
   },
   "HOME.Pricing.title": {
     "message": "Pricing"
@@ -916,6 +916,21 @@
   },
   "HOME.Downloads.download.windows.x64": {
     "message": "Download for Windows X64"
+  },
+  "HOME.Downloads.cli.eyebrow": {
+    "message": "CLI"
+  },
+  "HOME.Downloads.cli.title": {
+    "message": "Prefer the terminal? Use oo-cli to consume cloud functions directly."
+  },
+  "HOME.Downloads.cli.subtitle": {
+    "message": "Install oo-cli in Codex, Claude Code, or any local terminal to search packages, inspect inputs, run cloud functions, and fetch results without wiring API or MCP first."
+  },
+  "HOME.Downloads.cli.action.guide": {
+    "message": "Open CLI Guide"
+  },
+  "HOME.Downloads.cli.action.github": {
+    "message": "View oo-cli on GitHub"
   },
   "HOME.Community.title": {
     "message": "Contact the OOMOL Team"
@@ -2612,6 +2627,45 @@
   },
   "HOME.DeveloperBenefits.card2.cta": {
     "message": "Explore OOMOL Cloud"
+  },
+  "HOME.CliEntry.badge": {
+    "message": "CLI Consumption"
+  },
+  "HOME.CliEntry.title": {
+    "message": "Install oo-cli and turn packages into something users can run immediately."
+  },
+  "HOME.CliEntry.subtitle": {
+    "message": "For many teams, CLI is the most direct delivery path after publishing a package. It works inside Codex and Claude Code, but it is also simple enough for end users who just want to run a cloud function from a terminal."
+  },
+  "HOME.CliEntry.step1.title": {
+    "message": "Publish once as a reusable package"
+  },
+  "HOME.CliEntry.step1.description": {
+    "message": "The package remains the distribution unit. The same capability can then be consumed through CLI, API, or MCP without rebuilding the logic."
+  },
+  "HOME.CliEntry.step2.title": {
+    "message": "Search and inspect from the terminal"
+  },
+  "HOME.CliEntry.step2.description": {
+    "message": "Users can find packages, inspect package metadata and inputs, and decide what to run before any deeper integration work starts."
+  },
+  "HOME.CliEntry.step3.title": {
+    "message": "Run cloud functions and fetch results"
+  },
+  "HOME.CliEntry.step3.description": {
+    "message": "oo-cli already covers the main flow: sign in, search, run a cloud task, wait for completion, and read the result back."
+  },
+  "HOME.CliEntry.action.primary": {
+    "message": "Open CLI Guide"
+  },
+  "HOME.CliEntry.action.secondary": {
+    "message": "See Cloud Function Docs"
+  },
+  "HOME.CliEntry.terminal.title": {
+    "message": "Terminal Workflow"
+  },
+  "HOME.CliEntry.terminal.note": {
+    "message": "This is the delivery path to highlight when you want published OOMOL functions to be easy to consume by AI coding tools and regular terminal users, not only by app developers integrating APIs."
   },
   "CLOUD.hero.title": {
     "message": "OOMOL Cloud"
