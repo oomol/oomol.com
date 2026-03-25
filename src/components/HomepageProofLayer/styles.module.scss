@@ -47,8 +47,8 @@
   max-width: 11ch;
   font-family: var(--oomol-font-display);
   font-size: clamp(2.55rem, 4.8vw, 4.2rem);
-  line-height: 0.98;
-  letter-spacing: -0.045em;
+  line-height: var(--oomol-display-line-height-section);
+  letter-spacing: var(--oomol-display-letter-spacing-tight);
   color: var(--oomol-text-primary);
 }
 

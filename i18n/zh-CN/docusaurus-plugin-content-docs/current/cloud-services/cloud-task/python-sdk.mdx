@@ -152,10 +152,12 @@ url = client.upload_file(
 
 - `size` 必须是 `1` 到 `100` 之间的整数
 - 支持的筛选参数：`nextToken`、`status`、`taskType`、`workload`、`workloadID`、`packageID`
+  其中 `workload` 表示运行类型，当前只有 `serverless`
 
 ### `get_latest_tasks(workload_ids)`
 
 - 支持 `list[str]` 或逗号分隔的 `str`
+- `workload_ids` 表示要查询的 workload 标识
 - 数组长度必须在 `1` 到 `50` 之间
 - 空字符串或空项会在发请求前直接报错
 

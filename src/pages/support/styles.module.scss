@@ -4,36 +4,43 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 0 16px;
   margin-top: 64px;
   margin-bottom: 240px;
 }
 
 .supportTitle {
-  font-size: 64px;
+  font-family: var(--oomol-font-display);
+  width: min(100%, 720px);
+  font-size: clamp(2.5rem, 10vw, 4rem);
+  line-height: 1.08;
   font-weight: 800;
-  width: 720px;
   text-align: center;
+  text-wrap: balance;
   margin-top: 64px;
   margin-bottom: 120px;
 }
 
 .supportCellBox {
-  width: 1080px;
+  width: min(100%, 1080px);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 24px;
 }
 
 .supportCell {
-  width: 320px;
+  width: min(100%, 320px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 240px;
+  padding: 28px 24px;
   border-style: solid;
   border-color: var(--oomol-border-default);
   border-radius: 18px;
   background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white);
+  box-sizing: border-box;
 }
 
 .supportHeader {
@@ -60,5 +67,38 @@
 .text {
   margin-bottom: 42px;
   font-size: 14px;
+  line-height: 1.7;
   color: var(--oomol-text-secondary);
+}
+
+@media (max-width: 996px) {
+  .supportCellBox {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .supportBox {
+    margin-top: 32px;
+    margin-bottom: 120px;
+  }
+
+  .supportTitle {
+    margin-top: 32px;
+    margin-bottom: 48px;
+  }
+
+  .supportCellBox {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .supportCell {
+    min-height: 0;
+  }
+
+  .text {
+    margin-bottom: 24px;
+  }
 }

@@ -85,7 +85,7 @@ curl --request POST \
 - `nextToken`
 - `status`
 - `taskType`：`user` 或 `shared`
-- `workload`：当前只有 `serverless`
+- `workload`：当前只有 `serverless`，也就是这一种运行类型
 - `workloadID`
 - `packageID`
 
@@ -101,7 +101,7 @@ curl --request GET \
 
 请求参数：
 
-- `workloadIDs`：逗号分隔字符串
+- `workloadIDs`：逗号分隔字符串，对应要查询的 workload 标识
 
 ```bash
 curl --request GET \

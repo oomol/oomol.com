@@ -12,11 +12,18 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(18, 16, 13, 0.08);
   --oomol-font-display:
-    "Jost", "Inter", "Noto Sans", "Noto Sans SC", "Source Han Sans SC",
-    "Source Han Sans CN", sans-serif;
+    "Jost", "Inter", "Noto Sans SC", "Noto Sans CJK SC", "Source Han Sans SC",
+    "Source Han Sans CN", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    "WenQuanYi Micro Hei", system-ui, sans-serif;
   --oomol-font-body:
-    "Inter", "Noto Sans", "Noto Sans SC", "Source Han Sans SC",
-    "Source Han Sans CN", sans-serif;
+    "Inter", "Noto Sans SC", "Noto Sans CJK SC", "Source Han Sans SC",
+    "Source Han Sans CN", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    "WenQuanYi Micro Hei", system-ui, sans-serif;
+  --oomol-display-line-height-hero: 0.96;
+  --oomol-display-line-height-section: 0.98;
+  --oomol-display-line-height-cta: 0.95;
+  --oomol-display-letter-spacing-tight: -0.045em;
+  --oomol-display-letter-spacing-section: -0.04em;
   --ifm-font-family-base: var(--oomol-font-body);
   --ifm-heading-font-family: var(--oomol-font-display);
   --ifm-heading-color: var(--oomol-text-primary);
@@ -60,9 +67,20 @@ body {
   background: var(--oomol-bg-base);
 }
 
+html:lang(zh-CN) {
+  --oomol-display-line-height-hero: 1.03;
+  --oomol-display-line-height-section: 1.04;
+  --oomol-display-line-height-cta: 1.02;
+  --oomol-display-letter-spacing-tight: -0.024em;
+  --oomol-display-letter-spacing-section: -0.02em;
+}
+
 body {
   color: var(--oomol-text-primary);
   font-family: var(--oomol-font-body);
+  font-synthesis: none;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
 }
 
 [data-theme="light"],

@@ -12,6 +12,7 @@
 }
 
 .title {
+  font-family: var(--oomol-font-display);
   font-size: 3rem;
   font-weight: 700;
   color: var(--ifm-color-primary);
@@ -62,6 +63,7 @@
 }
 
 .shareTitle {
+  font-family: var(--oomol-font-display);
   font-size: 2.5rem;
   font-weight: 600;
   color: var(--ifm-heading-color);

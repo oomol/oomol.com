@@ -36,7 +36,7 @@
     "message": "给开发者的函数生成与交付平台"
   },
   "HOME.FirstScreen.script": {
-    "message": "让 Agent 帮你生成和编排函数，在真实 coding 环境里先把能力跑通，再直接发布成 API、MCP 工具或自动化任务。"
+    "message": "让 Agent 帮你生成和编排函数，先在真实编码环境里跑通，再直接交付成 API、MCP 工具或自动化任务。"
   },
   "HOME.FirstScreen.pill1": {
     "message": "不学新 DSL"
@@ -69,7 +69,7 @@
     "message": "写完业务，还要再搭一套后端"
   },
   "HOME.DeliveryGap.problem1.description": {
-    "message": "实现已经有了，但为了对外提供 API 或任务能力，还要重新封装接口、部署流程和运行方式。"
+    "message": "功能已经写好，但要对外提供 API 或任务能力，往往还得再补接口、部署流程和运行方式。"
   },
   "HOME.DeliveryGap.problem2.title": {
     "message": "本地能跑，不等于交付能跑"
@@ -81,7 +81,7 @@
     "message": "同一份能力，被重复包装"
   },
   "HOME.DeliveryGap.problem3.description": {
-    "message": "为了 API、MCP 工具和自动化任务，团队经常围着同一份实现反复改造，交付成本被重复放大。"
+    "message": "同一份实现为了 API、MCP 工具和自动化任务被反复包装，交付成本也被一再放大。"
   },
   "Suggested Media Slot": {
     "message": "建议素材位"
@@ -961,7 +961,7 @@
     "message": "从下一个函数开始交付"
   },
   "HOME.GetStartedPrompt.subtitle": {
-    "message": "下载 OOMOL Studio，让 Agent 帮你生成函数，在本地跑通后，再直接发布成 API、MCP 工具或自动化任务。"
+    "message": "下载 OOMOL Studio，让 Agent 帮你生成函数；先在本地跑通，再直接交付成 API、MCP 工具或自动化任务。"
   },
   "HOME.Pricing.title": {
     "message": "价格"
@@ -970,7 +970,7 @@
     "message": "下载 OOMOL Studio"
   },
   "HOME.Downloads.subtitle": {
-    "message": "安装 Studio，在真实 coding 环境里生成函数、本地验证，再继续发布成服务。"
+    "message": "安装 Studio，在真实编码环境里生成函数、完成本地验证，再继续发布成服务。"
   },
   "HOME.Downloads.Stable.title": {
     "message": "稳定版"
@@ -994,13 +994,13 @@
     "message": "隔夜构建版本，较不稳定"
   },
   "HOME.Downloads.download.macos.applesilicon": {
-    "message": "下载 MacOS Apple Silicon 版本"
+    "message": "下载 macOS Apple Silicon 版本"
   },
   "HOME.Downloads.download.macos.intel": {
-    "message": "下载 MacOS Intel 版本（旧版本）"
+    "message": "下载 macOS Intel 版本（旧版本）"
   },
   "HOME.Downloads.download.windows.x64": {
-    "message": "下载 Windows X64 版本"
+    "message": "下载 Windows x64 版本"
   },
   "HOME.Community.title": {
     "message": "联系 OOMOL 团队"
@@ -1085,10 +1085,10 @@
     "message": "简单、透明的定价"
   },
   "PRICING.subtitle": {
-    "message": "本地开发永久免费。只有当你需要 OOMOL 承接线上交付和托管用量时才开始付费。"
+    "message": "本地开发永久免费。只有当你需要 OOMOL 承接线上运行和托管用量时，才开始付费。"
   },
   "PRICING.model.summary": {
-    "message": "OOMOL Studio 的本地开发是免费的。只有当你要发布到线上、运行托管任务或使用托管 AI 服务时，才进入付费。"
+    "message": "Studio 本地开发免费。只有当你要把能力交给 OOMOL 承接线上运行，或使用托管 AI 时，才会产生费用。"
   },
   "PRICING.model.local.label": {
     "message": "本地"
@@ -1097,7 +1097,7 @@
     "message": "在 Studio 里免费构建和验证"
   },
   "PRICING.model.local.text": {
-    "message": "完整使用本地开发环境，按自己的依赖和工具链去验证结果；如果不想使用托管 AI，也可以直接接入你自己的模型服务。"
+    "message": "完整使用本地开发环境，按自己的依赖和工具链验证结果；如果不想使用托管 AI，也可以直接接入自己的模型服务。"
   },
   "PRICING.model.online.label": {
     "message": "线上"
@@ -1106,13 +1106,13 @@
     "message": "需要上线交付时再订阅"
   },
   "PRICING.model.online.text": {
-    "message": "当你希望把已经验证过的函数继续发布成 API、MCP 工具或自动化任务，并由 OOMOL 承接线上运行层时，再使用 Pro 或 Max。"
+    "message": "当你要把已经验证过的函数发布成 API、MCP 工具或自动化任务，并交给 OOMOL 承接线上运行时，再选择 Pro 或 Max。"
   },
   "PRICING.subscription.title": {
     "message": "选择你使用 OOMOL 的方式"
   },
   "PRICING.subscription.subtitle": {
-    "message": "Free 用于本地开发和托管能力试用。Pro 与 Max 面向线上发布、托管运行，以及更可预期的 Cloud Task 成本。"
+    "message": "Free 适合本地开发和轻量试用。Pro 与 Max 适合线上发布、托管运行，以及更稳定可预期的 Cloud Task 成本。"
   },
   "PRICING.subscription.recommended": {
     "message": "推荐"
@@ -1136,7 +1136,7 @@
     "message": "$0"
   },
   "PRICING.subscription.free.description": {
-    "message": "适合本地开发、结果验证，\n以及接入自有模型服务时的\n日常使用方式"
+    "message": "适合本地开发、验证结果，\n以及接入自有模型服务时的\n日常使用"
   },
   "PRICING.subscription.free.feature1": {
     "message": "完整使用 OOMOL Studio 本地开发环境"
@@ -1169,7 +1169,7 @@
     "message": "$12"
   },
   "PRICING.subscription.pro.description": {
-    "message": "适合把本地已跑通的函数\n发布成 API、MCP 工具或自动化任务，\n并稳定使用 OOMOL 托管运行层"
+    "message": "适合把本地已验证的函数\n发布成 API、MCP 工具或自动化任务，\n并稳定使用 OOMOL 托管运行"
   },
   "PRICING.subscription.pro.feature1": {
     "message": "使用 OOMOL 承接线上发布、运行和交付"
@@ -1202,7 +1202,7 @@
     "message": "$79"
   },
   "PRICING.subscription.max.description": {
-    "message": "适合已有稳定线上调用量，\n希望用更高月度托管额度\n持续承接运行需求的用户"
+    "message": "适合已有稳定线上调用量，\n需要更高月度托管额度，\n持续承接运行需求的用户"
   },
   "PRICING.subscription.max.feature1": {
     "message": "包含全部 Pro 功能，额度更高"
@@ -1361,10 +1361,10 @@
     "message": "按量计费价格"
   },
   "PRICING.tables.subtitle": {
-    "message": "当你使用托管 AI、Cloud Task 或其他托管服务调用时，会按照 Credits 计费。下面的价格与 OOMOL Console 保持一致。"
+    "message": "当你调用托管 AI、Cloud Task 或其他托管服务时，会按点数（Credits）计费。下面的价格与 OOMOL 控制台保持一致。"
   },
   "PRICING.tables.syncNote": {
-    "message": "LLM 价格实时读取 Console；Cloud Task 和 Fusion API 按当前价格表展示。Pro 的角色是提供包含额度，并让你在持续增长时拿到更好的单位成本。"
+    "message": "LLM 价格实时读取控制台；Cloud Task 和 Fusion API 显示当前价格表。Pro 的作用是提供包含额度，并在持续使用时降低单位成本。"
   },
   "PRICING.tables.tab.llm": {
     "message": "大模型价格"
@@ -1376,13 +1376,13 @@
     "message": "Fusion API 价格"
   },
   "PRICING.tables.llm.note": {
-    "message": "大模型价格会随 Console 中的模型配置变化而更新，单位为点数 / M Token。"
+    "message": "大模型价格会随控制台中的模型配置变化而更新，单位为点数 / M Token。"
   },
   "PRICING.tables.llm.loading": {
-    "message": "正在从 OOMOL Console 加载最新大模型价格..."
+    "message": "正在从 OOMOL 控制台加载最新大模型价格..."
   },
   "PRICING.tables.llm.error": {
-    "message": "暂时无法加载大模型价格，请稍后刷新页面或前往 Console 查看。"
+    "message": "暂时无法加载大模型价格，请稍后刷新页面或前往控制台查看。"
   },
   "PRICING.tables.llm.empty": {
     "message": "当前没有可展示的大模型价格数据。"
@@ -1418,7 +1418,7 @@
     "message": "不满一分钟按 1 分钟计费"
   },
   "PRICING.tables.cloudTask.alert": {
-    "message": "仅使用 OOMOL Studio 本地运行 Block 不会触发 Cloud Task 计费。在 Chat 或 hub.oomol.com 上运行 Block 会触发 Cloud Task 并扣费。"
+    "message": "仅在 OOMOL Studio 内本地运行 Block 不会触发 Cloud Task 计费；在 Chat 或 hub.oomol.com 上运行会触发并扣费。"
   },
   "PRICING.tables.fusionApi.service": {
     "message": "服务名"
@@ -1430,7 +1430,7 @@
     "message": "说明"
   },
   "PRICING.tables.fusionApi.alert": {
-    "message": "OOMOL 提供的部分官方 Block 会使用这些服务，用户也可以自行调用这些服务的 API。调用后会扣除相应点数。"
+    "message": "部分官方 Block 会使用这些服务；你也可以直接调用对应 API。每次调用都会扣除相应点数。"
   },
   "PRICING.tables.fusionApi.unit.image": {
     "message": "张图片"
@@ -2854,16 +2854,16 @@
   "APP.new.cta.download": { "message": "下载体验" },
   "APP.new.cta.docs": { "message": "查看文档" },
   "STUDIO.page.title": {
-    "message": "OOMOL Studio - 在真实 coding 环境里生成和验证函数"
+    "message": "OOMOL Studio - 在真实编码环境里生成和验证函数"
   },
   "STUDIO.page.description": {
-    "message": "在真实 coding 环境里生成函数、用本地容器验证能力，再把同一份代码继续发布成服务。"
+    "message": "在真实编码环境里生成函数、用本地容器验证能力，再把同一份代码继续发布成服务。"
   },
   "STUDIO.manifesto.title": {
     "message": "为开发者提效而设计的 Studio"
   },
   "STUDIO.manifesto.subtitle": {
-    "message": "给开发者的真实编码环境：让 Agent 帮你生成函数，在本地验证后，直接交付为 API、MCP 工具或自动化任务。"
+    "message": "给开发者的真实编码环境：让 Agent 帮你生成函数，先在本地验证，再直接交付成 API、MCP 工具或自动化任务。"
   },
   "STUDIO.manifesto.cta.download": {
     "message": "下载 OOMOL Studio"

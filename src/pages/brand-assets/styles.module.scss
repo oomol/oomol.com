@@ -25,11 +25,14 @@
 .title {
   display: flex;
   align-items: center;
-  font-size: 58px;
-  line-height: 58px;
+  font-family: var(--oomol-font-display);
+  max-width: 10ch;
+  font-size: clamp(2.5rem, 11vw, 3.625rem);
+  line-height: 1.06;
   font-weight: 800;
   text-align: center;
   color: var(--oomol-text-primary);
+  text-wrap: balance;
 }
 
 .subTitle {
@@ -146,9 +149,10 @@
 }
 
 .sectionTitle {
+  font-family: var(--oomol-font-display);
   font-weight: 800;
   font-size: 32px;
-  line-height: 32px;
+  line-height: 1.08;
   color: var(--oomol-text-primary);
   vertical-align: middle;
   text-align: left;
@@ -191,4 +195,34 @@
 
 i.icon {
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .titleBox {
+    min-height: 0;
+    padding: 56px 0;
+  }
+
+  .subTitle {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .scrollBox {
+    gap: 24px;
+    padding: 48px 0;
+  }
+
+  .content {
+    padding: 0;
+  }
+
+  .section {
+    gap: 24px;
+    padding-bottom: 24px;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
 }

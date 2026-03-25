@@ -13,7 +13,7 @@ export default function Support() {
           <div className={styles.supportCell}>
             <div className={styles.title}>
               <i className="i-bi-github" style={{ fontSize: "20px" }} />
-              <span className={styles["support-title"]}>Github 支持</span>
+              <span className={styles["support-title"]}>GitHub 支持</span>
             </div>
             <div className={styles.inner}>
               <div className={styles.text}>
@@ -25,7 +25,7 @@ export default function Support() {
                   href="https://github.com/orgs/oomol-lab/discussions"
                   rel="noopener noreferrer"
                 >
-                  Github 讨论区
+                  GitHub 讨论区
                 </a>
               </Button>
             </div>

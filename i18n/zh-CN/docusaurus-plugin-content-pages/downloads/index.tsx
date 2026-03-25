@@ -76,19 +76,35 @@ const downloadData = [
   },
 ];
 
+const DOWNLOAD_TITLE_BRAND = "OOMOL Studio";
+
+function renderDownloadTitle(title: string) {
+  if (!title.includes(DOWNLOAD_TITLE_BRAND)) {
+    return title;
+  }
+
+  const prefix = title.replace(DOWNLOAD_TITLE_BRAND, "").trim();
+
+  return (
+    <>
+      {prefix ? <span className={styles.titlePrefix}>{prefix}</span> : null}
+      <span className={styles.titleBrand}>{DOWNLOAD_TITLE_BRAND}</span>
+    </>
+  );
+}
+
 export default function Downloads() {
   const logoUrl = useBaseUrl("/img/logo2x.png");
+  const pageTitle = translate({
+    message: "HOME.Downloads.title",
+  });
 
   return (
     <Layout>
       <div className={styles.container}>
         <img className={styles.image} src={logoUrl} />
         <div className={styles.titleBox}>
-          <h1 className={styles.title}>
-            {translate({
-              message: "HOME.Downloads.title",
-            })}
-          </h1>
+          <h1 className={styles.title}>{renderDownloadTitle(pageTitle)}</h1>
           <p className={styles["sub-title"]}>
             {translate({
               message: "HOME.Downloads.subtitle",

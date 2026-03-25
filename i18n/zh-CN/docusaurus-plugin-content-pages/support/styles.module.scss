@@ -4,43 +4,47 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 0 16px;
   margin-top: 64px;
   margin-bottom: 240px;
 }
 
 .supportTitle {
-  font-size: 64px;
-  font-weight: bolder;
-  width: 720px;
+  font-family: var(--oomol-font-display);
+  width: min(100%, 720px);
+  font-size: clamp(2.5rem, 10vw, 4rem);
+  line-height: 1.08;
+  font-weight: 800;
   text-align: center;
+  text-wrap: balance;
   margin-top: 64px;
   margin-bottom: 120px;
 }
 
 .supportCellBox {
-  width: 1080px;
+  width: min(100%, 1080px);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 24px;
 }
 
 .supportCell {
-  width: 320px;
+  width: min(100%, 320px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /*background-color: yellow;*/
-  padding-top: 36px;
-  padding-bottom: 36px;
+  padding: 36px 24px;
   border-style: solid;
   border-color: var(--oomol-border-default);
   border-radius: 8px;
+  box-sizing: border-box;
 }
 
 .title {
-  width: 260px;
-  font-weight: bolder;
+  width: 100%;
+  font-weight: 700;
   font-size: 18px;
   display: flex;
   align-items: center;
@@ -51,11 +55,40 @@
 }
 
 .inner {
-  width: 260px;
+  width: 100%;
   margin-top: 12px;
 }
 
 .text {
   margin-bottom: 42px;
   font-size: 14px;
+  line-height: 1.7;
+}
+
+@media (max-width: 996px) {
+  .supportCellBox {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .supportBox {
+    margin-top: 32px;
+    margin-bottom: 120px;
+  }
+
+  .supportTitle {
+    margin-top: 32px;
+    margin-bottom: 48px;
+  }
+
+  .supportCellBox {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .text {
+    margin-bottom: 24px;
+  }
 }

@@ -46,16 +46,37 @@
 }
 
 .title {
-  font-size: 58px;
-  font-weight: 800;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  column-gap: 0.35em;
+  row-gap: 0.12em;
+  max-width: min(100%, 14ch);
+  font-size: clamp(2.6rem, 11vw, 3.625rem);
+  line-height: 1.06;
   margin: 0;
   padding-bottom: 14px;
   color: var(--oomol-text-primary);
 }
 
+.titlePrefix {
+  font-family: var(--oomol-font-display);
+  font-weight: 800;
+  letter-spacing: -0.024em;
+}
+
+.titleBrand {
+  font-family: var(--oomol-font-display);
+  font-weight: 700;
+  letter-spacing: -0.032em;
+  white-space: nowrap;
+}
+
 .sub-title {
-  height: 60px;
+  min-height: 0;
   font-size: 20px;
+  line-height: 1.5;
   font-weight: 400;
   vertical-align: middle;
   text-align: center;
@@ -104,7 +125,7 @@
 }
 
 .card {
-  height: 306px;
+  min-height: 306px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -116,6 +137,33 @@
   border-radius: 10px;
   box-sizing: border-box;
   border: 1px solid var(--oomol-border-subtle);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-top: 56px;
+  }
+
+  .titleBox {
+    gap: 12px;
+  }
+
+  .title {
+    max-width: min(100%, 11ch);
+  }
+
+  .sub-title {
+    font-size: 1rem;
+  }
+
+  .cards {
+    padding: 48px 0;
+  }
+
+  .card {
+    min-height: 0;
+    padding: 28px 24px;
+  }
 }
 
 .card {
