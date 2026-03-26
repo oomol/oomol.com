@@ -36,7 +36,7 @@
     "message": "给开发者的 Studio + CLI 函数工作流"
   },
   "HOME.FirstScreen.script": {
-    "message": "用 Studio 写函数，在本地跑通后发布到 OOMOL Cloud。之后通过登录 OOMOL CLI，在 Codex 或 Claude Code 中直接调用这些云函数，并把同一份能力继续作为 API、MCP 工具或自动化任务对外提供。"
+    "message": "用 OOMOL Studio 的 AI Agent 写好业务函数，发布到 Cloud 后，再通过 oo-cli 在 Codex 或 Claude Code 中直接调用这些能力。"
   },
   "HOME.FirstScreen.pill1": {
     "message": "不学新 DSL"
@@ -961,7 +961,7 @@
     "message": "从下一个函数开始，让 AI 直接调用"
   },
   "HOME.GetStartedPrompt.subtitle": {
-    "message": "下载 OOMOL Studio，把函数写好并在本地跑通，再发布到 OOMOL Cloud，并通过登录 OOMOL CLI 在 Codex 或 Claude Code 中调用，或继续交付成 API、MCP 工具和自动化任务。"
+    "message": "下载 OOMOL Studio，用 AI Agent 写好业务函数并发布到 Cloud，再通过 oo-cli 在 Codex 或 Claude Code 中直接调用。"
   },
   "HOME.Pricing.title": {
     "message": "价格"

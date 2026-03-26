@@ -128,6 +128,7 @@
   justify-content: center;
   min-height: 2.85rem;
   padding: 0 1rem;
+  border: 1px solid transparent;
   border-radius: 999px;
   text-decoration: none;
   font-size: 0.96rem;
@@ -146,7 +147,27 @@
 
 .primaryAction {
   color: var(--oomol-white);
-  background: linear-gradient(135deg, #5b5cf0 0%, #4147df 100%);
+  border-color: color-mix(in srgb, var(--oomol-primary-active) 64%, black 12%);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--oomol-primary) 78%, white 14%) 0%,
+    color-mix(in srgb, var(--oomol-primary-active) 88%, black 12%) 100%
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 12px 24px rgba(52, 57, 94, 0.14);
+
+  &:hover {
+    border-color: color-mix(in srgb, var(--oomol-primary-active) 72%, black 16%);
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--oomol-primary) 72%, white 12%) 0%,
+      color-mix(in srgb, var(--oomol-primary-active) 92%, black 8%) 100%
+    );
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.14),
+      0 16px 28px rgba(52, 57, 94, 0.18);
+  }
 }
 
 .secondaryAction {
