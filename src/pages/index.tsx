@@ -25,13 +25,13 @@ export default function Home() {
       </Head>
       <main>
         <HomepageFirstScreen />
-        <HomepageDeveloperBenefits />
         <HomepageCliEntry />
-        <HomepageDeliveryGap />
         <StudioDetailContent variant="home" />
+        <HomepageDeliveryGap />
         <HomepageProductComparison />
-        <HomepageCommunityShare />
         <HomepageProofLayer />
+        <HomepageCommunityShare />
+        <HomepageDeveloperBenefits />
         <GetStartedPrompt />
       </main>
     </Layout>

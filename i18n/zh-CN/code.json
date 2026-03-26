@@ -27,16 +27,16 @@
     "message": "社区"
   },
   "HOME.page.title": {
-    "message": "OOMOL - 给开发者的函数生成与交付平台"
+    "message": "OOMOL - 用 Studio 写函数，让 AI 直接调用"
   },
   "HOME.FirstScreen.slogan": {
     "message": "写好函数，直接交付"
   },
   "HOME.FirstScreen.kicker": {
-    "message": "给开发者的函数生成与交付平台"
+    "message": "给开发者的 Studio + CLI 函数工作流"
   },
   "HOME.FirstScreen.script": {
-    "message": "让 Agent 帮你生成和编排函数，在真实 coding 环境里先把能力跑通，再直接发布成 API、MCP 工具或自动化任务。"
+    "message": "用 Studio 写函数，在本地跑通后发布到 OOMOL Cloud。之后通过登录 OOMOL CLI，在 Codex 或 Claude Code 中直接调用这些云函数，并把同一份能力继续作为 API、MCP 工具或自动化任务对外提供。"
   },
   "HOME.FirstScreen.pill1": {
     "message": "不学新 DSL"
@@ -60,10 +60,10 @@
     "message": "为什么交付会卡住"
   },
   "HOME.DeliveryGap.title": {
-    "message": "代码不是阻碍，部署、运维和迭代成本才是"
+    "message": "真正费时间的，不是把函数写出来"
   },
   "HOME.DeliveryGap.subtitle": {
-    "message": "多数时间不是耗在把功能写出来，而是耗在接口封装、部署上线、环境对齐和后续迭代这些重复工作上。"
+    "message": "一旦你希望能力能被 AI、API 和自动化任务稳定调用，真正开始膨胀的往往是接口封装、环境对齐、部署上线和后续维护。"
   },
   "HOME.DeliveryGap.problem1.title": {
     "message": "写完业务，还要再搭一套后端"
@@ -171,10 +171,10 @@
     "message": "真实案例"
   },
   "HOME.ProofLayer.title": {
-    "message": "这些能力，已经被做成真实可用的产品"
+    "message": "这条 Studio -> Cloud -> CLI 链路已经跑在真实产品里"
   },
   "HOME.ProofLayer.subtitle": {
-    "message": "以 pdf.oomol.com 为例，同一套 OOMOL 能力已经组合成多个面向真实用户的工具与服务，并在持续稳定运行。"
+    "message": "以 pdf.oomol.com 为例，OOMOL 不只是把函数跑通，而是把同一套能力发布到 Cloud，再接到网页工具、桌面应用、CLI 和线上服务里，并稳定对外提供。"
   },
   "HOME.ProofLayer.note": {
     "message": "这一层先用一个真实上线案例，带两个占位场景。后续可以继续替换成更多真实服务、团队名称和使用数据。"
@@ -201,10 +201,10 @@
     "message": "背后实现"
   },
   "HOME.ProofLayer.signal3.value": {
-    "message": "OOMOL 函数 / 任务 / 服务"
+    "message": "OOMOL 函数 / Cloud / CLI"
   },
   "HOME.ProofLayer.signal3.description": {
-    "message": "这些能力不是分别重搭后端，而是沿着同一套 OOMOL 交付体系发布为真实可用的服务。"
+    "message": "这些能力不是分别重搭后端，而是沿着同一套 Studio、Cloud 和 CLI 链路被交付成真实可用的服务，CLI 登录后调用的也是这里的云函数。"
   },
   "HOME.ProofLayer.case1.kicker": {
     "message": "真实场景 01"
@@ -691,10 +691,10 @@
     "message": "智能对话工具，通过自然语言交互使用各种 AI 功能。"
   },
   "HOME.CommunityShare.title": {
-    "message": "发布出去的函数，还能继续组合和复用"
+    "message": "写过一次的函数，应该继续被团队复用"
   },
   "HOME.CommunityShare.subtitle": {
-    "message": "发布不是终点，而是把能力沉淀成可复用的资产。每交付一次，下一次开发就能少写一点、少搭一点。"
+    "message": "函数不该只活在某个项目里。发布之后，它还可以继续被装回本地、接进 AI 工作流，或者作为后续服务的基础能力。"
   },
   "HOME.CommunityShare.point1.title": {
     "message": "随时装回自己用"
@@ -958,10 +958,10 @@
     "message": "//#region generated meta\ntype Inputs = {\n};\ntype Outputs = {\n};\n//#endregion\n\nimport type { Context } from \"@oomol/types/oocana\";\n\nexport default async function(\n    params: Inputs,\n    context: Context<Inputs, Outputs>\n): Promise<Partial<Outputs> | undefined | void> {\n    // 融合 API 基础地址\n    const api_url = \"https://fusion-api.oomol.com/v1/fal-nano-banana-edit/submit\"\n\n    // 大模型基础地址，可使用 openai sdk\n    const llm_base_url = \"https://llm.oomol.com/v1\"\n\n    // 从 context 获取 OOMOL token（无需手动输入 API key）\n    const api_token = await context.getOomolToken()\n    // return { output: \"output_value\" };\n};"
   },
   "HOME.GetStartedPrompt.title": {
-    "message": "从下一个函数开始交付"
+    "message": "从下一个函数开始，让 AI 直接调用"
   },
   "HOME.GetStartedPrompt.subtitle": {
-    "message": "下载 OOMOL Studio，让 Agent 帮你生成函数，在本地跑通后，再发布为包、通过 CLI 直接消费，或继续交付成 API、MCP 工具和自动化任务。"
+    "message": "下载 OOMOL Studio，把函数写好并在本地跑通，再发布到 OOMOL Cloud，并通过登录 OOMOL CLI 在 Codex 或 Claude Code 中调用，或继续交付成 API、MCP 工具和自动化任务。"
   },
   "HOME.Pricing.title": {
     "message": "价格"
@@ -2554,10 +2554,10 @@
     "message": "容器化部署到私有云或 K8s 集群，支持 CI/CD 流水线，实现企业级 API 服务的持续交付和运维。"
   },
   "HOME.ProductComparison.title": {
-    "message": "把已经跑通的函数直接交付成云服务"
+    "message": "Cloud 负责把函数稳定跑在线上"
   },
   "HOME.ProductComparison.subtitle": {
-    "message": "OOMOL Cloud 不是另一个开发环境，而是把你已经在本地验证过的能力，继续接到真实线上交付的那一层服务。"
+    "message": "如果 Studio 负责把函数写出来，那么 OOMOL Cloud 就是统一的运行和交付层。CLI 登录之后，Codex / Claude Code 实际调用的也是这里部署的云函数。"
   },
   "HOME.ChatAgent.title": {
     "message": "OOMOL Chat & Agent 生态"
@@ -2605,13 +2605,13 @@
     "message": "更快上线，更少运维"
   },
   "HOME.ProductComparison.cloud.capability": {
-    "message": "把已经跑通的能力直接发到线上，不必再重搭接口、运行时和扩缩容。"
+    "message": "把已经跑通的函数托管成统一的线上能力，作为 CLI、API 和自动化任务共用的运行层，不必再重搭接口、运行时和扩缩容。"
   },
   "HOME.ProductComparison.cloud.scenario": {
-    "message": "适合想尽快把真实服务发出去的开发者，也适合希望减少部署和运维负担的小团队。"
+    "message": "适合希望把函数稳定提供给 AI、应用或自动化任务的开发者和小团队。"
   },
   "HOME.ProductComparison.cloud.tech": {
-    "message": "先在本地跑通，再交付到 Cloud。运行、扩缩容和对外交付由 OOMOL 承接。"
+    "message": "沿用 Studio 中已经跑通的实现，由 OOMOL Cloud 承接运行、鉴权和对外交付，CLI 登录后调用的也是这里的云函数。"
   },
   "HOME.ProductComparison.cta": {
     "message": "查看 OOMOL Cloud"
@@ -2620,7 +2620,7 @@
     "message": "云端交付"
   },
   "HOME.ProductComparison.outputSummary": {
-    "message": "同一份已经验证过的函数实现，可以继续交付为 API、MCP 工具或自动化任务，而不是为每个出口再搭一套系统。"
+    "message": "同一份已经验证过的函数实现，可以继续交付为 API、MCP 工具或自动化任务，作为 AI 和应用都能稳定调用的统一能力层。"
   },
   "HOME.ProductComparison.output1.title": {
     "message": "API 服务"
@@ -2644,28 +2644,28 @@
     "message": "交付负担"
   },
   "HOME.ProductComparison.benefit1.value": {
-    "message": "少搭一层后端"
+    "message": "少补一层服务"
   },
   "HOME.ProductComparison.benefit1.description": {
-    "message": "Cloud 承接函数对外运行和发布这一层，让你不用再补一套服务工程。"
+    "message": "Cloud 承接函数的线上运行和对外交付，让你不用再围着同一份能力重做一套接口工程。"
   },
   "HOME.ProductComparison.benefit2.label": {
-    "message": "运维负担"
+    "message": "运行负担"
   },
   "HOME.ProductComparison.benefit2.value": {
-    "message": "少操心线上"
+    "message": "更稳定地在线上用"
   },
   "HOME.ProductComparison.benefit2.description": {
-    "message": "把精力放回能力本身，而不是把时间继续耗在环境、扩缩容和线上维护上。"
+    "message": "把精力放回函数本身，而不是持续处理环境、调度、扩缩容和线上维护。"
   },
   "HOME.DeveloperBenefits.badge": {
     "message": "开发者福利"
   },
   "HOME.DeveloperBenefits.title": {
-    "message": "先把东西做出来，再决定要不要花钱"
+    "message": "先把链路跑通，再决定投入多少"
   },
   "HOME.DeveloperBenefits.subtitle": {
-    "message": "我们先拆掉开发者起步时最容易卡住的两件事：模型成本，以及轻量任务的线上验证成本。"
+    "message": "把成本说明放在后面。先解决模型接入和轻量任务验证，让你更容易完成从 Studio 到 CLI 再到线上交付的第一次闭环。"
   },
   "HOME.DeveloperBenefits.card1.eyebrow": {
     "message": "Studio 福利"
@@ -2716,43 +2716,43 @@
     "message": "查看 Cloud 交付"
   },
   "HOME.CliEntry.badge": {
-    "message": "CLI 消费"
+    "message": "AI Coding Agents"
   },
   "HOME.CliEntry.title": {
-    "message": "安装 oo-cli，让已发布的 Package 立刻变成可直接运行的能力。"
+    "message": "把函数发布到 OOMOL Cloud，再让 Codex 和 Claude Code 通过 CLI 调用。"
   },
   "HOME.CliEntry.subtitle": {
-    "message": "对很多团队来说，发布 Package 之后最直接的交付方式就是 CLI。它既适合在 Codex 和 Claude Code 中使用，也足够简单，能让终端用户直接运行云函数。"
+    "message": "CLI 不是直接调用本地函数。开发者登录之后，实际调用的是部署在 OOMOL Cloud 上的云函数，所以 Cloud 既是交付层，也是 CLI 可用的前提运行层。"
   },
   "HOME.CliEntry.step1.title": {
-    "message": "先把能力发布成可复用的包"
+    "message": "先在 Studio 里把函数写好"
   },
   "HOME.CliEntry.step1.description": {
-    "message": "Package 仍然是分发单位。同一份能力之后可以继续通过 CLI、API 或 MCP 被消费，而不需要重写逻辑。"
+    "message": "继续用熟悉的代码、依赖和调试方式把能力跑通，先把函数本身做好。"
   },
   "HOME.CliEntry.step2.title": {
-    "message": "在终端里搜包并查看信息"
+    "message": "发布到 Cloud，作为统一运行层"
   },
   "HOME.CliEntry.step2.description": {
-    "message": "用户可以先搜索包、查看包元数据和输入要求，再决定要执行什么，不必一开始就做更深的集成。"
+    "message": "把同一份函数部署成云函数，让 CLI、API 和自动化任务共享同一个运行时、鉴权和交付出口。"
   },
   "HOME.CliEntry.step3.title": {
-    "message": "执行云函数并直接拿结果"
+    "message": "登录 CLI，在 Codex / Claude Code 中调用"
   },
   "HOME.CliEntry.step3.description": {
-    "message": "oo-cli 已经覆盖主路径：登录、搜包、执行云任务、等待完成，再把结果读回来。"
+    "message": "用 oo-cli 登录后，AI 工具实际调用的是你部署在 Cloud 上的云函数，同一份能力也可以继续作为 API、MCP 工具或自动化任务提供。"
   },
   "HOME.CliEntry.action.primary": {
-    "message": "打开 CLI 指南"
+    "message": "查看 CLI 快速开始"
   },
   "HOME.CliEntry.action.secondary": {
-    "message": "查看云函数文档"
+    "message": "查看函数交付"
   },
   "HOME.CliEntry.terminal.title": {
-    "message": "终端工作流"
+    "message": "Studio -> Cloud -> CLI"
   },
   "HOME.CliEntry.terminal.note": {
-    "message": "如果你希望已发布的 OOMOL 函数不仅能被接 API 的开发者消费，也能被 AI 编程工具和普通终端用户直接使用，就应该重点突出这条交付路径。"
+    "message": "CLI 不只是另一个入口。它是在登录之后，把部署在 OOMOL Cloud 上的云函数稳定接到 Codex、Claude Code 和其他终端工作流里的那一层。"
   },
   "CLOUD.hero.title": {
     "message": "OOMOL Cloud"

@@ -27,16 +27,16 @@
     "message": "Community"
   },
   "HOME.page.title": {
-    "message": "OOMOL - Generate, Validate, and Deliver Functions"
+    "message": "OOMOL - Write Functions in Studio and Let AI Use Them"
   },
   "HOME.FirstScreen.slogan": {
     "message": "Write Function. Deliver Service."
   },
   "HOME.FirstScreen.kicker": {
-    "message": "Generate, Validate, Deliver"
+    "message": "A Studio + CLI workflow for developers"
   },
   "HOME.FirstScreen.script": {
-    "message": "Generate functions with AI, validate them locally, then publish the same implementation as APIs, MCP tools, or automation tasks."
+    "message": "Write functions in Studio, validate them locally, then publish them to OOMOL Cloud. After that, sign in with the OOMOL CLI so Codex or Claude Code can call those cloud functions directly, while the same capability remains available as an API, MCP tool, or automation task."
   },
   "HOME.FirstScreen.pill1": {
     "message": "No new DSL"
@@ -60,10 +60,10 @@
     "message": "Why Delivery Breaks"
   },
   "HOME.DeliveryGap.title": {
-    "message": "Code Is Not the Bottleneck. Delivery Is."
+    "message": "The real cost starts after the function works."
   },
   "HOME.DeliveryGap.subtitle": {
-    "message": "Most time is not spent writing the function itself. It goes into interface wrapping, deployment, environment alignment, and the repetitive work that follows."
+    "message": "Once you want a capability to be called reliably by AI, APIs, and automations, the work that grows is usually wrapping interfaces, aligning environments, shipping to production, and keeping the whole path stable."
   },
   "HOME.DeliveryGap.problem1.title": {
     "message": "Function Done. Backend Work Begins."
@@ -87,10 +87,10 @@
     "message": "Real Use Cases"
   },
   "HOME.ProofLayer.title": {
-    "message": "These Capabilities Already Run in Real Products"
+    "message": "This Studio -> Cloud -> CLI path already runs in real products"
   },
   "HOME.ProofLayer.subtitle": {
-    "message": "Using pdf.oomol.com as an example, the same OOMOL capabilities already power multiple tools and services for real users."
+    "message": "pdf.oomol.com shows that OOMOL is not only about making a function work locally. The same capabilities are published to Cloud first, then carried into web tools, desktop apps, CLI usage, and online services that already serve real users."
   },
   "HOME.ProofLayer.note": {
     "message": "This layer now includes one live production example plus two placeholders. Later we can replace more of it with real services, team names, and usage data."
@@ -117,10 +117,10 @@
     "message": "Underlying System"
   },
   "HOME.ProofLayer.signal3.value": {
-    "message": "OOMOL Functions / Tasks / Services"
+    "message": "OOMOL Functions / Cloud / CLI"
   },
   "HOME.ProofLayer.signal3.description": {
-    "message": "These capabilities are not rebuilt as separate backends. They are delivered through the same OOMOL system as live, reusable services."
+    "message": "These capabilities are not rebuilt as separate backends. They are delivered as real services through the same Studio, Cloud, and CLI path, and the CLI calls the cloud functions after sign-in."
   },
   "HOME.ProofLayer.case1.kicker": {
     "message": "Live Scenario 01"
@@ -606,10 +606,10 @@
     "message": "Intelligent conversation tool. Use various AI features through natural language interaction."
   },
   "HOME.CommunityShare.title": {
-    "message": "What You Publish Stays Reusable"
+    "message": "A function you wrote once should keep paying off"
   },
   "HOME.CommunityShare.subtitle": {
-    "message": "Publishing is not the end. It turns capabilities into reusable building blocks and makes the next delivery easier."
+    "message": "A function should not stay trapped in one project. After publishing, it can come back into local work, plug into AI workflows, or become the base capability behind future services."
   },
   "HOME.CommunityShare.point1.title": {
     "message": "Reuse What You Already Built"
@@ -873,10 +873,10 @@
     "message": "//#region generated meta\ntype Inputs = {\n};\ntype Outputs = {\n};\n//#endregion\n\nimport type { Context } from \"@oomol/types/oocana\";\n\nexport default async function(\n    params: Inputs,\n    context: Context<Inputs, Outputs>\n): Promise<Partial<Outputs> | undefined | void> {\n    // Fusion API Base URL\n    const api_url = \"https://fusion-api.oomol.com/v1/fal-nano-banana-edit/submit\"\n\n    // LLM Base URL, can use openai sdk\n    const llm_base_url = \"https://llm.oomol.com/v1\"\n\n    // Get OOMOL token from context (no need for manual API key input)\n    const api_token = await context.getOomolToken()\n    // return { output: \"output_value\" };\n};"
   },
   "HOME.GetStartedPrompt.title": {
-    "message": "Ship Your Next Function"
+    "message": "Start with your next function and let AI use it"
   },
   "HOME.GetStartedPrompt.subtitle": {
-    "message": "Download OOMOL Studio, generate functions with AI, validate them locally, then publish them as packages, consume them with CLI, or ship them as APIs, MCP tools, or automation tasks."
+    "message": "Download OOMOL Studio, write and validate your function locally, publish it to OOMOL Cloud, then sign in with the OOMOL CLI to use it from Codex or Claude Code, or keep delivering it as an API, MCP tool, or automation task."
   },
   "HOME.Pricing.title": {
     "message": "Pricing"
@@ -2467,10 +2467,10 @@
     "message": "Containerized deployment to private cloud or K8s clusters, supporting CI/CD pipelines for continuous delivery and operations of enterprise-grade API services."
   },
   "HOME.ProductComparison.title": {
-    "message": "Turn Validated Functions into Services"
+    "message": "Cloud keeps the function running reliably online"
   },
   "HOME.ProductComparison.subtitle": {
-    "message": "OOMOL Cloud is the service layer that takes what you already validated locally and puts it online."
+    "message": "If Studio is where you write the function, then OOMOL Cloud is the shared runtime and delivery layer. After sign-in, the CLI calls the cloud functions deployed there from Codex or Claude Code."
   },
   "HOME.ChatAgent.title": {
     "message": "OOMOL Chat & Agent Ecosystem"
@@ -2518,13 +2518,13 @@
     "message": "Launch faster, manage less"
   },
   "HOME.ProductComparison.cloud.capability": {
-    "message": "Get validated capabilities online without rebuilding interfaces, runtime layers, or scaling logic."
+    "message": "Turn a validated function into a shared online capability for CLI, APIs, and automation without rebuilding interfaces, runtimes, and scaling layers."
   },
   "HOME.ProductComparison.cloud.scenario": {
-    "message": "Best for developers who want to ship quickly and teams that want less deployment and operations overhead."
+    "message": "For developers and small teams that want to provide functions reliably to AI tools, applications, or automation tasks."
   },
   "HOME.ProductComparison.cloud.tech": {
-    "message": "Validate locally first, then deliver to Cloud. OOMOL handles runtime, scaling, and external delivery."
+    "message": "Reuse the implementation you already validated in Studio while OOMOL Cloud handles runtime, auth, and external delivery. The CLI signs in and calls the cloud functions from this layer."
   },
   "HOME.ProductComparison.cta": {
     "message": "Explore OOMOL Cloud"
@@ -2533,7 +2533,7 @@
     "message": "Delivery Targets"
   },
   "HOME.ProductComparison.outputSummary": {
-    "message": "The same validated implementation can continue as an API, MCP tool, or automation task instead of becoming three separate systems."
+    "message": "The same validated function can keep shipping as an API, MCP tool, or automation task, acting as one stable capability layer for both AI tools and applications."
   },
   "HOME.ProductComparison.output1.title": {
     "message": "API Services"
@@ -2557,28 +2557,28 @@
     "message": "Delivery Overhead"
   },
   "HOME.ProductComparison.benefit1.value": {
-    "message": "Less backend rebuilding"
+    "message": "Less service rebuilding"
   },
   "HOME.ProductComparison.benefit1.description": {
-    "message": "Cloud takes over the external service layer, so you do not need a second delivery stack around the function."
+    "message": "Cloud takes over the online runtime and delivery layer so you do not need to rebuild another interface stack around the same function."
   },
   "HOME.ProductComparison.benefit2.label": {
-    "message": "Ops Overhead"
+    "message": "Runtime Overhead"
   },
   "HOME.ProductComparison.benefit2.value": {
-    "message": "Less production maintenance"
+    "message": "More stable online usage"
   },
   "HOME.ProductComparison.benefit2.description": {
-    "message": "Stay focused on the capability itself instead of spending more time on environments, scaling, and production maintenance."
+    "message": "Stay focused on the function itself instead of spending more time on environments, scheduling, scaling, and production maintenance."
   },
   "HOME.DeveloperBenefits.badge": {
     "message": "Developer Benefits"
   },
   "HOME.DeveloperBenefits.title": {
-    "message": "Build First. Decide on Cost Later."
+    "message": "Get the path working before you optimize cost"
   },
   "HOME.DeveloperBenefits.subtitle": {
-    "message": "We remove two early blockers: model cost and the cost of getting lightweight tasks online."
+    "message": "Keep the pricing discussion later. First remove the blockers around model access and lightweight task validation so the Studio-to-CLI-to-production loop is easier to complete."
   },
   "HOME.DeveloperBenefits.card1.eyebrow": {
     "message": "Studio Benefit"
@@ -2629,43 +2629,43 @@
     "message": "Explore OOMOL Cloud"
   },
   "HOME.CliEntry.badge": {
-    "message": "CLI Consumption"
+    "message": "AI Coding Agents"
   },
   "HOME.CliEntry.title": {
-    "message": "Install oo-cli and turn packages into something users can run immediately."
+    "message": "Publish to OOMOL Cloud, then let Codex and Claude Code call it through the CLI."
   },
   "HOME.CliEntry.subtitle": {
-    "message": "For many teams, CLI is the most direct delivery path after publishing a package. It works inside Codex and Claude Code, but it is also simple enough for end users who just want to run a cloud function from a terminal."
+    "message": "CLI does not call local functions directly. After sign-in, it calls the cloud functions deployed on OOMOL Cloud, which makes Cloud both the delivery layer and the runtime prerequisite for CLI usage."
   },
   "HOME.CliEntry.step1.title": {
-    "message": "Publish once as a reusable package"
+    "message": "Write the function in Studio first"
   },
   "HOME.CliEntry.step1.description": {
-    "message": "The package remains the distribution unit. The same capability can then be consumed through CLI, API, or MCP without rebuilding the logic."
+    "message": "Use your normal code, dependencies, and debugging flow to get the capability working before you worry about delivery."
   },
   "HOME.CliEntry.step2.title": {
-    "message": "Search and inspect from the terminal"
+    "message": "Publish to Cloud as the shared runtime"
   },
   "HOME.CliEntry.step2.description": {
-    "message": "Users can find packages, inspect package metadata and inputs, and decide what to run before any deeper integration work starts."
+    "message": "Deploy the same function as a cloud function so CLI, APIs, and automation all share one runtime, auth layer, and delivery path."
   },
   "HOME.CliEntry.step3.title": {
-    "message": "Run cloud functions and fetch results"
+    "message": "Sign in from CLI and call it from Codex or Claude Code"
   },
   "HOME.CliEntry.step3.description": {
-    "message": "oo-cli already covers the main flow: sign in, search, run a cloud task, wait for completion, and read the result back."
+    "message": "After signing in with oo-cli, AI tools call the cloud functions you deployed on OOMOL Cloud, while the same capability can still be delivered as an API, MCP tool, or automation task."
   },
   "HOME.CliEntry.action.primary": {
-    "message": "Open CLI Guide"
+    "message": "Open CLI Quickstart"
   },
   "HOME.CliEntry.action.secondary": {
-    "message": "See Cloud Function Docs"
+    "message": "See Delivery Docs"
   },
   "HOME.CliEntry.terminal.title": {
-    "message": "Terminal Workflow"
+    "message": "Studio -> Cloud -> CLI"
   },
   "HOME.CliEntry.terminal.note": {
-    "message": "This is the delivery path to highlight when you want published OOMOL functions to be easy to consume by AI coding tools and regular terminal users, not only by app developers integrating APIs."
+    "message": "CLI is not just another entry point. After sign-in, it is the layer that connects cloud functions deployed on OOMOL Cloud to Codex, Claude Code, and other terminal workflows in a stable way."
   },
   "CLOUD.hero.title": {
     "message": "OOMOL Cloud"

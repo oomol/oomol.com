@@ -117,6 +117,7 @@ const sidebars = {
       collapsed: true,
       items: [
         "cloud-services/cloud-function",
+        "cloud-services/cli",
         {
           type: "category",
           label: "API & SDK",
