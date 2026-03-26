@@ -2629,37 +2629,94 @@
     "message": "Explore OOMOL Cloud"
   },
   "HOME.CliEntry.badge": {
-    "message": "AI Coding Agents"
+    "message": "CLI QUICKSTART"
   },
   "HOME.CliEntry.title": {
-    "message": "Publish to OOMOL Cloud, then let Codex and Claude Code call it through the CLI."
+    "message": "Install oo-cli, sign in once, then start calling published functions."
   },
   "HOME.CliEntry.subtitle": {
-    "message": "CLI does not call local functions directly. After sign-in, it calls the cloud functions deployed on OOMOL Cloud, which makes Cloud both the delivery layer and the runtime prerequisite for CLI usage."
+    "message": "Install the CLI, then get the first search and run working."
+  },
+  "HOME.CliEntry.bridge": {
+    "message": "Publish the function to OOMOL Cloud first. Then let CLI handle sign-in, discovery, and execution. That relationship only needs to be stated once."
   },
   "HOME.CliEntry.step1.title": {
-    "message": "Write the function in Studio first"
+    "message": "Install oo-cli"
   },
   "HOME.CliEntry.step1.description": {
-    "message": "Use your normal code, dependencies, and debugging flow to get the capability working before you worry about delivery."
+    "message": "Set up the CLI entry point."
   },
   "HOME.CliEntry.step2.title": {
-    "message": "Publish to Cloud as the shared runtime"
+    "message": "Sign in to your account"
   },
   "HOME.CliEntry.step2.description": {
-    "message": "Deploy the same function as a cloud function so CLI, APIs, and automation all share one runtime, auth layer, and delivery path."
+    "message": "Run oo login."
   },
   "HOME.CliEntry.step3.title": {
-    "message": "Sign in from CLI and call it from Codex or Claude Code"
+    "message": "Search and run a published function"
   },
   "HOME.CliEntry.step3.description": {
-    "message": "After signing in with oo-cli, AI tools call the cloud functions you deployed on OOMOL Cloud, while the same capability can still be delivered as an API, MCP tool, or automation task."
+    "message": "Search, then run."
   },
   "HOME.CliEntry.action.primary": {
     "message": "Open CLI Quickstart"
   },
   "HOME.CliEntry.action.secondary": {
-    "message": "See Delivery Docs"
+    "message": "See How Cloud Delivery Works"
+  },
+  "HOME.CliEntry.setup.eyebrow": {
+    "message": "INSTALL ONCE"
+  },
+  "HOME.CliEntry.setup.title": {
+    "message": "Two commands to install and sign in"
+  },
+  "HOME.CliEntry.setup.pill": {
+    "message": "30 sec"
+  },
+  "HOME.CliEntry.setup.note": {
+    "message": "Install once, then use it directly."
+  },
+  "HOME.CliEntry.demo.eyebrow": {
+    "message": "FIRST RUN DEMO"
+  },
+  "HOME.CliEntry.demo.title": {
+    "message": "Compress the first run into search, inspect, and run"
+  },
+  "HOME.CliEntry.demo.badge": {
+    "message": "Usage Flow"
+  },
+  "HOME.CliEntry.demo.note": {
+    "message": "Show the first successful path directly."
+  },
+  "HOME.CliEntry.demo.stage1.label": {
+    "message": "Search"
+  },
+  "HOME.CliEntry.demo.stage1.title": {
+    "message": "Search in natural language"
+  },
+  "HOME.CliEntry.demo.stage1.description": {
+    "message": "Search before memorizing package names. That matches how new users actually approach CLI."
+  },
+  "HOME.CliEntry.demo.stage2.label": {
+    "message": "Inspect"
+  },
+  "HOME.CliEntry.demo.stage2.title": {
+    "message": "Check package info"
+  },
+  "HOME.CliEntry.demo.stage2.description": {
+    "message": "Check package info before running so you do not guess the block-id or parameters."
+  },
+  "HOME.CliEntry.demo.stage3.label": {
+    "message": "Run"
+  },
+  "HOME.CliEntry.demo.stage3.title": {
+    "message": "Run and fetch result"
+  },
+  "HOME.CliEntry.demo.stage3.description": {
+    "message": "Cloud executes the function. CLI is the layer that sends the task and pulls the result back into the current workflow."
+  },
+  "HOME.CliEntry.demo.footer": {
+    "message": "The same published function can still be reused later as an API, MCP tool, or automation task."
   },
   "HOME.CliEntry.terminal.title": {
     "message": "Studio -> Cloud -> CLI"

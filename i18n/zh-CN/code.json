@@ -2716,37 +2716,94 @@
     "message": "查看 Cloud 交付"
   },
   "HOME.CliEntry.badge": {
-    "message": "AI Coding Agents"
+    "message": "CLI QUICKSTART"
   },
   "HOME.CliEntry.title": {
-    "message": "把函数发布到 OOMOL Cloud，再让 Codex 和 Claude Code 通过 CLI 调用。"
+    "message": "安装 oo-cli，登录后开始调用已发布函数。"
   },
   "HOME.CliEntry.subtitle": {
-    "message": "CLI 不是直接调用本地函数。开发者登录之后，实际调用的是部署在 OOMOL Cloud 上的云函数，所以 Cloud 既是交付层，也是 CLI 可用的前提运行层。"
+    "message": "先装上 CLI，再把第一次搜索和运行跑通。"
+  },
+  "HOME.CliEntry.bridge": {
+    "message": "函数先发布到 OOMOL Cloud，CLI 再负责登录、搜索和调用。这层关系说一遍就够，重点是让你第一次跑通。"
   },
   "HOME.CliEntry.step1.title": {
-    "message": "先在 Studio 里把函数写好"
+    "message": "安装 oo-cli"
   },
   "HOME.CliEntry.step1.description": {
-    "message": "继续用熟悉的代码、依赖和调试方式把能力跑通，先把函数本身做好。"
+    "message": "先装好命令行入口。"
   },
   "HOME.CliEntry.step2.title": {
-    "message": "发布到 Cloud，作为统一运行层"
+    "message": "登录账号"
   },
   "HOME.CliEntry.step2.description": {
-    "message": "把同一份函数部署成云函数，让 CLI、API 和自动化任务共享同一个运行时、鉴权和交付出口。"
+    "message": "执行 oo login。"
   },
   "HOME.CliEntry.step3.title": {
-    "message": "登录 CLI，在 Codex / Claude Code 中调用"
+    "message": "搜索并运行已发布函数"
   },
   "HOME.CliEntry.step3.description": {
-    "message": "用 oo-cli 登录后，AI 工具实际调用的是你部署在 Cloud 上的云函数，同一份能力也可以继续作为 API、MCP 工具或自动化任务提供。"
+    "message": "先搜，再跑。"
   },
   "HOME.CliEntry.action.primary": {
     "message": "查看 CLI 快速开始"
   },
   "HOME.CliEntry.action.secondary": {
-    "message": "查看函数交付"
+    "message": "查看如何发布到 Cloud"
+  },
+  "HOME.CliEntry.setup.eyebrow": {
+    "message": "INSTALL ONCE"
+  },
+  "HOME.CliEntry.setup.title": {
+    "message": "两条命令，先把 CLI 装好并登录"
+  },
+  "HOME.CliEntry.setup.pill": {
+    "message": "30 秒"
+  },
+  "HOME.CliEntry.setup.note": {
+    "message": "装好一次，后面直接用。"
+  },
+  "HOME.CliEntry.demo.eyebrow": {
+    "message": "FIRST RUN DEMO"
+  },
+  "HOME.CliEntry.demo.title": {
+    "message": "把第一次使用压缩成搜索、检查、运行三段"
+  },
+  "HOME.CliEntry.demo.badge": {
+    "message": "Usage Flow"
+  },
+  "HOME.CliEntry.demo.note": {
+    "message": "直接看第一次怎么跑通。"
+  },
+  "HOME.CliEntry.demo.stage1.label": {
+    "message": "Search"
+  },
+  "HOME.CliEntry.demo.stage1.title": {
+    "message": "自然语言搜索"
+  },
+  "HOME.CliEntry.demo.stage1.description": {
+    "message": "先搜索，而不是先记包名。这样更接近用户第一次接触 CLI 的真实动作。"
+  },
+  "HOME.CliEntry.demo.stage2.label": {
+    "message": "Inspect"
+  },
+  "HOME.CliEntry.demo.stage2.title": {
+    "message": "查看 package info"
+  },
+  "HOME.CliEntry.demo.stage2.description": {
+    "message": "在真正运行之前先看 package info，能避免把参数和 block-id 猜错。"
+  },
+  "HOME.CliEntry.demo.stage3.label": {
+    "message": "Run"
+  },
+  "HOME.CliEntry.demo.stage3.title": {
+    "message": "运行并取回结果"
+  },
+  "HOME.CliEntry.demo.stage3.description": {
+    "message": "函数交给 Cloud 执行，CLI 负责把任务发出去，并在当前工作流里把结果取回来。"
+  },
+  "HOME.CliEntry.demo.footer": {
+    "message": "同一份已发布函数，后面还可以继续作为 API、MCP 工具或自动化任务复用。"
   },
   "HOME.CliEntry.terminal.title": {
     "message": "Studio -> Cloud -> CLI"

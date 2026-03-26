@@ -22,7 +22,7 @@ const steps = [
   },
 ];
 
-const commands = [
+const installCommands = [
   {
     prompt: "$",
     text: "bun install -g @oomol-lab/oo-cli",
@@ -31,21 +31,30 @@ const commands = [
     prompt: "$",
     text: "oo login",
   },
+];
+
+const demoStages = [
   {
+    index: "01",
+    label: translate({ message: "HOME.CliEntry.demo.stage1.label" }),
+    title: translate({ message: "HOME.CliEntry.demo.stage1.title" }),
     prompt: "$",
     text: 'oo search "generate a QR code"',
   },
   {
+    index: "02",
+    label: translate({ message: "HOME.CliEntry.demo.stage2.label" }),
+    title: translate({ message: "HOME.CliEntry.demo.stage2.title" }),
     prompt: "$",
     text: "oo package info foo/bar@latest",
   },
   {
+    index: "03",
+    label: translate({ message: "HOME.CliEntry.demo.stage3.label" }),
+    title: translate({ message: "HOME.CliEntry.demo.stage3.title" }),
     prompt: "$",
     text: `oo cloud-task run foo/bar@1.2.3 --block-id main --data '{"text":"OOMOL"}'`,
-  },
-  {
-    prompt: "$",
-    text: "oo cloud-task result <task-id>",
+    followUp: "oo cloud-task result <task-id>",
   },
 ];
 
@@ -92,22 +101,25 @@ export default function HomepageCliEntry() {
           </div>
         </div>
 
-        <div className={styles.terminalCard}>
-          <div className={styles.terminalHeader}>
-            <span className={styles.terminalDot} />
-            <span className={styles.terminalDot} />
-            <span className={styles.terminalDot} />
-            <span className={styles.terminalTitle}>
-              {translate({ message: "HOME.CliEntry.terminal.title" })}
-            </span>
-          </div>
-          <div className={styles.terminalBody}>
-            <div className={styles.terminalNote}>
-              {translate({ message: "HOME.CliEntry.terminal.note" })}
+        <div className={styles.showcaseColumn}>
+          <div className={styles.setupCard}>
+            <div className={styles.panelEyebrow}>
+              {translate({ message: "HOME.CliEntry.setup.eyebrow" })}
             </div>
+            <div className={styles.panelHeader}>
+              <h3 className={styles.panelTitle}>
+                {translate({ message: "HOME.CliEntry.setup.title" })}
+              </h3>
+              <span className={styles.panelPill}>
+                {translate({ message: "HOME.CliEntry.setup.pill" })}
+              </span>
+            </div>
+            <p className={styles.panelNote}>
+              {translate({ message: "HOME.CliEntry.setup.note" })}
+            </p>
             <pre className={styles.commandBlock}>
               <code>
-                {commands.map(command => (
+                {installCommands.map(command => (
                   <span key={command.text} className={styles.commandLine}>
                     <span className={styles.prompt}>{command.prompt}</span>{" "}
                     {command.text}
@@ -115,6 +127,53 @@ export default function HomepageCliEntry() {
                 ))}
               </code>
             </pre>
+          </div>
+
+          <div className={styles.demoCard}>
+            <div className={styles.panelHeader}>
+              <div>
+                <div className={styles.panelEyebrow}>
+                  {translate({ message: "HOME.CliEntry.demo.eyebrow" })}
+                </div>
+                <h3 className={styles.panelTitle}>
+                  {translate({ message: "HOME.CliEntry.demo.title" })}
+                </h3>
+              </div>
+              <span className={styles.liveBadge}>
+                {translate({ message: "HOME.CliEntry.demo.badge" })}
+              </span>
+            </div>
+            <p className={styles.panelNote}>
+              {translate({ message: "HOME.CliEntry.demo.note" })}
+            </p>
+
+            <div className={styles.demoStageList}>
+              {demoStages.map(stage => (
+                <article key={stage.index} className={styles.demoStage}>
+                  <div className={styles.demoStageHeader}>
+                    <span className={styles.demoStageIndex}>{stage.index}</span>
+                    <div className={styles.demoStageHeading}>
+                      <div className={styles.demoStageLabel}>{stage.label}</div>
+                      <h4 className={styles.demoStageTitle}>{stage.title}</h4>
+                    </div>
+                  </div>
+                  <pre className={styles.stageCommandBlock}>
+                    <code>
+                      <span className={styles.commandLine}>
+                        <span className={styles.prompt}>{stage.prompt}</span>{" "}
+                        {stage.text}
+                      </span>
+                      {stage.followUp ? (
+                        <span className={styles.commandLineMuted}>
+                          <span className={styles.prompt}>$</span>{" "}
+                          {stage.followUp}
+                        </span>
+                      ) : null}
+                    </code>
+                  </pre>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </div>
