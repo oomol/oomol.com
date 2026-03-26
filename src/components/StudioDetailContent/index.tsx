@@ -1,9 +1,10 @@
 import styles from "./styles.module.scss";
 
-import { translate } from "@docusaurus/Translate";
 import type { DocusaurusContext } from "@docusaurus/types";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+
+import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import ThemedImage from "@theme/ThemedImage";
 import React, { useState } from "react";
 
@@ -98,9 +99,15 @@ export default function StudioDetailContent({
               </p>
 
               <div className={styles.homeFrustrationBlock}>
-                <p>{translate({ message: "STUDIO.story.frustration.line1" })}</p>
-                <p>{translate({ message: "STUDIO.story.frustration.line2" })}</p>
-                <p>{translate({ message: "STUDIO.story.frustration.line3" })}</p>
+                <p>
+                  {translate({ message: "STUDIO.story.frustration.line1" })}
+                </p>
+                <p>
+                  {translate({ message: "STUDIO.story.frustration.line2" })}
+                </p>
+                <p>
+                  {translate({ message: "STUDIO.story.frustration.line3" })}
+                </p>
               </div>
 
               <div className={styles.homeStorySummary}>

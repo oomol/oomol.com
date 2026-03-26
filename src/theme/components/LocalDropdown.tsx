@@ -1,12 +1,13 @@
+import styles from "./LocalDropdown.module.scss";
+
 import type { DocusaurusContext } from "@docusaurus/types";
 
+import { Dropdown, Menu } from "@arco-design/web-react";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import { useLocation } from "@docusaurus/router";
 import { useAlternatePageUtils } from "@docusaurus/theme-common/internal";
-import { Dropdown, Menu } from "@arco-design/web-react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { Button } from "@site/src/components/ui/button";
-import styles from "./LocalDropdown.module.scss";
 
 export interface LocalDropdownProps {
   queryString?: string;

@@ -1,9 +1,10 @@
+import styles from "./button.module.scss";
+
 import type { ButtonProps as ArcoButtonProps } from "@arco-design/web-react";
 
 import { Button as ArcoButton } from "@arco-design/web-react";
 import { cn } from "@site/src/lib/utils";
 import * as React from "react";
-import styles from "./button.module.scss";
 
 type ButtonVariant =
   | "default"

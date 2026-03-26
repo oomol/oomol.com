@@ -40,7 +40,9 @@ export default function HomepageProofLayer() {
     isZh ? "/img/proof/pdf2epub-zh.png" : "/img/proof/pdf2epub-en.png"
   );
   const case2Image = useBaseUrl(
-    isZh ? "/img/proof/reader-bookshelf-zh.jpg" : "/img/proof/reader-bookshelf-en.jpg"
+    isZh
+      ? "/img/proof/reader-bookshelf-zh.jpg"
+      : "/img/proof/reader-bookshelf-en.jpg"
   );
   const case3Image = useBaseUrl(
     isZh ? "/img/proof/reader-pdf-zh.jpg" : "/img/proof/reader-pdf-en.jpg"
@@ -94,9 +96,7 @@ export default function HomepageProofLayer() {
               <div key={signal.label} className={styles.signalCard}>
                 <div className={styles.signalLabel}>{signal.label}</div>
                 <div className={styles.signalValue}>{signal.value}</div>
-                <p className={styles.signalDescription}>
-                  {signal.description}
-                </p>
+                <p className={styles.signalDescription}>{signal.description}</p>
               </div>
             ))}
           </div>

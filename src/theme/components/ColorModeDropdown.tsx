@@ -1,8 +1,9 @@
-import { translate } from "@docusaurus/Translate";
+import styles from "./ColorModeDropdown.module.scss";
+
 import { Dropdown, Menu } from "@arco-design/web-react";
+import { translate } from "@docusaurus/Translate";
 import { Button } from "@site/src/components/ui/button";
 import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
-import styles from "./ColorModeDropdown.module.scss";
 
 type ColorModeType = "light" | "dark" | "system";
 

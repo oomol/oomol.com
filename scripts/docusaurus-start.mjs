@@ -11,7 +11,7 @@ const docusaurusCli = path.join(
   "@docusaurus",
   "core",
   "bin",
-  "docusaurus.mjs",
+  "docusaurus.mjs"
 );
 
 function run(command, args, extraEnv = {}) {
@@ -45,12 +45,12 @@ async function main() {
   const docusaurusExitCode = await run(
     process.execPath,
     [docusaurusCli, "start", ...process.argv.slice(2)],
-    env,
+    env
   );
   process.exit(docusaurusExitCode);
 }
 
-main().catch((error) => {
+main().catch(error => {
   console.error(error);
   process.exit(1);
 });

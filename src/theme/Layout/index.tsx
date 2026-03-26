@@ -2,14 +2,14 @@ import "@arco-design/web-react/dist/css/arco.css";
 import "../../styles/uno.css";
 import styles from "./styles.module.scss";
 
-import type { ReactNode } from "react";
 import type { DocusaurusContext } from "@docusaurus/types";
+import type { ReactNode } from "react";
 
-import { useColorMode } from "@docusaurus/theme-common";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { ConfigProvider, Empty } from "@arco-design/web-react";
 import enUS from "@arco-design/web-react/es/locale/en-US";
 import zhCN from "@arco-design/web-react/es/locale/zh-CN";
+import { useColorMode } from "@docusaurus/theme-common";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { CookieConsentProvider } from "@site/src/components/CookieConsent/CookieConsentProvider";
 import Footer from "@theme/Footer";
 import LayoutProvider from "@theme/Layout/Provider";
@@ -30,7 +30,7 @@ function ArcoBridge({ children }: { children: ReactNode }) {
 
   const arcoLocale = useMemo(
     () => (currentLocale === "zh-CN" ? zhCN : enUS),
-    [currentLocale],
+    [currentLocale]
   );
 
   useEffect(() => {

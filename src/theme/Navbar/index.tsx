@@ -10,10 +10,10 @@ import { useNavbarMobileSidebar } from "@docusaurus/theme-common/internal";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import ThemedImage from "@theme/ThemedImage";
 import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
 import NavbarItem from "@theme/NavbarItem";
 import SearchBar from "@theme/SearchBar";
+import ThemedImage from "@theme/ThemedImage";
 import { clsx } from "clsx";
 import React, { memo, useMemo } from "react";
 

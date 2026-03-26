@@ -105,12 +105,11 @@
   gap: 10px;
   padding: 24px;
   border-radius: 22px;
-  background:
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%) 0%,
-      color-mix(in srgb, var(--oomol-bg-base) 92%, white 8%) 100%
-    );
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%) 0%,
+    color-mix(in srgb, var(--oomol-bg-base) 92%, white 8%) 100%
+  );
   border: 1px solid color-mix(in srgb, var(--oomol-border-default) 86%, white);
   box-shadow: var(--oomol-shadow-sm);
 }
@@ -186,13 +185,21 @@
     var(--oomol-border-default) 84%,
     var(--plan-accent)
   );
-  --plan-price-color: color-mix(in srgb, var(--oomol-text-primary) 92%, var(--plan-accent) 8%);
+  --plan-price-color: color-mix(
+    in srgb,
+    var(--oomol-text-primary) 92%,
+    var(--plan-accent) 8%
+  );
   --plan-surface-top: color-mix(
     in srgb,
     var(--oomol-bg-elevated) 88%,
     white 12%
   );
-  --plan-surface-bottom: color-mix(in srgb, var(--oomol-bg-base) 90%, white 10%);
+  --plan-surface-bottom: color-mix(
+    in srgb,
+    var(--oomol-bg-base) 90%,
+    white 10%
+  );
   --plan-glow-top-left: color-mix(in srgb, var(--plan-accent) 36%, transparent);
   --plan-glow-top-right: color-mix(in srgb, white 68%, transparent);
   --plan-glow-bottom: color-mix(in srgb, var(--plan-accent) 12%, transparent);
@@ -215,13 +222,16 @@
     var(--oomol-primary-hover) 74%,
     black 10%
   );
-  --plan-button-border: color-mix(in srgb, var(--plan-accent-strong) 44%, transparent);
+  --plan-button-border: color-mix(
+    in srgb,
+    var(--plan-accent-strong) 44%,
+    transparent
+  );
   --plan-button-shadow:
     0 16px 30px color-mix(in srgb, var(--plan-accent-strong) 18%, transparent),
     inset 0 1px 0 rgba(255, 255, 255, 0.24);
   --plan-shadow:
-    0 24px 52px rgba(26, 34, 54, 0.08),
-    0 4px 14px rgba(32, 42, 64, 0.05);
+    0 24px 52px rgba(26, 34, 54, 0.08), 0 4px 14px rgba(32, 42, 64, 0.05);
   width: 100%;
   min-height: 100%;
   display: grid;
@@ -229,12 +239,11 @@
   align-content: start;
   padding: 34px 32px 30px;
   border-radius: 28px;
-  background:
-    linear-gradient(
-      180deg,
-      var(--plan-surface-top) 0%,
-      var(--plan-surface-bottom) 100%
-    );
+  background: linear-gradient(
+    180deg,
+    var(--plan-surface-top) 0%,
+    var(--plan-surface-bottom) 100%
+  );
   border: 1px solid var(--plan-border);
   box-shadow: var(--plan-shadow);
   transition:
@@ -250,7 +259,11 @@
     box-shadow:
       0 32px 76px color-mix(in srgb, var(--plan-accent-strong) 16%, transparent),
       0 10px 24px rgba(32, 42, 64, 0.07);
-    border-color: color-mix(in srgb, var(--plan-accent-strong) 32%, var(--oomol-border-default));
+    border-color: color-mix(
+      in srgb,
+      var(--plan-accent-strong) 32%,
+      var(--oomol-border-default)
+    );
   }
 
   &::before {
@@ -300,23 +313,23 @@
 
   &.recommended {
     --plan-accent: color-mix(in srgb, var(--oomol-primary) 78%, white);
-    --plan-accent-strong: color-mix(in srgb, var(--oomol-primary) 84%, #3d285f 16%);
+    --plan-accent-strong: color-mix(
+      in srgb,
+      var(--oomol-primary) 84%,
+      #3d285f 16%
+    );
     --plan-border: color-mix(
       in srgb,
       var(--plan-accent-strong) 60%,
       var(--oomol-border-default)
     );
-    --plan-price-color: color-mix(in srgb, #25173f 78%, var(--plan-accent-strong) 22%);
-    --plan-surface-top: color-mix(
+    --plan-price-color: color-mix(
       in srgb,
-      #d9d5fb 62%,
-      #fff7f1 38%
+      #25173f 78%,
+      var(--plan-accent-strong) 22%
     );
-    --plan-surface-bottom: color-mix(
-      in srgb,
-      #fcf9ff 74%,
-      #fff6ef 26%
-    );
+    --plan-surface-top: color-mix(in srgb, #d9d5fb 62%, #fff7f1 38%);
+    --plan-surface-bottom: color-mix(in srgb, #fcf9ff 74%, #fff6ef 26%);
     --plan-glow-top-left: rgba(127, 108, 219, 0.28);
     --plan-glow-top-right: rgba(255, 212, 183, 0.32);
     --plan-glow-bottom: rgba(133, 111, 229, 0.12);
@@ -336,8 +349,7 @@
       0 20px 38px rgba(95, 90, 181, 0.24),
       inset 0 1px 0 rgba(255, 255, 255, 0.22);
     --plan-shadow:
-      0 30px 80px rgba(110, 111, 185, 0.22),
-      0 12px 28px rgba(50, 41, 79, 0.08);
+      0 30px 80px rgba(110, 111, 185, 0.22), 0 12px 28px rgba(50, 41, 79, 0.08);
     border-width: 1.8px;
   }
 }
@@ -375,7 +387,11 @@
 .maxPlan {
   --plan-accent: color-mix(in srgb, #b88963 54%, white);
   --plan-accent-strong: color-mix(in srgb, #6d445d 68%, #9f6b45 32%);
-  --plan-border: color-mix(in srgb, rgba(109, 68, 93, 0.32) 70%, var(--oomol-border-default));
+  --plan-border: color-mix(
+    in srgb,
+    rgba(109, 68, 93, 0.32) 70%,
+    var(--oomol-border-default)
+  );
   --plan-price-color: color-mix(in srgb, #2c2232 74%, #6d445d 26%);
   --plan-surface-top: color-mix(in srgb, #fff7ef 74%, #f8eef5 26%);
   --plan-surface-bottom: color-mix(in srgb, #fff8f2 62%, #f5ebe8 38%);
@@ -395,11 +411,9 @@
   --plan-button-hover-end: #6d4860;
   --plan-button-border: rgba(101, 66, 88, 0.44);
   --plan-button-shadow:
-    0 20px 40px rgba(122, 79, 104, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    0 20px 40px rgba(122, 79, 104, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.2);
   --plan-shadow:
-    0 28px 74px rgba(122, 79, 104, 0.14),
-    0 8px 22px rgba(96, 72, 55, 0.08);
+    0 28px 74px rgba(122, 79, 104, 0.14), 0 8px 22px rgba(96, 72, 55, 0.08);
 }
 
 .badge {
@@ -407,14 +421,11 @@
   top: 18px;
   right: 24px;
   padding: 7px 14px;
-  background: linear-gradient(
-    135deg,
-    #7560c7 0%,
-    #5e5aa4 100%
-  );
+  background: linear-gradient(135deg, #7560c7 0%, #5e5aa4 100%);
   color: white;
   border-radius: 999px;
-  box-shadow: 0 12px 22px color-mix(in srgb, var(--oomol-primary) 18%, transparent);
+  box-shadow: 0 12px 22px
+    color-mix(in srgb, var(--oomol-primary) 18%, transparent);
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -992,11 +1003,7 @@
           rgba(116, 108, 179, 0.14) 0%,
           transparent 34%
         ),
-        linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.02) 0%,
-          transparent 26%
-        );
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, transparent 26%);
       pointer-events: none;
       z-index: -1;
     }
@@ -1024,12 +1031,11 @@
         var(--oomol-primary) 20%,
         rgba(255, 255, 255, 0.08)
       );
-      background:
-        linear-gradient(
-          135deg,
-          rgba(54, 61, 109, 0.42) 0%,
-          rgba(26, 28, 46, 0.86) 100%
-        );
+      background: linear-gradient(
+        135deg,
+        rgba(54, 61, 109, 0.42) 0%,
+        rgba(26, 28, 46, 0.86) 100%
+      );
       box-shadow:
         inset 0 1px 0 rgba(255, 255, 255, 0.08),
         0 18px 34px rgba(0, 0, 0, 0.18);
@@ -1037,12 +1043,11 @@
   }
 
   .pricingModelCard {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(49, 46, 69, 0.92) 0%,
-        rgba(28, 26, 40, 0.94) 100%
-      );
+    background: linear-gradient(
+      180deg,
+      rgba(49, 46, 69, 0.92) 0%,
+      rgba(28, 26, 40, 0.94) 100%
+    );
     border-color: color-mix(
       in srgb,
       var(--oomol-border-default) 64%,
@@ -1076,40 +1081,87 @@
 
   .planCard {
     --plan-accent: color-mix(in srgb, var(--oomol-primary) 42%, #e7e1f6 58%);
-    --plan-accent-strong: color-mix(in srgb, var(--oomol-primary) 78%, #d7cff0 22%);
-    --plan-border: color-mix(in srgb, var(--plan-accent-strong) 32%, var(--oomol-border-default));
+    --plan-accent-strong: color-mix(
+      in srgb,
+      var(--oomol-primary) 78%,
+      #d7cff0 22%
+    );
+    --plan-border: color-mix(
+      in srgb,
+      var(--plan-accent-strong) 32%,
+      var(--oomol-border-default)
+    );
     --plan-price-color: rgba(241, 236, 248, 0.94);
-    --plan-surface-top: color-mix(in srgb, #33304a 84%, var(--oomol-bg-elevated) 16%);
-    --plan-surface-bottom: color-mix(in srgb, #1d1a2b 82%, var(--oomol-bg-base) 18%);
-    --plan-glow-top-left: color-mix(in srgb, var(--plan-accent) 24%, transparent);
+    --plan-surface-top: color-mix(
+      in srgb,
+      #33304a 84%,
+      var(--oomol-bg-elevated) 16%
+    );
+    --plan-surface-bottom: color-mix(
+      in srgb,
+      #1d1a2b 82%,
+      var(--oomol-bg-base) 18%
+    );
+    --plan-glow-top-left: color-mix(
+      in srgb,
+      var(--plan-accent) 24%,
+      transparent
+    );
     --plan-glow-top-right: rgba(255, 255, 255, 0.05);
     --plan-glow-bottom: color-mix(in srgb, var(--plan-accent) 10%, transparent);
-    --plan-chip-bg: color-mix(in srgb, var(--plan-accent-strong) 18%, rgba(24, 22, 34, 0.92));
-    --plan-chip-border: color-mix(in srgb, var(--plan-accent-strong) 32%, transparent);
+    --plan-chip-bg: color-mix(
+      in srgb,
+      var(--plan-accent-strong) 18%,
+      rgba(24, 22, 34, 0.92)
+    );
+    --plan-chip-border: color-mix(
+      in srgb,
+      var(--plan-accent-strong) 32%,
+      transparent
+    );
     --plan-chip-text: rgba(240, 235, 247, 0.95);
-    --plan-button-start: color-mix(in srgb, var(--plan-accent-strong) 82%, #9188d8 18%);
-    --plan-button-end: color-mix(in srgb, var(--plan-accent-strong) 58%, #4d467b 42%);
-    --plan-button-hover-start: color-mix(in srgb, var(--plan-accent-strong) 88%, #a39ae7 12%);
-    --plan-button-hover-end: color-mix(in srgb, var(--plan-accent-strong) 64%, #574f8f 36%);
-    --plan-button-border: color-mix(in srgb, var(--plan-accent-strong) 42%, transparent);
+    --plan-button-start: color-mix(
+      in srgb,
+      var(--plan-accent-strong) 82%,
+      #9188d8 18%
+    );
+    --plan-button-end: color-mix(
+      in srgb,
+      var(--plan-accent-strong) 58%,
+      #4d467b 42%
+    );
+    --plan-button-hover-start: color-mix(
+      in srgb,
+      var(--plan-accent-strong) 88%,
+      #a39ae7 12%
+    );
+    --plan-button-hover-end: color-mix(
+      in srgb,
+      var(--plan-accent-strong) 64%,
+      #574f8f 36%
+    );
+    --plan-button-border: color-mix(
+      in srgb,
+      var(--plan-accent-strong) 42%,
+      transparent
+    );
     --plan-button-shadow:
       0 18px 34px color-mix(in srgb, var(--plan-accent-strong) 18%, transparent),
       inset 0 1px 0 rgba(255, 255, 255, 0.12);
     --plan-shadow:
-      0 28px 60px rgba(0, 0, 0, 0.28),
-      inset 0 1px 0 rgba(255, 255, 255, 0.04);
-    background:
-      linear-gradient(
-        180deg,
-        var(--plan-surface-top) 0%,
-        var(--plan-surface-bottom) 100%
-      );
+      0 28px 60px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    background: linear-gradient(
+      180deg,
+      var(--plan-surface-top) 0%,
+      var(--plan-surface-bottom) 100%
+    );
     backdrop-filter: blur(6px);
 
     &:hover {
       box-shadow:
         0 36px 74px rgba(0, 0, 0, 0.34),
-        0 12px 28px color-mix(in srgb, var(--plan-accent-strong) 16%, transparent),
+        0 12px 28px
+          color-mix(in srgb, var(--plan-accent-strong) 16%, transparent),
         inset 0 1px 0 rgba(255, 255, 255, 0.05);
     }
 
@@ -1125,11 +1177,7 @@
           var(--plan-glow-top-right) 0%,
           transparent 68%
         ),
-        linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.06) 0%,
-          transparent 72%
-        ),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, transparent 72%),
         radial-gradient(
           circle at bottom center,
           var(--plan-glow-bottom) 0%,
@@ -1151,7 +1199,11 @@
   .planCard.recommended {
     --plan-accent: color-mix(in srgb, #9a83ff 58%, #ffd0bc 42%);
     --plan-accent-strong: color-mix(in srgb, #a892ff 72%, #ffcfb5 28%);
-    --plan-border: color-mix(in srgb, var(--plan-accent-strong) 38%, #6f6794 62%);
+    --plan-border: color-mix(
+      in srgb,
+      var(--plan-accent-strong) 38%,
+      #6f6794 62%
+    );
     --plan-price-color: rgba(248, 240, 255, 0.96);
     --plan-surface-top: color-mix(in srgb, #41365b 74%, #2a2537 26%);
     --plan-surface-bottom: color-mix(in srgb, #271f33 74%, #191621 26%);
@@ -1181,7 +1233,11 @@
   .maxPlan {
     --plan-accent: color-mix(in srgb, #ca9670 52%, #f2d9c4 48%);
     --plan-accent-strong: color-mix(in srgb, #8c5b79 66%, #d79f73 34%);
-    --plan-border: color-mix(in srgb, var(--plan-accent-strong) 32%, #5f5067 68%);
+    --plan-border: color-mix(
+      in srgb,
+      var(--plan-accent-strong) 32%,
+      #5f5067 68%
+    );
     --plan-price-color: rgba(251, 238, 235, 0.96);
     --plan-surface-top: color-mix(in srgb, #3e2f3a 72%, #2b252d 28%);
     --plan-surface-bottom: color-mix(in srgb, #241b21 76%, #17131a 24%);
@@ -1226,11 +1282,19 @@
   }
 
   .featureList {
-    border-top-color: color-mix(in srgb, var(--plan-accent-strong) 18%, rgba(255, 255, 255, 0.08));
+    border-top-color: color-mix(
+      in srgb,
+      var(--plan-accent-strong) 18%,
+      rgba(255, 255, 255, 0.08)
+    );
   }
 
   .featureDisclosure {
-    border-top-color: color-mix(in srgb, var(--plan-accent-strong) 20%, rgba(255, 255, 255, 0.08));
+    border-top-color: color-mix(
+      in srgb,
+      var(--plan-accent-strong) 20%,
+      rgba(255, 255, 255, 0.08)
+    );
   }
 
   .priceTablesSection {

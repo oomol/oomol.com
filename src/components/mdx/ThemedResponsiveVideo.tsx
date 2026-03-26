@@ -1,6 +1,8 @@
+import type { ResponsiveVideoProps } from "./ResponsiveVideo";
+
 import { ThemedComponent } from "@docusaurus/theme-common";
 
-import ResponsiveVideo, { type ResponsiveVideoProps } from "./ResponsiveVideo";
+import ResponsiveVideo from "./ResponsiveVideo";
 
 export interface ThemedResponsiveVideoProps
   extends Omit<ResponsiveVideoProps, "src"> {

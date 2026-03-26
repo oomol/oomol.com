@@ -1,7 +1,8 @@
+import styles from "./styles.module.scss";
+
 import { Popover as ArcoPopover } from "@arco-design/web-react";
 import { clsx } from "clsx";
 import React from "react";
-import styles from "./styles.module.scss";
 
 interface PopoverProps {
   trigger: React.ReactNode;

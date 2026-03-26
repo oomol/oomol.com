@@ -1,5 +1,6 @@
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import type { ComponentProps, CSSProperties } from "react";
+
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 export interface ResponsiveVideoProps
   extends Omit<ComponentProps<"video">, "poster" | "src"> {

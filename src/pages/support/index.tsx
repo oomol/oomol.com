@@ -1,7 +1,12 @@
 import styles from "./styles.module.scss";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@site/src/components/ui/card";
 import { Button } from "@site/src/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@site/src/components/ui/card";
 import React from "react";
 
 import Layout from "../../theme/Layout";

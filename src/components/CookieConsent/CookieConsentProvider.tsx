@@ -4,7 +4,6 @@ import type { DocusaurusContext } from "@docusaurus/types";
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
 import {
   clearGoogleAnalyticsCookies,
   clearTrackingConsentState,
@@ -12,6 +11,7 @@ import {
   syncGoogleTracking,
   trackFirstLoginConversion,
 } from "@site/src/lib/analytics";
+import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
 import React, { useEffect } from "react";
 import { CookieManager, useCookieConsent } from "react-cookie-manager";
 

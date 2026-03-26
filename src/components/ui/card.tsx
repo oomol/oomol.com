@@ -1,21 +1,21 @@
+import styles from "./card.module.scss";
+
 import type { CardProps as ArcoCardProps } from "@arco-design/web-react";
 
 import { Card as ArcoCard } from "@arco-design/web-react";
 import { cn } from "@site/src/lib/utils";
 import * as React from "react";
-import styles from "./card.module.scss";
 
-const Card = React.forwardRef<
-  HTMLDivElement,
-  ArcoCardProps
->(({ className, bodyStyle, ...props }, ref) => (
-  <ArcoCard
-    bodyStyle={{ padding: 0, ...bodyStyle }}
-    className={cn(styles.card, className)}
-    ref={ref}
-    {...props}
-  />
-));
+const Card = React.forwardRef<HTMLDivElement, ArcoCardProps>(
+  ({ className, bodyStyle, ...props }, ref) => (
+    <ArcoCard
+      bodyStyle={{ padding: 0, ...bodyStyle }}
+      className={cn(styles.card, className)}
+      ref={ref}
+      {...props}
+    />
+  )
+);
 Card.displayName = "Card";
 
 const CardHeader = React.forwardRef<

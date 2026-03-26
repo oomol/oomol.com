@@ -1,5 +1,3 @@
-type GtagCommand = "config" | "consent" | "event" | "js" | "set";
-
 type TrackingConsentState = {
   advertising: boolean;
   analytics: boolean;
