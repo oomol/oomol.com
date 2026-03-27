@@ -15,9 +15,17 @@ import NavbarItem from "@theme/NavbarItem";
 import SearchBar from "@theme/SearchBar";
 import ThemedImage from "@theme/ThemedImage";
 import { clsx } from "clsx";
-import React, { memo, useMemo } from "react";
+import React, { memo, useEffect, useMemo, useRef, useState } from "react";
 
 interface NavbarProps {}
+
+type ProductMenuEntry = {
+  description: string;
+  href: string;
+  iconClassName: string;
+  key: string;
+  label: string;
+};
 
 const DefaultNavItemPosition = "right";
 
@@ -39,6 +47,9 @@ function splitNavItemsByPosition(
 
 const NavbarComponent: React.FC<NavbarProps> = memo(() => {
   const mobileSidebar = useNavbarMobileSidebar();
+  const [productMenuOpen, setProductMenuOpen] = useState(false);
+  const productMenuRef = useRef<HTMLDivElement>(null);
+  const productMenuCloseTimeoutRef = useRef<number | null>(null);
 
   const {
     siteConfig: {
@@ -84,6 +95,91 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
     () => splitNavItemsByPosition(items),
     [items]
   );
+
+  const productMenuItem = useMemo(
+    () =>
+      leftItems.find(item =>
+        String(item.className ?? "").includes("productDropdown")
+      ),
+    [leftItems]
+  );
+
+  const productMenuEntries = useMemo<ProductMenuEntry[]>(
+    () => [
+      {
+        key: "studio",
+        href: "/studio",
+        label: translate({
+          id: "item.label.navbar.oomol-studio",
+          message: "OOMOL Studio",
+        }),
+        description: translate({
+          message: "Theme.Navbar.product.studio.description",
+        }),
+        iconClassName: "i-lucide-square-terminal",
+      },
+      {
+        key: "cloud",
+        href: "/cloud",
+        label: translate({
+          id: "item.label.navbar.oomol-cloud",
+          message: "OOMOL Cloud",
+        }),
+        description: translate({
+          message: "Theme.Navbar.product.cloud.description",
+        }),
+        iconClassName: "i-lucide-cloud-upload",
+      },
+    ],
+    []
+  );
+
+  useEffect(() => {
+    setProductMenuOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const handlePointerDown = (event: MouseEvent) => {
+      if (
+        productMenuRef.current &&
+        !productMenuRef.current.contains(event.target as Node)
+      ) {
+        setProductMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handlePointerDown);
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+    };
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (productMenuCloseTimeoutRef.current !== null) {
+        window.clearTimeout(productMenuCloseTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const openProductMenu = () => {
+    if (productMenuCloseTimeoutRef.current !== null) {
+      window.clearTimeout(productMenuCloseTimeoutRef.current);
+      productMenuCloseTimeoutRef.current = null;
+    }
+    setProductMenuOpen(true);
+  };
+
+  const closeProductMenu = () => {
+    if (productMenuCloseTimeoutRef.current !== null) {
+      window.clearTimeout(productMenuCloseTimeoutRef.current);
+    }
+
+    productMenuCloseTimeoutRef.current = window.setTimeout(() => {
+      setProductMenuOpen(false);
+      productMenuCloseTimeoutRef.current = null;
+    }, 120);
+  };
 
   const isSignedIn = () => {
     const cookies = document.cookie.split(";").map(cookie => cookie.trim());
@@ -157,9 +253,68 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
           <Link className={styles.brand} to="/">
             <ThemedImage sources={logoSources} alt="logo" height={32} />
           </Link>
-          {leftItems.map((item, i) => (
-            <NavbarItem {...item} key={i} />
-          ))}
+          {leftItems.map((item, i) => {
+            if (item === productMenuItem) {
+              const isProductActive =
+                location.pathname.startsWith("/studio") ||
+                location.pathname.startsWith(`/${locale}/studio`) ||
+                location.pathname.startsWith("/cloud") ||
+                location.pathname.startsWith(`/${locale}/cloud`);
+
+              return (
+                <div
+                  key={`product-menu-${i}`}
+                  ref={productMenuRef}
+                  className={styles.productMenuWrapper}
+                  onMouseEnter={openProductMenu}
+                  onMouseLeave={closeProductMenu}
+                >
+                  <button
+                    type="button"
+                    className={clsx(styles.productMenuTrigger, {
+                      [styles.productMenuTriggerActive]: isProductActive,
+                    })}
+                    aria-expanded={productMenuOpen}
+                    aria-haspopup="true"
+                    onClick={() => setProductMenuOpen(current => !current)}
+                  >
+                    {translate({
+                      message: "Theme.Navbar.product.label",
+                    })}
+                    <span className={styles.productMenuCaret} aria-hidden="true" />
+                  </button>
+
+                  <div
+                    className={clsx(styles.productMenuPanel, {
+                      [styles.productMenuPanelOpen]: productMenuOpen,
+                    })}
+                  >
+                    {productMenuEntries.map(entry => (
+                      <Link
+                        key={entry.key}
+                        to={entry.href}
+                        className={styles.productMenuEntry}
+                      >
+                        <span className={styles.productMenuEntryIcon}>
+                          <i className={entry.iconClassName} />
+                        </span>
+                        <span className={styles.productMenuEntryText}>
+                          <span className={styles.productMenuEntryLabel}>
+                            {entry.label}
+                          </span>
+                          <span className={styles.productMenuEntryDescription}>
+                            {entry.description}
+                          </span>
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
+
+            return <NavbarItem {...item} key={i} />;
+          })}
         </div>
         <div className={styles.itemsRight}>
           {/* 当路由与文档路径匹配时，显示文档搜索框 */}

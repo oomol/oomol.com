@@ -1,12 +1,10 @@
 import styles from "./styles.module.scss";
 
-import type { DocusaurusContext } from "@docusaurus/types";
-
+import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import ThemedImage from "@theme/ThemedImage";
-import React, { useState } from "react";
+import React from "react";
 
 type StudioDetailContentProps = {
   variant?: "page" | "home";
@@ -57,13 +55,6 @@ const principles = [
 export default function StudioDetailContent({
   variant = "page",
 }: StudioDetailContentProps) {
-  const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
-    i18n: { currentLocale: string };
-  };
-  const isZh = i18n.currentLocale === "zh-CN";
-  const [expandedPrinciple, setExpandedPrinciple] = useState<number | null>(
-    null
-  );
   const studioPreviewLight = useBaseUrl("/img/pages/studio/studio-light.png");
   const studioPreviewDark = useBaseUrl("/img/pages/studio/studio-dark.png");
   const principle1Light = useBaseUrl("/img/pages/studio/code-light.png");
@@ -78,41 +69,62 @@ export default function StudioDetailContent({
     { light: principle2Light, dark: principle2Dark },
     { light: principle3Light, dark: principle3Dark },
   ];
+  const publishPreviewLight = useBaseUrl("/img/pages/home/publish-light.png");
+  const publishPreviewDark = useBaseUrl("/img/pages/home/publish-dark.png");
 
   if (variant === "home") {
+    const homeCards = [
+      {
+        title: translate({ message: "HOME.StudioChain.card1.title" }),
+        description: translate({
+          message: "HOME.StudioChain.card1.description",
+        }),
+        image: {
+          light: principle1Light,
+          dark: principle1Dark,
+        },
+        alt: "Build blocks in OOMOL Studio",
+      },
+      {
+        title: translate({ message: "HOME.StudioChain.card2.title" }),
+        description: translate({
+          message: "HOME.StudioChain.card2.description",
+        }),
+        image: {
+          light: publishPreviewLight,
+          dark: publishPreviewDark,
+        },
+        alt: "Deploy blocks with OOMOL Cloud",
+      },
+    ];
+
     return (
       <section className={styles.homeSection}>
         <div className={styles.homeContainer}>
           <header className={styles.homeHeader}>
             <h2 className={styles.homeTitle}>
-              {translate({ message: "STUDIO.manifesto.title" })}
+              {translate({ message: "HOME.StudioChain.title" })}
             </h2>
             <p className={styles.homeSubtitle}>
-              {translate({ message: "STUDIO.manifesto.subtitle" })}
+              {translate({ message: "HOME.StudioChain.subtitle" })}
             </p>
           </header>
 
           <div className={styles.homeHero}>
             <div className={styles.homeStoryCard}>
               <p className={styles.homeStoryLead}>
-                {translate({ message: "STUDIO.story.paragraph1" })}
+                {translate({ message: "HOME.StudioChain.lead" })}
               </p>
-
-              <div className={styles.homeFrustrationBlock}>
-                <p>
-                  {translate({ message: "STUDIO.story.frustration.line1" })}
-                </p>
-                <p>
-                  {translate({ message: "STUDIO.story.frustration.line2" })}
-                </p>
-                <p>
-                  {translate({ message: "STUDIO.story.frustration.line3" })}
-                </p>
-              </div>
-
               <div className={styles.homeStorySummary}>
-                <p>{translate({ message: "STUDIO.story.paragraph2" })}</p>
-                <p>{translate({ message: "STUDIO.story.paragraph3" })}</p>
+                <p>{translate({ message: "HOME.StudioChain.summary" })}</p>
+              </div>
+              <div className={styles.homeActions}>
+                <Link to="/studio" className={styles.homePrimaryAction}>
+                  {translate({ message: "HOME.StudioChain.action.studio" })}
+                </Link>
+                <Link to="/cloud" className={styles.homeSecondaryAction}>
+                  {translate({ message: "HOME.StudioChain.action.cloud" })}
+                </Link>
               </div>
             </div>
 
@@ -131,69 +143,21 @@ export default function StudioDetailContent({
           </div>
 
           <div className={styles.homePrinciplesGrid}>
-            {principles.map((principle, index) => {
-              const [firstParagraph, ...extraParagraphs] =
-                principle.paragraphKeys;
-              const isExpanded = expandedPrinciple === index;
-
-              return (
-                <article
-                  key={principle.titleKey}
-                  className={styles.homePrincipleCard}
-                >
-                  <div className={styles.homePrincipleMedia}>
-                    <ThemedImage
-                      sources={principleImageSources[index]}
-                      alt={principle.alt}
-                      className={styles.homePrincipleImage}
-                    />
-                  </div>
-                  <div className={styles.homePrincipleContent}>
-                    <h3>
-                      {translate({
-                        message: principle.titleKey,
-                      })}
-                    </h3>
-                    <p>
-                      {translate({
-                        message: firstParagraph,
-                      })}
-                    </p>
-                    <div
-                      className={`${styles.homePrincipleExtra} ${
-                        !isExpanded ? styles.homePrincipleExtraCollapsed : ""
-                      }`}
-                    >
-                      {extraParagraphs.map(key => (
-                        <p key={key}>
-                          {translate({
-                            message: key,
-                          })}
-                        </p>
-                      ))}
-                    </div>
-                    <button
-                      type="button"
-                      className={styles.homePrincipleToggle}
-                      aria-expanded={isExpanded}
-                      onClick={() => {
-                        setExpandedPrinciple(current =>
-                          current === index ? null : index
-                        );
-                      }}
-                    >
-                      {isExpanded
-                        ? isZh
-                          ? "收起"
-                          : "Show less"
-                        : isZh
-                          ? "展开更多"
-                          : "Show more"}
-                    </button>
-                  </div>
-                </article>
-              );
-            })}
+            {homeCards.map(card => (
+              <article key={card.title} className={styles.homePrincipleCard}>
+                <div className={styles.homePrincipleMedia}>
+                  <ThemedImage
+                    sources={card.image}
+                    alt={card.alt}
+                    className={styles.homePrincipleImage}
+                  />
+                </div>
+                <div className={styles.homePrincipleContent}>
+                  <h3>{card.title}</h3>
+                  <p>{card.description}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>

@@ -86,16 +86,10 @@ export default function HomepageCliEntry() {
           </div>
 
           <div className={styles.actions}>
-            <Link
-              to="/docs/cloud-services/cli"
-              className={styles.primaryAction}
-            >
+            <Link to="/docs/cloud-services/cli" className={styles.primaryAction}>
               {translate({ message: "HOME.CliEntry.action.primary" })}
             </Link>
-            <Link
-              to="/docs/cloud-services/cloud-function"
-              className={styles.secondaryAction}
-            >
+            <Link to="/cloud" className={styles.secondaryAction}>
               {translate({ message: "HOME.CliEntry.action.secondary" })}
             </Link>
           </div>

@@ -1,0 +1,356 @@
+@use "../../css/custom.scss" as *;
+
+.page {
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(155, 174, 226, 0.12) 0%,
+      rgba(155, 174, 226, 0) 34%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--oomol-bg-layout) 92%, white 8%) 0%,
+      var(--oomol-bg-base) 100%
+    );
+}
+
+.hero {
+  padding: clamp(5rem, 9vw, 7.5rem) 0 clamp(3rem, 6vw, 4.5rem);
+}
+
+.heroContainer,
+.sectionContainer {
+  width: min(1280px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.heroContainer {
+  display: grid;
+  grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
+  gap: clamp(1.6rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+.heroCopy {
+  display: grid;
+  gap: 1.2rem;
+  max-width: 40rem;
+}
+
+.kicker,
+.sectionLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: fit-content;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--oomol-text-secondary);
+
+  &::before {
+    content: "";
+    width: 0.8rem;
+    height: 1px;
+    background: var(--oomol-primary);
+  }
+}
+
+.heroTitle,
+.sectionTitle,
+.ctaTitle {
+  margin: 0;
+  font-family: var(--oomol-font-display);
+  letter-spacing: -0.045em;
+  color: var(--oomol-text-primary);
+}
+
+.heroTitle {
+  max-width: 10ch;
+  font-size: clamp(3.1rem, 6vw, 5.35rem);
+  line-height: 0.95;
+}
+
+.heroDescription,
+.sectionSubtitle,
+.sectionBody,
+.ctaDescription {
+  margin: 0;
+  line-height: 1.72;
+  color: var(--oomol-text-secondary);
+}
+
+.heroDescription {
+  max-width: 38rem;
+  font-size: 1.08rem;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.stat {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.6rem;
+  padding: 0 0.95rem;
+  border-radius: 999px;
+  border: 1px solid var(--oomol-divider);
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%);
+}
+
+.statValue {
+  font-size: 0.94rem;
+  font-weight: 650;
+  color: var(--oomol-text-primary);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  padding-top: 0.3rem;
+}
+
+.primaryAction,
+.secondaryAction,
+.inlineLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition:
+    transform 0.18s ease,
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease;
+
+  &:hover {
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+}
+
+.primaryAction,
+.secondaryAction {
+  min-height: 2.95rem;
+  padding: 0 1rem;
+  border-radius: 999px;
+  font-size: 0.96rem;
+  font-weight: 650;
+}
+
+.primaryAction {
+  color: var(--oomol-white);
+  border: 1px solid color-mix(in srgb, var(--oomol-primary-active) 64%, black 12%);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--oomol-primary) 78%, white 14%) 0%,
+    color-mix(in srgb, var(--oomol-primary-active) 88%, black 12%) 100%
+  );
+}
+
+.secondaryAction {
+  color: var(--oomol-text-primary);
+  border: 1px solid var(--oomol-divider);
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%);
+}
+
+.heroVisual {
+  min-width: 0;
+}
+
+.visualFrame {
+  padding: 0.9rem;
+  border-radius: 1.9rem;
+  border: 1px solid var(--oomol-divider);
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 95%, white 5%);
+  box-shadow: var(--oomol-shadow-lg);
+}
+
+.visualImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1.2rem;
+  border: 1px solid var(--oomol-divider);
+}
+
+.narrativeSection,
+.deliverySection,
+.pricingSection,
+.openSourceSection,
+.ctaSection {
+  padding: clamp(2.8rem, 6vw, 4.8rem) 0;
+}
+
+.sectionHeader {
+  display: grid;
+  gap: 0.9rem;
+  margin-bottom: 1.4rem;
+}
+
+.sectionTitle {
+  max-width: 12ch;
+  font-size: clamp(2.4rem, 4.8vw, 4rem);
+  line-height: 0.98;
+}
+
+.sectionSubtitle {
+  max-width: 48rem;
+  font-size: 1rem;
+}
+
+.sectionBody {
+  max-width: 52rem;
+  font-size: 1rem;
+}
+
+.modeGrid,
+.projectGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.modeGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.modeCard,
+.projectCard,
+.pricingCard,
+.ctaCard {
+  border: 1px solid var(--oomol-divider);
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%);
+  box-shadow: var(--oomol-shadow-md);
+}
+
+.modeCard,
+.projectCard {
+  border-radius: 1.4rem;
+  padding: 1.2rem 1.15rem 1.3rem;
+}
+
+.modeIndex {
+  font-family: var(--oomol-font-display);
+  font-size: 1.45rem;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: color-mix(in srgb, var(--oomol-primary) 78%, var(--oomol-text-primary));
+}
+
+.modeTitle,
+.projectTitle {
+  margin: 0.9rem 0 0.45rem;
+  font-size: 1.15rem;
+  line-height: 1.25;
+  color: var(--oomol-text-primary);
+}
+
+.modeDescription,
+.projectDescription {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.68;
+  color: var(--oomol-text-secondary);
+}
+
+.pricingCard,
+.ctaCard {
+  padding: clamp(1.6rem, 3.5vw, 2.4rem);
+  border-radius: 1.8rem;
+}
+
+.inlineLink {
+  margin-top: 1rem;
+  width: fit-content;
+  font-size: 0.95rem;
+  font-weight: 650;
+  color: var(--oomol-primary-text);
+}
+
+.projectGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1.4rem;
+}
+
+.ctaCard {
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(132, 138, 208, 0.2) 0%,
+      rgba(132, 138, 208, 0) 32%
+    ),
+    linear-gradient(180deg, #1a1b28 0%, #12131d 100%);
+  border-color: rgba(214, 221, 236, 0.12);
+}
+
+.ctaTitle {
+  max-width: 11ch;
+  font-size: clamp(2.4rem, 4.6vw, 4rem);
+  line-height: 0.96;
+  color: rgba(243, 239, 248, 0.98);
+}
+
+.ctaDescription {
+  max-width: 42rem;
+  padding-top: 0.9rem;
+  color: rgba(221, 214, 231, 0.8);
+}
+
+.ctaCard .secondaryAction {
+  color: rgba(243, 239, 248, 0.94);
+  border-color: rgba(243, 239, 248, 0.14);
+  background: rgba(243, 239, 248, 0.08);
+}
+
+:global(html[lang="en"]) .heroTitle {
+  max-width: 13ch;
+  font-size: clamp(2.8rem, 5.4vw, 4.8rem);
+  line-height: 0.98;
+}
+
+:global(html[lang="en"]) .sectionTitle {
+  max-width: 16ch;
+  font-size: clamp(2.1rem, 4vw, 3.45rem);
+  line-height: 1.02;
+}
+
+:global(html[lang="en"]) .ctaTitle {
+  max-width: 16ch;
+  font-size: clamp(2.2rem, 4vw, 3.55rem);
+  line-height: 1.03;
+}
+
+@media (max-width: 996px) {
+  .heroContainer,
+  .modeGrid,
+  .projectGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroContainer {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContainer,
+  .sectionContainer {
+    width: min(100%, calc(100% - 40px));
+  }
+
+  .hero {
+    padding-top: 4rem;
+  }
+
+  .heroTitle,
+  .sectionTitle,
+  .ctaTitle {
+    max-width: 100%;
+    text-wrap: pretty;
+  }
+}

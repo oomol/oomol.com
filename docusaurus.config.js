@@ -177,12 +177,29 @@ const config = {
         },
         items: [
           {
+            label: "Product",
+            position: "left",
+            className: "productDropdown",
+            items: [
+              {
+                to: "/studio",
+                label: "navbar.oomol-studio",
+                className: "productDropdownItem productDropdownItemStudio",
+              },
+              {
+                to: "/cloud",
+                label: "navbar.oomol-cloud",
+                className: "productDropdownItem productDropdownItemCloud",
+              },
+            ],
+          },
+          { to: "/downloads", label: "navbar.download", position: "left" },
+          {
             type: "doc",
             docId: "overview",
             position: "left",
             label: "Docs",
           },
-          { to: "/downloads", label: "navbar.download", position: "left" },
           { to: "/pricing", label: "navbar.pricing", position: "left" },
           { to: "/updates", label: "Updates", position: "left" },
           { to: "/blog", label: "Blog", position: "left" },

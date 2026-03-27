@@ -1,12 +1,9 @@
 import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
 import HomepageCliEntry from "@site/src/components/HomepageCliEntry";
-import HomepageCommunityShare from "@site/src/components/HomepageCommunityShare";
-import HomepageDeliveryGap from "@site/src/components/HomepageDeliveryGap";
-import HomepageDeveloperBenefits from "@site/src/components/HomepageDeveloperBenefits";
+import HomepageCodexBlocks from "@site/src/components/HomepageCodexBlocks";
 import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
 import HomepageProductComparison from "@site/src/components/HomepageProductComparison";
-import HomepageProofLayer from "@site/src/components/HomepageProofLayer";
 import StudioDetailContent from "@site/src/components/StudioDetailContent";
 import React from "react";
 
@@ -27,11 +24,8 @@ export default function Home() {
         <HomepageFirstScreen />
         <HomepageCliEntry />
         <StudioDetailContent variant="home" />
-        <HomepageDeliveryGap />
         <HomepageProductComparison />
-        <HomepageProofLayer />
-        <HomepageCommunityShare />
-        <HomepageDeveloperBenefits />
+        <HomepageCodexBlocks />
         <GetStartedPrompt />
       </main>
     </Layout>

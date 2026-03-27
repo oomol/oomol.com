@@ -152,6 +152,142 @@
   gap: 12px;
 }
 
+.productMenuWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0.75rem;
+  }
+}
+
+.productMenuTrigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.52rem;
+  min-height: 42px;
+  padding: 0.52rem 0.9rem;
+  margin: 0 0.18rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--oomol-text-primary);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+
+  &:hover {
+    color: var(--oomol-primary);
+    background: color-mix(in srgb, var(--oomol-primary-bg) 58%, transparent);
+  }
+}
+
+.productMenuTriggerActive {
+  color: var(--oomol-primary);
+  background: color-mix(in srgb, var(--oomol-primary-bg) 76%, transparent);
+}
+
+.productMenuCaret {
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-left: 0.08rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-1px);
+  opacity: 0.82;
+}
+
+.productMenuPanel {
+  position: absolute;
+  top: calc(100% + 0.2rem);
+  left: 0;
+  min-width: 18rem;
+  padding: 0.55rem;
+  border-radius: 1.1rem;
+  border: 1px solid color-mix(in srgb, var(--oomol-border-default) 78%, white);
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 96%, white 4%);
+  box-shadow: var(--oomol-shadow-lg);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+  z-index: 120;
+}
+
+.productMenuPanelOpen {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.productMenuEntry {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.9rem;
+  align-items: start;
+  min-height: 4rem;
+  padding: 0.85rem 0.9rem;
+  border-radius: 0.95rem;
+  text-decoration: none;
+  transition:
+    background 0.18s ease,
+    transform 0.18s ease;
+
+  &:hover {
+    text-decoration: none;
+    background: color-mix(in srgb, var(--oomol-primary-bg) 64%, transparent);
+    transform: translateY(-1px);
+  }
+}
+
+.productMenuEntryIcon {
+  width: 2.15rem;
+  height: 2.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.8rem;
+  background: color-mix(in srgb, var(--oomol-bg-layout) 90%, white 10%);
+  border: 1px solid var(--oomol-divider);
+  color: var(--oomol-primary);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 8px 18px rgba(77, 88, 124, 0.08);
+
+  i {
+    font-size: 1.05rem;
+  }
+}
+
+.productMenuEntryText {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.productMenuEntryLabel {
+  color: var(--oomol-text-primary);
+  font-size: 0.96rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.productMenuEntryDescription {
+  color: var(--oomol-text-secondary);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
 .brand {
   display: flex;
   align-items: center;

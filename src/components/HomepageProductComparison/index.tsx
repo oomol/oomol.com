@@ -87,10 +87,7 @@ export default function HomepageProductComparison() {
                   })}
                 </p>
                 <div className={styles.cardActions}>
-                  <Link
-                    to="/docs/cloud-services/cloud-function"
-                    className={styles.primaryCta}
-                  >
+                  <Link to="/cloud" className={styles.primaryCta}>
                     {translate({ message: "HOME.ProductComparison.cta" })}
                   </Link>
                   <div className={styles.inlineNote}>
