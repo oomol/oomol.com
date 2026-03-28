@@ -39,19 +39,25 @@
     "message": "Start with ready-made capabilities in oo-cli, create your own blocks in OOMOL Studio, then deploy and deliver them privately through Cloud."
   },
   "HOME.FirstScreen.heroTitle": {
-    "message": "Let agents use your skill while you stay in control of the code"
+    "message": "Let agents use your skill.\nYou stay in control of the code."
   },
   "HOME.FirstScreen.heroSubtitle": {
     "message": "We call this a cloud skill: a capability that runs in the cloud and can be used directly from terminals and agent workflows."
   },
   "HOME.FirstScreen.heroLead": {
-    "message": "A cloud skill runs in the cloud, stays reusable, and can be used directly from terminals and agent workflows."
+    "message": "A skill generated with OOMOL runs its underlying tool functions reliably in the cloud;\nonce users install oo-cli, they can use it directly in Codex and Claude Code."
   },
   "HOME.FirstScreen.heroAdvantage": {
     "message": "Open source or closed source,"
   },
   "HOME.FirstScreen.heroAdvantageHighlight": {
     "message": "it is your call."
+  },
+  "HOME.FirstScreen.video.playAriaLabel": {
+    "message": "Play demo video"
+  },
+  "HOME.FirstScreen.video.playLabel": {
+    "message": "Play demo"
   },
   "HOME.FirstScreen.pill1": {
     "message": "No new DSL"
@@ -70,33 +76,6 @@
   },
   "HOME.FirstScreen.offer2": {
     "message": "200 free Cloud Task minutes each month"
-  },
-  "HOME.DeliveryGap.badge": {
-    "message": "Why Delivery Breaks"
-  },
-  "HOME.DeliveryGap.title": {
-    "message": "The real cost starts after the function works."
-  },
-  "HOME.DeliveryGap.subtitle": {
-    "message": "Once you want a capability to be called reliably by AI, APIs, and automations, the work that grows is usually wrapping interfaces, aligning environments, shipping to production, and keeping the whole path stable."
-  },
-  "HOME.DeliveryGap.problem1.title": {
-    "message": "Function Done. Backend Work Begins."
-  },
-  "HOME.DeliveryGap.problem1.description": {
-    "message": "The implementation already exists, but publishing it as an API or task still means rebuilding interfaces, deployment steps, and runtime wrappers."
-  },
-  "HOME.DeliveryGap.problem2.title": {
-    "message": "Local Runs Do Not Guarantee Delivery"
-  },
-  "HOME.DeliveryGap.problem2.description": {
-    "message": "Development, dependency, and deployment environments drift apart. The problem is often not the code itself, but whether it still holds once it leaves your machine."
-  },
-  "HOME.DeliveryGap.problem3.title": {
-    "message": "One Capability Gets Wrapped Repeatedly"
-  },
-  "HOME.DeliveryGap.problem3.description": {
-    "message": "Teams often wrap the same implementation separately for APIs, MCP tools, and automation tasks, multiplying delivery cost without adding capability."
   },
   "HOME.ProofLayer.badge": {
     "message": "Real Use Cases"
@@ -3082,10 +3061,16 @@
     "message": "Explore Cloud"
   },
   "Theme.Navbar.product.studio.description": {
-    "message": "Build, debug, and validate your blocks"
+    "message": "Generate and validate your own cloud skills"
+  },
+  "Theme.Navbar.product.cli.description": {
+    "message": "Install in Codex or Claude Code and use skills directly"
   },
   "Theme.Navbar.product.cloud.description": {
-    "message": "Publish and deliver cloud skills privately"
+    "message": "Run, subscribe, and manage cloud skills in the cloud"
+  },
+  "Theme.Navbar.product.ai.description": {
+    "message": "Use the official GUI agent for the same skills"
   },
   "Theme.Navbar.product.label": {
     "message": "Product"

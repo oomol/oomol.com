@@ -67,12 +67,18 @@ export default function HomepageFirstScreen() {
                 type="button"
                 className={styles.playOverlay}
                 onClick={handlePlay}
-                aria-label="播放演示视频"
+                aria-label={translate({
+                  message: "HOME.FirstScreen.video.playAriaLabel",
+                })}
               >
                 <span className={styles.playButton}>
                   <span className={styles.playTriangle} aria-hidden="true" />
                 </span>
-                <span className={styles.playLabel}>点击播放演示</span>
+                <span className={styles.playLabel}>
+                  {translate({
+                    message: "HOME.FirstScreen.video.playLabel",
+                  })}
+                </span>
               </button>
             )}
             <video

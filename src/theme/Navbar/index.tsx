@@ -27,6 +27,15 @@ type ProductMenuEntry = {
   label: string;
 };
 
+function isProductEntryActive(pathname: string, locale: string, href: string) {
+  return (
+    pathname === href ||
+    pathname.startsWith(`${href}/`) ||
+    pathname === `/${locale}${href}` ||
+    pathname.startsWith(`/${locale}${href}/`)
+  );
+}
+
 const DefaultNavItemPosition = "right";
 
 function splitNavItemsByPosition(
@@ -107,6 +116,18 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
   const productMenuEntries = useMemo<ProductMenuEntry[]>(
     () => [
       {
+        key: "oo-cli",
+        href: "/docs/cloud-services/cli",
+        label: translate({
+          id: "item.label.navbar.oo-cli",
+          message: "oo-cli",
+        }),
+        description: translate({
+          message: "Theme.Navbar.product.cli.description",
+        }),
+        iconClassName: "i-lucide-terminal-square",
+      },
+      {
         key: "studio",
         href: "/studio",
         label: translate({
@@ -129,6 +150,18 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
           message: "Theme.Navbar.product.cloud.description",
         }),
         iconClassName: "i-lucide-cloud-upload",
+      },
+      {
+        key: "oomol-ai",
+        href: "/app",
+        label: translate({
+          id: "item.label.navbar.oomol-ai",
+          message: "OOMOL AI",
+        }),
+        description: translate({
+          message: "Theme.Navbar.product.ai.description",
+        }),
+        iconClassName: "i-lucide-bot",
       },
     ],
     []
@@ -256,10 +289,14 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
           {leftItems.map((item, i) => {
             if (item === productMenuItem) {
               const isProductActive =
+                location.pathname.startsWith("/docs/cloud-services/cli") ||
+                location.pathname.startsWith(`/${locale}/docs/cloud-services/cli`) ||
                 location.pathname.startsWith("/studio") ||
                 location.pathname.startsWith(`/${locale}/studio`) ||
                 location.pathname.startsWith("/cloud") ||
-                location.pathname.startsWith(`/${locale}/cloud`);
+                location.pathname.startsWith(`/${locale}/cloud`) ||
+                location.pathname.startsWith("/app") ||
+                location.pathname.startsWith(`/${locale}/app`);
 
               return (
                 <div
@@ -293,7 +330,13 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
                       <Link
                         key={entry.key}
                         to={entry.href}
-                        className={styles.productMenuEntry}
+                        className={clsx(styles.productMenuEntry, {
+                          [styles.productMenuEntryActive]: isProductEntryActive(
+                            location.pathname,
+                            locale,
+                            entry.href
+                          ),
+                        })}
                       >
                         <span className={styles.productMenuEntryIcon}>
                           <i className={entry.iconClassName} />

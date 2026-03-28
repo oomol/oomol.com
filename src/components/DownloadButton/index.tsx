@@ -29,12 +29,14 @@ export interface DownloadButtonProps {
   stableTag?: boolean;
   centered?: boolean;
   showNote?: boolean;
+  noteTone?: "default" | "inverse";
 }
 
 export const DownloadButton = ({
   stableTag,
   centered,
   showNote = true,
+  noteTone = "default",
 }: DownloadButtonProps) => {
   const downloadIcon = (
     <span className={styles.downloadIconWrap} aria-hidden="true">
@@ -47,6 +49,14 @@ export const DownloadButton = ({
   const windowsClassName = centered
     ? `${styles.windowsBox} ${styles.centered}`
     : styles.windowsBox;
+  const noteClassName =
+    noteTone === "inverse"
+      ? `${styles.chipNote} ${styles.inverseNote}`
+      : styles.chipNote;
+  const windowsSubtitleClassName =
+    noteTone === "inverse"
+      ? `${styles.windowsSubtitle} ${styles.inverseNote}`
+      : styles.windowsSubtitle;
 
   return (
     <BrowserOnly
@@ -61,7 +71,7 @@ export const DownloadButton = ({
             })}
           </Button>
           {showNote ? (
-            <span className={styles.chipNote}>
+            <span className={noteClassName}>
               {translate({
                 message: "HOME.FirstScreen.download-macos-chip-note",
               })}
@@ -92,7 +102,7 @@ export const DownloadButton = ({
                   </a>
                 </Button>
                 {showNote ? (
-                  <span className={styles.chipNote}>
+                  <span className={noteClassName}>
                     {translate({
                       message: "HOME.FirstScreen.download-macos-chip-note",
                     })}
@@ -118,7 +128,7 @@ export const DownloadButton = ({
                   </a>
                 </Button>
                 {showNote ? (
-                  <span className={styles.windowsSubtitle}>
+                  <span className={windowsSubtitleClassName}>
                     {translate({
                       message: "HOME.FirstScreen.download-windows-subtitle",
                     })}

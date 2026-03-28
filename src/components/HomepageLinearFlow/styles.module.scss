@@ -5,7 +5,27 @@
 }
 
 .section {
-  padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+  padding: clamp(3.35rem, 6.2vw, 5rem) 0;
+}
+
+.cliSection {
+  .container {
+    grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+    align-items: start;
+  }
+
+  .copyPanel {
+    gap: 1.05rem;
+    max-width: 36rem;
+  }
+
+  .sectionDescription {
+    max-width: 34rem;
+  }
+
+  .mediaPanel {
+    min-height: clamp(25rem, 42vw, 35rem);
+  }
 }
 
 .sectionTint {
@@ -15,6 +35,26 @@
       color-mix(in srgb, var(--oomol-bg-base) 92%, #d7c8af 8%) 0%,
       color-mix(in srgb, var(--oomol-bg-base) 96%, white 4%) 100%
     );
+}
+
+.cloudSection {
+  .container {
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    align-items: center;
+    gap: clamp(1.9rem, 3.6vw, 3.2rem);
+  }
+
+  .copyPanel {
+    max-width: 35rem;
+  }
+
+  .sectionTitle {
+    max-width: 12ch;
+  }
+
+  .sectionDescription {
+    max-width: 33rem;
+  }
 }
 
 .agentSection {
@@ -39,16 +79,16 @@
 
 .container {
   display: grid;
-  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
-  gap: clamp(1.6rem, 4vw, 3.2rem);
-  align-items: center;
+  grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
+  gap: clamp(1.7rem, 3.2vw, 2.8rem);
+  align-items: start;
 }
 
 .copyPanel {
   display: grid;
   gap: 1rem;
   align-content: start;
-  max-width: 38rem;
+  max-width: 40rem;
 }
 
 .eyebrow {
@@ -56,11 +96,10 @@
   width: fit-content;
   align-items: center;
   gap: 0.75rem;
-  font-size: 0.76rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--oomol-text-secondary);
+  letter-spacing: 0.08em;
+  color: color-mix(in srgb, var(--oomol-text-secondary) 88%, white 12%);
 
   &::before {
     content: "";
@@ -75,18 +114,19 @@
   margin: 0;
   max-width: 11ch;
   font-family: var(--oomol-font-display);
-  font-size: clamp(2.15rem, 4vw, 3.55rem);
-  line-height: 1;
+  font-size: clamp(2.1rem, 3.75vw, 3.2rem);
+  line-height: 1.03;
   letter-spacing: -0.045em;
+  text-wrap: pretty;
   color: var(--oomol-text-primary);
 }
 
 .sectionDescription,
 .ctaDescription {
   margin: 0;
-  max-width: 42rem;
-  font-size: 1.02rem;
-  line-height: 1.76;
+  max-width: 40rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
   color: var(--oomol-text-secondary);
 }
 
@@ -95,8 +135,8 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.85rem;
-  padding-top: 0.4rem;
+  gap: 0.9rem;
+  padding-top: 0.5rem;
 }
 
 .primaryLink,
@@ -105,11 +145,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 2.95rem;
-  padding: 0 1rem;
+  min-width: 11.5rem;
+  min-height: 3rem;
+  padding: 0 1.25rem;
   border-radius: 999px;
-  font-size: 0.95rem;
-  font-weight: 650;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
   text-decoration: none;
   transition:
     transform 0.18s ease,
@@ -143,16 +185,16 @@
 .terminalPanel,
 .mediaPanel,
 .agentMediaCard {
-  border-radius: 1.8rem;
+  border-radius: 1.5rem;
   border: 1px solid var(--oomol-divider);
   background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%);
-  box-shadow: var(--oomol-shadow-lg);
+  box-shadow: 0 16px 32px rgba(101, 118, 163, 0.1);
   overflow: hidden;
 }
 
 .mediaPanel,
 .agentMediaCard {
-  min-height: clamp(20rem, 34vw, 28rem);
+  min-height: clamp(24rem, 40vw, 33rem);
 }
 
 .terminalPanel {
@@ -176,15 +218,14 @@
 
 .terminalBody {
   display: grid;
-  gap: 1rem;
-  padding: 1.2rem 1.3rem 1.35rem;
+  gap: 0.82rem;
+  padding: 1.1rem 1.2rem 1.25rem;
 }
 
 .terminalLabel {
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--oomol-text-tertiary);
 }
 
@@ -195,8 +236,8 @@
   font-family:
     ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Monaco, Consolas,
     "Liberation Mono", monospace;
-  font-size: 0.92rem;
-  line-height: 1.8;
+  font-size: 1rem;
+  line-height: 1.9;
   color: var(--oomol-text-primary);
 }
 
@@ -206,7 +247,9 @@
 
 .commentLine {
   display: block;
-  margin: 0 0 0.28rem;
+  margin: 0 0 0.3rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
   color: var(--oomol-text-tertiary);
 }
 
@@ -218,9 +261,12 @@
   height: 100%;
   min-height: inherit;
   display: grid;
-  align-content: center;
-  gap: 0.95rem;
-  padding: clamp(1.4rem, 3vw, 2.2rem);
+  align-content: start;
+  gap: 1.1rem;
+  padding: clamp(1.55rem, 3vw, 2.4rem);
+  padding-top: clamp(4.3rem, 5vw, 5.15rem);
+  position: relative;
+  overflow: hidden;
   background:
     linear-gradient(rgba(97, 113, 145, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(97, 113, 145, 0.08) 1px, transparent 1px),
@@ -232,102 +278,201 @@
   background-size: 3.25rem 3.25rem, 3.25rem 3.25rem, auto;
 }
 
-.placeholderBadge {
-  display: inline-flex;
-  width: fit-content;
-  align-items: center;
-  justify-content: center;
-  min-height: 2rem;
-  padding: 0 0.7rem;
-  border-radius: 999px;
-  border: 1px solid var(--oomol-divider);
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--oomol-text-tertiary);
-}
-
 .placeholderTitle {
   margin: 0;
   max-width: 18ch;
   font-family: var(--oomol-font-display);
-  font-size: clamp(1.6rem, 2.4vw, 2.3rem);
-  line-height: 1.04;
+  font-size: clamp(1.42rem, 1.9vw, 1.72rem);
+  line-height: 1.12;
   letter-spacing: -0.03em;
   color: var(--oomol-text-primary);
+  position: relative;
+  z-index: 1;
 }
 
 .placeholderNote {
   margin: 0;
   max-width: 34rem;
-  font-size: 0.98rem;
-  line-height: 1.74;
+  font-size: 1rem;
+  line-height: 1.66;
   color: var(--oomol-text-secondary);
+  position: relative;
+  z-index: 1;
 }
 
-.stepGrid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.9rem;
+.placeholderCard::before {
+  content: "视频区域";
+  position: absolute;
+  top: clamp(1.4rem, 3vw, 2.2rem);
+  left: clamp(1.4rem, 3vw, 2.2rem);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  padding: 0 0.78rem;
+  border-radius: 999px;
+  border: 1px solid var(--oomol-divider);
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--oomol-text-tertiary);
 }
 
-.stepCard,
+.placeholderCard::after {
+  content: "";
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: 5.8rem;
+  height: 5.8rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--oomol-primary) 18%, white);
+  background:
+    radial-gradient(circle at center, rgba(84, 88, 135, 0.12) 0%, rgba(84, 88, 135, 0) 70%),
+    color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.62),
+    0 12px 26px rgba(77, 88, 124, 0.12);
+  mask:
+    radial-gradient(circle at 52% 50%, transparent 0 34%, #000 35%),
+    linear-gradient(#000, #000);
+  mask-composite: exclude;
+}
+
 .cloudCard {
-  border-radius: 1.25rem;
+  border-radius: 1.2rem;
   border: 1px solid var(--oomol-divider);
   background: color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%);
 }
 
-.stepCard {
-  padding: 1rem 1rem 1.05rem;
-}
-
-.stepTitle {
-  font-size: 0.86rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--oomol-primary-text);
-}
-
-.stepText {
-  margin: 0.65rem 0 0;
-  font-size: 0.95rem;
-  line-height: 1.68;
-  color: var(--oomol-text-secondary);
-}
-
 .cloudCardStack {
   display: grid;
-  gap: 0.95rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
 }
 
 .cloudCard {
-  padding: 1rem 1rem 1.1rem;
-}
-
-.cloudLabel {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--oomol-text-tertiary);
+  padding: 1rem 1rem 1.05rem;
 }
 
 .cloudTitle {
-  margin: 0.45rem 0 0;
-  font-size: 1.08rem;
-  line-height: 1.35;
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.34;
+  letter-spacing: -0.01em;
   color: var(--oomol-text-primary);
 }
 
 .cloudText {
   margin: 0.55rem 0 0;
-  font-size: 0.95rem;
-  line-height: 1.7;
+  font-size: 0.96rem;
+  line-height: 1.62;
   color: var(--oomol-text-secondary);
+}
+
+.cloudMediaPanel {
+  min-height: clamp(28rem, 38vw, 34rem);
+}
+
+.cloudPlaceholderCard {
+  gap: 0.95rem;
+  justify-content: start;
+}
+
+.cloudPlaceholderCard::after {
+  display: none;
+}
+
+.cloudMetaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cloudMetaPill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0 0.78rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--oomol-border-default) 82%, white);
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--oomol-text-secondary);
+}
+
+.cloudPreviewGrid {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cloudPreviewCard,
+.cloudPreviewList {
+  border-radius: 1.15rem;
+  border: 1px solid color-mix(in srgb, var(--oomol-border-default) 78%, white);
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 95%, white 5%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.52),
+    0 12px 24px rgba(107, 121, 159, 0.08);
+}
+
+.cloudPreviewCard {
+  min-height: 8rem;
+  padding: 1rem;
+  display: grid;
+  align-content: start;
+  gap: 0.55rem;
+}
+
+.cloudPreviewLabel {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--oomol-text-tertiary);
+}
+
+.cloudPreviewValue {
+  font-family: var(--oomol-font-display);
+  font-size: clamp(1.85rem, 2.6vw, 2.45rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--oomol-text-primary);
+}
+
+.cloudPreviewList {
+  grid-column: 1 / -1;
+  padding: 0.95rem 1rem;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.cloudPreviewItem {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 0.65rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--oomol-text-secondary);
+}
+
+.cloudPreviewDot {
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-top: 0.35rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--oomol-primary) 74%, white);
+  box-shadow: 0 0 0 0.22rem color-mix(in srgb, var(--oomol-primary) 10%, transparent);
 }
 
 .ctaSection {
@@ -336,9 +481,9 @@
 
 .ctaInner {
   display: grid;
-  gap: 1rem;
-  padding: clamp(1.9rem, 4vw, 2.8rem);
-  border-radius: 2rem;
+  gap: 1.1rem;
+  padding: clamp(2.1rem, 4.2vw, 3rem);
+  border-radius: 1.75rem;
   border: 1px solid rgba(214, 221, 236, 0.12);
   background:
     radial-gradient(
@@ -347,7 +492,7 @@
       rgba(132, 138, 208, 0) 32%
     ),
     linear-gradient(180deg, #1a1b28 0%, #12131d 100%);
-  box-shadow: var(--oomol-shadow-lg);
+  box-shadow: 0 18px 36px rgba(31, 28, 53, 0.22);
 }
 
 .ctaTitle {
@@ -362,7 +507,7 @@
 
 .ctaGhost {
   min-width: 12rem;
-  min-height: 54px;
+  min-height: 52px;
   padding: 0 1.35rem;
   border-radius: 999px;
   font-size: 1rem;
@@ -374,9 +519,17 @@
 
 :global(html[lang="en"]) .sectionTitle,
 :global(html[lang="en"]) .ctaTitle {
-  max-width: 14ch;
-  font-size: clamp(1.95rem, 3.6vw, 3.1rem);
-  line-height: 1.02;
+  max-width: 19ch;
+  font-size: clamp(2rem, 3.2vw, 2.95rem);
+  line-height: 1.05;
+}
+
+:global(html[lang="en"]) .cliSection .sectionTitle {
+  max-width: 20ch;
+}
+
+:global(html[lang="en"]) .cloudSection .sectionTitle {
+  max-width: 13ch;
 }
 
 @media (max-width: 996px) {
@@ -384,7 +537,27 @@
     grid-template-columns: 1fr;
   }
 
-  .stepGrid {
+  .cliSection {
+    .container {
+      grid-template-columns: 1fr;
+    }
+
+    .copyPanel {
+      max-width: 100%;
+    }
+
+    .terminalPanel {
+      max-width: 100%;
+    }
+  }
+
+  .cloudSection {
+    .container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .cloudCardStack {
     grid-template-columns: 1fr;
   }
 }
@@ -472,8 +645,30 @@
         180deg,
         color-mix(in srgb, var(--oomol-bg-elevated) 88%, black 12%) 0%,
         color-mix(in srgb, var(--oomol-bg-container) 82%, black 18%) 100%
-      );
+    );
     background-size: 3.25rem 3.25rem, 3.25rem 3.25rem, auto;
+  }
+
+  .placeholderCard::before {
+    background: color-mix(
+      in srgb,
+      var(--oomol-bg-elevated) 86%,
+      var(--oomol-bg-container) 14%
+    );
+  }
+
+  .placeholderCard::after {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-primary) 24%,
+      var(--oomol-divider)
+    );
+    background:
+      radial-gradient(circle at center, rgba(132, 138, 208, 0.12) 0%, rgba(132, 138, 208, 0) 70%),
+      color-mix(in srgb, var(--oomol-bg-elevated) 88%, black 12%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      0 14px 30px rgba(0, 0, 0, 0.18);
   }
 
   .ctaInner {

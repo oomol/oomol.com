@@ -182,6 +182,11 @@ const config = {
             className: "productDropdown",
             items: [
               {
+                to: "/docs/cloud-services/cli",
+                label: "navbar.oo-cli",
+                className: "productDropdownItem productDropdownItemCli",
+              },
+              {
                 to: "/studio",
                 label: "navbar.oomol-studio",
                 className: "productDropdownItem productDropdownItemStudio",
@@ -190,6 +195,11 @@ const config = {
                 to: "/cloud",
                 label: "navbar.oomol-cloud",
                 className: "productDropdownItem productDropdownItemCloud",
+              },
+              {
+                to: "/app",
+                label: "navbar.oomol-ai",
+                className: "productDropdownItem productDropdownItemAi",
               },
             ],
           },

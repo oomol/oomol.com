@@ -205,12 +205,17 @@ export default function StudioPage() {
               <p className={styles.ctaDescription}>
                 {translate({ message: "STUDIO.product.cta.description" })}
               </p>
-              <div className={styles.actions}>
-                <DownloadButton />
+              <div className={styles.ctaActions}>
+                <DownloadButton showNote={false} />
                 <Link to="/cloud" className={styles.secondaryAction}>
                   {translate({ message: "STUDIO.product.cta.secondary" })}
                 </Link>
               </div>
+              <p className={styles.ctaNote}>
+                {translate({
+                  message: "HOME.FirstScreen.download-macos-chip-note",
+                })}
+              </p>
             </div>
           </div>
         </section>
