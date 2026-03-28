@@ -27,19 +27,29 @@ function detectOSAndArchitecture(): OS {
 
 export interface DownloadButtonProps {
   stableTag?: boolean;
+  centered?: boolean;
 }
 
-export const DownloadButton = ({ stableTag }: DownloadButtonProps) => {
+export const DownloadButton = ({
+  stableTag,
+  centered,
+}: DownloadButtonProps) => {
   const downloadIcon = (
     <span className={styles.downloadIconWrap} aria-hidden="true">
       <span className={`i-codicon-desktop-download ${styles.downloadIcon}`} />
     </span>
   );
+  const containerClassName = centered
+    ? `${styles.downloadContainer} ${styles.centered}`
+    : styles.downloadContainer;
+  const windowsClassName = centered
+    ? `${styles.windowsBox} ${styles.centered}`
+    : styles.windowsBox;
 
   return (
     <BrowserOnly
       fallback={
-        <div className={styles.downloadContainer}>
+        <div className={containerClassName}>
           <Button className={styles.download}>
             {downloadIcon}
             {translate({
@@ -60,7 +70,7 @@ export const DownloadButton = ({ stableTag }: DownloadButtonProps) => {
         return (
           <div className={styles["button-box"]}>
             {detectOSAndArchitecture() === OS.MacOS ? (
-              <div className={styles.downloadContainer}>
+              <div className={containerClassName}>
                 <Button
                   asChild
                   className={styles.download}
@@ -84,7 +94,7 @@ export const DownloadButton = ({ stableTag }: DownloadButtonProps) => {
                 </span>
               </div>
             ) : (
-              <div className={styles.windowsBox}>
+              <div className={windowsClassName}>
                 <Button
                   asChild
                   className={styles.download}

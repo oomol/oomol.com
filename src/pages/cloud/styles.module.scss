@@ -86,6 +86,18 @@
   font-size: 1.08rem;
 }
 
+.heroNote {
+  margin: -0.2rem 0 0;
+  max-width: 38rem;
+  padding: 0.95rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid color-mix(in srgb, var(--oomol-primary) 16%, white);
+  background: color-mix(in srgb, var(--oomol-primary-bg) 54%, white);
+  font-size: 0.98rem;
+  line-height: 1.68;
+  color: color-mix(in srgb, var(--oomol-text-secondary) 90%, white 10%);
+}
+
 .stats {
   display: flex;
   flex-wrap: wrap;
@@ -352,5 +364,21 @@
   .ctaTitle {
     max-width: 100%;
     text-wrap: pretty;
+  }
+}
+
+[data-theme="dark"] {
+  .heroNote {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-primary) 22%,
+      var(--oomol-divider)
+    );
+    background: color-mix(
+      in srgb,
+      var(--oomol-bg-elevated) 78%,
+      var(--oomol-primary-bg) 22%
+    );
+    color: color-mix(in srgb, var(--oomol-text-secondary) 92%, white 8%);
   }
 }

@@ -14,19 +14,22 @@ export default function AppPage() {
         {/* Hero Section */}
         <section className={styles.hero}>
           <h1 className={styles.heroTitle}>
-            {translate({ id: "APP.new.hero.title", message: "OOMOL App" })}
+            {translate({
+              id: "APP.new.hero.title",
+              message: "OOMOL App Surfaces",
+            })}
           </h1>
           <p className={styles.heroSubtitle}>
             {translate({
               id: "APP.new.hero.subtitle",
-              message: "Direct Product Surfaces for Your Functions",
+              message: "Product surfaces for cloud skills",
             })}
           </p>
           <p className={styles.heroDescription}>
             {translate({
               id: "APP.new.hero.description",
               message:
-                "Turn function capabilities directly into Chat skills or Applet entry points, without building separate UI from scratch.",
+                "A single cloud skill can be delivered through chat or structured applets, without building separate product surfaces from scratch.",
             })}
           </p>
           <div className={styles.heroCTA}>
@@ -57,14 +60,14 @@ export default function AppPage() {
             <h2 className={styles.sectionTitle}>
               {translate({
                 id: "APP.new.concept.title",
-                message: "Code is Product",
+                message: "One skill, different surfaces",
               })}
             </h2>
             <p className={styles.sectionSubtitle}>
               {translate({
                 id: "APP.new.concept.description",
                 message:
-                  "OOMOL wraps function capabilities into usable product surfaces. You focus on the function; we connect it to the user.",
+                  "OOMOL turns the same cloud skill into usable entry points. You focus on the implementation; we connect it to the user.",
               })}
             </p>
           </div>
@@ -77,7 +80,7 @@ export default function AppPage() {
                   <span className={styles.productPill}>
                     {translate({
                       id: "APP.new.chat.pill",
-                      message: "Chat · Workflow Copilot",
+                      message: "Chat Surface · Skill",
                     })}
                   </span>
                   <span className={styles.productTag}>
@@ -97,7 +100,7 @@ export default function AppPage() {
                   {translate({
                     id: "APP.new.chat.description",
                     message:
-                      "When user intent is still vague, let AI choose and call your function capabilities through conversation.",
+                      "When user intent is still vague, let AI choose and run the right cloud skill through conversation.",
                   })}
                 </p>
                 <div className={styles.productMetaGrid}>
@@ -112,7 +115,7 @@ export default function AppPage() {
                       {translate({
                         id: "APP.new.chat.meta1.value",
                         message:
-                          "Best when capabilities need to be exposed through conversation and intent needs clarification first",
+                          "Best when a cloud skill should be used through conversation and intent needs clarification first",
                       })}
                     </div>
                   </div>
@@ -127,7 +130,7 @@ export default function AppPage() {
                       {translate({
                         id: "APP.new.chat.meta2.value",
                         message:
-                          "Understand intent first, then call the right service with less user setup",
+                          "Understand intent first, then call the right cloud skill with less setup",
                       })}
                     </div>
                   </div>
@@ -136,7 +139,7 @@ export default function AppPage() {
                   {translate({
                     id: "APP.new.chat.devValue",
                     message:
-                      "Functions as Skills: your functions become AI-callable capabilities.",
+                      "Cloud skill as agent tool: the same implementation becomes an AI-callable surface.",
                   })}
                 </p>
               </div>
@@ -161,7 +164,7 @@ export default function AppPage() {
                   <span className={styles.productPill}>
                     {translate({
                       id: "APP.new.applet.pill",
-                      message: "Parameterized Surface · Applet",
+                      message: "Structured Surface · Applet",
                     })}
                   </span>
                   <span className={styles.productTag}>
@@ -181,7 +184,7 @@ export default function AppPage() {
                   {translate({
                     id: "APP.new.applet.description",
                     message:
-                      "When inputs are clear, call the function directly through structured parameters for more reliable delivery.",
+                      "When inputs are clear, run the same cloud skill through structured parameters for more reliable delivery.",
                   })}
                 </p>
                 <div className={styles.productMetaGrid}>
@@ -196,7 +199,7 @@ export default function AppPage() {
                       {translate({
                         id: "APP.new.applet.meta1.value",
                         message:
-                          "Best for teams delivering fixed-input function capabilities to internal or external users",
+                          "Best for teams delivering fixed-input cloud skills to internal or external users",
                       })}
                     </div>
                   </div>
@@ -211,7 +214,7 @@ export default function AppPage() {
                       {translate({
                         id: "APP.new.applet.meta2.value",
                         message:
-                          "Wrap a function as a fillable, executable, and reusable product entry point",
+                          "Wrap the same cloud skill as a fillable, executable, and reusable entry point",
                       })}
                     </div>
                   </div>
@@ -220,7 +223,7 @@ export default function AppPage() {
                   {translate({
                     id: "APP.new.applet.devValue",
                     message:
-                      "Function as App: auto-generated parameter UI with less frontend boilerplate.",
+                      "Cloud skill as app: auto-generated parameter UI with less frontend boilerplate.",
                   })}
                 </p>
               </div>

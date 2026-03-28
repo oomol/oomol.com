@@ -10,7 +10,7 @@ const darkTheme = themes.dracula;
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "OOMOL",
-  tagline: "Write a function. Ship a service.",
+  tagline: "Build cloud skills. Keep the code.",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -70,7 +70,7 @@ const config = {
         "@context": "https://schema.org",
         "@type": "Organization",
         name: "OOMOL",
-        tagline: "Write a function. Ship a service.",
+        tagline: "Build cloud skills. Keep the code.",
         favicon: "img/favicon.ico",
         url: "https://oomol.com",
         sameAs: ["https://hub.oomol.com"],
@@ -153,12 +153,12 @@ const config = {
         {
           name: "keywords",
           content:
-            "function to service, ai-native developer tools, local validation, api publishing, mcp tools, automation tasks, containerized development, function delivery, OOMOL",
+            "cloud skill, skill distribution, closed-source skill delivery, ai-native developer tools, local validation, oo-cli, mcp tools, automation tasks, containerized development, OOMOL",
         },
         {
           name: "description",
           content:
-            "Generate functions in a real coding environment, validate locally, and publish the same capability as an API, MCP tool, or automation task.",
+            "Build cloud skills in a real coding environment, validate locally, and publish them for oo-cli, agents, APIs, and automation without exposing your source code.",
         },
       ],
 

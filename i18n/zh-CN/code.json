@@ -27,7 +27,7 @@
     "message": "社区"
   },
   "HOME.page.title": {
-    "message": "OOMOL - 为 agent 构建并交付你的能力"
+    "message": "OOMOL - 构建并发布 cloud skill"
   },
   "HOME.FirstScreen.slogan": {
     "message": "为 agent 构建并交付你的能力"
@@ -37,6 +37,21 @@
   },
   "HOME.FirstScreen.script": {
     "message": "先通过 oo-cli 使用现成能力，再在 OOMOL Studio 中编写自己的 block，最后通过 Cloud 私有部署并交付出去。"
+  },
+  "HOME.FirstScreen.heroTitle": {
+    "message": "让 Agent 用上你的 Skill，\n代码依然由你掌控。"
+  },
+  "HOME.FirstScreen.heroSubtitle": {
+    "message": "我们把这种运行在云端、可被终端和 agent 工作流直接使用的能力，叫做 cloud skill。"
+  },
+  "HOME.FirstScreen.heroLead": {
+    "message": "cloud skill 是一种运行在云端、可复用，并且能被终端和 agent 工作流直接使用的能力。"
+  },
+  "HOME.FirstScreen.heroAdvantage": {
+    "message": "开源还是闭源，"
+  },
+  "HOME.FirstScreen.heroAdvantageHighlight": {
+    "message": "都由你自己决定。"
   },
   "HOME.FirstScreen.pill1": {
     "message": "不学新 DSL"
@@ -262,7 +277,7 @@
     "message": "仅支持 x64 版本"
   },
   "HOME.FirstScreen.cta.secondary": {
-    "message": "开始构建"
+    "message": "先用 oo-cli"
   },
   "HOME.ValueProps.localCompute.title": {
     "message": "将本地算力转化为你的私有 AI 云"
@@ -961,7 +976,7 @@
     "message": "先把第一条链路跑通"
   },
   "HOME.GetStartedPrompt.subtitle": {
-    "message": "先下载 oo-cli，使用已经发布好的能力。需要时，再用 OOMOL Studio 写自己的 block，并通过 Cloud 部署出去。"
+    "message": "先通过 oo-cli 运行已经发布好的 cloud skill。需要时，再回到 OOMOL Studio 里生成并验证自己的实现，再通过 Cloud 发布出去。"
   },
   "HOME.Pricing.title": {
     "message": "价格"
@@ -1006,13 +1021,13 @@
     "message": "CLI"
   },
   "HOME.Downloads.cli.title": {
-    "message": "更想直接在终端里用？通过 oo-cli 直接消费云函数。"
+    "message": "更偏终端工作流？先从 oo-cli 开始。"
   },
   "HOME.Downloads.cli.subtitle": {
-    "message": "在 Codex、Claude Code 或任意本地终端中安装 oo-cli，就可以先搜包、看输入、执行云函数，再拿结果，不必一开始就接 API 或 MCP。"
+    "message": "在 Codex、Claude Code 或任意本地终端中安装 oo-cli，就可以先搜包、看输入、执行 cloud skill，再拿结果，不必一开始就接 API 或 MCP。"
   },
   "HOME.Downloads.cli.action.guide": {
-    "message": "打开 CLI 指南"
+    "message": "打开 oo-cli 指南"
   },
   "HOME.Downloads.cli.action.github": {
     "message": "查看 oo-cli GitHub"
@@ -2554,10 +2569,10 @@
     "message": "容器化部署到私有云或 K8s 集群，支持 CI/CD 流水线，实现企业级 API 服务的持续交付和运维。"
   },
   "HOME.ProductComparison.title": {
-    "message": "不是为了上云，而是为了交付"
+    "message": "Cloud 不是托管层，而是 skill 的交付层"
   },
   "HOME.ProductComparison.subtitle": {
-    "message": "Cloud 的意义，不只是把代码放到云上，而是让已经验证过的 block 可以持续提供给自己、团队或客户使用。"
+    "message": "OOMOL Cloud 不只是代码运行的地方，而是把已经验证过的实现变成 cloud skill，并私有交付给自己、团队或客户的那一层。"
   },
   "HOME.ChatAgent.title": {
     "message": "OOMOL Chat & Agent 生态"
@@ -2605,58 +2620,58 @@
     "message": "部署并交付"
   },
   "HOME.ProductComparison.cloud.capability": {
-    "message": "把已经验证过的 block 部署为云函数，稳定提供给自己、团队或客户使用，不必再围着同一份能力重做一层服务。"
+    "message": "把已经验证过的 block 发布为 cloud skill，让用户拿到能力，而不是拿到你的源码。"
   },
   "HOME.ProductComparison.cloud.scenario": {
-    "message": "适合给自己扩展 CLI 能力、给团队提供统一能力，或给客户提供 skill 与 CLI 服务的开发者和小团队。"
+    "message": "适合想把 skill 共享、售卖或持续运营出去，但又不想围着每个能力重做一层 SaaS 的开发者和小团队。"
   },
   "HOME.ProductComparison.cloud.tech": {
-    "message": "沿用 Studio 中已经跑通的实现，由 OOMOL Cloud 承接运行和对外交付；如果需要，同一份能力也可以继续通过 API 或 MCP 接出去。"
+    "message": "沿用 Studio 中已经跑通的实现，由 OOMOL Cloud 承接运行、访问控制和对外交付；如果需要，同一份 cloud skill 也可以继续通过 API 或 MCP 接出去。"
   },
   "HOME.ProductComparison.cta": {
-    "message": "查看 Cloud Function"
+    "message": "了解 Cloud"
   },
   "HOME.ProductComparison.outputIntro": {
-    "message": "同一份能力，按需继续扩展"
+    "message": "一个 cloud skill，多种消费面"
   },
   "HOME.ProductComparison.outputSummary": {
-    "message": "同一份已经验证过的 block，可以继续通过不同方式被消费和集成。"
+    "message": "同一份已经验证过的实现，可以继续被终端、应用、agent 和自动化消费，而不用拆成多个产品。"
   },
   "HOME.ProductComparison.output1.title": {
-    "message": "CLI 使用"
+    "message": "CLI 与 Agent"
   },
   "HOME.ProductComparison.output1.description": {
-    "message": "通过 oo-cli 直接搜索、查看和运行已经部署好的能力。"
+    "message": "通过 oo-cli 和 agent 终端工作流，直接搜索、查看和运行已经部署好的 cloud skill。"
   },
   "HOME.ProductComparison.output2.title": {
-    "message": "API 接入"
+    "message": "API 与应用接入"
   },
   "HOME.ProductComparison.output2.description": {
-    "message": "把同一份能力继续接进自己的应用、服务或自动化代码。"
+    "message": "把同一份 cloud skill 接进自己的应用界面、后端服务或产品集成里。"
   },
   "HOME.ProductComparison.output3.title": {
-    "message": "MCP 接入"
+    "message": "MCP 与自动化"
   },
   "HOME.ProductComparison.output3.description": {
-    "message": "在需要时，把同一份能力继续接入其他 agent 和工具系统。"
+    "message": "在需要时，把同一份 cloud skill 接入 agent 生态，或让它持续按触发器和定时器运行。"
   },
   "HOME.ProductComparison.benefit1.label": {
-    "message": "交付负担"
+    "message": "商业化路径"
   },
   "HOME.ProductComparison.benefit1.value": {
-    "message": "少补一层服务"
+    "message": "交付 skill，不交付源码"
   },
   "HOME.ProductComparison.benefit1.description": {
-    "message": "Cloud 承接函数的线上运行和对外交付，让你不用再围着同一份能力重做一套接口工程。"
+    "message": "Cloud 让你交付能力而不交付实现，分发不再逼着你不是开源，就是重做成完整 SaaS。"
   },
   "HOME.ProductComparison.benefit2.label": {
-    "message": "运行负担"
+    "message": "交付负担"
   },
   "HOME.ProductComparison.benefit2.value": {
-    "message": "更稳定地在线上用"
+    "message": "少重做产品外壳"
   },
   "HOME.ProductComparison.benefit2.description": {
-    "message": "把精力放回函数本身，而不是持续处理环境、调度、扩缩容和线上维护。"
+    "message": "把精力放回 skill 本身，而不是持续重做鉴权、托管、调度和交互外壳。"
   },
   "HOME.DeveloperBenefits.badge": {
     "message": "开发者福利"
@@ -2719,10 +2734,22 @@
     "message": "CLI FIRST"
   },
   "HOME.CliEntry.title": {
-    "message": "先用，再决定要不要自己做"
+    "message": "oo-cli 是发现和运行 cloud skill 的默认入口"
   },
   "HOME.CliEntry.subtitle": {
-    "message": "oo-cli 是 OOMOL 最快的使用入口。你可以先搜索、查看、运行已经发布好的能力，在终端里直接开始使用。"
+    "message": "在 Codex、Claude Code 或任意终端里装一次，就可以搜索包、查看输入、运行 cloud skill，再决定要不要接 API 或 MCP。"
+  },
+  "HOME.CliEntry.benefit1.label": {
+    "message": "先用现成 skill"
+  },
+  "HOME.CliEntry.benefit1.description": {
+    "message": "先从别人已经发布好的 skill 开始搜索、查看和运行，不必第一天就自己重做一套。"
+  },
+  "HOME.CliEntry.benefit2.label": {
+    "message": "需要时再发布自己的"
+  },
+  "HOME.CliEntry.benefit2.description": {
+    "message": "如果现成 skill 不够，就回到 Studio 里生成、验证并发布自己的 cloud skill。"
   },
   "HOME.CliEntry.bridge": {
     "message": "函数先发布到 OOMOL Cloud，CLI 再负责登录、搜索和调用。这层关系说一遍就够，重点是让你第一次跑通。"
@@ -2731,25 +2758,25 @@
     "message": "安装 oo-cli"
   },
   "HOME.CliEntry.step1.description": {
-    "message": "先把使用入口装好。"
+    "message": "先把使用已发布 cloud skill 的默认入口装好。"
   },
   "HOME.CliEntry.step2.title": {
     "message": "登录账号"
   },
   "HOME.CliEntry.step2.description": {
-    "message": "登录后开始搜索和运行已发布能力。"
+    "message": "登录后开始搜索和运行已发布的 cloud skill。"
   },
   "HOME.CliEntry.step3.title": {
-    "message": "搜索并运行能力"
+    "message": "搜索并运行 skill"
   },
   "HOME.CliEntry.step3.description": {
-    "message": "先看清楚能力做什么、需要什么输入，再直接运行。"
+    "message": "先看清楚 skill 做什么、需要什么输入，再直接在终端里运行。"
   },
   "HOME.CliEntry.action.primary": {
     "message": "查看 oo-cli"
   },
   "HOME.CliEntry.action.secondary": {
-    "message": "查看 Cloud Function"
+    "message": "了解 Cloud 交付"
   },
   "HOME.CliEntry.setup.eyebrow": {
     "message": "INSTALL ONCE"
@@ -2872,16 +2899,19 @@
     "message": "把长文档翻译成可继续阅读的双语 EPUB 或 Markdown 输出，而不是只拿回一段文本结果。"
   },
   "CLOUD.hero.title": {
-    "message": "OOMOL Cloud"
+    "message": "发布私有的 cloud skill"
   },
   "CLOUD.hero.description": {
-    "message": "把已经在本地跑通的函数直接交付成服务，不必再重搭后端、部署框架和运维流程。"
+    "message": "把已经在本地验证过的 skill 放到云端运行，让用户用到能力，而不用拿到你的源码或一套单独搭出来的服务。"
   },
   "CLOUD.hero.kicker": {
-    "message": "Cloud Function"
+    "message": "Cloud Skill Runtime"
+  },
+  "CLOUD.hero.note": {
+    "message": "用户通过 oo-cli、应用或 agent 使用 skill，而你的实现继续留在服务器端。"
   },
   "CLOUD.hero.stat1": {
-    "message": "直接发布"
+    "message": "私有交付"
   },
   "CLOUD.hero.stat2": {
     "message": "按量计费"
@@ -2890,7 +2920,7 @@
     "message": "少管运维"
   },
   "CLOUD.hero.cta.start": {
-    "message": "开始使用"
+    "message": "开始构建 Cloud Skill"
   },
   "CLOUD.hero.cta.docs": {
     "message": "了解更多"
@@ -2899,46 +2929,46 @@
     "message": "打开 Cloud 控制台"
   },
   "CLOUD.painPoints.title": {
-    "message": "交付代码不该是折磨"
+    "message": "交付一个 skill，不该等于重做一个 SaaS"
   },
   "CLOUD.painPoints.subtitle": {
     "message": "作为开发者，我们深知你的苦恼"
   },
   "CLOUD.painPoints.description": {
-    "message": "真正拖慢交付的，往往不是函数本身，而是把它包成服务的那一大段重复工作：准备接口、部署环境、配置扩缩容、维护可用性。Cloud 的目标就是把这段工作缩到最短。"
+    "message": "真正拖慢交付的，往往不是 skill 本身，而是围绕它补出来的那层东西：给用户做入口、让它稳定在线、控制访问、承担运维。Cloud 的目标就是把这一层压到最短。"
   },
   "CLOUD.solution.title": {
-    "message": "同一份函数，三种交付方式"
+    "message": "一个 skill，三种消费路径"
   },
   "CLOUD.solution.subtitle": {
-    "message": "写好的函数能力，可以继续交付为 API、MCP 工具或自动化任务。"
+    "message": "同一个 cloud skill 可以继续通过 API、MCP 或自动化被消费，同时仍然只维护一份实现。"
   },
   "CLOUD.solution.kicker": {
-    "message": "交付方式"
+    "message": "消费路径"
   },
   "CLOUD.modes.library.title": {
-    "message": "发布成自动化任务"
+    "message": "作为自动化运行"
   },
   "CLOUD.modes.library.description": {
-    "message": "按触发器或定时器运行同一份函数能力，让它持续执行，而不是停留在本地手动运行。"
+    "message": "让同一个 cloud skill 按触发器或定时器持续运行，而不是只停留在本地手动执行。"
   },
   "CLOUD.modes.serverless.title": {
-    "message": "发布成 API 服务"
+    "message": "通过 API 使用"
   },
   "CLOUD.modes.serverless.description": {
-    "message": "不必再单独搭服务框架，直接把函数交付为可调用 API，并由 OOMOL 负责运行和扩缩容。"
+    "message": "让应用直接通过 API 调用同一个 cloud skill，而不用围绕它再补一层独立后端。"
   },
   "CLOUD.modes.mcp.title": {
-    "message": "发布成 MCP 工具"
+    "message": "通过 MCP 使用"
   },
   "CLOUD.modes.mcp.description": {
-    "message": "把函数能力作为 MCP Tool 暴露给 Agent 和 AI 应用，让同一份实现直接进入调用链。"
+    "message": "当 agent-native 集成更重要时，把同一个 cloud skill 作为 MCP Tool 暴露给 Agent 和 AI 应用。"
   },
   "CLOUD.pricing.title": {
-    "message": "按调用收费，不用预支"
+    "message": "先发布，按使用增长再付费"
   },
   "CLOUD.pricing.description": {
-    "message": "没有昂贵的服务器租用费，没有复杂的预付费套餐。我们按调用次数收取费用，真正做到省钱省力，让你专注于享受编程的乐趣。"
+    "message": "你不需要为了验证分发这件事先养一台服务器。先把 skill 发布出去，验证需求，再随着使用量增长付费。"
   },
   "CLOUD.pricing.kicker": {
     "message": "价格"
@@ -2953,13 +2983,13 @@
     "message": "打开 Cloud 控制台"
   },
   "CLOUD.opensource.title": {
-    "message": "开源基础设施"
+    "message": "开放运行时，灵活部署"
   },
   "CLOUD.opensource.subtitle": {
-    "message": "OOMOL 的底层运行时内核全部开源,让你完全掌控部署环境"
+    "message": "即使你发布的 cloud skill 是私有的，底层运行时基础仍然保持开源。"
   },
   "CLOUD.opensource.description": {
-    "message": "我们坚信开源的力量。OOMOL 的虚拟机和运行时核心代码完全开源,你可以自由查看、修改和部署。无论是个人 NAS、私有服务器还是公有云,你都拥有完全的部署自由。"
+    "message": "OOMOL 的虚拟机和运行时核心持续开源，所以无论你用个人服务器、私有基础设施还是公有云，都依然保有部署自由，同时为每个 skill 单独决定如何交付。"
   },
   "CLOUD.opensource.projects.title": {
     "message": "开源项目"
@@ -2991,48 +3021,48 @@
   "STUDIO.hero.description": {
     "message": "面向开发者的本地开发环境，基于 VSCode 的可视化编程工具，结合 FRP 协议实现 P2P 算力共享"
   },
-  "APP.new.hero.title": { "message": "OOMOL App" },
-  "APP.new.hero.subtitle": { "message": "把函数直接交付给用户" },
+  "APP.new.hero.title": { "message": "OOMOL App Surfaces" },
+  "APP.new.hero.subtitle": { "message": "cloud skill 的产品化入口" },
   "APP.new.hero.description": {
-    "message": "无需单独开发 UI，把函数能力直接交付为 Chat 技能或 Applet 入口，让用户立刻可以使用。"
+    "message": "一个 cloud skill 可以继续通过对话入口或结构化 applet 被使用，而不用为每种产品形态重做一套界面。"
   },
-  "APP.new.concept.title": { "message": "代码即产品" },
+  "APP.new.concept.title": { "message": "一个 skill，多种入口" },
   "APP.new.concept.description": {
-    "message": "OOMOL 把函数能力封装成可直接使用的产品入口。你专注写函数，我们负责把它连接到用户。"
+    "message": "OOMOL 把同一个 cloud skill 包装成不同的可用入口。你专注实现本身，我们负责把它连接到用户。"
   },
   "APP.new.chat.pill": { "message": "对话入口 · Chat Skill" },
   "APP.new.chat.title": { "message": "OOMOL Chat" },
   "APP.new.chat.subtitle": { "message": "AI 助手 · 探索性交互" },
   "APP.new.chat.description": {
-    "message": "当用户需求还不够明确时，让 AI 在对话中选择并调用你的函数能力。"
+    "message": "当用户意图还不够明确时，让 AI 在对话中选择并运行合适的 cloud skill。"
   },
   "APP.new.chat.meta1.label": { "message": "适合谁" },
   "APP.new.chat.meta1.value": {
-    "message": "适合通过对话暴露函数能力、逐步澄清需求的场景"
+    "message": "适合通过对话暴露 cloud skill，并先逐步澄清用户意图的场景"
   },
   "APP.new.chat.meta2.label": { "message": "核心体验" },
   "APP.new.chat.meta2.value": {
-    "message": "先理解意图，再调用服务，降低用户上手门槛"
+    "message": "先理解意图，再调用正确的 cloud skill，降低用户上手门槛"
   },
   "APP.new.chat.devValue": {
-    "message": "函数即技能：你的函数就是 AI 可调用的能力"
+    "message": "cloud skill 即 agent tool：同一份实现可以直接变成 AI 可调用入口"
   },
-  "APP.new.applet.pill": { "message": "参数入口 · Applet" },
+  "APP.new.applet.pill": { "message": "结构化入口 · Applet" },
   "APP.new.applet.title": { "message": "OOMOL Applet" },
   "APP.new.applet.subtitle": { "message": "表单小程序 · 确定性交互" },
   "APP.new.applet.description": {
-    "message": "当用户输入明确时，用结构化参数直接调用函数能力，交付更稳定。"
+    "message": "当用户输入明确时，用结构化参数运行同一个 cloud skill，交付更稳定。"
   },
   "APP.new.applet.meta1.label": { "message": "适合谁" },
   "APP.new.applet.meta1.value": {
-    "message": "适合把固定输入输出的函数能力交付给团队或最终用户"
+    "message": "适合把固定输入输出的 cloud skill 交付给团队或最终用户"
   },
   "APP.new.applet.meta2.label": { "message": "核心体验" },
   "APP.new.applet.meta2.value": {
-    "message": "把函数包装成可填写、可执行、可复用的产品入口"
+    "message": "把同一个 cloud skill 包装成可填写、可执行、可复用的产品入口"
   },
   "APP.new.applet.devValue": {
-    "message": "函数即应用：自动生成参数入口，减少前端样板"
+    "message": "cloud skill 即应用：自动生成参数入口，减少前端样板"
   },
   "APP.new.hero.cta.web": {
     "message": "在网页中使用"
@@ -3103,28 +3133,28 @@
     "message": "所以 Studio 的角色很明确：它不是为了替代工程环境，而是把函数生成、本地验证和后续交付重新放回工程环境里。"
   },
   "HOME.StudioChain.title": {
-    "message": "从 block，到部署，再到交付"
+    "message": "从想法，到 cloud skill"
   },
   "HOME.StudioChain.subtitle": {
-    "message": "当现成能力不够时，OOMOL 让你继续往下走: 在 OOMOL Studio 里生产 block，在 Cloud 里部署，并把能力稳定交付出去。"
+    "message": "当现成 skill 不够时，OOMOL 给你一条连续的路径：在 Studio 里生成，在本地验证，通过 Cloud 发布，再由 oo-cli 交付出去。"
   },
   "HOME.StudioChain.lead": {
-    "message": "不只是连接能力，更是把能力做出来并交付出去。"
+    "message": "不要停在本地自动化，把它做成别人真的能用的 skill。"
   },
   "HOME.StudioChain.summary": {
-    "message": "在 OOMOL 里，你可以先使用现成能力，再在 Studio 里编写和验证自己的 block，最后通过 Cloud 私有部署并交付给自己、团队或客户使用。"
+    "message": "在 OOMOL 里，你可以先使用现成 skill，再在 Studio 里生成并验证自己的实现，最后通过 Cloud 私有发布给自己、团队或客户使用。"
   },
   "HOME.StudioChain.card1.title": {
     "message": "OOMOL Studio"
   },
   "HOME.StudioChain.card1.description": {
-    "message": "在 Studio 里编写、调试和验证自己的 block，用熟悉的方式组织代码、依赖和输入输出。"
+    "message": "在 Studio 里描述、编写、调试和验证自己的 skill，用真实工程环境管理代码、依赖和输入输出。"
   },
   "HOME.StudioChain.card2.title": {
     "message": "Cloud"
   },
   "HOME.StudioChain.card2.description": {
-    "message": "把已经验证过的 block 部署为云函数，稳定提供给自己、团队或客户使用。"
+    "message": "把已经验证过的实现发布为 cloud skill，持续提供给自己、团队或客户使用，而不暴露源码。"
   },
   "HOME.StudioChain.action.studio": {
     "message": "了解 Studio"
@@ -3136,7 +3166,7 @@
     "message": "编写、调试并验证你的 block"
   },
   "Theme.Navbar.product.cloud.description": {
-    "message": "部署并私有交付你的能力"
+    "message": "私有发布并交付你的 cloud skill"
   },
   "Theme.Navbar.product.label": {
     "message": "产品"

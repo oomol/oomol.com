@@ -73,6 +73,9 @@ export default function CloudPage() {
               <p className={styles.heroDescription}>
                 {translate({ message: "CLOUD.hero.description" })}
               </p>
+              <p className={styles.heroNote}>
+                {translate({ message: "CLOUD.hero.note" })}
+              </p>
 
               <div className={styles.stats}>
                 <div className={styles.stat}>
@@ -138,6 +141,25 @@ export default function CloudPage() {
           </div>
         </section>
 
+        <section className={styles.pricingSection}>
+          <div className={styles.sectionContainer}>
+            <div className={styles.pricingCard}>
+              <div className={styles.sectionLabel}>
+                {translate({ message: "CLOUD.pricing.kicker" })}
+              </div>
+              <h2 className={styles.sectionTitle}>
+                {translate({ message: "CLOUD.pricing.title" })}
+              </h2>
+              <p className={styles.sectionBody}>
+                {translate({ message: "CLOUD.pricing.description" })}
+              </p>
+              <Link to="/pricing" className={styles.inlineLink}>
+                {translate({ message: "CLOUD.pricing.cta" })}
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <section className={styles.deliverySection}>
           <div className={styles.sectionContainer}>
             <div className={styles.sectionHeader}>
@@ -164,25 +186,6 @@ export default function CloudPage() {
                   </p>
                 </article>
               ))}
-            </div>
-          </div>
-        </section>
-
-        <section className={styles.pricingSection}>
-          <div className={styles.sectionContainer}>
-            <div className={styles.pricingCard}>
-              <div className={styles.sectionLabel}>
-                {translate({ message: "CLOUD.pricing.kicker" })}
-              </div>
-              <h2 className={styles.sectionTitle}>
-                {translate({ message: "CLOUD.pricing.title" })}
-              </h2>
-              <p className={styles.sectionBody}>
-                {translate({ message: "CLOUD.pricing.description" })}
-              </p>
-              <Link to="/pricing" className={styles.inlineLink}>
-                {translate({ message: "CLOUD.pricing.cta" })}
-              </Link>
             </div>
           </div>
         </section>

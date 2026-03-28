@@ -131,6 +131,10 @@
   justify-content: center;
 }
 
+.centered {
+  align-items: center;
+}
+
 .chipNote {
   font-size: 13px;
   margin-top: 10px;
@@ -150,6 +154,12 @@
   margin-top: 10px;
   padding-left: 0.3rem;
   color: var(--oomol-text-tertiary);
+}
+
+.centered .chipNote,
+.centered .windowsSubtitle {
+  padding-left: 0;
+  text-align: center;
 }
 
 .icon {
