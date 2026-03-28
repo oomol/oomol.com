@@ -28,11 +28,13 @@ function detectOSAndArchitecture(): OS {
 export interface DownloadButtonProps {
   stableTag?: boolean;
   centered?: boolean;
+  showNote?: boolean;
 }
 
 export const DownloadButton = ({
   stableTag,
   centered,
+  showNote = true,
 }: DownloadButtonProps) => {
   const downloadIcon = (
     <span className={styles.downloadIconWrap} aria-hidden="true">
@@ -58,11 +60,13 @@ export const DownloadButton = ({
                 : "HOME.FirstScreen.download-macos",
             })}
           </Button>
-          <span className={styles.chipNote}>
-            {translate({
-              message: "HOME.FirstScreen.download-macos-chip-note",
-            })}
-          </span>
+          {showNote ? (
+            <span className={styles.chipNote}>
+              {translate({
+                message: "HOME.FirstScreen.download-macos-chip-note",
+              })}
+            </span>
+          ) : null}
         </div>
       }
     >
@@ -87,11 +91,13 @@ export const DownloadButton = ({
                     })}
                   </a>
                 </Button>
-                <span className={styles.chipNote}>
-                  {translate({
-                    message: "HOME.FirstScreen.download-macos-chip-note",
-                  })}
-                </span>
+                {showNote ? (
+                  <span className={styles.chipNote}>
+                    {translate({
+                      message: "HOME.FirstScreen.download-macos-chip-note",
+                    })}
+                  </span>
+                ) : null}
               </div>
             ) : (
               <div className={windowsClassName}>
@@ -111,11 +117,13 @@ export const DownloadButton = ({
                     })}
                   </a>
                 </Button>
-                <span className={styles.windowsSubtitle}>
-                  {translate({
-                    message: "HOME.FirstScreen.download-windows-subtitle",
-                  })}
-                </span>
+                {showNote ? (
+                  <span className={styles.windowsSubtitle}>
+                    {translate({
+                      message: "HOME.FirstScreen.download-windows-subtitle",
+                    })}
+                  </span>
+                ) : null}
               </div>
             )}
           </div>

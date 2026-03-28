@@ -39,19 +39,19 @@
     "message": "Start with ready-made capabilities in oo-cli, create your own blocks in OOMOL Studio, then deploy and deliver them privately through Cloud."
   },
   "HOME.FirstScreen.heroTitle": {
-    "message": "Let agents use your skill while you keep full control of the code"
+    "message": "Let agents use your skill while you stay in control of the code"
   },
   "HOME.FirstScreen.heroSubtitle": {
     "message": "We call this a cloud skill: a capability that runs in the cloud and can be used directly from terminals and agent workflows."
   },
   "HOME.FirstScreen.heroLead": {
-    "message": "A cloud skill is a capability that runs in the cloud, stays reusable, and can be used directly from terminals and agent workflows."
+    "message": "A cloud skill runs in the cloud, stays reusable, and can be used directly from terminals and agent workflows."
   },
   "HOME.FirstScreen.heroAdvantage": {
     "message": "Open source or closed source,"
   },
   "HOME.FirstScreen.heroAdvantageHighlight": {
-    "message": "the decision stays yours."
+    "message": "it is your call."
   },
   "HOME.FirstScreen.pill1": {
     "message": "No new DSL"

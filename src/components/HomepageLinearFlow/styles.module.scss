@@ -48,6 +48,7 @@
   display: grid;
   gap: 1rem;
   align-content: start;
+  max-width: 38rem;
 }
 
 .eyebrow {
@@ -72,9 +73,10 @@
 .sectionTitle,
 .ctaTitle {
   margin: 0;
+  max-width: 11ch;
   font-family: var(--oomol-font-display);
-  font-size: clamp(2.4rem, 4.8vw, 4.2rem);
-  line-height: 0.98;
+  font-size: clamp(2.15rem, 4vw, 3.55rem);
+  line-height: 1;
   letter-spacing: -0.045em;
   color: var(--oomol-text-primary);
 }
@@ -88,32 +90,11 @@
   color: var(--oomol-text-secondary);
 }
 
-.bulletList {
-  display: grid;
-  gap: 0.72rem;
-  padding-top: 0.25rem;
-}
-
-.bullet {
-  margin: 0;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.78rem;
-  align-items: start;
-  font-size: 0.98rem;
-  line-height: 1.72;
-  color: var(--oomol-text-secondary);
-
-  &::before {
-    content: "—";
-    color: var(--oomol-primary-text);
-  }
-}
-
 .inlineActions,
 .ctaActions {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.85rem;
   padding-top: 0.4rem;
 }
@@ -169,6 +150,11 @@
   overflow: hidden;
 }
 
+.mediaPanel,
+.agentMediaCard {
+  min-height: clamp(20rem, 34vw, 28rem);
+}
+
 .terminalPanel {
   display: grid;
 }
@@ -218,14 +204,67 @@
   display: block;
 }
 
+.commentLine {
+  display: block;
+  margin: 0 0 0.28rem;
+  color: var(--oomol-text-tertiary);
+}
+
 .prompt {
   color: var(--oomol-primary-text);
 }
 
-.heroImage {
-  display: block;
-  width: 100%;
-  height: auto;
+.placeholderCard {
+  height: 100%;
+  min-height: inherit;
+  display: grid;
+  align-content: center;
+  gap: 0.95rem;
+  padding: clamp(1.4rem, 3vw, 2.2rem);
+  background:
+    linear-gradient(rgba(97, 113, 145, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(97, 113, 145, 0.08) 1px, transparent 1px),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--oomol-bg-elevated) 90%, white 10%) 0%,
+      color-mix(in srgb, var(--oomol-bg-container) 82%, white 18%) 100%
+    );
+  background-size: 3.25rem 3.25rem, 3.25rem 3.25rem, auto;
+}
+
+.placeholderBadge {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+  padding: 0 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--oomol-divider);
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--oomol-text-tertiary);
+}
+
+.placeholderTitle {
+  margin: 0;
+  max-width: 18ch;
+  font-family: var(--oomol-font-display);
+  font-size: clamp(1.6rem, 2.4vw, 2.3rem);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  color: var(--oomol-text-primary);
+}
+
+.placeholderNote {
+  margin: 0;
+  max-width: 34rem;
+  font-size: 0.98rem;
+  line-height: 1.74;
+  color: var(--oomol-text-secondary);
 }
 
 .stepGrid {
@@ -291,11 +330,6 @@
   color: var(--oomol-text-secondary);
 }
 
-.dualMedia {
-  display: grid;
-  gap: 1rem;
-}
-
 .ctaSection {
   padding: clamp(4rem, 8vw, 5.8rem) 0 clamp(3rem, 6vw, 4.4rem);
 }
@@ -327,6 +361,12 @@
 }
 
 .ctaGhost {
+  min-width: 12rem;
+  min-height: 54px;
+  padding: 0 1.35rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 700;
   color: rgba(243, 239, 248, 0.94);
   border-color: rgba(243, 239, 248, 0.14);
   background: rgba(243, 239, 248, 0.08);
@@ -334,8 +374,8 @@
 
 :global(html[lang="en"]) .sectionTitle,
 :global(html[lang="en"]) .ctaTitle {
-  max-width: 16ch;
-  font-size: clamp(2.1rem, 4vw, 3.45rem);
+  max-width: 14ch;
+  font-size: clamp(1.95rem, 3.6vw, 3.1rem);
   line-height: 1.02;
 }
 
@@ -408,6 +448,32 @@
       var(--oomol-bg-elevated) 86%,
       var(--oomol-bg-container) 14%
     );
+  }
+
+  .inlineNote {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-primary) 22%,
+      var(--oomol-divider)
+    );
+    background: color-mix(
+      in srgb,
+      var(--oomol-bg-elevated) 78%,
+      var(--oomol-primary-bg) 22%
+    );
+    color: color-mix(in srgb, var(--oomol-text-secondary) 92%, white 8%);
+  }
+
+  .placeholderCard {
+    background:
+      linear-gradient(rgba(188, 194, 224, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(188, 194, 224, 0.07) 1px, transparent 1px),
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--oomol-bg-elevated) 88%, black 12%) 0%,
+        color-mix(in srgb, var(--oomol-bg-container) 82%, black 18%) 100%
+      );
+    background-size: 3.25rem 3.25rem, 3.25rem 3.25rem, auto;
   }
 
   .ctaInner {
