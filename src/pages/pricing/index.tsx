@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import type { ColumnProps } from "@arco-design/web-react/es/Table";
 
 import { Alert, Table, Tabs } from "@arco-design/web-react";
+import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
 import { DownloadButton } from "@site/src/components/DownloadButton";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
@@ -589,6 +590,16 @@ export default function Index() {
 
   return (
     <Layout>
+      <Head>
+        <title>{tPricing("PRICING.page.title", "Pricing — OOMOL")}</title>
+        <meta
+          name="description"
+          content={tPricing(
+            "PRICING.page.description",
+            "OOMOL Studio is free for local development. See subscription plans and pay-as-you-go pricing for cloud delivery, LLM usage, and Fusion APIs."
+          )}
+        />
+      </Head>
       <div className={styles.container}>
         <div className={styles.titleBox}>
           <div className={styles.title}>

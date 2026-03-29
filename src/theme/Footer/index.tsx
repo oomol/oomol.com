@@ -184,8 +184,13 @@ const Footer: React.FC = () => {
               trigger={
                 <div
                   className={styles.iconBox}
+                  role="button"
+                  tabIndex={0}
+                  aria-label="WeChat QR code"
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
+                  onFocus={() => setIsHovered(true)}
+                  onBlur={() => setIsHovered(false)}
                 >
                   <i
                     className="i-simple-icons-wechat"

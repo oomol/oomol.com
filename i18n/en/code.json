@@ -29,6 +29,9 @@
   "HOME.page.title": {
     "message": "OOMOL - Build and publish cloud skills"
   },
+  "HOME.page.description": {
+    "message": "Build cloud skills in a real coding environment, validate locally, and publish them for oo-cli, agents, APIs, and automation without exposing your source code."
+  },
   "HOME.FirstScreen.slogan": {
     "message": "Build and Deliver Capabilities for Agents"
   },
@@ -1470,7 +1473,7 @@
     "message": "Questions & Answers"
   },
   "PRICING.question.subtitle": {
-    "message": "If You Have Any Other Questions, Please\u00A0"
+    "message": "If You Have Any Other Questions, Please "
   },
   "PRICING.question.link": {
     "message": "Contact Us"
@@ -1951,7 +1954,7 @@
     "message": "Workflow Tools Redesigned for Developers"
   },
   "STUDIO.hero.description": {
-    "message": "We heard developers' voices: traditional workflow platforms make simple things complicated. OOMOL Studio changes everything."
+    "message": "Local development environment for developers, VSCode-based visual programming tool with FRP protocol for P2P computing power sharing"
   },
   "STUDIO.painPoints.title": {
     "message": "Three Pain Points of Traditional Workflow Tools"
@@ -2910,52 +2913,69 @@
   "CLOUD.opensource.ovm-mac.description": {
     "message": "OVM implementation for macOS platform, based on Apple Virtualization Framework"
   },
-  "STUDIO.hero.description": {
-    "message": "Local development environment for developers, VSCode-based visual programming tool with FRP protocol for P2P computing power sharing"
+  "APP.new.hero.title": {
+    "message": "OOMOL App Surfaces"
   },
-  "APP.new.hero.title": { "message": "OOMOL App Surfaces" },
   "APP.new.hero.subtitle": {
     "message": "Product surfaces for cloud skills"
   },
   "APP.new.hero.description": {
     "message": "A single cloud skill can be delivered through chat or structured applets, without building separate product surfaces from scratch."
   },
-  "APP.new.concept.title": { "message": "One skill, different surfaces" },
+  "APP.new.concept.title": {
+    "message": "One skill, different surfaces"
+  },
   "APP.new.concept.description": {
     "message": "OOMOL turns the same cloud skill into usable entry points. You focus on the implementation; we connect it to the user."
   },
-  "APP.new.chat.pill": { "message": "Chat Surface · Skill" },
-  "APP.new.chat.title": { "message": "OOMOL Chat" },
+  "APP.new.chat.pill": {
+    "message": "Chat Surface · Skill"
+  },
+  "APP.new.chat.title": {
+    "message": "OOMOL Chat"
+  },
   "APP.new.chat.subtitle": {
     "message": "AI Assistant · Exploratory Interaction"
   },
   "APP.new.chat.description": {
     "message": "When user intent is still vague, let AI choose and run the right cloud skill through conversation."
   },
-  "APP.new.chat.meta1.label": { "message": "For Whom" },
+  "APP.new.chat.meta1.label": {
+    "message": "For Whom"
+  },
   "APP.new.chat.meta1.value": {
     "message": "Best when a cloud skill should be used through conversation and intent needs clarification first"
   },
-  "APP.new.chat.meta2.label": { "message": "Core Experience" },
+  "APP.new.chat.meta2.label": {
+    "message": "Core Experience"
+  },
   "APP.new.chat.meta2.value": {
     "message": "Understand intent first, then call the right cloud skill with less setup"
   },
   "APP.new.chat.devValue": {
     "message": "Cloud skill as agent tool: the same implementation becomes an AI-callable surface."
   },
-  "APP.new.applet.pill": { "message": "Structured Surface · Applet" },
-  "APP.new.applet.title": { "message": "OOMOL Applet" },
+  "APP.new.applet.pill": {
+    "message": "Structured Surface · Applet"
+  },
+  "APP.new.applet.title": {
+    "message": "OOMOL Applet"
+  },
   "APP.new.applet.subtitle": {
     "message": "Form Applet · Deterministic Interaction"
   },
   "APP.new.applet.description": {
     "message": "When inputs are clear, run the same cloud skill through structured parameters for more reliable delivery."
   },
-  "APP.new.applet.meta1.label": { "message": "For Whom" },
+  "APP.new.applet.meta1.label": {
+    "message": "For Whom"
+  },
   "APP.new.applet.meta1.value": {
     "message": "Best for teams delivering fixed-input cloud skills to internal or external users"
   },
-  "APP.new.applet.meta2.label": { "message": "Core Experience" },
+  "APP.new.applet.meta2.label": {
+    "message": "Core Experience"
+  },
   "APP.new.applet.meta2.value": {
     "message": "Wrap the same cloud skill as a fillable, executable, and reusable entry point"
   },
@@ -2968,8 +2988,12 @@
   "APP.new.hero.cta.studio": {
     "message": "Use in OOMOL Studio"
   },
-  "APP.new.cta.download": { "message": "Download" },
-  "APP.new.cta.docs": { "message": "View Docs" },
+  "APP.new.cta.download": {
+    "message": "Download"
+  },
+  "APP.new.cta.docs": {
+    "message": "View Docs"
+  },
   "STUDIO.page.title": {
     "message": "OOMOL Studio - Generate and Validate Functions in a Real Coding Environment"
   },
@@ -3239,5 +3263,11 @@
   },
   "SDK.fusion.feature3": {
     "message": "Support text-to-image, TTS and more services"
+  },
+  "HOME.Downloads.page.title": {
+    "message": "Download OOMOL Studio — macOS & Windows"
+  },
+  "HOME.Downloads.page.description": {
+    "message": "Download OOMOL Studio for macOS (Apple Silicon) or Windows. Build, validate, and publish cloud skills locally."
   }
 }

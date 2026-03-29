@@ -152,7 +152,6 @@
   "HOME.ProofLayer.case3.cta": {
     "message": "查看阅读体验"
   },
-
   "HOME.FirstScreen.download-macos": {
     "message": "下载适用于 macOS 的版本"
   },
@@ -954,7 +953,6 @@
   "HOME.Community.open-source.subtitle": {
     "message": "这些项目承接了 OOMOL 在运行时、部署和真实场景工具上的持续投入。"
   },
-
   "FEATURES.title": {
     "message": "涵盖你所需的全部功能"
   },
@@ -1492,7 +1490,6 @@
   "PRICING.buttonText": {
     "message": "开始体验"
   },
-
   "CREATE.title": {
     "message": "OOMOL Studio"
   },
@@ -1503,7 +1500,7 @@
     "message": "为开发者重新设计的工作流工具"
   },
   "STUDIO.hero.description": {
-    "message": "我们听到了开发者的声音：传统工作流平台让简单的事情变复杂。OOMOL Studio 改变这一切。"
+    "message": "面向开发者的本地开发环境，基于 VSCode 的可视化编程工具，结合 FRP 协议实现 P2P 算力共享"
   },
   "STUDIO.painPoints.title": {
     "message": "传统工作流工具的三大痛点"
@@ -2913,46 +2910,69 @@
   "CLOUD.opensource.ovm-mac.description": {
     "message": "macOS 平台的 OVM 实现,基于 Apple Virtualization Framework"
   },
-  "STUDIO.hero.description": {
-    "message": "面向开发者的本地开发环境，基于 VSCode 的可视化编程工具，结合 FRP 协议实现 P2P 算力共享"
+  "APP.new.hero.title": {
+    "message": "OOMOL App Surfaces"
   },
-  "APP.new.hero.title": { "message": "OOMOL App Surfaces" },
-  "APP.new.hero.subtitle": { "message": "cloud skill 的产品化入口" },
+  "APP.new.hero.subtitle": {
+    "message": "cloud skill 的产品化入口"
+  },
   "APP.new.hero.description": {
     "message": "一个 cloud skill 可以继续通过对话入口或结构化 applet 被使用，而不用为每种产品形态重做一套界面。"
   },
-  "APP.new.concept.title": { "message": "一个 skill，多种入口" },
+  "APP.new.concept.title": {
+    "message": "一个 skill，多种入口"
+  },
   "APP.new.concept.description": {
     "message": "OOMOL 把同一个 cloud skill 包装成不同的可用入口。你专注实现本身，我们负责把它连接到用户。"
   },
-  "APP.new.chat.pill": { "message": "对话入口 · Chat Skill" },
-  "APP.new.chat.title": { "message": "OOMOL Chat" },
-  "APP.new.chat.subtitle": { "message": "AI 助手 · 探索性交互" },
+  "APP.new.chat.pill": {
+    "message": "对话入口 · Chat Skill"
+  },
+  "APP.new.chat.title": {
+    "message": "OOMOL Chat"
+  },
+  "APP.new.chat.subtitle": {
+    "message": "AI 助手 · 探索性交互"
+  },
   "APP.new.chat.description": {
     "message": "当用户意图还不够明确时，让 AI 在对话中选择并运行合适的 cloud skill。"
   },
-  "APP.new.chat.meta1.label": { "message": "适合谁" },
+  "APP.new.chat.meta1.label": {
+    "message": "适合谁"
+  },
   "APP.new.chat.meta1.value": {
     "message": "适合通过对话暴露 cloud skill，并先逐步澄清用户意图的场景"
   },
-  "APP.new.chat.meta2.label": { "message": "核心体验" },
+  "APP.new.chat.meta2.label": {
+    "message": "核心体验"
+  },
   "APP.new.chat.meta2.value": {
     "message": "先理解意图，再调用正确的 cloud skill，降低用户上手门槛"
   },
   "APP.new.chat.devValue": {
     "message": "cloud skill 即 agent tool：同一份实现可以直接变成 AI 可调用入口"
   },
-  "APP.new.applet.pill": { "message": "结构化入口 · Applet" },
-  "APP.new.applet.title": { "message": "OOMOL Applet" },
-  "APP.new.applet.subtitle": { "message": "表单小程序 · 确定性交互" },
+  "APP.new.applet.pill": {
+    "message": "结构化入口 · Applet"
+  },
+  "APP.new.applet.title": {
+    "message": "OOMOL Applet"
+  },
+  "APP.new.applet.subtitle": {
+    "message": "表单小程序 · 确定性交互"
+  },
   "APP.new.applet.description": {
     "message": "当用户输入明确时，用结构化参数运行同一个 cloud skill，交付更稳定。"
   },
-  "APP.new.applet.meta1.label": { "message": "适合谁" },
+  "APP.new.applet.meta1.label": {
+    "message": "适合谁"
+  },
   "APP.new.applet.meta1.value": {
     "message": "适合把固定输入输出的 cloud skill 交付给团队或最终用户"
   },
-  "APP.new.applet.meta2.label": { "message": "核心体验" },
+  "APP.new.applet.meta2.label": {
+    "message": "核心体验"
+  },
   "APP.new.applet.meta2.value": {
     "message": "把同一个 cloud skill 包装成可填写、可执行、可复用的产品入口"
   },
@@ -2965,8 +2985,12 @@
   "APP.new.hero.cta.studio": {
     "message": "在 OOMOL Studio 中使用"
   },
-  "APP.new.cta.download": { "message": "下载体验" },
-  "APP.new.cta.docs": { "message": "查看文档" },
+  "APP.new.cta.download": {
+    "message": "下载体验"
+  },
+  "APP.new.cta.docs": {
+    "message": "查看文档"
+  },
   "STUDIO.page.title": {
     "message": "OOMOL Studio - 在真实 coding 环境里生成和验证函数"
   },
@@ -3236,5 +3260,14 @@
   },
   "SDK.fusion.feature3": {
     "message": "支持文生图、语音合成等多种服务"
+  },
+  "HOME.page.description": {
+    "message": "在真实编码环境中构建云技能，本地验证，然后发布到 oo-cli、智能体、API 和自动化任务中，无需暴露源代码。"
+  },
+  "HOME.Downloads.page.title": {
+    "message": "下载 OOMOL Studio — macOS 和 Windows"
+  },
+  "HOME.Downloads.page.description": {
+    "message": "下载适用于 macOS (Apple Silicon) 或 Windows 的 OOMOL Studio，在本地构建、验证和发布云技能。"
   }
 }

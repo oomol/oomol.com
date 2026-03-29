@@ -70,12 +70,10 @@ const config = {
         "@context": "https://schema.org",
         "@type": "Organization",
         name: "OOMOL",
-        tagline: "Build cloud skills. Keep the code.",
-        favicon: "img/favicon.ico",
+        description: "Build cloud skills. Keep the code.",
         url: "https://oomol.com",
+        logo: "https://oomol.com/img/logo2x.png",
         sameAs: ["https://hub.oomol.com"],
-        // TODO: add logo to the website
-        // logo: "https://oomol.com/logo.svg",
       }),
     },
   ],
@@ -159,6 +157,19 @@ const config = {
           name: "description",
           content:
             "Build cloud skills in a real coding environment, validate locally, and publish them for oo-cli, agents, APIs, and automation without exposing your source code.",
+        },
+        { property: "og:site_name", content: "OOMOL" },
+        { property: "og:type", content: "website" },
+        {
+          property: "og:image",
+          content: "https://oomol.com/img/og-default.png",
+        },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { name: "twitter:card", content: "summary_large_image" },
+        {
+          name: "twitter:image",
+          content: "https://oomol.com/img/og-default.png",
         },
       ],
 

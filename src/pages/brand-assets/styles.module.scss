@@ -189,6 +189,13 @@
   gap: 40px;
 }
 
-i.icon {
+button.icon {
   cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+  display: inline-flex;
+  align-items: center;
 }

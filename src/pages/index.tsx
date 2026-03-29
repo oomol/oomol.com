@@ -15,6 +15,12 @@ export default function Home() {
             message: "HOME.page.title",
           })}
         </title>
+        <meta
+          name="description"
+          content={translate({
+            message: "HOME.page.description",
+          })}
+        />
       </Head>
       <main>
         <HomepageFirstScreen />

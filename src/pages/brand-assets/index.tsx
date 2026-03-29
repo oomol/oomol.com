@@ -33,10 +33,14 @@ export default function BrandAssets() {
   }
   const CornerDownload = ({ url }: CornerDownloadProps) => {
     return (
-      <i
-        className={`i-codicon-cloud-download ${styles.icon}`}
+      <button
+        type="button"
+        className={styles.icon}
+        aria-label="Download asset"
         onClick={() => window.open(url, "_self")}
-      />
+      >
+        <i className="i-codicon-cloud-download" />
+      </button>
     );
   };
 
@@ -60,11 +64,17 @@ export default function BrandAssets() {
     };
 
     return (
-      <i
-        className={`${isCopied ? "i-codicon-check" : "i-codicon-copy"} ${styles.icon}`}
-        style={{ color: isCopied ? "#52C41A" : "" }}
+      <button
+        type="button"
+        className={styles.icon}
+        aria-label={isCopied ? "Copied" : "Copy to clipboard"}
         onClick={handleCopy}
-      />
+      >
+        <i
+          className={isCopied ? "i-codicon-check" : "i-codicon-copy"}
+          style={{ color: isCopied ? "#52C41A" : "" }}
+        />
+      </button>
     );
   };
 

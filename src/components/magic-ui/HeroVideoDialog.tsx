@@ -4,7 +4,7 @@ import i18n from "@generated/i18n";
 import { cn } from "@site/src/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { Play, XIcon } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { createPortal } from "react-dom";
 
 type AnimationStyle =
@@ -84,28 +84,59 @@ export function HeroVideoDialog({
 }: HeroVideoProps) {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const selectedAnimation = animationVariants[animationStyle];
+  const triggerRef = useRef<HTMLDivElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+
+  const openVideo = useCallback(() => setIsVideoOpen(true), []);
+  const closeVideo = useCallback(() => {
+    setIsVideoOpen(false);
+    triggerRef.current?.focus();
+  }, []);
 
   // 管理页面滚动状态
   useEffect(() => {
     if (isVideoOpen) {
-      // 禁用页面滚动
       document.body.style.overflow = "hidden";
+      // Focus the close button when modal opens
+      requestAnimationFrame(() => closeRef.current?.focus());
     } else {
-      // 恢复页面滚动
       document.body.style.overflow = "unset";
     }
 
-    // 清理函数：组件卸载时恢复滚动
     return () => {
       document.body.style.overflow = "unset";
     };
   }, [isVideoOpen]);
 
+  // Trap focus inside modal and handle Escape
+  useEffect(() => {
+    if (!isVideoOpen) return;
+
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        closeVideo();
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isVideoOpen, closeVideo]);
+
   return (
     <div className={cn("relative", className)}>
       <div
+        ref={triggerRef}
         className="group relative cursor-pointer"
-        onClick={() => setIsVideoOpen(true)}
+        role="button"
+        tabIndex={0}
+        aria-label="Play video"
+        onClick={openVideo}
+        onKeyDown={e => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            openVideo();
+          }
+        }}
       >
         <img
           src={thumbnailSrc}
@@ -140,9 +171,12 @@ export function HeroVideoDialog({
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                onClick={() => setIsVideoOpen(false)}
+                onClick={closeVideo}
                 exit={{ opacity: 0 }}
                 className="pt-24 fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-md "
+                role="dialog"
+                aria-modal="true"
+                aria-label="Video player"
               >
                 <motion.div
                   {...selectedAnimation}
@@ -150,15 +184,18 @@ export function HeroVideoDialog({
                   className={`relative mx-4 w-full md:mx-0 ${i18n.currentLocale === "en" ? "aspect-video max-w-6xl" : styles.videoContainer}`}
                   onClick={e => e.stopPropagation()}
                 >
-                  <div
+                  <button
+                    ref={closeRef}
+                    type="button"
                     className="absolute cursor-pointer -top-6 -right-16 size-10 flex items-center justify-center rounded-full bg-neutral-900/50 p-2 text-white ring-1 ring-white/10 backdrop-blur-md dark:bg-neutral-100/50 dark:text-black dark:ring-black/10 border-none"
+                    aria-label="Close video"
                     onClick={e => {
                       e.stopPropagation();
-                      setIsVideoOpen(false);
+                      closeVideo();
                     }}
                   >
                     <XIcon className="size-5" />
-                  </div>
+                  </button>
                   <div className="relative isolate z-[1] size-full overflow-hidden rounded-2xl border-2 border-white">
                     {i18n.currentLocale === "zh-CN" ? (
                       <video

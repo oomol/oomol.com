@@ -172,7 +172,7 @@
   background: var(--oomol-bg-subtle);
   border: 2px solid var(--oomol-border-subtle);
   border-radius: 12px;
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
     border-color: var(--oomol-primary);

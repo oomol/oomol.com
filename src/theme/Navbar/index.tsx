@@ -376,16 +376,17 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
             </Link>
             <BrowserOnly
               fallback={
-                <a className={styles.loginButton}>
+                <button type="button" className={styles.loginButton}>
                   <i className="i-lucide-log-in" />
                   {translate({ message: "Theme.Navbar.login" })}
-                </a>
+                </button>
               }
             >
               {() => {
                 const signedIn = isSignedIn();
                 return (
-                  <a
+                  <button
+                    type="button"
                     className={styles.loginButton}
                     onClick={() => handleSignin()}
                   >
@@ -401,7 +402,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
                         ? "Theme.Navbar.console"
                         : "Theme.Navbar.login",
                     })}
-                  </a>
+                  </button>
                 );
               }}
             </BrowserOnly>
