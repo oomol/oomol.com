@@ -2566,16 +2566,16 @@
     "message": "把精力放回 skill 本身，而不是持续重做鉴权、托管、调度和交互外壳。"
   },
   "HOME.DeveloperBenefits.badge": {
-    "message": "开发者福利"
+    "message": "开发者免费方案"
   },
   "HOME.DeveloperBenefits.title": {
-    "message": "先把链路跑通，再决定投入多少"
+    "message": "零成本起步，先把链路跑通"
   },
   "HOME.DeveloperBenefits.subtitle": {
-    "message": "把成本说明放在后面。先解决模型接入和轻量任务验证，让你更容易完成从 Studio 到 CLI 再到线上交付的第一次闭环。"
+    "message": "不用先付费。接入自有模型 + 每月 200 分钟免费 Cloud Task，足够你完成从 Studio 到线上交付的第一次完整闭环。"
   },
   "HOME.DeveloperBenefits.card1.eyebrow": {
-    "message": "Studio 福利"
+    "message": "Studio 免费"
   },
   "HOME.DeveloperBenefits.card1.tag": {
     "message": "当前推荐"
@@ -2599,7 +2599,7 @@
     "message": "查看配置教程"
   },
   "HOME.DeveloperBenefits.card2.eyebrow": {
-    "message": "Cloud 福利"
+    "message": "Cloud 免费"
   },
   "HOME.DeveloperBenefits.card2.tag": {
     "message": "每月赠送"

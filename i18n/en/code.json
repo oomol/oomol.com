@@ -2569,16 +2569,16 @@
     "message": "Stay focused on the skill itself instead of rebuilding auth, hosting, scheduling, and interface layers around the same implementation."
   },
   "HOME.DeveloperBenefits.badge": {
-    "message": "Developer Benefits"
+    "message": "Free for Developers"
   },
   "HOME.DeveloperBenefits.title": {
-    "message": "Get the path working before you optimize cost"
+    "message": "Start at zero cost, get the full loop running"
   },
   "HOME.DeveloperBenefits.subtitle": {
-    "message": "Keep the pricing discussion later. First remove the blockers around model access and lightweight task validation so the Studio-to-CLI-to-production loop is easier to complete."
+    "message": "No upfront payment. Bring your own model plus 200 free Cloud Task minutes each month — enough to complete your first Studio-to-production delivery cycle."
   },
   "HOME.DeveloperBenefits.card1.eyebrow": {
-    "message": "Studio Benefit"
+    "message": "Studio Free"
   },
   "HOME.DeveloperBenefits.card1.tag": {
     "message": "Recommended"
@@ -2602,7 +2602,7 @@
     "message": "View Setup Guide"
   },
   "HOME.DeveloperBenefits.card2.eyebrow": {
-    "message": "Cloud Benefit"
+    "message": "Cloud Free"
   },
   "HOME.DeveloperBenefits.card2.tag": {
     "message": "Monthly Included"

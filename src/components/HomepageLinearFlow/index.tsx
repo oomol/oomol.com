@@ -4,6 +4,7 @@ import type { DocusaurusContext } from "@docusaurus/types";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { DownloadButton } from "@site/src/components/DownloadButton";
+import HomepageDeveloperBenefits from "@site/src/components/HomepageDeveloperBenefits";
 import { clsx } from "clsx";
 import React from "react";
 
@@ -363,6 +364,8 @@ export default function HomepageLinearFlow() {
           </div>
         </div>
       </section>
+
+      <HomepageDeveloperBenefits />
 
       {/* ── CTA ── */}
       <section className={styles.ctaSection}>
