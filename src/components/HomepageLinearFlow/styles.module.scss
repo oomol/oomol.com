@@ -39,13 +39,13 @@
 
 .cloudSection {
   .container {
-    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-    align-items: center;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    align-items: start;
     gap: clamp(1.9rem, 3.6vw, 3.2rem);
   }
 
   .copyPanel {
-    max-width: 35rem;
+    max-width: 100%;
   }
 
   .sectionTitle {
@@ -382,20 +382,24 @@
 
 /* ── Cloud cards ── */
 
-.cloudCard {
-  border-radius: 1.2rem;
-  border: 1px solid var(--oomol-divider);
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%);
-}
-
 .cloudCardStack {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.9rem;
+  gap: 0.75rem;
 }
 
 .cloudCard {
-  padding: 1rem 1rem 1.05rem;
+  padding: 1.1rem 1.1rem 1.15rem;
+  border-radius: 1rem;
+  border: 1px solid var(--oomol-divider);
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%);
+  box-shadow: 0 4px 12px rgba(101, 118, 163, 0.06);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    border-color: color-mix(in srgb, var(--oomol-primary) 18%, var(--oomol-divider));
+    box-shadow: 0 8px 20px rgba(101, 118, 163, 0.1);
+  }
 }
 
 .cloudTitle {
@@ -413,104 +417,25 @@
   color: var(--oomol-text-secondary);
 }
 
-.cloudMediaPanel {
-  min-height: clamp(28rem, 38vw, 34rem);
-}
-
-.cloudPlaceholderCard {
-  gap: 0.95rem;
-  justify-content: start;
-}
-
 .cloudMetaRow {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.55rem;
-  position: relative;
-  z-index: 1;
+  gap: 0.45rem;
+  margin-top: 0.25rem;
 }
 
 .cloudMetaPill {
   display: inline-flex;
   align-items: center;
-  min-height: 2rem;
-  padding: 0 0.78rem;
+  min-height: 1.65rem;
+  padding: 0 0.65rem;
   border-radius: 999px;
   border: 1px solid color-mix(in srgb, var(--oomol-border-default) 82%, white);
   background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%);
-  font-size: 0.84rem;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.01em;
-  color: var(--oomol-text-secondary);
-}
-
-.cloudPreviewGrid {
-  margin-top: auto;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.9rem;
-  position: relative;
-  z-index: 1;
-}
-
-.cloudPreviewCard,
-.cloudPreviewList {
-  border-radius: 1.15rem;
-  border: 1px solid color-mix(in srgb, var(--oomol-border-default) 78%, white);
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 95%, white 5%);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.52),
-    0 12px 24px rgba(107, 121, 159, 0.08);
-}
-
-.cloudPreviewCard {
-  min-height: 8rem;
-  padding: 1rem;
-  display: grid;
-  align-content: start;
-  gap: 0.55rem;
-}
-
-.cloudPreviewLabel {
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
   color: var(--oomol-text-tertiary);
-}
-
-.cloudPreviewValue {
-  font-family: var(--oomol-font-display);
-  font-size: clamp(1.85rem, 2.6vw, 2.45rem);
-  line-height: 1;
-  letter-spacing: -0.04em;
-  color: var(--oomol-text-primary);
-}
-
-.cloudPreviewList {
-  grid-column: 1 / -1;
-  padding: 0.95rem 1rem;
-  display: grid;
-  gap: 0.7rem;
-}
-
-.cloudPreviewItem {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: start;
-  gap: 0.65rem;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: var(--oomol-text-secondary);
-}
-
-.cloudPreviewDot {
-  width: 0.5rem;
-  height: 0.5rem;
-  margin-top: 0.35rem;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--oomol-primary) 74%, white);
-  box-shadow: 0 0 0 0.22rem color-mix(in srgb, var(--oomol-primary) 10%, transparent);
 }
 
 /* ── CTA section ── */

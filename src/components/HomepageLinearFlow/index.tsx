@@ -303,36 +303,21 @@ export default function HomepageLinearFlow() {
             </div>
           </div>
 
-          <div className={clsx(styles.mediaPanel, styles.cloudMediaPanel)}>
-            <div className={clsx(styles.placeholderCard, styles.cloudPlaceholderCard)}>
-              <h3 className={styles.placeholderTitle}>{copy.cloud.media.title}</h3>
-              <p className={styles.placeholderNote}>{copy.cloud.media.note}</p>
-              <div className={styles.cloudMetaRow}>
-                {copy.cloud.media.pills.map(pill => (
-                  <span key={pill} className={styles.cloudMetaPill}>
-                    {pill}
-                  </span>
-                ))}
+          <div className={styles.mediaPanel}>
+            <div className={styles.videoCard}>
+              <div className={styles.videoCardInner}>
+                <div className={styles.videoCardPlay} aria-hidden="true">
+                  <span className={styles.videoCardTriangle} />
+                </div>
               </div>
-              <div className={styles.cloudPreviewGrid} aria-hidden="true">
-                <div className={styles.cloudPreviewCard}>
-                  <span className={styles.cloudPreviewLabel}>
-                    {copy.cloud.media.pills[0]}
-                  </span>
-                  <strong className={styles.cloudPreviewValue}>12</strong>
-                </div>
-                <div className={styles.cloudPreviewCard}>
-                  <span className={styles.cloudPreviewLabel}>
-                    {copy.cloud.media.pills[1]}
-                  </span>
-                  <strong className={styles.cloudPreviewValue}>8</strong>
-                </div>
-                <div className={styles.cloudPreviewList}>
-                  {copy.cloud.media.items.map(item => (
-                    <div key={item} className={styles.cloudPreviewItem}>
-                      <span className={styles.cloudPreviewDot} />
-                      <span>{item}</span>
-                    </div>
+              <div className={styles.videoCardMeta}>
+                <h3 className={styles.videoCardTitle}>{copy.cloud.media.title}</h3>
+                <p className={styles.videoCardNote}>{copy.cloud.media.note}</p>
+                <div className={styles.cloudMetaRow}>
+                  {copy.cloud.media.pills.map(pill => (
+                    <span key={pill} className={styles.cloudMetaPill}>
+                      {pill}
+                    </span>
                   ))}
                 </div>
               </div>
