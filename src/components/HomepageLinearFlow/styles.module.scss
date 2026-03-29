@@ -9,11 +9,6 @@
 }
 
 .cliSection {
-  .container {
-    grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
-    align-items: start;
-  }
-
   .copyPanel {
     gap: 1.05rem;
     max-width: 36rem;
@@ -21,10 +16,6 @@
 
   .sectionDescription {
     max-width: 34rem;
-  }
-
-  .mediaPanel {
-    min-height: clamp(25rem, 42vw, 35rem);
   }
 }
 
@@ -38,12 +29,6 @@
 }
 
 .cloudSection {
-  .container {
-    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
-    align-items: start;
-    gap: clamp(1.9rem, 3.6vw, 3.2rem);
-  }
-
   .copyPanel {
     max-width: 100%;
   }
