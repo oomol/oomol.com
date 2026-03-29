@@ -3,7 +3,7 @@
 .section {
   position: relative;
   overflow: clip;
-  padding: clamp(4.75rem, 7.6vw, 6.6rem) 0 clamp(2.25rem, 4vw, 3.25rem);
+  padding: clamp(4.75rem, 7.6vw, 6.6rem) 0 0;
 }
 
 .background {
@@ -61,12 +61,12 @@
 
 .slogan {
   margin: 0;
-  max-width: 22ch;
+  max-width: 100%;
   font-family: var(--oomol-font-display);
   font-size: clamp(2.72rem, 4.7vw, 4.15rem);
-  line-height: 1;
+  line-height: 1.1;
   font-weight: 700;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.04em;
   white-space: pre-line;
   word-break: keep-all;
   overflow-wrap: normal;
@@ -83,21 +83,21 @@
 }
 
 .ownershipNote {
-  margin: 0.28rem 0 0;
+  margin: 0;
   max-width: 48rem;
   display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 0.3rem;
-  padding: 0.78rem 1.08rem 0.82rem;
+  padding: 0.55rem 1rem 0.58rem;
   border-radius: 999px;
   border: 1px solid color-mix(in srgb, var(--oomol-primary) 12%, white);
   background: color-mix(in srgb, var(--oomol-primary-bg) 52%, white);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.72),
     0 10px 24px rgba(124, 138, 190, 0.08);
-  font-size: 1rem;
+  font-size: 0.92rem;
   line-height: 1.55;
   color: color-mix(in srgb, var(--oomol-text-secondary) 88%, white 12%);
 }
@@ -107,14 +107,6 @@
   color: var(--oomol-primary-text);
 }
 
-.mediaStack {
-  display: grid;
-  gap: clamp(0.95rem, 1.55vw, 1.15rem);
-  max-width: 1040px;
-  width: 100%;
-  margin: 0 auto;
-}
-
 .actions {
   display: flex;
   flex-direction: row;
@@ -122,6 +114,7 @@
   align-items: flex-start;
   justify-content: center;
   gap: 0.95rem;
+  padding-top: 0.4rem;
 }
 
 .secondaryCta {
@@ -157,103 +150,89 @@
   }
 }
 
+/* ── Video Showcase: full-width dark container ── */
+
+.videoShowcase {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin-top: clamp(2rem, 3.5vw, 3rem);
+  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 3vw, 2.5rem) clamp(2rem, 4vw, 3.5rem);
+  background:
+    radial-gradient(
+      ellipse 80% 60% at 50% 0%,
+      rgba(84, 88, 135, 0.15) 0%,
+      transparent 70%
+    ),
+    linear-gradient(180deg, #1a1b28 0%, #12131d 100%);
+  border-radius: 2rem 2rem 0 0;
+}
+
+.videoShowcaseInner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 .videoFrame {
   width: 100%;
   overflow: clip;
-  border: 1px solid color-mix(in srgb, var(--oomol-border-default) 76%, white);
-  border-radius: 1.5rem;
-  background: color-mix(
-    in srgb,
-    var(--ifm-background-surface-color) 90%,
-    white
-  );
-  box-shadow: 0 16px 32px rgba(101, 118, 163, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 24px 48px rgba(0, 0, 0, 0.3),
+    0 0 80px rgba(84, 88, 135, 0.12);
   position: relative;
 }
 
 .playOverlay {
   position: absolute;
-  inset: 3.1rem 0 0;
+  inset: 0;
   z-index: 2;
   display: grid;
   place-items: center;
-  gap: 0.85rem;
-  background: linear-gradient(
-    180deg,
-    rgba(250, 251, 255, 0.14) 0%,
-    rgba(246, 248, 252, 0.52) 48%,
-    rgba(241, 244, 249, 0.72) 100%
-  );
+  background: rgba(0, 0, 0, 0.2);
   border: 0;
   padding: 0;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background 0.25s ease;
 
   &:hover {
-    background: linear-gradient(
-      180deg,
-      rgba(250, 251, 255, 0.1) 0%,
-      rgba(243, 246, 251, 0.46) 48%,
-      rgba(238, 242, 248, 0.66) 100%
-    );
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  &:hover .playButton {
+    transform: scale(1.08);
+    box-shadow:
+      0 0 0 12px rgba(255, 255, 255, 0.08),
+      0 20px 40px rgba(0, 0, 0, 0.3);
   }
 }
 
 .playButton {
-  width: 4.8rem;
-  height: 4.8rem;
+  width: 5.5rem;
+  height: 5.5rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  background: color-mix(in srgb, var(--oomol-primary) 86%, white);
+  background: rgba(255, 255, 255, 0.95);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.3),
-    0 16px 32px rgba(78, 68, 133, 0.18);
+    0 0 0 8px rgba(255, 255, 255, 0.1),
+    0 16px 32px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .playTriangle {
   width: 0;
   height: 0;
-  margin-left: 0.22rem;
-  border-top: 0.72rem solid transparent;
-  border-bottom: 0.72rem solid transparent;
-  border-left: 1.1rem solid var(--oomol-white);
-}
-
-.playLabel {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.55rem 0.9rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.88);
-  color: var(--oomol-text-primary);
-  font-size: 0.96rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  box-shadow: 0 10px 20px rgba(112, 126, 169, 0.12);
-}
-
-.videoChrome {
-  display: flex;
-  align-items: center;
-  gap: 0.42rem;
-  padding: 0.72rem 0.92rem;
-  border-bottom: 1px solid
-    color-mix(in srgb, var(--oomol-border-default) 72%, white);
-  background: color-mix(
-    in srgb,
-    var(--ifm-background-surface-color) 92%,
-    white
-  );
-
-  span {
-    width: 0.56rem;
-    height: 0.56rem;
-    border-radius: 999px;
-    background: color-mix(in srgb, var(--oomol-text-secondary) 24%, white);
-  }
+  margin-left: 0.3rem;
+  border-top: 0.85rem solid transparent;
+  border-bottom: 0.85rem solid transparent;
+  border-left: 1.3rem solid #1a1b28;
 }
 
 .heroVideo {
@@ -261,8 +240,10 @@
   aspect-ratio: 16 / 9;
   display: block;
   object-fit: cover;
-  background: var(--ifm-background-surface-color);
+  background: #0a0a12;
 }
+
+/* ── English overrides ── */
 
 :global(html[lang="en"]) .container {
   max-width: 1200px;
@@ -276,7 +257,7 @@
 :global(html[lang="en"]) .slogan {
   max-width: 15em;
   font-size: clamp(2.55rem, 4.2vw, 3.95rem);
-  line-height: 1.02;
+  line-height: 1.08;
   letter-spacing: -0.038em;
   text-wrap: pretty;
 }
@@ -287,8 +268,10 @@
 
 :global(html[lang="en"]) .ownershipNote {
   max-width: 42rem;
-  font-size: clamp(0.96rem, 0.98vw, 1.02rem);
+  font-size: clamp(0.88rem, 0.95vw, 0.98rem);
 }
+
+/* ── Tablet ── */
 
 @media (max-width: 996px) {
   .container {
@@ -314,15 +297,13 @@
   .overview {
     max-width: 100%;
   }
-
-  .mediaStack {
-    max-width: 100%;
-  }
 }
+
+/* ── Mobile ── */
 
 @media (max-width: 768px) {
   .section {
-    padding: 3.8rem 0 2.35rem;
+    padding: 3.8rem 0 0;
   }
 
   .container {
@@ -331,13 +312,13 @@
 
   .slogan {
     font-size: clamp(2.18rem, 8.5vw, 3rem);
-    line-height: 1.03;
+    line-height: 1.12;
     letter-spacing: -0.03em;
     max-width: 100%;
   }
 
   .titleGroup {
-    gap: 0.62rem;
+    gap: 0.75rem;
   }
 
   .overview {
@@ -348,8 +329,8 @@
   .ownershipNote {
     max-width: 100%;
     border-radius: 1rem;
-    padding: 0.78rem 0.95rem 0.82rem;
-    font-size: 0.95rem;
+    padding: 0.55rem 0.85rem 0.58rem;
+    font-size: 0.88rem;
     line-height: 1.58;
   }
 
@@ -362,12 +343,14 @@
     align-self: center;
   }
 
-  .videoFrame {
-    border-radius: 1.08rem;
+  .videoShowcase {
+    margin-top: clamp(1.5rem, 3vw, 2rem);
+    padding: 1rem 1rem 1.5rem;
+    border-radius: 1.25rem 1.25rem 0 0;
   }
 
-  .playOverlay {
-    gap: 0.7rem;
+  .videoFrame {
+    border-radius: 0.75rem;
   }
 
   .playButton {
@@ -375,14 +358,14 @@
     height: 4rem;
   }
 
-  .playLabel {
-    font-size: 0.9rem;
-  }
-
-  .videoChrome {
-    padding: 0.64rem 0.8rem;
+  .playTriangle {
+    border-top-width: 0.65rem;
+    border-bottom-width: 0.65rem;
+    border-left-width: 1rem;
   }
 }
+
+/* ── Dark mode ── */
 
 [data-theme="dark"] {
   .section {
@@ -445,60 +428,37 @@
     color: color-mix(in srgb, var(--oomol-primary-text) 86%, white 14%);
   }
 
+  .videoShowcase {
+    background:
+      radial-gradient(
+        ellipse 80% 60% at 50% 0%,
+        rgba(132, 138, 208, 0.1) 0%,
+        transparent 70%
+      ),
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--oomol-bg-container) 82%, var(--oomol-bg-spotlight) 18%) 0%,
+        color-mix(in srgb, var(--oomol-bg-elevated) 88%, black 12%) 100%
+      );
+  }
+
   .videoFrame {
-    background: color-mix(
-      in srgb,
-      var(--oomol-bg-elevated) 80%,
-      var(--oomol-bg-container) 20%
-    );
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-border-default) 78%,
-      var(--oomol-divider)
-    );
+    border-color: rgba(255, 255, 255, 0.06);
     box-shadow:
-      0 20px 42px rgba(0, 0, 0, 0.16),
-      0 8px 18px rgba(0, 0, 0, 0.1);
+      0 0 0 1px rgba(255, 255, 255, 0.03),
+      0 24px 48px rgba(0, 0, 0, 0.4),
+      0 0 60px rgba(132, 138, 208, 0.08);
+  }
+
+  .playButton {
+    background: rgba(255, 255, 255, 0.9);
   }
 
   .playOverlay {
-    background: linear-gradient(
-      180deg,
-      rgba(17, 18, 28, 0.08) 0%,
-      rgba(19, 21, 31, 0.34) 54%,
-      rgba(18, 20, 30, 0.48) 100%
-    );
+    background: rgba(0, 0, 0, 0.3);
 
     &:hover {
-      background: linear-gradient(
-        180deg,
-        rgba(17, 18, 28, 0.06) 0%,
-        rgba(19, 21, 31, 0.28) 54%,
-        rgba(18, 20, 30, 0.42) 100%
-      );
+      background: rgba(0, 0, 0, 0.15);
     }
-  }
-
-  .playLabel {
-    background: rgba(23, 26, 38, 0.84);
-    color: color-mix(in srgb, var(--oomol-text-primary) 90%, white 10%);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
-  }
-
-  .videoChrome {
-    border-bottom-color: color-mix(
-      in srgb,
-      var(--oomol-border-default) 72%,
-      black
-    );
-    background: color-mix(
-      in srgb,
-      var(--oomol-bg-container) 82%,
-      var(--oomol-bg-elevated) 18%
-    );
-  }
-
-  .videoChrome span {
-    background: color-mix(in srgb, var(--oomol-text-secondary) 30%, white);
   }
 }

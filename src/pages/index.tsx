@@ -1,5 +1,6 @@
 import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
+import HomepageBrandBreak from "@site/src/components/HomepageBrandBreak";
 import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
 import HomepageLinearFlow from "@site/src/components/HomepageLinearFlow";
 import React from "react";
@@ -24,6 +25,7 @@ export default function Home() {
       </Head>
       <main>
         <HomepageFirstScreen />
+        <HomepageBrandBreak />
         <HomepageLinearFlow />
       </main>
     </Layout>

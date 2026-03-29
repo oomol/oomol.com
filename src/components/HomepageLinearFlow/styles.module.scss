@@ -5,7 +5,7 @@
 }
 
 .section {
-  padding: clamp(3.35rem, 6.2vw, 5rem) 0;
+  padding: clamp(4rem, 7vw, 5.8rem) 0;
 }
 
 .cliSection {
@@ -49,7 +49,7 @@
   }
 
   .sectionTitle {
-    max-width: 12ch;
+    max-width: 100%;
   }
 
   .sectionDescription {
@@ -91,32 +91,33 @@
   max-width: 40rem;
 }
 
+/* ── Eyebrow badge ── */
+
 .eyebrow {
   display: inline-flex;
   width: fit-content;
   align-items: center;
-  gap: 0.75rem;
-  font-size: 0.9rem;
+  gap: 0.65rem;
+  padding: 0.38rem 0.85rem 0.4rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--oomol-primary) 16%, var(--oomol-divider));
+  background: color-mix(in srgb, var(--oomol-primary-bg) 42%, white);
+  font-size: 0.82rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  color: color-mix(in srgb, var(--oomol-text-secondary) 88%, white 12%);
-
-  &::before {
-    content: "";
-    width: 0.8rem;
-    height: 1px;
-    background: var(--oomol-primary);
-  }
+  letter-spacing: 0.06em;
+  color: var(--oomol-primary-text);
 }
+
+/* ── Section titles ── */
 
 .sectionTitle,
 .ctaTitle {
   margin: 0;
-  max-width: 11ch;
+  max-width: 100%;
   font-family: var(--oomol-font-display);
-  font-size: clamp(2.1rem, 3.75vw, 3.2rem);
-  line-height: 1.03;
-  letter-spacing: -0.045em;
+  font-size: clamp(2.1rem, 3.5vw, 2.85rem);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
   text-wrap: pretty;
   color: var(--oomol-text-primary);
 }
@@ -129,6 +130,8 @@
   line-height: 1.7;
   color: var(--oomol-text-secondary);
 }
+
+/* ── Action buttons ── */
 
 .inlineActions,
 .ctaActions {
@@ -182,6 +185,8 @@
   background: color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%);
 }
 
+/* ── Media panel + video card ── */
+
 .terminalPanel,
 .mediaPanel,
 .agentMediaCard {
@@ -196,6 +201,79 @@
 .agentMediaCard {
   min-height: clamp(24rem, 40vw, 33rem);
 }
+
+.videoCard {
+  height: 100%;
+  min-height: inherit;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.videoCardInner {
+  position: relative;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(
+      ellipse 70% 50% at 50% 40%,
+      rgba(84, 88, 135, 0.08) 0%,
+      transparent 70%
+    ),
+    linear-gradient(180deg, #1a1b28 0%, #12131d 100%);
+  min-height: 16rem;
+}
+
+.videoCardPlay {
+  width: 4.5rem;
+  height: 4.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 0 0 6px rgba(255, 255, 255, 0.08),
+    0 12px 28px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.06);
+  }
+}
+
+.videoCardTriangle {
+  width: 0;
+  height: 0;
+  margin-left: 0.2rem;
+  border-top: 0.7rem solid transparent;
+  border-bottom: 0.7rem solid transparent;
+  border-left: 1.1rem solid #1a1b28;
+}
+
+.videoCardMeta {
+  padding: 1.15rem 1.35rem 1.25rem;
+  border-top: 1px solid var(--oomol-divider);
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%);
+}
+
+.videoCardTitle {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--oomol-text-primary);
+}
+
+.videoCardNote {
+  margin: 0.35rem 0 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--oomol-text-tertiary);
+}
+
+/* ── Terminal panel (kept) ── */
 
 .terminalPanel {
   display: grid;
@@ -257,6 +335,8 @@
   color: var(--oomol-primary-text);
 }
 
+/* ── Placeholder card (Cloud section) ── */
+
 .placeholderCard {
   height: 100%;
   min-height: inherit;
@@ -264,12 +344,12 @@
   align-content: start;
   gap: 1.1rem;
   padding: clamp(1.55rem, 3vw, 2.4rem);
-  padding-top: clamp(4.3rem, 5vw, 5.15rem);
+  padding-top: clamp(1.8rem, 3vw, 2.4rem);
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(rgba(97, 113, 145, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(97, 113, 145, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(97, 113, 145, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(97, 113, 145, 0.06) 1px, transparent 1px),
     linear-gradient(
       180deg,
       color-mix(in srgb, var(--oomol-bg-elevated) 90%, white 10%) 0%,
@@ -300,45 +380,7 @@
   z-index: 1;
 }
 
-.placeholderCard::before {
-  content: "视频区域";
-  position: absolute;
-  top: clamp(1.4rem, 3vw, 2.2rem);
-  left: clamp(1.4rem, 3vw, 2.2rem);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 2rem;
-  padding: 0 0.78rem;
-  border-radius: 999px;
-  border: 1px solid var(--oomol-divider);
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--oomol-text-tertiary);
-}
-
-.placeholderCard::after {
-  content: "";
-  position: absolute;
-  inset: 50% auto auto 50%;
-  transform: translate(-50%, -50%);
-  width: 5.8rem;
-  height: 5.8rem;
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--oomol-primary) 18%, white);
-  background:
-    radial-gradient(circle at center, rgba(84, 88, 135, 0.12) 0%, rgba(84, 88, 135, 0) 70%),
-    color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.62),
-    0 12px 26px rgba(77, 88, 124, 0.12);
-  mask:
-    radial-gradient(circle at 52% 50%, transparent 0 34%, #000 35%),
-    linear-gradient(#000, #000);
-  mask-composite: exclude;
-}
+/* ── Cloud cards ── */
 
 .cloudCard {
   border-radius: 1.2rem;
@@ -378,10 +420,6 @@
 .cloudPlaceholderCard {
   gap: 0.95rem;
   justify-content: start;
-}
-
-.cloudPlaceholderCard::after {
-  display: none;
 }
 
 .cloudMetaRow {
@@ -475,6 +513,8 @@
   box-shadow: 0 0 0 0.22rem color-mix(in srgb, var(--oomol-primary) 10%, transparent);
 }
 
+/* ── CTA section ── */
+
 .ctaSection {
   padding: clamp(4rem, 8vw, 5.8rem) 0 clamp(3rem, 6vw, 4.4rem);
 }
@@ -517,20 +557,16 @@
   background: rgba(243, 239, 248, 0.08);
 }
 
+/* ── English overrides ── */
+
 :global(html[lang="en"]) .sectionTitle,
 :global(html[lang="en"]) .ctaTitle {
-  max-width: 19ch;
-  font-size: clamp(2rem, 3.2vw, 2.95rem);
-  line-height: 1.05;
+  max-width: 100%;
+  font-size: clamp(2rem, 3.2vw, 2.85rem);
+  line-height: 1.1;
 }
 
-:global(html[lang="en"]) .cliSection .sectionTitle {
-  max-width: 20ch;
-}
-
-:global(html[lang="en"]) .cloudSection .sectionTitle {
-  max-width: 13ch;
-}
+/* ── Tablet ── */
 
 @media (max-width: 996px) {
   .container {
@@ -562,6 +598,8 @@
   }
 }
 
+/* ── Mobile ── */
+
 @media (max-width: 768px) {
   .container,
   .ctaInner {
@@ -583,9 +621,31 @@
     font-size: 0.98rem;
     line-height: 1.7;
   }
+
+  .videoCardInner {
+    min-height: 12rem;
+  }
+
+  .videoCardPlay {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .videoCardTriangle {
+    border-top-width: 0.55rem;
+    border-bottom-width: 0.55rem;
+    border-left-width: 0.85rem;
+  }
 }
 
+/* ── Dark mode ── */
+
 [data-theme="dark"] {
+  .eyebrow {
+    border-color: color-mix(in srgb, var(--oomol-primary) 24%, var(--oomol-divider));
+    background: color-mix(in srgb, var(--oomol-bg-elevated) 78%, var(--oomol-primary-bg) 22%);
+  }
+
   .sectionTint {
     background:
       linear-gradient(
@@ -623,6 +683,32 @@
     );
   }
 
+  .videoCardMeta {
+    background: color-mix(
+      in srgb,
+      var(--oomol-bg-elevated) 86%,
+      var(--oomol-bg-container) 14%
+    );
+  }
+
+  .videoCardInner {
+    background:
+      radial-gradient(
+        ellipse 70% 50% at 50% 40%,
+        rgba(132, 138, 208, 0.08) 0%,
+        transparent 70%
+      ),
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--oomol-bg-container) 82%, var(--oomol-bg-spotlight) 18%) 0%,
+        color-mix(in srgb, var(--oomol-bg-elevated) 88%, black 12%) 100%
+      );
+  }
+
+  .videoCardPlay {
+    background: rgba(255, 255, 255, 0.88);
+  }
+
   .inlineNote {
     border-color: color-mix(
       in srgb,
@@ -647,28 +733,6 @@
         color-mix(in srgb, var(--oomol-bg-container) 82%, black 18%) 100%
     );
     background-size: 3.25rem 3.25rem, 3.25rem 3.25rem, auto;
-  }
-
-  .placeholderCard::before {
-    background: color-mix(
-      in srgb,
-      var(--oomol-bg-elevated) 86%,
-      var(--oomol-bg-container) 14%
-    );
-  }
-
-  .placeholderCard::after {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-primary) 24%,
-      var(--oomol-divider)
-    );
-    background:
-      radial-gradient(circle at center, rgba(132, 138, 208, 0.12) 0%, rgba(132, 138, 208, 0) 70%),
-      color-mix(in srgb, var(--oomol-bg-elevated) 88%, black 12%);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.06),
-      0 14px 30px rgba(0, 0, 0, 0.18);
   }
 
   .ctaInner {

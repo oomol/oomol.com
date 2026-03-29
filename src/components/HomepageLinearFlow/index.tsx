@@ -200,9 +200,11 @@ export default function HomepageLinearFlow() {
 
   return (
     <div className={styles.flow}>
+      {/* ── Section: oo-cli ── */}
       <section className={clsx(styles.section, styles.cliSection)}>
         <div className={styles.container}>
           <div className={styles.copyPanel}>
+            <span className={styles.eyebrow}>{copy.cli.eyebrow}</span>
             <h2 className={styles.sectionTitle}>{copy.cli.title}</h2>
             <p className={styles.sectionDescription}>{copy.cli.description}</p>
             <div className={styles.inlineActions}>
@@ -221,17 +223,26 @@ export default function HomepageLinearFlow() {
           </div>
 
           <div className={styles.mediaPanel}>
-            <div className={styles.placeholderCard}>
-              <h3 className={styles.placeholderTitle}>{copy.cli.media.title}</h3>
-              <p className={styles.placeholderNote}>{copy.cli.media.note}</p>
+            <div className={styles.videoCard}>
+              <div className={styles.videoCardInner}>
+                <div className={styles.videoCardPlay} aria-hidden="true">
+                  <span className={styles.videoCardTriangle} />
+                </div>
+              </div>
+              <div className={styles.videoCardMeta}>
+                <h3 className={styles.videoCardTitle}>{copy.cli.media.title}</h3>
+                <p className={styles.videoCardNote}>{copy.cli.media.note}</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* ── Section: Studio ── */}
       <section className={clsx(styles.section, styles.sectionTint)}>
         <div className={styles.container}>
           <div className={styles.copyPanel}>
+            <span className={styles.eyebrow}>{copy.studio.eyebrow}</span>
             <h2 className={styles.sectionTitle}>{copy.studio.title}</h2>
             <p className={styles.sectionDescription}>
               {copy.studio.description}
@@ -247,17 +258,26 @@ export default function HomepageLinearFlow() {
           </div>
 
           <div className={styles.mediaPanel}>
-            <div className={styles.placeholderCard}>
-              <h3 className={styles.placeholderTitle}>{copy.studio.media.title}</h3>
-              <p className={styles.placeholderNote}>{copy.studio.media.note}</p>
+            <div className={styles.videoCard}>
+              <div className={styles.videoCardInner}>
+                <div className={styles.videoCardPlay} aria-hidden="true">
+                  <span className={styles.videoCardTriangle} />
+                </div>
+              </div>
+              <div className={styles.videoCardMeta}>
+                <h3 className={styles.videoCardTitle}>{copy.studio.media.title}</h3>
+                <p className={styles.videoCardNote}>{copy.studio.media.note}</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* ── Section: Cloud ── */}
       <section className={clsx(styles.section, styles.cloudSection)}>
         <div className={styles.container}>
           <div className={styles.copyPanel}>
+            <span className={styles.eyebrow}>{copy.cloud.eyebrow}</span>
             <h2 className={styles.sectionTitle}>{copy.cloud.title}</h2>
             <p className={styles.sectionDescription}>{copy.cloud.description}</p>
             <div className={styles.cloudCardStack}>
@@ -321,9 +341,11 @@ export default function HomepageLinearFlow() {
         </div>
       </section>
 
+      {/* ── Section: OOMOL AI ── */}
       <section className={clsx(styles.section, styles.agentSection)}>
         <div className={styles.container}>
           <div className={styles.copyPanel}>
+            <span className={styles.eyebrow}>{copy.agent.eyebrow}</span>
             <h2 className={styles.sectionTitle}>{copy.agent.title}</h2>
             <p className={styles.sectionDescription}>{copy.agent.description}</p>
             <div className={styles.inlineActions}>
@@ -342,14 +364,22 @@ export default function HomepageLinearFlow() {
           </div>
 
           <div className={styles.mediaPanel}>
-            <div className={styles.placeholderCard}>
-              <h3 className={styles.placeholderTitle}>{copy.agent.media.title}</h3>
-              <p className={styles.placeholderNote}>{copy.agent.media.note}</p>
+            <div className={styles.videoCard}>
+              <div className={styles.videoCardInner}>
+                <div className={styles.videoCardPlay} aria-hidden="true">
+                  <span className={styles.videoCardTriangle} />
+                </div>
+              </div>
+              <div className={styles.videoCardMeta}>
+                <h3 className={styles.videoCardTitle}>{copy.agent.media.title}</h3>
+                <p className={styles.videoCardNote}>{copy.agent.media.note}</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* ── CTA ── */}
       <section className={styles.ctaSection}>
         <div className={styles.ctaInner}>
           <h2 className={styles.ctaTitle}>{copy.cta.title}</h2>

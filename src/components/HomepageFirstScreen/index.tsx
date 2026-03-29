@@ -32,16 +32,6 @@ export default function HomepageFirstScreen() {
       <div className={styles.background} />
       <div className={styles.container}>
         <div className={styles.titleGroup}>
-          <h1 className={styles.slogan}>
-            {translate({
-              message: "HOME.FirstScreen.heroTitle",
-            })}
-          </h1>
-          <p className={styles.overview}>
-            {translate({
-              message: "HOME.FirstScreen.heroLead",
-            })}
-          </p>
           <p className={styles.ownershipNote}>
             <span>
               {translate({
@@ -54,14 +44,29 @@ export default function HomepageFirstScreen() {
               })}
             </strong>
           </p>
+          <h1 className={styles.slogan}>
+            {translate({
+              message: "HOME.FirstScreen.heroTitle",
+            })}
+          </h1>
+          <p className={styles.overview}>
+            {translate({
+              message: "HOME.FirstScreen.heroLead",
+            })}
+          </p>
+          <div className={styles.actions}>
+            <DownloadButton centered />
+            <Link to="/docs/cloud-services/cli" className={styles.secondaryCta}>
+              {translate({
+                message: "HOME.FirstScreen.cta.secondary",
+              })}
+            </Link>
+          </div>
         </div>
-        <div className={styles.mediaStack}>
+      </div>
+      <div className={styles.videoShowcase}>
+        <div className={styles.videoShowcaseInner}>
           <div className={styles.videoFrame}>
-            <div className={styles.videoChrome} aria-hidden="true">
-              <span />
-              <span />
-              <span />
-            </div>
             {!isPlaying && (
               <button
                 type="button"
@@ -73,11 +78,6 @@ export default function HomepageFirstScreen() {
               >
                 <span className={styles.playButton}>
                   <span className={styles.playTriangle} aria-hidden="true" />
-                </span>
-                <span className={styles.playLabel}>
-                  {translate({
-                    message: "HOME.FirstScreen.video.playLabel",
-                  })}
                 </span>
               </button>
             )}
@@ -97,14 +97,6 @@ export default function HomepageFirstScreen() {
             >
               <source src={heroVideoUrl} type="video/mp4" />
             </video>
-          </div>
-          <div className={styles.actions}>
-            <DownloadButton centered />
-            <Link to="/docs/cloud-services/cli" className={styles.secondaryCta}>
-              {translate({
-                message: "HOME.FirstScreen.cta.secondary",
-              })}
-            </Link>
           </div>
         </div>
       </div>
