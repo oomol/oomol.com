@@ -80,6 +80,30 @@
   "HOME.FirstScreen.offer2": {
     "message": "200 free Cloud Task minutes each month"
   },
+  "HOME.PainPoints.badge": {
+    "message": "Why go cloud"
+  },
+  "HOME.PainPoints.title": {
+    "message": "Your code shouldn't leak when you deliver it"
+  },
+  "HOME.PainPoints.card1.title": {
+    "message": "Local execution = code exposure"
+  },
+  "HOME.PainPoints.card1.description": {
+    "message": "Today, when Codex or Claude Code calls your skill, it pulls the code to local and runs it there. Your algorithms, business logic, and call chains are fully exposed to the consumer."
+  },
+  "HOME.PainPoints.card1.solution": {
+    "message": "A cloud skill runs in the cloud. Users call the interface; your code stays with you."
+  },
+  "HOME.PainPoints.card2.title": {
+    "message": "You just want to deliver a skill, not build an entire backend"
+  },
+  "HOME.PainPoints.card2.description": {
+    "message": "Servers, auto-scaling, billing, subscription management, secrets, usage analytics… Writing the core logic is 20% of the work. The other 80% is delivery infrastructure."
+  },
+  "HOME.PainPoints.card2.solution": {
+    "message": "Cloud handles runtime, subscriptions, configuration, and data. You just write the logic."
+  },
   "HOME.ProofLayer.badge": {
     "message": "Real Use Cases"
   },

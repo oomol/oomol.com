@@ -15,7 +15,7 @@ export default function HomepageBrandBreak() {
     <section className={styles.section}>
       <div className={styles.inner}>
         <h2 className={styles.headline}>
-          {isZh ? "一次构建，\n持续交付。" : "Build once.\nDeliver continuously."}
+          {isZh ? "一次构建\n持续交付" : "Build once\nDeliver continuously"}
         </h2>
         <p className={styles.subline}>
           {isZh
@@ -58,15 +58,10 @@ export default function HomepageBrandBreak() {
           </div>
           <div className={styles.showcaseCard}>
             <div className={styles.showcaseCardIcon}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>
+              <i className={`${styles.showcaseGlyph} i-lucide-bot`} aria-hidden="true" />
             </div>
             <span className={styles.showcaseCardLabel}>
-              {isZh ? "用户使用" : "Users consume"}
+              {isZh ? "oo-cli 使用" : "Use via oo-cli"}
             </span>
           </div>
         </div>

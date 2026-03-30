@@ -24,7 +24,7 @@
     "message": "控制台"
   },
   "Theme.Navbar.community": {
-    "message": "社区"
+    "message": "Skills 社区"
   },
   "HOME.page.title": {
     "message": "OOMOL - 构建并发布 cloud skill"
@@ -39,7 +39,7 @@
     "message": "先通过 oo-cli 使用现成能力，再在 OOMOL Studio 中编写自己的 block，最后通过 Cloud 私有部署并交付出去。"
   },
   "HOME.FirstScreen.heroTitle": {
-    "message": "让 Agent 用上你的 Skill，\n代码依然由你掌控。"
+    "message": "让 Agent 用上你的 Skill\n代码依然由你掌控"
   },
   "HOME.FirstScreen.heroSubtitle": {
     "message": "我们把这种运行在云端、可被终端和 agent 工作流直接使用的能力，叫做 cloud skill。"
@@ -76,6 +76,30 @@
   },
   "HOME.FirstScreen.offer2": {
     "message": "每月赠送 200 分钟 Cloud Task"
+  },
+  "HOME.PainPoints.badge": {
+    "message": "为什么要上云"
+  },
+  "HOME.PainPoints.title": {
+    "message": "你写的能力，不该在交付时失控"
+  },
+  "HOME.PainPoints.card1.title": {
+    "message": "本地执行 = 代码泄露"
+  },
+  "HOME.PainPoints.card1.description": {
+    "message": "现在 Codex、Claude Code 要调用你的能力，就得把代码拉到本地跑。你的算法、商业逻辑、调用链路，全部暴露给使用方。"
+  },
+  "HOME.PainPoints.card1.solution": {
+    "message": "Cloud Skill 让能力在云端执行，用户只调用接口，代码始终在你手里。"
+  },
+  "HOME.PainPoints.card2.title": {
+    "message": "想交付一个 Skill，却要搭一整套后端"
+  },
+  "HOME.PainPoints.card2.description": {
+    "message": "服务器、扩缩容、计费系统、订阅管理、Secrets 配置、使用数据……写核心逻辑只占 20%，剩下 80% 都在搭基础设施。"
+  },
+  "HOME.PainPoints.card2.solution": {
+    "message": "Cloud 把运行时、订阅、配置和数据全部承接，你只管写核心逻辑。"
   },
   "HOME.ProofLayer.badge": {
     "message": "真实案例"
