@@ -52,7 +52,7 @@ type Copy = {
 
 const zhCopy: Copy = {
   cli: {
-    eyebrow: "02 / oo-cli",
+    eyebrow: "01 / oo-cli",
     title: "先在 Codex 里装 oo-cli，直接开始用 Skill",
     description:
       "oo-cli 是最适合在 Codex 和 Claude Code 里开始使用 Skill 的入口。先把安装文档打开，再用右侧视频直接看真实使用过程。",
@@ -64,7 +64,7 @@ const zhCopy: Copy = {
     github: "查看 GitHub",
   },
   studio: {
-    eyebrow: "03 / OOMOL Studio",
+    eyebrow: "02 / OOMOL Studio",
     title: "想做自己的 Skill，就用 OOMOL Studio",
     description:
       "直接告诉 Agent 你要生成什么，Studio 帮你把 Skill 生成出来，然后在本地完成验证。不会写平台 DSL，也能零门槛开始。",
@@ -76,7 +76,7 @@ const zhCopy: Copy = {
     secondary: "了解 Studio",
   },
   cloud: {
-    eyebrow: "04 / Cloud",
+    eyebrow: "03 / Cloud",
     title: "发布之后，Cloud 负责运行与交付",
     description:
       "Skill 发布之后，Cloud 在后台承接运行、订阅、配置和使用数据。你不需要再围着同一份实现重做一层产品外壳。",
@@ -100,7 +100,7 @@ const zhCopy: Copy = {
     secondary: "打开 Cloud 控制台",
   },
   agent: {
-    eyebrow: "05 / OOMOL AI",
+    eyebrow: "04 / OOMOL AI",
     title: "不想用 CLI，就直接用 OOMOL AI",
     description:
       "它可以理解成 oo-cli 的 GUI 版本。同一套 Skill，不同的消费入口。终端适合工作流，GUI 更适合直观使用。",
@@ -122,7 +122,7 @@ const zhCopy: Copy = {
 
 const enCopy: Copy = {
   cli: {
-    eyebrow: "02 / oo-cli",
+    eyebrow: "01 / oo-cli",
     title: "Install oo-cli in Codex and start using skills",
     description:
       "oo-cli is the best entry point for using skills inside Codex and Claude Code. Open the install guide first, then use the video on the right to see the real flow.",
@@ -134,7 +134,7 @@ const enCopy: Copy = {
     github: "View GitHub",
   },
   studio: {
-    eyebrow: "03 / OOMOL Studio",
+    eyebrow: "02 / OOMOL Studio",
     title: "When you need your own skill, use OOMOL Studio",
     description:
       "Tell the agent what skill you want, let Studio generate the first version, then validate it locally. You do not need to learn a platform DSL before you begin.",
@@ -146,7 +146,7 @@ const enCopy: Copy = {
     secondary: "Explore Studio",
   },
   cloud: {
-    eyebrow: "04 / Cloud",
+    eyebrow: "03 / Cloud",
     title: "After release, Cloud runs and delivers the skill",
     description:
       "After a skill is released, Cloud handles runtime, subscriptions, configuration, and usage data. You do not need a second product layer around the same implementation.",
@@ -173,7 +173,7 @@ const enCopy: Copy = {
     secondary: "Open Cloud Console",
   },
   agent: {
-    eyebrow: "05 / OOMOL AI",
+    eyebrow: "04 / OOMOL AI",
     title: "If you do not want CLI, use OOMOL AI",
     description:
       "Think of it as the GUI version of oo-cli. It uses the same skills through a more direct interface. CLI is better for workflows; GUI is better for straightforward use.",

@@ -157,32 +157,19 @@
   z-index: 1;
   width: 100%;
   margin-top: clamp(2rem, 3.5vw, 3rem);
-  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 3vw, 2.5rem) clamp(2rem, 4vw, 3.5rem);
-  background:
-    radial-gradient(
-      ellipse 80% 60% at 50% 0%,
-      rgba(84, 88, 135, 0.15) 0%,
-      transparent 70%
-    ),
-    linear-gradient(180deg, #1a1b28 0%, #12131d 100%);
-  border-radius: 2rem 2rem 0 0;
+  padding: 0;
 }
 
 .videoShowcaseInner {
-  max-width: 1100px;
+  width: min(1480px, calc(100% - 24px));
   margin: 0 auto;
 }
 
 .videoFrame {
   width: 100%;
   overflow: clip;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 1rem;
-  background: rgba(0, 0, 0, 0.4);
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.04),
-    0 24px 48px rgba(0, 0, 0, 0.3),
-    0 0 80px rgba(84, 88, 135, 0.12);
+  background: transparent;
+  box-shadow: 0 20px 40px rgba(83, 92, 132, 0.12);
   position: relative;
 }
 
@@ -240,7 +227,7 @@
   aspect-ratio: 16 / 9;
   display: block;
   object-fit: cover;
-  background: #0a0a12;
+  background: transparent;
 }
 
 /* ── English overrides ── */
@@ -345,12 +332,6 @@
 
   .videoShowcase {
     margin-top: clamp(1.5rem, 3vw, 2rem);
-    padding: 1rem 1rem 1.5rem;
-    border-radius: 1.25rem 1.25rem 0 0;
-  }
-
-  .videoFrame {
-    border-radius: 0.75rem;
   }
 
   .playButton {
@@ -429,25 +410,11 @@
   }
 
   .videoShowcase {
-    background:
-      radial-gradient(
-        ellipse 80% 60% at 50% 0%,
-        rgba(132, 138, 208, 0.1) 0%,
-        transparent 70%
-      ),
-      linear-gradient(
-        180deg,
-        color-mix(in srgb, var(--oomol-bg-container) 82%, var(--oomol-bg-spotlight) 18%) 0%,
-        color-mix(in srgb, var(--oomol-bg-elevated) 88%, black 12%) 100%
-      );
+    background: transparent;
   }
 
   .videoFrame {
-    border-color: rgba(255, 255, 255, 0.06);
-    box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.03),
-      0 24px 48px rgba(0, 0, 0, 0.4),
-      0 0 60px rgba(132, 138, 208, 0.08);
+    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.22);
   }
 
   .playButton {
