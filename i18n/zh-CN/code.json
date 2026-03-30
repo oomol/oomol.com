@@ -2593,10 +2593,10 @@
     "message": "开发者免费方案"
   },
   "HOME.DeveloperBenefits.title": {
-    "message": "零成本起步，先把链路跑通"
+    "message": "零成本起步，先把产品跑起来"
   },
   "HOME.DeveloperBenefits.subtitle": {
-    "message": "不用先付费。接入自有模型 + 每月 200 分钟免费 Cloud Task，足够你完成从 Studio 到线上交付的第一次完整闭环。"
+    "message": "不用先付费。接入自有模型 + 每月 200 分钟免费 Cloud Task，足够你从 Studio 走到第一次线上交付。"
   },
   "HOME.DeveloperBenefits.card1.eyebrow": {
     "message": "Studio 免费"
@@ -2611,13 +2611,13 @@
     "message": "支持接入自有模型"
   },
   "HOME.DeveloperBenefits.card1.title": {
-    "message": "接入你自己的模型，Studio 起步成本更低"
+    "message": "接入自有模型，先把 Studio 跑起来"
   },
   "HOME.DeveloperBenefits.card1.description": {
-    "message": "OOMOL Studio 支持配置你自己的 AI 模型。如果你已经有现成的模型额度，就不需要再为本地开发额外购买一套模型服务。目前我们更推荐开发者直接接入 GLM-5。"
+    "message": "已有模型额度就直接接入，不用再额外买服务。推荐先用 GLM-5。"
   },
   "HOME.DeveloperBenefits.card1.note": {
-    "message": "如果你已经有现成模型额度，按教程配好之后，通常就够先把 Studio 跑起来并完成本地验证。"
+    "message": "按教程配好后，通常就能完成本地验证。"
   },
   "HOME.DeveloperBenefits.card1.cta": {
     "message": "查看配置教程"
@@ -2635,13 +2635,13 @@
     "message": "Cloud Task 免费时长"
   },
   "HOME.DeveloperBenefits.card2.title": {
-    "message": "每月赠送 200 分钟 Cloud Task，先把轻量任务跑起来"
+    "message": "每月送 200 分钟，轻量任务先跑起来"
   },
   "HOME.DeveloperBenefits.card2.description": {
-    "message": "我们每个月都会赠送 200 分钟 Cloud Task 使用时长。对定时任务、轻量自动化、个人验证这类场景来说，通常已经够你把真实线上任务先跑起来。"
+    "message": "200 分钟免费 Cloud Task，通常够你先跑定时任务、轻量自动化和交付验证。"
   },
   "HOME.DeveloperBenefits.card2.note": {
-    "message": "如果你在做个人项目或轻量应用，可以先用免费额度验证交付链路，再决定是否继续投入。"
+    "message": "先用免费额度跑一遍，再决定是否继续投入。"
   },
   "HOME.DeveloperBenefits.card2.cta": {
     "message": "查看 Cloud 交付"

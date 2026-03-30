@@ -2614,13 +2614,13 @@
     "message": "Use your own model"
   },
   "HOME.DeveloperBenefits.card1.title": {
-    "message": "Use Your Own Model and Start at Lower Cost"
+    "message": "Bring Your Own Model and Get Studio Running"
   },
   "HOME.DeveloperBenefits.card1.description": {
-    "message": "OOMOL Studio lets you configure your own AI model. If you already have model quota elsewhere, you do not need another paid model service just to get local development running. We currently recommend GLM-5."
+    "message": "If you already have model quota, connect it directly instead of paying for another service. We recommend starting with GLM-5."
   },
   "HOME.DeveloperBenefits.card1.note": {
-    "message": "If you already have model quota, the setup guide is usually enough to get Studio running and finish local validation."
+    "message": "Follow the guide and you can usually finish local validation first."
   },
   "HOME.DeveloperBenefits.card1.cta": {
     "message": "View Setup Guide"
@@ -2638,13 +2638,13 @@
     "message": "Free Cloud Task time"
   },
   "HOME.DeveloperBenefits.card2.title": {
-    "message": "200 Free Cloud Task Minutes Each Month for Lightweight Jobs"
+    "message": "200 Free Minutes Each Month for Lightweight Jobs"
   },
   "HOME.DeveloperBenefits.card2.description": {
-    "message": "We give developers 200 minutes of Cloud Task usage every month. For scheduled jobs, lightweight automation, and validation flows, that is often enough to get real online tasks running."
+    "message": "The free Cloud Task quota is often enough for scheduled jobs, lightweight automation, and delivery validation."
   },
   "HOME.DeveloperBenefits.card2.note": {
-    "message": "For a lightweight app or workflow, the free quota is often enough to get tasks running before you pay anything."
+    "message": "Use the free quota to validate the flow before you spend more."
   },
   "HOME.DeveloperBenefits.card2.cta": {
     "message": "Explore OOMOL Cloud"
