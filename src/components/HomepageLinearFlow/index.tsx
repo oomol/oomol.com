@@ -1,12 +1,20 @@
 import styles from "./styles.module.scss";
 
 import type { DocusaurusContext } from "@docusaurus/types";
+
 import Link from "@docusaurus/Link";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { DownloadButton } from "@site/src/components/DownloadButton";
 import HomepageDeveloperBenefits from "@site/src/components/HomepageDeveloperBenefits";
 import { clsx } from "clsx";
 import React from "react";
+
+const homepageMediaUrls = {
+  cli: "https://static.oomol.com/assets/homepage/oomol-flow-en.webm",
+  studio: "https://static.oomol.com/assets/homepage/oomol-oo-cli-en.webm",
+  agent: "https://static.oomol.com/assets/homepage/oomol-AI-use-skills-en.webm",
+} as const;
 
 type Copy = {
   cli: {
@@ -49,6 +57,65 @@ type Copy = {
     secondary: string;
   };
 };
+
+type VideoCardProps = {
+  title: string;
+  note: string;
+  src: string;
+};
+
+type ImageCardProps = {
+  title: string;
+  note: string;
+  src: string;
+  pills: string[];
+};
+
+function VideoCard({ title, note, src }: VideoCardProps) {
+  return (
+    <div className={styles.videoCard}>
+      <div className={styles.videoCardMedia}>
+        <video
+          className={styles.videoCardVideo}
+          autoPlay
+          loop
+          muted
+          controls
+          playsInline
+          preload="metadata"
+          aria-label={title}
+        >
+          <source src={src} type="video/webm" />
+        </video>
+      </div>
+      <div className={styles.videoCardMeta}>
+        <h3 className={styles.videoCardTitle}>{title}</h3>
+        <p className={styles.videoCardNote}>{note}</p>
+      </div>
+    </div>
+  );
+}
+
+function ImageCard({ title, note, src, pills }: ImageCardProps) {
+  return (
+    <div className={styles.videoCard}>
+      <div className={styles.imageCardMedia}>
+        <img className={styles.imageCardImage} src={src} alt={title} />
+      </div>
+      <div className={styles.videoCardMeta}>
+        <h3 className={styles.videoCardTitle}>{title}</h3>
+        <p className={styles.videoCardNote}>{note}</p>
+        <div className={styles.cloudMetaRow}>
+          {pills.map(pill => (
+            <span key={pill} className={styles.cloudMetaPill}>
+              {pill}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const zhCopy: Copy = {
   cli: {
@@ -198,6 +265,11 @@ export default function HomepageLinearFlow() {
     i18n: { currentLocale: string };
   };
   const copy = i18n.currentLocale === "zh-CN" ? zhCopy : enCopy;
+  const cloudConsoleImage = useBaseUrl(
+    i18n.currentLocale === "zh-CN"
+      ? "/img/pages/home/cloud-console-zh.png"
+      : "/img/pages/home/cloud-console-en.png"
+  );
 
   return (
     <div className={styles.flow}>
@@ -209,7 +281,10 @@ export default function HomepageLinearFlow() {
             <h2 className={styles.sectionTitle}>{copy.cli.title}</h2>
             <p className={styles.sectionDescription}>{copy.cli.description}</p>
             <div className={styles.inlineActions}>
-              <Link to="/docs/cloud-services/cli" className={styles.primaryLink}>
+              <Link
+                to="/docs/cloud-services/cli"
+                className={styles.primaryLink}
+              >
                 {copy.cli.guide}
               </Link>
               <a
@@ -224,17 +299,11 @@ export default function HomepageLinearFlow() {
           </div>
 
           <div className={styles.mediaPanel}>
-            <div className={styles.videoCard}>
-              <div className={styles.videoCardInner}>
-                <div className={styles.videoCardPlay} aria-hidden="true">
-                  <span className={styles.videoCardTriangle} />
-                </div>
-              </div>
-              <div className={styles.videoCardMeta}>
-                <h3 className={styles.videoCardTitle}>{copy.cli.media.title}</h3>
-                <p className={styles.videoCardNote}>{copy.cli.media.note}</p>
-              </div>
-            </div>
+            <VideoCard
+              title={copy.cli.media.title}
+              note={copy.cli.media.note}
+              src={homepageMediaUrls.cli}
+            />
           </div>
         </div>
       </section>
@@ -259,17 +328,11 @@ export default function HomepageLinearFlow() {
           </div>
 
           <div className={styles.mediaPanel}>
-            <div className={styles.videoCard}>
-              <div className={styles.videoCardInner}>
-                <div className={styles.videoCardPlay} aria-hidden="true">
-                  <span className={styles.videoCardTriangle} />
-                </div>
-              </div>
-              <div className={styles.videoCardMeta}>
-                <h3 className={styles.videoCardTitle}>{copy.studio.media.title}</h3>
-                <p className={styles.videoCardNote}>{copy.studio.media.note}</p>
-              </div>
-            </div>
+            <VideoCard
+              title={copy.studio.media.title}
+              note={copy.studio.media.note}
+              src={homepageMediaUrls.studio}
+            />
           </div>
         </div>
       </section>
@@ -280,7 +343,9 @@ export default function HomepageLinearFlow() {
           <div className={styles.copyPanel}>
             <span className={styles.eyebrow}>{copy.cloud.eyebrow}</span>
             <h2 className={styles.sectionTitle}>{copy.cloud.title}</h2>
-            <p className={styles.sectionDescription}>{copy.cloud.description}</p>
+            <p className={styles.sectionDescription}>
+              {copy.cloud.description}
+            </p>
             <div className={styles.cloudCardStack}>
               {copy.cloud.cards.map(card => (
                 <article key={card.title} className={styles.cloudCard}>
@@ -305,24 +370,12 @@ export default function HomepageLinearFlow() {
           </div>
 
           <div className={styles.mediaPanel}>
-            <div className={styles.videoCard}>
-              <div className={styles.videoCardInner}>
-                <div className={styles.videoCardPlay} aria-hidden="true">
-                  <span className={styles.videoCardTriangle} />
-                </div>
-              </div>
-              <div className={styles.videoCardMeta}>
-                <h3 className={styles.videoCardTitle}>{copy.cloud.media.title}</h3>
-                <p className={styles.videoCardNote}>{copy.cloud.media.note}</p>
-                <div className={styles.cloudMetaRow}>
-                  {copy.cloud.media.pills.map(pill => (
-                    <span key={pill} className={styles.cloudMetaPill}>
-                      {pill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <ImageCard
+              title={copy.cloud.media.title}
+              note={copy.cloud.media.note}
+              src={cloudConsoleImage}
+              pills={copy.cloud.media.pills}
+            />
           </div>
         </div>
       </section>
@@ -333,7 +386,9 @@ export default function HomepageLinearFlow() {
           <div className={styles.copyPanel}>
             <span className={styles.eyebrow}>{copy.agent.eyebrow}</span>
             <h2 className={styles.sectionTitle}>{copy.agent.title}</h2>
-            <p className={styles.sectionDescription}>{copy.agent.description}</p>
+            <p className={styles.sectionDescription}>
+              {copy.agent.description}
+            </p>
             <div className={styles.inlineActions}>
               <a
                 href="https://app.oomol.com"
@@ -350,17 +405,11 @@ export default function HomepageLinearFlow() {
           </div>
 
           <div className={styles.mediaPanel}>
-            <div className={styles.videoCard}>
-              <div className={styles.videoCardInner}>
-                <div className={styles.videoCardPlay} aria-hidden="true">
-                  <span className={styles.videoCardTriangle} />
-                </div>
-              </div>
-              <div className={styles.videoCardMeta}>
-                <h3 className={styles.videoCardTitle}>{copy.agent.media.title}</h3>
-                <p className={styles.videoCardNote}>{copy.agent.media.note}</p>
-              </div>
-            </div>
+            <VideoCard
+              title={copy.agent.media.title}
+              note={copy.agent.media.note}
+              src={homepageMediaUrls.agent}
+            />
           </div>
         </div>
       </section>
