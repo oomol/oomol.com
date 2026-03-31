@@ -11,7 +11,7 @@ export default function HomepageFirstScreen() {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const heroVideoUrl = useBaseUrl(
-    "/img/docs/cn/get-started/zero-to-one/merge-into-a-reusable-block-light.mp4"
+    "https://static.oomol.com/assets/homepage/oomol-flow-en.webm"
   );
 
   const handlePlay = async () => {
