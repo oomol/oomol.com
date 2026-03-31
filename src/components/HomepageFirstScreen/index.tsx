@@ -13,6 +13,9 @@ export default function HomepageFirstScreen() {
   const heroVideoUrl = useBaseUrl(
     "https://static.oomol.com/assets/homepage/oomol-flow-en.webm"
   );
+  const heroVideoPosterUrl = useBaseUrl(
+    "/img/pages/home/homepage-first-screen-workflow-poster.png"
+  );
 
   const handlePlay = async () => {
     if (!videoRef.current) {
@@ -85,6 +88,7 @@ export default function HomepageFirstScreen() {
               ref={videoRef}
               className={styles.heroVideo}
               controls={isPlaying}
+              poster={heroVideoPosterUrl}
               playsInline
               preload="metadata"
               onPlay={() => setIsPlaying(true)}
