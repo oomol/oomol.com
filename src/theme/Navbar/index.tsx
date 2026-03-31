@@ -15,9 +15,26 @@ import NavbarItem from "@theme/NavbarItem";
 import SearchBar from "@theme/SearchBar";
 import ThemedImage from "@theme/ThemedImage";
 import { clsx } from "clsx";
-import React, { memo, useMemo } from "react";
+import React, { memo, useEffect, useMemo, useRef, useState } from "react";
 
 interface NavbarProps {}
+
+type ProductMenuEntry = {
+  description: string;
+  href: string;
+  iconClassName: string;
+  key: string;
+  label: string;
+};
+
+function isProductEntryActive(pathname: string, locale: string, href: string) {
+  return (
+    pathname === href ||
+    pathname.startsWith(`${href}/`) ||
+    pathname === `/${locale}${href}` ||
+    pathname.startsWith(`/${locale}${href}/`)
+  );
+}
 
 const DefaultNavItemPosition = "right";
 
@@ -39,6 +56,9 @@ function splitNavItemsByPosition(
 
 const NavbarComponent: React.FC<NavbarProps> = memo(() => {
   const mobileSidebar = useNavbarMobileSidebar();
+  const [productMenuOpen, setProductMenuOpen] = useState(false);
+  const productMenuRef = useRef<HTMLDivElement>(null);
+  const productMenuCloseTimeoutRef = useRef<number | null>(null);
 
   const {
     siteConfig: {
@@ -84,6 +104,115 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
     () => splitNavItemsByPosition(items),
     [items]
   );
+
+  const productMenuItem = useMemo(
+    () =>
+      leftItems.find(item =>
+        String(item.className ?? "").includes("productDropdown")
+      ),
+    [leftItems]
+  );
+
+  const productMenuEntries = useMemo<ProductMenuEntry[]>(
+    () => [
+      {
+        key: "oo-cli",
+        href: "/docs/cloud-services/cli",
+        label: translate({
+          id: "item.label.navbar.oo-cli",
+          message: "oo-cli",
+        }),
+        description: translate({
+          message: "Theme.Navbar.product.cli.description",
+        }),
+        iconClassName: "i-lucide-terminal-square",
+      },
+      {
+        key: "studio",
+        href: "/studio",
+        label: translate({
+          id: "item.label.navbar.oomol-studio",
+          message: "OOMOL Studio",
+        }),
+        description: translate({
+          message: "Theme.Navbar.product.studio.description",
+        }),
+        iconClassName: "i-lucide-square-terminal",
+      },
+      {
+        key: "cloud",
+        href: "/cloud",
+        label: translate({
+          id: "item.label.navbar.oomol-cloud",
+          message: "OOMOL Cloud",
+        }),
+        description: translate({
+          message: "Theme.Navbar.product.cloud.description",
+        }),
+        iconClassName: "i-lucide-cloud-upload",
+      },
+      {
+        key: "oomol-ai",
+        href: "/app",
+        label: translate({
+          id: "item.label.navbar.oomol-ai",
+          message: "OOMOL AI",
+        }),
+        description: translate({
+          message: "Theme.Navbar.product.ai.description",
+        }),
+        iconClassName: "i-lucide-bot",
+      },
+    ],
+    []
+  );
+
+  useEffect(() => {
+    setProductMenuOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const handlePointerDown = (event: MouseEvent) => {
+      if (
+        productMenuRef.current &&
+        !productMenuRef.current.contains(event.target as Node)
+      ) {
+        setProductMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handlePointerDown);
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+    };
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (productMenuCloseTimeoutRef.current !== null) {
+        window.clearTimeout(productMenuCloseTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const openProductMenu = () => {
+    if (productMenuCloseTimeoutRef.current !== null) {
+      window.clearTimeout(productMenuCloseTimeoutRef.current);
+      productMenuCloseTimeoutRef.current = null;
+    }
+    setProductMenuOpen(true);
+  };
+
+  const closeProductMenu = () => {
+    if (productMenuCloseTimeoutRef.current !== null) {
+      window.clearTimeout(productMenuCloseTimeoutRef.current);
+    }
+
+    productMenuCloseTimeoutRef.current = window.setTimeout(() => {
+      setProductMenuOpen(false);
+      productMenuCloseTimeoutRef.current = null;
+    }, 120);
+  };
 
   const isSignedIn = () => {
     const cookies = document.cookie.split(";").map(cookie => cookie.trim());
@@ -157,9 +286,78 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
           <Link className={styles.brand} to="/">
             <ThemedImage sources={logoSources} alt="logo" height={32} />
           </Link>
-          {leftItems.map((item, i) => (
-            <NavbarItem {...item} key={i} />
-          ))}
+          {leftItems.map((item, i) => {
+            if (item === productMenuItem) {
+              const isProductActive =
+                location.pathname.startsWith("/docs/cloud-services/cli") ||
+                location.pathname.startsWith(`/${locale}/docs/cloud-services/cli`) ||
+                location.pathname.startsWith("/studio") ||
+                location.pathname.startsWith(`/${locale}/studio`) ||
+                location.pathname.startsWith("/cloud") ||
+                location.pathname.startsWith(`/${locale}/cloud`) ||
+                location.pathname.startsWith("/app") ||
+                location.pathname.startsWith(`/${locale}/app`);
+
+              return (
+                <div
+                  key={`product-menu-${i}`}
+                  ref={productMenuRef}
+                  className={styles.productMenuWrapper}
+                  onMouseEnter={openProductMenu}
+                  onMouseLeave={closeProductMenu}
+                >
+                  <button
+                    type="button"
+                    className={clsx(styles.productMenuTrigger, {
+                      [styles.productMenuTriggerActive]: isProductActive,
+                    })}
+                    aria-expanded={productMenuOpen}
+                    aria-haspopup="true"
+                    onClick={() => setProductMenuOpen(current => !current)}
+                  >
+                    {translate({
+                      message: "Theme.Navbar.product.label",
+                    })}
+                    <span className={styles.productMenuCaret} aria-hidden="true" />
+                  </button>
+
+                  <div
+                    className={clsx(styles.productMenuPanel, {
+                      [styles.productMenuPanelOpen]: productMenuOpen,
+                    })}
+                  >
+                    {productMenuEntries.map(entry => (
+                      <Link
+                        key={entry.key}
+                        to={entry.href}
+                        className={clsx(styles.productMenuEntry, {
+                          [styles.productMenuEntryActive]: isProductEntryActive(
+                            location.pathname,
+                            locale,
+                            entry.href
+                          ),
+                        })}
+                      >
+                        <span className={styles.productMenuEntryIcon}>
+                          <i className={entry.iconClassName} />
+                        </span>
+                        <span className={styles.productMenuEntryText}>
+                          <span className={styles.productMenuEntryLabel}>
+                            {entry.label}
+                          </span>
+                          <span className={styles.productMenuEntryDescription}>
+                            {entry.description}
+                          </span>
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
+
+            return <NavbarItem {...item} key={i} />;
+          })}
         </div>
         <div className={styles.itemsRight}>
           {/* 当路由与文档路径匹配时，显示文档搜索框 */}
@@ -178,16 +376,17 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
             </Link>
             <BrowserOnly
               fallback={
-                <a className={styles.loginButton}>
+                <button type="button" className={styles.loginButton}>
                   <i className="i-lucide-log-in" />
                   {translate({ message: "Theme.Navbar.login" })}
-                </a>
+                </button>
               }
             >
               {() => {
                 const signedIn = isSignedIn();
                 return (
-                  <a
+                  <button
+                    type="button"
                     className={styles.loginButton}
                     onClick={() => handleSignin()}
                   >
@@ -203,7 +402,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
                         ? "Theme.Navbar.console"
                         : "Theme.Navbar.login",
                     })}
-                  </a>
+                  </button>
                 );
               }}
             </BrowserOnly>

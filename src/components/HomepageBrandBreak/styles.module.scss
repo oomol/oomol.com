@@ -1,0 +1,160 @@
+@use "../../css/custom.scss" as *;
+
+.section {
+  padding: clamp(4.5rem, 8vw, 7rem) 0;
+  background:
+    radial-gradient(
+      ellipse 60% 50% at 20% 20%,
+      rgba(255, 255, 255, 0.06) 0%,
+      transparent 60%
+    ),
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--oomol-primary) 92%, black 8%) 0%,
+      color-mix(in srgb, var(--oomol-primary-active) 88%, black 12%) 100%
+    );
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 6rem 6rem;
+    mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(0, 0, 0, 0.5), transparent 70%);
+    pointer-events: none;
+  }
+}
+
+.inner {
+  position: relative;
+  width: min(1260px, calc(100% - 48px));
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.headline {
+  margin: 0;
+  font-family: var(--oomol-font-display);
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  color: rgba(255, 255, 255, 0.97);
+  white-space: pre-line;
+}
+
+.subline {
+  margin: 0;
+  max-width: 36rem;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.showcaseRow {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.8rem, 2vw, 1.5rem);
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.showcaseCard {
+  display: grid;
+  gap: 0.65rem;
+  justify-items: center;
+  padding: 1.25rem 1.5rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  min-width: 9rem;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.showcaseCardIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.showcaseGlyph {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.showcaseCardLabel {
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.showcaseArrow {
+  color: rgba(255, 255, 255, 0.36);
+  flex-shrink: 0;
+}
+
+/* ── Mobile ── */
+
+@media (max-width: 768px) {
+  .section {
+    padding: clamp(3rem, 6vw, 4.5rem) 0;
+  }
+
+  .inner {
+    width: min(100%, calc(100% - 40px));
+    gap: 1.2rem;
+  }
+
+  .headline {
+    font-size: clamp(2.2rem, 8vw, 3rem);
+  }
+
+  .showcaseRow {
+    gap: 0.6rem;
+  }
+
+  .showcaseCard {
+    padding: 1rem 1.15rem;
+    min-width: 7rem;
+  }
+
+  .showcaseArrow {
+    display: none;
+  }
+}
+
+/* ── Dark mode ── */
+
+[data-theme="dark"] {
+  .section {
+    background:
+      radial-gradient(
+        ellipse 60% 50% at 20% 20%,
+        rgba(255, 255, 255, 0.04) 0%,
+        transparent 60%
+      ),
+      linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--oomol-primary) 72%, var(--oomol-bg-base) 28%) 0%,
+        color-mix(in srgb, var(--oomol-primary-active) 68%, var(--oomol-bg-base) 32%) 100%
+      );
+  }
+}

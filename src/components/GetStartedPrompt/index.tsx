@@ -1,5 +1,6 @@
 import styles from "./styles.module.scss";
 
+import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
@@ -19,7 +20,12 @@ export const GetStartedPrompt = () => {
           <span className={styles.subtitle}>
             {translate({ message: "HOME.GetStartedPrompt.subtitle" })}
           </span>
-          <DownloadButton />
+          <div className={styles.actions}>
+            <DownloadButton />
+            <Link to="/docs/cloud-services/cli" className={styles.secondaryLink}>
+              {translate({ message: "HOME.Downloads.cli.action.guide" })}
+            </Link>
+          </div>
         </div>
       </div>
     </div>

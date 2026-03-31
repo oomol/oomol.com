@@ -191,9 +191,8 @@
     }
 
     &:focus-visible {
-      outline: none;
-      ring: 1px;
-      ring-color: hsl(var(--ring));
+      outline: 2px solid hsl(var(--ring));
+      outline-offset: 2px;
     }
   }
 }
@@ -222,9 +221,8 @@
     }
 
     &:focus-visible {
-      outline: none;
-      ring: 1px;
-      ring-color: hsl(var(--ring));
+      outline: 2px solid hsl(var(--ring));
+      outline-offset: 2px;
     }
   }
 }

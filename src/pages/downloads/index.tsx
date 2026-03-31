@@ -1,5 +1,6 @@
 import styles from "./styles.module.scss";
 
+import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { DownloadUrl } from "@site/src/download_url";
@@ -74,6 +75,17 @@ export default function Downloads() {
 
   return (
     <Layout>
+      <Head>
+        <title>
+          {translate({ message: "HOME.Downloads.page.title" })}
+        </title>
+        <meta
+          name="description"
+          content={translate({
+            message: "HOME.Downloads.page.description",
+          })}
+        />
+      </Head>
       <div className={styles.container}>
         <img className={styles.image} src={logoUrl} />
         <div className={styles.titleBox}>

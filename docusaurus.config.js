@@ -10,7 +10,7 @@ const darkTheme = themes.dracula;
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "OOMOL",
-  tagline: "Write a function. Ship a service.",
+  tagline: "Build cloud skills. Keep the code.",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -70,12 +70,10 @@ const config = {
         "@context": "https://schema.org",
         "@type": "Organization",
         name: "OOMOL",
-        tagline: "Write a function. Ship a service.",
-        favicon: "img/favicon.ico",
+        description: "Build cloud skills. Keep the code.",
         url: "https://oomol.com",
+        logo: "https://oomol.com/img/logo2x.png",
         sameAs: ["https://hub.oomol.com"],
-        // TODO: add logo to the website
-        // logo: "https://oomol.com/logo.svg",
       }),
     },
   ],
@@ -153,12 +151,25 @@ const config = {
         {
           name: "keywords",
           content:
-            "function to service, ai-native developer tools, local validation, api publishing, mcp tools, automation tasks, containerized development, function delivery, OOMOL",
+            "cloud skill, skill distribution, closed-source skill delivery, ai-native developer tools, local validation, oo-cli, mcp tools, automation tasks, containerized development, OOMOL",
         },
         {
           name: "description",
           content:
-            "Generate functions in a real coding environment, validate locally, and publish the same capability as an API, MCP tool, or automation task.",
+            "Build cloud skills in a real coding environment, validate locally, and publish them for oo-cli, agents, APIs, and automation without exposing your source code.",
+        },
+        { property: "og:site_name", content: "OOMOL" },
+        { property: "og:type", content: "website" },
+        {
+          property: "og:image",
+          content: "https://oomol.com/img/og-default.png",
+        },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { name: "twitter:card", content: "summary_large_image" },
+        {
+          name: "twitter:image",
+          content: "https://oomol.com/img/og-default.png",
         },
       ],
 
@@ -177,12 +188,39 @@ const config = {
         },
         items: [
           {
+            label: "Product",
+            position: "left",
+            className: "productDropdown",
+            items: [
+              {
+                to: "/docs/cloud-services/cli",
+                label: "navbar.oo-cli",
+                className: "productDropdownItem productDropdownItemCli",
+              },
+              {
+                to: "/studio",
+                label: "navbar.oomol-studio",
+                className: "productDropdownItem productDropdownItemStudio",
+              },
+              {
+                to: "/cloud",
+                label: "navbar.oomol-cloud",
+                className: "productDropdownItem productDropdownItemCloud",
+              },
+              {
+                to: "/app",
+                label: "navbar.oomol-ai",
+                className: "productDropdownItem productDropdownItemAi",
+              },
+            ],
+          },
+          { to: "/downloads", label: "navbar.download", position: "left" },
+          {
             type: "doc",
             docId: "overview",
             position: "left",
             label: "Docs",
           },
-          { to: "/downloads", label: "navbar.download", position: "left" },
           { to: "/pricing", label: "navbar.pricing", position: "left" },
           { to: "/updates", label: "Updates", position: "left" },
           { to: "/blog", label: "Blog", position: "left" },

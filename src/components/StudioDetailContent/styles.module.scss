@@ -87,6 +87,51 @@
   gap: 0.9rem;
 }
 
+.homeActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.homePrimaryAction,
+.homeSecondaryAction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.85rem;
+  padding: 0 1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 650;
+  transition:
+    transform 0.18s ease,
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease;
+
+  &:hover {
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+}
+
+.homePrimaryAction {
+  color: var(--oomol-white);
+  border: 1px solid color-mix(in srgb, var(--oomol-primary-active) 64%, black 12%);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--oomol-primary) 78%, white 14%) 0%,
+    color-mix(in srgb, var(--oomol-primary-active) 88%, black 12%) 100%
+  );
+}
+
+.homeSecondaryAction {
+  color: var(--oomol-text-primary);
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%);
+  border: 1px solid var(--oomol-divider);
+}
+
 .homePreviewCard {
   min-width: 0;
   padding: 0.9rem;

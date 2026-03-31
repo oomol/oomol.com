@@ -47,7 +47,7 @@
   border-radius: 8px;
   color: var(--oomol-text-primary);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 
   &:hover {
     background-color: var(--oomol-primary);

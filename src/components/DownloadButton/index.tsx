@@ -27,19 +27,41 @@ function detectOSAndArchitecture(): OS {
 
 export interface DownloadButtonProps {
   stableTag?: boolean;
+  centered?: boolean;
+  showNote?: boolean;
+  noteTone?: "default" | "inverse";
 }
 
-export const DownloadButton = ({ stableTag }: DownloadButtonProps) => {
+export const DownloadButton = ({
+  stableTag,
+  centered,
+  showNote = true,
+  noteTone = "default",
+}: DownloadButtonProps) => {
   const downloadIcon = (
     <span className={styles.downloadIconWrap} aria-hidden="true">
       <span className={`i-codicon-desktop-download ${styles.downloadIcon}`} />
     </span>
   );
+  const containerClassName = centered
+    ? `${styles.downloadContainer} ${styles.centered}`
+    : styles.downloadContainer;
+  const windowsClassName = centered
+    ? `${styles.windowsBox} ${styles.centered}`
+    : styles.windowsBox;
+  const noteClassName =
+    noteTone === "inverse"
+      ? `${styles.chipNote} ${styles.inverseNote}`
+      : styles.chipNote;
+  const windowsSubtitleClassName =
+    noteTone === "inverse"
+      ? `${styles.windowsSubtitle} ${styles.inverseNote}`
+      : styles.windowsSubtitle;
 
   return (
     <BrowserOnly
       fallback={
-        <div className={styles.downloadContainer}>
+        <div className={containerClassName}>
           <Button className={styles.download}>
             {downloadIcon}
             {translate({
@@ -48,11 +70,13 @@ export const DownloadButton = ({ stableTag }: DownloadButtonProps) => {
                 : "HOME.FirstScreen.download-macos",
             })}
           </Button>
-          <span className={styles.chipNote}>
-            {translate({
-              message: "HOME.FirstScreen.download-macos-chip-note",
-            })}
-          </span>
+          {showNote ? (
+            <span className={noteClassName}>
+              {translate({
+                message: "HOME.FirstScreen.download-macos-chip-note",
+              })}
+            </span>
+          ) : null}
         </div>
       }
     >
@@ -60,7 +84,7 @@ export const DownloadButton = ({ stableTag }: DownloadButtonProps) => {
         return (
           <div className={styles["button-box"]}>
             {detectOSAndArchitecture() === OS.MacOS ? (
-              <div className={styles.downloadContainer}>
+              <div className={containerClassName}>
                 <Button
                   asChild
                   className={styles.download}
@@ -77,14 +101,16 @@ export const DownloadButton = ({ stableTag }: DownloadButtonProps) => {
                     })}
                   </a>
                 </Button>
-                <span className={styles.chipNote}>
-                  {translate({
-                    message: "HOME.FirstScreen.download-macos-chip-note",
-                  })}
-                </span>
+                {showNote ? (
+                  <span className={noteClassName}>
+                    {translate({
+                      message: "HOME.FirstScreen.download-macos-chip-note",
+                    })}
+                  </span>
+                ) : null}
               </div>
             ) : (
-              <div className={styles.windowsBox}>
+              <div className={windowsClassName}>
                 <Button
                   asChild
                   className={styles.download}
@@ -101,11 +127,13 @@ export const DownloadButton = ({ stableTag }: DownloadButtonProps) => {
                     })}
                   </a>
                 </Button>
-                <span className={styles.windowsSubtitle}>
-                  {translate({
-                    message: "HOME.FirstScreen.download-windows-subtitle",
-                  })}
-                </span>
+                {showNote ? (
+                  <span className={windowsSubtitleClassName}>
+                    {translate({
+                      message: "HOME.FirstScreen.download-windows-subtitle",
+                    })}
+                  </span>
+                ) : null}
               </div>
             )}
           </div>

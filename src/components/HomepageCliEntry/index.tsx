@@ -72,6 +72,24 @@ export default function HomepageCliEntry() {
           <p className={styles.subtitle}>
             {translate({ message: "HOME.CliEntry.subtitle" })}
           </p>
+          <div className={styles.benefitGrid}>
+            <article className={styles.benefitCard}>
+              <div className={styles.benefitLabel}>
+                {translate({ message: "HOME.CliEntry.benefit1.label" })}
+              </div>
+              <p className={styles.benefitDescription}>
+                {translate({ message: "HOME.CliEntry.benefit1.description" })}
+              </p>
+            </article>
+            <article className={styles.benefitCard}>
+              <div className={styles.benefitLabel}>
+                {translate({ message: "HOME.CliEntry.benefit2.label" })}
+              </div>
+              <p className={styles.benefitDescription}>
+                {translate({ message: "HOME.CliEntry.benefit2.description" })}
+              </p>
+            </article>
+          </div>
 
           <div className={styles.stepList}>
             {steps.map(step => (
@@ -92,10 +110,7 @@ export default function HomepageCliEntry() {
             >
               {translate({ message: "HOME.CliEntry.action.primary" })}
             </Link>
-            <Link
-              to="/docs/cloud-services/cloud-function"
-              className={styles.secondaryAction}
-            >
+            <Link to="/cloud" className={styles.secondaryAction}>
               {translate({ message: "HOME.CliEntry.action.secondary" })}
             </Link>
           </div>

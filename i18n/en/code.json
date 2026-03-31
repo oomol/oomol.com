@@ -27,16 +27,40 @@
     "message": "Community"
   },
   "HOME.page.title": {
-    "message": "OOMOL - Write Functions in Studio and Let AI Use Them"
+    "message": "OOMOL - Build and publish cloud skills"
+  },
+  "HOME.page.description": {
+    "message": "Build cloud skills in a real coding environment, validate locally, and publish them for oo-cli, agents, APIs, and automation without exposing your source code."
   },
   "HOME.FirstScreen.slogan": {
-    "message": "Write Function. Deliver Service."
+    "message": "Build and Deliver Capabilities for Agents"
   },
   "HOME.FirstScreen.kicker": {
-    "message": "A Studio + CLI workflow for developers"
+    "message": "A capability production and delivery path for developers"
   },
   "HOME.FirstScreen.script": {
-    "message": "Write functions in Studio, validate them locally, then publish them to OOMOL Cloud. After that, sign in with the OOMOL CLI so Codex or Claude Code can call those cloud functions directly, while the same capability remains available as an API, MCP tool, or automation task."
+    "message": "Start with ready-made capabilities in oo-cli, create your own blocks in OOMOL Studio, then deploy and deliver them privately through Cloud."
+  },
+  "HOME.FirstScreen.heroTitle": {
+    "message": "Let agents use your skill.\nYou stay in control of the code."
+  },
+  "HOME.FirstScreen.heroSubtitle": {
+    "message": "We call this a cloud skill: a capability that runs in the cloud and can be used directly from terminals and agent workflows."
+  },
+  "HOME.FirstScreen.heroLead": {
+    "message": "A skill generated with OOMOL runs its underlying tool functions reliably in the cloud;\nonce users install oo-cli, they can use it directly in Codex and Claude Code."
+  },
+  "HOME.FirstScreen.heroAdvantage": {
+    "message": "Open source or closed source,"
+  },
+  "HOME.FirstScreen.heroAdvantageHighlight": {
+    "message": "it is your call."
+  },
+  "HOME.FirstScreen.video.playAriaLabel": {
+    "message": "Play demo video"
+  },
+  "HOME.FirstScreen.video.playLabel": {
+    "message": "Play demo"
   },
   "HOME.FirstScreen.pill1": {
     "message": "No new DSL"
@@ -56,32 +80,29 @@
   "HOME.FirstScreen.offer2": {
     "message": "200 free Cloud Task minutes each month"
   },
-  "HOME.DeliveryGap.badge": {
-    "message": "Why Delivery Breaks"
+  "HOME.PainPoints.badge": {
+    "message": "Why go cloud"
   },
-  "HOME.DeliveryGap.title": {
-    "message": "The real cost starts after the function works."
+  "HOME.PainPoints.title": {
+    "message": "Your code shouldn't leak when you deliver it"
   },
-  "HOME.DeliveryGap.subtitle": {
-    "message": "Once you want a capability to be called reliably by AI, APIs, and automations, the work that grows is usually wrapping interfaces, aligning environments, shipping to production, and keeping the whole path stable."
+  "HOME.PainPoints.card1.title": {
+    "message": "Local execution = code exposure"
   },
-  "HOME.DeliveryGap.problem1.title": {
-    "message": "Function Done. Backend Work Begins."
+  "HOME.PainPoints.card1.description": {
+    "message": "Today, when Codex or Claude Code calls your skill, it pulls the code to local and runs it there. Your algorithms, business logic, and call chains are fully exposed to the consumer."
   },
-  "HOME.DeliveryGap.problem1.description": {
-    "message": "The implementation already exists, but publishing it as an API or task still means rebuilding interfaces, deployment steps, and runtime wrappers."
+  "HOME.PainPoints.card1.solution": {
+    "message": "A cloud skill runs in the cloud. Users call the interface; your code stays with you."
   },
-  "HOME.DeliveryGap.problem2.title": {
-    "message": "Local Runs Do Not Guarantee Delivery"
+  "HOME.PainPoints.card2.title": {
+    "message": "You just want to deliver a skill, not build an entire backend"
   },
-  "HOME.DeliveryGap.problem2.description": {
-    "message": "Development, dependency, and deployment environments drift apart. The problem is often not the code itself, but whether it still holds once it leaves your machine."
+  "HOME.PainPoints.card2.description": {
+    "message": "Servers, auto-scaling, billing, subscription management, secrets, usage analytics… Writing the core logic is 20% of the work. The other 80% is delivery infrastructure."
   },
-  "HOME.DeliveryGap.problem3.title": {
-    "message": "One Capability Gets Wrapped Repeatedly"
-  },
-  "HOME.DeliveryGap.problem3.description": {
-    "message": "Teams often wrap the same implementation separately for APIs, MCP tools, and automation tasks, multiplying delivery cost without adding capability."
+  "HOME.PainPoints.card2.solution": {
+    "message": "Cloud handles runtime, subscriptions, configuration, and data. You just write the logic."
   },
   "HOME.ProofLayer.badge": {
     "message": "Real Use Cases"
@@ -177,7 +198,7 @@
     "message": "only supports x64"
   },
   "HOME.FirstScreen.cta.secondary": {
-    "message": "Start Building"
+    "message": "Start with oo-cli"
   },
   "HOME.ValueProps.localCompute.title": {
     "message": "Turn Local Compute Into Your Private AI Cloud"
@@ -873,10 +894,10 @@
     "message": "//#region generated meta\ntype Inputs = {\n};\ntype Outputs = {\n};\n//#endregion\n\nimport type { Context } from \"@oomol/types/oocana\";\n\nexport default async function(\n    params: Inputs,\n    context: Context<Inputs, Outputs>\n): Promise<Partial<Outputs> | undefined | void> {\n    // Fusion API Base URL\n    const api_url = \"https://fusion-api.oomol.com/v1/fal-nano-banana-edit/submit\"\n\n    // LLM Base URL, can use openai sdk\n    const llm_base_url = \"https://llm.oomol.com/v1\"\n\n    // Get OOMOL token from context (no need for manual API key input)\n    const api_token = await context.getOomolToken()\n    // return { output: \"output_value\" };\n};"
   },
   "HOME.GetStartedPrompt.title": {
-    "message": "Start with your next function and let AI use it"
+    "message": "Get the first path working"
   },
   "HOME.GetStartedPrompt.subtitle": {
-    "message": "Download OOMOL Studio, write and validate your function locally, publish it to OOMOL Cloud, then sign in with the OOMOL CLI to use it from Codex or Claude Code, or keep delivering it as an API, MCP tool, or automation task."
+    "message": "Start with oo-cli to run published cloud skills. When you need your own, generate and validate it in OOMOL Studio, then publish it through Cloud."
   },
   "HOME.Pricing.title": {
     "message": "Pricing"
@@ -921,13 +942,13 @@
     "message": "CLI"
   },
   "HOME.Downloads.cli.title": {
-    "message": "Prefer the terminal? Use oo-cli to consume cloud functions directly."
+    "message": "Prefer terminal workflows? Start with oo-cli."
   },
   "HOME.Downloads.cli.subtitle": {
-    "message": "Install oo-cli in Codex, Claude Code, or any local terminal to search packages, inspect inputs, run cloud functions, and fetch results without wiring API or MCP first."
+    "message": "Install oo-cli in Codex, Claude Code, or any local terminal to search packages, inspect inputs, run cloud skills, and fetch results without wiring API or MCP first."
   },
   "HOME.Downloads.cli.action.guide": {
-    "message": "Open CLI Guide"
+    "message": "Open oo-cli Guide"
   },
   "HOME.Downloads.cli.action.github": {
     "message": "View oo-cli on GitHub"
@@ -1476,7 +1497,7 @@
     "message": "Questions & Answers"
   },
   "PRICING.question.subtitle": {
-    "message": "If You Have Any Other Questions, Please\u00A0"
+    "message": "If You Have Any Other Questions, Please "
   },
   "PRICING.question.link": {
     "message": "Contact Us"
@@ -1957,7 +1978,7 @@
     "message": "Workflow Tools Redesigned for Developers"
   },
   "STUDIO.hero.description": {
-    "message": "We heard developers' voices: traditional workflow platforms make simple things complicated. OOMOL Studio changes everything."
+    "message": "Local development environment for developers, VSCode-based visual programming tool with FRP protocol for P2P computing power sharing"
   },
   "STUDIO.painPoints.title": {
     "message": "Three Pain Points of Traditional Workflow Tools"
@@ -2467,10 +2488,10 @@
     "message": "Containerized deployment to private cloud or K8s clusters, supporting CI/CD pipelines for continuous delivery and operations of enterprise-grade API services."
   },
   "HOME.ProductComparison.title": {
-    "message": "Cloud keeps the function running reliably online"
+    "message": "Cloud is where a skill becomes deliverable"
   },
   "HOME.ProductComparison.subtitle": {
-    "message": "If Studio is where you write the function, then OOMOL Cloud is the shared runtime and delivery layer. After sign-in, the CLI calls the cloud functions deployed there from Codex or Claude Code."
+    "message": "OOMOL Cloud is not just runtime. It is the delivery layer that turns a validated implementation into a cloud skill you can provide privately to yourself, your team, or your customers."
   },
   "HOME.ChatAgent.title": {
     "message": "OOMOL Chat & Agent Ecosystem"
@@ -2515,73 +2536,73 @@
     "message": "Install locally and use immediately, with a built-in container environment that keeps development and validation in one place."
   },
   "HOME.ProductComparison.cloud.stage": {
-    "message": "Launch faster, manage less"
+    "message": "Deploy and deliver"
   },
   "HOME.ProductComparison.cloud.capability": {
-    "message": "Turn a validated function into a shared online capability for CLI, APIs, and automation without rebuilding interfaces, runtimes, and scaling layers."
+    "message": "Deploy validated blocks as cloud skills that run remotely, so users get the capability without receiving your source code."
   },
   "HOME.ProductComparison.cloud.scenario": {
-    "message": "For developers and small teams that want to provide functions reliably to AI tools, applications, or automation tasks."
+    "message": "For developers and small teams that want to share, sell, or operate reusable skills without rebuilding a separate SaaS around each one."
   },
   "HOME.ProductComparison.cloud.tech": {
-    "message": "Reuse the implementation you already validated in Studio while OOMOL Cloud handles runtime, auth, and external delivery. The CLI signs in and calls the cloud functions from this layer."
+    "message": "Reuse the implementation you already validated in Studio while OOMOL Cloud handles runtime, access, and external delivery. When needed, the same cloud skill can still expand through API or MCP."
   },
   "HOME.ProductComparison.cta": {
-    "message": "Explore OOMOL Cloud"
+    "message": "Explore Cloud"
   },
   "HOME.ProductComparison.outputIntro": {
-    "message": "Delivery Targets"
+    "message": "One cloud skill, multiple surfaces"
   },
   "HOME.ProductComparison.outputSummary": {
-    "message": "The same validated function can keep shipping as an API, MCP tool, or automation task, acting as one stable capability layer for both AI tools and applications."
+    "message": "The same validated implementation can be consumed through terminal, apps, agents, and automation without splitting into separate products."
   },
   "HOME.ProductComparison.output1.title": {
-    "message": "API Services"
+    "message": "CLI and Agents"
   },
   "HOME.ProductComparison.output1.description": {
-    "message": "Expose the function directly as a callable API without building a separate service framework or runtime layer."
+    "message": "Search, inspect, and run deployed cloud skills directly through oo-cli and agent terminal workflows."
   },
   "HOME.ProductComparison.output2.title": {
-    "message": "MCP Tools"
+    "message": "API and App Integration"
   },
   "HOME.ProductComparison.output2.description": {
-    "message": "Let the same implementation enter the call chain of agents and AI apps directly instead of maintaining a second tool service."
+    "message": "Carry the same cloud skill into your own application surfaces, backend services, or product integrations."
   },
   "HOME.ProductComparison.output3.title": {
-    "message": "Automation Tasks"
+    "message": "MCP and Automation"
   },
   "HOME.ProductComparison.output3.description": {
-    "message": "Turn the same implementation into scheduled jobs or automation flows so online runs and later iteration keep reusing one capability."
+    "message": "Expose the same cloud skill to agent ecosystems or keep it running on schedules and triggers."
   },
   "HOME.ProductComparison.benefit1.label": {
-    "message": "Delivery Overhead"
+    "message": "Commercialization Path"
   },
   "HOME.ProductComparison.benefit1.value": {
-    "message": "Less service rebuilding"
+    "message": "Ship the skill, keep the code"
   },
   "HOME.ProductComparison.benefit1.description": {
-    "message": "Cloud takes over the online runtime and delivery layer so you do not need to rebuild another interface stack around the same function."
+    "message": "Cloud lets you provide the capability without shipping the implementation, so distribution does not force you into open-sourcing or rebuilding the product as SaaS."
   },
   "HOME.ProductComparison.benefit2.label": {
-    "message": "Runtime Overhead"
+    "message": "Delivery Overhead"
   },
   "HOME.ProductComparison.benefit2.value": {
-    "message": "More stable online usage"
+    "message": "Less product rebuilding"
   },
   "HOME.ProductComparison.benefit2.description": {
-    "message": "Stay focused on the function itself instead of spending more time on environments, scheduling, scaling, and production maintenance."
+    "message": "Stay focused on the skill itself instead of rebuilding auth, hosting, scheduling, and interface layers around the same implementation."
   },
   "HOME.DeveloperBenefits.badge": {
-    "message": "Developer Benefits"
+    "message": "Free for Developers"
   },
   "HOME.DeveloperBenefits.title": {
-    "message": "Get the path working before you optimize cost"
+    "message": "Start at zero cost, get the full loop running"
   },
   "HOME.DeveloperBenefits.subtitle": {
-    "message": "Keep the pricing discussion later. First remove the blockers around model access and lightweight task validation so the Studio-to-CLI-to-production loop is easier to complete."
+    "message": "No upfront payment. Bring your own model plus 200 free Cloud Task minutes each month — enough to complete your first Studio-to-production delivery cycle."
   },
   "HOME.DeveloperBenefits.card1.eyebrow": {
-    "message": "Studio Benefit"
+    "message": "Studio Free"
   },
   "HOME.DeveloperBenefits.card1.tag": {
     "message": "Recommended"
@@ -2593,19 +2614,19 @@
     "message": "Use your own model"
   },
   "HOME.DeveloperBenefits.card1.title": {
-    "message": "Use Your Own Model and Start at Lower Cost"
+    "message": "Bring Your Own Model and Get Studio Running"
   },
   "HOME.DeveloperBenefits.card1.description": {
-    "message": "OOMOL Studio lets you configure your own AI model. If you already have model quota elsewhere, you do not need another paid model service just to get local development running. We currently recommend GLM-5."
+    "message": "If you already have model quota, connect it directly instead of paying for another service. We recommend starting with GLM-5."
   },
   "HOME.DeveloperBenefits.card1.note": {
-    "message": "If you already have model quota, the setup guide is usually enough to get Studio running and finish local validation."
+    "message": "Follow the guide and you can usually finish local validation first."
   },
   "HOME.DeveloperBenefits.card1.cta": {
     "message": "View Setup Guide"
   },
   "HOME.DeveloperBenefits.card2.eyebrow": {
-    "message": "Cloud Benefit"
+    "message": "Cloud Free"
   },
   "HOME.DeveloperBenefits.card2.tag": {
     "message": "Monthly Included"
@@ -2617,25 +2638,37 @@
     "message": "Free Cloud Task time"
   },
   "HOME.DeveloperBenefits.card2.title": {
-    "message": "200 Free Cloud Task Minutes Each Month for Lightweight Jobs"
+    "message": "200 Free Minutes Each Month for Lightweight Jobs"
   },
   "HOME.DeveloperBenefits.card2.description": {
-    "message": "We give developers 200 minutes of Cloud Task usage every month. For scheduled jobs, lightweight automation, and validation flows, that is often enough to get real online tasks running."
+    "message": "The free Cloud Task quota is often enough for scheduled jobs, lightweight automation, and delivery validation."
   },
   "HOME.DeveloperBenefits.card2.note": {
-    "message": "For a lightweight app or workflow, the free quota is often enough to get tasks running before you pay anything."
+    "message": "Use the free quota to validate the flow before you spend more."
   },
   "HOME.DeveloperBenefits.card2.cta": {
     "message": "Explore OOMOL Cloud"
   },
   "HOME.CliEntry.badge": {
-    "message": "CLI QUICKSTART"
+    "message": "CLI FIRST"
   },
   "HOME.CliEntry.title": {
-    "message": "Install oo-cli, sign in once, then start calling published functions."
+    "message": "oo-cli is the default way to discover and run cloud skills"
   },
   "HOME.CliEntry.subtitle": {
-    "message": "Install the CLI, then get the first search and run working."
+    "message": "Install once in Codex, Claude Code, or any terminal. Search packages, inspect inputs, run cloud skills, and get results before you wire API or MCP."
+  },
+  "HOME.CliEntry.benefit1.label": {
+    "message": "Start from published skills"
+  },
+  "HOME.CliEntry.benefit1.description": {
+    "message": "Search, inspect, and run skills other developers have already published instead of building your own path on day one."
+  },
+  "HOME.CliEntry.benefit2.label": {
+    "message": "Publish your own when needed"
+  },
+  "HOME.CliEntry.benefit2.description": {
+    "message": "When existing skills are not enough, use Studio to generate, validate, and publish your own cloud skill."
   },
   "HOME.CliEntry.bridge": {
     "message": "Publish the function to OOMOL Cloud first. Then let CLI handle sign-in, discovery, and execution. That relationship only needs to be stated once."
@@ -2644,31 +2677,31 @@
     "message": "Install oo-cli"
   },
   "HOME.CliEntry.step1.description": {
-    "message": "Set up the CLI entry point."
+    "message": "Install the default entry point for using published cloud skills."
   },
   "HOME.CliEntry.step2.title": {
     "message": "Sign in to your account"
   },
   "HOME.CliEntry.step2.description": {
-    "message": "Run oo login."
+    "message": "Sign in, then start searching and running cloud skills."
   },
   "HOME.CliEntry.step3.title": {
-    "message": "Search and run a published function"
+    "message": "Search and run a skill"
   },
   "HOME.CliEntry.step3.description": {
-    "message": "Search, then run."
+    "message": "Check what it does and what input it needs, then run it directly from the terminal."
   },
   "HOME.CliEntry.action.primary": {
-    "message": "Open CLI Quickstart"
+    "message": "Open oo-cli"
   },
   "HOME.CliEntry.action.secondary": {
-    "message": "See How Cloud Delivery Works"
+    "message": "See Cloud Delivery"
   },
   "HOME.CliEntry.setup.eyebrow": {
     "message": "INSTALL ONCE"
   },
   "HOME.CliEntry.setup.title": {
-    "message": "Two commands to install and sign in"
+    "message": "Two commands to install and sign in to oo-cli"
   },
   "HOME.CliEntry.setup.pill": {
     "message": "30 sec"
@@ -2680,7 +2713,7 @@
     "message": "FIRST RUN DEMO"
   },
   "HOME.CliEntry.demo.title": {
-    "message": "Compress the first run into search, inspect, and run"
+    "message": "Reduce the first run to three steps"
   },
   "HOME.CliEntry.demo.badge": {
     "message": "Usage Flow"
@@ -2710,7 +2743,7 @@
     "message": "Run"
   },
   "HOME.CliEntry.demo.stage3.title": {
-    "message": "Run and fetch result"
+    "message": "Run and get the result"
   },
   "HOME.CliEntry.demo.stage3.description": {
     "message": "Cloud executes the function. CLI is the layer that sends the task and pulls the result back into the current workflow."
@@ -2724,14 +2757,80 @@
   "HOME.CliEntry.terminal.note": {
     "message": "CLI is not just another entry point. After sign-in, it is the layer that connects cloud functions deployed on OOMOL Cloud to Codex, Claude Code, and other terminal workflows in a stable way."
   },
+  "HOME.CodexBlocks.badge": {
+    "message": "CODEX EXAMPLES"
+  },
+  "HOME.CodexBlocks.title": {
+    "message": "Start with representative blocks in Codex"
+  },
+  "HOME.CodexBlocks.subtitle": {
+    "message": "Instead of the old proof section, show the kinds of blocks that better define OOMOL's capability surface. Search, inspect, and run them in Codex first, then decide whether you need to build your own."
+  },
+  "HOME.CodexBlocks.action.primary": {
+    "message": "Open oo-cli"
+  },
+  "HOME.CodexBlocks.action.secondary": {
+    "message": "Explore Cloud Function"
+  },
+  "HOME.CodexBlocks.terminal": {
+    "message": "Run in Codex"
+  },
+  "HOME.CodexBlocks.video": {
+    "message": "Video demo"
+  },
+  "HOME.CodexBlocks.card1.eyebrow": {
+    "message": "Comic"
+  },
+  "HOME.CodexBlocks.card1.title": {
+    "message": "Comic Translation and Redraw"
+  },
+  "HOME.CodexBlocks.card1.description": {
+    "message": "Call a block from Codex to translate a full comic page, clean text, reflow layout, and return a readable result for serialized pages or promo art."
+  },
+  "HOME.CodexBlocks.card1.previewTitle": {
+    "message": "Comic Translation Demo"
+  },
+  "HOME.CodexBlocks.card1.previewNote": {
+    "message": "This area will be replaced with video to show the full path from a Codex call to the translated output."
+  },
+  "HOME.CodexBlocks.card2.eyebrow": {
+    "message": "Paper Figure"
+  },
+  "HOME.CodexBlocks.card2.title": {
+    "message": "PaperBanana Illustrations"
+  },
+  "HOME.CodexBlocks.card2.description": {
+    "message": "Generate paper-style figures from method descriptions, notes, or rough sketches for papers, slides, and technical writing."
+  },
+  "HOME.CodexBlocks.card2.previewTitle": {
+    "message": "PaperBanana Demo"
+  },
+  "HOME.CodexBlocks.card2.previewNote": {
+    "message": "This area will be replaced with video to show the full path from method description to generated paper figure."
+  },
+  "HOME.CodexBlocks.card3.eyebrow": {
+    "message": "Books"
+  },
+  "HOME.CodexBlocks.card3.title": {
+    "message": "PDF / EPUB Translation"
+  },
+  "HOME.CodexBlocks.card3.description": {
+    "message": "Translate long-form documents into bilingual EPUB or Markdown outputs that stay usable for reading instead of returning only raw text."
+  },
   "CLOUD.hero.title": {
-    "message": "OOMOL Cloud"
+    "message": "Publish private cloud skills"
   },
   "CLOUD.hero.description": {
-    "message": "Turn the function you already validated locally into a service, without rebuilding backend scaffolding, deployment flow, and operations from scratch."
+    "message": "Take the skill you already validated locally and run it in the cloud, so users can use the capability without getting your source code or a custom service stack."
+  },
+  "CLOUD.hero.kicker": {
+    "message": "Cloud Skill Runtime"
+  },
+  "CLOUD.hero.note": {
+    "message": "Users get the skill through oo-cli, apps, or agents. Your implementation stays on the server."
   },
   "CLOUD.hero.stat1": {
-    "message": "Direct Publish"
+    "message": "Private Delivery"
   },
   "CLOUD.hero.stat2": {
     "message": "Pay-as-you-go"
@@ -2740,61 +2839,76 @@
     "message": "Less Ops"
   },
   "CLOUD.hero.cta.start": {
-    "message": "Start Building"
+    "message": "Build a Cloud Skill"
   },
   "CLOUD.hero.cta.docs": {
     "message": "Learn More"
   },
+  "CLOUD.hero.cta.console": {
+    "message": "Open Cloud Console"
+  },
   "CLOUD.painPoints.title": {
-    "message": "Delivery Shouldn't Be Torture"
+    "message": "Shipping a skill should not mean rebuilding a SaaS"
   },
   "CLOUD.painPoints.subtitle": {
     "message": "We know the struggle as developers"
   },
   "CLOUD.painPoints.description": {
-    "message": "What slows delivery is usually not the function itself, but the repeated work required to wrap it as a service: building interfaces, preparing environments, scaling it, and keeping it available. Cloud is built to compress that part."
+    "message": "What slows delivery is usually not the skill itself, but the work around it: packaging a user surface, hosting it reliably, handling access, and keeping operations stable. Cloud is built to compress that layer."
   },
   "CLOUD.solution.title": {
-    "message": "One Function, Three Delivery Paths"
+    "message": "One skill, three consumption paths"
   },
   "CLOUD.solution.subtitle": {
-    "message": "The same capability can be delivered as an API, an MCP tool, or an automation task."
+    "message": "The same cloud skill can be consumed through API, MCP, or automation while staying backed by one implementation."
+  },
+  "CLOUD.solution.kicker": {
+    "message": "Consumption Paths"
   },
   "CLOUD.modes.library.title": {
-    "message": "Publish as Automation"
+    "message": "Run as Automation"
   },
   "CLOUD.modes.library.description": {
-    "message": "Run the same function on triggers or schedules so it keeps working as an ongoing task instead of staying local and manual."
+    "message": "Run the same cloud skill on triggers or schedules so it keeps delivering value beyond local and manual execution."
   },
   "CLOUD.modes.serverless.title": {
-    "message": "Publish as API Service"
+    "message": "Use through API"
   },
   "CLOUD.modes.serverless.description": {
-    "message": "Deliver the function directly as a callable API without building a separate service framework, while OOMOL handles runtime and scaling."
+    "message": "Give applications direct API access to the same cloud skill without rebuilding a separate backend surface."
   },
   "CLOUD.modes.mcp.title": {
-    "message": "Publish as MCP Tool"
+    "message": "Use through MCP"
   },
   "CLOUD.modes.mcp.description": {
-    "message": "Expose the function as an MCP tool for agents and AI apps so the same implementation enters the call chain directly."
+    "message": "Expose the same cloud skill to agents and AI apps as an MCP tool when agent-native integration matters."
   },
   "CLOUD.pricing.title": {
-    "message": "Pay Per Call, No Upfront Cost"
+    "message": "Start small, pay when the skill is used"
   },
   "CLOUD.pricing.description": {
-    "message": "No expensive server fees, no complex prepaid plans. We charge by call count. Save money, save effort, and focus on the joy of programming."
+    "message": "You do not need dedicated servers just to test distribution. Publish first, validate demand, and pay as usage grows."
+  },
+  "CLOUD.pricing.kicker": {
+    "message": "Pricing"
   },
   "CLOUD.pricing.cta": {
     "message": "View Pricing"
   },
+  "CLOUD.cta.primary": {
+    "message": "Start in Studio"
+  },
+  "CLOUD.cta.secondary": {
+    "message": "Open Cloud Console"
+  },
   "CLOUD.opensource.title": {
-    "message": "Open Source Infrastructure"
+    "message": "Open runtime, flexible deployment"
   },
   "CLOUD.opensource.subtitle": {
-    "message": "OOMOL's underlying runtime kernel is fully open source, giving you complete control over your deployment environment"
+    "message": "The runtime foundation stays open source even when the cloud skill you publish stays private."
   },
   "CLOUD.opensource.description": {
-    "message": "We believe in the power of open source. OOMOL's virtual machine and runtime core code are completely open source, allowing you to freely view, modify, and deploy. Whether it's a personal NAS, private server, or public cloud, you have complete deployment freedom."
+    "message": "OOMOL's virtual machine and runtime core stay open source, so you keep deployment freedom across personal servers, private infrastructure, or public cloud environments while choosing how each skill is delivered."
   },
   "CLOUD.opensource.projects.title": {
     "message": "Open Source Projects"
@@ -2823,57 +2937,74 @@
   "CLOUD.opensource.ovm-mac.description": {
     "message": "OVM implementation for macOS platform, based on Apple Virtualization Framework"
   },
-  "STUDIO.hero.description": {
-    "message": "Local development environment for developers, VSCode-based visual programming tool with FRP protocol for P2P computing power sharing"
+  "APP.new.hero.title": {
+    "message": "OOMOL App Surfaces"
   },
-  "APP.new.hero.title": { "message": "OOMOL App" },
   "APP.new.hero.subtitle": {
-    "message": "Direct Product Surfaces for Your Functions"
+    "message": "Product surfaces for cloud skills"
   },
   "APP.new.hero.description": {
-    "message": "Turn function capabilities directly into Chat skills or Applet entry points, without building separate UI from scratch."
+    "message": "A single cloud skill can be delivered through chat or structured applets, without building separate product surfaces from scratch."
   },
-  "APP.new.concept.title": { "message": "Code is Product" },
+  "APP.new.concept.title": {
+    "message": "One skill, different surfaces"
+  },
   "APP.new.concept.description": {
-    "message": "OOMOL wraps function capabilities into usable product surfaces. You focus on the function; we connect it to the user."
+    "message": "OOMOL turns the same cloud skill into usable entry points. You focus on the implementation; we connect it to the user."
   },
-  "APP.new.chat.pill": { "message": "Chat Surface · Skill" },
-  "APP.new.chat.title": { "message": "OOMOL Chat" },
+  "APP.new.chat.pill": {
+    "message": "Chat Surface · Skill"
+  },
+  "APP.new.chat.title": {
+    "message": "OOMOL Chat"
+  },
   "APP.new.chat.subtitle": {
     "message": "AI Assistant · Exploratory Interaction"
   },
   "APP.new.chat.description": {
-    "message": "When user intent is still vague, let AI choose and call your function capabilities through conversation."
+    "message": "When user intent is still vague, let AI choose and run the right cloud skill through conversation."
   },
-  "APP.new.chat.meta1.label": { "message": "For Whom" },
+  "APP.new.chat.meta1.label": {
+    "message": "For Whom"
+  },
   "APP.new.chat.meta1.value": {
-    "message": "Best when capabilities need to be exposed through conversation and intent needs clarification first"
+    "message": "Best when a cloud skill should be used through conversation and intent needs clarification first"
   },
-  "APP.new.chat.meta2.label": { "message": "Core Experience" },
+  "APP.new.chat.meta2.label": {
+    "message": "Core Experience"
+  },
   "APP.new.chat.meta2.value": {
-    "message": "Understand intent first, then call the right service with less user setup"
+    "message": "Understand intent first, then call the right cloud skill with less setup"
   },
   "APP.new.chat.devValue": {
-    "message": "Functions as Skills: your functions become AI-callable capabilities."
+    "message": "Cloud skill as agent tool: the same implementation becomes an AI-callable surface."
   },
-  "APP.new.applet.pill": { "message": "Parameterized Surface · Applet" },
-  "APP.new.applet.title": { "message": "OOMOL Applet" },
+  "APP.new.applet.pill": {
+    "message": "Structured Surface · Applet"
+  },
+  "APP.new.applet.title": {
+    "message": "OOMOL Applet"
+  },
   "APP.new.applet.subtitle": {
     "message": "Form Applet · Deterministic Interaction"
   },
   "APP.new.applet.description": {
-    "message": "When inputs are clear, call the function directly through structured parameters for more reliable delivery."
+    "message": "When inputs are clear, run the same cloud skill through structured parameters for more reliable delivery."
   },
-  "APP.new.applet.meta1.label": { "message": "For Whom" },
+  "APP.new.applet.meta1.label": {
+    "message": "For Whom"
+  },
   "APP.new.applet.meta1.value": {
-    "message": "Best for teams delivering fixed-input function capabilities to internal or external users"
+    "message": "Best for teams delivering fixed-input cloud skills to internal or external users"
   },
-  "APP.new.applet.meta2.label": { "message": "Core Experience" },
+  "APP.new.applet.meta2.label": {
+    "message": "Core Experience"
+  },
   "APP.new.applet.meta2.value": {
-    "message": "Wrap a function as a fillable, executable, and reusable product entry point"
+    "message": "Wrap the same cloud skill as a fillable, executable, and reusable entry point"
   },
   "APP.new.applet.devValue": {
-    "message": "Function as App: auto-generated parameter UI with less frontend boilerplate."
+    "message": "Cloud skill as app: auto-generated parameter UI with less frontend boilerplate."
   },
   "APP.new.hero.cta.web": {
     "message": "Use in Web"
@@ -2881,8 +3012,12 @@
   "APP.new.hero.cta.studio": {
     "message": "Use in OOMOL Studio"
   },
-  "APP.new.cta.download": { "message": "Download" },
-  "APP.new.cta.docs": { "message": "View Docs" },
+  "APP.new.cta.download": {
+    "message": "Download"
+  },
+  "APP.new.cta.docs": {
+    "message": "View Docs"
+  },
   "STUDIO.page.title": {
     "message": "OOMOL Studio - Generate and Validate Functions in a Real Coding Environment"
   },
@@ -2894,6 +3029,36 @@
   },
   "STUDIO.manifesto.subtitle": {
     "message": "A real coding environment where AI helps generate functions, validate them locally, and deliver them as APIs, MCP tools, or automation tasks."
+  },
+  "STUDIO.manifesto.cta.download": {
+    "message": "Download OOMOL Studio"
+  },
+  "STUDIO.product.hero.kicker": {
+    "message": "OOMOL Studio"
+  },
+  "STUDIO.product.hero.secondary": {
+    "message": "View Downloads"
+  },
+  "STUDIO.product.story.kicker": {
+    "message": "Real developer environment"
+  },
+  "STUDIO.product.story.title": {
+    "message": "Not another platform that asks developers to adapt"
+  },
+  "STUDIO.product.principles.kicker": {
+    "message": "Core principles"
+  },
+  "STUDIO.product.principles.title": {
+    "message": "Why Studio works better for building blocks"
+  },
+  "STUDIO.product.cta.title": {
+    "message": "Start with your next block"
+  },
+  "STUDIO.product.cta.description": {
+    "message": "Write, debug, and validate your own blocks in a real coding environment. When you are ready to deliver, carry them forward through Cloud."
+  },
+  "STUDIO.product.cta.secondary": {
+    "message": "Explore Cloud"
   },
   "STUDIO.story.paragraph1": {
     "message": "What we want is not another tool that asks developers to adapt to the platform, but a working environment where you can actually write functions, orchestrate nodes, debug dependencies, and validate results."
@@ -2912,6 +3077,51 @@
   },
   "STUDIO.story.paragraph3": {
     "message": "So Studio has a clear role: not to replace engineering workflow, but to bring function generation, local validation, and delivery back inside it."
+  },
+  "HOME.StudioChain.title": {
+    "message": "From idea to cloud skill"
+  },
+  "HOME.StudioChain.subtitle": {
+    "message": "When ready-made skills are not enough, OOMOL gives you one continuous path: generate in Studio, validate locally, publish through Cloud, and deliver through oo-cli."
+  },
+  "HOME.StudioChain.lead": {
+    "message": "Do not stop at local automation. Build a skill people can actually use."
+  },
+  "HOME.StudioChain.summary": {
+    "message": "In OOMOL, you can start with ready-made skills, create your own implementation in Studio, validate it locally, then publish it privately to yourself, your team, or your customers."
+  },
+  "HOME.StudioChain.card1.title": {
+    "message": "OOMOL Studio"
+  },
+  "HOME.StudioChain.card1.description": {
+    "message": "Describe, write, debug, and validate your own skill in a real coding environment for code, dependencies, and inputs."
+  },
+  "HOME.StudioChain.card2.title": {
+    "message": "Cloud"
+  },
+  "HOME.StudioChain.card2.description": {
+    "message": "Publish the validated implementation as a cloud skill and keep serving it without exposing your source code."
+  },
+  "HOME.StudioChain.action.studio": {
+    "message": "Explore Studio"
+  },
+  "HOME.StudioChain.action.cloud": {
+    "message": "Explore Cloud"
+  },
+  "Theme.Navbar.product.studio.description": {
+    "message": "Generate and validate your own cloud skills"
+  },
+  "Theme.Navbar.product.cli.description": {
+    "message": "Install in Codex or Claude Code and use skills directly"
+  },
+  "Theme.Navbar.product.cloud.description": {
+    "message": "Run, subscribe, and manage cloud skills in the cloud"
+  },
+  "Theme.Navbar.product.ai.description": {
+    "message": "Use the official GUI agent for the same skills"
+  },
+  "Theme.Navbar.product.label": {
+    "message": "Product"
   },
   "STUDIO.principle1.title": {
     "message": "1. Nodes Are Functions. Flows Are Composition."
@@ -3077,5 +3287,11 @@
   },
   "SDK.fusion.feature3": {
     "message": "Support text-to-image, TTS and more services"
+  },
+  "HOME.Downloads.page.title": {
+    "message": "Download OOMOL Studio — macOS & Windows"
+  },
+  "HOME.Downloads.page.description": {
+    "message": "Download OOMOL Studio for macOS (Apple Silicon) or Windows. Build, validate, and publish cloud skills locally."
   }
 }

@@ -88,7 +88,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
   text-align: left;
   width: 100%;
   position: relative;
@@ -173,7 +173,7 @@
   font-weight: 700;
   background: rgba(var(--ifm-color-primary-rgb), 0.1);
   color: var(--ifm-color-primary);
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 
   @media (max-width: 768px) {
     width: 40px;
@@ -189,7 +189,7 @@
   background: var(--ifm-color-emphasis-300);
   opacity: 0.3;
   margin-top: 6px;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 
 .stepInfo {
@@ -270,7 +270,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid var(--ifm-color-emphasis-200);
 
   @media (max-width: 996px) {

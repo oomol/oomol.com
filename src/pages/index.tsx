@@ -1,16 +1,11 @@
 import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
-import HomepageCliEntry from "@site/src/components/HomepageCliEntry";
-import HomepageCommunityShare from "@site/src/components/HomepageCommunityShare";
-import HomepageDeliveryGap from "@site/src/components/HomepageDeliveryGap";
-import HomepageDeveloperBenefits from "@site/src/components/HomepageDeveloperBenefits";
+import HomepageBrandBreak from "@site/src/components/HomepageBrandBreak";
 import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
-import HomepageProductComparison from "@site/src/components/HomepageProductComparison";
-import HomepageProofLayer from "@site/src/components/HomepageProofLayer";
-import StudioDetailContent from "@site/src/components/StudioDetailContent";
+import HomepageLinearFlow from "@site/src/components/HomepageLinearFlow";
+import HomepagePainPoints from "@site/src/components/HomepagePainPoints";
 import React from "react";
 
-import { GetStartedPrompt } from "../components/GetStartedPrompt";
 import Layout from "../theme/Layout";
 
 export default function Home() {
@@ -22,17 +17,18 @@ export default function Home() {
             message: "HOME.page.title",
           })}
         </title>
+        <meta
+          name="description"
+          content={translate({
+            message: "HOME.page.description",
+          })}
+        />
       </Head>
       <main>
         <HomepageFirstScreen />
-        <HomepageCliEntry />
-        <StudioDetailContent variant="home" />
-        <HomepageDeliveryGap />
-        <HomepageProductComparison />
-        <HomepageProofLayer />
-        <HomepageCommunityShare />
-        <HomepageDeveloperBenefits />
-        <GetStartedPrompt />
+        <HomepagePainPoints />
+        <HomepageBrandBreak />
+        <HomepageLinearFlow />
       </main>
     </Layout>
   );

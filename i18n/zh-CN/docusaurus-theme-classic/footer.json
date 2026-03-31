@@ -1,11 +1,11 @@
 {
-  "link.title.Product": {
-    "message": "产品",
-    "description": "The title of the footer links column with title=Product in the footer"
+  "link.title.Platform": {
+    "message": "平台",
+    "description": "The title of the footer links column with title=Platform in the footer"
   },
-  "link.title.Resources": {
-    "message": "资源",
-    "description": "The title of the footer links column with title=Resources in the footer"
+  "link.title.Support": {
+    "message": "支持",
+    "description": "The title of the footer links column with title=Support in the footer"
   },
   "link.title.Developers": {
     "message": "开发者",
