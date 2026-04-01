@@ -12,7 +12,8 @@ import React from "react";
 
 const homepageMediaUrls = {
   cli: "https://static.oomol.com/assets/homepage/oomol-oo-cli-en.webm",
-  studio: "https://static.oomol.com/assets/homepage/oomol-flow-en.webm",
+  studio:
+    "https://static.oomol.com/assets/homepage/OOMOL-Studio-gen-use-skils-en.webm",
   agent: "https://static.oomol.com/assets/homepage/oomol-AI-use-skills-en.webm",
 } as const;
 
