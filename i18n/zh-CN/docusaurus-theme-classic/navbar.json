@@ -43,6 +43,10 @@
     "message": "使用",
     "description": "Navbar item with label navbar.use"
   },
+  "item.label.navbar.oo-cli": {
+    "message": "oo-cli",
+    "description": "Navbar item with label navbar.oo-cli"
+  },
   "item.label.navbar.oomol-studio": {
     "message": "OOMOL Studio",
     "description": "Navbar item with label navbar.oomol-studio"
@@ -58,6 +62,10 @@
   "item.label.navbar.oomol-cloud": {
     "message": "OOMOL Cloud",
     "description": "Navbar item with label navbar.oomol-cloud"
+  },
+  "item.label.navbar.oomol-ai": {
+    "message": "OOMOL AI",
+    "description": "Navbar item with label navbar.oomol-ai"
   },
   "item.label.navbar.oomol-sdk": {
     "message": "OOMOL SDK",
