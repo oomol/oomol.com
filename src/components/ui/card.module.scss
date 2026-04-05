@@ -6,7 +6,7 @@
     var(--oomol-border-default) 72%,
     transparent
   ) !important;
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white);
+  background: var(--oomol-surface-float);
   box-shadow: var(--oomol-shadow-sm);
 
   :global(.arco-card-body) {

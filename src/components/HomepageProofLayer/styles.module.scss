@@ -72,7 +72,7 @@
   padding: 1.1rem 1.15rem 1.2rem;
   border: 1px solid var(--oomol-divider);
   border-radius: 1.35rem;
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%);
+  background: var(--oomol-surface-float);
   box-shadow: var(--oomol-shadow-sm);
 }
 
@@ -119,7 +119,7 @@
   padding: 1rem;
   border-radius: 1.5rem;
   border: 1px solid var(--oomol-divider);
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 90%, white 10%);
+  background: var(--oomol-surface-float);
   box-shadow: var(--oomol-shadow-sm);
   transition:
     transform 0.2s ease,
@@ -139,7 +139,11 @@
       rgba(132, 138, 208, 0.08) 0%,
       rgba(132, 138, 208, 0) 38%
     ),
-    color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%);
+    color-mix(
+      in srgb,
+      var(--oomol-primary-bg) 34%,
+      var(--oomol-surface-float) 66%
+    );
 
   .caseTitle {
     font-size: 1.75rem;
@@ -165,7 +169,7 @@
   object-position: top center;
   border-radius: 1rem;
   border: 1px solid color-mix(in srgb, var(--oomol-divider) 86%, white 14%);
-  background: var(--oomol-white);
+  background: var(--oomol-bg-elevated);
   box-shadow: var(--oomol-shadow-md);
 }
 

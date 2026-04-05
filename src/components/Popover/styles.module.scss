@@ -7,7 +7,7 @@
     border-radius: 18px;
     border: 1px solid
       color-mix(in srgb, var(--oomol-border-default) 72%, transparent);
-    background: color-mix(in srgb, var(--oomol-bg-elevated) 96%, white);
+    background: var(--oomol-surface-float);
     box-shadow: var(--oomol-shadow-md);
   }
 
