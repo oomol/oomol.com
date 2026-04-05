@@ -645,6 +645,11 @@
   .terminalPanel,
   .mediaPanel,
   .agentMediaCard {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-border-default) 72%,
+      var(--oomol-divider)
+    );
     background: color-mix(
       in srgb,
       var(--oomol-bg-elevated) 86%,
@@ -653,6 +658,11 @@
   }
 
   .videoCardMeta {
+    border-top-color: color-mix(
+      in srgb,
+      var(--oomol-border-default) 68%,
+      var(--oomol-divider)
+    );
     background: color-mix(
       in srgb,
       var(--oomol-bg-elevated) 86%,
@@ -724,6 +734,19 @@
     color: color-mix(in srgb, var(--oomol-text-secondary) 92%, white 8%);
   }
 
+  .cloudMetaPill {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-border-default) 72%,
+      var(--oomol-divider)
+    );
+    background: color-mix(
+      in srgb,
+      var(--oomol-bg-elevated) 82%,
+      var(--oomol-bg-container) 18%
+    );
+  }
+
   .placeholderCard {
     background:
       linear-gradient(rgba(188, 194, 224, 0.07) 1px, transparent 1px),
@@ -754,10 +777,10 @@
       linear-gradient(
         180deg,
         color-mix(
-            in srgb,
-            var(--oomol-bg-container) 82%,
-            var(--oomol-bg-spotlight) 18%
-          )
+          in srgb,
+          var(--oomol-bg-container) 82%,
+          var(--oomol-bg-spotlight) 18%
+        )
           0%,
         color-mix(in srgb, var(--oomol-bg-elevated) 88%, black 12%) 100%
       );

@@ -6,6 +6,7 @@
   flex-direction: column;
   margin-top: 64px;
   margin-bottom: 240px;
+  color: var(--oomol-text-primary);
 }
 
 .supportTitle {
@@ -15,6 +16,7 @@
   text-align: center;
   margin-top: 64px;
   margin-bottom: 120px;
+  color: var(--oomol-text-primary);
 }
 
 .supportCellBox {
@@ -33,7 +35,7 @@
   border-style: solid;
   border-color: var(--oomol-border-default);
   border-radius: 18px;
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white);
+  background: var(--oomol-surface-float);
 }
 
 .supportHeader {
@@ -46,6 +48,7 @@
   font-size: 18px;
   display: flex;
   align-items: center;
+  color: var(--oomol-text-primary);
 }
 
 .support-title {
@@ -61,4 +64,19 @@
   margin-bottom: 42px;
   font-size: 14px;
   color: var(--oomol-text-secondary);
+}
+
+[data-theme="dark"] {
+  .supportCell {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-border-default) 72%,
+      var(--oomol-divider)
+    );
+    background: linear-gradient(
+      180deg,
+      var(--oomol-surface-float) 0%,
+      var(--oomol-surface-panel) 100%
+    );
+  }
 }

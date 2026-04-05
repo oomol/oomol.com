@@ -89,7 +89,7 @@
   padding: 1.35rem 1.4rem 1.45rem;
   border: 1px solid var(--oomol-divider);
   border-radius: 1.7rem;
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%);
+  background: var(--oomol-surface-float);
   box-shadow: var(--oomol-shadow-sm);
   position: relative;
   overflow: hidden;
@@ -137,7 +137,7 @@
   padding: 0.32rem 0.7rem;
   border-radius: 999px;
   border: 1px solid var(--oomol-divider);
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 82%, white 18%);
+  background: var(--oomol-surface-panel);
 }
 
 .valueBox {
@@ -202,7 +202,11 @@
   min-height: 2.5rem;
   padding: 0 0.85rem;
   border-radius: 999px;
-  background: color-mix(in srgb, var(--oomol-primary-bg) 70%, white 30%);
+  background: color-mix(
+    in srgb,
+    var(--oomol-primary-bg) 70%,
+    var(--oomol-bg-elevated) 30%
+  );
   font-size: 0.96rem;
   font-weight: 650;
   color: var(--oomol-primary-text);
@@ -218,7 +222,7 @@
     background: color-mix(
       in srgb,
       var(--oomol-primary-bg-hover) 76%,
-      white 24%
+      var(--oomol-bg-elevated) 24%
     );
 
     &::after {

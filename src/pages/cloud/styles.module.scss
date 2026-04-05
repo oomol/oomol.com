@@ -4,8 +4,8 @@
   background:
     radial-gradient(
       circle at top left,
-      rgba(155, 174, 226, 0.12) 0%,
-      rgba(155, 174, 226, 0) 34%
+      color-mix(in srgb, var(--oomol-primary) 16%, transparent) 0%,
+      transparent 34%
     ),
     linear-gradient(
       180deg,
@@ -368,6 +368,25 @@
 }
 
 [data-theme="dark"] {
+  .page {
+    background:
+      radial-gradient(
+        circle at top left,
+        color-mix(in srgb, var(--oomol-primary) 14%, transparent) 0%,
+        transparent 36%
+      ),
+      linear-gradient(
+        180deg,
+        color-mix(
+            in srgb,
+            var(--oomol-bg-base) 90%,
+            var(--oomol-bg-container) 10%
+          )
+          0%,
+        color-mix(in srgb, var(--oomol-bg-base) 96%, black 4%) 100%
+      );
+  }
+
   .heroNote {
     border-color: color-mix(
       in srgb,
@@ -380,5 +399,35 @@
       var(--oomol-primary-bg) 22%
     );
     color: color-mix(in srgb, var(--oomol-text-secondary) 92%, white 8%);
+  }
+
+  .stat,
+  .secondaryAction,
+  .visualFrame,
+  .modeCard,
+  .projectCard,
+  .pricingCard {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-border-default) 72%,
+      var(--oomol-divider)
+    );
+    background: linear-gradient(
+      180deg,
+      color-mix(
+          in srgb,
+          var(--oomol-bg-elevated) 82%,
+          var(--oomol-bg-container) 18%
+        )
+        0%,
+      color-mix(in srgb, var(--oomol-bg-container) 88%, black 12%) 100%
+    );
+  }
+
+  .visualFrame,
+  .modeCard,
+  .projectCard,
+  .pricingCard {
+    box-shadow: none;
   }
 }

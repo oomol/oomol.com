@@ -409,6 +409,29 @@
     color: color-mix(in srgb, var(--oomol-primary-text) 86%, white 14%);
   }
 
+  .secondaryCta {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-border-default) 72%,
+      var(--oomol-divider)
+    );
+    background: color-mix(
+      in srgb,
+      var(--oomol-bg-elevated) 80%,
+      var(--oomol-bg-container) 20%
+    );
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+
+    &:hover {
+      border-color: color-mix(
+        in srgb,
+        var(--oomol-primary) 24%,
+        var(--oomol-divider)
+      );
+      box-shadow: 0 18px 32px rgba(0, 0, 0, 0.22);
+    }
+  }
+
   .videoShowcase {
     background: transparent;
   }

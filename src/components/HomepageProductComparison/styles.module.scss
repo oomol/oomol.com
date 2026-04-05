@@ -250,7 +250,7 @@
   padding: 1.2rem;
   border-radius: 1.8rem;
   border: 1px solid var(--oomol-divider);
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%);
+  background: var(--oomol-surface-float);
   box-shadow: var(--oomol-shadow-md);
   min-height: 100%;
   transition:
@@ -265,7 +265,7 @@
 .outputCard {
   border-radius: 1.2rem;
   border: 1px solid var(--oomol-divider);
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%);
+  background: var(--oomol-surface-panel);
 }
 
 .outputsIntro {

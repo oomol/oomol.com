@@ -43,7 +43,7 @@
 
 .variantOutline {
   &:global(.arco-btn-outline) {
-    background: color-mix(in srgb, var(--oomol-bg-elevated) 90%, white);
+    background: var(--oomol-surface-float);
     border-color: var(--oomol-border-default);
     color: var(--oomol-text-primary);
   }

@@ -6,7 +6,7 @@
   width: min(28rem, calc(100vw - 24px * 2));
   border: 1px solid var(--oomol-border-subtle);
   border-radius: 18px;
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%);
+  background: var(--oomol-surface-float);
   box-shadow: var(--oomol-shadow-lg);
   backdrop-filter: blur(16px) saturate(130%);
   color: var(--oomol-text-secondary);
@@ -63,19 +63,11 @@
   button.manageCancelButton {
     color: var(--oomol-text-primary);
     border-color: var(--oomol-border-default);
-    background-color: color-mix(
-      in srgb,
-      var(--oomol-bg-container) 88%,
-      white 12%
-    );
+    background-color: var(--oomol-surface-panel);
 
     &:hover {
       border-color: var(--oomol-border-strong);
-      background-color: color-mix(
-        in srgb,
-        var(--oomol-bg-spotlight) 82%,
-        white 18%
-      );
+      background-color: var(--oomol-surface-panel-strong);
     }
   }
 }

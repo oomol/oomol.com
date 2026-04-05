@@ -78,15 +78,14 @@
   display: grid;
   gap: 0.42rem;
   padding: 0.95rem 1rem 1rem;
-  border: 1px solid color-mix(in srgb, var(--oomol-border-default) 82%, white);
+  border: 1px solid
+    color-mix(in srgb, var(--oomol-border-default) 82%, transparent);
   border-radius: 1.1rem;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.72),
-      rgba(255, 255, 255, 0.4)
-    ),
-    color-mix(in srgb, var(--oomol-bg-elevated) 88%, white 12%);
+  background: linear-gradient(
+    180deg,
+    var(--oomol-surface-float) 0%,
+    var(--oomol-surface-panel) 100%
+  );
   box-shadow: 0 14px 26px rgba(130, 142, 181, 0.08);
 }
 
@@ -97,7 +96,11 @@
   min-height: 1.7rem;
   padding: 0 0.62rem;
   border-radius: 999px;
-  background: color-mix(in srgb, var(--oomol-primary-bg) 60%, white);
+  background: color-mix(
+    in srgb,
+    var(--oomol-primary-bg) 60%,
+    var(--oomol-bg-elevated) 40%
+  );
   color: var(--oomol-primary-text);
   font-size: 0.76rem;
   font-weight: 700;
@@ -125,7 +128,7 @@
   padding: 1rem 1.05rem;
   border: 1px solid var(--oomol-divider);
   border-radius: 1.25rem;
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 90%, white 10%);
+  background: var(--oomol-surface-float);
 }
 
 .stepIndex {
@@ -221,7 +224,7 @@
 
 .secondaryAction {
   color: var(--oomol-text-primary);
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 88%, white 12%);
+  background: var(--oomol-surface-float);
   border: 1px solid var(--oomol-divider);
 }
 

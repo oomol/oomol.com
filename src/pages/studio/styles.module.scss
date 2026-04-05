@@ -4,13 +4,13 @@
   background:
     radial-gradient(
       circle at top left,
-      rgba(161, 191, 235, 0.14) 0%,
-      rgba(161, 191, 235, 0) 36%
+      color-mix(in srgb, var(--oomol-primary) 18%, transparent) 0%,
+      transparent 36%
     ),
     linear-gradient(
       180deg,
-      rgba(251, 253, 255, 0.96) 0%,
-      rgba(244, 247, 251, 0.92) 100%
+      color-mix(in srgb, var(--oomol-bg-layout) 92%, white 8%) 0%,
+      var(--oomol-bg-base) 100%
     );
 }
 
@@ -362,5 +362,86 @@
   .ctaTitle {
     max-width: 100%;
     text-wrap: pretty;
+  }
+}
+
+[data-theme="dark"] {
+  .page {
+    background:
+      radial-gradient(
+        circle at top left,
+        color-mix(in srgb, var(--oomol-primary) 16%, transparent) 0%,
+        transparent 38%
+      ),
+      linear-gradient(
+        180deg,
+        color-mix(
+            in srgb,
+            var(--oomol-bg-base) 90%,
+            var(--oomol-bg-container) 10%
+          )
+          0%,
+        color-mix(in srgb, var(--oomol-bg-base) 96%, black 4%) 100%
+      );
+  }
+
+  .secondaryAction {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-border-default) 72%,
+      var(--oomol-divider)
+    );
+    background: color-mix(
+      in srgb,
+      var(--oomol-bg-elevated) 80%,
+      var(--oomol-bg-container) 20%
+    );
+  }
+
+  .quoteCard {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-primary-border) 72%,
+      var(--oomol-divider)
+    );
+    background: linear-gradient(
+      180deg,
+      color-mix(
+          in srgb,
+          var(--oomol-primary-bg) 58%,
+          var(--oomol-bg-elevated) 42%
+        )
+        0%,
+      color-mix(
+          in srgb,
+          var(--oomol-primary-bg) 34%,
+          var(--oomol-bg-container) 66%
+        )
+        100%
+    );
+  }
+
+  .visualFrame,
+  .principleMedia {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-border-default) 72%,
+      var(--oomol-divider)
+    );
+    background: linear-gradient(
+      180deg,
+      color-mix(
+          in srgb,
+          var(--oomol-bg-elevated) 82%,
+          var(--oomol-bg-container) 18%
+        )
+        0%,
+      color-mix(in srgb, var(--oomol-bg-container) 88%, black 12%) 100%
+    );
+    box-shadow: none;
+  }
+
+  .principleCard {
+    border-top-color: color-mix(in srgb, var(--oomol-divider) 84%, white 16%);
   }
 }

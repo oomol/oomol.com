@@ -78,8 +78,13 @@
       color-mix(in srgb, var(--oomol-primary) 16%, var(--oomol-border-default));
     background: linear-gradient(
       135deg,
-      color-mix(in srgb, var(--oomol-primary-bg) 74%, white 26%) 0%,
-      color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%) 100%
+      color-mix(
+          in srgb,
+          var(--oomol-primary-bg) 64%,
+          var(--oomol-bg-elevated) 36%
+        )
+        0%,
+      var(--oomol-surface-float) 100%
     );
     box-shadow: none;
   }
@@ -107,10 +112,11 @@
   border-radius: 22px;
   background: linear-gradient(
     180deg,
-    color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%) 0%,
-    color-mix(in srgb, var(--oomol-bg-base) 92%, white 8%) 100%
+    var(--oomol-surface-float) 0%,
+    var(--oomol-surface-panel) 100%
   );
-  border: 1px solid color-mix(in srgb, var(--oomol-border-default) 86%, white);
+  border: 1px solid
+    color-mix(in srgb, var(--oomol-border-default) 84%, transparent);
   box-shadow: var(--oomol-shadow-sm);
 }
 
@@ -120,7 +126,11 @@
   width: fit-content;
   padding: 6px 12px;
   border-radius: 999px;
-  background: color-mix(in srgb, var(--oomol-primary-bg) 58%, white 42%);
+  background: color-mix(
+    in srgb,
+    var(--oomol-primary-bg) 58%,
+    var(--oomol-bg-elevated) 42%
+  );
   color: var(--oomol-primary);
   font-size: 12px;
   line-height: 16px;
@@ -700,7 +710,7 @@
   padding: clamp(28px, 4vw, 46px);
   border-radius: 36px;
   border: 1px solid
-    color-mix(in srgb, var(--oomol-border-default) 78%, white 22%);
+    color-mix(in srgb, var(--oomol-border-default) 78%, transparent);
   background:
     radial-gradient(
       circle at top right,
@@ -709,8 +719,8 @@
     ),
     linear-gradient(
       180deg,
-      color-mix(in srgb, var(--oomol-bg-elevated) 95%, white 5%) 0%,
-      color-mix(in srgb, var(--oomol-bg-base) 96%, white 4%) 100%
+      var(--oomol-surface-float) 0%,
+      var(--oomol-surface-panel) 100%
     );
   box-shadow:
     0 24px 60px rgba(31, 41, 59, 0.06),
@@ -763,8 +773,13 @@
     color-mix(in srgb, var(--oomol-primary) 16%, var(--oomol-border-default));
   background: linear-gradient(
     180deg,
-    color-mix(in srgb, var(--oomol-primary-bg) 44%, white 56%) 0%,
-    color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%) 100%
+    color-mix(
+        in srgb,
+        var(--oomol-primary-bg) 44%,
+        var(--oomol-bg-elevated) 56%
+      )
+      0%,
+    var(--oomol-surface-float) 100%
   );
   color: var(--oomol-text-secondary);
   font-size: 13px;
@@ -776,7 +791,11 @@
     width: 8px;
     height: 8px;
     border-radius: 999px;
-    background: color-mix(in srgb, var(--oomol-primary) 74%, white);
+    background: color-mix(
+      in srgb,
+      var(--oomol-primary) 74%,
+      var(--oomol-bg-elevated) 26%
+    );
     box-shadow: 0 0 0 6px
       color-mix(in srgb, var(--oomol-primary-bg) 44%, transparent);
   }
@@ -850,8 +869,13 @@
     border: 1px solid color-mix(in srgb, var(--oomol-primary) 10%, transparent);
     background: linear-gradient(
       90deg,
-      color-mix(in srgb, var(--oomol-primary-bg) 54%, white 46%) 0%,
-      color-mix(in srgb, var(--oomol-bg-elevated) 98%, white 2%) 100%
+      color-mix(
+          in srgb,
+          var(--oomol-primary-bg) 54%,
+          var(--oomol-bg-elevated) 46%
+        )
+        0%,
+      var(--oomol-surface-float) 100%
     );
     box-shadow: none;
   }
@@ -872,8 +896,8 @@
   border-radius: 26px;
   background: linear-gradient(
     180deg,
-    color-mix(in srgb, var(--oomol-bg-base) 94%, white 6%) 0%,
-    color-mix(in srgb, var(--oomol-bg-elevated) 96%, white 4%) 100%
+    var(--oomol-surface-panel) 0%,
+    var(--oomol-surface-float) 100%
   );
   color: var(--oomol-text-secondary);
   font-size: 16px;
@@ -899,7 +923,7 @@
   }
 
   :global(.arco-table-header) {
-    background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%);
+    background: var(--oomol-surface-float);
   }
 
   :global(.arco-table-th) {
@@ -940,7 +964,11 @@
   max-width: 100%;
   padding: 7px 14px;
   border-radius: 999px;
-  background: color-mix(in srgb, var(--oomol-primary-bg) 62%, white 38%);
+  background: color-mix(
+    in srgb,
+    var(--oomol-primary-bg) 56%,
+    var(--oomol-bg-elevated) 44%
+  );
   border: 1px solid
     color-mix(in srgb, var(--oomol-primary) 14%, var(--oomol-border-default));
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.64);
