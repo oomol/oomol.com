@@ -1,13 +1,5 @@
 .page {
   --page-width: min(1220px, calc(100% - 56px));
-  --font-heading-cjk:
-    "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans CN",
-    "Microsoft YaHei UI", "Microsoft YaHei", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-body:
-    "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans CN",
-    "Microsoft YaHei UI", "Microsoft YaHei", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --fs-caption: 0.92rem;
   --fs-body: 1.02rem;
   --fs-body-lg: 1.08rem;
@@ -105,7 +97,7 @@
   padding: clamp(2.4rem, 5vw, 4.8rem) 0 36px;
   overflow-x: hidden;
   color: var(--text-primary);
-  font-family: var(--font-body);
+  font-family: var(--oomol-font-body);
   text-rendering: optimizeLegibility;
   background:
     radial-gradient(
@@ -314,7 +306,7 @@
 .solutionText h3,
 .downloadCardHeader strong {
   margin: 0;
-  font-family: var(--font-heading-cjk);
+  font-family: var(--ifm-heading-font-family);
   letter-spacing: -0.03em;
 }
 
@@ -538,7 +530,7 @@ video.outputsShowcaseImage {
 .pricingSummary h3,
 .pricingHeader h3 {
   margin: 0;
-  font-family: var(--font-heading-cjk);
+  font-family: var(--ifm-heading-font-family);
   font-size: var(--fs-title-sm);
   line-height: var(--lh-title);
   font-weight: 710;
