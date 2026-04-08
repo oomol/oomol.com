@@ -1071,7 +1071,7 @@
     "message": "/month"
   },
   "PRICING.subscription.subscribe": {
-    "message": "Subscribe Now"
+    "message": "Subscribe"
   },
   "PRICING.subscription.showDetails": {
     "message": "View full benefits"

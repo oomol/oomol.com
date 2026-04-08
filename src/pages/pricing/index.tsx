@@ -14,6 +14,7 @@ import Layout from "../../theme/Layout";
 
 const LLM_PRICING_ENDPOINT =
   "https://console-server.oomol.com/api/models/models_with_config";
+const SUBSCRIPTION_BILLING_URL = "https://console.oomol.com/billing/recharge";
 
 type PricingTableKey = "llm" | "cloud-task" | "fusion-api";
 
@@ -199,10 +200,9 @@ export default function Index() {
     "PRICING.subscription.max.highlight1",
     "PRICING.subscription.max.highlight2",
   ];
-  // Keep paid-plan CTAs disabled until self-serve checkout is ready on the site.
   const paidPlanCtaLabel = tPricing(
-    "PRICING.subscription.comingSoon",
-    "Coming Soon"
+    "PRICING.subscription.subscribe",
+    "Subscribe"
   );
 
   useEffect(() => {
@@ -773,9 +773,11 @@ export default function Index() {
               </div>
               <div className={styles.planActionArea}>
                 <Button
+                  anchorProps={{ rel: "noopener noreferrer" }}
                   className={styles.subscribeBtn}
-                  disabled
                   aria-label={paidPlanCtaLabel}
+                  href={SUBSCRIPTION_BILLING_URL}
+                  target="_blank"
                 >
                   {paidPlanCtaLabel}
                 </Button>
@@ -854,9 +856,11 @@ export default function Index() {
               </div>
               <div className={styles.planActionArea}>
                 <Button
+                  anchorProps={{ rel: "noopener noreferrer" }}
                   className={styles.subscribeBtn}
-                  disabled
                   aria-label={paidPlanCtaLabel}
+                  href={SUBSCRIPTION_BILLING_URL}
+                  target="_blank"
                 >
                   {paidPlanCtaLabel}
                 </Button>
