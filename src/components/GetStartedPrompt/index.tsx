@@ -22,7 +22,10 @@ export const GetStartedPrompt = () => {
           </span>
           <div className={styles.actions}>
             <DownloadButton />
-            <Link to="/docs/cloud-services/cli" className={styles.secondaryLink}>
+            <Link
+              to="/docs/cloud-services/cli"
+              className={styles.secondaryLink}
+            >
               {translate({ message: "HOME.Downloads.cli.action.guide" })}
             </Link>
           </div>

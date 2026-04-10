@@ -38,7 +38,10 @@ export default function HomepageCodexBlocks() {
             {translate({ message: "HOME.CodexBlocks.subtitle" })}
           </p>
           <div className={styles.headerActions}>
-            <Link to="/docs/cloud-services/cli" className={styles.primaryAction}>
+            <Link
+              to="/docs/cloud-services/cli"
+              className={styles.primaryAction}
+            >
               {translate({ message: "HOME.CodexBlocks.action.primary" })}
             </Link>
             <Link to="/cloud" className={styles.secondaryAction}>
@@ -85,7 +88,9 @@ export default function HomepageCodexBlocks() {
                   </div>
                 </div>
                 <div className={styles.videoMeta}>
-                  <div className={styles.videoMetaTitle}>{item.previewTitle}</div>
+                  <div className={styles.videoMetaTitle}>
+                    {item.previewTitle}
+                  </div>
                   <p className={styles.videoMetaNote}>{item.previewNote}</p>
                 </div>
               </div>

@@ -290,7 +290,9 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
             if (item === productMenuItem) {
               const isProductActive =
                 location.pathname.startsWith("/docs/cloud-services/cli") ||
-                location.pathname.startsWith(`/${locale}/docs/cloud-services/cli`) ||
+                location.pathname.startsWith(
+                  `/${locale}/docs/cloud-services/cli`
+                ) ||
                 location.pathname.startsWith("/studio") ||
                 location.pathname.startsWith(`/${locale}/studio`) ||
                 location.pathname.startsWith("/cloud") ||
@@ -318,7 +320,10 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
                     {translate({
                       message: "Theme.Navbar.product.label",
                     })}
-                    <span className={styles.productMenuCaret} aria-hidden="true" />
+                    <span
+                      className={styles.productMenuCaret}
+                      aria-hidden="true"
+                    />
                   </button>
 
                   <div

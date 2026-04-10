@@ -1,9 +1,10 @@
 import styles from "./styles.module.scss";
 
 import type { DocusaurusContext } from "@docusaurus/types";
-import clsx from "clsx";
+
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import cx from "clsx";
 import { memo, useEffect, useRef, useState } from "react";
 
 import Layout from "../../theme/Layout";
@@ -507,7 +508,6 @@ export default function AppPage() {
     "https://apps.apple.com/cn/app/%E6%82%9F%E5%A2%A8-ai-oomol-%E5%AF%B9%E8%AF%9D%E5%BC%8F%E4%BA%91%E5%87%BD%E6%95%B0/id6749377154";
   const rechargeHref = "https://console.oomol.com/billing/token-recharge";
 
-  const catPng = useBaseUrl("/img/pages/app/cat.png");
   const nanoBananaPng = useBaseUrl("/img/pages/app/nano-banana.png");
 
   const modelFeatureCards: readonly ModelFeatureCard[] = [
@@ -620,7 +620,7 @@ export default function AppPage() {
 
             <div className={styles.heroActions}>
               <a
-                className={clsx(
+                className={cx(
                   styles.heroActionButton,
                   styles.heroActionButtonPrimary
                 )}
@@ -655,9 +655,9 @@ export default function AppPage() {
 
         <section
           id="models"
-          className={clsx(styles.section, styles.modelsSection)}
+          className={cx(styles.section, styles.modelsSection)}
         >
-          <div className={clsx(styles.sectionIntro, styles.modelsIntro)}>
+          <div className={cx(styles.sectionIntro, styles.modelsIntro)}>
             <h2>{copy.models.title}</h2>
             <p>{copy.models.description}</p>
           </div>
@@ -702,7 +702,7 @@ export default function AppPage() {
         </section>
 
         <section id="problems" className={styles.section}>
-          <div className={clsx(styles.sectionIntro, styles.problemsIntro)}>
+          <div className={cx(styles.sectionIntro, styles.problemsIntro)}>
             <h2 className={styles.problemsTitle}>
               {copy.problems.titleLine1}
               <br />
@@ -722,7 +722,7 @@ export default function AppPage() {
 
         <section
           id="workspace"
-          className={clsx(styles.section, styles.workspaceSection)}
+          className={cx(styles.section, styles.workspaceSection)}
         >
           <div className={styles.solutionList}>
             {workflowSteps.map(step => (
@@ -746,7 +746,7 @@ export default function AppPage() {
         </section>
 
         <section id="outputs" className={styles.section}>
-          <div className={clsx(styles.sectionIntro, styles.outputsIntro)}>
+          <div className={cx(styles.sectionIntro, styles.outputsIntro)}>
             <h2>{copy.outputs.title}</h2>
             <p>{copy.outputs.description}</p>
           </div>
@@ -764,9 +764,9 @@ export default function AppPage() {
 
         <section
           id="pricing"
-          className={clsx(styles.section, styles.pricingSection)}
+          className={cx(styles.section, styles.pricingSection)}
         >
-          <div className={clsx(styles.sectionIntro, styles.pricingIntro)}>
+          <div className={cx(styles.sectionIntro, styles.pricingIntro)}>
             <h2>{copy.pricing.title}</h2>
             <p>{copy.pricing.description}</p>
           </div>
@@ -798,7 +798,7 @@ export default function AppPage() {
             {creditPacks.map(pack => (
               <article
                 key={pack.name}
-                className={clsx(
+                className={cx(
                   styles.pricingCard,
                   pack.featured && styles.pricingCardFeatured
                 )}
@@ -835,7 +835,7 @@ export default function AppPage() {
                 </div>
 
                 <a
-                  className={clsx(
+                  className={cx(
                     styles.cardAction,
                     pack.featured && styles.cardActionPrimary
                   )}
@@ -856,9 +856,9 @@ export default function AppPage() {
 
         <section
           id="downloads"
-          className={clsx(styles.section, styles.entrySection)}
+          className={cx(styles.section, styles.entrySection)}
         >
-          <div className={clsx(styles.sectionIntro, styles.downloadsIntro)}>
+          <div className={cx(styles.sectionIntro, styles.downloadsIntro)}>
             <h2>{copy.downloads.title}</h2>
           </div>
 
@@ -871,7 +871,7 @@ export default function AppPage() {
                 </div>
                 <p>{item.description}</p>
                 <a
-                  className={clsx(
+                  className={cx(
                     styles.cardAction,
                     item.kind === "web" && styles.cardActionPrimary
                   )}
@@ -885,7 +885,6 @@ export default function AppPage() {
             ))}
           </div>
         </section>
-
       </main>
     </Layout>
   );

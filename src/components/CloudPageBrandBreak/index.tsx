@@ -5,7 +5,7 @@ import type { DocusaurusContext } from "@docusaurus/types";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import React from "react";
 
-export default function HomepageBrandBreak() {
+export default function CloudPageBrandBreak() {
   const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
     i18n: { currentLocale: string };
   };
