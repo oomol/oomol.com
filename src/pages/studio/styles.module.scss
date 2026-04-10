@@ -189,7 +189,8 @@
   background: linear-gradient(
     180deg,
     color-mix(in srgb, var(--oomol-primary-bg) 76%, var(--oomol-bg-elevated)) 0%,
-    color-mix(in srgb, var(--oomol-primary-bg) 48%, var(--oomol-bg-elevated)) 100%
+    color-mix(in srgb, var(--oomol-primary-bg) 48%, var(--oomol-bg-elevated))
+      100%
   );
   font-size: 0.96rem;
   line-height: 1.66;

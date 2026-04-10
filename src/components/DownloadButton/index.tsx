@@ -30,6 +30,14 @@ export interface DownloadButtonProps {
   centered?: boolean;
   showNote?: boolean;
   noteTone?: "default" | "inverse";
+  texts?: Partial<{
+    macos: string;
+    macosStable: string;
+    macosNote: string;
+    windows: string;
+    windowsStable: string;
+    windowsSubtitle: string;
+  }>;
 }
 
 export const DownloadButton = ({
@@ -37,6 +45,7 @@ export const DownloadButton = ({
   centered,
   showNote = true,
   noteTone = "default",
+  texts,
 }: DownloadButtonProps) => {
   const downloadIcon = (
     <span className={styles.downloadIconWrap} aria-hidden="true">
@@ -57,6 +66,36 @@ export const DownloadButton = ({
     noteTone === "inverse"
       ? `${styles.windowsSubtitle} ${styles.inverseNote}`
       : styles.windowsSubtitle;
+  const macosLabel =
+    texts?.macos ??
+    translate({
+      message: "HOME.FirstScreen.download-macos",
+    });
+  const macosStableLabel =
+    texts?.macosStable ??
+    translate({
+      message: "HOME.FirstScreen.download-macos-stable",
+    });
+  const macosNote =
+    texts?.macosNote ??
+    translate({
+      message: "HOME.FirstScreen.download-macos-chip-note",
+    });
+  const windowsLabel =
+    texts?.windows ??
+    translate({
+      message: "HOME.FirstScreen.download-windows",
+    });
+  const windowsStableLabel =
+    texts?.windowsStable ??
+    translate({
+      message: "HOME.FirstScreen.download-windows-stable",
+    });
+  const windowsSubtitle =
+    texts?.windowsSubtitle ??
+    translate({
+      message: "HOME.FirstScreen.download-windows-subtitle",
+    });
 
   return (
     <BrowserOnly
@@ -64,19 +103,9 @@ export const DownloadButton = ({
         <div className={containerClassName}>
           <Button className={styles.download}>
             {downloadIcon}
-            {translate({
-              message: stableTag
-                ? "HOME.FirstScreen.download-macos-stable"
-                : "HOME.FirstScreen.download-macos",
-            })}
+            {stableTag ? macosStableLabel : macosLabel}
           </Button>
-          {showNote ? (
-            <span className={noteClassName}>
-              {translate({
-                message: "HOME.FirstScreen.download-macos-chip-note",
-              })}
-            </span>
-          ) : null}
+          {showNote ? <span className={noteClassName}>{macosNote}</span> : null}
         </div>
       }
     >
@@ -94,19 +123,11 @@ export const DownloadButton = ({
                 >
                   <a href={DownloadUrl.Stable.MacOS.AppleSilicon}>
                     {downloadIcon}
-                    {translate({
-                      message: stableTag
-                        ? "HOME.FirstScreen.download-macos-stable"
-                        : "HOME.FirstScreen.download-macos",
-                    })}
+                    {stableTag ? macosStableLabel : macosLabel}
                   </a>
                 </Button>
                 {showNote ? (
-                  <span className={noteClassName}>
-                    {translate({
-                      message: "HOME.FirstScreen.download-macos-chip-note",
-                    })}
-                  </span>
+                  <span className={noteClassName}>{macosNote}</span>
                 ) : null}
               </div>
             ) : (
@@ -120,18 +141,12 @@ export const DownloadButton = ({
                 >
                   <a href={DownloadUrl.Stable.Windows.x64}>
                     {downloadIcon}
-                    {translate({
-                      message: stableTag
-                        ? "HOME.FirstScreen.download-windows-stable"
-                        : "HOME.FirstScreen.download-windows",
-                    })}
+                    {stableTag ? windowsStableLabel : windowsLabel}
                   </a>
                 </Button>
                 {showNote ? (
                   <span className={windowsSubtitleClassName}>
-                    {translate({
-                      message: "HOME.FirstScreen.download-windows-subtitle",
-                    })}
+                    {windowsSubtitle}
                   </span>
                 ) : null}
               </div>

@@ -76,9 +76,7 @@ export default function Downloads() {
   return (
     <Layout>
       <Head>
-        <title>
-          {translate({ message: "HOME.Downloads.page.title" })}
-        </title>
+        <title>{translate({ message: "HOME.Downloads.page.title" })}</title>
         <meta
           name="description"
           content={translate({

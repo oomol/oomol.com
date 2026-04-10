@@ -96,7 +96,8 @@
 
 .primaryAction {
   color: var(--oomol-white);
-  border: 1px solid color-mix(in srgb, var(--oomol-primary-active) 64%, black 12%);
+  border: 1px solid
+    color-mix(in srgb, var(--oomol-primary-active) 64%, black 12%);
   background: linear-gradient(
     180deg,
     color-mix(in srgb, var(--oomol-primary) 78%, white 14%) 0%,
@@ -230,7 +231,11 @@
       rgba(123, 213, 184, 0.16) 0%,
       rgba(123, 213, 184, 0) 28%
     ),
-    linear-gradient(180deg, rgba(39, 45, 63, 0.92) 0%, rgba(28, 34, 48, 0.98) 100%);
+    linear-gradient(
+      180deg,
+      rgba(39, 45, 63, 0.92) 0%,
+      rgba(28, 34, 48, 0.98) 100%
+    );
 }
 
 .videoTracks {
