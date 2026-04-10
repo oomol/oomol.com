@@ -15,14 +15,42 @@ export default function HomepageBrandBreak() {
     <section className={styles.section}>
       <div className={styles.inner}>
         <h2 className={styles.headline}>
-          {isZh ? "一次构建\n持续交付" : "Build once\nDeliver continuously"}
+          {isZh
+            ? "从使用到交付\n一条连续路径"
+            : "From use to delivery\none continuous path"}
         </h2>
         <p className={styles.subline}>
           {isZh
-            ? "从 Skill 创建到云端运行，一条完整的路径。"
-            : "From skill creation to cloud runtime — one complete path."}
+            ? "先在 oo-cli 中用起来，再进入 Studio 构建，并通过 Cloud 持续运行与交付。"
+            : "Start in oo-cli, build in Studio, then run and deliver through Cloud."}
         </p>
         <div className={styles.showcaseRow}>
+          <div className={styles.showcaseCard}>
+            <div className={styles.showcaseCardIcon}>
+              <i
+                className={`${styles.showcaseGlyph} i-lucide-bot`}
+                aria-hidden="true"
+              />
+            </div>
+            <span className={styles.showcaseCardLabel}>
+              {isZh ? "oo-cli 使用" : "Use via oo-cli"}
+            </span>
+          </div>
+          <div className={styles.showcaseArrow} aria-hidden="true">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </div>
           <div className={styles.showcaseCard}>
             <div className={styles.showcaseCardIcon}>
               <svg
@@ -40,7 +68,7 @@ export default function HomepageBrandBreak() {
               </svg>
             </div>
             <span className={styles.showcaseCardLabel}>
-              {isZh ? "Studio 创建" : "Create in Studio"}
+              {isZh ? "Studio 构建" : "Build in Studio"}
             </span>
           </div>
           <div className={styles.showcaseArrow} aria-hidden="true">
@@ -74,33 +102,7 @@ export default function HomepageBrandBreak() {
               </svg>
             </div>
             <span className={styles.showcaseCardLabel}>
-              {isZh ? "Cloud 运行" : "Run on Cloud"}
-            </span>
-          </div>
-          <div className={styles.showcaseArrow} aria-hidden="true">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
-          </div>
-          <div className={styles.showcaseCard}>
-            <div className={styles.showcaseCardIcon}>
-              <i
-                className={`${styles.showcaseGlyph} i-lucide-bot`}
-                aria-hidden="true"
-              />
-            </div>
-            <span className={styles.showcaseCardLabel}>
-              {isZh ? "oo-cli 使用" : "Use via oo-cli"}
+              {isZh ? "Cloud 交付" : "Deliver through Cloud"}
             </span>
           </div>
         </div>

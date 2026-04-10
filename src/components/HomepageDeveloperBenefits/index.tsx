@@ -18,7 +18,7 @@ const benefits = [
     }),
     note: translate({ message: "HOME.DeveloperBenefits.card1.note" }),
     cta: translate({ message: "HOME.DeveloperBenefits.card1.cta" }),
-    href: "/docs/get-started/use-your-own-model",
+    href: "/docs/cloud-services/cli",
   },
   {
     tag: translate({ message: "HOME.DeveloperBenefits.card2.tag" }),
@@ -33,7 +33,7 @@ const benefits = [
     }),
     note: translate({ message: "HOME.DeveloperBenefits.card2.note" }),
     cta: translate({ message: "HOME.DeveloperBenefits.card2.cta" }),
-    href: "/docs/cloud-services/cloud-function",
+    href: "/studio",
   },
 ];
 
