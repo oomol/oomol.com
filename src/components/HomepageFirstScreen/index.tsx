@@ -3,9 +3,8 @@ import styles from "./styles.module.scss";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { Button } from "@site/src/components/ui/button";
 import React, { useRef, useState } from "react";
-
-import { DownloadButton } from "../DownloadButton";
 
 export default function HomepageFirstScreen() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -58,16 +57,29 @@ export default function HomepageFirstScreen() {
             })}
           </p>
           <div className={styles.actions}>
-            <DownloadButton centered />
-            <Link to="/docs/cloud-services/cli" className={styles.secondaryCta}>
-              {translate({
-                message: "HOME.FirstScreen.cta.secondary",
-              })}
-            </Link>
+            <Button asChild size="lg" className={styles.primaryCta}>
+              <Link to="/docs/cloud-services/cli">
+                {translate({
+                  message: "HOME.FirstScreen.cta.primary",
+                })}
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className={styles.secondaryCta}
+            >
+              <Link to="#hero-demo">
+                {translate({
+                  message: "HOME.FirstScreen.cta.secondary",
+                })}
+              </Link>
+            </Button>
           </div>
         </div>
       </div>
-      <div className={styles.videoShowcase}>
+      <div id="hero-demo" className={styles.videoShowcase}>
         <div className={styles.videoShowcaseInner}>
           <div className={styles.videoFrame}>
             {!isPlaying && (

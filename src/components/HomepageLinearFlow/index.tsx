@@ -5,8 +5,7 @@ import type { DocusaurusContext } from "@docusaurus/types";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { DownloadButton } from "@site/src/components/DownloadButton";
-import HomepageDeveloperBenefits from "@site/src/components/HomepageDeveloperBenefits";
+import { Button } from "@site/src/components/ui/button";
 import { clsx } from "clsx";
 import React from "react";
 
@@ -14,10 +13,14 @@ const homepageMediaUrls = {
   cli: "https://static.oomol.com/assets/homepage/oomol-oo-cli-en.webm",
   studio:
     "https://static.oomol.com/assets/homepage/OOMOL-Studio-gen-use-skils-en.webm",
-  agent: "https://static.oomol.com/assets/homepage/oomol-AI-use-skills-en.webm",
 } as const;
 
 type Copy = {
+  intro: {
+    badge: string;
+    title: string;
+    description: string;
+  };
   cli: {
     eyebrow: string;
     title: string;
@@ -40,14 +43,6 @@ type Copy = {
     description: string;
     cards: Array<{ title: string; text: string }>;
     media: { title: string; note: string; pills: string[]; items: string[] };
-    primary: string;
-    secondary: string;
-  };
-  agent: {
-    eyebrow: string;
-    title: string;
-    description: string;
-    media: { title: string; note: string };
     primary: string;
     secondary: string;
   };
@@ -119,95 +114,96 @@ function ImageCard({ title, note, src, pills }: ImageCardProps) {
 }
 
 const zhCopy: Copy = {
+  intro: {
+    badge: "路径说明",
+    title: "从使用到构建，再到交付，一条连续路径",
+    description:
+      "先让能力跑起来；现成能力不够时，再做自己的；需要持续运行和交付时，再交给 Cloud。",
+  },
   cli: {
     eyebrow: "01 / oo-cli",
-    title: "先在 Codex 里装 oo-cli，直接开始用 Skill",
+    title: "先在 Codex 里装 oo-cli，直接开始用能力",
     description:
-      "oo-cli 是最适合在 Codex 和 Claude Code 里开始使用 Skill 的入口。先把安装文档打开，再用右侧视频直接看真实使用过程。",
+      "oo-cli 是最适合在 Codex、Claude Code 和终端环境里开始使用能力的入口。先搜索、查看并运行已发布能力，把使用路径先跑通。",
     media: {
       title: "Codex 演示视频",
-      note: "展示在 Codex 中安装、搜索、查看并运行 Skill。",
+      note: "展示在 Codex 中安装、搜索、查看并运行能力的过程。",
     },
     guide: "查看安装文档",
     github: "查看 GitHub",
   },
   studio: {
     eyebrow: "02 / OOMOL Studio",
-    title: "想做自己的 Skill，就用 OOMOL Studio",
+    title: "当现成能力不够，就用 OOMOL Studio 做你自己的",
     description:
-      "直接告诉 Agent 你要生成什么，Studio 帮你把 Skill 生成出来，然后在本地完成验证。不会写平台 DSL，也能零门槛开始。",
+      "直接告诉 Agent 你要生成什么能力，再继续补代码、接依赖、改参数和做组合。Studio 的角色不是替代开发流程，而是把能力生成和本地验证带回真实编码环境。",
     media: {
-      title: "Studio + Agent Vibe 演示视频",
-      note: "展示从提需求到本地验证跑通的过程。",
+      title: "Studio 演示视频",
+      note: "展示从描述需求、生成能力到本地验证跑通的过程。",
     },
     primary: "安装 OOMOL Studio",
     secondary: "了解 Studio",
   },
   cloud: {
     eyebrow: "03 / Cloud",
-    title: "发布之后，Cloud 负责运行与交付",
+    title: "当能力需要持续运行和交付时，Cloud 来承接",
     description:
-      "Skill 发布之后，Cloud 在后台承接运行、订阅、配置和使用数据。你不需要再围着同一份实现重做一层产品外壳。",
+      "能力完成本地验证后，Cloud 负责承接运行时、配置、Secrets、交付关系和使用数据。你不用围着同一份实现重复做一层又一层产品外壳。",
     cards: [
       {
-        title: "交付给自己、团队或客户",
-        text: "通过订阅持续交付，而不是停留在本地脚本。",
+        title: "统一承接运行与交付",
+        text: "把能力交付给自己、团队或客户时，继续沿用同一套实现和同一条路径。",
       },
       {
-        title: "在一个后台里配置并观察",
-        text: "Secrets、权限、版本和使用数据集中管理。",
+        title: "把配置和使用关系放进同一个后台",
+        text: "Secrets、权限、版本、运行配置和使用数据集中管理，减少分散维护。",
       },
     ],
     media: {
       title: "Cloud 控制台预览",
-      note: "把订阅、配置和运行数据放到同一个后台里。",
-      pills: ["订阅关系", "运行配置", "使用数据"],
-      items: ["按订阅持续交付与续费", "统一管理 Secrets、权限和版本"],
+      note: "把运行配置、交付关系和使用数据放到同一个后台里管理。",
+      pills: ["运行配置", "Secrets 管理", "使用数据"],
+      items: ["统一承接运行和交付", "集中管理配置、权限和版本"],
     },
     primary: "了解 Cloud",
     secondary: "打开 Cloud 控制台",
   },
-  agent: {
-    eyebrow: "04 / OOMOL AI",
-    title: "不想用 CLI，就直接用 OOMOL AI",
-    description:
-      "它可以理解成 oo-cli 的 GUI 版本。同一套 Skill，不同的消费入口。终端适合工作流，GUI 更适合直观使用。",
-    media: {
-      title: "OOMOL AI 演示视频",
-      note: "展示对话入口和参数入口的体验。",
-    },
-    primary: "体验 OOMOL AI",
-    secondary: "了解 OOMOL AI",
-  },
   cta: {
-    title: "先用一个 Skill，再决定要不要自己做",
+    title: "先把一个能力跑起来，再决定要不要做自己的",
     description:
-      "先通过 oo-cli 把使用路径跑通。需要自己的 Skill 时，再安装 Studio 生成、验证并发布。",
-    primary: "安装 OOMOL Studio",
-    secondary: "先用 oo-cli",
+      "先通过 oo-cli 让使用路径跑通。需要自己的能力时，再进入 Studio 生成、组合、验证，并通过 Cloud 持续交付。",
+    primary: "先用 oo-cli",
+    secondary: "了解 Studio",
   },
 };
 
 const enCopy: Copy = {
+  intro: {
+    badge: "One Path",
+    title: "From usage to building to delivery, one continuous path",
+    description:
+      "Start by getting one capability working. Build your own when published capabilities are not enough, then hand it to Cloud when it needs to keep running and be delivered.",
+  },
   cli: {
     eyebrow: "01 / oo-cli",
-    title: "Install oo-cli in Codex and start using skills",
+    title: "Install oo-cli in Codex and start using capabilities",
     description:
-      "oo-cli is the best entry point for using skills inside Codex and Claude Code. Open the install guide first, then use the video on the right to see the real flow.",
+      "oo-cli is the best entry point for using capabilities inside Codex, Claude Code, and terminal workflows. Search, inspect, and run published capabilities first to get the usage path working.",
     media: {
       title: "Codex demo video",
-      note: "Show installing, searching, inspecting, and running a skill in Codex.",
+      note: "Show installing, searching, inspecting, and running a capability in Codex.",
     },
     guide: "Open install guide",
     github: "View GitHub",
   },
   studio: {
     eyebrow: "02 / OOMOL Studio",
-    title: "When you need your own skill, use OOMOL Studio",
+    title:
+      "When ready-made capabilities are not enough, build your own in OOMOL Studio",
     description:
-      "Tell the agent what skill you want, let Studio generate the first version, then validate it locally. You do not need to learn a platform DSL before you begin.",
+      "Tell the agent what capability you want, then keep editing code, dependencies, parameters, and compositions yourself. Studio does not replace engineering workflow; it brings capability generation and local validation back into a real coding environment.",
     media: {
-      title: "Studio + Agent Vibe demo video",
+      title: "Studio demo video",
       note: "Show the path from prompting to local validation.",
     },
     primary: "Install OOMOL Studio",
@@ -215,49 +211,38 @@ const enCopy: Copy = {
   },
   cloud: {
     eyebrow: "03 / Cloud",
-    title: "After release, Cloud runs and delivers the skill",
+    title:
+      "When a capability needs to keep running and be delivered, Cloud takes over",
     description:
-      "After a skill is released, Cloud handles runtime, subscriptions, configuration, and usage data. You do not need a second product layer around the same implementation.",
+      "After local validation is done, Cloud handles runtime, configuration, secrets, delivery relationships, and usage data. You do not need to keep rebuilding layers around the same implementation.",
     cards: [
       {
-        title: "Deliver it to yourself, your team, or customers",
-        text: "Keep the delivery loop running through subscriptions.",
+        title: "Handle runtime and delivery in one path",
+        text: "Keep the same implementation as you deliver the capability to yourself, your team, or customers.",
       },
       {
-        title: "Configure and observe it in one backend",
-        text: "Keep secrets, access, releases, and usage in one place.",
+        title: "Keep configuration and usage relationships in one backend",
+        text: "Manage secrets, access, releases, runtime settings, and usage data in one place.",
       },
     ],
     media: {
       title: "Cloud console preview",
-      note: "Bring subscriptions, settings, and operational data into one backend.",
-      pills: ["Subscriptions", "Runtime settings", "Usage data"],
+      note: "Bring runtime settings, delivery relationships, and usage data into one backend.",
+      pills: ["Runtime settings", "Secrets", "Usage data"],
       items: [
-        "Deliver and renew through subscriptions",
-        "Manage secrets, access, and releases in one console",
+        "Handle runtime and delivery together",
+        "Manage configuration, access, and releases in one console",
       ],
     },
     primary: "Explore Cloud",
     secondary: "Open Cloud Console",
   },
-  agent: {
-    eyebrow: "04 / OOMOL AI",
-    title: "If you do not want CLI, use OOMOL AI",
-    description:
-      "Think of it as the GUI version of oo-cli. It uses the same skills through a more direct interface. CLI is better for workflows; GUI is better for straightforward use.",
-    media: {
-      title: "OOMOL AI demo video",
-      note: "Show both the chat surface and the structured surface.",
-    },
-    primary: "Try OOMOL AI",
-    secondary: "Explore OOMOL AI",
-  },
   cta: {
-    title: "Use a skill first, then decide whether to build your own",
+    title: "Run one capability first, then decide whether to build your own",
     description:
-      "Start by getting the usage path working in oo-cli. When you need your own skill, install Studio to generate, validate, and publish it.",
-    primary: "Install OOMOL Studio",
-    secondary: "Start with oo-cli",
+      "Start by getting the usage path working in oo-cli. When you need your own capability, move into Studio to generate, compose, and validate it, then deliver it through Cloud.",
+    primary: "Start with oo-cli",
+    secondary: "Build your first capability",
   },
 };
 
@@ -274,6 +259,14 @@ export default function HomepageLinearFlow() {
 
   return (
     <div className={styles.flow}>
+      <section className={styles.introSection}>
+        <div className={styles.introInner}>
+          <div className={styles.introBadge}>{copy.intro.badge}</div>
+          <h2 className={styles.introTitle}>{copy.intro.title}</h2>
+          <p className={styles.introDescription}>{copy.intro.description}</p>
+        </div>
+      </section>
+
       {/* ── Section: oo-cli ── */}
       <section className={clsx(styles.section, styles.cliSection)}>
         <div className={styles.container}>
@@ -381,52 +374,23 @@ export default function HomepageLinearFlow() {
         </div>
       </section>
 
-      {/* ── Section: OOMOL AI ── */}
-      <section className={clsx(styles.section, styles.agentSection)}>
-        <div className={styles.container}>
-          <div className={styles.copyPanel}>
-            <span className={styles.eyebrow}>{copy.agent.eyebrow}</span>
-            <h2 className={styles.sectionTitle}>{copy.agent.title}</h2>
-            <p className={styles.sectionDescription}>
-              {copy.agent.description}
-            </p>
-            <div className={styles.inlineActions}>
-              <a
-                href="https://app.oomol.com"
-                target="_blank"
-                rel="noreferrer"
-                className={styles.primaryLink}
-              >
-                {copy.agent.primary}
-              </a>
-              <Link to="/app" className={styles.secondaryLink}>
-                {copy.agent.secondary}
-              </Link>
-            </div>
-          </div>
-
-          <div className={styles.mediaPanel}>
-            <VideoCard
-              title={copy.agent.media.title}
-              note={copy.agent.media.note}
-              src={homepageMediaUrls.agent}
-            />
-          </div>
-        </div>
-      </section>
-
-      <HomepageDeveloperBenefits />
-
       {/* ── CTA ── */}
       <section className={styles.ctaSection}>
         <div className={styles.ctaInner}>
           <h2 className={styles.ctaTitle}>{copy.cta.title}</h2>
           <p className={styles.ctaDescription}>{copy.cta.description}</p>
           <div className={styles.ctaActions}>
-            <DownloadButton centered showNote={false} />
-            <Link to="/docs/cloud-services/cli" className={styles.ctaGhost}>
-              {copy.cta.secondary}
-            </Link>
+            <Button asChild size="lg" className={styles.ctaPrimary}>
+              <Link to="/docs/cloud-services/cli">{copy.cta.primary}</Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className={styles.ctaSecondary}
+            >
+              <Link to="/studio">{copy.cta.secondary}</Link>
+            </Button>
           </div>
         </div>
       </section>

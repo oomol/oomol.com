@@ -1,0 +1,277 @@
+@use "../../css/custom.scss" as *;
+
+.section {
+  padding: clamp(2rem, 4vw, 3rem) 0 clamp(2.6rem, 4.6vw, 4rem);
+}
+
+.container {
+  width: min(1260px, calc(100% - 48px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(1.4rem, 3vw, 2.4rem);
+  align-items: center;
+}
+
+.copyColumn {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 34rem;
+}
+
+.badge {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  min-height: 1.95rem;
+  padding: 0 0.85rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--oomol-primary) 16%, white);
+  background: color-mix(in srgb, var(--oomol-primary-bg) 46%, white);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--oomol-primary-text);
+}
+
+.title {
+  margin: 0;
+  max-width: 14ch;
+  font-family: var(--oomol-font-display);
+  font-size: clamp(2rem, 3.2vw, 2.7rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  color: var(--oomol-text-primary);
+}
+
+.description,
+.footer {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--oomol-text-secondary);
+}
+
+.footer {
+  font-size: 0.94rem;
+  color: var(--oomol-text-tertiary);
+}
+
+.surfacePanel {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.1rem, 2.2vw, 1.5rem);
+  border-radius: 1.6rem;
+  border: 1px solid var(--oomol-divider);
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(132, 138, 208, 0.1) 0%,
+      rgba(132, 138, 208, 0) 34%
+    ),
+    color-mix(in srgb, var(--oomol-surface-float) 94%, white 6%);
+  box-shadow: 0 16px 36px rgba(78, 93, 131, 0.08);
+}
+
+.toolsBlock,
+.customBlock {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.blockLabel {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--oomol-text-tertiary);
+}
+
+.toolGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.toolChip,
+.customCard {
+  min-height: 100%;
+  padding: 0.95rem 0.9rem;
+  border-radius: 1.15rem;
+  border: 1px solid color-mix(in srgb, var(--oomol-border-default) 84%, white);
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%);
+  box-shadow: 0 6px 16px rgba(78, 93, 131, 0.06);
+}
+
+.toolChip {
+  display: grid;
+  gap: 0.55rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.toolIcon {
+  font-size: 1.1rem;
+  color: var(--oomol-text-primary);
+}
+
+.toolLabel {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--oomol-text-secondary);
+}
+
+.connectorRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.connectorLine {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(112, 127, 163, 0.12) 0%,
+    rgba(112, 127, 163, 0.38) 50%,
+    rgba(112, 127, 163, 0.12) 100%
+  );
+}
+
+.connectorBadge {
+  width: 1.7rem;
+  height: 1.7rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--oomol-primary) 20%, white);
+  background: color-mix(in srgb, var(--oomol-primary-bg) 58%, white);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--oomol-primary-text);
+}
+
+.connectorArrow {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--oomol-primary-text);
+}
+
+.customGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.customCard {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.customIconWrap {
+  width: 2.2rem;
+  height: 2.2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.8rem;
+  background: color-mix(in srgb, var(--oomol-primary-bg) 58%, white);
+  color: var(--oomol-primary-text);
+}
+
+.customIcon {
+  font-size: 1.08rem;
+}
+
+.customTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--oomol-text-primary);
+}
+
+.customText {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--oomol-text-secondary);
+}
+
+:global(html[lang="en"]) .title {
+  max-width: 18ch;
+  font-size: clamp(1.95rem, 3vw, 2.5rem);
+}
+
+:global(html[lang="en"]) .description {
+  max-width: 38rem;
+}
+
+@media (max-width: 996px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .copyColumn {
+    max-width: 100%;
+  }
+
+  .title {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 1.6rem 0 2.4rem;
+  }
+
+  .container {
+    width: min(100%, calc(100% - 40px));
+  }
+
+  .toolGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .customGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+[data-theme="dark"] {
+  .badge,
+  .connectorBadge {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-primary) 24%,
+      var(--oomol-divider)
+    );
+    background: color-mix(
+      in srgb,
+      var(--oomol-bg-elevated) 78%,
+      var(--oomol-primary-bg) 22%
+    );
+  }
+
+  .surfacePanel,
+  .toolChip,
+  .customCard {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-border-default) 72%,
+      var(--oomol-divider)
+    );
+    background: color-mix(
+      in srgb,
+      var(--oomol-bg-elevated) 86%,
+      var(--oomol-bg-container) 14%
+    );
+  }
+
+  .customIconWrap {
+    background: color-mix(
+      in srgb,
+      var(--oomol-primary-bg) 40%,
+      var(--oomol-bg-container) 60%
+    );
+  }
+}

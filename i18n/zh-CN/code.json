@@ -27,7 +27,10 @@
     "message": "Skills 社区"
   },
   "HOME.page.title": {
-    "message": "OOMOL - 构建并发布 cloud skill"
+    "message": "OOMOL - 为 agent 连接并交付能力"
+  },
+  "HOME.page.description": {
+    "message": "把现成工具、API 和你的业务接进 Agent，让执行从一句话开始。"
   },
   "HOME.FirstScreen.slogan": {
     "message": "为 agent 构建并交付你的能力"
@@ -39,19 +42,19 @@
     "message": "先通过 oo-cli 使用现成能力，再在 OOMOL Studio 中编写自己的 block，最后通过 Cloud 私有部署并交付出去。"
   },
   "HOME.FirstScreen.heroTitle": {
-    "message": "让 Agent 用上你的 Skill\n代码依然由你掌控"
+    "message": "把工具、API 和你的业务\n接进 Agent"
   },
   "HOME.FirstScreen.heroSubtitle": {
     "message": "我们把这种运行在云端、可被终端和 agent 工作流直接使用的能力，叫做 cloud skill。"
   },
   "HOME.FirstScreen.heroLead": {
-    "message": "用 OOMOL 生成的 Skill，背后的工具函数在云端稳定执行；\n用户安装 oo-cli 后即可直接在 Codex 和 Claude Code 中使用。"
+    "message": "把现成 SaaS、内部 API 和自定义 skill 接进来，让 Agent 真正开始做事。"
   },
   "HOME.FirstScreen.heroAdvantage": {
-    "message": "开源还是闭源，"
+    "message": "从连接工具，"
   },
   "HOME.FirstScreen.heroAdvantageHighlight": {
-    "message": "都由你自己决定。"
+    "message": "到接入业务。"
   },
   "HOME.FirstScreen.video.playAriaLabel": {
     "message": "播放演示视频"
@@ -78,37 +81,64 @@
     "message": "每月赠送 200 分钟 Cloud Task"
   },
   "HOME.PainPoints.badge": {
-    "message": "为什么要上云"
+    "message": "In Action"
   },
   "HOME.PainPoints.title": {
-    "message": "你写的能力，不该在交付时失控"
+    "message": "接上能力后，agent 可以直接替你执行这些动作"
+  },
+  "HOME.PainPoints.subtitle": {
+    "message": "不是再讲平台能接什么，而是先看 agent 接上之后会实际去做什么。"
+  },
+  "HOME.PainPoints.promptLabel": {
+    "message": "你可以这样说"
+  },
+  "HOME.PainPoints.resultLabel": {
+    "message": "agent 会去做"
   },
   "HOME.PainPoints.card1.title": {
-    "message": "本地执行 = 代码泄露"
+    "message": "总结 GitHub PR 并同步到 Slack"
   },
   "HOME.PainPoints.card1.description": {
-    "message": "现在 Codex、Claude Code 要调用你的能力，就得把代码拉到本地跑。你的算法、商业逻辑、调用链路，全部暴露给使用方。"
+    "message": "把代码上下文、PR 变更和团队通知放进同一个动作链路里。"
+  },
+  "HOME.PainPoints.card1.prompt": {
+    "message": "把这个 PR 的关键改动整理成 5 条，发到 Slack 的发布频道。"
   },
   "HOME.PainPoints.card1.solution": {
-    "message": "Cloud Skill 让能力在云端执行，用户只调用接口，代码始终在你手里。"
+    "message": "读取 PR diff、生成摘要，并把结果推送到指定 Slack 频道。"
   },
   "HOME.PainPoints.card2.title": {
-    "message": "想交付一个 Skill，却要搭一整套后端"
+    "message": "把 Notion 需求拆成 Linear 任务"
   },
   "HOME.PainPoints.card2.description": {
-    "message": "服务器、扩缩容、计费系统、订阅管理、Secrets 配置、使用数据……写核心逻辑只占 20%，剩下 80% 都在搭基础设施。"
+    "message": "把需求文档、任务拆解和执行跟踪放进同一个 agent 工作流里。"
+  },
+  "HOME.PainPoints.card2.prompt": {
+    "message": "读取这个 Notion 页面，拆成执行项并同步到 Linear。"
   },
   "HOME.PainPoints.card2.solution": {
-    "message": "Cloud 把运行时、订阅、配置和数据全部承接，你只管写核心逻辑。"
+    "message": "读取文档内容、生成任务拆分，并把结果写回 Linear。"
+  },
+  "HOME.PainPoints.card3.title": {
+    "message": "处理 Gmail 附件并调用你的 API"
+  },
+  "HOME.PainPoints.card3.description": {
+    "message": "把现成工具输入和你自己的处理接口接到同一条能力路径里。"
+  },
+  "HOME.PainPoints.card3.prompt": {
+    "message": "读取 Gmail 附件，调用我们的 PDF API 提取结构化内容，再回传结果。"
+  },
+  "HOME.PainPoints.card3.solution": {
+    "message": "拿到邮件输入后，继续调用你的 API 和自定义逻辑完成处理。"
   },
   "HOME.ProofLayer.badge": {
-    "message": "真实案例"
+    "message": "真实承载"
   },
   "HOME.ProofLayer.title": {
-    "message": "这条 Studio -> Cloud -> CLI 链路已经跑在真实产品里"
+    "message": "这条路径已经跑在真实产品里"
   },
   "HOME.ProofLayer.subtitle": {
-    "message": "以 pdf.oomol.com 为例，OOMOL 不只是把函数跑通，而是把同一套能力发布到 Cloud，再接到网页工具、桌面应用、CLI 和线上服务里，并稳定对外提供。"
+    "message": "OOMOL 不只是把一个工具接进 agent，而是把同一份能力继续承接到 CLI、网页工具、桌面应用和云端服务里。"
   },
   "HOME.ProofLayer.note": {
     "message": "这一层先用一个真实上线案例，带两个占位场景。后续可以继续替换成更多真实服务、团队名称和使用数据。"
@@ -123,22 +153,22 @@
     "message": "这不是内部 Demo，而是一个持续对外提供 PDF 与出版处理工具的真实项目。"
   },
   "HOME.ProofLayer.signal2.label": {
-    "message": "同站点多场景"
+    "message": "多个入口"
   },
   "HOME.ProofLayer.signal2.value": {
-    "message": "转换 / 翻译 / 生成"
+    "message": "网页 / 桌面 / CLI"
   },
   "HOME.ProofLayer.signal2.description": {
-    "message": "同一个项目里已经上线 PDF 转换、EPUB 翻译、漫画翻译与着色等多个入口，不是只有一个孤立页面。"
+    "message": "同一套能力已经进入网页工具、桌面应用和 CLI，不是停留在单个演示页面。"
   },
   "HOME.ProofLayer.signal3.label": {
-    "message": "背后实现"
+    "message": "同一套能力"
   },
   "HOME.ProofLayer.signal3.value": {
-    "message": "OOMOL 函数 / Cloud / CLI"
+    "message": "Functions / Cloud / CLI"
   },
   "HOME.ProofLayer.signal3.description": {
-    "message": "这些能力不是分别重搭后端，而是沿着同一套 Studio、Cloud 和 CLI 链路被交付成真实可用的服务，CLI 登录后调用的也是这里的云函数。"
+    "message": "这些入口不是分别重做后端，而是沿着同一条路径继续交付和承接。"
   },
   "HOME.ProofLayer.case1.kicker": {
     "message": "真实场景 01"
@@ -195,7 +225,10 @@
     "message": "仅支持 x64 版本"
   },
   "HOME.FirstScreen.cta.secondary": {
-    "message": "先用 oo-cli"
+    "message": "看 60 秒演示"
+  },
+  "HOME.FirstScreen.cta.primary": {
+    "message": "先在 Codex 里试一下"
   },
   "HOME.ValueProps.localCompute.title": {
     "message": "将本地算力转化为你的私有 AI 云"
@@ -2590,61 +2623,61 @@
     "message": "把精力放回 skill 本身，而不是持续重做鉴权、托管、调度和交互外壳。"
   },
   "HOME.DeveloperBenefits.badge": {
-    "message": "开发者免费方案"
+    "message": "推荐起步路径"
   },
   "HOME.DeveloperBenefits.title": {
-    "message": "零成本起步，先把产品跑起来"
+    "message": "先把使用路径跑通，再决定要不要做自己的"
   },
   "HOME.DeveloperBenefits.subtitle": {
-    "message": "不用先付费。接入自有模型 + 每月 200 分钟免费 Cloud Task，足够你从 Studio 走到第一次线上交付。"
+    "message": "对大多数用户来说，最自然的路径不是一上来先建能力，而是先在 oo-cli 中用起来；需要自己的实现时，再进入 Studio 和 Cloud。"
   },
   "HOME.DeveloperBenefits.card1.eyebrow": {
-    "message": "Studio 免费"
+    "message": "最快开始"
   },
   "HOME.DeveloperBenefits.card1.tag": {
-    "message": "当前推荐"
+    "message": "推荐"
   },
   "HOME.DeveloperBenefits.card1.value": {
-    "message": "GLM-5"
+    "message": "oo-cli"
   },
   "HOME.DeveloperBenefits.card1.valueCaption": {
-    "message": "支持接入自有模型"
+    "message": "先把使用路径跑通"
   },
   "HOME.DeveloperBenefits.card1.title": {
-    "message": "接入自有模型，先把 Studio 跑起来"
+    "message": "先在 Codex 和终端里直接使用已发布能力"
   },
   "HOME.DeveloperBenefits.card1.description": {
-    "message": "已有模型额度就直接接入，不用再额外买服务。推荐先用 GLM-5。"
+    "message": "安装 oo-cli 后，先搜索、查看并运行已发布能力。先得到真实使用体验，再决定是否需要自己构建。"
   },
   "HOME.DeveloperBenefits.card1.note": {
-    "message": "按教程配好后，通常就能完成本地验证。"
+    "message": "这是最短的开始方式，也最适合第一次接触 OOMOL 的用户。"
   },
   "HOME.DeveloperBenefits.card1.cta": {
-    "message": "查看配置教程"
+    "message": "查看 CLI 文档"
   },
   "HOME.DeveloperBenefits.card2.eyebrow": {
-    "message": "Cloud 免费"
+    "message": "需要扩展时"
   },
   "HOME.DeveloperBenefits.card2.tag": {
-    "message": "每月赠送"
+    "message": "下一步"
   },
   "HOME.DeveloperBenefits.card2.value": {
-    "message": "200 分钟"
+    "message": "Studio + Cloud"
   },
   "HOME.DeveloperBenefits.card2.valueCaption": {
-    "message": "Cloud Task 免费时长"
+    "message": "构建并交付自己的能力"
   },
   "HOME.DeveloperBenefits.card2.title": {
-    "message": "每月送 200 分钟，轻量任务先跑起来"
+    "message": "当现成能力不够，再进入 Studio 和 Cloud"
   },
   "HOME.DeveloperBenefits.card2.description": {
-    "message": "200 分钟免费 Cloud Task，通常够你先跑定时任务、轻量自动化和交付验证。"
+    "message": "在 Studio 中生成、组合和验证能力，再通过 Cloud 持续运行与交付，让同一份实现服务更多入口和更多用户。"
   },
   "HOME.DeveloperBenefits.card2.note": {
-    "message": "先用免费额度跑一遍，再决定是否继续投入。"
+    "message": "从使用到构建保持同一条路径，不必切换成另一套平台模式。"
   },
   "HOME.DeveloperBenefits.card2.cta": {
-    "message": "查看 Cloud 交付"
+    "message": "了解构建路径"
   },
   "HOME.CliEntry.badge": {
     "message": "CLI FIRST"
@@ -3284,9 +3317,6 @@
   },
   "SDK.fusion.feature3": {
     "message": "支持文生图、语音合成等多种服务"
-  },
-  "HOME.page.description": {
-    "message": "在真实编码环境中构建云技能，本地验证，然后发布到 oo-cli、智能体、API 和自动化任务中，无需暴露源代码。"
   },
   "HOME.Downloads.page.title": {
     "message": "下载 OOMOL Studio — macOS 和 Windows"
