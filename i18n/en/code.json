@@ -48,13 +48,13 @@
     "message": "We call this a cloud skill: a capability that runs in the cloud and can be used directly from terminals and agent workflows."
   },
   "HOME.FirstScreen.heroLead": {
-    "message": "Bring in ready-made SaaS, internal APIs, and custom skills so agents can start doing real work."
+    "message": "Bring in SaaS, internal APIs, and skills so agents can start executing."
   },
   "HOME.FirstScreen.heroAdvantage": {
-    "message": "From connecting tools,"
+    "message": "From tool integration,"
   },
   "HOME.FirstScreen.heroAdvantageHighlight": {
-    "message": "to plugging in your business."
+    "message": "to business integration."
   },
   "HOME.FirstScreen.video.playAriaLabel": {
     "message": "Play demo video"
@@ -84,10 +84,10 @@
     "message": "In Action"
   },
   "HOME.PainPoints.title": {
-    "message": "Once connected, these are the kinds of actions an agent can execute for you"
+    "message": "Once connected, these are the kinds of things agents will do"
   },
   "HOME.PainPoints.subtitle": {
-    "message": "Do not start with platform theory. Start with the real actions an agent can take after the capabilities are connected."
+    "message": "Start with outcomes, then explain the system."
   },
   "HOME.PainPoints.promptLabel": {
     "message": "You can say"
@@ -96,40 +96,40 @@
     "message": "The agent will"
   },
   "HOME.PainPoints.card1.title": {
-    "message": "Summarize a GitHub PR and send it to Slack"
+    "message": "Send a PR summary to Slack"
   },
   "HOME.PainPoints.card1.description": {
-    "message": "Bring code context, PR changes, and team communication into one action path."
+    "message": "Turn code changes and team communication into one action."
   },
   "HOME.PainPoints.card1.prompt": {
-    "message": "Summarize the key changes in this PR into five bullets and send them to the release Slack channel."
+    "message": "Summarize this PR and send it to Slack."
   },
   "HOME.PainPoints.card1.solution": {
-    "message": "Read the PR diff, generate the summary, and post it to the target Slack channel."
+    "message": "Read the diff, write the summary, post it to the target channel."
   },
   "HOME.PainPoints.card2.title": {
-    "message": "Turn a Notion spec into Linear tasks"
+    "message": "Turn a Notion spec into Linear"
   },
   "HOME.PainPoints.card2.description": {
-    "message": "Keep specification docs, task breakdown, and execution tracking in one agent workflow."
+    "message": "Keep docs, breakdown, and tracking in one chain."
   },
   "HOME.PainPoints.card2.prompt": {
-    "message": "Read this Notion page, break it down into action items, and sync them into Linear."
+    "message": "Read this Notion page, break it into tasks, and sync them to Linear."
   },
   "HOME.PainPoints.card2.solution": {
-    "message": "Read the document, generate the task breakdown, and write the result back into Linear."
+    "message": "Read the doc, split the tasks, write them back to Linear."
   },
   "HOME.PainPoints.card3.title": {
-    "message": "Process Gmail attachments and call your API"
+    "message": "Route Gmail attachments into your API"
   },
   "HOME.PainPoints.card3.description": {
-    "message": "Bring ready-made tool input and your own processing interface into the same capability path."
+    "message": "Put ready-made input and custom processing on one path."
   },
   "HOME.PainPoints.card3.prompt": {
-    "message": "Read the Gmail attachment, call our PDF API to extract structured content, then return the result."
+    "message": "Read the Gmail attachment, call our PDF API, and return the result."
   },
   "HOME.PainPoints.card3.solution": {
-    "message": "Start from the email input, then keep going through your API and custom logic to finish the job."
+    "message": "Take the email input, then keep going through your API."
   },
   "HOME.ProofLayer.badge": {
     "message": "Proof"
@@ -2623,16 +2623,16 @@
     "message": "Stay focused on the skill itself instead of rebuilding auth, hosting, scheduling, and interface layers around the same implementation."
   },
   "HOME.DeveloperBenefits.badge": {
-    "message": "Recommended Path"
+    "message": "CHOOSE YOUR PATH"
   },
   "HOME.DeveloperBenefits.title": {
-    "message": "Get the usage path working first, then decide whether to build your own"
+    "message": "Enter by goal, not everyone needs the same starting path"
   },
   "HOME.DeveloperBenefits.subtitle": {
-    "message": "For most users, the natural path is not to build first. Start by using published capabilities in oo-cli, then move into Studio and Cloud when you need your own implementation."
+    "message": "Some users want Codex working first. Others want to start wiring in their own APIs and skills. The homepage should make both entrances obvious."
   },
   "HOME.DeveloperBenefits.card1.eyebrow": {
-    "message": "Fastest start"
+    "message": "Use first"
   },
   "HOME.DeveloperBenefits.card1.tag": {
     "message": "Recommended"
@@ -2644,19 +2644,19 @@
     "message": "Get the usage path working first"
   },
   "HOME.DeveloperBenefits.card1.title": {
-    "message": "Use published capabilities directly in Codex and terminal workflows first"
+    "message": "Get capabilities working in Codex and terminal workflows first"
   },
   "HOME.DeveloperBenefits.card1.description": {
-    "message": "Install oo-cli, then search, inspect, and run published capabilities. Get the real usage experience first before deciding whether you need to build your own."
+    "message": "If your goal is to get agents running first, install oo-cli and start by searching, inspecting, and running published capabilities."
   },
   "HOME.DeveloperBenefits.card1.note": {
-    "message": "This is the shortest path into OOMOL and the best fit for first-time users."
+    "message": "Best for validating the usage path and seeing real execution quickly."
   },
   "HOME.DeveloperBenefits.card1.cta": {
-    "message": "View CLI guide"
+    "message": "Start with oo-cli"
   },
   "HOME.DeveloperBenefits.card2.eyebrow": {
-    "message": "When you need more"
+    "message": "Build next"
   },
   "HOME.DeveloperBenefits.card2.tag": {
     "message": "Next step"
@@ -2668,16 +2668,16 @@
     "message": "Build and deliver your own capability"
   },
   "HOME.DeveloperBenefits.card2.title": {
-    "message": "Move into Studio and Cloud when published capabilities are not enough"
+    "message": "Start wiring in your APIs, skills, and delivery path"
   },
   "HOME.DeveloperBenefits.card2.description": {
-    "message": "Generate, compose, and validate capabilities in Studio, then keep them running and deliver them through Cloud with the same implementation."
+    "message": "If your goal is to connect your own business, move into Studio and Cloud to keep adding APIs, skills, and delivery relationships."
   },
   "HOME.DeveloperBenefits.card2.note": {
-    "message": "Stay on one path from usage to building instead of switching into a different platform model."
+    "message": "Best for teams moving from ready-made capabilities to custom capabilities and delivery."
   },
   "HOME.DeveloperBenefits.card2.cta": {
-    "message": "Explore the build path"
+    "message": "Enter the build path"
   },
   "HOME.CliEntry.badge": {
     "message": "CLI FIRST"

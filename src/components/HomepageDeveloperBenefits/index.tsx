@@ -7,8 +7,8 @@ import React from "react";
 const benefits = [
   {
     tag: translate({ message: "HOME.DeveloperBenefits.card1.tag" }),
-    value: translate({ message: "HOME.DeveloperBenefits.card1.value" }),
-    valueCaption: translate({
+    route: translate({ message: "HOME.DeveloperBenefits.card1.value" }),
+    routeCaption: translate({
       message: "HOME.DeveloperBenefits.card1.valueCaption",
     }),
     eyebrow: translate({ message: "HOME.DeveloperBenefits.card1.eyebrow" }),
@@ -22,8 +22,8 @@ const benefits = [
   },
   {
     tag: translate({ message: "HOME.DeveloperBenefits.card2.tag" }),
-    value: translate({ message: "HOME.DeveloperBenefits.card2.value" }),
-    valueCaption: translate({
+    route: translate({ message: "HOME.DeveloperBenefits.card2.value" }),
+    routeCaption: translate({
       message: "HOME.DeveloperBenefits.card2.valueCaption",
     }),
     eyebrow: translate({ message: "HOME.DeveloperBenefits.card2.eyebrow" }),
@@ -65,10 +65,10 @@ export default function HomepageDeveloperBenefits() {
                 <div className={styles.eyebrow}>{benefit.eyebrow}</div>
                 <div className={styles.tag}>{benefit.tag}</div>
               </div>
-              <div className={styles.valueBox}>
-                <div className={styles.value}>{benefit.value}</div>
-                <div className={styles.valueCaption}>
-                  {benefit.valueCaption}
+              <div className={styles.routePill}>
+                <div className={styles.route}>{benefit.route}</div>
+                <div className={styles.routeCaption}>
+                  {benefit.routeCaption}
                 </div>
               </div>
               <h3 className={styles.cardTitle}>{benefit.title}</h3>

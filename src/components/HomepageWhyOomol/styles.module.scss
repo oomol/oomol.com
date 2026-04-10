@@ -1,0 +1,188 @@
+@use "../../css/custom.scss" as *;
+
+.section {
+  padding: clamp(2.4rem, 5vw, 3.8rem) 0;
+}
+
+.container {
+  width: min(1260px, calc(100% - 48px));
+  margin: 0 auto;
+  display: grid;
+  gap: clamp(1.2rem, 2.5vw, 1.9rem);
+}
+
+.header {
+  display: grid;
+  gap: 0.65rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.badge {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  min-height: 1.95rem;
+  padding: 0 0.85rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--oomol-primary) 16%, white);
+  background: color-mix(in srgb, var(--oomol-primary-bg) 46%, white);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--oomol-primary-text);
+}
+
+.title {
+  margin: 0;
+  max-width: 15ch;
+  font-family: var(--oomol-font-display);
+  font-size: clamp(1.95rem, 3.1vw, 2.65rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  color: var(--oomol-text-primary);
+}
+
+.subtitle {
+  margin: 0;
+  max-width: 42rem;
+  font-size: 0.96rem;
+  line-height: 1.64;
+  color: var(--oomol-text-secondary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.card {
+  display: grid;
+  gap: 0.72rem;
+  min-height: 100%;
+  padding: 1.15rem 1.15rem 1.25rem;
+  border-radius: 1.5rem;
+  border: 1px solid var(--oomol-divider);
+  background: color-mix(in srgb, var(--oomol-surface-float) 94%, white 6%);
+  box-shadow: var(--oomol-shadow-sm);
+}
+
+.cardTop {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.iconWrap {
+  width: 2.4rem;
+  height: 2.4rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.85rem;
+  background: color-mix(in srgb, var(--oomol-primary-bg) 58%, white);
+  color: var(--oomol-primary-text);
+}
+
+.icon {
+  font-size: 1.08rem;
+}
+
+.eyebrow {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--oomol-text-tertiary);
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 1.28rem;
+  line-height: 1.28;
+  font-weight: 650;
+  color: var(--oomol-text-primary);
+}
+
+.cardText {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--oomol-text-secondary);
+}
+
+:global(html[lang="en"]) .title {
+  max-width: 18ch;
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  line-height: 1.1;
+}
+
+:global(html[lang="en"]) .subtitle {
+  max-width: 56rem;
+}
+
+@media (max-width: 996px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 0;
+  }
+
+  .container {
+    width: min(100%, calc(100% - 40px));
+  }
+
+  .title {
+    max-width: 100%;
+    font-size: clamp(1.95rem, 8vw, 2.6rem);
+  }
+
+  .subtitle,
+  .cardText {
+    font-size: 0.9rem;
+    line-height: 1.62;
+  }
+
+  .cardTitle {
+    font-size: 1.16rem;
+  }
+}
+
+[data-theme="dark"] {
+  .badge {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-primary) 24%,
+      var(--oomol-divider)
+    );
+    background: color-mix(
+      in srgb,
+      var(--oomol-bg-elevated) 78%,
+      var(--oomol-primary-bg) 22%
+    );
+  }
+
+  .card {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-border-default) 72%,
+      var(--oomol-divider)
+    );
+    background: color-mix(
+      in srgb,
+      var(--oomol-bg-elevated) 86%,
+      var(--oomol-bg-container) 14%
+    );
+  }
+
+  .iconWrap {
+    background: color-mix(
+      in srgb,
+      var(--oomol-primary-bg) 40%,
+      var(--oomol-bg-container) 60%
+    );
+  }
+}

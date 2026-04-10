@@ -1,5 +1,5 @@
 .section {
-  padding: clamp(4rem, 8vw, 6rem) 0 clamp(2rem, 4vw, 3rem);
+  padding: clamp(3rem, 6vw, 4.6rem) 0 clamp(2.2rem, 4vw, 3.2rem);
   position: relative;
 
   &::before {
@@ -17,20 +17,19 @@
 }
 
 .container {
-  max-width: 1280px;
+  width: min(1260px, calc(100% - 48px));
   margin: 0 auto;
-  padding: 0 24px;
   display: grid;
   grid-template-columns: minmax(0, 0.68fr) minmax(0, 1.32fr);
-  gap: clamp(1.6rem, 4vw, 3rem);
+  gap: clamp(1.2rem, 3vw, 2rem);
   align-items: start;
 }
 
 .header {
   display: grid;
-  gap: 0.8rem;
+  gap: 0.65rem;
   text-align: left;
-  padding-top: 0.25rem;
+  padding-top: 0.15rem;
   max-width: 30rem;
 }
 
@@ -40,27 +39,27 @@
   display: inline-flex;
   width: fit-content;
   align-items: center;
-  gap: 0.55rem;
-  font-size: 0.74rem;
+  gap: 0.45rem;
+  font-size: 0.76rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--oomol-text-secondary);
+  color: var(--oomol-primary-text);
 }
 
-.badge::before,
-.eyebrow::before {
-  content: "";
-  width: 0.75rem;
-  height: 1px;
-  background: var(--oomol-primary);
+.badge {
+  min-height: 1.95rem;
+  padding: 0 0.85rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--oomol-primary) 16%, white);
+  background: color-mix(in srgb, var(--oomol-primary-bg) 46%, white);
 }
 
 .title {
   margin: 0;
-  max-width: 12ch;
+  max-width: 11ch;
   font-family: var(--oomol-font-display);
-  font-size: clamp(2.35rem, 3.9vw, 3.45rem);
+  font-size: clamp(1.88rem, 3.1vw, 2.6rem);
   line-height: 1.06;
   letter-spacing: -0.035em;
   color: var(--oomol-text-primary);
@@ -70,26 +69,26 @@
 .subtitle {
   margin: 0;
   max-width: 28rem;
-  font-size: 0.96rem;
-  line-height: 1.72;
+  font-size: 0.92rem;
+  line-height: 1.56;
   color: var(--oomol-text-secondary);
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 0.9rem;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
+  gap: 0.75rem;
   min-height: 100%;
-  padding: 1.35rem 1.4rem 1.45rem;
+  padding: 1.05rem 1.05rem 1.12rem;
   border: 1px solid var(--oomol-divider);
-  border-radius: 1.7rem;
-  background: var(--oomol-surface-float);
+  border-radius: 1.5rem;
+  background: color-mix(in srgb, var(--oomol-surface-float) 94%, white 6%);
   box-shadow: var(--oomol-shadow-sm);
   position: relative;
   overflow: hidden;
@@ -128,43 +127,46 @@
 .cardTop {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.8rem;
   align-items: flex-start;
-  padding-bottom: 0.35rem;
+  padding-bottom: 0.1rem;
 }
 
 .tag {
-  padding: 0.32rem 0.7rem;
+  padding: 0.26rem 0.62rem;
   border-radius: 999px;
   border: 1px solid var(--oomol-divider);
   background: var(--oomol-surface-panel);
 }
 
-.valueBox {
-  display: grid;
-  gap: 0.4rem;
-  padding: 0.15rem 0 0.85rem;
-  border-bottom: 1px solid var(--oomol-divider-subtle);
+.routePill {
+  display: inline-flex;
+  width: fit-content;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2rem;
+  padding: 0.38rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--oomol-primary) 14%, white);
+  background: color-mix(in srgb, var(--oomol-primary-bg) 42%, white);
 }
 
-.value {
-  margin: 0;
-  font-family: var(--oomol-font-display);
-  font-size: clamp(3rem, 4vw, 4.75rem);
-  line-height: 0.92;
-  letter-spacing: -0.06em;
-  color: var(--oomol-text-primary);
+.route {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--oomol-primary-text);
 }
 
-.valueCaption {
-  font-size: 0.88rem;
-  line-height: 1.5;
-  color: var(--oomol-text-secondary);
+.routeCaption {
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: var(--oomol-text-tertiary);
 }
 
 .cardTitle {
   margin: 0;
-  font-size: 1.55rem;
+  font-size: 1.16rem;
   line-height: 1.24;
   font-weight: 650;
   color: var(--oomol-text-primary);
@@ -173,8 +175,8 @@
 .cardDescription,
 .cardNote {
   margin: 0;
-  font-size: 1rem;
-  line-height: 1.75;
+  font-size: 0.9rem;
+  line-height: 1.56;
   color: var(--oomol-text-secondary);
 }
 
@@ -183,15 +185,15 @@
 }
 
 .cardNote {
-  padding-left: 0.9rem;
-  border-left: 2px solid var(--oomol-divider);
+  padding-left: 0.68rem;
+  border-left: 2px solid color-mix(in srgb, var(--oomol-primary) 20%, white);
   color: var(--oomol-text-tertiary);
-  font-size: 0.95rem;
+  font-size: 0.84rem;
 }
 
 .cardFooter {
   margin-top: auto;
-  padding-top: 0.5rem;
+  padding-top: 0.3rem;
 }
 
 .cta {
@@ -199,15 +201,15 @@
   align-items: center;
   gap: 0.45rem;
   width: fit-content;
-  min-height: 2.5rem;
-  padding: 0 0.85rem;
+  min-height: 2.25rem;
+  padding: 0 0.8rem;
   border-radius: 999px;
   background: color-mix(
     in srgb,
     var(--oomol-primary-bg) 70%,
     var(--oomol-bg-elevated) 30%
   );
-  font-size: 0.96rem;
+  font-size: 0.9rem;
   font-weight: 650;
   color: var(--oomol-primary-text);
   text-decoration: none;
@@ -254,17 +256,25 @@
       var(--oomol-border-default) 72%,
       var(--oomol-divider)
     );
-    background: linear-gradient(
-      180deg,
-      color-mix(
-          in srgb,
-          var(--oomol-bg-container) 84%,
-          var(--oomol-bg-elevated) 16%
-        )
-        0%,
-      color-mix(in srgb, var(--oomol-bg-elevated) 88%, black 12%) 100%
+    background: color-mix(
+      in srgb,
+      var(--oomol-bg-elevated) 86%,
+      var(--oomol-bg-container) 14%
     );
     box-shadow: var(--oomol-shadow-md);
+  }
+
+  .badge {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-primary) 24%,
+      var(--oomol-divider)
+    );
+    background: color-mix(
+      in srgb,
+      var(--oomol-bg-elevated) 78%,
+      var(--oomol-primary-bg) 22%
+    );
   }
 
   .tag {
@@ -280,11 +290,24 @@
     );
   }
 
+  .routePill {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-primary) 18%,
+      var(--oomol-divider)
+    );
+    background: color-mix(
+      in srgb,
+      var(--oomol-bg-elevated) 80%,
+      var(--oomol-primary-bg) 20%
+    );
+  }
+
   .cardNote {
     border-left-color: color-mix(
       in srgb,
-      var(--oomol-divider) 84%,
-      var(--oomol-primary-border) 16%
+      var(--oomol-primary) 26%,
+      var(--oomol-divider) 74%
     );
   }
 
@@ -308,7 +331,7 @@
 
 :global(html[lang="en"]) .title {
   max-width: 14ch;
-  font-size: clamp(2.35rem, 4.2vw, 3.75rem);
+  font-size: clamp(1.92rem, 3.2vw, 2.7rem);
   line-height: 1.02;
 }
 
@@ -321,13 +344,13 @@
 }
 
 :global(html[lang="en"]) .card {
-  gap: 1.2rem;
-  padding: 1.5rem 1.55rem 1.6rem;
+  gap: 0.95rem;
+  padding: 1.15rem 1.15rem 1.2rem;
 }
 
 :global(html[lang="en"]) .cardTitle {
   max-width: 20ch;
-  font-size: 1.34rem;
+  font-size: 1.2rem;
   line-height: 1.32;
 }
 
@@ -360,7 +383,7 @@
   }
 
   .container {
-    padding: 0 20px;
+    width: min(100%, calc(100% - 40px));
   }
 
   .title {

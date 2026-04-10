@@ -115,16 +115,14 @@ function ImageCard({ title, note, src, pills }: ImageCardProps) {
 
 const zhCopy: Copy = {
   intro: {
-    badge: "路径说明",
-    title: "从使用到构建，再到交付，一条连续路径",
-    description:
-      "先让能力跑起来；现成能力不够时，再做自己的；需要持续运行和交付时，再交给 Cloud。",
+    badge: "怎么开始",
+    title: "从用起来，到做自己的，再到持续交付",
+    description: "先用起来；不够时再做自己的；需要持续运行时再交给 Cloud。",
   },
   cli: {
     eyebrow: "01 / oo-cli",
     title: "先在 Codex 里装 oo-cli，直接开始用能力",
-    description:
-      "oo-cli 是最适合在 Codex、Claude Code 和终端环境里开始使用能力的入口。先搜索、查看并运行已发布能力，把使用路径先跑通。",
+    description: "先搜索并运行已发布能力，把使用路径先跑通。",
     media: {
       title: "Codex 演示视频",
       note: "展示在 Codex 中安装、搜索、查看并运行能力的过程。",
@@ -136,7 +134,7 @@ const zhCopy: Copy = {
     eyebrow: "02 / OOMOL Studio",
     title: "当现成能力不够，就用 OOMOL Studio 做你自己的",
     description:
-      "直接告诉 Agent 你要生成什么能力，再继续补代码、接依赖、改参数和做组合。Studio 的角色不是替代开发流程，而是把能力生成和本地验证带回真实编码环境。",
+      "告诉 Agent 你要生成什么，再继续补代码、接依赖、改参数和做组合。",
     media: {
       title: "Studio 演示视频",
       note: "展示从描述需求、生成能力到本地验证跑通的过程。",
@@ -147,8 +145,7 @@ const zhCopy: Copy = {
   cloud: {
     eyebrow: "03 / Cloud",
     title: "当能力需要持续运行和交付时，Cloud 来承接",
-    description:
-      "能力完成本地验证后，Cloud 负责承接运行时、配置、Secrets、交付关系和使用数据。你不用围着同一份实现重复做一层又一层产品外壳。",
+    description: "本地验证后，Cloud 承接运行、配置、交付关系和使用数据。",
     cards: [
       {
         title: "统一承接运行与交付",
@@ -171,7 +168,7 @@ const zhCopy: Copy = {
   cta: {
     title: "先把一个能力跑起来，再决定要不要做自己的",
     description:
-      "先通过 oo-cli 让使用路径跑通。需要自己的能力时，再进入 Studio 生成、组合、验证，并通过 Cloud 持续交付。",
+      "先通过 oo-cli 跑通使用路径。需要自己的能力时，再进入 Studio 和 Cloud。",
     primary: "先用 oo-cli",
     secondary: "了解 Studio",
   },
