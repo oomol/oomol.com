@@ -58,7 +58,7 @@ export default function HomepageFirstScreen() {
               size="lg"
               className={styles.secondaryCta}
             >
-              <Link to="#hero-demo">
+              <Link to="/downloads">
                 {translate({
                   message: "HOME.FirstScreen.cta.secondary",
                 })}

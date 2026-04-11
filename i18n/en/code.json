@@ -225,7 +225,7 @@
     "message": "only supports x64"
   },
   "HOME.FirstScreen.cta.secondary": {
-    "message": "Watch the 60s demo"
+    "message": "Download OOMOL Studio"
   },
   "HOME.FirstScreen.cta.primary": {
     "message": "Start with oo-cli"
