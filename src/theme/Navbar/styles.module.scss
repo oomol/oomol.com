@@ -53,96 +53,26 @@
 }
 
 .downloadButton {
-  display: inline-flex;
-  align-items: center;
   gap: 6px;
-  min-height: 42px;
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 82%, transparent);
-  border: 1px solid color-mix(in srgb, var(--oomol-border-default) 88%, white);
-  border-radius: 999px;
-  padding: 6px 17px;
   font-weight: 650;
   font-size: 13px;
   letter-spacing: 0.02em;
-  cursor: pointer;
-  color: var(--oomol-text-primary);
-  text-decoration: none;
   margin: 0 !important;
-  transition:
-    transform 0.2s ease,
-    border-color 0.2s ease,
-    background 0.2s ease,
-    color 0.2s ease;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
 
   i {
     font-size: 16px;
-  }
-
-  &:hover {
-    color: var(--oomol-primary) !important;
-    border-color: var(--oomol-primary);
-    background: color-mix(
-      in srgb,
-      var(--oomol-primary-bg) 72%,
-      var(--oomol-bg-elevated)
-    );
-    transform: translateY(-1px);
   }
 }
 
 .loginButton {
-  display: inline-flex;
-  align-items: center;
   gap: 6px;
-  min-height: 42px;
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--oomol-primary) 86%, white) 0%,
-    var(--oomol-primary) 100%
-  );
-  border: 1px solid color-mix(in srgb, var(--oomol-primary) 70%, black 10%);
-  border-radius: 999px;
-  padding: 6px 17px;
   font-weight: 650;
   font-size: 13px;
   letter-spacing: 0.02em;
-  cursor: pointer;
-  text-decoration: none;
   margin: 0 !important;
-  color: var(--oomol-text-inverse);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.2),
-    0 10px 20px rgba(46, 39, 74, 0.12);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
-
-  [data-theme="dark"] & {
-    color: var(--oomol-white);
-  }
 
   i {
     font-size: 16px;
-  }
-
-  &:hover {
-    background: linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--oomol-primary-hover) 86%, white) 0%,
-      var(--oomol-primary-hover) 100%
-    );
-    border-color: color-mix(in srgb, var(--oomol-primary-hover) 70%, black 10%);
-    color: var(--oomol-text-inverse) !important;
-    transform: translateY(-1px);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.2),
-      0 14px 28px rgba(46, 39, 74, 0.16);
-
-    [data-theme="dark"] & {
-      color: var(--oomol-white) !important;
-    }
   }
 }
 
@@ -168,32 +98,17 @@
 }
 
 .productMenuTrigger {
-  display: inline-flex;
-  align-items: center;
   gap: 0.52rem;
-  min-height: 42px;
-  padding: 0.52rem 0.9rem;
   margin: 0 0.18rem;
-  border: 0;
-  border-radius: 999px;
-  background: transparent;
-  color: var(--oomol-text-primary);
   font-weight: 600;
   font-size: 14px;
-  cursor: pointer;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
-
-  &:hover {
-    color: var(--oomol-primary);
-    background: color-mix(in srgb, var(--oomol-primary-bg) 58%, transparent);
-  }
 }
 
 .productMenuTriggerActive {
-  color: var(--oomol-primary);
-  background: color-mix(in srgb, var(--oomol-primary-bg) 76%, transparent);
+  &:global(.arco-btn-text) {
+    color: var(--oomol-primary);
+    background: color-mix(in srgb, var(--oomol-primary-bg) 76%, transparent);
+  }
 }
 
 .productMenuCaret {
@@ -494,47 +409,6 @@
 [data-theme="dark"] {
   .navbar {
     box-shadow: inset 0 -1px 0 var(--oomol-divider-subtle);
-  }
-
-  .downloadButton {
-    background: linear-gradient(
-      180deg,
-      var(--oomol-surface-float) 0%,
-      color-mix(in srgb, var(--oomol-bg-container) 88%, black 12%) 100%
-    );
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-border-default) 78%,
-      var(--oomol-divider)
-    );
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.12),
-      0 8px 18px rgba(0, 0, 0, 0.16);
-
-    &:hover {
-      background: linear-gradient(
-        180deg,
-        color-mix(
-            in srgb,
-            var(--oomol-primary-bg) 68%,
-            var(--oomol-bg-elevated) 32%
-          )
-          0%,
-        color-mix(
-            in srgb,
-            var(--oomol-primary-bg) 48%,
-            var(--oomol-bg-container) 52%
-          )
-          100%
-      );
-    }
-  }
-
-  .loginButton {
-    border-color: color-mix(in srgb, var(--oomol-primary) 62%, black 18%);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.18),
-      0 10px 22px rgba(31, 24, 55, 0.22);
   }
 
   :global(.navbar__item.navbar__link) {

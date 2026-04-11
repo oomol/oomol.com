@@ -514,37 +514,58 @@
 }
 
 .subscribeBtn {
+  --oomol-button-radius: 16px;
+  --oomol-button-fg: white;
+  --oomol-button-bg-start: var(--plan-button-start);
+  --oomol-button-bg-end: var(--plan-button-end);
+  --oomol-button-border-color: var(--plan-button-border);
+  --oomol-button-bg-start-hover: var(--plan-button-hover-start);
+  --oomol-button-bg-end-hover: var(--plan-button-hover-end);
+  --oomol-button-border-color-hover: var(--plan-button-border);
+  --oomol-button-bg-start-active: color-mix(
+    in srgb,
+    var(--plan-button-hover-start) 72%,
+    black 12%
+  );
+  --oomol-button-bg-end-active: color-mix(
+    in srgb,
+    var(--plan-button-hover-end) 76%,
+    black 10%
+  );
+  --oomol-button-border-color-active: color-mix(
+    in srgb,
+    var(--plan-button-border) 84%,
+    black 8%
+  );
+  --oomol-button-bg-start-disabled: color-mix(
+    in srgb,
+    var(--plan-button-start) 48%,
+    white 52%
+  );
+  --oomol-button-bg-end-disabled: color-mix(
+    in srgb,
+    var(--plan-button-end) 72%,
+    white 28%
+  );
+  --oomol-button-border-color-disabled: color-mix(
+    in srgb,
+    var(--plan-button-border) 52%,
+    rgba(255, 255, 255, 0.24)
+  );
+  --oomol-button-fg-disabled: rgba(255, 255, 255, 0.9);
+  --oomol-button-shadow: var(--plan-button-shadow);
+  --oomol-button-shadow-hover:
+    0 22px 40px color-mix(in srgb, var(--plan-accent-strong) 22%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24);
+  --oomol-button-shadow-active:
+    0 14px 28px color-mix(in srgb, var(--plan-accent-strong) 18%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+
   width: 100%;
-  height: 52px;
+  min-height: 52px;
   border-radius: 16px;
   font-size: 17px;
   font-weight: 700;
-  background: linear-gradient(
-    180deg,
-    var(--plan-button-start) 0%,
-    var(--plan-button-end) 100%
-  ) !important;
-  border-color: var(--plan-button-border) !important;
-  color: white !important;
-  box-shadow: var(--plan-button-shadow);
-  transition:
-    transform 0.24s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.24s ease,
-    filter 0.24s ease;
-
-  &:hover {
-    background: linear-gradient(
-      180deg,
-      var(--plan-button-hover-start) 0%,
-      var(--plan-button-hover-end) 100%
-    ) !important;
-    border-color: var(--plan-button-border) !important;
-    color: white !important;
-    transform: translateY(-1px);
-    box-shadow:
-      0 22px 40px color-mix(in srgb, var(--plan-accent-strong) 22%, transparent),
-      inset 0 1px 0 rgba(255, 255, 255, 0.24);
-  }
 
   a {
     color: white !important;
@@ -552,17 +573,6 @@
 
   &:global(.arco-btn-disabled),
   &:global(.arco-btn-disabled):hover {
-    background: linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--plan-button-start) 48%, white 52%) 0%,
-      color-mix(in srgb, var(--plan-button-end) 72%, white 28%) 100%
-    ) !important;
-    border-color: color-mix(
-      in srgb,
-      var(--plan-button-border) 52%,
-      rgba(255, 255, 255, 0.24)
-    ) !important;
-    color: rgba(255, 255, 255, 0.9) !important;
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.22),
       0 8px 20px color-mix(in srgb, var(--plan-accent-strong) 12%, transparent);
@@ -574,6 +584,35 @@
 }
 
 .downloadBtnWrapper {
+  --oomol-button-bg-start: var(--plan-button-start);
+  --oomol-button-bg-end: var(--plan-button-end);
+  --oomol-button-border-color: var(--plan-button-border);
+  --oomol-button-bg-start-hover: var(--plan-button-hover-start);
+  --oomol-button-bg-end-hover: var(--plan-button-hover-end);
+  --oomol-button-border-color-hover: var(--plan-button-border);
+  --oomol-button-bg-start-active: color-mix(
+    in srgb,
+    var(--plan-button-hover-start) 72%,
+    black 12%
+  );
+  --oomol-button-bg-end-active: color-mix(
+    in srgb,
+    var(--plan-button-hover-end) 76%,
+    black 10%
+  );
+  --oomol-button-border-color-active: color-mix(
+    in srgb,
+    var(--plan-button-border) 84%,
+    black 8%
+  );
+  --oomol-button-shadow: var(--plan-button-shadow);
+  --oomol-button-shadow-hover:
+    0 22px 40px color-mix(in srgb, var(--plan-accent-strong) 22%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24);
+  --oomol-button-shadow-active:
+    0 14px 28px color-mix(in srgb, var(--plan-accent-strong) 18%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+
   width: 100%;
   align-self: start;
 
@@ -584,16 +623,6 @@
   :global(button),
   :global(a) {
     width: 100%;
-  }
-
-  :global(button) {
-    background: linear-gradient(
-      180deg,
-      var(--plan-button-start) 0%,
-      var(--plan-button-end) 100%
-    ) !important;
-    border-color: var(--plan-button-border) !important;
-    box-shadow: var(--plan-button-shadow) !important;
   }
 }
 

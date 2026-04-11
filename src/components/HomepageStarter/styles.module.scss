@@ -21,6 +21,11 @@
   margin-bottom: 48px;
 }
 
+.cta {
+  min-width: 11rem;
+  font-weight: 700;
+}
+
 @media screen and (max-width: 600px) {
   .inner {
     width: 100%;

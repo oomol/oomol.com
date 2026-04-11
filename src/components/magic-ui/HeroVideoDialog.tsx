@@ -1,6 +1,7 @@
 import styles from "./HeroVideoDialog.module.scss";
 
 import i18n from "@generated/i18n";
+import { Button } from "@site/src/components/ui/button";
 import { cn } from "@site/src/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { Play, XIcon } from "lucide-react";
@@ -184,10 +185,11 @@ export function HeroVideoDialog({
                   className={`relative mx-4 w-full md:mx-0 ${i18n.currentLocale === "en" ? "aspect-video max-w-6xl" : styles.videoContainer}`}
                   onClick={e => e.stopPropagation()}
                 >
-                  <button
+                  <Button
                     ref={closeRef}
-                    type="button"
-                    className="absolute cursor-pointer -top-6 -right-16 size-10 flex items-center justify-center rounded-full bg-neutral-900/50 p-2 text-white ring-1 ring-white/10 backdrop-blur-md dark:bg-neutral-100/50 dark:text-black dark:ring-black/10 border-none"
+                    className={styles.closeButton}
+                    size="icon"
+                    variant="ghost"
                     aria-label="Close video"
                     onClick={e => {
                       e.stopPropagation();
@@ -195,7 +197,7 @@ export function HeroVideoDialog({
                     }}
                   >
                     <XIcon className="size-5" />
-                  </button>
+                  </Button>
                   <div className="relative isolate z-[1] size-full overflow-hidden rounded-2xl border-2 border-white">
                     {i18n.currentLocale === "zh-CN" ? (
                       <video

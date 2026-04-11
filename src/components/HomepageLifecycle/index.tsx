@@ -106,6 +106,7 @@ export default function HomepageLifecycle() {
             {steps.map((step, index) => (
               <div key={step.stepNumber}>
                 <button
+                  type="button"
                   className={`${styles.stepItem} ${
                     index === activeStep ? styles.active : ""
                   }`}

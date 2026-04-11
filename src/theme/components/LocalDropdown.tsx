@@ -74,7 +74,7 @@ export const LocalDropdown = ({ queryString = "" }: LocalDropdownProps) => {
           position="top"
           trigger="click"
         >
-          <Button className={styles.triggerButton} variant="ghost">
+          <Button className={styles.triggerButton} size="sm" variant="ghost">
             <div className="i-codicon-globe" />
             {formateLocale(currentLocale)}
           </Button>

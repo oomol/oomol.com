@@ -162,7 +162,8 @@ const zhCopy: Copy = {
 
 const enCopy: Copy = {
   intro: {
-    title: "Start in oo-cli. Build your own only when ready-made tools stop short",
+    title:
+      "Start in oo-cli. Build your own only when ready-made tools stop short",
     description:
       "Get one tool working first. When ready-made tools are not enough, build your own in Studio, then hand it to Cloud when it needs to keep running and be delivered.",
   },
@@ -190,8 +191,7 @@ const enCopy: Copy = {
     secondary: "Explore Studio",
   },
   cloud: {
-    title:
-      "When it needs to keep running and be delivered, Cloud takes over",
+    title: "When it needs to keep running and be delivered, Cloud takes over",
     description:
       "After local validation is done, Cloud handles runtime, configuration, secrets, and delivery relationships. You do not need to rebuild another delivery layer around the same implementation.",
     cards: [
@@ -358,7 +358,7 @@ export default function HomepageLinearFlow() {
             </Button>
             <Button
               asChild
-              variant="outline"
+              variant="contrast"
               size="lg"
               className={styles.ctaSecondary}
             >

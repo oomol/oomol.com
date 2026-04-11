@@ -170,61 +170,11 @@
 .leftControls {
   display: flex;
   align-items: center;
-
-  /* 确保 Shadcn Button 样式正确应用 */
-  :global(button) {
-    min-height: 36px;
-    padding: 0 12px;
-    border-radius: 999px;
-    background: transparent;
-    border: 1px solid transparent;
-    color: hsl(var(--foreground));
-    cursor: pointer;
-    transition:
-      background 0.2s ease,
-      color 0.2s ease,
-      border-color 0.2s ease;
-
-    &:hover {
-      background: hsl(var(--accent));
-      color: hsl(var(--accent-foreground));
-    }
-
-    &:focus-visible {
-      outline: 2px solid hsl(var(--ring));
-      outline-offset: 2px;
-    }
-  }
 }
 
 .rightControls {
   display: flex;
   align-items: center;
-
-  /* 确保 Shadcn Button 样式正确应用 */
-  :global(button) {
-    min-height: 36px;
-    padding: 0 12px;
-    border-radius: 999px;
-    background: transparent;
-    border: 1px solid transparent;
-    color: hsl(var(--foreground));
-    cursor: pointer;
-    transition:
-      background 0.2s ease,
-      color 0.2s ease,
-      border-color 0.2s ease;
-
-    &:hover {
-      background: hsl(var(--accent));
-      color: hsl(var(--accent-foreground));
-    }
-
-    &:focus-visible {
-      outline: 2px solid hsl(var(--ring));
-      outline-offset: 2px;
-    }
-  }
 }
 
 .bottomInfo {
@@ -270,12 +220,6 @@
     justify-content: flex-end;
   }
 
-  .leftControls :global(button),
-  .rightControls :global(button) {
-    width: 100%;
-    justify-content: center;
-  }
-
   .bottomInfo {
     order: 3;
     grid-column: 1 / -1;
@@ -299,11 +243,9 @@
 
 .cookieSettingsButton {
   margin-left: 8px;
+  min-height: 0;
   padding: 0;
-  border: none;
-  background: transparent;
   color: var(--oomol-text-secondary);
-  cursor: pointer;
   font: inherit;
 
   &:hover {
@@ -325,20 +267,41 @@
 }
 
 .iconBox {
-  min-width: 40px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--oomol-text-secondary);
   border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--oomol-border-default) 78%, white);
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.72),
+    0 8px 18px rgba(77, 88, 124, 0.08);
   transition:
     color 0.2s ease,
     background 0.2s ease,
-    border-color 0.2s ease;
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 
   &:hover {
     color: var(--oomol-primary);
+    background: color-mix(
+      in srgb,
+      var(--oomol-primary-bg) 60%,
+      var(--oomol-bg-elevated) 40%
+    );
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-primary-border) 72%,
+      transparent
+    );
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.76),
+      0 12px 24px color-mix(in srgb, var(--oomol-primary) 12%, transparent);
+    transform: translateY(-1px);
   }
 }
 
@@ -368,30 +331,6 @@
     border-top-color: color-mix(in srgb, var(--oomol-divider) 84%, white 16%);
   }
 
-  .leftControls :global(button),
-  .rightControls :global(button) {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-border-default) 72%,
-      transparent
-    );
-    background: var(--oomol-surface-float);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
-
-    &:hover {
-      background: color-mix(
-        in srgb,
-        var(--oomol-primary-bg) 60%,
-        var(--oomol-bg-elevated) 40%
-      );
-      border-color: color-mix(
-        in srgb,
-        var(--oomol-primary-border) 72%,
-        transparent
-      );
-    }
-  }
-
   .iconBox {
     color: color-mix(in srgb, var(--oomol-text-secondary) 92%, white 8%);
     background: var(--oomol-surface-float);
@@ -410,6 +349,9 @@
         var(--oomol-primary-border) 72%,
         transparent
       );
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        0 12px 24px rgba(0, 0, 0, 0.14);
     }
   }
 }

@@ -57,6 +57,7 @@ export default function HomepageDownloads() {
                 asChild
                 key={`download-${index}`}
                 className={styles["download-btn"]}
+                variant="outline"
                 disabled={data.disabled}
               >
                 <a href={data.downloadingUrl}>

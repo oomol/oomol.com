@@ -14,6 +14,7 @@ import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
 import NavbarItem from "@theme/NavbarItem";
 import SearchBar from "@theme/SearchBar";
 import ThemedImage from "@theme/ThemedImage";
+import { Button } from "@site/src/components/ui/button";
 import { clsx } from "clsx";
 import React, { memo, useEffect, useMemo, useRef, useState } from "react";
 
@@ -308,8 +309,9 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
                   onMouseEnter={openProductMenu}
                   onMouseLeave={closeProductMenu}
                 >
-                  <button
-                    type="button"
+                  <Button
+                    variant="ghost"
+                    size="sm"
                     className={clsx(styles.productMenuTrigger, {
                       [styles.productMenuTriggerActive]: isProductActive,
                     })}
@@ -324,7 +326,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
                       className={styles.productMenuCaret}
                       aria-hidden="true"
                     />
-                  </button>
+                  </Button>
 
                   <div
                     className={clsx(styles.productMenuPanel, {
@@ -375,23 +377,24 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
             <NavbarItem {...item} key={i} />
           ))}
           <div className={styles.actions}>
-            <Link to="https://hub.oomol.com" className={styles.downloadButton}>
-              <i className="i-lucide-users" />
-              {translate({ message: "Theme.Navbar.community" })}
-            </Link>
+            <Button asChild variant="outline" className={styles.downloadButton}>
+              <a href="https://hub.oomol.com" target="_blank" rel="noreferrer">
+                <i className="i-lucide-users" />
+                {translate({ message: "Theme.Navbar.community" })}
+              </a>
+            </Button>
             <BrowserOnly
               fallback={
-                <button type="button" className={styles.loginButton}>
+                <Button className={styles.loginButton}>
                   <i className="i-lucide-log-in" />
                   {translate({ message: "Theme.Navbar.login" })}
-                </button>
+                </Button>
               }
             >
               {() => {
                 const signedIn = isSignedIn();
                 return (
-                  <button
-                    type="button"
+                  <Button
                     className={styles.loginButton}
                     onClick={() => handleSignin()}
                   >
@@ -407,7 +410,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
                         ? "Theme.Navbar.console"
                         : "Theme.Navbar.login",
                     })}
-                  </button>
+                  </Button>
                 );
               }}
             </BrowserOnly>

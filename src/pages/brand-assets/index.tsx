@@ -18,6 +18,7 @@ import LogoIconSVG from "@site/static/img/pages/brand-assets/oomol-logo.svg";
 import TypefaceIconActiveSVG from "@site/static/img/pages/brand-assets/typeface-active.svg";
 import JostIconSVG from "@site/static/img/pages/brand-assets/typeface-jost.svg";
 import TypefaceIconSVG from "@site/static/img/pages/brand-assets/typeface.svg";
+import { Button } from "@site/src/components/ui/button";
 import Layout from "@theme/Layout";
 import { clsx } from "clsx";
 import React, { useState, useEffect, useRef, useMemo } from "react";
@@ -33,14 +34,15 @@ export default function BrandAssets() {
   }
   const CornerDownload = ({ url }: CornerDownloadProps) => {
     return (
-      <button
-        type="button"
+      <Button
         className={styles.icon}
         aria-label="Download asset"
+        size="icon"
+        variant="ghost"
         onClick={() => window.open(url, "_self")}
       >
         <i className="i-codicon-cloud-download" />
-      </button>
+      </Button>
     );
   };
 
@@ -64,17 +66,18 @@ export default function BrandAssets() {
     };
 
     return (
-      <button
-        type="button"
+      <Button
         className={styles.icon}
         aria-label={isCopied ? "Copied" : "Copy to clipboard"}
+        size="icon"
+        variant="ghost"
         onClick={handleCopy}
       >
         <i
           className={isCopied ? "i-codicon-check" : "i-codicon-copy"}
           style={{ color: isCopied ? "#52C41A" : "" }}
         />
-      </button>
+      </Button>
     );
   };
 

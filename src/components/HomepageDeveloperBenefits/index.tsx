@@ -2,6 +2,7 @@ import styles from "./styles.module.scss";
 
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
+import { Button } from "@site/src/components/ui/button";
 import React from "react";
 
 const benefits = [
@@ -75,9 +76,14 @@ export default function HomepageDeveloperBenefits() {
               <p className={styles.cardDescription}>{benefit.description}</p>
               <p className={styles.cardNote}>{benefit.note}</p>
               <div className={styles.cardFooter}>
-                <Link to={benefit.href} className={styles.cta}>
-                  {benefit.cta}
-                </Link>
+                <Button
+                  asChild
+                  size="sm"
+                  variant="secondary"
+                  className={styles.cta}
+                >
+                  <Link to={benefit.href}>{benefit.cta}</Link>
+                </Button>
               </div>
             </article>
           ))}

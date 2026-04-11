@@ -92,7 +92,12 @@ const HomepagePricing = () => {
                   )}
                 </CardContent>
                 <CardFooter>
-                  <Button className={styles.btn}>{item.buttonText}</Button>
+                  <Button
+                    className={styles.btn}
+                    variant={item.className ? "default" : "outline"}
+                  >
+                    {item.buttonText}
+                  </Button>
                 </CardFooter>
               </Card>
             );
@@ -108,7 +113,9 @@ const HomepagePricing = () => {
                   <h3>{item.price}</h3>
                 </CardHeader>
                 <CardFooter>
-                  <Button className={styles.btn}>{item.buttonText}</Button>
+                  <Button className={styles.btn} variant="outline">
+                    {item.buttonText}
+                  </Button>
                 </CardFooter>
               </Card>
             ))}

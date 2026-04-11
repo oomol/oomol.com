@@ -4,6 +4,7 @@ import type { DocusaurusContext } from "@docusaurus/types";
 
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { Button } from "@site/src/components/ui/button";
 import React from "react";
 
 const zhCopy = {
@@ -108,9 +109,9 @@ export default function CloudPageDeveloperBenefits() {
               <p className={styles.cardDescription}>{benefit.description}</p>
               <p className={styles.cardNote}>{benefit.note}</p>
               <div className={styles.cardFooter}>
-                <Link to={benefit.href} className={styles.cta}>
-                  {benefit.cta}
-                </Link>
+                <Button asChild variant="secondary" className={styles.cta}>
+                  <Link to={benefit.href}>{benefit.cta}</Link>
+                </Button>
               </div>
             </article>
           ))}

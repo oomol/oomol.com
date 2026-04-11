@@ -2,6 +2,7 @@ import styles from "./styles.module.scss";
 
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
+import { Button } from "@site/src/components/ui/button";
 
 const deliveryOutputs = [
   {
@@ -87,9 +88,16 @@ export default function HomepageProductComparison() {
                   })}
                 </p>
                 <div className={styles.cardActions}>
-                  <Link to="/cloud" className={styles.primaryCta}>
-                    {translate({ message: "HOME.ProductComparison.cta" })}
-                  </Link>
+                  <Button
+                    asChild
+                    size="lg"
+                    variant="contrast"
+                    className={styles.primaryCta}
+                  >
+                    <Link to="/cloud">
+                      {translate({ message: "HOME.ProductComparison.cta" })}
+                    </Link>
+                  </Button>
                   <div className={styles.inlineNote}>
                     {translate({
                       message: "HOME.ProductComparison.cloud.tech",

@@ -84,34 +84,47 @@
 .stepItem {
   display: flex;
   gap: 20px;
-  padding: 6px 0px;
+  padding: 10px 12px;
   background: transparent;
-  border: none;
+  border: 1px solid transparent;
+  border-radius: 20px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
   text-align: left;
   width: 100%;
   position: relative;
 
   &:hover {
-    background: rgba(var(--ifm-color-primary-rgb), 0.05);
+    background: var(--oomol-primary-bg);
+    border-color: color-mix(in srgb, var(--oomol-primary) 14%, transparent);
+  }
+
+  &:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--oomol-primary) 18%, transparent);
+    outline-offset: 2px;
   }
 
   &.active {
-    background: rgba(var(--ifm-color-primary-rgb), 0.08);
+    background: var(--oomol-primary-bg-hover);
+    border-color: color-mix(in srgb, var(--oomol-primary) 22%, transparent);
+    box-shadow: 0 12px 24px
+      color-mix(in srgb, var(--oomol-primary) 10%, transparent);
 
     .stepNumber {
-      background: var(--ifm-color-primary);
-      color: white;
+      background: var(--oomol-primary);
+      color: var(--oomol-white);
       // 移除 scale 动画,数字大小已统一
     }
 
     .stepTitle {
-      color: var(--ifm-color-primary);
+      color: var(--oomol-primary);
     }
 
     .stepConnector {
-      background: var(--ifm-color-primary);
+      background: var(--oomol-primary);
       opacity: 1;
     }
   }

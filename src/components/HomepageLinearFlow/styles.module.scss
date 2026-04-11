@@ -210,16 +210,7 @@
   min-width: 12rem;
 
   &:global(.arco-btn) {
-    border-radius: 999px;
     font-weight: 700;
-  }
-}
-
-.ctaSecondary {
-  &:global(.arco-btn) {
-    background: rgba(243, 239, 248, 0.08);
-    border-color: rgba(243, 239, 248, 0.14);
-    color: rgba(243, 239, 248, 0.94);
   }
 }
 

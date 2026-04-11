@@ -5,6 +5,7 @@ import type { DocusaurusContext } from "@docusaurus/types";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { Popover } from "@site/src/components/Popover";
+import { Button } from "@site/src/components/ui/button";
 import ThemedImage from "@theme/ThemedImage";
 import { clsx } from "clsx";
 import React, { useState, useMemo } from "react";
@@ -137,6 +138,7 @@ const Footer: React.FC = () => {
   const logoDark = useBaseUrl(
     `/img/logo-${currentLocale === "zh-CN" ? "zh" : "en"}-dark.svg`
   );
+  const qrCodeSrc = useBaseUrl("/img/qrcode.png");
 
   const logoSources = useMemo(
     () => ({
@@ -203,11 +205,7 @@ const Footer: React.FC = () => {
               }
               position="top"
               content={
-                <img
-                  alt="qrcode"
-                  className={styles.qrcode}
-                  src={"/img/qrcode@3x.png"}
-                />
+                <img alt="qrcode" className={styles.qrcode} src={qrCodeSrc} />
               }
             />
           </div>
@@ -238,13 +236,13 @@ const Footer: React.FC = () => {
           </div>
           <div className={styles.bottomInfo}>
             {copyright}
-            <button
+            <Button
               className={styles.cookieSettingsButton}
-              type="button"
+              variant="link"
               onClick={showCookieConsent}
             >
               {currentLocale === "zh-CN" ? "Cookie 设置" : "Cookie settings"}
-            </button>
+            </Button>
             {currentLocale === "zh-CN" && (
               <a
                 href="https://beian.miit.gov.cn/"

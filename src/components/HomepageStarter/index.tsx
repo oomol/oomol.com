@@ -2,6 +2,8 @@ import styles from "./styles.module.scss";
 
 import type { DocusaurusContext } from "@docusaurus/types";
 
+import Link from "@docusaurus/Link";
+import { Button } from "@site/src/components/ui/button";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
 import React, { useMemo } from "react";
@@ -27,13 +29,9 @@ export default function HomepageStarter() {
         Whether you’re new to Oomol or back to see what’s new, we’ll have you
         set up and ready to do your best work in minutes.
       </div>
-      <button
-      // href="https://console.oomol.com/"
-      // target="_blank"
-      // size={"large"}
-      >
-        Download
-      </button>
+      <Button asChild size="lg" className={styles.cta}>
+        <Link to="/downloads">Download</Link>
+      </Button>
     </div>
   );
 }

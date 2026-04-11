@@ -97,33 +97,8 @@
   min-width: 11.5rem;
 
   &:global(.arco-btn) {
-    border-radius: 999px;
     font-weight: 700;
     letter-spacing: 0.01em;
-    box-shadow: 0 12px 24px rgba(105, 120, 159, 0.09);
-  }
-}
-
-.secondaryCta {
-  &:global(.arco-btn) {
-    border-color: color-mix(in srgb, var(--oomol-border-default) 86%, white);
-    background: color-mix(
-      in srgb,
-      var(--ifm-background-surface-color) 88%,
-      white
-    );
-    color: var(--oomol-text-primary);
-  }
-
-  &:global(.arco-btn:hover) {
-    color: var(--oomol-primary) !important;
-    border-color: var(--oomol-primary);
-    background: color-mix(
-      in srgb,
-      var(--oomol-primary-bg) 72%,
-      var(--oomol-bg-elevated)
-    );
-    box-shadow: 0 16px 30px rgba(105, 120, 159, 0.13);
   }
 }
 
@@ -186,6 +161,12 @@
     background: rgba(0, 0, 0, 0.1);
   }
 
+  &:focus-visible {
+    outline: 3px solid
+      color-mix(in srgb, var(--oomol-primary) 22%, rgba(255, 255, 255, 0.9));
+    outline-offset: -6px;
+  }
+
   &:hover .playButton {
     transform: scale(1.08);
     box-shadow:
@@ -202,6 +183,7 @@
   justify-content: center;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.32);
   box-shadow:
     0 0 0 8px rgba(255, 255, 255, 0.1),
     0 16px 32px rgba(0, 0, 0, 0.25);

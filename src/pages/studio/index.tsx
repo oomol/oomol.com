@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
+import { Button } from "@site/src/components/ui/button";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import ThemedImage from "@theme/ThemedImage";
 import React from "react";
@@ -207,9 +208,16 @@ export default function StudioPage() {
               </p>
               <div className={styles.ctaActions}>
                 <DownloadButton showNote={false} />
-                <Link to="/cloud" className={styles.secondaryAction}>
-                  {translate({ message: "STUDIO.product.cta.secondary" })}
-                </Link>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="contrast"
+                  className={styles.secondaryAction}
+                >
+                  <Link to="/cloud">
+                    {translate({ message: "STUDIO.product.cta.secondary" })}
+                  </Link>
+                </Button>
               </div>
               <p className={styles.ctaNote}>
                 {translate({

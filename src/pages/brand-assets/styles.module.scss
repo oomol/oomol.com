@@ -189,13 +189,16 @@
   gap: 40px;
 }
 
-button.icon {
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 0;
-  color: inherit;
-  font-size: inherit;
-  display: inline-flex;
-  align-items: center;
+.icon {
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  color: var(--oomol-text-secondary);
+
+  i {
+    font-size: 1rem;
+  }
+
+  &:hover {
+    color: var(--oomol-primary);
+  }
 }

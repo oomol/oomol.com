@@ -10,6 +10,7 @@ type ButtonVariant =
   | "default"
   | "destructive"
   | "outline"
+  | "contrast"
   | "secondary"
   | "ghost"
   | "link";
@@ -19,6 +20,7 @@ const variantClassMap: Record<ButtonVariant, string> = {
   default: styles.variantDefault,
   destructive: styles.variantDestructive,
   outline: styles.variantOutline,
+  contrast: styles.variantContrast,
   secondary: styles.variantSecondary,
   ghost: styles.variantGhost,
   link: styles.variantLink,
@@ -38,6 +40,7 @@ const variantMap: Record<
   default: { type: "primary" },
   destructive: { status: "danger", type: "primary" },
   outline: { type: "outline" },
+  contrast: { type: "secondary" },
   secondary: { type: "secondary" },
   ghost: { type: "text" },
   link: { type: "text" },
@@ -65,8 +68,10 @@ const Button = React.forwardRef<HTMLElement, ButtonProps>(
           children?: React.ReactNode;
           className?: string;
           href?: string;
+          onClick?: React.MouseEventHandler<HTMLElement>;
           rel?: string;
           target?: string;
+          to?: string;
         }>)
       : null;
     const childProps = child?.props;
@@ -77,20 +82,24 @@ const Button = React.forwardRef<HTMLElement, ButtonProps>(
       size: mergedSize,
       variant: mergedVariant,
     });
-    const { href, rel, target } = childProps ?? {};
-    const anchorProps = href
+    const { href, onClick, rel, target, to } = childProps ?? {};
+    const resolvedHref = href ?? to;
+    const anchorProps = resolvedHref
       ? {
           ...(props.anchorProps ?? {}),
           ...(rel ? { rel } : {}),
         }
       : props.anchorProps;
+    const mergedOnClick = (onClick ??
+      props.onClick) as ArcoButtonProps["onClick"];
 
     return (
       <ArcoButton
         {...variantMap[mergedVariant]}
         anchorProps={anchorProps}
         className={mergedClassName}
-        href={href ?? props.href}
+        href={resolvedHref ?? props.href}
+        onClick={mergedOnClick}
         ref={ref as never}
         size={
           mergedSize === "sm"

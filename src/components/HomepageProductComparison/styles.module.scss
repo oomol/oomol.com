@@ -205,36 +205,9 @@
 }
 
 .primaryCta {
-  display: inline-flex;
   width: fit-content;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px;
-  padding: 0 1.05rem;
-  border-radius: 999px;
-  background: var(--oomol-white);
-  color: var(--oomol-text-primary);
   font-size: 0.95rem;
   font-weight: 700;
-  text-decoration: none;
-  box-shadow: var(--oomol-shadow-sm);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease,
-    color 0.2s ease;
-
-  &:hover {
-    text-decoration: none;
-    transform: translateY(-1px);
-    background: color-mix(
-      in srgb,
-      var(--oomol-white) 92%,
-      var(--oomol-primary-bg) 8%
-    );
-    box-shadow: var(--oomol-shadow-md);
-    color: var(--oomol-text-primary);
-  }
 }
 
 .inlineNote {

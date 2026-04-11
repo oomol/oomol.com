@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import type { DocusaurusContext } from "@docusaurus/types";
 
 import Link from "@docusaurus/Link";
+import { Button } from "@site/src/components/ui/button";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import React, { useRef, useState } from "react";
@@ -89,9 +90,14 @@ export default function CloudPageFirstScreen() {
           <p className={styles.overview}>{copy.overview}</p>
           <div className={styles.actions}>
             <DownloadButton centered texts={copy.downloadButtonTexts} />
-            <Link to="/docs/cloud-services/cli" className={styles.secondaryCta}>
-              {copy.secondaryCta}
-            </Link>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className={styles.secondaryCta}
+            >
+              <Link to="/docs/cloud-services/cli">{copy.secondaryCta}</Link>
+            </Button>
           </div>
         </div>
       </div>
