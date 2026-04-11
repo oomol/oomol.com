@@ -30,7 +30,7 @@
     "message": "OOMOL - 一个让 AI Agent 调用应用和工具的 CLI 入口"
   },
   "HOME.page.description": {
-    "message": "让 Codex、OpenClaw、Claude Code 等 Agent 直接调用常用应用、API 和内部工具；现成工具不够时，再用 OOMOL 继续组合和扩展。"
+    "message": "让 Codex、OpenClaw、Claude Code 等 Agent 直接调用常用应用、API 和内部工具；现成工具不够时，再用 OOMOL Studio 继续组合和扩展。"
   },
   "HOME.FirstScreen.slogan": {
     "message": "先用起来，再按需连接"
@@ -48,7 +48,7 @@
     "message": "先用 CLI 调起现成工具，现成工具不够时再继续组合和扩展。"
   },
   "HOME.FirstScreen.heroLead": {
-    "message": "让 Codex、OpenClaw、Claude Code 等 Agent 直接调用常用应用、API 和内部工具。用 OOMOL 继续组合和扩展自己的工具。"
+    "message": "让 Codex、OpenClaw、Claude Code 等 Agent 直接调用常用应用、API 和内部工具。用 OOMOL Studio 继续组合和扩展自己的工具。"
   },
   "HOME.FirstScreen.heroAdvantage": {
     "message": "先用 CLI 调起来，"
