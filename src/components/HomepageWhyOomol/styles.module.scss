@@ -13,41 +13,28 @@
 
 .header {
   display: grid;
-  gap: 0.65rem;
+  gap: 0.55rem;
   justify-items: center;
   text-align: center;
 }
 
-.badge {
-  display: inline-flex;
-  width: fit-content;
-  align-items: center;
-  min-height: 1.95rem;
-  padding: 0 0.85rem;
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--oomol-primary) 16%, white);
-  background: color-mix(in srgb, var(--oomol-primary-bg) 46%, white);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--oomol-primary-text);
-}
-
 .title {
   margin: 0;
-  max-width: 15ch;
+  max-width: 20ch;
   font-family: var(--oomol-font-display);
-  font-size: clamp(1.95rem, 3.1vw, 2.65rem);
-  line-height: 1.08;
+  font-size: clamp(1.92rem, 3vw, 2.46rem);
+  line-height: 1.12;
   letter-spacing: -0.04em;
+  text-wrap: balance;
   color: var(--oomol-text-primary);
 }
 
 .subtitle {
   margin: 0;
-  max-width: 42rem;
+  max-width: 34rem;
   font-size: 0.96rem;
   line-height: 1.64;
+  text-wrap: pretty;
   color: var(--oomol-text-secondary);
 }
 
@@ -87,14 +74,6 @@
   font-size: 1.08rem;
 }
 
-.eyebrow {
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--oomol-text-tertiary);
-}
-
 .cardTitle {
   margin: 0;
   font-size: 1.28rem;
@@ -111,13 +90,13 @@
 }
 
 :global(html[lang="en"]) .title {
-  max-width: 18ch;
-  font-size: clamp(2rem, 3.2vw, 2.8rem);
-  line-height: 1.1;
+  max-width: 24ch;
+  font-size: clamp(1.92rem, 3vw, 2.46rem);
+  line-height: 1.12;
 }
 
 :global(html[lang="en"]) .subtitle {
-  max-width: 56rem;
+  max-width: 44rem;
 }
 
 @media (max-width: 996px) {
@@ -152,19 +131,6 @@
 }
 
 [data-theme="dark"] {
-  .badge {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-primary) 24%,
-      var(--oomol-divider)
-    );
-    background: color-mix(
-      in srgb,
-      var(--oomol-bg-elevated) 78%,
-      var(--oomol-primary-bg) 22%
-    );
-  }
-
   .card {
     border-color: color-mix(
       in srgb,

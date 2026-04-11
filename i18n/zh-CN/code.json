@@ -27,34 +27,34 @@
     "message": "Skills 社区"
   },
   "HOME.page.title": {
-    "message": "OOMOL - 为 agent 连接并交付能力"
+    "message": "OOMOL - 一个让 AI Agent 调用应用和工具的 CLI 入口"
   },
   "HOME.page.description": {
-    "message": "把现成工具、API 和你的业务接进 Agent，让执行从一句话开始。"
+    "message": "让 Codex、OpenClaw、Claude Code 等 Agent 直接调用常用应用、API 和内部工具；现成工具不够时，再用 OOMOL 继续组合和扩展。"
   },
   "HOME.FirstScreen.slogan": {
-    "message": "为 agent 构建并交付你的能力"
+    "message": "先用起来，再按需连接"
   },
   "HOME.FirstScreen.kicker": {
-    "message": "给开发者的能力生产与交付链路"
+    "message": "给 Agent 的 CLI 入口"
   },
   "HOME.FirstScreen.script": {
-    "message": "先通过 oo-cli 使用现成能力，再在 OOMOL Studio 中编写自己的 block，最后通过 Cloud 私有部署并交付出去。"
+    "message": "先通过 oo-cli 使用现成工具；现成工具不够，再在 OOMOL Studio 和 Cloud 里组合和扩展自己的工具。"
   },
   "HOME.FirstScreen.heroTitle": {
-    "message": "把工具、API 和你的业务\n接进 Agent"
+    "message": "一个 CLI，让 Agent\n直接调用常用应用"
   },
   "HOME.FirstScreen.heroSubtitle": {
-    "message": "我们把这种运行在云端、可被终端和 agent 工作流直接使用的能力，叫做 cloud skill。"
+    "message": "先用 CLI 调起现成工具，现成工具不够时再继续组合和扩展。"
   },
   "HOME.FirstScreen.heroLead": {
-    "message": "把 SaaS、内部 API 和你的实现接进来，让 Agent 开始执行。"
+    "message": "让 Codex、OpenClaw、Claude Code 等 Agent 直接调用常用应用、API 和内部工具。用 OOMOL 继续组合和扩展自己的工具。"
   },
   "HOME.FirstScreen.heroAdvantage": {
-    "message": "从工具接入，"
+    "message": "先用 CLI 调起来，"
   },
   "HOME.FirstScreen.heroAdvantageHighlight": {
-    "message": "到业务接入。"
+    "message": "再继续组合扩展。"
   },
   "HOME.FirstScreen.video.playAriaLabel": {
     "message": "播放演示视频"
@@ -81,19 +81,19 @@
     "message": "每月赠送 200 分钟 Cloud Task"
   },
   "HOME.PainPoints.badge": {
-    "message": "它会这样做"
+    "message": "直接结果"
   },
   "HOME.PainPoints.title": {
-    "message": "接上能力后，Agent 会直接做这些事"
+    "message": "接上工具后，Agent 就能直接做这些事"
   },
   "HOME.PainPoints.subtitle": {
-    "message": "先看结果，再理解系统。"
+    "message": "先看结果，再理解怎么接进去。"
   },
   "HOME.PainPoints.promptLabel": {
-    "message": "你可以这样说"
+    "message": "你可以直接这样说"
   },
   "HOME.PainPoints.resultLabel": {
-    "message": "Agent 会直接执行"
+    "message": "Agent 会直接去做"
   },
   "HOME.PainPoints.card1.title": {
     "message": "PR 摘要发到 Slack"
@@ -120,7 +120,7 @@
     "message": "读文档、拆任务、写回 Linear。"
   },
   "HOME.PainPoints.card3.title": {
-    "message": "Gmail 附件接入你的 API"
+    "message": "读 Gmail 附件，再调用你的 API"
   },
   "HOME.PainPoints.card3.description": {
     "message": "现成输入和自定义处理接在一起。"
@@ -129,7 +129,7 @@
     "message": "读 Gmail 附件，调用我们的 PDF API，回传结果。"
   },
   "HOME.PainPoints.card3.solution": {
-    "message": "取邮件输入，再继续调用你的 API。"
+    "message": "先取邮件附件，再继续调用你的 API。"
   },
   "HOME.ProofLayer.badge": {
     "message": "真实承载"
@@ -228,7 +228,7 @@
     "message": "看 60 秒演示"
   },
   "HOME.FirstScreen.cta.primary": {
-    "message": "先在 Codex 里试一下"
+    "message": "开始使用 oo-cli"
   },
   "HOME.ValueProps.localCompute.title": {
     "message": "将本地算力转化为你的私有 AI 云"
@@ -2623,13 +2623,13 @@
     "message": "把精力放回 skill 本身，而不是持续重做鉴权、托管、调度和交互外壳。"
   },
   "HOME.DeveloperBenefits.badge": {
-    "message": "选择入口"
+    "message": "怎么开始"
   },
   "HOME.DeveloperBenefits.title": {
-    "message": "你现在想先做哪一步"
+    "message": "先把一个工具用起来，再决定要不要做自己的"
   },
   "HOME.DeveloperBenefits.subtitle": {
-    "message": "先用起来，或开始接自己的业务。"
+    "message": "想先跑通，就从 oo-cli 开始；现成工具不够，再进入 Studio + Cloud。"
   },
   "HOME.DeveloperBenefits.card1.eyebrow": {
     "message": "先用起来"
@@ -2641,22 +2641,22 @@
     "message": "oo-cli"
   },
   "HOME.DeveloperBenefits.card1.valueCaption": {
-    "message": "先把使用路径跑通"
+    "message": "最快开始"
   },
   "HOME.DeveloperBenefits.card1.title": {
-    "message": "先让 Codex 和终端直接用上能力"
+    "message": "先让 Agent 在终端里直接用上现成工具"
   },
   "HOME.DeveloperBenefits.card1.description": {
-    "message": "如果你的目标是先把 Agent 跑起来，先装 oo-cli，直接搜索并运行已发布能力。"
+    "message": "如果你想先让 Codex、OpenClaw、Claude Code 跑起来，就先装 oo-cli，直接搜索并运行已发布工具。"
   },
   "HOME.DeveloperBenefits.card1.note": {
-    "message": "适合先把使用路径跑通。"
+    "message": "最快把一个工具跑通。"
   },
   "HOME.DeveloperBenefits.card1.cta": {
-    "message": "从 oo-cli 开始"
+    "message": "先装 oo-cli"
   },
   "HOME.DeveloperBenefits.card2.eyebrow": {
-    "message": "开始构建"
+    "message": "需要扩展"
   },
   "HOME.DeveloperBenefits.card2.tag": {
     "message": "下一步"
@@ -2665,19 +2665,19 @@
     "message": "Studio + Cloud"
   },
   "HOME.DeveloperBenefits.card2.valueCaption": {
-    "message": "构建并交付自己的能力"
+    "message": "需要自己的工具时再进入"
   },
   "HOME.DeveloperBenefits.card2.title": {
-    "message": "开始接你的 API、实现和交付链路"
+    "message": "需要自己的 API 和逻辑时，再进入 Studio + Cloud"
   },
   "HOME.DeveloperBenefits.card2.description": {
-    "message": "如果你的目标是接自己的业务，就进入 Studio 和 Cloud，把 API、实现和交付关系接进来。"
+    "message": "当你需要接自己的 API、内部逻辑和长期交付路径时，再进入 Studio + Cloud。"
   },
   "HOME.DeveloperBenefits.card2.note": {
-    "message": "适合开始做自己的实现和交付。"
+    "message": "适合开始做自己的工具和持续交付。"
   },
   "HOME.DeveloperBenefits.card2.cta": {
-    "message": "进入构建路径"
+    "message": "了解 Studio + Cloud"
   },
   "HOME.CliEntry.badge": {
     "message": "CLI FIRST"

@@ -14,47 +14,41 @@ const toolIcons = [
 ];
 
 const zhCopy = {
-  badge: "现成工具 + 你的 API",
-  title: "先接现成工具，再接自己的能力",
-  description: "现成工具、内部服务和自定义能力可以共用一条路径。",
-  appsLabel: "现成工具",
-  customLabel: "自定义能力",
+  title: "先接常用应用，再接自己的工具",
+  description: "常见 SaaS、内部服务和自定义 API，都能沿同一路径给 Agent 使用。",
   customCards: [
     {
       icon: "i-lucide-braces",
       title: "你的 API",
-      text: "业务接口和内部服务继续接入。",
+      text: "把业务接口和内部服务继续接进来。",
     },
     {
       icon: "i-lucide-blocks",
-      title: "你的能力",
-      text: "需要时再组合和扩展自己的实现。",
+      title: "你的逻辑",
+      text: "现成工具不够时，再组合和扩展自己的实现。",
     },
   ],
-  footer: "SaaS 授权、接口密钥和自定义逻辑走同一条路径。",
+  footer: "现成工具不够时，用 OOMOL 继续组合和扩展。",
 };
 
 const enCopy = {
-  badge: "Ready-made tools + your API",
-  title:
-    "Connect ready-made tools first, then keep bringing in your own capabilities",
+  title: "Start with the apps you already use, then bring in your own tools",
   description:
-    "Ready-made tools, internal services, and custom capabilities can share one path.",
-  appsLabel: "Tools",
-  customLabel: "Your side",
+    "SaaS apps, internal services, and custom APIs can all follow the same path into agents.",
   customCards: [
     {
       icon: "i-lucide-braces",
       title: "Your API",
-      text: "Business endpoints and internal services keep joining the same path.",
+      text: "Bring business endpoints and internal services onto the same path.",
     },
     {
       icon: "i-lucide-blocks",
-      title: "Your capability",
-      text: "Compose and extend your own implementation when ready-made ones are not enough.",
+      title: "Your logic",
+      text: "Compose and extend your own implementation when ready-made tools stop short.",
     },
   ],
-  footer: "SaaS auth, API keys, and custom logic stay on the same path.",
+  footer:
+    "When ready-made tools stop short, keep composing and extending with OOMOL.",
 };
 
 export default function HomepageToolStrip() {
@@ -67,7 +61,6 @@ export default function HomepageToolStrip() {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.copyColumn}>
-          <div className={styles.badge}>{copy.badge}</div>
           <h2 className={styles.title}>{copy.title}</h2>
           <p className={styles.description}>{copy.description}</p>
           <p className={styles.footer}>{copy.footer}</p>
@@ -75,7 +68,6 @@ export default function HomepageToolStrip() {
 
         <div className={styles.surfacePanel}>
           <div className={styles.toolsBlock}>
-            <div className={styles.blockLabel}>{copy.appsLabel}</div>
             <div className={styles.toolGrid}>
               {toolIcons.map(tool => (
                 <div key={tool.label} className={styles.toolChip}>
@@ -97,7 +89,6 @@ export default function HomepageToolStrip() {
           </div>
 
           <div className={styles.customBlock}>
-            <div className={styles.blockLabel}>{copy.customLabel}</div>
             <div className={styles.customGrid}>
               {copy.customCards.map(card => (
                 <div key={card.title} className={styles.customCard}>

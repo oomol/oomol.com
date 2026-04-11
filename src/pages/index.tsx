@@ -1,6 +1,5 @@
 import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
-import HomepageDeveloperBenefits from "@site/src/components/HomepageDeveloperBenefits";
 import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
 import HomepageLinearFlow from "@site/src/components/HomepageLinearFlow";
 import HomepagePainPoints from "@site/src/components/HomepagePainPoints";
@@ -31,7 +30,6 @@ export default function Home() {
         <HomepageToolStrip />
         <HomepageWhyOomol />
         <HomepagePainPoints />
-        <HomepageDeveloperBenefits />
         <HomepageLinearFlow />
       </main>
     </Layout>

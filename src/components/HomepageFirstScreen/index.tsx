@@ -34,18 +34,6 @@ export default function HomepageFirstScreen() {
       <div className={styles.background} />
       <div className={styles.container}>
         <div className={styles.titleGroup}>
-          <p className={styles.ownershipNote}>
-            <span>
-              {translate({
-                message: "HOME.FirstScreen.heroAdvantage",
-              })}
-            </span>
-            <strong className={styles.ownershipHighlight}>
-              {translate({
-                message: "HOME.FirstScreen.heroAdvantageHighlight",
-              })}
-            </strong>
-          </p>
           <h1 className={styles.slogan}>
             {translate({
               message: "HOME.FirstScreen.heroTitle",

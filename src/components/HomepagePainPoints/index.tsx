@@ -52,9 +52,6 @@ export default function HomepagePainPoints() {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <div className={styles.badge}>
-            {translate({ message: "HOME.PainPoints.badge" })}
-          </div>
           <h2 className={styles.title}>
             {translate({ message: "HOME.PainPoints.title" })}
           </h2>
@@ -64,12 +61,9 @@ export default function HomepagePainPoints() {
         </div>
 
         <div className={styles.grid}>
-          {cards.map((card, index) => (
+          {cards.map(card => (
             <article key={card.title} className={styles.card}>
               <div className={styles.cardTop}>
-                <div className={styles.cardEyebrow}>
-                  {isZh ? `动作场景 0${index + 1}` : `Use Case 0${index + 1}`}
-                </div>
                 <div className={styles.appRow}>
                   {card.apps.map(app => (
                     <span key={app.label} className={styles.appChip}>

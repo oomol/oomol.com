@@ -63,7 +63,7 @@
   line-height: 1.06;
   letter-spacing: -0.035em;
   color: var(--oomol-text-primary);
-  text-wrap: pretty;
+  text-wrap: balance;
 }
 
 .subtitle {
@@ -71,6 +71,7 @@
   max-width: 28rem;
   font-size: 0.92rem;
   line-height: 1.56;
+  text-wrap: pretty;
   color: var(--oomol-text-secondary);
 }
 

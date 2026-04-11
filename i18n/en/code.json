@@ -27,10 +27,10 @@
     "message": "Community"
   },
   "HOME.page.title": {
-    "message": "OOMOL - Connect and deliver capabilities for agents"
+    "message": "OOMOL - A CLI that turns apps into tools for agents"
   },
   "HOME.page.description": {
-    "message": "Bring tools, APIs, and your business into agents so execution can start from a single instruction."
+    "message": "Let Codex, OpenClaw, Claude Code, and other agents use your apps, APIs, and internal tools. When ready-made tools stop short, keep composing and extending with OOMOL."
   },
   "HOME.FirstScreen.slogan": {
     "message": "Build and Deliver Capabilities for Agents"
@@ -39,22 +39,22 @@
     "message": "A capability production and delivery path for developers"
   },
   "HOME.FirstScreen.script": {
-    "message": "Start with ready-made capabilities in oo-cli, create your own blocks in OOMOL Studio, then deploy and deliver them privately through Cloud."
+    "message": "Start with ready-made tools in oo-cli. When they stop short, use OOMOL Studio and Cloud to compose and extend your own tools."
   },
   "HOME.FirstScreen.heroTitle": {
-    "message": "Bring tools, APIs, and your business\ninto agents"
+    "message": "One CLI lets agents\nuse the apps you already use"
   },
   "HOME.FirstScreen.heroSubtitle": {
-    "message": "We call this a cloud skill: a capability that runs in the cloud and can be used directly from terminals and agent workflows."
+    "message": "Start with ready-made tools in CLI. When they stop short, keep composing and extending with OOMOL."
   },
   "HOME.FirstScreen.heroLead": {
-    "message": "Bring in SaaS, internal APIs, and skills so agents can start executing."
+    "message": "Let Codex, OpenClaw, Claude Code, and other agents use your apps, APIs, and internal tools. Then use OOMOL to compose and extend your own tools."
   },
   "HOME.FirstScreen.heroAdvantage": {
-    "message": "From tool integration,"
+    "message": "Start with CLI,"
   },
   "HOME.FirstScreen.heroAdvantageHighlight": {
-    "message": "to business integration."
+    "message": "then keep composing and extending."
   },
   "HOME.FirstScreen.video.playAriaLabel": {
     "message": "Play demo video"
@@ -81,19 +81,19 @@
     "message": "200 free Cloud Task minutes each month"
   },
   "HOME.PainPoints.badge": {
-    "message": "In Action"
+    "message": "Outcomes"
   },
   "HOME.PainPoints.title": {
-    "message": "Once connected, these are the kinds of things agents will do"
+    "message": "Once one tool is connected, agents can do things like this"
   },
   "HOME.PainPoints.subtitle": {
-    "message": "Start with outcomes, then explain the system."
+    "message": "Start with outcomes, then explain how it connects."
   },
   "HOME.PainPoints.promptLabel": {
     "message": "You can say"
   },
   "HOME.PainPoints.resultLabel": {
-    "message": "The agent will"
+    "message": "The agent will do"
   },
   "HOME.PainPoints.card1.title": {
     "message": "Send a PR summary to Slack"
@@ -120,7 +120,7 @@
     "message": "Read the doc, split the tasks, write them back to Linear."
   },
   "HOME.PainPoints.card3.title": {
-    "message": "Route Gmail attachments into your API"
+    "message": "Read a Gmail attachment, then call your API"
   },
   "HOME.PainPoints.card3.description": {
     "message": "Put ready-made input and custom processing on one path."
@@ -129,7 +129,7 @@
     "message": "Read the Gmail attachment, call our PDF API, and return the result."
   },
   "HOME.PainPoints.card3.solution": {
-    "message": "Take the email input, then keep going through your API."
+    "message": "Take the email attachment, then keep going through your API."
   },
   "HOME.ProofLayer.badge": {
     "message": "Proof"
@@ -228,7 +228,7 @@
     "message": "Watch the 60s demo"
   },
   "HOME.FirstScreen.cta.primary": {
-    "message": "Try it in Codex"
+    "message": "Start with oo-cli"
   },
   "HOME.ValueProps.localCompute.title": {
     "message": "Turn Local Compute Into Your Private AI Cloud"
@@ -2623,13 +2623,13 @@
     "message": "Stay focused on the skill itself instead of rebuilding auth, hosting, scheduling, and interface layers around the same implementation."
   },
   "HOME.DeveloperBenefits.badge": {
-    "message": "CHOOSE YOUR PATH"
+    "message": "HOW TO START"
   },
   "HOME.DeveloperBenefits.title": {
-    "message": "Enter by goal, not everyone needs the same starting path"
+    "message": "Get one tool working first, then decide whether to build your own"
   },
   "HOME.DeveloperBenefits.subtitle": {
-    "message": "Some users want Codex working first. Others want to start wiring in their own APIs and skills. The homepage should make both entrances obvious."
+    "message": "If you just want to get moving, start with oo-cli. When ready-made tools stop short, move into Studio + Cloud."
   },
   "HOME.DeveloperBenefits.card1.eyebrow": {
     "message": "Use first"
@@ -2641,22 +2641,22 @@
     "message": "oo-cli"
   },
   "HOME.DeveloperBenefits.card1.valueCaption": {
-    "message": "Get the usage path working first"
+    "message": "Fastest start"
   },
   "HOME.DeveloperBenefits.card1.title": {
-    "message": "Get capabilities working in Codex and terminal workflows first"
+    "message": "Let agents use a ready-made tool from the terminal first"
   },
   "HOME.DeveloperBenefits.card1.description": {
-    "message": "If your goal is to get agents running first, install oo-cli and start by searching, inspecting, and running published capabilities."
+    "message": "If you want Codex, OpenClaw, or Claude Code working first, install oo-cli and start by searching, inspecting, and running published tools."
   },
   "HOME.DeveloperBenefits.card1.note": {
-    "message": "Best for validating the usage path and seeing real execution quickly."
+    "message": "Fastest way to get one tool working."
   },
   "HOME.DeveloperBenefits.card1.cta": {
-    "message": "Start with oo-cli"
+    "message": "Install oo-cli"
   },
   "HOME.DeveloperBenefits.card2.eyebrow": {
-    "message": "Build next"
+    "message": "Need more"
   },
   "HOME.DeveloperBenefits.card2.tag": {
     "message": "Next step"
@@ -2665,19 +2665,19 @@
     "message": "Studio + Cloud"
   },
   "HOME.DeveloperBenefits.card2.valueCaption": {
-    "message": "Build and deliver your own capability"
+    "message": "Enter when you need your own tools"
   },
   "HOME.DeveloperBenefits.card2.title": {
-    "message": "Start wiring in your APIs, skills, and delivery path"
+    "message": "When you need your own APIs and logic, move into Studio + Cloud"
   },
   "HOME.DeveloperBenefits.card2.description": {
-    "message": "If your goal is to connect your own business, move into Studio and Cloud to keep adding APIs, skills, and delivery relationships."
+    "message": "When ready-made tools stop short, use Studio + Cloud to add your APIs, internal logic, and long-running delivery path."
   },
   "HOME.DeveloperBenefits.card2.note": {
-    "message": "Best for teams moving from ready-made capabilities to custom capabilities and delivery."
+    "message": "Best when you need custom tools and continuous delivery."
   },
   "HOME.DeveloperBenefits.card2.cta": {
-    "message": "Enter the build path"
+    "message": "Explore Studio + Cloud"
   },
   "HOME.CliEntry.badge": {
     "message": "CLI FIRST"

@@ -17,12 +17,10 @@ const homepageMediaUrls = {
 
 type Copy = {
   intro: {
-    badge: string;
     title: string;
     description: string;
   };
   cli: {
-    eyebrow: string;
     title: string;
     description: string;
     media: { title: string; note: string };
@@ -30,7 +28,6 @@ type Copy = {
     github: string;
   };
   studio: {
-    eyebrow: string;
     title: string;
     description: string;
     media: { title: string; note: string };
@@ -38,11 +35,10 @@ type Copy = {
     secondary: string;
   };
   cloud: {
-    eyebrow: string;
     title: string;
     description: string;
     cards: Array<{ title: string; text: string }>;
-    media: { title: string; note: string; pills: string[]; items: string[] };
+    media: { title: string; note: string; items: string[] };
     primary: string;
     secondary: string;
   };
@@ -64,7 +60,6 @@ type ImageCardProps = {
   title: string;
   note: string;
   src: string;
-  pills: string[];
 };
 
 function VideoCard({ title, note, src }: VideoCardProps) {
@@ -92,7 +87,7 @@ function VideoCard({ title, note, src }: VideoCardProps) {
   );
 }
 
-function ImageCard({ title, note, src, pills }: ImageCardProps) {
+function ImageCard({ title, note, src }: ImageCardProps) {
   return (
     <div className={styles.videoCard}>
       <div className={styles.imageCardMedia}>
@@ -101,13 +96,6 @@ function ImageCard({ title, note, src, pills }: ImageCardProps) {
       <div className={styles.videoCardMeta}>
         <h3 className={styles.videoCardTitle}>{title}</h3>
         <p className={styles.videoCardNote}>{note}</p>
-        <div className={styles.cloudMetaRow}>
-          {pills.map(pill => (
-            <span key={pill} className={styles.cloudMetaPill}>
-              {pill}
-            </span>
-          ))}
-        </div>
       </div>
     </div>
   );
@@ -115,41 +103,40 @@ function ImageCard({ title, note, src, pills }: ImageCardProps) {
 
 const zhCopy: Copy = {
   intro: {
-    badge: "怎么开始",
-    title: "从用起来，到做自己的，再到持续交付",
-    description: "先用起来；不够时再做自己的；需要持续运行时再交给 Cloud。",
+    title: "先在 oo-cli 里用起来，不够时再自己做",
+    description:
+      "先用现成工具；不够时再用 Studio 扩展；需要持续运行时再交给 Cloud。",
   },
   cli: {
-    eyebrow: "01 / oo-cli",
-    title: "先在 Codex 里装 oo-cli，直接开始用能力",
-    description: "先搜索并运行已发布能力，把使用路径先跑通。",
+    title: "先装 oo-cli，让 Agent 直接调用应用和工具",
+    description:
+      "在 Codex、OpenClaw、Claude Code 和终端里，先搜、先看、先跑，把使用路径先跑通。",
     media: {
-      title: "Codex 演示视频",
-      note: "展示在 Codex 中安装、搜索、查看并运行能力的过程。",
+      title: "Agent 演示视频",
+      note: "展示在 Codex 中安装、搜索、查看并运行工具的过程。",
     },
     guide: "查看安装文档",
     github: "查看 GitHub",
   },
   studio: {
-    eyebrow: "02 / OOMOL Studio",
-    title: "当现成能力不够，就用 OOMOL Studio 做你自己的",
+    title: "现成工具不够，再用 OOMOL Studio 做你自己的",
     description:
-      "告诉 Agent 你要生成什么，再继续补代码、接依赖、改参数和做组合。",
+      "直接告诉 Agent 你要什么，再补代码、接依赖、改参数和做组合。Studio 让你更快把新工具做出来并在本地验证。",
     media: {
       title: "Studio 演示视频",
-      note: "展示从描述需求、生成能力到本地验证跑通的过程。",
+      note: "展示从描述需求、生成工具到本地验证跑通的过程。",
     },
     primary: "安装 OOMOL Studio",
     secondary: "了解 Studio",
   },
   cloud: {
-    eyebrow: "03 / Cloud",
-    title: "当能力需要持续运行和交付时，Cloud 来承接",
-    description: "本地验证后，Cloud 承接运行、配置、交付关系和使用数据。",
+    title: "需要持续运行和交付时，再交给 Cloud",
+    description:
+      "本地验证后，Cloud 承接运行、配置、Secrets 和使用关系，不用再围着同一份实现补一层交付系统。",
     cards: [
       {
         title: "统一承接运行与交付",
-        text: "把能力交付给自己、团队或客户时，继续沿用同一套实现和同一条路径。",
+        text: "当你把工具交付给自己、团队或客户时，继续沿用同一份实现和同一条路径。",
       },
       {
         title: "把配置和使用关系放进同一个后台",
@@ -158,17 +145,16 @@ const zhCopy: Copy = {
     ],
     media: {
       title: "Cloud 控制台预览",
-      note: "把运行配置、交付关系和使用数据放到同一个后台里管理。",
-      pills: ["运行配置", "Secrets 管理", "使用数据"],
+      note: "把运行配置、Secrets 和使用关系放到同一个后台里管理。",
       items: ["统一承接运行和交付", "集中管理配置、权限和版本"],
     },
     primary: "了解 Cloud",
     secondary: "打开 Cloud 控制台",
   },
   cta: {
-    title: "先把一个能力跑起来，再决定要不要做自己的",
+    title: "先用现成工具，需要时再做自己的",
     description:
-      "先通过 oo-cli 跑通使用路径。需要自己的能力时，再进入 Studio 和 Cloud。",
+      "先用 oo-cli 跑通现成工具。需要自定义时，再用 Studio 和 Cloud 组合、扩展并交付自己的工具。",
     primary: "先用 oo-cli",
     secondary: "了解 Studio",
   },
@@ -176,46 +162,42 @@ const zhCopy: Copy = {
 
 const enCopy: Copy = {
   intro: {
-    badge: "One Path",
-    title: "From usage to building to delivery, one continuous path",
+    title: "Start in oo-cli. Build your own only when ready-made tools stop short",
     description:
-      "Start by getting one capability working. Build your own when published capabilities are not enough, then hand it to Cloud when it needs to keep running and be delivered.",
+      "Get one tool working first. When ready-made tools are not enough, build your own in Studio, then hand it to Cloud when it needs to keep running and be delivered.",
   },
   cli: {
-    eyebrow: "01 / oo-cli",
-    title: "Install oo-cli in Codex and start using capabilities",
+    title: "Install oo-cli and let agents call apps and tools",
     description:
-      "oo-cli is the best entry point for using capabilities inside Codex, Claude Code, and terminal workflows. Search, inspect, and run published capabilities first to get the usage path working.",
+      "In Codex, OpenClaw, Claude Code, and terminal workflows, start by searching, inspecting, and running published tools to get the usage path working.",
     media: {
-      title: "Codex demo video",
-      note: "Show installing, searching, inspecting, and running a capability in Codex.",
+      title: "Agent demo video",
+      note: "Show installing, searching, inspecting, and running a tool in Codex.",
     },
     guide: "Open install guide",
     github: "View GitHub",
   },
   studio: {
-    eyebrow: "02 / OOMOL Studio",
     title:
-      "When ready-made capabilities are not enough, build your own in OOMOL Studio",
+      "When ready-made tools are not enough, build your own in OOMOL Studio",
     description:
-      "Tell the agent what capability you want, then keep editing code, dependencies, parameters, and compositions yourself. Studio does not replace engineering workflow; it brings capability generation and local validation back into a real coding environment.",
+      "Tell the agent what you want, then keep editing code, dependencies, parameters, and compositions yourself. Studio does not replace engineering workflow; it helps you create new tools faster and validate them locally.",
     media: {
       title: "Studio demo video",
-      note: "Show the path from prompting to local validation.",
+      note: "Show the path from prompting to generating a tool and validating it locally.",
     },
     primary: "Install OOMOL Studio",
     secondary: "Explore Studio",
   },
   cloud: {
-    eyebrow: "03 / Cloud",
     title:
-      "When a capability needs to keep running and be delivered, Cloud takes over",
+      "When it needs to keep running and be delivered, Cloud takes over",
     description:
-      "After local validation is done, Cloud handles runtime, configuration, secrets, delivery relationships, and usage data. You do not need to keep rebuilding layers around the same implementation.",
+      "After local validation is done, Cloud handles runtime, configuration, secrets, and delivery relationships. You do not need to rebuild another delivery layer around the same implementation.",
     cards: [
       {
         title: "Handle runtime and delivery in one path",
-        text: "Keep the same implementation as you deliver the capability to yourself, your team, or customers.",
+        text: "Keep the same implementation as you deliver the tool to yourself, your team, or customers.",
       },
       {
         title: "Keep configuration and usage relationships in one backend",
@@ -224,8 +206,7 @@ const enCopy: Copy = {
     ],
     media: {
       title: "Cloud console preview",
-      note: "Bring runtime settings, delivery relationships, and usage data into one backend.",
-      pills: ["Runtime settings", "Secrets", "Usage data"],
+      note: "Bring runtime settings, secrets, and delivery relationships into one backend.",
       items: [
         "Handle runtime and delivery together",
         "Manage configuration, access, and releases in one console",
@@ -235,11 +216,11 @@ const enCopy: Copy = {
     secondary: "Open Cloud Console",
   },
   cta: {
-    title: "Run one capability first, then decide whether to build your own",
+    title: "Start with ready-made tools, build your own only when needed",
     description:
-      "Start by getting the usage path working in oo-cli. When you need your own capability, move into Studio to generate, compose, and validate it, then deliver it through Cloud.",
+      "Use oo-cli to get ready-made tools working first. When you need custom ones, move into Studio and Cloud to compose, extend, and deliver your own tools.",
     primary: "Start with oo-cli",
-    secondary: "Build your first capability",
+    secondary: "Build your first tool",
   },
 };
 
@@ -258,7 +239,6 @@ export default function HomepageLinearFlow() {
     <div className={styles.flow}>
       <section className={styles.introSection}>
         <div className={styles.introInner}>
-          <div className={styles.introBadge}>{copy.intro.badge}</div>
           <h2 className={styles.introTitle}>{copy.intro.title}</h2>
           <p className={styles.introDescription}>{copy.intro.description}</p>
         </div>
@@ -268,7 +248,6 @@ export default function HomepageLinearFlow() {
       <section className={clsx(styles.section, styles.cliSection)}>
         <div className={styles.container}>
           <div className={styles.copyPanel}>
-            <span className={styles.eyebrow}>{copy.cli.eyebrow}</span>
             <h2 className={styles.sectionTitle}>{copy.cli.title}</h2>
             <p className={styles.sectionDescription}>{copy.cli.description}</p>
             <div className={styles.inlineActions}>
@@ -303,7 +282,6 @@ export default function HomepageLinearFlow() {
       <section className={clsx(styles.section, styles.sectionTint)}>
         <div className={styles.container}>
           <div className={styles.copyPanel}>
-            <span className={styles.eyebrow}>{copy.studio.eyebrow}</span>
             <h2 className={styles.sectionTitle}>{copy.studio.title}</h2>
             <p className={styles.sectionDescription}>
               {copy.studio.description}
@@ -332,7 +310,6 @@ export default function HomepageLinearFlow() {
       <section className={clsx(styles.section, styles.cloudSection)}>
         <div className={styles.container}>
           <div className={styles.copyPanel}>
-            <span className={styles.eyebrow}>{copy.cloud.eyebrow}</span>
             <h2 className={styles.sectionTitle}>{copy.cloud.title}</h2>
             <p className={styles.sectionDescription}>
               {copy.cloud.description}
@@ -365,7 +342,6 @@ export default function HomepageLinearFlow() {
               title={copy.cloud.media.title}
               note={copy.cloud.media.note}
               src={cloudConsoleImage}
-              pills={copy.cloud.media.pills}
             />
           </div>
         </div>
