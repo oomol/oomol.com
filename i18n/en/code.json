@@ -30,7 +30,7 @@
     "message": "OOMOL - A CLI that turns apps into tools for agents"
   },
   "HOME.page.description": {
-    "message": "Let Codex, OpenClaw, Claude Code, and other agents use your apps, APIs, and internal tools. When ready-made tools stop short, keep composing and extending with OOMOL."
+    "message": "Let Codex, OpenClaw, Claude Code, and other agents use your apps, APIs, and internal tools. When ready-made tools stop short, keep composing and extending with OOMOL Studio."
   },
   "HOME.FirstScreen.slogan": {
     "message": "Build and Deliver Capabilities for Agents"
@@ -45,10 +45,10 @@
     "message": "One CLI lets agents\nuse the apps you already use"
   },
   "HOME.FirstScreen.heroSubtitle": {
-    "message": "Start with ready-made tools in CLI. When they stop short, keep composing and extending with OOMOL."
+    "message": "Start with ready-made tools in CLI. When they stop short, keep composing and extending with OOMOL Studio."
   },
   "HOME.FirstScreen.heroLead": {
-    "message": "Let Codex, OpenClaw, Claude Code, and other agents use your apps, APIs, and internal tools. Then use OOMOL to compose and extend your own tools."
+    "message": "Let Codex, OpenClaw, Claude Code, and other agents use your apps, APIs, and internal tools. Then use OOMOL Studio to compose and extend your own tools."
   },
   "HOME.FirstScreen.heroAdvantage": {
     "message": "Start with CLI,"

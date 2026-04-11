@@ -116,7 +116,13 @@
   }
 
   &:global(.arco-btn:hover) {
-    border-color: color-mix(in srgb, var(--oomol-primary) 28%, white);
+    color: var(--oomol-primary) !important;
+    border-color: var(--oomol-primary);
+    background: color-mix(
+      in srgb,
+      var(--oomol-primary-bg) 72%,
+      var(--oomol-bg-elevated)
+    );
     box-shadow: 0 16px 30px rgba(105, 120, 159, 0.13);
   }
 }
@@ -415,10 +421,12 @@
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
 
     &:hover {
-      border-color: color-mix(
+      color: var(--oomol-primary) !important;
+      border-color: var(--oomol-primary);
+      background: color-mix(
         in srgb,
-        var(--oomol-primary) 24%,
-        var(--oomol-divider)
+        var(--oomol-primary-bg) 72%,
+        var(--oomol-bg-elevated)
       );
       box-shadow: 0 18px 32px rgba(0, 0, 0, 0.22);
     }
