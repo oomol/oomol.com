@@ -84,7 +84,7 @@ export default function Downloads() {
     <Layout>
       <div className={styles.container}>
         <img className={styles.image} src={logoUrl} />
-        <div className={styles.titleBox}>
+        <div id="studio-downloads" className={styles.titleBox}>
           <h1 className={styles.title}>
             {translate({
               message: "HOME.Downloads.title",

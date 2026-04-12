@@ -9,6 +9,7 @@ import React, { useRef, useState } from "react";
 export default function HomepageFirstScreen() {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const studioDownloadsHref = useBaseUrl("/downloads#studio-downloads");
   const heroVideoUrl = useBaseUrl(
     "https://static.oomol.com/assets/homepage/oomol-flow-en.webm"
   );
@@ -58,7 +59,7 @@ export default function HomepageFirstScreen() {
               size="lg"
               className={styles.secondaryCta}
             >
-              <Link to="/downloads">
+              <Link to={studioDownloadsHref}>
                 {translate({
                   message: "HOME.FirstScreen.cta.secondary",
                 })}
