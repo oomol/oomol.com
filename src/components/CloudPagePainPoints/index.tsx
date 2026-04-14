@@ -5,44 +5,79 @@ import type { DocusaurusContext } from "@docusaurus/types";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import React from "react";
 
-const zhCopy = {
-  badge: "为什么用 Cloud",
-  title: "现成工具不够时，难的是做出自己的工具",
-  card1: {
-    icon: "i-lucide-blocks",
-    title: "现成工具很快会到边界",
-    description:
-      "能先用，但一到真实业务，参数、状态、外部依赖和上下游约束就会超出边界。",
-    solution: "缺的那部分，最后还是要做成你自己的工具。",
-  },
-  card2: {
-    icon: "i-lucide-waypoints",
-    title: "难的是把它真正用起来",
-    description:
-      "做出功能只是开始。生成、验证、发布，再到 oo-cli 里可搜索、可调用，才是更重的一段。",
-    solution: "Studio 生成并验证，Cloud 发布并运行，oo-cli 负责调用。",
-  },
+type Copy = {
+  badge: string;
+  title: string;
+  subtitle: string;
+  cards: Array<{
+    icon: string;
+    eyebrow: string;
+    title: string;
+    description: string;
+    points: string[];
+  }>;
 };
 
-const enCopy = {
+const zhCopy: Copy = {
+  badge: "为什么用 Cloud",
+  title: "Cloud 解决的是交付和使用门槛",
+  subtitle:
+    "Studio 负责做出工具，Cloud 负责把它交付到 oo-cli，并以云服务的方式供用户使用。",
+  cards: [
+    {
+      icon: "i-lucide-waypoints",
+      eyebrow: "交付",
+      title: "交付到 oo-cli 更直接",
+      description:
+        "Cloud 和 oo-cli 是打通的。Studio 里的自定义工具交付后，就能直接在 oo-cli 中被搜索和调用。",
+      points: [
+        "不用再单独补一套接入链路",
+        "从 Studio 到 oo-cli 的交付路径天然连着",
+      ],
+    },
+    {
+      icon: "i-lucide-blocks",
+      eyebrow: "使用",
+      title: "免运维，按调用时长计费",
+      description:
+        "直接以云服务方式提供，用户不需要自己承担部署和运维，也不必为固定资源预先投入。",
+      points: [
+        "免运维，上手门槛更低",
+        "按调用时长收费，成本更灵活",
+      ],
+    },
+  ],
+};
+
+const enCopy: Copy = {
   badge: "Why Cloud",
-  title:
-    "When ready-made tools stop short, the hard part is building your own tool",
-  card1: {
-    icon: "i-lucide-blocks",
-    title: "Ready-made tools hit a limit fast",
-    description:
-      "They help at first, but real work quickly outgrows them with parameters, state, external dependencies, and handoff constraints.",
-    solution: "The missing piece still has to become a tool of your own.",
-  },
-  card2: {
-    icon: "i-lucide-waypoints",
-    title: "The hard part is making it usable",
-    description:
-      "Building the feature is only the start. Generation, validation, publish, and discovery in oo-cli are the heavier part.",
-    solution:
-      "Studio builds and validates it. Cloud publishes and runs it. oo-cli makes it callable.",
-  },
+  title: "Cloud lowers the delivery and usage barrier",
+  subtitle:
+    "Studio is where you build the tool. Cloud is what delivers it to oo-cli and makes it usable as a service.",
+  cards: [
+    {
+      icon: "i-lucide-waypoints",
+      eyebrow: "Delivery",
+      title: "A shorter path into oo-cli",
+      description:
+        "Cloud is tightly integrated with oo-cli. Once a custom tool is delivered from Studio, it can be searched and called directly in oo-cli.",
+      points: [
+        "No separate integration layer to build",
+        "The delivery path from Studio to oo-cli stays connected",
+      ],
+    },
+    {
+      icon: "i-lucide-blocks",
+      eyebrow: "Usage",
+      title: "No ops burden, flexible billing",
+      description:
+        "Cloud provides the tool as a service, so users do not need to run or maintain infrastructure of their own.",
+      points: [
+        "No ops overhead for the user",
+        "Billed by call duration for flexible cost",
+      ],
+    },
+  ],
 };
 
 export default function CloudPagePainPoints() {
@@ -57,36 +92,30 @@ export default function CloudPagePainPoints() {
         <div className={styles.header}>
           <div className={styles.badge}>{copy.badge}</div>
           <h2 className={styles.title}>{copy.title}</h2>
+          <p className={styles.subtitle}>{copy.subtitle}</p>
         </div>
 
         <div className={styles.grid}>
-          <article className={styles.card}>
-            <div className={styles.cardIcon}>
-              <i
-                className={`${styles.iconGlyph} ${copy.card1.icon}`}
-                aria-hidden="true"
-              />
-            </div>
-            <h3 className={styles.cardTitle}>{copy.card1.title}</h3>
-            <p className={styles.cardDescription}>{copy.card1.description}</p>
-            <div className={styles.solution}>
-              <p className={styles.solutionText}>{copy.card1.solution}</p>
-            </div>
-          </article>
-
-          <article className={styles.card}>
-            <div className={styles.cardIcon}>
-              <i
-                className={`${styles.iconGlyph} ${copy.card2.icon}`}
-                aria-hidden="true"
-              />
-            </div>
-            <h3 className={styles.cardTitle}>{copy.card2.title}</h3>
-            <p className={styles.cardDescription}>{copy.card2.description}</p>
-            <div className={styles.solution}>
-              <p className={styles.solutionText}>{copy.card2.solution}</p>
-            </div>
-          </article>
+          {copy.cards.map(card => (
+            <article key={card.title} className={styles.card}>
+              <div className={styles.cardIcon}>
+                <i
+                  className={`${styles.iconGlyph} ${card.icon}`}
+                  aria-hidden="true"
+                />
+              </div>
+              <div className={styles.cardEyebrow}>{card.eyebrow}</div>
+              <h3 className={styles.cardTitle}>{card.title}</h3>
+              <p className={styles.cardDescription}>{card.description}</p>
+              <ul className={styles.pointList}>
+                {card.points.map(point => (
+                  <li key={point} className={styles.pointItem}>
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
         </div>
       </div>
     </section>

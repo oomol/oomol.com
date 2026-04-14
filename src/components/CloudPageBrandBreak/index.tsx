@@ -21,8 +21,8 @@ export default function CloudPageBrandBreak() {
         </h2>
         <p className={styles.subline}>
           {isZh
-            ? "Studio 生成并验证，Cloud 发布并运行，oo-cli 在 Codex、Claude Code 和终端里直接搜索、查看和调用。"
-            : "Build and validate in Studio, publish through Cloud, then search, inspect, and run the tool through oo-cli in Codex, Claude Code, and the terminal."}
+            ? "Studio 生成并验证，Cloud 发布并运行，oo-cli 在 Agent、Codex 和 OpenCrawl 里直接搜索、查看和调用。"
+            : "Build and validate in Studio, publish through Cloud, then search, inspect, and run the tool through oo-cli in Agents, Codex, and OpenCrawl."}
         </p>
         <div className={styles.showcaseRow}>
           <div className={styles.showcaseCard}>

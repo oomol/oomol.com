@@ -143,7 +143,7 @@ const zhCopy: Copy = {
       },
       {
         title: "oo-cli 入口保持一致",
-        text: "发布后仍然通过 oo-cli 进入 Codex、Claude Code 和终端。",
+        text: "发布后仍然通过 oo-cli 进入 Agent、Codex 和 OpenCrawl。",
       },
     ],
     media: {
@@ -158,7 +158,7 @@ const zhCopy: Copy = {
     eyebrow: "03 / oo-cli",
     title: "最后在 oo-cli 里直接用起来",
     description:
-      "工具发布后，oo-cli 会把它带进 Codex、Claude Code 和终端。对使用者来说，不需要再换一套工作方式，也不用关心背后的发布链路。",
+      "工具发布后，oo-cli 会把它带进 Agent、Codex 和 OpenCrawl。对使用者来说，不需要再换一套工作方式，也不用关心背后的发布链路。",
     media: {
       title: "oo-cli 调用演示",
       note: "展示已发布工具在 Codex 中被搜索、查看和调用。",
@@ -169,7 +169,7 @@ const zhCopy: Copy = {
   cta: {
     title: "把自己的工具更快带进 oo-cli",
     description:
-      "现成工具不够用时，用 Studio 做出并验证第一版工具，再通过 Cloud 发布，让 oo-cli 直接把它带进 Codex、Claude Code 和终端。",
+      "现成工具不够用时，用 Studio 做出并验证第一版工具，再通过 Cloud 发布，让 oo-cli 直接把它带进 Agent、Codex 和 OpenCrawl。",
     secondary: "查看 Cloud 文档",
   },
 };
@@ -207,7 +207,7 @@ const enCopy: Copy = {
       },
       {
         title: "Keep the oo-cli path consistent",
-        text: "After publish, the tool is still reached through oo-cli in Codex, Claude Code, and the terminal.",
+        text: "After publish, the tool is still reached through oo-cli in Agents, Codex, and OpenCrawl.",
       },
     ],
     media: {
@@ -227,7 +227,7 @@ const enCopy: Copy = {
     eyebrow: "03 / oo-cli",
     title: "Then use it directly from oo-cli",
     description:
-      "After a tool is published, oo-cli brings it into Codex, Claude Code, and terminal workflows. For the user, there is no need to switch to a different way of working or think about the publish path behind it.",
+      "After a tool is published, oo-cli brings it into Agents, Codex, and OpenCrawl. For the user, there is no need to switch to a different way of working or think about the publish path behind it.",
     media: {
       title: "oo-cli invocation demo",
       note: "Show a published tool being searched, inspected, and called in Codex.",
@@ -238,7 +238,7 @@ const enCopy: Copy = {
   cta: {
     title: "Bring your own tools to oo-cli faster",
     description:
-      "When ready-made tools stop short, use Studio to build and validate the first version, then publish through Cloud so oo-cli can bring it straight into Codex, Claude Code, and the terminal.",
+      "When ready-made tools stop short, use Studio to build and validate the first version, then publish through Cloud so oo-cli can bring it straight into Agents, Codex, and OpenCrawl.",
     secondary: "Read Cloud docs",
   },
 };

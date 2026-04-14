@@ -2920,7 +2920,7 @@
     "message": "把自己的工具带进 oo-cli"
   },
   "CLOUD.hero.description": {
-    "message": "现成工具不够用时，用 Studio 做出并验证第一版工具，再通过 Cloud 发布到 oo-cli，让 Codex、Claude Code 和终端都能直接调用。"
+    "message": "把 Studio 里的自定义工具交付到 oo-cli，让 Agent、Codex 和 OpenCrawl 直接调用。"
   },
   "CLOUD.hero.kicker": {
     "message": "Cloud Runtime"

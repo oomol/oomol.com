@@ -2920,7 +2920,7 @@
     "message": "Bring your own tools to oo-cli"
   },
   "CLOUD.hero.description": {
-    "message": "When ready-made tools stop short, use Studio to build and validate the first version, then publish through Cloud so it shows up in oo-cli for Codex, Claude Code, and terminal workflows."
+    "message": "Deliver the custom tools from Studio to oo-cli, so Agents, Codex, and OpenCrawl can use them directly."
   },
   "CLOUD.hero.kicker": {
     "message": "Cloud Runtime"
