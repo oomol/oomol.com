@@ -138,7 +138,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
         description: translate({
           message: "Theme.Navbar.product.studio.description",
         }),
-        iconClassName: "i-lucide-square-terminal",
+        iconClassName: "i-lucide-waypoints",
       },
       {
         key: "cloud",
@@ -150,7 +150,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
         description: translate({
           message: "Theme.Navbar.product.cloud.description",
         }),
-        iconClassName: "i-lucide-cloud-upload",
+        iconClassName: "i-lucide-cloud",
       },
       {
         key: "oomol-ai",

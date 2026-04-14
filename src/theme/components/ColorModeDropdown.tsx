@@ -7,6 +7,10 @@ import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
 
 type ColorModeType = "light" | "dark" | "system";
 
+export interface ColorModeDropdownProps {
+  triggerClassName?: string;
+}
+
 const modeIconMap: Record<ColorModeType, string> = {
   light: "i-lucide-sun",
   dark: "i-lucide-moon",
@@ -25,7 +29,9 @@ const getModeText = (mode: ColorModeType) => {
   });
 };
 
-export const ColorModeDropdown = () => {
+export const ColorModeDropdown = ({
+  triggerClassName,
+}: ColorModeDropdownProps) => {
   const { colorMode, colorModeChoice, setColorMode } = useHydratedColorMode();
   const selectedMode: ColorModeType = colorModeChoice ?? "system";
 
@@ -72,7 +78,11 @@ export const ColorModeDropdown = () => {
       position="top"
       trigger="click"
     >
-      <Button className={styles.triggerButton} size="sm" variant="ghost">
+      <Button
+        className={`${styles.triggerButton}${triggerClassName ? ` ${triggerClassName}` : ""}`}
+        size="sm"
+        variant="ghost"
+      >
         <i className={`${getDisplayIcon()} ${styles.triggerIcon}`} />
         {getDisplayText()}
       </Button>

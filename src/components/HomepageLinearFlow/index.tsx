@@ -5,6 +5,7 @@ import type { DocusaurusContext } from "@docusaurus/types";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { SiteCta } from "@site/src/components/SiteCta";
 import { Button } from "@site/src/components/ui/button";
 import { clsx } from "clsx";
 import React from "react";
@@ -348,11 +349,11 @@ export default function HomepageLinearFlow() {
       </section>
 
       {/* ── CTA ── */}
-      <section className={styles.ctaSection}>
-        <div className={styles.ctaInner}>
-          <h2 className={styles.ctaTitle}>{copy.cta.title}</h2>
-          <p className={styles.ctaDescription}>{copy.cta.description}</p>
-          <div className={styles.ctaActions}>
+      <SiteCta
+        title={copy.cta.title}
+        description={copy.cta.description}
+        actions={
+          <>
             <Button asChild size="lg" className={styles.ctaPrimary}>
               <Link to="/docs/cloud-services/cli">{copy.cta.primary}</Link>
             </Button>
@@ -364,9 +365,9 @@ export default function HomepageLinearFlow() {
             >
               <Link to="/studio">{copy.cta.secondary}</Link>
             </Button>
-          </div>
-        </div>
-      </section>
+          </>
+        }
+      />
     </div>
   );
 }

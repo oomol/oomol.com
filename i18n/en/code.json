@@ -924,10 +924,16 @@
     "message": "//#region generated meta\ntype Inputs = {\n};\ntype Outputs = {\n};\n//#endregion\n\nimport type { Context } from \"@oomol/types/oocana\";\n\nexport default async function(\n    params: Inputs,\n    context: Context<Inputs, Outputs>\n): Promise<Partial<Outputs> | undefined | void> {\n    // Fusion API Base URL\n    const api_url = \"https://fusion-api.oomol.com/v1/fal-nano-banana-edit/submit\"\n\n    // LLM Base URL, can use openai sdk\n    const llm_base_url = \"https://llm.oomol.com/v1\"\n\n    // Get OOMOL token from context (no need for manual API key input)\n    const api_token = await context.getOomolToken()\n    // return { output: \"output_value\" };\n};"
   },
   "HOME.GetStartedPrompt.title": {
-    "message": "Get the first path working"
+    "message": "Start with ready-made tools, build your own only when needed"
   },
   "HOME.GetStartedPrompt.subtitle": {
-    "message": "Start with oo-cli to run published tools. When you need your own, generate and validate them in OOMOL Studio, then publish them through Cloud."
+    "message": "Use oo-cli to get ready-made tools working first. When you need custom ones, move into Studio and Cloud to compose, extend, and deliver your own tools."
+  },
+  "HOME.GetStartedPrompt.primary": {
+    "message": "Start with oo-cli"
+  },
+  "HOME.GetStartedPrompt.secondary": {
+    "message": "Build your first tool"
   },
   "HOME.Pricing.title": {
     "message": "Pricing"

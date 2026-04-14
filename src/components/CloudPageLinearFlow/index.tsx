@@ -7,6 +7,8 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import CloudPageDeveloperBenefits from "@site/src/components/CloudPageDeveloperBenefits";
 import { DownloadButton } from "@site/src/components/DownloadButton";
+import { SiteCta } from "@site/src/components/SiteCta";
+import siteCtaStyles from "@site/src/components/SiteCta/styles.module.scss";
 import { clsx } from "clsx";
 import React from "react";
 
@@ -436,22 +438,25 @@ export default function CloudPageLinearFlow() {
       <CloudPageDeveloperBenefits />
 
       {/* ── CTA ── */}
-      <section className={styles.ctaSection}>
-        <div className={styles.ctaInner}>
-          <h2 className={styles.ctaTitle}>{copy.cta.title}</h2>
-          <p className={styles.ctaDescription}>{copy.cta.description}</p>
-          <div className={styles.ctaActions}>
+      <SiteCta
+        title={copy.cta.title}
+        description={copy.cta.description}
+        actions={
+          <>
             <DownloadButton
               centered
               showNote={false}
               texts={downloadButtonTexts}
             />
-            <Link to="/docs/cloud-services/cli" className={styles.ctaGhost}>
+            <Link
+              to="/docs/cloud-services/cli"
+              className={siteCtaStyles.ghostLink}
+            >
               {copy.cta.secondary}
             </Link>
-          </div>
-        </div>
-      </section>
+          </>
+        }
+      />
     </div>
   );
 }

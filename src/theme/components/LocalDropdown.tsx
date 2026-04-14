@@ -11,6 +11,7 @@ import { Button } from "@site/src/components/ui/button";
 
 export interface LocalDropdownProps {
   queryString?: string;
+  triggerClassName?: string;
 }
 
 const localeMap = {
@@ -22,7 +23,10 @@ const formateLocale = (locale: string) => {
   return localeMap[locale] || locale;
 };
 
-export const LocalDropdown = ({ queryString = "" }: LocalDropdownProps) => {
+export const LocalDropdown = ({
+  queryString = "",
+  triggerClassName,
+}: LocalDropdownProps) => {
   const {
     i18n: { currentLocale, locales },
   } = useDocusaurusContext() as unknown as DocusaurusContext & {
@@ -74,7 +78,11 @@ export const LocalDropdown = ({ queryString = "" }: LocalDropdownProps) => {
           position="top"
           trigger="click"
         >
-          <Button className={styles.triggerButton} size="sm" variant="ghost">
+          <Button
+            className={`${styles.triggerButton}${triggerClassName ? ` ${triggerClassName}` : ""}`}
+            size="sm"
+            variant="ghost"
+          >
             <i className={`i-codicon-globe ${styles.triggerIcon}`} />
             {formateLocale(currentLocale)}
           </Button>

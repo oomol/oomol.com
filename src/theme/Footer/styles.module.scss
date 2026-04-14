@@ -236,6 +236,11 @@
 }
 
 .cookieControlButton {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.footerControlSurface {
   &:global(.arco-btn) {
     justify-content: center;
     border-color: color-mix(
@@ -263,6 +268,11 @@
     );
     color: var(--oomol-primary);
   }
+}
+
+.cookieControlIcon {
+  flex: none;
+  font-size: 14px;
 }
 
 .iconOutBox {
@@ -368,6 +378,10 @@
   }
 
   .cookieControlButton {
+    font-weight: 500;
+  }
+
+  .footerControlSurface {
     &:global(.arco-btn) {
       border-color: color-mix(
         in srgb,

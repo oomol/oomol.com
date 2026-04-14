@@ -924,10 +924,16 @@
     "message": "//#region generated meta\ntype Inputs = {\n};\ntype Outputs = {\n};\n//#endregion\n\nimport type { Context } from \"@oomol/types/oocana\";\n\nexport default async function(\n    params: Inputs,\n    context: Context<Inputs, Outputs>\n): Promise<Partial<Outputs> | undefined | void> {\n    // 融合 API 基础地址\n    const api_url = \"https://fusion-api.oomol.com/v1/fal-nano-banana-edit/submit\"\n\n    // 大模型基础地址，可使用 openai sdk\n    const llm_base_url = \"https://llm.oomol.com/v1\"\n\n    // 从 context 获取 OOMOL token（无需手动输入 API key）\n    const api_token = await context.getOomolToken()\n    // return { output: \"output_value\" };\n};"
   },
   "HOME.GetStartedPrompt.title": {
-    "message": "先把第一条链路跑通"
+    "message": "先用现成工具，需要时再做自己的"
   },
   "HOME.GetStartedPrompt.subtitle": {
-    "message": "先通过 oo-cli 运行已经发布好的工具。需要时，再回到 OOMOL Studio 里生成并验证自己的实现，再通过 Cloud 发布出去。"
+    "message": "先用 oo-cli 跑通现成工具。需要自定义时，再用 Studio 和 Cloud 组合、扩展并交付自己的工具。"
+  },
+  "HOME.GetStartedPrompt.primary": {
+    "message": "先用 oo-cli"
+  },
+  "HOME.GetStartedPrompt.secondary": {
+    "message": "了解 Studio"
   },
   "HOME.Pricing.title": {
     "message": "价格"
