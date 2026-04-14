@@ -2,6 +2,7 @@ import styles from "./styles.module.scss";
 
 import { translate } from "@docusaurus/Translate";
 import AssetBlockSVG from "@site/src/components/AssetBlock";
+import { Button } from "@site/src/components/ui/button";
 import ColorIconActiveSVG from "@site/static/img/pages/brand-assets/color-active.svg";
 import ColorIconSVG from "@site/static/img/pages/brand-assets/color.svg";
 import IconSymbolIconActiveSVG from "@site/static/img/pages/brand-assets/icon-symbol-active.svg";
@@ -18,7 +19,6 @@ import LogoIconSVG from "@site/static/img/pages/brand-assets/oomol-logo.svg";
 import TypefaceIconActiveSVG from "@site/static/img/pages/brand-assets/typeface-active.svg";
 import JostIconSVG from "@site/static/img/pages/brand-assets/typeface-jost.svg";
 import TypefaceIconSVG from "@site/static/img/pages/brand-assets/typeface.svg";
-import { Button } from "@site/src/components/ui/button";
 import Layout from "@theme/Layout";
 import { clsx } from "clsx";
 import React, { useState, useEffect, useRef, useMemo } from "react";

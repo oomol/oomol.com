@@ -3,8 +3,8 @@ import styles from "./styles.module.scss";
 import type { DocusaurusContext } from "@docusaurus/types";
 
 import Link from "@docusaurus/Link";
-import { Button } from "@site/src/components/ui/button";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { Button } from "@site/src/components/ui/button";
 import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
 import React, { useMemo } from "react";
 

@@ -4,6 +4,7 @@ import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { SiteCta } from "@site/src/components/SiteCta";
 import { Button } from "@site/src/components/ui/button";
 import ThemedImage from "@theme/ThemedImage";
 import React from "react";
@@ -53,10 +54,22 @@ const principles = [
   },
 ];
 
-const frustrations = [
-  "STUDIO.story.frustration.line1",
-  "STUDIO.story.frustration.line2",
-  "STUDIO.story.frustration.line3",
+const painPoints = [
+  {
+    labelKey: "STUDIO.story.point3.label",
+    titleKey: "STUDIO.story.point3.title",
+    descriptionKey: "STUDIO.story.point3.description",
+  },
+  {
+    labelKey: "STUDIO.story.point1.label",
+    titleKey: "STUDIO.story.point1.title",
+    descriptionKey: "STUDIO.story.point1.description",
+  },
+  {
+    labelKey: "STUDIO.story.point2.label",
+    titleKey: "STUDIO.story.point2.title",
+    descriptionKey: "STUDIO.story.point2.description",
+  },
 ];
 
 export default function StudioPage() {
@@ -73,6 +86,18 @@ export default function StudioPage() {
     { light: principle2Light, dark: principle2Dark },
     { light: principle3Light, dark: principle3Dark },
   ];
+  const storyTitleLines = translate({
+    message: "STUDIO.product.story.title",
+  }).split("\n");
+  const storyDescriptionLines = translate({
+    message: "STUDIO.product.story.description",
+  }).split("\n");
+  const heroTitleLines = translate({
+    message: "STUDIO.manifesto.title",
+  }).split("\n");
+  const principlesTitleLines = translate({
+    message: "STUDIO.product.principles.title",
+  }).split("\n");
 
   return (
     <Layout>
@@ -88,7 +113,12 @@ export default function StudioPage() {
           <div className={styles.sectionContainer}>
             <div className={styles.heroCopy}>
               <h1 className={styles.heroTitle}>
-                {translate({ message: "STUDIO.manifesto.title" })}
+                {heroTitleLines.map((line, index) => (
+                  <React.Fragment key={`${index}-${line}`}>
+                    {index > 0 ? <br /> : null}
+                    {line}
+                  </React.Fragment>
+                ))}
               </h1>
               <p className={styles.heroDescription}>
                 {translate({ message: "STUDIO.manifesto.subtitle" })}
@@ -122,30 +152,42 @@ export default function StudioPage() {
           <div className={styles.sectionContainer}>
             <div className={styles.sectionHeader}>
               <h2 className={styles.sectionTitle}>
-                {translate({ message: "STUDIO.product.story.title" })}
+                {storyTitleLines.map((line, index) => (
+                  <React.Fragment key={`${index}-${line}`}>
+                    {index > 0 ? <br /> : null}
+                    {line}
+                  </React.Fragment>
+                ))}
               </h2>
+              <p className={styles.sectionDescription}>
+                {storyDescriptionLines.map((line, index) => (
+                  <React.Fragment key={`${index}-${line}`}>
+                    {index > 0 ? <br /> : null}
+                    {line}
+                  </React.Fragment>
+                ))}
+              </p>
             </div>
 
-            <div className={styles.storyGrid}>
-              <div className={styles.storyCopy}>
-                <p className={styles.storyLead}>
-                  {translate({ message: "STUDIO.story.paragraph1" })}
-                </p>
-                <p className={styles.storyBody}>
-                  {translate({ message: "STUDIO.story.paragraph2" })}
-                </p>
-                <p className={styles.storyBody}>
-                  {translate({ message: "STUDIO.story.paragraph3" })}
-                </p>
-              </div>
-
-              <div className={styles.quoteStack}>
-                {frustrations.map(key => (
-                  <blockquote key={key} className={styles.quoteCard}>
-                    {translate({ message: key })}
-                  </blockquote>
-                ))}
-              </div>
+            <div className={styles.painPointsGrid}>
+              {painPoints.map((point, index) => (
+                <article key={point.titleKey} className={styles.painPointCard}>
+                  <div className={styles.painPointMeta}>
+                    <span className={styles.painPointIndex}>
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className={styles.painPointLabel}>
+                      {translate({ message: point.labelKey })}
+                    </span>
+                  </div>
+                  <h3 className={styles.painPointTitle}>
+                    {translate({ message: point.titleKey })}
+                  </h3>
+                  <p className={styles.painPointText}>
+                    {translate({ message: point.descriptionKey })}
+                  </p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -154,8 +196,18 @@ export default function StudioPage() {
           <div className={styles.sectionContainer}>
             <div className={styles.sectionHeader}>
               <h2 className={styles.sectionTitle}>
-                {translate({ message: "STUDIO.product.principles.title" })}
+                {principlesTitleLines.map((line, index) => (
+                  <React.Fragment key={`${index}-${line}`}>
+                    {index > 0 ? <br /> : null}
+                    {line}
+                  </React.Fragment>
+                ))}
               </h2>
+              <p className={styles.sectionDescription}>
+                {translate({
+                  message: "STUDIO.product.principles.description",
+                })}
+              </p>
             </div>
 
             <div className={styles.principlesGrid}>
@@ -189,36 +241,25 @@ export default function StudioPage() {
           </div>
         </section>
 
-        <section className={styles.ctaSection}>
-          <div className={styles.sectionContainer}>
-            <div className={styles.ctaCard}>
-              <h2 className={styles.ctaTitle}>
-                {translate({ message: "STUDIO.product.cta.title" })}
-              </h2>
-              <p className={styles.ctaDescription}>
-                {translate({ message: "STUDIO.product.cta.description" })}
-              </p>
-              <div className={styles.ctaActions}>
-                <DownloadButton showNote={false} />
-                <Button
-                  asChild
-                  size="lg"
-                  variant="contrast"
-                  className={styles.secondaryAction}
-                >
-                  <Link to="/cloud">
-                    {translate({ message: "STUDIO.product.cta.secondary" })}
-                  </Link>
-                </Button>
-              </div>
-              <p className={styles.ctaNote}>
-                {translate({
-                  message: "HOME.FirstScreen.download-macos-chip-note",
-                })}
-              </p>
-            </div>
-          </div>
-        </section>
+        <SiteCta
+          title={translate({ message: "STUDIO.product.cta.title" })}
+          description={translate({ message: "STUDIO.product.cta.description" })}
+          actions={
+            <>
+              <DownloadButton centered showNote noteTone="inverse" />
+              <Button
+                asChild
+                size="lg"
+                variant="contrast"
+                className={styles.siteCtaSecondary}
+              >
+                <Link to="/docs/cloud-services/cli">
+                  {translate({ message: "HOME.CliEntry.step1.title" })}
+                </Link>
+              </Button>
+            </>
+          }
+        />
       </main>
     </Layout>
   );

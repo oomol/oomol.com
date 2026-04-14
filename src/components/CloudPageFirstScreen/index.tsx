@@ -3,9 +3,9 @@ import styles from "./styles.module.scss";
 import type { DocusaurusContext } from "@docusaurus/types";
 
 import Link from "@docusaurus/Link";
-import { Button } from "@site/src/components/ui/button";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { Button } from "@site/src/components/ui/button";
 import React, { useRef, useState } from "react";
 
 import { DownloadButton } from "../DownloadButton";

@@ -10,11 +10,11 @@ import { useNavbarMobileSidebar } from "@docusaurus/theme-common/internal";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { Button } from "@site/src/components/ui/button";
 import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
 import NavbarItem from "@theme/NavbarItem";
 import SearchBar from "@theme/SearchBar";
 import ThemedImage from "@theme/ThemedImage";
-import { Button } from "@site/src/components/ui/button";
 import { clsx } from "clsx";
 import React, { memo, useEffect, useMemo, useRef, useState } from "react";
 
@@ -385,7 +385,10 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
                             {entry.label}
                           </span>
                           <span className={styles.productMenuEntryDescription}>
-                            {renderProductDescription(entry.description, locale)}
+                            {renderProductDescription(
+                              entry.description,
+                              locale
+                            )}
                           </span>
                         </span>
                       </Link>

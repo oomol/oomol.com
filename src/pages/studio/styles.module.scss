@@ -33,8 +33,7 @@
 }
 
 .heroTitle,
-.sectionTitle,
-.ctaTitle {
+.sectionTitle {
   margin: 0;
   font-family: var(--oomol-font-display);
   letter-spacing: -0.045em;
@@ -42,18 +41,18 @@
 }
 
 .heroTitle {
-  max-width: 14ch;
-  font-size: clamp(2.8rem, 5.2vw, 4.85rem);
-  line-height: 1.14;
-  text-wrap: balance;
+  max-width: 22ch;
+  font-size: clamp(2.52rem, 4.3vw, 3.9rem);
+  line-height: 1.12;
+  white-space: pre-line;
+  word-break: keep-all;
+  overflow-wrap: normal;
 }
 
 .heroDescription,
-.sectionSubtitle,
-.storyLead,
-.storyBody,
-.principleText,
-.ctaDescription {
+.sectionDescription,
+.painPointText,
+.principleText {
   margin: 0;
   line-height: 1.74;
   color: var(--oomol-text-secondary);
@@ -80,29 +79,11 @@
   margin: 0 auto;
 }
 
-.secondaryAction {
-  display: inline-flex;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  min-height: 2.95rem;
-  padding: 0 1rem;
-  border-radius: 999px;
-  font-size: 0.96rem;
-  font-weight: 650;
-  text-decoration: none;
-  color: var(--oomol-text-primary);
-  border: 1px solid var(--oomol-divider);
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%);
-  transition:
-    transform 0.18s ease,
-    background-color 0.18s ease,
-    border-color 0.18s ease,
-    color 0.18s ease;
+.siteCtaSecondary {
+  min-width: 13rem;
 
-  &:hover {
-    text-decoration: none;
-    transform: translateY(-1px);
+  &:global(.arco-btn) {
+    font-weight: 700;
   }
 }
 
@@ -147,8 +128,7 @@
 }
 
 .storySection,
-.principlesSection,
-.ctaSection {
+.principlesSection {
   padding: clamp(2.8rem, 6vw, 4.8rem) 0;
 }
 
@@ -158,48 +138,145 @@
   margin-bottom: 1.6rem;
 }
 
-.sectionTitle {
-  max-width: 13ch;
-  font-size: clamp(2.35rem, 4.8vw, 3.9rem);
-  line-height: 0.98;
+.storySection .sectionHeader {
+  max-width: 56rem;
+  margin-inline: auto;
+  justify-items: center;
+  text-align: center;
 }
 
-.storyGrid {
+.principlesSection .sectionHeader {
+  max-width: 48rem;
+  margin-inline: auto;
+  justify-items: center;
+  text-align: center;
+}
+
+.sectionTitle {
+  max-width: 18ch;
+  font-size: clamp(1.92rem, 3vw, 2.46rem);
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+.storySection .sectionTitle {
+  max-width: 14ch;
+}
+
+.principlesSection .sectionTitle {
+  max-width: 21ch;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+.sectionDescription {
+  max-width: 38rem;
+  font-size: 1rem;
+  line-height: 1.62;
+}
+
+.principlesSection .sectionDescription {
+  max-width: 34rem;
+  text-align: center;
+}
+
+.storySection .sectionDescription {
+  max-width: 38rem;
+}
+
+.painPointsGrid {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-  gap: 1.4rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem;
   align-items: start;
 }
 
-.storyCopy {
+.painPointCard {
+  position: relative;
   display: grid;
-  gap: 1rem;
-}
-
-.storyLead {
-  font-size: 1.04rem;
-}
-
-.quoteStack {
-  display: grid;
-  gap: 0.9rem;
-}
-
-.quoteCard {
+  gap: 0.82rem;
+  min-height: 14.5rem;
   margin: 0;
-  padding: 1.15rem 1.1rem;
-  border-radius: 1.3rem;
-  border: 1px solid var(--oomol-primary-border);
+  padding: 1.2rem 1.15rem 1.25rem;
+  border-radius: 1.4rem;
+  border: 1px solid color-mix(in srgb, var(--oomol-primary-border) 68%, white);
   background: linear-gradient(
     180deg,
-    color-mix(in srgb, var(--oomol-primary-bg) 76%, var(--oomol-bg-elevated)) 0%,
-    color-mix(in srgb, var(--oomol-primary-bg) 48%, var(--oomol-bg-elevated))
-      100%
+    color-mix(in srgb, var(--oomol-primary-bg) 84%, white 16%) 0%,
+    color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%) 100%
   );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.46),
+    0 14px 34px rgba(91, 101, 139, 0.08);
+  overflow: clip;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--oomol-primary) 86%, white 14%) 0%,
+      color-mix(in srgb, var(--oomol-primary) 24%, transparent) 100%
+    );
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -3rem;
+    right: -2.2rem;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 999px;
+    background: radial-gradient(
+      circle,
+      color-mix(in srgb, var(--oomol-primary-bg) 72%, white 28%) 0%,
+      transparent 72%
+    );
+    opacity: 0.68;
+    pointer-events: none;
+  }
+}
+
+.painPointMeta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.painPointIndex {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--oomol-primary);
+}
+
+.painPointLabel {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--oomol-text-secondary);
+}
+
+.painPointTitle {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  max-width: 16ch;
+  font-size: 1.14rem;
+  line-height: 1.32;
+  color: var(--oomol-text-primary);
+}
+
+.painPointText {
+  position: relative;
+  z-index: 1;
   font-size: 0.96rem;
   line-height: 1.66;
-  color: var(--oomol-text-secondary);
-  font-style: italic;
 }
 
 .principlesGrid {
@@ -209,26 +286,13 @@
 
 .principleCard {
   display: grid;
-  grid-template-columns: minmax(420px, 1.14fr) minmax(320px, 0.86fr);
+  grid-template-columns: minmax(320px, 0.86fr) minmax(420px, 1.14fr);
   gap: 1.5rem;
   align-items: center;
-  padding-top: 1rem;
-  border-top: 1px solid var(--oomol-divider);
-
-  &:nth-child(even) {
-    grid-template-columns: minmax(320px, 0.86fr) minmax(420px, 1.14fr);
-
-    .principleMedia {
-      order: 2;
-    }
-
-    .principleContent {
-      order: 1;
-    }
-  }
 }
 
 .principleMedia {
+  order: 2;
   border-radius: 1.4rem;
   padding: 0.65rem;
   border: 1px solid var(--oomol-divider);
@@ -246,6 +310,7 @@
 }
 
 .principleContent {
+  order: 1;
   display: grid;
   gap: 0.8rem;
   max-width: 35rem;
@@ -264,58 +329,6 @@
   gap: 0.55rem;
 }
 
-.ctaCard {
-  padding: clamp(1.8rem, 3.8vw, 2.6rem);
-  border-radius: 1.9rem;
-  border: 1px solid rgba(214, 221, 236, 0.12);
-  background:
-    radial-gradient(
-      circle at top left,
-      rgba(132, 138, 208, 0.2) 0%,
-      rgba(132, 138, 208, 0) 32%
-    ),
-    linear-gradient(180deg, #1a1b28 0%, #12131d 100%);
-  box-shadow: var(--oomol-shadow-lg);
-}
-
-.ctaTitle {
-  max-width: 12ch;
-  font-size: clamp(2.35rem, 4.6vw, 3.9rem);
-  line-height: 0.96;
-  color: rgba(243, 239, 248, 0.98);
-}
-
-.ctaDescription {
-  max-width: 40rem;
-  padding-top: 0.9rem;
-  color: rgba(221, 214, 231, 0.8);
-}
-
-.ctaActions {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 0.85rem;
-  padding-top: 0.35rem;
-}
-
-.ctaActions .secondaryAction {
-  min-height: 54px;
-}
-
-.ctaNote {
-  margin: 0;
-  padding-top: 0.7rem;
-  padding-left: 0.3rem;
-  font-size: 13px;
-  line-height: 1.5;
-  color: rgba(221, 214, 231, 0.76);
-}
-
-.ctaCard .secondaryAction {
-  font-weight: 700;
-}
-
 :global(html[lang="en"]) .heroTitle {
   max-width: 16ch;
   font-size: clamp(2.55rem, 4.2vw, 4.35rem);
@@ -323,29 +336,23 @@
 }
 
 :global(html[lang="en"]) .sectionTitle {
-  max-width: 17ch;
-  font-size: clamp(2.05rem, 4vw, 3.35rem);
-  line-height: 1.02;
+  max-width: 100%;
+  font-size: clamp(2rem, 3.2vw, 2.85rem);
+  line-height: 1.1;
 }
 
-:global(html[lang="en"]) .ctaTitle {
-  max-width: 18ch;
-  font-size: clamp(2.1rem, 4vw, 3.45rem);
-  line-height: 1.03;
+:global(html[lang="en"]) .storySection .sectionTitle {
+  max-width: 100%;
+}
+
+:global(html[lang="en"]) .storySection .sectionDescription {
+  max-width: 46rem;
 }
 
 @media (max-width: 996px) {
-  .storyGrid,
-  .principleCard,
-  .principleCard:nth-child(even) {
+  .painPointsGrid,
+  .principleCard {
     grid-template-columns: 1fr;
-  }
-
-  .principleCard:nth-child(even) {
-    .principleMedia,
-    .principleContent {
-      order: initial;
-    }
   }
 }
 
@@ -359,10 +366,13 @@
   }
 
   .heroTitle,
-  .sectionTitle,
-  .ctaTitle {
+  .sectionTitle {
     max-width: 100%;
     text-wrap: pretty;
+  }
+
+  .painPointCard {
+    min-height: auto;
   }
 
   .heroDescription {
@@ -396,19 +406,6 @@
           0%,
         color-mix(in srgb, var(--oomol-bg-base) 96%, black 4%) 100%
       );
-  }
-
-  .secondaryAction {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-border-default) 72%,
-      var(--oomol-divider)
-    );
-    background: color-mix(
-      in srgb,
-      var(--oomol-bg-elevated) 80%,
-      var(--oomol-bg-container) 20%
-    );
   }
 
   .quoteCard {
@@ -455,9 +452,5 @@
 
   .visualFrame {
     background: transparent;
-  }
-
-  .principleCard {
-    border-top-color: color-mix(in srgb, var(--oomol-divider) 84%, white 16%);
   }
 }

@@ -245,10 +245,7 @@ const CookieConsentOpenBridge = ({ requestKey }: { requestKey: number }) => {
   const handledRequestKeyRef = useRef(0);
 
   useEffect(() => {
-    if (
-      requestKey <= 0 ||
-      requestKey === handledRequestKeyRef.current
-    ) {
+    if (requestKey <= 0 || requestKey === handledRequestKeyRef.current) {
       return;
     }
 

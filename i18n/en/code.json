@@ -3118,16 +3118,16 @@
     "message": "View Docs"
   },
   "STUDIO.page.title": {
-    "message": "OOMOL Studio - Generate and Validate Functions in a Real Coding Environment"
+    "message": "OOMOL Studio - Let AI Agents Build Tools Automatically"
   },
   "STUDIO.page.description": {
-    "message": "Generate functions in a real coding environment, validate them with local containers, then carry the same code forward into service delivery."
+    "message": "Let an AI agent build the tool automatically first, then verify, revise, and ship the same code in a real coding environment."
   },
   "STUDIO.manifesto.title": {
     "message": "The Studio for Building Agent Tools"
   },
   "STUDIO.manifesto.subtitle": {
-    "message": "Use workflow orchestration and function generation to give agents new capabilities, then call them directly through oo-cli."
+    "message": "Let an AI agent build the tool automatically first, then verify, revise, and call it directly through oo-cli in a real engineering environment."
   },
   "STUDIO.manifesto.cta.download": {
     "message": "Download OOMOL Studio"
@@ -3142,40 +3142,70 @@
     "message": "Real developer environment"
   },
   "STUDIO.product.story.title": {
-    "message": "Not another platform that asks developers to adapt"
+    "message": "Tool Extension,\nReally Comes Down to Three Problems"
+  },
+  "STUDIO.product.story.description": {
+    "message": "Whether you compose with workflows or build function services, you usually get blocked by:\nnot being able to let an AI agent build automatically, DSL learning cost, and extension cost."
   },
   "STUDIO.product.principles.kicker": {
     "message": "Core principles"
   },
   "STUDIO.product.principles.title": {
-    "message": "Why Studio works better for building function tools"
+    "message": "OOMOL Studio gets these three things\nright in one pass"
+  },
+  "STUDIO.product.principles.description": {
+    "message": "Start by letting AI handle the work. When manual adjustment or deeper tuning is needed, you can step in directly with familiar coding skills instead of learning a DSL."
   },
   "STUDIO.product.cta.title": {
     "message": "Start with your next function tool"
   },
   "STUDIO.product.cta.description": {
-    "message": "Write, debug, and validate your own function tools in a real coding environment. When you are ready to deliver, carry them forward through Cloud."
-  },
-  "STUDIO.product.cta.secondary": {
-    "message": "Explore Cloud"
+    "message": "Use a real coding environment to let an AI agent generate, debug, and validate function tools. When you are ready to deliver, carry them forward through Cloud."
   },
   "STUDIO.story.paragraph1": {
-    "message": "What we want is not another tool that asks developers to adapt to the platform, but a working environment where you can actually write functions, orchestrate nodes, debug dependencies, and validate results."
+    "message": "What we want is not another tool that asks developers to adapt to the platform, but a working environment where an AI agent can build automatically first, and engineers can keep writing functions, orchestrating nodes, debugging dependencies, and validating results."
   },
   "STUDIO.story.frustration.line1": {
-    "message": "\"Why do I have to learn a proprietary JSON syntax just to write an if/else statement?\""
+    "message": "\"Why can't I just let an AI agent build this tool automatically?\""
   },
   "STUDIO.story.frustration.line2": {
-    "message": "\"Why can't I just import a library? Why do I have to wait for the platform to support it?\""
+    "message": "\"Why do I still have to learn a proprietary DSL before I can compose anything?\""
   },
   "STUDIO.story.frustration.line3": {
-    "message": "\"Why am I coding in a textarea with no autocomplete?\""
+    "message": "\"Why do I still have to wait for platform support just to import a library?\""
   },
   "STUDIO.story.paragraph2": {
-    "message": "For developers, the real problem is rarely whether something can be dragged visually. The moment delivery becomes real, you still end up dealing with code, dependencies, debugging, and environment control."
+    "message": "For developers, the real problem is not whether something can be dragged visually. It is whether the first step from requirement to usable tool can be completed automatically by an AI agent."
   },
   "STUDIO.story.paragraph3": {
-    "message": "So Studio has a clear role: not to replace engineering workflow, but to bring function generation, local validation, and delivery back inside it."
+    "message": "So Studio has a clear role: put fully automatic building by an AI agent into a real engineering environment, then connect local validation and delivery."
+  },
+  "STUDIO.story.point1.label": {
+    "message": "Learning Curve"
+  },
+  "STUDIO.story.point1.title": {
+    "message": "You have to learn a DSL before you can even compose"
+  },
+  "STUDIO.story.point1.description": {
+    "message": "Many platforms build workflows on top of proprietary low-code syntax. Before you extend anything, you first learn the platform."
+  },
+  "STUDIO.story.point2.label": {
+    "message": "Extension Cost"
+  },
+  "STUDIO.story.point2.title": {
+    "message": "You can compose, but dependencies and extension stay awkward"
+  },
+  "STUDIO.story.point2.description": {
+    "message": "Connecting nodes does not mean the system is truly extensible. Importing libraries or changing logic still gets stuck on platform constraints."
+  },
+  "STUDIO.story.point3.label": {
+    "message": "Auto Build"
+  },
+  "STUDIO.story.point3.title": {
+    "message": "You still cannot let an AI agent build it automatically"
+  },
+  "STUDIO.story.point3.description": {
+    "message": "The AI agent should find packages and nodes, connect them, and generate new nodes when needed."
   },
   "HOME.StudioChain.title": {
     "message": "From idea to a deliverable tool"
@@ -3223,16 +3253,16 @@
     "message": "Product"
   },
   "STUDIO.principle1.title": {
-    "message": "1. Nodes Are Functions. Flows Are Composition."
+    "message": "1. Let the AI agent build it automatically"
   },
   "STUDIO.principle1.paragraph1": {
-    "message": "Studio does not introduce a new definition language. It organizes standard code into runnable capabilities."
+    "message": "Describe the tool you want, and the AI agent can search for the right packages and nodes to build the tool automatically."
   },
   "STUDIO.principle1.paragraph2": {
-    "message": "In OOMOL, a node is still backed by a function. Inputs are arguments, outputs are return values."
+    "message": "When the existing nodes are not enough, it can keep going by generating new function nodes instead of only completing a few lines of code."
   },
   "STUDIO.principle1.paragraph3": {
-    "message": "You are not configuring a black-box platform. You are writing code that stays maintainable and ready for delivery."
+    "message": "From requirement to a usable tool, the first step is to let the AI agent build it automatically."
   },
   "STUDIO.principle1.codeComment1": {
     "message": "// This function..."
@@ -3247,28 +3277,28 @@
     "message": "// Output port: \"result\""
   },
   "STUDIO.principle2.title": {
-    "message": "2. Do Not Downgrade Your Developer Experience"
+    "message": "2. Start composing without learning a DSL first"
   },
   "STUDIO.principle2.paragraph1": {
-    "message": "Visual tooling should not come at the cost of a worse developer experience."
+    "message": "In Studio, nodes are still functions. Inputs are arguments. Outputs are return values."
   },
   "STUDIO.principle2.paragraph2": {
-    "message": "That is why each function unit keeps the editing, completion, typing, and debugging capabilities developers already rely on."
+    "message": "When you describe, review, or edit a flow, you work with concepts developers already understand instead of translating ideas into a platform DSL."
   },
   "STUDIO.principle2.paragraph3": {
-    "message": "AI, code, and the toolchain need to work together instead of forcing you to switch contexts."
+    "message": "That keeps learning cost out of the critical path and makes orchestration understandable from the start."
   },
   "STUDIO.principle3.title": {
-    "message": "3. Match Local and Cloud Environments Early"
+    "message": "3. Extend it the way engineers actually do"
   },
   "STUDIO.principle3.paragraph1": {
-    "message": "The hard part of function delivery is often not writing the code, but controlling dependencies, environment, and runtime behavior."
+    "message": "Install, import, and validate the dependencies you need in a real engineering environment instead of waiting for a platform allowlist."
   },
   "STUDIO.principle3.paragraph2": {
-    "message": "Studio uses standard containers to keep those concerns in one place."
+    "message": "Changing logic, adding nodes, and connecting external capabilities all happen in the same codebase and container."
   },
   "STUDIO.principle3.paragraph3": {
-    "message": "Install what you need, run the result locally, then carry the same capability forward as an API, MCP tool, or automation task."
+    "message": "So the flow is not just composable on the surface. It can keep expanding with the rest of your stack."
   },
   "STUDIO.principle3.codeComment": {
     "message": "# No wrappers. Just standard tools."

@@ -1,7 +1,8 @@
+import siteCtaStyles from "@site/src/components/SiteCta/styles.module.scss";
+
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import { SiteCta } from "@site/src/components/SiteCta";
-import siteCtaStyles from "@site/src/components/SiteCta/styles.module.scss";
 import { Button } from "@site/src/components/ui/button";
 
 export const GetStartedPrompt = () => {

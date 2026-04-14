@@ -1,4 +1,5 @@
 import styles from "./styles.module.scss";
+import siteCtaStyles from "@site/src/components/SiteCta/styles.module.scss";
 
 import type { DocusaurusContext } from "@docusaurus/types";
 
@@ -8,7 +9,6 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import CloudPageDeveloperBenefits from "@site/src/components/CloudPageDeveloperBenefits";
 import { DownloadButton } from "@site/src/components/DownloadButton";
 import { SiteCta } from "@site/src/components/SiteCta";
-import siteCtaStyles from "@site/src/components/SiteCta/styles.module.scss";
 import { clsx } from "clsx";
 import React from "react";
 
