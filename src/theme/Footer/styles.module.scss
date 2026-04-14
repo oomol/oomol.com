@@ -175,6 +175,7 @@
 .rightControls {
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
 .bottomInfo {
@@ -232,23 +233,34 @@
     margin-left: 0;
     margin-top: 6px;
   }
-
-  .cookieSettingsButton {
-    display: block;
-    margin-left: 0;
-    margin-top: 6px;
-    width: 100%;
-  }
 }
 
-.cookieSettingsButton {
-  margin-left: 8px;
-  min-height: 0;
-  padding: 0;
-  color: var(--oomol-text-secondary);
-  font: inherit;
+.cookieControlButton {
+  &:global(.arco-btn) {
+    justify-content: center;
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-border-default) 72%,
+      transparent
+    );
+    background: color-mix(in srgb, var(--oomol-bg-elevated) 96%, white 4%);
+    color: var(--oomol-text-secondary);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.72),
+      0 8px 18px rgba(77, 88, 124, 0.08);
+  }
 
-  &:hover {
+  &:global(.arco-btn:not(.arco-btn-disabled)):hover {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-primary-border) 72%,
+      transparent
+    );
+    background: color-mix(
+      in srgb,
+      var(--oomol-primary-bg) 68%,
+      var(--oomol-bg-elevated) 32%
+    );
     color: var(--oomol-primary);
   }
 }
@@ -352,6 +364,33 @@
       box-shadow:
         inset 0 1px 0 rgba(255, 255, 255, 0.12),
         0 12px 24px rgba(0, 0, 0, 0.14);
+    }
+  }
+
+  .cookieControlButton {
+    &:global(.arco-btn) {
+      border-color: color-mix(
+        in srgb,
+        var(--oomol-border-default) 72%,
+        transparent
+      );
+      background: var(--oomol-surface-float);
+      color: color-mix(in srgb, var(--oomol-text-secondary) 92%, white 8%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    &:global(.arco-btn:not(.arco-btn-disabled)):hover {
+      background: color-mix(
+        in srgb,
+        var(--oomol-primary-bg) 60%,
+        var(--oomol-bg-elevated) 40%
+      );
+      border-color: color-mix(
+        in srgb,
+        var(--oomol-primary-border) 72%,
+        transparent
+      );
+      color: color-mix(in srgb, var(--oomol-text-primary) 96%, white 4%);
     }
   }
 }

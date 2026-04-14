@@ -73,7 +73,7 @@ export const ColorModeDropdown = () => {
       trigger="click"
     >
       <Button className={styles.triggerButton} size="sm" variant="ghost">
-        <div className={getDisplayIcon()} />
+        <i className={`${getDisplayIcon()} ${styles.triggerIcon}`} />
         {getDisplayText()}
       </Button>
     </Dropdown>

@@ -12,7 +12,7 @@ import {
   trackFirstLoginConversion,
 } from "@site/src/lib/analytics";
 import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { CookieManager, useCookieConsent } from "react-cookie-manager";
 
 type LegacyConsentCookie = {
@@ -242,12 +242,17 @@ const AnalyticsConsentBridge = () => {
 
 const CookieConsentOpenBridge = ({ requestKey }: { requestKey: number }) => {
   const { openPreferencesModal } = useCookieConsent();
+  const handledRequestKeyRef = useRef(0);
 
   useEffect(() => {
-    if (requestKey <= 0) {
+    if (
+      requestKey <= 0 ||
+      requestKey === handledRequestKeyRef.current
+    ) {
       return;
     }
 
+    handledRequestKeyRef.current = requestKey;
     openPreferencesModal();
   }, [openPreferencesModal, requestKey]);
 

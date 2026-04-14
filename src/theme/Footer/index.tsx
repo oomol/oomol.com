@@ -236,13 +236,6 @@ const Footer: React.FC = () => {
           </div>
           <div className={styles.bottomInfo}>
             {copyright}
-            <Button
-              className={styles.cookieSettingsButton}
-              variant="link"
-              onClick={showCookieConsent}
-            >
-              {currentLocale === "zh-CN" ? "Cookie 设置" : "Cookie settings"}
-            </Button>
             {currentLocale === "zh-CN" && (
               <a
                 href="https://beian.miit.gov.cn/"
@@ -254,6 +247,14 @@ const Footer: React.FC = () => {
             )}
           </div>
           <div className={styles.rightControls}>
+            <Button
+              className={styles.cookieControlButton}
+              size="sm"
+              variant="ghost"
+              onClick={showCookieConsent}
+            >
+              {currentLocale === "zh-CN" ? "Cookie 设置" : "Cookie settings"}
+            </Button>
             <LocalDropdown />
           </div>
         </div>

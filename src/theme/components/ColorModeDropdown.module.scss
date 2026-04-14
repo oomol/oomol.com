@@ -3,7 +3,8 @@
   font-size: 12px;
 
   &:global(.arco-btn) {
-    justify-content: space-between;
+    justify-content: center;
+    gap: 8px;
     border-color: color-mix(
       in srgb,
       var(--oomol-border-default) 72%,
@@ -29,6 +30,11 @@
     );
     color: var(--oomol-primary);
   }
+}
+
+.triggerIcon {
+  flex: none;
+  font-size: 14px;
 }
 
 .menu {
