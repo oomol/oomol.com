@@ -3,8 +3,8 @@ import styles from "./styles.module.scss";
 import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
-import { Button } from "@site/src/components/ui/button";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { Button } from "@site/src/components/ui/button";
 import ThemedImage from "@theme/ThemedImage";
 import React from "react";
 
@@ -85,11 +85,8 @@ export default function StudioPage() {
       </Head>
       <main className={styles.page}>
         <section className={styles.hero}>
-          <div className={styles.heroContainer}>
+          <div className={styles.sectionContainer}>
             <div className={styles.heroCopy}>
-              <div className={styles.kicker}>
-                {translate({ message: "STUDIO.product.hero.kicker" })}
-              </div>
               <h1 className={styles.heroTitle}>
                 {translate({ message: "STUDIO.manifesto.title" })}
               </h1>
@@ -98,23 +95,24 @@ export default function StudioPage() {
               </p>
 
               <div className={styles.actions}>
-                <DownloadButton />
-                <Link to="/downloads" className={styles.secondaryAction}>
-                  {translate({ message: "STUDIO.product.hero.secondary" })}
-                </Link>
+                <DownloadButton centered />
               </div>
             </div>
+          </div>
 
-            <div className={styles.heroVisual}>
-              <div className={styles.visualFrame}>
-                <ThemedImage
-                  sources={{
-                    light: studioPreviewLight,
-                    dark: studioPreviewDark,
-                  }}
-                  alt="OOMOL Studio"
-                  className={styles.visualImage}
-                />
+          <div className={styles.heroShowcase}>
+            <div className={styles.heroShowcaseInner}>
+              <div className={styles.heroVisual}>
+                <div className={styles.visualFrame}>
+                  <ThemedImage
+                    sources={{
+                      light: studioPreviewLight,
+                      dark: studioPreviewDark,
+                    }}
+                    alt="OOMOL Studio"
+                    className={styles.visualImage}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -123,9 +121,6 @@ export default function StudioPage() {
         <section className={styles.storySection}>
           <div className={styles.sectionContainer}>
             <div className={styles.sectionHeader}>
-              <div className={styles.sectionLabel}>
-                {translate({ message: "STUDIO.product.story.kicker" })}
-              </div>
               <h2 className={styles.sectionTitle}>
                 {translate({ message: "STUDIO.product.story.title" })}
               </h2>
@@ -158,9 +153,6 @@ export default function StudioPage() {
         <section className={styles.principlesSection}>
           <div className={styles.sectionContainer}>
             <div className={styles.sectionHeader}>
-              <div className={styles.sectionLabel}>
-                {translate({ message: "STUDIO.product.principles.kicker" })}
-              </div>
               <h2 className={styles.sectionTitle}>
                 {translate({ message: "STUDIO.product.principles.title" })}
               </h2>

@@ -64,7 +64,7 @@
   max-width: 100%;
   font-family: var(--oomol-font-display);
   font-size: clamp(2.52rem, 4.3vw, 3.85rem);
-  line-height: 1.06;
+  line-height: 1.12;
   font-weight: 700;
   letter-spacing: -0.04em;
   white-space: pre-line;
@@ -223,7 +223,7 @@
 :global(html[lang="en"]) .slogan {
   max-width: 15em;
   font-size: clamp(2.35rem, 3.9vw, 3.6rem);
-  line-height: 1.08;
+  line-height: 1.12;
   letter-spacing: -0.038em;
   text-wrap: pretty;
 }
@@ -279,7 +279,7 @@
 
   .slogan {
     font-size: clamp(2rem, 8vw, 2.7rem);
-    line-height: 1.08;
+    line-height: 1.12;
     letter-spacing: -0.03em;
     max-width: 100%;
   }

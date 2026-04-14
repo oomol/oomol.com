@@ -3124,10 +3124,10 @@
     "message": "Generate functions in a real coding environment, validate them with local containers, then carry the same code forward into service delivery."
   },
   "STUDIO.manifesto.title": {
-    "message": "A Studio Built for Real Developer Work"
+    "message": "The Studio for Building Agent Tools"
   },
   "STUDIO.manifesto.subtitle": {
-    "message": "A real coding environment where AI helps generate functions, validate them locally, and deliver them as APIs, MCP tools, or automation tasks."
+    "message": "Use workflow orchestration and function generation to give agents new capabilities, then call them directly through oo-cli."
   },
   "STUDIO.manifesto.cta.download": {
     "message": "Download OOMOL Studio"

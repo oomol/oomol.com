@@ -3124,10 +3124,10 @@
     "message": "在真实 coding 环境里生成函数、用本地容器验证能力，再把同一份代码继续发布成服务。"
   },
   "STUDIO.manifesto.title": {
-    "message": "为开发者提效而设计的 Studio"
+    "message": "给 Agent 造工具的 Studio"
   },
   "STUDIO.manifesto.subtitle": {
-    "message": "给开发者的真实编码环境：让 Agent 帮你生成函数，在本地验证后，直接交付为 API、MCP 工具或自动化任务。"
+    "message": "用工作流编排和函数生成，把新能力交给 Agent，并通过 oo-cli 直接调用。"
   },
   "STUDIO.manifesto.cta.download": {
     "message": "下载 OOMOL Studio"
