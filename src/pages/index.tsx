@@ -28,8 +28,8 @@ export default function Home() {
       <main>
         <HomepageFirstScreen />
         <HomepageToolStrip />
-        <HomepageWhyOomol />
         <HomepagePainPoints />
+        <HomepageWhyOomol />
         <HomepageLinearFlow />
       </main>
     </Layout>

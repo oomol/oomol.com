@@ -2,60 +2,69 @@ import styles from "./styles.module.scss";
 
 import type { DocusaurusContext } from "@docusaurus/types";
 
+import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { Button } from "@site/src/components/ui/button";
 import React from "react";
 
 const zhCopy = {
-  title: "让 Agent 跑起来，先解决这四件事",
-  subtitle: "先跑通一个工具，再继续扩展成自己的工具链。",
+  badge: "进阶扩展",
+  title: "现成场景不够，就进入 OOMOL Studio 继续扩展",
+  subtitle:
+    "当你需要重新组合已有连接、编排多步工作流，或者直接开发新的函数工具时，就把这条路径自然延伸到 OOMOL Studio。",
+  primaryCta: "了解 OOMOL Studio",
+  secondaryCta: "下载 OOMOL Studio",
   cards: [
     {
-      icon: "i-lucide-search",
-      title: "先找到能直接用的应用和工具",
-      text: "先搜索、先查看、先运行，不用一开始就从零搭集成。",
-    },
-    {
-      icon: "i-lucide-key-round",
-      title: "需要访问时，再把账号和密钥接进来",
-      text: "账号、API Key 和访问关系按需接入，不在第一步增加信任成本。",
-    },
-    {
       icon: "i-lucide-blocks",
-      title: "现成工具不够时，再接你的 API 和业务逻辑",
-      text: "内部服务、自定义接口和组合逻辑都可以继续接进同一条路径。",
+      title: "重新组合现有连接",
+      text: "把 GitHub、Slack、Notion、Gmail 这些现成能力继续拼成你自己的执行链路。",
     },
     {
       icon: "i-lucide-waypoints",
-      title: "同一份实现继续服务不同入口",
-      text: "CLI、自动化和其他 Agent 入口共用同一份实现，不需要重复包装。",
+      title: "编排更复杂的工作流",
+      text: "把判断、分支、重试和多步协作整理成可重复运行的 workflow，而不是每次都临时拼接。",
+    },
+    {
+      icon: "i-lucide-braces",
+      title: "直接编写新的函数工具",
+      text: "当现有封装不够用时，直接写新的 function tool，把你自己的 API、内部系统和逻辑接进来。",
+    },
+    {
+      icon: "i-lucide-terminal",
+      title: "把能力继续带回 oo-cli",
+      text: "新编排和新工具不是另起炉灶，而是继续扩展 CLI 给 Agent 调用的那条主路径。",
     },
   ],
 };
 
 const enCopy = {
-  title: "What agents need to run for real",
+  badge: "Advanced extension",
+  title: "When ready-made scenarios are not enough, continue in OOMOL Studio",
   subtitle:
-    "Get one tool working first, then extend it into your own toolchain.",
+    "When you need to recombine existing connections, orchestrate multi-step workflows, or build brand-new function tools, extend the same path in OOMOL Studio.",
+  primaryCta: "Explore OOMOL Studio",
+  secondaryCta: "Download OOMOL Studio",
   cards: [
     {
-      icon: "i-lucide-search",
-      title: "Find apps and tools you can use right away",
-      text: "Search, inspect, and run before building from scratch.",
-    },
-    {
-      icon: "i-lucide-key-round",
-      title: "Connect accounts and API keys only when a tool really needs access",
-      text: "Keep OAuth, API keys, and access relationships on the same path without putting trust cost first.",
-    },
-    {
       icon: "i-lucide-blocks",
-      title: "When ready-made tools stop short, bring in your APIs and business logic",
-      text: "Add internal services, custom endpoints, and composed logic onto the same path.",
+      title: "Recombine built-in connections",
+      text: "Take GitHub, Slack, Notion, Gmail, and other ready-made capabilities and rearrange them into your own execution chain.",
     },
     {
       icon: "i-lucide-waypoints",
-      title: "Carry the same implementation into different surfaces",
-      text: "Let CLI, automations, and other agent entry points share one implementation without repackaging it.",
+      title: "Orchestrate more complex workflows",
+      text: "Turn branching, retries, coordination, and multi-step logic into repeatable workflows instead of rebuilding them ad hoc.",
+    },
+    {
+      icon: "i-lucide-braces",
+      title: "Write new function tools directly",
+      text: "When existing wrappers stop short, write new function tools and bring in your own APIs, internal systems, and business logic.",
+    },
+    {
+      icon: "i-lucide-terminal",
+      title: "Bring those capabilities back into oo-cli",
+      text: "New workflows and tools do not become a parallel product. They extend the same CLI path your agents already use.",
     },
   ],
 };
@@ -70,8 +79,22 @@ export default function HomepageWhyOomol() {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
+          <div className={styles.badge}>{copy.badge}</div>
           <h2 className={styles.title}>{copy.title}</h2>
           <p className={styles.subtitle}>{copy.subtitle}</p>
+          <div className={styles.actions}>
+            <Button asChild size="sm" className={styles.primaryAction}>
+              <Link to="/studio">{copy.primaryCta}</Link>
+            </Button>
+            <Button
+              asChild
+              size="sm"
+              variant="outline"
+              className={styles.secondaryAction}
+            >
+              <Link to="/downloads#studio-downloads">{copy.secondaryCta}</Link>
+            </Button>
+          </div>
         </div>
 
         <div className={styles.grid}>

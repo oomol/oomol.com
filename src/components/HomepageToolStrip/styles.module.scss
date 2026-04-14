@@ -39,6 +39,22 @@
   max-width: 34rem;
 }
 
+.badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 1.9rem;
+  padding: 0 0.8rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--oomol-primary) 14%, white);
+  background: color-mix(in srgb, var(--oomol-primary-bg) 46%, white 54%);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--oomol-primary-text);
+}
+
 .title {
   margin: 0;
   max-width: 20ch;
@@ -83,31 +99,88 @@
   backdrop-filter: blur(12px);
 }
 
-.toolsBlock,
-.customBlock {
-  display: grid;
-  gap: 0.5rem;
+.panelEyebrow,
+.wallNote {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--oomol-text-tertiary);
 }
 
-.toolGrid {
+.statGrid,
+.toolWall {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 0.6rem;
+  gap: 0.72rem;
 }
 
+.statGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.statCard,
 .toolChip,
-.customCard {
-  min-height: 100%;
-  padding: 0.82rem 0.82rem;
-  border-radius: 1.15rem;
+.coverageChip {
   border: 1px solid color-mix(in srgb, var(--oomol-border-default) 84%, white);
   background: color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%);
   box-shadow: 0 6px 16px rgba(78, 93, 131, 0.06);
 }
 
+.statCard {
+  display: grid;
+  gap: 0.42rem;
+  min-height: 100%;
+  padding: 0.95rem 0.95rem 1rem;
+  border-radius: 1.2rem;
+}
+
+.statValue {
+  font-family: var(--oomol-font-display);
+  font-size: clamp(1.5rem, 2.8vw, 2rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: var(--oomol-text-primary);
+}
+
+.statLabel {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--oomol-text-primary);
+}
+
+.statText {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.56;
+  color: var(--oomol-text-secondary);
+}
+
+.wallHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.9rem;
+}
+
+.wallTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--oomol-text-primary);
+}
+
+.toolGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
 .toolChip {
   display: grid;
   gap: 0.45rem;
+  min-height: 100%;
+  padding: 0.82rem 0.82rem;
+  border-radius: 1.15rem;
   justify-items: center;
   text-align: center;
 }
@@ -123,78 +196,20 @@
   color: var(--oomol-text-secondary);
 }
 
-.connectorRow {
+.coverageRow {
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.55rem;
 }
 
-.connectorLine {
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    rgba(112, 127, 163, 0.12) 0%,
-    rgba(112, 127, 163, 0.38) 50%,
-    rgba(112, 127, 163, 0.12) 100%
-  );
-}
-
-.connectorBadge {
-  width: 1.7rem;
-  height: 1.7rem;
+.coverageChip {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  min-height: 1.95rem;
+  padding: 0 0.78rem;
   border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--oomol-primary) 20%, white);
-  background: color-mix(in srgb, var(--oomol-primary-bg) 58%, white);
-  font-size: 0.92rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  color: var(--oomol-primary-text);
-}
-
-.connectorArrow {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--oomol-primary-text);
-}
-
-.customGrid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.65rem;
-}
-
-.customCard {
-  display: grid;
-  gap: 0.45rem;
-}
-
-.customIconWrap {
-  width: 2.2rem;
-  height: 2.2rem;
-  display: grid;
-  place-items: center;
-  border-radius: 0.8rem;
-  background: color-mix(in srgb, var(--oomol-primary-bg) 58%, white);
-  color: var(--oomol-primary-text);
-}
-
-.customIcon {
-  font-size: 1.08rem;
-}
-
-.customTitle {
-  font-size: 0.96rem;
-  font-weight: 700;
-  color: var(--oomol-text-primary);
-}
-
-.customText {
-  margin: 0;
-  font-size: 0.88rem;
-  line-height: 1.58;
   color: var(--oomol-text-secondary);
 }
 
@@ -219,6 +234,10 @@
   .title {
     max-width: 100%;
   }
+
+  .statGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
@@ -235,8 +254,13 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .customGrid {
-    grid-template-columns: 1fr;
+  .wallHeader {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .statCard {
+    padding: 0.9rem;
   }
 }
 
@@ -250,22 +274,19 @@
     );
   }
 
-  .connectorBadge {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-primary) 24%,
-      var(--oomol-divider)
-    );
+  .badge {
+    border-color: color-mix(in srgb, var(--oomol-primary) 20%, transparent);
     background: color-mix(
       in srgb,
-      var(--oomol-bg-elevated) 78%,
-      var(--oomol-primary-bg) 22%
+      var(--oomol-primary-bg) 30%,
+      var(--oomol-bg-container) 70%
     );
   }
 
   .surfacePanel,
+  .statCard,
   .toolChip,
-  .customCard {
+  .coverageChip {
     border-color: color-mix(
       in srgb,
       var(--oomol-border-default) 72%,
@@ -275,14 +296,6 @@
       in srgb,
       var(--oomol-bg-elevated) 86%,
       var(--oomol-bg-container) 14%
-    );
-  }
-
-  .customIconWrap {
-    background: color-mix(
-      in srgb,
-      var(--oomol-primary-bg) 40%,
-      var(--oomol-bg-container) 60%
     );
   }
 }
