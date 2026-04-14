@@ -933,10 +933,19 @@
     "message": "价格"
   },
   "HOME.Downloads.title": {
-    "message": "下载 OOMOL Studio"
+    "message": "获取与安装 OOMOL"
   },
   "HOME.Downloads.subtitle": {
-    "message": "安装 Studio，在真实 coding 环境里生成函数、本地验证，再继续发布成服务。"
+    "message": "先装 oo-cli，需要自定义扩展时再用 OOMOL Studio。"
+  },
+  "HOME.Downloads.studioSection.eyebrow": {
+    "message": "OOMOL Studio"
+  },
+  "HOME.Downloads.studioSection.title": {
+    "message": "下载 OOMOL Studio"
+  },
+  "HOME.Downloads.studioSection.subtitle": {
+    "message": "当现成工具不够时，用 Studio 在本地生成、扩展并验证自己的工具，然后再继续进入 Cloud。"
   },
   "HOME.Downloads.Stable.title": {
     "message": "稳定版"
@@ -971,6 +980,15 @@
   "HOME.Downloads.cli.eyebrow": {
     "message": "CLI"
   },
+  "HOME.Downloads.cli.info.eyebrow": {
+    "message": "Agent"
+  },
+  "HOME.Downloads.cli.info.title": {
+    "message": "先安装 oo-cli"
+  },
+  "HOME.Downloads.cli.info.description": {
+    "message": "让 Agent 先连接 SaaS 和已发布工具。你可以自己在终端安装，也可以直接把下面的提示词发给 Agent，让它替你完成安装和检查。"
+  },
   "HOME.Downloads.cli.title.line1": {
     "message": "让 Agent 连接 SaaS 工具"
   },
@@ -985,6 +1003,48 @@
   },
   "HOME.Downloads.cli.action.github": {
     "message": "查看 oo-cli GitHub"
+  },
+  "HOME.Downloads.cli.method.install.kicker": {
+    "message": "方式 1"
+  },
+  "HOME.Downloads.cli.method.install.title": {
+    "message": "直接在终端安装"
+  },
+  "HOME.Downloads.cli.method.install.description": {
+    "message": "在 Codex、Claude Code 或任意本地终端里运行这两条命令，登录后就可以开始使用 oo-cli。"
+  },
+  "HOME.Downloads.cli.method.agent.kicker": {
+    "message": "方式 2"
+  },
+  "HOME.Downloads.cli.method.agent.title": {
+    "message": "把安装交给 Agent"
+  },
+  "HOME.Downloads.cli.method.agent.description": {
+    "message": "如果你更希望 Agent 代你完成安装和检查，就把下面这段提示词直接复制给它。"
+  },
+  "HOME.Downloads.cli.method.agent.prompt": {
+    "message": "请帮我用 Bun 全局安装 oo-cli：先运行 `bun install -g @oomol-lab/oo-cli`，再运行 `oo login`，确认 CLI 已经可以使用，并告诉我下一条最适合在 oo-cli 里执行的命令。"
+  },
+  "HOME.Downloads.cli.copy": {
+    "message": "复制"
+  },
+  "HOME.Downloads.cli.copied": {
+    "message": "已复制"
+  },
+  "HOME.Downloads.cta.eyebrow": {
+    "message": "下一步"
+  },
+  "HOME.Downloads.cta.title": {
+    "message": "安装简单，扩展也简单"
+  },
+  "HOME.Downloads.cta.description": {
+    "message": "先用 oo-cli 跑通现成工具；需要自定义时，再回到上方下载 OOMOL Studio。"
+  },
+  "HOME.Downloads.cta.primary": {
+    "message": "打开 oo-cli 指南"
+  },
+  "HOME.Downloads.cta.secondary": {
+    "message": "下载 OOMOL Studio"
   },
   "HOME.Community.title": {
     "message": "联系 OOMOL 团队"
@@ -3322,9 +3382,9 @@
     "message": "支持文生图、语音合成等多种服务"
   },
   "HOME.Downloads.page.title": {
-    "message": "下载 OOMOL Studio — macOS 和 Windows"
+    "message": "获取与安装 OOMOL"
   },
   "HOME.Downloads.page.description": {
-    "message": "下载适用于 macOS (Apple Silicon) 或 Windows 的 OOMOL Studio，在本地构建、验证，并通过 Cloud 发布工具。"
+    "message": "先装 oo-cli，需要自定义扩展时再用 OOMOL Studio。"
   }
 }

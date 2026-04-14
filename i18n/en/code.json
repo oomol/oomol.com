@@ -933,10 +933,19 @@
     "message": "Pricing"
   },
   "HOME.Downloads.title": {
-    "message": "Download OOMOL Studio"
+    "message": "Get and Install OOMOL"
   },
   "HOME.Downloads.subtitle": {
-    "message": "Install Studio to generate functions in a real coding environment, validate them locally, and carry them forward into service delivery."
+    "message": "Start by installing oo-cli so agents can connect to SaaS tools and published capabilities. When you need to extend and customize your own tools, download OOMOL Studio to build and validate them locally."
+  },
+  "HOME.Downloads.studioSection.eyebrow": {
+    "message": "OOMOL Studio"
+  },
+  "HOME.Downloads.studioSection.title": {
+    "message": "Download OOMOL Studio"
+  },
+  "HOME.Downloads.studioSection.subtitle": {
+    "message": "Use Studio when ready-made tools stop short. Build, extend, and validate your own tools locally before you continue into Cloud."
   },
   "HOME.Downloads.Stable.title": {
     "message": "Stable"
@@ -971,6 +980,15 @@
   "HOME.Downloads.cli.eyebrow": {
     "message": "CLI"
   },
+  "HOME.Downloads.cli.info.eyebrow": {
+    "message": "Agent"
+  },
+  "HOME.Downloads.cli.info.title": {
+    "message": "Install oo-cli first"
+  },
+  "HOME.Downloads.cli.info.description": {
+    "message": "Use oo-cli to connect your Agent to SaaS tools and published capabilities first. You can install it in your terminal or send the prompt below to your Agent and let it handle the setup and verification."
+  },
   "HOME.Downloads.cli.title.line1": {
     "message": "Connect Agents to SaaS tools"
   },
@@ -985,6 +1003,48 @@
   },
   "HOME.Downloads.cli.action.github": {
     "message": "View oo-cli on GitHub"
+  },
+  "HOME.Downloads.cli.method.install.kicker": {
+    "message": "Option 1"
+  },
+  "HOME.Downloads.cli.method.install.title": {
+    "message": "Install in your terminal"
+  },
+  "HOME.Downloads.cli.method.install.description": {
+    "message": "Run these commands in Codex, Claude Code, or any local terminal, then sign in and start using oo-cli."
+  },
+  "HOME.Downloads.cli.method.agent.kicker": {
+    "message": "Option 2"
+  },
+  "HOME.Downloads.cli.method.agent.title": {
+    "message": "Let your agent do it"
+  },
+  "HOME.Downloads.cli.method.agent.description": {
+    "message": "Paste this prompt to your agent if you want it to install oo-cli and verify the setup for you."
+  },
+  "HOME.Downloads.cli.method.agent.prompt": {
+    "message": "Install oo-cli globally with Bun by running `bun install -g @oomol-lab/oo-cli`, then run `oo login`, confirm the CLI is ready, and tell me the next oo-cli command to use."
+  },
+  "HOME.Downloads.cli.copy": {
+    "message": "Copy"
+  },
+  "HOME.Downloads.cli.copied": {
+    "message": "Copied"
+  },
+  "HOME.Downloads.cta.eyebrow": {
+    "message": "Next step"
+  },
+  "HOME.Downloads.cta.title": {
+    "message": "Easy to install, easy to extend"
+  },
+  "HOME.Downloads.cta.description": {
+    "message": "Use oo-cli to get a ready-made tool working first. When you need custom logic, come back and download OOMOL Studio."
+  },
+  "HOME.Downloads.cta.primary": {
+    "message": "Open oo-cli Guide"
+  },
+  "HOME.Downloads.cta.secondary": {
+    "message": "Download OOMOL Studio"
   },
   "HOME.Community.title": {
     "message": "Contact the OOMOL Team"
@@ -3322,9 +3382,9 @@
     "message": "Support text-to-image, TTS and more services"
   },
   "HOME.Downloads.page.title": {
-    "message": "Download OOMOL Studio — macOS & Windows"
+    "message": "Get and Install OOMOL"
   },
   "HOME.Downloads.page.description": {
-    "message": "Download OOMOL Studio for macOS (Apple Silicon) or Windows. Build, validate, and publish tools through Cloud."
+    "message": "Install oo-cli to connect agents to SaaS tools and published capabilities, then download OOMOL Studio when you need to build and validate custom tools locally."
   }
 }

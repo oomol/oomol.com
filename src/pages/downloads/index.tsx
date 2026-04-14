@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import DownloadsCliPanel from "@site/src/components/DownloadsCliPanel";
 import { DownloadUrl } from "@site/src/download_url";
 import { downloadStable } from "@site/src/lib/utils";
 import Layout from "@theme/Layout";
@@ -72,6 +73,7 @@ const downloadData = [
 export default function Downloads() {
   const logoUrl = useBaseUrl("/img/logo2x.png");
   const cliGuideUrl = useBaseUrl("/docs/cloud-services/cli");
+  const studioDownloadsUrl = useBaseUrl("/downloads#studio-downloads");
 
   return (
     <Layout>
@@ -86,12 +88,42 @@ export default function Downloads() {
       </Head>
       <div className={styles.container}>
         <img className={styles.image} src={logoUrl} />
-        <div id="studio-downloads" className={styles.titleBox}>
+        <div className={styles.titleBox}>
           <h1 className={styles.title}>
             {translate({ message: "HOME.Downloads.title" })}
           </h1>
           <p className={styles["sub-title"]}>
             {translate({ message: "HOME.Downloads.subtitle" })}
+          </p>
+        </div>
+        <div className={styles.sectionHeading}>
+          <h2 className={styles.sectionTitle}>
+            {translate({ message: "HOME.Downloads.cli.info.title" })}
+          </h2>
+          <p className={styles.sectionSubtitle}>
+            {translate({ message: "HOME.Downloads.cli.info.description" })}
+          </p>
+          <div className={styles.sectionActions}>
+            <a className={styles.sectionAction} href={cliGuideUrl}>
+              {translate({ message: "HOME.Downloads.cli.action.guide" })}
+            </a>
+            <a
+              className={styles.sectionAction}
+              href="https://github.com/oomol-lab/oo-cli"
+              rel="noreferrer"
+              target="_blank"
+            >
+              {translate({ message: "HOME.Downloads.cli.action.github" })}
+            </a>
+          </div>
+        </div>
+        <DownloadsCliPanel />
+        <div id="studio-downloads" className={styles.sectionHeading}>
+          <h2 className={styles.sectionTitle}>
+            {translate({ message: "HOME.Downloads.studioSection.title" })}
+          </h2>
+          <p className={styles.sectionSubtitle}>
+            {translate({ message: "HOME.Downloads.studioSection.subtitle" })}
           </p>
         </div>
         <div className={styles.cards}>
@@ -102,16 +134,7 @@ export default function Downloads() {
                 key={`download-${index}`}
               >
                 <div className={styles.content}>
-                  <div className={styles.type}>
-                    {item.type}
-                    {item.mostRecommended && (
-                      <span className={styles["most-recommended"]}>
-                        {translate({
-                          message: "HOME.Downloads.mostRecommended",
-                        })}
-                      </span>
-                    )}
-                  </div>
+                  <div className={styles.type}>{item.type}</div>
                   <span className={styles.description}>{item.subTitle}</span>
                 </div>
                 <div className={styles.downloads}>
@@ -138,49 +161,29 @@ export default function Downloads() {
             );
           })}
         </div>
-        <div className={styles.cliPanel}>
-          <div className={styles.cliContent}>
-            <span className={styles.cliEyebrow}>
-              {translate({
-                message: "HOME.Downloads.cli.eyebrow",
-              })}
-            </span>
-            <h2 className={styles.cliTitle}>
-              <span className={styles.cliTitleLine}>
-                {translate({
-                  message: "HOME.Downloads.cli.title.line1",
-                })}
-              </span>
-              <span className={styles.cliTitleLine}>
-                {translate({
-                  message: "HOME.Downloads.cli.title.line2",
-                })}
-              </span>
-            </h2>
-            <p className={styles.cliSubtitle}>
-              {translate({
-                message: "HOME.Downloads.cli.subtitle",
-              })}
-            </p>
+        <section className={styles.pageCtaSection}>
+          <div className={styles.pageCtaPanel}>
+            <div className={styles.pageCtaContent}>
+              <h2 className={styles.pageCtaTitle}>
+                {translate({ message: "HOME.Downloads.cta.title" })}
+              </h2>
+              <p className={styles.pageCtaDescription}>
+                {translate({ message: "HOME.Downloads.cta.description" })}
+              </p>
+            </div>
+            <div className={styles.pageCtaActions}>
+              <a className={styles.pageCtaPrimaryAction} href={cliGuideUrl}>
+                {translate({ message: "HOME.Downloads.cta.primary" })}
+              </a>
+              <a
+                className={styles.pageCtaSecondaryAction}
+                href={studioDownloadsUrl}
+              >
+                {translate({ message: "HOME.Downloads.cta.secondary" })}
+              </a>
+            </div>
           </div>
-          <div className={styles.cliActions}>
-            <a className={styles.cliPrimaryAction} href={cliGuideUrl}>
-              {translate({
-                message: "HOME.Downloads.cli.action.guide",
-              })}
-            </a>
-            <a
-              className={styles.cliSecondaryAction}
-              href="https://github.com/oomol-lab/oo-cli"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {translate({
-                message: "HOME.Downloads.cli.action.github",
-              })}
-            </a>
-          </div>
-        </div>
+        </section>
       </div>
     </Layout>
   );
