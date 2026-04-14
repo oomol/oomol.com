@@ -15,12 +15,14 @@ export default function CloudPageBrandBreak() {
     <section className={styles.section}>
       <div className={styles.inner}>
         <h2 className={styles.headline}>
-          {isZh ? "一次构建\n持续交付" : "Build once\nDeliver continuously"}
+          {isZh
+            ? "把自己的工具\n带进 oo-cli"
+            : "Bring your own tools\nto oo-cli"}
         </h2>
         <p className={styles.subline}>
           {isZh
-            ? "从工具创建到云端运行，一条完整的路径。"
-            : "From tool creation to cloud runtime — one complete path."}
+            ? "Studio 生成并验证，Cloud 发布并运行，oo-cli 在 Codex、Claude Code 和终端里直接搜索、查看和调用。"
+            : "Build and validate in Studio, publish through Cloud, then search, inspect, and run the tool through oo-cli in Codex, Claude Code, and the terminal."}
         </p>
         <div className={styles.showcaseRow}>
           <div className={styles.showcaseCard}>
@@ -40,7 +42,7 @@ export default function CloudPageBrandBreak() {
               </svg>
             </div>
             <span className={styles.showcaseCardLabel}>
-              {isZh ? "Studio 创建" : "Create in Studio"}
+              {isZh ? "Studio 生成与验证" : "Build in Studio"}
             </span>
           </div>
           <div className={styles.showcaseArrow} aria-hidden="true">
@@ -74,7 +76,7 @@ export default function CloudPageBrandBreak() {
               </svg>
             </div>
             <span className={styles.showcaseCardLabel}>
-              {isZh ? "Cloud 运行" : "Run on Cloud"}
+              {isZh ? "Cloud 发布与运行" : "Publish through Cloud"}
             </span>
           </div>
           <div className={styles.showcaseArrow} aria-hidden="true">
@@ -100,7 +102,7 @@ export default function CloudPageBrandBreak() {
               />
             </div>
             <span className={styles.showcaseCardLabel}>
-              {isZh ? "oo-cli 使用" : "Use via oo-cli"}
+              {isZh ? "oo-cli 直接调用" : "Run with oo-cli"}
             </span>
           </div>
         </div>

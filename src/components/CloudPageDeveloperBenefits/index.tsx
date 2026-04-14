@@ -8,66 +8,67 @@ import { Button } from "@site/src/components/ui/button";
 import React from "react";
 
 const zhCopy = {
-  badge: "开发者免费方案",
-  title: "零成本起步，先把产品跑起来",
+  badge: "免费额度",
+  title: "先把第一个 oo-cli 工具跑通",
   subtitle:
-    "不用先付费。接入自有模型 + 每月 200 分钟免费 Cloud Task，足够你从 Studio 走到第一次线上交付。",
+    "每月赠送 200 分钟 Cloud Task。先把第一版工具从 Studio 发布到 Cloud，并确认它能在 oo-cli 中被搜索、查看和调用；需要更多时，再按运行时间扩展。",
   benefits: [
-    {
-      tag: "当前推荐",
-      value: "GLM-5",
-      valueCaption: "支持接入自有模型",
-      eyebrow: "Studio 免费",
-      title: "接入自有模型，先把 Studio 跑起来",
-      description: "已有模型额度就直接接入，不用再额外买服务。推荐先用 GLM-5。",
-      note: "按教程配好后，通常就能完成本地验证。",
-      cta: "查看配置教程",
-      href: "/docs/get-started/use-your-own-model",
-    },
     {
       tag: "每月赠送",
       value: "200 分钟",
       valueCaption: "Cloud Task 免费时长",
-      eyebrow: "Cloud 免费",
-      title: "每月送 200 分钟，轻量任务先跑起来",
+      eyebrow: "免费额度",
+      title: "先验证从 Studio 到 oo-cli 的整条路径",
       description:
-        "200 分钟免费 Cloud Task，通常够你先跑定时任务、轻量自动化和交付验证。",
-      note: "先用免费额度跑一遍，再决定是否继续投入。",
-      cta: "查看 Cloud 交付",
+        "用免费额度把第一版工具发布出去，确认它能持续运行，并在 oo-cli 中直接被调用。",
+      note: "适合第一次发布、轻量任务和流程验证。",
+      cta: "了解 Cloud Function",
       href: "/docs/cloud-services/cloud-function",
+    },
+    {
+      tag: "按时间计费",
+      value: "按时间",
+      valueCaption: "Cloud Task 计费方式",
+      eyebrow: "按量使用",
+      title: "需求明确后再扩大运行",
+      description:
+        "不需要先买服务器或预留固定资源。先按实际运行时间扩展，避免在路径还没验证前就投入过多。",
+      note: "先把路径跑通，再决定规模。",
+      cta: "查看价格",
+      href: "/pricing",
     },
   ],
 };
 
 const enCopy = {
-  badge: "Free for Developers",
-  title: "Start at zero cost, get the full loop running",
+  badge: "Free Tier",
+  title: "Validate your first tool in oo-cli with the free quota",
   subtitle:
-    "No upfront payment. Bring your own model plus 200 free Cloud Task minutes each month — enough to complete your first Studio-to-production delivery cycle.",
+    "You get 200 free Cloud Task minutes each month. Use them to publish the first version from Studio to Cloud and confirm it can be searched, inspected, and called in oo-cli, then scale with time-based billing when needed.",
   benefits: [
-    {
-      tag: "Recommended",
-      value: "GLM-5",
-      valueCaption: "Use your own model",
-      eyebrow: "Studio Free",
-      title: "Bring Your Own Model and Get Studio Running",
-      description:
-        "If you already have model quota, connect it directly instead of paying for another service. We recommend starting with GLM-5.",
-      note: "Follow the guide and you can usually finish local validation first.",
-      cta: "View Setup Guide",
-      href: "/docs/get-started/use-your-own-model",
-    },
     {
       tag: "Monthly Included",
       value: "200 Minutes",
       valueCaption: "Free Cloud Task time",
-      eyebrow: "Cloud Free",
-      title: "200 Free Minutes Each Month for Lightweight Jobs",
+      eyebrow: "Free quota",
+      title: "Validate the full path from Studio to oo-cli",
       description:
-        "The free Cloud Task quota is often enough for scheduled jobs, lightweight automation, and delivery validation.",
-      note: "Use the free quota to validate the flow before you spend more.",
-      cta: "Explore OOMOL Cloud",
+        "Use the included quota to publish the first version and confirm it stays callable in oo-cli.",
+      note: "A good fit for first releases, lightweight jobs, and flow validation.",
+      cta: "Read Cloud Function docs",
       href: "/docs/cloud-services/cloud-function",
+    },
+    {
+      tag: "Time-based billing",
+      value: "By Time",
+      valueCaption: "How Cloud Task is billed",
+      eyebrow: "Usage-based",
+      title: "Scale runtime only after the demand is real",
+      description:
+        "You do not need to buy servers or reserve fixed capacity up front. Expand based on actual runtime after the path is proven.",
+      note: "Prove the path first, then decide the scale.",
+      cta: "View pricing",
+      href: "/pricing",
     },
   ],
 };

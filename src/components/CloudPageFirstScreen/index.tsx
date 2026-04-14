@@ -11,13 +11,10 @@ import React, { useRef, useState } from "react";
 import { DownloadButton } from "../DownloadButton";
 
 const zhCopy = {
-  ownershipNote: "开源还是闭源，",
-  ownershipHighlight: "都由你自己决定。",
-  slogan: `让 Agent 用上你的工具
-代码依然由你掌控`,
-  overview: `用 OOMOL 做出来的工具，背后的函数和逻辑在云端稳定执行；
-用户安装 oo-cli 后即可直接在 Codex 和 Claude Code 中使用。`,
-  secondaryCta: "先用 oo-cli",
+  slogan: `把自己的工具更快
+带进 oo-cli`,
+  overview: `现成工具不够用时，用 Studio 做出并验证第一版工具，再通过 Cloud 发布到 oo-cli，让 Codex、Claude Code 和终端都能直接调用。`,
+  secondaryCta: "查看 Cloud 文档",
   playAriaLabel: "播放演示视频",
   downloadButtonTexts: {
     macos: "下载适用于 macOS 的版本",
@@ -30,13 +27,10 @@ const zhCopy = {
 };
 
 const enCopy = {
-  ownershipNote: "Open source or closed source,",
-  ownershipHighlight: "it is your call.",
-  slogan: `Let agents use your tools.
-You stay in control of the code.`,
-  overview: `Tools built with OOMOL run their underlying functions and logic reliably in the cloud;
-once users install oo-cli, they can use them directly in Codex and Claude Code.`,
-  secondaryCta: "Start with oo-cli",
+  slogan: `Bring your own tools
+to oo-cli faster`,
+  overview: `When ready-made tools stop short, use Studio to build and validate the first version, then publish through Cloud so it shows up in oo-cli for Codex, Claude Code, and terminal workflows.`,
+  secondaryCta: "Read Cloud docs",
   playAriaLabel: "Play demo video",
   downloadButtonTexts: {
     macos: "Download for macOS",
@@ -80,12 +74,6 @@ export default function CloudPageFirstScreen() {
       <div className={styles.background} />
       <div className={styles.container}>
         <div className={styles.titleGroup}>
-          <p className={styles.ownershipNote}>
-            <span>{copy.ownershipNote}</span>
-            <strong className={styles.ownershipHighlight}>
-              {copy.ownershipHighlight}
-            </strong>
-          </p>
           <h1 className={styles.slogan}>{copy.slogan}</h1>
           <p className={styles.overview}>{copy.overview}</p>
           <div className={styles.actions}>
@@ -96,7 +84,9 @@ export default function CloudPageFirstScreen() {
               size="lg"
               className={styles.secondaryCta}
             >
-              <Link to="/docs/cloud-services/cli">{copy.secondaryCta}</Link>
+              <Link to="/docs/cloud-services/cloud-function">
+                {copy.secondaryCta}
+              </Link>
             </Button>
           </div>
         </div>

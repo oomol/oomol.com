@@ -2917,10 +2917,10 @@
     "message": "把长文档翻译成可继续阅读的双语 EPUB 或 Markdown 输出，而不是只拿回一段文本结果。"
   },
   "CLOUD.hero.title": {
-    "message": "发布私有的工具"
+    "message": "把自己的工具带进 oo-cli"
   },
   "CLOUD.hero.description": {
-    "message": "把已经在本地验证过的工具放到云端运行，让用户用到能力，而不用拿到你的源码或一套单独搭出来的服务。"
+    "message": "现成工具不够用时，用 Studio 做出并验证第一版工具，再通过 Cloud 发布到 oo-cli，让 Codex、Claude Code 和终端都能直接调用。"
   },
   "CLOUD.hero.kicker": {
     "message": "Cloud Runtime"

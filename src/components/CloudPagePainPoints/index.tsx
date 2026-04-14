@@ -6,39 +6,42 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import React from "react";
 
 const zhCopy = {
-  badge: "为什么要上云",
-  title: "你写的能力，不该在交付时失控",
+  badge: "为什么用 Cloud",
+  title: "现成工具不够时，难的是做出自己的工具",
   card1: {
-    title: "本地执行 = 代码泄露",
+    icon: "i-lucide-blocks",
+    title: "现成工具很快会到边界",
     description:
-      "在不经过 Cloud 的本地交付模式里，Codex、Claude Code 要调用你的能力，往往得把代码拉到本地跑。你的算法、商业逻辑、调用链路，也就更容易暴露给使用方。",
-    solution:
-      "把工具交付到 Cloud 之后，能力在云端执行，用户只调用接口，代码始终在你手里。",
+      "能先用，但一到真实业务，参数、状态、外部依赖和上下游约束就会超出边界。",
+    solution: "缺的那部分，最后还是要做成你自己的工具。",
   },
   card2: {
-    title: "想交付一个工具，却要搭一整套后端",
+    icon: "i-lucide-waypoints",
+    title: "难的是把它真正用起来",
     description:
-      "服务器、扩缩容、计费系统、订阅管理、Secrets 配置、使用数据……写核心逻辑只占 20%，剩下 80% 都在搭基础设施。",
-    solution: "Cloud 把运行时、订阅、配置和数据全部承接，你只管写核心逻辑。",
+      "做出功能只是开始。生成、验证、发布，再到 oo-cli 里可搜索、可调用，才是更重的一段。",
+    solution: "Studio 生成并验证，Cloud 发布并运行，oo-cli 负责调用。",
   },
 };
 
 const enCopy = {
-  badge: "Why go cloud",
-  title: "Your code shouldn't leak when you deliver it",
+  badge: "Why Cloud",
+  title:
+    "When ready-made tools stop short, the hard part is building your own tool",
   card1: {
-    title: "Local execution = code exposure",
+    icon: "i-lucide-blocks",
+    title: "Ready-made tools hit a limit fast",
     description:
-      "In local delivery paths that do not go through Cloud, Codex or Claude Code often needs to pull code down and run it locally. That makes your algorithms, business logic, and call chains much easier to expose to the consumer.",
-    solution:
-      "Once the tool is delivered through Cloud, it runs in the cloud. Users call the interface; your code stays with you.",
+      "They help at first, but real work quickly outgrows them with parameters, state, external dependencies, and handoff constraints.",
+    solution: "The missing piece still has to become a tool of your own.",
   },
   card2: {
-    title: "You just want to deliver a tool, not build an entire backend",
+    icon: "i-lucide-waypoints",
+    title: "The hard part is making it usable",
     description:
-      "Servers, auto-scaling, billing, subscription management, secrets, usage analytics… Writing the core logic is 20% of the work. The other 80% is delivery infrastructure.",
+      "Building the feature is only the start. Generation, validation, publish, and discovery in oo-cli are the heavier part.",
     solution:
-      "Cloud handles runtime, subscriptions, configuration, and data. You just write the logic.",
+      "Studio builds and validates it. Cloud publishes and runs it. oo-cli makes it callable.",
   },
 };
 
@@ -59,19 +62,10 @@ export default function CloudPagePainPoints() {
         <div className={styles.grid}>
           <article className={styles.card}>
             <div className={styles.cardIcon}>
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                <path d="M7 11V7a5 5 0 0 1 9.9-1" />
-              </svg>
+              <i
+                className={`${styles.iconGlyph} ${copy.card1.icon}`}
+                aria-hidden="true"
+              />
             </div>
             <h3 className={styles.cardTitle}>{copy.card1.title}</h3>
             <p className={styles.cardDescription}>{copy.card1.description}</p>
@@ -82,20 +76,10 @@ export default function CloudPagePainPoints() {
 
           <article className={styles.card}>
             <div className={styles.cardIcon}>
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-                <line x1="12" y1="22.08" x2="12" y2="12" />
-              </svg>
+              <i
+                className={`${styles.iconGlyph} ${copy.card2.icon}`}
+                aria-hidden="true"
+              />
             </div>
             <h3 className={styles.cardTitle}>{copy.card2.title}</h3>
             <p className={styles.cardDescription}>{copy.card2.description}</p>

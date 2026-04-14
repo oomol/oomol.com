@@ -98,6 +98,10 @@
   color: var(--oomol-primary);
 }
 
+.iconGlyph {
+  font-size: 1.3rem;
+}
+
 .cardTitle {
   margin: 0;
   font-size: 1.4rem;
@@ -107,6 +111,7 @@
 }
 
 .cardDescription {
+  flex: 1;
   margin: 0;
   font-size: 1rem;
   line-height: 1.75;
@@ -114,7 +119,7 @@
 }
 
 .solution {
-  margin-top: 0.25rem;
+  margin-top: auto;
   padding-left: 0.9rem;
   border-left: 2px solid var(--oomol-primary);
 }
