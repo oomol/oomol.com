@@ -26,6 +26,7 @@ type ProductMenuEntry = {
   iconClassName: string;
   key: string;
   label: string;
+  matchHrefs?: string[];
 };
 
 const latinPhrasePattern =
@@ -33,12 +34,17 @@ const latinPhrasePattern =
 const latinPhraseSegmentPattern =
   /^[A-Za-z0-9][A-Za-z0-9+./#_-]*(?:\s+[A-Za-z0-9][A-Za-z0-9+./#_-]*)*$/;
 
-function isProductEntryActive(pathname: string, locale: string, href: string) {
-  return (
-    pathname === href ||
-    pathname.startsWith(`${href}/`) ||
-    pathname === `/${locale}${href}` ||
-    pathname.startsWith(`/${locale}${href}/`)
+function isProductEntryActive(
+  pathname: string,
+  locale: string,
+  hrefs: string[]
+) {
+  return hrefs.some(
+    href =>
+      pathname === href ||
+      pathname.startsWith(`${href}/`) ||
+      pathname === `/${locale}${href}` ||
+      pathname.startsWith(`/${locale}${href}/`)
   );
 }
 
@@ -150,7 +156,8 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
     () => [
       {
         key: "oo-cli",
-        href: "/docs/cloud-services/cli",
+        href: "/cli",
+        matchHrefs: ["/docs/cloud-services/cli"],
         label: translate({
           id: "item.label.navbar.oo-cli",
           message: "oo-cli",
@@ -321,17 +328,12 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
           </Link>
           {leftItems.map((item, i) => {
             if (item === productMenuItem) {
-              const isProductActive =
-                location.pathname.startsWith("/docs/cloud-services/cli") ||
-                location.pathname.startsWith(
-                  `/${locale}/docs/cloud-services/cli`
-                ) ||
-                location.pathname.startsWith("/studio") ||
-                location.pathname.startsWith(`/${locale}/studio`) ||
-                location.pathname.startsWith("/cloud") ||
-                location.pathname.startsWith(`/${locale}/cloud`) ||
-                location.pathname.startsWith("/app") ||
-                location.pathname.startsWith(`/${locale}/app`);
+              const isProductActive = productMenuEntries.some(entry =>
+                isProductEntryActive(location.pathname, locale, [
+                  entry.href,
+                  ...(entry.matchHrefs ?? []),
+                ])
+              );
 
               return (
                 <div
@@ -373,7 +375,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
                           [styles.productMenuEntryActive]: isProductEntryActive(
                             location.pathname,
                             locale,
-                            entry.href
+                            [entry.href, ...(entry.matchHrefs ?? [])]
                           ),
                         })}
                       >

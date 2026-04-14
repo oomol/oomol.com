@@ -1,4 +1,4 @@
-import styles from "./styles.module.scss";
+import styles from "../CloudPagePainPoints/styles.module.scss";
 
 import type { DocusaurusContext } from "@docusaurus/types";
 
@@ -19,65 +19,59 @@ type Copy = {
 };
 
 const zhCopy: Copy = {
-  badge: "为什么用 Cloud",
-  title: "Cloud 解决的是交付和使用门槛",
+  badge: "为什么用 CLI",
+  title: "CLI 解决的是先用起来的门槛",
   subtitle:
-    "Studio 负责做出工具，Cloud 负责把它交付到 oo-cli，并以云服务的方式供用户使用。",
+    "不是先设计一套完整接入方案，而是先让 Agent 把真实任务跑通。搜索、查看、运行，这三步先在终端里完成。",
   cards: [
     {
-      icon: "i-lucide-waypoints",
-      eyebrow: "交付",
-      title: "交付到 oo-cli 更直接",
+      icon: "i-lucide-search",
+      eyebrow: "发现",
+      title: "先确认有没有现成工具",
       description:
-        "Cloud 和 oo-cli 是打通的。Studio 里的自定义工具交付后，就能直接在 oo-cli 中被搜索、查看和调用。",
-      points: [
-        "不用再单独补一套接入链路",
-        "Studio 里的工具交付后就能自然进入 oo-cli",
-      ],
+        "你不需要第一天就从零做一套。先搜索别人已经发布好的工具，再决定缺口到底在哪里。",
+      points: ["先搜再判断", "避免凭想象重做一遍"],
     },
     {
-      icon: "i-lucide-blocks",
+      icon: "i-lucide-terminal-square",
       eyebrow: "使用",
-      title: "免运维，按调用时长计费",
+      title: "先在终端和 Agent 里直接跑起来",
       description:
-        "直接以云服务方式提供，用户不需要自己承担部署和运维，也不必为固定资源预先投入。",
-      points: ["免运维，上手门槛更低", "按调用时长收费，成本更灵活"],
+        "CLI 先把查看输入、调用和结果拿回来这条使用路径跑通，再决定是否要延伸到 API、MCP 或网页入口。",
+      points: ["先把真实任务做完", "有证据后再决定下一层"],
     },
   ],
 };
 
 const enCopy: Copy = {
-  badge: "Why Cloud",
-  title: "Cloud lowers the delivery and usage barrier",
+  badge: "Why CLI",
+  title: "CLI lowers the barrier to getting real usage started",
   subtitle:
-    "Studio is where you build the tool. Cloud is what delivers it to oo-cli and makes it usable as a service.",
+    "The goal is not to design the full integration stack upfront. The goal is to let the agent finish a real task first. Search, inspect, and run in terminal before anything else.",
   cards: [
     {
-      icon: "i-lucide-waypoints",
-      eyebrow: "Delivery",
-      title: "A direct route into oo-cli",
+      icon: "i-lucide-search",
+      eyebrow: "Discovery",
+      title: "Check whether ready-made tools already exist",
       description:
-        "Cloud is tightly integrated with oo-cli. Once a custom tool is delivered from Studio, it can be searched, inspected, and called directly in oo-cli.",
-      points: [
-        "No separate integration layer to build",
-        "Tools delivered from Studio flow straight into oo-cli",
-      ],
+        "You do not need to build a new path on day one. Search published tools first, then decide where the real gap is.",
+      points: ["Search before you judge", "Avoid rebuilding from guesswork"],
     },
     {
-      icon: "i-lucide-blocks",
+      icon: "i-lucide-terminal-square",
       eyebrow: "Usage",
-      title: "No ops burden, flexible billing",
+      title: "Run it directly in terminal and agent workflows first",
       description:
-        "Cloud provides the tool as a service, so users do not need to run or maintain infrastructure of their own.",
+        "CLI gets input inspection, invocation, and results working first. After that, you can decide whether the same capability should also become an API, MCP, or web entry point.",
       points: [
-        "No ops overhead for the user",
-        "Billed by call duration for flexible cost",
+        "Finish a real task first",
+        "Choose the next layer with evidence",
       ],
     },
   ],
 };
 
-export default function CloudPagePainPoints() {
+export default function CliPagePainPoints() {
   const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
     i18n: { currentLocale: string };
   };

@@ -19,7 +19,7 @@ const benefits = [
     }),
     note: translate({ message: "HOME.DeveloperBenefits.card1.note" }),
     cta: translate({ message: "HOME.DeveloperBenefits.card1.cta" }),
-    href: "/docs/cloud-services/cli",
+    href: "/cli",
   },
   {
     tag: translate({ message: "HOME.DeveloperBenefits.card2.tag" }),

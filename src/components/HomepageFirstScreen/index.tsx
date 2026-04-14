@@ -47,7 +47,7 @@ export default function HomepageFirstScreen() {
           </p>
           <div className={styles.actions}>
             <Button asChild size="lg" className={styles.primaryCta}>
-              <Link to="/docs/cloud-services/cli">
+              <Link to="/cli">
                 {translate({
                   message: "HOME.FirstScreen.cta.primary",
                 })}

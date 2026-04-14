@@ -355,7 +355,7 @@ export default function HomepageLinearFlow() {
         actions={
           <>
             <Button asChild size="lg" className={styles.ctaPrimary}>
-              <Link to="/docs/cloud-services/cli">{copy.cta.primary}</Link>
+              <Link to="/cli">{copy.cta.primary}</Link>
             </Button>
             <Button
               asChild

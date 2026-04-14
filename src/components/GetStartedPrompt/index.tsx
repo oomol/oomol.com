@@ -14,7 +14,7 @@ export const GetStartedPrompt = () => {
       actions={
         <>
           <Button asChild size="lg" className={siteCtaStyles.actionButton}>
-            <Link to="/docs/cloud-services/cli">
+            <Link to="/cli">
               {translate({ message: "HOME.GetStartedPrompt.primary" })}
             </Link>
           </Button>

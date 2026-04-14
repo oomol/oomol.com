@@ -1,4 +1,4 @@
-import styles from "./styles.module.scss";
+import styles from "../CloudPageFirstScreen/styles.module.scss";
 
 import type { DocusaurusContext } from "@docusaurus/types";
 
@@ -8,37 +8,38 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { Button } from "@site/src/components/ui/button";
 import React, { useRef, useState } from "react";
 
+const CLI_DEMO_VIDEO_URL =
+  "https://static.oomol.com/assets/homepage/oomol-oo-cli-en.webm";
+
 const zhCopy = {
-  slogan: `把自己的工具更快
-带进 oo-cli`,
-  overview: `把 Studio 里的自定义工具交付到 oo-cli，让 Agent、Codex 和 OpenCrawl 直接使用。`,
-  primaryCta: "开始使用 oo-cli",
-  secondaryCta: "下载 OOMOL Studio",
-  playAriaLabel: "播放演示视频",
+  slogan: `先在 oo-cli 里
+把任务跑起来`,
+  overview: `让 Codex、Claude Code 和本地终端先搜索、查看并调用现成工具。现成工具不够时，再自然进入 Studio 和 Cloud 继续扩展。`,
+  primaryCta: "查看安装文档",
+  secondaryCta: "查看 GitHub",
+  playAriaLabel: "播放 CLI 演示视频",
 };
 
 const enCopy = {
-  slogan: `Bring your own tools
-to oo-cli faster`,
-  overview: `Deliver the custom tools from Studio to oo-cli, so Agents, Codex, and OpenCrawl can use them directly.`,
-  primaryCta: "Start with oo-cli",
-  secondaryCta: "Download OOMOL Studio",
-  playAriaLabel: "Play demo video",
+  slogan: `Start in oo-cli
+before you build anything else`,
+  overview: `Let Codex, Claude Code, and local terminal workflows search, inspect, and run ready-made tools first. When they stop short, continue naturally in Studio and Cloud.`,
+  primaryCta: "Open install guide",
+  secondaryCta: "View GitHub",
+  playAriaLabel: "Play CLI demo video",
 };
 
-export default function CloudPageFirstScreen() {
+export default function CliPageFirstScreen() {
   const [isPlaying, setIsPlaying] = useState(false);
   const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
     i18n: { currentLocale: string };
   };
   const copy = i18n.currentLocale === "zh-CN" ? zhCopy : enCopy;
   const videoRef = useRef<HTMLVideoElement>(null);
-  const studioDownloadsHref = useBaseUrl("/downloads");
-  const heroVideoUrl = useBaseUrl(
-    "https://static.oomol.com/assets/homepage/oomol-flow-en.webm"
-  );
   const heroVideoPosterUrl = useBaseUrl(
-    "/img/pages/home/homepage-first-screen-workflow-poster.png"
+    i18n.currentLocale === "zh-CN"
+      ? "/img/docs/cn/terminal.png"
+      : "/img/docs/terminal.png"
   );
 
   const handlePlay = async () => {
@@ -63,7 +64,7 @@ export default function CloudPageFirstScreen() {
           <p className={styles.overview}>{copy.overview}</p>
           <div className={styles.actions}>
             <Button asChild size="lg" className={styles.primaryCta}>
-              <Link to="/cli">{copy.primaryCta}</Link>
+              <Link to="/docs/cloud-services/cli">{copy.primaryCta}</Link>
             </Button>
             <Button
               asChild
@@ -71,7 +72,13 @@ export default function CloudPageFirstScreen() {
               size="lg"
               className={styles.secondaryCta}
             >
-              <Link to={studioDownloadsHref}>{copy.secondaryCta}</Link>
+              <a
+                href="https://github.com/oomol-lab/oo-cli"
+                rel="noreferrer"
+                target="_blank"
+              >
+                {copy.secondaryCta}
+              </a>
             </Button>
           </div>
         </div>
@@ -106,7 +113,7 @@ export default function CloudPageFirstScreen() {
               }}
               onEnded={() => setIsPlaying(false)}
             >
-              <source src={heroVideoUrl} type="video/mp4" />
+              <source src={CLI_DEMO_VIDEO_URL} type="video/webm" />
             </video>
           </div>
         </div>

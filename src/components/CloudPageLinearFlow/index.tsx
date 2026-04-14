@@ -143,8 +143,7 @@ const zhCopy: Copy = {
   },
   cta: {
     title: "把验证好的工具交给 Cloud",
-    description:
-      "用 Cloud 承接交付，并统一管理配置、Secrets 和访问控制。",
+    description: "用 Cloud 承接交付，并统一管理配置、Secrets 和访问控制。",
     primary: "查看 Cloud 文档",
     secondary: "打开 Cloud 控制台",
   },
