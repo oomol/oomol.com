@@ -2,8 +2,8 @@ import styles from "./styles.module.scss";
 
 import type { DocusaurusContext } from "@docusaurus/types";
 
-import { usePluginData } from "@docusaurus/useGlobalData";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { usePluginData } from "@docusaurus/useGlobalData";
 import React from "react";
 
 const toolIcons = [

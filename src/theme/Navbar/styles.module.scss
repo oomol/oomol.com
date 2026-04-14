@@ -143,6 +143,11 @@
   z-index: 120;
 }
 
+.productMenuPanelSingleColumn {
+  width: min(22rem, calc(100vw - 2rem));
+  grid-template-columns: 1fr;
+}
+
 .productMenuPanelOpen {
   opacity: 1;
   pointer-events: auto;
