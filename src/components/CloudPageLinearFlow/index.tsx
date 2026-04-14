@@ -7,26 +7,16 @@ import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import CloudPageDeveloperBenefits from "@site/src/components/CloudPageDeveloperBenefits";
-import { DownloadButton } from "@site/src/components/DownloadButton";
 import { SiteCta } from "@site/src/components/SiteCta";
+import { Button } from "@site/src/components/ui/button";
 import { clsx } from "clsx";
 import React from "react";
 
 const homepageMediaUrls = {
   cli: "https://static.oomol.com/assets/homepage/oomol-oo-cli-en.webm",
-  studio:
-    "https://static.oomol.com/assets/homepage/OOMOL-Studio-gen-use-skils-en.webm",
 } as const;
 
 type Copy = {
-  studio: {
-    eyebrow: string;
-    title: string;
-    description: string;
-    media: { title: string; note: string };
-    primary: string;
-    secondary: string;
-  };
   cloud: {
     eyebrow: string;
     title: string;
@@ -47,6 +37,7 @@ type Copy = {
   cta: {
     title: string;
     description: string;
+    primary: string;
     secondary: string;
   };
 };
@@ -111,135 +102,100 @@ function ImageCard({ title, note, src, pills }: ImageCardProps) {
 }
 
 const zhCopy: Copy = {
-  studio: {
-    eyebrow: "01 / OOMOL Studio",
-    title: "先把第一版工具做出来并跑通",
-    description:
-      "从提示词、现有流程或一段代码开始，让 Studio 帮你把第一版工具做出来，然后在本地把输入输出、依赖和行为验证清楚。重点是先把工具本身做成。",
-    media: {
-      title: "Studio 生成与验证演示",
-      note: "展示从生成工具到本地跑通的过程。",
-    },
-    primary: "安装 OOMOL Studio",
-    secondary: "了解 Studio",
-  },
   cloud: {
-    eyebrow: "02 / Cloud",
-    title: "再通过 Cloud 把它发布到 oo-cli",
+    eyebrow: "01 / Cloud",
+    title: "把交付、配置和权限放进同一个后台",
     description:
-      "Cloud 把已经验证过的工具接成真正可用的发布路径。你不需要再单独补一套服务壳，发布后就能持续运行，并在 oo-cli 中被调用。",
+      "工具验证完成后，Cloud 承接交付，并统一管理运行配置、Secrets、访问控制和使用关系。你不需要再围着同一份实现补另一套后台。",
     cards: [
       {
-        title: "发布后持续可用",
-        text: "从本地验证，变成可被反复调用的工具。",
+        title: "统一交付到 oo-cli",
+        text: "工具交付后，就能直接在 oo-cli 中被搜索、查看和调用。",
       },
       {
-        title: "配置和访问集中管理",
-        text: "运行配置、Secrets、权限和状态放到同一个后台里管理。",
+        title: "配置和 Secrets 集中管理",
+        text: "把运行配置、Secrets 和环境差异放到同一个后台里维护。",
       },
       {
-        title: "继续用同一份工具实现",
-        text: "继续维护已经在 Studio 里验证过的工具，不必为了发布再重做一遍。",
-      },
-      {
-        title: "oo-cli 入口保持一致",
-        text: "发布后仍然通过 oo-cli 进入 Agent、Codex 和 OpenCrawl。",
+        title: "权限和状态统一查看",
+        text: "访问控制、运行状态和使用关系集中管理，减少分散维护。",
       },
     ],
     media: {
       title: "Cloud 控制台预览",
-      note: "在同一个后台里查看运行状态、配置与访问控制。",
-      pills: ["运行状态", "运行配置", "Secrets", "访问控制"],
+      note: "在同一个后台里管理交付、运行配置、Secrets 和访问控制。",
+      pills: ["交付", "运行配置", "Secrets", "访问控制"],
     },
     docs: "查看 Cloud 文档",
     secondary: "打开 Cloud 控制台",
   },
   cli: {
-    eyebrow: "03 / oo-cli",
-    title: "最后在 oo-cli 里直接用起来",
+    eyebrow: "02 / oo-cli",
+    title: "用户在 oo-cli 里直接使用",
     description:
-      "工具发布后，oo-cli 会把它带进 Agent、Codex 和 OpenCrawl。对使用者来说，不需要再换一套工作方式，也不用关心背后的发布链路。",
+      "对使用者来说，不需要额外接入，也不用切换工作方式。工具交付后，就可以直接搜索、查看和调用。",
     media: {
       title: "oo-cli 调用演示",
-      note: "展示已发布工具在 Codex 中被搜索、查看和调用。",
+      note: "展示已交付工具在 Codex 中被搜索、查看和调用。",
     },
     guide: "查看安装文档",
     github: "查看 GitHub",
   },
   cta: {
-    title: "把自己的工具更快带进 oo-cli",
+    title: "把验证好的工具交给 Cloud",
     description:
-      "现成工具不够用时，用 Studio 做出并验证第一版工具，再通过 Cloud 发布，让 oo-cli 直接把它带进 Agent、Codex 和 OpenCrawl。",
-    secondary: "查看 Cloud 文档",
+      "用 Cloud 承接交付，并统一管理配置、Secrets 和访问控制。",
+    primary: "查看 Cloud 文档",
+    secondary: "打开 Cloud 控制台",
   },
 };
 
 const enCopy: Copy = {
-  studio: {
-    eyebrow: "01 / OOMOL Studio",
-    title: "Build and validate the first version in Studio",
-    description:
-      "Start from a prompt, an existing flow, or a piece of code. Let Studio build the first version, then validate the inputs, outputs, dependencies, and behavior locally. The goal is to get your tool working first.",
-    media: {
-      title: "Studio generation and validation demo",
-      note: "Show the path from generating a tool to getting it working locally.",
-    },
-    primary: "Install OOMOL Studio",
-    secondary: "Explore Studio",
-  },
   cloud: {
-    eyebrow: "02 / Cloud",
-    title: "Publish it through Cloud so it appears in oo-cli",
+    eyebrow: "01 / Cloud",
+    title: "Keep delivery, config, and access in one backend",
     description:
-      "Cloud turns a validated tool into a real publish path. You do not need a separate service layer around it before people can keep using it through oo-cli.",
+      "Once the tool is validated, Cloud takes over delivery and keeps runtime settings, secrets, access control, and usage relationships in one place. You do not need another backend around the same implementation.",
     cards: [
       {
-        title: "Keep it available after publish",
-        text: "Move from local validation to a tool that can be invoked repeatedly.",
+        title: "Deliver into oo-cli",
+        text: "Once delivered, the tool can be searched, inspected, and called directly in oo-cli.",
       },
       {
-        title: "Manage config and access in one place",
-        text: "Keep runtime settings, secrets, permissions, and status in one backend.",
+        title: "Manage config and secrets together",
+        text: "Keep runtime settings, secrets, and environment differences in one console.",
       },
       {
-        title: "Keep using the same implementation",
-        text: "Keep maintaining what you already validated in Studio instead of rebuilding it for publish.",
-      },
-      {
-        title: "Keep the oo-cli path consistent",
-        text: "After publish, the tool is still reached through oo-cli in Agents, Codex, and OpenCrawl.",
+        title: "Review access and status in one place",
+        text: "Manage permissions, runtime status, and usage relationships without splitting them across tools.",
       },
     ],
     media: {
       title: "Cloud console preview",
-      note: "Track runtime status, configuration, and access control in one backend.",
-      pills: [
-        "Runtime status",
-        "Runtime settings",
-        "Secrets",
-        "Access control",
-      ],
+      note: "Keep delivery, runtime settings, secrets, and access control in one backend.",
+      pills: ["Delivery", "Runtime settings", "Secrets", "Access control"],
     },
     docs: "Read Cloud docs",
     secondary: "Open Cloud Console",
   },
   cli: {
-    eyebrow: "03 / oo-cli",
-    title: "Then use it directly from oo-cli",
+    eyebrow: "02 / oo-cli",
+    title: "Users work with it directly in oo-cli",
     description:
-      "After a tool is published, oo-cli brings it into Agents, Codex, and OpenCrawl. For the user, there is no need to switch to a different way of working or think about the publish path behind it.",
+      "For the user, there is no extra integration step and no new workflow to learn. Once delivered, they can search, inspect, and use it directly.",
     media: {
       title: "oo-cli invocation demo",
-      note: "Show a published tool being searched, inspected, and called in Codex.",
+      note: "Show a delivered tool being searched, inspected, and called in Codex.",
     },
     guide: "Open install guide",
     github: "View GitHub",
   },
   cta: {
-    title: "Bring your own tools to oo-cli faster",
+    title: "Hand validated tools to Cloud",
     description:
-      "When ready-made tools stop short, use Studio to build and validate the first version, then publish through Cloud so oo-cli can bring it straight into Agents, Codex, and OpenCrawl.",
-    secondary: "Read Cloud docs",
+      "Use Cloud to deliver the tool and keep configuration, secrets, and access control in one place.",
+    primary: "Read Cloud docs",
+    secondary: "Open Cloud Console",
   },
 };
 
@@ -248,24 +204,6 @@ export default function CloudPageLinearFlow() {
     i18n: { currentLocale: string };
   };
   const copy = i18n.currentLocale === "zh-CN" ? zhCopy : enCopy;
-  const downloadButtonTexts =
-    i18n.currentLocale === "zh-CN"
-      ? {
-          macos: "下载适用于 macOS 的版本",
-          macosStable: "下载适用于 macOS 的版本（稳定版）",
-          macosNote: "仅支持 Apple Silicon Mac",
-          windows: "下载适用于 Windows 的版本",
-          windowsStable: "下载适用于 Windows 的版本（稳定版）",
-          windowsSubtitle: "仅支持 x64 版本",
-        }
-      : {
-          macos: "Download for macOS",
-          macosStable: "Download for macOS (Stable)",
-          macosNote: "Apple Silicon Mac only",
-          windows: "Download for Windows",
-          windowsStable: "Download for Windows (Stable)",
-          windowsSubtitle: "only supports x64",
-        };
   const cloudConsoleImage = useBaseUrl(
     i18n.currentLocale === "zh-CN"
       ? "/img/pages/home/cloud-console-zh.png"
@@ -274,35 +212,6 @@ export default function CloudPageLinearFlow() {
 
   return (
     <div className={styles.flow}>
-      {/* ── Section: Studio ── */}
-      <section className={clsx(styles.section, styles.sectionTint)}>
-        <div className={styles.container}>
-          <div className={styles.copyPanel}>
-            <span className={styles.eyebrow}>{copy.studio.eyebrow}</span>
-            <h2 className={styles.sectionTitle}>{copy.studio.title}</h2>
-            <p className={styles.sectionDescription}>
-              {copy.studio.description}
-            </p>
-            <div className={styles.inlineActions}>
-              <Link to="/downloads" className={styles.primaryLink}>
-                {copy.studio.primary}
-              </Link>
-              <Link to="/studio" className={styles.secondaryLink}>
-                {copy.studio.secondary}
-              </Link>
-            </div>
-          </div>
-
-          <div className={styles.mediaPanel}>
-            <VideoCard
-              title={copy.studio.media.title}
-              note={copy.studio.media.note}
-              src={homepageMediaUrls.studio}
-            />
-          </div>
-        </div>
-      </section>
-
       {/* ── Section: Cloud ── */}
       <section className={clsx(styles.section, styles.cloudSection)}>
         <div className={styles.container}>
@@ -392,17 +301,19 @@ export default function CloudPageLinearFlow() {
         description={copy.cta.description}
         actions={
           <>
-            <DownloadButton
-              centered
-              showNote={false}
-              texts={downloadButtonTexts}
-            />
-            <Link
-              to="/docs/cloud-services/cloud-function"
+            <Button asChild size="lg" className={siteCtaStyles.actionButton}>
+              <Link to="/docs/cloud-services/cloud-function">
+                {copy.cta.primary}
+              </Link>
+            </Button>
+            <a
+              href="https://console.oomol.com/cloud-function"
+              target="_blank"
+              rel="noreferrer"
               className={siteCtaStyles.ghostLink}
             >
               {copy.cta.secondary}
-            </Link>
+            </a>
           </>
         }
       />

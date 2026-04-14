@@ -11,7 +11,7 @@ import React, { useRef, useState } from "react";
 const zhCopy = {
   slogan: `把自己的工具更快
 带进 oo-cli`,
-  overview: `把 Studio 里的自定义工具交付到 oo-cli，让 Agent、Codex 和 OpenCrawl 直接调用。`,
+  overview: `把 Studio 里的自定义工具交付到 oo-cli，让 Agent、Codex 和 OpenCrawl 直接使用。`,
   primaryCta: "开始使用 oo-cli",
   secondaryCta: "下载 OOMOL Studio",
   playAriaLabel: "播放演示视频",

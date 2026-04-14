@@ -445,6 +445,10 @@
   }
 }
 
+.cloudCard:last-child {
+  grid-column: span 2;
+}
+
 .cloudTitle {
   margin: 0;
   font-size: 1.05rem;
@@ -551,6 +555,10 @@
 
   .cloudCardStack {
     grid-template-columns: 1fr;
+  }
+
+  .cloudCard:last-child {
+    grid-column: auto;
   }
 }
 

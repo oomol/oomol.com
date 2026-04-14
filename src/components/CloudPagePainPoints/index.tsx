@@ -29,10 +29,10 @@ const zhCopy: Copy = {
       eyebrow: "交付",
       title: "交付到 oo-cli 更直接",
       description:
-        "Cloud 和 oo-cli 是打通的。Studio 里的自定义工具交付后，就能直接在 oo-cli 中被搜索和调用。",
+        "Cloud 和 oo-cli 是打通的。Studio 里的自定义工具交付后，就能直接在 oo-cli 中被搜索、查看和调用。",
       points: [
         "不用再单独补一套接入链路",
-        "从 Studio 到 oo-cli 的交付路径天然连着",
+        "Studio 里的工具交付后就能自然进入 oo-cli",
       ],
     },
     {
@@ -58,12 +58,12 @@ const enCopy: Copy = {
     {
       icon: "i-lucide-waypoints",
       eyebrow: "Delivery",
-      title: "A shorter path into oo-cli",
+      title: "A direct route into oo-cli",
       description:
-        "Cloud is tightly integrated with oo-cli. Once a custom tool is delivered from Studio, it can be searched and called directly in oo-cli.",
+        "Cloud is tightly integrated with oo-cli. Once a custom tool is delivered from Studio, it can be searched, inspected, and called directly in oo-cli.",
       points: [
         "No separate integration layer to build",
-        "The delivery path from Studio to oo-cli stays connected",
+        "Tools delivered from Studio flow straight into oo-cli",
       ],
     },
     {

@@ -9,20 +9,20 @@ import React from "react";
 
 const zhCopy = {
   badge: "免费额度",
-  title: "先把第一个 oo-cli 工具跑通",
+  title: "先用免费额度开始交付",
   subtitle:
-    "每月赠送 200 分钟 Cloud Task。先把第一版工具从 Studio 发布到 Cloud，并确认它能在 oo-cli 中被搜索、查看和调用；需要更多时，再按运行时间扩展。",
+    "每月赠送 200 分钟 Cloud Task。先用它把工具交付到 Cloud；需要更多时，再按调用时长扩展。",
   benefits: [
     {
       tag: "每月赠送",
       value: "200 分钟",
       valueCaption: "Cloud Task 免费时长",
       eyebrow: "免费额度",
-      title: "先验证从 Studio 到 oo-cli 的整条路径",
+      title: "先把工具交付并用起来",
       description:
-        "用免费额度把第一版工具发布出去，确认它能持续运行，并在 oo-cli 中直接被调用。",
-      note: "适合第一次发布、轻量任务和流程验证。",
-      cta: "了解 Cloud Function",
+        "用免费额度把工具交付出去，确认它能持续运行，并在 oo-cli 中直接被搜索、查看和调用。",
+      note: "适合首次交付、轻量任务和日常试用。",
+      cta: "查看 Cloud 文档",
       href: "/docs/cloud-services/cloud-function",
     },
     {
@@ -30,10 +30,10 @@ const zhCopy = {
       value: "按时间",
       valueCaption: "Cloud Task 计费方式",
       eyebrow: "按量使用",
-      title: "需求明确后再扩大运行",
+      title: "按调用时长计费，按需扩展",
       description:
-        "不需要先买服务器或预留固定资源。先按实际运行时间扩展，避免在路径还没验证前就投入过多。",
-      note: "先把路径跑通，再决定规模。",
+        "不需要先买服务器或预留固定资源。用多少算多少，需求增加时再按实际调用时长扩展。",
+      note: "先开始使用，再决定规模。",
       cta: "查看价格",
       href: "/pricing",
     },
@@ -42,20 +42,20 @@ const zhCopy = {
 
 const enCopy = {
   badge: "Free Tier",
-  title: "Validate your first tool in oo-cli with the free quota",
+  title: "Start delivery with the free quota",
   subtitle:
-    "You get 200 free Cloud Task minutes each month. Use them to publish the first version from Studio to Cloud and confirm it can be searched, inspected, and called in oo-cli, then scale with time-based billing when needed.",
+    "You get 200 free Cloud Task minutes each month. Use them to deliver the tool through Cloud first, then scale with call-duration billing when needed.",
   benefits: [
     {
       tag: "Monthly Included",
       value: "200 Minutes",
       valueCaption: "Free Cloud Task time",
       eyebrow: "Free quota",
-      title: "Validate the full path from Studio to oo-cli",
+      title: "Deliver the tool and start using it",
       description:
-        "Use the included quota to publish the first version and confirm it stays callable in oo-cli.",
-      note: "A good fit for first releases, lightweight jobs, and flow validation.",
-      cta: "Read Cloud Function docs",
+        "Use the included quota to deliver the tool and confirm it stays searchable and callable in oo-cli.",
+      note: "A good fit for first delivery, lightweight jobs, and everyday trial use.",
+      cta: "Read Cloud docs",
       href: "/docs/cloud-services/cloud-function",
     },
     {
@@ -63,10 +63,10 @@ const enCopy = {
       value: "By Time",
       valueCaption: "How Cloud Task is billed",
       eyebrow: "Usage-based",
-      title: "Scale runtime only after the demand is real",
+      title: "Scale with call-duration billing",
       description:
-        "You do not need to buy servers or reserve fixed capacity up front. Expand based on actual runtime after the path is proven.",
-      note: "Prove the path first, then decide the scale.",
+        "You do not need to buy servers or reserve fixed capacity up front. Pay for actual call time and expand only when demand grows.",
+      note: "Start using it first, then decide the scale.",
       cta: "View pricing",
       href: "/pricing",
     },
