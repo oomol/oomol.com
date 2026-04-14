@@ -3,6 +3,49 @@ import { themes } from "prism-react-renderer";
 const UnoCSS = require("@unocss/webpack");
 const path = require("path");
 
+const CATALOG_ENDPOINT = "https://connector.oomol.com/v1/catalog";
+
+const DEFAULT_CATALOG_STATS = {
+  providerCount: 1000,
+  actionCount: 40000,
+};
+
+async function loadCatalogStats() {
+  try {
+    const response = await fetch(CATALOG_ENDPOINT);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch catalog stats: ${response.status}`);
+    }
+
+    const result = await response.json();
+    const providerCount = result?.data?.providerCount;
+    const actionCount = result?.data?.actionCount;
+
+    if (
+      !result?.success ||
+      typeof providerCount !== "number" ||
+      !Number.isFinite(providerCount) ||
+      providerCount < 0 ||
+      typeof actionCount !== "number" ||
+      !Number.isFinite(actionCount) ||
+      actionCount < 0
+    ) {
+      throw new Error("Invalid catalog stats response");
+    }
+
+    return {
+      providerCount,
+      actionCount,
+    };
+  } catch (error) {
+    console.warn(
+      "[catalog-stats] Failed to load catalog stats, using fallback counts.",
+      error
+    );
+    return DEFAULT_CATALOG_STATS;
+  }
+}
+
 
 const lightTheme = themes.github;
 const darkTheme = themes.dracula;
@@ -91,6 +134,17 @@ const config = {
         onUntruncatedBlogPosts: "ignore",
       },
     ],
+    function catalogStatsPlugin() {
+      return {
+        name: "catalog-stats",
+        async loadContent() {
+          return loadCatalogStats();
+        },
+        contentLoaded({ content, actions }) {
+          actions.setGlobalData(content);
+        },
+      };
+    },
     function () {
       return {
         name: "unocss",
