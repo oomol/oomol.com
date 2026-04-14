@@ -23,7 +23,7 @@ const principles = [
       light: "/img/pages/studio/code-light.png",
       dark: "/img/pages/studio/code-dark.png",
     },
-    alt: "Write blocks with code in OOMOL Studio",
+    alt: "Write function tools with code in OOMOL Studio",
   },
   {
     titleKey: "STUDIO.principle2.title",
@@ -36,7 +36,7 @@ const principles = [
       light: "/img/pages/studio/edit-light.png",
       dark: "/img/pages/studio/edit-dark.png",
     },
-    alt: "Developer experience in OOMOL Studio",
+    alt: "Developer experience for function tools in OOMOL Studio",
   },
   {
     titleKey: "STUDIO.principle3.title",
@@ -49,7 +49,7 @@ const principles = [
       light: "/img/pages/studio/package-light.png",
       dark: "/img/pages/studio/package-dark.png",
     },
-    alt: "Local and cloud continuity in OOMOL Studio",
+    alt: "Local and cloud continuity for tools built in OOMOL Studio",
   },
 ];
 

@@ -148,9 +148,16 @@ export default function Downloads() {
               })}
             </span>
             <h2 className={styles.cliTitle}>
-              {translate({
-                message: "HOME.Downloads.cli.title",
-              })}
+              <span className={styles.cliTitleLine}>
+                {translate({
+                  message: "HOME.Downloads.cli.title.line1",
+                })}
+              </span>
+              <span className={styles.cliTitleLine}>
+                {translate({
+                  message: "HOME.Downloads.cli.title.line2",
+                })}
+              </span>
             </h2>
             <p className={styles.cliSubtitle}>
               {translate({

@@ -149,9 +149,15 @@
 
 .cliTitle {
   margin: 0;
+  display: flex;
+  flex-direction: column;
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   line-height: 1.06;
   color: var(--oomol-text-primary);
+}
+
+.cliTitleLine {
+  display: block;
 }
 
 .cliSubtitle {
@@ -182,24 +188,75 @@
   text-decoration: none;
   transition:
     transform 0.2s ease,
+    box-shadow 0.2s ease,
     border-color 0.2s ease,
     background-color 0.2s ease,
+    background 0.2s ease,
     color 0.2s ease;
 
   &:hover {
     transform: translateY(-1px);
   }
+
+  &:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--oomol-primary) 18%, transparent);
+    outline-offset: 2px;
+  }
 }
 
 .cliPrimaryAction {
   color: var(--oomol-white);
-  background: linear-gradient(135deg, #635bff 0%, #4f46e5 100%);
+  border: 1px solid
+    color-mix(in srgb, var(--oomol-primary) 74%, var(--oomol-primary-active));
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--oomol-primary) 82%, white 18%) 0%,
+    var(--oomol-primary) 100%
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 12px 24px color-mix(in srgb, var(--oomol-primary) 22%, transparent);
+
+  &:hover {
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--oomol-primary-hover) 84%, white 16%) 0%,
+      var(--oomol-primary-hover) 100%
+    );
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-primary-hover) 76%,
+      var(--oomol-primary-active)
+    );
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      0 16px 30px color-mix(in srgb, var(--oomol-primary) 26%, transparent);
+  }
 }
 
 .cliSecondaryAction {
   color: var(--oomol-text-primary);
   border: 1px solid var(--oomol-border-subtle);
-  background: var(--oomol-bg-container);
+  background: color-mix(
+    in srgb,
+    var(--oomol-surface-float) 88%,
+    var(--oomol-bg-container) 12%
+  );
+
+  &:hover {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-primary) 18%,
+      var(--oomol-border-default)
+    );
+    background: color-mix(
+      in srgb,
+      var(--oomol-surface-float) 78%,
+      var(--oomol-primary) 6%
+    );
+    box-shadow: 0 10px 20px
+      color-mix(in srgb, var(--oomol-primary) 12%, transparent);
+  }
 }
 
 .card {
@@ -304,4 +361,28 @@
 
 :global(html[data-theme="dark"]) .cliSecondaryAction {
   background: color-mix(in srgb, var(--oomol-bg-container) 80%, black 20%);
+}
+
+:global(html[data-theme="dark"]) .cliPrimaryAction {
+  border-color: color-mix(
+    in srgb,
+    var(--oomol-primary) 66%,
+    rgba(255, 255, 255, 0.1)
+  );
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--oomol-primary) 80%, white 10%) 0%,
+    color-mix(in srgb, var(--oomol-primary-active) 92%, black 8%) 100%
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 14px 28px color-mix(in srgb, var(--oomol-primary) 24%, transparent);
+
+  &:hover {
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--oomol-primary-hover) 82%, white 10%) 0%,
+      color-mix(in srgb, var(--oomol-primary) 92%, black 10%) 100%
+    );
+  }
 }

@@ -13,9 +13,9 @@ import { DownloadButton } from "../DownloadButton";
 const zhCopy = {
   ownershipNote: "开源还是闭源，",
   ownershipHighlight: "都由你自己决定。",
-  slogan: `让 Agent 用上你的 Skill
+  slogan: `让 Agent 用上你的工具
 代码依然由你掌控`,
-  overview: `用 OOMOL 生成的 Skill，背后的工具函数在云端稳定执行；
+  overview: `用 OOMOL 做出来的工具，背后的函数和逻辑在云端稳定执行；
 用户安装 oo-cli 后即可直接在 Codex 和 Claude Code 中使用。`,
   secondaryCta: "先用 oo-cli",
   playAriaLabel: "播放演示视频",
@@ -32,10 +32,10 @@ const zhCopy = {
 const enCopy = {
   ownershipNote: "Open source or closed source,",
   ownershipHighlight: "it is your call.",
-  slogan: `Let agents use your skill.
+  slogan: `Let agents use your tools.
 You stay in control of the code.`,
-  overview: `A skill generated with OOMOL runs its underlying tool functions reliably in the cloud;
-once users install oo-cli, they can use it directly in Codex and Claude Code.`,
+  overview: `Tools built with OOMOL run their underlying functions and logic reliably in the cloud;
+once users install oo-cli, they can use them directly in Codex and Claude Code.`,
   secondaryCta: "Start with oo-cli",
   playAriaLabel: "Play demo video",
   downloadButtonTexts: {

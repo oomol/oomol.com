@@ -19,8 +19,8 @@ export default function CloudPageBrandBreak() {
         </h2>
         <p className={styles.subline}>
           {isZh
-            ? "从 Skill 创建到云端运行，一条完整的路径。"
-            : "From skill creation to cloud runtime — one complete path."}
+            ? "从工具创建到云端运行，一条完整的路径。"
+            : "From tool creation to cloud runtime — one complete path."}
         </p>
         <div className={styles.showcaseRow}>
           <div className={styles.showcaseCard}>

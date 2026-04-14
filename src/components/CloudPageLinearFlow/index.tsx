@@ -121,21 +121,21 @@ function ImageCard({ title, note, src, pills }: ImageCardProps) {
 const zhCopy: Copy = {
   cli: {
     eyebrow: "01 / oo-cli",
-    title: "先在 Codex 里装 oo-cli，直接开始用 Skill",
+    title: "先在 Codex 里装 oo-cli，直接开始用工具",
     description:
-      "oo-cli 是最适合在 Codex 和 Claude Code 里开始使用 Skill 的入口。先把安装文档打开，再用右侧视频直接看真实使用过程。",
+      "oo-cli 是最适合在 Codex 和 Claude Code 里开始使用工具的入口。先把安装文档打开，再用右侧视频直接看真实使用过程。",
     media: {
       title: "Codex 演示视频",
-      note: "展示在 Codex 中安装、搜索、查看并运行 Skill。",
+      note: "展示在 Codex 中安装、搜索、查看并运行工具。",
     },
     guide: "查看安装文档",
     github: "查看 GitHub",
   },
   studio: {
     eyebrow: "02 / OOMOL Studio",
-    title: "想做自己的 Skill，就用 OOMOL Studio",
+    title: "想做自己的工具，就用 OOMOL Studio",
     description:
-      "直接告诉 Agent 你要生成什么，Studio 帮你把 Skill 生成出来，然后在本地完成验证。不会写平台 DSL，也能零门槛开始。",
+      "直接告诉 Agent 你要生成什么，Studio 帮你把第一版工具生成出来，然后在本地完成验证。不会写平台 DSL，也能零门槛开始。",
     media: {
       title: "Studio + Agent Vibe 演示视频",
       note: "展示从提需求到本地验证跑通的过程。",
@@ -147,7 +147,7 @@ const zhCopy: Copy = {
     eyebrow: "03 / Cloud",
     title: "发布之后，Cloud 负责运行与交付",
     description:
-      "Skill 发布之后，Cloud 在后台承接运行、订阅、配置和使用数据。你不需要再围着同一份实现重做一层产品外壳。",
+      "工具发布之后，Cloud 在后台承接运行、订阅、配置和使用数据。你不需要再围着同一份实现重做一层产品外壳。",
     cards: [
       {
         title: "交付给自己、团队或客户",
@@ -171,7 +171,7 @@ const zhCopy: Copy = {
     eyebrow: "04 / OOMOL AI",
     title: "不想用 CLI，就直接用 OOMOL AI",
     description:
-      "它可以理解成 oo-cli 的 GUI 版本。同一套 Skill，不同的消费入口。终端适合工作流，GUI 更适合直观使用。",
+      "它可以理解成 oo-cli 的 GUI 版本。同一套工具，不同的消费入口。终端适合工作流，GUI 更适合直观使用。",
     media: {
       title: "OOMOL AI 演示视频",
       note: "展示对话入口和参数入口的体验。",
@@ -180,9 +180,9 @@ const zhCopy: Copy = {
     secondary: "了解 OOMOL AI",
   },
   cta: {
-    title: "先用一个 Skill，再决定要不要自己做",
+    title: "先用一个工具，再决定要不要自己做",
     description:
-      "先通过 oo-cli 把使用路径跑通。需要自己的 Skill 时，再安装 Studio 生成、验证并发布。",
+      "先通过 oo-cli 把使用路径跑通。需要自己的工具时，再安装 Studio 生成、验证并发布。",
     primary: "安装 OOMOL Studio",
     secondary: "先用 oo-cli",
   },
@@ -191,21 +191,21 @@ const zhCopy: Copy = {
 const enCopy: Copy = {
   cli: {
     eyebrow: "01 / oo-cli",
-    title: "Install oo-cli in Codex and start using skills",
+    title: "Install oo-cli in Codex and start using tools",
     description:
-      "oo-cli is the best entry point for using skills inside Codex and Claude Code. Open the install guide first, then use the video on the right to see the real flow.",
+      "oo-cli is the best entry point for using tools inside Codex and Claude Code. Open the install guide first, then use the video on the right to see the real flow.",
     media: {
       title: "Codex demo video",
-      note: "Show installing, searching, inspecting, and running a skill in Codex.",
+      note: "Show installing, searching, inspecting, and running a tool in Codex.",
     },
     guide: "Open install guide",
     github: "View GitHub",
   },
   studio: {
     eyebrow: "02 / OOMOL Studio",
-    title: "When you need your own skill, use OOMOL Studio",
+    title: "When you need your own tools, use OOMOL Studio",
     description:
-      "Tell the agent what skill you want, let Studio generate the first version, then validate it locally. You do not need to learn a platform DSL before you begin.",
+      "Tell the agent what tool you want, let Studio generate the first version, then validate it locally. You do not need to learn a platform DSL before you begin.",
     media: {
       title: "Studio + Agent Vibe demo video",
       note: "Show the path from prompting to local validation.",
@@ -215,9 +215,9 @@ const enCopy: Copy = {
   },
   cloud: {
     eyebrow: "03 / Cloud",
-    title: "After release, Cloud runs and delivers the skill",
+    title: "After release, Cloud runs and delivers the tool",
     description:
-      "After a skill is released, Cloud handles runtime, subscriptions, configuration, and usage data. You do not need a second product layer around the same implementation.",
+      "After a tool is released, Cloud handles runtime, subscriptions, configuration, and usage data. You do not need a second product layer around the same implementation.",
     cards: [
       {
         title: "Deliver it to yourself, your team, or customers",
@@ -244,7 +244,7 @@ const enCopy: Copy = {
     eyebrow: "04 / OOMOL AI",
     title: "If you do not want CLI, use OOMOL AI",
     description:
-      "Think of it as the GUI version of oo-cli. It uses the same skills through a more direct interface. CLI is better for workflows; GUI is better for straightforward use.",
+      "Think of it as the GUI version of oo-cli. It uses the same tools through a more direct interface. CLI is better for workflows; GUI is better for straightforward use.",
     media: {
       title: "OOMOL AI demo video",
       note: "Show both the chat surface and the structured surface.",
@@ -253,9 +253,9 @@ const enCopy: Copy = {
     secondary: "Explore OOMOL AI",
   },
   cta: {
-    title: "Use a skill first, then decide whether to build your own",
+    title: "Use a tool first, then decide whether to build your own",
     description:
-      "Start by getting the usage path working in oo-cli. When you need your own skill, install Studio to generate, validate, and publish it.",
+      "Start by getting the usage path working in oo-cli. When you need your own tools, install Studio to generate, validate, and publish them.",
     primary: "Install OOMOL Studio",
     secondary: "Start with oo-cli",
   },

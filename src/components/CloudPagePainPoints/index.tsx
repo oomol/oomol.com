@@ -11,12 +11,12 @@ const zhCopy = {
   card1: {
     title: "本地执行 = 代码泄露",
     description:
-      "现在 Codex、Claude Code 要调用你的能力，就得把代码拉到本地跑。你的算法、商业逻辑、调用链路，全部暴露给使用方。",
+      "在不经过 Cloud 的本地交付模式里，Codex、Claude Code 要调用你的能力，往往得把代码拉到本地跑。你的算法、商业逻辑、调用链路，也就更容易暴露给使用方。",
     solution:
-      "Cloud Skill 让能力在云端执行，用户只调用接口，代码始终在你手里。",
+      "把工具交付到 Cloud 之后，能力在云端执行，用户只调用接口，代码始终在你手里。",
   },
   card2: {
-    title: "想交付一个 Skill，却要搭一整套后端",
+    title: "想交付一个工具，却要搭一整套后端",
     description:
       "服务器、扩缩容、计费系统、订阅管理、Secrets 配置、使用数据……写核心逻辑只占 20%，剩下 80% 都在搭基础设施。",
     solution: "Cloud 把运行时、订阅、配置和数据全部承接，你只管写核心逻辑。",
@@ -29,12 +29,12 @@ const enCopy = {
   card1: {
     title: "Local execution = code exposure",
     description:
-      "Today, when Codex or Claude Code calls your skill, it pulls the code to local and runs it there. Your algorithms, business logic, and call chains are fully exposed to the consumer.",
+      "In local delivery paths that do not go through Cloud, Codex or Claude Code often needs to pull code down and run it locally. That makes your algorithms, business logic, and call chains much easier to expose to the consumer.",
     solution:
-      "A cloud skill runs in the cloud. Users call the interface; your code stays with you.",
+      "Once the tool is delivered through Cloud, it runs in the cloud. Users call the interface; your code stays with you.",
   },
   card2: {
-    title: "You just want to deliver a skill, not build an entire backend",
+    title: "You just want to deliver a tool, not build an entire backend",
     description:
       "Servers, auto-scaling, billing, subscription management, secrets, usage analytics… Writing the core logic is 20% of the work. The other 80% is delivery infrastructure.",
     solution:
