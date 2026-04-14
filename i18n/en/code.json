@@ -3208,13 +3208,13 @@
     "message": "Explore Cloud"
   },
   "Theme.Navbar.product.studio.description": {
-    "message": "Generate and validate your own function tools"
+    "message": "Compose and generate functions to extend oo-cli"
   },
   "Theme.Navbar.product.cli.description": {
-    "message": "Install in Codex or Claude Code and use tools directly"
+    "message": "Install in many agents and use tools directly"
   },
   "Theme.Navbar.product.cloud.description": {
-    "message": "Run, subscribe, and manage tools in the cloud"
+    "message": "Run, manage, and automate tools in the cloud"
   },
   "Theme.Navbar.product.ai.description": {
     "message": "Use the official GUI agent for the same tools"

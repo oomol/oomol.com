@@ -92,7 +92,7 @@ export default function HomepageWhyOomol() {
               variant="outline"
               className={styles.secondaryAction}
             >
-              <Link to="/downloads#studio-downloads">{copy.secondaryCta}</Link>
+              <Link to="/downloads">{copy.secondaryCta}</Link>
             </Button>
           </div>
         </div>

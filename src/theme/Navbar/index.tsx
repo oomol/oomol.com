@@ -28,6 +28,11 @@ type ProductMenuEntry = {
   label: string;
 };
 
+const latinPhrasePattern =
+  /([A-Za-z0-9][A-Za-z0-9+./#_-]*(?:\s+[A-Za-z0-9][A-Za-z0-9+./#_-]*)*)/g;
+const latinPhraseSegmentPattern =
+  /^[A-Za-z0-9][A-Za-z0-9+./#_-]*(?:\s+[A-Za-z0-9][A-Za-z0-9+./#_-]*)*$/;
+
 function isProductEntryActive(pathname: string, locale: string, href: string) {
   return (
     pathname === href ||
@@ -53,6 +58,33 @@ function splitNavItemsByPosition(
   );
 
   return { leftItems, rightItems };
+}
+
+function renderProductDescription(description: string, locale: string) {
+  if (locale !== "zh-CN") {
+    return description;
+  }
+
+  const segments = description.split(latinPhrasePattern);
+
+  return segments.map((segment, index) => {
+    if (!segment) {
+      return null;
+    }
+
+    if (latinPhraseSegmentPattern.test(segment)) {
+      return (
+        <span
+          key={`latin-${index}-${segment}`}
+          className={styles.productMenuEntryInlineLatin}
+        >
+          {segment}
+        </span>
+      );
+    }
+
+    return <React.Fragment key={`text-${index}`}>{segment}</React.Fragment>;
+  });
 }
 
 const NavbarComponent: React.FC<NavbarProps> = memo(() => {
@@ -353,7 +385,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
                             {entry.label}
                           </span>
                           <span className={styles.productMenuEntryDescription}>
-                            {entry.description}
+                            {renderProductDescription(entry.description, locale)}
                           </span>
                         </span>
                       </Link>

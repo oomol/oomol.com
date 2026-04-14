@@ -224,6 +224,10 @@
   overflow: hidden;
 }
 
+.productMenuEntryInlineLatin {
+  white-space: nowrap;
+}
+
 @media screen and (max-width: 996px) {
   .productMenuPanel {
     width: min(24rem, calc(100vw - 2rem));

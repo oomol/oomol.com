@@ -3208,13 +3208,13 @@
     "message": "了解 Cloud"
   },
   "Theme.Navbar.product.studio.description": {
-    "message": "生成并验证你自己的函数工具"
+    "message": "用编排和函数生成扩展 oo-cli"
   },
   "Theme.Navbar.product.cli.description": {
-    "message": "装进 Codex 或 Claude Code，直接使用工具"
+    "message": "支持装进各种 Agent，直接调用工具"
   },
   "Theme.Navbar.product.cloud.description": {
-    "message": "在云端运行、订阅和管理工具"
+    "message": "在云端运行、管理和自动化工具"
   },
   "Theme.Navbar.product.ai.description": {
     "message": "用官方 GUI Agent 直接使用同一套工具"
