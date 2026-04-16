@@ -8,15 +8,15 @@ import React from "react";
 import Layout from "../../theme/Layout";
 
 const zhCopy = {
-  title: "oo-cli - 给 Agent 调用工具的默认入口",
+  title: "oo-cli - 为 Agent 提供更多工具",
   description:
-    "在 Codex、Claude Code 或任意终端里搜索、查看并运行现成工具。现成工具不够时，再进入 Studio 和 Cloud 继续扩展。",
+    "在一个 CLI 里搜索工具、查看输入、调用 connector、运行 cloud task、安装 skills，让 Agent 直接开始做事。",
 };
 
 const enCopy = {
-  title: "oo-cli - The default entry point for agents to use tools",
+  title: "oo-cli - More Tools for Agents",
   description:
-    "Search, inspect, and run ready-made tools in Codex, Claude Code, or any terminal. When existing tools stop short, continue in Studio and Cloud.",
+    "Search tools, inspect inputs, run connectors, launch cloud tasks, install skills, and let agents get to work from one CLI.",
 };
 
 export default function CliPage() {

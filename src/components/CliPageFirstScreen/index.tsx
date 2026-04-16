@@ -12,18 +12,25 @@ const CLI_DEMO_VIDEO_URL =
   "https://static.oomol.com/assets/homepage/oomol-oo-cli-en.webm";
 
 const zhCopy = {
-  slogan: `先在 oo-cli 里
-把任务跑起来`,
-  overview: `让 Codex、Claude Code 和本地终端先搜索、查看并调用现成工具。现成工具不够时，再自然进入 Studio 和 Cloud 继续扩展。`,
+  slogan: `为 Agent
+提供更多工具`,
+  overview: `Agent 会分析、会规划，但真正执行还得连上现有工具。oo-cli 把现实世界里的工具接到 Agent 手里，让它真正开始做事。`,
+  highlights: ["搜索工具", "调用连接器", "运行云任务", "安装技能"],
   primaryCta: "查看安装文档",
   secondaryCta: "查看 GitHub",
   playAriaLabel: "播放 CLI 演示视频",
 };
 
 const enCopy = {
-  slogan: `Start in oo-cli
-before you build anything else`,
-  overview: `Let Codex, Claude Code, and local terminal workflows search, inspect, and run ready-made tools first. When they stop short, continue naturally in Studio and Cloud.`,
+  slogan: `More Tools
+for Agents`,
+  overview: `Agents can analyze and plan, but execution still depends on real-world tools. oo-cli connects them to those tools so they can actually get work done.`,
+  highlights: [
+    "Search Tools",
+    "Run Connectors",
+    "Run Cloud Tasks",
+    "Install Skills",
+  ],
   primaryCta: "Open install guide",
   secondaryCta: "View GitHub",
   playAriaLabel: "Play CLI demo video",
@@ -62,6 +69,13 @@ export default function CliPageFirstScreen() {
         <div className={styles.titleGroup}>
           <h1 className={styles.slogan}>{copy.slogan}</h1>
           <p className={styles.overview}>{copy.overview}</p>
+          <div className={styles.highlights}>
+            {copy.highlights.map(item => (
+              <span key={item} className={styles.highlightPill}>
+                {item}
+              </span>
+            ))}
+          </div>
           <div className={styles.actions}>
             <Button asChild size="lg" className={styles.primaryCta}>
               <Link to="/docs/cloud-services/cli">{copy.primaryCta}</Link>
