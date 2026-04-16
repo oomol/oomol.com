@@ -3247,7 +3247,7 @@
     "message": "Run, manage, and automate tools in the cloud"
   },
   "Theme.Navbar.product.ai.description": {
-    "message": "OOMOL's native agent workspace with the same oo-cli capability layer built in"
+    "message": "Use oo-cli capabilities directly in the GUI"
   },
   "Theme.Navbar.product.label": {
     "message": "Product"
