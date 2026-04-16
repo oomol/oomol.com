@@ -21,6 +21,21 @@
   text-align: center;
 }
 
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.9rem;
+  padding: 0 0.8rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--oomol-primary) 14%, white);
+  background: color-mix(in srgb, var(--oomol-primary-bg) 46%, white 54%);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--oomol-primary-text);
+}
+
 .introTitle {
   margin: 0;
   max-width: 20ch;
@@ -625,6 +640,15 @@
 /* ── Dark mode ── */
 
 [data-theme="dark"] {
+  .eyebrow {
+    border-color: color-mix(in srgb, var(--oomol-primary) 20%, transparent);
+    background: color-mix(
+      in srgb,
+      var(--oomol-primary-bg) 30%,
+      var(--oomol-bg-container) 70%
+    );
+  }
+
   .sectionTint {
     background: linear-gradient(
       180deg,

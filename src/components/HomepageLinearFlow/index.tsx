@@ -18,11 +18,8 @@ const homepageMediaUrls = {
 } as const;
 
 type Copy = {
-  intro: {
-    title: string;
-    description: string;
-  };
   cli: {
+    eyebrow: string;
     title: string;
     description: string;
     media: { title: string; note: string };
@@ -30,6 +27,7 @@ type Copy = {
     github: string;
   };
   studio: {
+    eyebrow: string;
     title: string;
     description: string;
     media: { title: string; note: string };
@@ -37,6 +35,7 @@ type Copy = {
     secondary: string;
   };
   cloud: {
+    eyebrow: string;
     title: string;
     description: string;
     cards: Array<{ title: string; text: string }>;
@@ -104,26 +103,23 @@ function ImageCard({ title, note, src }: ImageCardProps) {
 }
 
 const zhCopy: Copy = {
-  intro: {
-    title: "先在 oo-cli 里用起来，不够时再自己做",
-    description:
-      "先用现成工具；不够时再用 Studio 扩展；需要持续运行时再交给 Cloud。",
-  },
   cli: {
-    title: "先装 oo-cli，让 Agent 直接调用应用和工具",
+    eyebrow: "03 / 给 Agent 使用",
+    title: "最后把工具交回 oo-cli，给 Agent 直接调用",
     description:
-      "在 Codex、OpenClaw、Claude Code 和终端里，先搜、先看、先跑，把使用路径先跑通。",
+      "当工具已经做好并交付出去后，Agent、Codex、OpenClaw 和 Claude Code 会继续沿同一条 oo-cli 路径来搜索、查看和调用。",
     media: {
-      title: "Agent 演示视频",
-      note: "展示在 Codex 中安装、搜索、查看并运行工具的过程。",
+      title: "oo-cli 调用演示",
+      note: "展示一个已交付工具在 Codex 中被搜索、查看和调用。",
     },
-    guide: "查看安装文档",
+    guide: "了解 oo-cli",
     github: "查看 GitHub",
   },
   studio: {
-    title: "现成工具不够，再用 OOMOL Studio 做你自己的",
+    eyebrow: "01 / 在 Studio 中构建",
+    title: "先在 OOMOL Studio 里生成、组合并验证",
     description:
-      "直接告诉 Agent 你要什么，再补代码、接依赖、改参数和做组合。Studio 让你更快把新工具做出来并在本地验证。",
+      "把需求交给 Agent 起步，然后继续补代码、接依赖、改参数和做编排。Studio 面向的是构建工具，而不是日常使用工具。",
     media: {
       title: "Studio 演示视频",
       note: "展示从描述需求、生成工具到本地验证跑通的过程。",
@@ -132,16 +128,17 @@ const zhCopy: Copy = {
     secondary: "了解 Studio",
   },
   cloud: {
-    title: "需要持续运行和交付时，再交给 Cloud",
+    eyebrow: "02 / 通过 Cloud 交付",
+    title: "验证完成后，再交给 Cloud 承接交付和运行",
     description:
-      "本地验证后，Cloud 承接运行、配置、Secrets 和使用关系，不用再围着同一份实现补一层交付系统。",
+      "Cloud 承接运行、配置、Secrets、权限和使用关系，让你不必围绕同一份实现再补一层后台。",
     cards: [
       {
-        title: "统一承接运行与交付",
+        title: "统一承接交付和托管运行",
         text: "当你把工具交付给自己、团队或客户时，继续沿用同一份实现和同一条路径。",
       },
       {
-        title: "把配置和使用关系放进同一个后台",
+        title: "把配置、权限和使用关系放进同一个后台",
         text: "Secrets、权限、版本、运行配置和使用数据集中管理，减少分散维护。",
       },
     ],
@@ -154,37 +151,32 @@ const zhCopy: Copy = {
     secondary: "打开 Cloud 控制台",
   },
   cta: {
-    title: "先用现成工具，需要时再做自己的",
+    title: "先用现成工具；需要时再走这条开发者路径",
     description:
-      "先用 oo-cli 跑通现成工具。需要自定义时，再用 Studio 和 Cloud 组合、扩展并交付自己的工具。",
+      "先用 oo-cli 跑通现成能力。需要自己生产、组合和交付工具时，再进入 Studio 和 Cloud。",
     primary: "先用 oo-cli",
     secondary: "了解 Studio",
   },
 };
 
 const enCopy: Copy = {
-  intro: {
-    title:
-      "Start in oo-cli. Build your own only when ready-made tools stop short",
-    description:
-      "Get one tool working first. When ready-made tools are not enough, build your own in Studio, then hand it to Cloud when it needs to keep running and be delivered.",
-  },
   cli: {
-    title: "Install oo-cli and let agents call apps and tools",
+    eyebrow: "03 / Use from oo-cli",
+    title: "Finally, hand the tool back to oo-cli for agents to use",
     description:
-      "In Codex, OpenClaw, Claude Code, and terminal workflows, start by searching, inspecting, and running published tools to get the usage path working.",
+      "Once the tool is built and delivered, Agents, Codex, OpenClaw, and Claude Code keep using the same oo-cli path to search, inspect, and call it.",
     media: {
-      title: "Agent demo video",
-      note: "Show installing, searching, inspecting, and running a tool in Codex.",
+      title: "oo-cli invocation demo",
+      note: "Show a delivered tool being searched, inspected, and called in Codex.",
     },
-    guide: "Open install guide",
+    guide: "Explore oo-cli",
     github: "View GitHub",
   },
   studio: {
-    title:
-      "When ready-made tools are not enough, build your own in OOMOL Studio",
+    eyebrow: "01 / Build in Studio",
+    title: "Start in OOMOL Studio to generate, compose, and validate",
     description:
-      "Tell the agent what you want, then keep editing code, dependencies, parameters, and compositions yourself. Studio does not replace engineering workflow; it helps you create new tools faster and validate them locally.",
+      "Use the agent to get started, then keep editing code, dependencies, parameters, and compositions yourself. Studio is for building tools, not for day-to-day tool usage.",
     media: {
       title: "Studio demo video",
       note: "Show the path from prompting to generating a tool and validating it locally.",
@@ -193,16 +185,17 @@ const enCopy: Copy = {
     secondary: "Explore Studio",
   },
   cloud: {
-    title: "When it needs to keep running and be delivered, Cloud takes over",
+    eyebrow: "02 / Deliver through Cloud",
+    title: "Once validation is done, hand delivery and runtime to Cloud",
     description:
-      "After local validation is done, Cloud handles runtime, configuration, secrets, and delivery relationships. You do not need to rebuild another delivery layer around the same implementation.",
+      "Cloud takes over runtime, configuration, secrets, access, and delivery relationships so you do not need to build another backend around the same implementation.",
     cards: [
       {
-        title: "Handle runtime and delivery in one path",
+        title: "Handle delivery and hosted runtime in one path",
         text: "Keep the same implementation as you deliver the tool to yourself, your team, or customers.",
       },
       {
-        title: "Keep configuration and usage relationships in one backend",
+        title: "Keep config, access, and usage relationships in one backend",
         text: "Manage secrets, access, releases, runtime settings, and usage data in one place.",
       },
     ],
@@ -218,11 +211,12 @@ const enCopy: Copy = {
     secondary: "Open Cloud Console",
   },
   cta: {
-    title: "Start with ready-made tools, build your own only when needed",
+    title:
+      "Start with ready-made tools, then take the developer path when needed",
     description:
-      "Use oo-cli to get ready-made tools working first. When you need custom ones, move into Studio and Cloud to compose, extend, and deliver your own tools.",
+      "Use oo-cli to get ready-made capabilities working first. When you need to produce, combine, and deliver your own tools, move into Studio and Cloud.",
     primary: "Start with oo-cli",
-    secondary: "Build your first tool",
+    secondary: "Explore Studio",
   },
 };
 
@@ -239,51 +233,11 @@ export default function HomepageLinearFlow() {
 
   return (
     <div className={styles.flow}>
-      <section className={styles.introSection}>
-        <div className={styles.introInner}>
-          <h2 className={styles.introTitle}>{copy.intro.title}</h2>
-          <p className={styles.introDescription}>{copy.intro.description}</p>
-        </div>
-      </section>
-
-      {/* ── Section: oo-cli ── */}
-      <section className={clsx(styles.section, styles.cliSection)}>
-        <div className={styles.container}>
-          <div className={styles.copyPanel}>
-            <h2 className={styles.sectionTitle}>{copy.cli.title}</h2>
-            <p className={styles.sectionDescription}>{copy.cli.description}</p>
-            <div className={styles.inlineActions}>
-              <Link
-                to="/docs/oo-cli"
-                className={styles.primaryLink}
-              >
-                {copy.cli.guide}
-              </Link>
-              <a
-                href="https://github.com/oomol-lab/oo-cli"
-                target="_blank"
-                rel="noreferrer"
-                className={styles.secondaryLink}
-              >
-                {copy.cli.github}
-              </a>
-            </div>
-          </div>
-
-          <div className={styles.mediaPanel}>
-            <VideoCard
-              title={copy.cli.media.title}
-              note={copy.cli.media.note}
-              src={homepageMediaUrls.cli}
-            />
-          </div>
-        </div>
-      </section>
-
       {/* ── Section: Studio ── */}
       <section className={clsx(styles.section, styles.sectionTint)}>
         <div className={styles.container}>
           <div className={styles.copyPanel}>
+            <span className={styles.eyebrow}>{copy.studio.eyebrow}</span>
             <h2 className={styles.sectionTitle}>{copy.studio.title}</h2>
             <p className={styles.sectionDescription}>
               {copy.studio.description}
@@ -312,6 +266,7 @@ export default function HomepageLinearFlow() {
       <section className={clsx(styles.section, styles.cloudSection)}>
         <div className={styles.container}>
           <div className={styles.copyPanel}>
+            <span className={styles.eyebrow}>{copy.cloud.eyebrow}</span>
             <h2 className={styles.sectionTitle}>{copy.cloud.title}</h2>
             <p className={styles.sectionDescription}>
               {copy.cloud.description}
@@ -344,6 +299,38 @@ export default function HomepageLinearFlow() {
               title={copy.cloud.media.title}
               note={copy.cloud.media.note}
               src={cloudConsoleImage}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section: oo-cli ── */}
+      <section className={clsx(styles.section, styles.cliSection)}>
+        <div className={styles.container}>
+          <div className={styles.copyPanel}>
+            <span className={styles.eyebrow}>{copy.cli.eyebrow}</span>
+            <h2 className={styles.sectionTitle}>{copy.cli.title}</h2>
+            <p className={styles.sectionDescription}>{copy.cli.description}</p>
+            <div className={styles.inlineActions}>
+              <Link to="/docs/oo-cli" className={styles.primaryLink}>
+                {copy.cli.guide}
+              </Link>
+              <a
+                href="https://github.com/oomol-lab/oo-cli"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.secondaryLink}
+              >
+                {copy.cli.github}
+              </a>
+            </div>
+          </div>
+
+          <div className={styles.mediaPanel}>
+            <VideoCard
+              title={copy.cli.media.title}
+              note={copy.cli.media.note}
+              src={homepageMediaUrls.cli}
             />
           </div>
         </div>

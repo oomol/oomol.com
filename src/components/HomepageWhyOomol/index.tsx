@@ -8,21 +8,21 @@ import { Button } from "@site/src/components/ui/button";
 import React from "react";
 
 const zhCopy = {
-  badge: "进阶扩展",
-  title: "现成场景不够，就进入 OOMOL Studio 继续扩展",
+  badge: "开发者入口",
+  title: "现成能力不够，就到 OOMOL Studio 做自己的工具",
   subtitle:
-    "当你需要重新组合已有连接、编排多步工作流，或者直接开发新的函数工具时，就把这条路径自然延伸到 OOMOL Studio。",
+    "你可以在 Studio 里重组现成能力、编排 workflow、补新的 function tool。做好之后，再继续走向交付。",
   primaryCta: "了解 OOMOL Studio",
   secondaryCta: "下载 OOMOL Studio",
   cards: [
     {
       icon: "i-lucide-blocks",
-      title: "重新组合现有连接",
-      text: "把 GitHub、Slack、Notion、Gmail 这些现成能力继续拼成你自己的执行链路。",
+      title: "把现成能力重组成你自己的工具",
+      text: "把 GitHub、Slack、Notion、Gmail 这些现成能力继续拼成你自己的执行链路，而不是停在单次调用。",
     },
     {
       icon: "i-lucide-waypoints",
-      title: "编排更复杂的工作流",
+      title: "把多步逻辑固定成 workflow",
       text: "把判断、分支、重试和多步协作整理成可重复运行的 workflow，而不是每次都临时拼接。",
     },
     {
@@ -31,29 +31,29 @@ const zhCopy = {
       text: "当现有封装不够用时，直接写新的 function tool，把你自己的 API、内部系统和逻辑接进来。",
     },
     {
-      icon: "i-lucide-terminal",
-      title: "把能力继续带回 oo-cli",
-      text: "新编排和新工具不是另起炉灶，而是继续扩展 CLI 给 Agent 调用的那条主路径。",
+      icon: "i-lucide-route",
+      title: "让新工具继续进入交付路径",
+      text: "Studio 不是终点。本地验证后，下一步就是交给 Cloud 和 oo-cli，继续给 Agent 使用。",
     },
   ],
 };
 
 const enCopy = {
-  badge: "Advanced extension",
-  title: "When ready-made scenarios are not enough, continue in OOMOL Studio",
+  badge: "Developer entry",
+  title: "When ready-made capabilities stop short, build your own in OOMOL Studio",
   subtitle:
-    "When you need to recombine existing connections, orchestrate multi-step workflows, or build brand-new function tools, extend the same path in OOMOL Studio.",
+    "In Studio, you can recombine ready-made capabilities, orchestrate workflows, and add new function tools. Once the tool is ready, it continues into delivery.",
   primaryCta: "Explore OOMOL Studio",
   secondaryCta: "Download OOMOL Studio",
   cards: [
     {
       icon: "i-lucide-blocks",
-      title: "Recombine built-in connections",
-      text: "Take GitHub, Slack, Notion, Gmail, and other ready-made capabilities and rearrange them into your own execution chain.",
+      title: "Turn ready-made capabilities into your own tool",
+      text: "Take GitHub, Slack, Notion, Gmail, and other built-in capabilities and reorganize them into your own execution chain instead of stopping at one-off use.",
     },
     {
       icon: "i-lucide-waypoints",
-      title: "Orchestrate more complex workflows",
+      title: "Turn multi-step logic into a workflow",
       text: "Turn branching, retries, coordination, and multi-step logic into repeatable workflows instead of rebuilding them ad hoc.",
     },
     {
@@ -62,9 +62,9 @@ const enCopy = {
       text: "When existing wrappers stop short, write new function tools and bring in your own APIs, internal systems, and business logic.",
     },
     {
-      icon: "i-lucide-terminal",
-      title: "Bring those capabilities back into oo-cli",
-      text: "New workflows and tools do not become a parallel product. They extend the same CLI path your agents already use.",
+      icon: "i-lucide-route",
+      title: "Move the new tool into the delivery path",
+      text: "Studio is not the endpoint. Once local validation is done, the next step is Cloud and oo-cli so agents can keep using the same path.",
     },
   ],
 };

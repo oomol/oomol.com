@@ -30,7 +30,7 @@
     "message": "OOMOL - 一个让 AI Agent 调用现成工具的 CLI 入口"
   },
   "HOME.page.description": {
-    "message": "让 Codex、OpenClaw、Claude Code 等 Agent 直接调用现成工具、API 和内部能力；现成工具不够时，再用 OOMOL Studio 继续组合和扩展。"
+    "message": "先让 Codex、OpenClaw、Claude Code 等 Agent 直接调用现成工具、API 和内部能力把工作跑起来；当你开始自己生产、组合和交付工具时，再进入 OOMOL Studio 和 Cloud。"
   },
   "HOME.FirstScreen.slogan": {
     "message": "先用起来，再按需连接"
@@ -48,7 +48,7 @@
     "message": "连接账号和应用，处理授权、调用和执行；需要自定义时，再到 Studio 里做你自己的工具。"
   },
   "HOME.FirstScreen.heroLead": {
-    "message": "连接账号和应用，处理授权、调用和执行；需要自定义时，再到 Studio 里做你自己的工具。"
+    "message": "先让 Agent 调用现成工具、API 和内部能力把工作跑起来；当现成能力不够、你要开始自己做工具时，再进入 Studio 和 Cloud。"
   },
   "HOME.FirstScreen.heroAdvantage": {
     "message": "先用 CLI 调起来，"
@@ -948,10 +948,10 @@
     "message": "OOMOL Studio"
   },
   "HOME.Downloads.studioSection.title": {
-    "message": "下载 OOMOL Studio"
+    "message": "如果你要自己做工具，就下载 OOMOL Studio"
   },
   "HOME.Downloads.studioSection.subtitle": {
-    "message": "当现成工具不够时，用 Studio 在本地生成、扩展并验证自己的工具，然后再继续进入 Cloud。"
+    "message": "当现成工具不够时，用 Studio 在本地生成、组合、修改并验证自己的工具。准备好之后，再继续交给 Cloud 承接交付和运行。"
   },
   "HOME.Downloads.Stable.title": {
     "message": "稳定版"
@@ -990,10 +990,10 @@
     "message": "Agent"
   },
   "HOME.Downloads.cli.info.title": {
-    "message": "先安装 oo-cli"
+    "message": "如果你要在终端和 Agent 中使用，就从 oo-cli 开始"
   },
   "HOME.Downloads.cli.info.description": {
-    "message": "让 Agent 先连接 SaaS 和已发布工具。你可以自己在终端安装，也可以直接把下面的提示词发给 Agent，让它替你完成安装和检查。"
+    "message": "如果你想在 Codex、Claude Code 或本地终端里直接搜索、调用和运行工具，就从 oo-cli 开始。你可以自己安装，也可以把下面的提示词发给 Agent，让它替你完成安装和检查。"
   },
   "HOME.Downloads.cli.title.line1": {
     "message": "让 Agent 连接 SaaS 工具"
@@ -1044,7 +1044,7 @@
     "message": "安装简单，扩展也简单"
   },
   "HOME.Downloads.cta.description": {
-    "message": "先用 oo-cli 跑通现成工具；需要自定义时，再回到上方下载 OOMOL Studio。"
+    "message": "如果你只是想使用工具，就从 oo-cli 或 OOMOL AI 开始；如果你要自己做工具，再下载 OOMOL Studio。"
   },
   "HOME.Downloads.cta.primary": {
     "message": "打开 oo-cli 指南"
@@ -1134,10 +1134,10 @@
     "message": "简单、透明的定价"
   },
   "PRICING.subtitle": {
-    "message": "本地开发永久免费。只有当你需要 OOMOL 承接线上交付和托管用量时才开始付费。"
+    "message": "在本地做和验证工具一直免费。只有当你要把工具交给 OOMOL 在线运行，或直接使用 OOMOL 提供的模型与服务时，才会付费。"
   },
   "PRICING.model.summary": {
-    "message": "OOMOL Studio 的本地开发是免费的。只有当你要发布到线上、运行托管任务或使用托管 AI 服务时，才进入付费。"
+    "message": "先在 Studio 本地做和验证；需要在线运行，或直接使用 OOMOL 提供的模型与服务时，再开始付费。"
   },
   "PRICING.model.local.label": {
     "message": "本地"
@@ -1146,22 +1146,22 @@
     "message": "在 Studio 里免费构建和验证"
   },
   "PRICING.model.local.text": {
-    "message": "完整使用本地开发环境，按自己的依赖和工具链去验证结果；如果不想使用托管 AI，也可以直接接入你自己的模型服务。"
+    "message": "完整使用本地环境，按自己的依赖和工作方式验证结果；如果你已经有模型，也可以直接接入。"
   },
   "PRICING.model.online.label": {
     "message": "线上"
   },
   "PRICING.model.online.title": {
-    "message": "需要上线交付时再订阅"
+    "message": "需要在线运行时再付费"
   },
   "PRICING.model.online.text": {
-    "message": "当你希望把已经验证过的函数继续发布成 API、MCP 工具或自动化任务，并由 OOMOL 承接线上运行层时，再使用 Pro 或 Max。"
+    "message": "当你要把工具放到线上，让别人稳定使用，并由 OOMOL 负责运行和管理时，再选择付费计划。"
   },
   "PRICING.subscription.title": {
     "message": "选择你使用 OOMOL 的方式"
   },
   "PRICING.subscription.subtitle": {
-    "message": "Free 用于本地开发和托管能力试用。Pro 与 Max 面向线上发布、托管运行，以及更可预期的 Cloud Task 成本。"
+    "message": "Free 适合本地使用和少量试用。Pro 与 Max 适合把工具放到线上，并包含更多每月使用额度。"
   },
   "PRICING.subscription.recommended": {
     "message": "推荐"
@@ -1410,10 +1410,10 @@
     "message": "按量计费价格"
   },
   "PRICING.tables.subtitle": {
-    "message": "当你使用托管 AI、Cloud Task 或其他托管服务调用时，会按照 Credits 计费。下面的价格与 OOMOL Console 保持一致。"
+    "message": "可以把价格理解成两层：上面是每月套餐，下面是超出套餐后的按量价格。"
   },
   "PRICING.tables.syncNote": {
-    "message": "LLM 价格实时读取 Console；Cloud Task 和 Fusion API 按当前价格表展示。Pro 的角色是提供包含额度，并让你在持续增长时拿到更好的单位成本。"
+    "message": "模型调用、在线运行和其他服务都会按点数结算；付费套餐的作用，是先包含一部分每月额度。"
   },
   "PRICING.tables.tab.llm": {
     "message": "大模型价格"
@@ -1422,7 +1422,7 @@
     "message": "Cloud Task 价格"
   },
   "PRICING.tables.tab.fusionApi": {
-    "message": "Fusion API 价格"
+    "message": "图像与其他服务"
   },
   "PRICING.tables.llm.note": {
     "message": "大模型价格会随 Console 中的模型配置变化而更新，单位为点数 / M Token。"
@@ -1479,7 +1479,7 @@
     "message": "说明"
   },
   "PRICING.tables.fusionApi.alert": {
-    "message": "OOMOL 提供的部分官方工具会使用这些服务，用户也可以自行调用这些服务的 API。调用后会扣除相应点数。"
+    "message": "有些 OOMOL 官方工具会直接用到这些服务。你也可以自己调用它们，费用会从点数里扣除。"
   },
   "PRICING.tables.fusionApi.unit.image": {
     "message": "张图片"
@@ -2917,10 +2917,10 @@
     "message": "把长文档翻译成可继续阅读的双语 EPUB 或 Markdown 输出，而不是只拿回一段文本结果。"
   },
   "CLOUD.hero.title": {
-    "message": "把自己的工具带进 oo-cli"
+    "message": "OOMOL Cloud - 工具的交付与托管层"
   },
   "CLOUD.hero.description": {
-    "message": "把 Studio 里的自定义工具交付到 oo-cli，让 Agent、Codex 和 OpenClaw 直接调用。"
+    "message": "把 Studio 里已经验证好的工具交给 Cloud，统一承接交付、托管运行、配置、Secrets 和访问控制，再继续交给 oo-cli 使用。"
   },
   "CLOUD.hero.kicker": {
     "message": "Cloud Runtime"
@@ -2938,10 +2938,10 @@
     "message": "少管运维"
   },
   "CLOUD.hero.cta.start": {
-    "message": "开始构建工具"
+    "message": "查看 Cloud 文档"
   },
   "CLOUD.hero.cta.docs": {
-    "message": "了解更多"
+    "message": "打开 Cloud 控制台"
   },
   "CLOUD.hero.cta.console": {
     "message": "打开 Cloud 控制台"
@@ -2995,7 +2995,7 @@
     "message": "查看详细价格"
   },
   "CLOUD.cta.primary": {
-    "message": "在 Studio 中开始"
+    "message": "查看 Cloud 文档"
   },
   "CLOUD.cta.secondary": {
     "message": "打开 Cloud 控制台"
@@ -3118,16 +3118,16 @@
     "message": "查看文档"
   },
   "STUDIO.page.title": {
-    "message": "OOMOL Studio - 让 AI Agent 全自动搭建工具"
+    "message": "OOMOL Studio - 在真实工程环境里构建和验证工具"
   },
   "STUDIO.page.description": {
-    "message": "先让 AI Agent 全自动搭建工具，再在真实 coding 环境里验证、修改并发布同一份代码。"
+    "message": "用 AI 帮你起步，在真实工程环境里生成、组合、调试和验证工具；准备交付时，再把同一份实现交给 Cloud。"
   },
   "STUDIO.manifesto.title": {
-    "message": "OOMOL Studio 给 Agent\n制造工具的平台"
+    "message": "OOMOL Studio 是\n给开发者构建工具的环境"
   },
   "STUDIO.manifesto.subtitle": {
-    "message": "先让 AI Agent 全自动搭建工具，再在真实工程环境里验证、修改，并通过 oo-cli 直接调用。"
+    "message": "让 AI 先帮你起步，然后继续写代码、接依赖、编排流程、验证结果；准备交付时，再把同一份实现交给 Cloud。"
   },
   "STUDIO.manifesto.cta.download": {
     "message": "下载 OOMOL Studio"
@@ -3139,28 +3139,28 @@
     "message": "查看下载"
   },
   "STUDIO.product.story.kicker": {
-    "message": "真实开发环境"
+    "message": "开发者问题"
   },
   "STUDIO.product.story.title": {
-    "message": "给 Agent 扩展工具\n真正难的是三件事"
+    "message": "给 Agent 做工具\n真正卡住的是三件事"
   },
   "STUDIO.product.story.description": {
-    "message": "不管你走工作流编排还是函数服务，最后都会卡在：\n还没法用 AI Agent 全自动搭建、DSL 学习成本，以及扩展成本。"
+    "message": "问题不只是能不能编排，而是起步速度、工程可扩展性，以及能不能沿同一份实现继续交付。"
   },
   "STUDIO.product.principles.kicker": {
-    "message": "核心原则"
+    "message": "构建原则"
   },
   "STUDIO.product.principles.title": {
-    "message": "OOMOL Studio，把这\n三件事一次做对"
+    "message": "OOMOL Studio，把这\n三件事接成一条路"
   },
   "STUDIO.product.principles.description": {
-    "message": "有需求就直接让 AI 做；需要手动调整或深度调优时，不用学 DSL，也能直接用熟悉的 coding 知识接手优化。"
+    "message": "让 AI 负责起步，让工程环境负责扩展，让同一份实现继续走向交付。需要手动调整时，也不用先学 DSL。"
   },
   "STUDIO.product.cta.title": {
-    "message": "从下一个函数工具开始"
+    "message": "把下一个工具先在 Studio 里跑出来"
   },
   "STUDIO.product.cta.description": {
-    "message": "在真实 coding 环境里让 AI Agent 生成、调试和验证函数工具。需要交付时，再继续通过 Cloud 部署出去。"
+    "message": "先在真实 coding 环境里生成、调试和验证工具；准备交付时，再继续通过 Cloud 承接运行和发布。"
   },
   "STUDIO.story.paragraph1": {
     "message": "我们想要的，不是另一个要求开发者迁就平台的工具，而是一个能先让 AI Agent 全自动搭建、再继续写函数、编排节点、调试依赖和验证结果的工作环境。"
@@ -3199,13 +3199,13 @@
     "message": "节点能连起来，不代表系统真可扩。引库、改逻辑时，还是常被平台约束卡住。"
   },
   "STUDIO.story.point3.label": {
-    "message": "全自动搭建"
+    "message": "起步速度"
   },
   "STUDIO.story.point3.title": {
-    "message": "还没法用 AI Agent 全自动搭建"
+    "message": "从需求到第一版工具，起步还是太慢"
   },
   "STUDIO.story.point3.description": {
-    "message": "要让 AI Agent 自己找包、找节点、连起来，不够时再生成节点。"
+    "message": "你希望 AI 先帮你找包、搭骨架、补节点，但最后仍能回到真实工程环境继续接手。"
   },
   "HOME.StudioChain.title": {
     "message": "从想法，到可交付的工具"
@@ -3253,16 +3253,16 @@
     "message": "产品"
   },
   "STUDIO.principle1.title": {
-    "message": "1. 先让 AI Agent 全自动搭建"
+    "message": "1. 先让 AI 帮你起步"
   },
   "STUDIO.principle1.paragraph1": {
-    "message": "把你要的工具描述清楚，AI Agent 会先去找合适的包和节点，把工具全自动搭出来。"
+    "message": "把你要的工具描述清楚，AI Agent 会先去找合适的包和节点，帮你把第一版搭出来。"
   },
   "STUDIO.principle1.paragraph2": {
     "message": "现成节点不够时，它还可以继续生成新的函数节点，而不是只补全几行代码。"
   },
   "STUDIO.principle1.paragraph3": {
-    "message": "从需求到可用工具，第一步就是先让 AI Agent 全自动搭建。"
+    "message": "重点不是停在自动搭建，而是让你从第一版开始就在真实工程环境里继续接手。"
   },
   "STUDIO.principle1.codeComment1": {
     "message": "# Perform addition of x and y"

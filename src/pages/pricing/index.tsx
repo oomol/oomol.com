@@ -214,12 +214,12 @@ export default function Index() {
     ? {
         title: "价格 - OOMOL",
         description:
-          "本地开发永久免费。只有当你需要 OOMOL 承接线上交付、托管运行或托管 AI 用量时才进入付费。",
+          "在本地做和验证工具一直免费。只有当你要把工具交给 OOMOL 在线运行，或直接使用 OOMOL 提供的模型与服务时，才会付费。",
       }
     : {
         title: "Pricing - OOMOL",
         description:
-          "Build locally for free. Pay only when you want OOMOL to handle hosted delivery, managed runs, or hosted AI usage.",
+          "Building and validating tools locally stays free. You only pay when you want OOMOL to run them online or when you use OOMOL-provided models and services.",
       };
 
   useEffect(() => {
@@ -627,7 +627,7 @@ export default function Index() {
             className={styles.pricingModelAlert}
             content={tPricing(
               "PRICING.model.summary",
-              "Studio is free for local development. You only pay when OOMOL hosts the online delivery layer or managed AI usage."
+              "Studio stays free for local work. You start paying only when you want OOMOL to run the tool online or when you use OOMOL-provided models and services."
             )}
           />
           <div className={styles.pricingModelGrid}>
@@ -644,7 +644,7 @@ export default function Index() {
               <p className={styles.pricingModelText}>
                 {tPricing(
                   "PRICING.model.local.text",
-                  "Use the full local authoring experience, bring your own model if needed, and only move to paid plans when you want OOMOL to take on online delivery."
+                  "Use the full local environment, verify results with your own dependencies and workflow, and connect your own model if you already have one."
                 )}
               </p>
             </div>
@@ -655,13 +655,13 @@ export default function Index() {
               <div className={styles.pricingModelTitle}>
                 {tPricing(
                   "PRICING.model.online.title",
-                  "Subscribe when you want to ship and host"
+                  "Pay when you want to put the tool online"
                 )}
               </div>
               <p className={styles.pricingModelText}>
                 {tPricing(
                   "PRICING.model.online.text",
-                  "Use Pro when you publish the same validated function as an API, MCP tool, or automation task, then pay usage by credits as your traffic grows."
+                  "Choose a paid plan when you want other people or systems to use the tool online and you want OOMOL to handle runtime and management."
                 )}
               </p>
             </div>
@@ -931,13 +931,13 @@ export default function Index() {
               <div className={styles.tableSectionSubtitle}>
                 {tPricing(
                   "PRICING.tables.subtitle",
-                  "These tables mirror the pricing structure shown in OOMOL Console so you can verify pay-as-you-go charges directly from the website."
+                  "Think of pricing in two layers: the plans above include monthly usage, and the tables below show what happens after that included usage is used up."
                 )}
               </div>
               <div className={styles.tableSyncNote}>
                 {tPricing(
                   "PRICING.tables.syncNote",
-                  "LLM pricing is fetched live from console; Cloud Task and Fusion API rows reflect the current console table"
+                  "Model calls, online runs, and other services all deduct credits. Paid plans include part of that monthly usage up front."
                 )}
               </div>
             </div>

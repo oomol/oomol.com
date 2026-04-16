@@ -89,14 +89,14 @@ export default function Downloads() {
     ? {
         pageTitle: "获取与安装 OOMOL",
         pageDescription:
-          "先安装 oo-cli；需要生产、组合或编排新工具时再下载 OOMOL Studio；如果你更想通过图形界面使用同一套能力，就打开 OOMOL AI。",
-        heroTitle: "获取与安装 OOMOL",
+          "选择最适合你的 OOMOL 入口：oo-cli 适合在终端和 Agent 中使用，OOMOL AI 适合图形界面，OOMOL Studio 适合自己做工具。",
+        heroTitle: "选择最适合你的 OOMOL 入口",
         heroSubtitle:
-          "先安装 oo-cli；需要生产、组合或编排新工具时再下载 OOMOL Studio；如果你更想通过图形界面使用同一套能力，也可以在下方直接打开 OOMOL AI。",
+          "如果你想在终端里让 Agent 直接使用工具，就从 oo-cli 开始；如果你更喜欢图形界面，就用 OOMOL AI；如果你要自己做工具，再下载 OOMOL Studio。",
         ai: {
-          title: "如果你更想用图形界面，就用 OOMOL AI",
+          title: "如果你更喜欢图形界面，就用 OOMOL AI",
           subtitle:
-            "OOMOL AI 是使用 oo-cli 能力的对话式图形入口，适合在 Web、桌面和 iOS 中更自然地连续完成任务；如果你要生产或编排新工具，请进入 OOMOL Studio。",
+            "OOMOL AI 适合在 Web、桌面和 iOS 中直接对话、查看结果并继续处理任务。如果你只是想更轻松地使用工具，从这里开始就够了。",
           actions: {
             openWeb: "打开网页版",
             desktopMac: "下载 Mac 版",
@@ -108,14 +108,14 @@ export default function Downloads() {
     : {
         pageTitle: "Get and Install OOMOL",
         pageDescription:
-          "Install oo-cli first, move into OOMOL Studio when you need to produce or orchestrate new tools, and open OOMOL AI when you want a GUI entry point for the same capabilities.",
-        heroTitle: "Get and Install OOMOL",
+          "Choose the OOMOL entry point that fits you best: oo-cli for terminal and agent use, OOMOL AI for a GUI, and OOMOL Studio for building your own tools.",
+        heroTitle: "Choose the OOMOL entry point that fits you best",
         heroSubtitle:
-          "Install oo-cli first, move into OOMOL Studio when you need to produce or orchestrate new tools, and open OOMOL AI below when you want a GUI entry point for the same capabilities.",
+          "Start with oo-cli if you want agents to use tools in the terminal. Use OOMOL AI if you prefer a GUI. Download OOMOL Studio when you want to build your own tools.",
         ai: {
           title: "If you prefer a GUI, use OOMOL AI",
           subtitle:
-            "OOMOL AI is the chat-based GUI entry point for using oo-cli capabilities across web, desktop, and iOS. If you want to build, combine, or orchestrate new tools, move into OOMOL Studio.",
+            "OOMOL AI gives you a simpler way to chat, review results, and keep working across web, desktop, and iOS. If you only want an easier way to use tools, start here.",
           actions: {
             openWeb: "Open Web App",
             desktopMac: "Download for macOS",
@@ -134,179 +134,198 @@ export default function Downloads() {
         <title>{copy.pageTitle}</title>
         <meta name="description" content={copy.pageDescription} />
       </Head>
-      <div className={styles.container}>
-        <img className={styles.image} src={logoUrl} />
-        <div className={styles.titleBox}>
-          <h1 className={styles.title}>{copy.heroTitle}</h1>
-          <p className={styles["sub-title"]}>{copy.heroSubtitle}</p>
-        </div>
-
-        <div className={styles.sectionHeading}>
-          <h2 className={styles.sectionTitle}>
-            {translate({ message: "HOME.Downloads.cli.info.title" })}
-          </h2>
-          <p className={styles.sectionSubtitle}>
-            {translate({ message: "HOME.Downloads.cli.info.description" })}
-          </p>
-          <div className={styles.sectionActions}>
-            <a className={styles.sectionAction} href={cliGuideUrl}>
-              {translate({ message: "HOME.Downloads.cli.action.guide" })}
-            </a>
-            <a
-              className={styles.sectionAction}
-              href="https://github.com/oomol-lab/oo-cli"
-              rel="noreferrer"
-              target="_blank"
-            >
-              {translate({ message: "HOME.Downloads.cli.action.github" })}
-            </a>
-          </div>
-        </div>
-        <DownloadsCliPanel />
-        <div id="studio-downloads" className={styles.sectionHeading}>
-          <h2 className={styles.sectionTitle}>
-            {translate({ message: "HOME.Downloads.studioSection.title" })}
-          </h2>
-          <p className={styles.sectionSubtitle}>
-            {translate({ message: "HOME.Downloads.studioSection.subtitle" })}
-          </p>
-        </div>
-        <div className={styles.cards}>
-          {downloadData.map((item, index) => {
-            return (
-              <div
-                className={`${styles.card} ${item.className}`}
-                key={`download-${index}`}
-              >
-                <div className={styles.content}>
-                  <div className={styles.type}>{item.type}</div>
-                  <span className={styles.description}>{item.subTitle}</span>
-                </div>
-                <div className={styles.downloads}>
-                  {item.downloads.map((download, i) => {
-                    return (
-                      <a
-                        key={`download-${index}-${i}`}
-                        href={download.url}
-                        onClick={
-                          item.mostRecommended
-                            ? event => downloadStable(event, download.url)
-                            : undefined
-                        }
-                      >
-                        <i
-                          className={`${styles["download-icon"]} i-codicon-desktop-download`}
-                        />
-                        {download.text}
-                      </a>
-                    );
-                  })}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-        <div className={styles.sectionHeading}>
-          <h2 className={styles.sectionTitle}>{copy.ai.title}</h2>
-          <p className={styles.sectionSubtitle}>{copy.ai.subtitle}</p>
-          <div className={styles.cards}>
-            <div className={styles.card}>
-              <div className={styles.content}>
-                <div className={styles.type}>Web</div>
-                <span className={styles.description}>
-                  {isZh ? "对话式图形入口" : "Chat GUI"}
-                </span>
-              </div>
-              <div className={styles.downloads}>
-                <a
-                  href={OOMOL_AI_DOWNLOAD_URLS.web}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i
-                    className={`${styles["download-icon"]} i-codicon-link-external`}
-                  />
-                  {copy.ai.actions.openWeb}
-                </a>
-              </div>
-            </div>
-            <div className={`${styles.card} ${styles.stable}`}>
-              <div className={styles.content}>
-                <div className={styles.type}>Desktop</div>
-                <span className={styles.description}>
-                  {isZh ? "桌面应用" : "Desktop app"}
-                </span>
-              </div>
-              <div className={styles.downloads}>
-                <a
-                  href={OOMOL_AI_DOWNLOAD_URLS.macos}
-                  onClick={event =>
-                    downloadStable(event, OOMOL_AI_DOWNLOAD_URLS.macos)
-                  }
-                >
-                  <i
-                    className={`${styles["download-icon"]} i-codicon-desktop-download`}
-                  />
-                  {copy.ai.actions.desktopMac}
-                </a>
-                <a
-                  href={OOMOL_AI_DOWNLOAD_URLS.windows}
-                  onClick={event =>
-                    downloadStable(event, OOMOL_AI_DOWNLOAD_URLS.windows)
-                  }
-                >
-                  <i
-                    className={`${styles["download-icon"]} i-codicon-desktop-download`}
-                  />
-                  {copy.ai.actions.desktopWindows}
-                </a>
-              </div>
-            </div>
-            <div className={styles.card}>
-              <div className={styles.content}>
-                <div className={styles.type}>iOS</div>
-                <span className={styles.description}>
-                  {isZh ? "移动应用" : "Mobile app"}
-                </span>
-              </div>
-              <div className={styles.downloads}>
-                <a
-                  href={OOMOL_AI_DOWNLOAD_URLS.ios}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i
-                    className={`${styles["download-icon"]} i-codicon-link-external`}
-                  />
-                  {copy.ai.actions.openStore}
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <section className={styles.pageCtaSection}>
-          <div className={styles.pageCtaPanel}>
-            <div className={styles.pageCtaContent}>
-              <h2 className={styles.pageCtaTitle}>
-                {translate({ message: "HOME.Downloads.cta.title" })}
-              </h2>
-              <p className={styles.pageCtaDescription}>
-                {translate({ message: "HOME.Downloads.cta.description" })}
-              </p>
-            </div>
-            <div className={styles.pageCtaActions}>
-              <a className={styles.pageCtaPrimaryAction} href={cliGuideUrl}>
-                {translate({ message: "HOME.Downloads.cta.primary" })}
-              </a>
-              <a
-                className={styles.pageCtaSecondaryAction}
-                href={studioDownloadsUrl}
-              >
-                {translate({ message: "HOME.Downloads.cta.secondary" })}
-              </a>
+      <div className={styles.page}>
+        <section className={styles.hero}>
+          <div className={styles.heroInner}>
+            <img className={styles.image} src={logoUrl} />
+            <div className={styles.titleBox}>
+              <h1 className={styles.title}>{copy.heroTitle}</h1>
+              <p className={styles["sub-title"]}>{copy.heroSubtitle}</p>
             </div>
           </div>
         </section>
+
+        <div className={styles.container}>
+          <section className={styles.pageSection}>
+            <div className={styles.sectionHeading}>
+              <h2 className={styles.sectionTitle}>
+                {translate({ message: "HOME.Downloads.cli.info.title" })}
+              </h2>
+              <p className={styles.sectionSubtitle}>
+                {translate({ message: "HOME.Downloads.cli.info.description" })}
+              </p>
+              <div className={styles.sectionActions}>
+                <a className={styles.sectionAction} href={cliGuideUrl}>
+                  {translate({ message: "HOME.Downloads.cli.action.guide" })}
+                </a>
+                <a
+                  className={styles.sectionAction}
+                  href="https://github.com/oomol-lab/oo-cli"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  {translate({ message: "HOME.Downloads.cli.action.github" })}
+                </a>
+              </div>
+            </div>
+            <DownloadsCliPanel />
+          </section>
+
+          <section className={styles.pageSection}>
+            <div className={styles.sectionHeading}>
+              <h2 className={styles.sectionTitle}>{copy.ai.title}</h2>
+              <p className={styles.sectionSubtitle}>{copy.ai.subtitle}</p>
+            </div>
+            <div className={styles.cards}>
+              <div className={styles.card}>
+                <div className={styles.content}>
+                  <div className={styles.type}>Web</div>
+                  <span className={styles.description}>
+                    {isZh ? "对话式图形入口" : "Chat GUI"}
+                  </span>
+                </div>
+                <div className={styles.downloads}>
+                  <a
+                    href={OOMOL_AI_DOWNLOAD_URLS.web}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i
+                      className={`${styles["download-icon"]} i-codicon-link-external`}
+                    />
+                    {copy.ai.actions.openWeb}
+                  </a>
+                </div>
+              </div>
+              <div className={`${styles.card} ${styles.stable}`}>
+                <div className={styles.content}>
+                  <div className={styles.type}>Desktop</div>
+                  <span className={styles.description}>
+                    {isZh ? "桌面应用" : "Desktop app"}
+                  </span>
+                </div>
+                <div className={styles.downloads}>
+                  <a
+                    href={OOMOL_AI_DOWNLOAD_URLS.macos}
+                    onClick={event =>
+                      downloadStable(event, OOMOL_AI_DOWNLOAD_URLS.macos)
+                    }
+                  >
+                    <i
+                      className={`${styles["download-icon"]} i-codicon-desktop-download`}
+                    />
+                    {copy.ai.actions.desktopMac}
+                  </a>
+                  <a
+                    href={OOMOL_AI_DOWNLOAD_URLS.windows}
+                    onClick={event =>
+                      downloadStable(event, OOMOL_AI_DOWNLOAD_URLS.windows)
+                    }
+                  >
+                    <i
+                      className={`${styles["download-icon"]} i-codicon-desktop-download`}
+                    />
+                    {copy.ai.actions.desktopWindows}
+                  </a>
+                </div>
+              </div>
+              <div className={styles.card}>
+                <div className={styles.content}>
+                  <div className={styles.type}>iOS</div>
+                  <span className={styles.description}>
+                    {isZh ? "移动应用" : "Mobile app"}
+                  </span>
+                </div>
+                <div className={styles.downloads}>
+                  <a
+                    href={OOMOL_AI_DOWNLOAD_URLS.ios}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i
+                      className={`${styles["download-icon"]} i-codicon-link-external`}
+                    />
+                    {copy.ai.actions.openStore}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="studio-downloads" className={styles.pageSection}>
+            <div className={styles.sectionHeading}>
+              <h2 className={styles.sectionTitle}>
+                {translate({ message: "HOME.Downloads.studioSection.title" })}
+              </h2>
+              <p className={styles.sectionSubtitle}>
+                {translate({
+                  message: "HOME.Downloads.studioSection.subtitle",
+                })}
+              </p>
+            </div>
+            <div className={styles.cards}>
+              {downloadData.map((item, index) => {
+                return (
+                  <div
+                    className={`${styles.card} ${item.className}`}
+                    key={`download-${index}`}
+                  >
+                    <div className={styles.content}>
+                      <div className={styles.type}>{item.type}</div>
+                      <span className={styles.description}>
+                        {item.subTitle}
+                      </span>
+                    </div>
+                    <div className={styles.downloads}>
+                      {item.downloads.map((download, i) => {
+                        return (
+                          <a
+                            key={`download-${index}-${i}`}
+                            href={download.url}
+                            onClick={
+                              item.mostRecommended
+                                ? event => downloadStable(event, download.url)
+                                : undefined
+                            }
+                          >
+                            <i
+                              className={`${styles["download-icon"]} i-codicon-desktop-download`}
+                            />
+                            {download.text}
+                          </a>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+
+          <section className={styles.pageCtaSection}>
+            <div className={styles.pageCtaPanel}>
+              <div className={styles.pageCtaContent}>
+                <h2 className={styles.pageCtaTitle}>
+                  {translate({ message: "HOME.Downloads.cta.title" })}
+                </h2>
+                <p className={styles.pageCtaDescription}>
+                  {translate({ message: "HOME.Downloads.cta.description" })}
+                </p>
+              </div>
+              <div className={styles.pageCtaActions}>
+                <a className={styles.pageCtaPrimaryAction} href={cliGuideUrl}>
+                  {translate({ message: "HOME.Downloads.cta.primary" })}
+                </a>
+                <a
+                  className={styles.pageCtaSecondaryAction}
+                  href={studioDownloadsUrl}
+                >
+                  {translate({ message: "HOME.Downloads.cta.secondary" })}
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
     </Layout>
   );
