@@ -14,9 +14,9 @@ export default function HomepagePainPoints() {
   const copy = isZh
     ? {
         badge: "第一步：先用现成能力",
-        title: "先让 Agent 把现成工作跑起来",
+        title: "先让 Agent 直接把现成工作跑起来",
         subtitle:
-          "如果现成工具已经够用，OOMOL 的第一层价值就在这里：先连接、先执行，不必一上来就自己做工具。",
+          "如果现成工具已经够用，OOMOL 的第一层价值就很简单：先接上、先执行，不必一上来就自己做工具。",
         promptLabel: "直接这样说",
         resultLabel: "Agent 会自动执行",
         cards: [
@@ -56,7 +56,7 @@ export default function HomepagePainPoints() {
         badge: "Step 1: Use what already exists",
         title: "Let agents run ready-made work first",
         subtitle:
-          "If a ready-made tool already solves the job, this is OOMOL's first layer of value: connect it, run it, and do not start by building your own tool.",
+          "If a ready-made tool already solves the job, OOMOL's first layer of value is simple: connect it, run it, and do not start by building your own tool.",
         promptLabel: "Say this",
         resultLabel: "Agent will run",
         cards: [

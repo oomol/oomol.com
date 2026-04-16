@@ -11,7 +11,7 @@ const zhCopy = {
   badge: "开发者入口",
   title: "现成能力不够，就到 OOMOL Studio 做自己的工具",
   subtitle:
-    "你可以在 Studio 里重组现成能力、编排 workflow、补新的 function tool。做好之后，再继续走向交付。",
+    "你可以在 Studio 里重组现成能力、补代码、编排 workflow、写新的 function tool。工具在本地跑通之后，再交给 Cloud 承接交付。",
   primaryCta: "了解 OOMOL Studio",
   secondaryCta: "下载 OOMOL Studio",
   cards: [
@@ -33,16 +33,16 @@ const zhCopy = {
     {
       icon: "i-lucide-route",
       title: "让新工具继续进入交付路径",
-      text: "Studio 不是终点。本地验证后，下一步就是交给 Cloud 和 oo-cli，继续给 Agent 使用。",
+      text: "Studio 不是终点。本地验证后，再交给 Cloud，并主要沿 oo-cli 继续给 Agent 使用。",
     },
   ],
 };
 
 const enCopy = {
   badge: "Developer entry",
-  title: "When ready-made capabilities stop short, build your own in OOMOL Studio",
+  title: "When ready-made capabilities stop short, move into OOMOL Studio",
   subtitle:
-    "In Studio, you can recombine ready-made capabilities, orchestrate workflows, and add new function tools. Once the tool is ready, it continues into delivery.",
+    "In Studio, you can recombine ready-made capabilities, add code, orchestrate workflows, and write new function tools. Once the tool works locally, hand it to Cloud for delivery.",
   primaryCta: "Explore OOMOL Studio",
   secondaryCta: "Download OOMOL Studio",
   cards: [
@@ -64,7 +64,7 @@ const enCopy = {
     {
       icon: "i-lucide-route",
       title: "Move the new tool into the delivery path",
-      text: "Studio is not the endpoint. Once local validation is done, the next step is Cloud and oo-cli so agents can keep using the same path.",
+      text: "Studio is not the endpoint. Once local validation is done, the next step is Cloud, then mainly back into oo-cli so agents can keep using the same path.",
     },
   ],
 };

@@ -30,7 +30,7 @@
     "message": "OOMOL - 一个让 AI Agent 调用现成工具的 CLI 入口"
   },
   "HOME.page.description": {
-    "message": "先让 Codex、OpenClaw、Claude Code 等 Agent 直接调用现成工具、API 和内部能力把工作跑起来；当你开始自己生产、组合和交付工具时，再进入 OOMOL Studio 和 Cloud。"
+    "message": "先用 oo-cli 让 Codex、OpenClaw、Claude Code 等 Agent 直接调用现成工具、API 和内部能力，把工作先跑起来；当你需要自己生产、组合和交付工具时，再进入 OOMOL Studio 和 Cloud。"
   },
   "HOME.FirstScreen.slogan": {
     "message": "先用起来，再按需连接"
@@ -48,7 +48,7 @@
     "message": "连接账号和应用，处理授权、调用和执行；需要自定义时，再到 Studio 里做你自己的工具。"
   },
   "HOME.FirstScreen.heroLead": {
-    "message": "先让 Agent 调用现成工具、API 和内部能力把工作跑起来；当现成能力不够、你要开始自己做工具时，再进入 Studio 和 Cloud。"
+    "message": "先用 oo-cli 让 Agent 接上现成工具、API 和内部能力，把工作先跑起来；当现成能力不够时，再进入 Studio 和 Cloud。"
   },
   "HOME.FirstScreen.heroAdvantage": {
     "message": "先用 CLI 调起来，"
@@ -1044,7 +1044,7 @@
     "message": "安装简单，扩展也简单"
   },
   "HOME.Downloads.cta.description": {
-    "message": "如果你只是想使用工具，就从 oo-cli 或 OOMOL AI 开始；如果你要自己做工具，再下载 OOMOL Studio。"
+    "message": "如果你只是想使用工具，就先从 oo-cli 开始；如果你更喜欢图形界面，可以使用 OOMOL AI；如果你要自己做工具，再下载 OOMOL Studio。"
   },
   "HOME.Downloads.cta.primary": {
     "message": "打开 oo-cli 指南"
@@ -1134,10 +1134,10 @@
     "message": "简单、透明的定价"
   },
   "PRICING.subtitle": {
-    "message": "在本地做和验证工具一直免费。只有当你要把工具交给 OOMOL 在线运行，或直接使用 OOMOL 提供的模型与服务时，才会付费。"
+    "message": "本地构建与验证始终免费。Free 用户每月还可直接使用 200 分钟 Cloud Task；超额后再充值或升级，OOMOL 提供的模型与服务按点数结算。"
   },
   "PRICING.model.summary": {
-    "message": "先在 Studio 本地做和验证；需要在线运行，或直接使用 OOMOL 提供的模型与服务时，再开始付费。"
+    "message": "先在 Studio 本地做和验证。Free 用户每月还会自动刷新 200 分钟 Cloud Task；只有当这部分免费额度不够，或你直接使用 OOMOL 提供的模型与服务时，才需要继续充值或升级。"
   },
   "PRICING.model.local.label": {
     "message": "本地"
@@ -1152,16 +1152,16 @@
     "message": "线上"
   },
   "PRICING.model.online.title": {
-    "message": "需要在线运行时再付费"
+    "message": "先免费上线，不够时再充值"
   },
   "PRICING.model.online.text": {
-    "message": "当你要把工具放到线上，让别人稳定使用，并由 OOMOL 负责运行和管理时，再选择付费计划。"
+    "message": "Free 用户已经可以发布并使用 Cloud，每月包含 200 分钟 Cloud Task。只有当你需要更多在线额度或更高限制时，再充值或升级到付费计划。"
   },
   "PRICING.subscription.title": {
     "message": "选择你使用 OOMOL 的方式"
   },
   "PRICING.subscription.subtitle": {
-    "message": "Free 适合本地使用和少量试用。Pro 与 Max 适合把工具放到线上，并包含更多每月使用额度。"
+    "message": "Free 已经包含本地使用和每月 200 分钟 Cloud Task。Pro 与 Max 适合更稳定的线上使用场景，并提供更高的每月包含额度。"
   },
   "PRICING.subscription.recommended": {
     "message": "推荐"
@@ -1185,7 +1185,7 @@
     "message": "$0"
   },
   "PRICING.subscription.free.description": {
-    "message": "适合本地开发、结果验证，\n以及接入自有模型服务时的\n日常使用方式"
+    "message": "适合本地开发、结果验证，\n以及先用每月 200 分钟 Cloud Task\n把工具在线跑起来"
   },
   "PRICING.subscription.free.feature1": {
     "message": "完整使用 OOMOL Studio 本地开发环境"
@@ -1197,13 +1197,13 @@
     "message": "在 Studio 内本地运行不触发 Cloud Task 计费"
   },
   "PRICING.subscription.free.feature4": {
-    "message": "每月包含 200 分钟 Cloud Task 额度"
+    "message": "每月自动刷新 200 分钟 Cloud Task 额度"
   },
   "PRICING.subscription.free.feature5": {
     "message": "注册即送 1 credit，用于试用 LLM 与 Fusion API"
   },
   "PRICING.subscription.free.feature6": {
-    "message": "可发布 20 个包（公有/私有合计）"
+    "message": "可发布 20 个包（公有/私有合计），可直接交付到 Cloud"
   },
   "PRICING.subscription.free.highlight1": {
     "message": "200 分钟/月"
@@ -1218,7 +1218,7 @@
     "message": "$12"
   },
   "PRICING.subscription.pro.description": {
-    "message": "适合把本地已跑通的函数\n发布成 API、MCP 工具或自动化任务，\n并稳定使用 OOMOL 托管运行层"
+    "message": "适合免费额度不够时，\n继续扩大线上托管运行规模，\n并获得更高的每月包含额度"
   },
   "PRICING.subscription.pro.feature1": {
     "message": "使用 OOMOL 承接线上发布、运行和交付"
@@ -1413,7 +1413,7 @@
     "message": "可以把价格理解成两层：上面是每月套餐，下面是超出套餐后的按量价格。"
   },
   "PRICING.tables.syncNote": {
-    "message": "模型调用、在线运行和其他服务都会按点数结算；付费套餐的作用，是先包含一部分每月额度。"
+    "message": "Free 与付费套餐都可以在线运行工具。Free 每月包含 200 分钟 Cloud Task；付费套餐包含更高的每月额度，超出后以及模型/其他服务调用再按点数结算。"
   },
   "PRICING.tables.tab.llm": {
     "message": "大模型价格"
@@ -2920,13 +2920,13 @@
     "message": "OOMOL Cloud - 工具的交付与托管层"
   },
   "CLOUD.hero.description": {
-    "message": "把 Studio 里已经验证好的工具交给 Cloud，统一承接交付、托管运行、配置、Secrets 和访问控制，再继续交给 oo-cli 使用。"
+    "message": "把 Studio 里已经验证好的工具交给 Cloud，统一承接交付、托管运行、配置、Secrets 和访问控制，再主要沿 oo-cli 交给 Agent 使用。"
   },
   "CLOUD.hero.kicker": {
     "message": "Cloud Runtime"
   },
   "CLOUD.hero.note": {
-    "message": "用户通过 oo-cli、应用或 agent 使用工具，而你的实现继续留在服务器端。"
+    "message": "用户主要通过 oo-cli 使用工具；实现则继续留在服务器端。"
   },
   "CLOUD.hero.stat1": {
     "message": "私有交付"
@@ -2986,7 +2986,7 @@
     "message": "先发布，按使用增长再付费"
   },
   "CLOUD.pricing.description": {
-    "message": "你不需要为了验证分发这件事先养一台服务器。先把工具发布出去，验证需求，再随着使用量增长付费。"
+    "message": "你不需要为了验证交付先养一台服务器。先发布、先验证需求，再随着使用量增长继续扩展。"
   },
   "CLOUD.pricing.kicker": {
     "message": "价格"
@@ -3121,7 +3121,7 @@
     "message": "OOMOL Studio - 在真实工程环境里构建和验证工具"
   },
   "STUDIO.page.description": {
-    "message": "用 AI 帮你起步，在真实工程环境里生成、组合、调试和验证工具；准备交付时，再把同一份实现交给 Cloud。"
+    "message": "用 AI 帮你起步，然后在真实工程环境里补代码、接依赖、编排流程并验证结果；准备交付时，再把同一份实现交给 Cloud。"
   },
   "STUDIO.manifesto.title": {
     "message": "OOMOL Studio 是\n给开发者构建工具的环境"
@@ -3145,7 +3145,7 @@
     "message": "给 Agent 做工具\n真正卡住的是三件事"
   },
   "STUDIO.product.story.description": {
-    "message": "问题不只是能不能编排，而是起步速度、工程可扩展性，以及能不能沿同一份实现继续交付。"
+    "message": "真正卡住的，不只是能不能编排，而是能不能起步够快、扩展够深，并沿同一份实现继续走向交付。"
   },
   "STUDIO.product.principles.kicker": {
     "message": "构建原则"
@@ -3160,7 +3160,7 @@
     "message": "把下一个工具先在 Studio 里跑出来"
   },
   "STUDIO.product.cta.description": {
-    "message": "先在真实 coding 环境里生成、调试和验证工具；准备交付时，再继续通过 Cloud 承接运行和发布。"
+    "message": "先在真实 coding 环境里把工具生成、调试并跑通；准备交付时，再交给 Cloud 承接运行与发布。"
   },
   "STUDIO.story.paragraph1": {
     "message": "我们想要的，不是另一个要求开发者迁就平台的工具，而是一个能先让 AI Agent 全自动搭建、再继续写函数、编排节点、调试依赖和验证结果的工作环境。"
@@ -3238,16 +3238,16 @@
     "message": "了解 Cloud"
   },
   "Theme.Navbar.product.studio.description": {
-    "message": "生产、组合和编排 oo-cli 可用的新工具"
+    "message": "现成能力不够时，构建、组合和编排你自己的工具"
   },
   "Theme.Navbar.product.cli.description": {
-    "message": "支持装进各种 Agent，直接调用工具"
+    "message": "主入口：装进 Agent，直接搜索和调用工具"
   },
   "Theme.Navbar.product.cloud.description": {
-    "message": "在云端运行、管理和自动化工具"
+    "message": "把工具交付回 oo-cli，并在云端托管运行"
   },
   "Theme.Navbar.product.ai.description": {
-    "message": "以对话式图形界面使用 oo-cli 能力"
+    "message": "可选 GUI：以图形界面使用同一套能力"
   },
   "Theme.Navbar.product.label": {
     "message": "产品"
@@ -3421,6 +3421,6 @@
     "message": "获取与安装 OOMOL"
   },
   "HOME.Downloads.page.description": {
-    "message": "先装 oo-cli，需要自定义扩展时再用 OOMOL Studio。"
+    "message": "先用 oo-cli 作为主入口；如果你更喜欢图形界面，可以使用 OOMOL AI；需要自己做工具时再下载 OOMOL Studio。"
   }
 }

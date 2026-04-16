@@ -89,14 +89,14 @@ export default function Downloads() {
     ? {
         pageTitle: "获取与安装 OOMOL",
         pageDescription:
-          "选择最适合你的 OOMOL 入口：oo-cli 适合在终端和 Agent 中使用，OOMOL AI 适合图形界面，OOMOL Studio 适合自己做工具。",
+          "以 oo-cli 作为主入口，把 Agent 接到现成工具与能力上；如果你更喜欢图形界面，可以使用 OOMOL AI；如果你要自己做工具，再下载 OOMOL Studio。",
         heroTitle: "选择最适合你的 OOMOL 入口",
         heroSubtitle:
-          "如果你想在终端里让 Agent 直接使用工具，就从 oo-cli 开始；如果你更喜欢图形界面，就用 OOMOL AI；如果你要自己做工具，再下载 OOMOL Studio。",
+          "如果你想在终端里让 Agent 直接使用工具，就从 oo-cli 开始；如果你更喜欢图形界面，可以使用 OOMOL AI；如果你要自己做工具，再下载 OOMOL Studio。",
         ai: {
-          title: "如果你更喜欢图形界面，就用 OOMOL AI",
+          title: "如果你更喜欢图形界面，可以使用 OOMOL AI",
           subtitle:
-            "OOMOL AI 适合在 Web、桌面和 iOS 中直接对话、查看结果并继续处理任务。如果你只是想更轻松地使用工具，从这里开始就够了。",
+            "OOMOL AI 是同一套能力的官方 GUI 入口，适合在 Web、桌面和 iOS 中直接对话、查看结果并继续处理任务。如果你只是想更轻松地使用工具，从这里开始就可以。",
           actions: {
             openWeb: "打开网页版",
             desktopMac: "下载 Mac 版",
@@ -108,14 +108,14 @@ export default function Downloads() {
     : {
         pageTitle: "Get and Install OOMOL",
         pageDescription:
-          "Choose the OOMOL entry point that fits you best: oo-cli for terminal and agent use, OOMOL AI for a GUI, and OOMOL Studio for building your own tools.",
+          "Use oo-cli as the primary entry point to connect agents to ready-made tools and capabilities. If you prefer a GUI, use OOMOL AI. Download OOMOL Studio when you want to build your own tools.",
         heroTitle: "Choose the OOMOL entry point that fits you best",
         heroSubtitle:
           "Start with oo-cli if you want agents to use tools in the terminal. Use OOMOL AI if you prefer a GUI. Download OOMOL Studio when you want to build your own tools.",
         ai: {
           title: "If you prefer a GUI, use OOMOL AI",
           subtitle:
-            "OOMOL AI gives you a simpler way to chat, review results, and keep working across web, desktop, and iOS. If you only want an easier way to use tools, start here.",
+            "OOMOL AI is the official GUI entry point for the same capability layer, giving you a simpler way to chat, review results, and keep working across web, desktop, and iOS. If you only want an easier way to use tools, start here.",
           actions: {
             openWeb: "Open Web App",
             desktopMac: "Download for macOS",

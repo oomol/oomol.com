@@ -214,12 +214,12 @@ export default function Index() {
     ? {
         title: "价格 - OOMOL",
         description:
-          "在本地做和验证工具一直免费。只有当你要把工具交给 OOMOL 在线运行，或直接使用 OOMOL 提供的模型与服务时，才会付费。",
+          "本地构建与验证始终免费。Free 用户每月还可直接使用 200 分钟 Cloud Task；超额后再充值或升级，OOMOL 提供的模型与服务按点数结算。",
       }
     : {
         title: "Pricing - OOMOL",
         description:
-          "Building and validating tools locally stays free. You only pay when you want OOMOL to run them online or when you use OOMOL-provided models and services.",
+          "Local building and validation stay free. Free users also get 200 Cloud Task minutes every month, then top up or upgrade only after that included usage runs out. OOMOL-provided models and services use credits.",
       };
 
   useEffect(() => {
@@ -627,7 +627,7 @@ export default function Index() {
             className={styles.pricingModelAlert}
             content={tPricing(
               "PRICING.model.summary",
-              "Studio stays free for local work. You start paying only when you want OOMOL to run the tool online or when you use OOMOL-provided models and services."
+              "Studio stays free for local work. Free users also get 200 Cloud Task minutes every month, then top up or upgrade only after that included usage runs out. OOMOL-provided models and services use credits."
             )}
           />
           <div className={styles.pricingModelGrid}>
@@ -655,13 +655,13 @@ export default function Index() {
               <div className={styles.pricingModelTitle}>
                 {tPricing(
                   "PRICING.model.online.title",
-                  "Pay when you want to put the tool online"
+                  "Free first, then top up when online usage grows"
                 )}
               </div>
               <p className={styles.pricingModelText}>
                 {tPricing(
                   "PRICING.model.online.text",
-                  "Choose a paid plan when you want other people or systems to use the tool online and you want OOMOL to handle runtime and management."
+                  "Free users can already publish and use Cloud with 200 monthly Cloud Task minutes. Top up or move to a paid plan only when you need more included usage or higher limits."
                 )}
               </p>
             </div>
@@ -937,7 +937,7 @@ export default function Index() {
               <div className={styles.tableSyncNote}>
                 {tPricing(
                   "PRICING.tables.syncNote",
-                  "Model calls, online runs, and other services all deduct credits. Paid plans include part of that monthly usage up front."
+                  "Free and paid plans can both run tools online. Free includes 200 Cloud Task minutes each month, paid plans include larger monthly allowances, and additional usage or model/service calls deduct credits."
                 )}
               </div>
             </div>

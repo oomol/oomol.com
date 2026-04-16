@@ -103,14 +103,14 @@ const COPY = {
   zh: {
     brandLabel: "悟墨 AI",
     page: {
-      title: "悟墨 AI（OOMOL AI）- 在对话式图形界面里使用 oo-cli 能力",
+      title: "悟墨 AI（OOMOL AI）- 同一套 OOMOL 能力的官方图形界面",
       description:
-        "通过 Web、桌面和 iOS 这些图形入口，更自然地使用同一套 oo-cli 能力与点数体系。",
+        "如果你更喜欢图形界面，可以在 Web、桌面和 iOS 中使用与 oo-cli 相同的能力层与点数体系。",
     },
     hero: {
-      titleLine1: "把 oo-cli 的能力",
-      titleLine2: "直接带进图形界面",
-      lead: "悟墨 AI（OOMOL AI）是 OOMOL 官方对话式图形入口，让 oo-cli 的能力在这里被更完整地整合、更自然地使用。",
+      titleLine1: "如果你更喜欢图形界面",
+      titleLine2: "就在 OOMOL AI 里使用同一套能力",
+      lead: "悟墨 AI（OOMOL AI）是 OOMOL 官方 GUI 入口。它把 oo-cli 所连接的同一套能力带进 Web、桌面和 iOS，让你用更顺手的图形界面完成连续任务。",
       productScreenshotAlt: "悟墨 AI 中由 Agent 原生调用工具完成任务的界面",
     },
     actions: {
@@ -119,26 +119,26 @@ const COPY = {
       ios: "iOS",
     },
     models: {
-      title: "oo-cli 的能力，在这里被更完整地整合",
+      title: "同一套能力，换一个更适合 GUI 的入口",
       description:
-        "在终端和其他 Agent 里，oo-cli 是高效的接入方式；在悟墨 AI 中，同一套能力被直接做进界面与交互流程。",
+        "oo-cli 仍然是给 Agent 和终端的主入口；悟墨 AI 则把同一套能力做成更适合日常使用的图形界面。",
       demo: {
-        eyebrow: "界面整合",
-        title: "不是替代 oo-cli，而是把同一套能力做成更顺手的对话式图形入口",
+        eyebrow: "官方 GUI",
+        title: "不是另一套能力体系，而是同一能力层的官方图形入口",
         description:
           "搜索、执行、查看结果与继续处理，都可以在同一个界面里连续完成。",
         imageAlt: "悟墨 AI 中原生工具能力与小程序工作台界面",
       },
       cards: {
         chat: {
-          eyebrow: "更完整地融合",
-          title: "同一套能力，直接进入界面流程",
+          eyebrow: "同一能力层",
+          title: "账号、任务和工具能力直接进入界面流程",
           body: "账号连接、任务运行和现成能力的调用，不再散落在额外步骤里，而是作为页面体验的一部分出现。",
           chips: ["界面整合", "连续流程", "直接可用"],
         },
         image: {
-          eyebrow: "更原生地使用",
-          title: "更适合日常使用与连续操作",
+          eyebrow: "更适合图形界面",
+          title: "更适合日常使用与连续跟进",
           body: "当你描述任务时，系统会在界面里继续衔接搜索、执行和结果处理，让使用过程更自然。",
           chips: ["描述任务", "继续执行", "返回结果"],
         },
@@ -179,22 +179,22 @@ const COPY = {
         },
         {
           title: "同一套能力，可以在不同入口中使用",
-          body: "oo-cli 适合接入终端和其他 Agent；悟墨 AI 适合提供更自然的对话式图形体验。",
+          body: "oo-cli 适合 Agent 与终端；悟墨 AI 适合提供更自然的图形界面连续体验。",
           detail: "两者面向的是同一套能力，只是入口和使用方式不同。",
           alt: "悟墨 AI 中将结果与 OOMOL 工具体系继续连接的界面",
         },
       ],
     },
     outputs: {
-      title: "oo-cli 提供能力入口，悟墨 AI 提供对话式图形入口",
+      title: "oo-cli 是给 Agent 的主入口，悟墨 AI 是官方 GUI 入口",
       description:
-        "如果你希望在终端或外部 Agent 中接入能力，就使用 oo-cli；如果你希望在 OOMOL 里更自然地使用同一套能力，就打开悟墨 AI。",
+        "如果你希望在终端或外部 Agent 中接入能力，就使用 oo-cli；如果你更喜欢图形界面里的连续体验，就打开悟墨 AI。",
       imageAlt: "悟墨 AI 中使用同一套工具能力持续完成任务的界面",
     },
     pricing: {
       title: "同一套能力，共用同一套点数",
       description:
-        "不论是通过 oo-cli 接入，还是在悟墨 AI 中直接使用，点数与消耗都统一管理。",
+        "不论是通过 oo-cli 接入，还是在悟墨 AI 中直接使用，同一套能力都共享同一套点数与消耗体系。",
       pillars: [
         "Web、Desktop、iOS 共用同一套能力与计费",
         "购买后的点数会一直保留，不会按月清零",
@@ -238,19 +238,19 @@ const COPY = {
       },
     },
     downloads: {
-      title: "选择适合你的使用入口",
+      title: "选择适合你的 GUI 入口",
       items: {
         web: {
           title: "Web",
           subtitle: "对话式图形入口",
-          description: "最快开始使用同一套 oo-cli 能力的 Web 图形入口。",
+          description: "最快开始使用同一套能力的 Web 图形入口。",
           action: "打开网页版",
         },
         desktop: {
           title: "Desktop",
           subtitle: "桌面应用",
           description:
-            "以桌面应用的方式使用同一套 oo-cli 能力，适合更长时间的连续任务与结果整理。",
+            "当你想要更稳定的图形工作区与更长时段的连续任务处理时，就用桌面版。",
           action: "下载桌面版",
         },
         ios: {
@@ -266,14 +266,14 @@ const COPY = {
   en: {
     brandLabel: "OOMOL AI",
     page: {
-      title: "OOMOL AI - Use oo-cli capabilities through a chat GUI",
+      title: "OOMOL AI - The official GUI for the OOMOL capability layer",
       description:
-        "Use the same oo-cli capability layer through web, desktop, and iOS GUI entry points with one shared credit system.",
+        "If you prefer a GUI, use the same capability layer and shared credit system as oo-cli through web, desktop, and iOS.",
     },
     hero: {
-      titleLine1: "Bring oo-cli capabilities",
-      titleLine2: "directly into a GUI experience",
-      lead: "OOMOL AI is OOMOL's official chat-based GUI entry point, designed to make oo-cli capabilities feel more fully integrated and more natural to use.",
+      titleLine1: "If you prefer a GUI,",
+      titleLine2: "use the same capability layer in OOMOL AI",
+      lead: "OOMOL AI is OOMOL's official GUI entry point. It brings the same capabilities connected through oo-cli into web, desktop, and iOS so continuous work feels more natural in a visual interface.",
       productScreenshotAlt:
         "OOMOL AI interface where the agent natively calls tools to complete a task",
     },
@@ -283,13 +283,13 @@ const COPY = {
       ios: "iOS",
     },
     models: {
-      title: "oo-cli capabilities, more fully integrated here",
+      title: "The same capabilities, through a more GUI-friendly surface",
       description:
-        "In terminals and external agents, oo-cli is an efficient way to connect capabilities. In OOMOL AI, the same capabilities are built more directly into the interface and flow.",
+        "oo-cli remains the primary entry point for agents and terminal workflows. OOMOL AI turns that same capability layer into a GUI that fits everyday use more naturally.",
       demo: {
-        eyebrow: "Interface integration",
+        eyebrow: "Official GUI",
         title:
-          "Not a replacement for oo-cli, but a more natural chat GUI entry point for the same capabilities",
+          "Not a separate capability stack, but the official GUI entry point for the same layer",
         description:
           "Search, execution, results, and follow-up work can stay in the same interface.",
         imageAlt:
@@ -297,14 +297,14 @@ const COPY = {
       },
       cards: {
         chat: {
-          eyebrow: "More fully integrated",
-          title: "The same capabilities, brought directly into the interface",
+          eyebrow: "Same capability layer",
+          title: "Accounts, tasks, and tool capabilities move directly into the interface flow",
           body: "Account connections, task execution, and ready-made capabilities are no longer scattered across separate steps. They become part of the product flow itself.",
           chips: ["Interface flow", "Continuous use", "Directly available"],
         },
         image: {
-          eyebrow: "More native to use",
-          title: "Better suited to everyday use and continuous work",
+          eyebrow: "More GUI-friendly",
+          title: "Better suited to everyday use and continuous follow-up",
           body: "When you describe a task, the interface can continue through search, execution, and result handling in a more natural way.",
           chips: ["Describe the task", "Continue execution", "Return results"],
         },
@@ -349,7 +349,7 @@ const COPY = {
         {
           title:
             "The same capabilities can be used through different entry points",
-          body: "oo-cli fits terminal and external agent integration. OOMOL AI fits a more natural chat GUI experience for the same capability set.",
+          body: "oo-cli fits agents and terminal workflows. OOMOL AI fits a more natural GUI experience for the same capability set.",
           detail:
             "The capability layer stays the same. What changes is the entry point and the experience around it.",
           alt: "OOMOL AI interface connecting results back into the OOMOL toolchain",
@@ -358,16 +358,16 @@ const COPY = {
     },
     outputs: {
       title:
-        "oo-cli provides the capability path. OOMOL AI provides the chat GUI entry point.",
+        "oo-cli is the main entry point for agents. OOMOL AI is the official GUI entry point.",
       description:
-        "Use oo-cli when you want to connect capabilities into a terminal or external agent. Open OOMOL AI when you want to use the same capabilities through a chat GUI inside OOMOL.",
+        "Use oo-cli when you want to connect capabilities into a terminal or external agent. Open OOMOL AI when you want the same capabilities through a more continuous GUI experience.",
       imageAlt:
         "OOMOL AI interface continuing work with the same tool capability layer",
     },
     pricing: {
       title: "One capability layer, one credit system",
       description:
-        "Whether capabilities are connected through oo-cli or used directly inside OOMOL AI, credits and usage stay under the same system.",
+        "Whether capabilities are connected through oo-cli or used directly inside OOMOL AI, the same capability layer shares one credit and usage system.",
       pillars: [
         "Web, desktop, and iOS share the same capability layer and billing",
         "Purchased credits stay in your account until you use them",
@@ -422,20 +422,20 @@ const COPY = {
       },
     },
     downloads: {
-      title: "Choose the entry point that fits you best",
+      title: "Choose the GUI entry point that fits you best",
       items: {
         web: {
           title: "Web",
           subtitle: "Chat GUI",
           description:
-            "The fastest web entry point for using the same oo-cli capabilities in a GUI.",
+            "The fastest web entry point for using the same capability layer in a GUI.",
           action: "Open Web App",
         },
         desktop: {
           title: "Desktop",
           subtitle: "Desktop app",
           description:
-            "Use the same oo-cli capabilities in a desktop app when you want a longer-running workspace.",
+            "Use the same capabilities in a desktop app when you want a more stable workspace for longer-running work.",
           action: "Download desktop app",
         },
         ios: {

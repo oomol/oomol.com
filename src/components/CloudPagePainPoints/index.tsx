@@ -22,7 +22,7 @@ const zhCopy: Copy = {
   badge: "为什么在 Studio 之后还需要 Cloud",
   title: "Studio 解决构建，Cloud 解决交付层",
   subtitle:
-    "工具在本地跑通之后，真正拖慢上线的通常不是逻辑本身，而是托管运行、访问控制、Secrets 和分发这层。Cloud 的角色就是把这一层压到最短。",
+    "工具在本地跑通之后，真正拖慢上线的往往不是逻辑本身，而是托管运行、访问控制、Secrets 和交付这层。Cloud 的角色，就是把这一层压到最短。",
   cards: [
     {
       icon: "i-lucide-waypoints",
@@ -30,14 +30,14 @@ const zhCopy: Copy = {
       title: "不用再围着同一份实现补一套后台",
       description:
         "Cloud 承接交付、配置、权限和运行关系，让你不需要再单独做一个发布后台去包住同一份实现。",
-      points: ["同一份实现继续往外交付", "不用再额外补一层用户入口和管理面"],
+      points: ["主要沿 oo-cli 继续交付给 Agent", "不用再额外补一层用户入口和管理面"],
     },
     {
       icon: "i-lucide-blocks",
       eyebrow: "托管层",
       title: "把运行、权限和访问控制一起交给 Cloud",
       description:
-        "用户通过 oo-cli、API、MCP 或自动化继续使用工具，而你的实现继续留在服务器端，由 Cloud 承接托管运行。",
+        "用户主要通过 oo-cli 继续使用工具；当你需要 API、MCP 或自动化时，也可以从同一层能力继续往外提供，而实现仍然留在服务器端。",
       points: ["少管运维和权限细节", "先交付，再按实际使用扩展"],
     },
   ],
@@ -47,7 +47,7 @@ const enCopy: Copy = {
   badge: "Why Cloud after Studio",
   title: "Studio handles building. Cloud handles the delivery layer",
   subtitle:
-    "Once the tool works locally, what slows launch is usually not the logic itself but the layer around it: hosted runtime, access control, secrets, and distribution. Cloud exists to compress that layer.",
+    "Once the tool works locally, what slows launch is usually not the logic itself but the layer around it: hosted runtime, access control, secrets, and delivery. Cloud exists to compress that layer.",
   cards: [
     {
       icon: "i-lucide-waypoints",
@@ -56,7 +56,7 @@ const enCopy: Copy = {
       description:
         "Cloud takes over delivery, configuration, access, and runtime relationships so you do not need a separate publishing backend wrapped around the same tool.",
       points: [
-        "Keep the same implementation moving outward",
+        "Primarily deliver it back through oo-cli for agents",
         "Avoid another user surface and admin layer",
       ],
     },
@@ -65,7 +65,7 @@ const enCopy: Copy = {
       eyebrow: "Hosted layer",
       title: "Hand runtime, access, and permissions to Cloud together",
       description:
-        "Users keep consuming the tool through oo-cli, API, MCP, or automation while the implementation stays on the server and Cloud handles hosted runtime.",
+        "Users primarily keep consuming the tool through oo-cli. When you need API, MCP, or automation surfaces, you can add them from the same hosted layer while the implementation stays on the server.",
       points: [
         "Less ops and permission work to maintain",
         "Deliver first, then expand with real usage",
