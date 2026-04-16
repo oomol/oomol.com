@@ -18,6 +18,16 @@ const sidebars = {
     "overview",
     {
       type: "category",
+      label: "oo-cli",
+      collapsible: true,
+      collapsed: true,
+      items: [
+        "cloud-services/cli",
+        "cloud-services/cli-command-reference",
+      ],
+    },
+    {
+      type: "category",
       label: "OOMOL Studio",
       collapsible: true,
       collapsed: true,
@@ -130,16 +140,6 @@ const sidebars = {
             "cloud-services/cloud-task/curl-api",
           ],
         },
-      ],
-    },
-    {
-      type: "category",
-      label: "oo-cli",
-      collapsible: true,
-      collapsed: true,
-      items: [
-        "cloud-services/cli",
-        "cloud-services/cli-command-reference",
       ],
     },
     {

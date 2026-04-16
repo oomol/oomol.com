@@ -1,5 +1,6 @@
 import styles from "./styles.module.scss";
 
+import Head from "@docusaurus/Head";
 import { Button } from "@site/src/components/ui/button";
 import Layout from "@theme/Layout";
 import React from "react";
@@ -7,6 +8,13 @@ import React from "react";
 export default function Support() {
   return (
     <Layout>
+      <Head>
+        <title>技术支持 - OOMOL</title>
+        <meta
+          name="description"
+          content="通过 GitHub 讨论区、Discord 或邮件获取 OOMOL 支持。"
+        />
+      </Head>
       <div className={styles.supportBox}>
         <div className={styles.supportTitle}>技术支持</div>
         <div className={styles.supportCellBox}>

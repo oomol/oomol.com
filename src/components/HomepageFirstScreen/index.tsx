@@ -100,7 +100,7 @@ export default function HomepageFirstScreen() {
               }}
               onEnded={() => setIsPlaying(false)}
             >
-              <source src={heroVideoUrl} type="video/mp4" />
+              <source src={heroVideoUrl} type="video/webm" />
             </video>
           </div>
         </div>

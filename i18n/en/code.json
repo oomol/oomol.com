@@ -1467,7 +1467,7 @@
     "message": "Anything under one minute is billed as one minute"
   },
   "PRICING.tables.cloudTask.alert": {
-    "message": "Running tools locally in OOMOL Studio does not trigger Cloud Task billing. Running tools in Chat or hub.oomol.com does."
+    "message": "Running tools locally in OOMOL Studio does not trigger Cloud Task billing. Running the same tools through OOMOL-hosted surfaces does."
   },
   "PRICING.tables.fusionApi.service": {
     "message": "Service"
@@ -2920,7 +2920,7 @@
     "message": "Bring your own tools to oo-cli"
   },
   "CLOUD.hero.description": {
-    "message": "Deliver the custom tools from Studio to oo-cli, so Agents, Codex, and OpenCrawl can use them directly."
+    "message": "Deliver the custom tools from Studio to oo-cli, so Agents, Codex, and OpenClaw can use them directly."
   },
   "CLOUD.hero.kicker": {
     "message": "Cloud Runtime"
@@ -3238,7 +3238,7 @@
     "message": "Explore Cloud"
   },
   "Theme.Navbar.product.studio.description": {
-    "message": "Compose and generate functions to extend oo-cli"
+    "message": "Build, combine, and orchestrate new tools for oo-cli"
   },
   "Theme.Navbar.product.cli.description": {
     "message": "Install in many agents and use tools directly"
@@ -3247,7 +3247,7 @@
     "message": "Run, manage, and automate tools in the cloud"
   },
   "Theme.Navbar.product.ai.description": {
-    "message": "Use oo-cli capabilities directly in the GUI"
+    "message": "Use oo-cli capabilities through a chat GUI"
   },
   "Theme.Navbar.product.label": {
     "message": "Product"

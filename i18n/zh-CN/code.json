@@ -1467,7 +1467,7 @@
     "message": "不满一分钟按 1 分钟计费"
   },
   "PRICING.tables.cloudTask.alert": {
-    "message": "仅使用 OOMOL Studio 在本地运行工具不会触发 Cloud Task 计费。在 Chat 或 hub.oomol.com 上运行工具会触发 Cloud Task 并扣费。"
+    "message": "仅使用 OOMOL Studio 在本地运行工具不会触发 Cloud Task 计费。通过 OOMOL 托管入口运行同一工具时，才会触发 Cloud Task 并扣费。"
   },
   "PRICING.tables.fusionApi.service": {
     "message": "服务名"
@@ -2920,7 +2920,7 @@
     "message": "把自己的工具带进 oo-cli"
   },
   "CLOUD.hero.description": {
-    "message": "把 Studio 里的自定义工具交付到 oo-cli，让 Agent、Codex 和 OpenCrawl 直接调用。"
+    "message": "把 Studio 里的自定义工具交付到 oo-cli，让 Agent、Codex 和 OpenClaw 直接调用。"
   },
   "CLOUD.hero.kicker": {
     "message": "Cloud Runtime"
@@ -3238,7 +3238,7 @@
     "message": "了解 Cloud"
   },
   "Theme.Navbar.product.studio.description": {
-    "message": "用编排和函数生成扩展 oo-cli"
+    "message": "生产、组合和编排 oo-cli 可用的新工具"
   },
   "Theme.Navbar.product.cli.description": {
     "message": "支持装进各种 Agent，直接调用工具"
@@ -3247,7 +3247,7 @@
     "message": "在云端运行、管理和自动化工具"
   },
   "Theme.Navbar.product.ai.description": {
-    "message": "在图形界面里直接使用 oo-cli 能力"
+    "message": "以对话式图形界面使用 oo-cli 能力"
   },
   "Theme.Navbar.product.label": {
     "message": "产品"

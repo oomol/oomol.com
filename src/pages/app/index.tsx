@@ -2,8 +2,10 @@ import styles from "./styles.module.scss";
 
 import type { DocusaurusContext } from "@docusaurus/types";
 
+import Head from "@docusaurus/Head";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { downloadStable } from "@site/src/lib/utils";
 import cx from "clsx";
 import { Download, Globe, Smartphone } from "lucide-react";
 import { memo, useEffect, useRef, useState } from "react";
@@ -62,6 +64,11 @@ const VIDEO_FILES = {
   outputs: { zh: "epub-translate-4K-ZH.mp4", en: "epub-translator-4K-en.mp4" },
 } as const;
 
+const APP_DESKTOP_DOWNLOAD_URLS = {
+  macos: "https://app-downloads.oomol.com/oomol-ai/darwin/arm64",
+  windows: "https://app-downloads.oomol.com/oomol-ai/win32/x64",
+} as const;
+
 const TRAILING_HANGING_PUNCTUATION = /([，。、；：？！])$/u;
 
 function splitZhTitleAtComma(title: string) {
@@ -95,10 +102,15 @@ function renderHangingTitleLine(text: string, className: string) {
 const COPY = {
   zh: {
     brandLabel: "悟墨 AI",
+    page: {
+      title: "悟墨 AI（OOMOL AI）- 在对话式图形界面里使用 oo-cli 能力",
+      description:
+        "通过 Web、桌面和 iOS 这些图形入口，更自然地使用同一套 oo-cli 能力与点数体系。",
+    },
     hero: {
       titleLine1: "把 oo-cli 的能力",
       titleLine2: "直接带进图形界面",
-      lead: "悟墨 AI 是 OOMOL 官方图形入口，让 oo-cli 的能力在这里被更完整地整合、更自然地使用。",
+      lead: "悟墨 AI（OOMOL AI）是 OOMOL 官方对话式图形入口，让 oo-cli 的能力在这里被更完整地整合、更自然地使用。",
       productScreenshotAlt: "悟墨 AI 中由 Agent 原生调用工具完成任务的界面",
     },
     actions: {
@@ -112,7 +124,7 @@ const COPY = {
         "在终端和其他 Agent 里，oo-cli 是高效的接入方式；在悟墨 AI 中，同一套能力被直接做进界面与交互流程。",
       demo: {
         eyebrow: "界面整合",
-        title: "不是替代 oo-cli，而是把同一套能力做成更顺手的图形体验",
+        title: "不是替代 oo-cli，而是把同一套能力做成更顺手的对话式图形入口",
         description:
           "搜索、执行、查看结果与继续处理，都可以在同一个界面里连续完成。",
         imageAlt: "悟墨 AI 中原生工具能力与小程序工作台界面",
@@ -134,7 +146,7 @@ const COPY = {
     },
     problems: {
       titleLine1: "为什么同一套能力，",
-      titleLine2: "还值得做成原生界面",
+      titleLine2: "还值得做成图形入口",
       cards: [
         {
           title: "能力可以接入，体验还可以更顺",
@@ -167,14 +179,14 @@ const COPY = {
         },
         {
           title: "同一套能力，可以在不同入口中使用",
-          body: "oo-cli 适合接入终端和其他 Agent；悟墨 AI 适合提供更原生的图形体验。",
+          body: "oo-cli 适合接入终端和其他 Agent；悟墨 AI 适合提供更自然的对话式图形体验。",
           detail: "两者面向的是同一套能力，只是入口和使用方式不同。",
           alt: "悟墨 AI 中将结果与 OOMOL 工具体系继续连接的界面",
         },
       ],
     },
     outputs: {
-      title: "oo-cli 提供能力入口，悟墨 AI 提供原生界面体验",
+      title: "oo-cli 提供能力入口，悟墨 AI 提供对话式图形入口",
       description:
         "如果你希望在终端或外部 Agent 中接入能力，就使用 oo-cli；如果你希望在 OOMOL 里更自然地使用同一套能力，就打开悟墨 AI。",
       imageAlt: "悟墨 AI 中使用同一套工具能力持续完成任务的界面",
@@ -230,20 +242,20 @@ const COPY = {
       items: {
         web: {
           title: "Web",
-          subtitle: "官方入口",
-          description: "最快体验 OOMOL 原生图形入口。",
+          subtitle: "对话式图形入口",
+          description: "最快开始使用同一套 oo-cli 能力的 Web 图形入口。",
           action: "打开网页版",
         },
         desktop: {
           title: "Desktop",
-          subtitle: "桌面版",
+          subtitle: "桌面应用",
           description:
-            "以独立应用的方式使用同一套能力，打开更直接，体验更顺手。",
+            "以桌面应用的方式使用同一套 oo-cli 能力，适合更长时间的连续任务与结果整理。",
           action: "下载桌面版",
         },
         ios: {
           title: "iOS",
-          subtitle: "移动端",
+          subtitle: "移动应用",
           description: "随时查看任务进展，并继续跟进当前对话。",
           action: "打开 App Store",
         },
@@ -253,16 +265,21 @@ const COPY = {
   },
   en: {
     brandLabel: "OOMOL AI",
+    page: {
+      title: "OOMOL AI - Use oo-cli capabilities through a chat GUI",
+      description:
+        "Use the same oo-cli capability layer through web, desktop, and iOS GUI entry points with one shared credit system.",
+    },
     hero: {
       titleLine1: "Bring oo-cli capabilities",
       titleLine2: "directly into a GUI experience",
-      lead: "OOMOL AI is OOMOL's official GUI entry point, designed to make oo-cli capabilities feel more fully integrated and more natural to use.",
+      lead: "OOMOL AI is OOMOL's official chat-based GUI entry point, designed to make oo-cli capabilities feel more fully integrated and more natural to use.",
       productScreenshotAlt:
         "OOMOL AI interface where the agent natively calls tools to complete a task",
     },
     actions: {
       openWeb: "Open Web App",
-      downloadDesktop: "Download Desktop App",
+      downloadDesktop: "Download desktop app",
       ios: "iOS",
     },
     models: {
@@ -272,7 +289,7 @@ const COPY = {
       demo: {
         eyebrow: "Interface integration",
         title:
-          "Not a replacement for oo-cli, but a more native GUI experience for the same capabilities",
+          "Not a replacement for oo-cli, but a more natural chat GUI entry point for the same capabilities",
         description:
           "Search, execution, results, and follow-up work can stay in the same interface.",
         imageAlt:
@@ -295,7 +312,7 @@ const COPY = {
     },
     problems: {
       titleLine1: "Why the same capabilities",
-      titleLine2: "still benefit from a native GUI",
+      titleLine2: "still benefit from a GUI entry point",
       cards: [
         {
           title:
@@ -332,7 +349,7 @@ const COPY = {
         {
           title:
             "The same capabilities can be used through different entry points",
-          body: "oo-cli fits terminal and external agent integration. OOMOL AI fits a more native GUI experience for the same capability set.",
+          body: "oo-cli fits terminal and external agent integration. OOMOL AI fits a more natural chat GUI experience for the same capability set.",
           detail:
             "The capability layer stays the same. What changes is the entry point and the experience around it.",
           alt: "OOMOL AI interface connecting results back into the OOMOL toolchain",
@@ -341,9 +358,9 @@ const COPY = {
     },
     outputs: {
       title:
-        "oo-cli provides the capability path. OOMOL AI provides the native GUI experience.",
+        "oo-cli provides the capability path. OOMOL AI provides the chat GUI entry point.",
       description:
-        "Use oo-cli when you want to connect capabilities into a terminal or external agent. Open OOMOL AI when you want to use the same capabilities more natively inside OOMOL.",
+        "Use oo-cli when you want to connect capabilities into a terminal or external agent. Open OOMOL AI when you want to use the same capabilities through a chat GUI inside OOMOL.",
       imageAlt:
         "OOMOL AI interface continuing work with the same tool capability layer",
     },
@@ -409,21 +426,21 @@ const COPY = {
       items: {
         web: {
           title: "Web",
-          subtitle: "Native workspace",
+          subtitle: "Chat GUI",
           description:
-            "The fastest way to experience OOMOL's native GUI entry.",
+            "The fastest web entry point for using the same oo-cli capabilities in a GUI.",
           action: "Open Web App",
         },
         desktop: {
           title: "Desktop",
           subtitle: "Desktop app",
           description:
-            "Use the same capabilities in a dedicated app with a more direct and seamless experience.",
-          action: "Download Desktop App",
+            "Use the same oo-cli capabilities in a desktop app when you want a longer-running workspace.",
+          action: "Download desktop app",
         },
         ios: {
           title: "iOS",
-          subtitle: "Mobile",
+          subtitle: "Mobile app",
           description:
             "Track progress and continue the current conversation from your phone or tablet.",
           action: "Open App Store",
@@ -443,6 +460,16 @@ function getLocalizedVideoSrc(
 
 function formatPackPrice(priceUsd: number): string {
   return `$ ${priceUsd}`;
+}
+
+function resolveAppDesktopDownloadUrl() {
+  if (typeof navigator === "undefined") {
+    return APP_DESKTOP_DOWNLOAD_URLS.macos;
+  }
+
+  return navigator.userAgent.includes("Win")
+    ? APP_DESKTOP_DOWNLOAD_URLS.windows
+    : APP_DESKTOP_DOWNLOAD_URLS.macos;
 }
 
 const AutoPlayVideo = memo(function AutoPlayVideo({
@@ -529,11 +556,13 @@ export default function AppPage() {
   const isZh = i18n.currentLocale === "zh-CN";
   const copy = isZh ? COPY.zh : COPY.en;
 
-  const downloadsHref = useBaseUrl("/downloads");
   const appWebHref = "https://app.oomol.com";
   const appStoreHref =
     "https://apps.apple.com/cn/app/%E6%82%9F%E5%A2%A8-ai-oomol-%E5%AF%B9%E8%AF%9D%E5%BC%8F%E4%BA%91%E5%87%BD%E6%95%B0/id6749377154";
   const rechargeHref = "https://console.oomol.com/billing/token-recharge";
+  const [desktopDownloadHref, setDesktopDownloadHref] = useState<string>(
+    APP_DESKTOP_DOWNLOAD_URLS.macos
+  );
   const pricingTitleLines = isZh
     ? splitZhTitleAtComma(copy.pricing.title)
     : [copy.pricing.title];
@@ -541,6 +570,10 @@ export default function AppPage() {
   const nativeWorkspacePng = useBaseUrl(
     "/img/pages/app/chat-login-agent-miniapps.png"
   );
+
+  useEffect(() => {
+    setDesktopDownloadHref(resolveAppDesktopDownloadUrl());
+  }, []);
 
   const modelFeatureCards: readonly ModelFeatureCard[] = [
     {
@@ -625,7 +658,8 @@ export default function AppPage() {
       subtitle: copy.downloads.items.desktop.subtitle,
       description: copy.downloads.items.desktop.description,
       action: copy.downloads.items.desktop.action,
-      href: downloadsHref,
+      href: desktopDownloadHref,
+      external: true,
       kind: "desktop",
     },
     {
@@ -641,6 +675,10 @@ export default function AppPage() {
 
   return (
     <Layout>
+      <Head>
+        <title>{copy.page.title}</title>
+        <meta name="description" content={copy.page.description} />
+      </Head>
       <main id="top" className={styles.page}>
         <section className={styles.hero}>
           <div className={styles.heroHeader}>
@@ -670,7 +708,11 @@ export default function AppPage() {
                   <Globe className={styles.heroActionIcon} aria-hidden="true" />
                   <span>{copy.actions.openWeb}</span>
                 </a>
-                <a className={styles.heroActionButton} href={downloadsHref}>
+                <a
+                  className={styles.heroActionButton}
+                  href={desktopDownloadHref}
+                  onClick={event => downloadStable(event, desktopDownloadHref)}
+                >
                   <Download
                     className={styles.heroActionIcon}
                     aria-hidden="true"
@@ -914,6 +956,11 @@ export default function AppPage() {
                     item.kind === "web" && styles.cardActionPrimary
                   )}
                   href={item.href}
+                  onClick={
+                    item.kind === "desktop"
+                      ? event => downloadStable(event, item.href)
+                      : undefined
+                  }
                   target={item.external ? "_blank" : undefined}
                   rel={item.external ? "noopener noreferrer" : undefined}
                 >

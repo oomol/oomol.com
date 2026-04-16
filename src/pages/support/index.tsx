@@ -1,5 +1,6 @@
 import styles from "./styles.module.scss";
 
+import Head from "@docusaurus/Head";
 import { Button } from "@site/src/components/ui/button";
 import {
   Card,
@@ -14,6 +15,13 @@ import Layout from "../../theme/Layout";
 export default function Support() {
   return (
     <Layout>
+      <Head>
+        <title>Support - OOMOL</title>
+        <meta
+          name="description"
+          content="Get help through GitHub Discussions, Discord, or email."
+        />
+      </Head>
       <div className={styles.supportBox}>
         <div className={styles.supportTitle}>Support</div>
         <div className={styles.supportCellBox}>

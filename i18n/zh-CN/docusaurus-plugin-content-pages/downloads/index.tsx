@@ -1,5 +1,6 @@
 import styles from "@site/src/pages/downloads/styles.module.scss";
 
+import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import DownloadsCliPanel from "@site/src/components/DownloadsCliPanel";
@@ -7,6 +8,13 @@ import { DownloadUrl } from "@site/src/download_url";
 import { downloadStable } from "@site/src/lib/utils";
 import Layout from "@theme/Layout";
 import React from "react";
+
+const OOMOL_AI_DOWNLOAD_URLS = {
+  web: "https://app.oomol.com",
+  ios: "https://apps.apple.com/cn/app/%E6%82%9F%E5%A2%A8-ai-oomol-%E5%AF%B9%E8%AF%9D%E5%BC%8F%E4%BA%91%E5%87%BD%E6%95%B0/id6749377154",
+  macos: "https://app-downloads.oomol.com/oomol-ai/darwin/arm64",
+  windows: "https://app-downloads.oomol.com/oomol-ai/win32/x64",
+} as const;
 
 const downloadData = [
   {
@@ -84,18 +92,21 @@ export default function Downloads() {
 
   return (
     <Layout>
+      <Head>
+        <title>获取与安装 OOMOL</title>
+        <meta
+          name="description"
+          content="先安装 oo-cli；需要生产、组合或编排新工具时再下载 OOMOL Studio；如果你更想通过图形界面使用同一套能力，就打开 OOMOL AI。"
+        />
+      </Head>
       <div className={styles.container}>
         <img className={styles.image} src={logoUrl} />
         <div className={styles.titleBox}>
-          <h1 className={styles.title}>
-            {translate({
-              message: "HOME.Downloads.title",
-            })}
-          </h1>
+          <h1 className={styles.title}>获取与安装 OOMOL</h1>
           <p className={styles["sub-title"]}>
-            {translate({
-              message: "HOME.Downloads.subtitle",
-            })}
+            先安装 oo-cli；需要生产、组合或编排新工具时再下载 OOMOL
+            Studio；如果你更想通过图形界面使用同一套能力，也可以在下方直接打开
+            OOMOL AI。
           </p>
         </div>
         <div className={styles.sectionHeading}>
@@ -174,6 +185,84 @@ export default function Downloads() {
               </div>
             );
           })}
+        </div>
+        <div className={styles.sectionHeading}>
+          <h2 className={styles.sectionTitle}>
+            如果你更想用图形界面，就用 OOMOL AI
+          </h2>
+          <p className={styles.sectionSubtitle}>
+            OOMOL AI 是使用 oo-cli 能力的对话式图形入口，适合在 Web、桌面和 iOS
+            中更自然地连续完成任务；如果你要生产或编排新工具，请进入 OOMOL
+            Studio。
+          </p>
+          <div className={styles.cards}>
+            <div className={styles.card}>
+              <div className={styles.content}>
+                <div className={styles.type}>Web</div>
+                <span className={styles.description}>对话式图形入口</span>
+              </div>
+              <div className={styles.downloads}>
+                <a
+                  href={OOMOL_AI_DOWNLOAD_URLS.web}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i
+                    className={`${styles["download-icon"]} i-codicon-link-external`}
+                  />
+                  打开网页版
+                </a>
+              </div>
+            </div>
+            <div className={`${styles.card} ${styles.stable}`}>
+              <div className={styles.content}>
+                <div className={styles.type}>Desktop</div>
+                <span className={styles.description}>桌面应用</span>
+              </div>
+              <div className={styles.downloads}>
+                <a
+                  href={OOMOL_AI_DOWNLOAD_URLS.macos}
+                  onClick={event =>
+                    downloadStable(event, OOMOL_AI_DOWNLOAD_URLS.macos)
+                  }
+                >
+                  <i
+                    className={`${styles["download-icon"]} i-codicon-desktop-download`}
+                  />
+                  下载 Mac 版
+                </a>
+                <a
+                  href={OOMOL_AI_DOWNLOAD_URLS.windows}
+                  onClick={event =>
+                    downloadStable(event, OOMOL_AI_DOWNLOAD_URLS.windows)
+                  }
+                >
+                  <i
+                    className={`${styles["download-icon"]} i-codicon-desktop-download`}
+                  />
+                  下载 Windows 版
+                </a>
+              </div>
+            </div>
+            <div className={styles.card}>
+              <div className={styles.content}>
+                <div className={styles.type}>iOS</div>
+                <span className={styles.description}>移动应用</span>
+              </div>
+              <div className={styles.downloads}>
+                <a
+                  href={OOMOL_AI_DOWNLOAD_URLS.ios}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i
+                    className={`${styles["download-icon"]} i-codicon-link-external`}
+                  />
+                  打开 App Store
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
         <section className={styles.pageCtaSection}>
           <div className={styles.pageCtaPanel}>

@@ -3,12 +3,10 @@ sidebar_position: 1
 title: 概述
 sidebar_label: 概述
 hide_title: true
+description: 先用 oo-cli，用现成工具跑通；不够时进入 OOMOL Studio；需要持续运行和交付时再交给 OOMOL Cloud。
 ---
 
 import desktop from "@site/static/img/docs/cn/desktop.png";
-import hub from "@site/static/img/docs/cn/hub.png";
-import hub_detail from "@site/static/img/docs/cn/hub_detail.png";
-import desktop_detail from "@site/static/img/docs/cn/desktop_detail.png";
 import ResponsiveVideo from "@site/src/components/mdx/ResponsiveVideo";
 
 <div
@@ -21,10 +19,14 @@ import ResponsiveVideo from "@site/src/components/mdx/ResponsiveVideo";
     letterSpacing: "-0.02em",
   }}
 >
-  有问题，问 Agent。有任务，让 Agent 直接做。
+  先从 oo-cli 开始。现成工具不够时进入 Studio。需要持续运行和交付时再交给
+  Cloud。
 </div>
 
-文档主要是提供给开发者查询，以及提供给搜索引擎了解产品功能。
+这份文档遵循主官网现在的产品路径。如果你只是想先把已发布工具跑起来，就从
+`oo-cli` 开始；如果你需要自己编写、扩展和验证工具，就进入 OOMOL Studio；
+如果这份实现已经验证完成并需要托管运行、统一配置或对外交付，再继续使用
+OOMOL Cloud。
 
 <ResponsiveVideo
   src="https://cloud-storage.oomol.com/users/019343aa-ff25-727c-a449-9017313539b0/chat-uploads/2026-03-23/4gxes_hu5_ua-OOMOL_Studio.webm"
@@ -38,108 +40,62 @@ import ResponsiveVideo from "@site/src/components/mdx/ResponsiveVideo";
   poster={desktop}
 />
 
-## 核心特点
+## 主路径
 
-OOMOL 是一个 AI 驱动的工作流平台，面向数据分析、自动化以及智能体构建。相比同类产品，我们更强调开源生态和开发者可编程性。
+### 1. oo-cli
 
-### 开源
+当你希望 Agent 先搜索、查看并直接运行现成工具时，从 `oo-cli` 开始。
 
-我们的商业模式很直接：底层执行引擎完全开源，上层应用提供产品化体验和托管服务。
+- 适合 Codex、Claude Code、终端工作流和其他 Agent
+- 包含搜索、查看、connector 调用、Cloud Task、skills、文件和账号能力
+- 当问题已经有已发布工具可用时，这是最短路径
 
-- 底层执行引擎开源，便于开发者理解运行机制，并在需要时进行定制
-- 计划支持导出容器镜像，进一步简化跨平台部署
+### 2. OOMOL Studio
 
-### 可编程
+当现成工具不够，需要自己做、自己改、自己验证时，再进入 OOMOL Studio。
 
-我们的核心能力之一是 Scriptlet Block，支持开发者使用 Python 和 Node.js 编写自定义业务逻辑。
+- 在真实 coding 环境里生成和编辑 function tool
+- 用同一份实现先在本地验证，再决定是否继续交付
+- 把连接、编排、依赖和自定义逻辑放在一条连续路径里完成
 
-- 传统工作流产品通常要求用户围绕预设模块拼接，业务实现容易受限
-- OOMOL 可以把工作流和开源生态直接连起来，让你在工作流中直接使用常见开源库
+### 3. OOMOL Cloud
 
-### AI 原生
+当实现已经验证完成，并且需要托管运行、持续交付或统一管理时，再使用 OOMOL
+Cloud。
 
-- 集成 AI 辅助编程能力，降低上手门槛
-- 支持基于大模型 function calling 的 Agent 式编排与生成
-- 内置多种 AI 模型，开发者无需复杂配置即可直接使用
+- 把运行配置、Secrets、权限和发布关系放进同一个后台
+- 不用围绕同一份实现再补一层新的交付系统
+- 继续把同一套能力通过 API、MCP、自动化和 `oo-cli` 交付出去
 
-## 产品架构
+## 文档如何使用
+
+- [oo-cli](/zh-CN/docs/oo-cli)：如果你想先让 Agent 和终端工作流直接使用已发布工具，就从这里开始
+- [OOMOL Studio](/zh-CN/docs/concepts/project)：如果你需要自己构建、扩展和验证工具，就看这里
+- [Cloud Function](/zh-CN/docs/cloud-services/cloud-function)：如果工具已经验证完成，并需要托管运行和线上交付，就看这里
+- [Support](/zh-CN/docs/community)：如果你需要发布、社区和相关运维信息，就看这里
+
+## 产品层次
 
 ```mermaid
-graph TB
-    subgraph Layer4["应用层"]
-        Hub["OOMOL Hub<br/>(项目和 Block 分享中心)"] ~~~ Cloud["OOMOL Cloud<br/>(Serverless 云函数部署)"]
+graph LR
+    Community["社区 / 目录<br/>(发现 package 和示例)"] -. 发现 .-> CLI["oo-cli<br/>(搜索、查看、运行)"]
+    CLI --> Studio["OOMOL Studio<br/>(构建与验证)"]
+    Studio --> Cloud["OOMOL Cloud<br/>(线上运行与交付)"]
+
+    subgraph Foundation["实现层"]
+        OOCANA["OOCANA 工作流引擎"]
+        OVM["OVM 运行环境"]
     end
 
-    subgraph Layer3["平台层"]
-        Studio["OOMOL Studio<br/>(All-in-One 桌面软件)"]
-    end
-
-    subgraph Layer2["引擎层 (开源)"]
-        Oocana["OOCANA 工作流引擎"]
-    end
-
-    subgraph Layer1["基础层 (开源)"]
-        OVM["OVM 虚拟化 Linux 环境<br/>(内置 Node.js 和 Python)"]
-    end
-
-    Layer4 --> Layer3
-    Layer3 --> Layer2
-    Layer2 --> Layer1
+    Studio --> OOCANA
+    Cloud --> OOCANA
+    OOCANA --> OVM
 ```
 
-### OOMOL STUDIO
+底层开源层仍然重要，但它们不再是大多数新用户的第一站：
 
-> OOMOL 桌面应用
+- `OOCANA` 是执行背后的工作流引擎
+- `OVM` 是 OOMOL Studio 和相关能力依赖的运行环境
 
-1. 方便的拖放式工作流。
-2. 专业的代码编辑器。
-3. 精美的数据可视化展示。
-
-<img src={desktop} width="720" />
-<img src={desktop_detail} width="720" />
-
-### OOMOL Hub
-
-> OOMOL 分享中心
-
-1. 分享你的创意。
-2. 与社区中的朋友协作项目。
-3. 从社区中寻找灵感。
-
-<img src={hub} width="720" />
-<img src={hub_detail} width="720" />
-
-### OOMOL Cloud
-
-> OOMOL 云函数服务
-
-1. 基于 Web 访问，无需本地安装。
-2. 在本地算力不够时，可以按需使用云端计算资源。
-3. 支持通过 API 等形式对外提供能力。
-
-### OVM
-
-> OOMOL 虚拟机
-
-1. 提供隔离的容器环境，确保安全性与可移植性
-2. 内置多语言开发环境，开箱即用
-
-**开源仓库**
-
-- https://github.com/oomol-lab/ovm
-- https://github.com/oomol-lab/ovm-core
-- https://github.com/oomol-lab/ovm-win
-- https://github.com/oomol-lab/ovm-js
-
-### OOCANA
-
-> OOMOL 工作流引擎
-
-1. 负责块调度。
-2. 吞吐量管理。
-
-**开源仓库**
-
-- https://github.com/oomol/oocana-node
-- https://github.com/oomol/oocana-python
-- https://github.com/oomol/oocana-rust
+如果你是第一次接触 OOMOL，先按上面的用户路径理解产品，再在需要实现细节时
+往下看底层部分。

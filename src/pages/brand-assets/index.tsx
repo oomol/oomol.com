@@ -1,6 +1,10 @@
 import styles from "./styles.module.scss";
 
+import type { DocusaurusContext } from "@docusaurus/types";
+
+import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import AssetBlockSVG from "@site/src/components/AssetBlock";
 import { Button } from "@site/src/components/ui/button";
 import ColorIconActiveSVG from "@site/static/img/pages/brand-assets/color-active.svg";
@@ -24,6 +28,10 @@ import { clsx } from "clsx";
 import React, { useState, useEffect, useRef, useMemo } from "react";
 
 export default function BrandAssets() {
+  const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
+    i18n: { currentLocale: string };
+  };
+  const isZh = i18n.currentLocale === "zh-CN";
   const [activeSection, setActiveSection] = useState("logos");
   const [isScrolling, setIsScrolling] = useState(false);
   const isManualScroll = useRef(false);
@@ -194,6 +202,17 @@ export default function BrandAssets() {
 
   return (
     <Layout>
+      <Head>
+        <title>{isZh ? "品牌资源 - OOMOL" : "Brand Assets - OOMOL"}</title>
+        <meta
+          name="description"
+          content={
+            isZh
+              ? "下载 OOMOL 的 Logo、图标、色彩和字体资源。"
+              : "Download OOMOL logos, icons, color references, and type assets."
+          }
+        />
+      </Head>
       <div className={styles.container}>
         <div className={styles.titleBox}>
           <div className={styles.title}>

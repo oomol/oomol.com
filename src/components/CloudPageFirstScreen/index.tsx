@@ -11,7 +11,7 @@ import React, { useRef, useState } from "react";
 const zhCopy = {
   slogan: `把自己的工具更快
 带进 oo-cli`,
-  overview: `把 Studio 里的自定义工具交付到 oo-cli，让 Agent、Codex 和 OpenCrawl 直接使用。`,
+  overview: `把 Studio 里的自定义工具交付到 oo-cli，让 Agent、Codex 和 OpenClaw 直接使用。`,
   primaryCta: "开始使用 oo-cli",
   secondaryCta: "下载 OOMOL Studio",
   playAriaLabel: "播放演示视频",
@@ -20,7 +20,7 @@ const zhCopy = {
 const enCopy = {
   slogan: `Bring your own tools
 to oo-cli faster`,
-  overview: `Deliver the custom tools from Studio to oo-cli, so Agents, Codex, and OpenCrawl can use them directly.`,
+  overview: `Deliver the custom tools from Studio to oo-cli, so Agents, Codex, and OpenClaw can use them directly.`,
   primaryCta: "Start with oo-cli",
   secondaryCta: "Download OOMOL Studio",
   playAriaLabel: "Play demo video",
@@ -106,7 +106,7 @@ export default function CloudPageFirstScreen() {
               }}
               onEnded={() => setIsPlaying(false)}
             >
-              <source src={heroVideoUrl} type="video/mp4" />
+              <source src={heroVideoUrl} type="video/webm" />
             </video>
           </div>
         </div>

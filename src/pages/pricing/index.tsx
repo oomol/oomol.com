@@ -1,10 +1,12 @@
 import styles from "./styles.module.scss";
 
 import type { ColumnProps } from "@arco-design/web-react/es/Table";
+import type { DocusaurusContext } from "@docusaurus/types";
 
 import { Alert, Table, Tabs } from "@arco-design/web-react";
 import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { DownloadButton } from "@site/src/components/DownloadButton";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { Button } from "@site/src/components/ui/button";
@@ -153,6 +155,10 @@ function PriceTable<T extends PricingRowBase>({
 }
 
 export default function Index() {
+  const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
+    i18n: { currentLocale: string };
+  };
+  const isZh = i18n.currentLocale === "zh-CN";
   const [activePricingTable, setActivePricingTable] =
     useState<PricingTableKey>("llm");
   const [llmRows, setLlmRows] = useState<LLMPricingRow[]>([]);
@@ -204,6 +210,17 @@ export default function Index() {
     "PRICING.subscription.subscribe",
     "Subscribe"
   );
+  const pageCopy = isZh
+    ? {
+        title: "价格 - OOMOL",
+        description:
+          "本地开发永久免费。只有当你需要 OOMOL 承接线上交付、托管运行或托管 AI 用量时才进入付费。",
+      }
+    : {
+        title: "Pricing - OOMOL",
+        description:
+          "Build locally for free. Pay only when you want OOMOL to handle hosted delivery, managed runs, or hosted AI usage.",
+      };
 
   useEffect(() => {
     let cancelled = false;
@@ -537,7 +554,7 @@ export default function Index() {
       : isCloudTaskTable
         ? tPricing(
             "PRICING.tables.cloudTask.alert",
-            "Running Blocks locally in OOMOL Studio does not trigger Cloud Task billing. Running Blocks in Chat or hub.oomol.com does."
+            "Running tools locally in OOMOL Studio does not trigger Cloud Task billing. Running the same tools through OOMOL-hosted surfaces does."
           )
         : tPricing(
             "PRICING.tables.fusionApi.alert",
@@ -591,14 +608,8 @@ export default function Index() {
   return (
     <Layout>
       <Head>
-        <title>{tPricing("PRICING.page.title", "Pricing — OOMOL")}</title>
-        <meta
-          name="description"
-          content={tPricing(
-            "PRICING.page.description",
-            "OOMOL Studio is free for local development. See subscription plans and pay-as-you-go pricing for cloud delivery, LLM usage, and Fusion APIs."
-          )}
-        />
+        <title>{pageCopy.title}</title>
+        <meta name="description" content={pageCopy.description} />
       </Head>
       <div className={styles.container}>
         <div className={styles.titleBox}>
