@@ -177,7 +177,7 @@ export default function CliPagePainPoints() {
               </div>
               <div className={styles.cardMeta}>
                 <div className={styles.cardEyebrow}>{card.eyebrow}</div>
-                <div className={styles.cardCommand}>{card.command}</div>
+                <code className={styles.cardCommand}>{card.command}</code>
               </div>
               <h3 className={styles.cardTitle}>{card.title}</h3>
               <p className={styles.cardDescription}>{card.description}</p>

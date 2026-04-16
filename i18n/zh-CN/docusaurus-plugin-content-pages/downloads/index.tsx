@@ -1,6 +1,7 @@
 import styles from "@site/src/pages/downloads/styles.module.scss";
 
 import Head from "@docusaurus/Head";
+import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import DownloadsCliPanel from "@site/src/components/DownloadsCliPanel";
@@ -11,7 +12,7 @@ import React from "react";
 
 const OOMOL_AI_DOWNLOAD_URLS = {
   web: "https://app.oomol.com",
-  ios: "https://apps.apple.com/cn/app/%E6%82%9F%E5%A2%A8-ai-oomol-%E5%AF%B9%E8%AF%9D%E5%BC%8F%E4%BA%91%E5%87%BD%E6%95%B0/id6749377154",
+  ios: "https://apps.apple.com/app/id6749377154",
   macos: "https://app-downloads.oomol.com/oomol-ai/darwin/arm64",
   windows: "https://app-downloads.oomol.com/oomol-ai/win32/x64",
 } as const;
@@ -86,7 +87,7 @@ export default function Downloads() {
       <div className={styles.page}>
         <section className={styles.hero}>
           <div className={styles.heroInner}>
-            <img className={styles.image} src={logoUrl} />
+            <img className={styles.image} src={logoUrl} alt="" />
             <div className={styles.titleBox}>
               <h1 className={styles.title}>选择最适合你的 OOMOL 入口</h1>
               <p className={styles["sub-title"]}>
@@ -112,11 +113,11 @@ export default function Downloads() {
                 })}
               </p>
               <div className={styles.sectionActions}>
-                <a className={styles.sectionAction} href={cliGuideUrl}>
+                <Link className={styles.sectionAction} to={cliGuideUrl}>
                   {translate({
                     message: "HOME.Downloads.cli.action.guide",
                   })}
-                </a>
+                </Link>
                 <a
                   className={styles.sectionAction}
                   href="https://github.com/oomol-lab/oo-cli"
@@ -279,19 +280,19 @@ export default function Downloads() {
                 </p>
               </div>
               <div className={styles.pageCtaActions}>
-                <a className={styles.pageCtaPrimaryAction} href={cliGuideUrl}>
+                <Link className={styles.pageCtaPrimaryAction} to={cliGuideUrl}>
                   {translate({
                     message: "HOME.Downloads.cta.primary",
                   })}
-                </a>
-                <a
+                </Link>
+                <Link
                   className={styles.pageCtaSecondaryAction}
-                  href={studioDownloadsUrl}
+                  to={studioDownloadsUrl}
                 >
                   {translate({
                     message: "HOME.Downloads.cta.secondary",
                   })}
-                </a>
+                </Link>
               </div>
             </div>
           </section>

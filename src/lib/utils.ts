@@ -10,7 +10,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 const callback = function (url: string) {
-  if (typeof url != "undefined") {
+  if (url) {
     window.location.href = url;
   }
 };

@@ -102,18 +102,6 @@ export default function HomepagePainPoints() {
         ],
       };
 
-  const cards = copy.cards.map(card => ({
-    ...card,
-    apps: card.apps.map(app =>
-      app.label === "你的 API" || app.label === "Your API"
-        ? {
-            ...app,
-            label: isZh ? "你的 API" : "Your API",
-          }
-        : app
-    ),
-  }));
-
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -124,7 +112,7 @@ export default function HomepagePainPoints() {
         </div>
 
         <div className={styles.grid}>
-          {cards.map(card => (
+          {copy.cards.map(card => (
             <article key={card.title} className={styles.card}>
               <div className={styles.cardHeader}>
                 <div className={styles.cardTop}>

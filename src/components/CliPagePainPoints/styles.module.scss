@@ -123,6 +123,7 @@
 }
 
 .cardCommand {
+  display: inline-block;
   width: fit-content;
   max-width: 100%;
   padding: 0.35rem 0.55rem;
@@ -134,7 +135,7 @@
     var(--oomol-primary-bg) 18%
   );
   font-family:
-    ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Monaco, Consolas,
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas,
     "Liberation Mono", monospace;
   font-size: 0.82rem;
   line-height: 1.45;

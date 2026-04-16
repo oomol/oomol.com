@@ -49,7 +49,7 @@ type DownloadItem = {
   subtitle: string;
   description: string;
   action: string;
-  href: string;
+  href?: string;
   external?: boolean;
   kind?: "web" | "desktop" | "ios";
 };
@@ -110,8 +110,7 @@ const COPY = {
     hero: {
       titleLine1: "OOMOL AI，把工具使用体验",
       titleLine2: "直接带进图形界面",
-      lead:
-        "悟墨 AI 是给人直接打开来用的官方图形入口，更适合连续对话、查看结果和继续处理任务。",
+      lead: "悟墨 AI 是给人直接打开来用的官方图形入口，更适合连续对话、查看结果和继续处理任务。",
       productScreenshotAlt: "悟墨 AI 中由 Agent 原生调用工具完成任务的界面",
     },
     actions: {
@@ -126,23 +125,20 @@ const COPY = {
       demo: {
         eyebrow: "一个工作区",
         title: "让任务在一个界面里继续往下走",
-        description:
-          "从搜索工具到查看结果，再到继续处理，都不需要来回跳转。",
+        description: "从搜索工具到查看结果，再到继续处理，都不需要来回跳转。",
         imageAlt: "悟墨 AI 中原生工具能力与小程序工作台界面",
       },
       cards: {
         chat: {
           eyebrow: "连续处理",
           title: "搜索、执行和结果都留在同一界面",
-          body:
-            "账号连接、任务运行和现成工具的调用，会直接进入当前工作区，不再散落在额外步骤里。",
+          body: "账号连接、任务运行和现成工具的调用，会直接进入当前工作区，不再散落在额外步骤里。",
           chips: ["一个工作区", "连续处理", "直接打开用"],
         },
         image: {
           eyebrow: "结果跟进",
           title: "更适合看结果、继续追问、继续处理",
-          body:
-            "当你拿到结果后，可以直接补充要求、继续追问或执行下一步，而不是先换回别的入口。",
+          body: "当你拿到结果后，可以直接补充要求、继续追问或执行下一步，而不是先换回别的入口。",
           chips: ["先看结果", "继续追问", "继续处理"],
         },
       },
@@ -251,8 +247,7 @@ const COPY = {
         desktop: {
           title: "Desktop",
           subtitle: "桌面应用",
-          description:
-            "适合更稳定的工作区与更长时间的连续处理。",
+          description: "适合更稳定的工作区与更长时间的连续处理。",
           action: "下载桌面版",
         },
         ios: {
@@ -275,8 +270,7 @@ const COPY = {
     hero: {
       titleLine1: "OOMOL AI brings tool use",
       titleLine2: "into a GUI workflow",
-      lead:
-        "OOMOL AI is the official GUI for opening and using tools directly, better suited to continuous chat, reviewing results, and keeping work moving.",
+      lead: "OOMOL AI is the official GUI for opening and using tools directly, better suited to continuous chat, reviewing results, and keeping work moving.",
       productScreenshotAlt:
         "OOMOL AI interface where the agent natively calls tools to complete a task",
     },
@@ -291,8 +285,7 @@ const COPY = {
         "Search, execution, results, and follow-up work all stay in one workspace here.",
       demo: {
         eyebrow: "One workspace",
-        title:
-          "Keep the task moving in one interface",
+        title: "Keep the task moving in one interface",
         description:
           "From search to execution to reviewing results, you do not need to bounce across separate surfaces.",
         imageAlt:
@@ -302,15 +295,13 @@ const COPY = {
         chat: {
           eyebrow: "Continuous work",
           title: "Search, execution, and results stay in one interface",
-          body:
-            "Account connections, task runs, and ready-made tools move straight into the current workspace instead of being scattered across extra steps.",
+          body: "Account connections, task runs, and ready-made tools move straight into the current workspace instead of being scattered across extra steps.",
           chips: ["One workspace", "Continuous work", "Open and use"],
         },
         image: {
           eyebrow: "Follow-up",
           title: "Better for reviewing results and continuing the next step",
-          body:
-            "Once you have the result, you can refine the request, ask follow-up questions, or continue the next action without switching back to another surface.",
+          body: "Once you have the result, you can refine the request, ask follow-up questions, or continue the next action without switching back to another surface.",
           chips: ["Review result", "Ask follow-up", "Keep going"],
         },
       },
@@ -324,7 +315,8 @@ const COPY = {
           body: "A GUI is better suited to everyday use than one-off command calls.",
         },
         {
-          title: "When you need to see the result before deciding the next step",
+          title:
+            "When you need to see the result before deciding the next step",
           body: "Images, documents, tables, and intermediate results are easier to follow when they stay in the current page.",
         },
         {
@@ -358,8 +350,7 @@ const COPY = {
       ],
     },
     outputs: {
-      title:
-        "Terminals are for integration. GUIs are for ongoing use.",
+      title: "Terminals are for integration. GUIs are for ongoing use.",
       description:
         "Use oo-cli when you want tools connected into agents and terminal workflows. Open OOMOL AI when you want to keep using those tools yourself in a visual workspace.",
       imageAlt:
@@ -376,8 +367,7 @@ const COPY = {
       ],
       summary: {
         eyebrow: "Shared billing",
-        title:
-          "You top up usage, not a surface",
+        title: "You top up usage, not a surface",
         description:
           "Whether a task starts from oo-cli or OOMOL AI, usage is counted the same way. Add more only when you need more headroom.",
         badge: "One credit system",
@@ -428,8 +418,7 @@ const COPY = {
         web: {
           title: "Web",
           subtitle: "Chat GUI",
-          description:
-            "The fastest way to start using it.",
+          description: "The fastest way to start using it.",
           action: "Open Web App",
         },
         desktop: {
@@ -465,10 +454,12 @@ function formatPackPrice(priceUsd: number): string {
 
 function resolveAppDesktopDownloadUrl() {
   if (typeof navigator === "undefined") {
-    return APP_DESKTOP_DOWNLOAD_URLS.macos;
+    return "";
   }
 
-  return navigator.userAgent.includes("Win")
+  const platformSignature = `${navigator.platform} ${navigator.userAgent}`;
+
+  return /Win/i.test(platformSignature)
     ? APP_DESKTOP_DOWNLOAD_URLS.windows
     : APP_DESKTOP_DOWNLOAD_URLS.macos;
 }
@@ -558,12 +549,9 @@ export default function AppPage() {
   const copy = isZh ? COPY.zh : COPY.en;
 
   const appWebHref = "https://app.oomol.com";
-  const appStoreHref =
-    "https://apps.apple.com/cn/app/%E6%82%9F%E5%A2%A8-ai-oomol-%E5%AF%B9%E8%AF%9D%E5%BC%8F%E4%BA%91%E5%87%BD%E6%95%B0/id6749377154";
+  const appStoreHref = "https://apps.apple.com/app/id6749377154";
   const rechargeHref = "https://console.oomol.com/billing/token-recharge";
-  const [desktopDownloadHref, setDesktopDownloadHref] = useState<string>(
-    APP_DESKTOP_DOWNLOAD_URLS.macos
-  );
+  const [desktopDownloadHref, setDesktopDownloadHref] = useState<string>("");
   const pricingTitleLines = isZh
     ? splitZhTitleAtComma(copy.pricing.title)
     : [copy.pricing.title];
@@ -659,7 +647,7 @@ export default function AppPage() {
       subtitle: copy.downloads.items.desktop.subtitle,
       description: copy.downloads.items.desktop.description,
       action: copy.downloads.items.desktop.action,
-      href: desktopDownloadHref,
+      href: desktopDownloadHref || undefined,
       external: true,
       kind: "desktop",
     },
@@ -711,8 +699,16 @@ export default function AppPage() {
                 </a>
                 <a
                   className={styles.heroActionButton}
-                  href={desktopDownloadHref}
-                  onClick={event => downloadStable(event, desktopDownloadHref)}
+                  href={desktopDownloadHref || undefined}
+                  aria-disabled={!desktopDownloadHref}
+                  onClick={event => {
+                    if (!desktopDownloadHref) {
+                      event.preventDefault();
+                      return;
+                    }
+
+                    downloadStable(event, desktopDownloadHref);
+                  }}
                 >
                   <Download
                     className={styles.heroActionIcon}
@@ -959,7 +955,14 @@ export default function AppPage() {
                   href={item.href}
                   onClick={
                     item.kind === "desktop"
-                      ? event => downloadStable(event, item.href)
+                      ? event => {
+                          if (!item.href) {
+                            event.preventDefault();
+                            return;
+                          }
+
+                          downloadStable(event, item.href);
+                        }
                       : undefined
                   }
                   target={item.external ? "_blank" : undefined}

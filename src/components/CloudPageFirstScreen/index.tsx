@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import type { DocusaurusContext } from "@docusaurus/types";
 
 import Link from "@docusaurus/Link";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { Button } from "@site/src/components/ui/button";
 import React, { useRef, useState } from "react";
@@ -23,7 +24,12 @@ const enCopy = {
   slogan: `Hand delivery, hosted runtime,
 and access control to Cloud`,
   overview: `Studio is where the tool gets built and validated. Cloud is where it gets delivered, with hosted runtime, configuration, and access handled in one place, then mainly flowing back into oo-cli for agents to use.`,
-  highlights: ["Deliver back to oo-cli", "Hosted runtime", "Secrets", "Access control"],
+  highlights: [
+    "Deliver back to oo-cli",
+    "Hosted runtime",
+    "Secrets",
+    "Access control",
+  ],
   primaryCta: "Read Cloud docs",
   secondaryCta: "Open Cloud Console",
   playAriaLabel: "Play demo video",
@@ -38,8 +44,9 @@ export default function CloudPageFirstScreen() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const heroVideoUrl =
     "https://static.oomol.com/assets/homepage/oomol-flow-en.webm";
-  const heroVideoPosterUrl =
-    "/img/pages/home/homepage-first-screen-workflow-poster.png";
+  const heroVideoPosterUrl = useBaseUrl(
+    "/img/pages/home/homepage-first-screen-workflow-poster.png"
+  );
 
   const handlePlay = async () => {
     if (!videoRef.current) {

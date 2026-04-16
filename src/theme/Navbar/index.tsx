@@ -204,7 +204,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
         iconClassName: "i-lucide-bot",
       },
     ],
-    []
+    [locale]
   );
 
   useEffect(() => {

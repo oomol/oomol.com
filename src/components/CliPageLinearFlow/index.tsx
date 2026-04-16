@@ -9,8 +9,7 @@ import { SiteCta } from "@site/src/components/SiteCta";
 import { Button } from "@site/src/components/ui/button";
 import React from "react";
 
-const COMMANDS_REFERENCE_URL =
-  "https://github.com/oomol-lab/oo-cli/blob/main/docs/commands.md";
+const COMMANDS_REFERENCE_ROUTE = "/docs/oo-cli/command-reference";
 
 type Copy = {
   workflow: {
@@ -383,20 +382,15 @@ export default function CliPageLinearFlow() {
             </p>
 
             <div className={styles.inlineActions}>
-              <Link
-                to="/docs/oo-cli"
-                className={styles.primaryLink}
-              >
+              <Link to="/docs/oo-cli" className={styles.primaryLink}>
                 {copy.workflow.primary}
               </Link>
-              <a
-                href={COMMANDS_REFERENCE_URL}
-                target="_blank"
-                rel="noreferrer"
+              <Link
+                to={COMMANDS_REFERENCE_ROUTE}
                 className={styles.secondaryLink}
               >
                 {copy.workflow.secondary}
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -505,14 +499,12 @@ export default function CliPageLinearFlow() {
             <Button asChild size="lg" className={siteCtaStyles.actionButton}>
               <Link to="/docs/oo-cli">{copy.cta.primary}</Link>
             </Button>
-            <a
-              href={COMMANDS_REFERENCE_URL}
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              to={COMMANDS_REFERENCE_ROUTE}
               className={siteCtaStyles.ghostLink}
             >
               {copy.cta.secondary}
-            </a>
+            </Link>
           </>
         }
       />
