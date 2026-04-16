@@ -3,7 +3,7 @@
   "position": 5,
   "link": {
     "type": "generated-index",
-    "description": "云函数、oo CLI 和直接接入文档。"
+    "description": "云函数与直接接入文档。"
   },
   "collapsed": true,
   "className": "sidebar-submenu-item"

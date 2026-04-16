@@ -78,7 +78,7 @@ export default function CliPageFirstScreen() {
           </div>
           <div className={styles.actions}>
             <Button asChild size="lg" className={styles.primaryCta}>
-              <Link to="/docs/cloud-services/cli">{copy.primaryCta}</Link>
+              <Link to="/docs/oo-cli">{copy.primaryCta}</Link>
             </Button>
             <Button
               asChild

@@ -384,7 +384,7 @@ export default function CliPageLinearFlow() {
 
             <div className={styles.inlineActions}>
               <Link
-                to="/docs/cloud-services/cli"
+                to="/docs/oo-cli"
                 className={styles.primaryLink}
               >
                 {copy.workflow.primary}
@@ -503,7 +503,7 @@ export default function CliPageLinearFlow() {
         actions={
           <>
             <Button asChild size="lg" className={siteCtaStyles.actionButton}>
-              <Link to="/docs/cloud-services/cli">{copy.cta.primary}</Link>
+              <Link to="/docs/oo-cli">{copy.cta.primary}</Link>
             </Button>
             <a
               href={COMMANDS_REFERENCE_URL}

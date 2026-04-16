@@ -72,7 +72,7 @@ const downloadData = [
 
 export default function Downloads() {
   const logoUrl = useBaseUrl("/img/logo2x.png");
-  const cliGuideUrl = useBaseUrl("/docs/cloud-services/cli");
+  const cliGuideUrl = useBaseUrl("/docs/oo-cli");
   const studioDownloadsUrl = useBaseUrl("/downloads#studio-downloads");
 
   return (

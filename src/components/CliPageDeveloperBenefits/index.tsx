@@ -26,7 +26,7 @@ const zhCopy = {
         "Agent 从找工具到拿到结果都在同一个 CLI 里完成，不必在网页和多种协议之间反复切换。",
       note: "切换越少，任务越容易跑通。",
       cta: "查看 CLI 指南",
-      href: "/docs/cloud-services/cli",
+      href: "/docs/oo-cli",
     },
     {
       tag: "结构化输出",
@@ -83,7 +83,7 @@ const enCopy = {
         "From finding a tool to getting the result back, the agent stays inside one CLI instead of bouncing across web pages and mixed protocols.",
       note: "Fewer switches make real tasks easier to finish.",
       cta: "Open CLI guide",
-      href: "/docs/cloud-services/cli",
+      href: "/docs/oo-cli",
     },
     {
       tag: "Structured output",

@@ -253,7 +253,7 @@ export default function StudioPage() {
                 variant="contrast"
                 className={styles.siteCtaSecondary}
               >
-                <Link to="/docs/cloud-services/cli">
+                <Link to="/docs/oo-cli">
                   {translate({ message: "HOME.CliEntry.step1.title" })}
                 </Link>
               </Button>

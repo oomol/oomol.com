@@ -157,7 +157,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
       {
         key: "oo-cli",
         href: "/cli",
-        matchHrefs: ["/docs/cloud-services/cli"],
+        matchHrefs: ["/docs/oo-cli", "/docs/oo-cli/command-reference"],
         label: translate({
           id: "item.label.navbar.oo-cli",
           message: "oo-cli",

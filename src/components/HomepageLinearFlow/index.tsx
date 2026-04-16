@@ -254,7 +254,7 @@ export default function HomepageLinearFlow() {
             <p className={styles.sectionDescription}>{copy.cli.description}</p>
             <div className={styles.inlineActions}>
               <Link
-                to="/docs/cloud-services/cli"
+                to="/docs/oo-cli"
                 className={styles.primaryLink}
               >
                 {copy.cli.guide}

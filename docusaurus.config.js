@@ -247,7 +247,7 @@ const config = {
             className: "productDropdown",
             items: [
               {
-                to: "/docs/cloud-services/cli",
+                to: "/docs/oo-cli",
                 label: "navbar.oo-cli",
                 className: "productDropdownItem productDropdownItemCli",
               },

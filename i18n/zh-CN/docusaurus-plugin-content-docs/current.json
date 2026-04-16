@@ -39,6 +39,10 @@
     "message": "云函数",
     "description": "The label for category Cloud Function in sidebar tutorialSidebar"
   },
+  "sidebar.tutorialSidebar.category.oo-cli": {
+    "message": "oo-cli",
+    "description": "The label for category oo-cli in sidebar tutorialSidebar"
+  },
   "sidebar.tutorialSidebar.category.API & SDK": {
     "message": "API 与 SDK",
     "description": "The label for category API & SDK in sidebar tutorialSidebar"
