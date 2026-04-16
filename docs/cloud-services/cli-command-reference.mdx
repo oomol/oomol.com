@@ -1,0 +1,207 @@
+---
+sidebar_position: 3
+sidebar_label: Command Reference
+---
+
+# CLI Command Reference
+
+This page summarizes the current `oo` command surface from the
+[`oo-cli`](https://github.com/oomol-lab/oo-cli) repository.
+
+:::note
+Use the commands on this page as the canonical website reference. Older examples
+such as `oo package info` are obsolete. The current namespaces are
+`oo packages ...` and `oo cloud-task ...`.
+:::
+
+## Global Options
+
+| Option | Purpose |
+| --- | --- |
+| `--debug` | Print the current log file path to `stderr` when the CLI exits |
+| `--lang <lang>` | Override the display language for the current invocation. Supported values: `en`, `zh` |
+| `-h`, `--help` | Show help for the current command |
+| `-V`, `--version` | Show the CLI version, build time, and commit hash |
+
+## Debug Logging
+
+`oo` writes persisted structured logs to platform-specific locations:
+
+- macOS: `~/Library/Logs/oo`
+- Linux: `${XDG_STATE_HOME:-~/.local/state}/oo/logs`
+- Windows: `%LOCALAPPDATA%\\oo\\Logs`
+
+These logs cover remote API request lifecycles, browser-login callbacks,
+explicit update checks, settings and auth store changes, and sqlite cache
+activity. The CLI keeps the newest `20` log files.
+
+## Authentication
+
+| Command | Purpose |
+| --- | --- |
+| `oo auth login` | Start the browser login flow and save the authenticated account |
+| `oo auth logout` | Remove the current account from persisted auth data |
+| `oo auth status` | Show the current account and validate its API key |
+| `oo auth switch` | Switch to the next saved account |
+| `oo login` | Alias for `oo auth login` |
+| `oo logout` | Alias for `oo auth logout` |
+
+## Configuration
+
+| Command | Purpose |
+| --- | --- |
+| `oo config list` | List currently persisted configuration values |
+| `oo config get <key>` | Read one persisted configuration value |
+| `oo config path` | Print the config file path |
+| `oo config set <key> <value>` | Persist one configuration value |
+| `oo config unset <key>` | Remove one configuration value |
+
+Supported configuration keys:
+
+- `lang`
+- `file.download.out_dir`
+
+Notable behavior:
+
+- Unknown keys in the persisted settings file are ignored and logged as
+  warnings.
+- `file.download.out_dir` accepts any non-empty path string.
+- Relative download paths resolve from the current working directory when
+  `oo file download` runs.
+
+## Updates
+
+| Command | Purpose |
+| --- | --- |
+| `oo check-update` | Check whether a newer CLI release is available |
+
+When a newer release exists, `oo` prints the recommended upgrade command for
+the current package manager.
+
+## Search And Discovery
+
+### Mixed Search
+
+| Command | Purpose |
+| --- | --- |
+| `oo search <text>` | Search packages and connector actions with one free-form query |
+
+Notable behavior:
+
+- JSON output mixes `package` and `connector` results and uses `kind` as the
+  discriminator.
+- Connector results include `authenticated` and `schemaPath`.
+
+### Connector Discovery
+
+| Command | Purpose |
+| --- | --- |
+| `oo connector search <text>` | Search connector actions with free-form text |
+| `oo connector run <serviceName>` | Validate input data and run one connector action |
+
+Notable options for `oo connector run`:
+
+- `-a`, `--action <action>`: required action name
+- `-d`, `--data <data>`: inline JSON or `@path` to a JSON file
+- `--dry-run`: validate the payload without executing the action
+- `--json`: emit structured output
+
+### Package Discovery
+
+| Command | Purpose |
+| --- | --- |
+| `oo packages search <text>` | Search published packages with free-form intent text |
+| `oo packages info <packageSpecifier>` | Show metadata for one package |
+
+`<packageSpecifier>` supports `foo/bar`, `foo/bar@latest`, and
+`foo/bar@1.2.3`.
+
+## Cloud Tasks
+
+| Command | Purpose |
+| --- | --- |
+| `oo cloud-task run <packageSpecifier>` | Validate input values and create a Cloud Task for a package block |
+| `oo cloud-task list` | List cloud tasks with optional filters |
+| `oo cloud-task log <taskId>` | Show paginated logs for one task |
+| `oo cloud-task result <taskId>` | Show the current result for one task |
+| `oo cloud-task wait <taskId>` | Poll until a task reaches a terminal state |
+
+Key details:
+
+- `oo cloud-task run` requires `PACKAGE_NAME@SEMVER`.
+- Use `-b`, `--block-id <block-id>` to choose the target block.
+- Use `-d`, `--data <data>` for inline JSON or `@path/to/file.json`.
+- `--dry-run` validates the request without creating a task.
+- `oo cloud-task wait` polls every `3` seconds and accepts `--timeout`.
+
+## Skills
+
+| Command | Purpose |
+| --- | --- |
+| `oo skills list` | List oo-managed skills from the local Codex skills directory |
+| `oo skills search <text>` | Search published skills |
+| `oo skills install [packageName]` | Install bundled skills or published skills |
+| `oo skills update [skills...]` | Update installed oo-managed published skills |
+| `oo skills uninstall [skill]` | Remove bundled skills or one oo-managed published skill |
+
+Key details:
+
+- `oo skills find <text>` is an alias for `oo skills search <text>`.
+- `oo skills add [packageName]` is an alias for
+  `oo skills install [packageName]`.
+- `oo skills remove [skill]` is an alias for `oo skills uninstall [skill]`.
+- Running `oo skills install` with no package installs bundled skills.
+- Bundled skills are published to supported local hosts such as Codex and
+  Claude Code when those directories already exist.
+- Published skills are installed into
+  `${CODEX_HOME:-~/.codex}/skills/<skill-id>`.
+- Bundled skills such as `oo` and `oo-find-skills` are synchronized
+  automatically during startup when needed, so `oo skills update` only targets
+  published oo-managed Codex skills.
+
+## Files
+
+| Command | Purpose |
+| --- | --- |
+| `oo file download <url> [outDir]` | Download one `http` or `https` file and save it locally |
+| `oo file upload <filePath>` | Upload one local file to the temporary file cache |
+| `oo file list` | List previously uploaded files from the local sqlite store |
+| `oo file cleanup` | Delete expired upload records from the local sqlite store |
+
+Key details:
+
+- `oo file download` defaults to `file.download.out_dir` when configured, or
+  `~/Downloads` otherwise.
+- Downloads resume when the server supports safe HTTP Range requests.
+- Existing target files are never overwritten; `oo` appends `_1`, `_2`, and so
+  on before the extension.
+- Uploaded files expire after one day.
+- Files larger than `512 MiB` are rejected by `oo file upload`.
+
+## Logs
+
+| Command | Purpose |
+| --- | --- |
+| `oo log path` | Print the current debug log directory path |
+| `oo log print [index]` | Print one previous persisted debug log file |
+
+`oo log print 1` means the previous log file. `oo` skips the current run's log
+file and reads earlier logs.
+
+## Shell Completion
+
+| Command | Purpose |
+| --- | --- |
+| `oo completion <shell>` | Generate a shell completion script |
+
+Supported shells:
+
+- `bash`
+- `zsh`
+- `fish`
+
+## Related Docs
+
+- [CLI Guide](/docs/cloud-services/cli)
+- [Cloud Function API Overview](/docs/cloud-services/cloud-task/overview)
+- [oo-cli on GitHub](https://github.com/oomol-lab/oo-cli)

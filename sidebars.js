@@ -118,6 +118,7 @@ const sidebars = {
       items: [
         "cloud-services/cloud-function",
         "cloud-services/cli",
+        "cloud-services/cli-command-reference",
         {
           type: "category",
           label: "API & SDK",
