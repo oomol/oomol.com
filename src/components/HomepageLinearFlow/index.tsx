@@ -6,6 +6,7 @@ import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import CloudPageDeveloperBenefits from "@site/src/components/CloudPageDeveloperBenefits";
+import HomepageGuiEntry from "@site/src/components/HomepageGuiEntry";
 import { SiteCta } from "@site/src/components/SiteCta";
 import { Button } from "@site/src/components/ui/button";
 import { clsx } from "clsx";
@@ -335,6 +336,8 @@ export default function HomepageLinearFlow() {
           </div>
         </div>
       </section>
+
+      <HomepageGuiEntry />
 
       <CloudPageDeveloperBenefits />
 

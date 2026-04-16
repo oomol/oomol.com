@@ -1134,10 +1134,10 @@
     "message": "简单、透明的定价"
   },
   "PRICING.subtitle": {
-    "message": "本地构建与验证始终免费。Free 用户每月还可直接使用 200 分钟 Cloud Task；超额后再充值或升级，OOMOL 提供的模型与服务按点数结算。"
+    "message": "本地构建与验证始终免费。Free 用户每月包含 200 分钟 Cloud Task；不够时再充值或升级，模型与其他服务按点数结算。"
   },
   "PRICING.model.summary": {
-    "message": "先在 Studio 本地做和验证。Free 用户每月还会自动刷新 200 分钟 Cloud Task；只有当这部分免费额度不够，或你直接使用 OOMOL 提供的模型与服务时，才需要继续充值或升级。"
+    "message": "先在 Studio 本地做和验证，再决定要不要上云。Free 用户每月会自动刷新 200 分钟 Cloud Task；超出后再充值或升级。"
   },
   "PRICING.model.local.label": {
     "message": "本地"
@@ -1146,7 +1146,7 @@
     "message": "在 Studio 里免费构建和验证"
   },
   "PRICING.model.local.text": {
-    "message": "完整使用本地环境，按自己的依赖和工作方式验证结果；如果你已经有模型，也可以直接接入。"
+    "message": "完整使用本地环境，按自己的依赖和工作方式把工具跑通；如果你已经有模型，也可以直接接入。"
   },
   "PRICING.model.online.label": {
     "message": "线上"
@@ -1155,13 +1155,13 @@
     "message": "先免费上线，不够时再充值"
   },
   "PRICING.model.online.text": {
-    "message": "Free 用户已经可以发布并使用 Cloud，每月包含 200 分钟 Cloud Task。只有当你需要更多在线额度或更高限制时，再充值或升级到付费计划。"
+    "message": "Free 用户已经可以发布并使用 Cloud，每月包含 200 分钟 Cloud Task。只有当你需要更多在线额度或更高限制时，再充值或升级。"
   },
   "PRICING.subscription.title": {
     "message": "选择你使用 OOMOL 的方式"
   },
   "PRICING.subscription.subtitle": {
-    "message": "Free 已经包含本地使用和每月 200 分钟 Cloud Task。Pro 与 Max 适合更稳定的线上使用场景，并提供更高的每月包含额度。"
+    "message": "Free 适合本地使用和轻量线上运行；Pro 与 Max 提供更高的每月 Cloud Task 额度与线上限制。"
   },
   "PRICING.subscription.recommended": {
     "message": "推荐"
@@ -1410,10 +1410,10 @@
     "message": "按量计费价格"
   },
   "PRICING.tables.subtitle": {
-    "message": "可以把价格理解成两层：上面是每月套餐，下面是超出套餐后的按量价格。"
+    "message": "价格可以分成两层来看：上面是每月套餐，下面是超出套餐后的按量价格。"
   },
   "PRICING.tables.syncNote": {
-    "message": "Free 与付费套餐都可以在线运行工具。Free 每月包含 200 分钟 Cloud Task；付费套餐包含更高的每月额度，超出后以及模型/其他服务调用再按点数结算。"
+    "message": "Free 与付费套餐都可以在线运行工具。差别主要在每月包含的 Cloud Task 额度；超出部分，以及模型与其他服务调用，再按点数结算。"
   },
   "PRICING.tables.tab.llm": {
     "message": "大模型价格"
@@ -3127,7 +3127,7 @@
     "message": "OOMOL Studio 是\n给开发者构建工具的环境"
   },
   "STUDIO.manifesto.subtitle": {
-    "message": "让 AI 先帮你起步，然后继续写代码、接依赖、编排流程、验证结果；准备交付时，再把同一份实现交给 Cloud。"
+    "message": "让 AI 先帮你起步，然后继续写代码、接依赖、编排流程，把工具在本地跑通；准备交付时，再把同一份实现交给 Cloud。"
   },
   "STUDIO.manifesto.cta.download": {
     "message": "下载 OOMOL Studio"
@@ -3154,13 +3154,13 @@
     "message": "OOMOL Studio，把这\n三件事接成一条路"
   },
   "STUDIO.product.principles.description": {
-    "message": "让 AI 负责起步，让工程环境负责扩展，让同一份实现继续走向交付。需要手动调整时，也不用先学 DSL。"
+    "message": "让 AI 帮你起步，让工程环境支持真实扩展，让同一份实现直接走向交付。需要手动调整时，也不用先学 DSL。"
   },
   "STUDIO.product.cta.title": {
     "message": "把下一个工具先在 Studio 里跑出来"
   },
   "STUDIO.product.cta.description": {
-    "message": "先在真实 coding 环境里把工具生成、调试并跑通；准备交付时，再交给 Cloud 承接运行与发布。"
+    "message": "先在真实 coding 环境里把工具做出来并跑通；准备交付时，再交给 Cloud。"
   },
   "STUDIO.story.paragraph1": {
     "message": "我们想要的，不是另一个要求开发者迁就平台的工具，而是一个能先让 AI Agent 全自动搭建、再继续写函数、编排节点、调试依赖和验证结果的工作环境。"

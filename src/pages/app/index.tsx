@@ -103,14 +103,15 @@ const COPY = {
   zh: {
     brandLabel: "悟墨 AI",
     page: {
-      title: "悟墨 AI（OOMOL AI）- 同一套 OOMOL 能力的官方图形界面",
+      title: "悟墨 AI（OOMOL AI）- OOMOL 的官方图形入口",
       description:
-        "如果你更喜欢图形界面，可以在 Web、桌面和 iOS 中使用与 oo-cli 相同的能力层与点数体系。",
+        "当你更喜欢图形界面时，可以在 Web、桌面和 iOS 中直接使用 OOMOL 的工具，适合连续对话、查看结果和继续处理任务。",
     },
     hero: {
-      titleLine1: "如果你更喜欢图形界面",
-      titleLine2: "就在 OOMOL AI 里使用同一套能力",
-      lead: "悟墨 AI（OOMOL AI）是 OOMOL 官方 GUI 入口。它把 oo-cli 所连接的同一套能力带进 Web、桌面和 iOS，让你用更顺手的图形界面完成连续任务。",
+      titleLine1: "OOMOL AI，把工具使用体验",
+      titleLine2: "直接带进图形界面",
+      lead:
+        "悟墨 AI 是给人直接打开来用的官方图形入口，更适合连续对话、查看结果和继续处理任务。",
       productScreenshotAlt: "悟墨 AI 中由 Agent 原生调用工具完成任务的界面",
     },
     actions: {
@@ -119,92 +120,93 @@ const COPY = {
       ios: "iOS",
     },
     models: {
-      title: "同一套能力，换一个更适合 GUI 的入口",
+      title: "更适合日常打开来用",
       description:
-        "oo-cli 仍然是给 Agent 和终端的主入口；悟墨 AI 则把同一套能力做成更适合日常使用的图形界面。",
+        "在这里，搜索、执行、查看结果和继续处理都留在同一个工作区里。",
       demo: {
-        eyebrow: "官方 GUI",
-        title: "不是另一套能力体系，而是同一能力层的官方图形入口",
+        eyebrow: "一个工作区",
+        title: "让任务在一个界面里继续往下走",
         description:
-          "搜索、执行、查看结果与继续处理，都可以在同一个界面里连续完成。",
+          "从搜索工具到查看结果，再到继续处理，都不需要来回跳转。",
         imageAlt: "悟墨 AI 中原生工具能力与小程序工作台界面",
       },
       cards: {
         chat: {
-          eyebrow: "同一能力层",
-          title: "账号、任务和工具能力直接进入界面流程",
-          body: "账号连接、任务运行和现成能力的调用，不再散落在额外步骤里，而是作为页面体验的一部分出现。",
-          chips: ["界面整合", "连续流程", "直接可用"],
+          eyebrow: "连续处理",
+          title: "搜索、执行和结果都留在同一界面",
+          body:
+            "账号连接、任务运行和现成工具的调用，会直接进入当前工作区，不再散落在额外步骤里。",
+          chips: ["一个工作区", "连续处理", "直接打开用"],
         },
         image: {
-          eyebrow: "更适合图形界面",
-          title: "更适合日常使用与连续跟进",
-          body: "当你描述任务时，系统会在界面里继续衔接搜索、执行和结果处理，让使用过程更自然。",
-          chips: ["描述任务", "继续执行", "返回结果"],
+          eyebrow: "结果跟进",
+          title: "更适合看结果、继续追问、继续处理",
+          body:
+            "当你拿到结果后，可以直接补充要求、继续追问或执行下一步，而不是先换回别的入口。",
+          chips: ["先看结果", "继续追问", "继续处理"],
         },
       },
     },
     problems: {
-      titleLine1: "为什么同一套能力，",
-      titleLine2: "还值得做成图形入口",
+      titleLine1: "什么时候",
+      titleLine2: "图形界面会更顺手",
       cards: [
         {
-          title: "能力可以接入，体验还可以更顺",
-          body: "在不同环境中使用同一套能力时，安装、切换和唤醒方式往往并不一致。",
+          title: "你会经常开着它",
+          body: "相比一次性命令调用，图形界面更适合日常打开、随时回来继续。",
         },
         {
-          title: "调用可以完成，流程未必连贯",
-          body: "如果搜索、执行和结果处理分散在不同位置，使用成本就会更高。",
+          title: "你需要看结果再决定下一步",
+          body: "图片、文档、表格或中间结果留在当前界面里，会更容易继续跟进。",
         },
         {
-          title: "工具已经够强，还需要更自然的入口",
-          body: "当能力直接融入界面后，日常使用、结果查看与后续处理都会更完整。",
+          title: "你想少一点切换，多一点连续感",
+          body: "当搜索、执行和追问都留在一个工作区里，处理任务会更自然。",
         },
       ] as ProblemCard[],
     },
     workflow: {
       steps: [
         {
-          title: "先描述任务，再由界面承接流程",
-          body: "你只需要表达目标，不必先思考命令或入口。",
-          detail:
-            "oo-cli 已经提供了能力接入；在这里，这些能力被继续整合进图形界面里。",
+          title: "先说目标，再开始处理",
+          body: "你先描述任务，界面再接住后面的搜索与执行。",
+          detail: "更像日常打开来用的工作区，而不是一串命令。",
           alt: "悟墨 AI 中由 Agent 主动搜索和调用技能的界面",
         },
         {
-          title: "搜索、执行与结果处理在界面里连续发生",
-          body: "当任务需要继续调用能力时，流程会在当前页面中自然衔接。",
-          detail: "你看到的是连贯的执行过程，而不是来回跳转的操作链。",
+          title: "结果出来后，直接继续下一步",
+          body: "查看结果、补充要求、继续处理，都可以留在当前页面里完成。",
+          detail: "适合需要边看边改、边问边做的任务。",
           alt: "悟墨 AI 中继续执行多步工具任务的界面",
         },
         {
-          title: "同一套能力，可以在不同入口中使用",
-          body: "oo-cli 适合 Agent 与终端；悟墨 AI 适合提供更自然的图形界面连续体验。",
-          detail: "两者面向的是同一套能力，只是入口和使用方式不同。",
+          title: "换设备时，当前工作还能继续",
+          body: "Web、桌面和 iOS 都可以继续使用，不必重新理解另一套界面。",
+          detail: "你打开哪个入口，取决于当下最顺手的设备。",
           alt: "悟墨 AI 中将结果与 OOMOL 工具体系继续连接的界面",
         },
       ],
     },
     outputs: {
-      title: "oo-cli 是给 Agent 的主入口，悟墨 AI 是官方 GUI 入口",
+      title: "终端适合接入，图形界面适合持续使用",
       description:
-        "如果你希望在终端或外部 Agent 中接入能力，就使用 oo-cli；如果你更喜欢图形界面里的连续体验，就打开悟墨 AI。",
+        "oo-cli 更适合给 Agent 和终端接入；悟墨 AI 更适合你直接打开来用，持续查看结果并继续处理。",
       imageAlt: "悟墨 AI 中使用同一套工具能力持续完成任务的界面",
     },
     pricing: {
-      title: "同一套能力，共用同一套点数",
+      title: "共用同一套点数",
       description:
-        "不论是通过 oo-cli 接入，还是在悟墨 AI 中直接使用，同一套能力都共享同一套点数与消耗体系。",
+        "悟墨 AI 与 oo-cli 共用同一套点数。你按实际使用消耗，不按 Web、桌面和 iOS 分开计费。",
       pillars: [
-        "Web、Desktop、iOS 共用同一套能力与计费",
+        "Web、Desktop、iOS 共用同一账户与点数",
         "购买后的点数会一直保留，不会按月清零",
-        "从轻量调用到长链路任务，都有对应档位",
+        "从轻量体验到高频使用都有对应档位",
       ],
       summary: {
-        eyebrow: "统一消耗",
-        title: "为能力本身补充余量，而不是为某个入口单独计费",
+        eyebrow: "统一计费",
+        title: "不是给某个入口单独充值",
         description:
-          "当任务继续执行、处理结果并完成交付时，点数会按实际使用量消耗。你可以先小额补充，也可以为高频任务预留更多余量。",
+          "无论你从 oo-cli 还是悟墨 AI 发起任务，消耗都按实际使用计算。用得更多时再补充即可。",
         badge: "跨入口共用",
       },
       perPack: "/ 包",
@@ -215,48 +217,48 @@ const COPY = {
         starter: {
           tier: "偶尔使用",
           name: "入门包",
-          description: "到账 5 点数。适合轻量体验或偶尔补充余量。",
+          description: "到账 5 点数。适合轻量体验或偶尔补充。",
           note: "灵活",
-          features: ["适合低频使用时快速补充", "无需一开始就准备过多余量"],
+          features: ["先小额体验", "不用一开始准备太多余量"],
         },
         boost: {
           tier: "日常使用",
           name: "增强包",
           description:
-            "到账 24 点数（20 基础点数 + 4 额外点数）。适合日常使用时持续处理任务与结果。",
+            "到账 24 点数（20 基础点数 + 4 额外点数）。适合日常使用。",
           note: "推荐",
-          features: ["更适合稳定的日常使用节奏", "连续处理多个任务时更从容"],
+          features: ["适合稳定日常使用", "连续处理多个任务更从容"],
         },
         ultra: {
           tier: "高频任务",
           name: "超级包",
           description:
-            "到账 128 点数（100 基础点数 + 28 额外点数）。适合批量处理、长链路任务与高频使用阶段。",
+            "到账 128 点数（100 基础点数 + 28 额外点数）。适合批量任务与高频阶段。",
           note: "储备型",
-          features: ["适合批量处理与长链路任务", "为高频阶段预留更充足余量"],
+          features: ["适合批量与长链路任务", "为高频阶段预留更多余量"],
         },
       },
     },
     downloads: {
-      title: "选择适合你的 GUI 入口",
+      title: "从你最顺手的入口打开",
       items: {
         web: {
           title: "Web",
           subtitle: "对话式图形入口",
-          description: "最快开始使用同一套能力的 Web 图形入口。",
+          description: "最快开始使用。",
           action: "打开网页版",
         },
         desktop: {
           title: "Desktop",
           subtitle: "桌面应用",
           description:
-            "当你想要更稳定的图形工作区与更长时段的连续任务处理时，就用桌面版。",
+            "适合更稳定的工作区与更长时间的连续处理。",
           action: "下载桌面版",
         },
         ios: {
           title: "iOS",
           subtitle: "移动应用",
-          description: "随时查看任务进展，并继续跟进当前对话。",
+          description: "适合随时查看进展，并继续当前任务。",
           action: "打开 App Store",
         },
       },
@@ -266,14 +268,15 @@ const COPY = {
   en: {
     brandLabel: "OOMOL AI",
     page: {
-      title: "OOMOL AI - The official GUI for the OOMOL capability layer",
+      title: "OOMOL AI - OOMOL's official GUI",
       description:
-        "If you prefer a GUI, use the same capability layer and shared credit system as oo-cli through web, desktop, and iOS.",
+        "When you prefer a GUI, use OOMOL tools through web, desktop, and iOS for continuous work, reviewing results, and keeping tasks moving.",
     },
     hero: {
-      titleLine1: "If you prefer a GUI,",
-      titleLine2: "use the same capability layer in OOMOL AI",
-      lead: "OOMOL AI is OOMOL's official GUI entry point. It brings the same capabilities connected through oo-cli into web, desktop, and iOS so continuous work feels more natural in a visual interface.",
+      titleLine1: "OOMOL AI brings tool use",
+      titleLine2: "into a GUI workflow",
+      lead:
+        "OOMOL AI is the official GUI for opening and using tools directly, better suited to continuous chat, reviewing results, and keeping work moving.",
       productScreenshotAlt:
         "OOMOL AI interface where the agent natively calls tools to complete a task",
     },
@@ -283,102 +286,100 @@ const COPY = {
       ios: "iOS",
     },
     models: {
-      title: "The same capabilities, through a more GUI-friendly surface",
+      title: "Better for everyday use",
       description:
-        "oo-cli remains the primary entry point for agents and terminal workflows. OOMOL AI turns that same capability layer into a GUI that fits everyday use more naturally.",
+        "Search, execution, results, and follow-up work all stay in one workspace here.",
       demo: {
-        eyebrow: "Official GUI",
+        eyebrow: "One workspace",
         title:
-          "Not a separate capability stack, but the official GUI entry point for the same layer",
+          "Keep the task moving in one interface",
         description:
-          "Search, execution, results, and follow-up work can stay in the same interface.",
+          "From search to execution to reviewing results, you do not need to bounce across separate surfaces.",
         imageAlt:
           "OOMOL AI workspace showing native tool capabilities and mini apps",
       },
       cards: {
         chat: {
-          eyebrow: "Same capability layer",
-          title: "Accounts, tasks, and tool capabilities move directly into the interface flow",
-          body: "Account connections, task execution, and ready-made capabilities are no longer scattered across separate steps. They become part of the product flow itself.",
-          chips: ["Interface flow", "Continuous use", "Directly available"],
+          eyebrow: "Continuous work",
+          title: "Search, execution, and results stay in one interface",
+          body:
+            "Account connections, task runs, and ready-made tools move straight into the current workspace instead of being scattered across extra steps.",
+          chips: ["One workspace", "Continuous work", "Open and use"],
         },
         image: {
-          eyebrow: "More GUI-friendly",
-          title: "Better suited to everyday use and continuous follow-up",
-          body: "When you describe a task, the interface can continue through search, execution, and result handling in a more natural way.",
-          chips: ["Describe the task", "Continue execution", "Return results"],
+          eyebrow: "Follow-up",
+          title: "Better for reviewing results and continuing the next step",
+          body:
+            "Once you have the result, you can refine the request, ask follow-up questions, or continue the next action without switching back to another surface.",
+          chips: ["Review result", "Ask follow-up", "Keep going"],
         },
       },
     },
     problems: {
-      titleLine1: "Why the same capabilities",
-      titleLine2: "still benefit from a GUI entry point",
+      titleLine1: "When does a GUI",
+      titleLine2: "feel more natural?",
       cards: [
         {
-          title:
-            "Capabilities can connect, but the experience can still be smoother",
-          body: "When the same capabilities are used across different environments, installation, switching, and wake-up flows are rarely identical.",
+          title: "When you keep it open all day",
+          body: "A GUI is better suited to everyday use than one-off command calls.",
         },
         {
-          title: "Execution can work, while the flow still feels fragmented",
-          body: "If search, execution, and result handling live in different places, the overall experience becomes less seamless.",
+          title: "When you need to see the result before deciding the next step",
+          body: "Images, documents, tables, and intermediate results are easier to follow when they stay in the current page.",
         },
         {
-          title: "Strong capabilities still need a more natural entry point",
-          body: "Once those capabilities are brought directly into the interface, everyday use, result viewing, and follow-up work all feel more complete.",
+          title: "When you want less switching and more continuity",
+          body: "If search, execution, and follow-up all stay in one workspace, tasks feel easier to carry forward.",
         },
       ] as ProblemCard[],
     },
     workflow: {
       steps: [
         {
-          title: "Start with the task, and let the interface carry the flow",
-          body: "You focus on the goal instead of deciding on commands or entry points first.",
+          title: "State the goal, then start working",
+          body: "You describe the task, and the interface carries search and execution from there.",
           detail:
-            "oo-cli already provides the capability path. Here, that same path is carried further into the GUI layer.",
+            "It feels more like an everyday workspace than a string of commands.",
           alt: "OOMOL AI interface where the agent actively searches for and calls skills",
         },
         {
-          title:
-            "Search, execution, and results stay together in the interface",
-          body: "When a task needs to continue through the capability layer, the current page can carry that process forward more naturally.",
+          title: "Once the result appears, keep going",
+          body: "Review the output, refine the request, and continue the next step in the same page.",
           detail:
-            "What you see is a connected execution flow rather than a chain of separate manual steps.",
+            "It fits tasks where you need to see, edit, and continue in one flow.",
           alt: "OOMOL AI interface continuing a multi-step tool task",
         },
         {
-          title:
-            "The same capabilities can be used through different entry points",
-          body: "oo-cli fits agents and terminal workflows. OOMOL AI fits a more natural GUI experience for the same capability set.",
-          detail:
-            "The capability layer stays the same. What changes is the entry point and the experience around it.",
+          title: "Switch devices without switching mental modes",
+          body: "Web, desktop, and iOS all keep the same product shape, so the work can continue.",
+          detail: "Use whichever surface is most convenient in the moment.",
           alt: "OOMOL AI interface connecting results back into the OOMOL toolchain",
         },
       ],
     },
     outputs: {
       title:
-        "oo-cli is the main entry point for agents. OOMOL AI is the official GUI entry point.",
+        "Terminals are for integration. GUIs are for ongoing use.",
       description:
-        "Use oo-cli when you want to connect capabilities into a terminal or external agent. Open OOMOL AI when you want the same capabilities through a more continuous GUI experience.",
+        "Use oo-cli when you want tools connected into agents and terminal workflows. Open OOMOL AI when you want to keep using those tools yourself in a visual workspace.",
       imageAlt:
         "OOMOL AI interface continuing work with the same tool capability layer",
     },
     pricing: {
-      title: "One capability layer, one credit system",
+      title: "One credit system",
       description:
-        "Whether capabilities are connected through oo-cli or used directly inside OOMOL AI, the same capability layer shares one credit and usage system.",
+        "OOMOL AI and oo-cli use the same credits. You pay for actual usage, not separately for web, desktop, and iOS.",
       pillars: [
-        "Web, desktop, and iOS share the same capability layer and billing",
+        "Web, desktop, and iOS share one account and one credit balance",
         "Purchased credits stay in your account until you use them",
-        "Pack sizes cover light usage through longer multi-step runs",
+        "Pack sizes cover light use through heavier ongoing work",
       ],
       summary: {
-        eyebrow: "Shared usage",
+        eyebrow: "Shared billing",
         title:
-          "Credits extend the capability layer itself, not one interface alone",
+          "You top up usage, not a surface",
         description:
-          "As tasks continue through execution, result handling, and delivery, credits reflect actual usage. Start small or keep more in reserve for heavier workloads.",
+          "Whether a task starts from oo-cli or OOMOL AI, usage is counted the same way. Add more only when you need more headroom.",
         badge: "One credit system",
       },
       perPack: "/ pack",
@@ -390,10 +391,10 @@ const COPY = {
           tier: "Occasional use",
           name: "Starter Pack",
           description:
-            "Includes 5 credits. A small refill for light usage or occasional balance top-ups.",
+            "Includes 5 credits. A small refill for light use or occasional top-ups.",
           note: "Flexible",
           features: [
-            "Useful when you only need a small additional balance",
+            "Useful for a small first balance",
             "No need to reserve too much upfront",
           ],
         },
@@ -401,10 +402,10 @@ const COPY = {
           tier: "Daily use",
           name: "Boost Pack",
           description:
-            "Includes 24 credits (20 base + 4 bonus). A better fit for regular day-to-day usage and ongoing task handling.",
+            "Includes 24 credits (20 base + 4 bonus). A better fit for regular day-to-day use.",
           note: "Popular",
           features: [
-            "A stronger fit for steady everyday usage",
+            "A stronger fit for steady daily use",
             "More comfortable when several tasks arrive in a row",
           ],
         },
@@ -412,37 +413,37 @@ const COPY = {
           tier: "Heavy use",
           name: "Ultra Pack",
           description:
-            "Includes 128 credits (100 base + 28 bonus). Best for batch processing, longer chains, and heavier usage periods.",
+            "Includes 128 credits (100 base + 28 bonus). Best for batch work and heavier periods.",
           note: "Reserve",
           features: [
-            "Built for batch processing and longer workflows",
+            "Built for batch work and longer workflows",
             "Keeps more headroom available during heavier periods",
           ],
         },
       },
     },
     downloads: {
-      title: "Choose the GUI entry point that fits you best",
+      title: "Open it from the surface that fits you best",
       items: {
         web: {
           title: "Web",
           subtitle: "Chat GUI",
           description:
-            "The fastest web entry point for using the same capability layer in a GUI.",
+            "The fastest way to start using it.",
           action: "Open Web App",
         },
         desktop: {
           title: "Desktop",
           subtitle: "Desktop app",
           description:
-            "Use the same capabilities in a desktop app when you want a more stable workspace for longer-running work.",
+            "Best when you want a more stable workspace for longer-running work.",
           action: "Download desktop app",
         },
         ios: {
           title: "iOS",
           subtitle: "Mobile app",
           description:
-            "Track progress and continue the current conversation from your phone or tablet.",
+            "Track progress and continue the current task from your phone or tablet.",
           action: "Open App Store",
         },
       },
