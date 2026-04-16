@@ -191,18 +191,18 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
         }),
         iconClassName: "i-lucide-cloud",
       },
-      // {
-      //   key: "oomol-ai",
-      //   href: "/app",
-      //   label: translate({
-      //     id: "item.label.navbar.oomol-ai",
-      //     message: "OOMOL AI",
-      //   }),
-      //   description: translate({
-      //     message: "Theme.Navbar.product.ai.description",
-      //   }),
-      //   iconClassName: "i-lucide-bot",
-      // },
+      {
+        key: "oomol-ai",
+        href: "/app",
+        label: translate({
+          id: "item.label.navbar.oomol-ai",
+          message: "OOMOL AI",
+        }),
+        description: translate({
+          message: "Theme.Navbar.product.ai.description",
+        }),
+        iconClassName: "i-lucide-bot",
+      },
     ],
     []
   );

@@ -262,15 +262,24 @@
 .section {
   position: relative;
   z-index: 1;
-  width: var(--page-width);
-  margin: 0 auto;
 }
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.66fr) minmax(0, 1.16fr);
-  gap: clamp(1rem, 1.6vw, 1.75rem);
-  align-items: center;
+  gap: clamp(1.6rem, 2.6vw, 2.35rem);
+  width: 100%;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.section {
+  width: var(--page-width);
+  margin: 0 auto;
+}
+
+.heroHeader {
+  width: var(--page-width);
+  margin: 0 auto;
 }
 
 .heroCopy,
@@ -279,9 +288,7 @@
 .painCard,
 .solutionItem,
 .outputsShowcaseFrame,
-.pricingSummary,
 .pricingCard,
-.pricingNote,
 .downloadCard {
   opacity: 0;
   animation: reveal-up 720ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -290,14 +297,50 @@
 .heroCopy {
   display: grid;
   gap: 1rem;
-  max-width: 34rem;
+  max-width: min(56rem, 100%);
+  margin: 0 auto;
+  justify-items: center;
+  text-align: center;
   animation-delay: 90ms;
 }
 
 .heroVisual {
-  justify-self: end;
-  width: min(100%, 54rem);
+  width: min(1480px, calc(100vw - 24px));
+  margin: 0 auto;
   animation-delay: 170ms;
+}
+
+.heroVisualInner {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.heroFrame {
+  position: relative;
+  width: 100%;
+  border-radius: 22px;
+  overflow: clip;
+  background: transparent;
+  box-shadow: 0 20px 40px rgba(83, 92, 132, 0.12);
+}
+
+.heroFrame::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -2.6rem;
+  width: min(92%, 1180px);
+  height: 4.2rem;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(49, 58, 74, 0.18) 0%,
+    rgba(49, 58, 74, 0.08) 32%,
+    rgba(49, 58, 74, 0) 72%
+  );
+  filter: blur(18px);
+  pointer-events: none;
 }
 
 .heroTitle,
@@ -311,41 +354,52 @@
 }
 
 .heroTitle {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.12em;
+  display: grid;
+  gap: 0.08em;
   width: fit-content;
-  font-size: clamp(3.2rem, 6.7vw, 5.55rem);
-  line-height: var(--lh-display);
-  font-weight: 740;
+  max-width: 100%;
+  font-size: clamp(2.52rem, 4.3vw, 3.85rem);
+  line-height: 1.12;
+  font-weight: 700;
   color: var(--text-primary);
-  text-wrap: balance;
+  text-align: center;
+  letter-spacing: -0.04em;
 }
 
-.heroTitle span {
+.heroTitleLine {
+  display: block;
+  white-space: nowrap;
+}
+
+.heroTitleAccent {
+  display: block;
   color: var(--primary);
 }
 
 .heroLead {
   margin: 0;
-  max-width: 31ch;
+  max-width: 34rem;
   color: var(--text-secondary);
-  font-size: clamp(1.16rem, 1.34vw, 1.3rem);
-  line-height: var(--lh-body-relaxed);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+:global(html[lang="en"]) .heroTitle {
+  font-size: clamp(2.35rem, 3.9vw, 3.6rem);
+}
+
+:global(html[lang="en"]) .heroLead {
+  max-width: 36rem;
 }
 
 .heroActions {
-  display: grid;
-  grid-template-columns: repeat(2, max-content);
+  display: flex;
+  flex-wrap: wrap;
   gap: 14px;
   margin-top: 12px;
-  align-items: start;
-  justify-content: start;
-}
-
-.heroActions > :first-child {
-  grid-column: 1 / -1;
+  align-items: center;
+  justify-content: center;
 }
 
 .heroActionButton,
@@ -372,6 +426,13 @@
     background-color 180ms ease,
     box-shadow 180ms ease,
     color 180ms ease;
+}
+
+.heroActionIcon {
+  flex: 0 0 auto;
+  width: 1rem;
+  height: 1rem;
+  stroke-width: 2.1;
 }
 
 .heroActionButton:hover,
@@ -409,9 +470,9 @@
 video.heroScreenshot,
 video.outputImage,
 video.outputsShowcaseImage {
-  border-radius: 12px;
+  border-radius: 20px;
   background: var(--bg-elevated);
-  clip-path: inset(2px round 12px);
+  clip-path: inset(0 round 20px);
 }
 
 .section {
@@ -427,19 +488,20 @@ video.outputsShowcaseImage {
 }
 
 .sectionIntro h2 {
+  max-width: 18ch;
   font-size: clamp(2.15rem, 3.55vw, 3.55rem);
   line-height: var(--lh-heading);
   font-weight: 740;
   color: var(--text-primary);
-  text-wrap: pretty;
+  text-wrap: balance;
 }
 
 .sectionIntro p {
   margin: 0;
-  max-width: 40ch;
+  max-width: 32rem;
   color: var(--text-secondary);
-  font-size: var(--fs-body-lg);
-  line-height: var(--lh-body);
+  font-size: 1rem;
+  line-height: 1.6;
   text-wrap: pretty;
 }
 
@@ -454,18 +516,40 @@ video.outputsShowcaseImage {
 }
 
 .outputsIntro p {
-  max-width: 44ch;
+  max-width: 34rem;
 }
 
 .pricingIntro p {
-  max-width: 48ch;
+  max-width: 34rem;
+}
+
+.hangingTitle,
+.problemsTitle {
+  display: grid;
+  gap: 0.06em;
+  width: fit-content;
+  max-width: none;
+  justify-items: center;
+  text-wrap: initial;
+}
+
+.hangingTitle {
+  margin-inline: auto;
+}
+
+.hangingTitleLine,
+.problemsTitleLine {
+  display: block;
+  white-space: nowrap;
+}
+
+.hangingPunctuation {
+  display: inline-block;
+  margin-inline-end: -1em;
 }
 
 .problemsTitle {
-  width: fit-content;
-  max-width: 20ch;
-  font-size: clamp(2rem, 3.2vw, 3.15rem) !important;
-  text-wrap: balance;
+  font-size: clamp(1.92rem, 3vw, 2.7rem) !important;
 }
 
 .modelFeatureGrid {
@@ -492,7 +576,6 @@ video.outputsShowcaseImage {
 .modelFeatureCard::before,
 .painCard::before,
 .downloadCard::before,
-.pricingSummary::before,
 .pricingCard::before {
   content: "";
   position: absolute;
@@ -514,8 +597,6 @@ video.outputsShowcaseImage {
 .modelFeatureEyebrow,
 .modelDemoEyebrow,
 .planTier,
-.pricingFeatureTitle,
-.pricingSummaryEyebrow,
 .downloadCardHeader span {
   margin: 0;
   color: var(--text-secondary);
@@ -527,7 +608,6 @@ video.outputsShowcaseImage {
 
 .modelFeatureCard h3,
 .modelDemoCopy h3,
-.pricingSummary h3,
 .pricingHeader h3 {
   margin: 0;
   font-family: var(--ifm-heading-font-family);
@@ -543,9 +623,7 @@ video.outputsShowcaseImage {
 .painBody,
 .solutionText p,
 .downloadCard p,
-.pricingSummaryDescription,
-.planDescription,
-.pricingNote p {
+.planDescription {
   margin: 0;
   color: var(--text-secondary);
   font-size: var(--fs-body);
@@ -576,13 +654,8 @@ video.outputsShowcaseImage {
 
 .modelDemo {
   display: grid;
-  gap: 20px;
-  margin-top: 28px;
-  padding: 26px;
-  border: 1px solid color-mix(in srgb, var(--border-default) 74%, white);
-  border-radius: 28px;
-  background: var(--card-surface);
-  box-shadow: var(--shadow-sm);
+  gap: 22px;
+  margin-top: 32px;
   opacity: 0;
   animation: reveal-up 720ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
   animation-delay: 280ms;
@@ -591,15 +664,15 @@ video.outputsShowcaseImage {
 .modelDemoCopy {
   display: grid;
   gap: 10px;
-  max-width: 52rem;
+  max-width: 48rem;
+  margin-inline: auto;
+  justify-items: center;
+  text-align: center;
 }
 
 .modelDemoFrame {
-  overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--border-default) 74%, white);
-  border-radius: 22px;
-  background: color-mix(in srgb, var(--surface-float) 90%, white);
-  box-shadow: var(--shadow-sm);
+  width: min(100%, 1080px);
+  margin: 0 auto;
 }
 
 .modelDemoImage {
@@ -742,66 +815,11 @@ video.outputsShowcaseImage {
   animation-delay: 180ms;
 }
 
-.pricingPillars {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 28px;
-}
-
-.pricingPillar {
-  padding: 14px 16px;
-  border: 1px solid color-mix(in srgb, var(--border-default) 78%, white);
-  border-radius: 18px;
-  color: var(--text-secondary);
-  background: var(--pillar-surface);
-  box-shadow: var(--shadow-sm);
-  font-size: 0.96rem;
-  font-weight: 600;
-  line-height: 1.5;
-  text-align: center;
-}
-
-.pricingSummary {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 20px;
-  margin-top: 28px;
-  padding: 26px;
-  border: 1px solid color-mix(in srgb, var(--border-default) 74%, white);
-  border-radius: 28px;
-  background: var(--card-accent-surface);
-  box-shadow: var(--shadow-sm);
-  animation-delay: 150ms;
-}
-
-.pricingSummaryCopy {
-  display: grid;
-  gap: 10px;
-  max-width: 42rem;
-}
-
-.pricingSummaryBadge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 36px;
-  padding: 0 14px;
-  border-radius: 999px;
-  color: var(--primary);
-  background: var(--primary-bg);
-  font-size: 0.9rem;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
 .pricingGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
-  margin-top: 44px;
+  margin-top: 32px;
 }
 
 .pricingCard {
@@ -840,23 +858,8 @@ video.outputsShowcaseImage {
 }
 
 .pricingHeader {
-  display: flex;
-  align-items: start;
-  justify-content: space-between;
-  gap: 14px;
-}
-
-.planBadge {
-  display: inline-flex;
-  align-items: center;
-  min-height: 32px;
-  padding: 0 12px;
-  border-radius: 999px;
-  color: var(--primary);
-  font-size: 0.86rem;
-  font-weight: 700;
-  background: var(--primary-bg);
-  white-space: nowrap;
+  display: grid;
+  gap: 6px;
 }
 
 .planPriceRow {
@@ -882,8 +885,8 @@ video.outputsShowcaseImage {
 .pricingFeatureBlock {
   display: grid;
   align-content: start;
-  gap: 14px;
-  padding-top: 4px;
+  gap: 12px;
+  padding-top: 18px;
   border-top: 1px solid var(--divider-soft);
 }
 
@@ -918,16 +921,6 @@ video.outputsShowcaseImage {
   border-radius: 999px;
   background: var(--primary);
   flex: 0 0 auto;
-}
-
-.pricingNote {
-  margin-top: 24px;
-  padding: 18px 22px;
-  border: 1px solid color-mix(in srgb, var(--border-default) 76%, white);
-  border-radius: 22px;
-  background: var(--note-surface);
-  box-shadow: var(--shadow-sm);
-  animation-delay: 320ms;
 }
 
 .entrySection {
@@ -997,14 +990,13 @@ video.outputsShowcaseImage {
 }
 
 @media (max-width: 1180px) {
-  .hero,
   .solutionItem,
   .solutionItem:nth-child(even) {
     grid-template-columns: 1fr;
   }
 
-  .hero {
-    gap: 32px;
+  .heroHeader {
+    width: var(--page-width);
   }
 
   .heroCopy,
@@ -1024,7 +1016,6 @@ video.outputsShowcaseImage {
   .heroVisual,
   .solutionMedia {
     width: 100%;
-    justify-self: stretch;
   }
 
   .solutionText {
@@ -1037,7 +1028,6 @@ video.outputsShowcaseImage {
 
   .painGrid,
   .modelFeatureGrid,
-  .pricingPillars,
   .pricingGrid,
   .downloadGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1049,6 +1039,10 @@ video.outputsShowcaseImage {
     padding-bottom: 32px;
   }
 
+  .heroHeader {
+    width: var(--page-width);
+  }
+
   .heroTitle,
   .problemsTitle,
   .solutionText h3,
@@ -1056,23 +1050,16 @@ video.outputsShowcaseImage {
     max-width: none;
   }
 
-  .pricingSummary {
-    flex-direction: column;
-  }
-
   .heroActions {
-    display: grid;
-    grid-template-columns: 1fr;
+    justify-content: center;
   }
 
   .heroActions > * {
-    width: 100%;
     min-width: 0;
   }
 
   .painGrid,
   .modelFeatureGrid,
-  .pricingPillars,
   .pricingGrid,
   .downloadGrid {
     grid-template-columns: 1fr;
@@ -1080,5 +1067,55 @@ video.outputsShowcaseImage {
 
   .painCard {
     min-height: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    gap: 1.4rem;
+  }
+
+  .heroHeader {
+    width: var(--page-width);
+  }
+
+  .heroTitle {
+    font-size: clamp(2.3rem, 10.6vw, 3.6rem);
+  }
+
+  .heroLead {
+    max-width: 100%;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  :global(html[lang="en"]) .heroTitle {
+    font-size: clamp(1.72rem, 6.6vw, 2.4rem);
+  }
+
+  .heroActions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .heroActions > * {
+    width: 100%;
+  }
+
+  .heroVisual {
+    width: min(calc(100vw - 16px), 1480px);
+  }
+
+  .problemsTitle {
+    font-size: clamp(1.55rem, 6.6vw, 2rem) !important;
+  }
+
+  .heroFrame {
+    border-radius: 18px;
+  }
+
+  video.heroScreenshot {
+    border-radius: 18px;
+    clip-path: inset(0 round 18px);
   }
 }

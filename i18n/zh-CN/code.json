@@ -3247,7 +3247,7 @@
     "message": "在云端运行、管理和自动化工具"
   },
   "Theme.Navbar.product.ai.description": {
-    "message": "用官方 GUI Agent 直接使用同一套工具"
+    "message": "OOMOL 官方原生 Agent 工作台，内建同一套 oo-cli 工具能力"
   },
   "Theme.Navbar.product.label": {
     "message": "产品"
