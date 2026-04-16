@@ -39,16 +39,16 @@
     "message": "给 Agent 的 CLI 入口"
   },
   "HOME.FirstScreen.script": {
-    "message": "先通过 oo-cli 使用现成工具；现成工具不够，再在 OOMOL Studio 和 Cloud 里组合和扩展自己的工具。"
+    "message": "你的 Agent 负责思考与决策；OOMOL 负责连接账号和应用，处理授权、调用和执行，并在需要时让你用 Studio 做自己的工具。"
   },
   "HOME.FirstScreen.heroTitle": {
-    "message": "一个 CLI，让 Agent\n直接调用现成工具"
+    "message": "你的 Agent 负责思考与决策\n剩下的交给 OOMOL"
   },
   "HOME.FirstScreen.heroSubtitle": {
-    "message": "先用 CLI 调起现成工具，现成工具不够时再继续组合和扩展。"
+    "message": "连接账号和应用，处理授权、调用和执行；需要自定义时，再到 Studio 里做你自己的工具。"
   },
   "HOME.FirstScreen.heroLead": {
-    "message": "让 Codex、OpenClaw、Claude Code 等 Agent 直接调用 Gmail、Notion 等工具、API 和内部能力。用 OOMOL Studio 继续组合和扩展自己的工具。"
+    "message": "连接账号和应用，处理授权、调用和执行；需要自定义时，再到 Studio 里做你自己的工具。"
   },
   "HOME.FirstScreen.heroAdvantage": {
     "message": "先用 CLI 调起来，"

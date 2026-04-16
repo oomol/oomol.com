@@ -39,16 +39,16 @@
     "message": "A capability production and delivery path for developers"
   },
   "HOME.FirstScreen.script": {
-    "message": "Start with ready-made tools in oo-cli. When they stop short, use OOMOL Studio and Cloud to compose and extend your own tools."
+    "message": "Your agent does the thinking and decision-making. OOMOL connects accounts and apps, handles auth, calls, and execution, and lets you build your own tools in Studio when needed."
   },
   "HOME.FirstScreen.heroTitle": {
-    "message": "One CLI lets agents\nuse the apps you already use"
+    "message": "Your agent does the thinking\nand decision-making.\nLeave the rest to OOMOL."
   },
   "HOME.FirstScreen.heroSubtitle": {
-    "message": "Start with ready-made tools in CLI. When they stop short, keep composing and extending with OOMOL Studio."
+    "message": "Connect accounts and apps, handle auth, calls, and execution, and build your own tools in Studio when you need something custom."
   },
   "HOME.FirstScreen.heroLead": {
-    "message": "Let Codex, OpenClaw, Claude Code, and other agents use your apps, APIs, and internal tools. Then use OOMOL Studio to compose and extend your own tools."
+    "message": "Connect accounts and apps, handle auth, calls, and execution, and build your own tools in Studio when you need something custom."
   },
   "HOME.FirstScreen.heroAdvantage": {
     "message": "Start with CLI,"
