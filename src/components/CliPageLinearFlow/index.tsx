@@ -1,9 +1,12 @@
 import styles from "./styles.module.scss";
+import siteCtaStyles from "@site/src/components/SiteCta/styles.module.scss";
 
 import type { DocusaurusContext } from "@docusaurus/types";
 
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { SiteCta } from "@site/src/components/SiteCta";
+import { Button } from "@site/src/components/ui/button";
 import React from "react";
 
 const COMMANDS_REFERENCE_URL =
@@ -51,6 +54,12 @@ type Copy = {
       cta: string;
       href: string;
     }>;
+  };
+  cta: {
+    title: string;
+    description: string;
+    primary: string;
+    secondary: string;
   };
 };
 
@@ -196,6 +205,13 @@ const zhCopy: Copy = {
       },
     ],
   },
+  cta: {
+    title: "现在就让 Agent 用上这些工具",
+    description:
+      "安装 oo-cli，先在终端里搜索工具、查看输入，并跑通一个真实任务。",
+    primary: "查看安装文档",
+    secondary: "查看命令参考",
+  },
 };
 
 const enCopy: Copy = {
@@ -340,6 +356,13 @@ const enCopy: Copy = {
       },
     ],
   },
+  cta: {
+    title: "Let your agent use these tools now",
+    description:
+      "Install oo-cli and use it to search tools, inspect inputs, and run a real task from terminal.",
+    primary: "Open install guide",
+    secondary: "Open command reference",
+  },
 };
 
 export default function CliPageLinearFlow() {
@@ -358,21 +381,6 @@ export default function CliPageLinearFlow() {
             <p className={styles.sectionDescription}>
               {copy.workflow.description}
             </p>
-
-            <div className={styles.commandGrid}>
-              {copy.workflow.steps.map(step => (
-                <article key={step.index} className={styles.commandCard}>
-                  <div className={styles.commandTop}>
-                    <span className={styles.commandIndex}>{step.index}</span>
-                    <span className={styles.commandSnippet}>
-                      {step.command}
-                    </span>
-                  </div>
-                  <h3 className={styles.commandTitle}>{step.title}</h3>
-                  <p className={styles.commandText}>{step.text}</p>
-                </article>
-              ))}
-            </div>
 
             <div className={styles.inlineActions}>
               <Link
@@ -416,6 +424,19 @@ export default function CliPageLinearFlow() {
                 )}
               </pre>
             </div>
+          </div>
+
+          <div className={styles.commandGrid}>
+            {copy.workflow.steps.map(step => (
+              <article key={step.index} className={styles.commandCard}>
+                <div className={styles.commandTop}>
+                  <span className={styles.commandIndex}>{step.index}</span>
+                  <span className={styles.commandSnippet}>{step.command}</span>
+                </div>
+                <h3 className={styles.commandTitle}>{step.title}</h3>
+                <p className={styles.commandText}>{step.text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -475,6 +496,26 @@ export default function CliPageLinearFlow() {
           </div>
         </div>
       </section>
+
+      <SiteCta
+        title={copy.cta.title}
+        description={copy.cta.description}
+        actions={
+          <>
+            <Button asChild size="lg" className={siteCtaStyles.actionButton}>
+              <Link to="/docs/cloud-services/cli">{copy.cta.primary}</Link>
+            </Button>
+            <a
+              href={COMMANDS_REFERENCE_URL}
+              target="_blank"
+              rel="noreferrer"
+              className={siteCtaStyles.ghostLink}
+            >
+              {copy.cta.secondary}
+            </a>
+          </>
+        }
+      />
     </div>
   );
 }

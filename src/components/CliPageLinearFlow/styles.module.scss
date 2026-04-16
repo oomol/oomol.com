@@ -5,7 +5,7 @@
 }
 
 .section {
-  padding: clamp(4rem, 7vw, 5.8rem) 0;
+  padding: clamp(3.6rem, 7vw, 5.2rem) 0;
 }
 
 .sectionTint {
@@ -23,25 +23,29 @@
 
 .twoColumn {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-  gap: clamp(1.7rem, 3.2vw, 2.8rem);
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(1.9rem, 3.5vw, 3rem);
   align-items: start;
 }
 
 .stackContainer {
   display: grid;
-  gap: 1.4rem;
+  gap: clamp(1.2rem, 2.6vw, 1.9rem);
 }
 
 .copyPanel,
 .header {
   display: grid;
-  gap: 1rem;
+  gap: 0.8rem;
   align-content: start;
 }
 
 .copyPanel {
   max-width: 40rem;
+}
+
+.twoColumn .copyPanel {
+  max-width: 38rem;
 }
 
 .header {
@@ -50,37 +54,40 @@
 
 .eyebrow {
   display: inline-flex;
-  width: fit-content;
   align-items: center;
-  gap: 0.65rem;
-  padding: 0.38rem 0.85rem 0.4rem;
+  min-height: 1.9rem;
+  width: fit-content;
+  padding: 0 0.8rem;
   border-radius: 999px;
-  border: 1px solid
-    color-mix(in srgb, var(--oomol-primary) 16%, var(--oomol-divider));
-  background: color-mix(in srgb, var(--oomol-primary-bg) 42%, white);
-  font-size: 0.82rem;
+  border: 1px solid color-mix(in srgb, var(--oomol-primary) 14%, white);
+  background: color-mix(in srgb, var(--oomol-primary-bg) 46%, white 54%);
+  font-size: 0.76rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: var(--oomol-primary-text);
 }
 
 .sectionTitle {
   margin: 0;
-  max-width: 100%;
+  max-width: 18ch;
   font-family: var(--oomol-font-display);
-  font-size: clamp(2.1rem, 3.5vw, 2.85rem);
+  font-size: clamp(1.92rem, 3vw, 2.46rem);
   line-height: 1.12;
   letter-spacing: -0.04em;
-  text-wrap: pretty;
+  text-wrap: balance;
   color: var(--oomol-text-primary);
 }
 
 .sectionDescription {
   margin: 0;
-  max-width: 42rem;
-  font-size: 1.0625rem;
-  line-height: 1.7;
+  max-width: 44rem;
+  font-size: 1.04rem;
+  line-height: 1.68;
   color: var(--oomol-text-secondary);
+}
+
+.twoColumn .sectionTitle {
+  max-width: 20ch;
 }
 
 .inlineActions {
@@ -123,15 +130,17 @@
 
 .commandGrid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 0.2rem;
 }
 
 .commandCard,
 .exampleCard,
 .nextCard,
 .terminalPanel {
-  border-radius: 1.4rem;
+  border-radius: 1.55rem;
   border: 1px solid var(--oomol-divider);
   background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%);
   box-shadow: 0 10px 24px rgba(101, 118, 163, 0.08);
@@ -141,10 +150,23 @@
   display: grid;
   gap: 0.75rem;
   padding: 1.1rem 1.1rem 1.15rem;
-}
+  position: relative;
+  overflow: hidden;
 
-.commandCard:last-child {
-  grid-column: span 2;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 1.2rem;
+    right: 1.2rem;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--oomol-primary) 58%, transparent) 0%,
+      color-mix(in srgb, var(--oomol-primary) 6%, transparent) 100%
+    );
+  }
 }
 
 .commandTop {
@@ -210,6 +232,7 @@
 .terminalPanel {
   display: grid;
   overflow: hidden;
+  box-shadow: 0 14px 30px rgba(101, 118, 163, 0.1);
 }
 
 .terminalChrome {
@@ -287,6 +310,26 @@
   padding: 1.25rem 1.25rem 1.35rem;
 }
 
+.exampleCard {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 1.2rem;
+    right: 1.2rem;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--oomol-primary) 58%, transparent) 0%,
+      color-mix(in srgb, var(--oomol-primary) 6%, transparent) 100%
+    );
+  }
+}
+
 .exampleTop {
   display: flex;
   flex-wrap: wrap;
@@ -341,19 +384,19 @@
 
 .nextCard {
   align-content: start;
+  padding: 1.15rem 1.2rem 1.22rem;
+  border-radius: 1.35rem;
+  box-shadow: 0 6px 16px rgba(101, 118, 163, 0.05);
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 97%, white 3%);
 }
 
 [data-theme="dark"] {
   .eyebrow {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-primary) 24%,
-      var(--oomol-divider)
-    );
+    border-color: color-mix(in srgb, var(--oomol-primary) 20%, transparent);
     background: color-mix(
       in srgb,
-      var(--oomol-bg-elevated) 78%,
-      var(--oomol-primary-bg) 22%
+      var(--oomol-primary-bg) 30%,
+      var(--oomol-bg-container) 70%
     );
   }
 
@@ -379,6 +422,16 @@
       var(--oomol-bg-elevated) 86%,
       var(--oomol-bg-container) 14%
     );
+    box-shadow: 0 12px 28px rgba(12, 16, 28, 0.28);
+  }
+
+  .nextCard {
+    background: color-mix(
+      in srgb,
+      var(--oomol-bg-elevated) 82%,
+      var(--oomol-bg-container) 18%
+    );
+    box-shadow: 0 8px 18px rgba(12, 16, 28, 0.18);
   }
 
   .commandSnippet {
@@ -417,20 +470,20 @@
 }
 
 :global(html[lang="en"]) .sectionTitle {
-  font-size: clamp(2rem, 3.2vw, 2.85rem);
-  line-height: 1.1;
+  max-width: 22ch;
+  font-size: clamp(1.92rem, 3vw, 2.46rem);
+  line-height: 1.12;
 }
 
 @media (max-width: 996px) {
   .twoColumn,
   .exampleGrid,
-  .nextGrid,
-  .commandGrid {
+  .nextGrid {
     grid-template-columns: 1fr;
   }
 
-  .commandCard:last-child {
-    grid-column: auto;
+  .commandGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -440,7 +493,7 @@
   }
 
   .section {
-    padding: 3rem 0;
+    padding: 2.5rem 0;
   }
 
   .sectionTitle {
@@ -449,14 +502,22 @@
   }
 
   .sectionDescription {
-    font-size: 0.98rem;
-    line-height: 1.7;
+    font-size: 0.96rem;
+    line-height: 1.64;
+  }
+
+  .stackContainer {
+    gap: 1rem;
   }
 
   .commandCard,
   .exampleCard,
   .nextCard {
     padding: 1.05rem 1.05rem 1.15rem;
+  }
+
+  .commandGrid {
+    grid-template-columns: 1fr;
   }
 
   .exampleSnippet {
