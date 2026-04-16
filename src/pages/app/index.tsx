@@ -2,9 +2,12 @@ import styles from "./styles.module.scss";
 
 import type { DocusaurusContext } from "@docusaurus/types";
 
+import Head from "@docusaurus/Head";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { downloadStable } from "@site/src/lib/utils";
 import cx from "clsx";
+import { Download, Globe, Smartphone } from "lucide-react";
 import { memo, useEffect, useRef, useState } from "react";
 
 import Layout from "../../theme/Layout";
@@ -46,7 +49,7 @@ type DownloadItem = {
   subtitle: string;
   description: string;
   action: string;
-  href: string;
+  href?: string;
   external?: boolean;
   kind?: "web" | "desktop" | "ios";
 };
@@ -61,14 +64,54 @@ const VIDEO_FILES = {
   outputs: { zh: "epub-translate-4K-ZH.mp4", en: "epub-translator-4K-en.mp4" },
 } as const;
 
+const APP_DESKTOP_DOWNLOAD_URLS = {
+  macos: "https://app-downloads.oomol.com/oomol-ai/darwin/arm64",
+  windows: "https://app-downloads.oomol.com/oomol-ai/win32/x64",
+} as const;
+
+const TRAILING_HANGING_PUNCTUATION = /([，。、；：？！])$/u;
+
+function splitZhTitleAtComma(title: string) {
+  const commaIndex = title.indexOf("，");
+
+  if (commaIndex === -1 || commaIndex === title.length - 1) {
+    return [title];
+  }
+
+  return [title.slice(0, commaIndex + 1), title.slice(commaIndex + 1)];
+}
+
+function renderHangingTitleLine(text: string, className: string) {
+  const match = text.match(TRAILING_HANGING_PUNCTUATION);
+
+  if (!match) {
+    return <span className={className}>{text}</span>;
+  }
+
+  const punctuation = match[1];
+  const content = text.slice(0, -punctuation.length);
+
+  return (
+    <span className={className}>
+      {content}
+      <span className={styles.hangingPunctuation}>{punctuation}</span>
+    </span>
+  );
+}
+
 const COPY = {
   zh: {
     brandLabel: "悟墨 AI",
+    page: {
+      title: "悟墨 AI（OOMOL AI）- OOMOL 的官方图形入口",
+      description:
+        "当你更喜欢图形界面时，可以在 Web、桌面和 iOS 中直接使用 OOMOL 的工具，适合连续对话、查看结果和继续处理任务。",
+    },
     hero: {
-      titleLine1: "科学分析，",
-      titleLine2: "清晰决策",
-      lead: "悟墨 AI 是一款面向大学生、老师和科研工作者的智能体工具，专注于数据分析、论文出图等任务。",
-      productScreenshotAlt: "悟墨 AI 产品界面截图",
+      titleLine1: "OOMOL AI，把工具使用体验",
+      titleLine2: "直接带进图形界面",
+      lead: "悟墨 AI 是给人直接打开来用的官方图形入口，更适合连续对话、查看结果和继续处理任务。",
+      productScreenshotAlt: "悟墨 AI 中由 Agent 原生调用工具完成任务的界面",
     },
     actions: {
       openWeb: "打开网页版",
@@ -76,156 +119,141 @@ const COPY = {
       ios: "iOS",
     },
     models: {
-      title: "这些模型能力，打开就能用",
+      title: "更适合日常打开来用",
       description:
-        "可以按任务切换聊天模型，也可以直接调用 nano-banana 系列生图能力，不需要自己另外找入口。",
+        "在这里，搜索、执行、查看结果和继续处理都留在同一个工作区里。",
       demo: {
-        eyebrow: "能力演示",
-        title:
-          "GPT 的业务理解能力和 nano-banana 的生图能力，可以一起完成更贴近业务的图像结果",
-        description:
-          "下面这张演示图就是基于 GPT 对业务内容的理解，再结合 nano-banana 的画图能力共同生成的结果。",
-        imageAlt: "基于 GPT 业务理解与 nano-banana 生图能力共同生成的演示图",
+        eyebrow: "一个工作区",
+        title: "让任务在一个界面里继续往下走",
+        description: "从搜索工具到查看结果，再到继续处理，都不需要来回跳转。",
+        imageAlt: "悟墨 AI 中原生工具能力与小程序工作台界面",
       },
       cards: {
         chat: {
-          eyebrow: "聊天模型",
-          title: "支持切换 OpenAI GPT-5.4 和 Qwen 3.5 Plus",
-          body: "同一个产品里就能切换使用 OpenAI 的 GPT-5.4 或千问的 Qwen 3.5 Plus，按任务选择更合适的模型。",
-          chips: ["OpenAI GPT-5.4", "Qwen 3.5 Plus"],
+          eyebrow: "连续处理",
+          title: "搜索、执行和结果都留在同一界面",
+          body: "账号连接、任务运行和现成工具的调用，会直接进入当前工作区，不再散落在额外步骤里。",
+          chips: ["一个工作区", "连续处理", "直接打开用"],
         },
         image: {
-          eyebrow: "生图模型",
-          title: "内置 nano-banana 各个系列生图能力",
-          body: "支持 nano-banana、nano-banana-2 和 nano-banana-pro，覆盖从快速出图到更高质量生成的不同场景。",
-          chips: ["nano-banana", "nano-banana-2", "nano-banana-pro"],
+          eyebrow: "结果跟进",
+          title: "更适合看结果、继续追问、继续处理",
+          body: "当你拿到结果后，可以直接补充要求、继续追问或执行下一步，而不是先换回别的入口。",
+          chips: ["先看结果", "继续追问", "继续处理"],
         },
       },
     },
     problems: {
-      titleLine1: "用户最常遇到的",
-      titleLine2: "三个问题",
+      titleLine1: "什么时候",
+      titleLine2: "图形界面会更顺手",
       cards: [
         {
-          title: "不想学一堆 AI，只想直接用",
-          body: "很多人缺的不是能力，而是没时间先研究各种 AI 用法。",
+          title: "你会经常开着它",
+          body: "相比一次性命令调用，图形界面更适合日常打开、随时回来继续。",
         },
         {
-          title: "图表能生成，后续难修改",
-          body: "一旦要补标注、调版式或改局部细节，很多工具最后还是得从头再来。",
+          title: "你需要看结果再决定下一步",
+          body: "图片、文档、表格或中间结果留在当前界面里，会更容易继续跟进。",
         },
         {
-          title: "来源说不清，结果不敢信",
-          body: "很多 AI 看起来答得很完整，但依据从哪里来、能不能核实说不清，用户自然不敢直接相信。",
+          title: "你想少一点切换，多一点连续感",
+          body: "当搜索、执行和追问都留在一个工作区里，处理任务会更自然。",
         },
       ] as ProblemCard[],
     },
     workflow: {
       steps: [
         {
-          title: "直接开做，不用先学 AI",
-          body: "常见的数据分析和研究任务，直接说需求就能开始。",
-          detail:
-            "搜资料、做分析、整理结果，这些常用能力都已经内置好，不用自己配工具。",
-          alt: "悟墨 AI 中可直接开始分析与研究任务的界面",
+          title: "先说目标，再开始处理",
+          body: "你先描述任务，界面再接住后面的搜索与执行。",
+          detail: "更像日常打开来用的工作区，而不是一串命令。",
+          alt: "悟墨 AI 中由 Agent 主动搜索和调用技能的界面",
         },
         {
-          title: "图表和插图，不满意还能接着改",
-          body: "先出结果，再慢慢调。改标注、配色、版式，不用每次都从头来。",
-          detail:
-            "图表支持继续优化和重绘，论文插图也能局部修改，不用在几个工具之间来回折腾。",
-          alt: "悟墨 AI 中可继续编辑的图表结果",
+          title: "结果出来后，直接继续下一步",
+          body: "查看结果、补充要求、继续处理，都可以留在当前页面里完成。",
+          detail: "适合需要边看边改、边问边做的任务。",
+          alt: "悟墨 AI 中继续执行多步工具任务的界面",
         },
         {
-          title: "来源说得清，结果才敢用",
-          body: "查到的数据、论文和资料，都会尽量把来源带上；写成报告时，也会把引用标出来。",
-          detail:
-            "不只是给你一个结论，而是把依据一并交代清楚，这样更容易核实，也更让人放心。",
-          alt: "悟墨 AI 在结果中保留来源、依据与引用信息",
+          title: "换设备时，当前工作还能继续",
+          body: "Web、桌面和 iOS 都可以继续使用，不必重新理解另一套界面。",
+          detail: "你打开哪个入口，取决于当下最顺手的设备。",
+          alt: "悟墨 AI 中将结果与 OOMOL 工具体系继续连接的界面",
         },
       ],
     },
     outputs: {
-      title: "不只是聊天，而是把任务交给悟墨 AI",
+      title: "终端适合接入，图形界面适合持续使用",
       description:
-        "分析、出图、整理和交付，不必停在对话里。你可以直接把任务交给悟墨 AI，让它继续往下做。",
-      imageAlt: "悟墨 AI 任务执行与工具界面展示",
+        "oo-cli 更适合给 Agent 和终端接入；悟墨 AI 更适合你直接打开来用，持续查看结果并继续处理。",
+      imageAlt: "悟墨 AI 中使用同一套工具能力持续完成任务的界面",
     },
     pricing: {
-      title: "积分包充值，按你的工作节奏来",
+      title: "共用同一套点数",
       description:
-        "只在需要更多积分时再补就好。三档积分包分别适合偶尔补量、稳定使用和批量任务，购买后的积分会一直保留，不会过期。",
+        "悟墨 AI 与 oo-cli 共用同一套点数。你按实际使用消耗，不按 Web、桌面和 iOS 分开计费。",
       pillars: [
-        "需要更多积分时再补，不绑月付周期",
-        "购买后的积分会一直保留，不会过期",
-        "从临时补量到批量任务，都有对应档位",
+        "Web、Desktop、iOS 共用同一账户与点数",
+        "购买后的点数会一直保留，不会按月清零",
+        "从轻量体验到高频使用都有对应档位",
       ],
       summary: {
-        eyebrow: "按需充值",
-        title: "先买一包放在账户里，什么时候要用什么时候用",
+        eyebrow: "统一计费",
+        title: "不是给某个入口单独充值",
         description:
-          "积分包适合灵活补充余额。任务多的时候再加，任务少的时候慢慢用，不必担心月底清零。",
-        badge: "积分不会过期",
+          "无论你从 oo-cli 还是悟墨 AI 发起任务，消耗都按实际使用计算。用得更多时再补充即可。",
+        badge: "跨入口共用",
       },
       perPack: "/ 包",
-      featureTitle: "适合这种使用方式",
+      featureTitle: "适合这种任务节奏",
       cta: "去充值",
-      note: "积分包购买后会保留在账户里，不按月清零，也不会因为使用节奏慢而失效。",
+      note: "点数购买后会保留在账户里，不按月清零，也不会因为你切换使用入口而失效。",
       packs: {
         starter: {
-          tier: "偶尔补量",
+          tier: "偶尔使用",
           name: "入门包",
-          description:
-            "到账 5 点数。适合偶尔跑任务时补一点余额，先继续做，不用一开始就买太多。",
+          description: "到账 5 点数。适合轻量体验或偶尔补充。",
           note: "灵活",
-          features: [
-            "偶尔补一点，就能把当前任务继续做完",
-            "先小额补充，不必预估长期用量",
-          ],
+          features: ["先小额体验", "不用一开始准备太多余量"],
         },
         boost: {
-          tier: "日常主力",
+          tier: "日常使用",
           name: "增强包",
           description:
-            "到账 24 点数（20 基础点数 + 4 额外点数）。适合稳定使用的日常分析、出图和整理任务，一次补充更从容，连续几次任务也不容易中断。",
+            "到账 24 点数（20 基础点数 + 4 额外点数）。适合日常使用。",
           note: "推荐",
-          features: [
-            "给稳定的日常工作节奏留出更舒服的余量",
-            "连续做几次任务时，不容易因为余额不够被打断",
-          ],
+          features: ["适合稳定日常使用", "连续处理多个任务更从容"],
         },
         ultra: {
           tier: "高频任务",
           name: "超级包",
           description:
-            "到账 128 点数（100 基础点数 + 28 额外点数）。适合批量处理、长流程和高频任务，先备一大包，进入重任务阶段时更稳，也更省心。",
+            "到账 128 点数（100 基础点数 + 28 额外点数）。适合批量任务与高频阶段。",
           note: "储备型",
-          features: [
-            "更适合批量执行、长流程和阶段性的高强度使用",
-            "先备好一笔大额储备，重任务推进起来更从容",
-          ],
+          features: ["适合批量与长链路任务", "为高频阶段预留更多余量"],
         },
       },
     },
     downloads: {
-      title: "开始试试吧",
+      title: "从你最顺手的入口打开",
       items: {
         web: {
           title: "Web",
-          subtitle: "最快开始",
-          description: "直接打开网页版，用真实任务试一次。",
+          subtitle: "对话式图形入口",
+          description: "最快开始使用。",
           action: "打开网页版",
         },
         desktop: {
           title: "Desktop",
-          subtitle: "本地继续做",
-          description: "下载桌面版，把分析、出图和整理放到本地环境里。",
+          subtitle: "桌面应用",
+          description: "适合更稳定的工作区与更长时间的连续处理。",
           action: "下载桌面版",
         },
         ios: {
           title: "iOS",
-          subtitle: "移动端查看",
-          description: "在手机或平板上查看任务进度和结果。",
+          subtitle: "移动应用",
+          description: "适合随时查看进展，并继续当前任务。",
           action: "打开 App Store",
         },
       },
@@ -234,171 +262,177 @@ const COPY = {
   },
   en: {
     brandLabel: "OOMOL AI",
+    page: {
+      title: "OOMOL AI - OOMOL's official GUI",
+      description:
+        "When you prefer a GUI, use OOMOL tools through web, desktop, and iOS for continuous work, reviewing results, and keeping tasks moving.",
+    },
     hero: {
-      titleLine1: "Scientific Analysis,",
-      titleLine2: "Clear Decisions",
-      lead: "OOMOL AI is an agentic tool for students, teachers, and researchers, focused on data analysis, paper figures, and similar work.",
-      productScreenshotAlt: "OOMOL AI product interface screenshot",
+      titleLine1: "OOMOL AI brings tool use",
+      titleLine2: "into a GUI workflow",
+      lead: "OOMOL AI is the official GUI for opening and using tools directly, better suited to continuous chat, reviewing results, and keeping work moving.",
+      productScreenshotAlt:
+        "OOMOL AI interface where the agent natively calls tools to complete a task",
     },
     actions: {
       openWeb: "Open Web App",
-      downloadDesktop: "Download Desktop App",
+      downloadDesktop: "Download desktop app",
       ios: "iOS",
     },
     models: {
-      title: "Model access that is ready to use",
+      title: "Better for everyday use",
       description:
-        "Switch chat models by task and use the nano-banana image generation lineup directly in the product, without hunting for separate entry points.",
+        "Search, execution, results, and follow-up work all stay in one workspace here.",
       demo: {
-        eyebrow: "Capability demo",
-        title:
-          "GPT-level business understanding and nano-banana image generation can work together to produce visuals that fit the task better",
+        eyebrow: "One workspace",
+        title: "Keep the task moving in one interface",
         description:
-          "The demo image below was generated by combining GPT's understanding of the business context with nano-banana's drawing capability.",
+          "From search to execution to reviewing results, you do not need to bounce across separate surfaces.",
         imageAlt:
-          "Demo image generated with GPT business understanding and nano-banana image generation",
+          "OOMOL AI workspace showing native tool capabilities and mini apps",
       },
       cards: {
         chat: {
-          eyebrow: "Chat models",
-          title: "Switch between OpenAI GPT-5.4 and Qwen 3.5 Plus",
-          body: "Use OpenAI GPT-5.4 or Qwen 3.5 Plus in the same product and choose the model that fits the task in front of you.",
-          chips: ["OpenAI GPT-5.4", "Qwen 3.5 Plus"],
+          eyebrow: "Continuous work",
+          title: "Search, execution, and results stay in one interface",
+          body: "Account connections, task runs, and ready-made tools move straight into the current workspace instead of being scattered across extra steps.",
+          chips: ["One workspace", "Continuous work", "Open and use"],
         },
         image: {
-          eyebrow: "Image models",
-          title: "Built-in nano-banana generation across the lineup",
-          body: "Supports nano-banana, nano-banana-2, and nano-banana-pro for everything from quick first drafts to higher-quality image generation.",
-          chips: ["nano-banana", "nano-banana-2", "nano-banana-pro"],
+          eyebrow: "Follow-up",
+          title: "Better for reviewing results and continuing the next step",
+          body: "Once you have the result, you can refine the request, ask follow-up questions, or continue the next action without switching back to another surface.",
+          chips: ["Review result", "Ask follow-up", "Keep going"],
         },
       },
     },
     problems: {
-      titleLine1: "The Three Problems",
-      titleLine2: "Users Hit Most Often",
+      titleLine1: "When does a GUI",
+      titleLine2: "feel more natural?",
       cards: [
         {
-          title: "I don't want to study AI first",
-          body: "For many people, the real bottleneck is not ability. It is not having time to learn a stack of AI tools before they can start.",
+          title: "When you keep it open all day",
+          body: "A GUI is better suited to everyday use than one-off command calls.",
         },
         {
-          title: "Charts come out fast, but edits are hard",
-          body: "Once you need labels, layout tweaks, or local figure edits, many tools still force you to start over.",
+          title:
+            "When you need to see the result before deciding the next step",
+          body: "Images, documents, tables, and intermediate results are easier to follow when they stay in the current page.",
         },
         {
-          title: "No clear sources, no confidence",
-          body: "Many AI outputs look complete, but if the source is unclear and hard to verify, people do not want to trust them.",
+          title: "When you want less switching and more continuity",
+          body: "If search, execution, and follow-up all stay in one workspace, tasks feel easier to carry forward.",
         },
       ] as ProblemCard[],
     },
     workflow: {
       steps: [
         {
-          title: "Start right away, without learning AI first",
-          body: "For common analysis and research tasks, you can begin just by describing the job.",
+          title: "State the goal, then start working",
+          body: "You describe the task, and the interface carries search and execution from there.",
           detail:
-            "Searching, analysis, and result organization are already built in, so you do not need to assemble tools yourself.",
-          alt: "OOMOL AI interface for starting analysis and research tasks directly",
+            "It feels more like an everyday workspace than a string of commands.",
+          alt: "OOMOL AI interface where the agent actively searches for and calls skills",
         },
         {
-          title: "Keep refining charts and figures after the first result",
-          body: "Get a first draft, then keep improving labels, colors, and layout without restarting.",
+          title: "Once the result appears, keep going",
+          body: "Review the output, refine the request, and continue the next step in the same page.",
           detail:
-            "Charts can be refined and redrawn, and paper figures can be edited locally instead of bouncing across multiple tools.",
-          alt: "Editable chart result in OOMOL AI",
+            "It fits tasks where you need to see, edit, and continue in one flow.",
+          alt: "OOMOL AI interface continuing a multi-step tool task",
         },
         {
-          title: "You can trust results only when the sources are clear",
-          body: "Data, papers, and references keep their sources whenever possible, and reports keep citations visible too.",
-          detail:
-            "It does not just hand you a conclusion. It also keeps the evidence nearby, which makes checking and using the result much safer.",
-          alt: "OOMOL AI result view with sources, evidence, and citations",
+          title: "Switch devices without switching mental modes",
+          body: "Web, desktop, and iOS all keep the same product shape, so the work can continue.",
+          detail: "Use whichever surface is most convenient in the moment.",
+          alt: "OOMOL AI interface connecting results back into the OOMOL toolchain",
         },
       ],
     },
     outputs: {
-      title: "Not just chat. Hand the task to OOMOL AI.",
+      title: "Terminals are for integration. GUIs are for ongoing use.",
       description:
-        "Analysis, figures, organization, and delivery should not stop at the conversation. Hand the task to OOMOL AI and let it continue.",
-      imageAlt: "OOMOL AI task execution and tool interface",
+        "Use oo-cli when you want tools connected into agents and terminal workflows. Open OOMOL AI when you want to keep using those tools yourself in a visual workspace.",
+      imageAlt:
+        "OOMOL AI interface continuing work with the same tool capability layer",
     },
     pricing: {
-      title: "Top up with credit packs on your schedule",
+      title: "One credit system",
       description:
-        "Add credits only when you need more. Three pack sizes cover occasional refills, steady day-to-day work, and heavier batch runs, and purchased credits stay in your account until you use them.",
+        "OOMOL AI and oo-cli use the same credits. You pay for actual usage, not separately for web, desktop, and iOS.",
       pillars: [
-        "Top up only when you actually need more credits",
-        "Purchased credits stay in your account and never expire",
-        "Three pack sizes cover light refills through heavier runs",
+        "Web, desktop, and iOS share one account and one credit balance",
+        "Purchased credits stay in your account until you use them",
+        "Pack sizes cover light use through heavier ongoing work",
       ],
       summary: {
-        eyebrow: "Flexible top-up",
-        title: "Keep a pack in your account and use it on your timeline",
+        eyebrow: "Shared billing",
+        title: "You top up usage, not a surface",
         description:
-          "Credit packs are built for flexible overflow usage. Add more when work spikes, and use the balance slowly when it does not. Nothing resets at the end of the month.",
-        badge: "Credits never expire",
+          "Whether a task starts from oo-cli or OOMOL AI, usage is counted the same way. Add more only when you need more headroom.",
+        badge: "One credit system",
       },
       perPack: "/ pack",
       featureTitle: "Works well for",
       cta: "Top Up",
-      note: "Purchased credit packs stay in your account until you use them. They do not reset monthly and do not expire.",
+      note: "Purchased credits stay in your account until you use them. They do not reset monthly and they do not disappear when you switch surfaces.",
       packs: {
         starter: {
-          tier: "Light refill",
+          tier: "Occasional use",
           name: "Starter Pack",
           description:
-            "Includes 5 credits. A small refill for the moments when you only need a bit more credit to keep moving.",
+            "Includes 5 credits. A small refill for light use or occasional top-ups.",
           note: "Flexible",
           features: [
-            "Occasional top-ups when you only need a little more",
-            "A low-commitment refill without planning long-term usage",
+            "Useful for a small first balance",
+            "No need to reserve too much upfront",
           ],
         },
         boost: {
-          tier: "Daily work",
+          tier: "Daily use",
           name: "Boost Pack",
           description:
-            "Includes 24 credits (20 base + 4 bonus). A practical refill for regular analysis, charting, and organization work, with enough room for several tasks in a row.",
+            "Includes 24 credits (20 base + 4 bonus). A better fit for regular day-to-day use.",
           note: "Popular",
           features: [
-            "A better fit for steady day-to-day work",
-            "Extra headroom when several tasks land back to back",
+            "A stronger fit for steady daily use",
+            "More comfortable when several tasks arrive in a row",
           ],
         },
         ultra: {
-          tier: "Heavy usage",
+          tier: "Heavy use",
           name: "Ultra Pack",
           description:
-            "Includes 128 credits (100 base + 28 bonus). A larger reserve for batch runs, longer workflows, and periods when you know the workload will stay high.",
+            "Includes 128 credits (100 base + 28 bonus). Best for batch work and heavier periods.",
           note: "Reserve",
           features: [
-            "Built for batch runs, longer workflows, and heavier usage windows",
-            "A larger reserve that helps intensive work keep moving",
+            "Built for batch work and longer workflows",
+            "Keeps more headroom available during heavier periods",
           ],
         },
       },
     },
     downloads: {
-      title: "Give it a try",
+      title: "Open it from the surface that fits you best",
       items: {
         web: {
           title: "Web",
-          subtitle: "Fastest start",
-          description: "Open the web app and try it on a real task.",
+          subtitle: "Chat GUI",
+          description: "The fastest way to start using it.",
           action: "Open Web App",
         },
         desktop: {
           title: "Desktop",
-          subtitle: "Keep working locally",
+          subtitle: "Desktop app",
           description:
-            "Download the desktop app to keep analysis, charting, and organization in your local environment.",
-          action: "Download Desktop App",
+            "Best when you want a more stable workspace for longer-running work.",
+          action: "Download desktop app",
         },
         ios: {
           title: "iOS",
-          subtitle: "Check on mobile",
+          subtitle: "Mobile app",
           description:
-            "Track task progress and view results on your phone or tablet.",
+            "Track progress and continue the current task from your phone or tablet.",
           action: "Open App Store",
         },
       },
@@ -416,6 +450,18 @@ function getLocalizedVideoSrc(
 
 function formatPackPrice(priceUsd: number): string {
   return `$ ${priceUsd}`;
+}
+
+function resolveAppDesktopDownloadUrl() {
+  if (typeof navigator === "undefined") {
+    return "";
+  }
+
+  const platformSignature = `${navigator.platform} ${navigator.userAgent}`;
+
+  return /Win/i.test(platformSignature)
+    ? APP_DESKTOP_DOWNLOAD_URLS.windows
+    : APP_DESKTOP_DOWNLOAD_URLS.macos;
 }
 
 const AutoPlayVideo = memo(function AutoPlayVideo({
@@ -502,13 +548,21 @@ export default function AppPage() {
   const isZh = i18n.currentLocale === "zh-CN";
   const copy = isZh ? COPY.zh : COPY.en;
 
-  const downloadsHref = useBaseUrl("/downloads");
   const appWebHref = "https://app.oomol.com";
-  const appStoreHref =
-    "https://apps.apple.com/cn/app/%E6%82%9F%E5%A2%A8-ai-oomol-%E5%AF%B9%E8%AF%9D%E5%BC%8F%E4%BA%91%E5%87%BD%E6%95%B0/id6749377154";
+  const appStoreHref = "https://apps.apple.com/app/id6749377154";
   const rechargeHref = "https://console.oomol.com/billing/token-recharge";
+  const [desktopDownloadHref, setDesktopDownloadHref] = useState<string>("");
+  const pricingTitleLines = isZh
+    ? splitZhTitleAtComma(copy.pricing.title)
+    : [copy.pricing.title];
 
-  const nanoBananaPng = useBaseUrl("/img/pages/app/nano-banana.png");
+  const nativeWorkspacePng = useBaseUrl(
+    "/img/pages/app/chat-login-agent-miniapps.png"
+  );
+
+  useEffect(() => {
+    setDesktopDownloadHref(resolveAppDesktopDownloadUrl());
+  }, []);
 
   const modelFeatureCards: readonly ModelFeatureCard[] = [
     {
@@ -593,7 +647,8 @@ export default function AppPage() {
       subtitle: copy.downloads.items.desktop.subtitle,
       description: copy.downloads.items.desktop.description,
       action: copy.downloads.items.desktop.action,
-      href: downloadsHref,
+      href: desktopDownloadHref || undefined,
+      external: true,
       kind: "desktop",
     },
     {
@@ -609,47 +664,84 @@ export default function AppPage() {
 
   return (
     <Layout>
+      <Head>
+        <title>{copy.page.title}</title>
+        <meta name="description" content={copy.page.description} />
+      </Head>
       <main id="top" className={styles.page}>
         <section className={styles.hero}>
-          <div className={styles.heroCopy}>
-            <h1 className={styles.heroTitle}>
-              {copy.hero.titleLine1}
-              <span>{copy.hero.titleLine2}</span>
-            </h1>
-            <p className={styles.heroLead}>{copy.hero.lead}</p>
+          <div className={styles.heroHeader}>
+            <div className={styles.heroCopy}>
+              <h1 className={styles.heroTitle}>
+                <span className={styles.heroTitleLine}>
+                  {copy.hero.titleLine1}
+                </span>
+                <span
+                  className={cx(styles.heroTitleLine, styles.heroTitleAccent)}
+                >
+                  {copy.hero.titleLine2}
+                </span>
+              </h1>
+              <p className={styles.heroLead}>{copy.hero.lead}</p>
 
-            <div className={styles.heroActions}>
-              <a
-                className={cx(
-                  styles.heroActionButton,
-                  styles.heroActionButtonPrimary
-                )}
-                href={appWebHref}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span>{copy.actions.openWeb}</span>
-              </a>
-              <a className={styles.heroActionButton} href={downloadsHref}>
-                <span>{copy.actions.downloadDesktop}</span>
-              </a>
-              <a
-                className={styles.heroActionButton}
-                href={appStoreHref}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span>{copy.actions.ios}</span>
-              </a>
+              <div className={styles.heroActions}>
+                <a
+                  className={cx(
+                    styles.heroActionButton,
+                    styles.heroActionButtonPrimary
+                  )}
+                  href={appWebHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Globe className={styles.heroActionIcon} aria-hidden="true" />
+                  <span>{copy.actions.openWeb}</span>
+                </a>
+                <a
+                  className={styles.heroActionButton}
+                  href={desktopDownloadHref || undefined}
+                  aria-disabled={!desktopDownloadHref}
+                  onClick={event => {
+                    if (!desktopDownloadHref) {
+                      event.preventDefault();
+                      return;
+                    }
+
+                    downloadStable(event, desktopDownloadHref);
+                  }}
+                >
+                  <Download
+                    className={styles.heroActionIcon}
+                    aria-hidden="true"
+                  />
+                  <span>{copy.actions.downloadDesktop}</span>
+                </a>
+                <a
+                  className={styles.heroActionButton}
+                  href={appStoreHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Smartphone
+                    className={styles.heroActionIcon}
+                    aria-hidden="true"
+                  />
+                  <span>{copy.actions.ios}</span>
+                </a>
+              </div>
             </div>
           </div>
 
           <div className={styles.heroVisual}>
-            <AutoPlayVideo
-              className={styles.heroScreenshot}
-              src={getLocalizedVideoSrc(VIDEO_FILES.hero, isZh)}
-              label={copy.hero.productScreenshotAlt}
-            />
+            <div className={styles.heroVisualInner}>
+              <div className={styles.heroFrame}>
+                <AutoPlayVideo
+                  className={styles.heroScreenshot}
+                  src={getLocalizedVideoSrc(VIDEO_FILES.hero, isZh)}
+                  label={copy.hero.productScreenshotAlt}
+                />
+              </div>
+            </div>
           </div>
         </section>
 
@@ -693,7 +785,7 @@ export default function AppPage() {
 
             <div className={styles.modelDemoFrame}>
               <img
-                src={nanoBananaPng}
+                src={nativeWorkspacePng}
                 alt={copy.models.demo.imageAlt}
                 className={styles.modelDemoImage}
               />
@@ -704,9 +796,14 @@ export default function AppPage() {
         <section id="problems" className={styles.section}>
           <div className={cx(styles.sectionIntro, styles.problemsIntro)}>
             <h2 className={styles.problemsTitle}>
-              {copy.problems.titleLine1}
-              <br />
-              {copy.problems.titleLine2}
+              {renderHangingTitleLine(
+                copy.problems.titleLine1,
+                styles.problemsTitleLine
+              )}
+              {renderHangingTitleLine(
+                copy.problems.titleLine2,
+                styles.problemsTitleLine
+              )}
             </h2>
           </div>
 
@@ -767,31 +864,19 @@ export default function AppPage() {
           className={cx(styles.section, styles.pricingSection)}
         >
           <div className={cx(styles.sectionIntro, styles.pricingIntro)}>
-            <h2>{copy.pricing.title}</h2>
+            <h2 className={styles.hangingTitle}>
+              {renderHangingTitleLine(
+                pricingTitleLines[0],
+                styles.hangingTitleLine
+              )}
+              {pricingTitleLines[1]
+                ? renderHangingTitleLine(
+                    pricingTitleLines[1],
+                    styles.hangingTitleLine
+                  )
+                : null}
+            </h2>
             <p>{copy.pricing.description}</p>
-          </div>
-
-          <div className={styles.pricingPillars}>
-            {copy.pricing.pillars.map(pillar => (
-              <div key={pillar} className={styles.pricingPillar}>
-                {pillar}
-              </div>
-            ))}
-          </div>
-
-          <div className={styles.pricingSummary}>
-            <div className={styles.pricingSummaryCopy}>
-              <p className={styles.pricingSummaryEyebrow}>
-                {copy.pricing.summary.eyebrow}
-              </p>
-              <h3>{copy.pricing.summary.title}</h3>
-              <p className={styles.pricingSummaryDescription}>
-                {copy.pricing.summary.description}
-              </p>
-            </div>
-            <span className={styles.pricingSummaryBadge}>
-              {copy.pricing.summary.badge}
-            </span>
           </div>
 
           <div className={styles.pricingGrid}>
@@ -809,7 +894,6 @@ export default function AppPage() {
                       <p className={styles.planTier}>{pack.tier}</p>
                       <h3>{pack.name}</h3>
                     </div>
-                    <span className={styles.planBadge}>{pack.note}</span>
                   </div>
 
                   <div className={styles.planPriceRow}>
@@ -821,9 +905,6 @@ export default function AppPage() {
                 </div>
 
                 <div className={styles.pricingFeatureBlock}>
-                  <p className={styles.pricingFeatureTitle}>
-                    {pack.featureTitle}
-                  </p>
                   <ul className={styles.pricingFeatureList}>
                     {pack.features.map(feature => (
                       <li key={feature}>
@@ -847,10 +928,6 @@ export default function AppPage() {
                 </a>
               </article>
             ))}
-          </div>
-
-          <div className={styles.pricingNote}>
-            <p>{copy.pricing.note}</p>
           </div>
         </section>
 
@@ -876,6 +953,18 @@ export default function AppPage() {
                     item.kind === "web" && styles.cardActionPrimary
                   )}
                   href={item.href}
+                  onClick={
+                    item.kind === "desktop"
+                      ? event => {
+                          if (!item.href) {
+                            event.preventDefault();
+                            return;
+                          }
+
+                          downloadStable(event, item.href);
+                        }
+                      : undefined
+                  }
                   target={item.external ? "_blank" : undefined}
                   rel={item.external ? "noopener noreferrer" : undefined}
                 >

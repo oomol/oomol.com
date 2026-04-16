@@ -1,0 +1,200 @@
+---
+sidebar_position: 2
+sidebar_label: 命令参考
+slug: /oo-cli/command-reference
+pagination_prev: cloud-services/cli
+pagination_next: null
+---
+
+# oo-cli 命令参考
+
+这一页汇总了
+[`oo-cli`](https://github.com/oomol-lab/oo-cli)
+ 仓库里当前的 `oo` 命令体系。
+
+:::note
+这里应该作为网站里的权威命令参考。像 `oo package info` 这类旧例子已经过时，
+当前应以 `oo packages ...` 和 `oo cloud-task ...` 这些命名空间为准。
+:::
+
+## 全局选项
+
+| 选项 | 作用 |
+| --- | --- |
+| `--debug` | CLI 退出时把当前日志文件路径打印到 `stderr` |
+| `--lang <lang>` | 只对当前命令临时覆盖显示语言。支持 `en`、`zh` |
+| `-h`、`--help` | 显示当前命令帮助 |
+| `-V`、`--version` | 显示 CLI 版本、构建时间和 commit hash |
+
+## Debug 日志
+
+`oo` 会把结构化日志持久化到按平台区分的目录：
+
+- macOS：`~/Library/Logs/oo`
+- Linux：`${XDG_STATE_HOME:-~/.local/state}/oo/logs`
+- Windows：`%LOCALAPPDATA%\\oo\\Logs`
+
+这些日志覆盖远端 API 请求生命周期、浏览器登录回调、显式更新检查、settings /
+auth 状态变化以及 sqlite cache 活动。CLI 最多保留最近 `20` 个日志文件。
+
+## 认证
+
+| 命令 | 作用 |
+| --- | --- |
+| `oo auth login` | 启动浏览器登录流程，并保存当前账号 |
+| `oo auth logout` | 从持久化认证数据里移除当前账号 |
+| `oo auth status` | 显示当前账号，并校验 API Key 状态 |
+| `oo auth switch` | 切换到下一个已保存账号 |
+| `oo login` | `oo auth login` 的别名 |
+| `oo logout` | `oo auth logout` 的别名 |
+
+## 配置
+
+| 命令 | 作用 |
+| --- | --- |
+| `oo config list` | 列出当前已持久化的配置 |
+| `oo config get <key>` | 读取某个配置值 |
+| `oo config path` | 输出配置文件路径 |
+| `oo config set <key> <value>` | 写入某个配置值 |
+| `oo config unset <key>` | 删除某个配置值 |
+
+当前支持的配置键：
+
+- `lang`
+- `file.download.out_dir`
+
+值得注意的行为：
+
+- 持久化 settings 文件里出现未知 key 时，CLI 会忽略它，并在日志中记录 warning。
+- `file.download.out_dir` 接受任意非空路径字符串。
+- 相对下载路径会在执行 `oo file download` 时相对于当前工作目录解析。
+
+## 更新
+
+| 命令 | 作用 |
+| --- | --- |
+| `oo check-update` | 检查是否有新的 CLI 版本可用 |
+
+如果存在新版本，`oo` 会输出当前包管理器对应的升级命令。
+
+## 搜索与检索
+
+### 混合搜索
+
+| 命令 | 作用 |
+| --- | --- |
+| `oo search <text>` | 用一条自由文本查询同时搜索 package 和 connector action |
+
+值得注意的行为：
+
+- JSON 输出会混合 `package` 和 `connector` 两类结果，并用 `kind` 区分。
+- connector 结果会带上 `authenticated` 和 `schemaPath`。
+
+### Connector 检索
+
+| 命令 | 作用 |
+| --- | --- |
+| `oo connector search <text>` | 用自由文本搜索 connector action |
+| `oo connector run <serviceName>` | 校验输入并运行一个 connector action |
+
+`oo connector run` 的常用选项：
+
+- `-a`、`--action <action>`：必填，要运行的 action 名
+- `-d`、`--data <data>`：直接传 JSON，或用 `@path` 读取 JSON 文件
+- `--dry-run`：只校验 payload，不真正执行
+- `--json`：输出结构化结果
+
+### Package 检索
+
+| 命令 | 作用 |
+| --- | --- |
+| `oo packages search <text>` | 用自由文本按意图搜索已发布 package |
+| `oo packages info <packageSpecifier>` | 查看单个 package 的元数据 |
+
+`<packageSpecifier>` 支持 `foo/bar`、`foo/bar@latest` 和 `foo/bar@1.2.3`
+这几种形式。
+
+## Cloud Task
+
+| 命令 | 作用 |
+| --- | --- |
+| `oo cloud-task run <packageSpecifier>` | 校验输入值，并为某个 package block 创建 Cloud Task |
+| `oo cloud-task list` | 按需过滤并列出 Cloud Task |
+| `oo cloud-task log <taskId>` | 查看单个任务的分页日志 |
+| `oo cloud-task result <taskId>` | 查看单个任务的当前结果 |
+| `oo cloud-task wait <taskId>` | 轮询等待任务进入终态 |
+
+关键说明：
+
+- `oo cloud-task run` 要求使用 `PACKAGE_NAME@SEMVER`。
+- 使用 `-b`、`--block-id <block-id>` 指定目标 block。
+- 使用 `-d`、`--data <data>` 传入 JSON 或 `@path/to/file.json`。
+- `--dry-run` 只校验请求，不创建任务。
+- `oo cloud-task wait` 每 `3` 秒轮询一次，并支持 `--timeout`。
+
+## Skills
+
+| 命令 | 作用 |
+| --- | --- |
+| `oo skills list` | 列出本地 Codex skills 目录里由 oo 管理的 skill |
+| `oo skills search <text>` | 搜索已发布 skill |
+| `oo skills install [packageName]` | 安装内置 skill 或已发布 skill |
+| `oo skills update [skills...]` | 更新已安装的 oo 管理型已发布 skill |
+| `oo skills uninstall [skill]` | 卸载内置 skill，或卸载某个 oo 管理型已发布 skill |
+
+关键说明：
+
+- `oo skills find <text>` 是 `oo skills search <text>` 的别名。
+- `oo skills add [packageName]` 是 `oo skills install [packageName]` 的别名。
+- `oo skills remove [skill]` 是 `oo skills uninstall [skill]` 的别名。
+- 直接执行 `oo skills install` 且不带包名时，会安装内置 skill。
+- 只要支持的本地宿主目录存在，内置 skill 会发布到 Codex 和 Claude Code。
+- 已发布 skill 会安装到 `${CODEX_HOME:-~/.codex}/skills/<skill-id>`。
+- `oo` 和 `oo-find-skills` 这类内置 skill 会在启动时自动同步，所以
+  `oo skills update` 只负责已发布的 oo 管理型 Codex skill。
+
+## 文件
+
+| 命令 | 作用 |
+| --- | --- |
+| `oo file download <url> [outDir]` | 从 `http` 或 `https` 地址下载文件到本地 |
+| `oo file upload <filePath>` | 把本地文件上传到临时文件缓存 |
+| `oo file list` | 查看本地 sqlite 里记录的上传文件 |
+| `oo file cleanup` | 删除本地 sqlite 中已过期的上传记录 |
+
+关键说明：
+
+- `oo file download` 默认写入已配置的 `file.download.out_dir`，未配置时
+  回落到 `~/Downloads`。
+- 如果服务端支持安全的 HTTP Range，下载会自动尝试续传。
+- 目标文件已存在时，CLI 不会覆盖，而是自动追加 `_1`、`_2` 等后缀。
+- 上传文件的有效期为一天。
+- 大于 `512 MiB` 的文件会被 `oo file upload` 拒绝。
+
+## 日志
+
+| 命令 | 作用 |
+| --- | --- |
+| `oo log path` | 输出当前 debug 日志目录路径 |
+| `oo log print [index]` | 输出某一份更早的持久化日志文件 |
+
+`oo log print 1` 表示上一份日志。CLI 会跳过当前这次运行的日志文件，只读取更早
+的文件。
+
+## Shell 补全
+
+| 命令 | 作用 |
+| --- | --- |
+| `oo completion <shell>` | 生成 shell 补全脚本 |
+
+支持的 shell：
+
+- `bash`
+- `zsh`
+- `fish`
+
+## 相关文档
+
+- [oo-cli 指南](/zh-CN/docs/oo-cli)
+- [云函数 API 概览](/zh-CN/docs/cloud-services/cloud-task/overview)
+- [oo-cli GitHub 仓库](https://github.com/oomol-lab/oo-cli)

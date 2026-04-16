@@ -53,7 +53,7 @@ const darkTheme = themes.dracula;
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "OOMOL",
-  tagline: "Build cloud skills. Keep the code.",
+  tagline: "Start with oo-cli. Build in Studio. Deliver through Cloud.",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -113,7 +113,8 @@ const config = {
         "@context": "https://schema.org",
         "@type": "Organization",
         name: "OOMOL",
-        description: "Build cloud skills. Keep the code.",
+        description:
+          "Let agents use your apps, APIs, and internal tools through one continuous path from oo-cli to Studio and Cloud.",
         url: "https://oomol.com",
         logo: "https://oomol.com/img/logo2x.png",
         sameAs: ["https://hub.oomol.com"],
@@ -205,12 +206,12 @@ const config = {
         {
           name: "keywords",
           content:
-            "cloud skill, skill distribution, closed-source skill delivery, ai-native developer tools, local validation, oo-cli, mcp tools, automation tasks, containerized development, OOMOL",
+            "agent tools, oo-cli, OOMOL Studio, OOMOL Cloud, MCP tools, workflow automation, connectors, cloud tasks, developer tools, OOMOL",
         },
         {
           name: "description",
           content:
-            "Build cloud skills in a real coding environment, validate locally, and publish them for oo-cli, agents, APIs, and automation without exposing your source code.",
+            "Let agents use your apps, APIs, and internal tools. Start with oo-cli, build in Studio when needed, and deliver through Cloud.",
         },
         { property: "og:site_name", content: "OOMOL" },
         { property: "og:type", content: "website" },
@@ -247,7 +248,7 @@ const config = {
             className: "productDropdown",
             items: [
               {
-                to: "/docs/cloud-services/cli",
+                to: "/docs/oo-cli",
                 label: "navbar.oo-cli",
                 className: "productDropdownItem productDropdownItemCli",
               },

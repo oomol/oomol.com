@@ -9,7 +9,7 @@ import React, { useRef, useState } from "react";
 export default function HomepageFirstScreen() {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const studioDownloadsHref = useBaseUrl("/downloads");
+  const studioDownloadsHref = useBaseUrl("/downloads#studio-downloads");
   const heroVideoUrl = useBaseUrl(
     "https://static.oomol.com/assets/homepage/oomol-flow-en.webm"
   );
@@ -100,7 +100,7 @@ export default function HomepageFirstScreen() {
               }}
               onEnded={() => setIsPlaying(false)}
             >
-              <source src={heroVideoUrl} type="video/mp4" />
+              <source src={heroVideoUrl} type="video/webm" />
             </video>
           </div>
         </div>

@@ -11,7 +11,7 @@ const zhCopy = {
   badge: "免费额度",
   title: "先用免费额度开始交付",
   subtitle:
-    "每月赠送 200 分钟 Cloud Task。先用它把工具交付到 Cloud；需要更多时，再按调用时长扩展。",
+    "Free 用户每月自动刷新 200 分钟 Cloud Task。先用它把工具交付到 Cloud；额度不够时，再充值或升级。",
   benefits: [
     {
       tag: "每月赠送",
@@ -20,7 +20,7 @@ const zhCopy = {
       eyebrow: "免费额度",
       title: "先把工具交付并用起来",
       description:
-        "用免费额度把工具交付出去，确认它能持续运行，并在 oo-cli 中直接被搜索、查看和调用。",
+        "用每月自动刷新的免费额度把工具交付出去，确认它能持续运行，并在 oo-cli 中直接被搜索、查看和调用。",
       note: "适合首次交付、轻量任务和日常试用。",
       cta: "查看 Cloud 文档",
       href: "/docs/cloud-services/cloud-function",
@@ -32,8 +32,8 @@ const zhCopy = {
       eyebrow: "按量使用",
       title: "按调用时长计费，按需扩展",
       description:
-        "不需要先买服务器或预留固定资源。用多少算多少，需求增加时再按实际调用时长扩展。",
-      note: "先开始使用，再决定规模。",
+        "先用每月自动刷新的免费额度；超出后，再按实际调用时长计费，不需要先买服务器或预留固定资源。",
+      note: "先用赠送额度跑起来，再决定规模。",
       cta: "查看价格",
       href: "/pricing",
     },
@@ -44,7 +44,7 @@ const enCopy = {
   badge: "Free Tier",
   title: "Start delivery with the free quota",
   subtitle:
-    "You get 200 free Cloud Task minutes each month. Use them to deliver the tool through Cloud first, then scale with call-duration billing when needed.",
+    "Free users get 200 Cloud Task minutes refreshed every month. Use them to deliver the tool through Cloud first, then top up or upgrade when the quota is not enough.",
   benefits: [
     {
       tag: "Monthly Included",
@@ -53,7 +53,7 @@ const enCopy = {
       eyebrow: "Free quota",
       title: "Deliver the tool and start using it",
       description:
-        "Use the included quota to deliver the tool and confirm it stays searchable and callable in oo-cli.",
+        "Use the monthly refreshed quota to deliver the tool and confirm it stays searchable and callable in oo-cli.",
       note: "A good fit for first delivery, lightweight jobs, and everyday trial use.",
       cta: "Read Cloud docs",
       href: "/docs/cloud-services/cloud-function",
@@ -65,7 +65,7 @@ const enCopy = {
       eyebrow: "Usage-based",
       title: "Scale with call-duration billing",
       description:
-        "You do not need to buy servers or reserve fixed capacity up front. Pay for actual call time and expand only when demand grows.",
+        "You do not need to buy servers or reserve fixed capacity up front. Pay for actual call time only after the included quota runs out, and expand only when demand grows.",
       note: "Start using it first, then decide the scale.",
       cta: "View pricing",
       href: "/pricing",

@@ -43,9 +43,9 @@ function formatCount(value: number, locale: string) {
 }
 
 const zhCopy: ToolStripCopy = {
-  title: "先看我们已经接了多少应用",
+  title: "先看 OOMOL 已经接好了多少应用",
   getDescription: (stats, locale) =>
-    `OOMOL 内置支持 ${formatCount(stats.providerCount, locale)} 个应用，包含 ${formatCount(stats.actionCount, locale)} 个封装工具。先用现成连接快速接入，再决定哪些环节值得继续编排或扩展。`,
+    `OOMOL 内置支持 ${formatCount(stats.providerCount, locale)} 个应用，包含 ${formatCount(stats.actionCount, locale)} 个封装工具。先通过 oo-cli 用现成连接把工作跑起来，再决定哪些环节值得继续编排、扩展，或做成你自己的工具。`,
   providerStat: {
     label: "个应用",
     text: "覆盖办公、协作、开发、营销和支付等常见服务。",
@@ -58,9 +58,9 @@ const zhCopy: ToolStripCopy = {
 };
 
 const enCopy: ToolStripCopy = {
-  title: "Start with how many apps are already built in",
+  title: "Start with how many apps are already connected",
   getDescription: (stats, locale) =>
-    `OOMOL comes with support for ${formatCount(stats.providerCount, locale)} apps and ${formatCount(stats.actionCount, locale)} wrapped tools. Start with what already exists, then decide where deeper orchestration or extension is worth it.`,
+    `OOMOL comes with support for ${formatCount(stats.providerCount, locale)} apps and ${formatCount(stats.actionCount, locale)} wrapped tools. Start by using what already exists through oo-cli, then decide what is worth orchestrating further, extending, or turning into your own tool.`,
   providerStat: {
     label: "apps",
     text: "Covering common services across collaboration, development, marketing, and payments.",

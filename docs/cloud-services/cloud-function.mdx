@@ -5,7 +5,13 @@ sidebar_label: Overview
 
 # Cloud Function
 
-If you want the fastest way to use a published OOMOL function, start with the [CLI guide](/docs/cloud-services/cli). If you need to call Cloud Function programmatically, use the docs in **API & SDK**. The current execution endpoints and SDK packages still use the name `Cloud Task v3`, which is the current integration layer behind Cloud Function.
+If you want the fastest way to use a published OOMOL function, start with the
+[oo-cli guide](/docs/oo-cli). If you need the concrete CLI namespaces
+and commands, use the
+[Command Reference](/docs/oo-cli/command-reference). If you need to
+call Cloud Function programmatically, use the docs in **API & SDK**. The
+current execution endpoints and SDK packages still use the name
+`Cloud Task v3`, which is the current integration layer behind Cloud Function.
 
 OOMOL Cloud Function is a serverless computing platform that allows you to deploy your OOMOL workflows as production-ready APIs without managing infrastructure. Focus on writing code, and let OOMOL handle the rest.
 
@@ -42,11 +48,14 @@ Share your blocks with the community, or reuse them inside more complex workflow
 
 ### 2. Consume with CLI
 
-Use [`oo-cli`](https://github.com/oomol-lab/oo-cli) to search packages, inspect package metadata, run cloud functions, and fetch results directly from the terminal.
+Use [`oo`](https://github.com/oomol-lab/oo-cli) to authenticate, search
+packages or connector actions, inspect package metadata, run cloud tasks, move
+files, and install bundled skills for AI coding hosts.
 
 **Use Cases:**
 - Use OOMOL functions from Codex or Claude Code
 - Let individual users run cloud functions without building an app
+- Search both package-backed and connector-backed paths before choosing one
 - Validate packages and workflows before investing in API integration
 
 **Why It Matters:**
@@ -54,7 +63,9 @@ Use [`oo-cli`](https://github.com/oomol-lab/oo-cli) to search packages, inspect 
 - Usually lower setup cost than running an MCP server
 - Works well for both AI-assisted development and direct terminal usage
 
-See the [CLI guide](/docs/cloud-services/cli) for the recommended workflow.
+See the [oo-cli guide](/docs/oo-cli) for the recommended workflow and the
+[Command Reference](/docs/oo-cli/command-reference) for current commands such
+as `oo search`, `oo packages info`, and `oo cloud-task run`.
 
 ### 3. Integrate through API & SDK
 
@@ -129,7 +140,13 @@ Visit [OOMOL Console](https://console.oomol.com/cloud-function) for detailed pri
 
 ### Example Deployment
 
-After deployment, most users should start with the [CLI guide](/docs/cloud-services/cli). Cloud Function currently uses the `Cloud Task v3` integration layer for direct API access. For a working request example, see [HTTP API With curl](/docs/cloud-services/cloud-task/curl-api).
+After deployment, most users should start with the
+[oo-cli guide](/docs/oo-cli). Cloud Function currently uses the
+`Cloud Task v3` integration layer for direct API access. For the current CLI
+command surface, see the
+[Command Reference](/docs/oo-cli/command-reference). For a working
+request example, see
+[HTTP API With curl](/docs/cloud-services/cloud-task/curl-api).
 
 ## Management
 
@@ -215,5 +232,6 @@ If you encounter any issues:
 ## Related Links
 
 - [OOMOL Console](https://console.oomol.com/cloud-function)
-- [CLI Guide](/docs/cloud-services/cli)
+- [oo-cli Guide](/docs/oo-cli)
+- [oo-cli Command Reference](/docs/oo-cli/command-reference)
 - [Cloud Function API Overview](/docs/cloud-services/cloud-task/overview)

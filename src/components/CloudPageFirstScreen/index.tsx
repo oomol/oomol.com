@@ -9,20 +9,29 @@ import { Button } from "@site/src/components/ui/button";
 import React, { useRef, useState } from "react";
 
 const zhCopy = {
-  slogan: `把自己的工具更快
-带进 oo-cli`,
-  overview: `把 Studio 里的自定义工具交付到 oo-cli，让 Agent、Codex 和 OpenCrawl 直接使用。`,
-  primaryCta: "开始使用 oo-cli",
-  secondaryCta: "下载 OOMOL Studio",
+  eyebrow: "Cloud 交付层",
+  slogan: `把工具的交付、托管运行
+和访问控制交给 Cloud`,
+  overview: `Studio 负责把工具做出来并验证；Cloud 负责把它交付出去，承接托管运行、配置和权限，并继续主要沿 oo-cli 给 Agent 使用。`,
+  highlights: ["交付回 oo-cli", "托管运行", "Secrets", "访问控制"],
+  primaryCta: "查看 Cloud 文档",
+  secondaryCta: "打开 Cloud 控制台",
   playAriaLabel: "播放演示视频",
 };
 
 const enCopy = {
-  slogan: `Bring your own tools
-to oo-cli faster`,
-  overview: `Deliver the custom tools from Studio to oo-cli, so Agents, Codex, and OpenCrawl can use them directly.`,
-  primaryCta: "Start with oo-cli",
-  secondaryCta: "Download OOMOL Studio",
+  eyebrow: "Cloud delivery layer",
+  slogan: `Hand delivery, hosted runtime,
+and access control to Cloud`,
+  overview: `Studio is where the tool gets built and validated. Cloud is where it gets delivered, with hosted runtime, configuration, and access handled in one place, then mainly flowing back into oo-cli for agents to use.`,
+  highlights: [
+    "Deliver back to oo-cli",
+    "Hosted runtime",
+    "Secrets",
+    "Access control",
+  ],
+  primaryCta: "Read Cloud docs",
+  secondaryCta: "Open Cloud Console",
   playAriaLabel: "Play demo video",
 };
 
@@ -33,10 +42,8 @@ export default function CloudPageFirstScreen() {
   };
   const copy = i18n.currentLocale === "zh-CN" ? zhCopy : enCopy;
   const videoRef = useRef<HTMLVideoElement>(null);
-  const studioDownloadsHref = useBaseUrl("/downloads");
-  const heroVideoUrl = useBaseUrl(
-    "https://static.oomol.com/assets/homepage/oomol-flow-en.webm"
-  );
+  const heroVideoUrl =
+    "https://static.oomol.com/assets/homepage/oomol-flow-en.webm";
   const heroVideoPosterUrl = useBaseUrl(
     "/img/pages/home/homepage-first-screen-workflow-poster.png"
   );
@@ -59,11 +66,21 @@ export default function CloudPageFirstScreen() {
       <div className={styles.background} />
       <div className={styles.container}>
         <div className={styles.titleGroup}>
+          <div className={styles.eyebrow}>{copy.eyebrow}</div>
           <h1 className={styles.slogan}>{copy.slogan}</h1>
           <p className={styles.overview}>{copy.overview}</p>
+          <div className={styles.highlights}>
+            {copy.highlights.map(item => (
+              <span key={item} className={styles.highlightPill}>
+                {item}
+              </span>
+            ))}
+          </div>
           <div className={styles.actions}>
             <Button asChild size="lg" className={styles.primaryCta}>
-              <Link to="/cli">{copy.primaryCta}</Link>
+              <Link to="/docs/cloud-services/cloud-function">
+                {copy.primaryCta}
+              </Link>
             </Button>
             <Button
               asChild
@@ -71,7 +88,13 @@ export default function CloudPageFirstScreen() {
               size="lg"
               className={styles.secondaryCta}
             >
-              <Link to={studioDownloadsHref}>{copy.secondaryCta}</Link>
+              <a
+                href="https://console.oomol.com/cloud-function"
+                rel="noreferrer"
+                target="_blank"
+              >
+                {copy.secondaryCta}
+              </a>
             </Button>
           </div>
         </div>
@@ -106,7 +129,7 @@ export default function CloudPageFirstScreen() {
               }}
               onEnded={() => setIsPlaying(false)}
             >
-              <source src={heroVideoUrl} type="video/mp4" />
+              <source src={heroVideoUrl} type="video/webm" />
             </video>
           </div>
         </div>

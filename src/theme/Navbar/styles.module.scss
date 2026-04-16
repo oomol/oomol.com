@@ -102,12 +102,27 @@
   margin: 0 0.18rem;
   font-weight: 600;
   font-size: 14px;
+
+  &:global(.arco-btn-text) {
+    color: var(--oomol-text-primary);
+    background: transparent;
+
+    &:hover {
+      color: var(--oomol-primary);
+      background: transparent;
+    }
+
+    &:active {
+      color: var(--oomol-text-primary);
+      background: transparent;
+    }
+  }
 }
 
 .productMenuTriggerActive {
   &:global(.arco-btn-text) {
-    color: var(--oomol-primary);
-    background: color-mix(in srgb, var(--oomol-primary-bg) 76%, transparent);
+    color: var(--oomol-text-primary);
+    background: transparent;
   }
 }
 

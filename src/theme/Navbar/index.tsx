@@ -157,7 +157,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
       {
         key: "oo-cli",
         href: "/cli",
-        matchHrefs: ["/docs/cloud-services/cli"],
+        matchHrefs: ["/docs/oo-cli", "/docs/oo-cli/command-reference"],
         label: translate({
           id: "item.label.navbar.oo-cli",
           message: "oo-cli",
@@ -191,20 +191,20 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
         }),
         iconClassName: "i-lucide-cloud",
       },
-      // {
-      //   key: "oomol-ai",
-      //   href: "/app",
-      //   label: translate({
-      //     id: "item.label.navbar.oomol-ai",
-      //     message: "OOMOL AI",
-      //   }),
-      //   description: translate({
-      //     message: "Theme.Navbar.product.ai.description",
-      //   }),
-      //   iconClassName: "i-lucide-bot",
-      // },
+      {
+        key: "oomol-ai",
+        href: "/app",
+        label: translate({
+          id: "item.label.navbar.oomol-ai",
+          message: "OOMOL AI",
+        }),
+        description: translate({
+          message: "Theme.Navbar.product.ai.description",
+        }),
+        iconClassName: "i-lucide-bot",
+      },
     ],
-    []
+    [locale]
   );
 
   useEffect(() => {

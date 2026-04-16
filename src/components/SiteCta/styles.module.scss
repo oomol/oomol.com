@@ -2,14 +2,14 @@
 
 .section {
   width: 100%;
-  padding: clamp(4rem, 8vw, 5.8rem) 0 clamp(3rem, 6vw, 4.4rem);
+  padding: clamp(3.6rem, 7vw, 5.2rem) 0 clamp(3rem, 6vw, 4.2rem);
 }
 
 .inner {
   width: min(1260px, calc(100% - 48px));
   margin: 0 auto;
   display: grid;
-  gap: 1.1rem;
+  gap: 0.95rem;
   padding: clamp(2.1rem, 4.2vw, 3rem);
   border-radius: 1.75rem;
   border: 1px solid rgba(214, 221, 236, 0.12);

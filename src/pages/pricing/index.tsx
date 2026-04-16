@@ -1,10 +1,12 @@
 import styles from "./styles.module.scss";
 
 import type { ColumnProps } from "@arco-design/web-react/es/Table";
+import type { DocusaurusContext } from "@docusaurus/types";
 
 import { Alert, Table, Tabs } from "@arco-design/web-react";
 import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { DownloadButton } from "@site/src/components/DownloadButton";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { Button } from "@site/src/components/ui/button";
@@ -153,6 +155,10 @@ function PriceTable<T extends PricingRowBase>({
 }
 
 export default function Index() {
+  const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
+    i18n: { currentLocale: string };
+  };
+  const isZh = i18n.currentLocale === "zh-CN";
   const [activePricingTable, setActivePricingTable] =
     useState<PricingTableKey>("llm");
   const [llmRows, setLlmRows] = useState<LLMPricingRow[]>([]);
@@ -204,6 +210,17 @@ export default function Index() {
     "PRICING.subscription.subscribe",
     "Subscribe"
   );
+  const pageCopy = isZh
+    ? {
+        title: "价格 - OOMOL",
+        description:
+          "本地构建与验证始终免费。Free 用户每月还可直接使用 200 分钟 Cloud Task；超额后再充值或升级，OOMOL 提供的模型与服务按点数结算。",
+      }
+    : {
+        title: "Pricing - OOMOL",
+        description:
+          "Local building and validation stay free. Free users also get 200 Cloud Task minutes every month, then top up or upgrade only after that included usage runs out. OOMOL-provided models and services use credits.",
+      };
 
   useEffect(() => {
     let cancelled = false;
@@ -537,7 +554,7 @@ export default function Index() {
       : isCloudTaskTable
         ? tPricing(
             "PRICING.tables.cloudTask.alert",
-            "Running Blocks locally in OOMOL Studio does not trigger Cloud Task billing. Running Blocks in Chat or hub.oomol.com does."
+            "Running tools locally in OOMOL Studio does not trigger Cloud Task billing. Running the same tools through OOMOL-hosted surfaces does."
           )
         : tPricing(
             "PRICING.tables.fusionApi.alert",
@@ -591,14 +608,8 @@ export default function Index() {
   return (
     <Layout>
       <Head>
-        <title>{tPricing("PRICING.page.title", "Pricing — OOMOL")}</title>
-        <meta
-          name="description"
-          content={tPricing(
-            "PRICING.page.description",
-            "OOMOL Studio is free for local development. See subscription plans and pay-as-you-go pricing for cloud delivery, LLM usage, and Fusion APIs."
-          )}
-        />
+        <title>{pageCopy.title}</title>
+        <meta name="description" content={pageCopy.description} />
       </Head>
       <div className={styles.container}>
         <div className={styles.titleBox}>
@@ -616,7 +627,7 @@ export default function Index() {
             className={styles.pricingModelAlert}
             content={tPricing(
               "PRICING.model.summary",
-              "Studio is free for local development. You only pay when OOMOL hosts the online delivery layer or managed AI usage."
+              "Studio stays free for local work. Free users also get 200 Cloud Task minutes every month, then top up or upgrade only after that included usage runs out. OOMOL-provided models and services use credits."
             )}
           />
           <div className={styles.pricingModelGrid}>
@@ -633,7 +644,7 @@ export default function Index() {
               <p className={styles.pricingModelText}>
                 {tPricing(
                   "PRICING.model.local.text",
-                  "Use the full local authoring experience, bring your own model if needed, and only move to paid plans when you want OOMOL to take on online delivery."
+                  "Use the full local environment, verify results with your own dependencies and workflow, and connect your own model if you already have one."
                 )}
               </p>
             </div>
@@ -644,13 +655,13 @@ export default function Index() {
               <div className={styles.pricingModelTitle}>
                 {tPricing(
                   "PRICING.model.online.title",
-                  "Subscribe when you want to ship and host"
+                  "Free first, then top up when online usage grows"
                 )}
               </div>
               <p className={styles.pricingModelText}>
                 {tPricing(
                   "PRICING.model.online.text",
-                  "Use Pro when you publish the same validated function as an API, MCP tool, or automation task, then pay usage by credits as your traffic grows."
+                  "Free users can already publish and use Cloud with 200 monthly Cloud Task minutes. Top up or move to a paid plan only when you need more included usage or higher limits."
                 )}
               </p>
             </div>
@@ -920,13 +931,13 @@ export default function Index() {
               <div className={styles.tableSectionSubtitle}>
                 {tPricing(
                   "PRICING.tables.subtitle",
-                  "These tables mirror the pricing structure shown in OOMOL Console so you can verify pay-as-you-go charges directly from the website."
+                  "Think of pricing in two layers: the plans above include monthly usage, and the tables below show what happens after that included usage is used up."
                 )}
               </div>
               <div className={styles.tableSyncNote}>
                 {tPricing(
                   "PRICING.tables.syncNote",
-                  "LLM pricing is fetched live from console; Cloud Task and Fusion API rows reflect the current console table"
+                  "Free and paid plans can both run tools online. Free includes 200 Cloud Task minutes each month, paid plans include larger monthly allowances, and additional usage or model/service calls deduct credits."
                 )}
               </div>
             </div>

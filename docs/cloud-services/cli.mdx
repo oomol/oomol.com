@@ -1,102 +1,163 @@
 ---
-sidebar_position: 2
-sidebar_label: CLI
+sidebar_position: 1
+sidebar_label: Overview
+slug: /oo-cli
+pagination_prev: null
+pagination_next: cloud-services/cli-command-reference
 ---
 
-# CLI
+# oo-cli
 
-`oo-cli` is OOMOL's command-line interface and the fastest way to consume published OOMOL packages and Cloud Function workloads from terminal-based environments.
+`oo-cli` exposes the `oo` command as OOMOL's terminal-first interface for
+working with OOMOL accounts, published packages, connector actions, cloud
+tasks, and managed skills.
 
-It works well in:
+If you are in Codex, Claude Code, or a regular shell session, start here before
+you wire a lower-level API or MCP integration. `oo` is the terminal-first path
+for both trying published capabilities and handling operational tasks such as
+auth, file transfer, and skill management.
 
-- Codex
-- Claude Code
-- Local terminal sessions
-- Individual user workflows that do not need a custom app integration
+## What `oo-cli` is good for
 
-If you want to search for a package, inspect what it does, run a cloud function, and get the result back quickly, start with `oo-cli` before considering API or MCP integration.
-
-## Why Start With CLI
-
-- **Fastest path to value**: install once, log in, and start running packages
-- **Better for AI coding tools**: works naturally inside Codex and Claude Code
-- **Good for end users too**: no need to build an app or wire a backend first
-- **Lower setup cost than MCP**: no server wrapper or protocol setup required
-- **Higher-level than raw API**: common flows such as search, inspection, task run, and waiting for results are already packaged as commands
-
-## Typical Workflow
-
-1. Install the CLI.
-2. Log in to your OOMOL account.
-3. Search packages with natural language.
-4. Inspect the package you want to use.
-5. Run a block as a cloud task.
-6. Wait for the result or fetch it later.
+- Sign in and switch between OOMOL accounts.
+- Search packages and connector actions with one free-form query.
+- Inspect package metadata, then create and monitor Cloud Task runs.
+- Run authenticated connector actions directly from the terminal.
+- Install bundled or published skills into Codex and Claude Code.
+- Upload and download artifacts that your workflows need.
 
 ## Install
-
-The current `oo-cli` README documents installation with Bun:
 
 ```bash
 bun install -g @oomol-lab/oo-cli
 ```
 
-Then sign in:
+## Quick Start
+
+1. Sign in:
 
 ```bash
 oo login
 ```
 
-## Search, Inspect, Run
+2. In Codex, use the bundled `oo` skill:
 
-Search for a package:
+```text
+$oo generate a QR code for the string OOMOL
+```
+
+`oo login` and `oo logout` are aliases for `oo auth login` and
+`oo auth logout`.
+
+## Bundled Skills For AI Hosts
+
+On the first `oo` launch, bundled skills are installed automatically into
+supported local hosts that already exist.
+
+- Codex: `${CODEX_HOME:-~/.codex}/skills/oo` and
+  `${CODEX_HOME:-~/.codex}/skills/oo-find-skills`
+- Claude Code: `~/.claude/skills/oo` and `~/.claude/skills/oo-find-skills`
+
+The two bundled skills solve different problems:
+
+- `oo`: routes practical tasks through existing `oo` packages or connector
+  actions instead of inventing a local workflow
+- `oo-find-skills`: searches the published OOMOL and `oo` skill catalog, then
+  installs one or more selected skills
+
+You can also install bundled skills explicitly:
+
+```bash
+oo skills install
+oo skills install oo-find-skills
+```
+
+## Main Workflows
+
+### Search across packages and connector actions
+
+Use `oo search` when the user intent matters more than the exact execution
+path.
 
 ```bash
 oo search "generate a QR code"
 ```
 
-Inspect a package:
+This command returns a mixed result set. Package results represent published
+OOMOL capabilities. Connector results represent callable external service
+actions.
+
+### Run connector actions directly
+
+Use the connector namespace when you already know you want an external service
+action.
 
 ```bash
-oo package info foo/bar@latest
+oo connector search "send an email"
+oo connector run <serviceName> -a <action> -d @input.json
 ```
 
-Run a cloud function block:
+`oo connector run` supports `--dry-run` for payload validation and can emit
+structured JSON with `--json`.
+
+### Inspect a package and run it as a cloud task
+
+Use the package and cloud-task namespaces when you want a direct programmatic
+path to a published block.
 
 ```bash
-oo cloud-task run foo/bar@1.2.3 --block-id main --data '{"text":"OOMOL"}'
+oo packages search "generate a QR code"
+oo packages info foo/bar@latest
+oo cloud-task run foo/bar@1.2.3 -b main -d '{"text":"OOMOL"}'
+oo cloud-task wait <taskId>
+oo cloud-task result <taskId>
 ```
 
-Wait for the task to finish:
+`oo cloud-task run` requires `PACKAGE_NAME@SEMVER`, while `oo packages info`
+can resolve `@latest` for inspection.
+
+### Move files into or out of a workflow
+
+Use the file namespace when the task needs input artifacts or downloadable
+results.
 
 ```bash
-oo cloud-task wait <task-id>
+oo file upload ./input.pdf
+oo file download <url>
 ```
 
-Read the result later:
+Uploads expire after one day. Downloads default to the configured
+`file.download.out_dir`, or `~/Downloads` when that setting is not present.
 
-```bash
-oo cloud-task result <task-id>
-```
+## Command Groups At A Glance
 
-## Codex And Claude Code
+| Area | Key commands | Purpose |
+| --- | --- | --- |
+| Auth | `oo auth ...`, `oo login`, `oo logout` | Manage accounts and verify the active API key |
+| Config | `oo config ...` | Persist CLI settings such as language and download directory |
+| Search | `oo search`, `oo packages search`, `oo connector search` | Discover packages, connector actions, or both |
+| Execution | `oo connector run`, `oo cloud-task ...` | Call connector actions or create and monitor cloud tasks |
+| Skills | `oo skills ...` | List, search, install, update, and remove oo-managed skills |
+| Files | `oo file ...` | Upload local inputs and download remote outputs |
+| Logs | `oo log ...`, `--debug` | Inspect persisted debug logs |
+| Updates | `oo check-update` | Check for a newer CLI release |
+| Shell | `oo completion <shell>` | Generate shell completion scripts |
 
-`oo-cli` is designed to work well with AI coding environments. The project README shows the primary usage pattern as:
+## When to use CLI vs API or MCP
 
-1. install `oo-cli`
-2. run `oo login`
-3. use `$oo ...` from Codex
+Use the CLI when you are operating directly from a terminal or an AI coding
+host and want the fastest path to a working result.
 
-The CLI also bundles a Codex skill. On first launch, or after `oo skills install`, it installs the managed `oo` skill into the local Codex skills directory when Codex is available.
+Use [API & SDK](/docs/cloud-services/cloud-task/overview) when you are
+embedding Cloud Function calls inside your own application, backend, script, or
+automation service and need direct control over task creation, polling, and
+uploads.
 
-## When To Use API Or MCP Instead
-
-Use [API & SDK](/docs/cloud-services/cloud-task/overview) when you are embedding Cloud Function calls into your own application, backend service, or automation code.
-
-Use MCP when you need to expose OOMOL capabilities through a standard MCP server for external agent frameworks or tool ecosystems.
+Use MCP when you want to expose OOMOL capabilities as tools for external agent
+frameworks or MCP-compatible runtimes.
 
 ## References
 
+- [Command Reference](/docs/oo-cli/command-reference)
 - [oo-cli on GitHub](https://github.com/oomol-lab/oo-cli)
-- [oo-cli command reference](https://github.com/oomol-lab/oo-cli/blob/main/docs/commands.md)
 - [Cloud Function API Overview](/docs/cloud-services/cloud-task/overview)

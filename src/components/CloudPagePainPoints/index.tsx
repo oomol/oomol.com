@@ -19,59 +19,56 @@ type Copy = {
 };
 
 const zhCopy: Copy = {
-  badge: "为什么用 Cloud",
-  title: "Cloud 解决的是交付和使用门槛",
+  badge: "为什么在 Studio 之后还需要 Cloud",
+  title: "Studio 解决构建，Cloud 解决交付层",
   subtitle:
-    "Studio 负责做出工具，Cloud 负责把它交付到 oo-cli，并以云服务的方式供用户使用。",
+    "工具在本地跑通之后，真正拖慢上线的往往不是逻辑本身，而是托管运行、访问控制、Secrets 和交付这层。Cloud 的角色，就是把这一层压到最短。",
   cards: [
     {
       icon: "i-lucide-waypoints",
-      eyebrow: "交付",
-      title: "交付到 oo-cli 更直接",
+      eyebrow: "交付层",
+      title: "不用再围着同一份实现补一套后台",
       description:
-        "Cloud 和 oo-cli 是打通的。Studio 里的自定义工具交付后，就能直接在 oo-cli 中被搜索、查看和调用。",
-      points: [
-        "不用再单独补一套接入链路",
-        "Studio 里的工具交付后就能自然进入 oo-cli",
-      ],
+        "Cloud 承接交付、配置、权限和运行关系，让你不需要再单独做一个发布后台去包住同一份实现。",
+      points: ["主要沿 oo-cli 继续交付给 Agent", "不用再额外补一层用户入口和管理面"],
     },
     {
       icon: "i-lucide-blocks",
-      eyebrow: "使用",
-      title: "免运维，按调用时长计费",
+      eyebrow: "托管层",
+      title: "把运行、权限和访问控制一起交给 Cloud",
       description:
-        "直接以云服务方式提供，用户不需要自己承担部署和运维，也不必为固定资源预先投入。",
-      points: ["免运维，上手门槛更低", "按调用时长收费，成本更灵活"],
+        "用户主要通过 oo-cli 继续使用工具；当你需要 API、MCP 或自动化时，也可以从同一层能力继续往外提供，而实现仍然留在服务器端。",
+      points: ["少管运维和权限细节", "先交付，再按实际使用扩展"],
     },
   ],
 };
 
 const enCopy: Copy = {
-  badge: "Why Cloud",
-  title: "Cloud lowers the delivery and usage barrier",
+  badge: "Why Cloud after Studio",
+  title: "Studio handles building. Cloud handles the delivery layer",
   subtitle:
-    "Studio is where you build the tool. Cloud is what delivers it to oo-cli and makes it usable as a service.",
+    "Once the tool works locally, what slows launch is usually not the logic itself but the layer around it: hosted runtime, access control, secrets, and delivery. Cloud exists to compress that layer.",
   cards: [
     {
       icon: "i-lucide-waypoints",
-      eyebrow: "Delivery",
-      title: "A direct route into oo-cli",
+      eyebrow: "Delivery layer",
+      title: "Stop building another backend around the same implementation",
       description:
-        "Cloud is tightly integrated with oo-cli. Once a custom tool is delivered from Studio, it can be searched, inspected, and called directly in oo-cli.",
+        "Cloud takes over delivery, configuration, access, and runtime relationships so you do not need a separate publishing backend wrapped around the same tool.",
       points: [
-        "No separate integration layer to build",
-        "Tools delivered from Studio flow straight into oo-cli",
+        "Primarily deliver it back through oo-cli for agents",
+        "Avoid another user surface and admin layer",
       ],
     },
     {
       icon: "i-lucide-blocks",
-      eyebrow: "Usage",
-      title: "No ops burden, flexible billing",
+      eyebrow: "Hosted layer",
+      title: "Hand runtime, access, and permissions to Cloud together",
       description:
-        "Cloud provides the tool as a service, so users do not need to run or maintain infrastructure of their own.",
+        "Users primarily keep consuming the tool through oo-cli. When you need API, MCP, or automation surfaces, you can add them from the same hosted layer while the implementation stays on the server.",
       points: [
-        "No ops overhead for the user",
-        "Billed by call duration for flexible cost",
+        "Less ops and permission work to maintain",
+        "Deliver first, then expand with real usage",
       ],
     },
   ],

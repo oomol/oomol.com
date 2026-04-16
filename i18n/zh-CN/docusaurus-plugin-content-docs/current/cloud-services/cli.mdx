@@ -1,102 +1,156 @@
 ---
-sidebar_position: 2
-sidebar_label: CLI
+sidebar_position: 1
+sidebar_label: 概述
+slug: /oo-cli
+pagination_prev: null
+pagination_next: cloud-services/cli-command-reference
 ---
 
-# CLI
+# oo-cli
 
-`oo-cli` 是 OOMOL 的命令行工具，也是从终端环境消费已发布 OOMOL 包和云函数能力的最快方式。
+`oo-cli` 通过 `oo` 这个命令，把 OOMOL 账号、已发布 package、connector
+action、cloud task 和受管 skill 统一接到终端里。
 
-它适合这些场景：
+如果你正在 Codex、Claude Code 或普通 shell 环境里工作，应该先从这里开始，
+而不是一上来就接更底层的 API 或 MCP。`oo` 是终端优先的使用路径，既适合快速
+试用已发布能力，也适合处理认证、文件传输和 skill 管理这类运维动作。
 
-- Codex
-- Claude Code
-- 本地终端
-- 不需要自己做应用集成的个人用户工作流
+## `oo-cli` 适合做什么
 
-如果你的目标是快速完成“搜包、看包、执行云函数、拿结果”这条链路，应该优先使用 `oo-cli`，而不是一开始就接 API 或 MCP。
-
-## 为什么优先用 CLI
-
-- **最快上手**：安装后登录即可开始运行包
-- **更适合 AI 编程工具**：在 Codex 和 Claude Code 里使用很自然
-- **个人用户也能直接消费**：不需要先做应用或后端集成
-- **比 MCP 接入成本更低**：不需要额外搭 MCP Server
-- **比原始 API 更高层**：搜包、查看详情、执行任务、等待结果这些流程都已经封装成命令
-
-## 典型使用流程
-
-1. 安装 CLI。
-2. 登录 OOMOL 账户。
-3. 用自然语言搜索包。
-4. 查看你要使用的包信息。
-5. 执行某个 block 对应的云任务。
-6. 等待结果，或者稍后再读取结果。
+- 登录、退出并切换 OOMOL 账号。
+- 用一条自由文本查询同时搜索 package 和 connector action。
+- 查看 package 元数据，然后创建并跟踪 Cloud Task。
+- 直接在终端里调用需要认证的 connector action。
+- 把内置或已发布的 skill 安装到 Codex 和 Claude Code。
+- 上传输入文件，或下载工作流产出的结果文件。
 
 ## 安装
-
-当前 `oo-cli` README 中给出的安装方式是使用 Bun：
 
 ```bash
 bun install -g @oomol-lab/oo-cli
 ```
 
-然后登录：
+## 快速开始
+
+1. 登录：
 
 ```bash
 oo login
 ```
 
-## 搜包、看包、执行
+2. 在 Codex 里直接使用内置的 `oo` skill：
 
-搜索包：
+```text
+$oo 帮我生成 OOMOL 字符串的二维码
+```
+
+`oo login` 和 `oo logout` 分别是 `oo auth login` 与 `oo auth logout`
+的别名。
+
+## 面向 AI 宿主的内置 Skill
+
+第一次启动 `oo` 时，只要本机已存在受支持的宿主目录，CLI 就会自动安装内置
+skill。
+
+- Codex：`${CODEX_HOME:-~/.codex}/skills/oo` 和
+  `${CODEX_HOME:-~/.codex}/skills/oo-find-skills`
+- Claude Code：`~/.claude/skills/oo` 和 `~/.claude/skills/oo-find-skills`
+
+这两个内置 skill 分工不同：
+
+- `oo`：优先通过已有的 `oo` package 或 connector action 来完成任务，
+  而不是临时拼一个本地实现
+- `oo-find-skills`：搜索已发布的 OOMOL / `oo` skill 目录，并安装选中的
+  skill
+
+如果你想手动安装，也可以直接执行：
+
+```bash
+oo skills install
+oo skills install oo-find-skills
+```
+
+## 主要工作流
+
+### 同时搜索 package 和 connector
+
+当你的目标更像“我要完成什么”，而不是“我已经知道该走哪种执行路径”时，
+优先使用 `oo search`。
 
 ```bash
 oo search "generate a QR code"
 ```
 
-查看包信息：
+这个命令会返回混合结果集。`package` 结果代表已发布的 OOMOL 能力，
+`connector` 结果代表可以直接调用的外部服务 action。
+
+### 直接运行 connector action
+
+如果你已经明确知道自己要调用外部服务 action，就直接进入 connector 命名空间。
 
 ```bash
-oo package info foo/bar@latest
+oo connector search "send an email"
+oo connector run <serviceName> -a <action> -d @input.json
 ```
 
-执行云函数 block：
+`oo connector run` 支持 `--dry-run` 做 payload 校验，也支持通过 `--json`
+输出结构化结果。
+
+### 查看 package 并把它跑成 cloud task
+
+如果你要直接面向某个已发布 block 走 Cloud Function / Cloud Task 路径，就使用
+`packages` 和 `cloud-task` 这两组命令。
 
 ```bash
-oo cloud-task run foo/bar@1.2.3 --block-id main --data '{"text":"OOMOL"}'
+oo packages search "generate a QR code"
+oo packages info foo/bar@latest
+oo cloud-task run foo/bar@1.2.3 -b main -d '{"text":"OOMOL"}'
+oo cloud-task wait <taskId>
+oo cloud-task result <taskId>
 ```
 
-等待任务完成：
+其中，`oo cloud-task run` 要求传入 `PACKAGE_NAME@SEMVER`，而
+`oo packages info` 可以用 `@latest` 做信息查看。
+
+### 在工作流和本地之间传文件
+
+当任务需要输入文件，或你需要把远端产物拉回本地时，使用 `file` 命名空间。
 
 ```bash
-oo cloud-task wait <task-id>
+oo file upload ./input.pdf
+oo file download <url>
 ```
 
-稍后读取结果：
+上传文件在服务端保留一天。下载默认写入已配置的
+`file.download.out_dir`，如果未配置，则回落到 `~/Downloads`。
 
-```bash
-oo cloud-task result <task-id>
-```
+## 命令分组速览
 
-## Codex 和 Claude Code
+| 分组 | 关键命令 | 作用 |
+| --- | --- | --- |
+| 认证 | `oo auth ...`、`oo login`、`oo logout` | 管理账号并校验当前 API Key |
+| 配置 | `oo config ...` | 持久化 CLI 配置，例如语言和下载目录 |
+| 搜索 | `oo search`、`oo packages search`、`oo connector search` | 搜索 package、connector 或两者混合结果 |
+| 执行 | `oo connector run`、`oo cloud-task ...` | 调用 connector action，或创建并跟踪 cloud task |
+| Skills | `oo skills ...` | 列出、搜索、安装、更新、卸载 oo 管理的 skill |
+| 文件 | `oo file ...` | 上传本地输入文件，下载远端输出文件 |
+| 日志 | `oo log ...`、`--debug` | 查看持久化 debug 日志 |
+| 更新 | `oo check-update` | 检查是否有新的 CLI 版本 |
+| Shell | `oo completion <shell>` | 生成 shell 补全脚本 |
 
-`oo-cli` 本身就是为 AI 编程环境准备的高效消费入口。项目 README 里展示的主路径是：
+## 什么时候用 CLI，什么时候用 API 或 MCP
 
-1. 安装 `oo-cli`
-2. 运行 `oo login`
-3. 在 Codex 里用 `$oo ...`
+如果你是直接在终端或 AI 编程宿主里操作，并且想尽快拿到结果，就用 CLI。
 
-这个 CLI 还内置了 Codex skill。在首次运行，或者执行 `oo skills install` 后，只要本机存在 Codex 目录，就会把受管的 `oo` skill 安装到本地 Codex skills 目录中。
+如果你要把 Cloud Function 调用嵌进自己的应用、后端、脚本或自动化服务，并且需要
+直接控制任务创建、轮询和上传流程，请看
+[API 与 SDK](/zh-CN/docs/cloud-services/cloud-task/overview)。
 
-## 什么时候该用 API 或 MCP
-
-如果你要把云函数调用嵌入自己的应用、后端服务或自动化代码里，请看 [API 与 SDK](/zh-CN/docs/cloud-services/cloud-task/overview)。
-
-如果你需要把 OOMOL 能力作为标准 MCP Server 暴露给外部 Agent 框架或工具生态，请使用 MCP。
+如果你要把 OOMOL 能力暴露成可供外部 Agent 框架或 MCP 运行时调用的工具，
+就应该使用 MCP。
 
 ## 参考链接
 
+- [命令参考](/zh-CN/docs/oo-cli/command-reference)
 - [oo-cli GitHub 仓库](https://github.com/oomol-lab/oo-cli)
-- [oo-cli 命令参考](https://github.com/oomol-lab/oo-cli/blob/main/docs/commands.md)
 - [云函数 API 概览](/zh-CN/docs/cloud-services/cloud-task/overview)

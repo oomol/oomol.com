@@ -13,9 +13,10 @@ export default function HomepagePainPoints() {
 
   const copy = isZh
     ? {
-        title: "几个典型的使用场景",
+        badge: "第一步：先用现成能力",
+        title: "先让 Agent 直接把现成工作跑起来",
         subtitle:
-          "从研发协作到文档流转，再到邮件和内部 API，先让 Agent 把这些常见工作跑起来。",
+          "如果现成工具已经够用，OOMOL 的第一层价值就很简单：先接上、先执行，不必一上来就自己做工具。",
         promptLabel: "直接这样说",
         resultLabel: "Agent 会自动执行",
         cards: [
@@ -52,9 +53,10 @@ export default function HomepagePainPoints() {
         ],
       }
     : {
-        title: "A few typical scenarios",
+        badge: "Step 1: Use what already exists",
+        title: "Let agents run ready-made work first",
         subtitle:
-          "From engineering collaboration to document flows to email plus internal APIs, start by letting agents run common work that already exists.",
+          "If a ready-made tool already solves the job, OOMOL's first layer of value is simple: connect it, run it, and do not start by building your own tool.",
         promptLabel: "Say this",
         resultLabel: "Agent will run",
         cards: [
@@ -100,28 +102,17 @@ export default function HomepagePainPoints() {
         ],
       };
 
-  const cards = copy.cards.map(card => ({
-    ...card,
-    apps: card.apps.map(app =>
-      app.label === "你的 API" || app.label === "Your API"
-        ? {
-            ...app,
-            label: isZh ? "你的 API" : "Your API",
-          }
-        : app
-    ),
-  }));
-
   return (
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
+          <div className={styles.badge}>{copy.badge}</div>
           <h2 className={styles.title}>{copy.title}</h2>
           <p className={styles.subtitle}>{copy.subtitle}</p>
         </div>
 
         <div className={styles.grid}>
-          {cards.map(card => (
+          {copy.cards.map(card => (
             <article key={card.title} className={styles.card}>
               <div className={styles.cardHeader}>
                 <div className={styles.cardTop}>

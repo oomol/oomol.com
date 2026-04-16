@@ -98,6 +98,15 @@ export default function StudioPage() {
   const principlesTitleLines = translate({
     message: "STUDIO.product.principles.title",
   }).split("\n");
+  const heroKicker = translate({
+    message: "STUDIO.product.hero.kicker",
+  });
+  const storyKicker = translate({
+    message: "STUDIO.product.story.kicker",
+  });
+  const principlesKicker = translate({
+    message: "STUDIO.product.principles.kicker",
+  });
 
   return (
     <Layout>
@@ -112,6 +121,7 @@ export default function StudioPage() {
         <section className={styles.hero}>
           <div className={styles.sectionContainer}>
             <div className={styles.heroCopy}>
+              <div className={styles.eyebrow}>{heroKicker}</div>
               <h1 className={styles.heroTitle}>
                 {heroTitleLines.map((line, index) => (
                   <React.Fragment key={`${index}-${line}`}>
@@ -151,6 +161,7 @@ export default function StudioPage() {
         <section className={styles.storySection}>
           <div className={styles.sectionContainer}>
             <div className={styles.sectionHeader}>
+              <div className={styles.eyebrow}>{storyKicker}</div>
               <h2 className={styles.sectionTitle}>
                 {storyTitleLines.map((line, index) => (
                   <React.Fragment key={`${index}-${line}`}>
@@ -195,6 +206,7 @@ export default function StudioPage() {
         <section className={styles.principlesSection}>
           <div className={styles.sectionContainer}>
             <div className={styles.sectionHeader}>
+              <div className={styles.eyebrow}>{principlesKicker}</div>
               <h2 className={styles.sectionTitle}>
                 {principlesTitleLines.map((line, index) => (
                   <React.Fragment key={`${index}-${line}`}>
@@ -253,8 +265,8 @@ export default function StudioPage() {
                 variant="contrast"
                 className={styles.siteCtaSecondary}
               >
-                <Link to="/docs/cloud-services/cli">
-                  {translate({ message: "HOME.CliEntry.step1.title" })}
+                <Link to="/cloud">
+                  {translate({ message: "HOME.StudioChain.action.cloud" })}
                 </Link>
               </Button>
             </>

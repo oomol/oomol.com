@@ -1,6 +1,7 @@
 import styles from "./styles.module.scss";
 
 import { MDXProvider } from "@mdx-js/react";
+import Head from "@docusaurus/Head";
 import React from "react";
 
 import Terms from "./_terms.mdx";
@@ -14,6 +15,13 @@ const components = {
 export default function Index() {
   return (
     <Layout>
+      <Head>
+        <title>Terms - OOMOL</title>
+        <meta
+          name="description"
+          content="Read OOMOL's terms of service and usage conditions."
+        />
+      </Head>
       <MDXProvider components={components}>
         <div className={styles.container}>
           <div className={styles.box}>

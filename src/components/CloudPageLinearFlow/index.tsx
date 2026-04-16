@@ -104,20 +104,20 @@ function ImageCard({ title, note, src, pills }: ImageCardProps) {
 const zhCopy: Copy = {
   cloud: {
     eyebrow: "01 / Cloud",
-    title: "把交付、配置和权限放进同一个后台",
+    title: "把交付、托管运行、配置和权限收进同一个后台",
     description:
-      "工具验证完成后，Cloud 承接交付，并统一管理运行配置、Secrets、访问控制和使用关系。你不需要再围着同一份实现补另一套后台。",
+      "工具验证完成后，Cloud 承接交付，并统一管理托管运行、运行配置、Secrets 和访问控制。默认的主要交付路径仍然是 oo-cli。",
     cards: [
       {
-        title: "统一交付到 oo-cli",
-        text: "工具交付后，就能直接在 oo-cli 中被搜索、查看和调用。",
+        title: "主要沿 oo-cli 交付，托管运行仍沿用同一份实现",
+        text: "工具交付出去之后，主要还是给 oo-cli 和 Agent 使用，不需要再围绕它额外重做一层服务。",
       },
       {
         title: "配置和 Secrets 集中管理",
         text: "把运行配置、Secrets 和环境差异放到同一个后台里维护。",
       },
       {
-        title: "权限和状态统一查看",
+        title: "权限、状态和使用关系统一查看",
         text: "访问控制、运行状态和使用关系集中管理，减少分散维护。",
       },
     ],
@@ -131,19 +131,20 @@ const zhCopy: Copy = {
   },
   cli: {
     eyebrow: "02 / oo-cli",
-    title: "用户在 oo-cli 里直接使用",
+    title: "交付之后，Agent 仍然沿 oo-cli 这条路径来使用",
     description:
-      "对使用者来说，不需要额外接入，也不用切换工作方式。工具交付后，就可以直接搜索、查看和调用。",
+      "对使用者来说，不需要认识你背后的实现，也不需要切换工作方式。工具交付后，他们仍然在 oo-cli 中搜索、查看和调用；API、MCP 与自动化只是可选延伸面。",
     media: {
       title: "oo-cli 调用演示",
       note: "展示已交付工具在 Codex 中被搜索、查看和调用。",
     },
-    guide: "查看安装文档",
+    guide: "了解 oo-cli",
     github: "查看 GitHub",
   },
   cta: {
-    title: "把验证好的工具交给 Cloud",
-    description: "用 Cloud 承接交付，并统一管理配置、Secrets 和访问控制。",
+    title: "让 Cloud 接住已经验证好的工具",
+    description:
+      "用 Cloud 承接交付、托管运行、配置、Secrets 和访问控制，然后主要沿 oo-cli 继续把工具交给 Agent 使用。",
     primary: "查看 Cloud 文档",
     secondary: "打开 Cloud 控制台",
   },
@@ -152,20 +153,20 @@ const zhCopy: Copy = {
 const enCopy: Copy = {
   cloud: {
     eyebrow: "01 / Cloud",
-    title: "Keep delivery, config, and access in one backend",
+    title: "Keep delivery, hosted runtime, config, and access in one backend",
     description:
-      "Once the tool is validated, Cloud takes over delivery and keeps runtime settings, secrets, access control, and usage relationships in one place. You do not need another backend around the same implementation.",
+      "Once the tool is validated, Cloud takes over delivery and keeps hosted runtime, runtime settings, secrets, and access control in one place. The default primary delivery path still flows back into oo-cli.",
     cards: [
       {
-        title: "Deliver into oo-cli",
-        text: "Once delivered, the tool can be searched, inspected, and called directly in oo-cli.",
+        title: "Deliver it mainly through oo-cli while keeping the same implementation",
+        text: "Once the tool is delivered, it still mainly flows back into oo-cli for agents instead of being rebuilt behind another service layer.",
       },
       {
         title: "Manage config and secrets together",
         text: "Keep runtime settings, secrets, and environment differences in one console.",
       },
       {
-        title: "Review access and status in one place",
+        title: "Review access, status, and usage relationships in one place",
         text: "Manage permissions, runtime status, and usage relationships without splitting them across tools.",
       },
     ],
@@ -179,20 +180,20 @@ const enCopy: Copy = {
   },
   cli: {
     eyebrow: "02 / oo-cli",
-    title: "Users work with it directly in oo-cli",
+    title: "After delivery, agents still use it through the oo-cli path",
     description:
-      "For the user, there is no extra integration step and no new workflow to learn. Once delivered, they can search, inspect, and use it directly.",
+      "For the user, there is no need to understand your implementation or learn a new workflow. Once delivered, they still search, inspect, and use it through oo-cli. APIs, MCP, and automation remain optional extension surfaces.",
     media: {
       title: "oo-cli invocation demo",
       note: "Show a delivered tool being searched, inspected, and called in Codex.",
     },
-    guide: "Open install guide",
+    guide: "Explore oo-cli",
     github: "View GitHub",
   },
   cta: {
-    title: "Hand validated tools to Cloud",
+    title: "Let Cloud take over validated tools",
     description:
-      "Use Cloud to deliver the tool and keep configuration, secrets, and access control in one place.",
+      "Use Cloud to handle delivery, hosted runtime, configuration, secrets, and access control, then keep the tool flowing mainly back into oo-cli.",
     primary: "Read Cloud docs",
     secondary: "Open Cloud Console",
   },
@@ -265,10 +266,7 @@ export default function CloudPageLinearFlow() {
             <h2 className={styles.sectionTitle}>{copy.cli.title}</h2>
             <p className={styles.sectionDescription}>{copy.cli.description}</p>
             <div className={styles.inlineActions}>
-              <Link
-                to="/docs/cloud-services/cli"
-                className={styles.primaryLink}
-              >
+              <Link to="/docs/oo-cli" className={styles.primaryLink}>
                 {copy.cli.guide}
               </Link>
               <a

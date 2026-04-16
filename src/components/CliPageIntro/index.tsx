@@ -1,3 +1,4 @@
+import CliPageDeveloperBenefits from "@site/src/components/CliPageDeveloperBenefits";
 import CliPageFirstScreen from "@site/src/components/CliPageFirstScreen";
 import CliPageLinearFlow from "@site/src/components/CliPageLinearFlow";
 import CliPagePainPoints from "@site/src/components/CliPagePainPoints";
@@ -8,6 +9,7 @@ export default function CliPageIntro() {
     <>
       <CliPageFirstScreen />
       <CliPagePainPoints />
+      <CliPageDeveloperBenefits />
       <CliPageLinearFlow />
     </>
   );

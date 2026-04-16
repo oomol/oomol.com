@@ -3,12 +3,10 @@ sidebar_position: 1
 title: Overview
 sidebar_label: Overview
 hide_title: true
+description: Start with oo-cli, build in OOMOL Studio when needed, and deliver through OOMOL Cloud.
 ---
 
 import desktop from "@site/static/img/docs/desktop.png";
-import hub from "@site/static/img/docs/hub.png";
-import hub_detail from "@site/static/img/docs/hub_detail.png";
-import desktop_detail from "@site/static/img/docs/desktop_detail.png";
 import ResponsiveVideo from "@site/src/components/mdx/ResponsiveVideo";
 
 <div
@@ -21,10 +19,14 @@ import ResponsiveVideo from "@site/src/components/mdx/ResponsiveVideo";
     letterSpacing: "-0.02em",
   }}
 >
-  Have a question? Ask Agent. Have a task? Let Agent do it.
+  Start with oo-cli. Build in Studio when ready-made tools stop short. Deliver
+  through Cloud when it needs to keep running.
 </div>
 
-The docs are mainly for developers to look things up and for search engines to understand the product's capabilities.
+These docs follow the same path as the main site. If you only need to use
+published tools, start with `oo-cli`. If you need to build or extend your own,
+move into OOMOL Studio. If the validated tool needs hosting, hosted delivery,
+or managed access, continue with OOMOL Cloud.
 
 <ResponsiveVideo
   src="https://cloud-storage.oomol.com/users/019343aa-ff25-727c-a449-9017313539b0/chat-uploads/2026-03-23/4gxes_hu5_ua-OOMOL_Studio.webm"
@@ -38,108 +40,65 @@ The docs are mainly for developers to look things up and for search engines to u
   poster={desktop}
 />
 
-## Core Features
+## The Main Path
 
-OOMOL is an AI-driven workflow platform for data analysis, automation, and agent building. Compared with similar products, it puts more emphasis on the open-source ecosystem and developer programmability.
+### 1. oo-cli
 
-### Open Source
+Use `oo-cli` when you want agents to search, inspect, and run published tools
+first.
 
-Our business model is straightforward: the underlying execution engine is fully open source, while the higher-level applications provide productized convenience and hosted services.
+- Best starting point for Codex, Claude Code, terminal workflows, and other agents
+- Covers discovery, inspection, connector execution, Cloud Task runs, skills, files, and auth
+- Keeps the shortest path when the job is already solved by something published
 
-- The execution engine is open source, so developers can understand how it works and customize it when needed
-- Container image export is planned to make cross-platform deployment easier
+### 2. OOMOL Studio
 
-### Programmable
+Move to OOMOL Studio when ready-made tools stop short and you need to build or
+extend your own implementation.
 
-At the core is the Scriptlet Block, which lets developers implement custom logic in Python or Node.js.
+- Generate and edit function tools in a real coding environment
+- Validate the same implementation locally before you ship it anywhere
+- Compose connectors, workflows, dependencies, and custom logic without splitting work across separate tools
 
-- Traditional workflow tools often limit users to predefined modules, which constrains real-world implementation
-- OOMOL connects workflows with the broader open-source ecosystem, so you can call libraries directly inside workflows
+### 3. OOMOL Cloud
 
-### AI Native
+Use OOMOL Cloud after the implementation is validated and needs hosting or
+delivery back into the main `oo-cli` path.
 
-- Built-in AI-assisted coding to lower the barrier to entry
-- Supports agent-driven authoring based on model function calling
-- Includes multiple AI models that developers can use directly without complex setup
+- Keep runtime settings, secrets, access control, and release relationships in one place
+- Deliver the same validated implementation through OOMOL-hosted surfaces instead of rebuilding another backend around it
+- Keep `oo-cli` as the primary delivery path for agents, with APIs, MCP, and automation available as optional surfaces when needed
 
-## Product Architecture
+## How The Docs Are Organized
+
+- [oo-cli](/docs/oo-cli): start here if you want to use published tools through agents or terminal workflows
+- [OOMOL Studio](/docs/concepts/project): use this when you need to build, extend, and validate your own tools
+- [Cloud Function](/docs/cloud-services/cloud-function): use this when the validated tool needs hosting, hosted delivery, or managed access
+- [Support](/docs/community): use this for publishing, community, and related operational topics
+
+## Product Layers
 
 ```mermaid
-graph TB
-    subgraph Layer4["Application Layer"]
-        Hub["OOMOL Hub<br/>(Project & Block Sharing Hub)"] ~~~ Cloud["OOMOL Cloud<br/>(Serverless Cloud Function Deployment)"]
+graph LR
+    Community["Community / Catalog<br/>(discover packages and examples)"] -. discovery .-> CLI["oo-cli<br/>(search, inspect, run)"]
+    CLI --> Studio["OOMOL Studio<br/>(build and validate)"]
+    Studio --> Cloud["OOMOL Cloud<br/>(run and deliver online)"]
+
+    subgraph Foundation["Implementation Layers"]
+        OOCANA["OOCANA Workflow Engine"]
+        OVM["OVM Runtime Environment"]
     end
 
-    subgraph Layer3["Platform Layer"]
-        Studio["OOMOL Studio<br/>(All-in-One Desktop Software)"]
-    end
-
-    subgraph Layer2["Engine Layer (Open Source)"]
-        Oocana["OOCANA Workflow Engine"]
-    end
-
-    subgraph Layer1["Foundation Layer (Open Source)"]
-        OVM["OVM Virtualized Linux Environment<br/>(Built-in Node.js & Python)"]
-    end
-
-    Layer4 --> Layer3
-    Layer3 --> Layer2
-    Layer2 --> Layer1
+    Studio --> OOCANA
+    Cloud --> OOCANA
+    OOCANA --> OVM
 ```
 
-### OOMOL STUDIO
+The open-source layers are still important, but they are not the first stop for
+most users:
 
-> OOMOL Desktop App
+- `OOCANA` is the workflow engine behind execution
+- `OVM` provides the runtime environment used by OOMOL Studio and related tooling
 
-1. Convenient drag-and-drop workflows
-2. Professional code editor
-3. Elegant data visualization capabilities
-
-<img src={desktop} width="720" />
-<img src={desktop_detail} width="720" />
-
-### OOMOL Hub
-
-> OOMOL Sharing Center
-
-1. Share your creative work
-2. Collaborate on projects with community members
-3. Find inspiration from the community
-
-<img src={hub} width="720" />
-<img src={hub_detail} width="720" />
-
-### OOMOL Cloud
-
-> OOMOL Cloud Function Service
-
-1. Web-based access without local installation
-2. Use cloud compute when local execution is not enough
-3. Expose capabilities through APIs and other integration surfaces
-
-### OVM
-
-> OOMOL Virtual Machine
-
-1. Provides isolated container environments, ensuring security and portability
-2. Built-in multi-language development environment, ready to use out of the box
-
-**Open Source Repositories**
-
-- https://github.com/oomol-lab/ovm
-- https://github.com/oomol-lab/ovm-core
-- https://github.com/oomol-lab/ovm-win
-- https://github.com/oomol-lab/ovm-js
-
-### OOCANA
-
-> OOMOL Workflow Engine
-
-1. Responsible for block scheduling
-2. Throughput management
-
-**Open Source Repositories**
-
-- https://github.com/oomol/oocana-node
-- https://github.com/oomol/oocana-python
-- https://github.com/oomol/oocana-rust
+If you are new to the product, start with the user path above and go deeper
+into the engine layers only when you need implementation detail.

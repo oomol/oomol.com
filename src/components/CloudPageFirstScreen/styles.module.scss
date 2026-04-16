@@ -59,6 +59,21 @@
   text-align: center;
 }
 
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.9rem;
+  padding: 0 0.8rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--oomol-primary) 14%, white);
+  background: color-mix(in srgb, var(--oomol-primary-bg) 46%, white 54%);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--oomol-primary-text);
+}
+
 .slogan {
   margin: 0;
   max-width: 100%;
@@ -80,6 +95,32 @@
   line-height: 1.7;
   white-space: pre-line;
   color: var(--oomol-text-secondary);
+}
+
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+}
+
+.highlightPill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0 0.85rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--oomol-primary) 14%, white);
+  background: color-mix(
+    in srgb,
+    var(--oomol-primary-bg) 54%,
+    var(--oomol-bg-elevated) 46%
+  );
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--oomol-primary-text);
 }
 
 .actions {
@@ -212,6 +253,10 @@
   max-width: 46rem;
 }
 
+:global(html[lang="en"]) .highlightPill {
+  font-size: 0.78rem;
+}
+
 /* ── Tablet ── */
 
 @media (max-width: 996px) {
@@ -256,6 +301,16 @@
     line-height: 1.12;
     letter-spacing: -0.03em;
     max-width: 100%;
+  }
+
+  .highlights {
+    gap: 0.5rem;
+  }
+
+  .highlightPill {
+    min-height: 1.8rem;
+    padding: 0 0.72rem;
+    font-size: 0.76rem;
   }
 
   .titleGroup {
@@ -303,6 +358,15 @@
 /* ── Dark mode ── */
 
 [data-theme="dark"] {
+  .eyebrow {
+    border-color: color-mix(in srgb, var(--oomol-primary) 20%, transparent);
+    background: color-mix(
+      in srgb,
+      var(--oomol-primary-bg) 30%,
+      var(--oomol-bg-container) 70%
+    );
+  }
+
   .section {
     box-shadow: inset 0 -1px 0 var(--oomol-divider-subtle);
   }

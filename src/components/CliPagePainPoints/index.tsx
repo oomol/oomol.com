@@ -1,4 +1,4 @@
-import styles from "../CloudPagePainPoints/styles.module.scss";
+import styles from "./styles.module.scss";
 
 import type { DocusaurusContext } from "@docusaurus/types";
 
@@ -12,6 +12,7 @@ type Copy = {
   cards: Array<{
     icon: string;
     eyebrow: string;
+    command: string;
     title: string;
     description: string;
     points: string[];
@@ -19,54 +20,133 @@ type Copy = {
 };
 
 const zhCopy: Copy = {
-  badge: "为什么用 CLI",
-  title: "CLI 解决的是先用起来的门槛",
+  badge: "oo-cli 能做什么",
+  title: "在一个命令行工具里，完成搜索、查看和运行",
   subtitle:
-    "不是先设计一套完整接入方案，而是先让 Agent 把真实任务跑通。搜索、查看、运行，这三步先在终端里完成。",
+    "它不只是搜索工具。搜索、查看、调用、等待结果，再到技能、文件和配置，都能在 oo-cli 里完成。",
   cards: [
     {
       icon: "i-lucide-search",
-      eyebrow: "发现",
-      title: "先确认有没有现成工具",
+      eyebrow: "搜索",
+      command: "oo search",
+      title: "统一搜索工具和连接器",
       description:
-        "你不需要第一天就从零做一套。先搜索别人已经发布好的工具，再决定缺口到底在哪里。",
-      points: ["先搜再判断", "避免凭想象重做一遍"],
+        "用一条自然语言查询，同时搜索已发布的工具和连接器，先看看有没有现成工具可以直接用。",
+      points: ["先找现成工具", "结果可以导出为 JSON"],
     },
     {
-      icon: "i-lucide-terminal-square",
-      eyebrow: "使用",
-      title: "先在终端和 Agent 里直接跑起来",
+      icon: "i-lucide-box",
+      eyebrow: "查看",
+      command: "oo packages info",
+      title: "先看工具信息，再决定怎么用",
       description:
-        "CLI 先把查看输入、调用和结果拿回来这条使用路径跑通，再决定是否要延伸到 API、MCP 或网页入口。",
-      points: ["先把真实任务做完", "有证据后再决定下一层"],
+        "查看工具说明、输入要求和版本信息，先弄清这个工具需要什么输入、适合做什么，再让 Agent 决定怎么调用。",
+      points: ["减少盲调", "先理解再执行"],
+    },
+    {
+      icon: "i-lucide-plug",
+      eyebrow: "运行",
+      command: "oo connector run",
+      title: "直接运行连接器",
+      description:
+        "看清输入格式后，先 dry-run 检查输入，再直接运行连接器，并把结果交给下一步。",
+      points: ["支持 dry-run", "失败信息更易诊断"],
+    },
+    {
+      icon: "i-lucide-cloud",
+      eyebrow: "云任务",
+      command: "oo cloud-task run",
+      title: "运行云任务并等待结果",
+      description:
+        "提交云任务后，再用 wait、result、log 把结果拿回来，让 CLI 帮 Agent 处理等待和追踪。",
+      points: ["适合较长任务", "把结果拿回来继续用"],
+    },
+    {
+      icon: "i-lucide-bot",
+      eyebrow: "技能",
+      command: "oo skills install",
+      title: "在 Codex 和 Claude Code 里直接使用",
+      description:
+        "搜索、安装和更新 oo 管理的技能，让 Agent 直接在 Codex 和 Claude Code 里使用这些工具。",
+      points: ["支持自动同步", "延续现在的使用方式"],
+    },
+    {
+      icon: "i-lucide-files",
+      eyebrow: "配套",
+      command: "oo file / oo auth / oo log",
+      title: "处理文件、账号和调试信息",
+      description:
+        "上传下载文件、切换账号、保存配置、查看日志，这些让任务真正跑通的配套功能都已经在 CLI 里准备好。",
+      points: ["少找辅助手段", "更容易排查问题"],
     },
   ],
 };
 
 const enCopy: Copy = {
-  badge: "Why CLI",
-  title: "CLI lowers the barrier to getting real usage started",
+  badge: "What oo-cli Does",
+  title: "Search, inspect, and run tools from one CLI",
   subtitle:
-    "The goal is not to design the full integration stack upfront. The goal is to let the agent finish a real task first. Search, inspect, and run in terminal before anything else.",
+    "It is more than search. Discovery, inspection, execution, waiting for results, skills, files, and config all live in one CLI.",
   cards: [
     {
       icon: "i-lucide-search",
       eyebrow: "Discovery",
-      title: "Check whether ready-made tools already exist",
+      command: "oo search",
+      title: "Search packages and connectors through one entry point",
       description:
-        "You do not need to build a new path on day one. Search published tools first, then decide where the real gap is.",
-      points: ["Search before you judge", "Avoid rebuilding from guesswork"],
+        "Use one natural-language query to search published packages and connector actions before deciding whether a ready-made tool already solves the job.",
+      points: ["Find ready-made tools first", "Export results as JSON"],
     },
     {
-      icon: "i-lucide-terminal-square",
-      eyebrow: "Usage",
-      title: "Run it directly in terminal and agent workflows first",
+      icon: "i-lucide-box",
+      eyebrow: "Inspect",
+      command: "oo packages info",
+      title: "Look at the tool before deciding how to use it",
       description:
-        "CLI gets input inspection, invocation, and results working first. After that, you can decide whether the same capability should also become an API, MCP, or web entry point.",
+        "Inspect package metadata, blocks, and versions first so the agent understands the inputs and what the tool is good for before running it.",
+      points: ["Reduce blind trial and error", "Understand before executing"],
+    },
+    {
+      icon: "i-lucide-plug",
+      eyebrow: "Run",
+      command: "oo connector run",
+      title: "Execute connector actions directly",
+      description:
+        "Check inputs with a dry run, execute the action, and hand the result to whatever the agent should do next.",
+      points: ["Dry-run before execution", "Diagnose failures more easily"],
+    },
+    {
+      icon: "i-lucide-cloud",
+      eyebrow: "Cloud",
+      command: "oo cloud-task run",
+      title: "Run cloud tasks and wait for the result",
+      description:
+        "Submit a cloud task, then use wait, result, and log commands to bring the result back when the job takes longer to finish.",
       points: [
-        "Finish a real task first",
-        "Choose the next layer with evidence",
+        "Fits longer-running work",
+        "Bring the result back and keep going",
       ],
+    },
+    {
+      icon: "i-lucide-bot",
+      eyebrow: "Skills",
+      command: "oo skills install",
+      title: "Use these tools directly in Codex and Claude Code",
+      description:
+        "Search, install, and update oo-managed skills so agents can use these tools directly inside Codex and Claude Code.",
+      points: [
+        "Support automatic sync",
+        "Keep using the tools you already know",
+      ],
+    },
+    {
+      icon: "i-lucide-files",
+      eyebrow: "Ops",
+      command: "oo file / oo auth / oo log",
+      title: "Handle files, auth, config, and debugging",
+      description:
+        "Upload and download files, switch accounts, manage config, and inspect logs without leaving the CLI you are already using.",
+      points: ["Avoid extra helper surfaces", "Debug real failures faster"],
     },
   ],
 };
@@ -95,7 +175,10 @@ export default function CliPagePainPoints() {
                   aria-hidden="true"
                 />
               </div>
-              <div className={styles.cardEyebrow}>{card.eyebrow}</div>
+              <div className={styles.cardMeta}>
+                <div className={styles.cardEyebrow}>{card.eyebrow}</div>
+                <code className={styles.cardCommand}>{card.command}</code>
+              </div>
               <h3 className={styles.cardTitle}>{card.title}</h3>
               <p className={styles.cardDescription}>{card.description}</p>
               <ul className={styles.pointList}>

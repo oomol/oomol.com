@@ -2,18 +2,13 @@
 
 .cliSection {
   width: 100%;
-  max-width: 1280px;
-  margin-bottom: 96px;
-
-  @media (max-width: 980px) {
-    margin-bottom: 72px;
-  }
+  max-width: 100%;
 }
 
 .cliMethodsGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
+  gap: 1rem;
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
@@ -22,13 +17,13 @@
 
 .cliMethodCard {
   display: grid;
-  gap: 10px;
+  gap: 0.9rem;
   min-height: 100%;
-  padding: 28px;
-  border-radius: 16px;
-  border: 1px solid var(--oomol-border-subtle);
-  background: var(--oomol-bg-elevated);
-  box-shadow: 0 10px 24px rgba(77, 88, 124, 0.05);
+  padding: 1.45rem;
+  border-radius: 1.55rem;
+  border: 1px solid var(--oomol-divider);
+  background: color-mix(in srgb, var(--oomol-bg-elevated) 95%, white 5%);
+  box-shadow: 0 14px 32px rgba(77, 88, 124, 0.08);
 }
 
 .cliMethodHeader {
@@ -38,37 +33,32 @@
 
 .cliMethodTitle {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: 1.18rem;
   font-weight: 700;
   color: var(--oomol-text-primary);
 }
 
 .cliMethodDescription {
   margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.7;
+  font-size: 0.98rem;
+  line-height: 1.72;
   color: var(--oomol-text-secondary);
 }
 
 .cliSnippetBox {
   display: grid;
-  gap: 10px;
-  padding: 14px;
-  border-radius: 14px;
-  background: color-mix(
-    in srgb,
-    var(--oomol-bg-layout) 52%,
-    var(--oomol-bg-elevated) 48%
-  );
-  border: 1px solid color-mix(in srgb, var(--oomol-border-subtle) 84%, white);
+  gap: 0.75rem;
+  padding: 1rem 0 0;
+  border-top: 1px solid
+    color-mix(in srgb, var(--oomol-border-subtle) 84%, white);
 }
 
 .cliSnippet {
   margin: 0;
   white-space: pre-wrap;
-  word-break: break-word;
-  font-size: 13px;
-  line-height: 1.7;
+  overflow-wrap: break-word;
+  font-size: 0.92rem;
+  line-height: 1.75;
   font-family:
     "SFMono-Regular", "SF Mono", "Cascadia Code", "JetBrains Mono", Consolas,
     "Liberation Mono", Menlo, monospace;
@@ -110,8 +100,14 @@
     var(--oomol-border-default) 74%,
     transparent
   );
-  background: var(--oomol-bg-container);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  background: color-mix(
+    in srgb,
+    var(--oomol-bg-container) 86%,
+    var(--oomol-bg-elevated) 14%
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 14px 32px rgba(0, 0, 0, 0.12);
 }
 
 :global(html[data-theme="dark"]) .cliSnippetBox {
@@ -120,11 +116,22 @@
     var(--oomol-border-default) 70%,
     transparent
   );
-  background: color-mix(
-    in srgb,
-    var(--oomol-bg-layout) 56%,
-    var(--oomol-bg-elevated) 44%
-  );
+}
+
+@media (max-width: 768px) {
+  .cliMethodCard {
+    padding: 1.2rem;
+    border-radius: 1.35rem;
+  }
+
+  .cliMethodTitle {
+    font-size: 1.08rem;
+  }
+
+  .cliMethodDescription,
+  .cliSnippet {
+    font-size: 0.94rem;
+  }
 }
 
 :global(html[data-theme="dark"]) .cliCopyButton {

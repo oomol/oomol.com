@@ -3,7 +3,7 @@
   "position": 5,
   "link": {
     "type": "generated-index",
-    "description": "Cloud Function guides, CLI usage, and direct integration docs."
+    "description": "Cloud Function and direct integration docs."
   },
   "collapsed": true,
   "className": "sidebar-submenu-item"

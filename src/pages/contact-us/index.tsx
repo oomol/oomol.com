@@ -1,7 +1,11 @@
 import styles from "./styles.module.scss";
 
+import type { DocusaurusContext } from "@docusaurus/types";
+
+import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { Popover } from "@site/src/components/Popover";
 import { Card, CardHeader, CardTitle } from "@site/src/components/ui/card";
@@ -122,6 +126,10 @@ const sloganData = [
 ];
 
 export default function ContactUsPage() {
+  const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
+    i18n: { currentLocale: string };
+  };
+  const isZh = i18n.currentLocale === "zh-CN";
   const [githubStats, setGithubStats] = useState<Record<
     string,
     RepoStats
@@ -238,6 +246,17 @@ export default function ContactUsPage() {
 
   return (
     <Layout>
+      <Head>
+        <title>{isZh ? "联系我们 - OOMOL" : "Contact Us - OOMOL"}</title>
+        <meta
+          name="description"
+          content={
+            isZh
+              ? "查看 OOMOL 的社区入口、开源仓库和联系渠道。"
+              : "Find OOMOL community links, open-source repositories, and contact channels."
+          }
+        />
+      </Head>
       <div className={styles.container}>
         <div className={styles.headBox}>
           <div className={styles.titleBox}>

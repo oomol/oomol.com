@@ -19,6 +19,21 @@
   justify-items: center;
 }
 
+.badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.9rem;
+  padding: 0 0.8rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--oomol-primary) 14%, white);
+  background: color-mix(in srgb, var(--oomol-primary-bg) 46%, white 54%);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--oomol-primary-text);
+}
+
 .title {
   margin: 0;
   max-width: 20ch;
@@ -33,8 +48,8 @@
 .subtitle {
   margin: 0;
   max-width: 34rem;
-  font-size: 0.94rem;
-  line-height: 1.56;
+  font-size: 1.04rem;
+  line-height: 1.62;
   text-wrap: pretty;
   color: var(--oomol-text-secondary);
 }
@@ -128,8 +143,8 @@
 
 .cardDescription {
   margin: 0;
-  font-size: 0.94rem;
-  line-height: 1.62;
+  font-size: 0.98rem;
+  line-height: 1.64;
   color: var(--oomol-text-secondary);
 }
 
@@ -201,6 +216,15 @@
 /* ── Dark mode ── */
 
 [data-theme="dark"] {
+  .badge {
+    border-color: color-mix(in srgb, var(--oomol-primary) 20%, transparent);
+    background: color-mix(
+      in srgb,
+      var(--oomol-primary-bg) 30%,
+      var(--oomol-bg-container) 70%
+    );
+  }
+
   .card {
     border-color: color-mix(
       in srgb,
@@ -290,8 +314,8 @@
   }
 
   .subtitle {
-    font-size: 0.9rem;
-    line-height: 1.58;
+    font-size: 0.98rem;
+    line-height: 1.62;
   }
 
   .grid {
@@ -316,7 +340,7 @@
   }
 
   .cardDescription {
-    font-size: 0.88rem;
+    font-size: 0.94rem;
     line-height: 1.56;
   }
 

@@ -1,0 +1,182 @@
+@use "../../css/custom.scss" as *;
+
+.section {
+  width: 100%;
+  padding: clamp(0.4rem, 1.4vw, 0.9rem) 0 clamp(1.2rem, 2.4vw, 1.8rem);
+}
+
+.container {
+  width: min(1260px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+  gap: clamp(1rem, 2.2vw, 1.6rem);
+  align-items: center;
+  padding: clamp(1rem, 2.2vw, 1.4rem);
+  border-radius: 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--oomol-primary) 12%, var(--oomol-divider));
+  background:
+    radial-gradient(
+      circle at top left,
+      color-mix(in srgb, var(--oomol-primary-bg) 56%, white 44%) 0%,
+      rgba(132, 138, 208, 0) 38%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--oomol-surface-float) 94%, white 6%) 0%,
+      color-mix(in srgb, var(--oomol-surface-panel) 96%, white 4%) 100%
+    );
+  box-shadow: 0 12px 24px rgba(60, 72, 102, 0.08);
+}
+
+.copy {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.badge {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  padding: 0 0.72rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--oomol-primary-text);
+  border: 1px solid color-mix(in srgb, var(--oomol-primary) 16%, white);
+  background: color-mix(in srgb, var(--oomol-primary-bg) 42%, white 58%);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--oomol-font-display);
+  max-width: 24ch;
+  font-size: clamp(1.36rem, 2vw, 1.72rem);
+  line-height: 1.16;
+  letter-spacing: -0.04em;
+  color: var(--oomol-text-primary);
+}
+
+.brandNoWrap {
+  white-space: nowrap;
+}
+
+.description {
+  margin: 0;
+  max-width: 34rem;
+  font-size: 0.94rem;
+  line-height: 1.62;
+  color: var(--oomol-text-secondary);
+}
+
+.pointRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.point {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  padding: 0 0.72rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--oomol-text-tertiary);
+  background: color-mix(in srgb, var(--oomol-surface-float) 86%, white 14%);
+  border: 1px solid var(--oomol-border-subtle);
+}
+
+.actions {
+  padding-top: 0.1rem;
+}
+
+.media {
+  min-width: 0;
+}
+
+.mediaFrame {
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid color-mix(in srgb, var(--oomol-primary) 10%, var(--oomol-divider));
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--oomol-surface-float) 96%, white 4%) 0%,
+    color-mix(in srgb, var(--oomol-surface-panel) 94%, white 6%) 100%
+  );
+  box-shadow: 0 14px 28px rgba(35, 38, 59, 0.08);
+}
+
+.mediaImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 0.96;
+}
+
+:global([data-theme="dark"]) .card {
+  border-color: rgba(132, 138, 208, 0.16);
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(132, 138, 208, 0.12) 0%,
+      rgba(132, 138, 208, 0) 36%
+    ),
+    linear-gradient(180deg, rgba(24, 25, 37, 0.96) 0%, rgba(18, 19, 29, 0.98) 100%);
+}
+
+:global([data-theme="dark"]) .badge {
+  color: rgba(197, 202, 246, 0.94);
+  border-color: rgba(132, 138, 208, 0.22);
+  background: rgba(132, 138, 208, 0.12);
+}
+
+:global([data-theme="dark"]) .title {
+  color: rgba(247, 249, 253, 0.96);
+}
+
+:global([data-theme="dark"]) .description {
+  color: rgba(226, 231, 240, 0.76);
+}
+
+:global([data-theme="dark"]) .point {
+  color: rgba(210, 216, 232, 0.72);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+:global([data-theme="dark"]) .mediaFrame {
+  border-color: rgba(132, 138, 208, 0.12);
+  background: linear-gradient(180deg, rgba(34, 33, 47, 0.88) 0%, rgba(25, 25, 37, 0.96) 100%);
+  box-shadow: 0 16px 30px rgba(5, 8, 18, 0.24);
+}
+
+@media (max-width: 900px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: min(100%, calc(100% - 40px));
+  }
+
+  .card {
+    gap: 0.95rem;
+    padding: 0.95rem;
+  }
+
+  .description {
+    font-size: 0.92rem;
+    line-height: 1.62;
+  }
+}
