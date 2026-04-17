@@ -231,9 +231,6 @@ const Footer: React.FC = () => {
       </div>
       <div className={styles.border}>
         <div className={styles.bottom}>
-          <div className={styles.leftControls}>
-            <ColorModeDropdown triggerClassName={styles.footerControlSurface} />
-          </div>
           <div className={styles.bottomInfo}>
             {copyright}
             {currentLocale === "zh-CN" && (
@@ -247,6 +244,7 @@ const Footer: React.FC = () => {
             )}
           </div>
           <div className={styles.rightControls}>
+            <ColorModeDropdown triggerClassName={styles.footerControlSurface} />
             <Button
               className={`${styles.cookieControlButton} ${styles.footerControlSurface}`}
               size="sm"

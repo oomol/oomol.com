@@ -55,6 +55,13 @@
   --oomol-mask: rgba(10, 10, 10, 0.6);
 
   /* ----------------------
+     层叠（顶栏约 100–120；Cookie / 对话框略高于顶栏）
+     ---------------------- */
+  --oomol-z-cookie-banner: 180;
+  --oomol-z-dialog-overlay: 190;
+  --oomol-z-dialog-content: 191;
+
+  /* ----------------------
      填充色 (Fill)
      ---------------------- */
   --oomol-fill-primary: rgba(0, 0, 0, 0.08);

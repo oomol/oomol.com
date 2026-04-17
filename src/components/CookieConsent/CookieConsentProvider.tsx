@@ -1,9 +1,11 @@
-import styles from "./styles.module.scss";
-
+import type { DetailedCookieConsent } from "./cookieConsentStorage";
 import type { DocusaurusContext } from "@docusaurus/types";
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import * as Dialog from "@radix-ui/react-dialog";
+import { Switch, Theme } from "@radix-ui/themes";
+import { Button } from "@site/src/components/ui/button";
 import {
   clearGoogleAnalyticsCookies,
   clearTrackingConsentState,
@@ -12,19 +14,25 @@ import {
   trackFirstLoginConversion,
 } from "@site/src/lib/analytics";
 import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
-import React, { useEffect, useRef } from "react";
-import { CookieManager, useCookieConsent } from "react-cookie-manager";
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
-type LegacyConsentCookie = {
-  categories?: string[];
-  consentTimestamp?: string;
-  lastConsentTimestamp?: string;
-};
+import {
+  buildConsent,
+  migrateLegacyConsentCookie,
+  persistConsent,
+  readStoredConsent,
+} from "./cookieConsentStorage";
 
-type CookieManagerTranslations = {
+type Translations = {
   buttonText: string;
   declineButtonText: string;
-  manageButtonText: string;
   privacyPolicyText: string;
   title: string;
   message: string;
@@ -36,8 +44,6 @@ type CookieManagerTranslations = {
   manageEssentialStatusButtonText: string;
   manageAnalyticsTitle: string;
   manageAnalyticsSubtitle: string;
-  manageSocialTitle: string;
-  manageSocialSubtitle: string;
   manageAdvertTitle: string;
   manageAdvertSubtitle: string;
   manageCookiesStatus: string;
@@ -47,16 +53,18 @@ type CookieManagerTranslations = {
   manageSaveButtonText: string;
 };
 
-const COOKIE_KEY = "cc_cookie";
-const COOKIE_EXPIRATION_DAYS = 365;
 const COOKIE_POPUP_INITIAL_DELAY_MS = 1200;
-const OOMOL_ROOT_DOMAIN = "oomol.com";
 
-const translationsByLocale: Record<string, CookieManagerTranslations> = {
+const CATEGORY_VISIBILITY = {
+  Analytics: true,
+  Social: false,
+  Advertising: true,
+} as const;
+
+const translationsByLocale: Record<string, Translations> = {
   en: {
     buttonText: "Accept all",
     declineButtonText: "Reject all",
-    manageButtonText: "Manage preferences",
     privacyPolicyText: "Privacy Policy",
     title: "Cookie settings",
     message:
@@ -72,8 +80,6 @@ const translationsByLocale: Record<string, CookieManagerTranslations> = {
     manageAnalyticsTitle: "Analytics",
     manageAnalyticsSubtitle:
       "Helps us understand visits, traffic sources, and product usage across the website.",
-    manageSocialTitle: "Social",
-    manageSocialSubtitle: "Enable social media features and sharing",
     manageAdvertTitle: "Advertising",
     manageAdvertSubtitle:
       "Allows Google Ads conversion tracking for key actions such as downloads and first sign-in.",
@@ -86,7 +92,6 @@ const translationsByLocale: Record<string, CookieManagerTranslations> = {
   "zh-CN": {
     buttonText: "接受全部",
     declineButtonText: "拒绝全部",
-    manageButtonText: "管理偏好",
     privacyPolicyText: "隐私政策",
     title: "Cookie 设置",
     message:
@@ -102,8 +107,6 @@ const translationsByLocale: Record<string, CookieManagerTranslations> = {
     manageAnalyticsTitle: "统计",
     manageAnalyticsSubtitle:
       "帮助我们了解访问来源、页面使用情况以及产品相关行为。",
-    manageSocialTitle: "社交",
-    manageSocialSubtitle: "启用社交媒体功能与分享",
     manageAdvertTitle: "广告与转化跟踪",
     manageAdvertSubtitle:
       "用于 Google Ads 转化跟踪，例如下载和首次登录这类关键动作。",
@@ -115,102 +118,73 @@ const translationsByLocale: Record<string, CookieManagerTranslations> = {
   },
 };
 
-function getCookieDomain(hostname: string): string | undefined {
-  const normalizedHostname = hostname.toLowerCase();
-
-  if (
-    normalizedHostname === OOMOL_ROOT_DOMAIN ||
-    normalizedHostname.endsWith(`.${OOMOL_ROOT_DOMAIN}`)
-  ) {
-    return OOMOL_ROOT_DOMAIN;
-  }
-
-  return undefined;
-}
-
-function readCookie(name: string): string | null {
-  if (typeof document === "undefined") {
-    return null;
-  }
-
-  const escapedName = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const match = document.cookie.match(
-    new RegExp(`(?:^|; )${escapedName}=([^;]*)`)
-  );
-
-  return match ? decodeURIComponent(match[1]) : null;
-}
-
-function writeCookie(name: string, value: string, days: number) {
-  const expiresAt = new Date();
-  expiresAt.setDate(expiresAt.getDate() + days);
-
-  const parts = [
-    `${name}=${encodeURIComponent(value)}`,
-    "Path=/",
-    `Expires=${expiresAt.toUTCString()}`,
-    "SameSite=Lax",
-  ];
-
-  if (typeof window !== "undefined") {
-    const domain = getCookieDomain(window.location.hostname);
-
-    if (domain) {
-      parts.push(`Domain=${domain}`);
-    }
-
-    if (window.location.protocol === "https:") {
-      parts.push("Secure");
-    }
-  }
-
-  document.cookie = parts.join("; ");
-}
-
-function migrateLegacyConsentCookie() {
-  if (typeof window === "undefined") {
-    return;
-  }
-
-  const rawCookie = readCookie(COOKIE_KEY);
-
-  if (!rawCookie) {
-    return;
-  }
-
+function formatConsentDate(timestamp: string, locale: string): string {
   try {
-    const parsedCookie = JSON.parse(rawCookie) as
-      | LegacyConsentCookie
-      | Record<string, unknown>;
-
-    if (
-      "Analytics" in parsedCookie ||
-      !Array.isArray(parsedCookie.categories)
-    ) {
-      return;
-    }
-
-    const hasStatisticsConsent = parsedCookie.categories.includes("statistics");
-    const timestamp =
-      parsedCookie.lastConsentTimestamp ??
-      parsedCookie.consentTimestamp ??
-      new Date().toISOString();
-
-    writeCookie(
-      COOKIE_KEY,
-      JSON.stringify({
-        Analytics: { consented: hasStatisticsConsent, timestamp },
-        Social: { consented: false, timestamp },
-        Advertising: { consented: hasStatisticsConsent, timestamp },
-      }),
-      COOKIE_EXPIRATION_DAYS
+    return new Date(timestamp).toLocaleString(
+      locale === "zh-CN" ? "zh-CN" : "en-US",
+      {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+      }
     );
   } catch {
-    // Ignore malformed legacy consent cookies.
+    return "";
   }
 }
 
-const AnalyticsConsentBridge = () => {
+function interpolateStatus(
+  template: string,
+  date: string,
+  status: string
+): string {
+  return template.replace("{{date}}", date).replace("{{status}}", status);
+}
+
+/** Radix `Switch` only — must render inside a parent `@radix-ui/themes` `Theme` (see preferences dialog). A standalone `Theme` would be `data-is-root-theme` and pick up `min-height: 100vh` from the library stylesheet. */
+function CookiePreferenceSwitch({
+  ariaLabel,
+  checked,
+  onCheckedChange,
+}: {
+  ariaLabel: string;
+  checked: boolean;
+  onCheckedChange: (value: boolean) => void;
+}) {
+  return (
+    <Switch
+      aria-label={ariaLabel}
+      checked={checked}
+      className="shrink-0"
+      color="gray"
+      onCheckedChange={onCheckedChange}
+      size="2"
+    />
+  );
+}
+
+type CookieConsentContextValue = {
+  detailedConsent: DetailedCookieConsent | null;
+  openPreferencesModal: () => void;
+};
+
+const CookieConsentContext = createContext<CookieConsentContextValue | null>(
+  null
+);
+
+export function useCookieConsent(): CookieConsentContextValue {
+  const ctx = useContext(CookieConsentContext);
+
+  if (!ctx) {
+    throw new Error("useCookieConsent must be used within CookieConsentProvider");
+  }
+
+  return ctx;
+}
+
+const AnalyticsConsentBridge: React.FC = () => {
   const { detailedConsent } = useCookieConsent();
 
   useEffect(() => {
@@ -240,34 +214,25 @@ const AnalyticsConsentBridge = () => {
   return null;
 };
 
-const CookieConsentOpenBridge = ({ requestKey }: { requestKey: number }) => {
-  const { openPreferencesModal } = useCookieConsent();
-  const handledRequestKeyRef = useRef(0);
-
-  useEffect(() => {
-    if (requestKey <= 0 || requestKey === handledRequestKeyRef.current) {
-      return;
-    }
-
-    handledRequestKeyRef.current = requestKey;
-    openPreferencesModal();
-  }, [openPreferencesModal, requestKey]);
-
-  return null;
-};
-
-export const CookieConsentProvider = () => {
+const CookieConsentProviderInner: React.FC = () => {
   const {
     i18n: { currentLocale },
   } = useDocusaurusContext() as unknown as DocusaurusContext & {
     i18n: { currentLocale: string };
   };
-  const { colorMode } = useHydratedColorMode();
   const privacyPolicyUrl = useBaseUrl("/privacy");
-  const translations =
-    translationsByLocale[currentLocale] ?? translationsByLocale.en;
-  const [showCookieManager, setShowCookieManager] = React.useState(false);
-  const [openRequestKey, setOpenRequestKey] = React.useState(0);
+  const { colorMode } = useHydratedColorMode();
+  const t = translationsByLocale[currentLocale] ?? translationsByLocale.en;
+  const localeTag = currentLocale === "zh-CN" ? "zh-CN" : "en-US";
+
+  const [detailedConsent, setDetailedConsent] =
+    useState<DetailedCookieConsent | null>(null);
+  const [bannerVisible, setBannerVisible] = useState(false);
+  const [preferencesOpen, setPreferencesOpen] = useState(false);
+  const [preferencesSession, setPreferencesSession] = useState(0);
+
+  const [draftAnalytics, setDraftAnalytics] = useState(false);
+  const [draftAdvertising, setDraftAdvertising] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -275,104 +240,265 @@ export const CookieConsentProvider = () => {
     }
 
     migrateLegacyConsentCookie();
+    const stored = readStoredConsent();
+    setDetailedConsent(stored);
 
-    const hasStoredConsent = Boolean(readCookie(COOKIE_KEY));
-
-    if (hasStoredConsent) {
-      setShowCookieManager(true);
+    if (stored) {
       return;
     }
 
-    let revealTimer: number | undefined;
+    const timer = window.setTimeout(() => {
+      setBannerVisible(true);
+    }, COOKIE_POPUP_INITIAL_DELAY_MS);
 
-    const scheduleReveal = () => {
-      window.clearTimeout(revealTimer);
-      revealTimer = window.setTimeout(() => {
-        setShowCookieManager(true);
-      }, COOKIE_POPUP_INITIAL_DELAY_MS);
-    };
+    return () => window.clearTimeout(timer);
+  }, []);
 
-    const handleVisibilityChange = () => {
-      if (document.visibilityState !== "visible") {
-        window.clearTimeout(revealTimer);
-        return;
-      }
-
-      scheduleReveal();
-    };
-
-    if (document.visibilityState === "visible") {
-      scheduleReveal();
+  useEffect(() => {
+    if (!preferencesOpen) {
+      return;
     }
 
-    document.addEventListener("visibilitychange", handleVisibilityChange);
+    setDraftAnalytics(detailedConsent?.Analytics.consented ?? false);
+    setDraftAdvertising(detailedConsent?.Advertising.consented ?? false);
+  }, [preferencesOpen, preferencesSession, detailedConsent]);
 
-    return () => {
-      window.clearTimeout(revealTimer);
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-    };
-  }, [showCookieManager]);
+  const openPreferencesModal = useCallback(() => {
+    setPreferencesSession(c => c + 1);
+    setPreferencesOpen(true);
+  }, []);
+
+  const ctx = useMemo(
+    () => ({
+      detailedConsent,
+      openPreferencesModal,
+    }),
+    [detailedConsent, openPreferencesModal]
+  );
 
   useEffect(() => {
     if (typeof window === "undefined") {
       return;
     }
 
-    const handleShowCookieConsent = () => {
-      setShowCookieManager(true);
-      setOpenRequestKey(current => current + 1);
+    const onShow = () => {
+      openPreferencesModal();
     };
 
-    window.addEventListener("show-cookie-consent", handleShowCookieConsent);
+    window.addEventListener("show-cookie-consent", onShow);
 
     return () => {
-      window.removeEventListener(
-        "show-cookie-consent",
-        handleShowCookieConsent
-      );
+      window.removeEventListener("show-cookie-consent", onShow);
     };
-  }, []);
+  }, [openPreferencesModal]);
 
-  if (!showCookieManager) {
-    return null;
-  }
+  const applyConsent = (next: DetailedCookieConsent) => {
+    persistConsent(next);
+    setDetailedConsent(next);
+    setBannerVisible(false);
+  };
+
+  const handleAcceptAll = () => {
+    applyConsent(buildConsent(true, true));
+  };
+
+  const handleRejectAll = () => {
+    applyConsent(buildConsent(false, false));
+  };
+
+  const handleSavePreferences = () => {
+    applyConsent(buildConsent(draftAnalytics, draftAdvertising));
+    setPreferencesOpen(false);
+  };
+
+  const renderStatus = (category: "Analytics" | "Advertising") => {
+    const status = detailedConsent?.[category];
+
+    if (!status) {
+      return null;
+    }
+
+    const dateStr = formatConsentDate(status.timestamp, localeTag);
+    const statusLabel = status.consented
+      ? t.manageCookiesStatusConsented
+      : t.manageCookiesStatusDeclined;
+
+    return (
+      <p className="mt-2 m-0 text-left text-xs font-medium leading-snug text-[var(--oomol-text-tertiary)]">
+        {interpolateStatus(t.manageCookiesStatus, dateStr, statusLabel)}
+      </p>
+    );
+  };
+
+  const showBanner = bannerVisible && detailedConsent === null;
 
   return (
-    <CookieManager
-      cookieKey={COOKIE_KEY}
-      cookieCategories={{ Analytics: true, Social: false, Advertising: true }}
-      classNames={{
-        popupContainer: styles.popupContainer,
-        popupContent: styles.popupContent,
-        popupTitle: styles.popupTitle,
-        popupMessage: styles.popupMessage,
-        acceptButton: styles.acceptButton,
-        declineButton: styles.declineButton,
-        privacyPolicyLink: styles.privacyPolicyLink,
-        manageCookieContainer: styles.manageCookieContainer,
-        manageCookieTitle: styles.manageCookieTitle,
-        manageCookieMessage: styles.manageCookieMessage,
-        manageCookieCategory: styles.manageCookieCategory,
-        manageCookieCategoryTitle: styles.manageCookieCategoryTitle,
-        manageCookieCategorySubtitle: styles.manageCookieCategorySubtitle,
-        manageCookieStatusText: styles.manageCookieStatusText,
-        manageCookieToggle: styles.manageCookieToggle,
-        manageCookieToggleChecked: styles.manageCookieToggleChecked,
-        manageCancelButton: styles.manageCancelButton,
-        manageSaveButton: styles.manageSaveButton,
-      }}
-      disableAutomaticBlocking
-      disableGeolocation
-      displayType="popup"
-      enableFloatingButton={false}
-      expirationDays={COOKIE_EXPIRATION_DAYS}
-      privacyPolicyUrl={privacyPolicyUrl}
-      showManageButton={false}
-      theme={colorMode === "dark" ? "dark" : "light"}
-      translations={translations}
-    >
+    <CookieConsentContext.Provider value={ctx}>
       <AnalyticsConsentBridge />
-      <CookieConsentOpenBridge requestKey={openRequestKey} />
-    </CookieManager>
+
+      {showBanner ? (
+        <div
+          className="fixed bottom-4 right-4 box-border w-[min(28rem,calc(100vw-2rem))] rounded-xl border border-solid border-[var(--oomol-border-default)] bg-[var(--oomol-bg-base)] px-5 py-4 text-[var(--oomol-text-secondary)] shadow-[var(--oomol-shadow-md)] [font-family:var(--oomol-font-body)] md:bottom-6 md:right-6"
+          role="region"
+          aria-label={t.title}
+          style={{ zIndex: "var(--oomol-z-cookie-banner)" }}
+        >
+          <div className="flex flex-col gap-3.5">
+            <h3 className="m-0 text-lg font-semibold leading-tight tracking-[-0.02em] text-[var(--oomol-text-primary)] [font-family:var(--oomol-font-display)]">
+              {t.title}
+            </h3>
+            <p className="m-0 text-[13px] leading-relaxed text-[var(--oomol-text-secondary)]">
+              {t.message}
+            </p>
+            <div className="flex flex-col gap-3 border-t border-solid border-[var(--oomol-divider)] pt-3.5 sm:flex-row sm:items-center sm:justify-between">
+              <a
+                className="order-last text-xs font-medium text-[var(--oomol-text-tertiary)] no-underline transition-colors hover:text-[var(--oomol-text-primary)] sm:order-first"
+                href={privacyPolicyUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                {t.privacyPolicyText}
+              </a>
+              <div className="flex flex-wrap items-center justify-end gap-2">
+                <Button
+                  className="h-8 rounded-md px-3 text-[13px]"
+                  onClick={handleRejectAll}
+                  size="sm"
+                  type="button"
+                  variant="outline"
+                >
+                  {t.declineButtonText}
+                </Button>
+                <Button
+                  className="h-8 rounded-md px-3 text-[13px]"
+                  onClick={handleAcceptAll}
+                  size="sm"
+                  type="button"
+                >
+                  {t.buttonText}
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : null}
+
+      <Dialog.Root
+        onOpenChange={setPreferencesOpen}
+        open={preferencesOpen}
+      >
+        <Dialog.Portal>
+          <Dialog.Overlay
+            className="fixed inset-0 bg-[var(--oomol-mask)] backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
+            style={{ zIndex: "var(--oomol-z-dialog-overlay)" }}
+          />
+          <Dialog.Content
+            className="fixed left-1/2 top-1/2 flex w-[min(26rem,calc(100vw-2rem))] max-h-[min(90dvh,calc(100vh-2rem))] -translate-x-1/2 -translate-y-1/2 flex-col overflow-y-auto rounded-2xl border border-solid border-[var(--oomol-border-default)] bg-[var(--oomol-bg-elevated)] p-0 text-[var(--oomol-text-secondary)] shadow-[var(--oomol-shadow-lg)] [font-family:var(--oomol-font-body)] focus:outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95"
+            key={preferencesSession}
+            style={{ zIndex: "var(--oomol-z-dialog-content)" }}
+          >
+            <Theme
+              accentColor="gray"
+              appearance={colorMode}
+              className="oomol-cookie-preferences-theme flex w-full min-w-0 flex-col"
+              grayColor="slate"
+              hasBackground={false}
+              panelBackground="solid"
+            >
+              <div className="border-b border-solid border-[var(--oomol-divider)] px-5 py-4">
+                <Dialog.Title className="m-0 text-base font-semibold leading-snug tracking-[-0.02em] text-[var(--oomol-text-primary)] [font-family:var(--oomol-font-display)] sm:text-lg">
+                  {t.manageTitle}
+                </Dialog.Title>
+                <Dialog.Description className="mt-2 m-0 text-[13px] leading-relaxed text-[var(--oomol-text-secondary)] sm:text-sm">
+                  {t.manageMessage}
+                </Dialog.Description>
+              </div>
+
+              <div className="px-5 py-4">
+                <div className="divide-y divide-[var(--oomol-divider)] overflow-hidden rounded-xl border border-solid border-[var(--oomol-border-default)] bg-[var(--oomol-bg-container)]">
+                  <div className="px-4 py-3.5 sm:px-5 sm:py-4">
+                    <div className="flex items-start justify-between gap-3 sm:items-center">
+                      <h4 className="m-0 min-w-0 flex-1 text-sm font-semibold leading-snug text-[var(--oomol-text-primary)]">
+                        {t.manageEssentialTitle}
+                      </h4>
+                      <span className="shrink-0 rounded-full border border-solid border-[var(--oomol-border-default)] bg-[var(--oomol-bg-spotlight)] px-2.5 py-1 text-center text-[11px] font-semibold tabular-nums text-[var(--oomol-text-tertiary)] sm:px-3 sm:text-xs">
+                        {t.manageEssentialStatusButtonText}
+                      </span>
+                    </div>
+                    <p className="mt-2 m-0 text-[13px] leading-relaxed text-[var(--oomol-text-secondary)]">
+                      {t.manageEssentialSubtitle}
+                    </p>
+                    <p className="mt-2 m-0 text-xs font-medium leading-snug text-[var(--oomol-text-tertiary)]">
+                      {t.manageEssentialStatus}
+                    </p>
+                  </div>
+
+                  {CATEGORY_VISIBILITY.Analytics ? (
+                    <div className="px-4 py-3.5 sm:px-5 sm:py-4">
+                      <div className="flex items-start justify-between gap-3 sm:items-center">
+                        <h4 className="m-0 min-w-0 flex-1 text-sm font-semibold leading-snug text-[var(--oomol-text-primary)]">
+                          {t.manageAnalyticsTitle}
+                        </h4>
+                        <CookiePreferenceSwitch
+                          ariaLabel={t.manageAnalyticsTitle}
+                          checked={draftAnalytics}
+                          onCheckedChange={setDraftAnalytics}
+                        />
+                      </div>
+                      <p className="mt-2 m-0 text-[13px] leading-relaxed text-[var(--oomol-text-secondary)]">
+                        {t.manageAnalyticsSubtitle}
+                      </p>
+                      {renderStatus("Analytics")}
+                    </div>
+                  ) : null}
+
+                  {CATEGORY_VISIBILITY.Advertising ? (
+                    <div className="px-4 py-3.5 sm:px-5 sm:py-4">
+                      <div className="flex items-start justify-between gap-3 sm:items-center">
+                        <h4 className="m-0 min-w-0 flex-1 text-sm font-semibold leading-snug text-[var(--oomol-text-primary)]">
+                          {t.manageAdvertTitle}
+                        </h4>
+                        <CookiePreferenceSwitch
+                          ariaLabel={t.manageAdvertTitle}
+                          checked={draftAdvertising}
+                          onCheckedChange={setDraftAdvertising}
+                        />
+                      </div>
+                      <p className="mt-2 m-0 text-[13px] leading-relaxed text-[var(--oomol-text-secondary)]">
+                        {t.manageAdvertSubtitle}
+                      </p>
+                      {renderStatus("Advertising")}
+                    </div>
+                  ) : null}
+                </div>
+              </div>
+
+              <div className="flex flex-col-reverse gap-2 border-t border-solid border-[var(--oomol-divider)] px-5 py-3.5 sm:flex-row sm:justify-end sm:gap-3 sm:py-4">
+                <Dialog.Close asChild>
+                  <Button
+                    className="h-9 w-full rounded-lg px-4 text-sm sm:w-auto"
+                    type="button"
+                    variant="outline"
+                  >
+                    {t.manageCancelButtonText}
+                  </Button>
+                </Dialog.Close>
+                <Button
+                  className="h-9 w-full rounded-lg px-4 text-sm sm:w-auto"
+                  onClick={handleSavePreferences}
+                  type="button"
+                >
+                  {t.manageSaveButtonText}
+                </Button>
+              </div>
+            </Theme>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
+    </CookieConsentContext.Provider>
   );
 };
+
+export const CookieConsentProvider: React.FC = () => (
+  <CookieConsentProviderInner />
+);
