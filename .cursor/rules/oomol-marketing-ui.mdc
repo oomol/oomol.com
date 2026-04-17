@@ -14,7 +14,7 @@ alwaysApply: true
 
 - **Actions row**: use `align-items: flex-start` when multiple controls sit in one row so a **footnote/caption under one control** does not vertically center the shorter sibling — primary actions stay on one baseline.
 - **Mobile** (stacked actions): use `align-items: center` so full-width buttons stay centered.
-- Do not revert the outer “band” + inner “card” contrast without a product reason.
+- **Above footer**: CTA section and `@theme/Footer` share the **spotlight** band; avoid `margin-top` on the footer so body white does not show. Use **generous `padding-bottom` on `SiteCta.section`** plus a little **`padding-top` on `Footer.root`** so CTA card and footer never feel glued. Inner card uses **`--oomol-bg-base` (light)** / **`--oomol-bg-elevated` (dark)**; drop **page-level `padding-bottom`** when it only created a white strip (e.g. `/app` `.page`). **Footer (wide)**: **single CSS grid** — fixed **brand** track (`minmax(11rem, 13.5rem)`) + **`minmax(0,1fr)`** link area; **`repeat(4, minmax(0, 1fr))`** inside links; cap links with **`max-width: ~42rem`** and **`justify-self: end`** so the cluster sits **right** in the fluid column (brand left, links right — balanced rail). **Do not** use `space-between` on the footer row. **`padding-inline` on `Footer.root`**.
 
 ## CLI workflow strip (`CliPageLinearFlow`)
 

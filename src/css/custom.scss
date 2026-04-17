@@ -352,23 +352,15 @@ html[lang="en"] {
   margin-top: 3rem;
 }
 
+/* @theme/Footer is fully swizzled — layout lives in theme/Footer/styles.module.scss */
 .footer {
-  background-color: var(--oomol-bg-base);
-  margin-top: 48px;
-  margin-bottom: 48px;
+  background: transparent;
+  margin: 0;
+  padding: 0;
 }
 
 .footer__links {
-  margin-bottom: 3rem;
-  padding: 0 20% 0 23rem;
-}
-
-/* 移动端下的自定义样式 */
-
-@media screen and (max-width: 996px) {
-  .footer__links {
-    padding: 0;
-  }
+  display: none;
 }
 
 .navbar {

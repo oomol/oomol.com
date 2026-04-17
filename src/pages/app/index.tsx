@@ -981,7 +981,14 @@ export default function AppPage() {
           </div>
         </section>
 
-        <section id="downloads" className={styles.section}>
+        <section
+          id="downloads"
+          className={cx(
+            styles.section,
+            styles.sectionMuted,
+            styles.sectionFlushBottom
+          )}
+        >
           <div className={cx(styles.sectionIntro, styles.downloadsIntro)}>
             <h2>{copy.downloads.title}</h2>
           </div>

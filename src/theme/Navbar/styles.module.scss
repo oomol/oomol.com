@@ -7,7 +7,7 @@
 .signInButton {
   background: var(--oomol-primary);
   border: none;
-  border-radius: 4px;
+  border-radius: var(--ifm-global-radius);
   padding: 4px 4px;
   font-weight: 500;
   font-size: 14px;
@@ -32,7 +32,7 @@
   gap: 6px;
   background: inherit;
   border: 1px solid var(--oomol-border-default);
-  border-radius: 4px;
+  border-radius: var(--ifm-global-radius);
   padding: 6px 16px;
   font-weight: 500;
   font-size: 14px;
@@ -158,8 +158,8 @@
   left: 0;
   width: min(34rem, calc(100vw - 2rem));
   padding: 0.35rem;
-  border-radius: 10px;
-  border: 1px solid var(--oomol-divider);
+  border-radius: var(--ifm-global-radius);
+  border: 1px solid var(--oomol-border-default);
   background: var(--oomol-bg-elevated);
   box-shadow: var(--oomol-shadow-md);
   display: grid;
@@ -350,14 +350,6 @@
 .inner {
   display: flex;
   align-items: center;
-}
-
-.innerBox {
-  width: 100%;
-  height: 88px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 @media screen and (max-width: 550px) {
@@ -588,10 +580,9 @@
   .navbar {
     height: 64px;
     display: flex;
-    background: color-mix(in srgb, var(--oomol-bg-base) 86%, transparent);
+    background: color-mix(in srgb, var(--oomol-bg-base) 90%, transparent);
     backdrop-filter: blur(18px) saturate(128%);
-    border-bottom: 1px solid
-      color-mix(in srgb, var(--oomol-divider) 70%, transparent);
+    border-bottom: 1px solid var(--oomol-divider);
 
     // TODO: Disable the new navbar design for now,
     // and re-enable it after the docs style refactor is complete.
@@ -617,9 +608,8 @@
 @media (max-width: 996px) {
   .navbar {
     backdrop-filter: blur(10px) saturate(115%);
-    background: color-mix(in srgb, var(--oomol-bg-base) 88%, transparent);
-    border-bottom: 1px solid
-      color-mix(in srgb, var(--oomol-divider) 66%, transparent);
+    background: color-mix(in srgb, var(--oomol-bg-base) 92%, transparent);
+    border-bottom: 1px solid var(--oomol-divider);
   }
 
   .actions {

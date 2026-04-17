@@ -47,7 +47,8 @@
   --primary-button-hover-surface: var(--oomol-foreground-hover);
   position: relative;
   min-height: 100vh;
-  padding: 0 0 36px;
+  /* No bottom padding: avoid white strip above global footer (same as SiteCta flush). */
+  padding: 0;
   overflow-x: hidden;
   color: var(--text-primary);
   font-family: var(--oomol-font-body);
@@ -141,6 +142,12 @@
 
 .sectionMuted::before {
   background: var(--bg-container);
+}
+
+/* Last block before global footer: small runway on the band (matches SiteCta spacing rhythm). */
+.sectionFlushBottom {
+  padding-bottom: clamp(3.5rem, 7vw, 5.5rem);
+  border-bottom: none;
 }
 
 .section > * {
@@ -556,10 +563,10 @@ video.outputsShowcaseImage {
 .painCard,
 .downloadCard {
   position: relative;
-  border: 1px solid var(--oomol-divider);
+  border: 1px solid var(--oomol-border-default);
   border-radius: var(--app-radius);
   background: var(--card-surface);
-  box-shadow: none;
+  box-shadow: 0 1px 3px rgba(10, 10, 10, 0.055);
 }
 
 .painCard {
@@ -925,10 +932,6 @@ video.outputsShowcaseImage {
 }
 
 @media (max-width: 900px) {
-  .page {
-    padding-bottom: 32px;
-  }
-
   .heroHeader {
     width: var(--page-width);
   }

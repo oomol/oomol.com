@@ -2,10 +2,10 @@
 
 .section {
   width: 100%;
-  padding: clamp(5rem, 10vw, 8rem) 0;
-  /* Band behind the card so the CTA reads as a distinct surface (not “floating same as page”). */
+  /* Breathing room before footer while staying on the spotlight band (no body-white strip). */
+  padding: clamp(5rem, 10vw, 8rem) 0 clamp(3.5rem, 7vw, 5.5rem);
   background: var(--oomol-bg-spotlight);
-  border-bottom: 1px solid var(--oomol-divider);
+  border-bottom: none;
 }
 
 .inner {
@@ -16,8 +16,9 @@
   padding: clamp(2.4rem, 5vw, 4rem) clamp(2rem, 4.2vw, 3rem);
   border-radius: 14px;
   border: 1px solid var(--oomol-border-default);
+  /* Clear lift from the band: light = white card on spotlight; dark = elevated panel on container band. */
   background: var(--oomol-bg-base);
-  box-shadow: 0 1px 3px rgba(10, 10, 10, 0.06);
+  box-shadow: 0 1px 3px rgba(10, 10, 10, 0.07);
   justify-items: center;
   text-align: center;
 }
@@ -75,7 +76,7 @@
 
   &:hover {
     text-decoration: none;
-    background: var(--oomol-bg-spotlight);
+    background: var(--oomol-hover-bg);
     color: var(--oomol-text-primary);
   }
 }
@@ -91,7 +92,7 @@
 
 @media (max-width: 768px) {
   .section {
-    padding: 3.4rem 0;
+    padding: 3.4rem 0 clamp(2.5rem, 5vw, 3.5rem);
   }
 
   .inner {
@@ -131,6 +132,6 @@
   .inner {
     border-color: var(--oomol-border-default);
     background: var(--oomol-bg-elevated);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
   }
 }
