@@ -406,6 +406,11 @@ html[lang="en"] {
   .navbar__link--active {
     color: var(--oomol-primary);
   }
+
+  /* 若存在与 .navbar__item.navbar__link 的 color 竞争，用三类名压过（与暗色顶栏修复一致） */
+  .navbar__item.navbar__link.navbar__link--active {
+    color: var(--oomol-primary);
+  }
 }
 
 ::selection {

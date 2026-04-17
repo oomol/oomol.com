@@ -483,25 +483,26 @@
 
   :global(.navbar__link) {
     &:hover {
-      color: var(--oomol-text-primary);
+      color: var(--oomol-primary-text-hover);
       background: transparent;
       box-shadow: none;
     }
   }
 
-  :global(.navbar__link--active) {
-    color: var(--oomol-text-primary);
+  /* 必须包含 .navbar__item：否则特异性低于上一行的 .navbar__item.navbar__link，active 色永远不生效 */
+  :global(.navbar__item.navbar__link.navbar__link--active) {
+    color: var(--ifm-menu-color-active, var(--oomol-primary-text));
     background: transparent;
     box-shadow: none;
   }
 
   .productMenuTrigger.productMenuTriggerActive {
-    color: var(--oomol-text-primary);
+    color: var(--ifm-menu-color-active, var(--oomol-primary-text));
     background: transparent;
 
     &:hover,
     &:active {
-      color: var(--oomol-text-primary);
+      color: var(--ifm-menu-color-active, var(--oomol-primary-text));
       background: transparent;
     }
   }
