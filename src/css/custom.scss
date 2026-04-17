@@ -761,6 +761,40 @@ $desktop-width: $breakpoint-xl;
     line-height: 1.45;
   }
 
+  /*
+   * 文档侧栏：Infima .menu 默认 semibold(600)，整树偏粗。
+   * 默认用正文级 400，仅当前页略加重(500)，靠近右侧 TOC、又和顶栏区分得开。
+   */
+  .theme-doc-sidebar-container .menu {
+    font-weight: 400;
+    letter-spacing: -0.005em;
+  }
+
+  .theme-doc-sidebar-container .menu__link--active {
+    font-weight: 500;
+  }
+
+  /*
+   * 分类箭头：Infima 用 2rem 背景图 + 1.25rem 盒子，显得又粗又大。
+   * 缩小绘制尺寸并略降不透明度，贴近右侧 TOC 的体量。
+   */
+  .theme-doc-sidebar-container .menu__link--sublist-caret::after {
+    min-width: 0.8125rem;
+    width: 0.8125rem;
+    height: 0.8125rem;
+    background: var(--ifm-menu-link-sublist-icon) 50% / 0.8125rem 0.8125rem;
+    filter: var(--ifm-menu-link-sublist-icon-filter);
+    opacity: 0.72;
+  }
+
+  .theme-doc-sidebar-container .menu__caret::before {
+    width: 0.8125rem;
+    height: 0.8125rem;
+    background: var(--ifm-menu-link-sublist-icon) 50% / 0.8125rem 0.8125rem;
+    filter: var(--ifm-menu-link-sublist-icon-filter);
+    opacity: 0.72;
+  }
+
   @media screen and (max-width: 996px) {
     .theme-doc-markdown {
       > :where(p, ul, ol, blockquote) {
