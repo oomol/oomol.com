@@ -66,6 +66,16 @@ const VIDEO_FILES = {
   outputs: { zh: "epub-translate-4K-ZH.mp4", en: "epub-translator-4K-en.mp4" },
 } as const;
 
+/** 与导出素材一致；若源文件改版请同步更新（用于 /app 尺寸标注）。 */
+const APP_MEDIA_PIXELS = {
+  video4k: { width: 3840, height: 2160 },
+  nativeWorkspacePng: { width: 2470, height: 1964 },
+} as const;
+
+function formatMediaPixelDimensions(width: number, height: number): string {
+  return `${width} × ${height}`;
+}
+
 const APP_DESKTOP_DOWNLOAD_URLS = {
   macos: "https://app-downloads.oomol.com/oomol-ai/darwin/arm64",
   windows: "https://app-downloads.oomol.com/oomol-ai/win32/x64",
@@ -731,13 +741,21 @@ export default function AppPage() {
 
           <div className={styles.heroVisual}>
             <div className={styles.heroVisualInner}>
-              <div className={styles.heroFrame}>
-                <AutoPlayVideo
-                  className={styles.heroScreenshot}
-                  src={getLocalizedVideoSrc(VIDEO_FILES.hero, isZh)}
-                  label={copy.hero.productScreenshotAlt}
-                />
-              </div>
+              <figure className={styles.mediaFigure}>
+                <div className={styles.heroFrame}>
+                  <AutoPlayVideo
+                    className={styles.heroScreenshot}
+                    src={getLocalizedVideoSrc(VIDEO_FILES.hero, isZh)}
+                    label={copy.hero.productScreenshotAlt}
+                  />
+                </div>
+                <figcaption className={styles.mediaDimension}>
+                  {formatMediaPixelDimensions(
+                    APP_MEDIA_PIXELS.video4k.width,
+                    APP_MEDIA_PIXELS.video4k.height
+                  )}
+                </figcaption>
+              </figure>
             </div>
           </div>
         </section>
@@ -788,13 +806,23 @@ export default function AppPage() {
               <p>{copy.models.demo.description}</p>
             </div>
 
-            <div className={styles.modelDemoFrame}>
-              <img
-                src={nativeWorkspacePng}
-                alt={copy.models.demo.imageAlt}
-                className={styles.modelDemoImage}
-              />
-            </div>
+            <figure
+              className={cx(styles.mediaFigure, styles.modelDemoMediaFigure)}
+            >
+              <div className={styles.modelDemoFrame}>
+                <img
+                  src={nativeWorkspacePng}
+                  alt={copy.models.demo.imageAlt}
+                  className={styles.modelDemoImage}
+                />
+              </div>
+              <figcaption className={styles.mediaDimension}>
+                {formatMediaPixelDimensions(
+                  APP_MEDIA_PIXELS.nativeWorkspacePng.width,
+                  APP_MEDIA_PIXELS.nativeWorkspacePng.height
+                )}
+              </figcaption>
+            </figure>
           </div>
         </section>
 
@@ -830,11 +858,19 @@ export default function AppPage() {
             {workflowSteps.map(step => (
               <article key={step.title} className={styles.solutionItem}>
                 <div className={styles.solutionMedia}>
-                  <AutoPlayVideo
-                    className={styles.outputImage}
-                    src={step.videoSrc}
-                    label={step.alt}
-                  />
+                  <figure className={styles.mediaFigure}>
+                    <AutoPlayVideo
+                      className={styles.outputImage}
+                      src={step.videoSrc}
+                      label={step.alt}
+                    />
+                    <figcaption className={styles.mediaDimension}>
+                      {formatMediaPixelDimensions(
+                        APP_MEDIA_PIXELS.video4k.width,
+                        APP_MEDIA_PIXELS.video4k.height
+                      )}
+                    </figcaption>
+                  </figure>
                 </div>
 
                 <div className={styles.solutionText}>
@@ -854,13 +890,23 @@ export default function AppPage() {
           </div>
 
           <div className={styles.outputsShowcase}>
-            <div className={styles.outputsShowcaseFrame}>
-              <AutoPlayVideo
-                className={styles.outputsShowcaseImage}
-                src={getLocalizedVideoSrc(VIDEO_FILES.outputs, isZh)}
-                label={copy.outputs.imageAlt}
-              />
-            </div>
+            <figure
+              className={cx(styles.mediaFigure, styles.outputsShowcaseFigure)}
+            >
+              <div className={styles.outputsShowcaseFrame}>
+                <AutoPlayVideo
+                  className={styles.outputsShowcaseImage}
+                  src={getLocalizedVideoSrc(VIDEO_FILES.outputs, isZh)}
+                  label={copy.outputs.imageAlt}
+                />
+              </div>
+              <figcaption className={styles.mediaDimension}>
+                {formatMediaPixelDimensions(
+                  APP_MEDIA_PIXELS.video4k.width,
+                  APP_MEDIA_PIXELS.video4k.height
+                )}
+              </figcaption>
+            </figure>
           </div>
         </section>
 

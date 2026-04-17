@@ -1,6 +1,8 @@
 .page {
   /* 水平边距由 .hero / .section 的 padding-inline 承担，内层用 100% 即可 */
   --page-width: min(1200px, 100%);
+  /* 全宽展示型视频/截图统一上限：与正文主栏同宽，避免 Hero 单独 1480px「撑爆」 */
+  --app-showcase-media-max: var(--page-width);
   --app-radius: var(--ifm-global-radius);
   --app-section-pad-top: clamp(5.75rem, 8.5vw, 8rem);
   --app-section-pad-bottom: clamp(5.75rem, 9vw, 8.5rem);
@@ -177,7 +179,7 @@
 }
 
 .heroVisual {
-  width: min(1480px, calc(100vw - 24px));
+  width: var(--app-showcase-media-max);
   margin: 0 auto;
   animation-delay: 170ms;
 }
@@ -264,6 +266,42 @@ video.outputImage,
 video.outputsShowcaseImage {
   border-radius: var(--app-radius);
   background: var(--bg-elevated);
+}
+
+/*
+ * 媒体尺寸标注：与营销站中性层级一致（小字号、tertiary、不加重），
+ * 格式统一为「宽 × 高」像素，便于全站沿用同一套规范。
+ */
+.mediaFigure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.375rem;
+  width: 100%;
+}
+
+.mediaDimension {
+  margin: 0;
+  align-self: flex-end;
+  max-width: 100%;
+  font-size: 0.75rem;
+  line-height: 1.35;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  color: var(--text-tertiary);
+  text-align: right;
+}
+
+.modelDemoMediaFigure {
+  width: var(--app-showcase-media-max);
+  margin-inline: auto;
+}
+
+.outputsShowcaseFigure {
+  width: var(--app-showcase-media-max);
+  margin-inline: auto;
 }
 
 .section {
@@ -487,7 +525,7 @@ video.outputsShowcaseImage {
 }
 
 .modelDemoFrame {
-  width: min(100%, 1080px);
+  width: 100%;
   margin: 0 auto;
   border-radius: var(--app-radius);
   border: 1px solid var(--oomol-border-default);
@@ -585,6 +623,7 @@ video.outputsShowcaseImage {
   gap: 12px;
 }
 
+/* 与文案并排：实际宽度由双栏栅格决定，通常窄于 --app-showcase-media-max；≤1180px 单列后随容器拉满 */
 .solutionMedia {
   order: 2;
   width: min(100%, 39rem);
@@ -633,7 +672,7 @@ video.outputsShowcaseImage {
 }
 
 .outputsShowcaseFrame {
-  width: min(100%, 72rem);
+  width: 100%;
   overflow: clip;
   border-radius: var(--app-radius);
   border: 1px solid var(--oomol-border-default);
@@ -939,7 +978,7 @@ video.outputsShowcaseImage {
   }
 
   .heroVisual {
-    width: min(calc(100vw - 16px), 1480px);
+    width: min(var(--app-showcase-media-max), calc(100vw - 16px));
   }
 
   .problemsTitle {
