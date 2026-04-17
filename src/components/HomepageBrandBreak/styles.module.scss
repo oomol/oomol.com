@@ -22,7 +22,7 @@
   font-family: var(--oomol-font-display);
   font-size: var(--oomol-display-hero);
   line-height: 1;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: var(--oomol-tracking-display);
   color: color-mix(in srgb, var(--oomol-bg-base) 96%, transparent);
   white-space: pre-line;
@@ -75,12 +75,12 @@
 }
 
 .showcaseGlyph {
-  font-size: 1.35rem;
+  font-size: var(--oomol-font-size-xl);
   line-height: 1;
 }
 
 .showcaseCardLabel {
-  font-size: 0.92rem;
+  font-size: var(--oomol-body-base);
   font-weight: 600;
   letter-spacing: var(--oomol-tracking-body);
   color: color-mix(in srgb, var(--oomol-bg-base) 88%, transparent);

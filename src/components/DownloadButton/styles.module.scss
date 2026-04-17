@@ -36,14 +36,14 @@
     justify-content: center;
     width: 1.25rem;
     height: 1.25rem;
-    font-size: 1rem;
+    font-size: var(--oomol-font-size-base);
     color: inherit;
     flex-shrink: 0;
   }
 
   .downloadIcon {
     color: inherit;
-    font-size: 1rem;
+    font-size: var(--oomol-font-size-base);
     line-height: 1;
   }
 }
@@ -52,11 +52,11 @@
   .downloadIconWrap {
     width: 1.125rem;
     height: 1.125rem;
-    font-size: 0.9375rem;
+    font-size: var(--oomol-body-base);
   }
 
   .downloadIcon {
-    font-size: 0.9375rem;
+    font-size: var(--oomol-body-base);
   }
 }
 
@@ -72,7 +72,7 @@
 }
 
 .chipNote {
-  font-size: 13px;
+  font-size: var(--oomol-font-size-sm);
   margin-top: 10px;
   padding-left: 0.3rem;
   color: var(--oomol-text-tertiary);
@@ -90,7 +90,7 @@
 }
 
 .windowsSubtitle {
-  font-size: 13px;
+  font-size: var(--oomol-font-size-sm);
   margin-top: 10px;
   padding-left: 0.3rem;
   color: var(--oomol-text-tertiary);
@@ -104,7 +104,7 @@
 }
 
 .icon {
-  font-size: 16px;
+  font-size: var(--oomol-font-size-base);
   padding-left: 12px;
   color: var(--oomol-text-secondary);
 }
@@ -115,9 +115,10 @@
   gap: 12px;
   background-color: var(--oomol-bg-elevated);
   border-radius: 8px;
+  border: 1px solid var(--oomol-border-default);
   padding: 12px 16px;
   color: var(--oomol-text-secondary);
-  box-shadow: var(--oomol-shadow-sm);
+  box-shadow: none;
 
   a {
     text-decoration: none;
@@ -130,7 +131,7 @@
   align-items: center;
   transition: color 0.2s ease;
   font-weight: 500;
-  font-size: 14px;
+  font-size: var(--oomol-font-size-sm);
   color: var(--oomol-text-secondary);
 
   &:hover {

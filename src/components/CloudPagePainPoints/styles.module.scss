@@ -62,7 +62,8 @@
   margin: 0;
   max-width: 48rem;
   font-size: var(--oomol-body-lead);
-  line-height: 1.6;
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
   color: var(--oomol-text-secondary);
 }
 
@@ -107,7 +108,7 @@
 }
 
 .iconGlyph {
-  font-size: 1.15rem;
+  font-size: var(--oomol-body-lead);
 }
 
 .cardEyebrow {
@@ -200,7 +201,7 @@
   }
 
   .subtitle {
-    font-size: 1rem;
+    font-size: var(--oomol-font-size-base);
   }
 
   .card {

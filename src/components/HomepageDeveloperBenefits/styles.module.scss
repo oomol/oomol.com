@@ -26,10 +26,11 @@
   width: fit-content;
   align-items: center;
   gap: 0.55rem;
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-body-mono);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  text-transform: none;
   color: var(--oomol-text-secondary);
 
   &::before {
@@ -60,6 +61,7 @@
   font-size: var(--oomol-display-hero);
   line-height: 1.06;
   letter-spacing: var(--oomol-tracking-display);
+  font-weight: 600;
   color: var(--oomol-text-primary);
   text-wrap: balance;
 }
@@ -133,21 +135,21 @@
 
 .route {
   font-family: var(--oomol-font-mono);
-  font-size: 0.88rem;
+  font-size: var(--oomol-body-sm);
   font-weight: 600;
   letter-spacing: var(--oomol-tracking-mono);
   color: var(--oomol-text-primary);
 }
 
 .routeCaption {
-  font-size: 0.82rem;
+  font-size: var(--oomol-body-mono);
   line-height: 1.4;
   color: var(--oomol-text-tertiary);
 }
 
 .cardTitle {
   margin: 0;
-  font-size: 1.16rem;
+  font-size: var(--oomol-font-size-lg);
   line-height: 1.24;
   font-weight: 650;
   color: var(--oomol-text-primary);
@@ -156,7 +158,7 @@
 .cardDescription,
 .cardNote {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: var(--oomol-body-base);
   line-height: 1.56;
   color: var(--oomol-text-secondary);
 }
@@ -169,7 +171,7 @@
   padding-left: 0.68rem;
   border-left: 2px solid var(--oomol-divider);
   color: var(--oomol-text-tertiary);
-  font-size: 0.84rem;
+  font-size: var(--oomol-body-sm);
 }
 
 .cardFooter {
@@ -179,7 +181,7 @@
 
 .cta {
   width: fit-content;
-  font-size: 0.9rem;
+  font-size: var(--oomol-body-base);
   font-weight: 650;
 }
 
@@ -246,7 +248,7 @@
 
 :global(html[lang="en"]) .cardTitle {
   max-width: 20ch;
-  font-size: 1.2rem;
+  font-size: var(--oomol-font-size-xl);
   line-height: 1.32;
 }
 
@@ -291,7 +293,7 @@
   }
 
   .subtitle {
-    font-size: 0.94rem;
+    font-size: var(--oomol-body-base);
     line-height: 1.68;
   }
 
@@ -316,13 +318,13 @@
   }
 
   .cardTitle {
-    font-size: 1.2rem;
+    font-size: var(--oomol-font-size-xl);
     line-height: 1.28;
   }
 
   .cardDescription,
   .cardNote {
-    font-size: 0.94rem;
+    font-size: var(--oomol-body-base);
     line-height: 1.62;
   }
 
@@ -331,12 +333,12 @@
   }
 
   .valueCaption {
-    font-size: 0.84rem;
+    font-size: var(--oomol-body-sm);
     line-height: 1.45;
   }
 
   .cta {
     min-height: 2.35rem;
-    font-size: 0.92rem;
+    font-size: var(--oomol-body-base);
   }
 }

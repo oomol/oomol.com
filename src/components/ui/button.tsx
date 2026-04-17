@@ -6,10 +6,7 @@ import * as React from "react";
 /**
  * shadcn/ui Button — tuned to Vercel's marketing-site button system.
  *
- * Sizes / radii / type scale all match vercel.com exactly:
- *   sm       32px  / 12px pad / 13px / rounded 6px
- *   default  40px  / 16px pad / 14px / rounded 8px
- *   lg       48px  / 20px pad / 15px / rounded 8px
+ * Sizes / radii match vercel.com; type sizes use OOMOL tokens (mono/base/sm).
  *
  * All variants: font-weight 500, letter-spacing -0.01em,
  * never uppercase, never min-width, never box-shadow on idle.
@@ -73,9 +70,9 @@ const buttonVariants = cva(
         ].join(" "),
       },
       size: {
-        sm: "h-8 px-3 text-[13px] rounded-md",
-        default: "h-10 px-4 text-sm rounded-lg",
-        lg: "h-12 px-5 text-[15px] rounded-lg",
+        sm: "h-8 px-3 text-oomol-mono rounded-md",
+        default: "h-10 px-4 text-oomol-sm rounded-lg",
+        lg: "h-12 px-5 text-oomol-body rounded-lg",
         icon: "h-10 w-10 p-0 rounded-lg",
       },
     },

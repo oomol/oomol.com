@@ -7,9 +7,9 @@
   --app-section-pad-top: clamp(5.75rem, 8.5vw, 8rem);
   --app-section-pad-bottom: clamp(5.75rem, 9vw, 8.5rem);
   --app-block-gap-after-grid: clamp(1.5rem, 3.5vw, 2.75rem);
-  --fs-caption: 0.86rem;
-  --fs-body: 0.94rem;
-  --fs-body-lg: 1.04rem;
+  --fs-caption: var(--oomol-body-sm);
+  --fs-body: var(--oomol-body-base);
+  --fs-body-lg: var(--oomol-body-lead);
   --fs-title-sm: clamp(1.05rem, 1.4vw, 1.18rem);
   --fs-title-md: clamp(1.6rem, 2vw, 1.9rem);
   --lh-display: 1.04;
@@ -293,7 +293,7 @@ video.outputsShowcaseImage {
   margin: 0;
   align-self: flex-end;
   max-width: 100%;
-  font-size: 0.75rem;
+  font-size: var(--oomol-font-size-xs);
   line-height: 1.35;
   font-weight: 400;
   font-variant-numeric: tabular-nums;
@@ -338,7 +338,7 @@ video.outputsShowcaseImage {
   margin: 0;
   max-width: 32rem;
   color: var(--text-secondary);
-  font-size: var(--oomol-body-base);
+  font-size: var(--oomol-body-lead);
   line-height: var(--oomol-line-height-relaxed);
   letter-spacing: var(--oomol-tracking-body);
   text-wrap: pretty;
@@ -566,7 +566,7 @@ video.outputsShowcaseImage {
   border: 1px solid var(--oomol-border-default);
   border-radius: var(--app-radius);
   background: var(--card-surface);
-  box-shadow: 0 1px 3px rgba(10, 10, 10, 0.055);
+  box-shadow: none;
 }
 
 .painCard {
@@ -752,8 +752,9 @@ video.outputsShowcaseImage {
 
 .planPriceRow span {
   color: var(--text-tertiary);
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: var(--oomol-font-size-base);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-body);
 }
 
 .pricingFeatureBlock {

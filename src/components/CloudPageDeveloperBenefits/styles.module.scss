@@ -33,7 +33,7 @@
   border: 0;
   background: transparent;
   font-family: var(--oomol-font-mono);
-  font-size: 0.78rem;
+  font-size: var(--oomol-body-mono);
   font-weight: 500;
   letter-spacing: 0.02em;
   text-transform: none;
@@ -58,7 +58,7 @@
   padding: 0.2rem 0.55rem;
   border-radius: 6px;
   font-family: var(--oomol-font-mono);
-  font-size: 0.72rem;
+  font-size: var(--oomol-font-size-xs);
   font-weight: 500;
   letter-spacing: 0.01em;
   color: var(--oomol-text-tertiary);
@@ -81,8 +81,9 @@
 .subtitle {
   margin: 0;
   max-width: 32rem;
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
   color: var(--oomol-text-secondary);
 }
 
@@ -151,14 +152,14 @@
 
 .valueCaption {
   margin: 0;
-  font-size: 0.82rem;
+  font-size: var(--oomol-body-mono);
   line-height: 1.5;
   color: var(--oomol-text-tertiary);
 }
 
 .cardTitle {
   margin: 0;
-  font-size: 1.12rem;
+  font-size: var(--oomol-body-lead);
   line-height: 1.32;
   font-weight: 600;
   letter-spacing: -0.012em;
@@ -168,7 +169,7 @@
 .cardDescription,
 .cardNote {
   margin: 0;
-  font-size: 0.94rem;
+  font-size: var(--oomol-body-base);
   line-height: 1.6;
   color: var(--oomol-text-secondary);
 }
@@ -181,7 +182,7 @@
   padding-left: 0.8rem;
   border-left: 1px solid var(--oomol-divider);
   color: var(--oomol-text-tertiary);
-  font-size: 0.88rem;
+  font-size: var(--oomol-body-sm);
 }
 
 .cardFooter {
@@ -238,7 +239,7 @@
 
 :global(html[lang="en"]) .cardTitle {
   max-width: 22ch;
-  font-size: 1.14rem;
+  font-size: var(--oomol-body-lead);
   line-height: 1.34;
 }
 
@@ -302,7 +303,7 @@
   }
 
   .subtitle {
-    font-size: 0.96rem;
+    font-size: var(--oomol-body-base);
     line-height: 1.62;
   }
 
@@ -321,13 +322,13 @@
   }
 
   .cardTitle {
-    font-size: 1.04rem;
+    font-size: var(--oomol-body-lead);
     line-height: 1.3;
   }
 
   .cardDescription,
   .cardNote {
-    font-size: 0.9rem;
+    font-size: var(--oomol-body-base);
     line-height: 1.6;
   }
 
@@ -336,7 +337,7 @@
   }
 
   .valueCaption {
-    font-size: 0.78rem;
+    font-size: var(--oomol-body-mono);
     line-height: 1.45;
   }
 }

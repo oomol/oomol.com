@@ -217,6 +217,17 @@ html[lang="en"] {
   color: var(--oomol-text-secondary);
 }
 
+/* 与 section 主标题配套的说明（Linear / CTA 等 *Description* 类名） */
+.oomol-home-main [class*="sectionDescription" i],
+.oomol-home-main [class*="ctaDescription" i],
+.oomol-landing-main [class*="sectionDescription" i],
+.oomol-landing-main [class*="ctaDescription" i] {
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
+  color: var(--oomol-text-secondary);
+}
+
 /* ── Eyebrow / Kicker / Badge: 强制 Mono 小号 + primary 圆点 ── */
 
 .oomol-home-main [class*="eyebrow"],
@@ -639,14 +650,14 @@ $desktop-width: $breakpoint-xl;
 // 文档页面 sidebar 样式
 .sidebar-submenu-item {
   > .menu__link {
-    font-size: 16px;
+    font-size: var(--oomol-font-size-base);
     color: var(--oomol-text-primary);
   }
 
   .theme-doc-sidebar-item-link-level-2,
   .theme-doc-sidebar-item-category-level-2 > .menu__list-item-collapsible,
   .theme-doc-sidebar-item-link-level-3 {
-    font-size: 14px;
+    font-size: var(--oomol-font-size-sm);
 
     > .menu__link {
       color: var(--oomol-text-secondary) !important;
@@ -757,12 +768,26 @@ $desktop-width: $breakpoint-xl;
       margin-bottom: 0.75rem;
     }
 
-    h4,
-    h5,
-    h6 {
-      letter-spacing: -0.01em;
+    h4 {
+      font-size: var(--oomol-font-size-lg);
+      letter-spacing: var(--oomol-tracking-section);
       margin-top: 1.5rem;
       margin-bottom: 0.6rem;
+    }
+
+    h5 {
+      font-size: var(--oomol-font-size-base);
+      letter-spacing: var(--oomol-tracking-body);
+      margin-top: 1.35rem;
+      margin-bottom: 0.55rem;
+    }
+
+    h6 {
+      font-size: var(--oomol-font-size-sm);
+      letter-spacing: var(--oomol-tracking-body);
+      margin-top: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--oomol-text-secondary);
     }
   }
 
@@ -775,7 +800,7 @@ $desktop-width: $breakpoint-xl;
 
   .breadcrumbs__link,
   .table-of-contents__link {
-    font-size: 0.95rem;
+    font-size: var(--oomol-body-base);
   }
 
   .pagination-nav__label {
@@ -784,9 +809,9 @@ $desktop-width: $breakpoint-xl;
   }
 
   .pagination-nav__sublabel {
-    font-size: 0.82rem;
+    font-size: var(--oomol-body-mono);
     letter-spacing: 0.01em;
-    text-transform: uppercase;
+    text-transform: none;
   }
 
   .menu__link {

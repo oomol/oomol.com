@@ -46,8 +46,9 @@
 
 .description {
   margin: 0;
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
   text-wrap: pretty;
   color: var(--oomol-text-secondary);
 }
@@ -90,14 +91,14 @@
 .statLabel {
   display: inline;
   margin-right: 0.4rem;
-  font-size: 0.92rem;
+  font-size: var(--oomol-body-base);
   font-weight: 500;
   color: var(--oomol-text-primary);
 }
 
 .statText {
   margin: 0;
-  font-size: 0.88rem;
+  font-size: var(--oomol-body-sm);
   line-height: 1.55;
   color: var(--oomol-text-secondary);
 }
@@ -111,10 +112,10 @@
 .wallTitle {
   margin: 0;
   font-family: var(--oomol-font-mono);
-  font-size: 0.72rem;
+  font-size: var(--oomol-font-size-xs);
   font-weight: 500;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
+  text-transform: none;
   color: var(--oomol-text-tertiary);
 }
 
@@ -162,12 +163,12 @@
 }
 
 .toolIcon {
-  font-size: 1.1rem;
+  font-size: var(--oomol-body-lead);
   color: var(--oomol-text-primary);
 }
 
 .toolLabel {
-  font-size: 0.86rem;
+  font-size: var(--oomol-body-sm);
   font-weight: 500;
   color: var(--oomol-text-secondary);
   letter-spacing: -0.003em;

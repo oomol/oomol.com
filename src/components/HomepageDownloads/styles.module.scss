@@ -16,15 +16,20 @@
 }
 
 .overview {
-  font-size: 20px;
-  font-weight: 900;
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-display-section);
+  font-weight: 600;
+  letter-spacing: var(--oomol-tracking-section);
+  line-height: 1.12;
   text-align: center;
   color: var(--oomol-text-primary);
   margin-bottom: 14px;
 }
 
 .description {
-  font-size: 14px;
+  font-size: var(--oomol-body-base);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
   font-weight: 400;
   margin: 0;
   padding: 0 24px;
@@ -41,8 +46,8 @@
 .download-btn {
   width: 240px;
   min-height: 42px;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: var(--oomol-font-size-sm);
+  font-weight: 500;
 }
 
 .overview-blur-fade {
@@ -58,7 +63,7 @@
 }
 
 .icon {
-  font-size: 18px;
+  font-size: var(--oomol-font-size-lg);
 }
 
 @media (max-width: 768px) {

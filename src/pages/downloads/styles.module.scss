@@ -72,8 +72,9 @@
 .sub-title {
   margin: 0;
   max-width: 48rem;
-  font-size: 0.97rem;
-  line-height: 1.62;
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
   color: var(--oomol-text-secondary);
   text-wrap: pretty;
   margin-inline: auto;
@@ -136,8 +137,9 @@
 .sectionSubtitle {
   margin: 0;
   max-width: 46rem;
-  font-size: var(--oomol-body-base);
-  line-height: 1.62;
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
   color: var(--oomol-text-secondary);
   text-wrap: pretty;
 }
@@ -212,7 +214,7 @@
   background: var(--oomol-foreground);
   color: var(--oomol-foreground-contrast);
   font-family: var(--oomol-font-mono);
-  font-size: 11px;
+  font-size: var(--oomol-font-size-xs);
   line-height: 1.45;
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -235,7 +237,7 @@
 
 .description {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: var(--oomol-body-sm);
   line-height: 1.5;
   color: var(--oomol-text-secondary);
 }
@@ -259,7 +261,7 @@
 }
 
 .download-icon {
-  font-size: 0.95rem;
+  font-size: var(--oomol-body-base);
 }
 
 /* ── English overrides ─────────────────────────────────── */
@@ -318,7 +320,7 @@
   }
 
   .sub-title {
-    font-size: 0.94rem;
+    font-size: var(--oomol-body-base);
     line-height: 1.62;
   }
 

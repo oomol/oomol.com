@@ -21,8 +21,29 @@ const buttonBorderSafelist = [
   "hover:border-[var(--oomol-border-strong)]",
 ] as const;
 
+/** Marketing / product UI：字号只引用 design-tokens，避免 Tailwind 默认 text-sm 等与品牌阶不一致 */
+const oomolTypeSafelist = [
+  "text-oomol-xs",
+  "text-oomol-sm",
+  "text-oomol-base",
+  "text-oomol-lg",
+  "text-oomol-mono",
+  "text-oomol-body",
+  "sm:text-oomol-lg",
+  "sm:text-oomol-sm",
+  "sm:text-oomol-xs",
+] as const;
+
 export default defineConfig({
-  safelist: [...buttonBorderSafelist],
+  safelist: [...buttonBorderSafelist, ...oomolTypeSafelist],
+  rules: [
+    ["text-oomol-xs", { "font-size": "var(--oomol-font-size-xs)" }],
+    ["text-oomol-sm", { "font-size": "var(--oomol-font-size-sm)" }],
+    ["text-oomol-base", { "font-size": "var(--oomol-font-size-base)" }],
+    ["text-oomol-lg", { "font-size": "var(--oomol-font-size-lg)" }],
+    ["text-oomol-mono", { "font-size": "var(--oomol-body-mono)" }],
+    ["text-oomol-body", { "font-size": "var(--oomol-body-base)" }],
+  ],
   presets: [
     presetIcons({
       collections: {

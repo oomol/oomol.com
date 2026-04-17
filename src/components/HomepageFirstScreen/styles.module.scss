@@ -47,11 +47,11 @@
 .overview {
   margin: 0;
   max-width: 38rem;
-  font-size: 1.08rem;
-  line-height: 1.6;
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
   white-space: pre-line;
   color: var(--oomol-text-secondary);
-  letter-spacing: -0.003em;
+  letter-spacing: var(--oomol-tracking-body);
 }
 
 .actions {
@@ -214,8 +214,9 @@
   }
 
   .overview {
-    font-size: 1rem;
-    line-height: 1.62;
+    font-size: var(--oomol-body-lead);
+    line-height: var(--oomol-line-height-relaxed);
+    letter-spacing: var(--oomol-tracking-body);
     max-width: 34rem;
   }
 

@@ -24,25 +24,30 @@
 }
 
 .title {
-  font-size: 40px;
-  font-weight: 800;
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-display-section);
+  font-weight: 600;
+  letter-spacing: var(--oomol-tracking-section);
+  line-height: 1.12;
   margin-bottom: 16px;
   color: var(--oomol-text-primary);
+  text-wrap: balance;
 
   @media (max-width: 768px) {
-    font-size: 28px;
+    font-size: var(--oomol-display-section);
   }
 }
 
 .subtitle {
-  font-size: 18px;
+  font-size: var(--oomol-body-lead);
   color: var(--oomol-text-secondary);
   max-width: 700px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
 
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: var(--oomol-body-lead);
   }
 }
 
@@ -78,13 +83,15 @@
 }
 
 .cardTitle {
-  font-size: 24px;
-  font-weight: 700;
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-font-size-2xl);
+  font-weight: 600;
+  letter-spacing: var(--oomol-tracking-section);
   margin: 0 0 28px 0;
   color: var(--oomol-text-primary);
 
   @media (max-width: 768px) {
-    font-size: 20px;
+    font-size: var(--oomol-font-size-xl);
     margin-bottom: 20px;
   }
 }
@@ -111,8 +118,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: var(--oomol-font-size-lg);
+  font-weight: 600;
   box-shadow: none;
 }
 
@@ -121,18 +128,18 @@
 }
 
 .stepTitle {
-  font-size: 18px;
+  font-size: var(--oomol-font-size-lg);
   font-weight: 600;
   margin: 0 0 8px 0;
   color: var(--oomol-text-primary);
 
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: var(--oomol-font-size-base);
   }
 }
 
 .stepDesc {
-  font-size: 14px;
+  font-size: var(--oomol-font-size-sm);
   color: var(--oomol-text-secondary);
   line-height: 1.6;
   margin: 0 0 12px 0;
@@ -150,7 +157,7 @@
   background: var(--oomol-bg-subtle);
   color: var(--oomol-text-secondary);
   border-radius: 12px;
-  font-size: 12px;
+  font-size: var(--oomol-font-size-xs);
   font-weight: 500;
   border: 1px solid var(--oomol-border-subtle);
 }
@@ -185,7 +192,7 @@
 }
 
 .optionIcon {
-  font-size: 32px;
+  font-size: var(--oomol-font-size-3xl);
   flex-shrink: 0;
   line-height: 1;
 }
@@ -195,14 +202,14 @@
 }
 
 .optionTitle {
-  font-size: 16px;
+  font-size: var(--oomol-font-size-base);
   font-weight: 600;
   margin: 0 0 8px 0;
   color: var(--oomol-text-primary);
 }
 
 .optionDesc {
-  font-size: 14px;
+  font-size: var(--oomol-font-size-sm);
   color: var(--oomol-text-secondary);
   line-height: 1.5;
   margin: 0 0 12px 0;
@@ -214,7 +221,7 @@
   background: var(--oomol-primary);
   color: white;
   border-radius: 12px;
-  font-size: 12px;
+  font-size: var(--oomol-font-size-xs);
   font-weight: 600;
 }
 
@@ -239,21 +246,24 @@
 }
 
 .statValue {
-  font-size: 48px;
-  font-weight: 800;
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-font-size-5xl);
+  font-weight: 600;
+  letter-spacing: var(--oomol-tracking-display);
   color: var(--oomol-primary);
   line-height: 1;
   margin-bottom: 8px;
 
   @media (max-width: 768px) {
-    font-size: 36px;
+    font-size: var(--oomol-font-size-4xl);
   }
 }
 
 .statLabel {
-  font-size: 14px;
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-body-mono);
   color: var(--oomol-text-secondary);
   font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  text-transform: none;
+  letter-spacing: var(--oomol-tracking-mono);
 }

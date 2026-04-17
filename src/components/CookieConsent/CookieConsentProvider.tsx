@@ -324,7 +324,7 @@ const CookieConsentProviderInner: React.FC = () => {
       : t.manageCookiesStatusDeclined;
 
     return (
-      <p className="mt-2 m-0 text-left text-xs font-medium leading-snug text-[var(--oomol-text-tertiary)]">
+      <p className="mt-2 m-0 text-left text-oomol-xs font-medium leading-snug text-[var(--oomol-text-tertiary)]">
         {interpolateStatus(t.manageCookiesStatus, dateStr, statusLabel)}
       </p>
     );
@@ -344,15 +344,15 @@ const CookieConsentProviderInner: React.FC = () => {
           style={{ zIndex: "var(--oomol-z-cookie-banner)" }}
         >
           <div className="flex flex-col gap-3.5">
-            <h3 className="m-0 text-lg font-semibold leading-tight tracking-[-0.02em] text-[var(--oomol-text-primary)] [font-family:var(--oomol-font-display)]">
+            <h3 className="m-0 text-oomol-lg font-semibold leading-tight tracking-[-0.02em] text-[var(--oomol-text-primary)] [font-family:var(--oomol-font-display)]">
               {t.title}
             </h3>
-            <p className="m-0 text-[13px] leading-relaxed text-[var(--oomol-text-secondary)]">
+            <p className="m-0 text-oomol-mono leading-relaxed text-[var(--oomol-text-secondary)]">
               {t.message}
             </p>
             <div className="flex flex-col gap-3 border-t border-solid border-[var(--oomol-divider)] pt-3.5 sm:flex-row sm:items-center sm:justify-between">
               <a
-                className="order-last text-xs font-medium text-[var(--oomol-text-tertiary)] no-underline transition-colors hover:text-[var(--oomol-text-primary)] sm:order-first"
+                className="order-last text-oomol-xs font-medium text-[var(--oomol-text-tertiary)] no-underline transition-colors hover:text-[var(--oomol-text-primary)] sm:order-first"
                 href={privacyPolicyUrl}
                 rel="noopener noreferrer"
                 target="_blank"
@@ -361,7 +361,7 @@ const CookieConsentProviderInner: React.FC = () => {
               </a>
               <div className="flex flex-wrap items-center justify-end gap-2">
                 <Button
-                  className="h-8 rounded-md px-3 text-[13px]"
+                  className="h-8 rounded-md px-3"
                   onClick={handleRejectAll}
                   size="sm"
                   type="button"
@@ -370,7 +370,7 @@ const CookieConsentProviderInner: React.FC = () => {
                   {t.declineButtonText}
                 </Button>
                 <Button
-                  className="h-8 rounded-md px-3 text-[13px]"
+                  className="h-8 rounded-md px-3"
                   onClick={handleAcceptAll}
                   size="sm"
                   type="button"
@@ -406,10 +406,10 @@ const CookieConsentProviderInner: React.FC = () => {
               panelBackground="solid"
             >
               <div className="border-b border-solid border-[var(--oomol-divider)] px-5 py-4">
-                <Dialog.Title className="m-0 text-base font-semibold leading-snug tracking-[-0.02em] text-[var(--oomol-text-primary)] [font-family:var(--oomol-font-display)] sm:text-lg">
+                <Dialog.Title className="m-0 text-oomol-base font-semibold leading-snug tracking-[-0.02em] text-[var(--oomol-text-primary)] [font-family:var(--oomol-font-display)] sm:text-oomol-lg">
                   {t.manageTitle}
                 </Dialog.Title>
-                <Dialog.Description className="mt-2 m-0 text-[13px] leading-relaxed text-[var(--oomol-text-secondary)] sm:text-sm">
+                <Dialog.Description className="mt-2 m-0 text-oomol-mono leading-relaxed text-[var(--oomol-text-secondary)] sm:text-oomol-sm">
                   {t.manageMessage}
                 </Dialog.Description>
               </div>
@@ -418,17 +418,17 @@ const CookieConsentProviderInner: React.FC = () => {
                 <div className="divide-y divide-[var(--oomol-divider)] overflow-hidden rounded-xl border border-solid border-[var(--oomol-border-default)] bg-[var(--oomol-bg-container)]">
                   <div className="px-4 py-3.5 sm:px-5 sm:py-4">
                     <div className="flex items-start justify-between gap-3 sm:items-center">
-                      <h4 className="m-0 min-w-0 flex-1 text-sm font-semibold leading-snug text-[var(--oomol-text-primary)]">
+                      <h4 className="m-0 min-w-0 flex-1 text-oomol-sm font-semibold leading-snug text-[var(--oomol-text-primary)]">
                         {t.manageEssentialTitle}
                       </h4>
-                      <span className="shrink-0 rounded-full border border-solid border-[var(--oomol-border-default)] bg-[var(--oomol-bg-spotlight)] px-2.5 py-1 text-center text-[11px] font-semibold tabular-nums text-[var(--oomol-text-tertiary)] sm:px-3 sm:text-xs">
+                      <span className="shrink-0 rounded-full border border-solid border-[var(--oomol-border-default)] bg-[var(--oomol-bg-spotlight)] px-2.5 py-1 text-center text-oomol-xs font-semibold tabular-nums text-[var(--oomol-text-tertiary)] sm:px-3 sm:text-oomol-xs">
                         {t.manageEssentialStatusButtonText}
                       </span>
                     </div>
-                    <p className="mt-2 m-0 text-[13px] leading-relaxed text-[var(--oomol-text-secondary)]">
+                    <p className="mt-2 m-0 text-oomol-mono leading-relaxed text-[var(--oomol-text-secondary)]">
                       {t.manageEssentialSubtitle}
                     </p>
-                    <p className="mt-2 m-0 text-xs font-medium leading-snug text-[var(--oomol-text-tertiary)]">
+                    <p className="mt-2 m-0 text-oomol-xs font-medium leading-snug text-[var(--oomol-text-tertiary)]">
                       {t.manageEssentialStatus}
                     </p>
                   </div>
@@ -436,7 +436,7 @@ const CookieConsentProviderInner: React.FC = () => {
                   {CATEGORY_VISIBILITY.Analytics ? (
                     <div className="px-4 py-3.5 sm:px-5 sm:py-4">
                       <div className="flex items-start justify-between gap-3 sm:items-center">
-                        <h4 className="m-0 min-w-0 flex-1 text-sm font-semibold leading-snug text-[var(--oomol-text-primary)]">
+                        <h4 className="m-0 min-w-0 flex-1 text-oomol-sm font-semibold leading-snug text-[var(--oomol-text-primary)]">
                           {t.manageAnalyticsTitle}
                         </h4>
                         <CookiePreferenceSwitch
@@ -445,7 +445,7 @@ const CookieConsentProviderInner: React.FC = () => {
                           onCheckedChange={setDraftAnalytics}
                         />
                       </div>
-                      <p className="mt-2 m-0 text-[13px] leading-relaxed text-[var(--oomol-text-secondary)]">
+                      <p className="mt-2 m-0 text-oomol-mono leading-relaxed text-[var(--oomol-text-secondary)]">
                         {t.manageAnalyticsSubtitle}
                       </p>
                       {renderStatus("Analytics")}
@@ -455,7 +455,7 @@ const CookieConsentProviderInner: React.FC = () => {
                   {CATEGORY_VISIBILITY.Advertising ? (
                     <div className="px-4 py-3.5 sm:px-5 sm:py-4">
                       <div className="flex items-start justify-between gap-3 sm:items-center">
-                        <h4 className="m-0 min-w-0 flex-1 text-sm font-semibold leading-snug text-[var(--oomol-text-primary)]">
+                        <h4 className="m-0 min-w-0 flex-1 text-oomol-sm font-semibold leading-snug text-[var(--oomol-text-primary)]">
                           {t.manageAdvertTitle}
                         </h4>
                         <CookiePreferenceSwitch
@@ -464,7 +464,7 @@ const CookieConsentProviderInner: React.FC = () => {
                           onCheckedChange={setDraftAdvertising}
                         />
                       </div>
-                      <p className="mt-2 m-0 text-[13px] leading-relaxed text-[var(--oomol-text-secondary)]">
+                      <p className="mt-2 m-0 text-oomol-mono leading-relaxed text-[var(--oomol-text-secondary)]">
                         {t.manageAdvertSubtitle}
                       </p>
                       {renderStatus("Advertising")}
@@ -476,7 +476,7 @@ const CookieConsentProviderInner: React.FC = () => {
               <div className="flex flex-col-reverse gap-2 border-t border-solid border-[var(--oomol-divider)] px-5 py-3.5 sm:flex-row sm:justify-end sm:gap-3 sm:py-4">
                 <Dialog.Close asChild>
                   <Button
-                    className="h-9 w-full rounded-lg px-4 text-sm sm:w-auto"
+                    className="h-9 w-full rounded-lg px-4 text-oomol-sm sm:w-auto"
                     type="button"
                     variant="outline"
                   >
@@ -484,7 +484,7 @@ const CookieConsentProviderInner: React.FC = () => {
                   </Button>
                 </Dialog.Close>
                 <Button
-                  className="h-9 w-full rounded-lg px-4 text-sm sm:w-auto"
+                  className="h-9 w-full rounded-lg px-4 text-oomol-sm sm:w-auto"
                   onClick={handleSavePreferences}
                   type="button"
                 >

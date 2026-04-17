@@ -45,23 +45,23 @@
 
 .badge {
   fill: var(--placeholder-muted-text);
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  font-size: var(--oomol-font-size-2xl);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: none;
 }
 
 .title {
   fill: var(--placeholder-strong-text);
   font-family: var(--oomol-font-display);
-  font-size: 82px;
-  font-weight: 700;
+  font-size: calc(var(--oomol-font-size-6xl) + 1.625rem);
+  font-weight: 600;
   letter-spacing: -0.045em;
 }
 
 .summary {
   fill: var(--placeholder-body-text);
-  font-size: 30px;
+  font-size: var(--oomol-font-size-3xl);
   font-weight: 500;
 }
 
@@ -73,9 +73,9 @@
 
 .chipLabel {
   fill: var(--placeholder-chip-text);
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-size: var(--oomol-font-size-2xl);
+  font-weight: 500;
+  letter-spacing: 0.06em;
 }
 
 .sidePanel {
@@ -91,20 +91,20 @@
 
 .stepIndex {
   fill: var(--placeholder-step-index);
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-size: var(--oomol-font-size-2xl);
+  font-weight: 600;
+  letter-spacing: 0.08em;
 }
 
 .stepTitle {
   fill: var(--placeholder-strong-text);
-  font-size: 32px;
-  font-weight: 700;
+  font-size: var(--oomol-font-size-3xl);
+  font-weight: 600;
 }
 
 .stepDetail {
   fill: var(--placeholder-body-text);
-  font-size: 23px;
+  font-size: var(--oomol-font-size-2xl);
 }
 
 .footnoteRule {
@@ -114,7 +114,7 @@
 
 .footnote {
   fill: var(--placeholder-muted-text);
-  font-size: 22px;
+  font-size: var(--oomol-font-size-2xl);
   font-weight: 600;
   letter-spacing: 0.06em;
 }

@@ -18,7 +18,7 @@ const DropdownMenuSubTrigger = React.forwardRef<
   <DropdownMenuPrimitive.SubTrigger
     ref={ref}
     className={cn(
-      "flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none",
+      "flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-oomol-sm outline-none",
       "focus:bg-[var(--oomol-hover-bg)] data-[state=open]:bg-[var(--oomol-hover-bg)]",
       inset && "pl-8",
       className
@@ -80,7 +80,7 @@ const DropdownMenuItem = React.forwardRef<
   <DropdownMenuPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors",
+      "relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-oomol-sm outline-none transition-colors",
       "focus:bg-[var(--oomol-hover-bg)] focus:text-[var(--oomol-text-primary)]",
       "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       inset && "pl-8",
@@ -98,7 +98,7 @@ const DropdownMenuCheckboxItem = React.forwardRef<
   <DropdownMenuPrimitive.CheckboxItem
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors",
+      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-oomol-sm outline-none transition-colors",
       "focus:bg-[var(--oomol-hover-bg)] focus:text-[var(--oomol-text-primary)]",
       "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       className
@@ -124,7 +124,7 @@ const DropdownMenuRadioItem = React.forwardRef<
   <DropdownMenuPrimitive.RadioItem
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors",
+      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-oomol-sm outline-none transition-colors",
       "focus:bg-[var(--oomol-hover-bg)] focus:text-[var(--oomol-text-primary)]",
       "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       className
@@ -151,7 +151,7 @@ const DropdownMenuLabel = React.forwardRef<
   <DropdownMenuPrimitive.Label
     ref={ref}
     className={cn(
-      "px-2 py-1.5 text-sm font-semibold",
+      "px-2 py-1.5 text-oomol-sm font-semibold",
       inset && "pl-8",
       className
     )}
@@ -180,7 +180,7 @@ const DropdownMenuShortcut = ({
   return (
     <span
       className={cn(
-        "ml-auto text-xs tracking-widest text-[var(--oomol-text-tertiary)]",
+        "ml-auto text-oomol-xs tracking-widest text-[var(--oomol-text-tertiary)]",
         className
       )}
       {...props}

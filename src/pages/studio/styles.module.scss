@@ -311,8 +311,10 @@
 }
 
 .principleText {
-  font-size: var(--oomol-body-base);
-  line-height: 1.6;
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
+  color: var(--oomol-text-secondary);
 }
 
 :global(html[lang="en"]) .heroTitle {
@@ -382,7 +384,7 @@
   }
 
   .heroDescription {
-    font-size: 1rem;
+    font-size: var(--oomol-body-lead);
   }
 
   .heroShowcaseInner {
@@ -394,11 +396,11 @@
   }
 
   .painPointTitle {
-    font-size: 1.05rem;
+    font-size: var(--oomol-body-lead);
   }
 
   .principleTitle {
-    font-size: 1.3rem;
+    font-size: var(--oomol-font-size-xl);
   }
 }
 

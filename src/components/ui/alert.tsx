@@ -4,7 +4,7 @@ import * as React from "react";
 
 const alertVariants = cva(
   [
-    "relative w-full rounded-[12px] border px-4 py-3 text-sm",
+    "relative w-full rounded-[12px] border px-4 py-3 text-oomol-sm",
     "[&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-[var(--oomol-text-primary)]",
     "[&>svg~*]:pl-7",
   ].join(" "),
@@ -59,7 +59,7 @@ const AlertDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("text-sm leading-[1.55] [&_p]:leading-[1.55]", className)}
+    className={cn("text-oomol-sm leading-[1.55] [&_p]:leading-[1.55]", className)}
     {...props}
   />
 ));

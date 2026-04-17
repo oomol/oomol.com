@@ -9,7 +9,7 @@ const Table = React.forwardRef<
     <table
       ref={ref}
       className={cn(
-        "w-full caption-bottom text-sm text-[var(--oomol-text-primary)]",
+        "w-full caption-bottom text-oomol-sm text-[var(--oomol-text-primary)]",
         className
       )}
       {...props}
@@ -112,7 +112,7 @@ const TableCaption = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <caption
     ref={ref}
-    className={cn("mt-4 text-sm text-[var(--oomol-text-tertiary)]", className)}
+    className={cn("mt-4 text-oomol-sm text-[var(--oomol-text-tertiary)]", className)}
     {...props}
   />
 ));

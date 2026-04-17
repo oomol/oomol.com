@@ -30,7 +30,7 @@
   border: 0;
   background: transparent;
   font-family: var(--oomol-font-mono);
-  font-size: 0.78rem;
+  font-size: var(--oomol-body-mono);
   font-weight: 500;
   letter-spacing: 0.02em;
   text-transform: none;
@@ -62,8 +62,9 @@
 .subtitle {
   margin: 0;
   max-width: 40rem;
-  font-size: 1.04rem;
-  line-height: 1.6;
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
   text-wrap: pretty;
   color: var(--oomol-text-secondary);
 }
@@ -135,20 +136,20 @@
   border-radius: 999px;
   border: 1px solid var(--oomol-divider);
   background: var(--oomol-bg-base);
-  font-size: 0.78rem;
+  font-size: var(--oomol-body-mono);
   font-weight: 500;
   color: var(--oomol-text-secondary);
   letter-spacing: -0.003em;
 }
 
 .appIcon {
-  font-size: 0.88rem;
+  font-size: var(--oomol-body-sm);
   color: var(--oomol-text-primary);
 }
 
 .cardTitle {
   margin: 0;
-  font-size: 1.08rem;
+  font-size: var(--oomol-body-lead);
   line-height: 1.32;
   font-weight: 600;
   letter-spacing: -0.012em;
@@ -157,7 +158,7 @@
 
 .cardDescription {
   margin: 0;
-  font-size: 0.92rem;
+  font-size: var(--oomol-body-base);
   line-height: 1.6;
   color: var(--oomol-text-secondary);
 }
@@ -176,10 +177,10 @@
 .exampleLabel,
 .resultLabel {
   font-family: var(--oomol-font-mono);
-  font-size: 0.68rem;
+  font-size: var(--oomol-font-size-xs);
   font-weight: 500;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
+  text-transform: none;
   color: var(--oomol-text-tertiary);
 }
 
@@ -188,7 +189,7 @@
   padding-left: 1rem;
   position: relative;
   font-family: var(--oomol-font-mono);
-  font-size: 0.82rem;
+  font-size: var(--oomol-body-mono);
   line-height: 1.56;
   color: var(--oomol-text-primary);
 
@@ -226,7 +227,7 @@
   margin: 0;
   padding-left: 1rem;
   position: relative;
-  font-size: 0.88rem;
+  font-size: var(--oomol-body-sm);
   line-height: 1.56;
   color: var(--oomol-text-primary);
   font-weight: 500;
@@ -282,7 +283,7 @@
 }
 
 :global(html[lang="en"]) .cardTitle {
-  font-size: 1.12rem;
+  font-size: var(--oomol-body-lead);
   line-height: 1.32;
 }
 
@@ -314,7 +315,7 @@
   }
 
   .subtitle {
-    font-size: 0.98rem;
+    font-size: var(--oomol-body-base);
     line-height: 1.6;
     max-width: 32rem;
   }
@@ -335,17 +336,17 @@
   }
 
   .cardTitle {
-    font-size: 1.04rem;
+    font-size: var(--oomol-body-lead);
   }
 
   .cardDescription {
-    font-size: 0.9rem;
+    font-size: var(--oomol-body-base);
     line-height: 1.6;
   }
 
   .exampleText,
   .resultText {
-    font-size: 0.82rem;
+    font-size: var(--oomol-body-mono);
   }
 
   .resultBlock {

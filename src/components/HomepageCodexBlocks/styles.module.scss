@@ -43,8 +43,10 @@
   max-width: 12ch;
   font-family: var(--oomol-font-display);
   font-size: var(--oomol-display-hero);
-  line-height: 0.98;
+  line-height: 1.04;
   letter-spacing: var(--oomol-tracking-display);
+  font-weight: 600;
+  text-wrap: balance;
   color: var(--oomol-text-primary);
 }
 
@@ -101,7 +103,7 @@
   box-shadow: none;
 
   i {
-    font-size: 1.15rem;
+    font-size: var(--oomol-body-lead);
   }
 }
 
@@ -116,14 +118,14 @@
 
 .cardTitle {
   margin: 0;
-  font-size: 1.38rem;
+  font-size: var(--oomol-font-size-2xl);
   line-height: 1.18;
   color: var(--oomol-text-primary);
 }
 
 .cardDescription {
   margin: 0;
-  font-size: 0.96rem;
+  font-size: var(--oomol-body-base);
   line-height: 1.7;
   color: var(--oomol-text-secondary);
 }
@@ -222,7 +224,7 @@
   box-shadow: none;
 
   i {
-    font-size: 1.2rem;
+    font-size: var(--oomol-font-size-xl);
     color: rgba(245, 248, 255, 0.96);
     transform: translateX(1px);
   }
@@ -233,10 +235,10 @@
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: var(--oomol-font-size-xs);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  text-transform: none;
   color: rgba(224, 230, 242, 0.76);
 }
 
@@ -246,16 +248,16 @@
 }
 
 .videoMetaTitle {
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: var(--oomol-body-mono);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  text-transform: none;
   color: var(--oomol-text-secondary);
 }
 
 .videoMetaNote {
   margin: 0;
-  font-size: 0.92rem;
+  font-size: var(--oomol-body-base);
   line-height: 1.58;
   color: var(--oomol-text-secondary);
 }
@@ -292,7 +294,7 @@
   .subtitle,
   .cardDescription,
   .videoMetaNote {
-    font-size: 0.93rem;
+    font-size: var(--oomol-body-base);
     line-height: 1.58;
   }
 }

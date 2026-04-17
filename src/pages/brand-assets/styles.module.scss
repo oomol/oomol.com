@@ -25,19 +25,27 @@
 .title {
   display: flex;
   align-items: center;
-  font-size: 58px;
-  line-height: 58px;
-  font-weight: 800;
+  justify-content: center;
+  margin: 0;
+  max-width: 22ch;
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-display-hero);
+  line-height: 1.06;
+  letter-spacing: var(--oomol-tracking-display);
+  font-weight: 600;
   text-align: center;
+  text-wrap: balance;
   color: var(--oomol-text-primary);
 }
 
 .subTitle {
-  font-size: 20px;
-  line-height: 30px;
+  margin: 0;
+  max-width: 42rem;
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
   font-weight: 400;
   text-align: center;
-  vertical-align: middle;
   @include flatSecondaryText;
 }
 
@@ -75,7 +83,7 @@
 .sideBarWrapper {
   display: block;
   color: var(--oomol-text-secondary);
-  font-size: 16px;
+  font-size: var(--oomol-font-size-base);
   transition: color 0.3s ease;
 
   &:hover {
@@ -116,7 +124,7 @@
 
 .sidebarText {
   height: 24px;
-  font-size: 16px;
+  font-size: var(--oomol-font-size-base);
   font-weight: 400;
   display: inline-block;
   vertical-align: middle;
@@ -146,11 +154,13 @@
 }
 
 .sectionTitle {
-  font-weight: 800;
-  font-size: 32px;
-  line-height: 32px;
+  margin: 0;
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-display-section);
+  line-height: 1.12;
+  letter-spacing: var(--oomol-tracking-section);
+  font-weight: 600;
   color: var(--oomol-text-primary);
-  vertical-align: middle;
   text-align: left;
 }
 
@@ -195,7 +205,7 @@
   color: var(--oomol-text-secondary);
 
   i {
-    font-size: 1rem;
+    font-size: var(--oomol-font-size-base);
   }
 
   &:hover {

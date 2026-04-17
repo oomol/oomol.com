@@ -50,7 +50,8 @@ type LogoNodeDataType = {
   name: string;
   iconClass: string;
   href: string;
-  size: number;
+  /** Slightly larger glyph (22px) for icons that read small at xl */
+  iconWide?: boolean;
 };
 
 const logoNodeData: LogoNodeDataType[] = [
@@ -58,25 +59,23 @@ const logoNodeData: LogoNodeDataType[] = [
     name: "twitter",
     iconClass: "i-bi-twitter-x",
     href: "https://twitter.com/OomolStudio",
-    size: 20,
   },
   {
     name: "discord",
     iconClass: "i-bi-discord",
     href: "https://discord.gg/W3evr2kJDa",
-    size: 22,
+    iconWide: true,
   },
   {
     name: "youtube",
     iconClass: "i-bi-youtube",
     href: "https://www.youtube.com/@oomolstudio",
-    size: 22,
+    iconWide: true,
   },
   {
     name: "github",
     iconClass: "i-bi-github",
     href: "https://github.com/oomol-lab",
-    size: 20,
   },
 ];
 
@@ -85,25 +84,23 @@ const logoNodeDataCN: LogoNodeDataType[] = [
     name: "twitter",
     iconClass: "i-bi-twitter-x",
     href: "https://twitter.com/OomolStudio",
-    size: 20,
   },
   {
     name: "discord",
     iconClass: "i-bi-discord",
     href: "https://discord.gg/W3evr2kJDa",
-    size: 22,
+    iconWide: true,
   },
   {
     name: "youtube",
     iconClass: "i-bi-youtube",
     href: "https://www.youtube.com/@oomolstudio",
-    size: 22,
+    iconWide: true,
   },
   {
     name: "github",
     iconClass: "i-bi-github",
     href: "https://github.com/oomol-lab",
-    size: 20,
   },
 ];
 
@@ -165,8 +162,12 @@ const Footer: React.FC = () => {
       >
         <div className={styles.iconBox}>
           <i
-            className={data.iconClass}
-            style={{ fontSize: `${data.size}px` }}
+            className={clsx(
+              data.iconClass,
+              styles.socialIcon,
+              data.iconWide && styles.socialIconWide
+            )}
+            aria-hidden="true"
           />
         </div>
       </a>
@@ -195,11 +196,11 @@ const Footer: React.FC = () => {
                   onBlur={() => setIsHovered(false)}
                 >
                   <i
-                    className="i-simple-icons-wechat"
-                    style={{
-                      fontSize: "20px",
-                      color: "inherit",
-                    }}
+                    className={clsx(
+                      "i-simple-icons-wechat",
+                      styles.socialIcon
+                    )}
+                    aria-hidden="true"
                   />
                 </div>
               }

@@ -32,14 +32,20 @@
   max-width: 13ch;
   font-family: var(--oomol-font-display);
   font-size: var(--oomol-display-hero);
-  line-height: 0.98;
+  line-height: 1.04;
   letter-spacing: var(--oomol-tracking-display);
+  font-weight: 600;
+  text-wrap: balance;
   color: var(--oomol-text-primary);
 }
 
 .sectionSubtitle {
   margin: 0;
   max-width: 48rem;
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
+  color: var(--oomol-text-secondary);
 }
 
 .headerRule {
@@ -303,7 +309,7 @@
 .outputDescription,
 .benefitDescription {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: var(--oomol-body-base);
   line-height: 1.7;
   color: var(--oomol-text-secondary);
 }
@@ -401,7 +407,7 @@
   .inlineNote,
   .outputDescription,
   .benefitDescription {
-    font-size: 0.93rem;
+    font-size: var(--oomol-body-base);
     line-height: 1.6;
   }
 
@@ -416,7 +422,7 @@
   }
 
   .cardLead {
-    font-size: 1rem;
+    font-size: var(--oomol-font-size-base);
     line-height: 1.5;
   }
 
@@ -455,7 +461,7 @@
   .outputIndex {
     min-width: 2rem;
     min-height: 2rem;
-    font-size: 0.75rem;
+    font-size: var(--oomol-font-size-xs);
   }
 
   .outputsGrid {
@@ -474,12 +480,12 @@
 
   .outputTitle {
     margin-bottom: 0.35rem;
-    font-size: 1.2rem;
+    font-size: var(--oomol-font-size-xl);
   }
 
   .benefitValue {
     margin-bottom: 0.3rem;
-    font-size: 1.22rem;
+    font-size: var(--oomol-font-size-xl);
   }
 
   .outputDescription,

@@ -18,7 +18,7 @@
   border: 1px solid var(--oomol-border-default);
   /* Clear lift from the band: light = white card on spotlight; dark = elevated panel on container band. */
   background: var(--oomol-bg-base);
-  box-shadow: 0 1px 3px rgba(10, 10, 10, 0.07);
+  box-shadow: none;
   justify-items: center;
   text-align: center;
 }
@@ -38,8 +38,9 @@
 .description {
   margin: 0;
   max-width: 42rem;
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
   color: var(--oomol-text-secondary);
 }
 
@@ -63,9 +64,9 @@
   min-height: 48px;
   padding: 0 1.25rem;
   border-radius: var(--ifm-global-radius);
-  font-size: 15px;
+  font-size: var(--oomol-body-base);
   font-weight: 500;
-  letter-spacing: -0.005em;
+  letter-spacing: var(--oomol-tracking-body);
   text-decoration: none;
   color: var(--oomol-text-primary);
   border: 1px solid var(--oomol-border-strong);
@@ -107,8 +108,8 @@
   }
 
   .description {
-    font-size: 0.96rem;
-    line-height: 1.62;
+    font-size: var(--oomol-body-base);
+    line-height: var(--oomol-line-height-relaxed);
   }
 
   .actions {
@@ -132,6 +133,6 @@
   .inner {
     border-color: var(--oomol-border-default);
     background: var(--oomol-bg-elevated);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: none;
   }
 }

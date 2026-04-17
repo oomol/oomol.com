@@ -45,7 +45,7 @@
   font-family: var(--oomol-font-display);
   font-size: clamp(8rem, 22vw, 18rem);
   line-height: 0.9;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.05em;
   color: transparent;
   -webkit-text-stroke: 1px var(--oomol-border-default);
@@ -71,7 +71,7 @@
   border: 0;
   background: transparent;
   font-family: var(--oomol-font-mono);
-  font-size: 0.78rem;
+  font-size: var(--oomol-body-mono);
   font-weight: 500;
   letter-spacing: 0.02em;
   text-transform: none;
@@ -118,8 +118,9 @@
 .ctaDescription {
   margin: 0;
   max-width: 36rem;
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
   color: var(--oomol-text-secondary);
 }
 
@@ -137,7 +138,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  font-size: 0.94rem;
+  font-size: var(--oomol-body-base);
   font-weight: 500;
   color: var(--oomol-text-primary);
   text-decoration: none;
@@ -264,7 +265,7 @@
 
 .videoCardTitle {
   margin: 0;
-  font-size: 0.96rem;
+  font-size: var(--oomol-body-base);
   font-weight: 500;
   line-height: 1.35;
   letter-spacing: -0.01em;
@@ -273,7 +274,7 @@
 
 .videoCardNote {
   margin: 0.35rem 0 0;
-  font-size: 0.85rem;
+  font-size: var(--oomol-body-sm);
   line-height: 1.56;
   color: var(--oomol-text-tertiary);
 }
@@ -306,10 +307,10 @@
 
 .terminalLabel {
   font-family: var(--oomol-font-mono);
-  font-size: 0.76rem;
+  font-size: var(--oomol-font-size-xs);
   font-weight: 500;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
+  text-transform: none;
   color: var(--oomol-text-tertiary);
 }
 
@@ -318,7 +319,7 @@
   padding: 0;
   white-space: pre-wrap;
   font-family: var(--oomol-font-mono);
-  font-size: 0.92rem;
+  font-size: var(--oomol-body-base);
   line-height: 1.9;
   color: var(--oomol-text-primary);
 }
@@ -330,7 +331,7 @@
 .commentLine {
   display: block;
   margin: 0 0 0.3rem;
-  font-size: 0.86rem;
+  font-size: var(--oomol-body-sm);
   line-height: 1.5;
   color: var(--oomol-text-tertiary);
 }
@@ -373,7 +374,7 @@
 
 .cloudTitle {
   margin: 0;
-  font-size: 0.96rem;
+  font-size: var(--oomol-body-base);
   line-height: 1.34;
   letter-spacing: -0.01em;
   font-weight: 600;
@@ -382,7 +383,7 @@
 
 .cloudText {
   margin: 0.5rem 0 0;
-  font-size: 0.88rem;
+  font-size: var(--oomol-body-sm);
   line-height: 1.58;
   color: var(--oomol-text-secondary);
 }
@@ -476,7 +477,7 @@
 
   .sectionDescription,
   .ctaDescription {
-    font-size: 0.98rem;
+    font-size: var(--oomol-body-base);
     line-height: 1.62;
   }
 

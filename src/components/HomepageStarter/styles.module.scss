@@ -1,3 +1,5 @@
+@use "../../css/custom.scss" as *;
+
 .sectionStarter {
   width: 100%;
   display: flex;
@@ -9,10 +11,15 @@
 }
 
 .title {
-  font-size: 42px;
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-display-section);
+  line-height: 1.12;
+  letter-spacing: var(--oomol-tracking-section);
+  font-weight: 600;
   margin-top: 12px;
   margin-bottom: 12px;
-  font-weight: bold;
+  color: var(--oomol-text-primary);
+  text-wrap: balance;
 }
 
 .inner {
@@ -23,7 +30,7 @@
 
 .cta {
   min-width: 11rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 @media screen and (max-width: 600px) {

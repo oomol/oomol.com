@@ -35,17 +35,14 @@
   overflow: hidden;
   padding: 20px;
   text-align: left;
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: border-color 0.18s ease;
   background-color: var(--oomol-bg-elevated);
   border: 1px solid var(--oomol-border-subtle);
-  border-radius: 10px;
-  box-shadow: var(--oomol-shadow-sm);
+  border-radius: 14px;
+  box-shadow: none;
   box-sizing: border-box;
 
   &:hover {
-    box-shadow: var(--oomol-shadow-sm);
     border-color: var(--oomol-border-strong);
   }
 }
@@ -92,18 +89,6 @@
   background: var(--oomol-bg-elevated);
   color: var(--oomol-text-secondary);
   border-color: var(--oomol-border-default);
-}
-
-.pro {
-  .btn {
-    --oomol-button-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.2),
-      0 16px 28px color-mix(in srgb, var(--oomol-primary) 22%, transparent);
-    --oomol-button-shadow-hover:
-      inset 0 1px 0 rgba(255, 255, 255, 0.22),
-      0 20px 34px
-        color-mix(in srgb, var(--oomol-primary-hover) 24%, transparent);
-  }
 }
 
 :global(html[data-theme="light"]) .pro {
@@ -158,12 +143,11 @@
 
 .btn {
   width: 100%;
-  min-height: 44px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .check {
-  font-size: 20px;
+  font-size: var(--oomol-font-size-xl);
   color: var(--oomol-success);
 }
 
