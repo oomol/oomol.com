@@ -162,6 +162,7 @@
 .painCard,
 .solutionItem,
 .outputsShowcaseFrame,
+.outputsShowcaseFigure,
 .pricingCard,
 .downloadCard {
   opacity: 0;
@@ -857,6 +858,24 @@ video.outputsShowcaseImage {
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroCopy,
+  .heroVisual,
+  .sectionIntro,
+  .painCard,
+  .solutionItem,
+  .outputsShowcaseFrame,
+  .outputsShowcaseFigure,
+  .pricingCard,
+  .downloadCard,
+  .modelFeatureCard,
+  .modelDemo {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 
