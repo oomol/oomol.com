@@ -377,6 +377,16 @@ html[lang="en"] {
   background: var(--ifm-menu-link-sublist-icon) 50% / 1.25rem 1.25rem;
 }
 
+/* Mermaid：HTML 节点标签在 foreignObject 内按测量宽高裁切；中文 + <br/> 行常高于默认假设。 */
+.docusaurus-mermaid-container svg foreignObject {
+  overflow: visible;
+}
+
+.docusaurus-mermaid-container svg foreignObject div,
+.docusaurus-mermaid-container svg .nodeLabel {
+  line-height: 1.55;
+}
+
 // Docs 文档板块底部按钮的样式
 .docusaurus-mt-lg {
   margin-top: 3rem;
