@@ -2,12 +2,18 @@ import styles from "./LocalDropdown.module.scss";
 
 import type { DocusaurusContext } from "@docusaurus/types";
 
-import { Dropdown, Menu } from "@arco-design/web-react";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import { useLocation } from "@docusaurus/router";
 import { useAlternatePageUtils } from "@docusaurus/theme-common/internal";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { Button } from "@site/src/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@site/src/components/ui/dropdown-menu";
+import { Check } from "lucide-react";
 
 export interface LocalDropdownProps {
   queryString?: string;
@@ -61,32 +67,32 @@ export const LocalDropdown = ({
   return (
     <BrowserOnly>
       {() => (
-        <Dropdown
-          droplist={
-            <Menu
-              className={styles.menu}
-              onClickMenuItem={handleLocaleChange}
-              selectedKeys={[currentLocale]}
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button
+              className={`${styles.triggerButton}${triggerClassName ? ` ${triggerClassName}` : ""}`}
+              size="sm"
+              variant="ghost"
             >
-              {locales.map(locale => (
-                <Menu.Item className={styles.menuItem} key={locale}>
-                  {formateLocale(locale)}
-                </Menu.Item>
-              ))}
-            </Menu>
-          }
-          position="top"
-          trigger="click"
-        >
-          <Button
-            className={`${styles.triggerButton}${triggerClassName ? ` ${triggerClassName}` : ""}`}
-            size="sm"
-            variant="ghost"
-          >
-            <i className={`i-codicon-globe ${styles.triggerIcon}`} />
-            {formateLocale(currentLocale)}
-          </Button>
-        </Dropdown>
+              <i className={`i-codicon-globe ${styles.triggerIcon}`} />
+              {formateLocale(currentLocale)}
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" side="top" className={styles.menu}>
+            {locales.map(locale => (
+              <DropdownMenuItem
+                key={locale}
+                className={styles.menuItem}
+                onSelect={() => handleLocaleChange(locale)}
+              >
+                <span className="flex-1">{formateLocale(locale)}</span>
+                {locale === currentLocale && (
+                  <Check className="ml-auto size-4 text-[var(--oomol-primary)]" />
+                )}
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
       )}
     </BrowserOnly>
   );
