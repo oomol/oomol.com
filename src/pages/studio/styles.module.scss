@@ -125,24 +125,7 @@
 }
 
 .siteCtaSecondary {
-  min-width: 10rem;
-
-  &:global(.arco-btn) {
-    font-weight: 500;
-    height: 46px !important;
-    min-height: 46px !important;
-    border-radius: 10px !important;
-    background: transparent !important;
-    color: var(--oomol-text-primary) !important;
-    border: 1px solid var(--oomol-border-strong) !important;
-    box-shadow: none !important;
-  }
-
-  &:global(.arco-btn:not(.arco-btn-disabled)):hover {
-    background: var(--oomol-bg-spotlight) !important;
-    color: var(--oomol-text-primary) !important;
-    transform: none !important;
-  }
+  /* styling from Button component */
 }
 
 .heroVisual {

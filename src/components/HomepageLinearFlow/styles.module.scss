@@ -416,50 +416,7 @@
   color: var(--oomol-text-secondary);
 }
 
-/* Override ctaPrimary/Secondary buttons for Vercel look */
-.ctaPrimary {
-  &:global(.arco-btn) {
-    min-width: 10rem;
-    height: 46px;
-    min-height: 46px;
-    padding: 0 1.3rem;
-    font-weight: 500;
-    font-size: 0.96rem;
-    border-radius: 10px;
-    background: var(--oomol-foreground) !important;
-    color: var(--oomol-foreground-contrast) !important;
-    border: 1px solid var(--oomol-foreground) !important;
-    box-shadow: none !important;
-  }
-
-  &:global(.arco-btn:not(.arco-btn-disabled)):hover {
-    background: var(--oomol-foreground-hover) !important;
-    border-color: var(--oomol-foreground-hover) !important;
-    transform: none;
-  }
-}
-
-.ctaSecondary {
-  &:global(.arco-btn) {
-    min-width: 10rem;
-    height: 46px;
-    min-height: 46px;
-    padding: 0 1.3rem;
-    font-weight: 500;
-    font-size: 0.96rem;
-    border-radius: 10px;
-    background: transparent !important;
-    color: var(--oomol-text-primary) !important;
-    border: 1px solid var(--oomol-border-strong) !important;
-    box-shadow: none !important;
-  }
-
-  &:global(.arco-btn:not(.arco-btn-disabled)):hover {
-    background: var(--oomol-bg-spotlight) !important;
-    color: var(--oomol-text-primary) !important;
-    transform: none;
-  }
-}
+/* CTA pair — styling comes from the Button component (variant + size). */
 
 /* ── English overrides ── */
 

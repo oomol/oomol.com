@@ -8,6 +8,7 @@ import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import DownloadsCliPanel from "@site/src/components/DownloadsCliPanel";
+import { Button } from "@site/src/components/ui/button";
 import { DownloadUrl } from "@site/src/download_url";
 import { downloadStable } from "@site/src/lib/utils";
 import Layout from "@theme/Layout";
@@ -156,17 +157,20 @@ export default function Downloads() {
                 {translate({ message: "HOME.Downloads.cli.info.description" })}
               </p>
               <div className={styles.sectionActions}>
-                <Link className={styles.sectionAction} to={cliGuideUrl}>
-                  {translate({ message: "HOME.Downloads.cli.action.guide" })}
-                </Link>
-                <a
-                  className={styles.sectionAction}
-                  href="https://github.com/oomol-lab/oo-cli"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  {translate({ message: "HOME.Downloads.cli.action.github" })}
-                </a>
+                <Button asChild variant="outline" size="sm">
+                  <Link to={cliGuideUrl}>
+                    {translate({ message: "HOME.Downloads.cli.action.guide" })}
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <a
+                    href="https://github.com/oomol-lab/oo-cli"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    {translate({ message: "HOME.Downloads.cli.action.github" })}
+                  </a>
+                </Button>
               </div>
             </div>
             <DownloadsCliPanel />
@@ -186,16 +190,18 @@ export default function Downloads() {
                   </span>
                 </div>
                 <div className={styles.downloads}>
-                  <a
-                    href={OOMOL_AI_DOWNLOAD_URLS.web}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i
-                      className={`${styles["download-icon"]} i-codicon-link-external`}
-                    />
-                    {copy.ai.actions.openWeb}
-                  </a>
+                  <Button asChild variant="outline" size="sm">
+                    <a
+                      href={OOMOL_AI_DOWNLOAD_URLS.web}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i
+                        className={`${styles["download-icon"]} i-codicon-link-external`}
+                      />
+                      {copy.ai.actions.openWeb}
+                    </a>
+                  </Button>
                 </div>
               </div>
               <div className={`${styles.card} ${styles.stable}`}>
@@ -206,28 +212,32 @@ export default function Downloads() {
                   </span>
                 </div>
                 <div className={styles.downloads}>
-                  <a
-                    href={OOMOL_AI_DOWNLOAD_URLS.macos}
-                    onClick={event =>
-                      downloadStable(event, OOMOL_AI_DOWNLOAD_URLS.macos)
-                    }
-                  >
-                    <i
-                      className={`${styles["download-icon"]} i-codicon-desktop-download`}
-                    />
-                    {copy.ai.actions.desktopMac}
-                  </a>
-                  <a
-                    href={OOMOL_AI_DOWNLOAD_URLS.windows}
-                    onClick={event =>
-                      downloadStable(event, OOMOL_AI_DOWNLOAD_URLS.windows)
-                    }
-                  >
-                    <i
-                      className={`${styles["download-icon"]} i-codicon-desktop-download`}
-                    />
-                    {copy.ai.actions.desktopWindows}
-                  </a>
+                  <Button asChild variant="outline" size="sm">
+                    <a
+                      href={OOMOL_AI_DOWNLOAD_URLS.macos}
+                      onClick={event =>
+                        downloadStable(event, OOMOL_AI_DOWNLOAD_URLS.macos)
+                      }
+                    >
+                      <i
+                        className={`${styles["download-icon"]} i-codicon-desktop-download`}
+                      />
+                      {copy.ai.actions.desktopMac}
+                    </a>
+                  </Button>
+                  <Button asChild variant="outline" size="sm">
+                    <a
+                      href={OOMOL_AI_DOWNLOAD_URLS.windows}
+                      onClick={event =>
+                        downloadStable(event, OOMOL_AI_DOWNLOAD_URLS.windows)
+                      }
+                    >
+                      <i
+                        className={`${styles["download-icon"]} i-codicon-desktop-download`}
+                      />
+                      {copy.ai.actions.desktopWindows}
+                    </a>
+                  </Button>
                 </div>
               </div>
               <div className={styles.card}>
@@ -238,16 +248,18 @@ export default function Downloads() {
                   </span>
                 </div>
                 <div className={styles.downloads}>
-                  <a
-                    href={OOMOL_AI_DOWNLOAD_URLS.ios}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i
-                      className={`${styles["download-icon"]} i-codicon-link-external`}
-                    />
-                    {copy.ai.actions.openStore}
-                  </a>
+                  <Button asChild variant="outline" size="sm">
+                    <a
+                      href={OOMOL_AI_DOWNLOAD_URLS.ios}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i
+                        className={`${styles["download-icon"]} i-codicon-link-external`}
+                      />
+                      {copy.ai.actions.openStore}
+                    </a>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -280,20 +292,27 @@ export default function Downloads() {
                     <div className={styles.downloads}>
                       {item.downloads.map((download, i) => {
                         return (
-                          <a
+                          <Button
                             key={`download-${index}-${i}`}
-                            href={download.url}
-                            onClick={
-                              item.mostRecommended
-                                ? event => downloadStable(event, download.url)
-                                : undefined
-                            }
+                            asChild
+                            variant="outline"
+                            size="sm"
                           >
-                            <i
-                              className={`${styles["download-icon"]} i-codicon-desktop-download`}
-                            />
-                            {download.text}
-                          </a>
+                            <a
+                              href={download.url}
+                              onClick={
+                                item.mostRecommended
+                                  ? event =>
+                                      downloadStable(event, download.url)
+                                  : undefined
+                              }
+                            >
+                              <i
+                                className={`${styles["download-icon"]} i-codicon-desktop-download`}
+                              />
+                              {download.text}
+                            </a>
+                          </Button>
                         );
                       })}
                     </div>
@@ -314,15 +333,16 @@ export default function Downloads() {
                 </p>
               </div>
               <div className={styles.pageCtaActions}>
-                <Link className={styles.pageCtaPrimaryAction} to={cliGuideUrl}>
-                  {translate({ message: "HOME.Downloads.cta.primary" })}
-                </Link>
-                <Link
-                  className={styles.pageCtaSecondaryAction}
-                  to={studioDownloadsUrl}
-                >
-                  {translate({ message: "HOME.Downloads.cta.secondary" })}
-                </Link>
+                <Button asChild>
+                  <Link to={cliGuideUrl}>
+                    {translate({ message: "HOME.Downloads.cta.primary" })}
+                  </Link>
+                </Button>
+                <Button asChild variant="outline">
+                  <Link to={studioDownloadsUrl}>
+                    {translate({ message: "HOME.Downloads.cta.secondary" })}
+                  </Link>
+                </Button>
               </div>
             </div>
           </section>

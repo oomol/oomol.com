@@ -5,6 +5,7 @@ import type { DocusaurusContext } from "@docusaurus/types";
 import Head from "@docusaurus/Head";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { Button } from "@site/src/components/ui/button";
 import { downloadStable } from "@site/src/lib/utils";
 import cx from "clsx";
 import { Download, Globe, Smartphone } from "lucide-react";
@@ -685,49 +686,43 @@ export default function AppPage() {
               <p className={styles.heroLead}>{copy.hero.lead}</p>
 
               <div className={styles.heroActions}>
-                <a
-                  className={cx(
-                    styles.heroActionButton,
-                    styles.heroActionButtonPrimary
-                  )}
-                  href={appWebHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Globe className={styles.heroActionIcon} aria-hidden="true" />
-                  <span>{copy.actions.openWeb}</span>
-                </a>
-                <a
-                  className={styles.heroActionButton}
-                  href={desktopDownloadHref || undefined}
-                  aria-disabled={!desktopDownloadHref}
-                  onClick={event => {
-                    if (!desktopDownloadHref) {
-                      event.preventDefault();
-                      return;
-                    }
+                <Button asChild size="lg">
+                  <a
+                    href={appWebHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Globe aria-hidden="true" />
+                    <span>{copy.actions.openWeb}</span>
+                  </a>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <a
+                    href={desktopDownloadHref || undefined}
+                    aria-disabled={!desktopDownloadHref}
+                    onClick={event => {
+                      if (!desktopDownloadHref) {
+                        event.preventDefault();
+                        return;
+                      }
 
-                    downloadStable(event, desktopDownloadHref);
-                  }}
-                >
-                  <Download
-                    className={styles.heroActionIcon}
-                    aria-hidden="true"
-                  />
-                  <span>{copy.actions.downloadDesktop}</span>
-                </a>
-                <a
-                  className={styles.heroActionButton}
-                  href={appStoreHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Smartphone
-                    className={styles.heroActionIcon}
-                    aria-hidden="true"
-                  />
-                  <span>{copy.actions.ios}</span>
-                </a>
+                      downloadStable(event, desktopDownloadHref);
+                    }}
+                  >
+                    <Download aria-hidden="true" />
+                    <span>{copy.actions.downloadDesktop}</span>
+                  </a>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <a
+                    href={appStoreHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Smartphone aria-hidden="true" />
+                    <span>{copy.actions.ios}</span>
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
@@ -915,17 +910,19 @@ export default function AppPage() {
                   </ul>
                 </div>
 
-                <a
-                  className={cx(
-                    styles.cardAction,
-                    pack.featured && styles.cardActionPrimary
-                  )}
-                  href={rechargeHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Button
+                  asChild
+                  variant={pack.featured ? "default" : "outline"}
+                  className={styles.cardAction}
                 >
-                  <span>{pack.cta}</span>
-                </a>
+                  <a
+                    href={rechargeHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span>{pack.cta}</span>
+                  </a>
+                </Button>
               </article>
             ))}
           </div>
@@ -947,29 +944,31 @@ export default function AppPage() {
                   <strong>{item.subtitle}</strong>
                 </div>
                 <p>{item.description}</p>
-                <a
-                  className={cx(
-                    styles.cardAction,
-                    item.kind === "web" && styles.cardActionPrimary
-                  )}
-                  href={item.href}
-                  onClick={
-                    item.kind === "desktop"
-                      ? event => {
-                          if (!item.href) {
-                            event.preventDefault();
-                            return;
-                          }
-
-                          downloadStable(event, item.href);
-                        }
-                      : undefined
-                  }
-                  target={item.external ? "_blank" : undefined}
-                  rel={item.external ? "noopener noreferrer" : undefined}
+                <Button
+                  asChild
+                  variant={item.kind === "web" ? "default" : "outline"}
+                  className={styles.cardAction}
                 >
-                  <span>{item.action}</span>
-                </a>
+                  <a
+                    href={item.href}
+                    onClick={
+                      item.kind === "desktop"
+                        ? event => {
+                            if (!item.href) {
+                              event.preventDefault();
+                              return;
+                            }
+
+                            downloadStable(event, item.href);
+                          }
+                        : undefined
+                    }
+                    target={item.external ? "_blank" : undefined}
+                    rel={item.external ? "noopener noreferrer" : undefined}
+                  >
+                    <span>{item.action}</span>
+                  </a>
+                </Button>
               </article>
             ))}
           </div>

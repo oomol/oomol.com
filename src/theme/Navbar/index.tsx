@@ -416,7 +416,12 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
             <NavbarItem {...item} key={i} />
           ))}
           <div className={styles.actions}>
-            <Button asChild variant="outline" className={styles.downloadButton}>
+            <Button
+              asChild
+              variant="outline"
+              size="sm"
+              className={styles.downloadButton}
+            >
               <a href="https://hub.oomol.com" target="_blank" rel="noreferrer">
                 <i className="i-lucide-users" />
                 {translate({ message: "Theme.Navbar.community" })}
@@ -424,7 +429,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
             </Button>
             <BrowserOnly
               fallback={
-                <Button className={styles.loginButton}>
+                <Button size="sm" className={styles.loginButton}>
                   <i className="i-lucide-log-in" />
                   {translate({ message: "Theme.Navbar.login" })}
                 </Button>
@@ -434,6 +439,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
                 const signedIn = isSignedIn();
                 return (
                   <Button
+                    size="sm"
                     className={styles.loginButton}
                     onClick={() => handleSignin()}
                   >

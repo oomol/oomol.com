@@ -13,7 +13,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@site/src/components/ui/dropdown-menu";
-import { Check } from "lucide-react";
 
 export interface LocalDropdownProps {
   queryString?: string;
@@ -87,7 +86,10 @@ export const LocalDropdown = ({
               >
                 <span className="flex-1">{formateLocale(locale)}</span>
                 {locale === currentLocale && (
-                  <Check className="ml-auto size-4 text-[var(--oomol-primary)]" />
+                  <i
+                    className="i-lucide-check ml-auto size-4 text-[var(--oomol-primary)]"
+                    aria-hidden="true"
+                  />
                 )}
               </DropdownMenuItem>
             ))}

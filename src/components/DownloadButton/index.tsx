@@ -101,7 +101,7 @@ export const DownloadButton = ({
     <BrowserOnly
       fallback={
         <div className={containerClassName}>
-          <Button className={styles.download}>
+          <Button size="lg" className={styles.download}>
             {downloadIcon}
             {stableTag ? macosStableLabel : macosLabel}
           </Button>
@@ -116,6 +116,7 @@ export const DownloadButton = ({
               <div className={containerClassName}>
                 <Button
                   asChild
+                  size="lg"
                   className={styles.download}
                   onClick={() =>
                     downloadStable(null, DownloadUrl.Stable.MacOS.AppleSilicon)
@@ -134,6 +135,7 @@ export const DownloadButton = ({
               <div className={windowsClassName}>
                 <Button
                   asChild
+                  size="lg"
                   className={styles.download}
                   onClick={() =>
                     downloadStable(null, DownloadUrl.Stable.Windows.x64)

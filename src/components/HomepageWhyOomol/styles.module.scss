@@ -75,53 +75,7 @@
   padding-top: 0.6rem;
 }
 
-/* Vercel CTA pair - 主 black, 副 hairline */
-.primaryAction {
-  &:global(.arco-btn) {
-    min-width: 0;
-    height: 40px;
-    min-height: 40px;
-    padding: 0 1.1rem;
-    font-weight: 500;
-    font-size: 0.92rem;
-    letter-spacing: -0.005em;
-    border-radius: 8px;
-    background: var(--oomol-foreground) !important;
-    color: var(--oomol-foreground-contrast) !important;
-    border: 1px solid var(--oomol-foreground) !important;
-    box-shadow: none !important;
-  }
-
-  &:global(.arco-btn:not(.arco-btn-disabled)):hover {
-    background: var(--oomol-foreground-hover) !important;
-    border-color: var(--oomol-foreground-hover) !important;
-    transform: none;
-  }
-}
-
-.secondaryAction {
-  &:global(.arco-btn) {
-    min-width: 0;
-    height: 40px;
-    min-height: 40px;
-    padding: 0 1.1rem;
-    font-weight: 500;
-    font-size: 0.92rem;
-    letter-spacing: -0.005em;
-    border-radius: 8px;
-    background: transparent !important;
-    color: var(--oomol-text-primary) !important;
-    border: 1px solid var(--oomol-border-strong) !important;
-    box-shadow: none !important;
-  }
-
-  &:global(.arco-btn:not(.arco-btn-disabled)):hover {
-    background: var(--oomol-bg-spotlight) !important;
-    border-color: var(--oomol-border-strong) !important;
-    color: var(--oomol-text-primary) !important;
-    transform: none;
-  }
-}
+/* CTAs — styling comes from the Button component (variant + size). */
 
 .grid {
   display: grid;

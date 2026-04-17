@@ -23,7 +23,6 @@ import {
   TabsList,
   TabsTrigger,
 } from "@site/src/components/ui/tabs";
-import { Loader2 } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
 type PricingColumn<T> = {
@@ -187,7 +186,10 @@ function PriceTable<T extends PricingRowBase>({
                 colSpan={columns.length}
                 className={styles.emptyCell}
               >
-                <Loader2 className="inline size-4 animate-spin mr-2 align-[-3px]" />
+                <i
+                  className="i-lucide-loader-circle inline-block size-4 animate-spin mr-2 align-[-3px]"
+                  aria-hidden="true"
+                />
                 Loading…
               </TableCell>
             </TableRow>

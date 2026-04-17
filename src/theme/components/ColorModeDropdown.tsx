@@ -9,7 +9,6 @@ import {
   DropdownMenuTrigger,
 } from "@site/src/components/ui/dropdown-menu";
 import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
-import { Check } from "lucide-react";
 
 type ColorModeType = "light" | "dark" | "system";
 
@@ -87,7 +86,10 @@ export const ColorModeDropdown = ({
             <i className={modeIconMap[mode]} />
             <span className="flex-1">{getModeText(mode)}</span>
             {mode === selectedMode && (
-              <Check className="ml-auto size-4 text-[var(--oomol-primary)]" />
+              <i
+                className="i-lucide-check ml-auto size-4 text-[var(--oomol-primary)]"
+                aria-hidden="true"
+              />
             )}
           </DropdownMenuItem>
         ))}

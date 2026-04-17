@@ -262,8 +262,7 @@ export default function StudioPage() {
               <Button
                 asChild
                 size="lg"
-                variant="contrast"
-                className={styles.siteCtaSecondary}
+                variant="outline"
               >
                 <Link to="/cloud">
                   {translate({ message: "HOME.StudioChain.action.cloud" })}

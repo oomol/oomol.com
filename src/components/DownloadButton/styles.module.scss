@@ -4,96 +4,35 @@
 }
 
 .download {
-  --oomol-button-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.22),
-    0 16px 30px color-mix(in srgb, var(--oomol-primary) 28%, transparent);
-  --oomol-button-shadow-hover:
-    inset 0 1px 0 rgba(255, 255, 255, 0.24),
-    0 20px 36px color-mix(in srgb, var(--oomol-primary-hover) 30%, transparent);
-  --oomol-button-shadow-active:
-    inset 0 1px 0 rgba(255, 255, 255, 0.16),
-    0 12px 24px color-mix(in srgb, var(--oomol-primary-active) 24%, transparent);
-
-  min-width: 292px;
-  min-height: 52px;
-  font-size: 1rem;
-  font-weight: 700;
-  padding: 0;
+  /* Vercel primary button handles size/radius/fill via the Button component.
+     We only need to ensure the asChild <a> fills the button and carry the icon slot. */
   white-space: nowrap;
-  letter-spacing: 0.01em;
-  overflow: hidden;
 
   :global(a),
   :global(button) {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.72rem;
+    gap: 0.6rem;
     width: 100%;
-    min-height: inherit;
-    padding: 0 1.25rem;
+    height: 100%;
   }
 
   .downloadIconWrap {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 2.05rem;
-    height: 2.05rem;
-    border-radius: 999px;
-    color: var(--oomol-white);
-    background: linear-gradient(
-      180deg,
-      rgba(67, 57, 111, 0.34) 0%,
-      rgba(51, 42, 87, 0.18) 100%
-    );
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.16),
-      0 4px 10px rgba(38, 31, 66, 0.16);
-    font-size: 1.125rem !important;
+    width: 1.25rem;
+    height: 1.25rem;
+    font-size: 1rem;
+    color: inherit;
     flex-shrink: 0;
-    transition:
-      transform 0.2s ease,
-      background 0.2s ease,
-      box-shadow 0.2s ease,
-      border-color 0.2s ease;
   }
 
   .downloadIcon {
-    color: var(--oomol-white);
-    font-size: 1.125rem;
+    color: inherit;
+    font-size: 1rem;
     line-height: 1;
-  }
-
-  &:hover .downloadIconWrap {
-    background: linear-gradient(
-      180deg,
-      rgba(74, 63, 121, 0.38) 0%,
-      rgba(57, 47, 95, 0.24) 100%
-    );
-    border-color: rgba(255, 255, 255, 0.22);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.18),
-      0 6px 14px rgba(38, 31, 66, 0.18);
-    transform: translateY(-0.5px);
-  }
-
-  &:active .downloadIconWrap {
-    background: linear-gradient(
-      180deg,
-      rgba(61, 52, 103, 0.3) 0%,
-      rgba(46, 38, 78, 0.16) 100%
-    );
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.14),
-      0 3px 8px rgba(38, 31, 66, 0.14);
-  }
-
-  :global(.oo-btn) {
-    &:hover {
-      border: solid var(--oomol-text-primary);
-    }
   }
 }
 
@@ -116,7 +55,7 @@
 }
 
 .inverseNote {
-  color: rgba(221, 214, 231, 0.76);
+  color: var(--oomol-text-tertiary);
 }
 
 .windowsBox {
@@ -147,15 +86,14 @@
 }
 
 .popoverBox {
-  height: 70px;
   display: flex;
   flex-direction: column;
   gap: 12px;
   background-color: var(--oomol-bg-elevated);
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 12px 16px;
   color: var(--oomol-text-secondary);
-  box-shadow: var(--oomol-shadow-md);
+  box-shadow: var(--oomol-shadow-sm);
 
   a {
     text-decoration: none;
@@ -164,22 +102,15 @@
 
 .popoverLink {
   width: 100%;
-  height: 17px;
   display: flex;
   align-items: center;
   transition: color 0.2s ease;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 14px;
   color: var(--oomol-text-secondary);
 
   &:hover {
     cursor: pointer;
-    transition: color 0.2s ease;
-
     color: var(--oomol-text-primary);
-
-    .icon {
-      background-color: var(--oomol-text-primary);
-    }
   }
 }

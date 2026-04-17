@@ -110,7 +110,12 @@ export default function CloudPageDeveloperBenefits() {
               <p className={styles.cardDescription}>{benefit.description}</p>
               <p className={styles.cardNote}>{benefit.note}</p>
               <div className={styles.cardFooter}>
-                <Button asChild variant="secondary" className={styles.cta}>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="sm"
+                  className={styles.cta}
+                >
                   <Link to={benefit.href}>{benefit.cta}</Link>
                 </Button>
               </div>

@@ -2,6 +2,7 @@ import styles from "./styles.module.scss";
 
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
+import { Button } from "@site/src/components/ui/button";
 import React from "react";
 
 const showcaseItems = [
@@ -38,12 +39,16 @@ export default function HomepageCodexBlocks() {
             {translate({ message: "HOME.CodexBlocks.subtitle" })}
           </p>
           <div className={styles.headerActions}>
-            <Link to="/cli" className={styles.primaryAction}>
-              {translate({ message: "HOME.CodexBlocks.action.primary" })}
-            </Link>
-            <Link to="/cloud" className={styles.secondaryAction}>
-              {translate({ message: "HOME.CodexBlocks.action.secondary" })}
-            </Link>
+            <Button asChild>
+              <Link to="/cli">
+                {translate({ message: "HOME.CodexBlocks.action.primary" })}
+              </Link>
+            </Button>
+            <Button asChild variant="outline">
+              <Link to="/cloud">
+                {translate({ message: "HOME.CodexBlocks.action.secondary" })}
+              </Link>
+            </Button>
           </div>
         </div>
 

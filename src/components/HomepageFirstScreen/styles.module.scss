@@ -84,64 +84,7 @@
   padding-top: 0.6rem;
 }
 
-/* Vercel 风格 — 主 CTA 是纯黑底白字（浅色）/ 纯白底黑字（深色） */
-.primaryCta {
-  &:global(.arco-btn) {
-    min-width: 10.5rem;
-    height: 46px;
-    min-height: 46px;
-    padding: 0 1.3rem;
-    font-weight: 500;
-    font-size: 0.96rem;
-    letter-spacing: -0.005em;
-    border-radius: 10px;
-    background: var(--oomol-foreground) !important;
-    color: var(--oomol-foreground-contrast) !important;
-    border: 1px solid var(--oomol-foreground) !important;
-    box-shadow: none !important;
-    transition:
-      background-color 0.15s ease,
-      transform 0.15s ease;
-  }
-
-  &:global(.arco-btn:not(.arco-btn-disabled)):hover {
-    background: var(--oomol-foreground-hover) !important;
-    border-color: var(--oomol-foreground-hover) !important;
-    transform: none;
-  }
-
-  &:global(.arco-btn:not(.arco-btn-disabled)):active {
-    transform: translateY(0);
-  }
-}
-
-/* 副 CTA — hairline ghost */
-.secondaryCta {
-  &:global(.arco-btn) {
-    min-width: 10.5rem;
-    height: 46px;
-    min-height: 46px;
-    padding: 0 1.3rem;
-    font-weight: 500;
-    font-size: 0.96rem;
-    letter-spacing: -0.005em;
-    border-radius: 10px;
-    background: var(--oomol-bg-base) !important;
-    color: var(--oomol-text-primary) !important;
-    border: 1px solid var(--oomol-border-strong) !important;
-    box-shadow: none !important;
-    transition:
-      background-color 0.15s ease,
-      border-color 0.15s ease;
-  }
-
-  &:global(.arco-btn:not(.arco-btn-disabled)):hover {
-    background: var(--oomol-bg-spotlight) !important;
-    border-color: var(--oomol-border-strong) !important;
-    color: var(--oomol-text-primary) !important;
-    transform: none;
-  }
-}
+/* Hero CTAs — styling comes from the Button component; no overrides needed. */
 
 /* ── 视频展示区 — hairline frame，无阴影光晕 ── */
 
@@ -310,9 +253,7 @@
 
   .primaryCta,
   .secondaryCta {
-    &:global(.arco-btn) {
-      width: 100%;
-    }
+    width: 100%;
   }
 
   .videoShowcase {

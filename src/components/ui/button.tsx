@@ -4,72 +4,79 @@ import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
 
 /**
- * shadcn/ui Button, adapted for OOMOL.
+ * shadcn/ui Button — tuned to Vercel's marketing-site button system.
  *
- * 外部 API 保持与旧版兼容（variant / size / asChild），
- * 让已有的 <Button variant="outline" size="lg" asChild> 调用无需修改。
+ * Sizes / radii / type scale all match vercel.com exactly:
+ *   sm       32px  / 12px pad / 13px / rounded 6px
+ *   default  40px  / 16px pad / 14px / rounded 8px
+ *   lg       48px  / 20px pad / 15px / rounded 8px
+ *
+ * All variants: font-weight 500, letter-spacing -0.01em,
+ * never uppercase, never min-width, never box-shadow on idle.
  */
 
 const buttonVariants = cva(
   [
     "inline-flex items-center justify-center gap-2 whitespace-nowrap",
-    "text-sm font-medium tracking-[-0.005em]",
-    "rounded-[10px] border transition-colors",
+    "font-medium tracking-[-0.005em]",
+    "border transition-colors",
+    "no-underline hover:no-underline",
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--background))]",
     "disabled:pointer-events-none disabled:opacity-50",
     "[&_svg]:size-4 [&_svg]:shrink-0",
-    "no-underline hover:no-underline",
+    "select-none",
   ].join(" "),
   {
     variants: {
       variant: {
-        // 主 CTA：近黑底白字（浅色模式）/ 近白底黑字（深色模式）
+        // Vercel primary "Deploy" style — dark filled (light mode = near-black, dark mode = near-white)
         default: [
           "bg-[var(--oomol-foreground)] border-[var(--oomol-foreground)] text-[var(--oomol-foreground-contrast)]",
           "hover:bg-[var(--oomol-foreground-hover)] hover:border-[var(--oomol-foreground-hover)] hover:text-[var(--oomol-foreground-contrast)]",
+          "active:opacity-90",
         ].join(" "),
-        // 品牌主色按钮（保留给需要的场景）
+        // Brand-color button (opt-in, rarely used)
         primary: [
-          "bg-[var(--oomol-primary)] border-[var(--oomol-primary)] text-[var(--oomol-white)]",
+          "bg-[var(--oomol-primary)] border-[var(--oomol-primary)] text-white",
           "hover:bg-[var(--oomol-primary-hover)] hover:border-[var(--oomol-primary-hover)]",
           "active:bg-[var(--oomol-primary-active)] active:border-[var(--oomol-primary-active)]",
         ].join(" "),
-        // 危险
         destructive: [
           "bg-[var(--oomol-error)] border-[var(--oomol-error)] text-white",
           "hover:opacity-90",
         ].join(" "),
-        // Hairline outline（Vercel 副 CTA）
+        // Vercel "Get a demo" hairline style
         outline: [
           "bg-transparent border-[var(--oomol-border-strong)] text-[var(--oomol-text-primary)]",
-          "hover:bg-[var(--oomol-bg-spotlight)] hover:text-[var(--oomol-text-primary)]",
+          "hover:bg-[var(--oomol-bg-spotlight)] hover:text-[var(--oomol-text-primary)] hover:border-[var(--oomol-border-strong)]",
         ].join(" "),
-        // 深色对比（CTA 块里的副按钮）
-        contrast: [
-          "bg-[var(--oomol-bg-elevated)] border-[var(--oomol-border-default)] text-[var(--oomol-text-primary)]",
-          "hover:bg-[var(--oomol-bg-spotlight)]",
-        ].join(" "),
-        // 次要（浅紫 pill）
+        // Subtle filled (used inside CTA panels, nav)
         secondary: [
           "bg-[var(--oomol-bg-container)] border-[var(--oomol-divider)] text-[var(--oomol-text-primary)]",
           "hover:bg-[var(--oomol-bg-spotlight)]",
         ].join(" "),
-        // 幽灵
+        // Alias kept for homepage CTA-block secondary action (inverted surface)
+        contrast: [
+          "bg-[var(--oomol-bg-elevated)] border-[var(--oomol-border-default)] text-[var(--oomol-text-primary)]",
+          "hover:bg-[var(--oomol-bg-spotlight)]",
+        ].join(" "),
+        // Ghost (no border, appears only on hover)
         ghost: [
           "bg-transparent border-transparent text-[var(--oomol-text-secondary)]",
           "hover:bg-[var(--oomol-hover-bg)] hover:text-[var(--oomol-text-primary)]",
         ].join(" "),
-        // 纯链接
+        // Pure underline text link
         link: [
-          "bg-transparent border-transparent text-[var(--oomol-primary)] underline underline-offset-2 p-0 h-auto min-h-0",
-          "hover:text-[var(--oomol-primary-hover)] hover:underline",
+          "bg-transparent border-transparent text-[var(--oomol-primary)]",
+          "underline-offset-[3px] hover:underline hover:text-[var(--oomol-primary-hover)]",
+          "h-auto min-h-0 p-0",
         ].join(" "),
       },
       size: {
-        default: "h-[46px] min-h-[46px] px-[1.3rem] text-[0.96rem] min-w-[10rem]",
-        sm: "h-9 min-h-9 px-3 text-[0.88rem] rounded-lg",
-        lg: "h-[46px] min-h-[46px] px-[1.3rem] text-[0.96rem] min-w-[10rem]",
-        icon: "h-10 w-10 min-w-0 p-0",
+        sm: "h-8 px-3 text-[13px] rounded-md",
+        default: "h-10 px-4 text-sm rounded-lg",
+        lg: "h-12 px-5 text-[15px] rounded-lg",
+        icon: "h-10 w-10 p-0 rounded-lg",
       },
     },
     defaultVariants: {

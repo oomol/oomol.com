@@ -104,26 +104,6 @@
 
 .actions {
   padding-top: 0.4rem;
-
-  /* Override for Vercel-style outline button */
-  :global(.arco-btn) {
-    height: 40px !important;
-    min-height: 40px !important;
-    padding: 0 1.1rem !important;
-    font-weight: 500 !important;
-    font-size: 0.92rem !important;
-    border-radius: 8px !important;
-    background: transparent !important;
-    color: var(--oomol-text-primary) !important;
-    border: 1px solid var(--oomol-border-strong) !important;
-    box-shadow: none !important;
-
-    &:hover {
-      background: var(--oomol-bg-spotlight) !important;
-      color: var(--oomol-text-primary) !important;
-      transform: none !important;
-    }
-  }
 }
 
 .media {

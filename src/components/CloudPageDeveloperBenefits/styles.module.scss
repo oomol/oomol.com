@@ -190,26 +190,6 @@
 
 .cta {
   width: fit-content;
-
-  /* Vercel-style flat outline button override */
-  &:global(.arco-btn) {
-    height: 36px !important;
-    min-height: 36px !important;
-    padding: 0 0.9rem !important;
-    font-size: 0.88rem !important;
-    font-weight: 500 !important;
-    border-radius: 8px !important;
-    background: transparent !important;
-    color: var(--oomol-text-primary) !important;
-    border: 1px solid var(--oomol-border-strong) !important;
-    box-shadow: none !important;
-
-    &:hover {
-      background: var(--oomol-bg-spotlight) !important;
-      color: var(--oomol-text-primary) !important;
-      transform: none !important;
-    }
-  }
 }
 
 [data-theme="dark"] {

@@ -197,8 +197,8 @@ const Footer: React.FC = () => {
                   <i
                     className="i-simple-icons-wechat"
                     style={{
-                      fontSize: "22px",
-                      color: isHovered ? "var(--oomol-primary)" : "inherit",
+                      fontSize: "20px",
+                      color: "inherit",
                     }}
                   />
                 </div>
