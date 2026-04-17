@@ -1,7 +1,8 @@
 /**
- * OOMOL Design Tokens
- * 基于 Ant Design 5.0 设计系统
- * 提供统一的亮色/暗色模式颜色管理
+ * OOMOL Design Tokens — Vercel-inspired neutral refresh
+ *
+ * 极简中性调：纯白 / 近黑 + 单一主色（靛蓝）作为强调点。
+ * 变量名保留不变以兼容所有既有组件；只改数值。
  */
 
 /* ============================================
@@ -10,118 +11,108 @@
 :root {
   /* ----------------------
      背景色 (Background)
+     纯白基底 + 极浅冷灰分层
      ---------------------- */
-  --oomol-bg-base: #f4f6fa;
-  --oomol-bg-container: #edf1f7;
-  --oomol-bg-elevated: #fafcff;
-  --oomol-bg-spotlight: #e6ebf5;
-  --oomol-bg-layout: #eef2f8;
-  --oomol-surface-float: color-mix(
-    in srgb,
-    var(--oomol-bg-elevated) 96%,
-    white 4%
-  );
-  --oomol-surface-panel: color-mix(
-    in srgb,
-    var(--oomol-bg-container) 86%,
-    var(--oomol-bg-elevated) 14%
-  );
-  --oomol-surface-panel-strong: color-mix(
-    in srgb,
-    var(--oomol-bg-spotlight) 72%,
-    var(--oomol-bg-container) 28%
-  );
+  --oomol-bg-base: #ffffff;
+  --oomol-bg-container: #fafafa;
+  --oomol-bg-elevated: #ffffff;
+  --oomol-bg-spotlight: #f5f5f5;
+  --oomol-bg-layout: #fafafa;
+  --oomol-surface-float: #ffffff;
+  --oomol-surface-panel: #fafafa;
+  --oomol-surface-panel-strong: #f5f5f5;
 
   /* ----------------------
      文字色 (Text)
+     近黑主文 + 中性灰层级
      ---------------------- */
-  --oomol-text-primary: rgba(26, 31, 42, 0.92);
-  --oomol-text-secondary: rgba(50, 58, 76, 0.72);
-  --oomol-text-tertiary: rgba(74, 84, 106, 0.56);
-  --oomol-text-quaternary: rgba(
-    74,
-    84,
-    106,
-    0.46
-  ); /* WCAG AA: 4.5:1 minimum for text */
-  --oomol-text-disabled: rgba(74, 84, 106, 0.46); /* WCAG AA compliant */
-  --oomol-text-inverse: #f7f9fd;
+  --oomol-text-primary: #0a0a0a;
+  --oomol-text-secondary: #525252;
+  --oomol-text-tertiary: #737373;
+  --oomol-text-quaternary: #a3a3a3;
+  --oomol-text-disabled: #d4d4d4;
+  --oomol-text-inverse: #ffffff;
 
   /* ----------------------
      边框色 (Border)
+     Hairline 细线
      ---------------------- */
-  --oomol-border-default: #d5dbe7;
-  --oomol-border-subtle: #e7ebf2;
-  --oomol-border-strong: #adb7ca;
+  --oomol-border-default: rgba(0, 0, 0, 0.08);
+  --oomol-border-subtle: rgba(0, 0, 0, 0.04);
+  --oomol-border-strong: rgba(0, 0, 0, 0.16);
 
   /* ----------------------
      分割线 (Divider)
      ---------------------- */
-  --oomol-divider: rgba(49, 58, 74, 0.12);
-  --oomol-divider-subtle: rgba(49, 58, 74, 0.06);
+  --oomol-divider: rgba(0, 0, 0, 0.06);
+  --oomol-divider-subtle: rgba(0, 0, 0, 0.03);
 
   /* ----------------------
      遮罩层 (Mask)
      ---------------------- */
-  --oomol-mask: rgba(18, 24, 34, 0.52);
+  --oomol-mask: rgba(10, 10, 10, 0.6);
 
   /* ----------------------
      填充色 (Fill)
      ---------------------- */
-  --oomol-fill-primary: rgba(34, 42, 58, 0.14);
-  --oomol-fill-secondary: rgba(34, 42, 58, 0.08);
-  --oomol-fill-tertiary: rgba(34, 42, 58, 0.05);
-  --oomol-fill-quaternary: rgba(34, 42, 58, 0.03);
+  --oomol-fill-primary: rgba(0, 0, 0, 0.08);
+  --oomol-fill-secondary: rgba(0, 0, 0, 0.05);
+  --oomol-fill-tertiary: rgba(0, 0, 0, 0.03);
+  --oomol-fill-quaternary: rgba(0, 0, 0, 0.02);
 
   /* ----------------------
-     品牌色 (Brand)
+     品牌色 (Brand) — 保留靛蓝作为唯一强调色
      ---------------------- */
-  --oomol-primary: #545887;
-  --oomol-primary-bg: rgba(84, 88, 135, 0.1);
-  --oomol-primary-bg-hover: rgba(84, 88, 135, 0.16);
-  --oomol-primary-border: rgba(84, 88, 135, 0.28);
-  --oomol-primary-hover: #63689c;
-  --oomol-primary-active: #45486f;
-  --oomol-primary-text: #545887;
-  --oomol-primary-text-hover: #63689c;
-  --oomol-primary-text-active: #45486f;
-  --oomol-arco-primary-1: 244, 245, 255;
-  --oomol-arco-primary-2: 229, 232, 250;
-  --oomol-arco-primary-3: 206, 211, 241;
-  --oomol-arco-primary-4: 177, 183, 228;
-  --oomol-arco-primary-5: 141, 148, 204;
-  --oomol-arco-primary-6: 84, 88, 135;
-  --oomol-arco-primary-7: 69, 72, 111;
-  --oomol-arco-primary-8: 56, 58, 89;
-  --oomol-arco-primary-9: 41, 42, 64;
-  --oomol-arco-primary-10: 26, 27, 40;
+  --oomol-primary: #5567d8;
+  --oomol-primary-bg: rgba(85, 103, 216, 0.08);
+  --oomol-primary-bg-hover: rgba(85, 103, 216, 0.14);
+  --oomol-primary-border: rgba(85, 103, 216, 0.28);
+  --oomol-primary-hover: #6678e6;
+  --oomol-primary-active: #4355bf;
+  --oomol-primary-text: #4e61d2;
+  --oomol-primary-text-hover: #6072df;
+  --oomol-primary-text-active: #3f51bb;
+  --oomol-arco-primary-1: 246, 245, 255;
+  --oomol-arco-primary-2: 234, 232, 252;
+  --oomol-arco-primary-3: 214, 210, 245;
+  --oomol-arco-primary-4: 184, 178, 234;
+  --oomol-arco-primary-5: 146, 141, 218;
+  --oomol-arco-primary-6: 94, 98, 163;
+  --oomol-arco-primary-7: 74, 79, 135;
+  --oomol-arco-primary-8: 58, 62, 107;
+  --oomol-arco-primary-9: 43, 45, 80;
+  --oomol-arco-primary-10: 29, 30, 52;
 
-  /* 白色系主题色 - 用于主题色背景上的文字 */
-  --oomol-white: #fbfcff;
+  --oomol-white: #ffffff;
+
+  /* ----------------------
+     Vercel 风格特有：近黑前景（用于主 CTA、CTA section）
+     ---------------------- */
+  --oomol-foreground: #0a0a0a;
+  --oomol-foreground-hover: #1a1a1a;
+  --oomol-foreground-contrast: #ffffff;
 
   /* ----------------------
      产品色 (Product Colors)
+     保留，用于产品专属 badge / icon
      ---------------------- */
-  /* Studio - 紫色 */
   --oomol-studio: #7d7fe9;
   --oomol-studio-light: #a855f7;
   --oomol-studio-bg: rgba(125, 127, 233, 0.1);
   --oomol-studio-border: rgba(125, 127, 233, 0.3);
 
-  /* Hub - 绿色 */
   --oomol-hub: #10b981;
   --oomol-hub-dark: #059669;
   --oomol-hub-bg: rgba(16, 185, 129, 0.1);
   --oomol-hub-border: rgba(16, 185, 129, 0.3);
 
-  /* App - 橙色 */
   --oomol-app: #f59e0b;
   --oomol-app-dark: #d97706;
   --oomol-app-bg: rgba(245, 158, 11, 0.1);
   --oomol-app-border: rgba(245, 158, 11, 0.3);
 
   /* ----------------------
-     功能色 (Functional Colors)
+     功能色 (Functional)
      ---------------------- */
   --oomol-success: #52c41a;
   --oomol-success-bg: rgba(82, 196, 26, 0.1);
@@ -140,198 +131,160 @@
   --oomol-info-border: rgba(24, 144, 255, 0.3);
 
   /* ----------------------
-     链接色 (Link)
+     链接 (Link)
      ---------------------- */
-  --oomol-link: #545887;
-  --oomol-link-hover: #63689c;
-  --oomol-link-active: #45486f;
+  --oomol-link: #4e61d2;
+  --oomol-link-hover: #6072df;
+  --oomol-link-active: #3f51bb;
 
   /* ----------------------
-     悬停效果 (Hover)
+     悬停 (Hover)
      ---------------------- */
-  --oomol-hover-bg: rgba(26, 32, 44, 0.06);
+  --oomol-hover-bg: rgba(0, 0, 0, 0.04);
 
   /* ----------------------
-     阴影 (Shadow)
+     阴影 (Shadow) — 极其克制
      ---------------------- */
-  --oomol-shadow-sm:
-    0 1px 2px rgba(29, 39, 58, 0.04), 0 8px 16px rgba(29, 39, 58, 0.05);
+  --oomol-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
   --oomol-shadow-md:
-    0 18px 40px rgba(30, 41, 61, 0.09), 0 6px 14px rgba(30, 41, 61, 0.06);
+    0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.04);
   --oomol-shadow-lg:
-    0 30px 64px rgba(29, 39, 58, 0.12), 0 10px 24px rgba(29, 39, 58, 0.08);
+    0 2px 4px rgba(0, 0, 0, 0.04), 0 12px 24px rgba(0, 0, 0, 0.06);
 
   /* ----------------------
-     Shadcn UI 变量 (映射到 Oomol 颜色体系)
+     Shadcn UI 变量
      ---------------------- */
-  /* 基础圆角 - 使用 Shadcn 默认值 8px */
   --radius: 0.5rem;
+  --border: 0 0% 92%;
+  --input: 0 0% 92%;
+  --ring: 231 62% 59%;
 
-  /* 边框和输入框 */
-  --border: 0 0% 85%; /* 映射到 --oomol-border-default #d9d9d9 */
-  --input: 0 0% 85%; /* 与边框保持一致 */
-  --ring: 237 23% 43%; /* 映射到 --oomol-primary */
+  --background: 0 0% 100%;
+  --foreground: 0 0% 4%;
 
-  /* 背景和前景 */
-  --background: 220 33% 98%; /* 冷中性亮色背景 */
-  --foreground: 226 24% 13%; /* 映射到 --oomol-text-primary */
+  --primary: 231 62% 59%;
+  --primary-foreground: 0 0% 100%;
 
-  /* 主色 - Oomol 紫色 */
-  --primary: 237 23% 43%;
-  --primary-foreground: 220 43% 98%;
+  --secondary: 0 0% 96%;
+  --secondary-foreground: 0 0% 4%;
 
-  /* 次要色 */
-  --secondary: 225 32% 95%;
-  --secondary-foreground: 226 24% 13%;
-
-  /* 危险色 */
-  --destructive: 0 100% 65%; /* 映射到 --oomol-error #ff4d4f */
+  --destructive: 0 100% 65%;
   --destructive-foreground: 0 0% 100%;
 
-  /* 静音色 */
-  --muted: 224 26% 93%;
-  --muted-foreground: 224 14% 38%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 40%;
 
-  /* 强调色 */
-  --accent: 226 26% 91%;
-  --accent-foreground: 226 24% 13%;
+  --accent: 0 0% 96%;
+  --accent-foreground: 0 0% 4%;
 
-  /* 弹出层 */
-  --popover: 220 40% 99%;
-  --popover-foreground: 226 24% 13%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 4%;
 
-  /* 卡片 */
-  --card: 220 40% 99%;
-  --card-foreground: 226 24% 13%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 4%;
 }
 
 /* ============================================
    暗色模式 (Dark Mode)
+   纯近黑（Vercel）
    ============================================ */
 [data-theme="dark"] {
   /* ----------------------
      背景色 (Background)
-     参考 Ant Design 标准,使用 #141414 作为基础背景
      ---------------------- */
-  --oomol-bg-base: #121219;
-  --oomol-bg-container: #191925;
-  --oomol-bg-elevated: #22212f;
-  --oomol-bg-spotlight: #2c2a3b;
-  --oomol-bg-layout: #0d0c13;
-  --oomol-surface-float: color-mix(
-    in srgb,
-    var(--oomol-bg-elevated) 82%,
-    var(--oomol-bg-container) 18%
-  );
-  --oomol-surface-panel: color-mix(
-    in srgb,
-    var(--oomol-bg-container) 84%,
-    var(--oomol-bg-elevated) 16%
-  );
-  --oomol-surface-panel-strong: color-mix(
-    in srgb,
-    var(--oomol-bg-spotlight) 68%,
-    var(--oomol-bg-container) 32%
-  );
+  --oomol-bg-base: #000000;
+  --oomol-bg-container: #0a0a0a;
+  --oomol-bg-elevated: #0f0f0f;
+  --oomol-bg-spotlight: #171717;
+  --oomol-bg-layout: #000000;
+  --oomol-surface-float: #0a0a0a;
+  --oomol-surface-panel: #0f0f0f;
+  --oomol-surface-panel-strong: #171717;
 
   /* ----------------------
      文字色 (Text)
-     根据 Ant Design 标准优化对比度,提升可读性
      ---------------------- */
-  --oomol-text-primary: rgba(243, 239, 248, 0.9);
-  --oomol-text-secondary: rgba(221, 214, 231, 0.74);
-  --oomol-text-tertiary: rgba(
-    203,
-    194,
-    217,
-    0.58
-  ); /* WCAG AA: improved from 0.50 */
-  --oomol-text-quaternary: rgba(
-    190,
-    181,
-    204,
-    0.48
-  ); /* WCAG AA: improved from 0.25 */
-  --oomol-text-disabled: rgba(190, 181, 204, 0.48); /* WCAG AA compliant */
-  --oomol-text-inverse: rgba(18, 16, 13, 0.92);
+  --oomol-text-primary: #fafafa;
+  --oomol-text-secondary: #a3a3a3;
+  --oomol-text-tertiary: #737373;
+  --oomol-text-quaternary: #525252;
+  --oomol-text-disabled: #404040;
+  --oomol-text-inverse: #0a0a0a;
 
   /* ----------------------
      边框色 (Border)
-     增强边框可见性,优化视觉层次
      ---------------------- */
-  --oomol-border-default: #4a4860;
-  --oomol-border-subtle: #353347;
-  --oomol-border-strong: #65627e;
+  --oomol-border-default: rgba(255, 255, 255, 0.1);
+  --oomol-border-subtle: rgba(255, 255, 255, 0.06);
+  --oomol-border-strong: rgba(255, 255, 255, 0.16);
 
   /* ----------------------
      分割线 (Divider)
      ---------------------- */
-  --oomol-divider: rgba(223, 216, 236, 0.14);
-  --oomol-divider-subtle: rgba(223, 216, 236, 0.08);
+  --oomol-divider: rgba(255, 255, 255, 0.08);
+  --oomol-divider-subtle: rgba(255, 255, 255, 0.04);
 
   /* ----------------------
      遮罩层 (Mask)
      ---------------------- */
-  --oomol-mask: rgba(7, 7, 12, 0.72);
+  --oomol-mask: rgba(0, 0, 0, 0.72);
 
   /* ----------------------
      填充色 (Fill)
      ---------------------- */
-  --oomol-fill-primary: rgba(234, 228, 244, 0.18);
-  --oomol-fill-secondary: rgba(234, 228, 244, 0.12);
-  --oomol-fill-tertiary: rgba(234, 228, 244, 0.08);
-  --oomol-fill-quaternary: rgba(234, 228, 244, 0.04);
+  --oomol-fill-primary: rgba(255, 255, 255, 0.1);
+  --oomol-fill-secondary: rgba(255, 255, 255, 0.06);
+  --oomol-fill-tertiary: rgba(255, 255, 255, 0.04);
+  --oomol-fill-quaternary: rgba(255, 255, 255, 0.02);
 
   /* ----------------------
-     品牌色 (Brand) - 保持一致
+     品牌色 (Brand)
      ---------------------- */
-  --oomol-primary: #848ad0;
-  --oomol-primary-bg: rgba(132, 138, 208, 0.16);
-  --oomol-primary-bg-hover: rgba(132, 138, 208, 0.24);
-  --oomol-primary-border: rgba(132, 138, 208, 0.36);
-  --oomol-primary-hover: #979ce0;
-  --oomol-primary-active: #6b71b7;
-  --oomol-primary-text: #b6bbf1;
-  --oomol-primary-text-hover: #c5c8f6;
-  --oomol-primary-text-active: #979ce0;
-  --oomol-arco-primary-1: 241, 238, 255;
-  --oomol-arco-primary-2: 223, 226, 255;
-  --oomol-arco-primary-3: 201, 206, 249;
-  --oomol-arco-primary-4: 174, 180, 240;
-  --oomol-arco-primary-5: 145, 151, 227;
-  --oomol-arco-primary-6: 132, 138, 208;
-  --oomol-arco-primary-7: 107, 113, 183;
-  --oomol-arco-primary-8: 83, 88, 145;
-  --oomol-arco-primary-9: 61, 65, 108;
-  --oomol-arco-primary-10: 39, 41, 72;
+  --oomol-primary: #7f96ff;
+  --oomol-primary-bg: rgba(127, 150, 255, 0.12);
+  --oomol-primary-bg-hover: rgba(127, 150, 255, 0.2);
+  --oomol-primary-border: rgba(127, 150, 255, 0.34);
+  --oomol-primary-hover: #98abff;
+  --oomol-primary-active: #6b80ef;
+  --oomol-primary-text: #b1bdff;
+  --oomol-primary-text-hover: #c3cdff;
+  --oomol-primary-text-active: #90a2ff;
+  --oomol-arco-primary-1: 239, 243, 255;
+  --oomol-arco-primary-2: 224, 231, 255;
+  --oomol-arco-primary-3: 199, 210, 255;
+  --oomol-arco-primary-4: 167, 183, 255;
+  --oomol-arco-primary-5: 137, 155, 255;
+  --oomol-arco-primary-6: 124, 140, 255;
+  --oomol-arco-primary-7: 103, 118, 233;
+  --oomol-arco-primary-8: 79, 92, 187;
+  --oomol-arco-primary-9: 57, 67, 137;
+  --oomol-arco-primary-10: 35, 42, 88;
 
-  /* 白色系主题色 - 用于主题色背景上的文字 */
-  --oomol-white: #f7f2e8;
+  --oomol-white: #fafafa;
 
   /* ----------------------
-     产品色 (Product Colors) - 保持一致
+     Vercel 风格特有：近白前景
      ---------------------- */
-  /* Studio - 紫色 */
+  --oomol-foreground: #fafafa;
+  --oomol-foreground-hover: #e5e5e5;
+  --oomol-foreground-contrast: #0a0a0a;
+
+  /* 产品色保持 */
   --oomol-studio: #7d7fe9;
   --oomol-studio-light: #a855f7;
   --oomol-studio-bg: rgba(125, 127, 233, 0.15);
   --oomol-studio-border: rgba(125, 127, 233, 0.4);
 
-  /* Hub - 绿色 */
   --oomol-hub: #10b981;
   --oomol-hub-dark: #059669;
   --oomol-hub-bg: rgba(16, 185, 129, 0.15);
   --oomol-hub-border: rgba(16, 185, 129, 0.4);
 
-  /* App - 橙色 */
   --oomol-app: #f59e0b;
   --oomol-app-dark: #d97706;
   --oomol-app-bg: rgba(245, 158, 11, 0.15);
   --oomol-app-border: rgba(245, 158, 11, 0.4);
 
-  /* ----------------------
-     功能色 (Functional Colors)
-     ---------------------- */
   --oomol-success: #52c41a;
   --oomol-success-bg: rgba(82, 196, 26, 0.15);
   --oomol-success-border: rgba(82, 196, 26, 0.4);
@@ -348,78 +301,55 @@
   --oomol-info-bg: rgba(24, 144, 255, 0.15);
   --oomol-info-border: rgba(24, 144, 255, 0.4);
 
-  /* ----------------------
-     链接色 (Link)
-     ---------------------- */
-  --oomol-link: #b6bbf1;
-  --oomol-link-hover: #c5c8f6;
-  --oomol-link-active: #848ad0;
+  --oomol-link: #b1bdff;
+  --oomol-link-hover: #c3cdff;
+  --oomol-link-active: #90a2ff;
 
-  /* ----------------------
-     悬停效果 (Hover)
-     增强交互反馈的视觉效果
-     ---------------------- */
-  --oomol-hover-bg: rgba(247, 242, 232, 0.08);
+  --oomol-hover-bg: rgba(255, 255, 255, 0.06);
 
-  /* ----------------------
-     阴影 (Shadow)
-     调整强度使其更柔和自然,避免视觉负担
-     ---------------------- */
-  --oomol-shadow-sm:
-    0 1px 2px rgba(0, 0, 0, 0.36), 0 10px 18px rgba(0, 0, 0, 0.18);
+  --oomol-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
   --oomol-shadow-md:
-    0 18px 36px rgba(0, 0, 0, 0.3), 0 8px 18px rgba(0, 0, 0, 0.18);
+    0 1px 2px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.4);
   --oomol-shadow-lg:
-    0 30px 64px rgba(0, 0, 0, 0.4), 0 12px 24px rgba(0, 0, 0, 0.22);
+    0 2px 4px rgba(0, 0, 0, 0.5), 0 12px 24px rgba(0, 0, 0, 0.4);
 
-  /* ----------------------
-     Shadcn UI 变量 - 暗色模式 (映射到 Oomol 暗色体系)
-     ---------------------- */
-  /* 边框和输入框 */
-  --border: 0 0% 26%; /* 映射到 --oomol-border-default #434343 */
-  --input: 0 0% 26%;
-  --ring: 242 73% 71%; /* 主色保持不变 */
+  --border: 0 0% 14%;
+  --input: 0 0% 14%;
+  --ring: 225 100% 75%;
 
-  /* 背景和前景 */
-  --background: 0 0% 8%; /* 映射到 --oomol-bg-base #141414 */
-  --foreground: 0 0% 85%; /* 映射到 --oomol-text-primary */
+  --background: 0 0% 0%;
+  --foreground: 0 0% 98%;
 
-  /* 主色 - Oomol 紫色 (保持不变) */
-  --primary: 242 73% 71%;
-  --primary-foreground: 0 0% 100%;
+  --primary: 225 100% 75%;
+  --primary-foreground: 0 0% 4%;
 
-  /* 次要色 */
-  --secondary: 0 0% 15%; /* 映射到 --oomol-bg-elevated #252525 */
-  --secondary-foreground: 0 0% 85%;
+  --secondary: 0 0% 6%;
+  --secondary-foreground: 0 0% 98%;
 
-  /* 危险色 (保持不变) */
   --destructive: 0 100% 65%;
   --destructive-foreground: 0 0% 100%;
 
-  /* 静音色 */
-  --muted: 0 0% 12%; /* 映射到 --oomol-bg-container #1f1f1f */
-  --muted-foreground: 0 0% 50%; /* 映射到 --oomol-text-tertiary */
+  --muted: 0 0% 6%;
+  --muted-foreground: 0 0% 64%;
 
-  /* 强调色 */
-  --accent: 0 0% 16%; /* 映射到 --oomol-bg-spotlight #2a2a2a */
-  --accent-foreground: 0 0% 85%;
+  --accent: 0 0% 9%;
+  --accent-foreground: 0 0% 98%;
 
-  /* 弹出层 */
-  --popover: 0 0% 12%; /* 映射到 --oomol-bg-container #1f1f1f */
-  --popover-foreground: 0 0% 85%;
+  --popover: 0 0% 4%;
+  --popover-foreground: 0 0% 98%;
 
-  /* 卡片 */
-  --card: 0 0% 12%; /* 映射到 --oomol-bg-container */
-  --card-foreground: 0 0% 85%;
+  --card: 0 0% 4%;
+  --card-foreground: 0 0% 98%;
 }
 
 /* ============================================
-   排版系统 (Typography)
+   排版系统 (Typography) — Vercel-inspired scale
+   - 标题字重一律 600（靠字号 + 负 tracking 来制造分量）
+   - body 偏小（14–16px），行高偏紧（1.5–1.6）
+   - eyebrow / 标签一律 Geist Mono
+   - 所有数字统一 tabular-nums
    ============================================ */
 :root {
-  /* ----------------------
-     字体大小 (Font Size)
-     ---------------------- */
   --oomol-font-size-xs: 12px;
   --oomol-font-size-sm: 14px;
   --oomol-font-size-base: 16px;
@@ -431,9 +361,17 @@
   --oomol-font-size-5xl: 48px;
   --oomol-font-size-6xl: 56px;
 
-  /* ----------------------
-     字重 (Font Weight)
-     ---------------------- */
+  /* Vercel display scale — hero / section / card */
+  --oomol-display-hero: clamp(2.75rem, 5.6vw, 4.5rem); /* 44–72px */
+  --oomol-display-section: clamp(2rem, 3.4vw, 3rem); /* 32–48px */
+  --oomol-display-card: clamp(1.05rem, 1.4vw, 1.18rem); /* 17–19px */
+
+  /* Vercel body scale */
+  --oomol-body-lead: 1.08rem; /* 17px - hero/section description */
+  --oomol-body-base: 0.94rem; /* 15px - card description */
+  --oomol-body-sm: 0.86rem; /* 14px - captions */
+  --oomol-body-mono: 0.78rem; /* 13px - eyebrows, labels */
+
   --oomol-font-weight-light: 300;
   --oomol-font-weight-normal: 400;
   --oomol-font-weight-medium: 500;
@@ -441,41 +379,36 @@
   --oomol-font-weight-bold: 700;
   --oomol-font-weight-extrabold: 800;
 
-  /* ----------------------
-     行高 (Line Height)
-     ---------------------- */
-  --oomol-line-height-tight: 1.25;
-  --oomol-line-height-snug: 1.375;
+  --oomol-line-height-tight: 1.06;
+  --oomol-line-height-snug: 1.24;
   --oomol-line-height-normal: 1.5;
-  --oomol-line-height-relaxed: 1.625;
-  --oomol-line-height-loose: 2;
+  --oomol-line-height-relaxed: 1.6;
+  --oomol-line-height-loose: 1.75;
+
+  --oomol-tracking-display: -0.038em;
+  --oomol-tracking-section: -0.032em;
+  --oomol-tracking-body: -0.003em;
+  --oomol-tracking-mono: 0.02em;
 }
 
 /* ============================================
    间距系统 (Spacing)
-   基于 8pt Grid System
    ============================================ */
 :root {
-  /* ----------------------
-     间距 (Space)
-     ---------------------- */
   --oomol-space-0: 0;
-  --oomol-space-1: 4px; /* 0.5 unit */
-  --oomol-space-2: 8px; /* 1 unit */
-  --oomol-space-3: 12px; /* 1.5 units */
-  --oomol-space-4: 16px; /* 2 units */
-  --oomol-space-5: 20px; /* 2.5 units */
-  --oomol-space-6: 24px; /* 3 units */
-  --oomol-space-8: 32px; /* 4 units */
-  --oomol-space-10: 40px; /* 5 units */
-  --oomol-space-12: 48px; /* 6 units */
-  --oomol-space-16: 64px; /* 8 units */
-  --oomol-space-20: 80px; /* 10 units */
-  --oomol-space-24: 96px; /* 12 units */
+  --oomol-space-1: 4px;
+  --oomol-space-2: 8px;
+  --oomol-space-3: 12px;
+  --oomol-space-4: 16px;
+  --oomol-space-5: 20px;
+  --oomol-space-6: 24px;
+  --oomol-space-8: 32px;
+  --oomol-space-10: 40px;
+  --oomol-space-12: 48px;
+  --oomol-space-16: 64px;
+  --oomol-space-20: 80px;
+  --oomol-space-24: 96px;
 
-  /* ----------------------
-     圆角 (Border Radius)
-     ---------------------- */
   --oomol-radius-none: 0;
   --oomol-radius-sm: 2px;
   --oomol-radius-base: 4px;
@@ -488,9 +421,8 @@
 }
 
 /* ============================================
-   主题切换过渡动画
+   主题切换过渡
    ============================================ */
-/* 仅对特定元素应用过渡，避免全局通配符导致的性能问题 */
 html,
 body,
 button,
@@ -513,7 +445,6 @@ div[class*="modal"],
     border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 对于某些不需要过渡的元素 */
 img,
 video,
 canvas,
@@ -522,7 +453,6 @@ iframe {
   transition: none;
 }
 
-/* Respect user motion preferences */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

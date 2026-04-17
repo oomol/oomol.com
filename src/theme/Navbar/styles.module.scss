@@ -58,6 +58,7 @@
   font-size: 13px;
   letter-spacing: 0.02em;
   margin: 0 !important;
+  border-radius: 999px;
 
   i {
     font-size: 16px;
@@ -70,6 +71,7 @@
   font-size: 13px;
   letter-spacing: 0.02em;
   margin: 0 !important;
+  border-radius: 999px;
 
   i {
     font-size: 16px;
@@ -142,7 +144,7 @@
   left: 0;
   width: min(34rem, calc(100vw - 2rem));
   padding: 0.65rem;
-  border-radius: 1.1rem;
+  border-radius: 0.95rem;
   border: 1px solid color-mix(in srgb, var(--oomol-border-default) 78%, white);
   background: color-mix(in srgb, var(--oomol-bg-elevated) 96%, white 4%);
   box-shadow: var(--oomol-shadow-lg);
@@ -176,7 +178,7 @@
   align-items: start;
   min-height: 5rem;
   padding: 0.95rem 1rem;
-  border-radius: 0.95rem;
+  border-radius: 0.8rem;
   text-decoration: none;
   transition:
     background 0.18s ease,
@@ -390,11 +392,11 @@
 
 :global(.navbar__item.navbar__link) {
   font-size: var(--ifm-font-size-base);
-  padding: 0.52rem 0.82rem;
+  padding: 0.5rem 0.8rem;
   margin: 0 0.18rem;
   font-weight: 600;
   font-size: 14px;
-  border-radius: 999px;
+  border-radius: 10px;
   transition:
     background 0.2s ease,
     color 0.2s ease;
@@ -428,6 +430,9 @@
 :global(.navbar__link--active) {
   color: var(--oomol-primary);
   background: color-mix(in srgb, var(--oomol-primary-bg) 76%, transparent);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--oomol-primary-border) 54%, transparent),
+    0 8px 18px color-mix(in srgb, var(--oomol-primary) 16%, transparent);
 }
 
 [data-theme="dark"] {
@@ -533,7 +538,14 @@
   .navbar {
     height: 64px;
     display: flex;
-    background: inherit;
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--oomol-bg-base) 84%, transparent) 0%,
+      color-mix(in srgb, var(--oomol-bg-base) 74%, transparent) 100%
+    );
+    backdrop-filter: blur(18px) saturate(128%);
+    border-bottom: 1px solid
+      color-mix(in srgb, var(--oomol-divider) 70%, transparent);
 
     // TODO: Disable the new navbar design for now,
     // and re-enable it after the docs style refactor is complete.
@@ -554,4 +566,24 @@
   // .navbarHidden {
   //   transform: translateY(-155%);
   // }
+}
+
+@media (max-width: 996px) {
+  .navbar {
+    backdrop-filter: blur(10px) saturate(115%);
+    background: color-mix(in srgb, var(--oomol-bg-base) 88%, transparent);
+    border-bottom: 1px solid
+      color-mix(in srgb, var(--oomol-divider) 66%, transparent);
+  }
+
+  .actions {
+    gap: 0.55rem;
+  }
+
+  .downloadButton,
+  .loginButton {
+    min-height: 36px;
+    font-size: 12px;
+    letter-spacing: 0.01em;
+  }
 }

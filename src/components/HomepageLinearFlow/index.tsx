@@ -221,6 +221,14 @@ const enCopy: Copy = {
   },
 };
 
+function splitEyebrow(eyebrow: string): { number: string; label: string } {
+  const parts = eyebrow.split(/\s*\/\s*/);
+  if (parts.length >= 2) {
+    return { number: parts[0], label: parts.slice(1).join(" / ") };
+  }
+  return { number: "", label: eyebrow };
+}
+
 export default function HomepageLinearFlow() {
   const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
     i18n: { currentLocale: string };
@@ -232,13 +240,28 @@ export default function HomepageLinearFlow() {
       : "/img/pages/home/cloud-console-en.png"
   );
 
+  const studioEyebrow = splitEyebrow(copy.studio.eyebrow);
+  const cloudEyebrow = splitEyebrow(copy.cloud.eyebrow);
+  const cliEyebrow = splitEyebrow(copy.cli.eyebrow);
+
   return (
     <div className={styles.flow}>
       {/* ── Section: Studio ── */}
       <section className={clsx(styles.section, styles.sectionTint)}>
+        <div className={styles.stepWatermark} aria-hidden="true">
+          {studioEyebrow.number}
+        </div>
         <div className={styles.container}>
           <div className={styles.copyPanel}>
-            <span className={styles.eyebrow}>{copy.studio.eyebrow}</span>
+            <span className={styles.eyebrow}>
+              <span className={styles.eyebrowNumber}>
+                {studioEyebrow.number}
+              </span>
+              <span className={styles.eyebrowDivider} aria-hidden="true" />
+              <span className={styles.eyebrowLabel}>
+                {studioEyebrow.label}
+              </span>
+            </span>
             <h2 className={styles.sectionTitle}>{copy.studio.title}</h2>
             <p className={styles.sectionDescription}>
               {copy.studio.description}
@@ -265,9 +288,18 @@ export default function HomepageLinearFlow() {
 
       {/* ── Section: Cloud ── */}
       <section className={clsx(styles.section, styles.cloudSection)}>
+        <div className={styles.stepWatermark} aria-hidden="true">
+          {cloudEyebrow.number}
+        </div>
         <div className={styles.container}>
           <div className={styles.copyPanel}>
-            <span className={styles.eyebrow}>{copy.cloud.eyebrow}</span>
+            <span className={styles.eyebrow}>
+              <span className={styles.eyebrowNumber}>
+                {cloudEyebrow.number}
+              </span>
+              <span className={styles.eyebrowDivider} aria-hidden="true" />
+              <span className={styles.eyebrowLabel}>{cloudEyebrow.label}</span>
+            </span>
             <h2 className={styles.sectionTitle}>{copy.cloud.title}</h2>
             <p className={styles.sectionDescription}>
               {copy.cloud.description}
@@ -307,9 +339,16 @@ export default function HomepageLinearFlow() {
 
       {/* ── Section: oo-cli ── */}
       <section className={clsx(styles.section, styles.cliSection)}>
+        <div className={styles.stepWatermark} aria-hidden="true">
+          {cliEyebrow.number}
+        </div>
         <div className={styles.container}>
           <div className={styles.copyPanel}>
-            <span className={styles.eyebrow}>{copy.cli.eyebrow}</span>
+            <span className={styles.eyebrow}>
+              <span className={styles.eyebrowNumber}>{cliEyebrow.number}</span>
+              <span className={styles.eyebrowDivider} aria-hidden="true" />
+              <span className={styles.eyebrowLabel}>{cliEyebrow.label}</span>
+            </span>
             <h2 className={styles.sectionTitle}>{copy.cli.title}</h2>
             <p className={styles.sectionDescription}>{copy.cli.description}</p>
             <div className={styles.inlineActions}>

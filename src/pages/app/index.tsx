@@ -668,7 +668,7 @@ export default function AppPage() {
         <title>{copy.page.title}</title>
         <meta name="description" content={copy.page.description} />
       </Head>
-      <main id="top" className={styles.page}>
+      <main id="top" className={`${styles.page} oomol-landing-main`}>
         <section className={styles.hero}>
           <div className={styles.heroHeader}>
             <div className={styles.heroCopy}>

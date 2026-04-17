@@ -15,7 +15,7 @@ export default function CloudPage() {
           content={translate({ message: "CLOUD.hero.description" })}
         />
       </Head>
-      <main>
+      <main className="oomol-landing-main">
         <CloudPageIntro />
       </main>
     </Layout>

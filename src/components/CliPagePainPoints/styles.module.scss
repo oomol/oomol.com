@@ -1,47 +1,57 @@
 @use "../../css/custom.scss" as *;
 
 .section {
-  padding: clamp(3.6rem, 7vw, 5.2rem) 0;
+  padding: clamp(5rem, 10vw, 8rem) 0;
   position: relative;
 }
 
 .container {
-  max-width: 1280px;
+  width: min(1200px, calc(100% - 48px));
   margin: 0 auto;
-  padding: 0 24px;
   display: grid;
-  gap: clamp(1.2rem, 2.6vw, 1.9rem);
+  gap: clamp(2.4rem, 4vw, 3.4rem);
 }
 
 .header {
   display: grid;
-  gap: 0.65rem;
-  text-align: center;
-  justify-items: center;
+  gap: 0.9rem;
+  text-align: left;
+  justify-items: start;
+  max-width: 48rem;
 }
 
 .badge {
   display: inline-flex;
   align-items: center;
-  min-height: 1.9rem;
-  padding: 0 0.8rem;
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--oomol-primary) 14%, white);
-  background: color-mix(in srgb, var(--oomol-primary-bg) 46%, white 54%);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--oomol-primary-text);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-body-mono);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  text-transform: none;
+  color: var(--oomol-primary);
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-right: 0.55rem;
+    border-radius: 999px;
+    background: var(--oomol-primary);
+  }
 }
 
 .title {
   margin: 0;
-  max-width: 18ch;
+  max-width: 22ch;
   font-family: var(--oomol-font-display);
-  font-size: clamp(1.92rem, 3vw, 2.46rem);
-  line-height: 1.12;
-  letter-spacing: -0.04em;
+  font-size: var(--oomol-display-section);
+  line-height: 1.06;
+  letter-spacing: var(--oomol-tracking-section);
+  font-weight: 600;
   color: var(--oomol-text-primary);
   text-wrap: balance;
 }
@@ -49,207 +59,148 @@
 .subtitle {
   margin: 0;
   max-width: 44rem;
-  font-size: 1.04rem;
-  line-height: 1.68;
+  font-size: var(--oomol-body-lead);
+  line-height: 1.6;
   color: var(--oomol-text-secondary);
   text-wrap: pretty;
 }
 
+/* Card grid — unified hairline outer frame */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 0.1rem;
+  gap: 0;
+  border: 1px solid var(--oomol-divider);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--oomol-bg-base);
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
-  padding: 1.5rem 1.4rem 1.65rem;
-  border: 1px solid var(--oomol-divider);
-  border-radius: 1.55rem;
-  background: var(--oomol-surface-float);
-  box-shadow: 0 10px 24px rgba(101, 118, 163, 0.08);
+  gap: 0.7rem;
+  padding: 1.5rem 1.4rem 1.6rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none !important;
   position: relative;
   overflow: hidden;
+  transition: background-color 0.2s ease;
+
+  /* hairline grid lines */
+  &:not(:nth-child(3n)) {
+    border-right: 1px solid var(--oomol-divider);
+  }
+
+  &:not(:nth-last-child(-n + 3)) {
+    border-bottom: 1px solid var(--oomol-divider);
+  }
+
+  &:hover {
+    background: var(--oomol-bg-container);
+  }
 
   &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 1.35rem;
-    right: 1.35rem;
-    height: 2px;
-    border-radius: 999px;
-    background: linear-gradient(
-      90deg,
-      color-mix(in srgb, var(--oomol-primary) 58%, transparent) 0%,
-      color-mix(in srgb, var(--oomol-primary) 6%, transparent) 100%
-    );
+    content: none;
   }
 }
 
 .cardIcon {
-  width: 2.6rem;
-  height: 2.6rem;
+  width: 2.2rem;
+  height: 2.2rem;
   display: grid;
   place-items: center;
-  border-radius: 0.75rem;
-  background: color-mix(
-    in srgb,
-    var(--oomol-primary-bg) 50%,
-    var(--oomol-bg-elevated) 50%
-  );
-  color: var(--oomol-primary);
+  border-radius: 8px;
+  border: 1px solid var(--oomol-divider);
+  background: var(--oomol-bg-base);
+  color: var(--oomol-text-primary);
 }
 
 .iconGlyph {
-  font-size: 1.3rem;
+  font-size: 1.05rem;
 }
 
 .cardMeta {
-  display: grid;
-  gap: 0.45rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  padding-top: 0.1rem;
 }
 
 .cardEyebrow {
-  font-size: 0.78rem;
-  line-height: 1.2;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--oomol-primary-text);
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-body-mono);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  text-transform: none;
+  color: var(--oomol-text-tertiary);
 }
 
 .cardCommand {
-  display: inline-block;
-  width: fit-content;
-  max-width: 100%;
-  padding: 0.35rem 0.55rem;
-  border-radius: 0.65rem;
-  border: 1px solid color-mix(in srgb, var(--oomol-primary) 12%, white);
-  background: color-mix(
-    in srgb,
-    var(--oomol-bg-elevated) 82%,
-    var(--oomol-primary-bg) 18%
-  );
-  font-family:
-    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas,
-    "Liberation Mono", monospace;
-  font-size: 0.82rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.1rem 0.45rem;
+  border-radius: 5px;
+  border: 1px solid var(--oomol-divider);
+  background: var(--oomol-bg-container);
+  font-family: var(--oomol-font-mono);
+  font-size: 0.76rem;
   line-height: 1.45;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   color: var(--oomol-text-primary);
-  overflow-wrap: anywhere;
 }
 
 .cardTitle {
   margin: 0;
-  font-size: 1.3rem;
-  line-height: 1.32;
-  font-weight: 650;
+  font-size: var(--oomol-display-card);
+  line-height: 1.28;
+  font-weight: 600;
+  letter-spacing: -0.015em;
   color: var(--oomol-text-primary);
+  text-wrap: balance;
 }
 
 .cardDescription {
   margin: 0;
-  font-size: 0.96rem;
-  line-height: 1.72;
+  font-size: var(--oomol-body-base);
+  line-height: 1.6;
   color: var(--oomol-text-secondary);
 }
 
 .pointList {
-  margin-top: auto;
-  margin-bottom: 0;
-  padding: 0.1rem 0 0;
   list-style: none;
+  margin: auto 0 0;
+  padding: 0.7rem 0 0;
   display: grid;
-  gap: 0.58rem;
+  gap: 0.35rem;
+  border-top: 1px dashed var(--oomol-divider);
 }
 
 .pointItem {
-  display: flex;
-  gap: 0.7rem;
-  margin: 0;
-  font-size: 0.92rem;
-  line-height: 1.58;
-  color: var(--oomol-primary-text);
-  font-weight: 500;
+  position: relative;
+  padding-left: 1rem;
+  font-size: var(--oomol-body-sm);
+  line-height: 1.55;
+  color: var(--oomol-text-secondary);
 
   &::before {
-    content: "";
-    width: 0.42rem;
-    height: 0.42rem;
-    margin-top: 0.48rem;
-    border-radius: 999px;
-    background: color-mix(in srgb, var(--oomol-primary) 72%, white 28%);
-    flex: none;
+    content: "›";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--oomol-text-quaternary);
+    font-weight: 500;
   }
 }
 
-[data-theme="dark"] {
-  .badge {
-    border-color: color-mix(in srgb, var(--oomol-primary) 20%, transparent);
-    background: color-mix(
-      in srgb,
-      var(--oomol-primary-bg) 30%,
-      var(--oomol-bg-container) 70%
-    );
-  }
-
-  .card {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-border-default) 72%,
-      var(--oomol-divider)
-    );
-    background: linear-gradient(
-      180deg,
-      color-mix(
-          in srgb,
-          var(--oomol-bg-container) 84%,
-          var(--oomol-bg-elevated) 16%
-        )
-        0%,
-      color-mix(in srgb, var(--oomol-bg-elevated) 88%, black 12%) 100%
-    );
-    box-shadow: 0 12px 28px rgba(12, 16, 28, 0.28);
-  }
-
-  .cardIcon {
-    background: color-mix(
-      in srgb,
-      var(--oomol-primary-bg) 40%,
-      var(--oomol-bg-container) 60%
-    );
-  }
-
-  .cardCommand {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-primary) 18%,
-      var(--oomol-divider)
-    );
-    background: color-mix(
-      in srgb,
-      var(--oomol-bg-elevated) 78%,
-      var(--oomol-primary-bg) 22%
-    );
-  }
-
-  .pointItem::before {
-    background: color-mix(
-      in srgb,
-      var(--oomol-primary) 72%,
-      var(--oomol-primary-border) 28%
-    );
-  }
-}
+/* ── English overrides ── */
 
 :global(html[lang="en"]) .title {
-  max-width: 22ch;
-  font-size: clamp(1.92rem, 3vw, 2.46rem);
-  line-height: 1.12;
+  max-width: 26ch;
 }
 
 :global(html[lang="en"]) .subtitle {
@@ -257,34 +208,40 @@
 }
 
 :global(html[lang="en"]) .cardTitle {
-  font-size: 1.2rem;
+  max-width: 26ch;
 }
-@media (max-width: 1100px) {
+
+/* ── Tablet ── */
+
+@media (max-width: 996px) {
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .card {
+    &:not(:nth-child(3n)) {
+      border-right: 0;
+    }
+
+    &:not(:nth-child(2n)) {
+      border-right: 1px solid var(--oomol-divider);
+    }
+
+    &:not(:nth-last-child(-n + 3)) {
+      border-bottom: 1px solid var(--oomol-divider);
+    }
+  }
 }
+
+/* ── Mobile ── */
 
 @media (max-width: 768px) {
   .section {
-    padding: 2.5rem 0 2.1rem;
+    padding: 3rem 0;
   }
 
   .container {
-    padding: 0 20px;
-    gap: 1rem;
-  }
-
-  .title {
-    max-width: 100%;
-    font-size: clamp(1.95rem, 8vw, 2.6rem);
-    line-height: 1.12;
-    letter-spacing: -0.03em;
-  }
-
-  .subtitle {
-    font-size: 0.96rem;
-    line-height: 1.64;
+    width: min(100%, calc(100% - 40px));
   }
 
   .grid {
@@ -292,11 +249,55 @@
   }
 
   .card {
-    padding: 1.2rem 1.15rem 1.35rem;
-    border-radius: 1.35rem;
+    padding: 1.35rem 1.25rem 1.4rem;
+
+    &:not(:nth-child(2n)) {
+      border-right: 0;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--oomol-divider);
+    }
   }
 
-  .cardTitle {
-    font-size: 1.15rem;
+  .title {
+    font-size: clamp(1.9rem, 7.6vw, 2.4rem);
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* ── Dark mode ── */
+
+[data-theme="dark"] {
+  .grid {
+    background: var(--oomol-bg-base);
+    border-color: var(--oomol-border-subtle);
+  }
+
+  .card {
+    &:not(:nth-child(3n)) {
+      border-right-color: var(--oomol-border-subtle);
+    }
+
+    &:not(:nth-last-child(-n + 3)) {
+      border-bottom-color: var(--oomol-border-subtle);
+    }
+
+    &:hover {
+      background: var(--oomol-bg-elevated);
+    }
+  }
+
+  .cardIcon {
+    background: var(--oomol-bg-elevated);
+    border-color: var(--oomol-border-default);
+  }
+
+  .cardCommand {
+    background: var(--oomol-bg-elevated);
+    border-color: var(--oomol-border-default);
   }
 }

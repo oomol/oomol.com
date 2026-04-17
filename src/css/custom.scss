@@ -12,18 +12,24 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(18, 16, 13, 0.08);
   --oomol-font-display:
-    "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Baskerville",
-    Georgia, serif;
+    "Geist", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
   --oomol-font-body:
-    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
-    Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI",
-    "Microsoft YaHei", "Source Han Sans CN", sans-serif;
+    "Geist", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  --oomol-font-mono:
+    "Geist Mono", "SFMono-Regular", "SF Mono", Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
   --ifm-font-family-base: var(--oomol-font-body);
   --ifm-heading-font-family: var(--oomol-font-display);
   --ifm-heading-color: var(--oomol-text-primary);
   --ifm-background-surface-color: var(--oomol-bg-elevated);
   --ifm-font-weight-semibold: 600;
-  --ifm-global-radius: 18px;
+  --ifm-global-radius: 14px;
+  --oomol-motion-duration-fast: 160ms;
+  --oomol-motion-duration-base: 220ms;
+  --oomol-motion-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --oomol-hover-lift: translateY(-2px);
 
   /* Light mode colors - 使用 design tokens */
   --ifm-navbar-background-color: var(--oomol-bg-base);
@@ -64,6 +70,7 @@ body {
 body {
   color: var(--oomol-text-primary);
   font-family: var(--oomol-font-body);
+  letter-spacing: -0.002em;
   --arcoblue-1: var(--oomol-arco-primary-1);
   --arcoblue-2: var(--oomol-arco-primary-2);
   --arcoblue-3: var(--oomol-arco-primary-3);
@@ -74,6 +81,227 @@ body {
   --arcoblue-8: var(--oomol-arco-primary-8);
   --arcoblue-9: var(--oomol-arco-primary-9);
   --arcoblue-10: var(--oomol-arco-primary-10);
+}
+
+:lang(zh-CN) {
+  --oomol-font-display:
+    "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI",
+    "Microsoft YaHei", "Geist", sans-serif;
+  --oomol-font-body:
+    "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI",
+    "Microsoft YaHei", "Geist", sans-serif;
+}
+
+:lang(en) {
+  --oomol-font-display:
+    "Geist", "Inter", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  --oomol-font-body:
+    "Geist", "Inter", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+}
+
+/* ============================================
+   Landing / marketing 页面通用排版 + 视觉规范
+   — 应用于 .oomol-home-main 与 .oomol-landing-main 两类 main
+   — 强制 Vercel 式字号、字重、tracking、mono eyebrow、flat surface
+   ============================================ */
+
+.oomol-home-main,
+.oomol-landing-main {
+  position: relative;
+  isolation: isolate;
+  font-family: var(--oomol-font-body);
+
+  > section {
+    margin-block: 0;
+  }
+
+  > section + section {
+    margin-top: 0;
+  }
+}
+
+/* 标题：600 semibold + 紧 tracking，英中分别适配 */
+:lang(zh-CN) .oomol-home-main :is(h1, h2, h3),
+:lang(zh-CN) .oomol-landing-main :is(h1, h2, h3) {
+  letter-spacing: -0.022em;
+  font-weight: 600;
+  line-height: 1.12;
+  text-wrap: pretty;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  font-variation-settings: normal;
+}
+
+:lang(en) .oomol-home-main :is(h1, h2, h3),
+:lang(en) .oomol-landing-main :is(h1, h2, h3) {
+  letter-spacing: -0.034em;
+  font-weight: 600;
+  line-height: 1.06;
+  text-wrap: balance;
+  hyphens: auto;
+}
+
+/* Body / subtitle / overview / description — 紧行高 */
+:lang(zh-CN) .oomol-home-main p,
+:lang(zh-CN) .oomol-landing-main p {
+  letter-spacing: 0;
+  line-height: 1.72;
+}
+
+:lang(en) .oomol-home-main p,
+:lang(en) .oomol-landing-main p {
+  letter-spacing: -0.003em;
+  line-height: 1.6;
+}
+
+/* ── Eyebrow / Kicker / Badge: 强制 Mono 小号 + primary 圆点 ── */
+
+.oomol-home-main [class*="eyebrow"],
+.oomol-home-main [class*="Eyebrow"],
+.oomol-home-main [class*="kicker"],
+.oomol-home-main [class*="Kicker"],
+.oomol-landing-main [class*="eyebrow"],
+.oomol-landing-main [class*="Eyebrow"],
+.oomol-landing-main [class*="kicker"],
+.oomol-landing-main [class*="Kicker"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  width: fit-content;
+  min-height: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-body-mono);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  text-transform: none;
+  color: var(--oomol-primary);
+  box-shadow: none !important;
+}
+
+.oomol-home-main [class*="eyebrow"]:not([class*="eyebrowNumber"]):not([class*="eyebrowLabel"]):not([class*="eyebrowDivider"])::before,
+.oomol-home-main [class*="Eyebrow"]::before,
+.oomol-home-main [class*="kicker"]::before,
+.oomol-home-main [class*="Kicker"]::before,
+.oomol-landing-main [class*="eyebrow"]:not([class*="eyebrowNumber"]):not([class*="eyebrowLabel"]):not([class*="eyebrowDivider"])::before,
+.oomol-landing-main [class*="Eyebrow"]::before,
+.oomol-landing-main [class*="kicker"]::before,
+.oomol-landing-main [class*="Kicker"]::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 0.55rem;
+  border-radius: 999px;
+  background: var(--oomol-primary);
+  flex-shrink: 0;
+}
+
+/* Badges (非 step 水印里的编号) — 也走 mono pill 但带 hairline */
+.oomol-home-main [class*="badge" i]:not([class*="NoWrap"]):not([class*="noWrap"]),
+.oomol-landing-main [class*="badge" i]:not([class*="NoWrap"]):not([class*="noWrap"]) {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 0.55rem;
+  border-radius: 6px;
+  border: 1px solid var(--oomol-divider);
+  background: var(--oomol-bg-container);
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-body-mono);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  text-transform: none;
+  color: var(--oomol-text-secondary);
+  box-shadow: none !important;
+}
+
+/* ── Section 背景：杀掉所有紫色 radial / linear-gradient，替换为平色 ── */
+
+.oomol-home-main > section,
+.oomol-landing-main > section {
+  position: relative;
+  background: var(--oomol-bg-base);
+  border-bottom: 1px solid var(--oomol-divider);
+}
+
+/* 偶数 section（第 2、4、6 个）换 container 色，形成段落区隔 */
+.oomol-home-main > section:nth-of-type(even),
+.oomol-landing-main > section:nth-of-type(even) {
+  background: var(--oomol-bg-container);
+}
+
+/* 抹掉 section 内装饰性渐变伪元素（许多老样式用 ::before 画紫光） */
+.oomol-landing-main > section::before {
+  background: none !important;
+}
+
+/* ── 卡片 / 面板 / Hero / Section：强制 hairline + 扁平阴影 ── */
+
+.oomol-home-main
+  :is(
+    [class*="card" i],
+    [class*="Card" i],
+    [class*="panel" i],
+    [class*="Panel" i],
+    [class*="surface" i],
+    [class*="hero" i],
+    [class*="Hero" i]
+  ),
+.oomol-landing-main
+  :is(
+    [class*="card" i],
+    [class*="Card" i],
+    [class*="panel" i],
+    [class*="Panel" i],
+    [class*="surface" i],
+    [class*="hero" i],
+    [class*="Hero" i]
+  ) {
+  box-shadow: none !important;
+  background-image: none !important;
+}
+
+/* 页面根容器（.page）也扁平化 */
+.oomol-landing-main[class*="page" i],
+.oomol-landing-main[class*="Page" i] {
+  background-image: none !important;
+  background-color: var(--oomol-bg-base);
+}
+
+/* Ring-style legacy badges with uppercase / heavy weight — 统一降权为正常 */
+.oomol-home-main :is([class*="tag" i], [class*="pill" i], [class*="chip" i]),
+.oomol-landing-main :is([class*="tag" i], [class*="pill" i], [class*="chip" i]) {
+  text-transform: none;
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  box-shadow: none !important;
+  background-image: none !important;
+}
+
+/* 描述 / subtitle 限宽 */
+[data-theme="dark"] .oomol-home-main p[class*="subtitle"],
+[data-theme="dark"] .oomol-home-main p[class*="Description"],
+[data-theme="dark"] .oomol-home-main p[class*="overview"],
+[data-theme="dark"] .oomol-landing-main p[class*="subtitle"],
+[data-theme="dark"] .oomol-landing-main p[class*="Description"],
+[data-theme="dark"] .oomol-landing-main p[class*="overview"] {
+  max-width: 40rem;
+}
+
+[data-theme="dark"]:lang(en) .oomol-home-main p[class*="subtitle"],
+[data-theme="dark"]:lang(en) .oomol-home-main p[class*="Description"],
+[data-theme="dark"]:lang(en) .oomol-home-main p[class*="overview"],
+[data-theme="dark"]:lang(en) .oomol-landing-main p[class*="subtitle"],
+[data-theme="dark"]:lang(en) .oomol-landing-main p[class*="Description"],
+[data-theme="dark"]:lang(en) .oomol-landing-main p[class*="overview"] {
+  max-width: 52rem;
 }
 
 [data-theme="light"],
@@ -164,11 +392,11 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(16px) saturate(120%);
     background: linear-gradient(
       180deg,
-      color-mix(in srgb, var(--oomol-bg-base) 90%, transparent) 0%,
-      color-mix(in srgb, var(--oomol-bg-base) 82%, transparent) 100%
+      color-mix(in srgb, var(--oomol-bg-base) 92%, transparent) 0%,
+      color-mix(in srgb, var(--oomol-bg-base) 80%, transparent) 100%
     );
     z-index: -1;
   }

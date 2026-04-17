@@ -135,7 +135,7 @@ export default function Downloads() {
         <title>{copy.pageTitle}</title>
         <meta name="description" content={copy.pageDescription} />
       </Head>
-      <div className={styles.page}>
+      <main className={`${styles.page} oomol-landing-main`}>
         <section className={styles.hero}>
           <div className={styles.heroInner}>
             <img className={styles.image} src={logoUrl} alt="" />
@@ -327,7 +327,7 @@ export default function Downloads() {
             </div>
           </section>
         </div>
-      </div>
+      </main>
     </Layout>
   );
 }

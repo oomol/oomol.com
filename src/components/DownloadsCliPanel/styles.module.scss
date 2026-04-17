@@ -8,7 +8,11 @@
 .cliMethodsGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 0;
+  border: 1px solid var(--oomol-divider);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--oomol-bg-base);
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
@@ -17,138 +21,133 @@
 
 .cliMethodCard {
   display: grid;
-  gap: 0.9rem;
+  gap: 0.85rem;
   min-height: 100%;
-  padding: 1.45rem;
-  border-radius: 1.55rem;
-  border: 1px solid var(--oomol-divider);
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 95%, white 5%);
-  box-shadow: 0 14px 32px rgba(77, 88, 124, 0.08);
+  padding: 1.5rem 1.6rem 1.6rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+
+  &:first-child {
+    border-right: 1px solid var(--oomol-divider);
+  }
+
+  @media (max-width: 900px) {
+    &:first-child {
+      border-right: 0;
+      border-bottom: 1px solid var(--oomol-divider);
+    }
+  }
 }
 
 .cliMethodHeader {
   display: grid;
-  gap: 2px;
+  gap: 0.25rem;
 }
 
 .cliMethodTitle {
   margin: 0;
-  font-size: 1.18rem;
-  font-weight: 700;
+  font-size: var(--oomol-display-card);
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.012em;
   color: var(--oomol-text-primary);
 }
 
 .cliMethodDescription {
   margin: 0;
-  font-size: 0.98rem;
-  line-height: 1.72;
+  font-size: var(--oomol-body-base);
+  line-height: 1.6;
   color: var(--oomol-text-secondary);
 }
 
 .cliSnippetBox {
   display: grid;
-  gap: 0.75rem;
-  padding: 1rem 0 0;
-  border-top: 1px solid
-    color-mix(in srgb, var(--oomol-border-subtle) 84%, white);
+  gap: 0.6rem;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--oomol-divider);
+  background: var(--oomol-bg-container);
+  margin-top: auto;
 }
 
 .cliSnippet {
   margin: 0;
   white-space: pre-wrap;
   overflow-wrap: break-word;
-  font-size: 0.92rem;
-  line-height: 1.75;
-  font-family:
-    "SFMono-Regular", "SF Mono", "Cascadia Code", "JetBrains Mono", Consolas,
-    "Liberation Mono", Menlo, monospace;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  font-family: var(--oomol-font-mono);
   color: var(--oomol-text-primary);
+
+  &::before {
+    content: "$ ";
+    color: var(--oomol-text-tertiary);
+  }
 }
 
 .cliCopyButton {
   justify-self: start;
-  min-height: 34px;
-  padding: 0 12px;
-  border: 1px solid color-mix(in srgb, var(--oomol-border-default) 78%, white);
-  border-radius: 999px;
-  background: var(--oomol-bg-elevated);
-  color: var(--oomol-text-primary);
-  font-size: 13px;
-  font-weight: 700;
+  min-height: 30px;
+  padding: 0 0.7rem;
+  border: 1px solid var(--oomol-divider);
+  border-radius: 6px;
+  background: var(--oomol-bg-base);
+  color: var(--oomol-text-secondary);
+  font-family: var(--oomol-font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   cursor: pointer;
   transition:
-    border-color 0.2s ease,
-    background-color 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
+    border-color 0.15s ease,
+    background-color 0.15s ease,
+    color 0.15s ease;
 
   &:hover {
-    transform: translateY(-1px);
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-primary-border) 74%,
-      var(--oomol-border-default)
-    );
-    background: color-mix(in srgb, var(--oomol-primary-bg) 64%, white 36%);
-    color: var(--oomol-primary);
+    transform: none;
+    border-color: var(--oomol-border-strong);
+    background: var(--oomol-bg-spotlight);
+    color: var(--oomol-text-primary);
   }
 }
 
-:global(html[data-theme="dark"]) .cliMethodCard {
-  border-color: color-mix(
-    in srgb,
-    var(--oomol-border-default) 74%,
-    transparent
-  );
-  background: color-mix(
-    in srgb,
-    var(--oomol-bg-container) 86%,
-    var(--oomol-bg-elevated) 14%
-  );
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.04),
-    0 14px 32px rgba(0, 0, 0, 0.12);
+:global(html[data-theme="dark"]) .cliMethodsGrid {
+  background: var(--oomol-bg-base);
+  border-color: var(--oomol-border-subtle);
+}
+
+:global(html[data-theme="dark"]) .cliMethodCard:first-child {
+  border-right-color: var(--oomol-border-subtle);
 }
 
 :global(html[data-theme="dark"]) .cliSnippetBox {
-  border-color: color-mix(
-    in srgb,
-    var(--oomol-border-default) 70%,
-    transparent
-  );
+  background: var(--oomol-bg-elevated);
+  border-color: var(--oomol-border-default);
 }
 
 @media (max-width: 768px) {
   .cliMethodCard {
-    padding: 1.2rem;
-    border-radius: 1.35rem;
+    padding: 1.2rem 1.3rem 1.3rem;
   }
 
   .cliMethodTitle {
-    font-size: 1.08rem;
+    font-size: 1.04rem;
   }
 
   .cliMethodDescription,
   .cliSnippet {
-    font-size: 0.94rem;
+    font-size: 0.88rem;
   }
 }
 
 :global(html[data-theme="dark"]) .cliCopyButton {
-  background: var(--oomol-surface-float);
-  border-color: color-mix(
-    in srgb,
-    var(--oomol-border-default) 74%,
-    transparent
-  );
-  color: color-mix(in srgb, var(--oomol-text-secondary) 94%, white 6%);
+  background: var(--oomol-bg-elevated);
+  border-color: var(--oomol-border-default);
 
   &:hover {
-    background: color-mix(
-      in srgb,
-      var(--oomol-primary-bg) 60%,
-      var(--oomol-bg-elevated) 40%
-    );
-    color: color-mix(in srgb, var(--oomol-text-primary) 96%, white 4%);
+    background: var(--oomol-bg-spotlight);
+    color: var(--oomol-text-primary);
   }
 }

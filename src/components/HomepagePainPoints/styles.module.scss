@@ -1,55 +1,69 @@
 @use "../../css/custom.scss" as *;
 
 .section {
-  padding: clamp(3rem, 6vw, 4.6rem) 0;
   position: relative;
+  padding: clamp(5rem, 10vw, 8rem) 0;
+  background: var(--oomol-bg-base);
+  border-bottom: 1px solid var(--oomol-divider);
 }
 
 .container {
-  width: min(1260px, calc(100% - 48px));
+  width: min(1200px, calc(100% - 48px));
   margin: 0 auto;
   display: grid;
-  gap: clamp(1.2rem, 2.8vw, 1.8rem);
+  gap: clamp(2.4rem, 4vw, 3.4rem);
 }
 
 .header {
   display: grid;
-  gap: 0.58rem;
-  text-align: center;
-  justify-items: center;
+  gap: 0.9rem;
+  text-align: left;
+  justify-items: start;
+  max-width: 48rem;
 }
 
+/* Monospace eyebrow — Vercel 经典手法 */
 .badge {
   display: inline-flex;
   align-items: center;
-  min-height: 1.9rem;
-  padding: 0 0.8rem;
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--oomol-primary) 14%, white);
-  background: color-mix(in srgb, var(--oomol-primary-bg) 46%, white 54%);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--oomol-primary-text);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: var(--oomol-font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--oomol-primary);
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-right: 0.6rem;
+    border-radius: 999px;
+    background: var(--oomol-primary);
+  }
 }
 
 .title {
   margin: 0;
-  max-width: 20ch;
+  max-width: 22ch;
   font-family: var(--oomol-font-display);
-  font-size: clamp(1.92rem, 3vw, 2.46rem);
-  line-height: 1.12;
-  letter-spacing: -0.04em;
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  font-weight: 600;
   text-wrap: balance;
   color: var(--oomol-text-primary);
 }
 
 .subtitle {
   margin: 0;
-  max-width: 34rem;
+  max-width: 40rem;
   font-size: 1.04rem;
-  line-height: 1.62;
+  line-height: 1.6;
   text-wrap: pretty;
   color: var(--oomol-text-secondary);
 }
@@ -57,44 +71,42 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.9rem;
-  max-width: 1180px;
+  gap: 1rem;
+  max-width: 100%;
   margin: 0 auto;
+  width: 100%;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  gap: 0.88rem;
+  gap: 1.1rem;
   height: 100%;
-  padding: 1.28rem 1.2rem 1.35rem;
+  padding: 1.4rem 1.4rem 1.5rem;
   border: 1px solid var(--oomol-divider);
-  border-radius: 1.5rem;
-  background: color-mix(in srgb, var(--oomol-surface-float) 94%, white 6%);
-  box-shadow: var(--oomol-shadow-sm);
+  border-radius: 14px;
+  background: var(--oomol-bg-base);
+  box-shadow: none;
   position: relative;
   overflow: hidden;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+
+  &:hover {
+    transform: none;
+    border-color: var(--oomol-border-strong);
+    box-shadow: none;
+  }
 
   &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 1.4rem;
-    right: 1.4rem;
-    height: 2px;
-    border-radius: 999px;
-    background: linear-gradient(
-      90deg,
-      color-mix(in srgb, var(--oomol-text-secondary) 50%, transparent) 0%,
-      color-mix(in srgb, var(--oomol-text-secondary) 10%, transparent) 100%
-    );
+    content: none;
   }
 }
 
 .cardHeader {
   display: grid;
-  gap: 0.82rem;
-  min-height: 9.1rem;
+  gap: 0.9rem;
 }
 
 .cardTop {
@@ -111,93 +123,98 @@
 .appRow {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.55rem;
+  gap: 0.4rem;
 }
 
 .appChip {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  min-height: 1.9rem;
-  padding: 0 0.72rem;
+  gap: 0.4rem;
+  min-height: 1.75rem;
+  padding: 0 0.6rem;
   border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--oomol-border-default) 82%, white);
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%);
-  font-size: 0.82rem;
-  font-weight: 600;
+  border: 1px solid var(--oomol-divider);
+  background: var(--oomol-bg-base);
+  font-size: 0.78rem;
+  font-weight: 500;
   color: var(--oomol-text-secondary);
+  letter-spacing: -0.003em;
 }
 
 .appIcon {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--oomol-text-primary);
 }
 
 .cardTitle {
   margin: 0;
-  font-size: 1.22rem;
-  line-height: 1.28;
-  font-weight: 650;
+  font-size: 1.08rem;
+  line-height: 1.32;
+  font-weight: 600;
+  letter-spacing: -0.012em;
   color: var(--oomol-text-primary);
 }
 
 .cardDescription {
   margin: 0;
-  font-size: 0.98rem;
-  line-height: 1.64;
+  font-size: 0.92rem;
+  line-height: 1.6;
   color: var(--oomol-text-secondary);
 }
 
+/* Prompt block — terminal 风格 */
 .exampleBlock {
   display: grid;
   gap: 0.45rem;
-  padding: 0.9rem 0.94rem;
-  border-radius: 1rem;
-  border: 1px solid color-mix(in srgb, var(--oomol-primary) 12%, white);
-  background: color-mix(in srgb, var(--oomol-primary-bg) 38%, white 62%);
-  min-height: 7.15rem;
+  padding: 0.85rem 0.95rem;
+  border-radius: 8px;
+  border: 1px solid var(--oomol-divider);
+  background: var(--oomol-bg-spotlight);
   align-content: start;
 }
 
 .exampleLabel,
 .resultLabel {
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-family: var(--oomol-font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--oomol-text-tertiary);
 }
 
 .exampleText {
   margin: 0;
-  font-size: 0.9rem;
+  padding-left: 1rem;
+  position: relative;
+  font-family: var(--oomol-font-mono);
+  font-size: 0.82rem;
   line-height: 1.56;
   color: var(--oomol-text-primary);
+
+  &::before {
+    content: "$";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--oomol-text-tertiary);
+    font-weight: 500;
+  }
 }
 
+/* Result block — arrow + mono */
 .resultBlock {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.8rem;
+  grid-template-columns: 1fr;
+  gap: 0.45rem;
   align-items: start;
   margin-top: auto;
-  padding-top: 0.9rem;
-  border-top: 1px solid
-    color-mix(in srgb, var(--oomol-border-default) 78%, white);
+  padding-top: 1rem;
+  border-top: 1px solid var(--oomol-divider);
 }
 
 .resultIconWrap {
-  width: 2.3rem;
-  height: 2.3rem;
-  display: grid;
-  place-items: center;
-  border-radius: 0.82rem;
-  background: color-mix(
-    in srgb,
-    var(--oomol-primary-bg) 58%,
-    var(--oomol-bg-elevated) 42%
-  );
-  color: var(--oomol-primary-text);
+  display: none;
 }
 
 .resultContent {
@@ -207,153 +224,131 @@
 
 .resultText {
   margin: 0;
-  font-size: 0.9rem;
+  padding-left: 1rem;
+  position: relative;
+  font-size: 0.88rem;
   line-height: 1.56;
-  color: var(--oomol-primary-text);
-  font-weight: 600;
+  color: var(--oomol-text-primary);
+  font-weight: 500;
+  letter-spacing: -0.003em;
+
+  &::before {
+    content: "↳";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--oomol-primary);
+    font-weight: 500;
+  }
 }
 
 /* ── Dark mode ── */
 
 [data-theme="dark"] {
-  .badge {
-    border-color: color-mix(in srgb, var(--oomol-primary) 20%, transparent);
-    background: color-mix(
-      in srgb,
-      var(--oomol-primary-bg) 30%,
-      var(--oomol-bg-container) 70%
-    );
-  }
-
   .card {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-border-default) 72%,
-      var(--oomol-divider)
-    );
-    background: color-mix(
-      in srgb,
-      var(--oomol-bg-elevated) 86%,
-      var(--oomol-bg-container) 14%
-    );
-    box-shadow: var(--oomol-shadow-md);
+    border-color: var(--oomol-border-default);
+    background: var(--oomol-bg-elevated);
+
+    &:hover {
+      background: var(--oomol-bg-spotlight);
+      border-color: var(--oomol-border-strong);
+    }
   }
 
-  .appChip,
+  .appChip {
+    border-color: var(--oomol-border-default);
+    background: var(--oomol-bg-elevated);
+  }
+
   .exampleBlock {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-primary) 18%,
-      var(--oomol-divider)
-    );
-    background: color-mix(
-      in srgb,
-      var(--oomol-bg-elevated) 82%,
-      var(--oomol-bg-container) 18%
-    );
-  }
-
-  .resultIconWrap {
-    background: color-mix(
-      in srgb,
-      var(--oomol-primary-bg) 40%,
-      var(--oomol-bg-container) 60%
-    );
+    border-color: var(--oomol-border-subtle);
+    background: var(--oomol-bg-spotlight);
   }
 }
 
 /* ── English overrides ── */
 
 :global(html[lang="en"]) .title {
-  max-width: 28ch;
-  font-size: clamp(1.95rem, 3.3vw, 2.85rem);
-  line-height: 1.1;
+  max-width: 26ch;
+  font-size: clamp(2rem, 3.6vw, 3rem);
+}
+
+:global(html[lang="zh-CN"]) .title {
+  max-width: 17ch;
 }
 
 :global(html[lang="en"]) .subtitle {
-  max-width: 58rem;
+  max-width: 48rem;
 }
 
 :global(html[lang="en"]) .cardTitle {
-  font-size: 1.28rem;
+  font-size: 1.12rem;
   line-height: 1.32;
-}
-
-:global(html[lang="en"]) .cardHeader {
-  min-height: 10.6rem;
 }
 
 @media (max-width: 996px) {
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
-  .cardHeader,
-  :global(html[lang="en"]) .cardHeader {
-    min-height: 10rem;
-  }
 }
-
-/* ── Mobile ── */
 
 @media (max-width: 768px) {
   .section {
-    padding: 2.2rem 0 2rem;
+    padding: 3rem 0 3rem;
   }
 
   .container {
     width: min(100%, calc(100% - 40px));
-    gap: 1.2rem;
+    gap: 2rem;
+  }
+
+  .header {
+    gap: 0.7rem;
   }
 
   .title {
     max-width: 100%;
-    font-size: clamp(1.85rem, 7.8vw, 2.45rem);
-    line-height: 1.1;
-    letter-spacing: -0.03em;
+    font-size: clamp(1.9rem, 7.6vw, 2.4rem);
+    line-height: 1.08;
+    letter-spacing: -0.028em;
   }
 
   .subtitle {
     font-size: 0.98rem;
-    line-height: 1.62;
+    line-height: 1.6;
+    max-width: 32rem;
   }
 
   .grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.8rem;
   }
 
   .card {
-    padding: 1.08rem 1rem 1.15rem;
-    border-radius: 1.35rem;
-    gap: 0.7rem;
+    padding: 1.2rem 1.15rem 1.3rem;
+    border-radius: 14px;
+    gap: 0.9rem;
   }
 
-  .cardHeader,
-  :global(html[lang="en"]) .cardHeader {
-    min-height: auto;
-    gap: 0.72rem;
+  .cardHeader {
+    gap: 0.75rem;
   }
 
   .cardTitle {
-    font-size: 1.08rem;
+    font-size: 1.04rem;
   }
 
   .cardDescription {
-    font-size: 0.94rem;
-    line-height: 1.56;
+    font-size: 0.9rem;
+    line-height: 1.6;
   }
 
   .exampleText,
   .resultText {
-    font-size: 0.84rem;
-  }
-
-  .exampleBlock {
-    min-height: auto;
+    font-size: 0.82rem;
   }
 
   .resultBlock {
-    padding-top: 0.72rem;
+    padding-top: 0.85rem;
   }
 }

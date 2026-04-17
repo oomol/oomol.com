@@ -25,7 +25,7 @@ export default function Home() {
           })}
         />
       </Head>
-      <main>
+      <main className="oomol-home-main">
         <HomepageFirstScreen />
         <HomepageToolStrip />
         <HomepagePainPoints />

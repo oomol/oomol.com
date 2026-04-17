@@ -117,7 +117,7 @@ export default function StudioPage() {
           content={translate({ message: "STUDIO.page.description" })}
         />
       </Head>
-      <main className={styles.page}>
+      <main className={`${styles.page} oomol-landing-main`}>
         <section className={styles.hero}>
           <div className={styles.sectionContainer}>
             <div className={styles.heroCopy}>

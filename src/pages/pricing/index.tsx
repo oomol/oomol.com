@@ -611,7 +611,7 @@ export default function Index() {
         <title>{pageCopy.title}</title>
         <meta name="description" content={pageCopy.description} />
       </Head>
-      <div className={styles.container}>
+      <main className={`${styles.container} oomol-landing-main`}>
         <div className={styles.titleBox}>
           <div className={styles.title}>
             {translate({ message: "PRICING.title" })}
@@ -959,7 +959,7 @@ export default function Index() {
         </div>
 
         <GetStartedPrompt />
-      </div>
+      </main>
     </Layout>
   );
 }
