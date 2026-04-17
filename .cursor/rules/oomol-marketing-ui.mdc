@@ -1,0 +1,36 @@
+---
+description: OOMOL marketing pages — layout, SiteCta, CLI workflow strip, tokens
+alwaysApply: true
+---
+
+# Marketing / product UI (oomol.com)
+
+## Tokens and surfaces
+
+- Prefer existing **`--oomol-*`** variables from `src/css/design-tokens.scss` (background, text, border, divider). Avoid one-off hex unless adding a new token.
+- For **layered surfaces**: use a slightly different background for the page band vs the inner card (e.g. light — section `--oomol-bg-spotlight`, card `--oomol-bg-base`; dark — section `--oomol-bg-container`, card `--oomol-bg-elevated`). Add a clear border (`--oomol-border-default`) and a **subtle** shadow only when it helps separation.
+
+## SiteCta (`src/components/SiteCta`)
+
+- **Actions row**: use `align-items: flex-start` when multiple controls sit in one row so a **footnote/caption under one control** does not vertically center the shorter sibling — primary actions stay on one baseline.
+- **Mobile** (stacked actions): use `align-items: center` so full-width buttons stay centered.
+- Do not revert the outer “band” + inner “card” contrast without a product reason.
+
+## CLI workflow strip (`CliPageLinearFlow`)
+
+- **Step cards** describe the **repeating business loop** (e.g. discover → run → finish). Treat **`oo login` as one-time setup**: explain in the section intro, not as a numbered step. The **terminal block** may still show the full session (including login) for a realistic copy-paste story.
+- Prefer **symmetric grids** for step columns (e.g. three equal columns) instead of awkward split rows (e.g. 3+2) unless a strong layout reason exists.
+- When multiple columns share the same vertical rhythm, **CSS subgrid** (with a simple flex fallback) is preferred so index / command / title / body rows align across cards.
+
+## Stat + caption blocks (e.g. developer benefits)
+
+- Large **numeric or display stats** with a caption below need enough **`line-height`** on the stat and **`gap`** in the flex/grid container so the caption does not collide with the stat.
+
+## Command snippets and CJK copy
+
+- Command lines: tinted background, border, **`overflow-wrap` / `word-break`** as needed, comfortable mono **line-height**.
+- Multi-line **Chinese titles**: use a comfortable **line-height** (roughly 1.48–1.52) and **`text-wrap: pretty`** where it helps.
+
+## Scope
+
+- When adding new marketing sections that mirror these patterns (hero-adjacent grids, bottom CTAs, step strips), align with the above before inventing a new visual system.
