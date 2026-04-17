@@ -87,15 +87,11 @@
   cursor: pointer;
   transition:
     background-color 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+    border-color 0.3s ease;
 
   &:hover {
     background-color: var(--oomol-hover-bg);
-    border-color: var(--oomol-border-color, rgba(255, 255, 255, 0.1));
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: var(--oomol-border-strong);
   }
 }
 

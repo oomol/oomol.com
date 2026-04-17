@@ -11,25 +11,6 @@
   position: relative;
   overflow: clip;
 
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background-image: radial-gradient(
-      circle,
-      var(--oomol-border-default) 1px,
-      transparent 1px
-    );
-    background-size: 32px 32px;
-    mask-image: radial-gradient(
-      ellipse 80% 60% at 50% 30%,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 0.4) 60%,
-      transparent 100%
-    );
-    opacity: 0.55;
-  }
 }
 
 .sectionContainer {
@@ -137,9 +118,7 @@
   border-radius: 14px;
   border: 1px solid var(--oomol-border-default);
   background: var(--oomol-bg-spotlight);
-  box-shadow:
-    0 0 0 1px var(--oomol-border-subtle),
-    0 24px 60px -12px rgba(0, 0, 0, 0.08);
+  box-shadow: none;
   position: relative;
   overflow: clip;
 }
@@ -318,11 +297,10 @@
 .principleTitle {
   margin: 0;
   max-width: 22ch;
-  font-size: var(--oomol-display-card);
-  font-size: clamp(1.4rem, 2vw, 1.75rem);
+  font-size: var(--oomol-font-size-xl);
   line-height: 1.2;
   font-weight: 600;
-  letter-spacing: -0.022em;
+  letter-spacing: var(--oomol-tracking-section);
   color: var(--oomol-text-primary);
   text-wrap: balance;
 }
@@ -395,11 +373,11 @@
   .sectionTitle {
     max-width: 100%;
     text-wrap: pretty;
-    font-size: clamp(1.9rem, 7.8vw, 2.4rem);
+    font-size: var(--oomol-display-section);
   }
 
   .heroTitle {
-    font-size: clamp(2rem, 8.4vw, 2.6rem);
+    font-size: var(--oomol-display-hero);
     line-height: 1.08;
   }
 
@@ -440,9 +418,7 @@
   .visualFrame {
     background: var(--oomol-bg-elevated);
     border-color: var(--oomol-border-subtle);
-    box-shadow:
-      0 0 0 1px var(--oomol-border-subtle),
-      0 24px 60px -12px rgba(0, 0, 0, 0.6);
+    box-shadow: none;
   }
 
   .principleMedia {

@@ -8,26 +8,6 @@
   border-bottom: 1px solid var(--oomol-divider);
 }
 
-/* 极淡 dot grid 背景 — Vercel 招牌纹理 */
-.background {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: radial-gradient(
-    circle,
-    var(--oomol-border-default) 1px,
-    transparent 1px
-  );
-  background-size: 32px 32px;
-  mask-image: radial-gradient(
-    ellipse 80% 60% at 50% 30%,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.4) 60%,
-    transparent 100%
-  );
-  opacity: 0.55;
-}
-
 .container {
   position: relative;
   z-index: 1;
@@ -51,10 +31,10 @@
   margin: 0;
   max-width: 100%;
   font-family: var(--oomol-font-display);
-  font-size: clamp(2.6rem, 5.2vw, 4.5rem);
+  font-size: var(--oomol-display-hero);
   line-height: 1.04;
   font-weight: 600;
-  letter-spacing: -0.038em;
+  letter-spacing: var(--oomol-tracking-display);
   white-space: pre-line;
   word-break: keep-all;
   overflow-wrap: normal;
@@ -107,9 +87,7 @@
   overflow: clip;
   border: 1px solid var(--oomol-border-default);
   background: var(--oomol-bg-spotlight);
-  box-shadow:
-    0 0 0 1px var(--oomol-border-subtle),
-    0 24px 60px -12px rgba(0, 0, 0, 0.08);
+  box-shadow: none;
   position: relative;
 }
 
@@ -135,7 +113,7 @@
   }
 
   &:hover .playButton {
-    transform: scale(1.04);
+    transform: scale(1.02);
   }
 }
 
@@ -147,10 +125,8 @@
   justify-content: center;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.08),
-    0 8px 24px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: none;
   transition: transform 0.2s ease;
 }
 
@@ -183,9 +159,9 @@
 
 :global(html[lang="en"]) .slogan {
   max-width: 20ch;
-  font-size: clamp(2.5rem, 4.6vw, 4.2rem);
+  font-size: var(--oomol-display-hero);
   line-height: 1.04;
-  letter-spacing: -0.04em;
+  letter-spacing: var(--oomol-tracking-display);
   text-wrap: balance;
 }
 
@@ -227,9 +203,9 @@
   }
 
   .slogan {
-    font-size: clamp(2rem, 8.4vw, 2.6rem);
+    font-size: var(--oomol-display-hero);
     line-height: 1.08;
-    letter-spacing: -0.03em;
+    letter-spacing: var(--oomol-tracking-display);
     max-width: 100%;
   }
 
@@ -283,20 +259,9 @@
     padding-top: clamp(5rem, 10vw, 8.4rem);
   }
 
-  .background {
-    background-image: radial-gradient(
-      circle,
-      var(--oomol-border-default) 1px,
-      transparent 1px
-    );
-    opacity: 0.7;
-  }
-
   .videoFrame {
     background: #0a0a0a;
-    box-shadow:
-      0 0 0 1px var(--oomol-border-subtle),
-      0 24px 60px -12px rgba(0, 0, 0, 0.6);
+    box-shadow: none;
   }
 
   .heroVideo {

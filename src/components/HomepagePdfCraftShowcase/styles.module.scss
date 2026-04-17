@@ -1,13 +1,7 @@
-@use "../../css/custom.scss" as *;
-
 .section {
   position: relative;
   padding: 120px 24px;
-  background: linear-gradient(
-    180deg,
-    var(--oomol-bg-canvas) 0%,
-    var(--oomol-bg-container) 100%
-  );
+  background: var(--oomol-bg-base);
 
   @media (max-width: 768px) {
     padding: 80px 16px;
@@ -83,7 +77,7 @@
   border: 1px solid var(--oomol-border-subtle);
   border-radius: 16px;
   padding: 32px;
-  box-shadow: var(--oomol-shadow-lg);
+  box-shadow: none;
   width: 100%;
 
   @media (max-width: 768px) {
@@ -201,8 +195,8 @@
   justify-content: center;
 
   &:hover {
-    border-color: var(--oomol-primary);
-    box-shadow: var(--oomol-shadow-md);
+    border-color: var(--oomol-border-strong);
+    box-shadow: none;
   }
 
   @media (max-width: 768px) {
@@ -211,15 +205,12 @@
 }
 
 .oomol {
-  border-color: var(--oomol-primary);
-  background: linear-gradient(
-    135deg,
-    var(--oomol-bg-elevated) 0%,
-    rgba(var(--oomol-primary-rgb), 0.05) 100%
-  );
+  border-color: var(--oomol-border-strong);
+  background: var(--oomol-bg-elevated);
 
   &:hover {
-    box-shadow: var(--oomol-shadow-xl);
+    border-color: var(--oomol-border-strong);
+    box-shadow: none;
   }
 }
 

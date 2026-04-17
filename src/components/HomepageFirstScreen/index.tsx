@@ -32,7 +32,6 @@ export default function HomepageFirstScreen() {
 
   return (
     <section className={styles.section}>
-      <div className={styles.background} />
       <div className={styles.container}>
         <div className={styles.titleGroup}>
           <h1 className={styles.slogan}>

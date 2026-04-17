@@ -124,7 +124,7 @@
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
 
   @media (max-width: 996px) {
     margin-top: 48px;

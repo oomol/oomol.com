@@ -2,7 +2,7 @@
 
 .section {
   padding: 100px 24px;
-  background: var(--oomol-bg-canvas);
+  background: var(--oomol-bg-base);
 
   @media (max-width: 768px) {
     padding: 60px 16px;
@@ -106,18 +106,14 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(
-    135deg,
-    var(--oomol-primary) 0%,
-    var(--oomol-primary-hover) 100%
-  );
+  background: var(--oomol-primary);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 18px;
   font-weight: 700;
-  box-shadow: 0 4px 12px rgba(var(--oomol-primary-rgb), 0.3);
+  box-shadow: none;
 }
 
 .stepContent {
@@ -178,9 +174,9 @@
     box-shadow 0.3s ease;
 
   &:hover {
-    border-color: var(--oomol-primary);
+    border-color: var(--oomol-border-strong);
     background: var(--oomol-bg-elevated);
-    box-shadow: var(--oomol-shadow-md);
+    box-shadow: none;
   }
 
   @media (max-width: 768px) {
@@ -227,13 +223,9 @@
   justify-content: center;
   gap: 80px;
   padding: 40px;
-  background: linear-gradient(
-    135deg,
-    rgba(var(--oomol-primary-rgb), 0.05) 0%,
-    rgba(var(--oomol-primary-rgb), 0.02) 100%
-  );
+  background: var(--oomol-bg-elevated);
   border-radius: 16px;
-  border: 1px solid var(--oomol-border-subtle);
+  border: 1px solid var(--oomol-divider);
 
   @media (max-width: 768px) {
     flex-direction: column;

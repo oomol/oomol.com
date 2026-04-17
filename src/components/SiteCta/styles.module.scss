@@ -25,9 +25,9 @@
   margin: 0;
   max-width: 22ch;
   font-family: var(--oomol-font-display);
-  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  font-size: var(--oomol-display-section);
   line-height: 1.06;
-  letter-spacing: -0.035em;
+  letter-spacing: var(--oomol-tracking-section);
   font-weight: 600;
   text-wrap: balance;
   color: var(--oomol-text-primary);
@@ -55,12 +55,13 @@
   align-items: center;
   justify-content: center;
   min-width: 10rem;
-  height: 46px;
-  min-height: 46px;
-  padding: 0 1.3rem;
-  border-radius: 10px;
-  font-size: 0.96rem;
+  height: 48px;
+  min-height: 48px;
+  padding: 0 1.25rem;
+  border-radius: var(--ifm-global-radius);
+  font-size: 15px;
   font-weight: 500;
+  letter-spacing: -0.005em;
   text-decoration: none;
   color: var(--oomol-text-primary);
   border: 1px solid var(--oomol-border-strong);
@@ -82,7 +83,7 @@
 
 :global(html[lang="en"]) .title {
   max-width: 26ch;
-  font-size: clamp(2rem, 3.3vw, 2.75rem);
+  font-size: var(--oomol-display-section);
 }
 
 @media (max-width: 768px) {
@@ -98,7 +99,7 @@
   .title {
     max-width: 100%;
     text-wrap: pretty;
-    font-size: clamp(1.85rem, 7.6vw, 2.2rem);
+    font-size: var(--oomol-display-section);
   }
 
   .description {

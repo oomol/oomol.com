@@ -70,9 +70,9 @@
   margin: 0;
   max-width: 14ch;
   font-family: var(--oomol-font-display);
-  font-size: clamp(2rem, 3.4vw, 2.9rem);
+  font-size: var(--oomol-display-hero);
   line-height: 1.06;
-  letter-spacing: -0.035em;
+  letter-spacing: var(--oomol-tracking-display);
   font-weight: 600;
   color: var(--oomol-text-primary);
   text-wrap: balance;
@@ -141,9 +141,9 @@
 .value {
   margin: 0;
   font-family: var(--oomol-font-display);
-  font-size: clamp(2.4rem, 3.8vw, 3.4rem);
+  font-size: var(--oomol-display-hero);
   line-height: 0.95;
-  letter-spacing: -0.04em;
+  letter-spacing: var(--oomol-tracking-display);
   font-weight: 500;
   color: var(--oomol-text-primary);
   font-feature-settings: "tnum" 1;
@@ -227,7 +227,7 @@
 
 :global(html[lang="en"]) .title {
   max-width: 16ch;
-  font-size: clamp(2rem, 3.4vw, 2.9rem);
+  font-size: var(--oomol-display-hero);
   line-height: 1.06;
 }
 
@@ -288,16 +288,16 @@
 
   .title {
     max-width: 100%;
-    font-size: clamp(1.9rem, 7.8vw, 2.4rem);
+    font-size: var(--oomol-display-hero);
     line-height: 1.08;
-    letter-spacing: -0.028em;
+    letter-spacing: var(--oomol-tracking-display);
     text-wrap: pretty;
   }
 
   .value {
-    font-size: clamp(2.2rem, 10vw, 3rem);
+    font-size: var(--oomol-display-hero);
     line-height: 1;
-    letter-spacing: -0.035em;
+    letter-spacing: var(--oomol-tracking-display);
   }
 
   .subtitle {

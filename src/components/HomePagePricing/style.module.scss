@@ -10,9 +10,11 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  font-size: 30px;
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-font-size-3xl);
   color: var(--oomol-text-primary);
-  font-weight: 900;
+  font-weight: 600;
+  letter-spacing: var(--oomol-tracking-section);
   padding-top: 40px;
   padding-bottom: 60px;
 }
@@ -58,8 +60,9 @@
 
 .card-title,
 .price {
-  font-size: 20px;
-  font-weight: 900;
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-font-size-xl);
+  font-weight: 600;
   color: var(--oomol-text-primary);
 }
 
@@ -70,22 +73,24 @@
 }
 
 .tag {
-  height: 22px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  font-size: 12px;
-  color: var(--oomol-white);
-  background-color: var(--oomol-primary);
-  border: none;
-  border-radius: 100px;
-  padding: 4px 16px;
+  min-height: 24px;
+  padding: 2px 10px;
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-body-mono);
   font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  color: var(--oomol-text-secondary);
+  background: var(--oomol-bg-container);
+  border: 1px solid var(--oomol-divider);
+  border-radius: 6px;
 }
 
 :global(html[data-theme="dark"]) .tag {
-  background-color: var(--oomol-primary-bg);
-  color: var(--oomol-primary-text);
-  border: 1px solid var(--oomol-primary-border);
+  background: var(--oomol-bg-elevated);
+  color: var(--oomol-text-secondary);
+  border-color: var(--oomol-border-default);
 }
 
 .pro {
@@ -100,40 +105,13 @@
   }
 }
 
-.pro::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: inherit;
-  padding: 2px;
-  background: linear-gradient(
-    105.32deg,
-    transparent -6.87%,
-    #987de9 10.42%,
-    var(--oomol-primary) 38.09%,
-    #9c9dee 64.61%,
-    #7da6e9 92.28%,
-    transparent 108.42%
-  );
-  mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
-  mask-composite: exclude;
-  pointer-events: none;
-  box-sizing: border-box;
-}
-
-:global(html[data-theme="light"]) .pro::before {
-  opacity: 0.8;
-}
-
 :global(html[data-theme="light"]) .pro {
   background-color: var(--oomol-bg-container);
-  border-color: transparent;
+  border: 1px solid var(--oomol-border-strong);
+}
+
+:global(html[data-theme="dark"]) .pro {
+  border: 1px solid var(--oomol-border-strong);
 }
 
 .card h2 {

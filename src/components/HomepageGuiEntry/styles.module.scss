@@ -59,9 +59,9 @@
   margin: 0;
   font-family: var(--oomol-font-display);
   max-width: 22ch;
-  font-size: clamp(1.7rem, 2.8vw, 2.25rem);
+  font-size: var(--oomol-display-section);
   line-height: 1.08;
-  letter-spacing: -0.035em;
+  letter-spacing: var(--oomol-tracking-section);
   font-weight: 600;
   color: var(--oomol-text-primary);
   text-wrap: balance;
@@ -158,7 +158,7 @@
 
   .title {
     max-width: 100%;
-    font-size: clamp(1.7rem, 7vw, 2rem);
+    font-size: var(--oomol-display-section);
   }
 
   .description {

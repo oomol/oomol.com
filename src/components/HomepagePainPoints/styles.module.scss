@@ -51,9 +51,9 @@
   margin: 0;
   max-width: 22ch;
   font-family: var(--oomol-font-display);
-  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-size: var(--oomol-display-hero);
   line-height: 1.06;
-  letter-spacing: -0.035em;
+  letter-spacing: var(--oomol-tracking-display);
   font-weight: 600;
   text-wrap: balance;
   color: var(--oomol-text-primary);
@@ -270,7 +270,7 @@
 
 :global(html[lang="en"]) .title {
   max-width: 26ch;
-  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-size: var(--oomol-display-hero);
 }
 
 :global(html[lang="zh-CN"]) .title {
@@ -308,9 +308,9 @@
 
   .title {
     max-width: 100%;
-    font-size: clamp(1.9rem, 7.6vw, 2.4rem);
+    font-size: var(--oomol-display-hero);
     line-height: 1.08;
-    letter-spacing: -0.028em;
+    letter-spacing: var(--oomol-tracking-display);
   }
 
   .subtitle {

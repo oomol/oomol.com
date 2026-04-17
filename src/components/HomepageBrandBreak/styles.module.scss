@@ -1,36 +1,10 @@
-@use "../../css/custom.scss" as *;
-
 .section {
   padding: clamp(4.5rem, 8vw, 7rem) 0;
-  background:
-    radial-gradient(
-      ellipse 60% 50% at 20% 20%,
-      rgba(255, 255, 255, 0.06) 0%,
-      transparent 60%
-    ),
-    linear-gradient(
-      135deg,
-      color-mix(in srgb, var(--oomol-primary) 92%, black 8%) 0%,
-      color-mix(in srgb, var(--oomol-primary-active) 88%, black 12%) 100%
-    );
+  background: var(--oomol-text-primary);
+  color: var(--oomol-bg-base);
   position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 6rem 6rem;
-    mask-image: radial-gradient(
-      ellipse 70% 70% at 50% 50%,
-      rgba(0, 0, 0, 0.5),
-      transparent 70%
-    );
-    pointer-events: none;
-  }
+  border-top: 1px solid var(--oomol-border-default);
+  border-bottom: 1px solid var(--oomol-border-default);
 }
 
 .inner {
@@ -46,20 +20,21 @@
 .headline {
   margin: 0;
   font-family: var(--oomol-font-display);
-  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-size: var(--oomol-display-hero);
   line-height: 1;
   font-weight: 700;
-  letter-spacing: -0.05em;
-  color: rgba(255, 255, 255, 0.97);
+  letter-spacing: var(--oomol-tracking-display);
+  color: color-mix(in srgb, var(--oomol-bg-base) 96%, transparent);
   white-space: pre-line;
 }
 
 .subline {
   margin: 0;
   max-width: 36rem;
-  font-size: 1.1rem;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.72);
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
+  color: color-mix(in srgb, var(--oomol-bg-base) 68%, transparent);
 }
 
 .showcaseRow {
@@ -77,14 +52,14 @@
   justify-items: center;
   padding: 1.25rem 1.5rem;
   border-radius: 1.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(8px);
+  border: 1px solid color-mix(in srgb, var(--oomol-bg-base) 18%, transparent);
+  background: color-mix(in srgb, var(--oomol-bg-base) 8%, transparent);
   min-width: 9rem;
-  transition: background 0.2s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.1);
+    border-color: color-mix(in srgb, var(--oomol-bg-base) 26%, transparent);
+    background: color-mix(in srgb, var(--oomol-bg-base) 12%, transparent);
   }
 }
 
@@ -94,8 +69,9 @@
   display: grid;
   place-items: center;
   border-radius: 0.75rem;
-  background: rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.92);
+  border: 1px solid color-mix(in srgb, var(--oomol-bg-base) 14%, transparent);
+  background: color-mix(in srgb, var(--oomol-bg-base) 10%, transparent);
+  color: color-mix(in srgb, var(--oomol-bg-base) 92%, transparent);
 }
 
 .showcaseGlyph {
@@ -105,17 +81,15 @@
 
 .showcaseCardLabel {
   font-size: 0.92rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  color: rgba(255, 255, 255, 0.88);
+  font-weight: 600;
+  letter-spacing: var(--oomol-tracking-body);
+  color: color-mix(in srgb, var(--oomol-bg-base) 88%, transparent);
 }
 
 .showcaseArrow {
-  color: rgba(255, 255, 255, 0.36);
+  color: color-mix(in srgb, var(--oomol-bg-base) 38%, transparent);
   flex-shrink: 0;
 }
-
-/* ── Mobile ── */
 
 @media (max-width: 768px) {
   .section {
@@ -128,7 +102,7 @@
   }
 
   .headline {
-    font-size: clamp(2.2rem, 8vw, 3rem);
+    font-size: var(--oomol-display-hero);
   }
 
   .showcaseRow {
@@ -145,26 +119,42 @@
   }
 }
 
-/* ── Dark mode ── */
-
 [data-theme="dark"] {
   .section {
-    background:
-      radial-gradient(
-        ellipse 60% 50% at 20% 20%,
-        rgba(255, 255, 255, 0.04) 0%,
-        transparent 60%
-      ),
-      linear-gradient(
-        135deg,
-        color-mix(in srgb, var(--oomol-primary) 72%, var(--oomol-bg-base) 28%)
-          0%,
-        color-mix(
-            in srgb,
-            var(--oomol-primary-active) 68%,
-            var(--oomol-bg-base) 32%
-          )
-          100%
-      );
+    background: var(--oomol-bg-elevated);
+    color: var(--oomol-text-primary);
+    border-color: var(--oomol-divider);
+  }
+
+  .headline {
+    color: var(--oomol-text-primary);
+  }
+
+  .subline {
+    color: var(--oomol-text-secondary);
+  }
+
+  .showcaseCard {
+    border-color: var(--oomol-divider);
+    background: var(--oomol-bg-container);
+
+    &:hover {
+      border-color: var(--oomol-border-strong);
+      background: var(--oomol-bg-container);
+    }
+  }
+
+  .showcaseCardIcon {
+    border-color: var(--oomol-divider);
+    background: var(--oomol-bg-base);
+    color: var(--oomol-text-primary);
+  }
+
+  .showcaseCardLabel {
+    color: var(--oomol-text-primary);
+  }
+
+  .showcaseArrow {
+    color: var(--oomol-text-tertiary);
   }
 }

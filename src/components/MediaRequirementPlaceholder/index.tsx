@@ -35,37 +35,13 @@ export default function MediaRequirementPlaceholder({
         role="img"
         aria-label={titleLines.join(" ")}
       >
-        <defs>
-          <linearGradient
-            id={`placeholder-bg-${tone}`}
-            x1="0%"
-            y1="0%"
-            x2="100%"
-            y2="100%"
-          >
-            <stop offset="0%" className={styles.gradientStart} />
-            <stop offset="100%" className={styles.gradientEnd} />
-          </linearGradient>
-          <linearGradient
-            id={`placeholder-panel-${tone}`}
-            x1="0%"
-            y1="0%"
-            x2="100%"
-            y2="100%"
-          >
-            <stop offset="0%" className={styles.panelStart} />
-            <stop offset="100%" className={styles.panelEnd} />
-          </linearGradient>
-        </defs>
-
         <rect
           x="12"
           y="12"
           width="1576"
           height="956"
           rx="48"
-          className={styles.frame}
-          fill={`url(#placeholder-bg-${tone})`}
+          className={`${styles.frame} ${styles.outerFill}`}
         />
         <rect
           x="80"
@@ -136,8 +112,7 @@ export default function MediaRequirementPlaceholder({
           width="500"
           height="560"
           rx="28"
-          className={styles.sidePanel}
-          fill={`url(#placeholder-panel-${tone})`}
+          className={`${styles.sidePanel} ${styles.panelFill}`}
         />
 
         {steps.map((step, index) => {

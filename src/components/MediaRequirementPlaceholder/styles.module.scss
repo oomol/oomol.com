@@ -19,20 +19,12 @@
   stroke-width: 1.5;
 }
 
-.gradientStart {
-  stop-color: var(--placeholder-bg-start);
+.outerFill {
+  fill: var(--placeholder-outer-fill);
 }
 
-.gradientEnd {
-  stop-color: var(--placeholder-bg-end);
-}
-
-.panelStart {
-  stop-color: var(--placeholder-panel-start);
-}
-
-.panelEnd {
-  stop-color: var(--placeholder-panel-end);
+.panelFill {
+  fill: var(--placeholder-panel-fill);
 }
 
 .chromeDotMuted {
@@ -128,17 +120,15 @@
 }
 
 .light {
-  --placeholder-bg-start: rgba(252, 253, 255, 0.98);
-  --placeholder-bg-end: rgba(239, 244, 251, 0.98);
+  --placeholder-outer-fill: rgba(246, 248, 252, 0.98);
+  --placeholder-panel-fill: rgba(241, 244, 250, 0.98);
   --placeholder-frame-stroke: rgba(188, 198, 223, 0.8);
   --placeholder-inner-fill: rgba(255, 255, 255, 0.88);
   --placeholder-inner-stroke: rgba(205, 212, 228, 0.9);
-  --placeholder-panel-start: rgba(245, 247, 252, 0.95);
-  --placeholder-panel-end: rgba(233, 238, 248, 0.98);
   --placeholder-panel-stroke: rgba(195, 203, 221, 0.94);
   --placeholder-dot-muted: rgba(210, 216, 229, 0.9);
   --placeholder-dot-mid: rgba(184, 192, 216, 0.95);
-  --placeholder-dot-strong: rgba(132, 138, 208, 0.95);
+  --placeholder-dot-strong: rgba(120, 128, 152, 0.85);
   --placeholder-toolbar: rgba(229, 234, 245, 0.96);
   --placeholder-strong-text: rgba(38, 43, 61, 0.94);
   --placeholder-body-text: rgba(83, 91, 116, 0.9);
@@ -152,17 +142,15 @@
 }
 
 .dark {
-  --placeholder-bg-start: rgba(28, 28, 43, 0.98);
-  --placeholder-bg-end: rgba(15, 14, 24, 0.99);
+  --placeholder-outer-fill: rgba(22, 23, 35, 0.98);
+  --placeholder-panel-fill: rgba(28, 29, 42, 0.98);
   --placeholder-frame-stroke: rgba(105, 112, 148, 0.48);
   --placeholder-inner-fill: rgba(18, 19, 29, 0.86);
   --placeholder-inner-stroke: rgba(88, 93, 120, 0.56);
-  --placeholder-panel-start: rgba(34, 35, 50, 0.96);
-  --placeholder-panel-end: rgba(22, 23, 35, 0.98);
   --placeholder-panel-stroke: rgba(96, 103, 138, 0.5);
   --placeholder-dot-muted: rgba(99, 104, 135, 0.85);
   --placeholder-dot-mid: rgba(136, 143, 183, 0.88);
-  --placeholder-dot-strong: rgba(190, 197, 248, 0.92);
+  --placeholder-dot-strong: rgba(168, 174, 198, 0.88);
   --placeholder-toolbar: rgba(44, 47, 66, 0.92);
   --placeholder-strong-text: rgba(243, 239, 248, 0.96);
   --placeholder-body-text: rgba(208, 202, 223, 0.84);

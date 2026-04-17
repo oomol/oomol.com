@@ -106,9 +106,9 @@
   margin: 0;
   max-width: 100%;
   font-family: var(--oomol-font-display);
-  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  font-size: var(--oomol-display-section);
   line-height: 1.06;
-  letter-spacing: -0.035em;
+  letter-spacing: var(--oomol-tracking-section);
   font-weight: 600;
   text-wrap: pretty;
   color: var(--oomol-text-primary);
@@ -237,15 +237,13 @@
   justify-content: center;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.08),
-    0 8px 24px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: none;
   cursor: pointer;
   transition: transform 0.18s ease;
 
   &:hover {
-    transform: scale(1.04);
+    transform: scale(1.02);
   }
 }
 
@@ -423,7 +421,7 @@
 :global(html[lang="en"]) .sectionTitle,
 :global(html[lang="en"]) .ctaTitle {
   max-width: 100%;
-  font-size: clamp(2rem, 3.3vw, 2.75rem);
+  font-size: var(--oomol-display-section);
   line-height: 1.06;
 }
 

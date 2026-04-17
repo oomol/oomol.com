@@ -60,7 +60,8 @@ const VIDEO_BASE_URL = "https://static.oomol.com/assets/homepage";
 const VIDEO_FILES = {
   hero: { zh: "chart-gen-4k-ZH.mp4", en: "chart-gen-4K-en.mp4" },
   startFast: { zh: "use-skills-4K-ZH.mp4", en: "use-skills-4K-en.mp4" },
-  keepEditing: { zh: "chart-edit-4k-ZH.mp4", en: "chart-edit-4K-en.mp4" },
+  /* EN: chart-edit-4K-en.mp4 在 CDN 上当前 404；与 ZH 共用可用片源，避免工作流区块黑屏 */
+  keepEditing: { zh: "chart-edit-4k-ZH.mp4", en: "chart-edit-4k-ZH.mp4" },
   trustSources: { zh: "chat-source-4K-ZH.mp4", en: "chat-source-4K-en.mp4" },
   outputs: { zh: "epub-translate-4K-ZH.mp4", en: "epub-translator-4K-en.mp4" },
 } as const;
@@ -669,7 +670,10 @@ export default function AppPage() {
         <title>{copy.page.title}</title>
         <meta name="description" content={copy.page.description} />
       </Head>
-      <main id="top" className={`${styles.page} oomol-landing-main`}>
+      <main
+        id="top"
+        className={cx(styles.page, "oomol-landing-main", "oomol-app-page")}
+      >
         <section className={styles.hero}>
           <div className={styles.heroHeader}>
             <div className={styles.heroCopy}>
@@ -677,9 +681,7 @@ export default function AppPage() {
                 <span className={styles.heroTitleLine}>
                   {copy.hero.titleLine1}
                 </span>
-                <span
-                  className={cx(styles.heroTitleLine, styles.heroTitleAccent)}
-                >
+                <span className={styles.heroTitleLine}>
                   {copy.hero.titleLine2}
                 </span>
               </h1>
@@ -742,7 +744,7 @@ export default function AppPage() {
 
         <section
           id="models"
-          className={cx(styles.section, styles.modelsSection)}
+          className={cx(styles.section, styles.sectionMuted)}
         >
           <div className={cx(styles.sectionIntro, styles.modelsIntro)}>
             <h2>{copy.models.title}</h2>
@@ -768,13 +770,21 @@ export default function AppPage() {
               </article>
             ))}
           </div>
+        </section>
 
+        <section
+          id="models-demo"
+          className={styles.section}
+          aria-labelledby="models-demo-heading"
+        >
           <div className={styles.modelDemo}>
             <div className={styles.modelDemoCopy}>
               <p className={styles.modelDemoEyebrow}>
                 {copy.models.demo.eyebrow}
               </p>
-              <h3>{copy.models.demo.title}</h3>
+              <h2 id="models-demo-heading" className={styles.modelDemoTitle}>
+                {copy.models.demo.title}
+              </h2>
               <p>{copy.models.demo.description}</p>
             </div>
 
@@ -788,7 +798,10 @@ export default function AppPage() {
           </div>
         </section>
 
-        <section id="problems" className={styles.section}>
+        <section
+          id="problems"
+          className={cx(styles.section, styles.sectionMuted)}
+        >
           <div className={cx(styles.sectionIntro, styles.problemsIntro)}>
             <h2 className={styles.problemsTitle}>
               {renderHangingTitleLine(
@@ -812,10 +825,7 @@ export default function AppPage() {
           </div>
         </section>
 
-        <section
-          id="workspace"
-          className={cx(styles.section, styles.workspaceSection)}
-        >
+        <section id="workspace" className={styles.section}>
           <div className={styles.solutionList}>
             {workflowSteps.map(step => (
               <article key={step.title} className={styles.solutionItem}>
@@ -854,10 +864,7 @@ export default function AppPage() {
           </div>
         </section>
 
-        <section
-          id="pricing"
-          className={cx(styles.section, styles.pricingSection)}
-        >
+        <section id="pricing" className={cx(styles.section, styles.sectionMuted)}>
           <div className={cx(styles.sectionIntro, styles.pricingIntro)}>
             <h2 className={styles.hangingTitle}>
               {renderHangingTitleLine(
@@ -928,10 +935,7 @@ export default function AppPage() {
           </div>
         </section>
 
-        <section
-          id="downloads"
-          className={cx(styles.section, styles.entrySection)}
-        >
+        <section id="downloads" className={styles.section}>
           <div className={cx(styles.sectionIntro, styles.downloadsIntro)}>
             <h2>{copy.downloads.title}</h2>
           </div>

@@ -11,7 +11,7 @@ const TabsList = React.forwardRef<
   <TabsPrimitive.List
     ref={ref}
     className={cn(
-      "inline-flex h-10 items-center justify-center rounded-[10px] border border-[var(--oomol-divider)] bg-[var(--oomol-bg-container)] p-1 text-[var(--oomol-text-secondary)]",
+      "inline-flex h-9 items-center justify-center rounded-[8px] border border-[var(--oomol-divider)] bg-[var(--oomol-bg-container)] p-[3px] text-[var(--oomol-text-secondary)]",
       className
     )}
     {...props}
@@ -26,11 +26,16 @@ const TabsTrigger = React.forwardRef<
   <TabsPrimitive.Trigger
     ref={ref}
     className={cn(
-      "inline-flex items-center justify-center whitespace-nowrap rounded-[6px] px-3 py-1.5 text-sm font-medium",
-      "ring-offset-[var(--oomol-bg-base)] transition-all",
+      // border-0 + bg-transparent 显式覆盖浏览器 <button> 默认样式
+      // (项目 Tailwind preflight 被关掉了，所以必须手动重置)
+      "inline-flex items-center justify-center whitespace-nowrap rounded-[5px] px-3 h-full",
+      "border-0 bg-transparent cursor-pointer appearance-none",
+      "text-[13px] font-medium tracking-[-0.005em] text-[var(--oomol-text-secondary)]",
+      "ring-offset-[var(--oomol-bg-base)] transition-colors",
       "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2",
       "disabled:pointer-events-none disabled:opacity-50",
-      "data-[state=active]:bg-[var(--oomol-bg-elevated)] data-[state=active]:text-[var(--oomol-text-primary)] data-[state=active]:shadow-sm",
+      "hover:text-[var(--oomol-text-primary)]",
+      "data-[state=active]:bg-[var(--oomol-bg-base)] data-[state=active]:text-[var(--oomol-text-primary)]",
       className
     )}
     {...props}
@@ -45,7 +50,7 @@ const TabsContent = React.forwardRef<
   <TabsPrimitive.Content
     ref={ref}
     className={cn(
-      "mt-3 ring-offset-[var(--oomol-bg-base)]",
+      "mt-4 ring-offset-[var(--oomol-bg-base)]",
       "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2",
       className
     )}

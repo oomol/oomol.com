@@ -73,10 +73,6 @@
       var(--oomol-border-default) 72%,
       var(--oomol-divider)
     );
-    background: linear-gradient(
-      180deg,
-      var(--oomol-surface-float) 0%,
-      var(--oomol-surface-panel) 100%
-    );
+    background: var(--oomol-bg-elevated);
   }
 }

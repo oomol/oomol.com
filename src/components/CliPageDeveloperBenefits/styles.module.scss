@@ -51,9 +51,9 @@
   margin: 0;
   max-width: 16ch;
   font-family: var(--oomol-font-display);
-  font-size: var(--oomol-display-section);
+  font-size: var(--oomol-display-hero);
   line-height: 1.06;
-  letter-spacing: var(--oomol-tracking-section);
+  letter-spacing: var(--oomol-tracking-display);
   font-weight: 600;
   color: var(--oomol-text-primary);
   text-wrap: balance;
@@ -158,9 +158,9 @@
 .value {
   margin: 0;
   font-family: var(--oomol-font-display);
-  font-size: clamp(2.2rem, 3.4vw, 2.8rem);
+  font-size: var(--oomol-display-hero);
   line-height: 0.95;
-  letter-spacing: -0.04em;
+  letter-spacing: var(--oomol-tracking-display);
   font-weight: 500;
   color: var(--oomol-text-primary);
   font-feature-settings: "tnum" 1;
@@ -316,10 +316,6 @@
     width: min(100%, calc(100% - 40px));
   }
 
-  .title {
-    font-size: clamp(1.9rem, 7.8vw, 2.4rem);
-  }
-
   .subtitle {
     font-size: 1rem;
   }
@@ -349,6 +345,6 @@
   }
 
   .value {
-    font-size: clamp(2rem, 9vw, 2.5rem);
+    font-size: var(--oomol-display-hero);
   }
 }

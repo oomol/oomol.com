@@ -261,7 +261,7 @@
   }
 
   .title {
-    font-size: clamp(1.9rem, 7.6vw, 2.4rem);
+    font-size: var(--oomol-display-section);
   }
 
   .subtitle {

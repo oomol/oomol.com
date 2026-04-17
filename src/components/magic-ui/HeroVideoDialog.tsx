@@ -150,9 +150,9 @@ export function HeroVideoDialog({
             showPlayButtonOnHover && "opacity-0 group-hover:opacity-100"
           )}
         >
-          <div className="flex size-28 items-center justify-center rounded-full bg-primary/10 backdrop-blur-md">
+          <div className="flex size-28 items-center justify-center rounded-full bg-black/25 backdrop-blur-md">
             <div
-              className={`relative flex size-20 scale-100 items-center justify-center rounded-full bg-gradient-to-b from-primary/30 to-primary shadow-md   group-hover:scale-[1.2]`}
+              className="relative flex size-20 scale-100 items-center justify-center rounded-full border border-white/15 bg-[var(--oomol-foreground)] shadow-none transition-transform group-hover:scale-105"
             >
               <Play
                 className="size-8 scale-100 fill-white text-white transition-transform  group-hover:scale-105"

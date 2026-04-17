@@ -1,60 +1,22 @@
-import styles from "./AuroraText.module.scss";
-
-import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
 import React, { memo } from "react";
 
-interface AuroraTextProps {
+export interface AuroraTextProps {
   children: React.ReactNode;
   className?: string;
+  /** @deprecated Flat text styling; ignored. */
   colors?: string[];
+  /** @deprecated Flat text styling; ignored. */
   lightColors?: string[];
+  /** @deprecated No animation; ignored. */
   speed?: number;
 }
 
-const AuroraTextComponent = memo(
-  ({
-    children,
-    className = "",
-    colors,
-    lightColors,
-    speed = 1,
-  }: AuroraTextProps) => {
-    const { colorMode } = useHydratedColorMode();
+/** Renders children as plain text (no gradient). Kept for API compatibility. */
+export const AuroraText = memo(function AuroraText({
+  children,
+  className = "",
+}: AuroraTextProps) {
+  return <span className={className}>{children}</span>;
+});
 
-    // 默认的暗色模式颜色和亮色模式颜色
-    const defaultDarkColors = ["#7D7FE9", "#FFFFFF", "#7DE993", "#FFFFFF"];
-    const defaultLightColors = ["#4C1D95", "#1E293B", "#059669", "#1E293B"];
-
-    // 根据主题选择颜色
-    const selectedColors =
-      colorMode === "light"
-        ? lightColors || defaultLightColors
-        : colors || defaultDarkColors;
-
-    const gradientStyle = {
-      backgroundImage: `linear-gradient(135deg, ${selectedColors.join(", ")}, ${
-        selectedColors[0]
-      })`,
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      animationDuration: `${10 / speed}s`,
-    };
-
-    return (
-      <span className={`relative inline-block ${className}`}>
-        <span className="sr-only">{children}</span>
-        <span
-          className={`relative ${styles.auroraText} bg-[length:200%_auto] bg-clip-text text-transparent`}
-          style={gradientStyle}
-          aria-hidden="true"
-        >
-          {children}
-        </span>
-      </span>
-    );
-  }
-);
-
-AuroraTextComponent.displayName = "AuroraText";
-
-export const AuroraText = AuroraTextComponent;
+AuroraText.displayName = "AuroraText";

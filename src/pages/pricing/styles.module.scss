@@ -35,7 +35,8 @@
 .subTitle {
   max-width: 40rem;
   font-size: var(--oomol-body-lead);
-  line-height: 1.6;
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
   font-weight: 400;
   text-align: center;
   color: var(--oomol-text-secondary);
@@ -73,30 +74,6 @@
 .pricingModelAlert {
   max-width: 1100px;
   margin: 0 auto 20px;
-
-  :global(.arco-alert) {
-    border-radius: 12px;
-    border: 1px solid
-      color-mix(in srgb, var(--oomol-primary) 16%, var(--oomol-border-default));
-    background: linear-gradient(
-      135deg,
-      color-mix(
-          in srgb,
-          var(--oomol-primary-bg) 64%,
-          var(--oomol-bg-elevated) 36%
-        )
-        0%,
-      var(--oomol-surface-float) 100%
-    );
-    box-shadow: none;
-  }
-
-  :global(.arco-alert-content) {
-    color: var(--oomol-text-primary);
-    font-size: 15px;
-    line-height: 24px;
-    font-weight: 600;
-  }
 }
 
 .pricingModelGrid {
@@ -160,10 +137,10 @@
   position: relative;
   z-index: 1;
   font-family: var(--oomol-font-display);
-  font-size: 36px;
-  line-height: 44px;
+  font-size: var(--oomol-display-section);
+  line-height: 1.15;
   font-weight: 600;
-  letter-spacing: -0.035em;
+  letter-spacing: var(--oomol-tracking-section);
   color: var(--oomol-text-primary);
   text-align: center;
   margin-bottom: 16px;
@@ -174,8 +151,9 @@
   z-index: 1;
   max-width: 860px;
   margin: 0 auto 52px;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
   font-weight: 400;
   color: var(--oomol-text-secondary);
   text-align: center;
@@ -253,10 +231,10 @@
 
 .planName {
   font-family: var(--oomol-font-display);
-  font-size: 28px;
+  font-size: var(--oomol-font-size-xl);
   line-height: 1.05;
   font-weight: 600;
-  letter-spacing: -0.04em;
+  letter-spacing: var(--oomol-tracking-section);
   color: var(--oomol-text-primary);
 }
 
@@ -267,10 +245,10 @@
 
   .price {
     font-family: var(--oomol-font-display);
-    font-size: clamp(3.35rem, 5vw, 4.35rem);
+    font-size: var(--oomol-display-hero);
     line-height: 0.92;
     font-weight: 600;
-    letter-spacing: -0.055em;
+    letter-spacing: var(--oomol-tracking-display);
     color: var(--plan-price-color);
   }
 
@@ -467,9 +445,9 @@
   margin: 0;
   max-width: 11ch;
   font-family: var(--oomol-font-display);
-  font-size: clamp(2.05rem, 3vw, 2.95rem);
+  font-size: var(--oomol-display-hero);
   line-height: 0.96;
-  letter-spacing: -0.04em;
+  letter-spacing: var(--oomol-tracking-display);
   font-weight: 600;
   color: var(--oomol-text-primary);
 }
@@ -512,103 +490,29 @@
   width: 100%;
   margin: 0 auto;
   padding-top: 4px;
-
-  :global(.arco-tabs-header) {
-    margin-bottom: 0;
-  }
-
-  :global(.arco-tabs-header-nav::before) {
-    background-color: color-mix(
-      in srgb,
-      var(--oomol-border-default) 78%,
-      transparent
-    );
-  }
-
-  :global(.arco-tabs-content) {
-    padding-top: 26px;
-  }
-
-  :global(.arco-tabs-header-title) {
-    padding: 0 0 16px;
-    margin-right: 32px;
-    color: var(--oomol-text-secondary);
-    font-size: 15px;
-    line-height: 22px;
-    font-weight: 500;
-    transition:
-      color 0.2s ease,
-      transform 0.2s ease;
-  }
-
-  :global(.arco-tabs-header-title:hover) {
-    color: var(--oomol-text-primary);
-    transform: translateY(-1px);
-  }
-
-  :global(.arco-tabs-header-title-active),
-  :global(.arco-tabs-header-title-active:hover) {
-    color: var(--oomol-primary);
-  }
-
-  :global(.arco-tabs-header-ink) {
-    height: 3px;
-    border-radius: 999px;
-    background: linear-gradient(
-      90deg,
-      color-mix(in srgb, var(--oomol-primary) 84%, white) 0%,
-      var(--oomol-primary) 100%
-    );
-  }
 }
 
 .tablePanel {
   display: grid;
-  gap: 20px;
+  gap: 16px;
+  padding-top: 12px;
 }
 
 .tableAlert {
   max-width: none;
   margin: 0;
-
-  :global(.arco-alert) {
-    border-radius: 12px;
-    border: 1px solid color-mix(in srgb, var(--oomol-primary) 10%, transparent);
-    background: linear-gradient(
-      90deg,
-      color-mix(
-          in srgb,
-          var(--oomol-primary-bg) 54%,
-          var(--oomol-bg-elevated) 46%
-        )
-        0%,
-      var(--oomol-surface-float) 100%
-    );
-    box-shadow: none;
-  }
-
-  :global(.arco-alert-content) {
-    color: var(--oomol-text-primary);
-    font-size: 15px;
-    line-height: 24px;
-  }
 }
 
 .tableStatus {
   max-width: 760px;
   margin: 0 auto;
-  padding: 34px 28px;
-  border: 1px dashed
-    color-mix(in srgb, var(--oomol-border-default) 66%, transparent);
-  border-radius: 26px;
-  background: linear-gradient(
-    180deg,
-    var(--oomol-surface-panel) 0%,
-    var(--oomol-surface-float) 100%
-  );
+  padding: 28px 24px;
+  border: 1px solid var(--oomol-divider);
+  border-radius: 12px;
+  background: var(--oomol-bg-container);
   color: var(--oomol-text-secondary);
-  font-size: 16px;
-  line-height: 28px;
+  font-size: 14px;
+  line-height: 1.6;
   text-align: center;
 }
 
@@ -616,53 +520,6 @@
   width: 100%;
   max-width: none;
   margin: 0 auto;
-
-  :global(.arco-table) {
-    overflow: visible;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none;
-  }
-
-  :global(.arco-table-container) {
-    border: 0;
-  }
-
-  :global(.arco-table-header) {
-    background: var(--oomol-surface-float);
-  }
-
-  :global(.arco-table-th) {
-    padding: 16px 18px;
-    border-bottom: 1px solid
-      color-mix(in srgb, var(--oomol-border-default) 84%, white 16%);
-    background: transparent;
-    color: color-mix(in srgb, var(--oomol-text-primary) 92%, white 8%);
-    font-size: 13px;
-    line-height: 20px;
-    font-weight: 600;
-  }
-
-  :global(.arco-table-td) {
-    padding: 16px 18px;
-    border-bottom: 1px solid
-      color-mix(in srgb, var(--oomol-border-default) 78%, white 22%);
-    background: transparent;
-    color: var(--oomol-text-secondary);
-    font-size: 14px;
-    line-height: 22px;
-    vertical-align: top;
-  }
-
-  :global(.arco-table-tr:hover .arco-table-td) {
-    background: color-mix(in srgb, var(--oomol-primary-bg) 24%, white 76%);
-  }
-
-  :global(.arco-table-placeholder) {
-    padding: 0;
-    background: transparent;
-  }
 }
 
 .identifierBadge {
@@ -722,56 +579,17 @@
   .container {
     position: relative;
     isolation: isolate;
-
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto;
-      height: min(1280px, 100%);
-      background:
-        radial-gradient(
-          circle at 50% 0%,
-          rgba(116, 108, 179, 0.14) 0%,
-          transparent 34%
-        ),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, transparent 26%);
-      pointer-events: none;
-      z-index: -1;
-    }
   }
 
   .title {
-    color: rgba(245, 240, 250, 0.96);
-    text-shadow: 0 6px 30px rgba(17, 17, 28, 0.22);
+    color: var(--oomol-text-primary);
+    text-shadow: none;
   }
 
   .subTitle {
-    background-image: linear-gradient(
-      90deg,
-      rgba(197, 190, 255, 0.88) 0%,
-      rgba(178, 168, 245, 0.78) 46%,
-      rgba(237, 231, 255, 0.82) 100%
-    );
-    opacity: 0.96;
+    color: var(--oomol-text-secondary);
   }
 
-  .pricingModelAlert {
-    :global(.arco-alert) {
-      border-color: color-mix(
-        in srgb,
-        var(--oomol-primary) 20%,
-        rgba(255, 255, 255, 0.08)
-      );
-      background: linear-gradient(
-        135deg,
-        rgba(54, 61, 109, 0.42) 0%,
-        rgba(26, 28, 46, 0.86) 100%
-      );
-      box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.08),
-        0 18px 34px rgba(0, 0, 0, 0.18);
-    }
-  }
 
   .pricingModelCard {
     background: var(--oomol-bg-elevated);
@@ -857,100 +675,28 @@
     }
   }
 
-  .tableTabs {
-    :global(.arco-tabs-header-nav::before) {
-      background-color: rgba(255, 255, 255, 0.08);
-    }
-
-    :global(.arco-tabs-header-title) {
-      color: rgba(211, 203, 226, 0.68);
-    }
-
-    :global(.arco-tabs-header-title:hover) {
-      color: rgba(241, 236, 248, 0.9);
-    }
-
-    :global(.arco-tabs-header-title-active),
-    :global(.arco-tabs-header-title-active:hover) {
-      color: rgba(203, 191, 255, 0.98);
-    }
-
-    :global(.arco-tabs-header-ink) {
-      background: linear-gradient(90deg, #9687f0 0%, #b8abff 100%);
-      box-shadow: 0 0 18px rgba(150, 135, 240, 0.26);
-    }
-  }
-
-  .tableAlert {
-    :global(.arco-alert) {
-      border-color: rgba(120, 137, 228, 0.18);
-      background: linear-gradient(
-        90deg,
-        rgba(63, 76, 143, 0.58) 0%,
-        rgba(39, 41, 63, 0.92) 100%
-      );
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    }
-
-    :global(.arco-alert-content) {
-      color: rgba(233, 227, 241, 0.86);
-    }
-  }
-
   .tableStatus {
-    border-color: rgba(204, 194, 240, 0.18);
-    background: linear-gradient(
-      180deg,
-      rgba(59, 53, 79, 0.88) 0%,
-      rgba(37, 34, 50, 0.92) 100%
-    );
-    color: rgba(229, 222, 237, 0.8);
+    border-color: var(--oomol-border-subtle);
+    background: var(--oomol-bg-elevated);
+    color: var(--oomol-text-secondary);
   }
 
   .identifierBadge {
-    background: linear-gradient(
-      180deg,
-      rgba(120, 113, 155, 0.34) 0%,
-      rgba(83, 79, 108, 0.44) 100%
-    );
-    border-color: rgba(196, 189, 255, 0.16);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
-    color: rgba(243, 238, 248, 0.92);
+    background: var(--oomol-bg-spotlight);
+    border-color: var(--oomol-border-default);
+    box-shadow: none;
+    color: var(--oomol-text-primary);
   }
 
   .modelName,
   .priceValue,
   .multilinePriceValue {
-    color: rgba(244, 238, 248, 0.92);
+    color: var(--oomol-text-primary);
   }
 
   .modelAlias,
   .emptyCell {
-    color: rgba(212, 204, 225, 0.72) !important;
-  }
-
-  .tableWrap {
-    :global(.arco-table) {
-      background: transparent;
-    }
-
-    :global(.arco-table-header) {
-      background: rgba(255, 255, 255, 0.03);
-    }
-
-    :global(.arco-table-th) {
-      border-bottom-color: rgba(255, 255, 255, 0.1);
-      color: rgba(236, 230, 243, 0.84);
-    }
-
-    :global(.arco-table-td) {
-      border-bottom-color: rgba(255, 255, 255, 0.08);
-      color: rgba(221, 214, 232, 0.8);
-    }
-
-    :global(.arco-table-tr:hover .arco-table-td) {
-      background: rgba(119, 108, 174, 0.14);
-    }
+    color: var(--oomol-text-secondary) !important;
   }
 }
 
@@ -987,8 +733,8 @@
   }
 
   .sectionTitle {
-    font-size: 28px;
-    line-height: 36px;
+    font-size: var(--oomol-display-section);
+    line-height: 1.2;
   }
 
   .sectionSubtitle {
@@ -1021,8 +767,8 @@
   }
 
   .tableSectionTitle {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: var(--oomol-display-section);
+    line-height: 1.2;
     max-width: none;
   }
 

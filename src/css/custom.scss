@@ -25,7 +25,7 @@
   --ifm-heading-color: var(--oomol-text-primary);
   --ifm-background-surface-color: var(--oomol-bg-elevated);
   --ifm-font-weight-semibold: 600;
-  --ifm-global-radius: 14px;
+  --ifm-global-radius: 8px;
   --oomol-motion-duration-fast: 160ms;
   --oomol-motion-duration-base: 220ms;
   --oomol-motion-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
@@ -133,6 +133,36 @@ body {
   hyphens: auto;
 }
 
+/* 落地页语义标题字号 — 与 design-tokens 同一套 scale，避免各模块各自 clamp 过大 */
+.oomol-home-main h1,
+.oomol-landing-main h1 {
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-display-hero);
+  letter-spacing: var(--oomol-tracking-display);
+  line-height: 1.06;
+}
+
+.oomol-home-main h2,
+.oomol-landing-main h2 {
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-display-section);
+  letter-spacing: var(--oomol-tracking-section);
+  line-height: 1.1;
+}
+
+.oomol-home-main h3,
+.oomol-landing-main h3 {
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-display-card);
+  letter-spacing: var(--oomol-tracking-section);
+  line-height: 1.25;
+}
+
+:lang(zh-CN) .oomol-home-main h3,
+:lang(zh-CN) .oomol-landing-main h3 {
+  letter-spacing: -0.018em;
+}
+
 /* Body / subtitle / overview / description — 紧行高 */
 :lang(zh-CN) .oomol-home-main p,
 :lang(zh-CN) .oomol-landing-main p {
@@ -144,6 +174,15 @@ body {
 :lang(en) .oomol-landing-main p {
   letter-spacing: -0.003em;
   line-height: 1.6;
+}
+
+/* 营销区块副标题：与 design-tokens 正文档对齐，避免各模块自设 1rem/1.02rem 混用 */
+.oomol-home-main [class*="subtitle" i]:not([class*="card" i]),
+.oomol-landing-main [class*="subtitle" i]:not([class*="card" i]) {
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
+  color: var(--oomol-text-secondary);
 }
 
 /* ── Eyebrow / Kicker / Badge: 强制 Mono 小号 + primary 圆点 ── */
@@ -215,7 +254,7 @@ body {
 /* ── Section 背景：杀掉所有紫色 radial / linear-gradient，替换为平色 ── */
 
 .oomol-home-main > section,
-.oomol-landing-main > section {
+.oomol-landing-main:not(.oomol-app-page) > section {
   position: relative;
   background: var(--oomol-bg-base);
   border-bottom: 1px solid var(--oomol-divider);
@@ -223,12 +262,12 @@ body {
 
 /* 偶数 section（第 2、4、6 个）换 container 色，形成段落区隔 */
 .oomol-home-main > section:nth-of-type(even),
-.oomol-landing-main > section:nth-of-type(even) {
+.oomol-landing-main:not(.oomol-app-page) > section:nth-of-type(even) {
   background: var(--oomol-bg-container);
 }
 
 /* 抹掉 section 内装饰性渐变伪元素（许多老样式用 ::before 画紫光） */
-.oomol-landing-main > section::before {
+.oomol-landing-main:not(.oomol-app-page) > section::before {
   background: none !important;
 }
 
@@ -342,11 +381,8 @@ body {
     right: 0;
     bottom: 0;
     backdrop-filter: blur(16px) saturate(120%);
-    background: linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--oomol-bg-base) 92%, transparent) 0%,
-      color-mix(in srgb, var(--oomol-bg-base) 80%, transparent) 100%
-    );
+    /* 扁平半透明底，避免暖色/多段渐变带来的「生成式 UI」感 */
+    background: color-mix(in srgb, var(--oomol-bg-base) 86%, transparent);
     z-index: -1;
   }
 
@@ -478,14 +514,13 @@ $desktop-width: $breakpoint-xl;
   }
 }
 
+/* 旧版彩虹渐变字 — 与当前 Vercel 中性文案规范冲突，保留 mixin 名以免破坏 @use，实质为纯色 */
 @mixin linearGradientColor {
-  background-image: linear-gradient(
-    90deg,
-    #7572a5 0%,
-    var(--oomol-primary) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--oomol-text-secondary);
+  background-image: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: unset;
 }
 
 // 文档页面使用，用于在一行显示多个图片
@@ -654,25 +689,28 @@ $desktop-width: $breakpoint-xl;
 
     :is(h1, h2, h3, h4, h5, h6) {
       font-family: var(--oomol-font-body);
-      font-weight: 700;
+      font-weight: 600;
       line-height: 1.18;
       letter-spacing: -0.02em;
       text-wrap: balance;
     }
 
     h1 {
-      font-size: clamp(2.2rem, 1.9rem + 1.4vw, 3rem);
+      font-size: var(--oomol-display-hero);
+      letter-spacing: var(--oomol-tracking-display);
       margin-bottom: 1rem;
     }
 
     h2 {
-      font-size: clamp(1.6rem, 1.45rem + 0.7vw, 2rem);
+      font-size: var(--oomol-display-section);
+      letter-spacing: var(--oomol-tracking-section);
       margin-top: 2.75rem;
       margin-bottom: 0.9rem;
     }
 
     h3 {
-      font-size: clamp(1.28rem, 1.2rem + 0.35vw, 1.5rem);
+      font-size: var(--oomol-font-size-xl);
+      letter-spacing: var(--oomol-tracking-section);
       margin-top: 2rem;
       margin-bottom: 0.75rem;
     }
@@ -720,7 +758,7 @@ $desktop-width: $breakpoint-xl;
       }
 
       h1 {
-        font-size: clamp(1.9rem, 1.65rem + 1.2vw, 2.35rem);
+        font-size: var(--oomol-display-hero);
       }
     }
   }

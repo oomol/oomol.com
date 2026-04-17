@@ -297,13 +297,7 @@
 
 [data-theme="dark"] {
   .root {
-    background: linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--oomol-bg-base) 92%, var(--oomol-bg-container) 8%)
-        0%,
-      color-mix(in srgb, var(--oomol-bg-layout) 74%, var(--oomol-bg-base) 26%)
-        100%
-    );
+    background: var(--oomol-bg-layout);
   }
 
   .border {

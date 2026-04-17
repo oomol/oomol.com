@@ -1,5 +1,10 @@
 .page {
-  --page-width: min(1200px, calc(100% - 48px));
+  /* 水平边距由 .hero / .section 的 padding-inline 承担，内层用 100% 即可 */
+  --page-width: min(1200px, 100%);
+  --app-radius: var(--ifm-global-radius);
+  --app-section-pad-top: clamp(5.75rem, 8.5vw, 8rem);
+  --app-section-pad-bottom: clamp(5.75rem, 9vw, 8.5rem);
+  --app-block-gap-after-grid: clamp(1.5rem, 3.5vw, 2.75rem);
   --fs-caption: 0.86rem;
   --fs-body: 0.94rem;
   --fs-body-lg: 1.04rem;
@@ -93,20 +98,55 @@
 .hero,
 .section {
   position: relative;
-  z-index: 1;
+  isolation: isolate;
 }
 
 .hero {
   display: grid;
   gap: clamp(1.6rem, 2.6vw, 2.35rem);
   width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   justify-items: center;
+  box-sizing: border-box;
+  padding-inline: clamp(20px, 5vw, 24px);
+  /* 与导航之间留出呼吸感，避免 slogan 顶得太死 */
+  padding-top: clamp(3.5rem, 6vw + 1rem, 6rem);
+  background: var(--bg-base);
+  border-bottom: 1px solid var(--divider);
 }
 
+/* 全宽色带：用伪元素铺底，避免背景视觉上「贴在内容盒子边缘」；实色仍随 section 全宽拉伸 */
 .section {
-  width: var(--page-width);
-  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  margin-inline: 0;
+  padding-inline: clamp(20px, 5vw, 24px);
+  padding-bottom: var(--app-section-pad-bottom);
+  box-sizing: border-box;
+  background: transparent;
+  border-bottom: 1px solid var(--divider);
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--bg-base);
+  pointer-events: none;
+}
+
+.sectionMuted::before {
+  background: var(--bg-container);
+}
+
+.section > * {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--page-width);
+  margin-inline: auto;
 }
 
 .heroHeader {
@@ -123,7 +163,7 @@
 .pricingCard,
 .downloadCard {
   opacity: 0;
-  animation: reveal-up 720ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: reveal-up 560ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .heroCopy {
@@ -150,23 +190,11 @@
 .heroFrame {
   position: relative;
   width: 100%;
-  border-radius: 14px;
+  border-radius: var(--app-radius);
   overflow: clip;
-  background: transparent;
+  border: 1px solid var(--oomol-border-default);
+  background: var(--oomol-bg-spotlight);
   box-shadow: none;
-}
-
-.heroFrame::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -2.6rem;
-  width: min(92%, 1180px);
-  height: 4.2rem;
-  transform: translateX(-50%);
-  border-radius: 999px;
-  background: none;
-  pointer-events: none;
 }
 
 .heroTitle,
@@ -175,8 +203,7 @@
 .solutionText h3,
 .downloadCardHeader strong {
   margin: 0;
-  font-family: var(--ifm-heading-font-family);
-  letter-spacing: -0.03em;
+  font-family: var(--oomol-font-display);
 }
 
 .heroTitle {
@@ -184,12 +211,12 @@
   gap: 0.08em;
   width: fit-content;
   max-width: 100%;
-  font-size: clamp(2.52rem, 4.3vw, 3.85rem);
+  font-size: var(--oomol-display-hero);
   line-height: 1.12;
   font-weight: 600;
   color: var(--text-primary);
   text-align: center;
-  letter-spacing: -0.04em;
+  letter-spacing: var(--oomol-tracking-display);
 }
 
 .heroTitleLine {
@@ -197,22 +224,18 @@
   white-space: nowrap;
 }
 
-.heroTitleAccent {
-  display: block;
-  color: var(--primary);
-}
-
 .heroLead {
   margin: 0;
   max-width: 34rem;
   color: var(--text-secondary);
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
   text-wrap: pretty;
 }
 
 :global(html[lang="en"]) .heroTitle {
-  font-size: clamp(2.35rem, 3.9vw, 3.6rem);
+  font-size: var(--oomol-display-hero);
 }
 
 :global(html[lang="en"]) .heroLead {
@@ -222,64 +245,10 @@
 .heroActions {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 12px;
+  gap: 12px;
+  margin-top: 0.25rem;
   align-items: center;
   justify-content: center;
-}
-
-.heroActionButton,
-.cardAction {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.62rem;
-  box-sizing: border-box;
-  min-height: 3.4rem;
-  padding: 0 1.3rem;
-  border: 1px solid color-mix(in srgb, var(--border-default) 82%, white);
-  border-radius: 999px;
-  color: var(--text-primary);
-  background: var(--surface-float);
-  box-shadow: var(--shadow-sm);
-  font-size: 1rem;
-  font-weight: 500;
-  text-decoration: none;
-  white-space: nowrap;
-  transition:
-    transform 180ms ease,
-    border-color 180ms ease,
-    background-color 180ms ease,
-    box-shadow 180ms ease,
-    color 180ms ease;
-}
-
-.heroActionIcon {
-  flex: 0 0 auto;
-  width: 1rem;
-  height: 1rem;
-  stroke-width: 2.1;
-}
-
-.heroActionButton:hover,
-.cardAction:hover {
-  transform: translateY(-1px);
-  border-color: color-mix(in srgb, var(--primary-border) 82%, white);
-  box-shadow: var(--shadow-md);
-}
-
-.heroActionButtonPrimary,
-.cardActionPrimary {
-  color: var(--oomol-foreground-contrast);
-  border-color: var(--oomol-foreground);
-  background: var(--oomol-foreground);
-  box-shadow: none;
-}
-
-.heroActionButtonPrimary:hover,
-.cardActionPrimary:hover {
-  background: var(--oomol-foreground-hover);
-  border-color: var(--oomol-foreground-hover);
 }
 
 .heroScreenshot,
@@ -293,13 +262,12 @@
 video.heroScreenshot,
 video.outputImage,
 video.outputsShowcaseImage {
-  border-radius: 12px;
+  border-radius: var(--app-radius);
   background: var(--bg-elevated);
-  clip-path: inset(0 round 20px);
 }
 
 .section {
-  padding-top: clamp(5.5rem, 8vw, 7.5rem);
+  padding-top: var(--app-section-pad-top);
   scroll-margin-top: calc(var(--ifm-navbar-height) + 22px);
 }
 
@@ -312,9 +280,10 @@ video.outputsShowcaseImage {
 
 .sectionIntro h2 {
   max-width: 18ch;
-  font-size: clamp(2.15rem, 3.55vw, 3.55rem);
+  font-size: var(--oomol-display-section);
   line-height: var(--lh-heading);
   font-weight: 600;
+  letter-spacing: var(--oomol-tracking-section);
   color: var(--text-primary);
   text-wrap: balance;
 }
@@ -323,8 +292,9 @@ video.outputsShowcaseImage {
   margin: 0;
   max-width: 32rem;
   color: var(--text-secondary);
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: var(--oomol-body-base);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
   text-wrap: pretty;
 }
 
@@ -372,7 +342,8 @@ video.outputsShowcaseImage {
 }
 
 .problemsTitle {
-  font-size: clamp(1.92rem, 3vw, 2.7rem) !important;
+  font-size: var(--oomol-display-section) !important;
+  letter-spacing: var(--oomol-tracking-section);
 }
 
 .modelFeatureGrid {
@@ -380,33 +351,21 @@ video.outputsShowcaseImage {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
   margin-top: 44px;
+  margin-bottom: var(--app-block-gap-after-grid);
 }
 
 .modelFeatureCard {
   position: relative;
   display: grid;
   align-content: start;
-  gap: 14px;
-  padding: 26px;
-  border: 1px solid color-mix(in srgb, var(--border-default) 74%, white);
-  border-radius: 14px;
+  gap: 12px;
+  padding: 22px;
+  border: 1px solid var(--oomol-divider);
+  border-radius: var(--app-radius);
   background: var(--card-accent-surface);
-  box-shadow: var(--shadow-sm);
+  box-shadow: none;
   opacity: 0;
-  animation: reveal-up 720ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.modelFeatureCard::before,
-.painCard::before,
-.downloadCard::before,
-.pricingCard::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 20px;
-  left: 20px;
-  height: 1px;
-  background: var(--highlight-line);
+  animation: reveal-up 560ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .modelFeatureCard:nth-child(1) {
@@ -418,22 +377,55 @@ video.outputsShowcaseImage {
 }
 
 .modelFeatureEyebrow,
-.modelDemoEyebrow,
-.planTier,
-.downloadCardHeader span {
+.modelDemoEyebrow {
   margin: 0;
-  color: var(--text-secondary);
-  font-size: var(--fs-caption);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
-.modelFeatureCard h3,
-.modelDemoCopy h3,
+.planTier {
+  margin: 0;
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-body-mono);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  text-transform: none;
+  color: var(--text-tertiary);
+}
+
+.downloadCardHeader span {
+  margin: 0;
+  font-size: var(--oomol-body-base);
+  font-weight: 600;
+  letter-spacing: var(--oomol-tracking-section);
+  color: var(--text-primary);
+}
+
+.modelFeatureCard h3 {
+  margin: 0;
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-font-size-xl);
+  line-height: var(--lh-title);
+  font-weight: 600;
+  letter-spacing: var(--oomol-tracking-section);
+  color: var(--text-primary);
+  text-wrap: pretty;
+}
+
+/* Demo 主标题：大图区块的视觉焦点，字号介于 section 与 hero 之间 */
+.modelDemoTitle {
+  margin: 0;
+  font-family: var(--oomol-font-display);
+  font-size: clamp(1.65rem, 3.2vw, 2.65rem);
+  line-height: 1.08;
+  font-weight: 600;
+  letter-spacing: var(--oomol-tracking-display);
+  color: var(--text-primary);
+  text-wrap: balance;
+  max-width: min(36ch, 100%);
+}
+
 .pricingHeader h3 {
   margin: 0;
-  font-family: var(--ifm-heading-font-family);
+  font-family: var(--oomol-font-display);
   font-size: var(--fs-title-sm);
   line-height: var(--lh-title);
   font-weight: 600;
@@ -456,31 +448,32 @@ video.outputsShowcaseImage {
 .modelFeatureChips {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   margin-top: 2px;
 }
 
 .modelFeatureChip {
   display: inline-flex;
   align-items: center;
-  min-height: 36px;
-  padding: 0 14px;
-  border: 1px solid color-mix(in srgb, var(--primary-border) 74%, white);
+  min-height: 28px;
+  padding: 0 10px;
+  border: 1px solid var(--oomol-divider);
   border-radius: 999px;
-  color: var(--primary);
-  background: var(--primary-bg);
-  font-size: 0.96rem;
-  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--oomol-bg-container);
+  font-size: var(--oomol-body-sm);
+  font-weight: 500;
   line-height: 1;
+  letter-spacing: var(--oomol-tracking-body);
   white-space: nowrap;
 }
 
 .modelDemo {
   display: grid;
   gap: 22px;
-  margin-top: 32px;
+  margin-top: 0;
   opacity: 0;
-  animation: reveal-up 720ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: reveal-up 560ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
   animation-delay: 280ms;
 }
 
@@ -496,6 +489,10 @@ video.outputsShowcaseImage {
 .modelDemoFrame {
   width: min(100%, 1080px);
   margin: 0 auto;
+  border-radius: var(--app-radius);
+  border: 1px solid var(--oomol-border-default);
+  background: var(--oomol-bg-spotlight);
+  overflow: clip;
 }
 
 .modelDemoImage {
@@ -514,15 +511,16 @@ video.outputsShowcaseImage {
 .painGrid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: stretch;
+  margin-bottom: var(--app-block-gap-after-grid);
 }
 
 .painCard,
 .downloadCard {
   position: relative;
-  border: 1px solid color-mix(in srgb, var(--border-default) 74%, white);
-  border-radius: 14px;
+  border: 1px solid var(--oomol-divider);
+  border-radius: var(--app-radius);
   background: var(--card-surface);
-  box-shadow: var(--shadow-sm);
+  box-shadow: none;
 }
 
 .painCard {
@@ -606,10 +604,12 @@ video.outputsShowcaseImage {
 }
 
 .solutionText h3 {
-  max-width: 18ch;
+  max-width: 22ch;
   font-size: var(--fs-title-md);
   line-height: var(--lh-title);
   font-weight: 600;
+  font-family: var(--oomol-font-display);
+  letter-spacing: var(--oomol-tracking-section);
   color: var(--text-primary);
   text-wrap: pretty;
 }
@@ -634,7 +634,10 @@ video.outputsShowcaseImage {
 
 .outputsShowcaseFrame {
   width: min(100%, 72rem);
-  overflow: visible;
+  overflow: clip;
+  border-radius: var(--app-radius);
+  border: 1px solid var(--oomol-border-default);
+  background: var(--oomol-bg-spotlight);
   animation-delay: 180ms;
 }
 
@@ -643,6 +646,7 @@ video.outputsShowcaseImage {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
   margin-top: 32px;
+  margin-bottom: var(--app-block-gap-after-grid);
 }
 
 .pricingCard {
@@ -651,16 +655,15 @@ video.outputsShowcaseImage {
   grid-template-rows: auto minmax(0, 1fr) auto;
   gap: 22px;
   padding: 28px 26px;
-  border: 1px solid color-mix(in srgb, var(--border-default) 74%, white);
-  border-radius: 14px;
+  border: 1px solid var(--oomol-divider);
+  border-radius: var(--app-radius);
   background: var(--pricing-card-surface);
-  box-shadow: var(--shadow-sm);
+  box-shadow: none;
 }
 
 .pricingCardFeatured {
   background: var(--pricing-card-featured-surface);
-  border-color: color-mix(in srgb, var(--primary-border) 88%, white);
-  box-shadow: var(--shadow-md);
+  border-color: var(--oomol-border-strong);
 }
 
 .pricingCard:nth-child(1) {
@@ -692,11 +695,12 @@ video.outputsShowcaseImage {
 }
 
 .planPriceRow strong {
-  font-size: clamp(2.6rem, 4vw, 3.25rem);
+  font-size: var(--oomol-display-section);
   line-height: 0.95;
   font-weight: 600;
-  letter-spacing: -0.05em;
+  letter-spacing: var(--oomol-tracking-section);
   color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
 }
 
 .planPriceRow span {
@@ -715,7 +719,7 @@ video.outputsShowcaseImage {
 
 .pricingCard .cardAction {
   width: 100%;
-  min-height: 3.45rem;
+  min-height: 48px;
   margin-top: 0;
   justify-self: stretch;
 }
@@ -738,17 +742,15 @@ video.outputsShowcaseImage {
 }
 
 .featureDot {
-  width: 8px;
-  height: 8px;
-  margin-top: 8px;
+  width: 6px;
+  height: 6px;
+  margin-top: 0.5rem;
   border-radius: 999px;
-  background: var(--primary);
+  background: var(--oomol-text-primary);
   flex: 0 0 auto;
+  opacity: 0.35;
 }
 
-.entrySection {
-  padding-top: clamp(5.5rem, 8vw, 7.5rem);
-}
 
 .downloadGrid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -757,8 +759,8 @@ video.outputsShowcaseImage {
 .downloadCard {
   display: grid;
   align-content: start;
-  gap: 18px;
-  padding: 26px;
+  gap: 14px;
+  padding: 22px;
 }
 
 .downloadCard:nth-child(1) {
@@ -780,14 +782,21 @@ video.outputsShowcaseImage {
 }
 
 .downloadCard p {
-  min-height: 6.2em;
+  min-height: 4.9em;
 }
 
 .cardAction {
-  min-height: 3.25rem;
-  margin-top: 10px;
-  padding: 0 20px;
-  font-weight: 600;
+  min-height: 40px;
+  margin-top: auto;
+  padding: 0 14px;
+  border-radius: var(--app-radius);
+  font-weight: 500;
+  box-shadow: none;
+}
+
+.cardAction:hover {
+  transform: none;
+  box-shadow: none;
 }
 
 @keyframes page-fade {
@@ -803,7 +812,7 @@ video.outputsShowcaseImage {
 @keyframes reveal-up {
   from {
     opacity: 0;
-    transform: translate3d(0, 24px, 0);
+    transform: translate3d(0, 12px, 0);
   }
 
   to {
@@ -903,17 +912,21 @@ video.outputsShowcaseImage {
   }
 
   .heroTitle {
-    font-size: clamp(2.3rem, 10.6vw, 3.6rem);
+    font-size: var(--oomol-display-hero);
+  }
+
+  .heroTitleLine {
+    white-space: normal;
   }
 
   .heroLead {
     max-width: 100%;
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: var(--oomol-body-lead);
+    line-height: var(--oomol-line-height-relaxed);
   }
 
   :global(html[lang="en"]) .heroTitle {
-    font-size: clamp(1.72rem, 6.6vw, 2.4rem);
+    font-size: var(--oomol-display-hero);
   }
 
   .heroActions {
@@ -930,15 +943,11 @@ video.outputsShowcaseImage {
   }
 
   .problemsTitle {
-    font-size: clamp(1.55rem, 6.6vw, 2rem) !important;
+    font-size: var(--oomol-display-section) !important;
   }
 
-  .heroFrame {
-    border-radius: 18px;
-  }
-
+  .heroFrame,
   video.heroScreenshot {
-    border-radius: 18px;
-    clip-path: inset(0 round 18px);
+    border-radius: var(--app-radius);
   }
 }

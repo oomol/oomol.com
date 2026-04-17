@@ -341,10 +341,10 @@
   --oomol-font-size-5xl: 48px;
   --oomol-font-size-6xl: 56px;
 
-  /* Vercel display scale — hero / section / card */
-  --oomol-display-hero: clamp(2.75rem, 5.6vw, 4.5rem); /* 44–72px */
-  --oomol-display-section: clamp(2rem, 3.4vw, 3rem); /* 32–48px */
-  --oomol-display-card: clamp(1.05rem, 1.4vw, 1.18rem); /* 17–19px */
+  /* Vercel display scale — hero / section / card（全站统一略收紧，避免营销页标题过大） */
+  --oomol-display-hero: clamp(2.2rem, 4.2vw, 3.35rem); /* ~35–54px */
+  --oomol-display-section: clamp(1.45rem, 2.35vw, 2.15rem); /* ~23–34px */
+  --oomol-display-card: clamp(1rem, 1.2vw, 1.1rem); /* 卡片小标题 */
 
   /* Vercel body scale */
   --oomol-body-lead: 1.08rem; /* 17px - hero/section description */
