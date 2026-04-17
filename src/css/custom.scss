@@ -73,7 +73,9 @@ body {
   letter-spacing: -0.002em;
 }
 
-:lang(zh-CN) {
+/* html[lang] 与 :lang 双写：保证文档根语言一变，整站字体变量立刻对齐（Docusaurus 在 <html> 上写 locale） */
+:lang(zh-CN),
+html[lang="zh-CN"] {
   --oomol-font-display:
     "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI",
     "Microsoft YaHei", "Geist", sans-serif;
@@ -82,7 +84,8 @@ body {
     "Microsoft YaHei", "Geist", sans-serif;
 }
 
-:lang(en) {
+:lang(en),
+html[lang="en"] {
   --oomol-font-display:
     "Geist", "Inter", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB",
     "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
@@ -627,10 +630,10 @@ $desktop-width: $breakpoint-xl;
   }
 }
 
-// 文档页统一使用无衬线字体，提升中英文阅读一致性
+// 文档页：正文用 body 栈；标题与营销站一致用 display 栈（Infima 标题变量同步）
 .docs-wrapper {
   --ifm-font-family-base: var(--oomol-font-body);
-  --ifm-heading-font-family: var(--oomol-font-body);
+  --ifm-heading-font-family: var(--oomol-font-display);
   --ifm-font-size-base: 1rem;
   --ifm-leading: 1.75;
 
@@ -647,7 +650,10 @@ $desktop-width: $breakpoint-xl;
   }
 
   .theme-doc-markdown :is(h1, h2, h3, h4, h5, h6),
-  .pagination-nav__label,
+  .pagination-nav__label {
+    font-family: var(--oomol-font-display);
+  }
+
   .pagination-nav__sublabel,
   .table-of-contents__link,
   .breadcrumbs__link {
@@ -688,7 +694,7 @@ $desktop-width: $breakpoint-xl;
     }
 
     :is(h1, h2, h3, h4, h5, h6) {
-      font-family: var(--oomol-font-body);
+      font-family: var(--oomol-font-display);
       font-weight: 600;
       line-height: 1.18;
       letter-spacing: -0.02em;
@@ -761,5 +767,47 @@ $desktop-width: $breakpoint-xl;
         font-size: var(--oomol-display-hero);
       }
     }
+  }
+}
+
+/* 文档正文标题：tracking / 行高 / 中文断行与 .oomol-home-main 同级 */
+:lang(zh-CN) .docs-wrapper .theme-doc-markdown,
+html[lang="zh-CN"] .docs-wrapper .theme-doc-markdown {
+  :is(h1, h2) {
+    letter-spacing: -0.022em;
+    line-height: 1.12;
+    text-wrap: pretty;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  h3 {
+    letter-spacing: -0.018em;
+    line-height: 1.12;
+    text-wrap: pretty;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  :is(h4, h5, h6) {
+    letter-spacing: -0.018em;
+    line-height: 1.2;
+    text-wrap: pretty;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  :where(p, li) {
+    letter-spacing: 0;
+  }
+}
+
+:lang(en) .docs-wrapper .theme-doc-markdown,
+html[lang="en"] .docs-wrapper .theme-doc-markdown {
+  :is(h1, h2, h3) {
+    letter-spacing: -0.034em;
+    line-height: 1.12;
+    text-wrap: balance;
+    hyphens: auto;
   }
 }
