@@ -3,7 +3,8 @@
 .section {
   width: 100%;
   padding: clamp(5rem, 10vw, 8rem) 0;
-  background: var(--oomol-bg-base);
+  /* Band behind the card so the CTA reads as a distinct surface (not “floating same as page”). */
+  background: var(--oomol-bg-spotlight);
   border-bottom: 1px solid var(--oomol-divider);
 }
 
@@ -14,9 +15,9 @@
   gap: 1.1rem;
   padding: clamp(2.4rem, 5vw, 4rem) clamp(2rem, 4.2vw, 3rem);
   border-radius: 14px;
-  border: 1px solid var(--oomol-divider);
-  background: var(--oomol-bg-container);
-  box-shadow: none;
+  border: 1px solid var(--oomol-border-default);
+  background: var(--oomol-bg-base);
+  box-shadow: 0 1px 3px rgba(10, 10, 10, 0.06);
   justify-items: center;
   text-align: center;
 }
@@ -44,9 +45,11 @@
 .actions {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  /* Top-align rows so a caption under one control (e.g. DownloadButton note) does not
+     vertically center the shorter sibling — primary/secondary buttons stay on one line. */
+  align-items: flex-start;
   justify-content: center;
-  gap: 0.7rem;
+  gap: 0.7rem 1rem;
   padding-top: 0.8rem;
 }
 
@@ -111,6 +114,7 @@
     width: 100%;
     max-width: 20rem;
     flex-direction: column;
+    align-items: center;
   }
 
   .ghostLink,
@@ -120,8 +124,13 @@
 }
 
 [data-theme="dark"] {
+  .section {
+    background: var(--oomol-bg-container);
+  }
+
   .inner {
     border-color: var(--oomol-border-default);
     background: var(--oomol-bg-elevated);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   }
 }

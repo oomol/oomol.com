@@ -150,7 +150,8 @@
 
 .valueBox {
   display: grid;
-  gap: 0.25rem;
+  /* 英/中文混排时 line-height<1 会让字形挤出并与下一行叠在一起，需留足行距 */
+  gap: 0.45rem;
   padding: 0.1rem 0 0.75rem;
   border-bottom: 1px solid var(--oomol-divider);
 }
@@ -159,7 +160,7 @@
   margin: 0;
   font-family: var(--oomol-font-display);
   font-size: var(--oomol-display-hero);
-  line-height: 0.95;
+  line-height: 1.06;
   letter-spacing: var(--oomol-tracking-display);
   font-weight: 500;
   color: var(--oomol-text-primary);
@@ -167,6 +168,7 @@
 }
 
 .valueCaption {
+  margin: 0;
   font-family: var(--oomol-font-mono);
   font-size: 0.74rem;
   line-height: 1.5;
