@@ -386,14 +386,13 @@ export default function HomepageLinearFlow() {
         description={copy.cta.description}
         actions={
           <>
-            <Button asChild size="lg" className={styles.ctaPrimary}>
+            <Button asChild size="lg">
               <Link to="/cli">{copy.cta.primary}</Link>
             </Button>
             <Button
               asChild
               variant="contrast"
               size="lg"
-              className={styles.ctaSecondary}
             >
               <Link to="/studio">{copy.cta.secondary}</Link>
             </Button>

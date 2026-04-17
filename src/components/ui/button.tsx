@@ -3,6 +3,8 @@ import { cn } from "@site/src/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
 
+import styles from "./button.module.scss";
+
 /**
  * shadcn/ui Button — tuned to Vercel's marketing-site button system.
  *
@@ -10,15 +12,19 @@ import * as React from "react";
  *
  * All variants: font-weight 500, letter-spacing -0.01em,
  * never uppercase, never min-width, never box-shadow on idle.
+ *
+ * Surface colors live in button.module.scss so Link/anchor globals cannot
+ * override label contrast on filled buttons.
  */
 
 const buttonVariants = cva(
   [
+    styles.buttonRoot,
     "inline-flex items-center justify-center gap-2 whitespace-nowrap",
     "font-medium tracking-[-0.005em]",
     "border border-solid transition-colors",
     "no-underline hover:no-underline",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--background))]",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--oomol-bg-base)]",
     "disabled:pointer-events-none disabled:opacity-50",
     "[&_svg]:size-4 [&_svg]:shrink-0",
     "select-none",
@@ -27,47 +33,22 @@ const buttonVariants = cva(
     variants: {
       variant: {
         // Vercel primary "Deploy" style — dark filled (light mode = near-black, dark mode = near-white)
-        default: [
-          "bg-[var(--oomol-foreground)] border-[var(--oomol-foreground)] text-[var(--oomol-foreground-contrast)]",
-          "hover:bg-[var(--oomol-foreground-hover)] hover:border-[var(--oomol-foreground-hover)] hover:text-[var(--oomol-foreground-contrast)]",
-          "active:opacity-90",
-        ].join(" "),
+        default: styles.variantDefault,
         // Brand-color button (opt-in, rarely used)
-        primary: [
-          "bg-[var(--oomol-primary)] border-[var(--oomol-primary)] text-white",
-          "hover:bg-[var(--oomol-primary-hover)] hover:border-[var(--oomol-primary-hover)]",
-          "active:bg-[var(--oomol-primary-active)] active:border-[var(--oomol-primary-active)]",
-        ].join(" "),
-        destructive: [
-          "bg-[var(--oomol-error)] border-[var(--oomol-error)] text-white",
-          "hover:opacity-90",
-        ].join(" "),
+        primary: styles.variantPrimary,
+        destructive: styles.variantDestructive,
         // Vercel "Get a demo" hairline style
-        outline: [
-          "bg-transparent border-[var(--oomol-border-strong)] text-[var(--oomol-text-primary)]",
-          "hover:bg-[var(--oomol-bg-spotlight)] hover:text-[var(--oomol-text-primary)] hover:border-[var(--oomol-border-strong)]",
-        ].join(" "),
+        outline: styles.variantOutline,
         // Subtle filled (used inside CTA panels, nav)
-        secondary: [
-          "bg-[var(--oomol-bg-container)] border-[var(--oomol-divider)] text-[var(--oomol-text-primary)]",
-          "hover:bg-[var(--oomol-bg-spotlight)]",
-        ].join(" "),
+        secondary: styles.variantSecondary,
         // Alias kept for homepage CTA-block secondary action (inverted surface)
-        contrast: [
-          "bg-[var(--oomol-bg-elevated)] border-[var(--oomol-border-default)] text-[var(--oomol-text-primary)]",
-          "hover:bg-[var(--oomol-bg-spotlight)]",
-        ].join(" "),
+        contrast: styles.variantContrast,
         // Ghost (no border, appears only on hover)
-        ghost: [
-          "bg-transparent border-transparent text-[var(--oomol-text-secondary)]",
-          "hover:bg-[var(--oomol-hover-bg)] hover:text-[var(--oomol-text-primary)]",
-        ].join(" "),
+        ghost: styles.variantGhost,
         // Pure underline text link（无线框占位）
-        link: [
-          "bg-transparent border-0 text-[var(--oomol-primary)]",
-          "underline-offset-[3px] hover:underline hover:text-[var(--oomol-primary-hover)]",
-          "h-auto min-h-0 p-0",
-        ].join(" "),
+        link: [styles.variantLink, "underline-offset-[3px] h-auto min-h-0 p-0"].join(
+          " "
+        ),
       },
       size: {
         sm: "h-8 px-3 text-oomol-mono rounded-md",

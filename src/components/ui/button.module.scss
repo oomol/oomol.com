@@ -1,0 +1,118 @@
+/**
+ * Button surfaces live in CSS Modules so filled/outline colors win over
+ * global anchor / navbar link rules when using Button asChild + Link.
+ *
+ * Compound `.buttonRoot.variant*` keeps specificity above single-class link styles.
+ */
+
+.buttonRoot {
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:focus-visible,
+  &:active {
+    text-decoration: none;
+  }
+
+  &.variantDefault {
+    background-color: var(--oomol-foreground);
+    border-color: var(--oomol-foreground);
+    color: var(--oomol-foreground-contrast);
+
+    &:hover {
+      background-color: var(--oomol-foreground-hover);
+      border-color: var(--oomol-foreground-hover);
+      color: var(--oomol-foreground-contrast);
+    }
+
+    &:active {
+      opacity: 0.9;
+    }
+  }
+
+  &.variantPrimary {
+    background-color: var(--oomol-primary);
+    border-color: var(--oomol-primary);
+    color: var(--oomol-white);
+
+    &:hover {
+      background-color: var(--oomol-primary-hover);
+      border-color: var(--oomol-primary-hover);
+      color: var(--oomol-white);
+    }
+
+    &:active {
+      background-color: var(--oomol-primary-active);
+      border-color: var(--oomol-primary-active);
+    }
+  }
+
+  &.variantDestructive {
+    background-color: var(--oomol-error);
+    border-color: var(--oomol-error);
+    color: var(--oomol-white);
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &.variantOutline {
+    background-color: transparent;
+    border-color: var(--oomol-border-strong);
+    color: var(--oomol-text-primary);
+
+    &:hover {
+      background-color: var(--oomol-bg-spotlight);
+      border-color: var(--oomol-border-strong);
+      color: var(--oomol-text-primary);
+    }
+  }
+
+  &.variantSecondary {
+    background-color: var(--oomol-bg-container);
+    border-color: var(--oomol-divider);
+    color: var(--oomol-text-primary);
+
+    &:hover {
+      background-color: var(--oomol-bg-spotlight);
+      color: var(--oomol-text-primary);
+    }
+  }
+
+  &.variantContrast {
+    background-color: var(--oomol-bg-elevated);
+    border-color: var(--oomol-border-default);
+    color: var(--oomol-text-primary);
+
+    &:hover {
+      background-color: var(--oomol-bg-spotlight);
+      color: var(--oomol-text-primary);
+    }
+  }
+
+  &.variantGhost {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--oomol-text-secondary);
+
+    &:hover {
+      background-color: var(--oomol-hover-bg);
+      color: var(--oomol-text-primary);
+    }
+  }
+
+  &.variantLink {
+    background-color: transparent;
+    /* Base layout still adds Uno `border`; kill it so link variant stays borderless. */
+    border: none !important;
+    color: var(--oomol-primary);
+
+    &:hover {
+      color: var(--oomol-primary-hover);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
+}
