@@ -26,11 +26,8 @@ export default function ResponsiveVideo({
       poster={resolvedPoster}
       style={{
         width: "100%",
-        maxWidth: "100%",
-        borderRadius: "var(--ifm-global-radius)",
-        border: "1px solid var(--oomol-border-default)",
-        background: "var(--oomol-chrome-void)",
-        boxShadow: "var(--oomol-shadow-sm)",
+        borderRadius: "16px",
+        background: "#000",
         ...style,
       }}
     >

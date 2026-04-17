@@ -1,4 +1,4 @@
-import { themes as prismThemes } from "prism-react-renderer";
+import { themes } from "prism-react-renderer";
 
 const UnoCSS = require("@unocss/webpack");
 const path = require("path");
@@ -47,9 +47,8 @@ async function loadCatalogStats() {
 }
 
 
-/** Neutral Atom One–derived palettes — calmer than GitHub/Dracula, closer to Vercel docs. */
-const lightCodeTheme = prismThemes.oneLight;
-const darkCodeTheme = prismThemes.oneDark;
+const lightTheme = themes.github;
+const darkTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -415,12 +414,12 @@ const config = {
         //... other Algolia params
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: lightTheme,
+        darkTheme: darkTheme,
         additionalLanguages: ["json"],
       },
       mermaid: {
-        theme: { light: "neutral", dark: "dark" },
+        theme: { light: "base", dark: "dark" },
       },
     }),
   future: {

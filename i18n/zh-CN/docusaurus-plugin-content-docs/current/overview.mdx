@@ -6,14 +6,22 @@ hide_title: true
 description: 先用 oo-cli，用现成工具跑通；不够时进入 OOMOL Studio；需要持续运行和交付时再交给 OOMOL Cloud。
 ---
 
-import DocsLead from "@site/src/components/mdx/DocsLead";
 import desktop from "@site/static/img/docs/cn/desktop.png";
 import ResponsiveVideo from "@site/src/components/mdx/ResponsiveVideo";
 
-<DocsLead>
+<div
+  style={{
+    marginBottom: "0.9rem",
+    color: "var(--oomol-text-primary)",
+    fontSize: "clamp(1.6rem, 1.45rem + 0.7vw, 2rem)",
+    fontWeight: 700,
+    lineHeight: 1.18,
+    letterSpacing: "-0.02em",
+  }}
+>
   先从 oo-cli 开始。现成工具不够时进入 Studio。需要持续运行和交付时再交给
   Cloud。
-</DocsLead>
+</div>
 
 这份文档遵循主官网现在的产品路径。如果你只是想先把已发布工具跑起来，就从
 `oo-cli` 开始；如果你需要自己编写、扩展和验证工具，就进入 OOMOL Studio；
