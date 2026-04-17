@@ -29,7 +29,6 @@
   --oomol-motion-duration-fast: 160ms;
   --oomol-motion-duration-base: 220ms;
   --oomol-motion-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
-  --oomol-hover-lift: translateY(-2px);
 
   /* Light mode colors - 使用 design tokens */
   --ifm-navbar-background-color: var(--oomol-bg-base);
@@ -517,8 +516,8 @@ $desktop-width: $breakpoint-xl;
   }
 }
 
-/* 旧版彩虹渐变字 — 与当前 Vercel 中性文案规范冲突，保留 mixin 名以免破坏 @use，实质为纯色 */
-@mixin linearGradientColor {
+/* 副文案：纯色次级色，无渐变（旧名 linearGradientColor 已弃用） */
+@mixin flatSecondaryText {
   color: var(--oomol-text-secondary);
   background-image: none;
   -webkit-background-clip: unset;

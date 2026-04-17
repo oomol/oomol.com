@@ -782,12 +782,18 @@
   }
 
   .tableTabs {
-    :global(.arco-tabs-header-title) {
-      margin-right: 20px;
+    :global([role="tablist"]) {
+      flex-wrap: wrap;
+      row-gap: 8px;
+      column-gap: 4px;
+    }
+
+    :global([role="tab"]) {
+      margin-right: 16px;
       padding-bottom: 12px;
     }
 
-    :global(.arco-tabs-content) {
+    :global([role="tabpanel"]) {
       padding-top: 20px;
     }
   }

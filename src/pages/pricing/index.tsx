@@ -1041,7 +1041,11 @@ export default function Index() {
                 ))}
               </TabsList>
               {tableTabs.map(tab => (
-                <TabsContent key={tab.key} value={tab.key}>
+                <TabsContent
+                  key={tab.key}
+                  value={tab.key}
+                  className="mt-0"
+                >
                   {renderPricingTable(tab.key)}
                 </TabsContent>
               ))}

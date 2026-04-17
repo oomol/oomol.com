@@ -92,6 +92,11 @@
 .productMenuTrigger {
   gap: 0.4rem;
   margin: 0 2px;
+  padding: 0.5rem 0.7rem;
+  font-size: 14px;
+  font-weight: 550;
+  letter-spacing: -0.005em;
+  line-height: 1.25;
   color: var(--oomol-text-secondary);
   background: transparent;
 
@@ -104,11 +109,22 @@
     color: var(--oomol-text-primary);
     background: transparent;
   }
-}
 
-.productMenuTriggerActive {
-  color: var(--oomol-text-primary);
-  background: transparent;
+  /* 与 [data-theme="light"] .navbar__link--active 一致（品牌蓝），双类名压过 ghost 按钮的 text-secondary */
+  &.productMenuTriggerActive {
+    color: var(--oomol-primary);
+    background: transparent;
+
+    &:hover {
+      color: var(--oomol-primary-hover);
+      background: transparent;
+    }
+
+    &:active {
+      color: var(--oomol-primary-active);
+      background: transparent;
+    }
+  }
 }
 
 .productMenuCaret {
@@ -170,13 +186,44 @@
     background: var(--oomol-hover-bg);
     transform: none;
   }
+
+  &:hover .productMenuEntryLabel {
+    color: var(--oomol-text-primary);
+  }
+
+  &:hover .productMenuEntryIcon {
+    color: var(--oomol-text-primary);
+    border-color: var(--oomol-border-default);
+  }
 }
 
 .productMenuEntryActive {
-  background: var(--oomol-hover-bg);
+  background: var(--oomol-primary-bg);
+
+  &:hover {
+    background: var(--oomol-primary-bg-hover);
+  }
 
   .productMenuEntryLabel {
-    color: var(--oomol-text-primary);
+    color: var(--ifm-menu-color-active, var(--oomol-primary-text));
+  }
+
+  .productMenuEntryIcon {
+    color: var(--ifm-menu-color-active, var(--oomol-primary-text));
+    border-color: var(--oomol-primary-border);
+    background: color-mix(
+      in srgb,
+      var(--oomol-primary-bg) 55%,
+      var(--oomol-bg-container)
+    );
+  }
+
+  &:hover .productMenuEntryLabel {
+    color: var(--ifm-menu-color-active, var(--oomol-primary-text));
+  }
+
+  &:hover .productMenuEntryIcon {
+    color: var(--ifm-menu-color-active, var(--oomol-primary-text));
   }
 }
 
@@ -189,9 +236,13 @@
   border-radius: 6px;
   background: var(--oomol-bg-container);
   border: 1px solid var(--oomol-divider);
-  color: var(--oomol-text-primary);
+  color: var(--oomol-text-secondary);
   box-shadow: none;
   flex-shrink: 0;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease,
+    background-color 0.15s ease;
 
   i {
     font-size: 1rem;
@@ -204,11 +255,12 @@
 }
 
 .productMenuEntryLabel {
-  color: var(--oomol-text-primary);
-  font-size: 0.9rem;
-  font-weight: 600;
+  color: var(--oomol-text-secondary);
+  font-size: 14px;
+  font-weight: 550;
   line-height: 1.25;
   letter-spacing: -0.005em;
+  transition: color 0.15s ease;
 }
 
 .productMenuEntryDescription {
@@ -364,7 +416,7 @@
 :global(.navbar__item.navbar__link) {
   padding: 0.5rem 0.7rem;
   margin: 0 2px;
-  font-weight: 500;
+  font-weight: 550;
   font-size: 14px;
   letter-spacing: -0.005em;
   border-radius: 6px;
@@ -426,6 +478,17 @@
     color: var(--oomol-text-primary);
     background: transparent;
     box-shadow: none;
+  }
+
+  .productMenuTrigger.productMenuTriggerActive {
+    color: var(--oomol-text-primary);
+    background: transparent;
+
+    &:hover,
+    &:active {
+      color: var(--oomol-text-primary);
+      background: transparent;
+    }
   }
 
   :global(.navbar__toggle) {

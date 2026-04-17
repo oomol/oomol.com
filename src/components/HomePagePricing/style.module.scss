@@ -35,7 +35,9 @@
   overflow: hidden;
   padding: 20px;
   text-align: left;
-  transition: transform 0.3s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
   background-color: var(--oomol-bg-elevated);
   border: 1px solid var(--oomol-border-subtle);
   border-radius: 10px;
@@ -43,9 +45,8 @@
   box-sizing: border-box;
 
   &:hover {
-    box-shadow: var(--oomol-shadow-md);
-    transform: translateY(-2px);
-    border-color: var(--oomol-border-default);
+    box-shadow: var(--oomol-shadow-sm);
+    border-color: var(--oomol-border-strong);
   }
 }
 

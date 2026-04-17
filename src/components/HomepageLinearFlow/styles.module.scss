@@ -253,7 +253,7 @@
   margin-left: 0.2rem;
   border-top: 0.7rem solid transparent;
   border-bottom: 0.7rem solid transparent;
-  border-left: 1.1rem solid #0a0a0a;
+  border-left: 1.1rem solid var(--oomol-text-primary);
 }
 
 .videoCardMeta {
@@ -555,6 +555,10 @@
 
   .videoCardPlay {
     background: rgba(255, 255, 255, 0.95);
+  }
+
+  .videoCardTriangle {
+    border-left-color: var(--oomol-text-inverse);
   }
 
   .ctaInner {

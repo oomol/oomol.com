@@ -185,7 +185,7 @@
   margin-left: 0.25rem;
   border-top: 0.75rem solid transparent;
   border-bottom: 0.75rem solid transparent;
-  border-left: 1.15rem solid #0a0a0a;
+  border-left: 1.15rem solid var(--oomol-text-primary);
 }
 
 .heroVideo {
@@ -301,13 +301,17 @@
 /* ── Dark mode ── */
 
 [data-theme="dark"] {
+  .playTriangle {
+    border-left-color: var(--oomol-text-inverse);
+  }
+
   .videoFrame {
-    background: #0a0a0a;
+    background: var(--oomol-bg-container);
     box-shadow: none;
   }
 
   .heroVideo {
-    background: #0a0a0a;
+    background: var(--oomol-bg-container);
   }
 
   .playOverlay {
