@@ -3,6 +3,18 @@
   gap: 14px;
 }
 
+/* 定价卡等窄栏：与「width: 100%」主按钮对齐，避免 flex 子项按内容收缩 */
+.buttonBoxFullWidth {
+  width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.stackFullWidth {
+  width: 100%;
+  align-items: stretch;
+}
+
 .download {
   /* Vercel primary button handles size/radius/fill via the Button component.
      We only need to ensure the asChild <a> fills the button and carry the icon slot. */
@@ -33,6 +45,18 @@
     color: inherit;
     font-size: 1rem;
     line-height: 1;
+  }
+}
+
+.downloadCompact {
+  .downloadIconWrap {
+    width: 1.125rem;
+    height: 1.125rem;
+    font-size: 0.9375rem;
+  }
+
+  .downloadIcon {
+    font-size: 0.9375rem;
   }
 }
 

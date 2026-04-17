@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import { translate } from "@docusaurus/Translate";
 import { DownloadUrl } from "@site/src/download_url";
-import { downloadStable } from "@site/src/lib/utils";
+import { cn, downloadStable } from "@site/src/lib/utils";
 
 import { Button } from "../ui/button";
 
@@ -30,6 +30,12 @@ export interface DownloadButtonProps {
   centered?: boolean;
   showNote?: boolean;
   noteTone?: "default" | "inverse";
+  /** `default` (40px) matches pricing subscribe CTAs; `lg` (48px) for hero sections. */
+  buttonSize?: "default" | "lg";
+  /** Stretch to parent width (e.g. pricing cards next to full-width Subscribe). */
+  fullWidth?: boolean;
+  /** Merged onto the primary Button / link (e.g. pricing `planCta`). */
+  className?: string;
   texts?: Partial<{
     macos: string;
     macosStable: string;
@@ -45,6 +51,9 @@ export const DownloadButton = ({
   centered,
   showNote = true,
   noteTone = "default",
+  buttonSize = "lg",
+  fullWidth = false,
+  className,
   texts,
 }: DownloadButtonProps) => {
   const downloadIcon = (
@@ -96,12 +105,26 @@ export const DownloadButton = ({
     translate({
       message: "HOME.FirstScreen.download-windows-subtitle",
     });
+  const size = buttonSize;
+  const downloadClassName = cn(
+    size === "default"
+      ? `${styles.download} ${styles.downloadCompact}`
+      : styles.download,
+    className
+  );
+  const stackStretchClass = fullWidth ? styles.stackFullWidth : "";
+  const outerBoxClass = fullWidth
+    ? `${styles["button-box"]} ${styles.buttonBoxFullWidth}`
+    : styles["button-box"];
+  const macWindowsShellClass = [containerClassName, stackStretchClass]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <BrowserOnly
       fallback={
-        <div className={containerClassName}>
-          <Button size="lg" className={styles.download}>
+        <div className={macWindowsShellClass}>
+          <Button size={size} className={downloadClassName}>
             {downloadIcon}
             {stableTag ? macosStableLabel : macosLabel}
           </Button>
@@ -111,13 +134,13 @@ export const DownloadButton = ({
     >
       {() => {
         return (
-          <div className={styles["button-box"]}>
+          <div className={outerBoxClass}>
             {detectOSAndArchitecture() === OS.MacOS ? (
-              <div className={containerClassName}>
+              <div className={macWindowsShellClass}>
                 <Button
                   asChild
-                  size="lg"
-                  className={styles.download}
+                  size={size}
+                  className={downloadClassName}
                   onClick={() =>
                     downloadStable(null, DownloadUrl.Stable.MacOS.AppleSilicon)
                   }
@@ -132,11 +155,17 @@ export const DownloadButton = ({
                 ) : null}
               </div>
             ) : (
-              <div className={windowsClassName}>
+              <div
+                className={
+                  fullWidth
+                    ? `${windowsClassName} ${styles.stackFullWidth}`.trim()
+                    : windowsClassName
+                }
+              >
                 <Button
                   asChild
-                  size="lg"
-                  className={styles.download}
+                  size={size}
+                  className={downloadClassName}
                   onClick={() =>
                     downloadStable(null, DownloadUrl.Stable.Windows.x64)
                   }

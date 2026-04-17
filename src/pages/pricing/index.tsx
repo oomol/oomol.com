@@ -779,7 +779,11 @@ export default function Index() {
               </div>
               <div className={styles.planActionArea}>
                 <div className={styles.downloadBtnWrapper}>
-                  <DownloadButton />
+                  <DownloadButton
+                    buttonSize="default"
+                    fullWidth
+                    className={styles.planCta}
+                  />
                 </div>
               </div>
               <div className={styles.planDetails}>
@@ -861,7 +865,8 @@ export default function Index() {
               <div className={styles.planActionArea}>
                 <Button
                   asChild
-                  className={styles.subscribeBtn}
+                  size="default"
+                  className={styles.planCta}
                   aria-label={paidPlanCtaLabel}
                 >
                   <a
@@ -948,7 +953,8 @@ export default function Index() {
               <div className={styles.planActionArea}>
                 <Button
                   asChild
-                  className={styles.subscribeBtn}
+                  size="default"
+                  className={styles.planCta}
                   aria-label={paidPlanCtaLabel}
                 >
                   <a

@@ -261,7 +261,8 @@
 }
 
 .planDescription {
-  max-width: 24ch;
+  /* 略宽于 24ch，避免「每月 200 分钟」与 Cloud Task 在中英文混排时被挤成两行 */
+  max-width: min(34ch, 100%);
   min-height: calc(1.72em * 3);
   font-size: 15px;
   line-height: 1.72;
@@ -293,28 +294,32 @@
   box-shadow: none;
 }
 
-.subscribeBtn {
+/* 三列方案主 CTA：同宽铺满卡片内容区，与 Vercel 定价页一致 */
+.planCta {
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  justify-self: stretch;
 }
 
 .downloadBtnWrapper {
   width: 100%;
-  align-self: start;
+  min-width: 0;
+  align-self: stretch;
+  justify-self: stretch;
 
   > * {
     width: 100%;
-  }
-
-  :global(button),
-  :global(a) {
-    width: 100%;
+    min-width: 0;
   }
 }
 
 .planActionArea {
   display: grid;
+  width: 100%;
+  justify-items: stretch;
   align-content: start;
-  min-height: 110px;
+  min-height: 92px;
   margin-bottom: 24px;
 }
 
