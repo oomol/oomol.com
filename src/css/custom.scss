@@ -414,22 +414,10 @@ html[lang="en"] {
   display: none;
 }
 
+/* 顶栏毛玻璃只在 theme/Navbar/styles.module.scss 做一层；此处不再叠 ::before + backdrop，
+   否则与模块内 backdrop 双重采样，快速滚动时易闪烁（尤其首页多段入场动画同时跑合成）。 */
 .navbar {
-  position: relative;
   border-bottom: 1px solid var(--oomol-divider);
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    backdrop-filter: blur(16px) saturate(120%);
-    /* 扁平半透明底，避免暖色/多段渐变带来的「生成式 UI」感 */
-    background: color-mix(in srgb, var(--oomol-bg-base) 86%, transparent);
-    z-index: -1;
-  }
 
   .navbar__inner {
     justify-content: unset;

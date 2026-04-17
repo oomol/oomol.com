@@ -362,6 +362,8 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  /* 独立合成层，减轻与正文 motion/opacity 叠层时的 sticky 顶栏闪烁 */
+  isolation: isolate;
   transition: transform 0.3s ease;
   --ifm-navbar-padding-vertical: 0;
   background: transparent;
