@@ -1,107 +1,90 @@
 import styles from "./styles.module.scss";
+import terminalStyles from "@site/src/components/magic/terminal.module.scss";
 
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { HomepageFirstScreenVideoHero } from "@site/src/components/_archive/HomepageFirstScreenVideoHero";
+import { HomepageHeroBeam } from "@site/src/components/magic/homepage-hero-beam";
+import {
+  AnimatedSpan,
+  Terminal,
+  TypingAnimation,
+} from "@site/src/components/magic/terminal";
 import { Button } from "@site/src/components/ui/button";
-import React, { useRef, useState } from "react";
+import { useReducedMotion } from "framer-motion";
+import React from "react";
 
 export default function HomepageFirstScreen() {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const studioDownloadsHref = useBaseUrl("/downloads#studio-downloads");
-  const heroVideoUrl = useBaseUrl(
-    "https://static.oomol.com/assets/homepage/oomol-flow-en.webm"
-  );
-  const heroVideoPosterUrl = useBaseUrl(
-    "/img/pages/home/homepage-first-screen-workflow-poster.png"
-  );
-
-  const handlePlay = async () => {
-    if (!videoRef.current) {
-      return;
-    }
-
-    try {
-      await videoRef.current.play();
-      setIsPlaying(true);
-    } catch {
-      setIsPlaying(false);
-    }
-  };
+  const reduceMotion = useReducedMotion();
 
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.titleGroup}>
-          <h1 className={styles.slogan}>
-            {translate({
-              message: "HOME.FirstScreen.heroTitle",
-            })}
-          </h1>
-          <p className={styles.overview}>
-            {translate({
-              message: "HOME.FirstScreen.heroLead",
-            })}
-          </p>
-          <div className={styles.actions}>
-            <Button asChild size="lg" className={styles.primaryCta}>
-              <Link to="/cli">
-                {translate({
-                  message: "HOME.FirstScreen.cta.primary",
-                })}
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className={styles.secondaryCta}
-            >
-              <Link to={studioDownloadsHref}>
-                {translate({
-                  message: "HOME.FirstScreen.cta.secondary",
-                })}
-              </Link>
-            </Button>
+        <div className={styles.heroTop}>
+          <div className={styles.titleGroup}>
+            <h1 className={styles.slogan}>
+              {translate({
+                message: "HOME.FirstScreen.heroTitle",
+              })}
+            </h1>
+            <p className={styles.overview}>
+              {translate({
+                message: "HOME.FirstScreen.heroLead",
+              })}
+            </p>
+            <div className={styles.actions}>
+              <Button asChild size="lg" className={styles.primaryCta}>
+                <Link to="/cli">
+                  {translate({
+                    message: "HOME.FirstScreen.cta.primary",
+                  })}
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className={styles.secondaryCta}
+              >
+                <Link to={studioDownloadsHref}>
+                  {translate({
+                    message: "HOME.FirstScreen.cta.secondary",
+                  })}
+                </Link>
+              </Button>
+            </div>
+          </div>
+          <div className={styles.heroVisual}>
+            <Terminal staticMode={reduceMotion === true}>
+              <TypingAnimation>
+                {translate({ message: "HOME.FirstScreen.terminal.l1" })}
+              </TypingAnimation>
+              <AnimatedSpan className={terminalStyles.lineOk}>
+                {translate({ message: "HOME.FirstScreen.terminal.l2" })}
+              </AnimatedSpan>
+              <TypingAnimation>
+                {translate({ message: "HOME.FirstScreen.terminal.l3" })}
+              </TypingAnimation>
+              <AnimatedSpan className={terminalStyles.lineOk}>
+                {translate({ message: "HOME.FirstScreen.terminal.l4" })}
+              </AnimatedSpan>
+              <TypingAnimation>
+                {translate({ message: "HOME.FirstScreen.terminal.l5" })}
+              </TypingAnimation>
+            </Terminal>
           </div>
         </div>
-      </div>
-      <div id="hero-demo" className={styles.videoShowcase}>
-        <div className={styles.videoShowcaseInner}>
-          <div className={styles.videoFrame}>
-            {!isPlaying && (
-              <button
-                type="button"
-                className={styles.playOverlay}
-                onClick={handlePlay}
-                aria-label={translate({
-                  message: "HOME.FirstScreen.video.playAriaLabel",
-                })}
-              >
-                <span className={styles.playButton}>
-                  <span className={styles.playTriangle} aria-hidden="true" />
-                </span>
-              </button>
-            )}
-            <video
-              ref={videoRef}
-              className={styles.heroVideo}
-              controls={isPlaying}
-              poster={heroVideoPosterUrl}
-              playsInline
-              preload="metadata"
-              onPlay={() => setIsPlaying(true)}
-              onPause={() => {
-                if (videoRef.current && videoRef.current.currentTime === 0) {
-                  setIsPlaying(false);
-                }
-              }}
-              onEnded={() => setIsPlaying(false)}
-            >
-              <source src={heroVideoUrl} type="video/webm" />
-            </video>
-          </div>
+        <HomepageHeroBeam />
+        <div className={styles.workflowArchive}>
+          <h2 className={styles.workflowArchiveTitle}>
+            {translate({ message: "HOME.FirstScreen.workflowArchive.title" })}
+          </h2>
+          <p className={styles.workflowArchiveLead}>
+            {translate({ message: "HOME.FirstScreen.workflowArchive.lead" })}
+          </p>
+          <HomepageFirstScreenVideoHero />
         </div>
       </div>
     </section>

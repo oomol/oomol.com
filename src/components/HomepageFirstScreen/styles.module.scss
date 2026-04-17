@@ -18,13 +18,27 @@
   gap: clamp(1rem, 2.2vw, 1.6rem);
 }
 
+.heroTop {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.02fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+
+.heroVisual {
+  width: 100%;
+  justify-self: stretch;
+  display: flex;
+  justify-content: center;
+}
+
 .titleGroup {
   display: grid;
   gap: 1.1rem;
-  max-width: 52rem;
-  margin: 0 auto;
-  justify-items: center;
-  text-align: center;
+  max-width: 40rem;
+  margin: 0;
+  justify-items: start;
+  text-align: left;
 }
 
 .slogan {
@@ -59,9 +73,34 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.7rem;
   padding-top: 0.6rem;
+}
+
+.workflowArchive {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding-top: clamp(1.5rem, 3vw, 2rem);
+  border-top: 1px solid var(--oomol-divider);
+  display: grid;
+  gap: 0.65rem;
+}
+
+.workflowArchiveTitle {
+  margin: 0;
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-font-size-xl);
+  font-weight: 600;
+  letter-spacing: var(--oomol-tracking-section);
+  color: var(--oomol-text-primary);
+}
+
+.workflowArchiveLead {
+  margin: 0;
+  max-width: 40rem;
+  font-size: var(--oomol-body-base);
+  line-height: var(--oomol-line-height-relaxed);
+  color: var(--oomol-text-secondary);
 }
 
 /* Hero CTAs — styling comes from the Button component; no overrides needed. */
@@ -154,7 +193,7 @@
 }
 
 :global(html[lang="en"]) .titleGroup {
-  max-width: 54rem;
+  max-width: 42rem;
 }
 
 :global(html[lang="en"]) .slogan {
@@ -175,6 +214,22 @@
   .container {
     gap: clamp(1.35rem, 3vw, 1.9rem);
     padding: 0 24px;
+  }
+
+  .heroTop {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .titleGroup {
+    max-width: 100%;
+    margin: 0 auto;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .actions {
+    justify-content: center;
   }
 
   .section {

@@ -230,6 +230,42 @@
   "HOME.FirstScreen.cta.primary": {
     "message": "Start with oo-cli"
   },
+  "HOME.FirstScreen.terminal.l1": {
+    "message": "$ bun install -g @oomol-lab/oo-cli"
+  },
+  "HOME.FirstScreen.terminal.l2": {
+    "message": "✔ oo-cli installed"
+  },
+  "HOME.FirstScreen.terminal.l3": {
+    "message": "$ oo login"
+  },
+  "HOME.FirstScreen.terminal.l4": {
+    "message": "✔ Authenticated with OOMOL"
+  },
+  "HOME.FirstScreen.terminal.l5": {
+    "message": "$ oo search \"generate a QR code\""
+  },
+  "HOME.FirstScreen.flow.aria": {
+    "message": "Integration path from agents through oo-cli to Studio and Cloud"
+  },
+  "HOME.FirstScreen.flow.agent": {
+    "message": "Agents"
+  },
+  "HOME.FirstScreen.flow.cli": {
+    "message": "oo-cli"
+  },
+  "HOME.FirstScreen.flow.studio": {
+    "message": "Studio"
+  },
+  "HOME.FirstScreen.flow.cloud": {
+    "message": "Cloud"
+  },
+  "HOME.FirstScreen.workflowArchive.title": {
+    "message": "Workflow walkthrough"
+  },
+  "HOME.FirstScreen.workflowArchive.lead": {
+    "message": "Full demo video — same asset as before, parked here for reuse."
+  },
   "HOME.ValueProps.localCompute.title": {
     "message": "Turn Local Compute Into Your Private AI Cloud"
   },
