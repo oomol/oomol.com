@@ -21,7 +21,6 @@ const buttonBorderSafelist = [
   "hover:border-[var(--oomol-border-strong)]",
 ] as const;
 
-/** Marketing / product UI：字号只引用 design-tokens，避免 Tailwind 默认 text-sm 等与品牌阶不一致 */
 const oomolTypeSafelist = [
   "text-oomol-xs",
   "text-oomol-sm",

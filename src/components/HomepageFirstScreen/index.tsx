@@ -6,6 +6,7 @@ import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { HomepageFirstScreenVideoHero } from "@site/src/components/_archive/HomepageFirstScreenVideoHero";
 import { HomepageHeroBeam } from "@site/src/components/magic/homepage-hero-beam";
+import { HomepageHeroCopilotBeam } from "@site/src/components/magic/homepage-hero-copilot-beam";
 import {
   AnimatedSpan,
   Terminal,
@@ -22,7 +23,7 @@ export default function HomepageFirstScreen() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.heroTop}>
+        <div className={styles.intro}>
           <div className={styles.titleGroup}>
             <h1 className={styles.slogan}>
               {translate({
@@ -56,27 +57,32 @@ export default function HomepageFirstScreen() {
               </Button>
             </div>
           </div>
-          <div className={styles.heroVisual}>
-            <Terminal staticMode={reduceMotion === true}>
-              <TypingAnimation>
-                {translate({ message: "HOME.FirstScreen.terminal.l1" })}
-              </TypingAnimation>
-              <AnimatedSpan className={terminalStyles.lineOk}>
-                {translate({ message: "HOME.FirstScreen.terminal.l2" })}
-              </AnimatedSpan>
-              <TypingAnimation>
-                {translate({ message: "HOME.FirstScreen.terminal.l3" })}
-              </TypingAnimation>
-              <AnimatedSpan className={terminalStyles.lineOk}>
-                {translate({ message: "HOME.FirstScreen.terminal.l4" })}
-              </AnimatedSpan>
-              <TypingAnimation>
-                {translate({ message: "HOME.FirstScreen.terminal.l5" })}
-              </TypingAnimation>
-            </Terminal>
-          </div>
         </div>
+
+        <HomepageHeroCopilotBeam />
+
+        <div className={styles.heroTerminal}>
+          <Terminal staticMode={reduceMotion === true}>
+            <TypingAnimation>
+              {translate({ message: "HOME.FirstScreen.terminal.l1" })}
+            </TypingAnimation>
+            <AnimatedSpan className={terminalStyles.lineOk}>
+              {translate({ message: "HOME.FirstScreen.terminal.l2" })}
+            </AnimatedSpan>
+            <TypingAnimation>
+              {translate({ message: "HOME.FirstScreen.terminal.l3" })}
+            </TypingAnimation>
+            <AnimatedSpan className={terminalStyles.lineOk}>
+              {translate({ message: "HOME.FirstScreen.terminal.l4" })}
+            </AnimatedSpan>
+            <TypingAnimation>
+              {translate({ message: "HOME.FirstScreen.terminal.l5" })}
+            </TypingAnimation>
+          </Terminal>
+        </div>
+
         <HomepageHeroBeam />
+
         <div className={styles.workflowArchive}>
           <h2 className={styles.workflowArchiveTitle}>
             {translate({ message: "HOME.FirstScreen.workflowArchive.title" })}

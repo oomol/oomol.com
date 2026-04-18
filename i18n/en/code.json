@@ -266,6 +266,36 @@
   "HOME.FirstScreen.workflowArchive.lead": {
     "message": "Full demo video — same asset as before, parked here for reuse."
   },
+  "HOME.FirstScreen.copilotBeam.aria": {
+    "message": "SaaS tools connecting into OOMOL as your co-pilot hub"
+  },
+  "HOME.FirstScreen.copilotBeam.logoAlt": {
+    "message": "OOMOL"
+  },
+  "HOME.FirstScreen.copilotBeam.hubName": {
+    "message": "OOMOL"
+  },
+  "HOME.FirstScreen.copilotBeam.tagline": {
+    "message": "Your co-pilot for every tool"
+  },
+  "HOME.FirstScreen.copilotBeam.satellite.gdrive": {
+    "message": "Google Drive"
+  },
+  "HOME.FirstScreen.copilotBeam.satellite.notion": {
+    "message": "Notion"
+  },
+  "HOME.FirstScreen.copilotBeam.satellite.whatsapp": {
+    "message": "WhatsApp"
+  },
+  "HOME.FirstScreen.copilotBeam.satellite.gdocs": {
+    "message": "Google Docs"
+  },
+  "HOME.FirstScreen.copilotBeam.satellite.zapier": {
+    "message": "Zapier"
+  },
+  "HOME.FirstScreen.copilotBeam.satellite.messenger": {
+    "message": "Messenger"
+  },
   "HOME.ValueProps.localCompute.title": {
     "message": "Turn Local Compute Into Your Private AI Cloud"
   },

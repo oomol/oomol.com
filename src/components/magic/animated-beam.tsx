@@ -4,12 +4,7 @@ import type {RefObject} from "react";
 
 import { cn } from "@site/src/lib/utils";
 import { motion } from "motion/react";
-import {
-  useEffect,
-  useId,
-  useState
-  
-} from "react";
+import { useId, useLayoutEffect, useState } from "react";
 
 export interface AnimatedBeamProps {
   className?: string;
@@ -72,45 +67,69 @@ export function AnimatedBeam({
         y2: ["0%", "0%"],
       };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    let raf = 0;
+
     const updatePath = () => {
-      if (containerRef.current && fromRef.current && toRef.current) {
-        const containerRect = containerRef.current.getBoundingClientRect();
-        const rectA = fromRef.current.getBoundingClientRect();
-        const rectB = toRef.current.getBoundingClientRect();
-
-        const svgWidth = containerRect.width;
-        const svgHeight = containerRect.height;
-        setSvgDimensions({ width: svgWidth, height: svgHeight });
-
-        const startX =
-          rectA.left - containerRect.left + rectA.width / 2 + startXOffset;
-        const startY =
-          rectA.top - containerRect.top + rectA.height / 2 + startYOffset;
-        const endX =
-          rectB.left - containerRect.left + rectB.width / 2 + endXOffset;
-        const endY =
-          rectB.top - containerRect.top + rectB.height / 2 + endYOffset;
-
-        const controlY = startY - curvature;
-        const d = `M ${startX},${startY} Q ${
-          (startX + endX) / 2
-        },${controlY} ${endX},${endY}`;
-        setPathD(d);
+      const container = containerRef.current;
+      const fromEl = fromRef.current;
+      const toEl = toRef.current;
+      if (!container || !fromEl || !toEl) {
+        return;
       }
+
+      const containerRect = container.getBoundingClientRect();
+      const rectA = fromEl.getBoundingClientRect();
+      const rectB = toEl.getBoundingClientRect();
+
+      const svgWidth = Math.max(1, containerRect.width);
+      const svgHeight = Math.max(1, containerRect.height);
+      setSvgDimensions({ width: svgWidth, height: svgHeight });
+
+      const startX =
+        rectA.left - containerRect.left + rectA.width / 2 + startXOffset;
+      const startY =
+        rectA.top - containerRect.top + rectA.height / 2 + startYOffset;
+      const endX =
+        rectB.left - containerRect.left + rectB.width / 2 + endXOffset;
+      const endY =
+        rectB.top - containerRect.top + rectB.height / 2 + endYOffset;
+
+      const controlY = startY - curvature;
+      const d = `M ${startX},${startY} Q ${
+        (startX + endX) / 2
+      },${controlY} ${endX},${endY}`;
+      setPathD(d);
     };
 
-    const resizeObserver = new ResizeObserver(() => {
-      updatePath();
-    });
+    const scheduleUpdate = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        updatePath();
+        // Second frame: satellite refs/layout can settle after flex/order.
+        raf = requestAnimationFrame(updatePath);
+      });
+    };
 
-    if (containerRef.current) {
-      resizeObserver.observe(containerRef.current);
+    const resizeObserver = new ResizeObserver(scheduleUpdate);
+
+    const container = containerRef.current;
+    const fromEl = fromRef.current;
+    const toEl = toRef.current;
+    if (container) {
+      resizeObserver.observe(container);
+    }
+    if (fromEl) {
+      resizeObserver.observe(fromEl);
+    }
+    if (toEl) {
+      resizeObserver.observe(toEl);
     }
 
-    updatePath();
+    scheduleUpdate();
 
     return () => {
+      cancelAnimationFrame(raf);
       resizeObserver.disconnect();
     };
   }, [
@@ -124,21 +143,20 @@ export function AnimatedBeam({
     endYOffset,
   ]);
 
-  if (svgDimensions.width === 0 || svgDimensions.height === 0) {
-    return null;
-  }
+  const w = Math.max(1, svgDimensions.width);
+  const h = Math.max(1, svgDimensions.height);
 
   return (
     <svg
       fill="none"
-      width={svgDimensions.width}
-      height={svgDimensions.height}
+      width={w}
+      height={h}
       xmlns="http://www.w3.org/2000/svg"
       className={cn(
-        "pointer-events-none absolute top-0 left-0 transform-gpu stroke-2",
+        "pointer-events-none absolute top-0 left-0 z-0 transform-gpu stroke-2",
         className
       )}
-      viewBox={`0 0 ${svgDimensions.width} ${svgDimensions.height}`}
+      viewBox={`0 0 ${w} ${h}`}
       aria-hidden="true"
     >
       <path
