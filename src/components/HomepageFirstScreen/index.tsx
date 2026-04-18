@@ -1,24 +1,14 @@
 import styles from "./styles.module.scss";
-import terminalStyles from "@site/src/components/magic/terminal.module.scss";
 
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { HomepageFirstScreenVideoHero } from "@site/src/components/_archive/HomepageFirstScreenVideoHero";
-import { HomepageHeroBeam } from "@site/src/components/magic/homepage-hero-beam";
-import { HomepageHeroCopilotBeam } from "@site/src/components/magic/homepage-hero-copilot-beam";
-import {
-  AnimatedSpan,
-  Terminal,
-  TypingAnimation,
-} from "@site/src/components/magic/terminal";
 import { Button } from "@site/src/components/ui/button";
-import { useReducedMotion } from "framer-motion";
 import React from "react";
 
 export default function HomepageFirstScreen() {
   const studioDownloadsHref = useBaseUrl("/downloads#studio-downloads");
-  const reduceMotion = useReducedMotion();
 
   return (
     <section className={styles.section}>
@@ -59,6 +49,7 @@ export default function HomepageFirstScreen() {
           </div>
         </div>
 
+        {/* 这是“首页的动画组件备用模块”，先不显示。
         <HomepageHeroCopilotBeam />
 
         <div className={styles.heroTerminal}>
@@ -82,6 +73,7 @@ export default function HomepageFirstScreen() {
         </div>
 
         <HomepageHeroBeam />
+        */}
 
         <div className={styles.workflowArchive}>
           <h2 className={styles.workflowArchiveTitle}>
