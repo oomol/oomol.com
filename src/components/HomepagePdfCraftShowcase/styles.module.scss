@@ -3,11 +3,7 @@
 .section {
   position: relative;
   padding: 120px 24px;
-  background: linear-gradient(
-    180deg,
-    var(--oomol-bg-canvas) 0%,
-    var(--oomol-bg-container) 100%
-  );
+  background: var(--oomol-bg-base);
 
   @media (max-width: 768px) {
     padding: 80px 16px;
@@ -29,36 +25,31 @@
 }
 
 .title {
-  font-size: 48px;
-  font-weight: 800;
-  color: var(--ifm-heading-color);
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-display-section);
+  font-weight: 600;
+  color: var(--oomol-text-primary);
   margin-bottom: 12px;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  letter-spacing: var(--oomol-tracking-section);
+  line-height: 1.12;
+  text-wrap: balance;
 
   @media (max-width: 996px) {
-    font-size: 2.25rem;
+    font-size: var(--oomol-display-section);
   }
 
   @media (max-width: 768px) {
-    font-size: 2rem;
+    font-size: var(--oomol-display-section);
   }
 }
 
 .subtitle {
-  font-size: 1.2rem;
-  color: var(--ifm-color-emphasis-700);
+  font-size: var(--oomol-body-lead);
+  color: var(--oomol-text-secondary);
   max-width: 720px;
   margin: 0 auto;
-  line-height: 1.6;
-
-  @media (max-width: 996px) {
-    font-size: 1.1rem;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
-  }
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
 }
 
 .content {
@@ -83,7 +74,7 @@
   border: 1px solid var(--oomol-border-subtle);
   border-radius: 16px;
   padding: 32px;
-  box-shadow: var(--oomol-shadow-lg);
+  box-shadow: none;
   width: 100%;
 
   @media (max-width: 768px) {
@@ -99,18 +90,20 @@
 }
 
 .projectIcon {
-  font-size: 48px;
+  font-size: var(--oomol-font-size-5xl);
   line-height: 1;
 }
 
 .projectName {
-  font-size: 28px;
-  font-weight: 700;
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-font-size-2xl);
+  font-weight: 600;
+  letter-spacing: var(--oomol-tracking-section);
   margin: 0 0 8px 0;
   color: var(--oomol-text-primary);
 
   @media (max-width: 768px) {
-    font-size: 24px;
+    font-size: var(--oomol-font-size-2xl);
   }
 }
 
@@ -129,20 +122,17 @@
   border-radius: 20px;
   text-decoration: none;
   color: var(--oomol-text-primary);
-  font-size: 14px;
+  font-size: var(--oomol-font-size-sm);
   font-weight: 600;
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
+  transition: background-color 0.2s ease;
 
   &:hover {
     background: var(--oomol-bg-muted);
-    transform: translateY(-1px);
   }
 }
 
 .starIcon {
-  font-size: 16px;
+  font-size: var(--oomol-font-size-base);
 }
 
 .starCount {
@@ -150,7 +140,7 @@
 }
 
 .projectDescription {
-  font-size: 16px;
+  font-size: var(--oomol-font-size-base);
   line-height: 1.6;
   color: var(--oomol-text-secondary);
   margin-bottom: 24px;
@@ -166,14 +156,14 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 15px;
+  font-size: var(--oomol-body-base);
   color: var(--oomol-text-primary);
 }
 
 .featureIcon {
   color: var(--oomol-primary);
-  font-weight: 700;
-  font-size: 18px;
+  font-weight: 600;
+  font-size: var(--oomol-font-size-lg);
 }
 
 .rightSection {
@@ -201,8 +191,8 @@
   justify-content: center;
 
   &:hover {
-    border-color: var(--oomol-primary);
-    box-shadow: var(--oomol-shadow-md);
+    border-color: var(--oomol-border-strong);
+    box-shadow: none;
   }
 
   @media (max-width: 768px) {
@@ -211,15 +201,12 @@
 }
 
 .oomol {
-  border-color: var(--oomol-primary);
-  background: linear-gradient(
-    135deg,
-    var(--oomol-bg-elevated) 0%,
-    rgba(var(--oomol-primary-rgb), 0.05) 100%
-  );
+  border-color: var(--oomol-border-strong);
+  background: var(--oomol-bg-elevated);
 
   &:hover {
-    box-shadow: var(--oomol-shadow-xl);
+    border-color: var(--oomol-border-strong);
+    box-shadow: none;
   }
 }
 
@@ -233,10 +220,10 @@
   background: var(--oomol-bg-muted);
   color: var(--oomol-text-secondary);
   border-radius: 12px;
-  font-size: 12px;
+  font-size: var(--oomol-font-size-xs);
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  text-transform: none;
+  letter-spacing: var(--oomol-tracking-body);
 }
 
 .recommended {
@@ -245,7 +232,7 @@
   border: 1px solid var(--oomol-primary);
   padding: 6px 16px;
   border-radius: 20px;
-  font-size: 13px;
+  font-size: var(--oomol-body-mono);
   transition:
     background-color 0.2s ease,
     border-color 0.2s ease;
@@ -262,7 +249,7 @@
   border: 1px solid var(--oomol-border-default);
   padding: 6px 16px;
   border-radius: 20px;
-  font-size: 13px;
+  font-size: var(--oomol-body-mono);
   transition:
     background-color 0.2s ease,
     border-color 0.2s ease;
@@ -274,8 +261,10 @@
 }
 
 .cardTitle {
-  font-size: 20px;
-  font-weight: 700;
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-font-size-xl);
+  font-weight: 600;
+  letter-spacing: var(--oomol-tracking-section);
   margin: 0 0 16px 0;
   color: var(--oomol-text-primary);
 }
@@ -285,14 +274,16 @@
 }
 
 .priceTag {
-  font-size: 32px;
-  font-weight: 800;
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-font-size-3xl);
+  font-weight: 600;
+  letter-spacing: var(--oomol-tracking-display);
   color: var(--oomol-text-tertiary);
   margin-bottom: 12px;
 }
 
 .cardDescription {
-  font-size: 14px;
+  font-size: var(--oomol-font-size-sm);
   color: var(--oomol-text-secondary);
   line-height: 1.5;
   margin: 0;
@@ -310,7 +301,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 15px;
+    font-size: var(--oomol-body-base);
     color: var(--oomol-text-primary);
     line-height: 1.5;
   }
@@ -318,8 +309,8 @@
 
 .checkIcon {
   color: var(--oomol-primary);
-  font-weight: 700;
-  font-size: 18px;
+  font-weight: 600;
+  font-size: var(--oomol-font-size-lg);
   flex-shrink: 0;
   line-height: 1;
 }
@@ -344,7 +335,7 @@
   gap: 6px;
   padding: 8px 20px;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: var(--oomol-font-size-sm);
   font-weight: 500;
   text-decoration: none;
   transition:
@@ -358,21 +349,21 @@
   // Small size
   &.small {
     padding: 4px 12px;
-    font-size: 12px;
+    font-size: var(--oomol-font-size-xs);
     gap: 4px;
   }
 
   // Medium size (default)
   &.medium {
     padding: 8px 20px;
-    font-size: 14px;
+    font-size: var(--oomol-font-size-sm);
     gap: 6px;
   }
 
   // Large size
   &.large {
     padding: 12px 32px;
-    font-size: 16px;
+    font-size: var(--oomol-font-size-base);
     gap: 8px;
     font-weight: 600;
   }

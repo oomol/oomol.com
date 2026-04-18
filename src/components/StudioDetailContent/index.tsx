@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { Button } from "@site/src/components/ui/button";
 import ThemedImage from "@theme/ThemedImage";
 import React from "react";
 
@@ -119,12 +120,16 @@ export default function StudioDetailContent({
                 <p>{translate({ message: "HOME.StudioChain.summary" })}</p>
               </div>
               <div className={styles.homeActions}>
-                <Link to="/studio" className={styles.homePrimaryAction}>
-                  {translate({ message: "HOME.StudioChain.action.studio" })}
-                </Link>
-                <Link to="/cloud" className={styles.homeSecondaryAction}>
-                  {translate({ message: "HOME.StudioChain.action.cloud" })}
-                </Link>
+                <Button asChild>
+                  <Link to="/studio">
+                    {translate({ message: "HOME.StudioChain.action.studio" })}
+                  </Link>
+                </Button>
+                <Button asChild variant="outline">
+                  <Link to="/cloud">
+                    {translate({ message: "HOME.StudioChain.action.cloud" })}
+                  </Link>
+                </Button>
               </div>
             </div>
 

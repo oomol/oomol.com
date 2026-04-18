@@ -1,16 +1,37 @@
 import styles from "./styles.module.scss";
 
-import type { ColumnProps } from "@arco-design/web-react/es/Table";
 import type { DocusaurusContext } from "@docusaurus/types";
 
-import { Alert, Table, Tabs } from "@arco-design/web-react";
 import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { DownloadButton } from "@site/src/components/DownloadButton";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
+import { Alert, AlertDescription } from "@site/src/components/ui/alert";
 import { Button } from "@site/src/components/ui/button";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@site/src/components/ui/table";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@site/src/components/ui/tabs";
 import React, { useEffect, useState } from "react";
+
+type PricingColumn<T> = {
+  key: string;
+  title: React.ReactNode;
+  dataIndex?: keyof T;
+  render?: (value: unknown, record: T, index: number) => React.ReactNode;
+  width?: number | string;
+};
 
 import Layout from "../../theme/Layout";
 
@@ -129,27 +150,80 @@ function PriceTable<T extends PricingRowBase>({
   emptyState,
   loading = false,
 }: {
-  columns: ColumnProps<T>[];
+  columns: PricingColumn<T>[];
   rows: T[];
   emptyState: string;
   loading?: boolean;
 }) {
   return (
     <div className={styles.tableWrap}>
-      <Table<T>
-        border={{
-          cell: false,
-          wrapper: false,
-        }}
-        columns={columns}
-        data={rows}
-        loading={loading}
-        noDataElement={<div className={styles.emptyCell}>{emptyState}</div>}
-        pagination={false}
-        rowKey="key"
-        scroll={{ x: 960 }}
-        tableLayoutFixed
-      />
+      <Table>
+        <TableHeader>
+          <TableRow>
+            {columns.map(column => (
+              <TableHead
+                key={column.key}
+                style={
+                  column.width
+                    ? {
+                        width:
+                          typeof column.width === "number"
+                            ? `${column.width}px`
+                            : column.width,
+                      }
+                    : undefined
+                }
+              >
+                {column.title}
+              </TableHead>
+            ))}
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {loading ? (
+            <TableRow>
+              <TableCell
+                colSpan={columns.length}
+                className={styles.emptyCell}
+              >
+                <i
+                  className="i-lucide-loader-circle inline-block size-4 animate-spin mr-2 align-[-3px]"
+                  aria-hidden="true"
+                />
+                Loading…
+              </TableCell>
+            </TableRow>
+          ) : rows.length === 0 ? (
+            <TableRow>
+              <TableCell
+                colSpan={columns.length}
+                className={styles.emptyCell}
+              >
+                {emptyState}
+              </TableCell>
+            </TableRow>
+          ) : (
+            rows.map((row, rowIndex) => (
+              <TableRow key={row.key}>
+                {columns.map(column => {
+                  const raw = column.dataIndex
+                    ? (row as unknown as Record<string, unknown>)[
+                        column.dataIndex as string
+                      ]
+                    : undefined;
+                  const cellContent = column.render
+                    ? column.render(raw, row, rowIndex)
+                    : (raw as React.ReactNode);
+
+                  return (
+                    <TableCell key={column.key}>{cellContent}</TableCell>
+                  );
+                })}
+              </TableRow>
+            ))
+          )}
+        </TableBody>
+      </Table>
     </div>
   );
 }
@@ -263,7 +337,7 @@ export default function Index() {
     };
   }, []);
 
-  const llmColumns: ColumnProps<LLMPricingRow>[] = [
+  const llmColumns: PricingColumn<LLMPricingRow>[] = [
     {
       dataIndex: "channel",
       key: "channel",
@@ -308,7 +382,7 @@ export default function Index() {
     },
   ];
 
-  const cloudTaskColumns: ColumnProps<CloudTaskPricingRow>[] = [
+  const cloudTaskColumns: PricingColumn<CloudTaskPricingRow>[] = [
     {
       dataIndex: "service",
       key: "service",
@@ -357,7 +431,7 @@ export default function Index() {
   );
   const unitHour = tPricing("PRICING.tables.fusionApi.unit.hour", "Hour");
 
-  const fusionApiColumns: ColumnProps<FusionApiPricingRow>[] = [
+  const fusionApiColumns: PricingColumn<FusionApiPricingRow>[] = [
     {
       dataIndex: "service",
       key: "service",
@@ -567,7 +641,9 @@ export default function Index() {
 
     return (
       <div className={styles.tablePanel}>
-        <Alert banner className={styles.tableAlert} content={tableAlert} />
+        <Alert variant="info" className={styles.tableAlert}>
+          <AlertDescription>{tableAlert}</AlertDescription>
+        </Alert>
         {isLLMTable && llmLoadFailed ? (
           <div className={styles.tableStatus}>
             {tPricing(
@@ -611,7 +687,7 @@ export default function Index() {
         <title>{pageCopy.title}</title>
         <meta name="description" content={pageCopy.description} />
       </Head>
-      <div className={styles.container}>
+      <main className={`${styles.container} oomol-landing-main`}>
         <div className={styles.titleBox}>
           <div className={styles.title}>
             {translate({ message: "PRICING.title" })}
@@ -622,14 +698,14 @@ export default function Index() {
         </div>
 
         <div className={styles.pricingModelSection}>
-          <Alert
-            banner
-            className={styles.pricingModelAlert}
-            content={tPricing(
-              "PRICING.model.summary",
-              "Studio stays free for local work. Free users also get 200 Cloud Task minutes every month, then top up or upgrade only after that included usage runs out. OOMOL-provided models and services use credits."
-            )}
-          />
+          <Alert variant="info" className={styles.pricingModelAlert}>
+            <AlertDescription>
+              {tPricing(
+                "PRICING.model.summary",
+                "Studio stays free for local work. Free users also get 200 Cloud Task minutes every month, then top up or upgrade only after that included usage runs out. OOMOL-provided models and services use credits."
+              )}
+            </AlertDescription>
+          </Alert>
           <div className={styles.pricingModelGrid}>
             <div className={styles.pricingModelCard}>
               <div className={styles.pricingModelLabel}>
@@ -703,7 +779,11 @@ export default function Index() {
               </div>
               <div className={styles.planActionArea}>
                 <div className={styles.downloadBtnWrapper}>
-                  <DownloadButton />
+                  <DownloadButton
+                    buttonSize="default"
+                    fullWidth
+                    className={styles.planCta}
+                  />
                 </div>
               </div>
               <div className={styles.planDetails}>
@@ -784,13 +864,18 @@ export default function Index() {
               </div>
               <div className={styles.planActionArea}>
                 <Button
-                  anchorProps={{ rel: "noopener noreferrer" }}
-                  className={styles.subscribeBtn}
+                  asChild
+                  size="default"
+                  className={styles.planCta}
                   aria-label={paidPlanCtaLabel}
-                  href={SUBSCRIPTION_BILLING_URL}
-                  target="_blank"
                 >
-                  {paidPlanCtaLabel}
+                  <a
+                    href={SUBSCRIPTION_BILLING_URL}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    {paidPlanCtaLabel}
+                  </a>
                 </Button>
                 <div className={styles.planActionMeta} aria-hidden="true" />
               </div>
@@ -867,13 +952,18 @@ export default function Index() {
               </div>
               <div className={styles.planActionArea}>
                 <Button
-                  anchorProps={{ rel: "noopener noreferrer" }}
-                  className={styles.subscribeBtn}
+                  asChild
+                  size="default"
+                  className={styles.planCta}
                   aria-label={paidPlanCtaLabel}
-                  href={SUBSCRIPTION_BILLING_URL}
-                  target="_blank"
                 >
-                  {paidPlanCtaLabel}
+                  <a
+                    href={SUBSCRIPTION_BILLING_URL}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    {paidPlanCtaLabel}
+                  </a>
                 </Button>
                 <div className={styles.planActionMeta} aria-hidden="true" />
               </div>
@@ -943,23 +1033,34 @@ export default function Index() {
             </div>
 
             <Tabs
-              activeTab={activePricingTable}
+              value={activePricingTable}
+              onValueChange={key =>
+                setActivePricingTable(key as PricingTableKey)
+              }
               className={styles.tableTabs}
-              type="line"
-              size="large"
-              onChange={key => setActivePricingTable(key as PricingTableKey)}
             >
+              <TabsList>
+                {tableTabs.map(tab => (
+                  <TabsTrigger key={tab.key} value={tab.key}>
+                    {tab.label}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
               {tableTabs.map(tab => (
-                <Tabs.TabPane key={tab.key} title={tab.label}>
+                <TabsContent
+                  key={tab.key}
+                  value={tab.key}
+                  className="mt-0"
+                >
                   {renderPricingTable(tab.key)}
-                </Tabs.TabPane>
+                </TabsContent>
               ))}
             </Tabs>
           </div>
         </div>
 
         <GetStartedPrompt />
-      </div>
+      </main>
     </Layout>
   );
 }

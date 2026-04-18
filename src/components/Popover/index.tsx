@@ -1,8 +1,10 @@
-import styles from "./styles.module.scss";
-
-import { Popover as ArcoPopover } from "@arco-design/web-react";
+import {
+  Popover as ShadPopover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@site/src/components/ui/popover";
 import { clsx } from "clsx";
-import React from "react";
+import React, { useState } from "react";
 
 interface PopoverProps {
   trigger: React.ReactNode;
@@ -11,20 +13,40 @@ interface PopoverProps {
   className?: string;
 }
 
+/**
+ * Backwards-compatible hover-triggered popover used by Footer / contact-us.
+ * Built on the shadcn <Popover> (Radix) so we no longer depend on Arco.
+ */
 export const Popover: React.FC<PopoverProps> = ({
   trigger,
   content,
   position = "bottom",
   className,
 }) => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <ArcoPopover
-      className={styles.popover}
-      content={content}
-      position={position}
-      trigger="hover"
-    >
-      <div className={clsx(styles.trigger, className)}>{trigger}</div>
-    </ArcoPopover>
+    <ShadPopover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
+        <span
+          className={clsx("inline-flex", className)}
+          onMouseEnter={() => setOpen(true)}
+          onMouseLeave={() => setOpen(false)}
+          onFocus={() => setOpen(true)}
+          onBlur={() => setOpen(false)}
+        >
+          {trigger}
+        </span>
+      </PopoverTrigger>
+      <PopoverContent
+        side={position}
+        sideOffset={8}
+        onMouseEnter={() => setOpen(true)}
+        onMouseLeave={() => setOpen(false)}
+        className="w-auto p-0"
+      >
+        {content}
+      </PopoverContent>
+    </ShadPopover>
   );
 };

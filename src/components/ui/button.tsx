@@ -1,118 +1,84 @@
-import styles from "./button.module.scss";
-
-import type { ButtonProps as ArcoButtonProps } from "@arco-design/web-react";
-
-import { Button as ArcoButton } from "@arco-design/web-react";
+import { Slot } from "@radix-ui/react-slot";
 import { cn } from "@site/src/lib/utils";
+import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
 
-type ButtonVariant =
-  | "default"
-  | "destructive"
-  | "outline"
-  | "contrast"
-  | "secondary"
-  | "ghost"
-  | "link";
-type ButtonSize = "default" | "sm" | "lg" | "icon";
+import styles from "./button.module.scss";
 
-const variantClassMap: Record<ButtonVariant, string> = {
-  default: styles.variantDefault,
-  destructive: styles.variantDestructive,
-  outline: styles.variantOutline,
-  contrast: styles.variantContrast,
-  secondary: styles.variantSecondary,
-  ghost: styles.variantGhost,
-  link: styles.variantLink,
-};
+/**
+ * shadcn/ui Button — tuned to Vercel's marketing-site button system.
+ *
+ * Sizes / radii match vercel.com; type sizes use OOMOL tokens (mono/base/sm).
+ *
+ * All variants: font-weight 500, letter-spacing -0.01em,
+ * never uppercase, never min-width, never box-shadow on idle.
+ *
+ * Surface colors live in button.module.scss so Link/anchor globals cannot
+ * override label contrast on filled buttons.
+ */
 
-const sizeClassMap: Record<ButtonSize, string> = {
-  default: styles.sizeDefault,
-  sm: styles.sizeSm,
-  lg: styles.sizeLg,
-  icon: styles.sizeIcon,
-};
-
-const variantMap: Record<
-  ButtonVariant,
-  Pick<ArcoButtonProps, "status" | "type">
-> = {
-  default: { type: "primary" },
-  destructive: { status: "danger", type: "primary" },
-  outline: { type: "outline" },
-  contrast: { type: "secondary" },
-  secondary: { type: "secondary" },
-  ghost: { type: "text" },
-  link: { type: "text" },
-};
+const buttonVariants = cva(
+  [
+    styles.buttonRoot,
+    "inline-flex items-center justify-center gap-2 whitespace-nowrap",
+    "font-medium tracking-[-0.005em]",
+    "border border-solid transition-colors",
+    "no-underline hover:no-underline",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--oomol-bg-base)]",
+    "disabled:pointer-events-none disabled:opacity-50",
+    "[&_svg]:size-4 [&_svg]:shrink-0",
+    "select-none",
+  ].join(" "),
+  {
+    variants: {
+      variant: {
+        // Vercel primary "Deploy" style — dark filled (light mode = near-black, dark mode = near-white)
+        default: styles.variantDefault,
+        // Brand-color button (opt-in, rarely used)
+        primary: styles.variantPrimary,
+        destructive: styles.variantDestructive,
+        // Vercel "Get a demo" hairline style
+        outline: styles.variantOutline,
+        // Subtle filled (used inside CTA panels, nav)
+        secondary: styles.variantSecondary,
+        // Alias kept for homepage CTA-block secondary action (inverted surface)
+        contrast: styles.variantContrast,
+        // Ghost (no border, appears only on hover)
+        ghost: styles.variantGhost,
+        // Pure underline text link（无线框占位）
+        link: [styles.variantLink, "underline-offset-[3px] h-auto min-h-0 p-0"].join(
+          " "
+        ),
+      },
+      size: {
+        sm: "h-8 px-3 text-oomol-mono rounded-md",
+        default: "h-10 px-4 text-oomol-sm rounded-lg",
+        lg: "h-12 px-5 text-oomol-body rounded-lg",
+        icon: "h-10 w-10 p-0 rounded-lg",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+);
 
 export interface ButtonProps
-  extends Omit<ArcoButtonProps, "children" | "size" | "status" | "type"> {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
   asChild?: boolean;
-  children?: React.ReactNode;
-  size?: ButtonSize;
-  variant?: ButtonVariant;
 }
 
-const buttonVariants = ({
-  className,
-  size = "default",
-  variant = "default",
-}: Pick<ButtonProps, "className" | "size" | "variant">) =>
-  cn(styles.button, variantClassMap[variant], sizeClassMap[size], className);
-
-const Button = React.forwardRef<HTMLElement, ButtonProps>(
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const child = asChild
-      ? (React.Children.only(props.children) as React.ReactElement<{
-          children?: React.ReactNode;
-          className?: string;
-          href?: string;
-          onClick?: React.MouseEventHandler<HTMLElement>;
-          rel?: string;
-          target?: string;
-          to?: string;
-        }>)
-      : null;
-    const childProps = child?.props;
-    const mergedVariant = variant ?? "default";
-    const mergedSize = size ?? "default";
-    const mergedClassName = buttonVariants({
-      className: cn(className, childProps?.className),
-      size: mergedSize,
-      variant: mergedVariant,
-    });
-    const { href, onClick, rel, target, to } = childProps ?? {};
-    const resolvedHref = href ?? to;
-    const anchorProps = resolvedHref
-      ? {
-          ...(props.anchorProps ?? {}),
-          ...(rel ? { rel } : {}),
-        }
-      : props.anchorProps;
-    const mergedOnClick = (onClick ??
-      props.onClick) as ArcoButtonProps["onClick"];
-
+    const Comp = asChild ? Slot : "button";
     return (
-      <ArcoButton
-        {...variantMap[mergedVariant]}
-        anchorProps={anchorProps}
-        className={mergedClassName}
-        href={resolvedHref ?? props.href}
-        onClick={mergedOnClick}
-        ref={ref as never}
-        size={
-          mergedSize === "sm"
-            ? "small"
-            : mergedSize === "lg"
-              ? "large"
-              : "default"
-        }
-        target={target ?? props.target}
+      <Comp
+        ref={ref}
+        className={cn(buttonVariants({ variant, size }), className)}
         {...props}
-      >
-        {childProps?.children ?? props.children}
-      </ArcoButton>
+      />
     );
   }
 );

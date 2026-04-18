@@ -2,180 +2,191 @@
 
 .section {
   position: relative;
-  z-index: 2;
-  margin-top: clamp(-1rem, -1.8vw, -1.5rem);
-  padding: clamp(1.4rem, 3vw, 2.2rem) 0 clamp(2rem, 4vw, 3rem);
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: min(1480px, calc(100% - 24px));
-    height: clamp(3.6rem, 7vw, 5.4rem);
-    transform: translateX(-50%);
-    background: linear-gradient(
-      180deg,
-      rgba(245, 247, 251, 0.88) 0%,
-      rgba(245, 247, 251, 0.38) 48%,
-      rgba(245, 247, 251, 0) 100%
-    );
-    pointer-events: none;
-  }
+  padding: clamp(4rem, 7vw, 6rem) 0 clamp(4rem, 7vw, 6rem);
+  background: var(--oomol-bg-base);
+  border-bottom: 1px solid var(--oomol-divider);
 }
 
 .container {
-  width: min(1260px, calc(100% - 48px));
+  width: min(1200px, calc(100% - 48px));
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
-  gap: clamp(1.1rem, 2.5vw, 1.9rem);
-  align-items: center;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
 }
 
 .copyColumn {
   display: grid;
-  gap: 0.8rem;
-  max-width: 34rem;
+  gap: 1rem;
+  max-width: 30rem;
 }
 
 .title {
   margin: 0;
-  max-width: 20ch;
+  max-width: 18ch;
   font-family: var(--oomol-font-display);
-  font-size: clamp(1.92rem, 3vw, 2.46rem);
-  line-height: 1.12;
-  letter-spacing: -0.04em;
+  font-size: var(--oomol-display-section);
+  line-height: 1.08;
+  letter-spacing: var(--oomol-tracking-section);
+  font-weight: 600;
   text-wrap: balance;
   color: var(--oomol-text-primary);
 }
 
 .surfacePanel {
   display: grid;
-  gap: 1rem;
-  padding: clamp(1rem, 2vw, 1.35rem);
-  border-radius: 1.6rem;
-  border: 1px solid var(--oomol-divider);
-  background:
-    radial-gradient(
-      circle at top right,
-      rgba(132, 138, 208, 0.1) 0%,
-      rgba(132, 138, 208, 0) 34%
-    ),
-    color-mix(in srgb, var(--oomol-surface-float) 94%, white 6%);
-  box-shadow:
-    0 18px 40px rgba(78, 93, 131, 0.08),
-    0 4px 12px rgba(78, 93, 131, 0.04);
-  backdrop-filter: blur(12px);
+  gap: 1.8rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
 .description {
   margin: 0;
-  font-size: 1.08rem;
-  line-height: 1.72;
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
   text-wrap: pretty;
   color: var(--oomol-text-secondary);
 }
 
-.statGrid,
-.toolWall {
-  display: block;
-}
-
+/* 两栏超大统计，仅用 1px hairline 分隔 */
 .statGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--oomol-border-default) 80%, white);
-  border-radius: 1.3rem;
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%);
+  gap: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  border-top: 1px solid var(--oomol-divider);
+  border-bottom: 1px solid var(--oomol-divider);
 }
 
 .statCard {
   display: grid;
-  gap: 0.55rem;
-  min-height: 100%;
-  padding: 1rem 1.05rem 1.1rem;
+  gap: 0.6rem;
+  padding: 1.6rem 1.8rem 1.8rem 0;
   background: transparent;
+  align-content: start;
 
   &:not(:first-child) {
-    border-left: 1px solid
-      color-mix(in srgb, var(--oomol-border-default) 84%, white);
+    border-left: 1px solid var(--oomol-divider);
+    padding-left: 1.8rem;
   }
 }
 
 .statValue {
   font-family: var(--oomol-font-display);
-  font-size: clamp(1.5rem, 2.8vw, 2rem);
+  font-size: var(--oomol-display-hero);
   line-height: 1;
-  letter-spacing: -0.05em;
+  letter-spacing: var(--oomol-tracking-display);
+  font-weight: 500;
   color: var(--oomol-text-primary);
+  font-feature-settings: "tnum" 1;
 }
 
 .statLabel {
   display: inline;
-  margin-right: 0.35rem;
-  font-size: 0.9rem;
-  font-weight: 700;
+  margin-right: 0.4rem;
+  font-size: var(--oomol-body-base);
+  font-weight: 500;
   color: var(--oomol-text-primary);
 }
 
 .statText {
   margin: 0;
-  font-size: 0.88rem;
-  line-height: 1.56;
+  font-size: var(--oomol-body-sm);
+  line-height: 1.55;
   color: var(--oomol-text-secondary);
 }
 
+/* Logo 墙 */
+.toolWall {
+  display: grid;
+  gap: 0.9rem;
+}
+
 .wallTitle {
-  margin-bottom: 0.72rem;
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--oomol-text-primary);
+  margin: 0;
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-font-size-xs);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: none;
+  color: var(--oomol-text-tertiary);
 }
 
 .toolGrid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.6rem;
+  gap: 0;
+  border: 1px solid var(--oomol-divider);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--oomol-bg-base);
 }
 
 .toolChip {
-  display: grid;
-  gap: 0.45rem;
-  min-height: 100%;
-  padding: 0.92rem 0.82rem;
-  border-radius: 1.15rem;
-  border: 1px solid color-mix(in srgb, var(--oomol-border-default) 84%, white);
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%);
-  justify-items: center;
-  text-align: center;
-  box-shadow: 0 6px 16px rgba(78, 93, 131, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 56px;
+  padding: 0.9rem 0.6rem;
+  border-radius: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  transition: background-color 0.15s ease;
+
+  /* 只靠 hairline 分隔 */
+  border-right: 1px solid var(--oomol-divider);
+  border-bottom: 1px solid var(--oomol-divider);
+
+  &:nth-child(4n) {
+    border-right: 0;
+  }
+
+  &:nth-last-child(-n + 4) {
+    border-bottom: 0;
+  }
+
+  &:hover {
+    background: var(--oomol-bg-spotlight);
+    transform: none;
+    border-color: var(--oomol-divider);
+    box-shadow: none;
+  }
 }
 
 .toolIcon {
-  font-size: 1.1rem;
+  font-size: var(--oomol-body-lead);
   color: var(--oomol-text-primary);
 }
 
 .toolLabel {
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-size: var(--oomol-body-sm);
+  font-weight: 500;
   color: var(--oomol-text-secondary);
+  letter-spacing: -0.003em;
 }
 
 :global(html[lang="en"]) .title {
-  max-width: 24ch;
-  font-size: clamp(1.92rem, 3vw, 2.46rem);
+  max-width: 22ch;
+  font-size: var(--oomol-display-section);
 }
 
 :global(html[lang="en"]) .description {
-  max-width: 38rem;
+  max-width: 40rem;
 }
 
 @media (max-width: 996px) {
   .container {
     grid-template-columns: 1fr;
+    gap: 2.2rem;
   }
 
   .copyColumn {
@@ -185,22 +196,11 @@
   .title {
     max-width: 100%;
   }
-
-  .statGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .statCard:not(:first-child) {
-    border-top: 1px solid
-      color-mix(in srgb, var(--oomol-border-default) 84%, white);
-    border-left: none;
-  }
 }
 
 @media (max-width: 768px) {
   .section {
-    margin-top: -0.5rem;
-    padding: 1rem 0 2rem;
+    padding: 3rem 0 3rem;
   }
 
   .container {
@@ -210,41 +210,52 @@
   .toolGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .toolChip {
+    min-height: 52px;
+
+    &:nth-child(4n) {
+      border-right: 1px solid var(--oomol-divider);
+    }
+
+    &:nth-child(2n) {
+      border-right: 0;
+    }
+
+    &:nth-last-child(-n + 4) {
+      border-bottom: 1px solid var(--oomol-divider);
+    }
+
+    &:nth-last-child(-n + 2) {
+      border-bottom: 0;
+    }
+  }
+
+  .statGrid {
+    grid-template-columns: 1fr;
+  }
+
   .statCard {
-    padding: 0.9rem;
+    padding: 1.3rem 0 1.3rem 0;
+
+    &:not(:first-child) {
+      border-left: 0;
+      border-top: 1px solid var(--oomol-divider);
+      padding-left: 0;
+    }
+  }
+
+  .statValue {
+    font-size: var(--oomol-display-hero);
   }
 }
 
 [data-theme="dark"] {
-  .section::before {
-    background: linear-gradient(
-      180deg,
-      rgba(18, 18, 25, 0.78) 0%,
-      rgba(18, 18, 25, 0.32) 48%,
-      rgba(18, 18, 25, 0) 100%
-    );
+  .toolGrid {
+    background: var(--oomol-bg-elevated);
   }
 
-  .surfacePanel,
-  .statGrid,
-  .toolChip {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-border-default) 72%,
-      var(--oomol-divider)
-    );
-    background: color-mix(
-      in srgb,
-      var(--oomol-bg-elevated) 86%,
-      var(--oomol-bg-container) 14%
-    );
-  }
-
-  .statCard:not(:first-child) {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-border-default) 72%,
-      var(--oomol-divider)
-    );
+  .toolChip:hover {
+    background: var(--oomol-bg-spotlight);
   }
 }

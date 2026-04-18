@@ -1,64 +1,73 @@
 @use "../../css/custom.scss" as *;
 
 .page {
-  background:
-    radial-gradient(
-      circle at top left,
-      color-mix(in srgb, var(--oomol-primary) 18%, transparent) 0%,
-      transparent 36%
-    ),
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--oomol-bg-layout) 92%, white 8%) 0%,
-      var(--oomol-bg-base) 100%
-    );
+  background: var(--oomol-bg-base);
 }
 
 .hero {
-  padding: clamp(4.25rem, 6.8vw, 5.8rem) 0 clamp(2rem, 4vw, 3.2rem);
+  padding: clamp(4.8rem, 10vw, 8rem) 0 clamp(2.4rem, 4vw, 3.4rem);
+  background: var(--oomol-bg-base);
+  border-bottom: 1px solid var(--oomol-divider);
+  position: relative;
+  overflow: clip;
+
 }
 
 .sectionContainer {
+  position: relative;
+  z-index: 1;
   width: min(1200px, calc(100% - 48px));
   margin: 0 auto;
 }
 
 .heroCopy {
   display: grid;
-  gap: 0.95rem;
+  gap: 1.1rem;
   max-width: 54rem;
   margin: 0 auto;
   justify-items: center;
   text-align: center;
 }
 
+/* Mono eyebrow */
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  min-height: 1.9rem;
-  padding: 0 0.8rem;
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--oomol-primary) 14%, white);
-  background: color-mix(in srgb, var(--oomol-primary-bg) 46%, white 54%);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--oomol-primary-text);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-body-mono);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  text-transform: none;
+  color: var(--oomol-primary);
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-right: 0.55rem;
+    border-radius: 999px;
+    background: var(--oomol-primary);
+  }
 }
 
 .heroTitle,
 .sectionTitle {
   margin: 0;
   font-family: var(--oomol-font-display);
-  letter-spacing: -0.045em;
   color: var(--oomol-text-primary);
+  font-weight: 600;
+  text-wrap: balance;
 }
 
 .heroTitle {
   max-width: 22ch;
-  font-size: clamp(2.52rem, 4.3vw, 3.9rem);
-  line-height: 1.12;
+  font-size: var(--oomol-display-hero);
+  line-height: 1.04;
+  letter-spacing: var(--oomol-tracking-display);
   white-space: pre-line;
   word-break: keep-all;
   overflow-wrap: normal;
@@ -69,37 +78,35 @@
 .painPointText,
 .principleText {
   margin: 0;
-  line-height: 1.74;
+  line-height: 1.6;
   color: var(--oomol-text-secondary);
 }
 
 .heroDescription {
-  max-width: 46rem;
-  font-size: 1.08rem;
+  max-width: 44rem;
+  font-size: var(--oomol-body-lead);
 }
 
 .actions {
   display: grid;
   justify-items: center;
-  padding-top: 0.55rem;
+  padding-top: 0.6rem;
 }
 
 .heroShowcase {
+  position: relative;
+  z-index: 1;
   width: 100%;
-  margin-top: clamp(1.6rem, 3vw, 2.5rem);
+  margin-top: clamp(2.4rem, 4vw, 3.6rem);
 }
 
 .heroShowcaseInner {
-  width: min(1480px, calc(100% - 24px));
+  width: min(1200px, calc(100% - 48px));
   margin: 0 auto;
 }
 
 .siteCtaSecondary {
-  min-width: 13rem;
-
-  &:global(.arco-btn) {
-    font-weight: 700;
-  }
+  /* styling from Button component */
 }
 
 .heroVisual {
@@ -108,29 +115,12 @@
 
 .visualFrame {
   width: 100%;
-  border-radius: 18px;
-  box-shadow: var(--oomol-shadow-lg);
+  border-radius: 14px;
+  border: 1px solid var(--oomol-border-default);
+  background: var(--oomol-bg-spotlight);
+  box-shadow: none;
   position: relative;
   overflow: clip;
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -2.4rem;
-    width: min(92%, 1180px);
-    height: 4.2rem;
-    transform: translateX(-50%);
-    border-radius: 999px;
-    background: radial-gradient(
-      ellipse at center,
-      rgba(49, 58, 74, 0.18) 0%,
-      rgba(49, 58, 74, 0.08) 32%,
-      rgba(49, 58, 74, 0) 72%
-    );
-    filter: blur(18px);
-    pointer-events: none;
-  }
 }
 
 .visualImage {
@@ -144,174 +134,147 @@
 
 .storySection,
 .principlesSection {
-  padding: clamp(2.8rem, 6vw, 4.8rem) 0;
+  padding: clamp(5rem, 10vw, 8rem) 0;
+  background: var(--oomol-bg-base);
+  border-bottom: 1px solid var(--oomol-divider);
+}
+
+.storySection {
+  background: var(--oomol-bg-container);
 }
 
 .sectionHeader {
   display: grid;
   gap: 0.9rem;
-  margin-bottom: 1.6rem;
+  margin-bottom: 2rem;
 }
 
-.storySection .sectionHeader {
-  max-width: 56rem;
-  margin-inline: auto;
-  justify-items: center;
-  text-align: center;
-}
-
+.storySection .sectionHeader,
 .principlesSection .sectionHeader {
   max-width: 48rem;
-  margin-inline: auto;
-  justify-items: center;
-  text-align: center;
+  margin-inline: 0;
+  justify-items: start;
+  text-align: left;
 }
 
 .sectionTitle {
-  max-width: 18ch;
-  font-size: clamp(1.92rem, 3vw, 2.46rem);
-  line-height: 1.12;
+  max-width: 22ch;
+  font-size: var(--oomol-display-section);
+  line-height: 1.06;
+  letter-spacing: var(--oomol-tracking-section);
   text-wrap: balance;
-}
-
-.storySection .sectionTitle {
-  max-width: 14ch;
-}
-
-.principlesSection .sectionTitle {
-  max-width: 21ch;
-  word-break: keep-all;
-  overflow-wrap: normal;
+  white-space: pre-line;
 }
 
 .sectionDescription {
-  max-width: 38rem;
-  font-size: 1rem;
-  line-height: 1.62;
-}
-
-.principlesSection .sectionDescription {
-  max-width: 34rem;
-  text-align: center;
-}
-
-.storySection .sectionDescription {
-  max-width: 38rem;
+  max-width: 44rem;
+  font-size: var(--oomol-body-lead);
+  line-height: 1.6;
 }
 
 .painPointsGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.1rem;
-  align-items: start;
+  gap: 0;
+  border: 1px solid var(--oomol-divider);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--oomol-bg-base);
+  align-items: stretch;
 }
 
 .painPointCard {
   position: relative;
   display: grid;
-  gap: 0.82rem;
-  min-height: 14.5rem;
-  margin: 0;
-  padding: 1.2rem 1.15rem 1.25rem;
-  border-radius: 1.4rem;
-  border: 1px solid color-mix(in srgb, var(--oomol-primary-border) 68%, white);
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--oomol-primary-bg) 84%, white 16%) 0%,
-    color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%) 100%
-  );
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.46),
-    0 14px 34px rgba(91, 101, 139, 0.08);
-  overflow: clip;
+  gap: 0.7rem;
+  padding: 1.6rem 1.6rem 1.75rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none !important;
+  transition: background-color 0.2s ease;
 
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0 0 auto 0;
-    height: 2px;
-    background: linear-gradient(
-      90deg,
-      color-mix(in srgb, var(--oomol-primary) 86%, white 14%) 0%,
-      color-mix(in srgb, var(--oomol-primary) 24%, transparent) 100%
-    );
+  &:not(:last-child) {
+    border-right: 1px solid var(--oomol-divider);
   }
 
+  &:hover {
+    background: var(--oomol-bg-container);
+  }
+
+  &::before,
   &::after {
-    content: "";
-    position: absolute;
-    top: -3rem;
-    right: -2.2rem;
-    width: 8rem;
-    height: 8rem;
-    border-radius: 999px;
-    background: radial-gradient(
-      circle,
-      color-mix(in srgb, var(--oomol-primary-bg) 72%, white 28%) 0%,
-      transparent 72%
-    );
-    opacity: 0.68;
-    pointer-events: none;
+    content: none;
   }
 }
 
 .painPointMeta {
-  position: relative;
-  z-index: 1;
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0.55rem;
 }
 
 .painPointIndex {
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-body-mono);
+  font-weight: 500;
+  letter-spacing: 0.02em;
   color: var(--oomol-primary);
+  font-feature-settings: "tnum" 1;
 }
 
 .painPointLabel {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: var(--oomol-text-secondary);
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-body-mono);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  color: var(--oomol-text-tertiary);
 }
 
 .painPointTitle {
-  position: relative;
-  z-index: 1;
   margin: 0;
-  max-width: 16ch;
-  font-size: 1.14rem;
-  line-height: 1.32;
+  max-width: 20ch;
+  font-size: var(--oomol-display-card);
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.012em;
   color: var(--oomol-text-primary);
+  text-wrap: balance;
 }
 
 .painPointText {
-  position: relative;
-  z-index: 1;
-  font-size: 0.96rem;
-  line-height: 1.66;
+  font-size: var(--oomol-body-base);
+  line-height: 1.6;
 }
 
 .principlesGrid {
   display: grid;
-  gap: 1.25rem;
+  gap: clamp(2.4rem, 5vw, 4rem);
 }
 
 .principleCard {
   display: grid;
-  grid-template-columns: minmax(320px, 0.86fr) minmax(420px, 1.14fr);
-  gap: 1.5rem;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: clamp(2rem, 4vw, 3rem);
   align-items: center;
+}
+
+.principleCard:nth-child(even) .principleMedia {
+  order: 1;
+}
+
+.principleCard:nth-child(even) .principleContent {
+  order: 2;
 }
 
 .principleMedia {
   order: 2;
-  border-radius: 1.4rem;
-  padding: 0.65rem;
+  border-radius: 14px;
+  padding: 0;
   border: 1px solid var(--oomol-divider);
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 96%, white 4%);
+  background: var(--oomol-bg-spotlight);
+  overflow: hidden;
+  box-shadow: none;
 }
 
 .principleImage {
@@ -320,44 +283,46 @@
   aspect-ratio: 16 / 10;
   object-fit: cover;
   object-position: top center;
-  border-radius: 1rem;
-  border: 1px solid var(--oomol-divider);
+  border-radius: 0;
+  border: 0;
 }
 
 .principleContent {
   order: 1;
   display: grid;
-  gap: 0.8rem;
-  max-width: 35rem;
+  gap: 0.85rem;
+  max-width: 36rem;
 }
 
 .principleTitle {
   margin: 0;
-  max-width: 18ch;
-  font-size: 1.6rem;
-  line-height: 1.24;
+  max-width: 22ch;
+  font-size: var(--oomol-font-size-xl);
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: var(--oomol-tracking-section);
   color: var(--oomol-text-primary);
+  text-wrap: balance;
 }
 
 .principleParagraphs {
   display: grid;
-  gap: 0.55rem;
+  gap: 0.7rem;
+}
+
+.principleText {
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
+  color: var(--oomol-text-secondary);
 }
 
 :global(html[lang="en"]) .heroTitle {
-  max-width: 16ch;
-  font-size: clamp(2.55rem, 4.2vw, 4.35rem);
-  line-height: 1.1;
+  max-width: 20ch;
 }
 
 :global(html[lang="en"]) .sectionTitle {
-  max-width: 100%;
-  font-size: clamp(2rem, 3.2vw, 2.85rem);
-  line-height: 1.1;
-}
-
-:global(html[lang="en"]) .storySection .sectionTitle {
-  max-width: 100%;
+  max-width: 24ch;
 }
 
 :global(html[lang="en"]) .storySection .sectionDescription {
@@ -365,9 +330,30 @@
 }
 
 @media (max-width: 996px) {
-  .painPointsGrid,
-  .principleCard {
+  .painPointsGrid {
     grid-template-columns: 1fr;
+  }
+
+  .painPointCard {
+    &:not(:last-child) {
+      border-right: 0;
+      border-bottom: 1px solid var(--oomol-divider);
+    }
+  }
+
+  .principleCard,
+  .principleCard:nth-child(even) .principleMedia,
+  .principleCard:nth-child(even) .principleContent {
+    grid-template-columns: 1fr;
+    order: initial;
+  }
+
+  .principleMedia {
+    order: 2;
+  }
+
+  .principleContent {
+    order: 1;
   }
 }
 
@@ -377,104 +363,81 @@
   }
 
   .hero {
-    padding-top: 3.8rem;
+    padding: 3.4rem 0 2rem;
+  }
+
+  .storySection,
+  .principlesSection {
+    padding: 3rem 0;
   }
 
   .heroTitle,
   .sectionTitle {
     max-width: 100%;
     text-wrap: pretty;
+    font-size: var(--oomol-display-section);
   }
 
-  .painPointCard {
-    min-height: auto;
+  .heroTitle {
+    font-size: var(--oomol-display-hero);
+    line-height: 1.08;
   }
 
   .heroDescription {
-    font-size: 1rem;
+    font-size: var(--oomol-body-lead);
   }
 
   .heroShowcaseInner {
-    width: min(100%, calc(100% - 16px));
+    width: min(100%, calc(100% - 32px));
   }
 
-  .visualFrame {
-    border-radius: 1rem;
+  .painPointCard {
+    padding: 1.35rem 1.2rem 1.4rem;
+  }
+
+  .painPointTitle {
+    font-size: var(--oomol-body-lead);
+  }
+
+  .principleTitle {
+    font-size: var(--oomol-font-size-xl);
   }
 }
 
 [data-theme="dark"] {
-  .eyebrow {
-    border-color: color-mix(in srgb, var(--oomol-primary) 20%, transparent);
-    background: color-mix(
-      in srgb,
-      var(--oomol-primary-bg) 30%,
-      var(--oomol-bg-container) 70%
-    );
+  .hero {
+    background: var(--oomol-bg-base);
+  }
+
+  .storySection {
+    background: var(--oomol-bg-container);
   }
 
   .page {
-    background:
-      radial-gradient(
-        circle at top left,
-        color-mix(in srgb, var(--oomol-primary) 16%, transparent) 0%,
-        transparent 38%
-      ),
-      linear-gradient(
-        180deg,
-        color-mix(
-            in srgb,
-            var(--oomol-bg-base) 90%,
-            var(--oomol-bg-container) 10%
-          )
-          0%,
-        color-mix(in srgb, var(--oomol-bg-base) 96%, black 4%) 100%
-      );
-  }
-
-  .quoteCard {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-primary-border) 72%,
-      var(--oomol-divider)
-    );
-    background: linear-gradient(
-      180deg,
-      color-mix(
-          in srgb,
-          var(--oomol-primary-bg) 58%,
-          var(--oomol-bg-elevated) 42%
-        )
-        0%,
-      color-mix(
-          in srgb,
-          var(--oomol-primary-bg) 34%,
-          var(--oomol-bg-container) 66%
-        )
-        100%
-    );
-  }
-
-  .visualFrame,
-  .principleMedia {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-border-default) 72%,
-      var(--oomol-divider)
-    );
-    background: linear-gradient(
-      180deg,
-      color-mix(
-          in srgb,
-          var(--oomol-bg-elevated) 82%,
-          var(--oomol-bg-container) 18%
-        )
-        0%,
-      color-mix(in srgb, var(--oomol-bg-container) 88%, black 12%) 100%
-    );
+    background: var(--oomol-bg-base);
   }
 
   .visualFrame {
-    background: transparent;
+    background: var(--oomol-bg-elevated);
+    border-color: var(--oomol-border-subtle);
+    box-shadow: none;
+  }
+
+  .principleMedia {
+    background: var(--oomol-bg-elevated);
+    border-color: var(--oomol-border-subtle);
+  }
+
+  .painPointsGrid {
+    background: var(--oomol-bg-base);
+    border-color: var(--oomol-border-subtle);
+  }
+
+  .painPointCard:not(:last-child) {
+    border-right-color: var(--oomol-border-subtle);
+  }
+
+  .painPointCard:hover {
+    background: var(--oomol-bg-elevated);
   }
 }

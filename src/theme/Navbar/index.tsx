@@ -34,18 +34,28 @@ const latinPhrasePattern =
 const latinPhraseSegmentPattern =
   /^[A-Za-z0-9][A-Za-z0-9+./#_-]*(?:\s+[A-Za-z0-9][A-Za-z0-9+./#_-]*)*$/;
 
+function normalizeNavPath(path: string) {
+  if (path.length > 1 && path.endsWith("/")) {
+    return path.slice(0, -1);
+  }
+  return path;
+}
+
 function isProductEntryActive(
   pathname: string,
   locale: string,
   hrefs: string[]
 ) {
-  return hrefs.some(
-    href =>
-      pathname === href ||
-      pathname.startsWith(`${href}/`) ||
-      pathname === `/${locale}${href}` ||
-      pathname.startsWith(`/${locale}${href}/`)
-  );
+  const p = normalizeNavPath(pathname);
+  return hrefs.some(href => {
+    const h = normalizeNavPath(href);
+    return (
+      p === h ||
+      p.startsWith(`${h}/`) ||
+      p === normalizeNavPath(`/${locale}${href}`) ||
+      p.startsWith(normalizeNavPath(`/${locale}${href}`) + "/")
+    );
+  });
 }
 
 const DefaultNavItemPosition = "right";
@@ -157,7 +167,12 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
       {
         key: "oo-cli",
         href: "/cli",
-        matchHrefs: ["/docs/oo-cli", "/docs/oo-cli/command-reference"],
+        matchHrefs: [
+          "/docs/cloud-services/cli",
+          "/docs/cloud-services/cli-command-reference",
+          "/docs/oo-cli",
+          "/docs/oo-cli/command-reference",
+        ],
         label: translate({
           id: "item.label.navbar.oo-cli",
           message: "oo-cli",
@@ -170,6 +185,12 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
       {
         key: "studio",
         href: "/studio",
+        matchHrefs: [
+          "/docs/concepts",
+          "/docs/get-started",
+          "/docs/advanced-guide",
+          "/docs/workflow-engine",
+        ],
         label: translate({
           id: "item.label.navbar.oomol-studio",
           message: "OOMOL Studio",
@@ -182,6 +203,10 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
       {
         key: "cloud",
         href: "/cloud",
+        matchHrefs: [
+          "/docs/cloud-services/cloud-function",
+          "/docs/cloud-services/cloud-task",
+        ],
         label: translate({
           id: "item.label.navbar.oomol-cloud",
           message: "OOMOL Cloud",
@@ -416,7 +441,12 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
             <NavbarItem {...item} key={i} />
           ))}
           <div className={styles.actions}>
-            <Button asChild variant="outline" className={styles.downloadButton}>
+            <Button
+              asChild
+              variant="outline"
+              size="sm"
+              className={styles.downloadButton}
+            >
               <a href="https://hub.oomol.com" target="_blank" rel="noreferrer">
                 <i className="i-lucide-users" />
                 {translate({ message: "Theme.Navbar.community" })}
@@ -424,7 +454,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
             </Button>
             <BrowserOnly
               fallback={
-                <Button className={styles.loginButton}>
+                <Button size="sm" className={styles.loginButton}>
                   <i className="i-lucide-log-in" />
                   {translate({ message: "Theme.Navbar.login" })}
                 </Button>
@@ -434,6 +464,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
                 const signedIn = isSignedIn();
                 return (
                   <Button
+                    size="sm"
                     className={styles.loginButton}
                     onClick={() => handleSignin()}
                   >

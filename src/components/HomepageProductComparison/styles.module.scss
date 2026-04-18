@@ -2,11 +2,7 @@
 
 .comparisonSection {
   padding: clamp(4rem, 8vw, 6rem) 0;
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--oomol-bg-base) 92%, #d8c3a2 8%) 0%,
-    var(--oomol-bg-base) 100%
-  );
+  background: var(--oomol-bg-base);
 }
 
 .container {
@@ -35,17 +31,20 @@
   margin: 0;
   max-width: 13ch;
   font-family: var(--oomol-font-display);
-  font-size: clamp(2.6rem, 4.8vw, 4.2rem);
-  line-height: 0.98;
-  letter-spacing: -0.045em;
+  font-size: var(--oomol-display-hero);
+  line-height: 1.04;
+  letter-spacing: var(--oomol-tracking-display);
+  font-weight: 600;
+  text-wrap: balance;
   color: var(--oomol-text-primary);
 }
 
 .sectionSubtitle {
   margin: 0;
   max-width: 48rem;
-  font-size: 1.02rem;
-  line-height: 1.76;
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
   color: var(--oomol-text-secondary);
 }
 
@@ -68,20 +67,7 @@
   &:focus-within {
     .outputsPanel,
     .cardHeader {
-      transform: translateY(-2px);
-      box-shadow: var(--oomol-shadow-lg);
-    }
-
-    .outputsPanel {
-      border-color: color-mix(
-        in srgb,
-        var(--oomol-primary) 28%,
-        var(--oomol-divider)
-      );
-    }
-
-    .cardHeader::before {
-      opacity: 1;
+      border-color: var(--oomol-border-strong);
     }
   }
 }
@@ -97,45 +83,14 @@
   flex-direction: column;
   height: 100%;
   padding: clamp(1.8rem, 4vw, 2.6rem);
-  border-radius: 2rem;
-  background:
-    radial-gradient(
-      circle at top left,
-      rgba(132, 138, 208, 0.24) 0%,
-      rgba(132, 138, 208, 0) 34%
-    ),
-    linear-gradient(180deg, #1a1b28 0%, #12131d 100%);
-  color: rgba(243, 239, 248, 0.94);
-  box-shadow: var(--oomol-shadow-lg);
+  border-radius: var(--ifm-global-radius);
+  border: 1px solid var(--oomol-divider);
+  background: var(--oomol-bg-elevated);
+  color: var(--oomol-text-primary);
+  box-shadow: none;
   position: relative;
   overflow: hidden;
-  transition:
-    transform 0.24s ease,
-    box-shadow 0.24s ease;
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    border: 1px solid rgba(190, 197, 248, 0.18);
-    opacity: 0;
-    transition: opacity 0.24s ease;
-    pointer-events: none;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    inset: auto 2rem 0;
-    height: 1px;
-    background: linear-gradient(
-      90deg,
-      rgba(215, 208, 234, 0.36) 0%,
-      rgba(215, 208, 234, 0) 100%
-    );
-    pointer-events: none;
-  }
+  transition: border-color 0.18s ease;
 }
 
 .cardMetaRow {
@@ -152,49 +107,53 @@
   min-width: 2.25rem;
   min-height: 2.25rem;
   border-radius: 999px;
-  border: 1px solid rgba(221, 214, 231, 0.18);
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: rgba(182, 187, 241, 0.92);
+  border: 1px solid var(--oomol-divider);
+  background: var(--oomol-bg-container);
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-body-mono);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  color: var(--oomol-text-secondary);
 }
 
 .cardBadge {
   display: inline-flex;
   width: fit-content;
   align-items: center;
-  padding: 0.35rem 0.8rem;
-  border-radius: 999px;
-  background: rgba(243, 239, 248, 0.08);
-  border: 1px solid rgba(243, 239, 248, 0.12);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  padding: 0.28rem 0.65rem;
+  border-radius: 6px;
+  background: var(--oomol-bg-container);
+  border: 1px solid var(--oomol-divider);
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-body-mono);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  text-transform: none;
+  color: var(--oomol-text-secondary);
 }
 
 .cardTitle {
   margin: 0 0 0.7rem;
   font-family: var(--oomol-font-display);
-  font-size: clamp(2.6rem, 4.4vw, 4rem);
+  font-size: var(--oomol-display-section);
   line-height: 0.95;
-  letter-spacing: -0.05em;
+  letter-spacing: var(--oomol-tracking-section);
   color: inherit;
 }
 
 .cardLead {
   margin: 0 0 0.9rem;
-  font-size: 1.12rem;
-  line-height: 1.55;
+  font-size: var(--oomol-font-size-lg);
+  line-height: var(--oomol-line-height-snug);
   font-weight: 600;
-  color: rgba(243, 239, 248, 0.92);
+  color: var(--oomol-text-primary);
 }
 
 .cardSummary {
   margin: 0;
-  font-size: 1rem;
-  line-height: 1.8;
-  color: rgba(221, 214, 231, 0.76);
+  font-size: var(--oomol-body-base);
+  line-height: var(--oomol-line-height-relaxed);
+  color: var(--oomol-text-secondary);
 }
 
 .cardActions {
@@ -206,14 +165,12 @@
 
 .primaryCta {
   width: fit-content;
-  font-size: 0.95rem;
-  font-weight: 700;
 }
 
 .inlineNote {
-  font-size: 0.92rem;
-  line-height: 1.7;
-  color: rgba(221, 214, 231, 0.72);
+  font-size: var(--oomol-body-sm);
+  line-height: var(--oomol-line-height-relaxed);
+  color: var(--oomol-text-tertiary);
 }
 
 .outputsPanel {
@@ -221,61 +178,44 @@
   align-content: start;
   gap: 1rem;
   padding: 1.2rem;
-  border-radius: 1.8rem;
+  border-radius: var(--ifm-global-radius);
   border: 1px solid var(--oomol-divider);
-  background: var(--oomol-surface-float);
-  box-shadow: var(--oomol-shadow-md);
+  background: var(--oomol-bg-base);
+  box-shadow: none;
   min-height: 100%;
-  transition:
-    transform 0.24s ease,
-    box-shadow 0.24s ease,
-    border-color 0.24s ease;
+  transition: border-color 0.18s ease;
 }
 
 .outputsIntro,
 .benefitsPanel,
 .benefitCard,
 .outputCard {
-  border-radius: 1.2rem;
+  border-radius: var(--ifm-global-radius);
   border: 1px solid var(--oomol-divider);
-  background: var(--oomol-surface-panel);
+  background: var(--oomol-bg-container);
 }
 
 .outputsIntro {
   padding: 1.3rem 1.35rem;
-  border-radius: 1.5rem;
   position: relative;
   overflow: hidden;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 1.35rem;
-    right: 1.35rem;
-    height: 2px;
-    border-radius: 999px;
-    background: linear-gradient(
-      90deg,
-      color-mix(in srgb, var(--oomol-primary) 74%, white) 0%,
-      rgba(132, 138, 208, 0.12) 100%
-    );
-  }
 }
 
 .infoLabel,
 .benefitLabel {
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--oomol-text-secondary);
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-body-mono);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  text-transform: none;
+  color: var(--oomol-text-tertiary);
 }
 
 .outputsText {
   margin: 0.65rem 0 0;
-  font-size: 0.98rem;
-  line-height: 1.72;
+  font-size: var(--oomol-body-base);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
   color: var(--oomol-text-secondary);
 }
 
@@ -317,11 +257,12 @@
   min-height: 2.35rem;
   border-radius: 999px;
   border: 1px solid var(--oomol-divider);
-  background: color-mix(in srgb, var(--oomol-primary-bg) 65%, white 35%);
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--oomol-primary-text);
+  background: var(--oomol-bg-base);
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-body-mono);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  color: var(--oomol-text-secondary);
 }
 
 .outputContent {
@@ -333,105 +274,42 @@
 .benefitValue {
   margin: 0 0 0.65rem;
   font-family: var(--oomol-font-display);
-  font-size: clamp(1.55rem, 2vw, 2rem);
+  font-size: var(--oomol-display-section);
   line-height: 1.08;
-  letter-spacing: -0.04em;
+  letter-spacing: var(--oomol-tracking-section);
   color: var(--oomol-text-primary);
 }
 
 [data-theme="dark"] {
   .comparisonSection {
-    background: linear-gradient(
-      180deg,
-      color-mix(
-          in srgb,
-          var(--oomol-bg-container) 82%,
-          var(--oomol-bg-spotlight) 18%
-        )
-        0%,
-      color-mix(in srgb, var(--oomol-bg-base) 76%, var(--oomol-bg-layout) 24%)
-        100%
-    );
-    box-shadow:
-      inset 0 1px 0 var(--oomol-divider-subtle),
-      inset 0 -1px 0 var(--oomol-divider-subtle);
+    background: var(--oomol-bg-base);
   }
 
   .cardHeader {
-    background:
-      radial-gradient(
-        circle at top left,
-        rgba(132, 138, 208, 0.26) 0%,
-        rgba(132, 138, 208, 0) 36%
-      ),
-      linear-gradient(
-        180deg,
-        color-mix(
-            in srgb,
-            var(--oomol-bg-spotlight) 68%,
-            var(--oomol-primary-active) 32%
-          )
-          0%,
-        color-mix(in srgb, var(--oomol-bg-container) 84%, black 16%) 100%
-      );
+    background: var(--oomol-bg-elevated);
+    color: var(--oomol-text-primary);
   }
 
   .outputsPanel {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-border-default) 74%,
-      var(--oomol-divider)
-    );
-    background: linear-gradient(
-      180deg,
-      color-mix(
-          in srgb,
-          var(--oomol-bg-elevated) 84%,
-          var(--oomol-bg-container) 16%
-        )
-        0%,
-      color-mix(in srgb, var(--oomol-bg-container) 90%, black 10%) 100%
-    );
+    background: var(--oomol-bg-base);
   }
 
   .outputsIntro,
   .benefitsPanel,
   .benefitCard,
   .outputCard {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-border-default) 68%,
-      var(--oomol-divider)
-    );
-    background: color-mix(
-      in srgb,
-      var(--oomol-bg-elevated) 74%,
-      var(--oomol-bg-container) 26%
-    );
+    background: var(--oomol-bg-container);
   }
 
   .outputIndex {
-    background: color-mix(
-      in srgb,
-      var(--oomol-primary-bg) 76%,
-      var(--oomol-bg-elevated) 24%
-    );
-  }
-
-  .primaryCta {
-    background: color-mix(
-      in srgb,
-      var(--oomol-white) 88%,
-      var(--oomol-primary-bg) 12%
-    );
-    color: var(--oomol-text-inverse);
+    background: var(--oomol-bg-elevated);
   }
 }
 
 .outputDescription,
 .benefitDescription {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: var(--oomol-body-base);
   line-height: 1.7;
   color: var(--oomol-text-secondary);
 }
@@ -446,7 +324,7 @@
 
 :global(html[lang="en"]) .sectionTitle {
   max-width: 18ch;
-  font-size: clamp(2.2rem, 4vw, 3.65rem);
+  font-size: var(--oomol-display-hero);
   line-height: 1.03;
 }
 
@@ -464,7 +342,7 @@
 }
 
 :global(html[lang="en"]) .cardTitle {
-  font-size: clamp(2.35rem, 4vw, 3.5rem);
+  font-size: var(--oomol-display-section);
 }
 
 @media (max-width: 996px) {
@@ -505,16 +383,16 @@
   }
 
   .sectionTitle {
-    font-size: clamp(2.2rem, 10vw, 3rem);
+    font-size: var(--oomol-display-hero);
     line-height: 1.08;
-    letter-spacing: -0.03em;
+    letter-spacing: var(--oomol-tracking-display);
     text-wrap: pretty;
   }
 
   .cardTitle {
-    font-size: clamp(2rem, 9vw, 2.8rem);
+    font-size: var(--oomol-display-section);
     line-height: 1.02;
-    letter-spacing: -0.04em;
+    letter-spacing: var(--oomol-tracking-section);
   }
 
   .outputTitle,
@@ -529,7 +407,7 @@
   .inlineNote,
   .outputDescription,
   .benefitDescription {
-    font-size: 0.93rem;
+    font-size: var(--oomol-body-base);
     line-height: 1.6;
   }
 
@@ -544,7 +422,7 @@
   }
 
   .cardLead {
-    font-size: 1rem;
+    font-size: var(--oomol-font-size-base);
     line-height: 1.5;
   }
 
@@ -583,7 +461,7 @@
   .outputIndex {
     min-width: 2rem;
     min-height: 2rem;
-    font-size: 0.75rem;
+    font-size: var(--oomol-font-size-xs);
   }
 
   .outputsGrid {
@@ -602,12 +480,12 @@
 
   .outputTitle {
     margin-bottom: 0.35rem;
-    font-size: 1.2rem;
+    font-size: var(--oomol-font-size-xl);
   }
 
   .benefitValue {
     margin-bottom: 0.3rem;
-    font-size: 1.22rem;
+    font-size: var(--oomol-font-size-xl);
   }
 
   .outputDescription,

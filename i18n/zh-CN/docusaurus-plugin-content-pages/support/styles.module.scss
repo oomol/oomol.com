@@ -6,56 +6,102 @@
   flex-direction: column;
   margin-top: 64px;
   margin-bottom: 240px;
+  color: var(--oomol-text-primary);
 }
 
 .supportTitle {
-  font-size: 64px;
-  font-weight: bolder;
-  width: 720px;
+  margin: 0;
+  margin-top: clamp(2rem, 5vw, 4rem);
+  margin-bottom: clamp(3rem, 8vw, 5rem);
+  width: 100%;
+  max-width: min(720px, calc(100% - 32px));
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-display-hero);
+  line-height: 1.04;
+  letter-spacing: var(--oomol-tracking-display);
+  font-weight: 600;
   text-align: center;
-  margin-top: 64px;
-  margin-bottom: 120px;
+  text-wrap: balance;
+  color: var(--oomol-text-primary);
 }
 
 .supportCellBox {
-  width: 1080px;
+  width: 100%;
+  max-width: 1080px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 24px;
+  padding: 0 16px;
+  box-sizing: border-box;
 }
 
 .supportCell {
   width: 320px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /*background-color: yellow;*/
-  padding-top: 36px;
-  padding-bottom: 36px;
+  justify-content: space-between;
+  min-height: 240px;
   border-style: solid;
   border-color: var(--oomol-border-default);
-  border-radius: 8px;
+  border-radius: 18px;
+  background: var(--oomol-surface-float);
+}
+
+.supportHeader {
+  padding-bottom: 8px;
 }
 
 .title {
-  width: 260px;
-  font-weight: bolder;
-  font-size: 18px;
+  width: 100%;
+  font-weight: 600;
+  font-size: var(--oomol-font-size-lg);
+  letter-spacing: var(--oomol-tracking-section);
   display: flex;
   align-items: center;
+  color: var(--oomol-text-primary);
 }
 
 .support-title {
   margin-left: 8px;
 }
 
+.titleIcon {
+  flex-shrink: 0;
+  font-size: var(--oomol-font-size-xl);
+  line-height: 1;
+  color: var(--oomol-text-primary);
+}
+
+.titleIconMuted {
+  flex-shrink: 0;
+  font-size: var(--oomol-font-size-xl);
+  line-height: 1;
+  color: var(--oomol-text-primary);
+  opacity: 0.72;
+}
+
 .inner {
-  width: 260px;
-  margin-top: 12px;
+  width: 100%;
+  margin-top: 0;
 }
 
 .text {
   margin-bottom: 42px;
-  font-size: 14px;
+  font-size: var(--oomol-font-size-sm);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
+  color: var(--oomol-text-secondary);
+}
+
+[data-theme="dark"] {
+  .supportCell {
+    border-color: color-mix(
+      in srgb,
+      var(--oomol-border-default) 72%,
+      var(--oomol-divider)
+    );
+    background: var(--oomol-bg-elevated);
+  }
 }

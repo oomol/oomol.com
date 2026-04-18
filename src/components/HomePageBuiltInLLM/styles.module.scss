@@ -30,36 +30,23 @@
 }
 
 .title {
-  font-size: 48px;
-  font-weight: 800;
-  color: var(--ifm-heading-color);
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-display-section);
+  font-weight: 600;
+  color: var(--oomol-text-primary);
   margin-bottom: 12px;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-
-  @media (max-width: 996px) {
-    font-size: 2.25rem;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
+  letter-spacing: var(--oomol-tracking-section);
+  line-height: 1.12;
+  text-wrap: balance;
 }
 
 .subtitle {
-  font-size: 1.2rem;
-  color: var(--ifm-color-emphasis-700);
+  font-size: var(--oomol-body-lead);
+  color: var(--oomol-text-secondary);
   max-width: 720px;
   margin: 0 auto;
-  line-height: 1.6;
-
-  @media (max-width: 996px) {
-    font-size: 1.1rem;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
-  }
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
 }
 
 .llmList {
@@ -124,7 +111,7 @@
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
 
   @media (max-width: 996px) {
     margin-top: 48px;
@@ -168,7 +155,7 @@
     border-radius: 0;
     padding: 1.5rem !important;
     margin: 0;
-    font-size: 0.875rem;
+    font-size: var(--oomol-font-size-sm);
     line-height: 1.6;
   }
 }

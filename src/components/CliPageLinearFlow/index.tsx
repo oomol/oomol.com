@@ -67,37 +67,27 @@ const zhCopy: Copy = {
     eyebrow: "真实流程",
     title: "让 Agent 在 oo-cli 里完成一次真实任务",
     description:
-      "常见用法不是先看一堆文档，再自己写一套接入，而是先登录、搜索、查看、调用、等结果。下面这条流程，就是 Agent 在终端里最常见的使用方式。",
+      "oo login 通常只需做一次，用来建立会话；之后每次完成任务，多半是发现工具、执行调用、再取回结果。下面这条流程讲的是这一套日常业务路径（终端里仍会从登录写起，方便你对照一次完整会话）。",
     steps: [
       {
         index: "01",
-        command: "oo login",
-        title: "先登录，复用同一套账号上下文",
-        text: "认证状态准备好之后，后续搜索、cloud task 和 skills 都可以沿用同一个 CLI 会话。",
+        command:
+          'oo search "generate a QR code for OOMOL"\noo packages info foo/bar',
+        title: "发现：搜工具、看清用法",
+        text: "用自然语言搜 package 与 connector，再用 metadata / schema 确认输入与行为，能复用就别从零写。",
       },
       {
         index: "02",
-        command: 'oo search "generate a QR code for OOMOL"',
-        title: "先找找有没有现成工具",
-        text: "先让 Agent 用自然语言搜索 package 和 connector，看看有没有已经可以直接使用的工具。",
+        command: "oo connector run …\noo cloud-task run …",
+        title: "执行：连接器或云任务",
+        text: "可直接跑 connector，也可以提交 cloud task，把重活交给云端。",
       },
       {
         index: "03",
-        command: "oo packages info foo/bar",
-        title: "先看清楚这个工具怎么用",
-        text: "先看 package metadata、blocks 或 connector schema，弄清需要什么输入，再决定怎么调用。",
-      },
-      {
-        index: "04",
-        command: "oo connector run ... / oo cloud-task run ...",
-        title: "直接把任务跑起来",
-        text: "既可以直接执行 connector action，也可以提交一个 cloud task，把任务先跑起来。",
-      },
-      {
-        index: "05",
-        command: "oo cloud-task wait <taskId>",
-        title: "等结果回来，再继续下一步",
-        text: "CLI 会帮你等待状态、读取日志和拿回结果，Agent 可以继续往下做。",
+        command:
+          "oo cloud-task wait <taskId>\noo cloud-task result <taskId>",
+        title: "收尾：等状态、取结果",
+        text: "CLI 会等待状态、读日志，需要时用 result 取回结构化输出，Agent 再接下一步。",
       },
     ],
     terminal: {
@@ -218,37 +208,27 @@ const enCopy: Copy = {
     eyebrow: "Real Workflow",
     title: "Let the agent finish one real task inside oo-cli",
     description:
-      "A common path is not to read a pile of docs and build a custom integration first. It is to log in, search, inspect, run, and wait for results. This is closer to how an agent actually uses a CLI.",
+      "oo login is usually a one-time setup to establish a session. After that, most tasks follow the same loop: discover the right tool, run it, then collect the result. The steps below focus on that repeating workflow (the terminal still starts from login so you can mirror a full session).",
     steps: [
       {
         index: "01",
-        command: "oo login",
-        title: "Log in once and reuse the same account context",
-        text: "Once auth is ready, search, cloud tasks, and skills all reuse the same CLI session.",
+        command:
+          'oo search "generate a QR code for OOMOL"\noo packages info foo/bar',
+        title: "Discover: search, then read the contract",
+        text: "Search packages and connectors in natural language, then inspect metadata or schemas so inputs and behavior are clear before you call anything.",
       },
       {
         index: "02",
-        command: 'oo search "generate a QR code for OOMOL"',
-        title: "Check whether a ready-made tool already exists",
-        text: "Let the agent search packages and connectors in natural language before deciding whether anything new needs to be built.",
+        command: "oo connector run …\noo cloud-task run …",
+        title: "Run: connector or cloud task",
+        text: "Call a connector directly or submit a cloud task when the workload fits async runs.",
       },
       {
         index: "03",
-        command: "oo packages info foo/bar",
-        title: "See how the tool works before calling it",
-        text: "Look at package metadata, blocks, or connector schemas first so the required inputs are clear before execution.",
-      },
-      {
-        index: "04",
-        command: "oo connector run ... / oo cloud-task run ...",
-        title: "Run the actual call",
-        text: "Either execute a connector action directly or submit a cloud task so the real task starts moving.",
-      },
-      {
-        index: "05",
-        command: "oo cloud-task wait <taskId>",
-        title: "Wait for the result and keep moving",
-        text: "The CLI handles waiting, logs, and result retrieval so the agent can keep moving.",
+        command:
+          "oo cloud-task wait <taskId>\noo cloud-task result <taskId>",
+        title: "Finish: wait, then fetch the result",
+        text: "The CLI waits on status and logs; use result when you need structured output for the next step.",
       },
     ],
     terminal: {
@@ -423,10 +403,8 @@ export default function CliPageLinearFlow() {
           <div className={styles.commandGrid}>
             {copy.workflow.steps.map(step => (
               <article key={step.index} className={styles.commandCard}>
-                <div className={styles.commandTop}>
-                  <span className={styles.commandIndex}>{step.index}</span>
-                  <span className={styles.commandSnippet}>{step.command}</span>
-                </div>
+                <span className={styles.commandIndex}>{step.index}</span>
+                <code className={styles.commandSnippet}>{step.command}</code>
                 <h3 className={styles.commandTitle}>{step.title}</h3>
                 <p className={styles.commandText}>{step.text}</p>
               </article>

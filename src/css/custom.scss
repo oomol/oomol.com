@@ -1,6 +1,36 @@
 @use "./font.scss" as *;
 @use "./design-tokens.scss" as *;
 
+/* Radix Themes — only for components that opt in (e.g. Cookie preferences Switch). */
+@import "@radix-ui/themes/styles.css";
+
+/* Root `Theme` in Radix sets `min-height: 100vh` on `.radix-themes[data-is-root-theme='true']`.
+   In a dialog that becomes a full-viewport “pillar”; scope the override to cookie preferences only. */
+.oomol-cookie-preferences-theme.radix-themes[data-is-root-theme="true"] {
+  min-height: 0;
+}
+
+/* Cookie switches: Radix default `accentColor="gray"` makes the “on” track too close to “off”.
+   Use the same fill token as the primary Button (`--oomol-foreground`). */
+.oomol-cookie-preferences-theme.radix-themes
+  .rt-SwitchRoot.rt-variant-surface:not([data-disabled])::before {
+  background-image: linear-gradient(
+    to right,
+    var(--oomol-foreground) 40%,
+    transparent 60%
+  );
+}
+
+.oomol-cookie-preferences-theme.radix-themes
+  .rt-SwitchRoot.rt-variant-surface:not([data-disabled])
+  :where(.rt-SwitchThumb):where([data-state="checked"]) {
+  box-shadow:
+    0 1px 3px var(--black-a2),
+    0 2px 4px -1px var(--black-a1),
+    0 0 0 1px var(--black-a2),
+    -1px 0 1px var(--black-a2);
+}
+
 :root {
   --ifm-color-primary: var(--oomol-primary);
   --ifm-color-primary-dark: #45486f;
@@ -12,18 +42,23 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(18, 16, 13, 0.08);
   --oomol-font-display:
-    "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Baskerville",
-    Georgia, serif;
+    "Geist", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
   --oomol-font-body:
-    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
-    Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI",
-    "Microsoft YaHei", "Source Han Sans CN", sans-serif;
+    "Geist", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  --oomol-font-mono:
+    "Geist Mono", "SFMono-Regular", "SF Mono", Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
   --ifm-font-family-base: var(--oomol-font-body);
   --ifm-heading-font-family: var(--oomol-font-display);
   --ifm-heading-color: var(--oomol-text-primary);
   --ifm-background-surface-color: var(--oomol-bg-elevated);
   --ifm-font-weight-semibold: 600;
-  --ifm-global-radius: 18px;
+  --ifm-global-radius: 8px;
+  --oomol-motion-duration-fast: 160ms;
+  --oomol-motion-duration-base: 220ms;
+  --oomol-motion-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
 
   /* Light mode colors - 使用 design tokens */
   --ifm-navbar-background-color: var(--oomol-bg-base);
@@ -64,57 +99,281 @@ body {
 body {
   color: var(--oomol-text-primary);
   font-family: var(--oomol-font-body);
-  --arcoblue-1: var(--oomol-arco-primary-1);
-  --arcoblue-2: var(--oomol-arco-primary-2);
-  --arcoblue-3: var(--oomol-arco-primary-3);
-  --arcoblue-4: var(--oomol-arco-primary-4);
-  --arcoblue-5: var(--oomol-arco-primary-5);
-  --arcoblue-6: var(--oomol-arco-primary-6);
-  --arcoblue-7: var(--oomol-arco-primary-7);
-  --arcoblue-8: var(--oomol-arco-primary-8);
-  --arcoblue-9: var(--oomol-arco-primary-9);
-  --arcoblue-10: var(--oomol-arco-primary-10);
+  letter-spacing: -0.002em;
 }
 
-[data-theme="light"],
-[data-theme="dark"] {
-  :global(.arco-btn),
-  :global(.arco-card),
-  :global(.arco-menu),
-  :global(.arco-trigger-popup),
-  :global(.arco-table),
-  :global(.arco-tabs),
-  :global(.arco-alert) {
-    font-family: var(--oomol-font-body);
+/* html[lang] 与 :lang 双写：保证文档根语言一变，整站字体变量立刻对齐（Docusaurus 在 <html> 上写 locale） */
+:lang(zh-CN),
+html[lang="zh-CN"] {
+  --oomol-font-display:
+    "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI",
+    "Microsoft YaHei", "Geist", sans-serif;
+  --oomol-font-body:
+    "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI",
+    "Microsoft YaHei", "Geist", sans-serif;
+}
+
+:lang(en),
+html[lang="en"] {
+  --oomol-font-display:
+    "Geist", "Inter", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  --oomol-font-body:
+    "Geist", "Inter", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+}
+
+/* ============================================
+   Landing / marketing 页面通用排版 + 视觉规范
+   — 应用于 .oomol-home-main 与 .oomol-landing-main 两类 main
+   — 强制 Vercel 式字号、字重、tracking、mono eyebrow、flat surface
+   ============================================ */
+
+.oomol-home-main,
+.oomol-landing-main {
+  position: relative;
+  isolation: isolate;
+  font-family: var(--oomol-font-body);
+
+  > section {
+    margin-block: 0;
   }
 
-  :global(.arco-card) {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-border-default) 72%,
-      transparent
-    );
-    background: var(--oomol-surface-float);
-    box-shadow: var(--oomol-shadow-sm);
+  > section + section {
+    margin-top: 0;
   }
+}
 
-  :global(.arco-menu-light),
-  :global(.arco-menu-pop),
-  :global(.arco-trigger-popup) {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-border-default) 72%,
-      transparent
-    );
-    background: var(--oomol-surface-float);
-    box-shadow: var(--oomol-shadow-md);
-  }
+/* 标题：600 semibold + 紧 tracking，英中分别适配 */
+:lang(zh-CN) .oomol-home-main :is(h1, h2, h3),
+:lang(zh-CN) .oomol-landing-main :is(h1, h2, h3) {
+  letter-spacing: -0.022em;
+  font-weight: 600;
+  line-height: 1.12;
+  text-wrap: pretty;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  font-variation-settings: normal;
+}
 
-  :global(.arco-menu-selected),
-  :global(.arco-tabs-tab-active),
-  :global(.arco-link) {
-    color: var(--oomol-primary);
-  }
+:lang(en) .oomol-home-main :is(h1, h2, h3),
+:lang(en) .oomol-landing-main :is(h1, h2, h3) {
+  letter-spacing: -0.034em;
+  font-weight: 600;
+  line-height: 1.06;
+  text-wrap: balance;
+  hyphens: auto;
+}
+
+/* 落地页语义标题字号 — 与 design-tokens 同一套 scale，避免各模块各自 clamp 过大 */
+.oomol-home-main h1,
+.oomol-landing-main h1 {
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-display-hero);
+  letter-spacing: var(--oomol-tracking-display);
+  line-height: 1.06;
+}
+
+.oomol-home-main h2,
+.oomol-landing-main h2 {
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-display-section);
+  letter-spacing: var(--oomol-tracking-section);
+  line-height: 1.1;
+}
+
+.oomol-home-main h3,
+.oomol-landing-main h3 {
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-display-card);
+  letter-spacing: var(--oomol-tracking-section);
+  line-height: 1.25;
+}
+
+:lang(zh-CN) .oomol-home-main h3,
+:lang(zh-CN) .oomol-landing-main h3 {
+  letter-spacing: -0.018em;
+}
+
+/* Body / subtitle / overview / description — 紧行高 */
+:lang(zh-CN) .oomol-home-main p,
+:lang(zh-CN) .oomol-landing-main p {
+  letter-spacing: 0;
+  line-height: 1.72;
+}
+
+:lang(en) .oomol-home-main p,
+:lang(en) .oomol-landing-main p {
+  letter-spacing: -0.003em;
+  line-height: 1.6;
+}
+
+/* 营销区块副标题：与 design-tokens 正文档对齐，避免各模块自设 1rem/1.02rem 混用 */
+.oomol-home-main [class*="subtitle" i]:not([class*="card" i]),
+.oomol-landing-main [class*="subtitle" i]:not([class*="card" i]) {
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
+  color: var(--oomol-text-secondary);
+}
+
+/* 与 section 主标题配套的说明（Linear / CTA 等 *Description* 类名） */
+.oomol-home-main [class*="sectionDescription" i],
+.oomol-home-main [class*="ctaDescription" i],
+.oomol-landing-main [class*="sectionDescription" i],
+.oomol-landing-main [class*="ctaDescription" i] {
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
+  color: var(--oomol-text-secondary);
+}
+
+/* ── Eyebrow / Kicker / Badge: 强制 Mono 小号 + primary 圆点 ── */
+
+.oomol-home-main [class*="eyebrow"],
+.oomol-home-main [class*="Eyebrow"],
+.oomol-home-main [class*="kicker"],
+.oomol-home-main [class*="Kicker"],
+.oomol-landing-main [class*="eyebrow"],
+.oomol-landing-main [class*="Eyebrow"],
+.oomol-landing-main [class*="kicker"],
+.oomol-landing-main [class*="Kicker"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  width: fit-content;
+  min-height: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-body-mono);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  text-transform: none;
+  color: var(--oomol-primary);
+  box-shadow: none !important;
+}
+
+.oomol-home-main [class*="eyebrow"]:not([class*="eyebrowNumber"]):not([class*="eyebrowLabel"]):not([class*="eyebrowDivider"])::before,
+.oomol-home-main [class*="Eyebrow"]::before,
+.oomol-home-main [class*="kicker"]::before,
+.oomol-home-main [class*="Kicker"]::before,
+.oomol-landing-main [class*="eyebrow"]:not([class*="eyebrowNumber"]):not([class*="eyebrowLabel"]):not([class*="eyebrowDivider"])::before,
+.oomol-landing-main [class*="Eyebrow"]::before,
+.oomol-landing-main [class*="kicker"]::before,
+.oomol-landing-main [class*="Kicker"]::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 0.55rem;
+  border-radius: 999px;
+  background: var(--oomol-primary);
+  flex-shrink: 0;
+}
+
+/* Badges (非 step 水印里的编号) — 也走 mono pill 但带 hairline */
+.oomol-home-main [class*="badge" i]:not([class*="NoWrap"]):not([class*="noWrap"]),
+.oomol-landing-main [class*="badge" i]:not([class*="NoWrap"]):not([class*="noWrap"]) {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 0.55rem;
+  border-radius: 6px;
+  border: 1px solid var(--oomol-divider);
+  background: var(--oomol-bg-container);
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-body-mono);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  text-transform: none;
+  color: var(--oomol-text-secondary);
+  box-shadow: none !important;
+}
+
+/* ── Section 背景：杀掉所有紫色 radial / linear-gradient，替换为平色 ── */
+
+.oomol-home-main > section,
+.oomol-landing-main:not(.oomol-app-page) > section {
+  position: relative;
+  background: var(--oomol-bg-base);
+  border-bottom: 1px solid var(--oomol-divider);
+}
+
+/* 偶数 section（第 2、4、6 个）换 container 色，形成段落区隔 */
+.oomol-home-main > section:nth-of-type(even),
+.oomol-landing-main:not(.oomol-app-page) > section:nth-of-type(even) {
+  background: var(--oomol-bg-container);
+}
+
+/* 抹掉 section 内装饰性渐变伪元素（许多老样式用 ::before 画紫光） */
+.oomol-landing-main:not(.oomol-app-page) > section::before {
+  background: none !important;
+}
+
+/* ── 卡片 / 面板 / Hero / Section：强制 hairline + 扁平阴影 ── */
+
+.oomol-home-main
+  :is(
+    [class*="card" i],
+    [class*="Card" i],
+    [class*="panel" i],
+    [class*="Panel" i],
+    [class*="surface" i],
+    [class*="hero" i],
+    [class*="Hero" i]
+  ),
+.oomol-landing-main
+  :is(
+    [class*="card" i],
+    [class*="Card" i],
+    [class*="panel" i],
+    [class*="Panel" i],
+    [class*="surface" i],
+    [class*="hero" i],
+    [class*="Hero" i]
+  ) {
+  box-shadow: none !important;
+  background-image: none !important;
+}
+
+/* 页面根容器（.page）也扁平化 */
+.oomol-landing-main[class*="page" i],
+.oomol-landing-main[class*="Page" i] {
+  background-image: none !important;
+  background-color: var(--oomol-bg-base);
+}
+
+/* Ring-style legacy badges with uppercase / heavy weight — 统一降权为正常 */
+.oomol-home-main :is([class*="tag" i], [class*="pill" i], [class*="chip" i]),
+.oomol-landing-main :is([class*="tag" i], [class*="pill" i], [class*="chip" i]) {
+  text-transform: none;
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  box-shadow: none !important;
+  background-image: none !important;
+}
+
+/* 描述 / subtitle 限宽 */
+[data-theme="dark"] .oomol-home-main p[class*="subtitle"],
+[data-theme="dark"] .oomol-home-main p[class*="Description"],
+[data-theme="dark"] .oomol-home-main p[class*="overview"],
+[data-theme="dark"] .oomol-landing-main p[class*="subtitle"],
+[data-theme="dark"] .oomol-landing-main p[class*="Description"],
+[data-theme="dark"] .oomol-landing-main p[class*="overview"] {
+  max-width: 40rem;
+}
+
+[data-theme="dark"]:lang(en) .oomol-home-main p[class*="subtitle"],
+[data-theme="dark"]:lang(en) .oomol-home-main p[class*="Description"],
+[data-theme="dark"]:lang(en) .oomol-home-main p[class*="overview"],
+[data-theme="dark"]:lang(en) .oomol-landing-main p[class*="subtitle"],
+[data-theme="dark"]:lang(en) .oomol-landing-main p[class*="Description"],
+[data-theme="dark"]:lang(en) .oomol-landing-main p[class*="overview"] {
+  max-width: 52rem;
 }
 
 #__docusaurus {
@@ -129,49 +388,36 @@ body {
   background: var(--ifm-menu-link-sublist-icon) 50% / 1.25rem 1.25rem;
 }
 
+/* Mermaid：HTML 节点标签在 foreignObject 内按测量宽高裁切；中文 + <br/> 行常高于默认假设。 */
+.docusaurus-mermaid-container svg foreignObject {
+  overflow: visible;
+}
+
+.docusaurus-mermaid-container svg foreignObject div,
+.docusaurus-mermaid-container svg .nodeLabel {
+  line-height: 1.55;
+}
+
 // Docs 文档板块底部按钮的样式
 .docusaurus-mt-lg {
   margin-top: 3rem;
 }
 
+/* @theme/Footer is fully swizzled — layout lives in theme/Footer/styles.module.scss */
 .footer {
-  background-color: var(--oomol-bg-base);
-  margin-top: 48px;
-  margin-bottom: 48px;
+  background: transparent;
+  margin: 0;
+  padding: 0;
 }
 
 .footer__links {
-  margin-bottom: 3rem;
-  padding: 0 20% 0 23rem;
+  display: none;
 }
 
-/* 移动端下的自定义样式 */
-
-@media screen and (max-width: 996px) {
-  .footer__links {
-    padding: 0;
-  }
-}
-
+/* 顶栏毛玻璃只在 theme/Navbar/styles.module.scss 做一层；此处不再叠 ::before + backdrop，
+   否则与模块内 backdrop 双重采样，快速滚动时易闪烁（尤其首页多段入场动画同时跑合成）。 */
 .navbar {
-  position: relative;
   border-bottom: 1px solid var(--oomol-divider);
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    backdrop-filter: blur(12px);
-    background: linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--oomol-bg-base) 90%, transparent) 0%,
-      color-mix(in srgb, var(--oomol-bg-base) 82%, transparent) 100%
-    );
-    z-index: -1;
-  }
 
   .navbar__inner {
     justify-content: unset;
@@ -189,6 +435,11 @@ body {
   }
 
   .navbar__link--active {
+    color: var(--oomol-primary);
+  }
+
+  /* 若存在与 .navbar__item.navbar__link 的 color 竞争，用三类名压过（与暗色顶栏修复一致） */
+  .navbar__item.navbar__link.navbar__link--active {
     color: var(--oomol-primary);
   }
 }
@@ -301,14 +552,13 @@ $desktop-width: $breakpoint-xl;
   }
 }
 
-@mixin linearGradientColor {
-  background-image: linear-gradient(
-    90deg,
-    #7572a5 0%,
-    var(--oomol-primary) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* 副文案：纯色次级色，无渐变（旧名 linearGradientColor 已弃用） */
+@mixin flatSecondaryText {
+  color: var(--oomol-text-secondary);
+  background-image: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: unset;
 }
 
 // 文档页面使用，用于在一行显示多个图片
@@ -388,14 +638,14 @@ $desktop-width: $breakpoint-xl;
 // 文档页面 sidebar 样式
 .sidebar-submenu-item {
   > .menu__link {
-    font-size: 16px;
+    font-size: var(--oomol-font-size-base);
     color: var(--oomol-text-primary);
   }
 
   .theme-doc-sidebar-item-link-level-2,
   .theme-doc-sidebar-item-category-level-2 > .menu__list-item-collapsible,
   .theme-doc-sidebar-item-link-level-3 {
-    font-size: 14px;
+    font-size: var(--oomol-font-size-sm);
 
     > .menu__link {
       color: var(--oomol-text-secondary) !important;
@@ -415,10 +665,10 @@ $desktop-width: $breakpoint-xl;
   }
 }
 
-// 文档页统一使用无衬线字体，提升中英文阅读一致性
+// 文档页：正文用 body 栈；标题与营销站一致用 display 栈（Infima 标题变量同步）
 .docs-wrapper {
   --ifm-font-family-base: var(--oomol-font-body);
-  --ifm-heading-font-family: var(--oomol-font-body);
+  --ifm-heading-font-family: var(--oomol-font-display);
   --ifm-font-size-base: 1rem;
   --ifm-leading: 1.75;
 
@@ -435,7 +685,10 @@ $desktop-width: $breakpoint-xl;
   }
 
   .theme-doc-markdown :is(h1, h2, h3, h4, h5, h6),
-  .pagination-nav__label,
+  .pagination-nav__label {
+    font-family: var(--oomol-font-display);
+  }
+
   .pagination-nav__sublabel,
   .table-of-contents__link,
   .breadcrumbs__link {
@@ -476,36 +729,53 @@ $desktop-width: $breakpoint-xl;
     }
 
     :is(h1, h2, h3, h4, h5, h6) {
-      font-family: var(--oomol-font-body);
-      font-weight: 700;
+      font-family: var(--oomol-font-display);
+      font-weight: 600;
       line-height: 1.18;
       letter-spacing: -0.02em;
       text-wrap: balance;
     }
 
     h1 {
-      font-size: clamp(2.2rem, 1.9rem + 1.4vw, 3rem);
+      font-size: var(--oomol-display-hero);
+      letter-spacing: var(--oomol-tracking-display);
       margin-bottom: 1rem;
     }
 
     h2 {
-      font-size: clamp(1.6rem, 1.45rem + 0.7vw, 2rem);
+      font-size: var(--oomol-display-section);
+      letter-spacing: var(--oomol-tracking-section);
       margin-top: 2.75rem;
       margin-bottom: 0.9rem;
     }
 
     h3 {
-      font-size: clamp(1.28rem, 1.2rem + 0.35vw, 1.5rem);
+      font-size: var(--oomol-font-size-xl);
+      letter-spacing: var(--oomol-tracking-section);
       margin-top: 2rem;
       margin-bottom: 0.75rem;
     }
 
-    h4,
-    h5,
-    h6 {
-      letter-spacing: -0.01em;
+    h4 {
+      font-size: var(--oomol-font-size-lg);
+      letter-spacing: var(--oomol-tracking-section);
       margin-top: 1.5rem;
       margin-bottom: 0.6rem;
+    }
+
+    h5 {
+      font-size: var(--oomol-font-size-base);
+      letter-spacing: var(--oomol-tracking-body);
+      margin-top: 1.35rem;
+      margin-bottom: 0.55rem;
+    }
+
+    h6 {
+      font-size: var(--oomol-font-size-sm);
+      letter-spacing: var(--oomol-tracking-body);
+      margin-top: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--oomol-text-secondary);
     }
   }
 
@@ -518,7 +788,7 @@ $desktop-width: $breakpoint-xl;
 
   .breadcrumbs__link,
   .table-of-contents__link {
-    font-size: 0.95rem;
+    font-size: var(--oomol-body-base);
   }
 
   .pagination-nav__label {
@@ -527,13 +797,47 @@ $desktop-width: $breakpoint-xl;
   }
 
   .pagination-nav__sublabel {
-    font-size: 0.82rem;
+    font-size: var(--oomol-body-mono);
     letter-spacing: 0.01em;
-    text-transform: uppercase;
+    text-transform: none;
   }
 
   .menu__link {
     line-height: 1.45;
+  }
+
+  /*
+   * 文档侧栏：Infima .menu 默认 semibold(600)，整树偏粗。
+   * 默认用正文级 400，仅当前页略加重(500)，靠近右侧 TOC、又和顶栏区分得开。
+   */
+  .theme-doc-sidebar-container .menu {
+    font-weight: 400;
+    letter-spacing: -0.005em;
+  }
+
+  .theme-doc-sidebar-container .menu__link--active {
+    font-weight: 500;
+  }
+
+  /*
+   * 分类箭头：Infima 用 2rem 背景图 + 1.25rem 盒子，显得又粗又大。
+   * 缩小绘制尺寸并略降不透明度，贴近右侧 TOC 的体量。
+   */
+  .theme-doc-sidebar-container .menu__link--sublist-caret::after {
+    min-width: 0.8125rem;
+    width: 0.8125rem;
+    height: 0.8125rem;
+    background: var(--ifm-menu-link-sublist-icon) 50% / 0.8125rem 0.8125rem;
+    filter: var(--ifm-menu-link-sublist-icon-filter);
+    opacity: 0.72;
+  }
+
+  .theme-doc-sidebar-container .menu__caret::before {
+    width: 0.8125rem;
+    height: 0.8125rem;
+    background: var(--ifm-menu-link-sublist-icon) 50% / 0.8125rem 0.8125rem;
+    filter: var(--ifm-menu-link-sublist-icon-filter);
+    opacity: 0.72;
   }
 
   @media screen and (max-width: 996px) {
@@ -543,8 +847,50 @@ $desktop-width: $breakpoint-xl;
       }
 
       h1 {
-        font-size: clamp(1.9rem, 1.65rem + 1.2vw, 2.35rem);
+        font-size: var(--oomol-display-hero);
       }
     }
+  }
+}
+
+/* 文档正文标题：tracking / 行高 / 中文断行与 .oomol-home-main 同级 */
+:lang(zh-CN) .docs-wrapper .theme-doc-markdown,
+html[lang="zh-CN"] .docs-wrapper .theme-doc-markdown {
+  :is(h1, h2) {
+    letter-spacing: -0.022em;
+    line-height: 1.12;
+    text-wrap: pretty;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  h3 {
+    letter-spacing: -0.018em;
+    line-height: 1.12;
+    text-wrap: pretty;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  :is(h4, h5, h6) {
+    letter-spacing: -0.018em;
+    line-height: 1.2;
+    text-wrap: pretty;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  :where(p, li) {
+    letter-spacing: 0;
+  }
+}
+
+:lang(en) .docs-wrapper .theme-doc-markdown,
+html[lang="en"] .docs-wrapper .theme-doc-markdown {
+  :is(h1, h2, h3) {
+    letter-spacing: -0.034em;
+    line-height: 1.12;
+    text-wrap: balance;
+    hyphens: auto;
   }
 }

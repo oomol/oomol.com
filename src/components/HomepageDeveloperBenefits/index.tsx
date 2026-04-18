@@ -55,13 +55,8 @@ export default function HomepageDeveloperBenefits() {
         </div>
 
         <div className={styles.grid}>
-          {benefits.map((benefit, index) => (
-            <article
-              key={benefit.title}
-              className={`${styles.card} ${
-                index === 0 ? styles.modelCard : styles.cloudCard
-              }`}
-            >
+          {benefits.map(benefit => (
+            <article key={benefit.title} className={styles.card}>
               <div className={styles.cardTop}>
                 <div className={styles.eyebrow}>{benefit.eyebrow}</div>
                 <div className={styles.tag}>{benefit.tag}</div>

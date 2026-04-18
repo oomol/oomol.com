@@ -2,141 +2,114 @@
 
 .flow {
   display: grid;
-}
-
-.introSection {
-  padding: clamp(3.2rem, 6vw, 4.6rem) 0 0;
-}
-
-.introInner,
-.section {
-  width: min(1260px, calc(100% - 48px));
-  margin: 0 auto;
-}
-
-.introInner {
-  display: grid;
-  gap: 0.75rem;
-  justify-items: center;
-  text-align: center;
-}
-
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  min-height: 1.9rem;
-  padding: 0 0.8rem;
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--oomol-primary) 14%, white);
-  background: color-mix(in srgb, var(--oomol-primary-bg) 46%, white 54%);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--oomol-primary-text);
-}
-
-.introTitle {
-  margin: 0;
-  max-width: 20ch;
-  font-family: var(--oomol-font-display);
-  font-size: clamp(1.92rem, 3vw, 2.46rem);
-  line-height: 1.12;
-  letter-spacing: -0.04em;
-  text-wrap: balance;
-  color: var(--oomol-text-primary);
-}
-
-.introDescription {
-  margin: 0;
-  max-width: 44rem;
-  font-size: 1.08rem;
-  line-height: 1.68;
-  text-wrap: pretty;
-  color: var(--oomol-text-secondary);
+  gap: 0;
 }
 
 .section {
-  padding: clamp(4rem, 7vw, 5.8rem) 0;
+  position: relative;
+  width: 100%;
+  padding: clamp(5rem, 10vw, 8rem) 0;
+  background: var(--oomol-bg-base);
+  border-bottom: 1px solid var(--oomol-divider);
+  overflow: hidden;
 }
 
+.sectionTint,
+.cloudSection,
 .cliSection {
-  .copyPanel {
-    gap: 1.05rem;
-    max-width: 36rem;
-  }
-
-  .sectionDescription {
-    max-width: 34rem;
-  }
+  background: var(--oomol-bg-base);
 }
 
-.sectionTint {
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--oomol-bg-base) 92%, #d7c8af 8%) 0%,
-    color-mix(in srgb, var(--oomol-bg-base) 96%, white 4%) 100%
-  );
-}
-
+/* 浅色底纹变化：奇数段 base，偶数段稍带 container，制造 Vercel 式的段落区隔 */
 .cloudSection {
-  .copyPanel {
-    max-width: 100%;
-  }
-
-  .sectionTitle {
-    max-width: 100%;
-  }
-
-  .sectionDescription {
-    max-width: 33rem;
-  }
-}
-
-.agentSection {
-  background:
-    radial-gradient(
-      circle at top right,
-      rgba(188, 167, 122, 0.12) 0%,
-      rgba(188, 167, 122, 0) 28%
-    ),
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--oomol-bg-base) 96%, white 4%) 0%,
-      var(--oomol-bg-base) 100%
-    );
-}
-
-.container,
-.ctaInner {
-  width: min(1260px, calc(100% - 48px));
-  margin: 0 auto;
+  background: var(--oomol-bg-container);
 }
 
 .container {
+  position: relative;
+  z-index: 1;
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
-  gap: clamp(1.7rem, 3.2vw, 2.8rem);
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  gap: clamp(2rem, 4vw, 3.4rem);
   align-items: start;
+}
+
+/* 巨大空心 step 序号水印 */
+.stepWatermark {
+  position: absolute;
+  top: clamp(2rem, 5vw, 4rem);
+  right: 4vw;
+  z-index: 0;
+  font-family: var(--oomol-font-display);
+  font-size: clamp(8rem, 22vw, 18rem);
+  line-height: 0.9;
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--oomol-border-default);
+  opacity: 0.7;
+  pointer-events: none;
+  user-select: none;
+  font-feature-settings: "tnum" 1;
 }
 
 .copyPanel {
   display: grid;
-  gap: 1rem;
+  gap: 1.1rem;
   align-content: start;
-  max-width: 40rem;
+  max-width: 34rem;
 }
 
-/* ── Section titles ── */
+/* Monospace eyebrow - step badge */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-body-mono);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--oomol-primary);
+  box-shadow: none;
+  min-height: auto;
+  border-radius: 0;
+  width: fit-content;
+}
 
+.eyebrowNumber {
+  color: var(--oomol-primary);
+  font-weight: 600;
+}
+
+.eyebrowDivider {
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  background: var(--oomol-border-strong);
+  flex-shrink: 0;
+}
+
+.eyebrowLabel {
+  color: var(--oomol-text-secondary);
+  font-weight: 500;
+}
+
+/* Section titles */
 .sectionTitle,
 .ctaTitle {
   margin: 0;
   max-width: 100%;
   font-family: var(--oomol-font-display);
-  font-size: clamp(1.82rem, 2.8vw, 2.32rem);
-  line-height: 1.14;
-  letter-spacing: -0.04em;
+  font-size: var(--oomol-display-section);
+  line-height: 1.06;
+  letter-spacing: var(--oomol-tracking-section);
+  font-weight: 600;
   text-wrap: pretty;
   color: var(--oomol-text-primary);
 }
@@ -144,106 +117,77 @@
 .sectionDescription,
 .ctaDescription {
   margin: 0;
-  max-width: 40rem;
-  font-size: 1.08rem;
-  line-height: 1.68;
+  max-width: 36rem;
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
   color: var(--oomol-text-secondary);
 }
 
-/* ── Action buttons ── */
-
+/* Inline actions - 扁平 text link 风格 */
 .inlineActions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1.2rem;
-  padding-top: 0.5rem;
-}
-
-.ctaActions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.9rem;
-  padding-top: 0.5rem;
+  gap: 1.4rem;
+  padding-top: 0.6rem;
 }
 
 .primaryLink,
 .secondaryLink {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--oomol-primary-text);
+  gap: 0.3rem;
+  font-size: var(--oomol-body-base);
+  font-weight: 500;
+  color: var(--oomol-text-primary);
   text-decoration: none;
-  transition: opacity 0.15s ease;
+  letter-spacing: -0.003em;
+  transition: color 0.15s ease;
 
   &::after {
     content: "→";
     transition: transform 0.15s ease;
+    color: var(--oomol-text-tertiary);
   }
 
   &:hover {
     text-decoration: none;
-    opacity: 0.78;
+    color: var(--oomol-primary);
 
     &::after {
       transform: translateX(3px);
+      color: var(--oomol-primary);
     }
   }
 }
 
 .secondaryLink {
   color: var(--oomol-text-secondary);
-}
-
-.ctaGhost {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 12rem;
-  min-height: 52px;
-  padding: 0 1.35rem;
-  border-radius: 999px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  color: rgba(243, 239, 248, 0.94);
-  border: 1px solid rgba(243, 239, 248, 0.14);
-  background: rgba(243, 239, 248, 0.08);
-  transition: opacity 0.15s ease;
 
   &:hover {
-    text-decoration: none;
-    opacity: 0.82;
+    color: var(--oomol-text-primary);
+
+    &::after {
+      color: var(--oomol-text-primary);
+    }
   }
 }
 
-.ctaPrimary,
-.ctaSecondary {
-  min-width: 12rem;
-
-  &:global(.arco-btn) {
-    font-weight: 700;
-  }
-}
-
-/* ── Media panel + video card ── */
-
+/* Media panel + video card — 全部 hairline，无阴影光 */
 .terminalPanel,
 .mediaPanel,
 .agentMediaCard {
-  border-radius: 1.5rem;
+  border-radius: 14px;
   border: 1px solid var(--oomol-divider);
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%);
-  box-shadow: 0 16px 32px rgba(101, 118, 163, 0.1);
+  background: var(--oomol-bg-base);
+  box-shadow: none;
   overflow: hidden;
 }
 
 .mediaPanel,
 .agentMediaCard {
-  min-height: clamp(24rem, 40vw, 33rem);
+  min-height: clamp(20rem, 36vw, 30rem);
 }
 
 .videoCard {
@@ -253,29 +197,13 @@
   grid-template-rows: 1fr auto;
 }
 
-.videoCardInner {
+.videoCardInner,
+.videoCardMedia {
   position: relative;
   display: grid;
   place-items: center;
-  background:
-    radial-gradient(
-      ellipse 70% 50% at 50% 40%,
-      rgba(84, 88, 135, 0.08) 0%,
-      transparent 70%
-    ),
-    linear-gradient(180deg, #1a1b28 0%, #12131d 100%);
+  background: var(--oomol-bg-spotlight);
   min-height: 16rem;
-}
-
-.videoCardMedia {
-  min-height: 16rem;
-  background:
-    radial-gradient(
-      ellipse 70% 50% at 50% 40%,
-      rgba(84, 88, 135, 0.08) 0%,
-      transparent 70%
-    ),
-    linear-gradient(180deg, #1a1b28 0%, #12131d 100%);
 }
 
 .videoCardVideo {
@@ -289,7 +217,9 @@
 
 .imageCardMedia {
   min-height: 16rem;
-  background: color-mix(in srgb, var(--oomol-bg-container) 88%, black 12%);
+  background: var(--oomol-bg-spotlight);
+  display: grid;
+  place-items: center;
 }
 
 .imageCardImage {
@@ -301,21 +231,20 @@
 }
 
 .videoCardPlay {
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 4rem;
+  height: 4rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow:
-    0 0 0 6px rgba(255, 255, 255, 0.08),
-    0 12px 28px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: none;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.18s ease;
 
   &:hover {
-    transform: scale(1.06);
+    transform: scale(1.02);
   }
 }
 
@@ -325,19 +254,19 @@
   margin-left: 0.2rem;
   border-top: 0.7rem solid transparent;
   border-bottom: 0.7rem solid transparent;
-  border-left: 1.1rem solid #1a1b28;
+  border-left: 1.1rem solid var(--oomol-text-primary);
 }
 
 .videoCardMeta {
-  padding: 1.15rem 1.35rem 1.25rem;
+  padding: 1rem 1.2rem 1.15rem;
   border-top: 1px solid var(--oomol-divider);
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%);
+  background: var(--oomol-bg-base);
 }
 
 .videoCardTitle {
   margin: 0;
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-size: var(--oomol-body-base);
+  font-weight: 500;
   line-height: 1.35;
   letter-spacing: -0.01em;
   color: var(--oomol-text-primary);
@@ -345,13 +274,12 @@
 
 .videoCardNote {
   margin: 0.35rem 0 0;
-  font-size: 0.92rem;
-  line-height: 1.6;
+  font-size: var(--oomol-body-sm);
+  line-height: 1.56;
   color: var(--oomol-text-tertiary);
 }
 
-/* ── Terminal panel (kept) ── */
-
+/* Terminal panel (used elsewhere) */
 .terminalPanel {
   display: grid;
 }
@@ -360,27 +288,29 @@
   display: flex;
   align-items: center;
   gap: 0.45rem;
-  padding: 0.82rem 1rem;
+  padding: 0.75rem 1rem;
   border-bottom: 1px solid var(--oomol-divider);
 
   span {
-    width: 0.58rem;
-    height: 0.58rem;
+    width: 0.55rem;
+    height: 0.55rem;
     border-radius: 999px;
-    background: color-mix(in srgb, var(--oomol-text-secondary) 26%, white);
+    background: var(--oomol-border-strong);
   }
 }
 
 .terminalBody {
   display: grid;
-  gap: 0.82rem;
-  padding: 1.1rem 1.2rem 1.25rem;
+  gap: 0.8rem;
+  padding: 1rem 1.2rem 1.2rem;
 }
 
 .terminalLabel {
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-font-size-xs);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: none;
   color: var(--oomol-text-tertiary);
 }
 
@@ -388,10 +318,8 @@
   margin: 0;
   padding: 0;
   white-space: pre-wrap;
-  font-family:
-    ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Monaco, Consolas,
-    "Liberation Mono", monospace;
-  font-size: 1rem;
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-body-base);
   line-height: 1.9;
   color: var(--oomol-text-primary);
 }
@@ -403,151 +331,99 @@
 .commentLine {
   display: block;
   margin: 0 0 0.3rem;
-  font-size: 0.9rem;
+  font-size: var(--oomol-body-sm);
   line-height: 1.5;
   color: var(--oomol-text-tertiary);
 }
 
 .prompt {
-  color: var(--oomol-primary-text);
+  color: var(--oomol-primary);
 }
 
-/* ── Placeholder card (Cloud section) ── */
-
-.placeholderCard {
-  height: 100%;
-  min-height: inherit;
-  display: grid;
-  align-content: start;
-  gap: 1.1rem;
-  padding: clamp(1.55rem, 3vw, 2.4rem);
-  padding-top: clamp(1.8rem, 3vw, 2.4rem);
-  position: relative;
-  overflow: hidden;
-  background:
-    linear-gradient(rgba(97, 113, 145, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(97, 113, 145, 0.06) 1px, transparent 1px),
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--oomol-bg-elevated) 90%, white 10%) 0%,
-      color-mix(in srgb, var(--oomol-bg-container) 82%, white 18%) 100%
-    );
-  background-size:
-    3.25rem 3.25rem,
-    3.25rem 3.25rem,
-    auto;
-}
-
-.placeholderTitle {
-  margin: 0;
-  max-width: 18ch;
-  font-family: var(--oomol-font-display);
-  font-size: clamp(1.42rem, 1.9vw, 1.72rem);
-  line-height: 1.12;
-  letter-spacing: -0.03em;
-  color: var(--oomol-text-primary);
-  position: relative;
-  z-index: 1;
-}
-
-.placeholderNote {
-  margin: 0;
-  max-width: 34rem;
-  font-size: 1rem;
-  line-height: 1.66;
-  color: var(--oomol-text-secondary);
-  position: relative;
-  z-index: 1;
-}
-
-/* ── Cloud cards ── */
-
+/* Cloud cards - nested mini cards - hairline stack */
 .cloudCardStack {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
+  gap: 0;
+  border: 1px solid var(--oomol-divider);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--oomol-bg-base);
+  margin-top: 0.4rem;
 }
 
 .cloudCard {
-  padding: 1.1rem 1.1rem 1.15rem;
-  border-radius: 1rem;
-  border: 1px solid var(--oomol-divider);
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%);
-  box-shadow: 0 4px 12px rgba(101, 118, 163, 0.06);
-  transition:
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
+  padding: 1.1rem 1.15rem 1.2rem;
+  border-radius: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  transition: background-color 0.18s ease;
+
+  &:nth-child(odd) {
+    border-right: 1px solid var(--oomol-divider);
+  }
 
   &:hover {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-primary) 18%,
-      var(--oomol-divider)
-    );
-    box-shadow: 0 8px 20px rgba(101, 118, 163, 0.1);
+    transform: none;
+    border-color: var(--oomol-divider);
+    box-shadow: none;
+    background: var(--oomol-bg-spotlight);
   }
 }
 
 .cloudTitle {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: var(--oomol-body-base);
   line-height: 1.34;
   letter-spacing: -0.01em;
+  font-weight: 600;
   color: var(--oomol-text-primary);
 }
 
 .cloudText {
-  margin: 0.55rem 0 0;
-  font-size: 0.96rem;
-  line-height: 1.62;
+  margin: 0.5rem 0 0;
+  font-size: var(--oomol-body-sm);
+  line-height: 1.58;
   color: var(--oomol-text-secondary);
 }
 
-/* ── CTA section ── */
-
+/* CTA section - the SiteCta wrapper is separately styled */
 .ctaSection {
   padding: clamp(4rem, 8vw, 5.8rem) 0 clamp(3rem, 6vw, 4.4rem);
 }
 
 .ctaInner {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
   display: grid;
   gap: 1.1rem;
   padding: clamp(2.1rem, 4.2vw, 3rem);
-  border-radius: 1.75rem;
-  border: 1px solid rgba(214, 221, 236, 0.12);
-  background:
-    radial-gradient(
-      circle at top left,
-      rgba(132, 138, 208, 0.18) 0%,
-      rgba(132, 138, 208, 0) 32%
-    ),
-    linear-gradient(180deg, #1a1b28 0%, #12131d 100%);
-  box-shadow: 0 18px 36px rgba(31, 28, 53, 0.22);
+  border-radius: 1.2rem;
+  border: 1px solid var(--oomol-divider);
+  background: var(--oomol-bg-container);
+  box-shadow: none;
 }
 
 .ctaTitle {
-  max-width: 18ch;
-  color: rgba(243, 239, 248, 0.98);
+  max-width: 100%;
+  color: var(--oomol-text-primary);
 }
 
 .ctaDescription {
   max-width: 42rem;
-  color: rgba(221, 214, 231, 0.8);
+  color: var(--oomol-text-secondary);
 }
+
+/* CTA pair — styling comes from the Button component (variant + size). */
 
 /* ── English overrides ── */
 
 :global(html[lang="en"]) .sectionTitle,
 :global(html[lang="en"]) .ctaTitle {
   max-width: 100%;
-  font-size: clamp(2rem, 3.2vw, 2.85rem);
-  line-height: 1.1;
-}
-
-:global(html[lang="en"]) .introTitle {
-  max-width: 18ch;
-  font-size: clamp(2.1rem, 3.4vw, 3rem);
-  line-height: 1.1;
+  font-size: var(--oomol-display-section);
+  line-height: 1.06;
 }
 
 /* ── Tablet ── */
@@ -557,250 +433,143 @@
     grid-template-columns: 1fr;
   }
 
-  .cliSection {
-    .container {
-      grid-template-columns: 1fr;
-    }
-
-    .copyPanel {
-      max-width: 100%;
-    }
-
-    .terminalPanel {
-      max-width: 100%;
-    }
-  }
-
-  .cloudSection {
-    .container {
-      grid-template-columns: 1fr;
-    }
+  .cliSection .container,
+  .cloudSection .container {
+    grid-template-columns: 1fr;
   }
 
   .cloudCardStack {
     grid-template-columns: 1fr;
+  }
+
+  .cloudCard:nth-child(odd) {
+    border-right: 0;
+  }
+
+  .cloudCard:not(:last-child) {
+    border-bottom: 1px solid var(--oomol-divider);
+  }
+
+  .stepWatermark {
+    top: 1rem;
+    right: 2vw;
+    font-size: clamp(6rem, 18vw, 12rem);
   }
 }
 
 /* ── Mobile ── */
 
 @media (max-width: 768px) {
-  .introInner,
   .container,
   .ctaInner {
     width: min(100%, calc(100% - 40px));
-  }
-
-  .introSection {
-    padding-top: 2.6rem;
   }
 
   .section {
     padding: 3rem 0;
   }
 
-  .introTitle,
   .sectionTitle,
   .ctaTitle {
     max-width: 100%;
     text-wrap: pretty;
   }
 
-  .introDescription,
   .sectionDescription,
   .ctaDescription {
-    font-size: 1.02rem;
-    line-height: 1.72;
+    font-size: var(--oomol-body-base);
+    line-height: 1.62;
   }
 
-  .videoCardInner {
-    min-height: 12rem;
-  }
-
-  .videoCardMedia {
-    min-height: 12rem;
-  }
-
+  .videoCardInner,
+  .videoCardMedia,
   .imageCardMedia {
     min-height: 12rem;
   }
 
   .videoCardPlay {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 3.2rem;
+    height: 3.2rem;
   }
 
   .videoCardTriangle {
-    border-top-width: 0.55rem;
-    border-bottom-width: 0.55rem;
-    border-left-width: 0.85rem;
+    border-top-width: 0.5rem;
+    border-bottom-width: 0.5rem;
+    border-left-width: 0.8rem;
+  }
+
+  .stepWatermark {
+    top: 1rem;
+    right: -1rem;
+    font-size: clamp(5rem, 24vw, 8rem);
+  }
+
+  .inlineActions {
+    gap: 1rem;
   }
 }
 
 /* ── Dark mode ── */
 
 [data-theme="dark"] {
-  .eyebrow {
-    border-color: color-mix(in srgb, var(--oomol-primary) 20%, transparent);
-    background: color-mix(
-      in srgb,
-      var(--oomol-primary-bg) 30%,
-      var(--oomol-bg-container) 70%
-    );
+  .section {
+    padding-top: clamp(5rem, 10vw, 8rem);
+    padding-bottom: clamp(5rem, 10vw, 8rem);
   }
 
-  .sectionTint {
-    background: linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--oomol-bg-base) 90%, #41372d 10%) 0%,
-      color-mix(in srgb, var(--oomol-bg-base) 96%, black 4%) 100%
-    );
+  .sectionTint,
+  .cliSection {
+    background: var(--oomol-bg-base);
   }
 
-  .agentSection {
-    background:
-      radial-gradient(
-        circle at top right,
-        rgba(188, 167, 122, 0.08) 0%,
-        rgba(188, 167, 122, 0) 28%
-      ),
-      linear-gradient(
-        180deg,
-        color-mix(in srgb, var(--oomol-bg-base) 96%, black 4%) 0%,
-        var(--oomol-bg-base) 100%
-      );
+  .cloudSection {
+    background: var(--oomol-bg-container);
   }
 
-  .stepCard,
-  .cloudCard,
+  .stepWatermark {
+    -webkit-text-stroke: 1px var(--oomol-border-default);
+    opacity: 0.9;
+  }
+
+  .cloudCardStack,
   .terminalPanel,
   .mediaPanel,
   .agentMediaCard {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-border-default) 72%,
-      var(--oomol-divider)
-    );
-    background: color-mix(
-      in srgb,
-      var(--oomol-bg-elevated) 86%,
-      var(--oomol-bg-container) 14%
-    );
+    border-color: var(--oomol-border-subtle);
+    background: var(--oomol-bg-elevated);
+  }
+
+  .cloudCard:hover {
+    background: var(--oomol-bg-spotlight);
   }
 
   .videoCardMeta {
-    border-top-color: color-mix(
-      in srgb,
-      var(--oomol-border-default) 68%,
-      var(--oomol-divider)
-    );
-    background: color-mix(
-      in srgb,
-      var(--oomol-bg-elevated) 86%,
-      var(--oomol-bg-container) 14%
-    );
+    border-top-color: var(--oomol-border-subtle);
+    background: var(--oomol-bg-elevated);
   }
 
-  .videoCardInner {
-    background:
-      radial-gradient(
-        ellipse 70% 50% at 50% 40%,
-        rgba(132, 138, 208, 0.08) 0%,
-        transparent 70%
-      ),
-      linear-gradient(
-        180deg,
-        color-mix(
-            in srgb,
-            var(--oomol-bg-container) 82%,
-            var(--oomol-bg-spotlight) 18%
-          )
-          0%,
-        color-mix(in srgb, var(--oomol-bg-elevated) 88%, black 12%) 100%
-      );
-  }
-
-  .videoCardMedia {
-    background:
-      radial-gradient(
-        ellipse 70% 50% at 50% 40%,
-        rgba(132, 138, 208, 0.08) 0%,
-        transparent 70%
-      ),
-      linear-gradient(
-        180deg,
-        color-mix(
-            in srgb,
-            var(--oomol-bg-container) 82%,
-            var(--oomol-bg-spotlight) 18%
-          )
-          0%,
-        color-mix(in srgb, var(--oomol-bg-elevated) 88%, black 12%) 100%
-      );
-  }
-
+  .videoCardInner,
+  .videoCardMedia,
   .imageCardMedia {
-    background: color-mix(
-      in srgb,
-      var(--oomol-bg-container) 72%,
-      var(--oomol-bg-elevated) 28%
-    );
+    background: var(--oomol-bg-spotlight);
   }
 
   .videoCardPlay {
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(255, 255, 255, 0.95);
   }
 
-  .inlineNote {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-primary) 22%,
-      var(--oomol-divider)
-    );
-    background: color-mix(
-      in srgb,
-      var(--oomol-bg-elevated) 78%,
-      var(--oomol-primary-bg) 22%
-    );
-    color: color-mix(in srgb, var(--oomol-text-secondary) 92%, white 8%);
-  }
-
-  .placeholderCard {
-    background:
-      linear-gradient(rgba(188, 194, 224, 0.07) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(188, 194, 224, 0.07) 1px, transparent 1px),
-      linear-gradient(
-        180deg,
-        color-mix(in srgb, var(--oomol-bg-elevated) 88%, black 12%) 0%,
-        color-mix(in srgb, var(--oomol-bg-container) 82%, black 18%) 100%
-      );
-    background-size:
-      3.25rem 3.25rem,
-      3.25rem 3.25rem,
-      auto;
+  .videoCardTriangle {
+    border-left-color: var(--oomol-text-inverse);
   }
 
   .ctaInner {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-primary-border) 44%,
-      var(--oomol-divider)
-    );
-    background:
-      radial-gradient(
-        circle at top left,
-        rgba(132, 138, 208, 0.16) 0%,
-        rgba(132, 138, 208, 0) 34%
-      ),
-      linear-gradient(
-        180deg,
-        color-mix(
-            in srgb,
-            var(--oomol-bg-container) 82%,
-            var(--oomol-bg-spotlight) 18%
-          )
-          0%,
-        color-mix(in srgb, var(--oomol-bg-elevated) 88%, black 12%) 100%
-      );
+    border-color: var(--oomol-border-default);
+    background: var(--oomol-bg-elevated);
   }
+}
+
+:global(html[lang="en"]) .introTitle,
+:global(html[lang="en"]) .sectionTitle,
+:global(html[lang="en"]) .ctaTitle {
+  max-width: 22ch;
 }

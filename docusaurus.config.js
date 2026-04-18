@@ -420,6 +420,14 @@ const config = {
       },
       mermaid: {
         theme: { light: "base", dark: "dark" },
+        // HTML 标签用 foreignObject + 测量宽高；需与正文字体一致，否则 CJK/多行易裁切
+        options: {
+          fontFamily:
+            'Geist, "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", system-ui, sans-serif',
+          block: {
+            padding: 14,
+          },
+        },
       },
     }),
   future: {

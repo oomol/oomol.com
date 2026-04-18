@@ -1,16 +1,6 @@
 .section {
   padding: clamp(4rem, 8vw, 6rem) 0 clamp(2.5rem, 5vw, 4rem);
-  background:
-    radial-gradient(
-      circle at 85% 20%,
-      rgba(124, 132, 225, 0.08) 0%,
-      rgba(124, 132, 225, 0) 26%
-    ),
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--oomol-bg-layout) 90%, white 10%) 0%,
-      color-mix(in srgb, var(--oomol-bg-base) 96%, white 4%) 100%
-    );
+  background: var(--oomol-bg-base);
 }
 
 .container {
@@ -32,16 +22,18 @@
   width: fit-content;
   align-items: center;
   gap: 0.65rem;
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--oomol-text-secondary);
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-body-mono);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  text-transform: none;
+  color: var(--oomol-text-tertiary);
 
   &::before {
     content: "";
-    width: 0.8rem;
-    height: 1px;
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
     background: var(--oomol-primary);
   }
 }
@@ -50,17 +42,20 @@
   margin: 0;
   max-width: 12ch;
   font-family: var(--oomol-font-display);
-  font-size: clamp(2.55rem, 4.8vw, 4.2rem);
-  line-height: 0.98;
-  letter-spacing: -0.045em;
+  font-size: var(--oomol-display-hero);
+  line-height: 1.04;
+  letter-spacing: var(--oomol-tracking-display);
+  font-weight: 600;
+  text-wrap: balance;
   color: var(--oomol-text-primary);
 }
 
 .subtitle {
   margin: 0;
   max-width: 48rem;
-  font-size: 1rem;
-  line-height: 1.72;
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
   color: var(--oomol-text-secondary);
 }
 
@@ -69,46 +64,6 @@
   flex-wrap: wrap;
   gap: 0.85rem;
   padding-top: 0.25rem;
-}
-
-.primaryAction,
-.secondaryAction {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 2.85rem;
-  padding: 0 1rem;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 0.96rem;
-  font-weight: 650;
-  transition:
-    transform 0.18s ease,
-    background-color 0.18s ease,
-    border-color 0.18s ease,
-    color 0.18s ease;
-
-  &:hover {
-    text-decoration: none;
-    transform: translateY(-1px);
-  }
-}
-
-.primaryAction {
-  color: var(--oomol-white);
-  border: 1px solid
-    color-mix(in srgb, var(--oomol-primary-active) 64%, black 12%);
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--oomol-primary) 78%, white 14%) 0%,
-    color-mix(in srgb, var(--oomol-primary-active) 88%, black 12%) 100%
-  );
-}
-
-.secondaryAction {
-  color: var(--oomol-text-primary);
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 92%, white 8%);
-  border: 1px solid var(--oomol-divider);
 }
 
 .grid {
@@ -123,10 +78,10 @@
   gap: 0.9rem;
   min-height: 100%;
   padding: 1.15rem;
-  border-radius: 1.45rem;
+  border-radius: var(--ifm-global-radius);
   border: 1px solid var(--oomol-divider);
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 93%, white 7%);
-  box-shadow: var(--oomol-shadow-sm);
+  background: var(--oomol-bg-elevated);
+  box-shadow: none;
 }
 
 .cardTop {
@@ -141,37 +96,36 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.95rem;
+  border-radius: var(--ifm-global-radius);
   border: 1px solid var(--oomol-divider);
-  background: color-mix(in srgb, var(--oomol-bg-layout) 90%, white 10%);
-  color: var(--oomol-primary);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.6),
-    0 8px 16px rgba(77, 88, 124, 0.08);
+  background: var(--oomol-bg-container);
+  color: var(--oomol-text-primary);
+  box-shadow: none;
 
   i {
-    font-size: 1.15rem;
+    font-size: var(--oomol-body-lead);
   }
 }
 
 .cardEyebrow {
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--oomol-text-secondary);
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-body-mono);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  text-transform: none;
+  color: var(--oomol-text-tertiary);
 }
 
 .cardTitle {
   margin: 0;
-  font-size: 1.38rem;
+  font-size: var(--oomol-font-size-2xl);
   line-height: 1.18;
   color: var(--oomol-text-primary);
 }
 
 .cardDescription {
   margin: 0;
-  font-size: 0.96rem;
+  font-size: var(--oomol-body-base);
   line-height: 1.7;
   color: var(--oomol-text-secondary);
 }
@@ -185,12 +139,10 @@
   position: relative;
   overflow: hidden;
   aspect-ratio: 16 / 9;
-  border-radius: 1.25rem;
-  border: 1px solid rgba(52, 59, 84, 0.16);
-  background: linear-gradient(180deg, #252b3b 0%, #1c2230 100%);
-  box-shadow:
-    0 24px 60px rgba(24, 29, 44, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border-radius: var(--ifm-global-radius);
+  border: 1px solid var(--oomol-border-default);
+  background: var(--oomol-bg-spotlight);
+  box-shadow: none;
 }
 
 .videoChrome {
@@ -220,22 +172,11 @@
 .videoGradient {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(
-      circle at 20% 18%,
-      rgba(137, 162, 255, 0.18) 0%,
-      rgba(137, 162, 255, 0) 30%
-    ),
-    radial-gradient(
-      circle at 80% 78%,
-      rgba(123, 213, 184, 0.16) 0%,
-      rgba(123, 213, 184, 0) 28%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(39, 45, 63, 0.92) 0%,
-      rgba(28, 34, 48, 0.98) 100%
-    );
+  background: color-mix(
+    in srgb,
+    var(--oomol-text-primary) 88%,
+    var(--oomol-bg-base) 12%
+  );
 }
 
 .videoTracks {
@@ -249,11 +190,7 @@
     display: block;
     height: 0.85rem;
     border-radius: 999px;
-    background: linear-gradient(
-      90deg,
-      rgba(246, 248, 255, 0.92) 0%,
-      rgba(246, 248, 255, 0.58) 100%
-    );
+    background: rgba(255, 255, 255, 0.11);
 
     &:nth-child(2) {
       width: 78%;
@@ -282,15 +219,12 @@
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.22),
-    0 12px 28px rgba(8, 12, 22, 0.2);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: none;
 
   i {
-    font-size: 1.2rem;
+    font-size: var(--oomol-font-size-xl);
     color: rgba(245, 248, 255, 0.96);
     transform: translateX(1px);
   }
@@ -301,10 +235,10 @@
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: var(--oomol-font-size-xs);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  text-transform: none;
   color: rgba(224, 230, 242, 0.76);
 }
 
@@ -314,23 +248,23 @@
 }
 
 .videoMetaTitle {
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: var(--oomol-body-mono);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  text-transform: none;
   color: var(--oomol-text-secondary);
 }
 
 .videoMetaNote {
   margin: 0;
-  font-size: 0.92rem;
+  font-size: var(--oomol-body-base);
   line-height: 1.58;
   color: var(--oomol-text-secondary);
 }
 
 :global(html[lang="en"]) .title {
   max-width: 18ch;
-  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-size: var(--oomol-display-hero);
   line-height: 1.03;
 }
 
@@ -351,60 +285,43 @@
 
   .title {
     max-width: 100%;
-    font-size: clamp(2.15rem, 9.4vw, 3rem);
+    font-size: var(--oomol-display-hero);
     line-height: 1.08;
-    letter-spacing: -0.03em;
+    letter-spacing: var(--oomol-tracking-display);
     text-wrap: pretty;
   }
 
   .subtitle,
   .cardDescription,
   .videoMetaNote {
-    font-size: 0.93rem;
+    font-size: var(--oomol-body-base);
     line-height: 1.58;
   }
 }
 
 [data-theme="dark"] {
   .section {
-    background:
-      radial-gradient(
-        circle at 85% 20%,
-        rgba(124, 132, 225, 0.1) 0%,
-        rgba(124, 132, 225, 0) 28%
-      ),
-      linear-gradient(
-        180deg,
-        color-mix(
-            in srgb,
-            var(--oomol-bg-base) 90%,
-            var(--oomol-bg-container) 10%
-          )
-          0%,
-        color-mix(in srgb, var(--oomol-bg-base) 96%, black 4%) 100%
-      );
+    background: var(--oomol-bg-base);
     box-shadow:
       inset 0 1px 0 var(--oomol-divider-subtle),
       inset 0 -1px 0 var(--oomol-divider-subtle);
   }
 
-  .secondaryAction,
-  .card {
-    border-color: color-mix(
+  .videoGradient {
+    background: color-mix(
       in srgb,
-      var(--oomol-border-default) 72%,
-      var(--oomol-divider)
+      var(--oomol-bg-container) 88%,
+      black 12%
     );
-    background: linear-gradient(
-      180deg,
-      color-mix(
-          in srgb,
-          var(--oomol-bg-elevated) 82%,
-          var(--oomol-bg-container) 18%
-        )
-        0%,
-      color-mix(in srgb, var(--oomol-bg-container) 88%, black 12%) 100%
-    );
+  }
+
+  .videoTracks span {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .card {
+    border-color: var(--oomol-divider);
+    background: var(--oomol-bg-elevated);
   }
 
   .iconWrap {
@@ -418,9 +335,7 @@
       var(--oomol-bg-container) 82%,
       var(--oomol-bg-elevated) 18%
     );
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.04),
-      0 10px 20px rgba(0, 0, 0, 0.14);
+    box-shadow: none;
   }
 
   .videoMetaTitle,

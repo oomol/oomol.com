@@ -63,7 +63,6 @@ export default function CloudPageFirstScreen() {
 
   return (
     <section className={styles.section}>
-      <div className={styles.background} />
       <div className={styles.container}>
         <div className={styles.titleGroup}>
           <div className={styles.eyebrow}>{copy.eyebrow}</div>

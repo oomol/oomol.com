@@ -91,7 +91,7 @@ export default function HomepageProductComparison() {
                   <Button
                     asChild
                     size="lg"
-                    variant="contrast"
+                    variant="default"
                     className={styles.primaryCta}
                   >
                     <Link to="/cloud">

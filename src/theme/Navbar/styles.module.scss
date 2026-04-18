@@ -7,10 +7,10 @@
 .signInButton {
   background: var(--oomol-primary);
   border: none;
-  border-radius: 4px;
+  border-radius: var(--ifm-global-radius);
   padding: 4px 4px;
   font-weight: 500;
-  font-size: 14px;
+  font-size: var(--oomol-font-size-sm);
   cursor: pointer;
 
   &:hover {
@@ -32,10 +32,10 @@
   gap: 6px;
   background: inherit;
   border: 1px solid var(--oomol-border-default);
-  border-radius: 4px;
+  border-radius: var(--ifm-global-radius);
   padding: 6px 16px;
   font-weight: 500;
-  font-size: 14px;
+  font-size: var(--oomol-font-size-sm);
   cursor: pointer;
   color: var(--oomol-text-primary);
   text-decoration: none;
@@ -43,7 +43,7 @@
   margin: 0 !important;
 
   i {
-    font-size: 16px;
+    font-size: var(--oomol-font-size-base);
   }
 
   &:hover {
@@ -53,26 +53,18 @@
 }
 
 .downloadButton {
-  gap: 6px;
-  font-weight: 650;
-  font-size: 13px;
-  letter-spacing: 0.02em;
   margin: 0 !important;
 
   i {
-    font-size: 16px;
+    font-size: var(--oomol-body-base);
   }
 }
 
 .loginButton {
-  gap: 6px;
-  font-weight: 650;
-  font-size: 13px;
-  letter-spacing: 0.02em;
   margin: 0 !important;
 
   i {
-    font-size: 16px;
+    font-size: var(--oomol-body-base);
   }
 }
 
@@ -98,30 +90,54 @@
 }
 
 .productMenuTrigger {
-  gap: 0.52rem;
-  margin: 0 0.18rem;
-  font-weight: 600;
-  font-size: 14px;
+  gap: 0.4rem;
+  margin: 0 2px;
+  padding: 0.5rem 0.7rem;
+  font-size: var(--oomol-font-size-sm);
+  font-weight: 550;
+  letter-spacing: -0.005em;
+  line-height: 1.25;
+  color: var(--oomol-text-secondary);
+  background: transparent;
 
-  &:global(.arco-btn-text) {
+  &:hover {
     color: var(--oomol-text-primary);
+    background: transparent;
+  }
+
+  &:active {
+    color: var(--oomol-text-primary);
+    background: transparent;
+  }
+
+  /* 与 [data-theme="light"] .navbar__link--active 一致（品牌蓝），双类名压过 ghost 按钮的 text-secondary */
+  &.productMenuTriggerActive {
+    color: var(--oomol-primary);
     background: transparent;
 
     &:hover {
-      color: var(--oomol-primary);
+      color: var(--oomol-primary-hover);
       background: transparent;
     }
 
     &:active {
-      color: var(--oomol-text-primary);
+      color: var(--oomol-primary-active);
       background: transparent;
     }
   }
 }
 
-.productMenuTriggerActive {
-  &:global(.arco-btn-text) {
-    color: var(--oomol-text-primary);
+/* 浅色非激活：与 custom.scss 里 [data-theme="light"] .navbar__link 一致（ghost 默认是 secondary，会偏浅） */
+:global([data-theme="light"]) .productMenuTrigger:not(.productMenuTriggerActive) {
+  color: var(--oomol-text-primary);
+
+  &:hover {
+    color: var(--oomol-primary);
+    background: transparent;
+  }
+
+  &:active {
+    color: var(--oomol-primary-active);
     background: transparent;
   }
 }
@@ -138,23 +154,23 @@
 
 .productMenuPanel {
   position: absolute;
-  top: calc(100% + 0.2rem);
+  top: calc(100% + 0.25rem);
   left: 0;
   width: min(34rem, calc(100vw - 2rem));
-  padding: 0.65rem;
-  border-radius: 1.1rem;
-  border: 1px solid color-mix(in srgb, var(--oomol-border-default) 78%, white);
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 96%, white 4%);
-  box-shadow: var(--oomol-shadow-lg);
+  padding: 0.35rem;
+  border-radius: var(--ifm-global-radius);
+  border: 1px solid var(--oomol-border-default);
+  background: var(--oomol-bg-elevated);
+  box-shadow: var(--oomol-shadow-sm);
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.45rem;
+  gap: 6px;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   transition:
-    opacity 0.18s ease,
-    transform 0.18s ease;
+    opacity 0.15s ease,
+    transform 0.15s ease;
   z-index: 120;
 }
 
@@ -172,72 +188,100 @@
 .productMenuEntry {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 0.9rem;
-  align-items: start;
-  min-height: 5rem;
-  padding: 0.95rem 1rem;
-  border-radius: 0.95rem;
+  gap: 0.75rem;
+  align-items: center;
+  min-height: 68px;
+  padding: 0.68rem 0.78rem;
+  border-radius: 6px;
   text-decoration: none;
-  transition:
-    background 0.18s ease,
-    transform 0.18s ease;
+  transition: background-color 0.15s ease;
 
   &:hover {
     text-decoration: none;
-    background: color-mix(in srgb, var(--oomol-primary-bg) 64%, transparent);
-    transform: translateY(-1px);
+    background: var(--oomol-hover-bg);
+    transform: none;
+  }
+
+  &:hover .productMenuEntryLabel {
+    color: var(--oomol-text-primary);
+  }
+
+  &:hover .productMenuEntryIcon {
+    color: var(--oomol-text-primary);
+    border-color: var(--oomol-border-default);
   }
 }
 
 .productMenuEntryActive {
-  background: color-mix(in srgb, var(--oomol-primary-bg) 78%, transparent);
+  background: var(--oomol-primary-bg);
 
-  .productMenuEntryIcon {
-    border-color: color-mix(in srgb, var(--oomol-primary) 30%, white);
-    background: color-mix(in srgb, var(--oomol-primary-bg) 68%, white 32%);
-    color: var(--oomol-primary-active);
+  &:hover {
+    background: var(--oomol-primary-bg-hover);
   }
 
   .productMenuEntryLabel {
-    color: var(--oomol-primary-text);
+    color: var(--ifm-menu-color-active, var(--oomol-primary-text));
+  }
+
+  .productMenuEntryIcon {
+    color: var(--ifm-menu-color-active, var(--oomol-primary-text));
+    border-color: var(--oomol-primary-border);
+    background: color-mix(
+      in srgb,
+      var(--oomol-primary-bg) 55%,
+      var(--oomol-bg-container)
+    );
+  }
+
+  &:hover .productMenuEntryLabel {
+    color: var(--ifm-menu-color-active, var(--oomol-primary-text));
+  }
+
+  &:hover .productMenuEntryIcon {
+    color: var(--ifm-menu-color-active, var(--oomol-primary-text));
   }
 }
 
 .productMenuEntryIcon {
-  width: 2.35rem;
-  height: 2.35rem;
+  width: 2rem;
+  height: 2rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.8rem;
-  background: color-mix(in srgb, var(--oomol-bg-layout) 90%, white 10%);
+  border-radius: 6px;
+  background: var(--oomol-bg-container);
   border: 1px solid var(--oomol-divider);
-  color: var(--oomol-primary);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.7),
-    0 8px 18px rgba(77, 88, 124, 0.08);
+  color: var(--oomol-text-secondary);
+  box-shadow: none;
+  flex-shrink: 0;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease,
+    background-color 0.15s ease;
 
   i {
-    font-size: 1.05rem;
+    font-size: var(--oomol-font-size-base);
   }
 }
 
 .productMenuEntryText {
   display: grid;
-  gap: 0.28rem;
+  gap: 0.18rem;
 }
 
 .productMenuEntryLabel {
-  color: var(--oomol-text-primary);
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.2;
+  color: var(--oomol-text-secondary);
+  font-size: var(--oomol-font-size-sm);
+  font-weight: 550;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  transition: color 0.15s ease;
 }
 
 .productMenuEntryDescription {
-  color: var(--oomol-text-secondary);
-  font-size: 0.86rem;
-  line-height: 1.5;
+  color: var(--oomol-text-tertiary);
+  font-size: var(--oomol-body-mono);
+  line-height: 1.38;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -277,7 +321,7 @@
 
 .btn-nav-text {
   font-weight: 500;
-  font-size: 12px;
+  font-size: var(--oomol-font-size-xs);
 }
 
 :global(html[data-theme="light"]) .brand {
@@ -308,14 +352,6 @@
   align-items: center;
 }
 
-.innerBox {
-  width: 100%;
-  height: 88px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 @media screen and (max-width: 550px) {
   .inner {
     padding: 0;
@@ -326,6 +362,8 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  /* 独立合成层，减轻与正文 motion/opacity 叠层时的 sticky 顶栏闪烁 */
+  isolation: isolate;
   transition: transform 0.3s ease;
   --ifm-navbar-padding-vertical: 0;
   background: transparent;
@@ -341,7 +379,7 @@
   align-items: center;
   /* background: url("/img/navbar/github.svg") 0 center / 20px 20px no-repeat; */
   padding: 0.2rem 0 0.2rem 1.8rem;
-  font-size: 15px;
+  font-size: var(--oomol-body-base);
 
   /* needed for mobile, when font-size: 0 */
   height: 32px;
@@ -360,12 +398,6 @@
 
   .actions {
     gap: 8px;
-  }
-
-  .loginButton {
-    min-height: 38px;
-    padding: 5px 12px;
-    font-size: 12px;
   }
 
   :global(.navbar__toggle) {
@@ -388,20 +420,22 @@
     display: none;
 } */
 
+/* Navbar links — Vercel style: flat text, no bg/shadow.
+   Active state = fuller opacity color; hover = subtle color shift only. */
 :global(.navbar__item.navbar__link) {
-  font-size: var(--ifm-font-size-base);
-  padding: 0.52rem 0.82rem;
-  margin: 0 0.18rem;
-  font-weight: 600;
-  font-size: 14px;
-  border-radius: 999px;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
+  padding: 0.5rem 0.7rem;
+  margin: 0 2px;
+  font-weight: 550;
+  font-size: var(--oomol-font-size-sm);
+  letter-spacing: -0.005em;
+  border-radius: 6px;
+  background: transparent;
+  box-shadow: none;
+  transition: color 0.15s ease;
 }
 
 :global(.navbar__item.dropdown .navbar__link):after {
-  border: 5px solid var(--oomol-text-primary);
+  border: 5px solid var(--oomol-text-secondary);
   border-width: 0 2px 2px 0;
   width: 6px;
   height: 6px;
@@ -409,7 +443,7 @@
 }
 
 :global(.dropdown__link) {
-  font-size: 1rem;
+  font-size: var(--oomol-body-base);
 }
 
 :global(.navbar__toggle) {
@@ -417,17 +451,19 @@
 }
 
 :global(.navbar__link) {
-  color: var(--oomol-text-primary);
+  color: var(--oomol-text-secondary);
 
   &:hover {
-    color: var(--oomol-primary);
-    background: color-mix(in srgb, var(--oomol-primary-bg) 58%, transparent);
+    color: var(--oomol-text-primary);
+    background: transparent;
+    box-shadow: none;
   }
 }
 
 :global(.navbar__link--active) {
-  color: var(--oomol-primary);
-  background: color-mix(in srgb, var(--oomol-primary-bg) 76%, transparent);
+  color: var(--oomol-text-primary);
+  background: transparent;
+  box-shadow: none;
 }
 
 [data-theme="dark"] {
@@ -436,27 +472,40 @@
   }
 
   :global(.navbar__item.navbar__link) {
-    color: color-mix(in srgb, var(--oomol-text-primary) 92%, white 8%);
+    color: var(--oomol-text-secondary);
   }
 
   :global(.navbar__link) {
     &:hover {
-      background: color-mix(in srgb, var(--oomol-primary-bg) 72%, transparent);
+      color: var(--oomol-primary-text-hover);
+      background: transparent;
+      box-shadow: none;
     }
   }
 
-  :global(.navbar__link--active) {
-    background: color-mix(in srgb, var(--oomol-primary-bg) 88%, transparent);
-    box-shadow: inset 0 0 0 1px
-      color-mix(in srgb, var(--oomol-primary-border) 76%, transparent);
+  /* 必须包含 .navbar__item：否则特异性低于上一行的 .navbar__item.navbar__link，active 色永远不生效 */
+  :global(.navbar__item.navbar__link.navbar__link--active) {
+    color: var(--ifm-menu-color-active, var(--oomol-primary-text));
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .productMenuTrigger.productMenuTriggerActive {
+    color: var(--ifm-menu-color-active, var(--oomol-primary-text));
+    background: transparent;
+
+    &:hover,
+    &:active {
+      color: var(--ifm-menu-color-active, var(--oomol-primary-text));
+      background: transparent;
+    }
   }
 
   :global(.navbar__toggle) {
-    border-radius: 999px;
     color: var(--oomol-text-primary);
 
     &:hover {
-      background: color-mix(in srgb, var(--oomol-primary-bg) 68%, transparent);
+      background: var(--oomol-hover-bg);
     }
   }
 }
@@ -533,7 +582,9 @@
   .navbar {
     height: 64px;
     display: flex;
-    background: inherit;
+    background: color-mix(in srgb, var(--oomol-bg-base) 90%, transparent);
+    backdrop-filter: blur(18px) saturate(128%);
+    border-bottom: 1px solid var(--oomol-divider);
 
     // TODO: Disable the new navbar design for now,
     // and re-enable it after the docs style refactor is complete.
@@ -554,4 +605,17 @@
   // .navbarHidden {
   //   transform: translateY(-155%);
   // }
+}
+
+@media (max-width: 996px) {
+  .navbar {
+    backdrop-filter: blur(10px) saturate(115%);
+    background: color-mix(in srgb, var(--oomol-bg-base) 92%, transparent);
+    border-bottom: 1px solid var(--oomol-divider);
+  }
+
+  .actions {
+    gap: 0.55rem;
+  }
+
 }

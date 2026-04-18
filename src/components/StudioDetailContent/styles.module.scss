@@ -22,15 +22,15 @@
   margin: 0;
   max-width: 13ch;
   font-family: var(--oomol-font-display);
-  font-size: clamp(2.6rem, 4.8vw, 4.2rem);
+  font-size: var(--oomol-display-hero);
   line-height: 0.98;
-  letter-spacing: -0.045em;
+  letter-spacing: var(--oomol-tracking-display);
   color: var(--oomol-text-primary);
 }
 
 .homeSubtitle {
   margin: 0;
-  font-size: 1rem;
+  font-size: var(--oomol-font-size-base);
   line-height: 1.76;
   color: var(--oomol-text-secondary);
 }
@@ -55,7 +55,7 @@
 .homeStorySummary p,
 .homePrincipleContent p {
   margin: 0;
-  font-size: 1rem;
+  font-size: var(--oomol-font-size-base);
   line-height: 1.78;
   color: var(--oomol-text-secondary);
 }
@@ -65,17 +65,12 @@
   gap: 0.85rem;
   padding: 1.2rem 1.15rem;
   border-radius: 1.3rem;
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--oomol-primary-bg) 76%, var(--oomol-bg-elevated)) 0%,
-    color-mix(in srgb, var(--oomol-primary-bg) 48%, var(--oomol-bg-elevated))
-      100%
-  );
-  border: 1px solid var(--oomol-primary-border);
+  background: var(--oomol-bg-container);
+  border: 1px solid var(--oomol-divider);
 
   p {
     margin: 0;
-    font-size: 0.95rem;
+    font-size: var(--oomol-body-base);
     line-height: 1.68;
     color: var(--oomol-text-secondary);
     font-style: italic;
@@ -102,29 +97,22 @@
   padding: 0 1rem;
   border-radius: 999px;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: var(--oomol-body-base);
   font-weight: 650;
   transition:
-    transform 0.18s ease,
     background-color 0.18s ease,
     border-color 0.18s ease,
     color 0.18s ease;
 
   &:hover {
     text-decoration: none;
-    transform: translateY(-1px);
   }
 }
 
 .homePrimaryAction {
   color: var(--oomol-white);
-  border: 1px solid
-    color-mix(in srgb, var(--oomol-primary-active) 64%, black 12%);
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--oomol-primary) 78%, white 14%) 0%,
-    color-mix(in srgb, var(--oomol-primary-active) 88%, black 12%) 100%
-  );
+  border: 1px solid var(--oomol-primary);
+  background: var(--oomol-primary);
 }
 
 .homeSecondaryAction {
@@ -138,12 +126,8 @@
   padding: 0.9rem;
   border-radius: 1.8rem;
   border: 1px solid var(--oomol-divider);
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--oomol-bg-elevated) 94%, white 6%) 0%,
-    color-mix(in srgb, var(--oomol-bg-elevated) 100%, black 0%) 100%
-  );
-  box-shadow: var(--oomol-shadow-md);
+  background: var(--oomol-bg-elevated);
+  box-shadow: none;
 }
 
 .homePreviewFrame {
@@ -151,11 +135,7 @@
   min-height: 420px;
   border-radius: 1.3rem;
   border: 1px solid var(--oomol-divider);
-  background: linear-gradient(
-    180deg,
-    rgba(251, 253, 255, 0.9) 0%,
-    rgba(239, 244, 251, 0.94) 100%
-  );
+  background: var(--oomol-bg-spotlight);
 }
 
 .homePreviewImage {
@@ -217,7 +197,7 @@
   h3 {
     margin: 0;
     max-width: 18ch;
-    font-size: 1.6rem;
+    font-size: var(--oomol-display-section);
     line-height: 1.24;
     font-weight: 650;
     color: var(--oomol-text-primary);
@@ -239,7 +219,7 @@
 
 :global(html[lang="en"]) .homeTitle {
   max-width: 17ch;
-  font-size: clamp(2.2rem, 4vw, 3.65rem);
+  font-size: var(--oomol-display-hero);
   line-height: 1.03;
 }
 
@@ -250,7 +230,7 @@
 
 :global(html[lang="en"]) .homePrincipleContent h3 {
   max-width: 22ch;
-  font-size: 1.5rem;
+  font-size: var(--oomol-font-size-2xl);
   line-height: 1.28;
 }
 
@@ -285,9 +265,9 @@
 
   .homeTitle {
     max-width: 100%;
-    font-size: clamp(2.15rem, 9.4vw, 3rem);
+    font-size: var(--oomol-display-hero);
     line-height: 1.08;
-    letter-spacing: -0.03em;
+    letter-spacing: var(--oomol-tracking-display);
     text-wrap: pretty;
   }
 
@@ -321,7 +301,7 @@
   .homeStoryLead,
   .homeStorySummary p,
   .homePrincipleContent p {
-    font-size: 0.96rem;
+    font-size: var(--oomol-body-base);
     line-height: 1.68;
   }
 
@@ -330,7 +310,7 @@
     padding: 0.95rem 1rem;
 
     p {
-      font-size: 0.92rem;
+      font-size: var(--oomol-body-base);
       line-height: 1.58;
     }
   }
@@ -360,7 +340,7 @@
   }
 
   .homePrincipleContent h3 {
-    font-size: 1.28rem;
+    font-size: var(--oomol-font-size-xl);
     line-height: 1.3;
   }
 
@@ -369,7 +349,7 @@
   }
 
   .homePrincipleContent p {
-    font-size: 0.93rem;
+    font-size: var(--oomol-body-base);
     line-height: 1.58;
   }
 
@@ -390,14 +370,14 @@
     border: none;
     background: transparent;
     color: var(--oomol-primary-text);
-    font-size: 0.88rem;
+    font-size: var(--oomol-body-sm);
     font-weight: 650;
     line-height: 1.4;
     cursor: pointer;
 
     &::after {
       content: "→";
-      font-size: 0.8rem;
+      font-size: var(--oomol-font-size-xs);
       transform: rotate(90deg);
       transition: transform 0.2s ease;
     }
@@ -427,28 +407,30 @@
 
 .title {
   font-family: var(--oomol-font-display);
-  font-size: 4rem;
-  font-weight: 700;
-  line-height: 1;
+  font-size: var(--oomol-display-hero);
+  font-weight: 600;
+  line-height: 1.06;
   margin-bottom: 32px;
-  letter-spacing: -0.04em;
-  color: var(--ifm-heading-color);
+  letter-spacing: var(--oomol-tracking-display);
+  color: var(--oomol-text-primary);
+  text-wrap: balance;
 
   @include respond-to(md) {
-    font-size: 2.7rem;
+    font-size: var(--oomol-display-hero);
   }
 }
 
 .subtitle {
-  font-size: 1.35rem;
-  color: var(--ifm-color-emphasis-600);
+  font-size: var(--oomol-body-lead);
+  color: var(--oomol-text-secondary);
   font-weight: 400;
-  line-height: 1.7;
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
   max-width: 700px;
   margin: 0 auto;
 
   @include respond-to(md) {
-    font-size: 1.1rem;
+    font-size: var(--oomol-body-lead);
   }
 }
 
@@ -474,7 +456,7 @@
   overflow: hidden;
   background: var(--ifm-background-surface-color);
   border: 1px solid var(--ifm-color-emphasis-200);
-  box-shadow: var(--oomol-shadow-md);
+  box-shadow: none;
 }
 
 .storySection {
@@ -487,17 +469,22 @@
   }
 
   p {
-    font-size: 1.12rem;
-    line-height: 1.8;
-    color: var(--ifm-color-emphasis-800);
+    font-size: var(--oomol-body-lead);
+    line-height: var(--oomol-line-height-relaxed);
+    letter-spacing: var(--oomol-tracking-body);
+    color: var(--oomol-text-secondary);
     margin-bottom: 24px;
   }
 
   h2 {
-    font-size: 2rem;
+    font-family: var(--oomol-font-display);
+    font-size: var(--oomol-display-section);
+    line-height: 1.12;
+    letter-spacing: var(--oomol-tracking-section);
     margin-top: 60px;
     margin-bottom: 32px;
-    font-weight: 700;
+    font-weight: 600;
+    color: var(--oomol-text-primary);
   }
 }
 
@@ -509,7 +496,7 @@
   border-radius: 0 16px 16px 0;
 
   p {
-    font-size: 1.1rem;
+    font-size: var(--oomol-body-lead);
     margin-bottom: 0;
     color: var(--ifm-color-emphasis-700);
     font-style: italic;
@@ -546,16 +533,20 @@
 
 .principleText {
   h3 {
-    font-size: 2rem;
-    font-weight: 700;
+    font-family: var(--oomol-font-display);
+    font-size: var(--oomol-display-section);
+    line-height: 1.12;
+    letter-spacing: var(--oomol-tracking-section);
+    font-weight: 600;
     margin-bottom: 24px;
     color: var(--oomol-primary);
   }
 
   p {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: var(--ifm-color-emphasis-700);
+    font-size: var(--oomol-body-lead);
+    line-height: var(--oomol-line-height-relaxed);
+    letter-spacing: var(--oomol-tracking-body);
+    color: var(--oomol-text-secondary);
     margin-bottom: 24px;
   }
 }
@@ -582,7 +573,7 @@
   overflow: hidden;
   background: var(--ifm-background-surface-color);
   border: 1px solid var(--ifm-color-emphasis-200);
-  box-shadow: var(--oomol-shadow-sm);
+  box-shadow: none;
 }
 
 @media (max-width: 996px) {
@@ -615,7 +606,7 @@
 @media (max-width: 768px) {
   .homeTitle {
     max-width: 100%;
-    font-size: 2.35rem;
+    font-size: var(--oomol-display-hero);
   }
 
   .homePreviewCard,
@@ -631,61 +622,21 @@
 
 [data-theme="dark"] {
   .homeSection {
-    background: linear-gradient(
-      180deg,
-      color-mix(
-          in srgb,
-          var(--oomol-bg-base) 90%,
-          var(--oomol-bg-container) 10%
-        )
-        0%,
-      color-mix(in srgb, var(--oomol-bg-base) 96%, black 4%) 100%
-    );
+    background: var(--oomol-bg-base);
     box-shadow:
       inset 0 1px 0 var(--oomol-divider-subtle),
       inset 0 -1px 0 var(--oomol-divider-subtle);
   }
 
   .homeFrustrationBlock {
-    background: linear-gradient(
-      180deg,
-      color-mix(
-          in srgb,
-          var(--oomol-primary-bg) 58%,
-          var(--oomol-bg-elevated) 42%
-        )
-        0%,
-      color-mix(
-          in srgb,
-          var(--oomol-primary-bg) 34%,
-          var(--oomol-bg-container) 66%
-        )
-        100%
-    );
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-primary-border) 72%,
-      var(--oomol-divider)
-    );
+    background: var(--oomol-bg-container);
+    border-color: var(--oomol-divider);
   }
 
   .homePreviewCard,
   .homePrincipleMedia {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-border-default) 72%,
-      var(--oomol-divider)
-    );
-    background: linear-gradient(
-      180deg,
-      color-mix(
-          in srgb,
-          var(--oomol-bg-elevated) 82%,
-          var(--oomol-bg-container) 18%
-        )
-        0%,
-      color-mix(in srgb, var(--oomol-bg-container) 88%, black 12%) 100%
-    );
+    border-color: var(--oomol-divider);
+    background: var(--oomol-bg-elevated);
   }
 
   .homePrincipleCard {
@@ -699,15 +650,6 @@
   }
 
   .homePreviewFrame {
-    background: linear-gradient(
-      180deg,
-      color-mix(
-          in srgb,
-          var(--oomol-bg-container) 80%,
-          var(--oomol-bg-spotlight) 20%
-        )
-        0%,
-      color-mix(in srgb, var(--oomol-bg-elevated) 82%, black 18%) 100%
-    );
+    background: var(--oomol-bg-spotlight);
   }
 }

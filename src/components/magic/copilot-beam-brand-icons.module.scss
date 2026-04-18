@@ -1,0 +1,23 @@
+.svg {
+  display: block;
+  width: 62%;
+  height: 62%;
+  max-width: 28px;
+  max-height: 28px;
+}
+
+.svgDocs {
+  display: block;
+  width: 52%;
+  height: 72%;
+  max-width: 22px;
+  max-height: 30px;
+}
+
+/* Wide wordmark: fit inside the circular satellite without clipping */
+.svgZapier {
+  display: block;
+  width: 118%;
+  height: auto;
+  max-height: 22px;
+}

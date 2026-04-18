@@ -3,7 +3,7 @@ import styles from "./style.module.scss";
 import { translate } from "@docusaurus/Translate";
 import React from "react";
 
-import { BlurFade } from "../magic-ui/BlurFade";
+import { BlurFade } from "@site/src/components/ui/blur-fade";
 import { Button } from "../ui/button";
 import {
   Card,

@@ -1,8 +1,13 @@
 import styles from "./ColorModeDropdown.module.scss";
 
-import { Dropdown, Menu } from "@arco-design/web-react";
 import { translate } from "@docusaurus/Translate";
 import { Button } from "@site/src/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@site/src/components/ui/dropdown-menu";
 import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
 
 type ColorModeType = "light" | "dark" | "system";
@@ -60,32 +65,35 @@ export const ColorModeDropdown = ({
   };
 
   return (
-    <Dropdown
-      droplist={
-        <Menu
-          className={styles.menu}
-          onClickMenuItem={key => handleModeChange(key as ColorModeType)}
-          selectedKeys={[selectedMode]}
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button
+          className={`${styles.triggerButton}${triggerClassName ? ` ${triggerClassName}` : ""}`}
+          size="sm"
+          variant="ghost"
         >
-          {modes.map(mode => (
-            <Menu.Item className={styles.menuItem} key={mode}>
-              <i className={modeIconMap[mode]} />
-              <span>{getModeText(mode)}</span>
-            </Menu.Item>
-          ))}
-        </Menu>
-      }
-      position="top"
-      trigger="click"
-    >
-      <Button
-        className={`${styles.triggerButton}${triggerClassName ? ` ${triggerClassName}` : ""}`}
-        size="sm"
-        variant="ghost"
-      >
-        <i className={`${getDisplayIcon()} ${styles.triggerIcon}`} />
-        {getDisplayText()}
-      </Button>
-    </Dropdown>
+          <i className={`${getDisplayIcon()} ${styles.triggerIcon}`} />
+          {getDisplayText()}
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end" side="top" className={styles.menu}>
+        {modes.map(mode => (
+          <DropdownMenuItem
+            key={mode}
+            className={styles.menuItem}
+            onSelect={() => handleModeChange(mode)}
+          >
+            <i className={modeIconMap[mode]} />
+            <span className="flex-1">{getModeText(mode)}</span>
+            {mode === selectedMode && (
+              <i
+                className="i-lucide-check ml-auto size-4 text-[var(--oomol-primary)]"
+                aria-hidden="true"
+              />
+            )}
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };

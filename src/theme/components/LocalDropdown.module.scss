@@ -1,119 +1,30 @@
 .triggerButton {
   min-width: 116px;
-  font-size: 12px;
-
-  &:global(.arco-btn) {
-    justify-content: center;
-    gap: 8px;
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-border-default) 72%,
-      transparent
-    );
-    background: color-mix(in srgb, var(--oomol-bg-elevated) 96%, white 4%);
-    color: var(--oomol-text-secondary);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.72),
-      0 8px 18px rgba(77, 88, 124, 0.08);
-  }
-
-  &:global(.arco-btn:not(.arco-btn-disabled)):hover {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-primary-border) 72%,
-      transparent
-    );
-    background: color-mix(
-      in srgb,
-      var(--oomol-primary-bg) 68%,
-      var(--oomol-bg-elevated) 32%
-    );
-    color: var(--oomol-primary);
-  }
+  font-size: var(--oomol-font-size-xs);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
 }
 
 .triggerIcon {
   flex: none;
-  font-size: 14px;
+  font-size: var(--oomol-font-size-sm);
+  margin-right: 0.2rem;
 }
 
 .menu {
   min-width: 140px;
-  padding: 6px;
-  border-radius: 16px;
-  border: 1px solid
-    color-mix(in srgb, var(--oomol-border-default) 72%, transparent);
-  background: color-mix(in srgb, var(--oomol-bg-elevated) 96%, white);
-  box-shadow: var(--oomol-shadow-md);
-
-  :global(.arco-menu-inner) {
-    padding: 0;
-  }
-
-  :global(.arco-menu-selected) {
-    color: var(--oomol-primary);
-    background: color-mix(in srgb, var(--oomol-primary) 10%, transparent);
-  }
-
-  :global(.arco-menu-item:hover) {
-    color: var(--oomol-primary);
-    background: color-mix(in srgb, var(--oomol-primary-bg) 76%, transparent);
-  }
-
-  :global(.arco-menu-selected:hover) {
-    color: var(--oomol-primary);
-    background: color-mix(
-      in srgb,
-      var(--oomol-primary-bg-hover) 82%,
-      transparent
-    );
-  }
 }
 
 .menuItem {
-  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  font-size: var(--oomol-body-mono);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
   color: var(--oomol-text-primary);
-}
-
-[data-theme="dark"] {
-  .triggerButton {
-    &:global(.arco-btn) {
-      border-color: color-mix(
-        in srgb,
-        var(--oomol-border-default) 72%,
-        transparent
-      );
-      background: var(--oomol-surface-float);
-      color: color-mix(in srgb, var(--oomol-text-secondary) 92%, white 8%);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
-    }
-
-    &:global(.arco-btn:not(.arco-btn-disabled)):hover {
-      background: color-mix(
-        in srgb,
-        var(--oomol-primary-bg) 60%,
-        var(--oomol-bg-elevated) 40%
-      );
-      border-color: color-mix(
-        in srgb,
-        var(--oomol-primary-border) 72%,
-        transparent
-      );
-      color: color-mix(in srgb, var(--oomol-text-primary) 96%, white 4%);
-    }
-  }
-
-  .menu {
-    border-color: color-mix(
-      in srgb,
-      var(--oomol-border-default) 76%,
-      transparent
-    );
-    background: var(--oomol-surface-float);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.08),
-      var(--oomol-shadow-md);
-  }
+  cursor: pointer;
 }
 
 @media (max-width: 430px) {

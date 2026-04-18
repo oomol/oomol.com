@@ -35,20 +35,26 @@
 }
 
 .title {
-  font-size: 58px;
-  line-height: 58px;
-  font-weight: 800;
+  margin: 0;
+  max-width: 22ch;
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-display-hero);
+  line-height: 1.06;
+  letter-spacing: var(--oomol-tracking-display);
+  font-weight: 600;
   text-align: center;
+  text-wrap: balance;
   color: var(--oomol-text-primary);
 }
 .subTitle {
-  min-height: 30px;
-  font-size: 20px;
-  line-height: 30px;
+  margin: 0;
+  max-width: 42rem;
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
   font-weight: 400;
   text-align: center;
-  vertical-align: middle;
-  @include linearGradientColor;
+  @include flatSecondaryText;
 }
 
 .contactBox {
@@ -87,15 +93,11 @@
   cursor: pointer;
   transition:
     background-color 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+    border-color 0.3s ease;
 
   &:hover {
     background-color: var(--oomol-hover-bg);
-    border-color: var(--oomol-border-color, rgba(255, 255, 255, 0.1));
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: var(--oomol-border-strong);
   }
 }
 
@@ -113,18 +115,18 @@
 }
 
 .contactCardIcon {
-  font-size: 24px;
+  font-size: var(--oomol-font-size-2xl);
   color: var(--oomol-text-primary);
 
   i {
     width: 24px;
     height: 24px;
-    font-size: 24px;
+    font-size: var(--oomol-font-size-2xl);
   }
 }
 
 .contactCardTitle {
-  font-size: 14px;
+  font-size: var(--oomol-font-size-sm);
   font-weight: 600;
   text-align: center;
   color: var(--oomol-text-primary);
@@ -183,7 +185,7 @@
 .sloganIcon {
   width: 32px;
   height: 32px;
-  font-size: 32px;
+  font-size: var(--oomol-font-size-3xl);
   font-weight: 400;
   text-align: center;
   vertical-align: middle;
@@ -191,8 +193,8 @@
 }
 .sloganText {
   max-width: 245px;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: var(--oomol-font-size-base);
+  line-height: var(--oomol-line-height-relaxed);
   font-weight: 400;
   text-align: center;
   vertical-align: middle;
@@ -243,14 +245,17 @@
 }
 
 .repo-title {
-  font-size: 16px;
-  font-weight: 800;
+  font-family: var(--oomol-font-display);
+  font-size: var(--oomol-font-size-base);
+  font-weight: 600;
+  letter-spacing: var(--oomol-tracking-section);
   color: var(--oomol-text-primary);
 }
 
 .repo-description {
-  font-size: 14px;
-  font-weight: 600;
+  font-size: var(--oomol-font-size-sm);
+  font-weight: 400;
+  line-height: var(--oomol-line-height-relaxed);
   color: var(--oomol-text-secondary);
 }
 
@@ -261,7 +266,7 @@
 }
 
 .repo-name {
-  font-size: 14px;
+  font-size: var(--oomol-font-size-sm);
   font-weight: 600;
   color: var(--oomol-text-tertiary);
 }
@@ -279,12 +284,12 @@
 }
 
 .icon {
-  font-size: 16px;
+  font-size: var(--oomol-font-size-base);
   cursor: pointer;
 }
 
 .star-icon {
-  font-size: 16px;
+  font-size: var(--oomol-font-size-base);
   color: var(--oomol-text-primary);
   margin-left: 2px;
 }

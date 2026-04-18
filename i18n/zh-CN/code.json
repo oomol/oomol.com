@@ -230,6 +230,72 @@
   "HOME.FirstScreen.cta.primary": {
     "message": "开始使用 oo-cli"
   },
+  "HOME.FirstScreen.terminal.l1": {
+    "message": "$ bun install -g @oomol-lab/oo-cli"
+  },
+  "HOME.FirstScreen.terminal.l2": {
+    "message": "✔ 已安装 oo-cli"
+  },
+  "HOME.FirstScreen.terminal.l3": {
+    "message": "$ oo login"
+  },
+  "HOME.FirstScreen.terminal.l4": {
+    "message": "✔ 已通过 OOMOL 认证"
+  },
+  "HOME.FirstScreen.terminal.l5": {
+    "message": "$ oo search \"生成二维码\""
+  },
+  "HOME.FirstScreen.flow.aria": {
+    "message": "从 Agent 经 oo-cli 到 Studio 与 Cloud 的集成路径"
+  },
+  "HOME.FirstScreen.flow.agent": {
+    "message": "Agent"
+  },
+  "HOME.FirstScreen.flow.cli": {
+    "message": "oo-cli"
+  },
+  "HOME.FirstScreen.flow.studio": {
+    "message": "Studio"
+  },
+  "HOME.FirstScreen.flow.cloud": {
+    "message": "Cloud"
+  },
+  "HOME.FirstScreen.workflowArchive.title": {
+    "message": "工作流演示"
+  },
+  "HOME.FirstScreen.workflowArchive.lead": {
+    "message": "完整演示视频（原首页主视觉素材），暂置于此便于以后组合。"
+  },
+  "HOME.FirstScreen.copilotBeam.aria": {
+    "message": "各类 SaaS 通过光束汇聚到 OOMOL 统一编排"
+  },
+  "HOME.FirstScreen.copilotBeam.logoAlt": {
+    "message": "悟墨 OOMOL"
+  },
+  "HOME.FirstScreen.copilotBeam.hubName": {
+    "message": "悟墨"
+  },
+  "HOME.FirstScreen.copilotBeam.tagline": {
+    "message": "你的工具聚合与协同副驾"
+  },
+  "HOME.FirstScreen.copilotBeam.satellite.gdrive": {
+    "message": "Google Drive"
+  },
+  "HOME.FirstScreen.copilotBeam.satellite.notion": {
+    "message": "Notion"
+  },
+  "HOME.FirstScreen.copilotBeam.satellite.whatsapp": {
+    "message": "WhatsApp"
+  },
+  "HOME.FirstScreen.copilotBeam.satellite.gdocs": {
+    "message": "Google 文档"
+  },
+  "HOME.FirstScreen.copilotBeam.satellite.zapier": {
+    "message": "Zapier"
+  },
+  "HOME.FirstScreen.copilotBeam.satellite.messenger": {
+    "message": "Messenger"
+  },
   "HOME.ValueProps.localCompute.title": {
     "message": "将本地算力转化为你的私有 AI 云"
   },

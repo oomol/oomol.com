@@ -28,7 +28,10 @@ export default function Support() {
           <Card className={styles.supportCell}>
             <CardHeader className={styles.supportHeader}>
               <div className={styles.title}>
-                <i className="i-bi-github" style={{ fontSize: "20px" }} />
+                <i
+                  className={`i-bi-github ${styles.titleIcon}`}
+                  aria-hidden="true"
+                />
                 <CardTitle className={styles["support-title"]}>
                   Github Support
                 </CardTitle>
@@ -54,8 +57,8 @@ export default function Support() {
             <CardHeader className={styles.supportHeader}>
               <div className={styles.title}>
                 <i
-                  className="i-bi-discord"
-                  style={{ fontSize: "20px", opacity: 0.7 }}
+                  className={`i-bi-discord ${styles.titleIconMuted}`}
+                  aria-hidden="true"
                 />
                 <CardTitle className={styles["support-title"]}>
                   Discord Support
@@ -81,7 +84,10 @@ export default function Support() {
           <Card className={styles.supportCell}>
             <CardHeader className={styles.supportHeader}>
               <div className={styles.title}>
-                <div className="i-codicon-mail" />
+                <i
+                  className={`i-codicon-mail ${styles.titleIcon}`}
+                  aria-hidden="true"
+                />
                 <CardTitle className={styles["support-title"]}>
                   Email Support
                 </CardTitle>

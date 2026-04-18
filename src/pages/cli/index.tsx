@@ -31,7 +31,7 @@ export default function CliPage() {
         <title>{copy.title}</title>
         <meta name="description" content={copy.description} />
       </Head>
-      <main>
+      <main className="oomol-landing-main">
         <CliPageIntro />
       </main>
     </Layout>

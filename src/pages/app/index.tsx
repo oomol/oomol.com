@@ -5,6 +5,7 @@ import type { DocusaurusContext } from "@docusaurus/types";
 import Head from "@docusaurus/Head";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { Button } from "@site/src/components/ui/button";
 import { downloadStable } from "@site/src/lib/utils";
 import cx from "clsx";
 import { Download, Globe, Smartphone } from "lucide-react";
@@ -59,10 +60,21 @@ const VIDEO_BASE_URL = "https://static.oomol.com/assets/homepage";
 const VIDEO_FILES = {
   hero: { zh: "chart-gen-4k-ZH.mp4", en: "chart-gen-4K-en.mp4" },
   startFast: { zh: "use-skills-4K-ZH.mp4", en: "use-skills-4K-en.mp4" },
-  keepEditing: { zh: "chart-edit-4k-ZH.mp4", en: "chart-edit-4K-en.mp4" },
+  /* EN: chart-edit-4K-en.mp4 在 CDN 上当前 404；与 ZH 共用可用片源，避免工作流区块黑屏 */
+  keepEditing: { zh: "chart-edit-4k-ZH.mp4", en: "chart-edit-4k-ZH.mp4" },
   trustSources: { zh: "chat-source-4K-ZH.mp4", en: "chat-source-4K-en.mp4" },
   outputs: { zh: "epub-translate-4K-ZH.mp4", en: "epub-translator-4K-en.mp4" },
 } as const;
+
+/** 与导出素材一致；若源文件改版请同步更新（用于 /app 尺寸标注）。 */
+const APP_MEDIA_PIXELS = {
+  video4k: { width: 3840, height: 2160 },
+  nativeWorkspacePng: { width: 2470, height: 1964 },
+} as const;
+
+function formatMediaPixelDimensions(width: number, height: number): string {
+  return `${width} × ${height}`;
+}
 
 const APP_DESKTOP_DOWNLOAD_URLS = {
   macos: "https://app-downloads.oomol.com/oomol-ai/darwin/arm64",
@@ -668,7 +680,10 @@ export default function AppPage() {
         <title>{copy.page.title}</title>
         <meta name="description" content={copy.page.description} />
       </Head>
-      <main id="top" className={styles.page}>
+      <main
+        id="top"
+        className={cx(styles.page, "oomol-landing-main", "oomol-app-page")}
+      >
         <section className={styles.hero}>
           <div className={styles.heroHeader}>
             <div className={styles.heroCopy}>
@@ -676,78 +691,78 @@ export default function AppPage() {
                 <span className={styles.heroTitleLine}>
                   {copy.hero.titleLine1}
                 </span>
-                <span
-                  className={cx(styles.heroTitleLine, styles.heroTitleAccent)}
-                >
+                <span className={styles.heroTitleLine}>
                   {copy.hero.titleLine2}
                 </span>
               </h1>
               <p className={styles.heroLead}>{copy.hero.lead}</p>
 
               <div className={styles.heroActions}>
-                <a
-                  className={cx(
-                    styles.heroActionButton,
-                    styles.heroActionButtonPrimary
-                  )}
-                  href={appWebHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Globe className={styles.heroActionIcon} aria-hidden="true" />
-                  <span>{copy.actions.openWeb}</span>
-                </a>
-                <a
-                  className={styles.heroActionButton}
-                  href={desktopDownloadHref || undefined}
-                  aria-disabled={!desktopDownloadHref}
-                  onClick={event => {
-                    if (!desktopDownloadHref) {
-                      event.preventDefault();
-                      return;
-                    }
+                <Button asChild size="lg">
+                  <a
+                    href={appWebHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Globe aria-hidden="true" />
+                    <span>{copy.actions.openWeb}</span>
+                  </a>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <a
+                    href={desktopDownloadHref || undefined}
+                    aria-disabled={!desktopDownloadHref}
+                    onClick={event => {
+                      if (!desktopDownloadHref) {
+                        event.preventDefault();
+                        return;
+                      }
 
-                    downloadStable(event, desktopDownloadHref);
-                  }}
-                >
-                  <Download
-                    className={styles.heroActionIcon}
-                    aria-hidden="true"
-                  />
-                  <span>{copy.actions.downloadDesktop}</span>
-                </a>
-                <a
-                  className={styles.heroActionButton}
-                  href={appStoreHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Smartphone
-                    className={styles.heroActionIcon}
-                    aria-hidden="true"
-                  />
-                  <span>{copy.actions.ios}</span>
-                </a>
+                      downloadStable(event, desktopDownloadHref);
+                    }}
+                  >
+                    <Download aria-hidden="true" />
+                    <span>{copy.actions.downloadDesktop}</span>
+                  </a>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <a
+                    href={appStoreHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Smartphone aria-hidden="true" />
+                    <span>{copy.actions.ios}</span>
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
 
           <div className={styles.heroVisual}>
             <div className={styles.heroVisualInner}>
-              <div className={styles.heroFrame}>
-                <AutoPlayVideo
-                  className={styles.heroScreenshot}
-                  src={getLocalizedVideoSrc(VIDEO_FILES.hero, isZh)}
-                  label={copy.hero.productScreenshotAlt}
-                />
-              </div>
+              <figure className={styles.mediaFigure}>
+                <div className={styles.heroFrame}>
+                  <AutoPlayVideo
+                    className={styles.heroScreenshot}
+                    src={getLocalizedVideoSrc(VIDEO_FILES.hero, isZh)}
+                    label={copy.hero.productScreenshotAlt}
+                  />
+                </div>
+                <figcaption className={styles.mediaDimension}>
+                  {formatMediaPixelDimensions(
+                    APP_MEDIA_PIXELS.video4k.width,
+                    APP_MEDIA_PIXELS.video4k.height
+                  )}
+                </figcaption>
+              </figure>
             </div>
           </div>
         </section>
 
         <section
           id="models"
-          className={cx(styles.section, styles.modelsSection)}
+          className={cx(styles.section, styles.sectionMuted)}
         >
           <div className={cx(styles.sectionIntro, styles.modelsIntro)}>
             <h2>{copy.models.title}</h2>
@@ -773,27 +788,48 @@ export default function AppPage() {
               </article>
             ))}
           </div>
+        </section>
 
+        <section
+          id="models-demo"
+          className={styles.section}
+          aria-labelledby="models-demo-heading"
+        >
           <div className={styles.modelDemo}>
             <div className={styles.modelDemoCopy}>
               <p className={styles.modelDemoEyebrow}>
                 {copy.models.demo.eyebrow}
               </p>
-              <h3>{copy.models.demo.title}</h3>
+              <h2 id="models-demo-heading" className={styles.modelDemoTitle}>
+                {copy.models.demo.title}
+              </h2>
               <p>{copy.models.demo.description}</p>
             </div>
 
-            <div className={styles.modelDemoFrame}>
-              <img
-                src={nativeWorkspacePng}
-                alt={copy.models.demo.imageAlt}
-                className={styles.modelDemoImage}
-              />
-            </div>
+            <figure
+              className={cx(styles.mediaFigure, styles.modelDemoMediaFigure)}
+            >
+              <div className={styles.modelDemoFrame}>
+                <img
+                  src={nativeWorkspacePng}
+                  alt={copy.models.demo.imageAlt}
+                  className={styles.modelDemoImage}
+                />
+              </div>
+              <figcaption className={styles.mediaDimension}>
+                {formatMediaPixelDimensions(
+                  APP_MEDIA_PIXELS.nativeWorkspacePng.width,
+                  APP_MEDIA_PIXELS.nativeWorkspacePng.height
+                )}
+              </figcaption>
+            </figure>
           </div>
         </section>
 
-        <section id="problems" className={styles.section}>
+        <section
+          id="problems"
+          className={cx(styles.section, styles.sectionMuted)}
+        >
           <div className={cx(styles.sectionIntro, styles.problemsIntro)}>
             <h2 className={styles.problemsTitle}>
               {renderHangingTitleLine(
@@ -817,19 +853,24 @@ export default function AppPage() {
           </div>
         </section>
 
-        <section
-          id="workspace"
-          className={cx(styles.section, styles.workspaceSection)}
-        >
+        <section id="workspace" className={styles.section}>
           <div className={styles.solutionList}>
             {workflowSteps.map(step => (
               <article key={step.title} className={styles.solutionItem}>
                 <div className={styles.solutionMedia}>
-                  <AutoPlayVideo
-                    className={styles.outputImage}
-                    src={step.videoSrc}
-                    label={step.alt}
-                  />
+                  <figure className={styles.mediaFigure}>
+                    <AutoPlayVideo
+                      className={styles.outputImage}
+                      src={step.videoSrc}
+                      label={step.alt}
+                    />
+                    <figcaption className={styles.mediaDimension}>
+                      {formatMediaPixelDimensions(
+                        APP_MEDIA_PIXELS.video4k.width,
+                        APP_MEDIA_PIXELS.video4k.height
+                      )}
+                    </figcaption>
+                  </figure>
                 </div>
 
                 <div className={styles.solutionText}>
@@ -849,20 +890,27 @@ export default function AppPage() {
           </div>
 
           <div className={styles.outputsShowcase}>
-            <div className={styles.outputsShowcaseFrame}>
-              <AutoPlayVideo
-                className={styles.outputsShowcaseImage}
-                src={getLocalizedVideoSrc(VIDEO_FILES.outputs, isZh)}
-                label={copy.outputs.imageAlt}
-              />
-            </div>
+            <figure
+              className={cx(styles.mediaFigure, styles.outputsShowcaseFigure)}
+            >
+              <div className={styles.outputsShowcaseFrame}>
+                <AutoPlayVideo
+                  className={styles.outputsShowcaseImage}
+                  src={getLocalizedVideoSrc(VIDEO_FILES.outputs, isZh)}
+                  label={copy.outputs.imageAlt}
+                />
+              </div>
+              <figcaption className={styles.mediaDimension}>
+                {formatMediaPixelDimensions(
+                  APP_MEDIA_PIXELS.video4k.width,
+                  APP_MEDIA_PIXELS.video4k.height
+                )}
+              </figcaption>
+            </figure>
           </div>
         </section>
 
-        <section
-          id="pricing"
-          className={cx(styles.section, styles.pricingSection)}
-        >
+        <section id="pricing" className={cx(styles.section, styles.sectionMuted)}>
           <div className={cx(styles.sectionIntro, styles.pricingIntro)}>
             <h2 className={styles.hangingTitle}>
               {renderHangingTitleLine(
@@ -915,17 +963,19 @@ export default function AppPage() {
                   </ul>
                 </div>
 
-                <a
-                  className={cx(
-                    styles.cardAction,
-                    pack.featured && styles.cardActionPrimary
-                  )}
-                  href={rechargeHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Button
+                  asChild
+                  variant={pack.featured ? "default" : "outline"}
+                  className={styles.cardAction}
                 >
-                  <span>{pack.cta}</span>
-                </a>
+                  <a
+                    href={rechargeHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span>{pack.cta}</span>
+                  </a>
+                </Button>
               </article>
             ))}
           </div>
@@ -933,7 +983,11 @@ export default function AppPage() {
 
         <section
           id="downloads"
-          className={cx(styles.section, styles.entrySection)}
+          className={cx(
+            styles.section,
+            styles.sectionMuted,
+            styles.sectionFlushBottom
+          )}
         >
           <div className={cx(styles.sectionIntro, styles.downloadsIntro)}>
             <h2>{copy.downloads.title}</h2>
@@ -947,29 +1001,31 @@ export default function AppPage() {
                   <strong>{item.subtitle}</strong>
                 </div>
                 <p>{item.description}</p>
-                <a
-                  className={cx(
-                    styles.cardAction,
-                    item.kind === "web" && styles.cardActionPrimary
-                  )}
-                  href={item.href}
-                  onClick={
-                    item.kind === "desktop"
-                      ? event => {
-                          if (!item.href) {
-                            event.preventDefault();
-                            return;
-                          }
-
-                          downloadStable(event, item.href);
-                        }
-                      : undefined
-                  }
-                  target={item.external ? "_blank" : undefined}
-                  rel={item.external ? "noopener noreferrer" : undefined}
+                <Button
+                  asChild
+                  variant={item.kind === "web" ? "default" : "outline"}
+                  className={styles.cardAction}
                 >
-                  <span>{item.action}</span>
-                </a>
+                  <a
+                    href={item.href}
+                    onClick={
+                      item.kind === "desktop"
+                        ? event => {
+                            if (!item.href) {
+                              event.preventDefault();
+                              return;
+                            }
+
+                            downloadStable(event, item.href);
+                          }
+                        : undefined
+                    }
+                    target={item.external ? "_blank" : undefined}
+                    rel={item.external ? "noopener noreferrer" : undefined}
+                  >
+                    <span>{item.action}</span>
+                  </a>
+                </Button>
               </article>
             ))}
           </div>
