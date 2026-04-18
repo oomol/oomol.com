@@ -347,9 +347,15 @@ const CookieConsentProviderInner: React.FC = () => {
             <h3 className="m-0 text-oomol-lg font-semibold leading-tight tracking-[-0.02em] text-[var(--oomol-text-primary)] [font-family:var(--oomol-font-display)]">
               {t.title}
             </h3>
-            <p className="m-0 text-oomol-mono leading-relaxed text-[var(--oomol-text-secondary)]">
-              {t.message}
-            </p>
+            <div className="flex flex-col gap-2">
+              <p className="m-0 text-oomol-mono leading-relaxed text-[var(--oomol-text-secondary)]">
+                {t.message}
+              </p>
+              <div
+                aria-hidden
+                className="h-px w-full shrink-0 bg-[var(--oomol-divider)]"
+              />
+            </div>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <a
                 className="order-2 inline-flex max-w-full shrink-0 text-oomol-xs font-medium text-[var(--oomol-text-tertiary)] underline-offset-[3px] transition-colors hover:text-[var(--oomol-text-primary)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--oomol-bg-base)] sm:order-1"
