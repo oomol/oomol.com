@@ -834,6 +834,7 @@ video.outputsShowcaseImage {
 }
 
 .cardAction {
+  width: 100%;
   min-height: 40px;
   margin-top: auto;
   padding: 0 14px;
@@ -962,6 +963,10 @@ video.outputsShowcaseImage {
   .painCard {
     min-height: 0;
   }
+
+  .downloadCard p {
+    min-height: 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -994,6 +999,9 @@ video.outputsShowcaseImage {
   .heroActions {
     flex-direction: column;
     gap: 10px;
+    width: 100%;
+    max-width: 22rem;
+    margin-inline: auto;
   }
 
   .heroActions > * {
@@ -1011,5 +1019,50 @@ video.outputsShowcaseImage {
   .heroFrame,
   video.heroScreenshot {
     border-radius: var(--app-radius);
+  }
+
+  .painGrid,
+  .modelFeatureGrid,
+  .pricingGrid,
+  .downloadGrid,
+  .solutionList {
+    gap: 16px;
+  }
+
+  .painCard,
+  .modelFeatureCard,
+  .pricingCard,
+  .downloadCard {
+    padding: 18px 16px;
+  }
+
+  .planPriceRow {
+    flex-wrap: wrap;
+    row-gap: 2px;
+  }
+
+  .planPriceRow strong {
+    font-size: var(--oomol-display-section);
+  }
+
+  .planPriceRow span {
+    font-size: var(--oomol-body-sm);
+  }
+
+  .pricingCard {
+    gap: 18px;
+  }
+
+  .pricingFeatureBlock {
+    gap: 10px;
+    padding-top: 14px;
+  }
+
+  .pricingFeatureList {
+    gap: 10px;
+  }
+
+  .downloadCard p {
+    min-height: 0;
   }
 }

@@ -4,9 +4,11 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 64px;
-  margin-bottom: 240px;
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: clamp(4rem, 12vw, 12rem);
   color: var(--oomol-text-primary);
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .supportTitle {
@@ -38,7 +40,9 @@
 }
 
 .supportCell {
-  width: 320px;
+  width: min(100%, 320px);
+  max-width: 100%;
+  flex: 1 1 320px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -88,11 +92,44 @@
 }
 
 .text {
-  margin-bottom: 42px;
+  margin-bottom: clamp(1.5rem, 4vw, 2.625rem);
   font-size: var(--oomol-font-size-sm);
   line-height: var(--oomol-line-height-relaxed);
   letter-spacing: var(--oomol-tracking-body);
   color: var(--oomol-text-secondary);
+}
+
+.supportAction {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .supportBox {
+    margin-top: 2rem;
+    margin-bottom: 4.5rem;
+    padding: 0 16px;
+  }
+
+  .supportTitle {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 100%;
+  }
+
+  .supportCellBox {
+    gap: 16px;
+    padding: 0;
+  }
+
+  .supportCell {
+    width: 100%;
+    min-height: 0;
+  }
+
+  .text {
+    margin-bottom: 1.5rem;
+  }
 }
 
 [data-theme="dark"] {

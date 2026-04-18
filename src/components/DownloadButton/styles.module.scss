@@ -139,3 +139,15 @@
     color: var(--oomol-text-primary);
   }
 }
+
+@media (max-width: 430px) {
+  .download {
+    white-space: normal;
+
+    :global(a),
+    :global(button) {
+      text-align: center;
+      line-height: 1.35;
+    }
+  }
+}

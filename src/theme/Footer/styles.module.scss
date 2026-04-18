@@ -250,6 +250,11 @@
     justify-content: flex-start;
   }
 
+  .rightControls > * {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
   .bottomInfo a {
     display: block;
     margin-left: 0;

@@ -306,6 +306,17 @@
   }
 }
 
+@media (max-width: 1100px) {
+  .downloads {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .downloads > * {
+    width: 100%;
+  }
+}
+
 /* ── Mobile ────────────────────────────────────────────── */
 
 @media (max-width: 768px) {
@@ -343,9 +354,30 @@
     max-width: 100%;
   }
 
+  .sectionActions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .sectionActions > * {
+    width: 100%;
+  }
+
   .card {
     padding: 1.15rem 1.1rem 1.2rem;
     min-height: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroInner,
+  .container {
+    width: min(100%, calc(100% - 32px));
+  }
+
+  .cardBadge {
+    top: 10px;
+    right: 10px;
   }
 }
 

@@ -166,4 +166,15 @@
     font-size: var(--oomol-body-base);
     line-height: 1.6;
   }
+
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 20rem;
+  }
+
+  .actions > * {
+    width: 100%;
+  }
 }

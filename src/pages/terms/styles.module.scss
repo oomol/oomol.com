@@ -4,8 +4,19 @@
   justify-content: center;
   margin-top: 32px;
   margin-bottom: 32px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .box {
-  width: 1200px;
+  width: min(1200px, 100%);
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    padding: 0 16px;
+  }
 }

@@ -394,6 +394,21 @@
     padding: 0 18px;
   }
 
+  .title {
+    max-width: 100%;
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 22rem;
+  }
+
+  .actions > * {
+    width: 100%;
+  }
+
   .panelHeader {
     flex-direction: column;
   }

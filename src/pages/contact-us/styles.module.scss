@@ -6,6 +6,8 @@
   align-items: center;
   justify-content: center;
   padding: 0 16px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .headBox {
@@ -73,11 +75,20 @@
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  padding: 0 16px;
+  width: 100%;
+  padding: 0;
   justify-content: center;
 }
 
+.contactList > * {
+  flex: 1 1 160px;
+  max-width: 180px;
+}
+
 .cardLink {
+  display: flex;
+  flex: 1 1 160px;
+  max-width: 180px;
   text-decoration: none;
   color: inherit;
 
@@ -87,10 +98,12 @@
 }
 
 .contactCard {
-  min-width: 160px;
+  min-width: 0;
+  width: 100%;
   background-color: var(--oomol-bg-elevated);
   border: 1px solid transparent;
   cursor: pointer;
+  box-sizing: border-box;
   transition:
     background-color 0.3s ease,
     border-color 0.3s ease;
@@ -138,9 +151,9 @@
 }
 
 .qrcode {
-  max-width: none;
-  width: 200px;
-  height: 200px;
+  max-width: min(200px, calc(100vw - 64px));
+  width: min(200px, calc(100vw - 64px));
+  height: min(200px, calc(100vw - 64px));
 }
 
 .popoverCentered {
@@ -160,6 +173,7 @@
 }
 
 .sloganBox {
+  width: 100%;
   max-width: 1280px;
   min-height: 130px;
   display: flex;
@@ -175,10 +189,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 305px;
+  width: min(100%, 305px);
+  max-width: 305px;
+  flex: 1 1 280px;
   min-height: 130px;
   border-radius: 20px;
   gap: 14px;
+  padding: 24px 20px;
+  box-sizing: border-box;
   text-align: center;
   background-color: var(--oomol-bg-elevated);
 }
@@ -202,23 +220,27 @@
 }
 
 .repositories {
+  width: 100%;
   max-width: 1280px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
-  padding-top: 160px;
-  padding-bottom: 80px;
+  padding-top: clamp(4.5rem, 12vw, 10rem);
+  padding-bottom: clamp(3.5rem, 8vw, 5rem);
 }
 
 .repository {
-  width: 410px;
-  height: 208px;
+  width: min(100%, 410px);
+  max-width: 410px;
+  min-height: 208px;
+  flex: 1 1 320px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border-radius: 20px;
   padding: 24px;
+  box-sizing: border-box;
   background-color: var(--oomol-bg-elevated);
   cursor: pointer;
 
@@ -263,12 +285,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .repo-name {
   font-size: var(--oomol-font-size-sm);
   font-weight: 600;
   color: var(--oomol-text-tertiary);
+  overflow-wrap: anywhere;
 }
 
 .repo-status {
@@ -292,4 +317,85 @@
   font-size: var(--oomol-font-size-base);
   color: var(--oomol-text-primary);
   margin-left: 2px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .headBox {
+    min-height: 0;
+    padding: 56px 0;
+    gap: 28px;
+  }
+
+  .titleBox {
+    min-height: 0;
+    max-width: 100%;
+  }
+
+  .contactBox {
+    max-width: 100%;
+    min-height: 0;
+    gap: 16px;
+  }
+
+  .contactList {
+    gap: 12px;
+  }
+
+  .contactList > *,
+  .cardLink {
+    flex-basis: calc(50% - 6px);
+    max-width: calc(50% - 6px);
+  }
+
+  .contactCardHeader {
+    padding: 20px 16px;
+  }
+
+  .sloganBox {
+    padding: 48px 0 0;
+    gap: 16px;
+  }
+
+  .slogan {
+    max-width: 100%;
+  }
+
+  .repositories {
+    gap: 16px;
+    padding-top: 64px;
+    padding-bottom: 56px;
+  }
+
+  .repository {
+    flex-basis: 100%;
+    max-width: 100%;
+    min-height: 0;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactList > *,
+  .cardLink {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  .qrcode {
+    max-width: min(180px, calc(100vw - 56px));
+    width: min(180px, calc(100vw - 56px));
+    height: min(180px, calc(100vw - 56px));
+  }
+
+  .sloganBox {
+    padding-top: 40px;
+  }
+
+  .slogan {
+    flex-basis: 100%;
+  }
 }
