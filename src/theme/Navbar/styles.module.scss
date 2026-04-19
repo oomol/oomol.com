@@ -582,8 +582,9 @@
   .navbar {
     height: 64px;
     display: flex;
-    background: color-mix(in srgb, var(--oomol-bg-base) 90%, transparent);
-    backdrop-filter: blur(18px) saturate(128%);
+    /* Solid-tint bar instead of backdrop-filter: resize drags re-sample the full
+       navbar width every frame; blur + sticky is a common jank source (see custom.scss). */
+    background: color-mix(in srgb, var(--oomol-bg-base) 97%, transparent);
     border-bottom: 1px solid var(--oomol-divider);
 
     // TODO: Disable the new navbar design for now,
@@ -609,8 +610,7 @@
 
 @media (max-width: 996px) {
   .navbar {
-    backdrop-filter: blur(10px) saturate(115%);
-    background: color-mix(in srgb, var(--oomol-bg-base) 92%, transparent);
+    background: color-mix(in srgb, var(--oomol-bg-base) 97%, transparent);
     border-bottom: 1px solid var(--oomol-divider);
   }
 

@@ -204,6 +204,7 @@
   place-items: center;
   background: var(--oomol-bg-spotlight);
   min-height: 16rem;
+  contain: layout paint;
 }
 
 .videoCardVideo {

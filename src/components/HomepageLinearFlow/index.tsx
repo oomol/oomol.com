@@ -10,7 +10,7 @@ import HomepageGuiEntry from "@site/src/components/HomepageGuiEntry";
 import { SiteCta } from "@site/src/components/SiteCta";
 import { Button } from "@site/src/components/ui/button";
 import { clsx } from "clsx";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 const homepageMediaUrls = {
   cli: "https://static.oomol.com/assets/homepage/oomol-oo-cli-en.webm",
@@ -65,17 +65,65 @@ type ImageCardProps = {
 };
 
 function VideoCard({ title, note, src }: VideoCardProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) {
+      return;
+    }
+
+    let isInView = false;
+
+    const syncPlayback = async () => {
+      if (!isInView || document.visibilityState !== "visible") {
+        video.pause();
+        return;
+      }
+
+      try {
+        await video.play();
+      } catch {
+        // Ignore autoplay rejections on restrictive browsers.
+      }
+    };
+
+    const observer = new IntersectionObserver(
+      entries => {
+        const entry = entries[0];
+        isInView = entry?.isIntersecting ?? false;
+        void syncPlayback();
+      },
+      {
+        rootMargin: "240px 0px",
+        threshold: 0.01,
+      }
+    );
+
+    observer.observe(video);
+    const onVisibilityChange = () => {
+      void syncPlayback();
+    };
+    document.addEventListener("visibilitychange", onVisibilityChange);
+
+    return () => {
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+      video.pause();
+    };
+  }, []);
+
   return (
     <div className={styles.videoCard}>
       <div className={styles.videoCardMedia}>
         <video
+          ref={videoRef}
           className={styles.videoCardVideo}
-          autoPlay
           loop
           muted
           controls
           playsInline
-          preload="metadata"
+          preload="none"
           aria-label={title}
         >
           <source src={src} type="video/webm" />
@@ -93,7 +141,13 @@ function ImageCard({ title, note, src }: ImageCardProps) {
   return (
     <div className={styles.videoCard}>
       <div className={styles.imageCardMedia}>
-        <img className={styles.imageCardImage} src={src} alt={title} />
+        <img
+          className={styles.imageCardImage}
+          src={src}
+          alt={title}
+          loading="lazy"
+          decoding="async"
+        />
       </div>
       <div className={styles.videoCardMeta}>
         <h3 className={styles.videoCardTitle}>{title}</h3>
