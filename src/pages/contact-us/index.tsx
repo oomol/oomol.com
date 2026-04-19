@@ -4,7 +4,6 @@ import type { DocusaurusContext } from "@docusaurus/types";
 
 import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { Popover } from "@site/src/components/Popover";
@@ -134,8 +133,8 @@ export default function ContactUsPage() {
     string,
     RepoStats
   > | null>(null);
-  const qrcodeUrl = useBaseUrl("/img/qrcode@3x.png");
-  const repositoryIconUrl = useBaseUrl("/img/pages/community/repository.png");
+  const qrcodeUrl = "/img/qrcode@3x.png";
+  const repositoryIconUrl = "/img/pages/community/repository.png";
 
   useEffect(() => {
     const controller = new AbortController();

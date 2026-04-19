@@ -8,7 +8,7 @@ import { Button } from "@site/src/components/ui/button";
 import React from "react";
 
 export default function HomepageFirstScreen() {
-  const studioDownloadsHref = useBaseUrl("/downloads#studio-downloads");
+  const studioDownloadsHref = useBaseUrl("/downloads?section=studio-downloads");
 
   return (
     <section className={styles.section}>

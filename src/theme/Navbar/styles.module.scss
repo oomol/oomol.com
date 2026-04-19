@@ -614,8 +614,52 @@
     border-bottom: 1px solid var(--oomol-divider);
   }
 
+  .productMenuWrapper {
+    display: none;
+  }
+
+  .itemsRight {
+    gap: 0.5rem;
+    margin-left: auto;
+  }
+
   .actions {
     gap: 0.55rem;
   }
+}
 
+@media (max-width: 640px) {
+  .brand {
+    margin-right: 0.5rem;
+  }
+
+  .brand img {
+    height: 28px;
+    width: auto;
+  }
+
+  .itemsRight {
+    gap: 0.4rem;
+  }
+
+  .loginButton {
+    padding-inline: 0.85rem;
+  }
+
+  :global(.navbar__toggle) {
+    padding-left: 8px;
+  }
+}
+
+@media (max-width: 430px) {
+  .loginButton {
+    min-width: 42px;
+    padding-inline: 0.8rem;
+    font-size: 0;
+  }
+
+  .loginButton i {
+    margin: 0;
+    font-size: var(--oomol-body-base);
+  }
 }

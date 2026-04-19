@@ -13,7 +13,7 @@ import { Button } from "@site/src/components/ui/button";
 import { DownloadUrl } from "@site/src/download_url";
 import { downloadStable } from "@site/src/lib/utils";
 import Layout from "@theme/Layout";
-import React from "react";
+import React, { useEffect } from "react";
 
 const OOMOL_AI_DOWNLOAD_URLS = {
   web: "https://app.oomol.com",
@@ -122,7 +122,43 @@ export default function Downloads() {
         },
       };
   const cliGuideUrl = useBaseUrl("/docs/oo-cli");
-  const studioDownloadsUrl = useBaseUrl("/downloads#studio-downloads");
+  const studioDownloadsUrl = useBaseUrl("/downloads?section=studio-downloads");
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const currentUrl = new URL(window.location.href);
+    const sectionId =
+      currentUrl.searchParams.get("section") ??
+      (currentUrl.hash ? currentUrl.hash.slice(1) : "");
+
+    if (!sectionId) {
+      return;
+    }
+
+    const scrollToSection = () => {
+      const target = document.getElementById(sectionId);
+      if (!target) {
+        return false;
+      }
+
+      target.scrollIntoView({ block: "start" });
+      return true;
+    };
+
+    if (scrollToSection()) {
+      return;
+    }
+
+    const rafId = window.requestAnimationFrame(scrollToSection);
+    const timeoutId = window.setTimeout(scrollToSection, 120);
+    return () => {
+      window.cancelAnimationFrame(rafId);
+      window.clearTimeout(timeoutId);
+    };
+  }, []);
 
   return (
     <Layout>

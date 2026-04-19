@@ -722,6 +722,7 @@
   .planBox {
     grid-template-columns: 1fr;
     padding-top: 8px;
+    min-height: 0;
   }
 
   .planCard {
@@ -868,6 +869,7 @@
 
   .planCard {
     padding: 22px 18px 18px;
+    grid-template-rows: auto auto auto;
   }
 
   .badge {
@@ -901,6 +903,7 @@
   }
 
   .planActionArea {
+    min-height: 0;
     margin-bottom: 18px;
   }
 
@@ -971,8 +974,45 @@
     width: min(100%, calc(100% - 32px));
   }
 
+  .heroSection {
+    padding: 2.4rem 0 2.1rem;
+  }
+
   .planCard {
     padding: 18px 14px 14px;
+  }
+
+  .planHeader {
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .planName {
+    font-size: var(--oomol-font-size-lg);
+  }
+
+  .planPrice .price {
+    font-size: clamp(2.2rem, 11vw, 2.8rem);
+  }
+
+  .planDescription {
+    max-width: 100%;
+    line-height: 1.56;
+  }
+
+  .planHighlights {
+    gap: 8px;
+  }
+
+  .planHighlight {
+    min-height: 24px;
+    padding: 2px 7px;
+  }
+
+  .featureItem {
+    gap: 8px;
+    font-size: var(--oomol-body-sm);
+    line-height: 1.5;
   }
 
   .priceTablesSection {

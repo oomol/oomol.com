@@ -142,6 +142,27 @@
   }
 }
 
+@media (max-width: 480px) {
+  .cliMethodCard {
+    gap: 0.65rem;
+    padding: 0.95rem;
+  }
+
+  .cliMethodHeader {
+    gap: 0.2rem;
+  }
+
+  .cliSnippetBox {
+    gap: 0.45rem;
+    padding: 0.7rem 0.75rem;
+  }
+
+  .cliCopyButton {
+    min-height: 30px;
+    padding: 0 0.7rem;
+  }
+}
+
 :global(html[data-theme="dark"]) .cliCopyButton {
   background: var(--oomol-bg-elevated);
   border-color: var(--oomol-border-default);

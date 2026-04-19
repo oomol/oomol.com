@@ -72,23 +72,22 @@
 }
 
 .contactList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 18px;
   width: 100%;
   padding: 0;
-  justify-content: center;
 }
 
 .contactList > * {
-  flex: 1 1 160px;
-  max-width: 180px;
+  min-width: 0;
+  max-width: none;
 }
 
 .cardLink {
   display: flex;
-  flex: 1 1 160px;
-  max-width: 180px;
+  min-width: 0;
+  max-width: none;
   text-decoration: none;
   color: inherit;
 
@@ -101,7 +100,7 @@
   min-width: 0;
   width: 100%;
   background-color: var(--oomol-bg-elevated);
-  border: 1px solid transparent;
+  border: 1px solid var(--oomol-divider);
   cursor: pointer;
   box-sizing: border-box;
   transition:
@@ -124,7 +123,8 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  padding: 24px 20px;
+  min-height: 112px;
+  padding: 22px 18px;
 }
 
 .contactCardIcon {
@@ -342,17 +342,13 @@
   }
 
   .contactList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
 
-  .contactList > *,
-  .cardLink {
-    flex-basis: calc(50% - 6px);
-    max-width: calc(50% - 6px);
-  }
-
   .contactCardHeader {
-    padding: 20px 16px;
+    min-height: 104px;
+    padding: 18px 14px;
   }
 
   .sloganBox {
@@ -379,10 +375,38 @@
 }
 
 @media (max-width: 480px) {
-  .contactList > *,
-  .cardLink {
-    flex-basis: 100%;
-    max-width: 100%;
+  .headBox {
+    padding: 40px 0;
+    gap: 22px;
+  }
+
+  .title {
+    font-size: clamp(2.3rem, 12vw, 3.1rem);
+    line-height: 1.08;
+  }
+
+  .subTitle {
+    font-size: var(--oomol-body-base);
+    line-height: 1.58;
+  }
+
+  .contactList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .contactCardHeader {
+    min-height: 96px;
+    gap: 10px;
+    padding: 16px 12px;
+  }
+
+  .contactCardIcon {
+    font-size: var(--oomol-font-size-xl);
+  }
+
+  .contactCardTitle {
+    font-size: var(--oomol-font-size-xs);
   }
 
   .qrcode {
@@ -392,10 +416,53 @@
   }
 
   .sloganBox {
-    padding-top: 40px;
+    padding-top: 36px;
+    gap: 12px;
   }
 
   .slogan {
     flex-basis: 100%;
+    min-height: 112px;
+    gap: 10px;
+    padding: 18px 16px;
+  }
+
+  .sloganText {
+    font-size: var(--oomol-body-sm);
+    line-height: 1.5;
+  }
+
+  .repositories {
+    gap: 12px;
+    padding-top: 44px;
+    padding-bottom: 40px;
+  }
+
+  .repository {
+    padding: 16px;
+  }
+
+  .repo-header {
+    align-items: flex-start;
+  }
+
+  .repo-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .repo-description {
+    line-height: 1.56;
+  }
+
+  .repo-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .repo-status {
+    justify-content: space-between;
+    width: 100%;
   }
 }

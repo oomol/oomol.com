@@ -125,6 +125,32 @@
   }
 }
 
+@media (max-width: 480px) {
+  .section {
+    padding: 2.6rem 0 2.2rem;
+  }
+
+  .inner {
+    width: min(100%, calc(100% - 32px));
+    gap: 0.9rem;
+    padding: 1.5rem 1rem 1.65rem;
+  }
+
+  .title {
+    font-size: var(--oomol-display-card);
+    line-height: 1.14;
+  }
+
+  .description {
+    line-height: 1.56;
+  }
+
+  .actions {
+    max-width: 100%;
+    padding-top: 0.5rem;
+  }
+}
+
 [data-theme="dark"] {
   .section {
     background: var(--oomol-bg-container);
