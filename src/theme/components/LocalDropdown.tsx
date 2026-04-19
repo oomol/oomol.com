@@ -6,7 +6,7 @@ import BrowserOnly from "@docusaurus/BrowserOnly";
 import { useLocation } from "@docusaurus/router";
 import { useAlternatePageUtils } from "@docusaurus/theme-common/internal";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { Button } from "@site/src/components/ui/button";
+import { Button, type ButtonProps } from "@site/src/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,6 +15,7 @@ import {
 } from "@site/src/components/ui/dropdown-menu";
 
 export interface LocalDropdownProps {
+  buttonVariant?: ButtonProps["variant"];
   queryString?: string;
   triggerClassName?: string;
 }
@@ -29,6 +30,7 @@ const formateLocale = (locale: string) => {
 };
 
 export const LocalDropdown = ({
+  buttonVariant = "ghost",
   queryString = "",
   triggerClassName,
 }: LocalDropdownProps) => {
@@ -71,7 +73,7 @@ export const LocalDropdown = ({
             <Button
               className={`${styles.triggerButton}${triggerClassName ? ` ${triggerClassName}` : ""}`}
               size="sm"
-              variant="ghost"
+              variant={buttonVariant}
             >
               <i className={`i-codicon-globe ${styles.triggerIcon}`} />
               {formateLocale(currentLocale)}

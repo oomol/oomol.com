@@ -226,26 +226,22 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 8px;
+  gap: 10px;
   flex-shrink: 0;
+  row-gap: 10px;
 }
 
 @media (max-width: 640px) {
   .rightControls {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+    align-items: flex-start;
+    flex-wrap: wrap;
     width: 100%;
-    justify-content: stretch;
+    justify-content: flex-start;
   }
 
   .rightControls > * {
-    width: 100%;
-    min-width: 0;
-  }
-
-  .rightControls > :nth-child(2) {
-    grid-column: 1 / -1;
+    flex: 0 1 auto;
+    max-width: 100%;
   }
 }
 
@@ -271,43 +267,14 @@
   .bottomInfo {
     font-size: var(--oomol-body-sm);
     line-height: 1.58;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
   }
 
   .bottomInfo a {
     display: inline-flex;
     margin-left: 0;
-    margin-top: 0.35rem;
-  }
-}
-
-@media (max-width: 430px) {
-  .bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-  }
-
-  .bottomInfo {
-    order: 1;
-    width: 100%;
-  }
-
-  .rightControls {
-    order: 2;
-    width: 100%;
-    justify-content: flex-start;
-  }
-
-  .rightControls > * {
-    flex: 1 1 0;
-    min-width: 0;
-  }
-
-  .bottomInfo a {
-    display: block;
-    margin-left: 0;
-    margin-top: 6px;
   }
 }
 
@@ -317,14 +284,20 @@
 }
 
 .footerControlSurface {
-  justify-content: center;
+  min-height: 36px;
+  min-width: fit-content;
+  max-width: 100%;
+  padding-inline: 0.9rem;
+  border-radius: 999px;
+  justify-content: flex-start;
+  gap: 0.45rem;
+  white-space: nowrap;
 }
 
 @media (max-width: 640px) {
   .footerControlSurface {
-    width: 100%;
-    min-height: 40px;
-    justify-content: center;
+    min-height: 38px;
+    min-width: 0;
   }
 }
 

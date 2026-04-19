@@ -1,5 +1,5 @@
 .triggerButton {
-  min-width: 124px;
+  min-width: 0;
   font-size: var(--oomol-font-size-xs);
   font-weight: 500;
   letter-spacing: var(--oomol-tracking-mono);
@@ -29,13 +29,5 @@
   i {
     font-size: var(--oomol-font-size-sm);
     color: var(--oomol-text-secondary);
-  }
-}
-
-@media (max-width: 430px) {
-  .triggerButton {
-    min-width: 0;
-    width: 100%;
-    justify-content: center;
   }
 }
