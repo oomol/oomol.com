@@ -1,36 +1,124 @@
 ---
-description: OOMOL marketing pages — layout, SiteCta, CLI workflow strip, tokens
+description: OOMOL marketing UI single source of truth - tokens, typography, surfaces, CTA/footer, workflow sections
 alwaysApply: true
 ---
 
 # Marketing / product UI (oomol.com)
 
-## Tokens and surfaces
+## Single source of truth
 
-- Prefer existing **`--oomol-*`** variables from `src/css/design-tokens.scss` (background, text, border, divider). Avoid one-off hex unless adding a new token.
-- For **layered surfaces**: use a slightly different background for the page band vs the inner card (e.g. light — section `--oomol-bg-spotlight`, card `--oomol-bg-base`; dark — section `--oomol-bg-container`, card `--oomol-bg-elevated`). Add a clear border (`--oomol-border-default`) and a **subtle** shadow only when it helps separation.
+- This file is the only normative design rule source for marketing/product UI work in this repo.
+- Do not create a second design-spec document (`DESIGN_RULES.md`, README mirror, ad-hoc comments that restate the same rules, external copied notes, etc.).
+- `src/css/design-tokens.scss`, `src/css/custom.scss`, and component styles are implementation, not parallel sources of truth.
+- If a stable pattern is missing, update this file first or in the same change as the implementation. Do not leave the rule only inside a component stylesheet.
+- When another file needs to mention the design system, point back to this rule file instead of duplicating the guidance.
+
+## Design priorities
+
+- OOMOL marketing UI uses a Vercel-inspired neutral system: white / near-black surfaces, restrained hairline borders, and one primary indigo accent.
+- Prefer clarity, rhythm, and restraint over decoration. If a UI decision needs extra glow, blur, color, or shadow to work, the layout is probably under-specified.
+- Reuse established patterns before inventing a new section language. New pages should feel like the same site, not campaign microsites.
+
+## Tokens and color usage
+
+- Prefer existing `--oomol-*` variables from `src/css/design-tokens.scss` for surfaces, text, borders, dividers, fills, and brand color.
+- Avoid one-off hex values unless introducing a truly reusable token. If the value is reusable, add a token rather than hardcoding it in a component.
+- Preserve the current color strategy:
+  - light mode: pure white / very light neutral layers
+  - dark mode: near-black layers
+  - accent: indigo only
+- Product colors (`--oomol-studio`, `--oomol-hub`, `--oomol-app`) are for product-specific badge/icon moments, not for general CTA or section theming.
+- Default interaction emphasis should come from contrast, border, spacing, and typography, not accent-color flooding.
+
+## Surfaces, borders, and shadows
+
+- Default visual language is flat surface plus hairline border.
+- Prefer these layered-surface pairings:
+  - light: outer band `--oomol-bg-spotlight` or `--oomol-bg-container`, inner card `--oomol-bg-base`
+  - dark: outer band `--oomol-bg-container`, inner card `--oomol-bg-elevated`
+- Use `--oomol-border-default` or `--oomol-divider` for separation. Borders should usually do the work that shadows often do on other sites.
+- Shadows should be rare and subtle. `box-shadow: none` is the default for cards, media panels, workflow cards, and CTA blocks unless elevation genuinely improves readability.
+- Avoid frosted-glass, heavy gradients, neon glows, or soft ambiguous surfaces.
+
+## Layout rhythm and width
+
+- Standard content width is `min(1200px, calc(100% - 48px))` or an equivalent 1200px-centered container with modest viewport insets.
+- Use generous vertical section padding, typically in the `clamp(5rem, 10vw, 8rem)` range for major bands.
+- Adjacent marketing sections should feel like a continuous editorial flow. Avoid accidental white gaps created by margin stacking or page-level bottom padding.
+- Alternate section background subtly when a page needs rhythm, but keep the contrast low and systematic.
+
+## Typography and copy rhythm
+
+- Use `var(--oomol-font-display)` for section titles and `var(--oomol-font-body)` for body copy.
+- Headings are 600 semibold with tight tracking and short line-height. They should feel compact, not airy.
+- Body copy should stay readable but slightly tight, following the shared scale from `src/css/custom.scss`.
+- Prefer the existing title scale:
+  - hero: `--oomol-display-hero`
+  - section: `--oomol-display-section`
+  - card: `--oomol-display-card`
+- Eyebrow / kicker / small labels should use the mono system (`var(--oomol-font-mono)`) and remain understated.
+- English headings can use tighter tracking and `text-wrap: balance`; multi-line Chinese headings should prefer comfortable line-height and `text-wrap: pretty`.
+- Do not compensate for weak copy hierarchy by increasing color noise or font-weight variety.
+
+## Buttons and inline actions
+
+- Primary buttons follow the existing OOMOL/Vercel pattern: strong filled foreground surface, compact radius, no idle shadow, no uppercase, medium weight.
+- Outline and ghost actions should stay restrained and rely on border/hover state, not ornamental effects.
+- Inline text actions should feel editorial, not pill-like: simple text links with a subtle directional arrow is the preferred pattern when a full button is unnecessary.
+- Do not introduce oversized CTA buttons, excessive min-widths, or mismatched radii that break the current button system.
 
 ## SiteCta (`src/components/SiteCta`)
 
-- **Actions row**: use `align-items: flex-start` when multiple controls sit in one row so a **footnote/caption under one control** does not vertically center the shorter sibling — primary actions stay on one baseline.
-- **Mobile** (stacked actions): use `align-items: center` so full-width buttons stay centered.
-- **Above footer**: CTA section and `@theme/Footer` share the **spotlight** band; avoid `margin-top` on the footer so body white does not show. Use **generous `padding-bottom` on `SiteCta.section`** plus a little **`padding-top` on `Footer.root`** so CTA card and footer never feel glued. Inner card uses **`--oomol-bg-base` (light)** / **`--oomol-bg-elevated` (dark)**; drop **page-level `padding-bottom`** when it only created a white strip (e.g. `/app` `.page`). **Footer (wide)**: **single CSS grid** — fixed **brand** track (`minmax(11rem, 13.5rem)`) + **`minmax(0,1fr)`** link area; **`repeat(4, minmax(0, 1fr))`** inside links; cap links with **`max-width: ~42rem`** and **`justify-self: end`** so the cluster sits **right** in the fluid column (brand left, links right — balanced rail). **Do not** use `space-between` on the footer row. **`padding-inline` on `Footer.root`**.
+- Treat `SiteCta` as the canonical bottom-of-page conversion pattern.
+- Actions row: use `align-items: flex-start` when multiple controls sit in one row so a footnote/caption under one control does not vertically center the shorter sibling.
+- Mobile stacked actions: use `align-items: center` so full-width controls stay visually centered.
+- The CTA card should remain centered, self-contained, and visually lifted by contrast and border, not shadow theatrics.
+- Above the footer, CTA section and `@theme/Footer` should share the same spotlight band. Avoid white body strips between them.
+- Prefer generous `padding-bottom` on `SiteCta.section` plus a little `padding-top` on `Footer.root` so the CTA and footer feel related but not glued together.
+
+## Footer (`src/theme/Footer`)
+
+- Footer desktop layout should remain a single grid:
+  - fixed brand track: `minmax(11rem, 13.5rem)`
+  - fluid links track: `minmax(0, 1fr)`
+  - internal links grid: `repeat(4, minmax(0, 1fr))`
+- Cap the links cluster around 42rem and align it to the right side of the fluid column with `justify-self: end`.
+- Do not use `space-between` to fake the overall desktop footer layout; it creates an unstable empty void.
+- Use padding on the footer root for horizontal runway. Avoid viewport-hugging footer content.
+
+## Cards, media panels, and workflow blocks
+
+- Marketing cards, terminal panels, media cards, and workflow strips should share one family resemblance: clean radius, hairline border, neutral background, no gratuitous shadow.
+- Media areas can use a subtly tinted neutral background to separate visual content from surrounding white surfaces.
+- Large decorative gestures are acceptable only when they are structural and restrained, for example oversized outline step numerals or section watermarking. They must stay low-contrast and never compete with the copy.
 
 ## CLI workflow strip (`CliPageLinearFlow`)
 
-- **Step cards** describe the **repeating business loop** (e.g. discover → run → finish). Treat **`oo login` as one-time setup**: explain in the section intro, not as a numbered step. The **terminal block** may still show the full session (including login) for a realistic copy-paste story.
-- Prefer **symmetric grids** for step columns (e.g. three equal columns) instead of awkward split rows (e.g. 3+2) unless a strong layout reason exists.
-- When multiple columns share the same vertical rhythm, **CSS subgrid** (with a simple flex fallback) is preferred so index / command / title / body rows align across cards.
+- Step cards describe the repeating business loop such as discover -> run -> finish.
+- Treat `oo login` as one-time setup: explain it in the intro or terminal narrative, not as a numbered recurring step.
+- The terminal block may still show the full session, including login, when that makes the copy-paste story more realistic.
+- Prefer symmetric grids for step columns, such as three equal columns, instead of awkward split compositions unless there is a strong reason.
+- When multiple cards share the same vertical rhythm, CSS subgrid with a simple fallback is preferred so index / command / title / body rows align cleanly.
 
-## Stat + caption blocks (e.g. developer benefits)
+## Stats and captions
 
-- Large **numeric or display stats** with a caption below need enough **`line-height`** on the stat and **`gap`** in the flex/grid container so the caption does not collide with the stat.
+- Large numeric/display stats need enough `line-height` and container `gap` so captions never crowd or visually collide with the stat.
+- If a stat block only works when the number is visually compressed against the caption, the block needs more spacing, not more font tricks.
 
-## Command snippets and CJK copy
+## Command snippets and technical copy
 
-- Command lines: tinted background, border, **`overflow-wrap` / `word-break`** as needed, comfortable mono **line-height**.
-- Multi-line **Chinese titles**: use a comfortable **line-height** (roughly 1.48–1.52) and **`text-wrap: pretty`** where it helps.
+- Command blocks should use mono typography, comfortable line-height, and enough wrapping resilience for narrow viewports.
+- Use tinted neutral backgrounds and borders for command containers instead of heavy terminal chrome unless the UI specifically calls for a terminal panel.
+- For technical marketing copy, clarity beats hype. Commands, labels, and microcopy should read like product UI, not ad copy.
 
-## Scope
+## Responsiveness
 
-- When adding new marketing sections that mirror these patterns (hero-adjacent grids, bottom CTAs, step strips), align with the above before inventing a new visual system.
+- Mobile should preserve the same hierarchy, not a second visual system.
+- On small screens, stack actions and columns cleanly, widen tappable controls to the available width when appropriate, and keep centered CTA/button groups actually centered.
+- Responsive changes should simplify layout, not introduce arbitrary size jumps or decorative leftovers from desktop compositions.
+
+## Scope and maintenance
+
+- Apply these rules to homepage sections, product landing pages, CLI pages, CTA bands, footer-adjacent sections, and other marketing/product storytelling UI.
+- For docs pages or app-like UI embedded in the site, borrow from this system only where it improves consistency; do not force every documentation surface into a marketing layout.
+- When adding a new stable pattern that is likely to repeat, update this file so future agents inherit it from the same source.

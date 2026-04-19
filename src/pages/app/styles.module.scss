@@ -17,75 +17,15 @@
   --lh-title: 1.3;
   --lh-body: 1.6;
   --lh-body-relaxed: 1.62;
-  --bg-base: var(--oomol-bg-base);
-  --bg-container: var(--oomol-bg-container);
-  --bg-elevated: var(--oomol-bg-elevated);
-  --bg-spotlight: var(--oomol-bg-spotlight);
-  --surface-float: var(--oomol-bg-base);
-  --text-primary: var(--oomol-text-primary);
-  --text-secondary: var(--oomol-text-secondary);
-  --text-tertiary: var(--oomol-text-tertiary);
-  --border-default: var(--oomol-border-default);
-  --divider: var(--oomol-divider);
-  --divider-soft: var(--oomol-divider-subtle);
-  --primary: var(--oomol-primary);
-  --primary-hover: var(--oomol-primary-hover);
-  --primary-active: var(--oomol-primary-active);
-  --primary-bg: var(--oomol-primary-bg);
-  --primary-border: var(--oomol-primary-border);
-  --shadow-sm: none;
-  --shadow-md: none;
-  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.06);
-  --card-surface: var(--oomol-bg-base);
-  --card-accent-surface: var(--oomol-bg-base);
-  --pricing-card-surface: var(--oomol-bg-base);
-  --pricing-card-featured-surface: var(--oomol-bg-container);
-  --pillar-surface: var(--oomol-bg-base);
-  --note-surface: var(--oomol-bg-container);
-  --highlight-line: var(--oomol-divider);
-  --primary-button-shadow: none;
-  --primary-button-hover-surface: var(--oomol-foreground-hover);
   position: relative;
   min-height: 100vh;
   /* No bottom padding: avoid white strip above global footer (same as SiteCta flush). */
   padding: 0;
   overflow-x: hidden;
-  color: var(--text-primary);
+  color: var(--oomol-text-primary);
   font-family: var(--oomol-font-body);
   text-rendering: optimizeLegibility;
-  background: var(--bg-base);
-
-  [data-theme="dark"] & {
-    --bg-base: var(--oomol-bg-base);
-    --bg-container: var(--oomol-bg-container);
-    --bg-elevated: var(--oomol-bg-elevated);
-    --bg-spotlight: var(--oomol-bg-spotlight);
-    --surface-float: var(--oomol-bg-elevated);
-    --text-primary: var(--oomol-text-primary);
-    --text-secondary: var(--oomol-text-secondary);
-    --text-tertiary: var(--oomol-text-tertiary);
-    --border-default: var(--oomol-border-default);
-    --divider: var(--oomol-divider);
-    --divider-soft: var(--oomol-divider-subtle);
-    --primary: var(--oomol-primary);
-    --primary-hover: var(--oomol-primary-hover);
-    --primary-active: var(--oomol-primary-active);
-    --primary-bg: var(--oomol-primary-bg);
-    --primary-border: var(--oomol-primary-border);
-    --shadow-sm: none;
-    --shadow-md: none;
-    --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.4);
-    --card-surface: var(--oomol-bg-elevated);
-    --card-accent-surface: var(--oomol-bg-elevated);
-    --pricing-card-surface: var(--oomol-bg-elevated);
-    --pricing-card-featured-surface: var(--oomol-bg-spotlight);
-    --pillar-surface: var(--oomol-bg-elevated);
-    --note-surface: var(--oomol-bg-container);
-    --highlight-line: var(--oomol-divider);
-    --primary-button-shadow: none;
-    --primary-button-hover-surface: var(--oomol-foreground-hover);
-    background: var(--bg-base);
-  }
+  background: var(--oomol-bg-base);
 }
 
 .page::before,
@@ -115,8 +55,8 @@
   padding-inline: clamp(20px, 5vw, 24px);
   /* 与导航之间留出呼吸感，避免 slogan 顶得太死 */
   padding-top: clamp(3.5rem, 6vw + 1rem, 6rem);
-  background: var(--bg-base);
-  border-bottom: 1px solid var(--divider);
+  background: var(--oomol-bg-base);
+  border-bottom: 1px solid var(--oomol-divider);
 }
 
 /* 全宽色带：用伪元素铺底，避免背景视觉上「贴在内容盒子边缘」；实色仍随 section 全宽拉伸 */
@@ -128,7 +68,7 @@
   padding-bottom: var(--app-section-pad-bottom);
   box-sizing: border-box;
   background: transparent;
-  border-bottom: 1px solid var(--divider);
+  border-bottom: 1px solid var(--oomol-divider);
 }
 
 .section::before {
@@ -136,12 +76,12 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: var(--bg-base);
+  background: var(--oomol-bg-base);
   pointer-events: none;
 }
 
 .sectionMuted::before {
-  background: var(--bg-container);
+  background: var(--oomol-bg-container);
 }
 
 /* Last block before global footer: small runway on the band (matches SiteCta spacing rhythm). */
@@ -224,7 +164,7 @@
   font-size: var(--oomol-display-hero);
   line-height: 1.12;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--oomol-text-primary);
   text-align: center;
   letter-spacing: var(--oomol-tracking-display);
 }
@@ -237,7 +177,7 @@
 .heroLead {
   margin: 0;
   max-width: 34rem;
-  color: var(--text-secondary);
+  color: var(--oomol-text-secondary);
   font-size: var(--oomol-body-lead);
   line-height: var(--oomol-line-height-relaxed);
   letter-spacing: var(--oomol-tracking-body);
@@ -273,7 +213,7 @@ video.heroScreenshot,
 video.outputImage,
 video.outputsShowcaseImage {
   border-radius: var(--app-radius);
-  background: var(--bg-elevated);
+  background: var(--oomol-bg-elevated);
 }
 
 /*
@@ -298,7 +238,7 @@ video.outputsShowcaseImage {
   font-weight: 400;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.02em;
-  color: var(--text-tertiary);
+  color: var(--oomol-text-tertiary);
   text-align: right;
 }
 
@@ -330,14 +270,14 @@ video.outputsShowcaseImage {
   line-height: var(--lh-heading);
   font-weight: 600;
   letter-spacing: var(--oomol-tracking-section);
-  color: var(--text-primary);
+  color: var(--oomol-text-primary);
   text-wrap: balance;
 }
 
 .sectionIntro p {
   margin: 0;
   max-width: 32rem;
-  color: var(--text-secondary);
+  color: var(--oomol-text-secondary);
   font-size: var(--oomol-body-lead);
   line-height: var(--oomol-line-height-relaxed);
   letter-spacing: var(--oomol-tracking-body);
@@ -408,7 +348,7 @@ video.outputsShowcaseImage {
   padding: 22px;
   border: 1px solid var(--oomol-divider);
   border-radius: var(--app-radius);
-  background: var(--card-accent-surface);
+  background: var(--oomol-bg-base);
   box-shadow: none;
   opacity: 0;
   animation: reveal-up 560ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -434,7 +374,7 @@ video.outputsShowcaseImage {
   font-weight: 500;
   letter-spacing: var(--oomol-tracking-mono);
   text-transform: none;
-  color: var(--text-tertiary);
+  color: var(--oomol-text-tertiary);
 }
 
 .downloadCardHeader span {
@@ -442,7 +382,7 @@ video.outputsShowcaseImage {
   font-size: var(--oomol-body-base);
   font-weight: 600;
   letter-spacing: var(--oomol-tracking-section);
-  color: var(--text-primary);
+  color: var(--oomol-text-primary);
 }
 
 .modelFeatureCard h3 {
@@ -452,7 +392,7 @@ video.outputsShowcaseImage {
   line-height: var(--lh-title);
   font-weight: 600;
   letter-spacing: var(--oomol-tracking-section);
-  color: var(--text-primary);
+  color: var(--oomol-text-primary);
   text-wrap: pretty;
 }
 
@@ -464,7 +404,7 @@ video.outputsShowcaseImage {
   line-height: 1.08;
   font-weight: 600;
   letter-spacing: var(--oomol-tracking-display);
-  color: var(--text-primary);
+  color: var(--oomol-text-primary);
   text-wrap: balance;
   max-width: min(36ch, 100%);
 }
@@ -475,7 +415,7 @@ video.outputsShowcaseImage {
   font-size: var(--fs-title-sm);
   line-height: var(--lh-title);
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--oomol-text-primary);
   text-wrap: pretty;
 }
 
@@ -486,7 +426,7 @@ video.outputsShowcaseImage {
 .downloadCard p,
 .planDescription {
   margin: 0;
-  color: var(--text-secondary);
+  color: var(--oomol-text-secondary);
   font-size: var(--fs-body);
   line-height: var(--lh-body);
 }
@@ -505,7 +445,7 @@ video.outputsShowcaseImage {
   padding: 0 10px;
   border: 1px solid var(--oomol-divider);
   border-radius: 999px;
-  color: var(--text-secondary);
+  color: var(--oomol-text-secondary);
   background: var(--oomol-bg-container);
   font-size: var(--oomol-body-sm);
   font-weight: 500;
@@ -565,7 +505,7 @@ video.outputsShowcaseImage {
   position: relative;
   border: 1px solid var(--oomol-border-default);
   border-radius: var(--app-radius);
-  background: var(--card-surface);
+  background: var(--oomol-bg-base);
   box-shadow: none;
 }
 
@@ -593,7 +533,7 @@ video.outputsShowcaseImage {
   font-size: var(--fs-title-sm);
   line-height: var(--lh-title);
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--oomol-text-primary);
 }
 
 .solutionList {
@@ -657,7 +597,7 @@ video.outputsShowcaseImage {
   font-weight: 600;
   font-family: var(--oomol-font-display);
   letter-spacing: var(--oomol-tracking-section);
-  color: var(--text-primary);
+  color: var(--oomol-text-primary);
   text-wrap: pretty;
 }
 
@@ -668,7 +608,7 @@ video.outputsShowcaseImage {
 }
 
 .solutionText p + p {
-  color: var(--text-secondary);
+  color: var(--oomol-text-secondary);
   font-size: var(--fs-body);
   line-height: var(--lh-body);
 }
@@ -704,12 +644,12 @@ video.outputsShowcaseImage {
   padding: 28px 26px;
   border: 1px solid var(--oomol-divider);
   border-radius: var(--app-radius);
-  background: var(--pricing-card-surface);
+  background: var(--oomol-bg-base);
   box-shadow: none;
 }
 
 .pricingCardFeatured {
-  background: var(--pricing-card-featured-surface);
+  background: var(--oomol-bg-container);
   border-color: var(--oomol-border-strong);
 }
 
@@ -746,12 +686,12 @@ video.outputsShowcaseImage {
   line-height: 0.95;
   font-weight: 600;
   letter-spacing: var(--oomol-tracking-section);
-  color: var(--text-primary);
+  color: var(--oomol-text-primary);
   font-variant-numeric: tabular-nums;
 }
 
 .planPriceRow span {
-  color: var(--text-tertiary);
+  color: var(--oomol-text-tertiary);
   font-size: var(--oomol-font-size-base);
   font-weight: 500;
   letter-spacing: var(--oomol-tracking-body);
@@ -762,7 +702,7 @@ video.outputsShowcaseImage {
   align-content: start;
   gap: 12px;
   padding-top: 18px;
-  border-top: 1px solid var(--divider-soft);
+  border-top: 1px solid var(--oomol-divider-subtle);
 }
 
 .pricingCard .cardAction {
@@ -784,7 +724,7 @@ video.outputsShowcaseImage {
   display: flex;
   align-items: start;
   gap: 10px;
-  color: var(--text-secondary);
+  color: var(--oomol-text-secondary);
   font-size: var(--fs-body);
   line-height: var(--lh-body);
 }
@@ -799,7 +739,6 @@ video.outputsShowcaseImage {
   opacity: 0.35;
 }
 
-
 .downloadGrid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -813,7 +752,7 @@ video.outputsShowcaseImage {
 
 .downloadCard:nth-child(1) {
   animation-delay: 160ms;
-  background: var(--card-accent-surface);
+  background: var(--oomol-bg-base);
 }
 
 .downloadCard:nth-child(2) {

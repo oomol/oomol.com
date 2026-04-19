@@ -182,10 +182,7 @@ function PriceTable<T extends PricingRowBase>({
         <TableBody>
           {loading ? (
             <TableRow>
-              <TableCell
-                colSpan={columns.length}
-                className={styles.emptyCell}
-              >
+              <TableCell colSpan={columns.length} className={styles.emptyCell}>
                 <i
                   className="i-lucide-loader-circle inline-block size-4 animate-spin mr-2 align-[-3px]"
                   aria-hidden="true"
@@ -195,10 +192,7 @@ function PriceTable<T extends PricingRowBase>({
             </TableRow>
           ) : rows.length === 0 ? (
             <TableRow>
-              <TableCell
-                colSpan={columns.length}
-                className={styles.emptyCell}
-              >
+              <TableCell colSpan={columns.length} className={styles.emptyCell}>
                 {emptyState}
               </TableCell>
             </TableRow>
@@ -215,9 +209,7 @@ function PriceTable<T extends PricingRowBase>({
                     ? column.render(raw, row, rowIndex)
                     : (raw as React.ReactNode);
 
-                  return (
-                    <TableCell key={column.key}>{cellContent}</TableCell>
-                  );
+                  return <TableCell key={column.key}>{cellContent}</TableCell>;
                 })}
               </TableRow>
             ))
@@ -687,227 +679,210 @@ export default function Index() {
         <title>{pageCopy.title}</title>
         <meta name="description" content={pageCopy.description} />
       </Head>
-      <main className={`${styles.container} oomol-landing-main`}>
-        <div className={styles.titleBox}>
-          <div className={styles.title}>
-            {translate({ message: "PRICING.title" })}
-          </div>
-          <div className={styles.subTitle}>
-            {translate({ message: "PRICING.subtitle" })}
-          </div>
-        </div>
-
-        <div className={styles.pricingModelSection}>
-          <Alert variant="info" className={styles.pricingModelAlert}>
-            <AlertDescription>
-              {tPricing(
-                "PRICING.model.summary",
-                "Studio stays free for local work. Free users also get 200 Cloud Task minutes every month, then top up or upgrade only after that included usage runs out. OOMOL-provided models and services use credits."
-              )}
-            </AlertDescription>
-          </Alert>
-          <div className={styles.pricingModelGrid}>
-            <div className={styles.pricingModelCard}>
-              <div className={styles.pricingModelLabel}>
-                {tPricing("PRICING.model.local.label", "Local")}
-              </div>
-              <div className={styles.pricingModelTitle}>
-                {tPricing(
-                  "PRICING.model.local.title",
-                  "Build and validate in Studio for free"
-                )}
-              </div>
-              <p className={styles.pricingModelText}>
-                {tPricing(
-                  "PRICING.model.local.text",
-                  "Use the full local environment, verify results with your own dependencies and workflow, and connect your own model if you already have one."
-                )}
-              </p>
-            </div>
-            <div className={styles.pricingModelCard}>
-              <div className={styles.pricingModelLabel}>
-                {tPricing("PRICING.model.online.label", "Online")}
-              </div>
-              <div className={styles.pricingModelTitle}>
-                {tPricing(
-                  "PRICING.model.online.title",
-                  "Free first, then top up when online usage grows"
-                )}
-              </div>
-              <p className={styles.pricingModelText}>
-                {tPricing(
-                  "PRICING.model.online.text",
-                  "Free users can already publish and use Cloud with 200 monthly Cloud Task minutes. Top up or move to a paid plan only when you need more included usage or higher limits."
-                )}
+      <main className={`${styles.page} oomol-landing-main`}>
+        <section className={styles.heroSection}>
+          <div className={styles.sectionInner}>
+            <div className={styles.titleBox}>
+              <h1 className={styles.title}>
+                {translate({ message: "PRICING.title" })}
+              </h1>
+              <p className={styles.subTitle}>
+                {translate({ message: "PRICING.subtitle" })}
               </p>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className={styles.subscriptionSection}>
-          <div className={styles.sectionTitle}>
-            {translate({ message: "PRICING.subscription.title" })}
+        <section className={styles.pricingModelSection}>
+          <div className={styles.sectionInner}>
+            <Alert variant="info" className={styles.pricingModelAlert}>
+              <AlertDescription>
+                {tPricing(
+                  "PRICING.model.summary",
+                  "Studio stays free for local work. Free users also get 200 Cloud Task minutes every month, then top up or upgrade only after that included usage runs out. OOMOL-provided models and services use credits."
+                )}
+              </AlertDescription>
+            </Alert>
+            <div className={styles.pricingModelGrid}>
+              <div className={styles.pricingModelCard}>
+                <div className={styles.pricingModelLabel}>
+                  {tPricing("PRICING.model.local.label", "Local")}
+                </div>
+                <h2 className={styles.pricingModelTitle}>
+                  {tPricing(
+                    "PRICING.model.local.title",
+                    "Build and validate in Studio for free"
+                  )}
+                </h2>
+                <p className={styles.pricingModelText}>
+                  {tPricing(
+                    "PRICING.model.local.text",
+                    "Use the full local environment, verify results with your own dependencies and workflow, and connect your own model if you already have one."
+                  )}
+                </p>
+              </div>
+              <div className={styles.pricingModelCard}>
+                <div className={styles.pricingModelLabel}>
+                  {tPricing("PRICING.model.online.label", "Online")}
+                </div>
+                <h2 className={styles.pricingModelTitle}>
+                  {tPricing(
+                    "PRICING.model.online.title",
+                    "Free first, then top up when online usage grows"
+                  )}
+                </h2>
+                <p className={styles.pricingModelText}>
+                  {tPricing(
+                    "PRICING.model.online.text",
+                    "Free users can already publish and use Cloud with 200 monthly Cloud Task minutes. Top up or move to a paid plan only when you need more included usage or higher limits."
+                  )}
+                </p>
+              </div>
+            </div>
           </div>
-          <div className={styles.sectionSubtitle}>
-            {translate({ message: "PRICING.subscription.subtitle" })}
-          </div>
+        </section>
 
-          <div className={styles.planBox}>
-            {/* 免费版 */}
-            <div className={`${styles.planCard} ${styles.freePlan}`}>
-              <div className={styles.planHeader}>
-                <div className={styles.planName}>
-                  {translate({ message: "PRICING.subscription.free.name" })}
-                </div>
-                <div className={styles.planPrice}>
-                  <span className={styles.price}>
-                    {translate({ message: "PRICING.subscription.free.price" })}
-                  </span>
-                </div>
-                <div className={styles.planDescription}>
-                  {translate({
-                    message: "PRICING.subscription.free.description",
-                  })}
-                </div>
-                <div className={styles.planHighlights}>
-                  {freeHighlights.map(highlightKey => (
-                    <span key={highlightKey} className={styles.planHighlight}>
-                      {translate({ message: highlightKey })}
+        <section className={styles.subscriptionSection}>
+          <div className={styles.sectionInner}>
+            <h2 className={styles.sectionTitle}>
+              {translate({ message: "PRICING.subscription.title" })}
+            </h2>
+            <p className={styles.sectionSubtitle}>
+              {translate({ message: "PRICING.subscription.subtitle" })}
+            </p>
+
+            <div className={styles.planBox}>
+              {/* 免费版 */}
+              <div className={`${styles.planCard} ${styles.freePlan}`}>
+                <div className={styles.planHeader}>
+                  <h3 className={styles.planName}>
+                    {translate({ message: "PRICING.subscription.free.name" })}
+                  </h3>
+                  <div className={styles.planPrice}>
+                    <span className={styles.price}>
+                      {translate({
+                        message: "PRICING.subscription.free.price",
+                      })}
                     </span>
-                  ))}
+                  </div>
+                  <div className={styles.planDescription}>
+                    {translate({
+                      message: "PRICING.subscription.free.description",
+                    })}
+                  </div>
+                  <div className={styles.planHighlights}>
+                    {freeHighlights.map(highlightKey => (
+                      <span key={highlightKey} className={styles.planHighlight}>
+                        {translate({ message: highlightKey })}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className={styles.planActionArea}>
+                  <div className={styles.downloadBtnWrapper}>
+                    <DownloadButton
+                      buttonSize="default"
+                      fullWidth
+                      className={styles.planCta}
+                    />
+                  </div>
+                </div>
+                <div className={styles.planDetails}>
+                  <div className={styles.featureList}>
+                    {freeFeatures.map(featureKey => (
+                      <div key={featureKey} className={styles.featureItem}>
+                        <i className="i-codicon:check" />
+                        <span>
+                          {translate({
+                            message: featureKey,
+                          })}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  <details className={styles.featureDisclosure}>
+                    <summary className={styles.featureDisclosureTrigger}>
+                      <span className={styles.featureDisclosureOpenLabel}>
+                        {translate({
+                          message: "PRICING.subscription.showDetails",
+                        })}
+                      </span>
+                      <span className={styles.featureDisclosureCloseLabel}>
+                        {translate({
+                          message: "PRICING.subscription.hideDetails",
+                        })}
+                      </span>
+                      <i className="i-codicon:chevron-down" />
+                    </summary>
+                    <div className={styles.featureDisclosureContent}>
+                      {freeMoreFeatures.map(featureKey => (
+                        <div key={featureKey} className={styles.featureItem}>
+                          <i className="i-codicon:check" />
+                          <span>
+                            {translate({
+                              message: featureKey,
+                            })}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </details>
                 </div>
               </div>
-              <div className={styles.planActionArea}>
-                <div className={styles.downloadBtnWrapper}>
-                  <DownloadButton
-                    buttonSize="default"
-                    fullWidth
+
+              <div
+                className={`${styles.planCard} ${styles.recommended} ${styles.proPlan}`}
+              >
+                <div className={styles.badge}>
+                  {translate({ message: "PRICING.subscription.recommended" })}
+                </div>
+                <div className={styles.planHeader}>
+                  <h3 className={styles.planName}>
+                    {translate({ message: "PRICING.subscription.pro.name" })}
+                  </h3>
+                  <div className={styles.planPrice}>
+                    <span className={styles.price}>
+                      {translate({
+                        message: "PRICING.subscription.pro.price",
+                      })}
+                    </span>
+                    <span className={styles.period}>
+                      {translate({ message: "PRICING.subscription.period" })}
+                    </span>
+                  </div>
+                  <div className={styles.planDescription}>
+                    {translate({
+                      message: "PRICING.subscription.pro.description",
+                    })}
+                  </div>
+                  <div className={styles.planHighlights}>
+                    {proHighlights.map(highlightKey => (
+                      <span key={highlightKey} className={styles.planHighlight}>
+                        {translate({ message: highlightKey })}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className={styles.planActionArea}>
+                  <Button
+                    asChild
+                    size="default"
                     className={styles.planCta}
-                  />
-                </div>
-              </div>
-              <div className={styles.planDetails}>
-                <div className={styles.featureList}>
-                  {freeFeatures.map(featureKey => (
-                    <div key={featureKey} className={styles.featureItem}>
-                      <i className="i-codicon:check" />
-                      <span>
-                        {translate({
-                          message: featureKey,
-                        })}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-                <details className={styles.featureDisclosure}>
-                  <summary className={styles.featureDisclosureTrigger}>
-                    <span className={styles.featureDisclosureOpenLabel}>
-                      {translate({
-                        message: "PRICING.subscription.showDetails",
-                      })}
-                    </span>
-                    <span className={styles.featureDisclosureCloseLabel}>
-                      {translate({
-                        message: "PRICING.subscription.hideDetails",
-                      })}
-                    </span>
-                    <i className="i-codicon:chevron-down" />
-                  </summary>
-                  <div className={styles.featureDisclosureContent}>
-                    {freeMoreFeatures.map(featureKey => (
-                      <div key={featureKey} className={styles.featureItem}>
-                        <i className="i-codicon:check" />
-                        <span>
-                          {translate({
-                            message: featureKey,
-                          })}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </details>
-              </div>
-            </div>
-
-            <div
-              className={`${styles.planCard} ${styles.recommended} ${styles.proPlan}`}
-            >
-              <div className={styles.badge}>
-                {translate({ message: "PRICING.subscription.recommended" })}
-              </div>
-              <div className={styles.planHeader}>
-                <div className={styles.planName}>
-                  {translate({ message: "PRICING.subscription.pro.name" })}
-                </div>
-                <div className={styles.planPrice}>
-                  <span className={styles.price}>
-                    {translate({
-                      message: "PRICING.subscription.pro.price",
-                    })}
-                  </span>
-                  <span className={styles.period}>
-                    {translate({ message: "PRICING.subscription.period" })}
-                  </span>
-                </div>
-                <div className={styles.planDescription}>
-                  {translate({
-                    message: "PRICING.subscription.pro.description",
-                  })}
-                </div>
-                <div className={styles.planHighlights}>
-                  {proHighlights.map(highlightKey => (
-                    <span key={highlightKey} className={styles.planHighlight}>
-                      {translate({ message: highlightKey })}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div className={styles.planActionArea}>
-                <Button
-                  asChild
-                  size="default"
-                  className={styles.planCta}
-                  aria-label={paidPlanCtaLabel}
-                >
-                  <a
-                    href={SUBSCRIPTION_BILLING_URL}
-                    rel="noopener noreferrer"
-                    target="_blank"
+                    aria-label={paidPlanCtaLabel}
                   >
-                    {paidPlanCtaLabel}
-                  </a>
-                </Button>
-                <div className={styles.planActionMeta} aria-hidden="true" />
-              </div>
-              <div className={styles.planDetails}>
-                <div className={styles.featureList}>
-                  {proFeatures.map(featureKey => (
-                    <div key={featureKey} className={styles.featureItem}>
-                      <i className="i-codicon:check" />
-                      <span>
-                        {translate({
-                          message: featureKey,
-                        })}
-                      </span>
-                    </div>
-                  ))}
+                    <a
+                      href={SUBSCRIPTION_BILLING_URL}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      {paidPlanCtaLabel}
+                    </a>
+                  </Button>
+                  <div className={styles.planActionMeta} aria-hidden="true" />
                 </div>
-                <details className={styles.featureDisclosure}>
-                  <summary className={styles.featureDisclosureTrigger}>
-                    <span className={styles.featureDisclosureOpenLabel}>
-                      {translate({
-                        message: "PRICING.subscription.showDetails",
-                      })}
-                    </span>
-                    <span className={styles.featureDisclosureCloseLabel}>
-                      {translate({
-                        message: "PRICING.subscription.hideDetails",
-                      })}
-                    </span>
-                    <i className="i-codicon:chevron-down" />
-                  </summary>
-                  <div className={styles.featureDisclosureContent}>
-                    {proMoreFeatures.map(featureKey => (
+                <div className={styles.planDetails}>
+                  <div className={styles.featureList}>
+                    {proFeatures.map(featureKey => (
                       <div key={featureKey} className={styles.featureItem}>
                         <i className="i-codicon:check" />
                         <span>
@@ -918,84 +893,84 @@ export default function Index() {
                       </div>
                     ))}
                   </div>
-                </details>
+                  <details className={styles.featureDisclosure}>
+                    <summary className={styles.featureDisclosureTrigger}>
+                      <span className={styles.featureDisclosureOpenLabel}>
+                        {translate({
+                          message: "PRICING.subscription.showDetails",
+                        })}
+                      </span>
+                      <span className={styles.featureDisclosureCloseLabel}>
+                        {translate({
+                          message: "PRICING.subscription.hideDetails",
+                        })}
+                      </span>
+                      <i className="i-codicon:chevron-down" />
+                    </summary>
+                    <div className={styles.featureDisclosureContent}>
+                      {proMoreFeatures.map(featureKey => (
+                        <div key={featureKey} className={styles.featureItem}>
+                          <i className="i-codicon:check" />
+                          <span>
+                            {translate({
+                              message: featureKey,
+                            })}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </details>
+                </div>
               </div>
-            </div>
 
-            <div className={`${styles.planCard} ${styles.maxPlan}`}>
-              <div className={styles.planHeader}>
-                <div className={styles.planName}>
-                  {translate({ message: "PRICING.subscription.max.name" })}
-                </div>
-                <div className={styles.planPrice}>
-                  <span className={styles.price}>
+              <div className={`${styles.planCard} ${styles.maxPlan}`}>
+                <div className={styles.planHeader}>
+                  <h3 className={styles.planName}>
+                    {translate({ message: "PRICING.subscription.max.name" })}
+                  </h3>
+                  <div className={styles.planPrice}>
+                    <span className={styles.price}>
+                      {translate({
+                        message: "PRICING.subscription.max.price",
+                      })}
+                    </span>
+                    <span className={styles.period}>
+                      {translate({ message: "PRICING.subscription.period" })}
+                    </span>
+                  </div>
+                  <div className={styles.planDescription}>
                     {translate({
-                      message: "PRICING.subscription.max.price",
+                      message: "PRICING.subscription.max.description",
                     })}
-                  </span>
-                  <span className={styles.period}>
-                    {translate({ message: "PRICING.subscription.period" })}
-                  </span>
-                </div>
-                <div className={styles.planDescription}>
-                  {translate({
-                    message: "PRICING.subscription.max.description",
-                  })}
-                </div>
-                <div className={styles.planHighlights}>
-                  {maxHighlights.map(highlightKey => (
-                    <span key={highlightKey} className={styles.planHighlight}>
-                      {translate({ message: highlightKey })}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div className={styles.planActionArea}>
-                <Button
-                  asChild
-                  size="default"
-                  className={styles.planCta}
-                  aria-label={paidPlanCtaLabel}
-                >
-                  <a
-                    href={SUBSCRIPTION_BILLING_URL}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    {paidPlanCtaLabel}
-                  </a>
-                </Button>
-                <div className={styles.planActionMeta} aria-hidden="true" />
-              </div>
-              <div className={styles.planDetails}>
-                <div className={styles.featureList}>
-                  {maxFeatures.map(featureKey => (
-                    <div key={featureKey} className={styles.featureItem}>
-                      <i className="i-codicon:check" />
-                      <span>
-                        {translate({
-                          message: featureKey,
-                        })}
+                  </div>
+                  <div className={styles.planHighlights}>
+                    {maxHighlights.map(highlightKey => (
+                      <span key={highlightKey} className={styles.planHighlight}>
+                        {translate({ message: highlightKey })}
                       </span>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-                <details className={styles.featureDisclosure}>
-                  <summary className={styles.featureDisclosureTrigger}>
-                    <span className={styles.featureDisclosureOpenLabel}>
-                      {translate({
-                        message: "PRICING.subscription.showDetails",
-                      })}
-                    </span>
-                    <span className={styles.featureDisclosureCloseLabel}>
-                      {translate({
-                        message: "PRICING.subscription.hideDetails",
-                      })}
-                    </span>
-                    <i className="i-codicon:chevron-down" />
-                  </summary>
-                  <div className={styles.featureDisclosureContent}>
-                    {maxMoreFeatures.map(featureKey => (
+                <div className={styles.planActionArea}>
+                  <Button
+                    asChild
+                    size="default"
+                    className={styles.planCta}
+                    aria-label={paidPlanCtaLabel}
+                  >
+                    <a
+                      href={SUBSCRIPTION_BILLING_URL}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      {paidPlanCtaLabel}
+                    </a>
+                  </Button>
+                  <div className={styles.planActionMeta} aria-hidden="true" />
+                </div>
+                <div className={styles.planDetails}>
+                  <div className={styles.featureList}>
+                    {maxFeatures.map(featureKey => (
                       <div key={featureKey} className={styles.featureItem}>
                         <i className="i-codicon:check" />
                         <span>
@@ -1006,58 +981,85 @@ export default function Index() {
                       </div>
                     ))}
                   </div>
-                </details>
+                  <details className={styles.featureDisclosure}>
+                    <summary className={styles.featureDisclosureTrigger}>
+                      <span className={styles.featureDisclosureOpenLabel}>
+                        {translate({
+                          message: "PRICING.subscription.showDetails",
+                        })}
+                      </span>
+                      <span className={styles.featureDisclosureCloseLabel}>
+                        {translate({
+                          message: "PRICING.subscription.hideDetails",
+                        })}
+                      </span>
+                      <i className="i-codicon:chevron-down" />
+                    </summary>
+                    <div className={styles.featureDisclosureContent}>
+                      {maxMoreFeatures.map(featureKey => (
+                        <div key={featureKey} className={styles.featureItem}>
+                          <i className="i-codicon:check" />
+                          <span>
+                            {translate({
+                              message: featureKey,
+                            })}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </details>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className={styles.tableSectionWrapper}>
-          <div className={styles.priceTablesSection}>
-            <div className={styles.tableSectionHeader}>
-              <div className={styles.tableSectionTitle}>
-                {tPricing("PRICING.tables.title", "Detailed Pricing Tables")}
+        <section
+          className={`${styles.tableSectionWrapper} ${styles.sectionFlushBottom}`}
+        >
+          <div className={styles.sectionInner}>
+            <div className={styles.priceTablesSection}>
+              <div className={styles.tableSectionHeader}>
+                <h2 className={styles.tableSectionTitle}>
+                  {tPricing("PRICING.tables.title", "Detailed Pricing Tables")}
+                </h2>
+                <p className={styles.tableSectionSubtitle}>
+                  {tPricing(
+                    "PRICING.tables.subtitle",
+                    "Think of pricing in two layers: the plans above include monthly usage, and the tables below show what happens after that included usage is used up."
+                  )}
+                </p>
+                <div className={styles.tableSyncNote}>
+                  {tPricing(
+                    "PRICING.tables.syncNote",
+                    "Free and paid plans can both run tools online. Free includes 200 Cloud Task minutes each month, paid plans include larger monthly allowances, and additional usage or model/service calls deduct credits."
+                  )}
+                </div>
               </div>
-              <div className={styles.tableSectionSubtitle}>
-                {tPricing(
-                  "PRICING.tables.subtitle",
-                  "Think of pricing in two layers: the plans above include monthly usage, and the tables below show what happens after that included usage is used up."
-                )}
-              </div>
-              <div className={styles.tableSyncNote}>
-                {tPricing(
-                  "PRICING.tables.syncNote",
-                  "Free and paid plans can both run tools online. Free includes 200 Cloud Task minutes each month, paid plans include larger monthly allowances, and additional usage or model/service calls deduct credits."
-                )}
-              </div>
-            </div>
 
-            <Tabs
-              value={activePricingTable}
-              onValueChange={key =>
-                setActivePricingTable(key as PricingTableKey)
-              }
-              className={styles.tableTabs}
-            >
-              <TabsList>
+              <Tabs
+                value={activePricingTable}
+                onValueChange={key =>
+                  setActivePricingTable(key as PricingTableKey)
+                }
+                className={styles.tableTabs}
+              >
+                <TabsList>
+                  {tableTabs.map(tab => (
+                    <TabsTrigger key={tab.key} value={tab.key}>
+                      {tab.label}
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
                 {tableTabs.map(tab => (
-                  <TabsTrigger key={tab.key} value={tab.key}>
-                    {tab.label}
-                  </TabsTrigger>
+                  <TabsContent key={tab.key} value={tab.key} className="mt-0">
+                    {renderPricingTable(tab.key)}
+                  </TabsContent>
                 ))}
-              </TabsList>
-              {tableTabs.map(tab => (
-                <TabsContent
-                  key={tab.key}
-                  value={tab.key}
-                  className="mt-0"
-                >
-                  {renderPricingTable(tab.key)}
-                </TabsContent>
-              ))}
-            </Tabs>
+              </Tabs>
+            </div>
           </div>
-        </div>
+        </section>
 
         <GetStartedPrompt />
       </main>
