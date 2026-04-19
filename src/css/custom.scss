@@ -298,14 +298,20 @@ html[lang="en"] {
   [class*="eyebrow"]:not([class*="eyebrowNumber"]):not(
     [class*="eyebrowLabel"]
   ):not([class*="eyebrowDivider"])::before,
-.oomol-home-main [class*="Eyebrow"]::before,
+.oomol-home-main
+  [class*="Eyebrow"]:not([class*="EyebrowNumber"]):not(
+    [class*="EyebrowLabel"]
+  ):not([class*="EyebrowDivider"])::before,
 .oomol-home-main [class*="kicker"]::before,
 .oomol-home-main [class*="Kicker"]::before,
 .oomol-landing-main
   [class*="eyebrow"]:not([class*="eyebrowNumber"]):not(
     [class*="eyebrowLabel"]
   ):not([class*="eyebrowDivider"])::before,
-.oomol-landing-main [class*="Eyebrow"]::before,
+.oomol-landing-main
+  [class*="Eyebrow"]:not([class*="EyebrowNumber"]):not(
+    [class*="EyebrowLabel"]
+  ):not([class*="EyebrowDivider"])::before,
 .oomol-landing-main [class*="kicker"]::before,
 .oomol-landing-main [class*="Kicker"]::before {
   content: "";

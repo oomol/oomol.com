@@ -1,12 +1,11 @@
 import styles from "./button.module.scss";
 
-import type {VariantProps} from "class-variance-authority";
+import type { VariantProps } from "class-variance-authority";
 
 import { Slot } from "@radix-ui/react-slot";
 import { cn } from "@site/src/lib/utils";
-import { cva  } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 import * as React from "react";
-
 
 /**
  * shadcn/ui Button — tuned to Vercel's marketing-site button system.
@@ -49,9 +48,10 @@ const buttonVariants = cva(
         // Ghost (no border, appears only on hover)
         ghost: styles.variantGhost,
         // Pure underline text link（无线框占位）
-        link: [styles.variantLink, "underline-offset-[3px] h-auto min-h-0 p-0"].join(
-          " "
-        ),
+        link: [
+          styles.variantLink,
+          "underline-offset-[3px] h-auto min-h-0 p-0",
+        ].join(" "),
       },
       size: {
         sm: "h-8 px-3 text-oomol-mono rounded-md",
