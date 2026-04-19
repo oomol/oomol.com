@@ -1,4 +1,4 @@
-@use "../../css/custom.scss" as *;
+@use "../../css/mixins.scss" as *;
 
 .homeSection {
   padding: clamp(4rem, 8vw, 6rem) 0 clamp(3rem, 6vw, 4.5rem);

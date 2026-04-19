@@ -1,5 +1,6 @@
 @use "./font.scss" as *;
 @use "./design-tokens.scss" as *;
+@use "./mixins.scss" as *;
 
 /* Radix Themes — only for components that opt in (e.g. Cookie preferences Switch). */
 @import "@radix-ui/themes/styles.css";
@@ -134,6 +135,7 @@ html[lang="en"] {
   position: relative;
   isolation: isolate;
   font-family: var(--oomol-font-body);
+  --oomol-page-block-intrinsic-size: 960px;
 
   > section {
     margin-block: 0;
@@ -141,6 +143,42 @@ html[lang="en"] {
 
   > section + section {
     margin-top: 0;
+  }
+}
+
+.oomol-app-page {
+  --oomol-page-block-intrinsic-size: 1200px;
+}
+
+/* Page-level block isolation:
+   resize jank on long marketing pages mostly came from offscreen sections and
+   sibling sections participating in the same lifecycle updates. Isolate each
+   top-level block so offscreen content can be skipped and visible blocks stop
+   invalidating the whole page. */
+@supports (content-visibility: auto) {
+  .oomol-home-main > *,
+  .oomol-landing-main > * {
+    content-visibility: auto;
+    contain: content;
+    contain-intrinsic-size: auto var(--oomol-page-block-intrinsic-size);
+  }
+
+  .oomol-home-main > .oomol-no-section-isolation,
+  .oomol-home-main > :target,
+  .oomol-landing-main > .oomol-no-section-isolation,
+  .oomol-landing-main > :target {
+    content-visibility: visible;
+    contain: none;
+    contain-intrinsic-size: auto;
+  }
+
+  @supports selector(:has(:target)) {
+    .oomol-home-main > :has(:target),
+    .oomol-landing-main > :has(:target) {
+      content-visibility: visible;
+      contain: none;
+      contain-intrinsic-size: auto;
+    }
   }
 }
 
@@ -256,12 +294,24 @@ html[lang="en"] {
   box-shadow: none !important;
 }
 
-.oomol-home-main [class*="eyebrow"]:not([class*="eyebrowNumber"]):not([class*="eyebrowLabel"]):not([class*="eyebrowDivider"])::before,
-.oomol-home-main [class*="Eyebrow"]::before,
+.oomol-home-main
+  [class*="eyebrow"]:not([class*="eyebrowNumber"]):not(
+    [class*="eyebrowLabel"]
+  ):not([class*="eyebrowDivider"])::before,
+.oomol-home-main
+  [class*="Eyebrow"]:not([class*="EyebrowNumber"]):not(
+    [class*="EyebrowLabel"]
+  ):not([class*="EyebrowDivider"])::before,
 .oomol-home-main [class*="kicker"]::before,
 .oomol-home-main [class*="Kicker"]::before,
-.oomol-landing-main [class*="eyebrow"]:not([class*="eyebrowNumber"]):not([class*="eyebrowLabel"]):not([class*="eyebrowDivider"])::before,
-.oomol-landing-main [class*="Eyebrow"]::before,
+.oomol-landing-main
+  [class*="eyebrow"]:not([class*="eyebrowNumber"]):not(
+    [class*="eyebrowLabel"]
+  ):not([class*="eyebrowDivider"])::before,
+.oomol-landing-main
+  [class*="Eyebrow"]:not([class*="EyebrowNumber"]):not(
+    [class*="EyebrowLabel"]
+  ):not([class*="EyebrowDivider"])::before,
 .oomol-landing-main [class*="kicker"]::before,
 .oomol-landing-main [class*="Kicker"]::before {
   content: "";
@@ -275,8 +325,10 @@ html[lang="en"] {
 }
 
 /* Badges (非 step 水印里的编号) — 也走 mono pill 但带 hairline */
-.oomol-home-main [class*="badge" i]:not([class*="NoWrap"]):not([class*="noWrap"]),
-.oomol-landing-main [class*="badge" i]:not([class*="NoWrap"]):not([class*="noWrap"]) {
+.oomol-home-main
+  [class*="badge" i]:not([class*="NoWrap"]):not([class*="noWrap"]),
+.oomol-landing-main
+  [class*="badge" i]:not([class*="NoWrap"]):not([class*="noWrap"]) {
   display: inline-flex;
   width: fit-content;
   align-items: center;
@@ -349,7 +401,8 @@ html[lang="en"] {
 
 /* Ring-style legacy badges with uppercase / heavy weight — 统一降权为正常 */
 .oomol-home-main :is([class*="tag" i], [class*="pill" i], [class*="chip" i]),
-.oomol-landing-main :is([class*="tag" i], [class*="pill" i], [class*="chip" i]) {
+.oomol-landing-main
+  :is([class*="tag" i], [class*="pill" i], [class*="chip" i]) {
   text-transform: none;
   font-weight: 500;
   letter-spacing: var(--oomol-tracking-mono);
@@ -453,95 +506,6 @@ html[lang="en"] {
    基于标准的移动优先设计
    ============================================ */
 
-// 标准断点定义
-$breakpoint-xs: 375px; // 小手机
-$breakpoint-sm: 640px; // 大手机
-$breakpoint-md: 768px; // 平板
-$breakpoint-lg: 1024px; // 笔记本
-$breakpoint-xl: 1280px; // 桌面
-$breakpoint-2xl: 1536px; // 大屏幕
-
-// 为了向后兼容，保留旧的变量名作为别名
-$mobile-width: $breakpoint-xs;
-$mobile-middle-width: 390px;
-$mobile-large-width: 430px;
-$tablet-width: $breakpoint-sm;
-$tablet-middle-width: $breakpoint-md;
-$tablet-large-width: 820px;
-$desktop-width: $breakpoint-xl;
-
-// 推荐使用的新 mixin（标准命名）
-@mixin respond-to($breakpoint) {
-  @if $breakpoint == xs {
-    @media (max-width: $breakpoint-xs) {
-      @content;
-    }
-  } @else if $breakpoint == sm {
-    @media (max-width: $breakpoint-sm) {
-      @content;
-    }
-  } @else if $breakpoint == md {
-    @media (max-width: $breakpoint-md) {
-      @content;
-    }
-  } @else if $breakpoint == lg {
-    @media (max-width: $breakpoint-lg) {
-      @content;
-    }
-  } @else if $breakpoint == xl {
-    @media (max-width: $breakpoint-xl) {
-      @content;
-    }
-  } @else if $breakpoint == 2xl {
-    @media (max-width: $breakpoint-2xl) {
-      @content;
-    }
-  }
-}
-
-// 为了向后兼容，保留旧的 mixin
-@mixin phone {
-  @media (max-width: #{$mobile-width}) {
-    @content;
-  }
-}
-
-@mixin phone-middle {
-  @media (max-width: #{$mobile-middle-width}) {
-    @content;
-  }
-}
-
-@mixin phone-large {
-  @media (max-width: #{$mobile-large-width}) {
-    @content;
-  }
-}
-
-@mixin pad {
-  @media (max-width: #{$tablet-width}) {
-    @content;
-  }
-}
-
-@mixin pad-middle {
-  @media (max-width: #{$tablet-middle-width}) {
-    @content;
-  }
-}
-
-@mixin pad-large {
-  @media (max-width: #{$tablet-large-width}) {
-    @content;
-  }
-}
-
-@mixin desktop {
-  @media (max-width: #{$desktop-width}) {
-    @content;
-  }
-}
-
 @media (min-width: 997px) {
   :root {
     // TODO: 替换为新的 Navbar 样式后再恢复该样式
@@ -550,15 +514,6 @@ $desktop-width: $breakpoint-xl;
 
     --ifm-navbar-height: 64px;
   }
-}
-
-/* 副文案：纯色次级色，无渐变（旧名 linearGradientColor 已弃用） */
-@mixin flatSecondaryText {
-  color: var(--oomol-text-secondary);
-  background-image: none;
-  -webkit-background-clip: unset;
-  background-clip: unset;
-  -webkit-text-fill-color: unset;
 }
 
 // 文档页面使用，用于在一行显示多个图片

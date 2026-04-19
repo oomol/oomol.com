@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss";
 
-import { MDXProvider } from "@mdx-js/react";
 import Head from "@docusaurus/Head";
+import { MDXProvider } from "@mdx-js/react";
 import React from "react";
 
 import Privacy from "./_privacy.mdx";

@@ -1,5 +1,7 @@
+import type { VariantProps } from "class-variance-authority";
+
 import { cn } from "@site/src/lib/utils";
-import { cva, type VariantProps } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 import * as React from "react";
 
 const alertVariants = cva(
@@ -59,7 +61,10 @@ const AlertDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("text-oomol-sm leading-[1.55] [&_p]:leading-[1.55]", className)}
+    className={cn(
+      "text-oomol-sm leading-[1.55] [&_p]:leading-[1.55]",
+      className
+    )}
     {...props}
   />
 ));

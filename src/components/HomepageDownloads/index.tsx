@@ -1,10 +1,10 @@
 import styles from "./styles.module.scss";
 
 import { translate } from "@docusaurus/Translate";
+import { BlurFade } from "@site/src/components/ui/blur-fade";
 import { DownloadUrl } from "@site/src/download_url";
 import React from "react";
 
-import { BlurFade } from "@site/src/components/ui/blur-fade";
 import { Button } from "../ui/button";
 
 type DownloadBtnProps = {

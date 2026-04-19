@@ -1,5 +1,7 @@
-import Head from "@docusaurus/Head";
+import homeStyles from "./home.module.scss";
+
 import BrowserOnly from "@docusaurus/BrowserOnly";
+import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
 import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
 import HomepageLinearFlow from "@site/src/components/HomepageLinearFlow";
@@ -9,7 +11,6 @@ import HomepageWhyOomol from "@site/src/components/HomepageWhyOomol";
 import React from "react";
 
 import Layout from "../theme/Layout";
-import homeStyles from "./home.module.scss";
 
 type PerfSection =
   | "hero"

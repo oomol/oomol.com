@@ -8,7 +8,7 @@ import { Popover } from "@site/src/components/Popover";
 import { Button } from "@site/src/components/ui/button";
 import ThemedImage from "@theme/ThemedImage";
 import { clsx } from "clsx";
-import React, { useState, useMemo } from "react";
+import React, { useMemo } from "react";
 
 import { ColorModeDropdown } from "../components/ColorModeDropdown";
 import { LocalDropdown } from "../components/LocalDropdown";
@@ -128,7 +128,7 @@ const Footer: React.FC = () => {
   const { copyright, links = [] } = siteConfig.themeConfig.footer;
   const hasFooter = !!siteConfig.themeConfig.footer;
   const currentLocale = i18n.currentLocale;
-  const [isHovered, setIsHovered] = useState(false);
+
   const logoLight = useBaseUrl(
     `/img/logo-${currentLocale === "zh-CN" ? "zh" : "en"}-light.svg`
   );
@@ -190,16 +190,9 @@ const Footer: React.FC = () => {
                   role="button"
                   tabIndex={0}
                   aria-label="WeChat QR code"
-                  onMouseEnter={() => setIsHovered(true)}
-                  onMouseLeave={() => setIsHovered(false)}
-                  onFocus={() => setIsHovered(true)}
-                  onBlur={() => setIsHovered(false)}
                 >
                   <i
-                    className={clsx(
-                      "i-simple-icons-wechat",
-                      styles.socialIcon
-                    )}
+                    className={clsx("i-simple-icons-wechat", styles.socialIcon)}
                     aria-hidden="true"
                   />
                 </div>
