@@ -1,7 +1,7 @@
 import styles from "./ColorModeDropdown.module.scss";
 
 import { translate } from "@docusaurus/Translate";
-import { Button } from "@site/src/components/ui/button";
+import { Button, type ButtonProps } from "@site/src/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,6 +13,7 @@ import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
 type ColorModeType = "light" | "dark" | "system";
 
 export interface ColorModeDropdownProps {
+  buttonVariant?: ButtonProps["variant"];
   triggerClassName?: string;
 }
 
@@ -35,6 +36,7 @@ const getModeText = (mode: ColorModeType) => {
 };
 
 export const ColorModeDropdown = ({
+  buttonVariant = "ghost",
   triggerClassName,
 }: ColorModeDropdownProps) => {
   const { colorMode, colorModeChoice, setColorMode } = useHydratedColorMode();
@@ -70,7 +72,7 @@ export const ColorModeDropdown = ({
         <Button
           className={`${styles.triggerButton}${triggerClassName ? ` ${triggerClassName}` : ""}`}
           size="sm"
-          variant="ghost"
+          variant={buttonVariant}
         >
           <i className={`${getDisplayIcon()} ${styles.triggerIcon}`} />
           {getDisplayText()}

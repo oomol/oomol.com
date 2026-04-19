@@ -238,17 +238,23 @@ const Footer: React.FC = () => {
             )}
           </div>
           <div className={styles.rightControls}>
-            <ColorModeDropdown triggerClassName={styles.footerControlSurface} />
+            <ColorModeDropdown
+              buttonVariant="outline"
+              triggerClassName={styles.footerControlSurface}
+            />
             <Button
               className={`${styles.cookieControlButton} ${styles.footerControlSurface}`}
               size="sm"
-              variant="ghost"
+              variant="outline"
               onClick={showCookieConsent}
             >
               <i className={`i-lucide-cookie ${styles.cookieControlIcon}`} />
               {currentLocale === "zh-CN" ? "Cookie 设置" : "Cookie settings"}
             </Button>
-            <LocalDropdown triggerClassName={styles.footerControlSurface} />
+            <LocalDropdown
+              buttonVariant="outline"
+              triggerClassName={styles.footerControlSurface}
+            />
           </div>
         </div>
       </div>
