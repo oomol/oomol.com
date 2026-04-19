@@ -9,6 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@site/src/components/ui/dropdown-menu";
 import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
+import * as React from "react";
 
 type ColorModeType = "light" | "dark" | "system";
 
@@ -40,6 +41,8 @@ export const ColorModeDropdown = ({
   triggerClassName,
 }: ColorModeDropdownProps) => {
   const { colorMode, colorModeChoice, setColorMode } = useHydratedColorMode();
+  const triggerRef = React.useRef<HTMLButtonElement>(null);
+  const shouldSkipTriggerRefocusRef = React.useRef(false);
   const selectedMode: ColorModeType = colorModeChoice ?? "system";
 
   const modes: ColorModeType[] = ["light", "dark", "system"];
@@ -70,6 +73,7 @@ export const ColorModeDropdown = ({
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
+          ref={triggerRef}
           className={`${styles.triggerButton}${triggerClassName ? ` ${triggerClassName}` : ""}`}
           size="sm"
           variant={buttonVariant}
@@ -78,11 +82,27 @@ export const ColorModeDropdown = ({
           {getDisplayText()}
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" side="top" className={styles.menu}>
+      <DropdownMenuContent
+        align="end"
+        side="top"
+        className={styles.menu}
+        onCloseAutoFocus={event => {
+          if (!shouldSkipTriggerRefocusRef.current) {
+            return;
+          }
+
+          event.preventDefault();
+          shouldSkipTriggerRefocusRef.current = false;
+          triggerRef.current?.blur();
+        }}
+      >
         {modes.map(mode => (
           <DropdownMenuItem
             key={mode}
             className={styles.menuItem}
+            onPointerDown={() => {
+              shouldSkipTriggerRefocusRef.current = true;
+            }}
             onSelect={() => handleModeChange(mode)}
           >
             <i className={modeIconMap[mode]} />
