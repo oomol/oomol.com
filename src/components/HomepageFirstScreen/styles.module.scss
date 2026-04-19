@@ -291,6 +291,46 @@
   }
 }
 
+@media (max-width: 480px) {
+  .section {
+    padding: 3rem 0 1.4rem;
+  }
+
+  .container {
+    padding: 0 16px;
+    gap: 1.15rem;
+  }
+
+  .slogan {
+    font-size: clamp(2.3rem, 12.8vw, 3rem);
+    line-height: 1.06;
+  }
+
+  .overview {
+    font-size: var(--oomol-body-base);
+    line-height: 1.58;
+  }
+
+  .actions {
+    max-width: 100%;
+    gap: 0.6rem;
+  }
+
+  .workflowArchive {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    gap: 0.55rem;
+  }
+
+  .workflowArchiveTitle {
+    font-size: var(--oomol-font-size-lg);
+  }
+
+  .workflowArchiveLead {
+    font-size: var(--oomol-body-sm);
+  }
+}
+
 /* ── Dark mode ── */
 
 [data-theme="dark"] {

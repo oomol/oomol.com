@@ -298,6 +298,17 @@
     padding-top: 0.8rem;
   }
 
+  .homeActions {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 20rem;
+  }
+
+  .homeActions > * {
+    width: 100%;
+  }
+
   .homeStoryLead,
   .homeStorySummary p,
   .homePrincipleContent p {
@@ -385,6 +396,16 @@
     &[aria-expanded="true"]::after {
       transform: rotate(-90deg);
     }
+  }
+}
+
+@media (max-width: 480px) {
+  .homeContainer {
+    padding: 0 16px;
+  }
+
+  .homePreviewFrame {
+    min-height: 200px;
   }
 }
 

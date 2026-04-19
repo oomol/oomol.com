@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 16px;
+  box-sizing: border-box;
 }
 
 .title {
@@ -24,10 +26,14 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+  width: 100%;
+  max-width: 1280px;
 }
 
 .card {
-  width: 413px;
+  width: min(413px, 100%);
+  max-width: 100%;
+  flex: 1 1 320px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -68,6 +74,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .tag {
@@ -119,8 +127,32 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .title {
+    gap: 10px;
+    padding-top: 28px;
+    padding-bottom: 36px;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .pricing {
+    gap: 16px;
+  }
+
   .card {
     width: 100%;
+    flex-basis: 100%;
+    padding: 16px;
+  }
+
+  .top-up {
+    height: auto;
+    min-height: 160px;
   }
 }
 

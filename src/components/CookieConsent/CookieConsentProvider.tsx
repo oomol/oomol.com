@@ -347,19 +347,25 @@ const CookieConsentProviderInner: React.FC = () => {
             <h3 className="m-0 text-oomol-lg font-semibold leading-tight tracking-[-0.02em] text-[var(--oomol-text-primary)] [font-family:var(--oomol-font-display)]">
               {t.title}
             </h3>
-            <p className="m-0 text-oomol-mono leading-relaxed text-[var(--oomol-text-secondary)]">
-              {t.message}
-            </p>
-            <div className="flex flex-col gap-3 border-t border-solid border-[var(--oomol-divider)] pt-3.5 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-col gap-2">
+              <p className="m-0 text-oomol-mono leading-relaxed text-[var(--oomol-text-secondary)]">
+                {t.message}
+              </p>
+              <div
+                aria-hidden
+                className="h-px w-full shrink-0 bg-[var(--oomol-divider)]"
+              />
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <a
-                className="order-last text-oomol-xs font-medium text-[var(--oomol-text-tertiary)] no-underline transition-colors hover:text-[var(--oomol-text-primary)] sm:order-first"
+                className="order-2 inline-flex max-w-full shrink-0 text-oomol-xs font-medium text-[var(--oomol-text-tertiary)] underline-offset-[3px] transition-colors hover:text-[var(--oomol-text-primary)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--oomol-bg-base)] sm:order-1"
                 href={privacyPolicyUrl}
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 {t.privacyPolicyText}
               </a>
-              <div className="flex flex-wrap items-center justify-end gap-2">
+              <div className="order-1 flex flex-wrap items-center justify-end gap-2 sm:order-2">
                 <Button
                   className="h-8 rounded-md px-3"
                   onClick={handleRejectAll}

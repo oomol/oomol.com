@@ -1,26 +1,56 @@
 @use "../../css/custom.scss" as *;
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 16px;
+.page {
+  background: var(--oomol-bg-base);
 }
 
-.titleBox {
+.heroSection,
+.pricingModelSection,
+.subscriptionSection,
+.tableSectionWrapper {
   width: 100%;
-  min-height: 280px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: clamp(3.4rem, 7vw, 5.4rem) 0;
-  gap: 1.1rem;
+  border-bottom: 1px solid var(--oomol-divider);
+  background: var(--oomol-bg-base);
+}
+
+.heroSection {
+  padding: clamp(4.8rem, 10vw, 8rem) 0 clamp(3rem, 6vw, 4.5rem);
+}
+
+.pricingModelSection {
+  padding: clamp(3.2rem, 7vw, 4.8rem) 0;
+}
+
+.subscriptionSection {
+  padding: clamp(5rem, 10vw, 8rem) 0;
+}
+
+.tableSectionWrapper {
+  padding: clamp(5rem, 9vw, 7rem) 0;
+  background: var(--oomol-bg-container);
+}
+
+.sectionFlushBottom {
+  padding-bottom: clamp(3.5rem, 7vw, 5.5rem);
+  border-bottom: 0;
+}
+
+.sectionInner {
+  width: min(1200px, calc(100% - 48px));
   margin: 0 auto;
 }
 
+.titleBox {
+  max-width: 48rem;
+  display: grid;
+  justify-items: center;
+  gap: 1.1rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .title {
+  margin: 0;
   max-width: 20ch;
   font-family: var(--oomol-font-display);
   font-size: var(--oomol-display-hero);
@@ -33,6 +63,7 @@
 }
 
 .subTitle {
+  margin: 0;
   max-width: 40rem;
   font-size: var(--oomol-body-lead);
   line-height: var(--oomol-line-height-relaxed);
@@ -45,39 +76,22 @@
 .planBox {
   position: relative;
   z-index: 1;
-  width: min(1180px, 100%);
+  width: 100%;
   min-height: 593px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: stretch;
   gap: clamp(18px, 2.2vw, 26px);
   padding: 10px 0 0;
-  margin: 0 auto;
-}
-
-.subscriptionSection {
-  width: 100%;
-  max-width: 1280px;
-  margin: 40px auto 80px;
-  padding: 20px 16px 0;
-  position: relative;
-  isolation: isolate;
-}
-
-.pricingModelSection {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto 28px;
-  padding: 0 16px;
 }
 
 .pricingModelAlert {
-  max-width: 1100px;
+  max-width: none;
   margin: 0 auto 20px;
 }
 
 .pricingModelGrid {
-  width: min(1100px, 100%);
+  width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -112,6 +126,7 @@
 }
 
 .pricingModelTitle {
+  margin: 0;
   color: var(--oomol-text-primary);
   font-size: var(--oomol-font-size-2xl);
   line-height: 1.25;
@@ -126,16 +141,14 @@
 }
 
 .tableSectionWrapper {
-  width: 100%;
-  max-width: 1200px;
-  margin: 96px auto 112px;
-  padding: 0 16px;
   position: relative;
 }
 
 .sectionTitle {
   position: relative;
   z-index: 1;
+  margin: 0 auto 16px;
+  max-width: 24ch;
   font-family: var(--oomol-font-display);
   font-size: var(--oomol-display-section);
   line-height: 1.15;
@@ -143,14 +156,13 @@
   letter-spacing: var(--oomol-tracking-section);
   color: var(--oomol-text-primary);
   text-align: center;
-  margin-bottom: 16px;
 }
 
 .sectionSubtitle {
   position: relative;
   z-index: 1;
-  max-width: 860px;
   margin: 0 auto 52px;
+  max-width: 860px;
   font-size: var(--oomol-body-lead);
   line-height: var(--oomol-line-height-relaxed);
   letter-spacing: var(--oomol-tracking-body);
@@ -230,6 +242,7 @@
 }
 
 .planName {
+  margin: 0;
   font-family: var(--oomol-font-display);
   font-size: var(--oomol-font-size-xl);
   line-height: 1.05;
@@ -581,7 +594,7 @@
 }
 
 [data-theme="dark"] {
-  .container {
+  .page {
     position: relative;
     isolation: isolate;
   }
@@ -594,7 +607,6 @@
   .subTitle {
     color: var(--oomol-text-secondary);
   }
-
 
   .pricingModelCard {
     background: var(--oomol-bg-elevated);
@@ -707,13 +719,10 @@
 
 // 响应式设计
 @media (max-width: 966px) {
-  .pricingModelSection {
-    margin-bottom: 18px;
-  }
-
   .planBox {
     grid-template-columns: 1fr;
     padding-top: 8px;
+    min-height: 0;
   }
 
   .planCard {
@@ -750,10 +759,6 @@
 
   .pricingModelGrid {
     grid-template-columns: 1fr;
-  }
-
-  .tableSectionWrapper {
-    margin: 72px auto 88px;
   }
 
   .priceTablesSection {
@@ -805,5 +810,216 @@
 
   .tablePanel {
     gap: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 2.8rem 0 2.5rem;
+  }
+
+  .pricingModelSection {
+    padding: 2.4rem 0;
+  }
+
+  .subscriptionSection {
+    padding: 3.2rem 0;
+  }
+
+  .tableSectionWrapper {
+    padding: 3.2rem 0;
+  }
+
+  .sectionInner {
+    width: min(100%, calc(100% - 40px));
+  }
+
+  .titleBox {
+    gap: 0.9rem;
+  }
+
+  .title {
+    max-width: 100%;
+    text-wrap: pretty;
+  }
+
+  .subTitle {
+    max-width: 100%;
+    font-size: var(--oomol-body-base);
+    line-height: 1.62;
+  }
+
+  .pricingModelAlert {
+    margin-bottom: 16px;
+  }
+
+  .pricingModelCard {
+    padding: 16px 16px 18px;
+  }
+
+  .pricingModelTitle {
+    font-size: var(--oomol-font-size-xl);
+    line-height: 1.3;
+  }
+
+  .planBox {
+    gap: 14px;
+    padding-top: 0;
+  }
+
+  .planCard {
+    padding: 22px 18px 18px;
+    grid-template-rows: auto auto auto;
+  }
+
+  .badge {
+    top: 14px;
+    right: 14px;
+  }
+
+  .planHeader {
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .planPrice {
+    flex-wrap: wrap;
+    row-gap: 2px;
+  }
+
+  .planPrice .price {
+    font-size: var(--oomol-display-section);
+    line-height: 0.98;
+  }
+
+  .planPrice .period {
+    font-size: var(--oomol-body-base);
+  }
+
+  .planDescription {
+    min-height: 0;
+    font-size: var(--oomol-body-sm);
+    line-height: 1.62;
+  }
+
+  .planActionArea {
+    min-height: 0;
+    margin-bottom: 18px;
+  }
+
+  .featureList {
+    gap: 8px;
+    padding-top: 14px;
+  }
+
+  .sectionTitle {
+    margin-bottom: 12px;
+  }
+
+  .sectionSubtitle {
+    margin-bottom: 24px;
+  }
+
+  .priceTablesSection {
+    padding: 18px 14px;
+  }
+
+  .tableSectionHeader {
+    row-gap: 12px;
+    padding-bottom: 16px;
+  }
+
+  .tableSectionTitle {
+    font-size: var(--oomol-display-section);
+    line-height: 1.08;
+  }
+
+  .tableSectionSubtitle {
+    font-size: var(--oomol-body-sm);
+    line-height: 1.62;
+  }
+
+  .tableSyncNote {
+    gap: 8px;
+    padding: 12px 13px;
+    font-size: var(--oomol-font-size-xs);
+  }
+
+  .tableTabs {
+    :global([role="tablist"]) {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    :global([role="tab"]) {
+      width: 100%;
+      margin-right: 0;
+      justify-content: flex-start;
+      padding-bottom: 10px;
+    }
+
+    :global([role="tabpanel"]) {
+      padding-top: 16px;
+    }
+  }
+
+  .emptyCell {
+    padding: 24px 16px !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .sectionInner {
+    width: min(100%, calc(100% - 32px));
+  }
+
+  .heroSection {
+    padding: 2.4rem 0 2.1rem;
+  }
+
+  .planCard {
+    padding: 18px 14px 14px;
+  }
+
+  .planHeader {
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .planName {
+    font-size: var(--oomol-font-size-lg);
+  }
+
+  .planPrice .price {
+    font-size: clamp(2.2rem, 11vw, 2.8rem);
+  }
+
+  .planDescription {
+    max-width: 100%;
+    line-height: 1.56;
+  }
+
+  .planHighlights {
+    gap: 8px;
+  }
+
+  .planHighlight {
+    min-height: 24px;
+    padding: 2px 7px;
+  }
+
+  .featureItem {
+    gap: 8px;
+    font-size: var(--oomol-body-sm);
+    line-height: 1.5;
+  }
+
+  .priceTablesSection {
+    padding: 14px 10px;
+  }
+
+  .tableSyncNote {
+    padding: 10px 11px;
   }
 }

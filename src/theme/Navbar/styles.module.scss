@@ -582,8 +582,9 @@
   .navbar {
     height: 64px;
     display: flex;
-    background: color-mix(in srgb, var(--oomol-bg-base) 90%, transparent);
-    backdrop-filter: blur(18px) saturate(128%);
+    /* Solid-tint bar instead of backdrop-filter: resize drags re-sample the full
+       navbar width every frame; blur + sticky is a common jank source (see custom.scss). */
+    background: color-mix(in srgb, var(--oomol-bg-base) 97%, transparent);
     border-bottom: 1px solid var(--oomol-divider);
 
     // TODO: Disable the new navbar design for now,
@@ -609,13 +610,56 @@
 
 @media (max-width: 996px) {
   .navbar {
-    backdrop-filter: blur(10px) saturate(115%);
-    background: color-mix(in srgb, var(--oomol-bg-base) 92%, transparent);
+    background: color-mix(in srgb, var(--oomol-bg-base) 97%, transparent);
     border-bottom: 1px solid var(--oomol-divider);
+  }
+
+  .productMenuWrapper {
+    display: none;
+  }
+
+  .itemsRight {
+    gap: 0.5rem;
+    margin-left: auto;
   }
 
   .actions {
     gap: 0.55rem;
   }
+}
 
+@media (max-width: 640px) {
+  .brand {
+    margin-right: 0.5rem;
+  }
+
+  .brand img {
+    height: 28px;
+    width: auto;
+  }
+
+  .itemsRight {
+    gap: 0.4rem;
+  }
+
+  .loginButton {
+    padding-inline: 0.85rem;
+  }
+
+  :global(.navbar__toggle) {
+    padding-left: 8px;
+  }
+}
+
+@media (max-width: 430px) {
+  .loginButton {
+    min-width: 42px;
+    padding-inline: 0.8rem;
+    font-size: 0;
+  }
+
+  .loginButton i {
+    margin: 0;
+    font-size: var(--oomol-body-base);
+  }
 }

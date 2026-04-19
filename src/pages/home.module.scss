@@ -1,0 +1,20 @@
+/* Homepage-only: avoid Motion/IntersectionObserver wrappers for section chrome —
+   those still do work on viewport changes; CSS one-shot is enough here. */
+
+.homeHeroEnter {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: homeHeroEnter 0.48s cubic-bezier(0.16, 1, 0.3, 1) 0.06s both;
+  }
+}
+
+@keyframes homeHeroEnter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

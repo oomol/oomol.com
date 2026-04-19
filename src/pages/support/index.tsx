@@ -42,7 +42,7 @@ export default function Support() {
                 Go to our GitHub discussions to browse for help and best
                 practices.
               </div>
-              <Button asChild>
+              <Button asChild className={styles.supportAction}>
                 <a
                   target="_blank"
                   href="https://github.com/orgs/oomol-lab/discussions"
@@ -70,7 +70,7 @@ export default function Support() {
                 If you need instant communication, please join our Discord
                 server.
               </div>
-              <Button asChild>
+              <Button asChild className={styles.supportAction}>
                 <a
                   target="_blank"
                   href="https://discord.gg/W3evr2kJDa"
@@ -98,7 +98,7 @@ export default function Support() {
                 If you need help beyond the product, you can contact us by
                 email.
               </div>
-              <Button asChild>
+              <Button asChild className={styles.supportAction}>
                 <a href="mailto:support@oomol.com">Email To Us</a>
               </Button>
             </CardContent>

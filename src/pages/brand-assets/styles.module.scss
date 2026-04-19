@@ -7,6 +7,7 @@
   justify-content: flex-start;
   padding: 0 16px;
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 .titleBox {
@@ -62,9 +63,12 @@
 
   @media (max-width: 1199px) {
     flex-direction: column;
+    gap: 24px;
+
     .sidebar {
       display: none;
     }
+
     .content {
       width: 100%;
       padding: 0;
@@ -210,5 +214,49 @@
 
   &:hover {
     color: var(--oomol-primary);
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .titleBox {
+    min-height: 0;
+    padding: 48px 0 40px;
+    max-width: 100%;
+  }
+
+  .title {
+    max-width: 100%;
+  }
+
+  .subTitle {
+    max-width: 100%;
+    font-size: var(--oomol-body-base);
+    line-height: 1.62;
+  }
+
+  .scrollBox {
+    padding: 24px 0 40px;
+  }
+
+  .content {
+    padding: 0;
+  }
+
+  .section {
+    gap: 24px;
+    padding-bottom: 32px;
+  }
+
+  .sectionTitle {
+    font-size: var(--oomol-display-section);
+  }
+
+  .sectionContentMultiple,
+  .sectionContentSingle {
+    gap: 20px;
   }
 }

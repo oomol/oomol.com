@@ -8,7 +8,7 @@ import { Button } from "@site/src/components/ui/button";
 import React from "react";
 
 export default function HomepageFirstScreen() {
-  const studioDownloadsHref = useBaseUrl("/downloads#studio-downloads");
+  const studioDownloadsHref = useBaseUrl("/downloads?section=studio-downloads");
 
   return (
     <section className={styles.section}>
@@ -49,8 +49,7 @@ export default function HomepageFirstScreen() {
           </div>
         </div>
 
-        {/* 这是“首页的动画组件备用模块”，先不显示。
-        <HomepageHeroCopilotBeam />
+        {/* 这里保留的是旧版首页实验方案的说明；当前首页不再使用 beam / terminal 组合。
 
         <div className={styles.heroTerminal}>
           <Terminal staticMode={reduceMotion === true}>

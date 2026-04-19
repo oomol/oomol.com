@@ -1,14 +1,67 @@
 import Head from "@docusaurus/Head";
+import BrowserOnly from "@docusaurus/BrowserOnly";
 import { translate } from "@docusaurus/Translate";
 import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
 import HomepageLinearFlow from "@site/src/components/HomepageLinearFlow";
 import HomepagePainPoints from "@site/src/components/HomepagePainPoints";
 import HomepageToolStrip from "@site/src/components/HomepageToolStrip";
 import HomepageWhyOomol from "@site/src/components/HomepageWhyOomol";
-import { BlurFade } from "@site/src/components/ui/blur-fade";
 import React from "react";
 
 import Layout from "../theme/Layout";
+import homeStyles from "./home.module.scss";
+
+type PerfSection =
+  | "hero"
+  | "toolstrip"
+  | "painpoints"
+  | "why"
+  | "flow";
+
+const PERF_SECTION_KEYS: PerfSection[] = [
+  "hero",
+  "toolstrip",
+  "painpoints",
+  "why",
+  "flow",
+];
+
+function parseHomepagePerfSections(): Set<PerfSection> {
+  if (typeof window === "undefined") {
+    return new Set();
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const raw = params.get("perf-hide");
+  if (!raw) {
+    return new Set();
+  }
+
+  return new Set(
+    raw
+      .split(",")
+      .map(value => value.trim().toLowerCase())
+      .filter((value): value is PerfSection =>
+        PERF_SECTION_KEYS.includes(value as PerfSection)
+      )
+  );
+}
+
+function HomepageSections({ hidden }: { hidden: Set<PerfSection> }) {
+  return (
+    <main className="oomol-home-main">
+      {!hidden.has("hero") && (
+        <div className={homeStyles.homeHeroEnter}>
+          <HomepageFirstScreen />
+        </div>
+      )}
+      {!hidden.has("toolstrip") && <HomepageToolStrip />}
+      {!hidden.has("painpoints") && <HomepagePainPoints />}
+      {!hidden.has("why") && <HomepageWhyOomol />}
+      {!hidden.has("flow") && <HomepageLinearFlow />}
+    </main>
+  );
+}
 
 export default function Home() {
   return (
@@ -26,24 +79,9 @@ export default function Home() {
           })}
         />
       </Head>
-      <main className="oomol-home-main">
-        {/* Magic UI Blur Fade：inView=false 为挂载即播放入场；inView 为 true 时滚入视口再播 */}
-        <BlurFade duration={0.48} offset={16} delay={0.06} blur="0px">
-          <HomepageFirstScreen />
-        </BlurFade>
-        <BlurFade inView duration={0.44} offset={14} blur="0px">
-          <HomepageToolStrip />
-        </BlurFade>
-        <BlurFade inView duration={0.44} offset={14} blur="0px">
-          <HomepagePainPoints />
-        </BlurFade>
-        <BlurFade inView duration={0.44} offset={14} blur="0px">
-          <HomepageWhyOomol />
-        </BlurFade>
-        <BlurFade inView duration={0.44} offset={14} blur="0px">
-          <HomepageLinearFlow />
-        </BlurFade>
-      </main>
+      <BrowserOnly fallback={<HomepageSections hidden={new Set()} />}>
+        {() => <HomepageSections hidden={parseHomepagePerfSections()} />}
+      </BrowserOnly>
     </Layout>
   );
 }

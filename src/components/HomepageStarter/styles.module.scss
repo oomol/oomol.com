@@ -8,6 +8,9 @@
   flex-direction: column;
   padding-top: 64px;
   padding-bottom: 64px;
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
 }
 
 .title {
@@ -23,7 +26,7 @@
 }
 
 .inner {
-  width: 600px;
+  width: min(600px, 100%);
   text-align: center;
   margin-bottom: 48px;
 }
@@ -34,8 +37,22 @@
 }
 
 @media screen and (max-width: 600px) {
+  .sectionStarter {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
   .inner {
     width: 100%;
-    padding: 0 24px;
+    padding: 0;
+    margin-bottom: 28px;
+  }
+
+  .cta {
+    width: 100%;
+    min-width: 0;
+    max-width: 20rem;
   }
 }
