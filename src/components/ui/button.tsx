@@ -1,9 +1,12 @@
+import styles from "./button.module.scss";
+
+import type {VariantProps} from "class-variance-authority";
+
 import { Slot } from "@radix-ui/react-slot";
 import { cn } from "@site/src/lib/utils";
-import { cva, type VariantProps } from "class-variance-authority";
+import { cva  } from "class-variance-authority";
 import * as React from "react";
 
-import styles from "./button.module.scss";
 
 /**
  * shadcn/ui Button — tuned to Vercel's marketing-site button system.

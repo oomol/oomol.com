@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss";
 
-import { MDXProvider } from "@mdx-js/react";
 import Head from "@docusaurus/Head";
+import { MDXProvider } from "@mdx-js/react";
 import Layout from "@theme/Layout";
 import React from "react";
 

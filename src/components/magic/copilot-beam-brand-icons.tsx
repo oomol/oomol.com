@@ -1,6 +1,7 @@
+import styles from "./copilot-beam-brand-icons.module.scss";
+
 import { useId } from "react";
 
-import styles from "./copilot-beam-brand-icons.module.scss";
 
 /**
  * Brand-colored SaaS marks (inline SVG) for the co-pilot beam hero.

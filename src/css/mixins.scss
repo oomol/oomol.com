@@ -1,0 +1,98 @@
+/* Shared Sass helpers only.
+   Keep this file CSS-output-free so module styles can safely `@use` it. */
+
+// Standard breakpoint definitions
+$breakpoint-xs: 375px; // Small phones
+$breakpoint-sm: 640px; // Large phones
+$breakpoint-md: 768px; // Tablets
+$breakpoint-lg: 1024px; // Laptops
+$breakpoint-xl: 1280px; // Desktop
+$breakpoint-2xl: 1536px; // Large desktop
+
+// Legacy aliases kept for existing modules
+$mobile-width: $breakpoint-xs;
+$mobile-middle-width: 390px;
+$mobile-large-width: 430px;
+$tablet-width: $breakpoint-sm;
+$tablet-middle-width: $breakpoint-md;
+$tablet-large-width: 820px;
+$desktop-width: $breakpoint-xl;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: $breakpoint-xs) {
+      @content;
+    }
+  } @else if $breakpoint == sm {
+    @media (max-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (max-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (max-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (max-width: $breakpoint-xl) {
+      @content;
+    }
+  } @else if $breakpoint == 2xl {
+    @media (max-width: $breakpoint-2xl) {
+      @content;
+    }
+  }
+}
+
+@mixin phone {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin phone-middle {
+  @media (max-width: #{$mobile-middle-width}) {
+    @content;
+  }
+}
+
+@mixin phone-large {
+  @media (max-width: #{$mobile-large-width}) {
+    @content;
+  }
+}
+
+@mixin pad {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin pad-middle {
+  @media (max-width: #{$tablet-middle-width}) {
+    @content;
+  }
+}
+
+@mixin pad-large {
+  @media (max-width: #{$tablet-large-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+/* Secondary copy should stay flat and avoid clipped gradient text. */
+@mixin flatSecondaryText {
+  color: var(--oomol-text-secondary);
+  background-image: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: unset;
+}

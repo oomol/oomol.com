@@ -1,12 +1,14 @@
-import { useRef } from "react";
+import type {MotionProps, UseInViewOptions, Variants} from "motion/react";
+
 import {
   AnimatePresence,
   motion,
-  useInView,
-  type MotionProps,
-  type UseInViewOptions,
-  type Variants,
+  useInView
+  
+  
+  
 } from "motion/react";
+import { useRef } from "react";
 
 type MarginType = UseInViewOptions["margin"];
 

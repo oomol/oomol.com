@@ -1,4 +1,4 @@
-@use "../../css/custom.scss" as *;
+@use "../../css/mixins.scss" as *;
 
 /* Same runway as SiteCta: spotlight band. Use padding (not margin-top) so no body-white “sandwich” gap. */
 .root {
