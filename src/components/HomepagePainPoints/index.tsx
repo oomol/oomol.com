@@ -80,7 +80,7 @@ export default function HomepagePainPoints() {
       {
         title: translate({
           id: "HOME.PainPoints.card3.title",
-          message: "Read a Gmail attachment, then call an internal API",
+          message: "Read a Gmail attachment, then call your API",
         }),
         description: translate({
           id: "HOME.PainPoints.card3.description",
@@ -95,7 +95,7 @@ export default function HomepagePainPoints() {
         result: translate({
           id: "HOME.PainPoints.card3.solution",
           message:
-            "Download the attachment, call your internal API, and return the output.",
+            "Download the attachment, call your API, and return the output.",
         }),
         apps: [
           { icon: "i-simple-icons-gmail", label: "Gmail" },

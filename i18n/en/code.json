@@ -30,7 +30,7 @@
     "message": "OOMOL - A CLI that turns apps into tools for agents"
   },
   "HOME.page.description": {
-    "message": "Start with oo-cli so Codex, OpenClaw, Claude Code, and other agents can use ready-made tools, APIs, and internal capabilities to get real work moving. When you need to build, combine, and deliver your own tools, move into OOMOL Studio and Cloud."
+    "message": "Start with oo-cli so Codex, OpenClaw, Claude Code, and other agents can use ready-made tools, APIs, and business systems to get real work moving. When you need to build, combine, and deliver your own tools, move into OOMOL Studio and Cloud."
   },
   "HOME.FirstScreen.slogan": {
     "message": "Build and Deliver Tools for Agents"
@@ -42,7 +42,7 @@
     "message": "Your agent does the thinking\nand decision-making.\nLeave the rest to OOMOL."
   },
   "HOME.FirstScreen.heroLead": {
-    "message": "Start with oo-cli so agents can use ready-made tools, APIs, and internal capabilities to get work moving. When those are not enough, move into Studio and Cloud."
+    "message": "Let Codex, OpenClaw, Claude Code, and other agents directly use tools like Gmail and Notion, plus APIs and business systems. Then use OOMOL Studio to compose and extend your own tools."
   },
   "HOME.FirstScreen.video.playAriaLabel": {
     "message": "Play demo video"
@@ -87,7 +87,7 @@
     "message": "Extract requirements, shape tasks, and write them back to Linear."
   },
   "HOME.PainPoints.card3.title": {
-    "message": "Read a Gmail attachment, then call an internal API"
+    "message": "Read a Gmail attachment, then call your API"
   },
   "HOME.PainPoints.card3.description": {
     "message": "Useful when you want to pipe email inputs straight into your own service."
@@ -96,7 +96,7 @@
     "message": "Read the Gmail attachment, call our PDF API, and return the result."
   },
   "HOME.PainPoints.card3.solution": {
-    "message": "Download the attachment, call your internal API, and return the output."
+    "message": "Download the attachment, call your API, and return the output."
   },
   "HOME.PainPoints.card3.apiLabel": {
     "message": "Your API"
@@ -159,7 +159,7 @@
     "message": "Workflow walkthrough"
   },
   "HOME.FirstScreen.workflowArchive.lead": {
-    "message": "Full demo video, kept here for reuse."
+    "message": "A full demo video that walks through the workflow from generation to execution."
   },
   "HOME.CoreFeatures.title": {
     "message": "What Makes “Function-to-Delivery” Actually Work"
@@ -2047,7 +2047,7 @@
     "message": "When you need your own APIs and logic, move into Studio + Cloud"
   },
   "HOME.DeveloperBenefits.card2.description": {
-    "message": "When ready-made tools are not enough, use Studio + Cloud to add your APIs, internal logic, and a long-running delivery path."
+    "message": "When ready-made tools are not enough, use Studio + Cloud to add your APIs, custom logic, and a long-running delivery path."
   },
   "HOME.DeveloperBenefits.card2.note": {
     "message": "Best when you need custom tools and continuous delivery."
@@ -2743,7 +2743,7 @@
     "message": "Write new function tools directly"
   },
   "HOME.DeveloperEntry.card3.text": {
-    "message": "When existing wrappers are not enough, write new function tools and bring in your own APIs, internal systems, and business logic."
+    "message": "When existing wrappers are not enough, write new function tools and bring in your own APIs, business systems, and business logic."
   },
   "HOME.DeveloperEntry.card4.title": {
     "message": "Move the new tool into the delivery path"
