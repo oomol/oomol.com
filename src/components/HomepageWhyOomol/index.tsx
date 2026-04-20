@@ -63,7 +63,7 @@ export default function HomepageWhyOomol() {
         text: translate({
           id: "HOME.DeveloperEntry.card3.text",
           message:
-            "When existing wrappers are not enough, write new function tools and bring in your own APIs, internal systems, and business logic.",
+            "When existing wrappers are not enough, write new function tools and bring in your own APIs, business systems, and business logic.",
         }),
       },
       {
