@@ -599,16 +599,16 @@ export default function Index() {
     const tableAlert = isLLMTable
       ? tPricing(
           "PRICING.tables.llm.note",
-          "LLM rates update with the model configuration in console. Units are credits per M token."
+          "LLM rates update with the model configuration in the console. Units are credits per million tokens."
         )
       : isCloudTaskTable
         ? tPricing(
             "PRICING.tables.cloudTask.alert",
-            "Running tools locally in OOMOL Studio does not trigger Cloud Task billing. Running the same tools through OOMOL-hosted surfaces does."
+            "Running tools locally in OOMOL Studio does not incur Cloud Task charges. Running the same tools through OOMOL-hosted services does."
           )
         : tPricing(
             "PRICING.tables.fusionApi.alert",
-            "Some official Blocks provided by OOMOL use these services. Users can also call these APIs directly, and credits are deducted on invocation."
+            "Some official OOMOL tools use these services directly. You can also call them yourself, and that usage is deducted from your credits."
           );
     const tableEmptyState = tPricing(
       "PRICING.tables.llm.empty",

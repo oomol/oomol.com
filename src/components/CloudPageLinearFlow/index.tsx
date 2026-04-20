@@ -155,19 +155,19 @@ const enCopy: Copy = {
     eyebrow: "01 / Cloud",
     title: "Keep delivery, hosted runtime, config, and access in one backend",
     description:
-      "Once the tool is validated, Cloud takes over delivery and keeps hosted runtime, runtime settings, secrets, and access control in one place. The default primary delivery path still flows back into oo-cli.",
+      "Once the tool is validated, Cloud takes over delivery and keeps hosted runtime, runtime settings, secrets, and access control in one place. By default, the tool is still delivered mainly through oo-cli.",
     cards: [
       {
         title: "Deliver it mainly through oo-cli while keeping the same implementation",
-        text: "Once the tool is delivered, it still mainly flows back into oo-cli for agents instead of being rebuilt behind another service layer.",
+        text: "Once the tool is delivered, agents still use it mainly through oo-cli instead of through a separate service layer built around it.",
       },
       {
         title: "Manage config and secrets together",
         text: "Keep runtime settings, secrets, and environment differences in one console.",
       },
       {
-        title: "Review access, status, and usage relationships in one place",
-        text: "Manage permissions, runtime status, and usage relationships without splitting them across tools.",
+        title: "Review access, status, and usage in one place",
+        text: "Manage permissions, runtime status, and usage data without splitting them across tools.",
       },
     ],
     media: {
@@ -182,10 +182,10 @@ const enCopy: Copy = {
     eyebrow: "02 / oo-cli",
     title: "After delivery, agents still use it through the oo-cli path",
     description:
-      "For the user, there is no need to understand your implementation or learn a new workflow. Once delivered, they still search, inspect, and use it through oo-cli. APIs, MCP, and automation remain optional extension surfaces.",
+      "For the user, there is no need to understand your implementation or learn a new workflow. Once delivered, they still search, inspect, and use it through oo-cli. APIs, MCP, and automation remain optional ways to use the same tool.",
     media: {
       title: "oo-cli invocation demo",
-      note: "Show a delivered tool being searched, inspected, and called in Codex.",
+      note: "Shows a delivered tool being searched, inspected, and called in Codex.",
     },
     guide: "Explore oo-cli",
     github: "View GitHub",

@@ -20,12 +20,12 @@ const zhCopy = {
 };
 
 const enCopy = {
-  eyebrow: "Cloud delivery layer",
-  slogan: `Hand delivery, hosted runtime,
-and access control to Cloud`,
-  overview: `Studio is where the tool gets built and validated. Cloud is where it gets delivered, with hosted runtime, configuration, and access handled in one place, then mainly flowing back into oo-cli for agents to use.`,
+  eyebrow: "Cloud delivery",
+  slogan: `Put delivery, hosted runtime,
+and access control in Cloud`,
+  overview: `Studio is where the tool gets built and validated. Cloud is where delivery happens, with hosted runtime, configuration, and access handled in one place, then used mainly through oo-cli by agents.`,
   highlights: [
-    "Deliver back to oo-cli",
+    "Delivered through oo-cli",
     "Hosted runtime",
     "Secrets",
     "Access control",

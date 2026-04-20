@@ -83,10 +83,10 @@ const zhCopy: Copy = {
 };
 
 const enCopy: Copy = {
-  badge: "What oo-cli Does",
+  badge: "What You Can Do with oo-cli",
   title: "Search, inspect, and run tools from one CLI",
   subtitle:
-    "It is more than search. Discovery, inspection, execution, waiting for results, skills, files, and config all live in one CLI.",
+    "It does more than search. Discovery, inspection, execution, waiting for results, skills, files, and config all live in one CLI.",
   cards: [
     {
       icon: "i-lucide-search",
@@ -101,9 +101,9 @@ const enCopy: Copy = {
       icon: "i-lucide-box",
       eyebrow: "Inspect",
       command: "oo packages info",
-      title: "Look at the tool before deciding how to use it",
+      title: "Inspect a tool before deciding how to use it",
       description:
-        "Inspect package metadata, blocks, and versions first so the agent understands the inputs and what the tool is good for before running it.",
+        "Inspect package metadata, input requirements, and versions first so the agent understands what the tool expects and what it is good for before running it.",
       points: ["Reduce blind trial and error", "Understand before executing"],
     },
     {
@@ -146,7 +146,7 @@ const enCopy: Copy = {
       title: "Handle files, auth, config, and debugging",
       description:
         "Upload and download files, switch accounts, manage config, and inspect logs without leaving the CLI you are already using.",
-      points: ["Avoid extra helper surfaces", "Debug real failures faster"],
+      points: ["Avoid extra helper tools", "Debug real failures faster"],
     },
   ],
 };

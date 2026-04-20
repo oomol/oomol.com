@@ -1,31 +1,11 @@
 import styles from "./styles.module.scss";
 
-import type { DocusaurusContext } from "@docusaurus/types";
-
 import Link from "@docusaurus/Link";
+import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { Button } from "@site/src/components/ui/button";
 import ThemedImage from "@theme/ThemedImage";
 import React from "react";
-
-const zhCopy = {
-  badge: "oo-cli 的 GUI 延伸",
-  title: "同一套能力，也可以在 OOMOL AI 里继续用图形界面",
-  description:
-    "当你已经沿 oo-cli 这条路径把工具接起来之后，如果更喜欢图形界面，OOMOL AI 提供同一套能力的官方 GUI 入口，适合在 Web、桌面和 iOS 中继续使用。",
-  points: ["Web", "Desktop", "iOS"],
-  action: "了解 OOMOL AI",
-};
-
-const enCopy = {
-  badge: "GUI extension for oo-cli",
-  title: "The same capability layer also works through OOMOL AI",
-  description:
-    "Once you already understand the oo-cli path, OOMOL AI gives you the official GUI for the same capability layer when you want a visual interface across web, desktop, and iOS.",
-  points: ["Web", "Desktop", "iOS"],
-  action: "Explore OOMOL AI",
-};
 
 function renderLockedBrand(text: string) {
   const brand = "OOMOL AI";
@@ -58,10 +38,43 @@ function renderLockedBrand(text: string) {
 }
 
 export default function HomepageGuiEntry() {
-  const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
-    i18n: { currentLocale: string };
+  const copy = {
+    badge: translate({
+      id: "HOME.GuiEntry.badge",
+      message: "GUI extension of oo-cli",
+    }),
+    title: translate({
+      id: "HOME.GuiEntry.title",
+      message: "You can keep using the same tools through OOMOL AI",
+    }),
+    description: translate({
+      id: "HOME.GuiEntry.description",
+      message:
+        "Once you have tools connected through oo-cli, OOMOL AI gives you the official GUI for using those same capabilities across web, desktop, and iOS.",
+    }),
+    points: [
+      translate({
+        id: "HOME.GuiEntry.point1",
+        message: "Web",
+      }),
+      translate({
+        id: "HOME.GuiEntry.point2",
+        message: "Desktop",
+      }),
+      translate({
+        id: "HOME.GuiEntry.point3",
+        message: "iOS",
+      }),
+    ],
+    action: translate({
+      id: "HOME.GuiEntry.action",
+      message: "Explore OOMOL AI",
+    }),
+    imageAlt: translate({
+      id: "HOME.GuiEntry.imageAlt",
+      message: "OOMOL AI interface preview",
+    }),
   };
-  const copy = i18n.currentLocale === "zh-CN" ? zhCopy : enCopy;
   const imageSources = {
     light: useBaseUrl("/img/pages/app/chat-light.png"),
     dark: useBaseUrl("/img/pages/app/chat-dark.png"),
@@ -93,7 +106,7 @@ export default function HomepageGuiEntry() {
             <div className={styles.mediaFrame}>
               <ThemedImage
                 sources={imageSources}
-                alt="OOMOL AI"
+                alt={copy.imageAlt}
                 className={styles.mediaImage}
               />
             </div>

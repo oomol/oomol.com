@@ -277,12 +277,12 @@ const COPY = {
     page: {
       title: "OOMOL AI - OOMOL's official GUI",
       description:
-        "When you prefer a GUI, use OOMOL tools through web, desktop, and iOS for continuous work, reviewing results, and keeping tasks moving.",
+        "When you prefer a GUI, use OOMOL tools on web, desktop, and iOS for ongoing work, reviewing results, and keeping tasks moving.",
     },
     hero: {
       titleLine1: "OOMOL AI brings tool use",
-      titleLine2: "into a GUI workflow",
-      lead: "OOMOL AI is the official GUI for opening and using tools directly, better suited to continuous chat, reviewing results, and keeping work moving.",
+      titleLine2: "into a visual workspace",
+      lead: "OOMOL AI is the official GUI for using tools directly. It is better suited to ongoing conversations, reviewing results, and keeping work moving.",
       productScreenshotAlt:
         "OOMOL AI interface where the agent natively calls tools to complete a task",
     },
@@ -293,13 +293,12 @@ const COPY = {
     },
     models: {
       title: "Better for everyday use",
-      description:
-        "Search, execution, results, and follow-up work all stay in one workspace here.",
+      description: "Search, execution, results, and follow-up work all stay in one workspace.",
       demo: {
         eyebrow: "One workspace",
-        title: "Keep the task moving in one interface",
+        title: "Keep the task moving in one workspace",
         description:
-          "From search to execution to reviewing results, you do not need to bounce across separate surfaces.",
+          "From searching for tools to reviewing results and continuing the work, you do not need to bounce between separate interfaces.",
         imageAlt:
           "OOMOL AI workspace showing native tool capabilities and mini apps",
       },
@@ -307,13 +306,13 @@ const COPY = {
         chat: {
           eyebrow: "Continuous work",
           title: "Search, execution, and results stay in one interface",
-          body: "Account connections, task runs, and ready-made tools move straight into the current workspace instead of being scattered across extra steps.",
-          chips: ["One workspace", "Continuous work", "Open and use"],
+          body: "Account connections, task runs, and ready-made tools all land in the current workspace instead of being scattered across extra steps.",
+          chips: ["One workspace", "Ongoing work", "Use directly"],
         },
         image: {
           eyebrow: "Follow-up",
-          title: "Better for reviewing results and continuing the next step",
-          body: "Once you have the result, you can refine the request, ask follow-up questions, or continue the next action without switching back to another surface.",
+          title: "Better for reviewing results, asking follow-up questions, and continuing the work",
+          body: "Once you have the result, you can refine the request, ask follow-up questions, or continue the next action without switching to another interface.",
           chips: ["Review result", "Ask follow-up", "Keep going"],
         },
       },
@@ -324,12 +323,12 @@ const COPY = {
       cards: [
         {
           title: "When you keep it open all day",
-          body: "A GUI is better suited to everyday use than one-off command calls.",
+          body: "Compared with one-off command calls, a GUI is better suited to something you keep open and return to throughout the day.",
         },
         {
           title:
             "When you need to see the result before deciding the next step",
-          body: "Images, documents, tables, and intermediate results are easier to follow when they stay in the current page.",
+          body: "Images, documents, spreadsheets, and intermediate results are easier to follow when they stay in the current workspace.",
         },
         {
           title: "When you want less switching and more continuity",
@@ -341,32 +340,32 @@ const COPY = {
       steps: [
         {
           title: "State the goal, then start working",
-          body: "You describe the task, and the interface carries search and execution from there.",
+          body: "You describe the task, and the interface handles the searching and execution from there.",
           detail:
             "It feels more like an everyday workspace than a string of commands.",
           alt: "OOMOL AI interface where the agent actively searches for and calls skills",
         },
         {
           title: "Once the result appears, keep going",
-          body: "Review the output, refine the request, and continue the next step in the same page.",
+          body: "Review the output, refine the request, and continue from the same page.",
           detail:
             "It fits tasks where you need to see, edit, and continue in one flow.",
           alt: "OOMOL AI interface continuing a multi-step tool task",
         },
         {
           title: "Switch devices without switching mental modes",
-          body: "Web, desktop, and iOS all keep the same product shape, so the work can continue.",
-          detail: "Use whichever surface is most convenient in the moment.",
+          body: "Web, desktop, and iOS all let you continue the same work without learning a different interface.",
+          detail: "Use whichever one is most convenient in the moment.",
           alt: "OOMOL AI interface connecting results back into the OOMOL toolchain",
         },
       ],
     },
     outputs: {
-      title: "Terminals are for integration. GUIs are for ongoing use.",
+      title: "Terminals are great for integration. GUIs are better for ongoing use.",
       description:
-        "Use oo-cli when you want tools connected into agents and terminal workflows. Open OOMOL AI when you want to keep using those tools yourself in a visual workspace.",
+        "Use oo-cli when you want tools connected into agents and terminal workflows. Open OOMOL AI when you want to use those same tools yourself in a visual workspace.",
       imageAlt:
-        "OOMOL AI interface continuing work with the same tool capability layer",
+        "OOMOL AI interface continuing work with the same tools in one workspace",
     },
     pricing: {
       title: "One credit system",
@@ -379,7 +378,7 @@ const COPY = {
       ],
       summary: {
         eyebrow: "Shared billing",
-        title: "You top up usage, not a surface",
+        title: "You top up usage, not a specific app",
         description:
           "Whether a task starts from oo-cli or OOMOL AI, usage is counted the same way. Add more only when you need more headroom.",
         badge: "One credit system",
@@ -387,7 +386,7 @@ const COPY = {
       perPack: "/ pack",
       featureTitle: "Works well for",
       cta: "Top Up",
-      note: "Purchased credits stay in your account until you use them. They do not reset monthly and they do not disappear when you switch surfaces.",
+      note: "Purchased credits stay in your account until you use them. They do not reset monthly, and switching between entry points does not affect them.",
       packs: {
         starter: {
           tier: "Occasional use",
@@ -425,11 +424,11 @@ const COPY = {
       },
     },
     downloads: {
-      title: "Open it from the surface that fits you best",
+      title: "Open it in whichever app fits you best",
       items: {
         web: {
           title: "Web",
-          subtitle: "Chat GUI",
+          subtitle: "Chat-based interface",
           description: "The fastest way to start using it.",
           action: "Open Web App",
         },

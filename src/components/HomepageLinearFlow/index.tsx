@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import type { DocusaurusContext } from "@docusaurus/types";
 
 import Link from "@docusaurus/Link";
+import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import CloudPageDeveloperBenefits from "@site/src/components/CloudPageDeveloperBenefits";
@@ -40,7 +41,7 @@ type Copy = {
     title: string;
     description: string;
     cards: Array<{ title: string; text: string }>;
-    media: { title: string; note: string; items: string[] };
+    media: { title: string; note: string };
     primary: string;
     secondary: string;
   };
@@ -157,124 +158,6 @@ function ImageCard({ title, note, src }: ImageCardProps) {
   );
 }
 
-const zhCopy: Copy = {
-  cli: {
-    eyebrow: "03 / 给 Agent 使用",
-    title: "最后把工具交回 oo-cli，给 Agent 直接调用",
-    description:
-      "当工具已经做好并交付出去后，Agent、Codex、OpenClaw 和 Claude Code 会继续沿同一条 oo-cli 路径来搜索、查看和调用。",
-    media: {
-      title: "oo-cli 调用演示",
-      note: "展示一个已交付工具在 Codex 中被搜索、查看和调用。",
-    },
-    guide: "了解 oo-cli",
-    github: "查看 GitHub",
-  },
-  studio: {
-    eyebrow: "01 / 在 Studio 中构建",
-    title: "先在 OOMOL Studio 里生成、组合并验证",
-    description:
-      "把需求交给 Agent 起步，然后继续补代码、接依赖、改参数和做编排。Studio 面向的是构建工具，而不是日常使用工具。",
-    media: {
-      title: "Studio 演示视频",
-      note: "展示从描述需求、生成工具到本地验证跑通的过程。",
-    },
-    primary: "安装 OOMOL Studio",
-    secondary: "了解 Studio",
-  },
-  cloud: {
-    eyebrow: "02 / 通过 Cloud 交付",
-    title: "验证完成后，再交给 Cloud 承接交付和运行",
-    description:
-      "Cloud 承接运行、配置、Secrets、权限和使用关系，让你不必围绕同一份实现再补一层后台。",
-    cards: [
-      {
-        title: "统一承接交付和托管运行",
-        text: "当你把工具交付给自己、团队或客户时，继续沿用同一份实现和同一条路径。",
-      },
-      {
-        title: "把配置、权限和使用关系放进同一个后台",
-        text: "Secrets、权限、版本、运行配置和使用数据集中管理，减少分散维护。",
-      },
-    ],
-    media: {
-      title: "Cloud 控制台预览",
-      note: "把运行配置、Secrets 和使用关系放到同一个后台里管理。",
-      items: ["统一承接运行和交付", "集中管理配置、权限和版本"],
-    },
-    primary: "了解 Cloud",
-    secondary: "打开 Cloud 控制台",
-  },
-  cta: {
-    title: "先用现成工具；需要时再走这条开发者路径",
-    description:
-      "先用 oo-cli 跑通现成能力。需要自己生产、组合和交付工具时，再进入 Studio 和 Cloud。",
-    primary: "先用 oo-cli",
-    secondary: "了解 Studio",
-  },
-};
-
-const enCopy: Copy = {
-  cli: {
-    eyebrow: "03 / Use from oo-cli",
-    title: "Finally, hand the tool back to oo-cli for agents to use",
-    description:
-      "Once the tool is built and delivered, Agents, Codex, OpenClaw, and Claude Code keep using the same oo-cli path to search, inspect, and call it.",
-    media: {
-      title: "oo-cli invocation demo",
-      note: "Show a delivered tool being searched, inspected, and called in Codex.",
-    },
-    guide: "Explore oo-cli",
-    github: "View GitHub",
-  },
-  studio: {
-    eyebrow: "01 / Build in Studio",
-    title: "Start in OOMOL Studio to generate, compose, and validate",
-    description:
-      "Use the agent to get started, then keep editing code, dependencies, parameters, and compositions yourself. Studio is for building tools, not for day-to-day tool usage.",
-    media: {
-      title: "Studio demo video",
-      note: "Show the path from prompting to generating a tool and validating it locally.",
-    },
-    primary: "Install OOMOL Studio",
-    secondary: "Explore Studio",
-  },
-  cloud: {
-    eyebrow: "02 / Deliver through Cloud",
-    title: "Once validation is done, hand delivery and runtime to Cloud",
-    description:
-      "Cloud takes over runtime, configuration, secrets, access, and delivery relationships so you do not need to build another backend around the same implementation.",
-    cards: [
-      {
-        title: "Handle delivery and hosted runtime in one path",
-        text: "Keep the same implementation as you deliver the tool to yourself, your team, or customers.",
-      },
-      {
-        title: "Keep config, access, and usage relationships in one backend",
-        text: "Manage secrets, access, releases, runtime settings, and usage data in one place.",
-      },
-    ],
-    media: {
-      title: "Cloud console preview",
-      note: "Bring runtime settings, secrets, and delivery relationships into one backend.",
-      items: [
-        "Handle runtime and delivery together",
-        "Manage configuration, access, and releases in one console",
-      ],
-    },
-    primary: "Explore Cloud",
-    secondary: "Open Cloud Console",
-  },
-  cta: {
-    title:
-      "Start with ready-made tools, then take the developer path when needed",
-    description:
-      "Use oo-cli to get ready-made capabilities working first. When you need to produce, combine, and deliver your own tools, move into Studio and Cloud.",
-    primary: "Start with oo-cli",
-    secondary: "Explore Studio",
-  },
-};
-
 function splitEyebrow(eyebrow: string): { number: string; label: string } {
   const parts = eyebrow.split(/\s*\/\s*/);
   if (parts.length >= 2) {
@@ -287,12 +170,160 @@ export default function HomepageLinearFlow() {
   const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
     i18n: { currentLocale: string };
   };
-  const copy = i18n.currentLocale === "zh-CN" ? zhCopy : enCopy;
   const cloudConsoleImage = useBaseUrl(
     i18n.currentLocale === "zh-CN"
       ? "/img/pages/home/cloud-console-zh.png"
       : "/img/pages/home/cloud-console-en.png"
   );
+  const copy: Copy = {
+    cli: {
+      eyebrow: translate({
+        id: "HOME.LinearFlow.cli.eyebrow",
+        message: "03 / Use from oo-cli",
+      }),
+      title: translate({
+        id: "HOME.LinearFlow.cli.title",
+        message: "Finally, hand the tool back to oo-cli so agents can use it",
+      }),
+      description: translate({
+        id: "HOME.LinearFlow.cli.description",
+        message:
+          "Once the tool is built and delivered, agents in Codex, OpenClaw, and Claude Code keep using the same oo-cli path to search for it, inspect it, and call it.",
+      }),
+      media: {
+        title: translate({
+          id: "HOME.LinearFlow.cli.media.title",
+          message: "oo-cli invocation demo",
+        }),
+        note: translate({
+          id: "HOME.LinearFlow.cli.media.note",
+          message:
+            "Shows a delivered tool being searched, inspected, and called in Codex.",
+        }),
+      },
+      guide: translate({
+        id: "HOME.LinearFlow.cli.guide",
+        message: "Explore oo-cli",
+      }),
+      github: translate({
+        id: "HOME.LinearFlow.cli.github",
+        message: "View GitHub",
+      }),
+    },
+    studio: {
+      eyebrow: translate({
+        id: "HOME.LinearFlow.studio.eyebrow",
+        message: "01 / Build in Studio",
+      }),
+      title: translate({
+        id: "HOME.LinearFlow.studio.title",
+        message: "Start in OOMOL Studio to generate, compose, and validate",
+      }),
+      description: translate({
+        id: "HOME.LinearFlow.studio.description",
+        message:
+          "Use the agent to get started, then keep editing code, dependencies, parameters, and workflows yourself. Studio is for building tools, not day-to-day tool use.",
+      }),
+      media: {
+        title: translate({
+          id: "HOME.LinearFlow.studio.media.title",
+          message: "Studio demo video",
+        }),
+        note: translate({
+          id: "HOME.LinearFlow.studio.media.note",
+          message:
+            "Show the path from prompting to generating a tool and validating it locally.",
+        }),
+      },
+      primary: translate({
+        id: "HOME.LinearFlow.studio.primary",
+        message: "Install OOMOL Studio",
+      }),
+      secondary: translate({
+        id: "HOME.LinearFlow.studio.secondary",
+        message: "Explore Studio",
+      }),
+    },
+    cloud: {
+      eyebrow: translate({
+        id: "HOME.LinearFlow.cloud.eyebrow",
+        message: "02 / Deliver through Cloud",
+      }),
+      title: translate({
+        id: "HOME.LinearFlow.cloud.title",
+        message:
+          "Once validation is done, let Cloud handle delivery and runtime",
+      }),
+      description: translate({
+        id: "HOME.LinearFlow.cloud.description",
+        message:
+          "Cloud takes over runtime, configuration, secrets, access, and delivery so you do not need to build another backend around the same implementation.",
+      }),
+      cards: [
+        {
+          title: translate({
+            id: "HOME.LinearFlow.cloud.card1.title",
+            message: "Handle delivery and hosted runtime in one place",
+          }),
+          text: translate({
+            id: "HOME.LinearFlow.cloud.card1.text",
+            message:
+              "Keep the same implementation as you deliver the tool to yourself, your team, or customers.",
+          }),
+        },
+        {
+          title: translate({
+            id: "HOME.LinearFlow.cloud.card2.title",
+            message: "Keep config, access, and usage in one backend",
+          }),
+          text: translate({
+            id: "HOME.LinearFlow.cloud.card2.text",
+            message:
+              "Manage secrets, access, releases, runtime settings, and usage data in one place.",
+          }),
+        },
+      ],
+      media: {
+        title: translate({
+          id: "HOME.LinearFlow.cloud.media.title",
+          message: "Cloud console preview",
+        }),
+        note: translate({
+          id: "HOME.LinearFlow.cloud.media.note",
+          message:
+            "Bring runtime settings, secrets, and delivery into one backend.",
+        }),
+      },
+      primary: translate({
+        id: "HOME.LinearFlow.cloud.primary",
+        message: "Explore Cloud",
+      }),
+      secondary: translate({
+        id: "HOME.LinearFlow.cloud.secondary",
+        message: "Open Cloud Console",
+      }),
+    },
+    cta: {
+      title: translate({
+        id: "HOME.LinearFlow.cta.title",
+        message:
+          "Start with ready-made tools, then take the developer path when needed",
+      }),
+      description: translate({
+        id: "HOME.LinearFlow.cta.description",
+        message:
+          "Use oo-cli to get ready-made capabilities working first. When you need to produce, combine, and deliver your own tools, move into Studio and Cloud.",
+      }),
+      primary: translate({
+        id: "HOME.LinearFlow.cta.primary",
+        message: "Start with oo-cli",
+      }),
+      secondary: translate({
+        id: "HOME.LinearFlow.cta.secondary",
+        message: "Explore Studio",
+      }),
+    },
+  };
 
   const studioEyebrow = splitEyebrow(copy.studio.eyebrow);
   const cloudEyebrow = splitEyebrow(copy.cloud.eyebrow);
@@ -312,9 +343,7 @@ export default function HomepageLinearFlow() {
                 {studioEyebrow.number}
               </span>
               <span className={styles.eyebrowDivider} aria-hidden="true" />
-              <span className={styles.eyebrowLabel}>
-                {studioEyebrow.label}
-              </span>
+              <span className={styles.eyebrowLabel}>{studioEyebrow.label}</span>
             </span>
             <h2 className={styles.sectionTitle}>{copy.studio.title}</h2>
             <p className={styles.sectionDescription}>
@@ -443,11 +472,7 @@ export default function HomepageLinearFlow() {
             <Button asChild size="lg">
               <Link to="/cli">{copy.cta.primary}</Link>
             </Button>
-            <Button
-              asChild
-              variant="contrast"
-              size="lg"
-            >
+            <Button asChild variant="contrast" size="lg">
               <Link to="/studio">{copy.cta.secondary}</Link>
             </Button>
           </>

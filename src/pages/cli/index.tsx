@@ -16,7 +16,7 @@ const zhCopy = {
 const enCopy = {
   title: "oo-cli - More Tools for Agents",
   description:
-    "Search tools, inspect inputs, run connectors, launch cloud tasks, install skills, and let agents get to work from one CLI.",
+    "Search tools, inspect inputs, run connector actions, launch cloud tasks, and install skills from one CLI so agents can get to work.",
 };
 
 export default function CliPage() {
