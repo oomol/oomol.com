@@ -30,7 +30,6 @@ type PricingColumn<T> = {
   title: React.ReactNode;
   dataIndex?: keyof T;
   render?: (value: unknown, record: T, index: number) => React.ReactNode;
-  width?: number | string;
 };
 
 import Layout from "../../theme/Layout";
@@ -157,25 +156,19 @@ function PriceTable<T extends PricingRowBase>({
 }) {
   return (
     <div className={styles.tableWrap}>
-      <Table>
+      <Table className={styles.dataTable}>
+        <colgroup>
+          {columns.map(column => (
+            <col
+              key={column.key}
+              style={{ width: `${100 / columns.length}%` }}
+            />
+          ))}
+        </colgroup>
         <TableHeader>
           <TableRow>
             {columns.map(column => (
-              <TableHead
-                key={column.key}
-                style={
-                  column.width
-                    ? {
-                        width:
-                          typeof column.width === "number"
-                            ? `${column.width}px`
-                            : column.width,
-                      }
-                    : undefined
-                }
-              >
-                {column.title}
-              </TableHead>
+              <TableHead key={column.key}>{column.title}</TableHead>
             ))}
           </TableRow>
         </TableHeader>
@@ -335,7 +328,6 @@ export default function Index() {
       key: "channel",
       render: renderIdentifierBadge,
       title: tPricing("PRICING.tables.llm.channel", "Channel"),
-      width: 180,
     },
     {
       dataIndex: "model",
@@ -349,28 +341,24 @@ export default function Index() {
         </div>
       ),
       title: tPricing("PRICING.tables.llm.model", "Model"),
-      width: 260,
     },
     {
       dataIndex: "inputPrice",
       key: "inputPrice",
       render: renderSinglePriceValue,
       title: `${tPricing("PRICING.tables.llm.inputPrice", "Input Price")} (${tPricing("PRICING.tables.llm.unit", "Credits/M Token")})`,
-      width: 180,
     },
     {
       dataIndex: "cachePrice",
       key: "cachePrice",
       render: renderSinglePriceValue,
       title: `${tPricing("PRICING.tables.llm.cachePrice", "Cache Price")} (${tPricing("PRICING.tables.llm.unit", "Credits/M Token")})`,
-      width: 180,
     },
     {
       dataIndex: "outputPrice",
       key: "outputPrice",
       render: renderSinglePriceValue,
       title: `${tPricing("PRICING.tables.llm.outputPrice", "Output Price")} (${tPricing("PRICING.tables.llm.unit", "Credits/M Token")})`,
-      width: 180,
     },
   ];
 
@@ -380,7 +368,6 @@ export default function Index() {
       key: "service",
       render: renderIdentifierBadge,
       title: tPricing("PRICING.tables.cloudTask.service", "Service"),
-      width: 260,
     },
     {
       dataIndex: "price",
@@ -390,7 +377,6 @@ export default function Index() {
         "PRICING.tables.cloudTask.price",
         "Price (Credits/Minute)"
       ),
-      width: 220,
     },
     {
       dataIndex: "note",
@@ -429,14 +415,12 @@ export default function Index() {
       key: "service",
       render: renderIdentifierBadge,
       title: tPricing("PRICING.tables.fusionApi.service", "Service"),
-      width: 260,
     },
     {
       dataIndex: "price",
       key: "price",
       render: renderMultiLinePriceValue,
       title: tPricing("PRICING.tables.fusionApi.price", "Price (Credits)"),
-      width: 340,
     },
     {
       dataIndex: "description",

@@ -4,14 +4,19 @@ import * as React from "react";
 const Table = React.forwardRef<
   HTMLTableElement,
   React.HTMLAttributes<HTMLTableElement>
->(({ className, ...props }, ref) => (
-  <div className="relative w-full overflow-auto rounded-[12px] border border-[var(--oomol-divider)]">
+>(({ className, style, ...props }, ref) => (
+  <div className="relative w-full overflow-auto">
     <table
       ref={ref}
       className={cn(
-        "w-full caption-bottom text-oomol-sm text-[var(--oomol-text-primary)]",
+        "w-full border-separate border-spacing-0 caption-bottom text-oomol-sm text-[var(--oomol-text-primary)]",
         className
       )}
+      style={{
+        borderCollapse: "separate",
+        borderSpacing: 0,
+        ...style,
+      }}
       {...props}
     />
   </div>
@@ -24,10 +29,7 @@ const TableHeader = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <thead
     ref={ref}
-    className={cn(
-      "bg-[var(--oomol-bg-container)] [&_tr]:border-b [&_tr]:border-[var(--oomol-divider)]",
-      className
-    )}
+    className={cn("bg-[var(--oomol-bg-container)]", className)}
     {...props}
   />
 ));
@@ -67,7 +69,7 @@ const TableRow = React.forwardRef<
   <tr
     ref={ref}
     className={cn(
-      "border-b border-[var(--oomol-divider)] transition-colors hover:bg-[var(--oomol-hover-bg)] data-[state=selected]:bg-[var(--oomol-bg-spotlight)]",
+      "transition-colors hover:bg-[var(--oomol-hover-bg)] data-[state=selected]:bg-[var(--oomol-bg-spotlight)]",
       className
     )}
     {...props}
@@ -112,7 +114,10 @@ const TableCaption = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <caption
     ref={ref}
-    className={cn("mt-4 text-oomol-sm text-[var(--oomol-text-tertiary)]", className)}
+    className={cn(
+      "mt-4 text-oomol-sm text-[var(--oomol-text-tertiary)]",
+      className
+    )}
     {...props}
   />
 ));

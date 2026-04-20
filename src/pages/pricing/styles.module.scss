@@ -534,8 +534,54 @@
 
 .tableWrap {
   width: 100%;
-  max-width: none;
   margin: 0 auto;
+  min-width: 0;
+}
+
+.dataTable {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+
+  :global(th),
+  :global(td) {
+    border: 0;
+  }
+
+  :global(thead tr) {
+    border-bottom: 0 !important;
+  }
+
+  :global(thead th) {
+    background: var(--oomol-bg-container);
+    border-top: 1px solid var(--oomol-divider);
+    border-bottom: 1px solid var(--oomol-divider);
+  }
+
+  :global(tbody td) {
+    border-top: 0;
+    border-bottom: 1px solid var(--oomol-divider);
+  }
+
+  :global(th:first-child),
+  :global(td:first-child) {
+    border-left: 1px solid var(--oomol-divider);
+  }
+
+  :global(th + th),
+  :global(td + td) {
+    border-left: 1px solid var(--oomol-divider);
+  }
+
+  :global(th:last-child),
+  :global(td:last-child) {
+    border-right: 1px solid var(--oomol-divider);
+  }
+
+  :global(td) {
+    overflow-wrap: anywhere;
+  }
 }
 
 .identifierBadge {
