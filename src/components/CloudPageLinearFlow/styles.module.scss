@@ -29,7 +29,7 @@
   padding-inline: 24px;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  grid-template-columns: 1fr;
   gap: clamp(2rem, 4vw, 3.4rem);
   align-items: start;
 }
@@ -278,9 +278,19 @@
   color: var(--oomol-text-tertiary);
 }
 
+@media (min-width: 997px) {
+  .container {
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  }
+}
+
 /* ── Tablet ── */
 
 @media (max-width: 996px) {
+  .section {
+    overflow: visible;
+  }
+
   .container {
     grid-template-columns: 1fr;
   }
