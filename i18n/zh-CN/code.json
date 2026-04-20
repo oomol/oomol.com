@@ -35,176 +35,71 @@
   "HOME.FirstScreen.slogan": {
     "message": "先用起来，再按需连接"
   },
-  "HOME.FirstScreen.kicker": {
-    "message": "给 Agent 的 CLI 入口"
-  },
   "HOME.FirstScreen.script": {
     "message": "你的 Agent 负责思考与决策；OOMOL 负责连接账号和应用，处理授权、调用和执行，并在需要时让你用 Studio 做自己的工具。"
   },
   "HOME.FirstScreen.heroTitle": {
     "message": "你的 Agent 负责思考与决策\n剩下的交给 OOMOL"
   },
-  "HOME.FirstScreen.heroSubtitle": {
-    "message": "连接账号和应用，处理授权、调用和执行；需要自定义时，再到 Studio 里做你自己的工具。"
-  },
   "HOME.FirstScreen.heroLead": {
     "message": "先用 oo-cli 让 Agent 接上现成工具、API 和内部能力，把工作先跑起来；当现成能力不够时，再进入 Studio 和 Cloud。"
-  },
-  "HOME.FirstScreen.heroAdvantage": {
-    "message": "先用 CLI 调起来，"
-  },
-  "HOME.FirstScreen.heroAdvantageHighlight": {
-    "message": "再继续组合扩展。"
   },
   "HOME.FirstScreen.video.playAriaLabel": {
     "message": "播放演示视频"
   },
-  "HOME.FirstScreen.video.playLabel": {
-    "message": "点击播放演示"
-  },
-  "HOME.FirstScreen.pill1": {
-    "message": "不学新 DSL"
-  },
-  "HOME.FirstScreen.pill2": {
-    "message": "本地先跑通"
-  },
-  "HOME.FirstScreen.pill3": {
-    "message": "直接交付到云端"
-  },
-  "HOME.FirstScreen.caption": {
-    "message": "生成 -> 验证 -> 交付"
-  },
-  "HOME.FirstScreen.offer1": {
-    "message": "支持接入自有 AI 模型，当前推荐 GLM-5"
-  },
-  "HOME.FirstScreen.offer2": {
-    "message": "每月赠送 200 分钟 Cloud Task"
-  },
   "HOME.PainPoints.badge": {
-    "message": "直接结果"
+    "message": "第一步：先用现成能力"
   },
   "HOME.PainPoints.title": {
-    "message": "接上工具后，Agent 就能直接做这些事"
+    "message": "先让 Agent 直接把现成工作跑起来"
   },
   "HOME.PainPoints.subtitle": {
-    "message": "先看结果，再理解怎么接进去。"
+    "message": "如果现成工具已经够用，OOMOL 的第一层价值就很简单：先接上、先执行，不必一上来就自己做工具。"
   },
   "HOME.PainPoints.promptLabel": {
-    "message": "你可以直接这样说"
+    "message": "直接这样说"
   },
   "HOME.PainPoints.resultLabel": {
-    "message": "Agent 会直接去做"
+    "message": "Agent 会自动执行"
   },
   "HOME.PainPoints.card1.title": {
-    "message": "PR 摘要发到 Slack"
+    "message": "总结 GitHub PR，并发到 Slack"
   },
   "HOME.PainPoints.card1.description": {
-    "message": "把代码变更和团队通知串成一次动作。"
+    "message": "适合把评审结论快速同步到团队，不再手动整理和转发。"
   },
   "HOME.PainPoints.card1.prompt": {
-    "message": "总结这个 PR，发到 Slack。"
+    "message": "总结这个 PR 的关键信息，发到 Slack 频道。"
   },
   "HOME.PainPoints.card1.solution": {
-    "message": "读 diff、写摘要、推到指定频道。"
+    "message": "读取 diff、提炼结论、发送到指定频道。"
   },
   "HOME.PainPoints.card2.title": {
-    "message": "Notion 需求拆成 Linear"
+    "message": "把 Notion 需求拆成 Linear 任务"
   },
   "HOME.PainPoints.card2.description": {
-    "message": "文档、拆解和追踪放在一条链里。"
+    "message": "适合把需求页直接变成可跟踪任务，减少手动拆分。"
   },
   "HOME.PainPoints.card2.prompt": {
     "message": "读这个 Notion 页面，拆成任务并同步到 Linear。"
   },
   "HOME.PainPoints.card2.solution": {
-    "message": "读文档、拆任务、写回 Linear。"
+    "message": "提取需求、整理任务、写回 Linear。"
   },
   "HOME.PainPoints.card3.title": {
-    "message": "读 Gmail 附件，再调用你的 API"
+    "message": "读取 Gmail 附件，再调用内部 API"
   },
   "HOME.PainPoints.card3.description": {
-    "message": "现成输入和自定义处理接在一起。"
+    "message": "适合把邮件输入直接接到你的服务，省掉人工中转。"
   },
   "HOME.PainPoints.card3.prompt": {
     "message": "读 Gmail 附件，调用我们的 PDF API，回传结果。"
   },
   "HOME.PainPoints.card3.solution": {
-    "message": "先取邮件附件，再继续调用你的 API。"
+    "message": "下载附件、调用内部 API、返回处理结果。"
   },
-  "HOME.ProofLayer.badge": {
-    "message": "真实承载"
-  },
-  "HOME.ProofLayer.title": {
-    "message": "这条路径已经跑在真实产品里"
-  },
-  "HOME.ProofLayer.subtitle": {
-    "message": "OOMOL 不只是把一个工具接进 agent，而是把同一份能力继续承接到 CLI、网页工具、桌面应用和云端服务里。"
-  },
-  "HOME.ProofLayer.note": {
-    "message": "这一层先用一个真实上线案例，带两个占位场景。后续可以继续替换成更多真实服务、团队名称和使用数据。"
-  },
-  "HOME.ProofLayer.signal1.label": {
-    "message": "真实项目"
-  },
-  "HOME.ProofLayer.signal1.value": {
-    "message": "pdf.oomol.com"
-  },
-  "HOME.ProofLayer.signal1.description": {
-    "message": "这不是内部 Demo，而是一个持续对外提供 PDF 与出版处理工具的真实项目。"
-  },
-  "HOME.ProofLayer.signal2.label": {
-    "message": "多个入口"
-  },
-  "HOME.ProofLayer.signal2.value": {
-    "message": "网页 / 桌面 / CLI"
-  },
-  "HOME.ProofLayer.signal2.description": {
-    "message": "同一套能力已经进入网页工具、桌面应用和 CLI，不是停留在单个演示页面。"
-  },
-  "HOME.ProofLayer.signal3.label": {
-    "message": "同一套能力"
-  },
-  "HOME.ProofLayer.signal3.value": {
-    "message": "Functions / Cloud / CLI"
-  },
-  "HOME.ProofLayer.signal3.description": {
-    "message": "这些入口不是分别重做后端，而是沿着同一条路径继续交付和承接。"
-  },
-  "HOME.ProofLayer.case1.kicker": {
-    "message": "真实场景 01"
-  },
-  "HOME.ProofLayer.case1.title": {
-    "message": "在线 PDF 转换入口"
-  },
-  "HOME.ProofLayer.case1.description": {
-    "message": "真实上线的网页工具，不是展示页。用户可以直接上传 PDF，生成 EPUB 或 Markdown，背后能力由同一套 OOMOL 系统承接。"
-  },
-  "HOME.ProofLayer.case1.cta": {
-    "message": "查看在线工具"
-  },
-  "HOME.ProofLayer.case2.kicker": {
-    "message": "真实场景 02"
-  },
-  "HOME.ProofLayer.case2.title": {
-    "message": "桌面书架与管理"
-  },
-  "HOME.ProofLayer.case2.description": {
-    "message": "同一个项目不只停留在网页转换，还把结果继续接到了桌面应用里，用来管理书库、整理内容和承接后续使用。"
-  },
-  "HOME.ProofLayer.case2.cta": {
-    "message": "查看桌面应用"
-  },
-  "HOME.ProofLayer.case3.kicker": {
-    "message": "真实场景 03"
-  },
-  "HOME.ProofLayer.case3.title": {
-    "message": "桌面阅读界面"
-  },
-  "HOME.ProofLayer.case3.description": {
-    "message": "导出的内容不是到文件就结束，而是继续进入真实的阅读界面。交付结果能被打开、浏览、管理，而不是只停在函数执行成功。"
-  },
-  "HOME.ProofLayer.case3.cta": {
-    "message": "查看阅读体验"
+  "HOME.PainPoints.card3.apiLabel": {
+    "message": "你的 API"
   },
   "HOME.FirstScreen.download-macos": {
     "message": "下载适用于 macOS 的版本"
@@ -265,54 +160,6 @@
   },
   "HOME.FirstScreen.workflowArchive.lead": {
     "message": "完整演示视频（原首页主视觉素材），暂置于此便于以后组合。"
-  },
-  "HOME.FirstScreen.copilotBeam.aria": {
-    "message": "各类 SaaS 通过光束汇聚到 OOMOL 统一编排"
-  },
-  "HOME.FirstScreen.copilotBeam.logoAlt": {
-    "message": "悟墨 OOMOL"
-  },
-  "HOME.FirstScreen.copilotBeam.hubName": {
-    "message": "悟墨"
-  },
-  "HOME.FirstScreen.copilotBeam.tagline": {
-    "message": "你的工具聚合与协同副驾"
-  },
-  "HOME.FirstScreen.copilotBeam.satellite.gdrive": {
-    "message": "Google Drive"
-  },
-  "HOME.FirstScreen.copilotBeam.satellite.notion": {
-    "message": "Notion"
-  },
-  "HOME.FirstScreen.copilotBeam.satellite.whatsapp": {
-    "message": "WhatsApp"
-  },
-  "HOME.FirstScreen.copilotBeam.satellite.gdocs": {
-    "message": "Google 文档"
-  },
-  "HOME.FirstScreen.copilotBeam.satellite.zapier": {
-    "message": "Zapier"
-  },
-  "HOME.FirstScreen.copilotBeam.satellite.messenger": {
-    "message": "Messenger"
-  },
-  "HOME.ValueProps.localCompute.title": {
-    "message": "将本地算力转化为你的私有 AI 云"
-  },
-  "HOME.ValueProps.localCompute.description": {
-    "message": "在你自己的 PC 或 NAS 上运行工作流。利用闲置的 CPU/GPU 资源，与他人共享，或随时扩展到 OOMOL Cloud。"
-  },
-  "HOME.ValueProps.workflowAPI.title": {
-    "message": "用工作流开发，以 API 交付"
-  },
-  "HOME.ValueProps.workflowAPI.description": {
-    "message": "创建函数工具、组装工作流，并将它们发布为 REST 或 MCP API，无需额外编写服务器代码。"
-  },
-  "HOME.ValueProps.aiNative.title": {
-    "message": "AI 原生开发体验"
-  },
-  "HOME.ValueProps.aiNative.description": {
-    "message": "AI 辅助的函数工具生成、Vibe Coding 工作流编排，以及深度 VSCode 集成，让开发快速而灵活。"
   },
   "HOME.CoreFeatures.title": {
     "message": "一份业务代码，直接走到交付"
@@ -389,63 +236,6 @@
   "HOME.Lifecycle.step4.description": {
     "message": "• 对外 API 服务与用户交互应用\n• 供 AI 调用的 MCP 工具\n• 自动化工作流交付"
   },
-  "HOME.WhyOomol.title": {
-    "message": "为什么选择 OOMOL"
-  },
-  "HOME.WhyOomol.subtitle": {
-    "message": "与其他工具的对比,看看 OOMOL 如何重新定义开发者体验"
-  },
-  "HOME.WhyOomol.featureColumn": {
-    "message": "特性"
-  },
-  "HOME.WhyOomol.othersColumn": {
-    "message": "其他工具"
-  },
-  "HOME.WhyOomol.feature1": {
-    "message": "自己构建函数"
-  },
-  "HOME.WhyOomol.oomol1": {
-    "message": "函数工具 = 函数，可生成"
-  },
-  "HOME.WhyOomol.feature2": {
-    "message": "组合函数 → 新 API"
-  },
-  "HOME.WhyOomol.oomol2": {
-    "message": "完整工作流构建"
-  },
-  "HOME.WhyOomol.feature3": {
-    "message": "本地 GPU 运行"
-  },
-  "HOME.WhyOomol.oomol3": {
-    "message": "支持 WSL2 + NVIDIA"
-  },
-  "HOME.WhyOomol.feature4": {
-    "message": "本地部署 + 云部署"
-  },
-  "HOME.WhyOomol.oomol4": {
-    "message": "一体化"
-  },
-  "HOME.WhyOomol.feature5": {
-    "message": "MCP 工具生成"
-  },
-  "HOME.WhyOomol.oomol5": {
-    "message": "原生支持"
-  },
-  "HOME.WhyOomol.feature6": {
-    "message": "真正开发者体验"
-  },
-  "HOME.WhyOomol.oomol6": {
-    "message": "VSCode 原生 + AI"
-  },
-  "HOME.WhyOomol.supported": {
-    "message": "支持"
-  },
-  "HOME.WhyOomol.limited": {
-    "message": "受限"
-  },
-  "HOME.WhyOomol.notSupported": {
-    "message": "很少支持"
-  },
   "HOME.PdfCraft.title": {
     "message": "基于 OOMOL 的开源项目：PDF-Craft"
   },
@@ -518,210 +308,6 @@
   "HOME.BrandAssets.typeface": {
     "message": "字体"
   },
-  "HOME.Scenes.title": {
-    "message": "开发者使用场景"
-  },
-  "HOME.Scenes.subtitle": {
-    "message": "从 GPU 算力共享到 AI Agent 工具链，探索 oomol 的强大应用场景"
-  },
-  "HOME.Scenes.gpu-sharing.title": {
-    "message": "GPU 算力共享"
-  },
-  "HOME.Scenes.gpu-sharing.inner": {
-    "message": "将家里的 RTX 4090 通过 FRP 协议共享给团队远程使用。支持 WSL2 调用 NVIDIA GPU，实现 P2P 算力分享，深夜训练模型，白天共享算力。"
-  },
-  "HOME.Scenes.mcp-server.title": {
-    "message": "构建 MCP Server"
-  },
-  "HOME.Scenes.mcp-server.inner": {
-    "message": "为 Claude Desktop 开发自定义 MCP 工具。通过可视化工作流生成函数，自动支持 MCP 协议，让 AI Agent 直接调用你的服务。"
-  },
-  "HOME.Scenes.data-api.title": {
-    "message": "数据分析 API"
-  },
-  "HOME.Scenes.data-api.inner": {
-    "message": "本地 Python 脚本一键变成 API 服务。组合 pandas、numpy 等数据分析库，通过容器打包，自动生成 RESTful API 接口。"
-  },
-  "HOME.Scenes.ai-image-service.title": {
-    "message": "AI 图像服务"
-  },
-  "HOME.Scenes.ai-image-service.inner": {
-    "message": "部署 Stable Diffusion 推理服务。利用本地 GPU 算力，通过 FRP 对外提供图像生成 API，支持多模型切换和参数自定义。"
-  },
-  "HOME.Scenes.iot-control.title": {
-    "message": "IoT 设备控制"
-  },
-  "HOME.Scenes.iot-control.inner": {
-    "message": "通过 FRP 远程控制树莓派和 IoT 设备。构建工作流编排智能家居，实现远程监控、数据采集和自动化控制。"
-  },
-  "HOME.Scenes.agent-toolchain.title": {
-    "message": "AI Agent 工具链"
-  },
-  "HOME.Scenes.agent-toolchain.inner": {
-    "message": "组合多个 MCP Tool 构建专家 Agent。整合数据查询、文件处理、API 调用等能力，打造领域专属的智能助手。"
-  },
-  "HOME.Scenes.data-science.title": {
-    "message": "AI 视频处理"
-  },
-  "HOME.Scenes.data-science.tag": {
-    "message": "视频内容"
-  },
-  "HOME.Scenes.data-science.inner": {
-    "message": "创建强大的 AI 视频处理工具，包括自动转录、翻译、字幕生成和内容分析，使用先进的 AI 模型和直观的可视化工作流。"
-  },
-  "HOME.Scenes.media-processing.title": {
-    "message": "多媒体编辑处理"
-  },
-  "HOME.Scenes.media-processing.tag": {
-    "message": "媒体处理"
-  },
-  "HOME.Scenes.media-processing.inner": {
-    "message": "集成 FFmpeg 的多媒体编辑工具包，支持视频剪辑、格式转换、音频处理等多种功能，让多媒体创作变得高效且轻松。"
-  },
-  "HOME.Scenes.ai-image-edit.title": {
-    "message": "AI 图像编辑"
-  },
-  "HOME.Scenes.ai-image-edit.tag": {
-    "message": "图片内容"
-  },
-  "HOME.Scenes.ai-image-edit.inner": {
-    "message": "基于文本指令，利用 AI 大模型实现图像的编辑与转换，包括对象更改、场景调整及创意效果应用，满足多样化的图像处理需求。"
-  },
-  "HOME.Scenes.ai-vibe-coding.title": {
-    "message": "AI 氛围编程自动生成"
-  },
-  "HOME.Scenes.ai-vibe-coding.tag": {
-    "message": "智能生成"
-  },
-  "HOME.Scenes.ai-vibe-coding.inner": {
-    "message": "通过 AI Vibe Coding 技术，只需描述您的需求，AI 将自动生成完整的工作流和节点，快速创建功能强大的 AI 工具，无需编程经验。"
-  },
-  "HOME.Scenes.drag-drop-manual.title": {
-    "message": "拖拽手动创建"
-  },
-  "HOME.Scenes.drag-drop-manual.tag": {
-    "message": "可视化编辑"
-  },
-  "HOME.Scenes.drag-drop-manual.inner": {
-    "message": "使用直观的拖拽界面手动构建工作流，精确控制每个节点和连接，适合需要定制化和精细控制的 AI 工具开发场景。"
-  },
-  "HOME.Scenes.text-processing.title": {
-    "message": "AI 文本处理"
-  },
-  "HOME.Scenes.text-processing.tag": {
-    "message": "文本内容"
-  },
-  "HOME.Scenes.text-processing.inner": {
-    "message": "智能文本分析与处理，包括情感分析、关键词提取、文本摘要、翻译和内容生成，助力高效的文档处理工作流。"
-  },
-  "HOME.Scenes.zip-archive-manipulation.title": {
-    "message": "ZIP 压缩包操作"
-  },
-  "HOME.Scenes.zip-archive-manipulation.tag": {
-    "message": "文件管理"
-  },
-  "HOME.Scenes.zip-archive-manipulation.inner": {
-    "message": "专业 ZIP 压缩包处理工具包，涵盖压缩、解压、加密、编码转换等各类 ZIP 文件操作。"
-  },
-  "HOME.Scenes.txt-to-epub.title": {
-    "message": "TXT 转 EPUB"
-  },
-  "HOME.Scenes.txt-to-epub.tag": {
-    "message": "文档转换"
-  },
-  "HOME.Scenes.txt-to-epub.inner": {
-    "message": "将 TXT 格式文本文件转换为优雅排版设计的 EPUB 电子书。"
-  },
-  "HOME.Scenes.pdf-processing.title": {
-    "message": "PDF 处理"
-  },
-  "HOME.Scenes.pdf-processing.tag": {
-    "message": "文档工具"
-  },
-  "HOME.Scenes.pdf-processing.inner": {
-    "message": "功能强大的 PDF 处理工具包，涵盖合并、分割等基础操作，以及 OCR、表单填写、安全管理等高级功能，满足各种 PDF 处理需求。"
-  },
-  "HOME.Scenes.data-analysis.title": {
-    "message": "数据分析"
-  },
-  "HOME.Scenes.data-analysis.tag": {
-    "message": "数据分析"
-  },
-  "HOME.Scenes.data-analysis.inner": {
-    "message": "使用 AI 分析表格数据，并根据用户需求以自定义格式输出图表。"
-  },
-  "HOME.Scenes.audio-processing.title": {
-    "message": "AI 音频处理"
-  },
-  "HOME.Scenes.audio-processing.tag": {
-    "message": "音频内容"
-  },
-  "HOME.Scenes.audio-processing.inner": {
-    "message": "专业音频处理工具，支持语音识别、音频增强、噪音消除、音乐生成和声音分析，打造完整的音频处理解决方案。"
-  },
-  "HOME.Scenes.automation.title": {
-    "message": "流程自动化"
-  },
-  "HOME.Scenes.automation.tag": {
-    "message": "自动化"
-  },
-  "HOME.Scenes.automation.inner": {
-    "message": "构建智能自动化工作流，连接各种应用和服务，实现任务自动执行、数据同步和业务流程优化。"
-  },
-  "HOME.Scenes.web-scraping.title": {
-    "message": "网页数据采集"
-  },
-  "HOME.Scenes.web-scraping.tag": {
-    "message": "数据采集"
-  },
-  "HOME.Scenes.web-scraping.inner": {
-    "message": "智能网页数据抓取工具，支持动态内容获取、数据清洗和结构化存储，轻松获取所需的网络数据。"
-  },
-  "HOME.Scenes.api-integration.title": {
-    "message": "API 集成"
-  },
-  "HOME.Scenes.api-integration.tag": {
-    "message": "系统集成"
-  },
-  "HOME.Scenes.api-integration.inner": {
-    "message": "无缝连接各种第三方服务和API，实现系统间的数据交换、功能整合和业务协同，构建强大的集成解决方案。"
-  },
-  "HOME.Scenes.content-generation.title": {
-    "message": "内容生成"
-  },
-  "HOME.Scenes.content-generation.tag": {
-    "message": "创意内容"
-  },
-  "HOME.Scenes.content-generation.inner": {
-    "message": "AI 驱动的内容创作工具，支持文章写作、图像生成、视频制作和创意设计，释放无限创作潜能。"
-  },
-  "HOME.Scenes.link-button": {
-    "message": "查看更多案例"
-  },
-  "HOME.Create.title": {
-    "message": "从创建到部署，一站式开发体验"
-  },
-  "HOME.Create.subtitle": {
-    "message": "创建工作流 → 生成 Package → 发布社区 → 灵活部署(本地 FRP / 云端 API)"
-  },
-  "HOME.Create.browse-docs": {
-    "message": "浏览文档"
-  },
-  "HOME.Products.title": {
-    "message": "如何创造"
-  },
-  "HOME.Products.subtitle": {
-    "message": "探索 OOMOL 生态系统中的三大核心产品，从创造到分享再到使用，完整的 AI 工具生命周期。"
-  },
-  "HOME.Products.studio.description": {
-    "message": "OOMOL 推出的 AI 工具创作平台。该平台的核心优势在于：既保留了传统编程的无限创造能力，又具备低代码开发的便捷性，让用户能够高效地构建各类 AI 工具。"
-  },
-  "HOME.Products.hub.description": {
-    "message": "AI 工具分享社区，发现、分享和获取灵感的最佳平台。"
-  },
-  "HOME.Products.chat.description": {
-    "message": "智能对话工具，通过自然语言交互使用各种 AI 功能。"
-  },
   "HOME.CommunityShare.title": {
     "message": "写过一次的函数，应该继续被团队复用"
   },
@@ -745,237 +331,6 @@
   },
   "HOME.CommunityShare.point3.description": {
     "message": "基于已经发布的函数继续组合和扩展，把已有能力不断变成新的作品和服务。"
-  },
-  "HOME.Features.title": {
-    "message": "功能特点"
-  },
-  "HOME.Features.subtitle": {
-    "message": "无需编程，一站式 AI 工具创造、定制和分享平台。"
-  },
-  "HOME.Features.intuitive-interaction.title": {
-    "message": "可视化创造"
-  },
-  "HOME.Features.pre-installed-environment.title": {
-    "message": "即用即用"
-  },
-  "HOME.Features.programming-friendly.title": {
-    "message": "零配置"
-  },
-  "HOME.Features.support-sharing.title": {
-    "message": "一键分享"
-  },
-  "HOME.Features.block-sharing.title": {
-    "message": "可复用工具"
-  },
-  "HOME.Features.intuitive-interaction.inner": {
-    "message": "简单拖拽即可构建 AI 工具，无需任何编程知识。"
-  },
-  "HOME.Features.pre-installed-environment.inner": {
-    "message": "一切都已预配置，立即开始创建 AI 工具。"
-  },
-  "HOME.Features.programming-friendly.inner": {
-    "message": "下载即用，无需复杂设置或依赖管理。"
-  },
-  "HOME.Features.support-sharing.inner": {
-    "message": "一键分享你的 AI 工具，他人可立即使用。"
-  },
-  "HOME.Features.block-sharing.inner": {
-    "message": "一次构建，处处可用。为社区创建可复用的 AI 组件。"
-  },
-  "HOME.Features.linkBtn-text": {
-    "message": "查看全部"
-  },
-  "HOME.Ecosystem.title": {
-    "message": "oomol 产品生态"
-  },
-  "HOME.Ecosystem.subtitle": {
-    "message": "从本地开发到云端部署，完整的 AI 工具生命周期"
-  },
-  "HOME.Ecosystem.studio.title": {
-    "message": "oomol Studio"
-  },
-  "HOME.Ecosystem.studio.subtitle": {
-    "message": "本地开发"
-  },
-  "HOME.Ecosystem.studio.description": {
-    "message": "VSCode 集成的可视化编辑器，支持 AI 辅助开发和本地容器运行。"
-  },
-  "HOME.Ecosystem.studio.feature1": {
-    "message": "VSCode 集成"
-  },
-  "HOME.Ecosystem.studio.feature2": {
-    "message": "可视化编辑"
-  },
-  "HOME.Ecosystem.studio.feature3": {
-    "message": "AI 辅助开发"
-  },
-  "HOME.Ecosystem.studio.feature4": {
-    "message": "本地容器"
-  },
-  "HOME.Ecosystem.hub.title": {
-    "message": "oomol Hub"
-  },
-  "HOME.Ecosystem.hub.subtitle": {
-    "message": "社区生态"
-  },
-  "HOME.Ecosystem.hub.description": {
-    "message": "开放的 Package 分享社区，发布、浏览和安装 Blocks，一键集成依赖。"
-  },
-  "HOME.Ecosystem.hub.feature1": {
-    "message": "发布 Package"
-  },
-  "HOME.Ecosystem.hub.feature2": {
-    "message": "浏览社区"
-  },
-  "HOME.Ecosystem.hub.feature3": {
-    "message": "一键安装"
-  },
-  "HOME.Ecosystem.hub.feature4": {
-    "message": "开发者协作"
-  },
-  "HOME.Ecosystem.cloud.title": {
-    "message": "oomol Cloud"
-  },
-  "HOME.Ecosystem.cloud.subtitle": {
-    "message": "云端部署"
-  },
-  "HOME.Ecosystem.cloud.description": {
-    "message": "一键部署到云端，提供 RESTful 和 MCP 两种 API 协议，支持计量计费。"
-  },
-  "HOME.Ecosystem.cloud.feature1": {
-    "message": "一键部署"
-  },
-  "HOME.Ecosystem.cloud.feature2": {
-    "message": "RESTful API"
-  },
-  "HOME.Ecosystem.cloud.feature3": {
-    "message": "MCP 协议"
-  },
-  "HOME.Ecosystem.cloud.feature4": {
-    "message": "计量计费"
-  },
-  "HOME.Ecosystem.chat.title": {
-    "message": "oomol Chat"
-  },
-  "HOME.Ecosystem.chat.subtitle": {
-    "message": "AI 助手"
-  },
-  "HOME.Ecosystem.chat.description": {
-    "message": "基于 MCP Tool 的 AI 对话助手，组合 Tool 构建 Agent 专家，支持多模型。"
-  },
-  "HOME.Ecosystem.chat.feature1": {
-    "message": "MCP Tool"
-  },
-  "HOME.Ecosystem.chat.feature2": {
-    "message": "Agent 专家"
-  },
-  "HOME.Ecosystem.chat.feature3": {
-    "message": "企业知识库"
-  },
-  "HOME.Ecosystem.chat.feature4": {
-    "message": "多模型支持"
-  },
-  "HOME.Guide.title": {
-    "message": "加入开发者社区"
-  },
-  "HOME.Guide.subtitle": {
-    "message": "与全球开发者一起构建 AI 工具生态，分享经验，获取支持，参与开源贡献。"
-  },
-  "HOME.Guide.link-button-text": {
-    "message": "访问 Hub 社区"
-  },
-  "HOME.Guide.github.title": {
-    "message": "GitHub 开源"
-  },
-  "HOME.Guide.github.description": {
-    "message": "参与开源项目，贡献代码，报告问题，与全球开发者协作。"
-  },
-  "HOME.Guide.discord.title": {
-    "message": "Discord 社区"
-  },
-  "HOME.Guide.discord.description": {
-    "message": "实时交流，获取技术支持，分享使用经验，结识志同道合的开发者。"
-  },
-  "HOME.Guide.docs.title": {
-    "message": "开发者文档"
-  },
-  "HOME.Guide.docs.description": {
-    "message": "完整的 API 文档、示例代码、最佳实践，快速上手 oomol 开发。"
-  },
-  "HOME.Guide.project-1.title": {
-    "message": "AI 视频翻译器"
-  },
-  "HOME.Guide.project-1.description": {
-    "message": "AI 驱动的视频翻译和字幕生成"
-  },
-  "HOME.Guide.project-2.title": {
-    "message": "PDF Craft"
-  },
-  "HOME.Guide.project-2.description": {
-    "message": "集成 pdf-craft 的起始项目"
-  },
-  "HOME.Guide.project-3.title": {
-    "message": "FFmpeg"
-  },
-  "HOME.Guide.project-3.description": {
-    "message": "使用 FFmpeg 进行视频处理"
-  },
-  "HOME.Guide.project-4.title": {
-    "message": "Data Lab"
-  },
-  "HOME.Guide.project-4.description": {
-    "message": "使用 pandas & plotly 数据分析"
-  },
-  "HOME.Guide.project-5.title": {
-    "message": "Stock Analysis"
-  },
-  "HOME.Guide.project-5.description": {
-    "message": "股票分析与回测"
-  },
-  "HOME.Guide.project-6.title": {
-    "message": "Transform"
-  },
-  "HOME.Guide.project-6.description": {
-    "message": "常见数据转换"
-  },
-  "HOME.Guide.project-7.title": {
-    "message": "AI 图片压缩器"
-  },
-  "HOME.Guide.project-7.description": {
-    "message": "智能图像优化和压缩"
-  },
-  "HOME.Guide.project-8.title": {
-    "message": "AI 文档解析器"
-  },
-  "HOME.Guide.project-8.description": {
-    "message": "使用 AI 从文档中提取和结构化数据"
-  },
-  "HOME.Guide.project-9.title": {
-    "message": "Whisper"
-  },
-  "HOME.Guide.project-9.description": {
-    "message": "识别音频中的语音"
-  },
-  "HOME.Guide.project-10.title": {
-    "message": "SiliconFlow"
-  },
-  "HOME.Guide.project-10.description": {
-    "message": "Siliconflow 平台的多种功能集"
-  },
-  "HOME.Guide.project-11.title": {
-    "message": "V2EX Lottery"
-  },
-  "HOME.Guide.project-11.description": {
-    "message": "用于 V2EX 抽奖"
-  },
-  "HOME.Guide.project-12.title": {
-    "message": "Manga Translator"
-  },
-  "HOME.Guide.project-12.description": {
-    "message": "翻译漫画图片和 PDF"
-  },
-  "HOME.Guide.view-all-projects": {
-    "message": "查看全部"
   },
   "HOME.Built-in.title": {
     "message": "融合 APIs 与大模型"
@@ -1004,15 +359,6 @@
   "HOME.Pricing.title": {
     "message": "价格"
   },
-  "HOME.Downloads.title": {
-    "message": "获取与安装 OOMOL"
-  },
-  "HOME.Downloads.subtitle": {
-    "message": "先装 oo-cli，需要自定义扩展时再用 OOMOL Studio。"
-  },
-  "HOME.Downloads.studioSection.eyebrow": {
-    "message": "OOMOL Studio"
-  },
   "HOME.Downloads.studioSection.title": {
     "message": "如果你要自己做工具，就下载 OOMOL Studio"
   },
@@ -1022,20 +368,11 @@
   "HOME.Downloads.Stable.title": {
     "message": "稳定版"
   },
-  "HOME.Downloads.Canary.title": {
-    "message": "预发布版"
-  },
   "HOME.Downloads.Nightly.title": {
     "message": "每日构建版"
   },
   "HOME.Downloads.Stable.subtitle": {
     "message": "经过全面测试的版本"
-  },
-  "HOME.Downloads.mostRecommended": {
-    "message": "最推荐"
-  },
-  "HOME.Downloads.Canary.subtitle": {
-    "message": "具有新功能但未经全面测试的版本"
   },
   "HOME.Downloads.Nightly.subtitle": {
     "message": "隔夜构建版本，较不稳定"
@@ -1043,17 +380,8 @@
   "HOME.Downloads.download.macos.applesilicon": {
     "message": "下载 MacOS Apple Silicon 版本"
   },
-  "HOME.Downloads.download.macos.intel": {
-    "message": "下载 MacOS Intel 版本（旧版本）"
-  },
   "HOME.Downloads.download.windows.x64": {
     "message": "下载 Windows X64 版本"
-  },
-  "HOME.Downloads.cli.eyebrow": {
-    "message": "CLI"
-  },
-  "HOME.Downloads.cli.info.eyebrow": {
-    "message": "Agent"
   },
   "HOME.Downloads.cli.info.title": {
     "message": "如果你要在终端和 Agent 中使用，就从 oo-cli 开始"
@@ -1061,32 +389,17 @@
   "HOME.Downloads.cli.info.description": {
     "message": "如果你想在 Codex、Claude Code 或本地终端里直接搜索、调用和运行工具，就从 oo-cli 开始。你可以自己安装，也可以把下面的提示词发给 Agent，让它替你完成安装和检查。"
   },
-  "HOME.Downloads.cli.title.line1": {
-    "message": "让 Agent 连接 SaaS 工具"
-  },
-  "HOME.Downloads.cli.title.line2": {
-    "message": "从 oo-cli 开始"
-  },
-  "HOME.Downloads.cli.subtitle": {
-    "message": "在 Codex、Claude Code 或任意本地终端中安装 oo-cli，让 Agent 先连接 OOMOL 上的 SaaS 与已发布能力，直接搜索、调用并拿结果。"
-  },
   "HOME.Downloads.cli.action.guide": {
     "message": "打开 oo-cli 指南"
   },
   "HOME.Downloads.cli.action.github": {
     "message": "查看 oo-cli GitHub"
   },
-  "HOME.Downloads.cli.method.install.kicker": {
-    "message": "方式 1"
-  },
   "HOME.Downloads.cli.method.install.title": {
     "message": "直接在终端安装"
   },
   "HOME.Downloads.cli.method.install.description": {
     "message": "在 Codex、Claude Code 或任意本地终端里运行这两条命令，登录后就可以开始使用 oo-cli。"
-  },
-  "HOME.Downloads.cli.method.agent.kicker": {
-    "message": "方式 2"
   },
   "HOME.Downloads.cli.method.agent.title": {
     "message": "把安装交给 Agent"
@@ -1102,9 +415,6 @@
   },
   "HOME.Downloads.cli.copied": {
     "message": "已复制"
-  },
-  "HOME.Downloads.cta.eyebrow": {
-    "message": "下一步"
   },
   "HOME.Downloads.cta.title": {
     "message": "安装简单，扩展也简单"
@@ -2622,83 +1932,14 @@
     "message": "This author has not written any posts yet.",
     "description": "The text for authors with 0 blog post"
   },
-  "HOME.Scenes.dataScience.title": {
-    "message": "数据科学流水线"
-  },
-  "HOME.Scenes.dataScience.inner": {
-    "message": "构建数据清洗→模型训练→可视化展示的端到端流水线，支持 pandas、scikit-learn 等库，GPU 加速深度学习模型训练。"
-  },
-  "HOME.Scenes.multimedia.title": {
-    "message": "多媒体处理自动化"
-  },
-  "HOME.Scenes.multimedia.inner": {
-    "message": "批量视频转码、自动添加多语言字幕、PDF 生成等。调用 ffmpeg、Pillow 等工具，构建高效的媒体处理流水线。"
-  },
-  "HOME.Scenes.aiAgent.title": {
-    "message": "AI Agent 工具链"
-  },
-  "HOME.Scenes.aiAgent.inner": {
-    "message": "通过 MCP 协议将函数工具转化为 AI 可调用工具，组合成专项 Agent。整合数据查询、文件处理、API 调用等能力。"
-  },
-  "HOME.Scenes.apiPublish.title": {
-    "message": "API 服务快速发布"
-  },
-  "HOME.Scenes.apiPublish.inner": {
-    "message": "将工作流打包为 RESTful API 或 Chatbot 接口，一键部署到 OOMOL Cloud，自动生成 API 文档和测试界面。"
-  },
-  "HOME.Scenes.enterprise.title": {
-    "message": "企业级集成"
-  },
-  "HOME.Scenes.enterprise.inner": {
-    "message": "容器化部署到私有云或 K8s 集群，支持 CI/CD 流水线，实现企业级 API 服务的持续交付和运维。"
-  },
   "HOME.ProductComparison.title": {
     "message": "Cloud 不是托管层，而是工具的交付层"
   },
   "HOME.ProductComparison.subtitle": {
     "message": "OOMOL Cloud 不只是代码运行的地方，而是把已经验证过的实现变成可交付的工具，并私有交付给自己、团队或客户的那一层。"
   },
-  "HOME.ChatAgent.title": {
-    "message": "OOMOL Chat & Agent 生态"
-  },
-  "HOME.ChatAgent.description": {
-    "message": "OOMOL Chat 是由你自己的函数工具驱动的 Agent 界面。每个函数工具、工作流或 API 都会成为 Agent 可调用的 MCP 工具。"
-  },
-  "HOME.ChatAgent.feature1": {
-    "message": "组合工具"
-  },
-  "HOME.ChatAgent.feature2": {
-    "message": "构建专家 AI Agent"
-  },
-  "HOME.ChatAgent.feature3": {
-    "message": "交付真实产品"
-  },
-  "HOME.ProductComparison.dimension.capability": {
-    "message": "核心能力"
-  },
-  "HOME.ProductComparison.dimension.scenario": {
-    "message": "适用场景"
-  },
-  "HOME.ProductComparison.dimension.tech": {
-    "message": "技术特点"
-  },
-  "HOME.ProductComparison.product.studio": {
-    "message": "Studio"
-  },
   "HOME.ProductComparison.product.cloud": {
     "message": "Cloud"
-  },
-  "HOME.ProductComparison.studio.stage": {
-    "message": "本地开发与快速起步"
-  },
-  "HOME.ProductComparison.studio.capability": {
-    "message": "先写、先跑、先验证"
-  },
-  "HOME.ProductComparison.studio.scenario": {
-    "message": "适合个人开发、函数调试和本地验证，先把能力做出来、跑通，再决定是否继续交付。"
-  },
-  "HOME.ProductComparison.studio.tech": {
-    "message": "本地安装即用，内置容器环境，适合把开发和验证先收拢在一处。"
   },
   "HOME.ProductComparison.cloud.stage": {
     "message": "部署并交付"
@@ -2835,9 +2076,6 @@
   "HOME.CliEntry.benefit2.description": {
     "message": "如果现成工具不够，就回到 Studio 里生成、验证并通过 Cloud 发布自己的工具。"
   },
-  "HOME.CliEntry.bridge": {
-    "message": "函数先发布到 OOMOL Cloud，CLI 再负责登录、搜索和调用。这层关系说一遍就够，重点是让你第一次跑通。"
-  },
   "HOME.CliEntry.step1.title": {
     "message": "安装 oo-cli"
   },
@@ -2892,35 +2130,17 @@
   "HOME.CliEntry.demo.stage1.title": {
     "message": "自然语言搜索"
   },
-  "HOME.CliEntry.demo.stage1.description": {
-    "message": "先搜索，而不是先记包名。这样更接近用户第一次接触 CLI 的真实动作。"
-  },
   "HOME.CliEntry.demo.stage2.label": {
     "message": "Inspect"
   },
   "HOME.CliEntry.demo.stage2.title": {
     "message": "查看 package info"
   },
-  "HOME.CliEntry.demo.stage2.description": {
-    "message": "在真正运行之前先看 package info，能避免把参数和 block-id 猜错。"
-  },
   "HOME.CliEntry.demo.stage3.label": {
     "message": "Run"
   },
   "HOME.CliEntry.demo.stage3.title": {
     "message": "运行并获取结果"
-  },
-  "HOME.CliEntry.demo.stage3.description": {
-    "message": "函数交给 Cloud 执行，CLI 负责把任务发出去，并在当前工作流里把结果取回来。"
-  },
-  "HOME.CliEntry.demo.footer": {
-    "message": "同一份已发布函数，后面还可以继续作为 API、MCP 工具或自动化任务复用。"
-  },
-  "HOME.CliEntry.terminal.title": {
-    "message": "Studio -> Cloud -> CLI"
-  },
-  "HOME.CliEntry.terminal.note": {
-    "message": "CLI 不只是另一个入口。它是在登录之后，把部署在 OOMOL Cloud 上的云函数稳定接到 Codex、Claude Code 和其他终端工作流里的那一层。"
   },
   "HOME.CodexBlocks.badge": {
     "message": "CODEX EXAMPLES"
@@ -2936,9 +2156,6 @@
   },
   "HOME.CodexBlocks.action.secondary": {
     "message": "查看 Cloud Function"
-  },
-  "HOME.CodexBlocks.terminal": {
-    "message": "在 Codex 中调用"
   },
   "HOME.CodexBlocks.video": {
     "message": "视频演示"
@@ -2972,15 +2189,6 @@
   },
   "HOME.CodexBlocks.card2.previewNote": {
     "message": "这里会替换成视频，用来展示从方法描述到论文插图生成的完整调用过程。"
-  },
-  "HOME.CodexBlocks.card3.eyebrow": {
-    "message": "Books"
-  },
-  "HOME.CodexBlocks.card3.title": {
-    "message": "PDF / EPUB 翻译"
-  },
-  "HOME.CodexBlocks.card3.description": {
-    "message": "把长文档翻译成可继续阅读的双语 EPUB 或 Markdown 输出，而不是只拿回一段文本结果。"
   },
   "CLOUD.hero.title": {
     "message": "OOMOL Cloud - 工具的交付与托管层"
@@ -3483,10 +2691,232 @@
   "SDK.fusion.feature3": {
     "message": "支持文生图、语音合成等多种服务"
   },
-  "HOME.Downloads.page.title": {
-    "message": "获取与安装 OOMOL"
+  "HOME.ToolStrip.title": {
+    "message": "先看 OOMOL 已经接好了多少应用"
   },
-  "HOME.Downloads.page.description": {
-    "message": "先用 oo-cli 作为主入口；如果你更喜欢图形界面，可以使用 OOMOL AI；需要自己做工具时再下载 OOMOL Studio。"
+  "HOME.ToolStrip.description": {
+    "message": "OOMOL 内置支持 {providerCount} 个应用，包含 {actionCount} 个封装工具。先通过 oo-cli 用现成连接把工作跑起来，再决定哪些环节值得继续编排、扩展，或做成你自己的工具。"
+  },
+  "HOME.ToolStrip.providerStat.label": {
+    "message": "个应用"
+  },
+  "HOME.ToolStrip.providerStat.text": {
+    "message": "覆盖办公、协作、开发、营销和支付等常见服务。"
+  },
+  "HOME.ToolStrip.actionStat.label": {
+    "message": "封装工具"
+  },
+  "HOME.ToolStrip.actionStat.text": {
+    "message": "不是零散接口，而是可直接调用的能力入口。"
+  },
+  "HOME.ToolStrip.wallTitle": {
+    "message": "常见应用已内置接入"
+  },
+  "HOME.DeveloperEntry.badge": {
+    "message": "开发者入口"
+  },
+  "HOME.DeveloperEntry.title": {
+    "message": "现成能力不够，就到 OOMOL Studio 做自己的工具"
+  },
+  "HOME.DeveloperEntry.subtitle": {
+    "message": "你可以在 Studio 里重组现成能力、补代码、编排 workflow、写新的 function tool。工具在本地跑通之后，再交给 Cloud 承接交付。"
+  },
+  "HOME.DeveloperEntry.primaryCta": {
+    "message": "了解 OOMOL Studio"
+  },
+  "HOME.DeveloperEntry.secondaryCta": {
+    "message": "下载 OOMOL Studio"
+  },
+  "HOME.DeveloperEntry.card1.title": {
+    "message": "把现成能力重组成你自己的工具"
+  },
+  "HOME.DeveloperEntry.card1.text": {
+    "message": "把 GitHub、Slack、Notion、Gmail 这些现成能力继续拼成你自己的执行链路，而不是停在单次调用。"
+  },
+  "HOME.DeveloperEntry.card2.title": {
+    "message": "把多步逻辑固定成 workflow"
+  },
+  "HOME.DeveloperEntry.card2.text": {
+    "message": "把判断、分支、重试和多步协作整理成可重复运行的 workflow，而不是每次都临时拼接。"
+  },
+  "HOME.DeveloperEntry.card3.title": {
+    "message": "直接编写新的函数工具"
+  },
+  "HOME.DeveloperEntry.card3.text": {
+    "message": "当现有封装不够用时，直接写新的 function tool，把你自己的 API、内部系统和逻辑接进来。"
+  },
+  "HOME.DeveloperEntry.card4.title": {
+    "message": "让新工具继续进入交付路径"
+  },
+  "HOME.DeveloperEntry.card4.text": {
+    "message": "Studio 不是终点。本地验证后，再交给 Cloud，并主要沿 oo-cli 继续给 Agent 使用。"
+  },
+  "HOME.LinearFlow.studio.eyebrow": {
+    "message": "01 / 在 Studio 中构建"
+  },
+  "HOME.LinearFlow.studio.title": {
+    "message": "先在 OOMOL Studio 里生成、组合并验证"
+  },
+  "HOME.LinearFlow.studio.description": {
+    "message": "把需求交给 Agent 起步，然后继续补代码、接依赖、改参数和做编排。Studio 面向的是构建工具，而不是日常使用工具。"
+  },
+  "HOME.LinearFlow.studio.media.title": {
+    "message": "Studio 演示视频"
+  },
+  "HOME.LinearFlow.studio.media.note": {
+    "message": "展示从描述需求、生成工具到本地验证跑通的过程。"
+  },
+  "HOME.LinearFlow.studio.primary": {
+    "message": "安装 OOMOL Studio"
+  },
+  "HOME.LinearFlow.studio.secondary": {
+    "message": "了解 Studio"
+  },
+  "HOME.LinearFlow.cloud.eyebrow": {
+    "message": "02 / 通过 Cloud 交付"
+  },
+  "HOME.LinearFlow.cloud.title": {
+    "message": "验证完成后，再交给 Cloud 承接交付和运行"
+  },
+  "HOME.LinearFlow.cloud.description": {
+    "message": "Cloud 承接运行、配置、Secrets、权限和使用关系，让你不必围绕同一份实现再补一层后台。"
+  },
+  "HOME.LinearFlow.cloud.card1.title": {
+    "message": "统一承接交付和托管运行"
+  },
+  "HOME.LinearFlow.cloud.card1.text": {
+    "message": "当你把工具交付给自己、团队或客户时，继续沿用同一份实现和同一条路径。"
+  },
+  "HOME.LinearFlow.cloud.card2.title": {
+    "message": "把配置、权限和使用关系放进同一个后台"
+  },
+  "HOME.LinearFlow.cloud.card2.text": {
+    "message": "Secrets、权限、版本、运行配置和使用数据集中管理，减少分散维护。"
+  },
+  "HOME.LinearFlow.cloud.media.title": {
+    "message": "Cloud 控制台预览"
+  },
+  "HOME.LinearFlow.cloud.media.note": {
+    "message": "把运行配置、Secrets 和使用关系放到同一个后台里管理。"
+  },
+  "HOME.LinearFlow.cloud.primary": {
+    "message": "了解 Cloud"
+  },
+  "HOME.LinearFlow.cloud.secondary": {
+    "message": "打开 Cloud 控制台"
+  },
+  "HOME.LinearFlow.cli.eyebrow": {
+    "message": "03 / 给 Agent 使用"
+  },
+  "HOME.LinearFlow.cli.title": {
+    "message": "最后把工具交回 oo-cli，给 Agent 直接调用"
+  },
+  "HOME.LinearFlow.cli.description": {
+    "message": "当工具已经做好并交付出去后，Agent、Codex、OpenClaw 和 Claude Code 会继续沿同一条 oo-cli 路径来搜索、查看和调用。"
+  },
+  "HOME.LinearFlow.cli.media.title": {
+    "message": "oo-cli 调用演示"
+  },
+  "HOME.LinearFlow.cli.media.note": {
+    "message": "展示一个已交付工具在 Codex 中被搜索、查看和调用。"
+  },
+  "HOME.LinearFlow.cli.guide": {
+    "message": "了解 oo-cli"
+  },
+  "HOME.LinearFlow.cli.github": {
+    "message": "查看 GitHub"
+  },
+  "HOME.LinearFlow.cta.title": {
+    "message": "先用现成工具；需要时再走这条开发者路径"
+  },
+  "HOME.LinearFlow.cta.description": {
+    "message": "先用 oo-cli 跑通现成能力。需要自己生产、组合和交付工具时，再进入 Studio 和 Cloud。"
+  },
+  "HOME.LinearFlow.cta.primary": {
+    "message": "先用 oo-cli"
+  },
+  "HOME.LinearFlow.cta.secondary": {
+    "message": "了解 Studio"
+  },
+  "HOME.GuiEntry.badge": {
+    "message": "oo-cli 的 GUI 延伸"
+  },
+  "HOME.GuiEntry.title": {
+    "message": "同一套能力，也可以在 OOMOL AI 里继续用图形界面"
+  },
+  "HOME.GuiEntry.description": {
+    "message": "当你已经沿 oo-cli 这条路径把工具接起来之后，如果更喜欢图形界面，OOMOL AI 提供同一套能力的官方 GUI 入口，适合在 Web、桌面和 iOS 中继续使用。"
+  },
+  "HOME.GuiEntry.point1": {
+    "message": "Web"
+  },
+  "HOME.GuiEntry.point2": {
+    "message": "桌面端"
+  },
+  "HOME.GuiEntry.point3": {
+    "message": "iOS"
+  },
+  "HOME.GuiEntry.action": {
+    "message": "了解 OOMOL AI"
+  },
+  "HOME.GuiEntry.imageAlt": {
+    "message": "OOMOL AI 界面预览"
+  },
+  "HOME.CloudBenefits.badge": {
+    "message": "免费额度"
+  },
+  "HOME.CloudBenefits.title": {
+    "message": "先用免费额度开始交付"
+  },
+  "HOME.CloudBenefits.subtitle": {
+    "message": "免费用户每月自动刷新 200 分钟 Cloud Task。先用它把工具交付到 Cloud；额度不够时，再充值或升级。"
+  },
+  "HOME.CloudBenefits.card1.tag": {
+    "message": "每月赠送"
+  },
+  "HOME.CloudBenefits.card1.value": {
+    "message": "200 分钟"
+  },
+  "HOME.CloudBenefits.card1.valueCaption": {
+    "message": "Cloud Task 免费时长"
+  },
+  "HOME.CloudBenefits.card1.eyebrow": {
+    "message": "免费额度"
+  },
+  "HOME.CloudBenefits.card1.title": {
+    "message": "先把工具交付并用起来"
+  },
+  "HOME.CloudBenefits.card1.description": {
+    "message": "用每月自动刷新的免费额度把工具交付出去，确认它能持续运行，并在 oo-cli 中直接被搜索、查看和调用。"
+  },
+  "HOME.CloudBenefits.card1.note": {
+    "message": "适合首次交付、轻量任务和日常试用。"
+  },
+  "HOME.CloudBenefits.card1.cta": {
+    "message": "查看 Cloud 文档"
+  },
+  "HOME.CloudBenefits.card2.tag": {
+    "message": "按时间计费"
+  },
+  "HOME.CloudBenefits.card2.value": {
+    "message": "按时间"
+  },
+  "HOME.CloudBenefits.card2.valueCaption": {
+    "message": "Cloud Task 计费方式"
+  },
+  "HOME.CloudBenefits.card2.eyebrow": {
+    "message": "按量使用"
+  },
+  "HOME.CloudBenefits.card2.title": {
+    "message": "按调用时长计费，按需扩展"
+  },
+  "HOME.CloudBenefits.card2.description": {
+    "message": "先用每月自动刷新的免费额度；超出后，再按实际调用时长计费，不需要先买服务器或预留固定资源。"
+  },
+  "HOME.CloudBenefits.card2.note": {
+    "message": "先用赠送额度跑起来，再决定规模。"
+  },
+  "HOME.CloudBenefits.card2.cta": {
+    "message": "查看价格"
   }
 }
