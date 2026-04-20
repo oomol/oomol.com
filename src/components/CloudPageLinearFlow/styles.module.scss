@@ -1,12 +1,14 @@
 .flow {
   display: grid;
   gap: 0;
+  overflow-x: clip;
 }
 
 .section {
   padding: clamp(5rem, 10vw, 8rem) 0;
   background: var(--oomol-bg-base);
   border-bottom: 1px solid var(--oomol-divider);
+  overflow-x: clip;
 }
 
 .cloudSection {
@@ -87,20 +89,23 @@
   align-items: center;
   gap: 0.8rem 1.2rem;
   padding-top: 0.2rem;
+  min-width: 0;
 }
 
 .primaryLink,
 .secondaryLink {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 0.35rem;
   min-width: 0;
+  max-width: 100%;
   font-size: var(--oomol-body-base);
   font-weight: 500;
   color: var(--oomol-text-primary);
   text-decoration: none;
   white-space: normal;
   overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .primaryLink::after,
@@ -276,6 +281,11 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 0.7rem;
+  }
+
+  .primaryLink,
+  .secondaryLink {
+    width: 100%;
   }
 
   .videoCardMeta {

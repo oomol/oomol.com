@@ -340,7 +340,7 @@ const CookieConsentProviderInner: React.FC = () => {
 
       {showBanner ? (
         <div
-          className="fixed bottom-4 right-4 box-border w-[min(28rem,calc(100vw-2rem))] rounded-xl border border-solid border-[var(--oomol-border-default)] bg-[var(--oomol-bg-base)] px-5 py-4 text-[var(--oomol-text-secondary)] shadow-[var(--oomol-shadow-md)] [font-family:var(--oomol-font-body)] md:bottom-6 md:right-6"
+          className="fixed inset-x-4 bottom-4 box-border w-auto max-w-[calc(100dvw-2rem)] rounded-xl border border-solid border-[var(--oomol-border-default)] bg-[var(--oomol-bg-base)] px-5 py-4 text-[var(--oomol-text-secondary)] shadow-[var(--oomol-shadow-md)] [font-family:var(--oomol-font-body)] md:inset-x-auto md:bottom-6 md:right-6 md:w-[min(28rem,calc(100dvw-3rem))]"
           role="region"
           aria-label={t.title}
           style={{ zIndex: "var(--oomol-z-cookie-banner)" }}

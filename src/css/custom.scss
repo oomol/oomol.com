@@ -189,15 +189,54 @@ html[lang="en"] {
   }
 }
 
-/* 标题：600 semibold + 紧 tracking，英中分别适配 */
+/* Safari/WebKit fallback:
+   `content-visibility` with intrinsic sizing can produce visible section pop-in,
+   scrollbar length jumps, and intermittent flicker while scrolling long pages.
+   Prefer stable document flow on WebKit until engine behavior is consistent. */
+/* Global horizontal-overflow guard.
+   Must NOT be scoped to `@supports (-webkit-touch-callout: none)` — that
+   feature query only returns true on iOS Safari, so desktop Safari (and
+   Safari's responsive design mode) skipped the rule entirely and `body`
+   ended up with `overflow: visible`, letting any stray oversized child
+   push the page wider than the viewport. */
+html,
+body,
+#__docusaurus {
+  overflow-x: clip;
+}
+
+@supports not (overflow: clip) {
+  html,
+  body,
+  #__docusaurus {
+    overflow-x: hidden;
+  }
+}
+
+/* iOS Safari–only: `content-visibility: auto` produces scrollbar jumps and
+   section pop-in. Keep the rest of its quirks contained here. */
+@supports (-webkit-touch-callout: none) {
+  .oomol-home-main > *,
+  .oomol-landing-main > * {
+    content-visibility: visible;
+    contain: none;
+    contain-intrinsic-size: auto;
+  }
+}
+
+/* 标题：600 semibold + 紧 tracking，英中分别适配
+   注意：中文标题不要用 `word-break: keep-all`。
+   Safari/WebKit 对 `keep-all + overflow-wrap: break-word` 的降级不可靠，
+   会把一整句中文当成一个不可断的"单词"，导致窄屏下标题撑出容器、
+   进而把整个 section 的宽度顶宽（Chrome 能正常降级，Safari 不行）。 */
 :lang(zh-CN) .oomol-home-main :is(h1, h2, h3),
 :lang(zh-CN) .oomol-landing-main :is(h1, h2, h3) {
   letter-spacing: -0.022em;
   font-weight: 600;
   line-height: 1.12;
   text-wrap: pretty;
-  word-break: keep-all;
-  overflow-wrap: break-word;
+  word-break: normal;
+  overflow-wrap: anywhere;
   font-variation-settings: normal;
 }
 

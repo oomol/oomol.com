@@ -81,13 +81,19 @@
     }
   }
 
+  /* Lift one level above the CTA panel surface.
+     Previously used `--oomol-bg-elevated`, which is the exact same token
+     SiteCta uses for its inner panel — the button effectively disappeared,
+     leaving only a faint 10% border. Using `--oomol-bg-spotlight` gives a
+     visible step against the panel in both themes. */
   &.variantContrast {
-    background-color: var(--oomol-bg-elevated);
-    border-color: var(--oomol-border-default);
+    background-color: var(--oomol-bg-spotlight);
+    border-color: var(--oomol-border-strong);
     color: var(--oomol-text-primary);
 
     &:hover {
-      background-color: var(--oomol-bg-spotlight);
+      background-color: var(--oomol-bg-container);
+      border-color: var(--oomol-border-strong);
       color: var(--oomol-text-primary);
     }
   }

@@ -63,6 +63,12 @@
   white-space: nowrap;
 }
 
+@media (max-width: 480px) {
+  .brandNoWrap {
+    white-space: normal;
+  }
+}
+
 .description {
   margin: 0;
   max-width: 34rem;

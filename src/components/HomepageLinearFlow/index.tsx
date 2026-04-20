@@ -122,7 +122,6 @@ function VideoCard({ title, note, src }: VideoCardProps) {
           className={styles.videoCardVideo}
           loop
           muted
-          controls
           playsInline
           preload="none"
           aria-label={title}
@@ -330,7 +329,7 @@ export default function HomepageLinearFlow() {
   const cliEyebrow = splitEyebrow(copy.cli.eyebrow);
 
   return (
-    <div className={styles.flow}>
+    <div className={`${styles.flow} oomol-no-section-isolation`}>
       {/* ── Section: Studio ── */}
       <section className={clsx(styles.section, styles.sectionTint)}>
         <div className={styles.stepWatermark} aria-hidden="true">
