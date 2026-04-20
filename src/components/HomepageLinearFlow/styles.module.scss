@@ -32,7 +32,7 @@
   padding-inline: 24px;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  grid-template-columns: 1fr;
   gap: clamp(2rem, 4vw, 3.4rem);
   align-items: start;
 }
@@ -349,7 +349,7 @@
 /* Cloud cards - nested mini cards - hairline stack */
 .cloudCardStack {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 0;
   border: 1px solid var(--oomol-divider);
   border-radius: 12px;
@@ -368,15 +368,15 @@
   transition: background-color 0.18s ease;
   min-width: 0;
 
-  &:nth-child(odd) {
-    border-right: 1px solid var(--oomol-divider);
-  }
-
   &:hover {
     transform: none;
     border-color: var(--oomol-divider);
     box-shadow: none;
     background: var(--oomol-bg-spotlight);
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--oomol-divider);
   }
 }
 
@@ -437,34 +437,41 @@
   line-height: 1.06;
 }
 
-/* ── Tablet ── */
-
-@media (max-width: 996px) {
+@media (min-width: 997px) {
   .container {
-    grid-template-columns: 1fr;
-  }
-
-  .cliSection .container,
-  .cloudSection .container {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
   }
 
   .cloudCardStack {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cloudCard {
+    &:not(:last-child) {
+      border-bottom: 0;
+    }
   }
 
   .cloudCard:nth-child(odd) {
-    border-right: 0;
-  }
-
-  .cloudCard:not(:last-child) {
-    border-bottom: 1px solid var(--oomol-divider);
+    border-right: 1px solid var(--oomol-divider);
   }
 
   .stepWatermark {
-    top: 1rem;
-    right: 2vw;
-    font-size: clamp(6rem, 18vw, 12rem);
+    top: clamp(2rem, 5vw, 4rem);
+    right: 4vw;
+    font-size: clamp(8rem, 22vw, 18rem);
+  }
+}
+
+/* ── Tablet ── */
+
+@media (max-width: 996px) {
+  .section {
+    overflow: visible;
+  }
+
+  .stepWatermark {
+    display: none;
   }
 }
 
