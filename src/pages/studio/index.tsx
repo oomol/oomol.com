@@ -259,11 +259,7 @@ export default function StudioPage() {
           actions={
             <>
               <DownloadButton centered showNote noteTone="inverse" />
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-              >
+              <Button asChild size="lg" variant="outline">
                 <Link to="/cloud">
                   {translate({ message: "HOME.StudioChain.action.cloud" })}
                 </Link>

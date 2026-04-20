@@ -1,36 +1,34 @@
 .section {
   width: 100%;
-  /* Breathing room before footer while staying on the spotlight band (no body-white strip). */
   padding: clamp(5rem, 10vw, 8rem) 0 clamp(3.5rem, 7vw, 5.5rem);
   background: var(--oomol-bg-spotlight);
-  border-bottom: none;
 }
 
 .inner {
   width: min(1200px, calc(100% - 48px));
   margin: 0 auto;
   display: grid;
-  gap: 1.1rem;
-  padding: clamp(2.4rem, 5vw, 4rem) clamp(2rem, 4.2vw, 3rem);
-  border-radius: 14px;
-  border: 1px solid var(--oomol-border-default);
-  /* Clear lift from the band: light = white card on spotlight; dark = elevated panel on container band. */
-  background: var(--oomol-bg-base);
-  box-shadow: none;
   justify-items: center;
+  gap: 1rem;
+  padding: clamp(2.2rem, 5vw, 3.5rem) clamp(1.8rem, 4vw, 2.8rem);
+  border: 1px solid var(--oomol-border-default);
+  border-radius: 14px;
+  background: var(--oomol-bg-base);
   text-align: center;
 }
 
 .title {
   margin: 0;
-  max-width: 22ch;
+  max-width: 24ch;
   font-family: var(--oomol-font-display);
   font-size: var(--oomol-display-section);
-  line-height: 1.06;
+  line-height: 1.08;
   letter-spacing: var(--oomol-tracking-section);
   font-weight: 600;
-  text-wrap: balance;
   color: var(--oomol-text-primary);
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .description {
@@ -40,17 +38,16 @@
   line-height: var(--oomol-line-height-relaxed);
   letter-spacing: var(--oomol-tracking-body);
   color: var(--oomol-text-secondary);
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
-  /* Top-align rows so a caption under one control (e.g. DownloadButton note) does not
-     vertically center the shorter sibling — primary/secondary buttons stay on one line. */
-  align-items: flex-start;
   justify-content: center;
-  gap: 0.7rem 1rem;
-  padding-top: 0.8rem;
+  gap: 0.75rem 1rem;
+  padding-top: 0.4rem;
 }
 
 .ghostLink {
@@ -58,63 +55,51 @@
   align-items: center;
   justify-content: center;
   min-width: 10rem;
-  height: 48px;
   min-height: 48px;
   padding: 0 1.25rem;
+  border: 1px solid var(--oomol-border-strong);
   border-radius: var(--ifm-global-radius);
+  background: transparent;
+  color: var(--oomol-text-primary);
   font-size: var(--oomol-body-base);
   font-weight: 500;
-  letter-spacing: var(--oomol-tracking-body);
   text-decoration: none;
-  color: var(--oomol-text-primary);
-  border: 1px solid var(--oomol-border-strong);
-  background: transparent;
-  transition:
-    background-color 0.15s ease,
-    border-color 0.15s ease;
+}
 
-  &:hover {
-    text-decoration: none;
-    background: var(--oomol-hover-bg);
-    color: var(--oomol-text-primary);
-  }
+.ghostLink:hover {
+  text-decoration: none;
+  background: var(--oomol-hover-bg);
 }
 
 .actionButton {
-  /* styling from Button component */
-}
-
-:global(html[lang="en"]) .title {
-  max-width: 26ch;
-  font-size: var(--oomol-display-section);
+  width: auto;
 }
 
 @media (max-width: 768px) {
   .section {
-    padding: 3.4rem 0 clamp(2.5rem, 5vw, 3.5rem);
+    padding: 3rem 0 2.6rem;
   }
 
   .inner {
     width: min(100%, calc(100% - 40px));
-    padding: 2rem 1.4rem 2.2rem;
+    padding: 1.8rem 1.2rem 2rem;
   }
 
   .title {
     max-width: 100%;
-    text-wrap: pretty;
     font-size: var(--oomol-display-section);
   }
 
   .description {
     font-size: var(--oomol-body-base);
-    line-height: var(--oomol-line-height-relaxed);
+    line-height: 1.6;
   }
 
   .actions {
     width: 100%;
     max-width: 20rem;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
   }
 
   .ghostLink,
@@ -124,28 +109,14 @@
 }
 
 @media (max-width: 480px) {
-  .section {
-    padding: 2.6rem 0 2.2rem;
-  }
-
   .inner {
     width: min(100%, calc(100% - 32px));
-    gap: 0.9rem;
     padding: 1.5rem 1rem 1.65rem;
   }
 
   .title {
     font-size: var(--oomol-display-card);
     line-height: 1.14;
-  }
-
-  .description {
-    line-height: 1.56;
-  }
-
-  .actions {
-    max-width: 100%;
-    padding-top: 0.5rem;
   }
 }
 
@@ -155,8 +126,6 @@
   }
 
   .inner {
-    border-color: var(--oomol-border-default);
     background: var(--oomol-bg-elevated);
-    box-shadow: none;
   }
 }

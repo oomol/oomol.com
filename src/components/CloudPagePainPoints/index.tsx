@@ -30,7 +30,10 @@ const zhCopy: Copy = {
       title: "不用再围着同一份实现补一套后台",
       description:
         "Cloud 承接交付、配置、权限和运行关系，让你不需要再单独做一个发布后台去包住同一份实现。",
-      points: ["主要沿 oo-cli 继续交付给 Agent", "不用再额外补一层用户入口和管理面"],
+      points: [
+        "主要沿 oo-cli 继续交付给 Agent",
+        "不用再额外补一层用户入口和管理面",
+      ],
     },
     {
       icon: "i-lucide-blocks",

@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss";
 
-import { translate } from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
+import { translate } from "@docusaurus/Translate";
 import { Button } from "@site/src/components/ui/button";
 import React from "react";
 

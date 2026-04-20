@@ -55,7 +55,9 @@
   border: 1px solid color-mix(in srgb, var(--oomol-bg-base) 18%, transparent);
   background: color-mix(in srgb, var(--oomol-bg-base) 8%, transparent);
   min-width: 9rem;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
 
   &:hover {
     border-color: color-mix(in srgb, var(--oomol-bg-base) 26%, transparent);

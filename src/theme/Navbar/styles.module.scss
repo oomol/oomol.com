@@ -132,7 +132,8 @@
 }
 
 /* 浅色非激活：与 custom.scss 里 [data-theme="light"] .navbar__link 一致（ghost 默认是 secondary，会偏浅） */
-:global([data-theme="light"]) .productMenuTrigger:not(.productMenuTriggerActive) {
+:global([data-theme="light"])
+  .productMenuTrigger:not(.productMenuTriggerActive) {
   color: var(--oomol-text-primary);
 
   &:hover {

@@ -1,5 +1,4 @@
 .section {
-  width: 100%;
   padding: clamp(5rem, 10vw, 8rem) 0;
   background: var(--oomol-bg-base);
   border-bottom: 1px solid var(--oomol-divider);
@@ -12,57 +11,50 @@
 
 .card {
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
-  gap: clamp(2rem, 4vw, 3.4rem);
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
   align-items: center;
-  padding: 0;
-  border-radius: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
 }
 
 .copy {
   display: grid;
-  gap: 0.9rem;
+  gap: 1rem;
   align-content: start;
+  max-width: 34rem;
+  min-width: 0;
 }
 
 .badge {
   display: inline-flex;
   width: fit-content;
   align-items: center;
-  padding: 0;
-  border: 0;
-  background: transparent;
   font-family: var(--oomol-font-mono);
   font-size: var(--oomol-body-mono);
   font-weight: 500;
   letter-spacing: 0.02em;
-  text-transform: none;
   color: var(--oomol-primary);
+}
 
-  &::before {
-    content: "";
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    margin-right: 0.6rem;
-    border-radius: 999px;
-    background: var(--oomol-primary);
-  }
+.badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-right: 0.6rem;
+  border-radius: 999px;
+  background: var(--oomol-primary);
 }
 
 .title {
   margin: 0;
-  font-family: var(--oomol-font-display);
   max-width: 22ch;
+  font-family: var(--oomol-font-display);
   font-size: var(--oomol-display-section);
   line-height: 1.08;
   letter-spacing: var(--oomol-tracking-section);
   font-weight: 600;
   color: var(--oomol-text-primary);
   text-wrap: balance;
+  overflow-wrap: anywhere;
 }
 
 .brandNoWrap {
@@ -76,33 +68,32 @@
   line-height: var(--oomol-line-height-relaxed);
   letter-spacing: var(--oomol-tracking-body);
   color: var(--oomol-text-secondary);
+  overflow-wrap: anywhere;
 }
 
 .pointRow {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
-  padding-top: 0.2rem;
 }
 
 .point {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 26px;
-  padding: 0 0.7rem;
-  border-radius: 6px;
+  min-height: 28px;
+  padding: 0 0.75rem;
+  border: 1px solid var(--oomol-divider);
+  border-radius: 999px;
+  background: var(--oomol-bg-container);
   font-family: var(--oomol-font-mono);
   font-size: var(--oomol-font-size-xs);
   font-weight: 500;
-  letter-spacing: 0.01em;
   color: var(--oomol-text-secondary);
-  background: var(--oomol-bg-container);
-  border: 1px solid var(--oomol-divider);
 }
 
 .actions {
-  padding-top: 0.4rem;
+  padding-top: 0.2rem;
 }
 
 .media {
@@ -111,33 +102,20 @@
 
 .mediaFrame {
   overflow: hidden;
-  border-radius: 14px;
   border: 1px solid var(--oomol-divider);
+  border-radius: 14px;
   background: var(--oomol-bg-spotlight);
-  box-shadow: none;
 }
 
 .mediaImage {
   display: block;
   width: 100%;
   height: auto;
-  opacity: 1;
 }
 
-:global([data-theme="dark"]) .mediaFrame {
-  border-color: var(--oomol-border-subtle);
-  background: var(--oomol-bg-spotlight);
-}
-
-:global([data-theme="dark"]) .point {
-  background: var(--oomol-bg-elevated);
-  border-color: var(--oomol-border-default);
-}
-
-@media (max-width: 900px) {
+@media (min-width: 997px) {
   .card {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
   }
 }
 
@@ -148,11 +126,6 @@
 
   .container {
     width: min(100%, calc(100% - 40px));
-  }
-
-  .card {
-    gap: 1.6rem;
-    padding: 0;
   }
 
   .title {
@@ -167,7 +140,6 @@
 
   .actions {
     display: grid;
-    grid-template-columns: 1fr;
     width: 100%;
     max-width: 20rem;
   }
@@ -175,4 +147,25 @@
   .actions > * {
     width: 100%;
   }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: min(100%, calc(100% - 32px));
+  }
+
+  .title {
+    font-size: var(--oomol-display-card);
+    line-height: 1.14;
+  }
+}
+
+:global([data-theme="dark"]) .mediaFrame {
+  border-color: var(--oomol-border-subtle);
+  background: var(--oomol-bg-spotlight);
+}
+
+:global([data-theme="dark"]) .point {
+  background: var(--oomol-bg-elevated);
+  border-color: var(--oomol-border-default);
 }

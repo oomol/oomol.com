@@ -293,7 +293,8 @@ const COPY = {
     },
     models: {
       title: "Better for everyday use",
-      description: "Search, execution, results, and follow-up work all stay in one workspace.",
+      description:
+        "Search, execution, results, and follow-up work all stay in one workspace.",
       demo: {
         eyebrow: "One workspace",
         title: "Keep the task moving in one workspace",
@@ -311,7 +312,8 @@ const COPY = {
         },
         image: {
           eyebrow: "Follow-up",
-          title: "Better for reviewing results, asking follow-up questions, and continuing the work",
+          title:
+            "Better for reviewing results, asking follow-up questions, and continuing the work",
           body: "Once you have the result, you can refine the request, ask follow-up questions, or continue the next action without switching to another interface.",
           chips: ["Review result", "Ask follow-up", "Keep going"],
         },
@@ -361,7 +363,8 @@ const COPY = {
       ],
     },
     outputs: {
-      title: "Terminals are great for integration. GUIs are better for ongoing use.",
+      title:
+        "Terminals are great for integration. GUIs are better for ongoing use.",
       description:
         "Use oo-cli when you want tools connected into agents and terminal workflows. Open OOMOL AI when you want to use those same tools yourself in a visual workspace.",
       imageAlt:
@@ -909,7 +912,10 @@ export default function AppPage() {
           </div>
         </section>
 
-        <section id="pricing" className={cx(styles.section, styles.sectionMuted)}>
+        <section
+          id="pricing"
+          className={cx(styles.section, styles.sectionMuted)}
+        >
           <div className={cx(styles.sectionIntro, styles.pricingIntro)}>
             <h2 className={styles.hangingTitle}>
               {renderHangingTitleLine(

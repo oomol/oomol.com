@@ -84,8 +84,7 @@ const zhCopy: Copy = {
       },
       {
         index: "03",
-        command:
-          "oo cloud-task wait <taskId>\noo cloud-task result <taskId>",
+        command: "oo cloud-task wait <taskId>\noo cloud-task result <taskId>",
         title: "收尾：等状态、取结果",
         text: "CLI 会等待状态、读日志，需要时用 result 取回结构化输出，Agent 再接下一步。",
       },
@@ -225,8 +224,7 @@ const enCopy: Copy = {
       },
       {
         index: "03",
-        command:
-          "oo cloud-task wait <taskId>\noo cloud-task result <taskId>",
+        command: "oo cloud-task wait <taskId>\noo cloud-task result <taskId>",
         title: "Finish: wait, then fetch the result",
         text: "The CLI waits for status changes and logs. Use result when you need structured output for the next step.",
       },

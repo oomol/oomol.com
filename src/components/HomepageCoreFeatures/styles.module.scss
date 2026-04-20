@@ -52,8 +52,8 @@
   background: var(--oomol-bg-elevated);
   box-shadow: none;
   animation: fadeInUp 0.65s ease-out both;
-  transition:
-    border-color var(--oomol-motion-duration-base) var(--oomol-motion-ease-standard);
+  transition: border-color var(--oomol-motion-duration-base)
+    var(--oomol-motion-ease-standard);
 
   &:hover {
     border-color: var(--oomol-border-strong);

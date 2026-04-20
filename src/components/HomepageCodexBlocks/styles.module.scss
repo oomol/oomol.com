@@ -308,11 +308,7 @@
   }
 
   .videoGradient {
-    background: color-mix(
-      in srgb,
-      var(--oomol-bg-container) 88%,
-      black 12%
-    );
+    background: color-mix(in srgb, var(--oomol-bg-container) 88%, black 12%);
   }
 
   .videoTracks span {

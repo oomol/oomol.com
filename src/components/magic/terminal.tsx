@@ -1,12 +1,12 @@
 import styles from "./terminal.module.scss";
 
-import type {HTMLMotionProps, MotionProps} from "motion/react";
-import type {ComponentType, ReactNode, RefAttributes} from "react";
+import type { HTMLMotionProps, MotionProps } from "motion/react";
+import type { ComponentType, ReactNode, RefAttributes } from "react";
 
 /* Terminal + typing sequence adapted from Magic UI (MIT) — https://magicui.design/docs/components/terminal */
 
 import { cn } from "@site/src/lib/utils";
-import { motion, useInView   } from "motion/react";
+import { motion, useInView } from "motion/react";
 import {
   Children,
   createContext,
@@ -14,12 +14,8 @@ import {
   useEffect,
   useMemo,
   useRef,
-  useState
-  
-  
-  
+  useState,
 } from "react";
-
 
 interface SequenceContextValue {
   completeItem: (index: number) => void;
@@ -115,7 +111,10 @@ export function AnimatedSpan({
             ? { opacity: 1, y: 0 }
             : { opacity: 0, y: -5 }
       }
-      transition={{ duration: staticMode ? 0 : 0.3, delay: sequence ? 0 : delay / 1000 }}
+      transition={{
+        duration: staticMode ? 0 : 0.3,
+        delay: sequence ? 0 : delay / 1000,
+      }}
       className={cn(className)}
       onAnimationComplete={() => {
         if (staticMode) {
@@ -291,7 +290,11 @@ export function Terminal({
   });
 
   const [activeIndex, setActiveIndex] = useState(0);
-  const sequenceHasStarted = staticMode ? true : sequence ? !startOnView || isInView : false;
+  const sequenceHasStarted = staticMode
+    ? true
+    : sequence
+      ? !startOnView || isInView
+      : false;
 
   const contextValue = useMemo<SequenceContextValue | null>(() => {
     if (!sequence || staticMode) {

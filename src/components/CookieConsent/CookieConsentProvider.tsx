@@ -178,7 +178,9 @@ export function useCookieConsent(): CookieConsentContextValue {
   const ctx = useContext(CookieConsentContext);
 
   if (!ctx) {
-    throw new Error("useCookieConsent must be used within CookieConsentProvider");
+    throw new Error(
+      "useCookieConsent must be used within CookieConsentProvider"
+    );
   }
 
   return ctx;
@@ -389,10 +391,7 @@ const CookieConsentProviderInner: React.FC = () => {
         </div>
       ) : null}
 
-      <Dialog.Root
-        onOpenChange={setPreferencesOpen}
-        open={preferencesOpen}
-      >
+      <Dialog.Root onOpenChange={setPreferencesOpen} open={preferencesOpen}>
         <Dialog.Portal>
           <Dialog.Overlay
             className="fixed inset-0 bg-[var(--oomol-mask)] backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"

@@ -158,7 +158,8 @@ const enCopy: Copy = {
       "Once the tool is validated, Cloud takes over delivery and keeps hosted runtime, runtime settings, secrets, and access control in one place. By default, the tool is still delivered mainly through oo-cli.",
     cards: [
       {
-        title: "Deliver it mainly through oo-cli while keeping the same implementation",
+        title:
+          "Deliver it mainly through oo-cli while keeping the same implementation",
         text: "Once the tool is delivered, agents still use it mainly through oo-cli instead of through a separate service layer built around it.",
       },
       {
