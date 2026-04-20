@@ -2,7 +2,6 @@ import styles from "./copilot-beam-brand-icons.module.scss";
 
 import { useId } from "react";
 
-
 /**
  * Brand-colored SaaS marks (inline SVG) for the co-pilot beam hero.
  * UnoCSS Simple Icons use currentColor → monochrome; these match Magic UI–style previews.
@@ -80,11 +79,25 @@ export function CopilotBeamIconWhatsApp() {
       aria-hidden
     >
       <defs>
-        <linearGradient id={gid} x1="85.915" x2="86.535" y1="32.567" y2="137.092" gradientUnits="userSpaceOnUse">
+        <linearGradient
+          id={gid}
+          x1="85.915"
+          x2="86.535"
+          y1="32.567"
+          y2="137.092"
+          gradientUnits="userSpaceOnUse"
+        >
           <stop offset="0" stopColor="#57d163" />
           <stop offset="1" stopColor="#23b33a" />
         </linearGradient>
-        <filter id={fid} width="1.115" height="1.114" x="-0.057" y="-0.057" colorInterpolationFilters="sRGB">
+        <filter
+          id={fid}
+          width="1.115"
+          height="1.114"
+          x="-0.057"
+          y="-0.057"
+          colorInterpolationFilters="sRGB"
+        >
           <feGaussianBlur stdDeviation="3.531" />
         </filter>
       </defs>
@@ -113,7 +126,12 @@ export function CopilotBeamIconWhatsApp() {
 /** Compact Google Docs–style mark (multi-color), avoids heavy mask stacks from full brand SVG. */
 export function CopilotBeamIconGoogleDocs() {
   return (
-    <svg className={styles.svgDocs} viewBox="0 0 47 65" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+    <svg
+      className={styles.svgDocs}
+      viewBox="0 0 47 65"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+    >
       <path
         fill="#4285F4"
         d="M4 0h25.4L47 17.6v43c0 2.4-2 4.4-4.4 4.4H4c-2.4 0-4.4-2-4.4-4.4V4C0 2 2 0 4 0z"
@@ -145,7 +163,10 @@ export function CopilotBeamIconZapier() {
         d="M100.487 14.8297C96.4797 14.8297 93.2136 15.434 90.6892 16.6429C88.3376 17.6963 86.3568 19.4321 85.0036 21.6249C83.7091 23.8321 82.8962 26.2883 82.6184 28.832L93.1602 30.3135C93.5415 28.0674 94.3042 26.4754 95.4482 25.5373C96.7486 24.5562 98.3511 24.0605 99.9783 24.136C102.118 24.136 103.67 24.7079 104.634 25.8519C105.59 26.9959 106.076 28.5803 106.076 30.6681V31.7091H95.9401C90.7807 31.7091 87.0742 32.8531 84.8206 35.1411C82.5669 37.429 81.442 40.4492 81.4458 44.2014C81.4458 48.0452 82.5707 50.9052 84.8206 52.7813C87.0704 54.6574 89.8999 55.5897 93.3089 55.5783C97.5379 55.5783 100.791 54.1235 103.067 51.214C104.412 49.426 105.372 47.3793 105.887 45.2024H106.27L107.723 54.7546H117.275V30.5651C117.275 25.5659 115.958 21.6936 113.323 18.948C110.688 16.2024 106.409 14.8297 100.487 14.8297ZM103.828 44.6475C102.312 45.9116 100.327 46.5408 97.8562 46.5408C95.8199 46.5408 94.4052 46.1843 93.6121 45.4712C93.2256 45.1338 92.9182 44.7155 92.7116 44.246C92.505 43.7764 92.4043 43.2671 92.4166 42.7543C92.3941 42.2706 92.4702 41.7874 92.6403 41.3341C92.8104 40.8808 93.071 40.4668 93.4062 40.1174C93.7687 39.7774 94.1964 39.5145 94.6633 39.3444C95.1303 39.1743 95.6269 39.1006 96.1231 39.1278H106.093V39.7856C106.113 40.7154 105.919 41.6374 105.527 42.4804C105.134 43.3234 104.553 44.0649 103.828 44.6475Z"
         fill="#201515"
       />
-      <path d="M175.035 15.7391H163.75V54.7833H175.035V15.7391Z" fill="#201515" />
+      <path
+        d="M175.035 15.7391H163.75V54.7833H175.035V15.7391Z"
+        fill="#201515"
+      />
       <path
         d="M241.666 15.7391C238.478 15.7391 235.965 16.864 234.127 19.1139C232.808 20.7307 231.805 23.1197 231.119 26.2809H230.787L229.311 15.7391H219.673V54.7775H230.959V34.7578C230.959 32.2335 231.55 30.2982 232.732 28.9521C233.914 27.606 236.095 26.933 239.275 26.933H243.559V15.7391H241.666Z"
         fill="#201515"
@@ -172,7 +193,12 @@ export function CopilotBeamIconMessenger() {
   const gid = `msg-g-${uid}`;
 
   return (
-    <svg className={styles.svg} viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+    <svg
+      className={styles.svg}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+    >
       <defs>
         <radialGradient
           id={gid}

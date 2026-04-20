@@ -1,12 +1,13 @@
 import styles from "./LocalDropdown.module.scss";
 
 import type { DocusaurusContext } from "@docusaurus/types";
+import type { ButtonProps } from "@site/src/components/ui/button";
 
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import { useLocation } from "@docusaurus/router";
 import { useAlternatePageUtils } from "@docusaurus/theme-common/internal";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { Button, type ButtonProps } from "@site/src/components/ui/button";
+import { Button } from "@site/src/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,

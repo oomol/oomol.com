@@ -17,10 +17,7 @@ export default function Index() {
     <Layout>
       <Head>
         <title>使用条款 - OOMOL</title>
-        <meta
-          name="description"
-          content="查看 OOMOL 的使用条款和服务条件。"
-        />
+        <meta name="description" content="查看 OOMOL 的使用条款和服务条件。" />
       </Head>
       <MDXProvider components={components}>
         <div className={styles.container}>

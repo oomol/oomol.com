@@ -1,4 +1,4 @@
-import type {RefObject} from "react";
+import type { RefObject } from "react";
 
 /* Animated beam pattern adapted from Magic UI (MIT) — https://magicui.design/docs/components/animated-beam */
 

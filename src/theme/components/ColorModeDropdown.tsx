@@ -1,7 +1,9 @@
 import styles from "./ColorModeDropdown.module.scss";
 
+import type { ButtonProps } from "@site/src/components/ui/button";
+
 import { translate } from "@docusaurus/Translate";
-import { Button, type ButtonProps } from "@site/src/components/ui/button";
+import { Button } from "@site/src/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,

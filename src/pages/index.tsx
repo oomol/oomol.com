@@ -12,12 +12,7 @@ import React from "react";
 
 import Layout from "../theme/Layout";
 
-type PerfSection =
-  | "hero"
-  | "toolstrip"
-  | "painpoints"
-  | "why"
-  | "flow";
+type PerfSection = "hero" | "toolstrip" | "painpoints" | "why" | "flow";
 
 const PERF_SECTION_KEYS: PerfSection[] = [
   "hero",

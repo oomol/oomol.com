@@ -72,13 +72,8 @@ function writeCookie(name: string, value: string, days: number) {
   document.cookie = parts.join("; ");
 }
 
-export function normalizeDetailedConsent(
-  raw: unknown
-): DetailedCookieConsent {
-  const safeStatus = (
-    status: unknown,
-    fallbackTs: string
-  ): ConsentStatus => {
+export function normalizeDetailedConsent(raw: unknown): DetailedCookieConsent {
+  const safeStatus = (status: unknown, fallbackTs: string): ConsentStatus => {
     if (
       status &&
       typeof status === "object" &&
@@ -144,8 +139,7 @@ export function migrateLegacyConsentCookie() {
       return;
     }
 
-    const hasStatisticsConsent =
-      parsedCookie.categories.includes("statistics");
+    const hasStatisticsConsent = parsedCookie.categories.includes("statistics");
     const timestamp =
       parsedCookie.lastConsentTimestamp ??
       parsedCookie.consentTimestamp ??
@@ -180,8 +174,8 @@ export function readStoredConsent(): DetailedCookieConsent | null {
     const parsed = JSON.parse(raw) as unknown;
     const normalized = normalizeDetailedConsent(parsed);
     const oldestTimestamp = Math.min(
-      ...Object.values(normalized).map(
-        status => new Date(status.timestamp).getTime()
+      ...Object.values(normalized).map(status =>
+        new Date(status.timestamp).getTime()
       )
     );
     const expirationTime =

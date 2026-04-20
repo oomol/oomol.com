@@ -5,7 +5,6 @@ import { AnimatedBeam } from "@site/src/components/magic/animated-beam";
 import { useReducedMotion } from "framer-motion";
 import React, { useRef } from "react";
 
-
 /**
  * Magic UI–style integration strip: Agents → oo-cli → Studio → Cloud.
  */
@@ -18,7 +17,10 @@ export function HomepageHeroBeam() {
   const cloudRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className={styles.flow} aria-label={translate({ message: "HOME.FirstScreen.flow.aria" })}>
+    <div
+      className={styles.flow}
+      aria-label={translate({ message: "HOME.FirstScreen.flow.aria" })}
+    >
       <div ref={containerRef} className={styles.flowInner}>
         {!reduceMotion ? (
           <>

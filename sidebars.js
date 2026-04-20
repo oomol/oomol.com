@@ -21,10 +21,7 @@ const sidebars = {
       label: "oo-cli",
       collapsible: true,
       collapsed: true,
-      items: [
-        "cloud-services/cli",
-        "cloud-services/cli-command-reference",
-      ],
+      items: ["cloud-services/cli", "cloud-services/cli-command-reference"],
     },
     {
       type: "category",
