@@ -13,6 +13,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@site/src/components/ui/dropdown-menu";
+import * as React from "react";
 
 export interface LocalDropdownProps {
   buttonVariant?: ButtonProps["variant"];
@@ -39,6 +40,8 @@ export const LocalDropdown = ({
   } = useDocusaurusContext() as unknown as DocusaurusContext & {
     i18n: { currentLocale: string; locales: string[] };
   };
+  const triggerRef = React.useRef<HTMLButtonElement>(null);
+  const shouldSkipTriggerRefocusRef = React.useRef(false);
   const alternatePageUtils = useAlternatePageUtils();
   const { search, hash } = useLocation();
 
@@ -71,6 +74,7 @@ export const LocalDropdown = ({
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
+              ref={triggerRef}
               className={`${styles.triggerButton}${triggerClassName ? ` ${triggerClassName}` : ""}`}
               size="sm"
               variant={buttonVariant}
@@ -79,11 +83,27 @@ export const LocalDropdown = ({
               {formateLocale(currentLocale)}
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" side="top" className={styles.menu}>
+          <DropdownMenuContent
+            align="end"
+            side="top"
+            className={styles.menu}
+            onCloseAutoFocus={event => {
+              if (!shouldSkipTriggerRefocusRef.current) {
+                return;
+              }
+
+              event.preventDefault();
+              shouldSkipTriggerRefocusRef.current = false;
+              triggerRef.current?.blur();
+            }}
+          >
             {locales.map(locale => (
               <DropdownMenuItem
                 key={locale}
                 className={styles.menuItem}
+                onPointerDown={() => {
+                  shouldSkipTriggerRefocusRef.current = true;
+                }}
                 onSelect={() => handleLocaleChange(locale)}
               >
                 <span className="flex-1">{formateLocale(locale)}</span>
