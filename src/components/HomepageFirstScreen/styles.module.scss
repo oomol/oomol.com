@@ -92,14 +92,6 @@
   color: var(--oomol-text-primary);
 }
 
-.workflowArchiveLead {
-  margin: 0;
-  max-width: 40rem;
-  font-size: var(--oomol-body-base);
-  line-height: var(--oomol-line-height-relaxed);
-  color: var(--oomol-text-secondary);
-}
-
 /* Hero CTAs — styling comes from the Button component; no overrides needed. */
 
 /* ── 视频展示区 — hairline frame，无阴影光晕 ── */
@@ -322,10 +314,6 @@
 
   .workflowArchiveTitle {
     font-size: var(--oomol-font-size-lg);
-  }
-
-  .workflowArchiveLead {
-    font-size: var(--oomol-body-sm);
   }
 }
 

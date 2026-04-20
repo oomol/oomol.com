@@ -158,9 +158,6 @@
   "HOME.FirstScreen.workflowArchive.title": {
     "message": "工作流演示"
   },
-  "HOME.FirstScreen.workflowArchive.lead": {
-    "message": "完整演示视频，展示从生成到运行的完整工作流。"
-  },
   "HOME.CoreFeatures.title": {
     "message": "一份业务代码，直接走到交付"
   },
