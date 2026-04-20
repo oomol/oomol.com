@@ -1,3 +1,5 @@
+@use "../../css/mixins.scss" as *;
+
 .section {
   position: relative;
   padding: clamp(4rem, 7vw, 6rem) 0 clamp(4rem, 7vw, 6rem);
@@ -21,15 +23,7 @@
 }
 
 .title {
-  margin: 0;
-  max-width: 18ch;
-  font-family: var(--oomol-font-display);
-  font-size: var(--oomol-display-section);
-  line-height: 1.08;
-  letter-spacing: var(--oomol-tracking-section);
-  font-weight: 600;
-  text-wrap: balance;
-  color: var(--oomol-text-primary);
+  @include marketing-display-title(section, 18ch, left, 1.08);
 }
 
 .surfacePanel {
@@ -43,12 +37,7 @@
 }
 
 .description {
-  margin: 0;
-  font-size: var(--oomol-body-lead);
-  line-height: var(--oomol-line-height-relaxed);
-  letter-spacing: var(--oomol-tracking-body);
-  text-wrap: pretty;
-  color: var(--oomol-text-secondary);
+  @include marketing-supporting-copy();
 }
 
 /* 两栏超大统计，仅用 1px hairline 分隔 */
@@ -203,6 +192,10 @@
 
   .container {
     width: min(100%, calc(100% - 40px));
+  }
+
+  .description {
+    @include marketing-mobile-supporting-copy();
   }
 
   .toolGrid {

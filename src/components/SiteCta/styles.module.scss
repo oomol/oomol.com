@@ -1,7 +1,14 @@
+@use "../../css/mixins.scss" as *;
+
 .section {
   width: 100%;
-  padding: clamp(5rem, 10vw, 8rem) 0 clamp(3.5rem, 7vw, 5.5rem);
+  /* Horizontal padding is on `.section` (not `.inner`) so the rounded
+     `.inner` card never touches the viewport edge on narrow screens. */
+  padding:
+    clamp(5rem, 10vw, 8rem) clamp(16px, 4vw, 32px)
+    clamp(3.5rem, 7vw, 5.5rem);
   background: var(--oomol-bg-spotlight);
+  box-sizing: border-box;
 }
 
 .inner {
@@ -22,25 +29,13 @@
 }
 
 .title {
-  margin: 0;
-  max-width: 24ch;
-  font-family: var(--oomol-font-display);
-  font-size: var(--oomol-display-section);
-  line-height: 1.08;
-  letter-spacing: var(--oomol-tracking-section);
-  font-weight: 600;
-  color: var(--oomol-text-primary);
+  @include marketing-display-title(section, 24ch, center, 1.08);
   overflow-wrap: anywhere;
   word-break: break-word;
 }
 
 .description {
-  margin: 0;
-  max-width: 42rem;
-  font-size: var(--oomol-body-lead);
-  line-height: var(--oomol-line-height-relaxed);
-  letter-spacing: var(--oomol-tracking-body);
-  color: var(--oomol-text-secondary);
+  @include marketing-supporting-copy(42rem, center);
   overflow-wrap: anywhere;
   word-break: break-word;
 }
@@ -80,7 +75,7 @@
 
 @media (max-width: 768px) {
   .section {
-    padding: 3rem 0 2.6rem;
+    padding: 3rem 20px 2.6rem;
   }
 
   .inner {
@@ -95,8 +90,7 @@
   }
 
   .description {
-    font-size: var(--oomol-body-base);
-    line-height: 1.6;
+    @include marketing-mobile-supporting-copy();
   }
 
   .actions {
@@ -113,6 +107,10 @@
 }
 
 @media (max-width: 480px) {
+  .section {
+    padding-inline: 16px;
+  }
+
   .inner {
     padding-inline: 16px;
     padding-top: 1.5rem;

@@ -1,3 +1,5 @@
+@use "../../css/mixins.scss" as *;
+
 .section {
   padding: clamp(5rem, 10vw, 8rem) 0;
   position: relative;
@@ -46,23 +48,11 @@
 }
 
 .title {
-  margin: 0;
-  max-width: 16ch;
-  font-family: var(--oomol-font-display);
-  font-size: var(--oomol-display-hero);
-  line-height: 1.06;
-  letter-spacing: var(--oomol-tracking-display);
-  font-weight: 600;
-  color: var(--oomol-text-primary);
-  text-wrap: balance;
+  @include marketing-display-title(hero, 16ch, left, 1.06);
 }
 
 .subtitle {
-  margin: 0;
-  max-width: 32rem;
-  font-size: var(--oomol-body-lead);
-  line-height: 1.6;
-  color: var(--oomol-text-secondary);
+  @include marketing-supporting-copy(32rem, left, 1.6, null);
 }
 
 .grid {
@@ -317,7 +307,7 @@
   }
 
   .subtitle {
-    font-size: var(--oomol-font-size-base);
+    @include marketing-mobile-supporting-copy();
   }
 
   .grid {

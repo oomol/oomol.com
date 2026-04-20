@@ -64,7 +64,6 @@ function VideoCard({ title, note, src }: VideoCardProps) {
           autoPlay
           loop
           muted
-          controls
           playsInline
           preload="metadata"
           aria-label={title}
@@ -212,7 +211,7 @@ export default function CloudPageLinearFlow() {
   );
 
   return (
-    <div className={styles.flow}>
+    <div className={`${styles.flow} oomol-no-section-isolation`}>
       {/* ── Section: Cloud ── */}
       <section className={clsx(styles.section, styles.cloudSection)}>
         <div className={styles.container}>

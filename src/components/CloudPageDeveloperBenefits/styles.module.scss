@@ -1,3 +1,5 @@
+@use "../../css/mixins.scss" as *;
+
 .section {
   padding: clamp(5rem, 10vw, 8rem) 0;
   background: var(--oomol-bg-base);
@@ -43,25 +45,13 @@
 }
 
 .title {
-  margin: 0;
-  max-width: 18ch;
-  font-family: var(--oomol-font-display);
-  font-size: var(--oomol-display-hero);
-  line-height: 1.08;
-  letter-spacing: var(--oomol-tracking-display);
-  font-weight: 600;
-  color: var(--oomol-text-primary);
+  @include marketing-display-title(hero, 18ch, left, 1.08);
   overflow-wrap: anywhere;
   word-break: break-word;
 }
 
 .subtitle {
-  margin: 0;
-  max-width: 38rem;
-  font-size: var(--oomol-body-lead);
-  line-height: var(--oomol-line-height-relaxed);
-  letter-spacing: var(--oomol-tracking-body);
-  color: var(--oomol-text-secondary);
+  @include marketing-supporting-copy(38rem);
   overflow-wrap: anywhere;
   word-break: break-word;
 }
@@ -190,8 +180,7 @@
   }
 
   .subtitle {
-    font-size: var(--oomol-body-base);
-    line-height: 1.6;
+    @include marketing-mobile-supporting-copy();
   }
 
   .card {

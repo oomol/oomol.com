@@ -23,7 +23,7 @@ export default function Support() {
         />
       </Head>
       <div className={styles.supportBox}>
-        <div className={styles.supportTitle}>Support</div>
+        <h1 className={styles.supportTitle}>Support</h1>
         <div className={styles.supportCellBox}>
           <Card className={styles.supportCell}>
             <CardHeader className={styles.supportHeader}>

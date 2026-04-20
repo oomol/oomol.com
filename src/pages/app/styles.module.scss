@@ -1,3 +1,5 @@
+@use "../../css/mixins.scss" as *;
+
 .page {
   /* 水平边距由 .hero / .section 的 padding-inline 承担，内层用 100% 即可 */
   --page-width: min(1200px, 100%);
@@ -160,13 +162,8 @@
   display: grid;
   gap: 0.08em;
   width: fit-content;
-  max-width: 100%;
-  font-size: var(--oomol-display-hero);
-  line-height: 1.12;
-  font-weight: 600;
-  color: var(--oomol-text-primary);
+  @include marketing-display-title(hero, 100%, center, 1.12);
   text-align: center;
-  letter-spacing: var(--oomol-tracking-display);
 }
 
 .heroTitleLine {
@@ -175,13 +172,7 @@
 }
 
 .heroLead {
-  margin: 0;
-  max-width: 34rem;
-  color: var(--oomol-text-secondary);
-  font-size: var(--oomol-body-lead);
-  line-height: var(--oomol-line-height-relaxed);
-  letter-spacing: var(--oomol-tracking-body);
-  text-wrap: pretty;
+  @include marketing-supporting-copy(34rem, center);
 }
 
 :global(html[lang="en"]) .heroTitle {
@@ -265,22 +256,12 @@ video.outputsShowcaseImage {
 }
 
 .sectionIntro h2 {
-  max-width: 18ch;
-  font-size: var(--oomol-display-section);
-  line-height: var(--lh-heading);
-  font-weight: 600;
-  letter-spacing: var(--oomol-tracking-section);
-  color: var(--oomol-text-primary);
+  @include marketing-display-title(section, 18ch, inherit, var(--lh-heading));
   text-wrap: balance;
 }
 
 .sectionIntro p {
-  margin: 0;
-  max-width: 32rem;
-  color: var(--oomol-text-secondary);
-  font-size: var(--oomol-body-lead);
-  line-height: var(--oomol-line-height-relaxed);
-  letter-spacing: var(--oomol-tracking-body);
+  @include marketing-supporting-copy(32rem);
   text-wrap: pretty;
 }
 
@@ -931,6 +912,10 @@ video.outputsShowcaseImage {
     line-height: var(--oomol-line-height-relaxed);
   }
 
+  .sectionIntro p {
+    @include marketing-mobile-supporting-copy();
+  }
+
   :global(html[lang="en"]) .heroTitle {
     font-size: var(--oomol-display-hero);
   }
@@ -1003,5 +988,11 @@ video.outputsShowcaseImage {
 
   .downloadCard p {
     min-height: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroLead {
+    @include marketing-mobile-supporting-copy(1.58);
   }
 }

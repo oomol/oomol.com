@@ -1,3 +1,5 @@
+@use "../../css/mixins.scss" as *;
+
 .section {
   padding: clamp(5rem, 10vw, 8rem) 0;
   position: relative;
@@ -43,25 +45,11 @@
 }
 
 .title {
-  margin: 0;
-  max-width: 22ch;
-  font-family: var(--oomol-font-display);
-  font-size: var(--oomol-display-section);
-  line-height: 1.06;
-  letter-spacing: var(--oomol-tracking-section);
-  font-weight: 600;
-  color: var(--oomol-text-primary);
-  text-wrap: balance;
+  @include marketing-display-title(section, 22ch, left, 1.06);
 }
 
 .subtitle {
-  margin: 0;
-  max-width: 44rem;
-  font-size: var(--oomol-body-lead);
-  line-height: var(--oomol-line-height-relaxed);
-  letter-spacing: var(--oomol-tracking-body);
-  color: var(--oomol-text-secondary);
-  text-wrap: pretty;
+  @include marketing-supporting-copy(44rem);
 }
 
 /* Card grid — unified hairline outer frame */
@@ -264,7 +252,7 @@
   }
 
   .subtitle {
-    font-size: var(--oomol-font-size-base);
+    @include marketing-mobile-supporting-copy();
   }
 }
 
