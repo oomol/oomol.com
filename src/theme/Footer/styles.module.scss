@@ -5,8 +5,11 @@
 }
 
 .center {
-  width: min(1200px, calc(100% - 40px));
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
+  padding-inline: 20px;
+  box-sizing: border-box;
 }
 
 .content {
@@ -81,8 +84,11 @@
 }
 
 .border {
-  width: min(1200px, calc(100% - 40px));
+  width: 100%;
+  max-width: 1200px;
   margin: 1.5rem auto 0;
+  padding-inline: 20px;
+  box-sizing: border-box;
   padding-top: 1rem;
   border-top: 1px solid var(--oomol-border-default);
 }
@@ -208,7 +214,7 @@
 @media (max-width: 480px) {
   .center,
   .border {
-    width: min(100%, calc(100% - 32px));
+    padding-inline: 16px;
   }
 
   .links {

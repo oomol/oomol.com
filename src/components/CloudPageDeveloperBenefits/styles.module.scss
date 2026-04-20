@@ -5,8 +5,11 @@
 }
 
 .container {
-  width: min(1200px, calc(100% - 48px));
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
+  padding-inline: 24px;
+  box-sizing: border-box;
   display: grid;
   gap: clamp(1.5rem, 3vw, 2.5rem);
 }
@@ -48,7 +51,6 @@
   letter-spacing: var(--oomol-tracking-display);
   font-weight: 600;
   color: var(--oomol-text-primary);
-  text-wrap: balance;
   overflow-wrap: anywhere;
   word-break: break-word;
 }
@@ -179,7 +181,7 @@
   }
 
   .container {
-    width: min(100%, calc(100% - 40px));
+    padding-inline: 20px;
   }
 
   .title {
@@ -204,7 +206,7 @@
 
 @media (max-width: 480px) {
   .container {
-    width: min(100%, calc(100% - 32px));
+    padding-inline: 16px;
   }
 
   .title {
