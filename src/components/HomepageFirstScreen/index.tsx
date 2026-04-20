@@ -75,9 +75,6 @@ export default function HomepageFirstScreen() {
         */}
 
         <div className={styles.workflowArchive}>
-          <h2 className={styles.workflowArchiveTitle}>
-            {translate({ message: "HOME.FirstScreen.workflowArchive.title" })}
-          </h2>
           <HomepageFirstScreenVideoHero />
         </div>
       </div>

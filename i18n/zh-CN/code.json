@@ -155,9 +155,6 @@
   "HOME.FirstScreen.flow.cloud": {
     "message": "Cloud"
   },
-  "HOME.FirstScreen.workflowArchive.title": {
-    "message": "工作流演示"
-  },
   "HOME.CoreFeatures.title": {
     "message": "一份业务代码，直接走到交付"
   },
