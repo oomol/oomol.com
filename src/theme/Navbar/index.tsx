@@ -456,17 +456,25 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
               fallback={
                 <Button size="sm" className={styles.loginButton}>
                   <i className="i-lucide-log-in" />
-                  {translate({ message: "Theme.Navbar.login" })}
+                  <span className={styles.loginButtonLabel}>
+                    {translate({ message: "Theme.Navbar.login" })}
+                  </span>
                 </Button>
               }
             >
               {() => {
                 const signedIn = isSignedIn();
+                const buttonLabel = translate({
+                  message: signedIn
+                    ? "Theme.Navbar.console"
+                    : "Theme.Navbar.login",
+                });
                 return (
                   <Button
                     size="sm"
                     className={styles.loginButton}
                     onClick={() => handleSignin()}
+                    aria-label={buttonLabel}
                   >
                     <i
                       className={
@@ -475,11 +483,9 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
                           : "i-lucide-log-in"
                       }
                     />
-                    {translate({
-                      message: signedIn
-                        ? "Theme.Navbar.console"
-                        : "Theme.Navbar.login",
-                    })}
+                    <span className={styles.loginButtonLabel}>
+                      {buttonLabel}
+                    </span>
                   </Button>
                 );
               }}

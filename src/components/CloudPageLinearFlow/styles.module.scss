@@ -23,8 +23,11 @@
 .container {
   position: relative;
   z-index: 1;
-  width: min(1200px, calc(100% - 48px));
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
+  padding-inline: 24px;
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
   gap: clamp(2rem, 4vw, 3.4rem);
@@ -36,6 +39,7 @@
   gap: 1.1rem;
   align-content: start;
   max-width: 34rem;
+  min-width: 0;
 }
 
 /* Mono eyebrow */
@@ -71,6 +75,7 @@
   font-weight: 600;
   color: var(--oomol-text-primary);
   text-wrap: balance;
+  overflow-wrap: anywhere;
 }
 
 .sectionDescription {
@@ -80,6 +85,7 @@
   line-height: var(--oomol-line-height-relaxed);
   letter-spacing: var(--oomol-tracking-body);
   color: var(--oomol-text-secondary);
+  overflow-wrap: anywhere;
 }
 
 /* Inline action links */
@@ -95,15 +101,18 @@
 .secondaryLink {
   display: inline-flex;
   align-items: center;
+  max-width: 100%;
   gap: 0.3rem;
   font-size: var(--oomol-body-base);
   font-weight: 500;
   color: var(--oomol-text-primary);
   text-decoration: none;
   transition: color 0.15s ease;
+  overflow-wrap: anywhere;
 
   &::after {
     content: "→";
+    flex: 0 0 auto;
     color: var(--oomol-text-tertiary);
     transition: transform 0.15s ease;
   }
@@ -141,6 +150,7 @@
   overflow: hidden;
   background: var(--oomol-bg-base);
   margin-top: 0.4rem;
+  min-width: 0;
 }
 
 .cloudCard {
@@ -150,6 +160,7 @@
   background: transparent;
   box-shadow: none !important;
   transition: background-color 0.18s ease;
+  min-width: 0;
 
   &:not(:last-child) {
     border-bottom: 1px solid var(--oomol-divider);
@@ -167,6 +178,7 @@
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--oomol-text-primary);
+  overflow-wrap: anywhere;
 }
 
 .cloudText {
@@ -174,6 +186,7 @@
   font-size: var(--oomol-body-sm);
   line-height: 1.58;
   color: var(--oomol-text-secondary);
+  overflow-wrap: anywhere;
 }
 
 /* Media panel — hairline frame */
@@ -184,6 +197,7 @@
   box-shadow: none;
   overflow: hidden;
   min-height: clamp(20rem, 36vw, 30rem);
+  min-width: 0;
 }
 
 .videoCard {
@@ -191,6 +205,7 @@
   min-height: inherit;
   display: grid;
   grid-template-rows: 1fr auto;
+  min-width: 0;
 }
 
 .videoCardMedia,
@@ -222,6 +237,7 @@
   padding: 1rem 1.2rem 1.15rem;
   border-top: 1px solid var(--oomol-divider);
   background: var(--oomol-bg-base);
+  min-width: 0;
 }
 
 .videoCardTitle {
@@ -231,6 +247,7 @@
   line-height: 1.35;
   letter-spacing: -0.01em;
   color: var(--oomol-text-primary);
+  overflow-wrap: anywhere;
 }
 
 .videoCardNote {
@@ -238,6 +255,7 @@
   font-size: var(--oomol-body-sm);
   line-height: 1.56;
   color: var(--oomol-text-tertiary);
+  overflow-wrap: anywhere;
 }
 
 .cloudMetaRow {
@@ -280,12 +298,19 @@
   }
 
   .container {
-    width: min(100%, calc(100% - 40px));
+    padding-inline: 16px;
+    gap: 1.5rem;
   }
 
   .videoCardMedia,
   .imageCardMedia {
     min-height: 12rem;
+  }
+
+  .inlineActions {
+    display: grid;
+    justify-items: start;
+    gap: 0.85rem;
   }
 }
 

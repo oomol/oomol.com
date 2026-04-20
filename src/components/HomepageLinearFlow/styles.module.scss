@@ -26,8 +26,11 @@
 .container {
   position: relative;
   z-index: 1;
-  width: min(1200px, calc(100% - 48px));
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
+  padding-inline: 24px;
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
   gap: clamp(2rem, 4vw, 3.4rem);
@@ -58,6 +61,7 @@
   gap: 1.1rem;
   align-content: start;
   max-width: 34rem;
+  min-width: 0;
 }
 
 /* Monospace eyebrow - step badge */
@@ -181,6 +185,7 @@
   background: var(--oomol-bg-base);
   box-shadow: none;
   overflow: hidden;
+  min-width: 0;
 }
 
 .mediaPanel,
@@ -193,6 +198,7 @@
   min-height: inherit;
   display: grid;
   grid-template-rows: 1fr auto;
+  min-width: 0;
 }
 
 .videoCardInner,
@@ -260,6 +266,7 @@
   padding: 1rem 1.2rem 1.15rem;
   border-top: 1px solid var(--oomol-divider);
   background: var(--oomol-bg-base);
+  min-width: 0;
 }
 
 .videoCardTitle {
@@ -349,6 +356,7 @@
   overflow: hidden;
   background: var(--oomol-bg-base);
   margin-top: 0.4rem;
+  min-width: 0;
 }
 
 .cloudCard {
@@ -358,6 +366,7 @@
   background: transparent;
   box-shadow: none;
   transition: background-color 0.18s ease;
+  min-width: 0;
 
   &:nth-child(odd) {
     border-right: 1px solid var(--oomol-divider);
@@ -393,10 +402,13 @@
 }
 
 .ctaInner {
-  width: min(1200px, calc(100% - 48px));
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   gap: 1.1rem;
+  padding-inline: 24px;
+  box-sizing: border-box;
   padding: clamp(2.1rem, 4.2vw, 3rem);
   border-radius: 1.2rem;
   border: 1px solid var(--oomol-divider);
@@ -461,7 +473,7 @@
 @media (max-width: 768px) {
   .container,
   .ctaInner {
-    width: min(100%, calc(100% - 40px));
+    padding-inline: 16px;
   }
 
   .section {
@@ -498,9 +510,7 @@
   }
 
   .stepWatermark {
-    top: 1rem;
-    right: -1rem;
-    font-size: clamp(5rem, 24vw, 8rem);
+    display: none;
   }
 
   .inlineActions {
@@ -511,7 +521,7 @@
 @media (max-width: 480px) {
   .container,
   .ctaInner {
-    width: min(100%, calc(100% - 32px));
+    padding-inline: 12px;
   }
 
   .copyPanel {

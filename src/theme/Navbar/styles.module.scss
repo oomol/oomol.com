@@ -68,6 +68,10 @@
   }
 }
 
+.loginButtonLabel {
+  display: inline;
+}
+
 .actions {
   display: flex;
   align-items: center;
@@ -653,13 +657,23 @@
 
 @media (max-width: 430px) {
   .loginButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    width: 42px;
     min-width: 42px;
-    padding-inline: 0.8rem;
-    font-size: 0;
+    height: 42px;
+    padding: 0;
+    flex-shrink: 0;
   }
 
   .loginButton i {
     margin: 0;
     font-size: var(--oomol-body-base);
+  }
+
+  .loginButtonLabel {
+    display: none;
   }
 }
