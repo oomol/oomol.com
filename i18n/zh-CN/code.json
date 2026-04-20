@@ -30,7 +30,7 @@
     "message": "OOMOL - 一个让 AI Agent 调用现成工具的 CLI 入口"
   },
   "HOME.page.description": {
-    "message": "先用 oo-cli 让 Codex、OpenClaw、Claude Code 等 Agent 直接调用现成工具、API 和内部能力，把工作先跑起来；当你需要自己生产、组合和交付工具时，再进入 OOMOL Studio 和 Cloud。"
+    "message": "先用 oo-cli 让 Codex、OpenClaw、Claude Code 等 Agent 直接调用现成工具、API 和业务系统，把工作先跑起来；当你需要自己生产、组合和交付工具时，再进入 OOMOL Studio 和 Cloud。"
   },
   "HOME.FirstScreen.slogan": {
     "message": "先用起来，再按需连接"
@@ -42,7 +42,7 @@
     "message": "你的 Agent 负责思考与决策\n剩下的交给 OOMOL"
   },
   "HOME.FirstScreen.heroLead": {
-    "message": "先用 oo-cli 让 Agent 接上现成工具、API 和内部能力，把工作先跑起来；当现成能力不够时，再进入 Studio 和 Cloud。"
+    "message": "让 Codex、OpenClaw、Claude Code 等 Agent 直接调用 Gmail、Notion 等工具、API 和业务系统。用 OOMOL Studio 继续组合和扩展自己的工具。"
   },
   "HOME.FirstScreen.video.playAriaLabel": {
     "message": "播放演示视频"
@@ -87,7 +87,7 @@
     "message": "提取需求、整理任务、写回 Linear。"
   },
   "HOME.PainPoints.card3.title": {
-    "message": "读取 Gmail 附件，再调用内部 API"
+    "message": "读取 Gmail 附件，再调用你的 API"
   },
   "HOME.PainPoints.card3.description": {
     "message": "适合把邮件输入直接接到你的服务，省掉人工中转。"
@@ -96,7 +96,7 @@
     "message": "读 Gmail 附件，调用我们的 PDF API，回传结果。"
   },
   "HOME.PainPoints.card3.solution": {
-    "message": "下载附件、调用内部 API、返回处理结果。"
+    "message": "下载附件、调用你的 API、返回处理结果。"
   },
   "HOME.PainPoints.card3.apiLabel": {
     "message": "你的 API"
@@ -159,7 +159,7 @@
     "message": "工作流演示"
   },
   "HOME.FirstScreen.workflowArchive.lead": {
-    "message": "完整演示视频（原首页主视觉素材），暂置于此便于以后组合。"
+    "message": "完整演示视频，展示从生成到运行的完整工作流。"
   },
   "HOME.CoreFeatures.title": {
     "message": "一份业务代码，直接走到交付"
@@ -2047,7 +2047,7 @@
     "message": "需要自己的 API 和逻辑时，再进入 Studio + Cloud"
   },
   "HOME.DeveloperBenefits.card2.description": {
-    "message": "当你需要接自己的 API、内部逻辑和长期交付路径时，再进入 Studio + Cloud。"
+    "message": "当你需要接自己的 API、自有逻辑和长期交付路径时，再进入 Studio + Cloud。"
   },
   "HOME.DeveloperBenefits.card2.note": {
     "message": "适合开始做自己的工具和持续交付。"
@@ -2743,7 +2743,7 @@
     "message": "直接编写新的函数工具"
   },
   "HOME.DeveloperEntry.card3.text": {
-    "message": "当现有封装不够用时，直接写新的 function tool，把你自己的 API、内部系统和逻辑接进来。"
+    "message": "当现有封装不够用时，直接写新的 function tool，把你自己的 API、业务系统和逻辑接进来。"
   },
   "HOME.DeveloperEntry.card4.title": {
     "message": "让新工具继续进入交付路径"
