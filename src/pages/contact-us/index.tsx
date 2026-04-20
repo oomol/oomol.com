@@ -259,16 +259,16 @@ export default function ContactUsPage() {
       <div className={styles.container}>
         <div className={styles.headBox}>
           <div className={styles.titleBox}>
-            <div className={styles.title}>
+            <h1 className={styles.title}>
               {translate({
                 message: "HOME.Community.title",
               })}
-            </div>
-            <div className={styles.subTitle}>
+            </h1>
+            <p className={styles.subTitle}>
               {translate({
                 message: "HOME.Community.subtitle",
               })}
-            </div>
+            </p>
           </div>
           <div className={styles.contactBox}>
             <div className={styles["contactList"]}>
@@ -320,16 +320,16 @@ export default function ContactUsPage() {
           </div>
         </div>
         <div className={styles.titleBox}>
-          <div className={styles.title}>
+          <h2 className={styles.sectionTitle}>
             {translate({
               message: "HOME.Community.open-source.title",
             })}
-          </div>
-          <div className={styles.subTitle}>
+          </h2>
+          <p className={styles.subTitle}>
             {translate({
               message: "HOME.Community.open-source.subtitle",
             })}
-          </div>
+          </p>
         </div>
         <div className={styles.repositories}>
           {REPOS.map(repo => {

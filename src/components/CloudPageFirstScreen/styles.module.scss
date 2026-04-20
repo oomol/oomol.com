@@ -1,3 +1,5 @@
+@use "../../css/mixins.scss" as *;
+
 .section {
   position: relative;
   overflow: clip;
@@ -52,29 +54,16 @@
 }
 
 .slogan {
-  margin: 0;
-  max-width: 100%;
-  font-family: var(--oomol-font-display);
-  font-size: var(--oomol-display-hero);
-  line-height: 1.04;
-  font-weight: 600;
-  letter-spacing: var(--oomol-tracking-display);
+  @include marketing-display-title(hero, 100%, center, 1.04);
   white-space: pre-line;
   word-break: keep-all;
   overflow-wrap: normal;
-  color: var(--oomol-text-primary);
   display: block;
-  text-wrap: balance;
 }
 
 .overview {
-  margin: 0;
-  max-width: 40rem;
-  font-size: var(--oomol-body-lead);
-  line-height: var(--oomol-line-height-relaxed);
+  @include marketing-supporting-copy(40rem, center);
   white-space: pre-line;
-  color: var(--oomol-text-secondary);
-  letter-spacing: var(--oomol-tracking-body);
 }
 
 /* Highlight pills — small hairline rectangles, mono */
@@ -294,6 +283,21 @@
     border-top-width: 0.55rem;
     border-bottom-width: 0.55rem;
     border-left-width: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 3rem 0 1.4rem;
+  }
+
+  .container {
+    padding: 0 16px;
+    gap: 1.15rem;
+  }
+
+  .overview {
+    @include marketing-mobile-supporting-copy(1.58);
   }
 }
 

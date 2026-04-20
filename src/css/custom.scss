@@ -280,14 +280,36 @@ body,
 }
 
 /* Body / subtitle / overview / description — 紧行高 */
-:lang(zh-CN) .oomol-home-main p,
-:lang(zh-CN) .oomol-landing-main p {
+:lang(zh-CN)
+  .oomol-home-main
+  p:not([class*="subtitle" i]):not([class*="description" i]):not(
+    [class*="overview" i]
+  ):not([class*="lead" i]),
+:lang(zh-CN)
+  .oomol-landing-main:not(.oomol-app-page)
+  p:not([class*="subtitle" i]):not([class*="description" i]):not(
+    [class*="overview" i]
+  ):not([class*="lead" i]) {
   letter-spacing: 0;
   line-height: 1.72;
 }
 
+/* Lead / section-intro copy: treat these as subtitle-grade copy, not generic body text.
+   This prevents app/landing intro paragraphs from being pulled back to the zh body 1.72 line-height. */
+.oomol-home-main [class*="lead" i]:not([class*="card" i]),
+.oomol-landing-main:not(.oomol-app-page) [class*="lead" i]:not(
+    [class*="card" i]
+  ),
+.oomol-home-main [class*="sectionIntro" i] > p,
+.oomol-landing-main:not(.oomol-app-page) [class*="sectionIntro" i] > p {
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
+  color: var(--oomol-text-secondary);
+}
+
 :lang(en) .oomol-home-main p,
-:lang(en) .oomol-landing-main p {
+:lang(en) .oomol-landing-main:not(.oomol-app-page) p {
   letter-spacing: -0.003em;
   line-height: 1.6;
 }
@@ -310,6 +332,27 @@ body,
   line-height: var(--oomol-line-height-relaxed);
   letter-spacing: var(--oomol-tracking-body);
   color: var(--oomol-text-secondary);
+}
+
+/* Mobile marketing subtitles: keep the same downshift across subtitle/description variants.
+   Some modules use `subtitle`, others use `sectionDescription`; without this override, the
+   global desktop normalization above keeps parts of the page at 17px while other sections
+   correctly shrink to 15px in their local mobile rules. */
+@media (max-width: 768px) {
+  .oomol-home-main [class*="subtitle" i]:not([class*="card" i]),
+  .oomol-landing-main [class*="subtitle" i]:not([class*="card" i]),
+  .oomol-home-main [class*="sectionDescription" i],
+  .oomol-home-main [class*="ctaDescription" i],
+  .oomol-home-main [class*="lead" i]:not([class*="card" i]),
+  .oomol-home-main [class*="sectionIntro" i] > p,
+  .oomol-landing-main:not(.oomol-app-page) [class*="sectionDescription" i],
+  .oomol-landing-main:not(.oomol-app-page) [class*="ctaDescription" i],
+  .oomol-landing-main:not(.oomol-app-page)
+    [class*="lead" i]:not([class*="card" i]),
+  .oomol-landing-main:not(.oomol-app-page) [class*="sectionIntro" i] > p {
+    font-size: var(--oomol-body-base);
+    line-height: 1.6;
+  }
 }
 
 /* ── Eyebrow / Kicker / Badge: 强制 Mono 小号 + primary 圆点 ── */

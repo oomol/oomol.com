@@ -96,3 +96,72 @@ $desktop-width: $breakpoint-xl;
   background-clip: unset;
   -webkit-text-fill-color: unset;
 }
+
+/* Marketing-page typography contract
+   - `hero`: page hero / first-screen heading
+   - `section`: section heading under the hero
+   - `card`: compact card heading
+   Supporting copy should stay on the lead/body scale and downshift on mobile. */
+@mixin marketing-display-title(
+  $level: section,
+  $max-width: null,
+  $align: left,
+  $line-height: null
+) {
+  margin: 0;
+
+  @if $max-width != null {
+    max-width: $max-width;
+  }
+
+  font-family: var(--oomol-font-display);
+  font-weight: 600;
+  text-align: $align;
+  text-wrap: balance;
+  color: var(--oomol-text-primary);
+
+  @if $level == hero {
+    font-size: var(--oomol-display-hero);
+    letter-spacing: var(--oomol-tracking-display);
+    line-height: if($line-height == null, 1.06, $line-height);
+  } @else if $level == section {
+    font-size: var(--oomol-display-section);
+    letter-spacing: var(--oomol-tracking-section);
+    line-height: if($line-height == null, 1.06, $line-height);
+  } @else if $level == card {
+    font-size: var(--oomol-display-card);
+    letter-spacing: -0.012em;
+    line-height: if($line-height == null, 1.3, $line-height);
+  } @else {
+    @error "Unknown marketing title level: #{$level}";
+  }
+}
+
+@mixin marketing-supporting-copy(
+  $max-width: null,
+  $align: left,
+  $line-height: var(--oomol-line-height-relaxed),
+  $wrap: pretty
+) {
+  margin: 0;
+
+  @if $max-width != null {
+    max-width: $max-width;
+  }
+
+  font-size: var(--oomol-body-lead);
+  line-height: $line-height;
+  letter-spacing: var(--oomol-tracking-body);
+  text-align: $align;
+
+  @if $wrap != null {
+    text-wrap: $wrap;
+  }
+
+  @include flatSecondaryText;
+}
+
+@mixin marketing-mobile-supporting-copy($line-height: 1.6) {
+  font-size: var(--oomol-body-base);
+  line-height: $line-height;
+}

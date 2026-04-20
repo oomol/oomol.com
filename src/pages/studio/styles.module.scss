@@ -1,3 +1,5 @@
+@use "../../css/mixins.scss" as *;
+
 .page {
   background: var(--oomol-bg-base);
 }
@@ -61,10 +63,7 @@
 }
 
 .heroTitle {
-  max-width: 22ch;
-  font-size: var(--oomol-display-hero);
-  line-height: 1.04;
-  letter-spacing: var(--oomol-tracking-display);
+  @include marketing-display-title(hero, 22ch, center, 1.04);
   white-space: pre-line;
   word-break: keep-all;
   overflow-wrap: normal;
@@ -80,8 +79,7 @@
 }
 
 .heroDescription {
-  max-width: 44rem;
-  font-size: var(--oomol-body-lead);
+  @include marketing-supporting-copy(44rem, center);
 }
 
 .actions {
@@ -155,18 +153,13 @@
 }
 
 .sectionTitle {
-  max-width: 22ch;
-  font-size: var(--oomol-display-section);
-  line-height: 1.06;
-  letter-spacing: var(--oomol-tracking-section);
+  @include marketing-display-title(section, 22ch, left, 1.06);
   text-wrap: balance;
   white-space: pre-line;
 }
 
 .sectionDescription {
-  max-width: 44rem;
-  font-size: var(--oomol-body-lead);
-  line-height: 1.6;
+  @include marketing-supporting-copy(44rem);
 }
 
 .painPointsGrid {
@@ -398,6 +391,12 @@
 
   .principleTitle {
     font-size: var(--oomol-font-size-xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .heroDescription {
+    @include marketing-mobile-supporting-copy(1.58);
   }
 }
 

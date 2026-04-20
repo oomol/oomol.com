@@ -1,3 +1,5 @@
+@use "../../css/mixins.scss" as *;
+
 .page {
   background: var(--oomol-bg-base);
 }
@@ -54,26 +56,12 @@
 }
 
 .title {
-  margin: 0;
-  max-width: 18.5ch;
-  font-family: var(--oomol-font-display);
-  font-size: var(--oomol-display-hero);
-  line-height: 1.05;
-  font-weight: 600;
-  letter-spacing: var(--oomol-tracking-display);
-  text-wrap: balance;
-  color: var(--oomol-text-primary);
+  @include marketing-display-title(hero, 18.5ch, center, 1.05);
   margin-inline: auto;
 }
 
 .sub-title {
-  margin: 0;
-  max-width: 48rem;
-  font-size: var(--oomol-body-lead);
-  line-height: var(--oomol-line-height-relaxed);
-  letter-spacing: var(--oomol-tracking-body);
-  color: var(--oomol-text-secondary);
-  text-wrap: pretty;
+  @include marketing-supporting-copy(48rem, center);
   margin-inline: auto;
 }
 
@@ -328,8 +316,7 @@
   }
 
   .sub-title {
-    font-size: var(--oomol-body-base);
-    line-height: 1.62;
+    @include marketing-mobile-supporting-copy();
   }
 
   .pageSection {

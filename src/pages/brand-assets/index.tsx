@@ -215,12 +215,12 @@ export default function BrandAssets() {
       </Head>
       <div className={styles.container}>
         <div className={styles.titleBox}>
-          <div className={styles.title}>
+          <h1 className={styles.title}>
             {translate({ message: "HOME.BrandAssets.title" })}
-          </div>
-          <div className={styles.subTitle}>
+          </h1>
+          <p className={styles.subTitle}>
             {translate({ message: "HOME.BrandAssets.subtitle" })}
-          </div>
+          </p>
         </div>
 
         <div className={styles.scrollBox}>
