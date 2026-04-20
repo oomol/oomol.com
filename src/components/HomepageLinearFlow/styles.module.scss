@@ -68,6 +68,7 @@
 .eyebrow {
   display: inline-flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.7rem;
   padding: 0;
   border: 0;
@@ -100,6 +101,7 @@
 .eyebrowLabel {
   color: var(--oomol-text-secondary);
   font-weight: 500;
+  overflow-wrap: anywhere;
 }
 
 /* Section titles */
@@ -139,6 +141,7 @@
 .secondaryLink {
   display: inline-flex;
   align-items: center;
+  max-width: 100%;
   gap: 0.3rem;
   font-size: var(--oomol-body-base);
   font-weight: 500;
@@ -146,9 +149,12 @@
   text-decoration: none;
   letter-spacing: -0.003em;
   transition: color 0.15s ease;
+  overflow-wrap: anywhere;
+  white-space: normal;
 
   &::after {
     content: "→";
+    flex: 0 0 auto;
     transition: transform 0.15s ease;
     color: var(--oomol-text-tertiary);
   }

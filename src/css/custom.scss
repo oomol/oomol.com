@@ -71,6 +71,13 @@
   --ifm-footer-background-color: var(--oomol-bg-base);
 }
 
+/* iOS Safari may auto-enlarge text on real devices, which can cause
+   localized mobile overflow that doesn't reproduce in desktop emulation. */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 
 [data-theme="dark"] {
