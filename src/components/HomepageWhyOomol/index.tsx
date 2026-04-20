@@ -40,7 +40,7 @@ const zhCopy = {
 
 const enCopy = {
   badge: "Developer entry",
-  title: "When ready-made capabilities stop short, move into OOMOL Studio",
+  title: "When ready-made capabilities are not enough, move into OOMOL Studio",
   subtitle:
     "In Studio, you can recombine ready-made capabilities, add code, orchestrate workflows, and write new function tools. Once the tool works locally, hand it to Cloud for delivery.",
   primaryCta: "Explore OOMOL Studio",
@@ -59,7 +59,7 @@ const enCopy = {
     {
       icon: "i-lucide-braces",
       title: "Write new function tools directly",
-      text: "When existing wrappers stop short, write new function tools and bring in your own APIs, internal systems, and business logic.",
+      text: "When existing wrappers are not enough, write new function tools and bring in your own APIs, internal systems, and business logic.",
     },
     {
       icon: "i-lucide-route",

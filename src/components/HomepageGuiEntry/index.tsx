@@ -19,10 +19,10 @@ const zhCopy = {
 };
 
 const enCopy = {
-  badge: "GUI extension for oo-cli",
-  title: "The same capability layer also works through OOMOL AI",
+  badge: "GUI extension of oo-cli",
+  title: "You can keep using the same tools through OOMOL AI",
   description:
-    "Once you already understand the oo-cli path, OOMOL AI gives you the official GUI for the same capability layer when you want a visual interface across web, desktop, and iOS.",
+    "Once you have tools connected through oo-cli, OOMOL AI gives you the official GUI for using those same capabilities across web, desktop, and iOS.",
   points: ["Web", "Desktop", "iOS"],
   action: "Explore OOMOL AI",
 };

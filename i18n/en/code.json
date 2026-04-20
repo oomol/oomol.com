@@ -30,16 +30,16 @@
     "message": "OOMOL - A CLI that turns apps into tools for agents"
   },
   "HOME.page.description": {
-    "message": "Start with oo-cli so Codex, OpenClaw, Claude Code, and other agents can use ready-made tools, APIs, and internal capabilities and get real work moving. When you need to produce, combine, and deliver your own tools, move into OOMOL Studio and Cloud."
+    "message": "Start with oo-cli so Codex, OpenClaw, Claude Code, and other agents can use ready-made tools, APIs, and internal capabilities to get real work moving. When you need to build, combine, and deliver your own tools, move into OOMOL Studio and Cloud."
   },
   "HOME.FirstScreen.slogan": {
-    "message": "Build and Deliver Capabilities for Agents"
+    "message": "Build and Deliver Tools for Agents"
   },
   "HOME.FirstScreen.kicker": {
-    "message": "A capability production and delivery path for developers"
+    "message": "A build-and-delivery path for developers"
   },
   "HOME.FirstScreen.script": {
-    "message": "Your agent does the thinking and decision-making. OOMOL connects accounts and apps, handles auth, calls, and execution, and lets you build your own tools in Studio when needed."
+    "message": "Your agent does the thinking and makes the decisions. OOMOL connects accounts and apps, handles auth, calls, and execution, and lets you build your own tools in Studio when you need to."
   },
   "HOME.FirstScreen.heroTitle": {
     "message": "Your agent does the thinking\nand decision-making.\nLeave the rest to OOMOL."
@@ -48,13 +48,13 @@
     "message": "Connect accounts and apps, handle auth, calls, and execution, and build your own tools in Studio when you need something custom."
   },
   "HOME.FirstScreen.heroLead": {
-    "message": "Start with oo-cli so agents can connect to ready-made tools, APIs, and internal capabilities and get work moving. When those stop short, move into Studio and Cloud."
+    "message": "Start with oo-cli so agents can use ready-made tools, APIs, and internal capabilities to get work moving. When those are not enough, move into Studio and Cloud."
   },
   "HOME.FirstScreen.heroAdvantage": {
-    "message": "Start with CLI,"
+    "message": "Start with the CLI,"
   },
   "HOME.FirstScreen.heroAdvantageHighlight": {
-    "message": "then keep composing and extending."
+    "message": "then keep building and extending."
   },
   "HOME.FirstScreen.video.playAriaLabel": {
     "message": "Play demo video"
@@ -75,7 +75,7 @@
     "message": "Generate -> Validate -> Deliver"
   },
   "HOME.FirstScreen.offer1": {
-    "message": "Use your own AI model. GLM-5 recommended."
+    "message": "Bring your own AI model. We currently recommend GLM-5."
   },
   "HOME.FirstScreen.offer2": {
     "message": "200 free Cloud Task minutes each month"
@@ -168,7 +168,7 @@
     "message": "Functions / Cloud / CLI"
   },
   "HOME.ProofLayer.signal3.description": {
-    "message": "These surfaces do not each rebuild a backend. They keep delivering through the same path."
+    "message": "These entry points do not each rebuild a backend. They all deliver through the same path."
   },
   "HOME.ProofLayer.case1.kicker": {
     "message": "Live Scenario 01"
@@ -264,7 +264,7 @@
     "message": "Workflow walkthrough"
   },
   "HOME.FirstScreen.workflowArchive.lead": {
-    "message": "Full demo video — same asset as before, parked here for reuse."
+    "message": "Full demo video, kept here for reuse."
   },
   "HOME.FirstScreen.copilotBeam.aria": {
     "message": "SaaS tools connecting into OOMOL as your co-pilot hub"
@@ -504,7 +504,7 @@
     "message": "Brand Assets & Guidelines"
   },
   "HOME.BrandAssets.subtitle": {
-    "message": "OOMOL Trademarks and Logos Must Not Be Modified or Used for Anything Other Than Representing OOMOL Inc."
+    "message": "OOMOL trademarks and logos must not be modified or used for anything other than representing OOMOL Inc."
   },
   "HOME.BrandAssets.logos": {
     "message": "Logos"
@@ -1008,7 +1008,7 @@
     "message": "Get and Install OOMOL"
   },
   "HOME.Downloads.subtitle": {
-    "message": "Start by installing oo-cli so agents can connect to SaaS tools and published capabilities. When you need to extend and customize your own tools, download OOMOL Studio to build and validate them locally."
+    "message": "Start by installing oo-cli so agents can connect to SaaS tools and published capabilities. When you need to extend or customize your own tools, download OOMOL Studio to build and validate them locally."
   },
   "HOME.Downloads.studioSection.eyebrow": {
     "message": "OOMOL Studio"
@@ -1017,7 +1017,7 @@
     "message": "Download OOMOL Studio when you want to build your own tools"
   },
   "HOME.Downloads.studioSection.subtitle": {
-    "message": "Use Studio when ready-made tools stop short. Build, combine, edit, and validate your own tools locally, then hand them to Cloud when you are ready to deliver them."
+    "message": "Use Studio when ready-made tools are not enough. Build, combine, edit, and validate your own tools locally, then hand them to Cloud when you are ready to deliver them."
   },
   "HOME.Downloads.Stable.title": {
     "message": "Stable"
@@ -1029,7 +1029,7 @@
     "message": "Nightly"
   },
   "HOME.Downloads.Stable.subtitle": {
-    "message": "Fully Tested Version"
+    "message": "Fully tested release"
   },
   "HOME.Downloads.mostRecommended": {
     "message": "Most Recommended"
@@ -1038,16 +1038,16 @@
     "message": "Versions With New Features But Not Fully Tested"
   },
   "HOME.Downloads.Nightly.subtitle": {
-    "message": "Overnight Build Version, Less Stable"
+    "message": "Nightly build, less stable"
   },
   "HOME.Downloads.download.macos.applesilicon": {
-    "message": "Download for MacOS Apple Silicon"
+    "message": "Download for macOS (Apple silicon)"
   },
   "HOME.Downloads.download.macos.intel": {
     "message": "Download for MacOS Intel (Legacy)"
   },
   "HOME.Downloads.download.windows.x64": {
-    "message": "Download for Windows X64"
+    "message": "Download for Windows (x64)"
   },
   "HOME.Downloads.cli.eyebrow": {
     "message": "CLI"
@@ -1056,22 +1056,22 @@
     "message": "Agent"
   },
   "HOME.Downloads.cli.info.title": {
-    "message": "Start with oo-cli if you want to use tools in the terminal"
+    "message": "Start with oo-cli if you want to use tools from the terminal"
   },
   "HOME.Downloads.cli.info.description": {
-    "message": "If you want to search, run, and reuse tools inside Codex, Claude Code, or your local terminal, start with oo-cli. You can install it yourself or let your agent handle the setup and verification."
+    "message": "If you want to search, run, and reuse tools in Codex, Claude Code, or your local terminal, start with oo-cli. You can install it yourself or let your agent handle setup and verification."
   },
   "HOME.Downloads.cli.title.line1": {
-    "message": "Connect Agents to SaaS tools"
+    "message": "Connect agents to SaaS tools"
   },
   "HOME.Downloads.cli.title.line2": {
     "message": "Start with oo-cli"
   },
   "HOME.Downloads.cli.subtitle": {
-    "message": "Install oo-cli in Codex, Claude Code, or any local terminal so Agents can connect to SaaS integrations and published capabilities in OOMOL, then search, invoke, and get results directly."
+    "message": "Install oo-cli in Codex, Claude Code, or any local terminal so agents can connect to SaaS integrations and published capabilities in OOMOL, then search, call them, and get results directly."
   },
   "HOME.Downloads.cli.action.guide": {
-    "message": "Open oo-cli Guide"
+    "message": "Read the oo-cli guide"
   },
   "HOME.Downloads.cli.action.github": {
     "message": "View oo-cli on GitHub"
@@ -1083,7 +1083,7 @@
     "message": "Install in your terminal"
   },
   "HOME.Downloads.cli.method.install.description": {
-    "message": "Run these commands in Codex, Claude Code, or any local terminal, then sign in and start using oo-cli."
+    "message": "Run these commands in Codex, Claude Code, or any local terminal. Then sign in and start using oo-cli."
   },
   "HOME.Downloads.cli.method.agent.kicker": {
     "message": "Option 2"
@@ -1092,10 +1092,10 @@
     "message": "Let your agent do it"
   },
   "HOME.Downloads.cli.method.agent.description": {
-    "message": "Paste this prompt to your agent if you want it to install oo-cli and verify the setup for you."
+    "message": "Paste this prompt into your agent if you want it to install oo-cli and verify the setup for you."
   },
   "HOME.Downloads.cli.method.agent.prompt": {
-    "message": "Install oo-cli globally with Bun by running `bun install -g @oomol-lab/oo-cli`, then run `oo login`, confirm the CLI is ready, and tell me the next oo-cli command to use."
+    "message": "Install oo-cli globally with Bun by running `bun install -g @oomol-lab/oo-cli`, then run `oo login`, confirm that the CLI is ready to use, and tell me the best next oo-cli command to run."
   },
   "HOME.Downloads.cli.copy": {
     "message": "Copy"
@@ -1107,13 +1107,13 @@
     "message": "Next step"
   },
   "HOME.Downloads.cta.title": {
-    "message": "Easy to install, easy to extend"
+    "message": "Easy to install. Easy to extend."
   },
   "HOME.Downloads.cta.description": {
     "message": "Start with oo-cli when you only need to use tools. If you prefer a GUI, use OOMOL AI. Download OOMOL Studio when you want to build your own."
   },
   "HOME.Downloads.cta.primary": {
-    "message": "Open oo-cli Guide"
+    "message": "Read the oo-cli guide"
   },
   "HOME.Downloads.cta.secondary": {
     "message": "Download OOMOL Studio"
@@ -1122,28 +1122,28 @@
     "message": "Contact the OOMOL Team"
   },
   "HOME.Community.subtitle": {
-    "message": "Get updates, send direct feedback, and follow the open-source projects we keep maintaining."
+    "message": "Get updates, share feedback directly, and follow the open-source projects we continue to maintain."
   },
   "HOME.Community.contact-we-com": {
     "message": "WeCom"
   },
   "HOME.Community.slogan-1": {
-    "message": "See product and release updates early"
+    "message": "Get product and release updates early"
   },
   "HOME.Community.slogan-2": {
-    "message": "Share problems and real usage scenarios directly"
+    "message": "Share problems and real-world use cases directly"
   },
   "HOME.Community.slogan-3": {
     "message": "Track the open-source projects we maintain"
   },
   "HOME.Community.slogan-4": {
-    "message": "Every suggestion feeds product and docs improvements"
+    "message": "Every suggestion helps improve the product and docs"
   },
   "HOME.Community.open-source.title": {
     "message": "Open Source"
   },
   "HOME.Community.open-source.subtitle": {
-    "message": "These projects carry OOMOL's ongoing work on runtime, deployment, and real-world developer tools."
+    "message": "These projects reflect OOMOL's ongoing work on runtime, deployment, and real-world developer tools."
   },
   "FEATURES.title": {
     "message": "All the features that you need"
@@ -1200,7 +1200,7 @@
     "message": "Simple, Transparent Pricing"
   },
   "PRICING.subtitle": {
-    "message": "Local building and validation stay free. Free users also get 200 Cloud Task minutes every month. Top up or upgrade only when that included usage runs out. Models and other services use credits."
+    "message": "Local building and validation stay free. Free users also get 200 Cloud Task minutes every month. Top up or upgrade only when that included usage runs out. Model and other service usage is billed in credits."
   },
   "PRICING.model.summary": {
     "message": "Build and validate in Studio first, then decide whether the tool needs cloud runtime. Free users get 200 Cloud Task minutes refreshed every month; top up or upgrade only after that."
@@ -1218,7 +1218,7 @@
     "message": "Online"
   },
   "PRICING.model.online.title": {
-    "message": "Go online for free first, then top up when usage grows"
+    "message": "Go online for free first, then top up as usage grows"
   },
   "PRICING.model.online.text": {
     "message": "Free users can already publish and use Cloud with 200 monthly Cloud Task minutes. Top up or move to a paid plan only when you need more online usage or higher limits."
@@ -1227,7 +1227,7 @@
     "message": "Choose How You Use OOMOL"
   },
   "PRICING.subscription.subtitle": {
-    "message": "Free covers local work and light hosted usage. Pro and Max add larger monthly Cloud Task allowances and higher online limits."
+    "message": "Free covers local work and light hosted usage. Pro and Max include larger monthly Cloud Task allowances and higher online limits."
   },
   "PRICING.subscription.recommended": {
     "message": "Recommended"
@@ -1251,13 +1251,13 @@
     "message": "$0"
   },
   "PRICING.subscription.free.description": {
-    "message": "For local development,\nvalidation, and getting a tool online first\nwith 200 monthly Cloud Task minutes"
+    "message": "For local development,\nvalidation, and getting your first tool online\nwith 200 Cloud Task minutes each month"
   },
   "PRICING.subscription.free.feature1": {
     "message": "Full OOMOL Studio local development environment"
   },
   "PRICING.subscription.free.feature2": {
-    "message": "Bring your own model service when you do not want managed AI billing"
+    "message": "Bring your own model service if you do not want managed AI billing"
   },
   "PRICING.subscription.free.feature3": {
     "message": "No charge for local runs inside Studio"
@@ -1266,7 +1266,7 @@
     "message": "200 Cloud Task minutes refreshed automatically every month"
   },
   "PRICING.subscription.free.feature5": {
-    "message": "1 sign-up credit to try LLM and Fusion API usage"
+    "message": "1 sign-up credit for trying LLM and Fusion API usage"
   },
   "PRICING.subscription.free.feature6": {
     "message": "Publish up to 20 packages total, public and private combined, and deliver them through Cloud"
@@ -1284,7 +1284,7 @@
     "message": "$12"
   },
   "PRICING.subscription.pro.description": {
-    "message": "For when the free quota is not enough,\nand you need a larger hosted monthly allowance\nwith higher limits for online usage"
+    "message": "For when the free quota is not enough,\nand you need a larger monthly allowance\nfor hosted usage"
   },
   "PRICING.subscription.pro.feature1": {
     "message": "Publish online with OOMOL-managed delivery and runtime"
@@ -1317,7 +1317,7 @@
     "message": "$79"
   },
   "PRICING.subscription.max.description": {
-    "message": "For steady online traffic that needs\na larger monthly hosted allowance\nfor ongoing hosted runs"
+    "message": "For steady online traffic that needs\na larger monthly allowance\nfor ongoing hosted usage"
   },
   "PRICING.subscription.max.feature1": {
     "message": "All Pro features, with higher limits"
@@ -1347,7 +1347,7 @@
     "message": "Pay-As-You-Go"
   },
   "PRICING.payAsYouGo.subtitle": {
-    "message": "Pay only for what you use, flexible and transparent"
+    "message": "Pay only for what you use, with flexible and transparent pricing"
   },
   "PRICING.payAsYouGo.table.item": {
     "message": "Billing Item"
@@ -1476,10 +1476,10 @@
     "message": "Usage Pricing"
   },
   "PRICING.tables.subtitle": {
-    "message": "Think of pricing in two layers: the plans above cover monthly usage, and the tables below show what happens after that included usage runs out."
+    "message": "Think of pricing in two layers: the plans above cover included monthly usage, and the tables below show what happens after that usage runs out."
   },
   "PRICING.tables.syncNote": {
-    "message": "Free and paid plans can both run tools online. The main difference is the included monthly Cloud Task allowance. Usage beyond that, plus model and other service calls, uses credits."
+    "message": "Free and paid plans can both run tools online. The main difference is the included monthly Cloud Task allowance. Usage beyond that, along with model and other service calls, uses credits."
   },
   "PRICING.tables.tab.llm": {
     "message": "LLM Pricing"
@@ -1491,7 +1491,7 @@
     "message": "Media & Other Services"
   },
   "PRICING.tables.llm.note": {
-    "message": "LLM rates update with the model configuration in console. Units are credits per M token."
+    "message": "LLM rates update with the model configuration in the console. Units are credits per million tokens."
   },
   "PRICING.tables.llm.loading": {
     "message": "Loading the latest LLM pricing from OOMOL Console..."
@@ -1533,7 +1533,7 @@
     "message": "Anything under one minute is billed as one minute"
   },
   "PRICING.tables.cloudTask.alert": {
-    "message": "Running tools locally in OOMOL Studio does not trigger Cloud Task billing. Running the same tools through OOMOL-hosted surfaces does."
+    "message": "Running tools locally in OOMOL Studio does not incur Cloud Task charges. Running the same tools through OOMOL-hosted services does."
   },
   "PRICING.tables.fusionApi.service": {
     "message": "Service"
@@ -1545,7 +1545,7 @@
     "message": "Description"
   },
   "PRICING.tables.fusionApi.alert": {
-    "message": "Some official OOMOL tools use these services directly. You can also call them yourself, and the usage is deducted from your credits."
+    "message": "Some official OOMOL tools use these services directly. You can also call them yourself, and that usage is deducted from your credits."
   },
   "PRICING.tables.fusionApi.unit.image": {
     "message": "Image"
@@ -2656,7 +2656,7 @@
     "message": "Cloud is where a tool becomes deliverable"
   },
   "HOME.ProductComparison.subtitle": {
-    "message": "OOMOL Cloud is not just runtime. It is the delivery layer that turns a validated implementation into a deliverable tool you can provide privately to yourself, your team, or your customers."
+    "message": "OOMOL Cloud is not just runtime. It is what turns a validated implementation into a tool you can deliver privately to yourself, your team, or your customers."
   },
   "HOME.ChatAgent.title": {
     "message": "OOMOL Chat & Agent Ecosystem"
@@ -2716,10 +2716,10 @@
     "message": "Explore Cloud"
   },
   "HOME.ProductComparison.outputIntro": {
-    "message": "One tool, multiple surfaces"
+    "message": "One tool, multiple ways to use it"
   },
   "HOME.ProductComparison.outputSummary": {
-    "message": "The same validated implementation can be consumed through terminal, apps, agents, and automation without splitting into separate products."
+    "message": "The same validated implementation can be used through the terminal, apps, agents, and automation without splitting into separate products."
   },
   "HOME.ProductComparison.output1.title": {
     "message": "CLI and Agents"
@@ -2731,7 +2731,7 @@
     "message": "API and App Integration"
   },
   "HOME.ProductComparison.output2.description": {
-    "message": "Carry the same tool into your own application surfaces, backend services, or product integrations."
+    "message": "Carry the same tool into your own app interfaces, backend services, or product integrations."
   },
   "HOME.ProductComparison.output3.title": {
     "message": "MCP and Automation"
@@ -2764,7 +2764,7 @@
     "message": "Get one tool working first, then decide whether to build your own"
   },
   "HOME.DeveloperBenefits.subtitle": {
-    "message": "If you just want to get moving, start with oo-cli. When ready-made tools stop short, move into Studio + Cloud."
+    "message": "If you just want to get moving, start with oo-cli. When ready-made tools are not enough, move into Studio + Cloud."
   },
   "HOME.DeveloperBenefits.card1.eyebrow": {
     "message": "Use first"
@@ -2806,7 +2806,7 @@
     "message": "When you need your own APIs and logic, move into Studio + Cloud"
   },
   "HOME.DeveloperBenefits.card2.description": {
-    "message": "When ready-made tools stop short, use Studio + Cloud to add your APIs, internal logic, and long-running delivery path."
+    "message": "When ready-made tools are not enough, use Studio + Cloud to add your APIs, internal logic, and a long-running delivery path."
   },
   "HOME.DeveloperBenefits.card2.note": {
     "message": "Best when you need custom tools and continuous delivery."
@@ -2929,7 +2929,7 @@
     "message": "Start with representative tools in Codex"
   },
   "HOME.CodexBlocks.subtitle": {
-    "message": "Instead of the old proof section, show the kinds of tools that better define OOMOL's capability surface. Search, inspect, and run them in Codex first, then decide whether you need to build your own."
+    "message": "Instead of the old proof section, show the kinds of tools that better define what OOMOL offers. Search, inspect, and run them in Codex first, then decide whether you need to build your own."
   },
   "HOME.CodexBlocks.action.primary": {
     "message": "Open oo-cli"
@@ -2983,16 +2983,16 @@
     "message": "Translate long-form documents into bilingual EPUB or Markdown outputs that stay usable for reading instead of returning only raw text."
   },
   "CLOUD.hero.title": {
-    "message": "OOMOL Cloud - The delivery and hosted runtime layer for tools"
+    "message": "OOMOL Cloud - Delivery and hosted runtime for tools"
   },
   "CLOUD.hero.description": {
-    "message": "Hand validated tools from Studio to Cloud so delivery, hosted runtime, configuration, secrets, and access control stay in one place before the tool flows mainly back into oo-cli for agents."
+    "message": "Hand off validated tools from Studio to Cloud so delivery, hosted runtime, configuration, secrets, and access control stay in one place before the tool is used mainly through oo-cli by agents."
   },
   "CLOUD.hero.kicker": {
     "message": "Cloud Runtime"
   },
   "CLOUD.hero.note": {
-    "message": "Users primarily get the tool through oo-cli while your implementation stays on the server."
+    "message": "Users mainly access the tool through oo-cli while your implementation stays on the server."
   },
   "CLOUD.hero.stat1": {
     "message": "Private Delivery"
@@ -3013,19 +3013,19 @@
     "message": "Open Cloud Console"
   },
   "CLOUD.painPoints.title": {
-    "message": "Shipping a tool should not mean rebuilding a SaaS"
+    "message": "Shipping a tool should not mean rebuilding a SaaS around it"
   },
   "CLOUD.painPoints.subtitle": {
     "message": "We know the struggle as developers"
   },
   "CLOUD.painPoints.description": {
-    "message": "What slows delivery is usually not the tool itself, but the work around it: packaging a user surface, hosting it reliably, handling access, and keeping operations stable. Cloud is built to compress that layer."
+    "message": "What slows delivery is usually not the tool itself but the work around it: building a user-facing layer, hosting it reliably, handling access, and keeping operations stable. Cloud is built to shrink that layer."
   },
   "CLOUD.solution.title": {
-    "message": "One tool, three consumption paths"
+    "message": "One tool, three ways to use it"
   },
   "CLOUD.solution.subtitle": {
-    "message": "The same tool can be consumed through API, MCP, or automation while staying backed by one implementation."
+    "message": "The same tool can be used through API, MCP, or automation while still being backed by a single implementation."
   },
   "CLOUD.solution.kicker": {
     "message": "Consumption Paths"
@@ -3034,13 +3034,13 @@
     "message": "Run as Automation"
   },
   "CLOUD.modes.library.description": {
-    "message": "Run the same tool on triggers or schedules so it keeps delivering value beyond local and manual execution."
+    "message": "Run the same tool on triggers or schedules so it keeps delivering value beyond local or manual execution."
   },
   "CLOUD.modes.serverless.title": {
     "message": "Use through API"
   },
   "CLOUD.modes.serverless.description": {
-    "message": "Give applications direct API access to the same tool without rebuilding a separate backend surface."
+    "message": "Give applications direct API access to the same tool without rebuilding a separate backend around it."
   },
   "CLOUD.modes.mcp.title": {
     "message": "Use through MCP"
@@ -3049,7 +3049,7 @@
     "message": "Expose the same tool to agents and AI apps as an MCP tool when agent-native integration matters."
   },
   "CLOUD.pricing.title": {
-    "message": "Start small, pay when the tool is used"
+    "message": "Start small. Pay as usage grows."
   },
   "CLOUD.pricing.description": {
     "message": "You do not need dedicated servers just to validate delivery. Publish first, validate demand, and expand only as usage grows."
@@ -3073,7 +3073,7 @@
     "message": "The runtime foundation stays open source even when the tool you publish stays private."
   },
   "CLOUD.opensource.description": {
-    "message": "OOMOL's virtual machine and runtime core stay open source, so you keep deployment freedom across personal servers, private infrastructure, or public cloud environments while choosing how each tool is delivered."
+    "message": "OOMOL's virtual machine and runtime core stay open source, so you keep the freedom to deploy across personal servers, private infrastructure, or public cloud environments while choosing how each tool is delivered."
   },
   "CLOUD.opensource.projects.title": {
     "message": "Open Source Projects"
@@ -3190,10 +3190,10 @@
     "message": "Use AI to get started, then add code, dependencies, orchestration, and validation in a real engineering environment before handing the same implementation to Cloud."
   },
   "STUDIO.manifesto.title": {
-    "message": "OOMOL Studio is\nthe environment for developers to build tools"
+    "message": "OOMOL Studio is\nthe environment where developers build tools"
   },
   "STUDIO.manifesto.subtitle": {
-    "message": "Let AI help you get started, then keep writing code, adding dependencies, orchestrating flows, and getting the tool working locally. When you are ready to deliver, hand the same implementation to Cloud."
+    "message": "Let AI help you get started, then keep writing code, adding dependencies, orchestrating flows, and getting the tool working locally. When you are ready to deliver it, hand the same implementation to Cloud."
   },
   "STUDIO.manifesto.cta.download": {
     "message": "Download OOMOL Studio"
@@ -3208,19 +3208,19 @@
     "message": "Developer friction"
   },
   "STUDIO.product.story.title": {
-    "message": "Building tools for agents\nreally gets blocked in three places"
+    "message": "Building tools for agents\ngets blocked in three places"
   },
   "STUDIO.product.story.description": {
-    "message": "What really blocks progress is not only composition. It is whether you can start fast, extend deeply with real engineering tools, and keep moving toward delivery on the same implementation."
+    "message": "What really blocks progress is not just composition. It is whether you can start quickly, extend deeply with real engineering tools, and keep moving toward delivery on the same implementation."
   },
   "STUDIO.product.principles.kicker": {
     "message": "Build principles"
   },
   "STUDIO.product.principles.title": {
-    "message": "OOMOL Studio connects\nthose three problems into one path"
+    "message": "OOMOL Studio turns\nthose three needs into one path"
   },
   "STUDIO.product.principles.description": {
-    "message": "Let AI handle the starting point, let the engineering environment handle real extension, and let the same implementation move straight into delivery. When you need manual control, you still do not need a DSL."
+    "message": "Let AI handle the starting point, let a real engineering environment support real extension, and let the same implementation move straight into delivery. When you need manual control, you still do not need a DSL."
   },
   "STUDIO.product.cta.title": {
     "message": "Get the next tool running in Studio first"
@@ -3229,7 +3229,7 @@
     "message": "Build, debug, and get the tool working in a real coding environment first. When you are ready to deliver it, hand it to Cloud."
   },
   "STUDIO.story.paragraph1": {
-    "message": "What we want is not another tool that asks developers to adapt to the platform, but a working environment where an AI agent can build automatically first, and engineers can keep writing functions, orchestrating nodes, debugging dependencies, and validating results."
+    "message": "What we want is not another tool that asks developers to adapt to the platform. We want a working environment where an AI agent can build the first version automatically, and engineers can keep writing functions, orchestrating nodes, debugging dependencies, and validating results."
   },
   "STUDIO.story.frustration.line1": {
     "message": "\"Why can't I just let an AI agent build this tool automatically?\""
@@ -3244,22 +3244,22 @@
     "message": "For developers, the real problem is not whether something can be dragged visually. It is whether the first step from requirement to usable tool can be completed automatically by an AI agent."
   },
   "STUDIO.story.paragraph3": {
-    "message": "So Studio has a clear role: put fully automatic building by an AI agent into a real engineering environment, then connect local validation and delivery."
+    "message": "So Studio has a clear role: bring fully automated AI-agent building into a real engineering environment, then connect local validation to delivery."
   },
   "STUDIO.story.point1.label": {
     "message": "Learning Curve"
   },
   "STUDIO.story.point1.title": {
-    "message": "You have to learn a DSL before you can even compose"
+    "message": "You have to learn a DSL before you can even start composing"
   },
   "STUDIO.story.point1.description": {
-    "message": "Many platforms build workflows on top of proprietary low-code syntax. Before you extend anything, you first learn the platform."
+    "message": "Many platforms build workflows on top of proprietary low-code syntax. Before you can extend anything, you first have to learn the platform."
   },
   "STUDIO.story.point2.label": {
     "message": "Extension Cost"
   },
   "STUDIO.story.point2.title": {
-    "message": "You can compose, but dependencies and extension stay awkward"
+    "message": "You can compose, but dependencies and extension still feel awkward"
   },
   "STUDIO.story.point2.description": {
     "message": "Connecting nodes does not mean the system is truly extensible. Importing libraries or changing logic still gets stuck on platform constraints."
@@ -3271,7 +3271,7 @@
     "message": "Getting from requirement to a first working version is still too slow"
   },
   "STUDIO.story.point3.description": {
-    "message": "You want AI to find packages, sketch the first version, and add nodes when needed, while still leaving you in a real engineering environment to take over."
+    "message": "You want AI to find packages, sketch the first version, and add nodes when needed, while still leaving you in a real engineering environment to take over from there."
   },
   "HOME.StudioChain.title": {
     "message": "From idea to a deliverable tool"
@@ -3304,7 +3304,7 @@
     "message": "Explore Cloud"
   },
   "Theme.Navbar.product.studio.description": {
-    "message": "Build, combine, and orchestrate your own tools when ready-made ones stop short"
+    "message": "Build, combine, and orchestrate your own tools when ready-made ones are not enough"
   },
   "Theme.Navbar.product.cli.description": {
     "message": "Primary entry: install in agents and search and use tools directly"
@@ -3331,7 +3331,7 @@
     "message": "The point is not to stop at automatic generation. It is to let you take over from the first working version inside a real engineering environment."
   },
   "STUDIO.principle1.codeComment1": {
-    "message": "// This function..."
+    "message": "# Perform addition of x and y"
   },
   "STUDIO.principle1.codeComment2": {
     "message": "// ...Automatically becomes a Node with:"
@@ -3364,7 +3364,7 @@
     "message": "Changing logic, adding nodes, and connecting external capabilities all happen in the same codebase and container."
   },
   "STUDIO.principle3.paragraph3": {
-    "message": "So the flow is not just composable on the surface. It can keep expanding with the rest of your stack."
+    "message": "So the flow is not just something you can visually compose. It can keep expanding with the rest of your stack."
   },
   "STUDIO.principle3.codeComment": {
     "message": "# No wrappers. Just standard tools."

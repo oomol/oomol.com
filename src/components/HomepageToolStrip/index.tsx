@@ -58,16 +58,16 @@ const zhCopy: ToolStripCopy = {
 };
 
 const enCopy: ToolStripCopy = {
-  title: "Start with how many apps are already connected",
+  title: "Start with the apps OOMOL already connects",
   getDescription: (stats, locale) =>
-    `OOMOL comes with support for ${formatCount(stats.providerCount, locale)} apps and ${formatCount(stats.actionCount, locale)} wrapped tools. Start by using what already exists through oo-cli, then decide what is worth orchestrating further, extending, or turning into your own tool.`,
+    `OOMOL comes with support for ${formatCount(stats.providerCount, locale)} apps and ${formatCount(stats.actionCount, locale)} packaged tools. Start by using what already exists through oo-cli, then decide what is worth orchestrating further, extending, or turning into your own tool.`,
   providerStat: {
     label: "apps",
     text: "Covering common services across collaboration, development, marketing, and payments.",
   },
   actionStat: {
-    label: "wrapped tools",
-    text: "Packaged as usable capability entry points instead of raw integration fragments.",
+    label: "packaged tools",
+    text: "Not raw APIs, but ready-to-use actions.",
   },
   wallTitle: "Common apps are already available",
 };

@@ -206,7 +206,7 @@ const zhCopy: Copy = {
 const enCopy: Copy = {
   workflow: {
     eyebrow: "Real Workflow",
-    title: "Let the agent finish one real task inside oo-cli",
+    title: "See how an agent completes a real task in oo-cli",
     description:
       "oo login is usually a one-time setup to establish a session. After that, most tasks follow the same loop: discover the right tool, run it, then collect the result. The steps below focus on that repeating workflow (the terminal still starts from login so you can mirror a full session).",
     steps: [
@@ -214,25 +214,25 @@ const enCopy: Copy = {
         index: "01",
         command:
           'oo search "generate a QR code for OOMOL"\noo packages info foo/bar',
-        title: "Discover: search, then read the contract",
+        title: "Discover: search, then inspect the tool",
         text: "Search packages and connectors in natural language, then inspect metadata or schemas so inputs and behavior are clear before you call anything.",
       },
       {
         index: "02",
         command: "oo connector run …\noo cloud-task run …",
         title: "Run: connector or cloud task",
-        text: "Call a connector directly or submit a cloud task when the workload fits async runs.",
+        text: "Call a connector directly, or submit a cloud task when the job is better handled asynchronously.",
       },
       {
         index: "03",
         command:
           "oo cloud-task wait <taskId>\noo cloud-task result <taskId>",
         title: "Finish: wait, then fetch the result",
-        text: "The CLI waits on status and logs; use result when you need structured output for the next step.",
+        text: "The CLI waits for status changes and logs. Use result when you need structured output for the next step.",
       },
     ],
     terminal: {
-      label: "One real agent workflow",
+      label: "One real task in oo-cli",
       lines: [
         { kind: "comment", text: "# log in once and reuse the same context" },
         { kind: "command", text: "oo login" },
@@ -261,8 +261,8 @@ const enCopy: Copy = {
         { kind: "command", text: "oo cloud-task result task_123" },
       ],
     },
-    primary: "Open install guide",
-    secondary: "Open command reference",
+    primary: "Read the install guide",
+    secondary: "Read the command reference",
   },
   examples: {
     eyebrow: "Command Examples",
@@ -272,7 +272,7 @@ const enCopy: Copy = {
     cards: [
       {
         tag: "Search",
-        result: "Return packages and connectors together",
+        result: "Returns packages and connectors together",
         title: "Search first before deciding to build",
         description:
           "Use one natural-language query to look for ready-made tools before deciding to build your own.",
@@ -291,7 +291,7 @@ const enCopy: Copy = {
       },
       {
         tag: "Cloud Task",
-        result: "Fit longer tasks and async waiting",
+        result: "Good for longer-running tasks and async waits",
         title: "Run a workload and wait for the result",
         description:
           "For published tasks, the CLI creates the task, waits for status updates, reads logs, and brings the result back.",
@@ -303,7 +303,7 @@ const enCopy: Copy = {
       },
       {
         tag: "Skills",
-        result: "Land directly in Codex / Claude Code",
+        result: "Use directly in Codex / Claude Code",
         title: "Use these tools directly in Codex and Claude Code",
         description:
           "Search, install, and update skills through oo-cli instead of jumping to a separate place to keep using them.",
@@ -319,11 +319,11 @@ const enCopy: Copy = {
     eyebrow: "Need More?",
     title: "When ready-made tools are not enough, use Studio or Cloud",
     description:
-      "Let oo-cli get the task moving first. If you need to build your own tool or keep it running, then move on to Studio or Cloud.",
+      "Let oo-cli get the task moving first. If you need to build your own tool or keep it running continuously, then move on to Studio or Cloud.",
     cards: [
       {
         title: "Go to Studio to generate or complete your own tool",
-        text: "When existing tools are not enough, use Studio to let the agent generate code, fill parameters, and validate the tool locally.",
+        text: "When existing tools are not enough, use Studio to let the agent generate code, fill in parameters, and validate the tool locally.",
         cta: "Explore Studio",
         href: "/studio",
       },
@@ -338,9 +338,9 @@ const enCopy: Copy = {
   cta: {
     title: "Let your agent use these tools now",
     description:
-      "Install oo-cli and use it to search tools, inspect inputs, and run a real task from terminal.",
-    primary: "Open install guide",
-    secondary: "Open command reference",
+      "Install oo-cli and use it to search tools, inspect inputs, and run a real task from the terminal.",
+    primary: "Read the install guide",
+    secondary: "Read the command reference",
   },
 };
 

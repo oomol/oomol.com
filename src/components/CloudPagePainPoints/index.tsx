@@ -45,29 +45,29 @@ const zhCopy: Copy = {
 
 const enCopy: Copy = {
   badge: "Why Cloud after Studio",
-  title: "Studio handles building. Cloud handles the delivery layer",
+  title: "Studio handles building. Cloud handles delivery.",
   subtitle:
-    "Once the tool works locally, what slows launch is usually not the logic itself but the layer around it: hosted runtime, access control, secrets, and delivery. Cloud exists to compress that layer.",
+    "Once the tool works locally, what slows launch is usually not the logic itself but everything around it: hosted runtime, access control, secrets, and delivery. Cloud exists to shrink that layer.",
   cards: [
     {
       icon: "i-lucide-waypoints",
       eyebrow: "Delivery layer",
       title: "Stop building another backend around the same implementation",
       description:
-        "Cloud takes over delivery, configuration, access, and runtime relationships so you do not need a separate publishing backend wrapped around the same tool.",
+        "Cloud takes over delivery, configuration, access, and runtime so you do not need a separate publishing backend wrapped around the same tool.",
       points: [
-        "Primarily deliver it back through oo-cli for agents",
-        "Avoid another user surface and admin layer",
+        "Deliver it mainly through oo-cli for agents",
+        "Avoid building a separate user and admin layer",
       ],
     },
     {
       icon: "i-lucide-blocks",
       eyebrow: "Hosted layer",
-      title: "Hand runtime, access, and permissions to Cloud together",
+      title: "Let Cloud handle runtime, access, and permissions together",
       description:
-        "Users primarily keep consuming the tool through oo-cli. When you need API, MCP, or automation surfaces, you can add them from the same hosted layer while the implementation stays on the server.",
+        "Users still access the tool mainly through oo-cli. When you need API, MCP, or automation endpoints, you can add them through the same Cloud setup while the implementation stays on the server.",
       points: [
-        "Less ops and permission work to maintain",
+        "Less ops and permission work to manage",
         "Deliver first, then expand with real usage",
       ],
     },

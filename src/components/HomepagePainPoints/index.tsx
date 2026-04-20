@@ -56,9 +56,9 @@ export default function HomepagePainPoints() {
         badge: "Step 1: Use what already exists",
         title: "Let agents run ready-made work first",
         subtitle:
-          "If a ready-made tool already solves the job, OOMOL's first layer of value is simple: connect it, run it, and do not start by building your own tool.",
+          "If a ready-made tool already solves the job, OOMOL's first layer of value is simple: connect it, run it, and skip building your own tool at the start.",
         promptLabel: "Say this",
-        resultLabel: "Agent will run",
+        resultLabel: "The agent does",
         cards: [
           {
             title: "Summarize a GitHub PR and send it to Slack",

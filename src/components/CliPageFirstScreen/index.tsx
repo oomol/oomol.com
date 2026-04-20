@@ -31,7 +31,7 @@ for Agents`,
     "Run Cloud Tasks",
     "Install Skills",
   ],
-  primaryCta: "Open install guide",
+  primaryCta: "Read the install guide",
   secondaryCta: "View GitHub",
   playAriaLabel: "Play CLI demo video",
 };

@@ -30,7 +30,7 @@ const downloadData = [
       {
         text: translate({
           message: "HOME.Downloads.download.macos.applesilicon",
-          description: "Download For MacOS Apple Silicon",
+          description: "Download for macOS (Apple silicon)",
         }),
         url: DownloadUrl.Nightly.MacOS.AppleSilicon,
       },
@@ -50,7 +50,7 @@ const downloadData = [
       {
         text: translate({
           message: "HOME.Downloads.download.macos.applesilicon",
-          description: "Download For MacOS Apple Silicon",
+          description: "Download for macOS (Apple silicon)",
         }),
         url: DownloadUrl.Stable.MacOS.AppleSilicon,
       },
@@ -107,12 +107,12 @@ export default function Downloads() {
           "Start with oo-cli if you want agents to use tools in the terminal. Use OOMOL AI if you prefer a GUI. Download OOMOL Studio when you want to build your own tools.",
         recommended: "Recommended",
         cliEyebrow: "Command line",
-        aiEyebrow: "Graphical interface",
-        studioEyebrow: "Build your own tools",
+        aiEyebrow: "GUI",
+        studioEyebrow: "Tool builder",
         ai: {
           title: "If you prefer a GUI, use OOMOL AI",
           subtitle:
-            "OOMOL AI is the official GUI entry point for the same capability layer, giving you a simpler way to chat, review results, and keep working across web, desktop, and iOS. If you only want an easier way to use tools, start here.",
+            "OOMOL AI is the official GUI for the same tools, giving you an easier way to chat, review results, and keep working across web, desktop, and iOS. If you mainly want an easier way to use tools, start here.",
           actions: {
             openWeb: "Open Web App",
             desktopMac: "Download for macOS",
@@ -224,7 +224,7 @@ export default function Downloads() {
                 <div className={styles.content}>
                   <div className={styles.type}>Web</div>
                   <span className={styles.description}>
-                    {isZh ? "对话式图形入口" : "Chat GUI"}
+                    {isZh ? "对话式图形入口" : "Chat-based interface"}
                   </span>
                 </div>
                 <div className={styles.downloads}>

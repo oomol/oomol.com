@@ -69,9 +69,9 @@ const zhCopy = {
 
 const enCopy = {
   badge: "Why It Fits Agents",
-  title: "A command-line tool that works better for agents",
+  title: "A command-line tool built for agents",
   subtitle:
-    "This is not a web UI squeezed into a terminal. It gives agents one practical place to search, inspect, run, and wait for results.",
+    "This is not a web UI transplanted into a terminal. It gives agents one practical place to search, inspect, run, and wait for results.",
   benefits: [
     {
       tag: "Unified path",
@@ -82,19 +82,19 @@ const enCopy = {
       description:
         "From finding a tool to getting the result back, the agent stays inside one CLI instead of bouncing across web pages and mixed protocols.",
       note: "Fewer switches make real tasks easier to finish.",
-      cta: "Open CLI guide",
+      cta: "Read the CLI guide",
       href: "/docs/oo-cli",
     },
     {
       tag: "Structured output",
       value: "JSON",
-      valueCaption: "Let the next step continue",
+      valueCaption: "Ready for the next step",
       eyebrow: "Output",
       title: "Make results easier to use in the next step",
       description:
-        "Search, connector, cloud task, skills, and file commands support JSON output so the result can move directly into the next step.",
-      note: "Not just terminal output for people. The result can move straight into the next step.",
-      cta: "Open command reference",
+        "Search, connector, cloud task, skills, and file commands all support JSON output so the result can move directly into the next step.",
+      note: "Not just terminal output for humans. The result can move straight into the next step.",
+      cta: "Read the command reference",
       href: COMMANDS_REFERENCE_URL,
     },
     {
@@ -104,9 +104,9 @@ const enCopy = {
       eyebrow: "Execution",
       title: "Check inputs before you actually run",
       description:
-        "connector run and cloud-task run support dry runs or explicit input checks so the agent can avoid wasteful blind attempts.",
-      note: "First see whether it will run. Then decide whether to run it.",
-      cta: "Open command reference",
+        "`connector run` and `cloud-task run` support dry runs or explicit input checks so the agent can avoid wasteful blind attempts.",
+      note: "See whether it will work first, then decide whether to run it.",
+      cta: "Read the command reference",
       href: COMMANDS_REFERENCE_URL,
     },
     {
@@ -117,7 +117,7 @@ const enCopy = {
       title: "Use it directly in Codex and Claude Code",
       description:
         "oo installs and manages built-in skills, and it can search and install published skills so agents can use them directly inside Codex and Claude Code.",
-      note: "No separate place to jump into.",
+      note: "No separate place to switch to.",
       cta: "View GitHub",
       href: CLI_REPOSITORY_URL,
     },

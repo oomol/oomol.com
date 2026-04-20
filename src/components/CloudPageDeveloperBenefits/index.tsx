@@ -41,32 +41,32 @@ const zhCopy = {
 };
 
 const enCopy = {
-  badge: "Free Tier",
-  title: "Start delivery with the free quota",
+  badge: "Included Usage",
+  title: "Start delivery with the included free quota",
   subtitle:
     "Free users get 200 Cloud Task minutes refreshed every month. Use them to deliver the tool through Cloud first, then top up or upgrade when the quota is not enough.",
   benefits: [
     {
-      tag: "Monthly Included",
-      value: "200 Minutes",
-      valueCaption: "Free Cloud Task time",
+      tag: "Included Monthly",
+      value: "200 min",
+      valueCaption: "Included Cloud Task time",
       eyebrow: "Free quota",
       title: "Deliver the tool and start using it",
       description:
-        "Use the monthly refreshed quota to deliver the tool and confirm it stays searchable and callable in oo-cli.",
+        "Use the monthly refreshed quota to deliver the tool, confirm it keeps running, and make sure it is searchable and callable in oo-cli.",
       note: "A good fit for first delivery, lightweight jobs, and everyday trial use.",
       cta: "Read Cloud docs",
       href: "/docs/cloud-services/cloud-function",
     },
     {
       tag: "Time-based billing",
-      value: "By Time",
+      value: "By runtime",
       valueCaption: "How Cloud Task is billed",
       eyebrow: "Usage-based",
-      title: "Scale with call-duration billing",
+      title: "Pay by runtime as usage grows",
       description:
         "You do not need to buy servers or reserve fixed capacity up front. Pay for actual call time only after the included quota runs out, and expand only when demand grows.",
-      note: "Start using it first, then decide the scale.",
+      note: "Start with the included quota, then scale only when you need to.",
       cta: "View pricing",
       href: "/pricing",
     },

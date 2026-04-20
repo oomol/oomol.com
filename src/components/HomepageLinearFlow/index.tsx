@@ -217,12 +217,12 @@ const zhCopy: Copy = {
 const enCopy: Copy = {
   cli: {
     eyebrow: "03 / Use from oo-cli",
-    title: "Finally, hand the tool back to oo-cli for agents to use",
+    title: "Finally, hand the tool back to oo-cli so agents can use it",
     description:
-      "Once the tool is built and delivered, Agents, Codex, OpenClaw, and Claude Code keep using the same oo-cli path to search, inspect, and call it.",
+      "Once the tool is built and delivered, agents in Codex, OpenClaw, and Claude Code keep using the same oo-cli path to search for it, inspect it, and call it.",
     media: {
       title: "oo-cli invocation demo",
-      note: "Show a delivered tool being searched, inspected, and called in Codex.",
+      note: "Shows a delivered tool being searched, inspected, and called in Codex.",
     },
     guide: "Explore oo-cli",
     github: "View GitHub",
@@ -231,7 +231,7 @@ const enCopy: Copy = {
     eyebrow: "01 / Build in Studio",
     title: "Start in OOMOL Studio to generate, compose, and validate",
     description:
-      "Use the agent to get started, then keep editing code, dependencies, parameters, and compositions yourself. Studio is for building tools, not for day-to-day tool usage.",
+      "Use the agent to get started, then keep editing code, dependencies, parameters, and workflows yourself. Studio is for building tools, not day-to-day tool use.",
     media: {
       title: "Studio demo video",
       note: "Show the path from prompting to generating a tool and validating it locally.",
@@ -241,22 +241,22 @@ const enCopy: Copy = {
   },
   cloud: {
     eyebrow: "02 / Deliver through Cloud",
-    title: "Once validation is done, hand delivery and runtime to Cloud",
+    title: "Once validation is done, let Cloud handle delivery and runtime",
     description:
-      "Cloud takes over runtime, configuration, secrets, access, and delivery relationships so you do not need to build another backend around the same implementation.",
+      "Cloud takes over runtime, configuration, secrets, access, and delivery so you do not need to build another backend around the same implementation.",
     cards: [
       {
-        title: "Handle delivery and hosted runtime in one path",
+        title: "Handle delivery and hosted runtime in one place",
         text: "Keep the same implementation as you deliver the tool to yourself, your team, or customers.",
       },
       {
-        title: "Keep config, access, and usage relationships in one backend",
+        title: "Keep config, access, and usage in one backend",
         text: "Manage secrets, access, releases, runtime settings, and usage data in one place.",
       },
     ],
     media: {
       title: "Cloud console preview",
-      note: "Bring runtime settings, secrets, and delivery relationships into one backend.",
+      note: "Bring runtime settings, secrets, and delivery into one backend.",
       items: [
         "Handle runtime and delivery together",
         "Manage configuration, access, and releases in one console",
