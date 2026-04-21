@@ -694,7 +694,8 @@ body,
   --ifm-font-family-base: var(--oomol-font-body);
   --ifm-heading-font-family: var(--oomol-font-display);
   --ifm-font-size-base: 1rem;
-  --ifm-leading: 1.75;
+  // Infima expects --ifm-leading to resolve to a length, not a unitless number.
+  --ifm-leading-desktop: 1.75;
 
   .theme-doc-markdown,
   .theme-doc-breadcrumbs,
@@ -734,6 +735,7 @@ body,
       blockquote,
       table,
       pre,
+      .theme-code-block,
       .theme-admonition,
       .tabs-container
     ) {
