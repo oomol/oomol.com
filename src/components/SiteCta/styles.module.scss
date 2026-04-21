@@ -4,8 +4,7 @@
   width: 100%;
   /* Horizontal padding is on `.section` (not `.inner`) so the rounded
      `.inner` card never touches the viewport edge on narrow screens. */
-  padding:
-    clamp(5rem, 10vw, 8rem) clamp(16px, 4vw, 32px)
+  padding: clamp(5rem, 10vw, 8rem) clamp(16px, 4vw, 32px)
     clamp(3.5rem, 7vw, 5.5rem);
   background: var(--oomol-bg-spotlight);
   box-sizing: border-box;

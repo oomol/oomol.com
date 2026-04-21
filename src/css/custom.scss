@@ -297,9 +297,8 @@ body,
 /* Lead / section-intro copy: treat these as subtitle-grade copy, not generic body text.
    This prevents app/landing intro paragraphs from being pulled back to the zh body 1.72 line-height. */
 .oomol-home-main [class*="lead" i]:not([class*="card" i]),
-.oomol-landing-main:not(.oomol-app-page) [class*="lead" i]:not(
-    [class*="card" i]
-  ),
+.oomol-landing-main:not(.oomol-app-page)
+  [class*="lead" i]:not([class*="card" i]),
 .oomol-home-main [class*="sectionIntro" i] > p,
 .oomol-landing-main:not(.oomol-app-page) [class*="sectionIntro" i] > p {
   font-size: var(--oomol-body-lead);
