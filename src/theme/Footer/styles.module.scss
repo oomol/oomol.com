@@ -99,8 +99,11 @@
 }
 
 .bottomInfo {
-  display: grid;
-  gap: 0.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 1rem;
+  row-gap: 0.35rem;
   min-width: 0;
   font-size: var(--oomol-body-sm);
   line-height: 1.58;
