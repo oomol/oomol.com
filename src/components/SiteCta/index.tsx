@@ -19,7 +19,11 @@ export function SiteCta({
   id,
 }: SiteCtaProps) {
   return (
-    <section id={id} className={clsx(styles.section, className)}>
+    <section
+      id={id}
+      className={clsx(styles.section, className)}
+      data-oomol-surface="footer-band"
+    >
       <div className={styles.inner}>
         <h2 className={styles.ctaTitle}>{title}</h2>
         <p className={styles.ctaDescription}>{description}</p>

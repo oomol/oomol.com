@@ -68,7 +68,8 @@
   --ifm-menu-color-background-hover: var(--oomol-hover-bg);
   --ifm-toc-link-color: var(--oomol-text-secondary);
   --ifm-navbar-link-color: var(--oomol-text-primary);
-  --ifm-footer-background-color: var(--oomol-bg-base);
+  --oomol-footer-band-bg: var(--oomol-bg-spotlight);
+  --ifm-footer-background-color: var(--oomol-footer-band-bg);
 }
 
 /* iOS Safari may auto-enlarge text on real devices, which can cause
@@ -96,7 +97,8 @@ html {
   --ifm-menu-color-background-hover: var(--oomol-hover-bg);
   --ifm-toc-link-color: var(--oomol-text-secondary);
   --ifm-navbar-link-color: var(--oomol-text-primary);
-  --ifm-footer-background-color: var(--oomol-bg-base);
+  --oomol-footer-band-bg: var(--oomol-bg-container);
+  --ifm-footer-background-color: var(--oomol-footer-band-bg);
 }
 
 html,
@@ -447,6 +449,15 @@ body,
 .oomol-home-main > section:nth-of-type(even),
 .oomol-landing-main:not(.oomol-app-page) > section:nth-of-type(even) {
   background: var(--oomol-bg-container);
+}
+
+/* CTA band before the swizzled footer should match the footer background,
+   instead of participating in the generic odd/even landing-page striping. */
+.oomol-home-main > section[data-oomol-surface="footer-band"],
+.oomol-landing-main:not(.oomol-app-page)
+  > section[data-oomol-surface="footer-band"] {
+  background: var(--oomol-footer-band-bg);
+  border-bottom: 0;
 }
 
 /* 抹掉 section 内装饰性渐变伪元素（许多老样式用 ::before 画紫光） */

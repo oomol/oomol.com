@@ -1,7 +1,7 @@
 .root {
   width: 100%;
   padding: clamp(2rem, 5vw, 3rem) 0 1.5rem;
-  background: var(--oomol-bg-spotlight);
+  background: var(--oomol-footer-band-bg);
 }
 
 .center {
@@ -223,10 +223,6 @@
 }
 
 [data-theme="dark"] {
-  .root {
-    background: var(--oomol-bg-container);
-  }
-
   .border {
     border-top-color: var(--oomol-border-default);
   }
