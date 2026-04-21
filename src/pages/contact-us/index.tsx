@@ -259,12 +259,12 @@ export default function ContactUsPage() {
       <div className={styles.container}>
         <div className={styles.headBox}>
           <div className={styles.titleBox}>
-            <h1 className={styles.title}>
+            <h1 className={styles.heroTitle}>
               {translate({
                 message: "HOME.Community.title",
               })}
             </h1>
-            <p className={styles.subTitle}>
+            <p className={styles.sectionSubtitle}>
               {translate({
                 message: "HOME.Community.subtitle",
               })}
@@ -325,7 +325,7 @@ export default function ContactUsPage() {
               message: "HOME.Community.open-source.title",
             })}
           </h2>
-          <p className={styles.subTitle}>
+          <p className={styles.sectionSubtitle}>
             {translate({
               message: "HOME.Community.open-source.subtitle",
             })}

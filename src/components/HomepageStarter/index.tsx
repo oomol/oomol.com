@@ -24,11 +24,11 @@ export default function HomepageStarter() {
   return (
     <div className={styles.sectionStarter}>
       <img src={logoSrc} alt="logo" />
-      <div className={styles.title}>Start creating today</div>
-      <div className={styles.inner}>
+      <h2 className={styles.sectionTitle}>Start creating today</h2>
+      <p className={styles.sectionDescription}>
         Whether you’re new to Oomol or back to see what’s new, we’ll have you
         set up and ready to do your best work in minutes.
-      </div>
+      </p>
       <Button asChild size="lg" className={styles.cta}>
         <Link to="/downloads">Download</Link>
       </Button>

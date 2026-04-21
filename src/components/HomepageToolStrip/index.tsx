@@ -111,8 +111,8 @@ export default function HomepageToolStrip() {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.copyColumn}>
-          <h2 className={styles.title}>{copy.title}</h2>
-          <p className={styles.description}>{copy.description}</p>
+          <h2 className={styles.sectionTitle}>{copy.title}</h2>
+          <p className={styles.sectionDescription}>{copy.description}</p>
         </div>
 
         <div className={styles.surfacePanel}>

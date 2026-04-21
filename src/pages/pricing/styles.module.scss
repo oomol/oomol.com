@@ -49,11 +49,11 @@
   text-align: center;
 }
 
-.title {
+.heroTitle {
   @include marketing-display-title(hero, 20ch, center, 1.04);
 }
 
-.subTitle {
+.heroSubtitle {
   @include marketing-supporting-copy(40rem, center);
   font-weight: 400;
 }
@@ -618,12 +618,12 @@
     isolation: isolate;
   }
 
-  .title {
+  .heroTitle {
     color: var(--oomol-text-primary);
     text-shadow: none;
   }
 
-  .subTitle {
+  .heroSubtitle {
     color: var(--oomol-text-secondary);
   }
 
@@ -857,12 +857,12 @@
     gap: 0.9rem;
   }
 
-  .title {
+  .heroTitle {
     max-width: 100%;
     text-wrap: pretty;
   }
 
-  .subTitle {
+  .heroSubtitle {
     max-width: 100%;
     font-size: var(--oomol-body-base);
     line-height: 1.62;

@@ -1,3 +1,5 @@
+@use "../../css/mixins.scss" as *;
+
 .section {
   padding: clamp(3rem, 6vw, 4.6rem) 0 clamp(2.2rem, 4vw, 3.2rem);
   position: relative;
@@ -54,26 +56,12 @@
   color: var(--oomol-text-tertiary);
 }
 
-.title {
-  margin: 0;
-  max-width: 11ch;
-  font-family: var(--oomol-font-display);
-  font-size: var(--oomol-display-hero);
-  line-height: 1.06;
-  letter-spacing: var(--oomol-tracking-display);
-  font-weight: 600;
-  color: var(--oomol-text-primary);
-  text-wrap: balance;
+.sectionTitle {
+  @include marketing-display-title(hero, 11ch, left, 1.06);
 }
 
-.subtitle {
-  margin: 0;
-  max-width: 28rem;
-  font-size: var(--oomol-body-lead);
-  line-height: var(--oomol-line-height-relaxed);
-  letter-spacing: var(--oomol-tracking-body);
-  text-wrap: pretty;
-  color: var(--oomol-text-secondary);
+.sectionSubtitle {
+  @include marketing-supporting-copy(28rem);
 }
 
 .grid {
@@ -227,13 +215,13 @@
   max-width: 42rem;
 }
 
-:global(html[lang="en"]) .title {
+:global(html[lang="en"]) .sectionTitle {
   max-width: 14ch;
   font-size: var(--oomol-display-hero);
   line-height: 1.02;
 }
 
-:global(html[lang="en"]) .subtitle {
+:global(html[lang="en"]) .sectionSubtitle {
   max-width: 34rem;
 }
 
@@ -270,7 +258,7 @@
     max-width: 100%;
   }
 
-  .title {
+  .sectionTitle {
     max-width: 100%;
   }
 }
@@ -284,7 +272,7 @@
     width: min(100%, calc(100% - 40px));
   }
 
-  .title {
+  .sectionTitle {
     max-width: 100%;
     font-size: var(--oomol-display-hero);
     line-height: 1.1;
@@ -292,7 +280,7 @@
     text-wrap: pretty;
   }
 
-  .subtitle {
+  .sectionSubtitle {
     font-size: var(--oomol-body-base);
     line-height: 1.68;
   }

@@ -172,10 +172,10 @@ export default function StudioDetailContent({
   return (
     <div className={styles.container}>
       <header className={styles.manifestHeader}>
-        <h1 className={styles.title}>
+        <h1 className={styles.heroTitle}>
           {translate({ message: "STUDIO.manifesto.title" })}
         </h1>
-        <p className={styles.subtitle}>
+        <p className={styles.heroSubtitle}>
           {translate({ message: "STUDIO.manifesto.subtitle" })}
         </p>
       </header>

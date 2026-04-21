@@ -9,10 +9,10 @@ export default function HomepagePdfCraftShowcase() {
     <section id="pdf-craft-case" className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.title}>
+          <h2 className={styles.sectionTitle}>
             {translate({ message: "HOME.PdfCraft.title" })}
           </h2>
-          <p className={styles.subtitle}>
+          <p className={styles.sectionSubtitle}>
             {translate({ message: "HOME.PdfCraft.subtitle" })}
           </p>
         </div>

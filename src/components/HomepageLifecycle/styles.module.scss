@@ -1,3 +1,5 @@
+@use "../../css/mixins.scss" as *;
+
 .lifecycleSection {
   padding: 120px 0;
   background: var(--ifm-background-color);
@@ -19,23 +21,14 @@
 }
 
 .sectionTitle {
-  font-family: var(--oomol-font-display);
-  font-size: var(--oomol-display-section);
-  font-weight: 600;
-  color: var(--oomol-text-primary);
+  @include marketing-display-title(section, null, center, 1.12);
   margin-bottom: 16px;
-  letter-spacing: var(--oomol-tracking-section);
-  line-height: 1.12;
-  text-wrap: balance;
 }
 
 .sectionSubtitle {
-  font-size: var(--oomol-body-lead);
-  color: var(--oomol-text-secondary);
+  @include marketing-supporting-copy(720px, center);
   max-width: 720px;
   margin: 0 auto;
-  line-height: var(--oomol-line-height-relaxed);
-  letter-spacing: var(--oomol-tracking-body);
 }
 
 // 主内容区 - 左右分栏

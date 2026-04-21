@@ -23,14 +23,14 @@
   position: relative;
 }
 
-.title {
+.heroTitle {
   display: flex;
   align-items: center;
   justify-content: center;
   @include marketing-display-title(hero, 22ch, center, 1.06);
 }
 
-.subTitle {
+.heroSubtitle {
   @include marketing-supporting-copy(42rem, center);
   font-weight: 400;
   @include flatSecondaryText;
@@ -218,7 +218,7 @@
     max-width: 100%;
   }
 
-  .subTitle {
+  .heroSubtitle {
     max-width: 100%;
     @include marketing-mobile-supporting-copy();
   }

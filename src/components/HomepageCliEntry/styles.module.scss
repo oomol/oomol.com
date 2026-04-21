@@ -1,3 +1,5 @@
+@use "../../css/mixins.scss" as *;
+
 .section {
   position: relative;
   padding: clamp(3.5rem, 7vw, 5.6rem) 0;
@@ -40,25 +42,12 @@
   }
 }
 
-.title {
-  margin: 0;
-  max-width: 13ch;
-  font-family: var(--oomol-font-display);
-  font-size: var(--oomol-display-hero);
-  line-height: 1.04;
-  letter-spacing: var(--oomol-tracking-display);
-  font-weight: 600;
-  text-wrap: balance;
-  color: var(--oomol-text-primary);
+.sectionTitle {
+  @include marketing-display-title(hero, 13ch, left, 1.04);
 }
 
-.subtitle {
-  margin: 0;
-  max-width: 40rem;
-  font-size: var(--oomol-body-lead);
-  line-height: var(--oomol-line-height-relaxed);
-  letter-spacing: var(--oomol-tracking-body);
-  color: var(--oomol-text-secondary);
+.sectionSubtitle {
+  @include marketing-supporting-copy(40rem);
 }
 
 .benefitGrid {
@@ -376,7 +365,7 @@
     max-width: 100%;
   }
 
-  .title {
+  .sectionTitle {
     max-width: 14ch;
   }
 
@@ -394,7 +383,7 @@
     padding: 0 18px;
   }
 
-  .title {
+  .sectionTitle {
     max-width: 100%;
   }
 
@@ -433,13 +422,13 @@
   }
 }
 
-:global(html[lang="en"]) .title {
+:global(html[lang="en"]) .sectionTitle {
   max-width: 13.5ch;
   font-size: var(--oomol-display-hero);
   line-height: 1.02;
 }
 
-:global(html[lang="en"]) .subtitle {
+:global(html[lang="en"]) .sectionSubtitle {
   max-width: 42rem;
 }
 

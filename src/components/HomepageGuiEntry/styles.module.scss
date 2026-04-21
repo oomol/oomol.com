@@ -49,7 +49,7 @@
   background: var(--oomol-primary);
 }
 
-.title {
+.sectionTitle {
   @include marketing-display-title(section, 22ch, left, 1.08);
   overflow-wrap: anywhere;
 }
@@ -64,7 +64,7 @@
   }
 }
 
-.description {
+.sectionDescription {
   @include marketing-supporting-copy(34rem);
   overflow-wrap: anywhere;
 }
@@ -126,12 +126,12 @@
     padding-inline: 20px;
   }
 
-  .title {
+  .sectionTitle {
     max-width: 100%;
     font-size: var(--oomol-display-section);
   }
 
-  .description {
+  .sectionDescription {
     @include marketing-mobile-supporting-copy();
   }
 
@@ -151,7 +151,7 @@
     padding-inline: 16px;
   }
 
-  .title {
+  .sectionTitle {
     font-size: var(--oomol-display-card);
     line-height: 1.14;
   }

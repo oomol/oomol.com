@@ -38,10 +38,10 @@ export default function HomepageCommunityShare() {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.content}>
-          <h2 className={styles.title}>
+          <h2 className={styles.sectionTitle}>
             {translate({ id: "HOME.CommunityShare.title" })}
           </h2>
-          <p className={styles.subtitle}>
+          <p className={styles.sectionSubtitle}>
             {translate({ id: "HOME.CommunityShare.subtitle" })}
           </p>
           <div className={styles.pointsGrid}>

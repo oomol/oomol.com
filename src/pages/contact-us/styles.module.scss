@@ -36,7 +36,7 @@
   margin: 0 auto;
 }
 
-.title {
+.heroTitle {
   @include marketing-display-title(hero, 22ch, center, 1.06);
 }
 
@@ -44,7 +44,7 @@
   @include marketing-display-title(section, 22ch, center, 1.08);
 }
 
-.subTitle {
+.sectionSubtitle {
   @include marketing-supporting-copy(42rem, center);
   font-weight: 400;
   @include flatSecondaryText;
@@ -326,7 +326,7 @@
     max-width: 100%;
   }
 
-  .subTitle {
+  .sectionSubtitle {
     @include marketing-mobile-supporting-copy();
   }
 
@@ -375,7 +375,7 @@
     gap: 22px;
   }
 
-  .title {
+  .heroTitle {
     font-size: clamp(2.3rem, 12vw, 3.1rem);
     line-height: 1.08;
   }
@@ -385,7 +385,7 @@
     font-size: var(--oomol-display-section);
   }
 
-  .subTitle {
+  .sectionSubtitle {
     @include marketing-mobile-supporting-copy();
   }
 

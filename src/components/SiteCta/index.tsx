@@ -21,8 +21,8 @@ export function SiteCta({
   return (
     <section id={id} className={clsx(styles.section, className)}>
       <div className={styles.inner}>
-        <h2 className={styles.title}>{title}</h2>
-        <p className={styles.description}>{description}</p>
+        <h2 className={styles.ctaTitle}>{title}</h2>
+        <p className={styles.ctaDescription}>{description}</p>
         <div className={styles.actions}>{actions}</div>
       </div>
     </section>

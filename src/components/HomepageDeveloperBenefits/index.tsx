@@ -46,10 +46,10 @@ export default function HomepageDeveloperBenefits() {
           <div className={styles.badge}>
             {translate({ message: "HOME.DeveloperBenefits.badge" })}
           </div>
-          <h2 className={styles.title}>
+          <h2 className={styles.sectionTitle}>
             {translate({ message: "HOME.DeveloperBenefits.title" })}
           </h2>
-          <p className={styles.subtitle}>
+          <p className={styles.sectionSubtitle}>
             {translate({ message: "HOME.DeveloperBenefits.subtitle" })}
           </p>
         </div>

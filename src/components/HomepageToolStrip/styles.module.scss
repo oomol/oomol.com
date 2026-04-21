@@ -22,7 +22,7 @@
   max-width: 30rem;
 }
 
-.title {
+.sectionTitle {
   @include marketing-display-title(section, 18ch, left, 1.08);
 }
 
@@ -36,7 +36,7 @@
   backdrop-filter: none;
 }
 
-.description {
+.sectionDescription {
   @include marketing-supporting-copy();
 }
 
@@ -161,12 +161,12 @@
   letter-spacing: -0.003em;
 }
 
-:global(html[lang="en"]) .title {
+:global(html[lang="en"]) .sectionTitle {
   max-width: 22ch;
   font-size: var(--oomol-display-section);
 }
 
-:global(html[lang="en"]) .description {
+:global(html[lang="en"]) .sectionDescription {
   max-width: 40rem;
 }
 
@@ -180,7 +180,7 @@
     max-width: 100%;
   }
 
-  .title {
+  .sectionTitle {
     max-width: 100%;
   }
 }
@@ -194,7 +194,7 @@
     width: min(100%, calc(100% - 40px));
   }
 
-  .description {
+  .sectionDescription {
     @include marketing-mobile-supporting-copy();
   }
 

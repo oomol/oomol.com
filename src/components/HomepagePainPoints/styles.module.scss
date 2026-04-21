@@ -47,11 +47,11 @@
   }
 }
 
-.title {
+.sectionTitle {
   @include marketing-display-title(hero, 22ch, left, 1.06);
 }
 
-.subtitle {
+.sectionSubtitle {
   @include marketing-supporting-copy(40rem);
 }
 
@@ -255,16 +255,16 @@
 
 /* ── English overrides ── */
 
-:global(html[lang="en"]) .title {
+:global(html[lang="en"]) .sectionTitle {
   max-width: 26ch;
   font-size: var(--oomol-display-hero);
 }
 
-:global(html[lang="zh-CN"]) .title {
+:global(html[lang="zh-CN"]) .sectionTitle {
   max-width: 17ch;
 }
 
-:global(html[lang="en"]) .subtitle {
+:global(html[lang="en"]) .sectionSubtitle {
   max-width: 48rem;
 }
 
@@ -293,14 +293,14 @@
     gap: 0.7rem;
   }
 
-  .title {
+  .sectionTitle {
     max-width: 100%;
     font-size: var(--oomol-display-hero);
     line-height: 1.08;
     letter-spacing: var(--oomol-tracking-display);
   }
 
-  .subtitle {
+  .sectionSubtitle {
     @include marketing-mobile-supporting-copy();
     max-width: 32rem;
   }

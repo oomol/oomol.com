@@ -28,13 +28,13 @@
   text-align: center;
 }
 
-.title {
+.ctaTitle {
   @include marketing-display-title(section, 24ch, center, 1.08);
   overflow-wrap: anywhere;
   word-break: break-word;
 }
 
-.description {
+.ctaDescription {
   @include marketing-supporting-copy(42rem, center);
   overflow-wrap: anywhere;
   word-break: break-word;
@@ -84,12 +84,12 @@
     padding-bottom: 2rem;
   }
 
-  .title {
+  .ctaTitle {
     max-width: 100%;
     font-size: var(--oomol-display-section);
   }
 
-  .description {
+  .ctaDescription {
     @include marketing-mobile-supporting-copy();
   }
 
@@ -117,7 +117,7 @@
     padding-bottom: 1.65rem;
   }
 
-  .title {
+  .ctaTitle {
     font-size: var(--oomol-display-card);
     line-height: 1.14;
   }

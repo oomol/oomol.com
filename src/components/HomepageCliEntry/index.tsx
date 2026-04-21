@@ -67,10 +67,10 @@ export default function HomepageCliEntry() {
           <div className={styles.badge}>
             {translate({ message: "HOME.CliEntry.badge" })}
           </div>
-          <h2 className={styles.title}>
+          <h2 className={styles.sectionTitle}>
             {translate({ message: "HOME.CliEntry.title" })}
           </h2>
-          <p className={styles.subtitle}>
+          <p className={styles.sectionSubtitle}>
             {translate({ message: "HOME.CliEntry.subtitle" })}
           </p>
           <div className={styles.benefitGrid}>

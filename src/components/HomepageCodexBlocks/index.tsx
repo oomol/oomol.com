@@ -32,10 +32,10 @@ export default function HomepageCodexBlocks() {
           <div className={styles.badge}>
             {translate({ message: "HOME.CodexBlocks.badge" })}
           </div>
-          <h2 className={styles.title}>
+          <h2 className={styles.sectionTitle}>
             {translate({ message: "HOME.CodexBlocks.title" })}
           </h2>
-          <p className={styles.subtitle}>
+          <p className={styles.sectionSubtitle}>
             {translate({ message: "HOME.CodexBlocks.subtitle" })}
           </p>
           <div className={styles.headerActions}>
