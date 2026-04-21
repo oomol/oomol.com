@@ -48,6 +48,7 @@ export default function ResponsiveVideoEmbed({
         allow={allow}
         allowFullScreen={allowFullScreen}
         frameBorder={frameBorder}
+        loading={loading}
         style={{
           width: "100%",
           height: "100%",
