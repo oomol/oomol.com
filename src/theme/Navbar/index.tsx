@@ -492,13 +492,17 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
             </BrowserOnly>
           </div>
         </div>
-        <div
-          aria-label="Navigation bar toggle"
+        <button
+          type="button"
+          aria-label={translate({
+            id: "theme.docs.sidebar.toggleSidebarButtonAriaLabel",
+            message: "Toggle navigation bar",
+            description:
+              "The ARIA label for hamburger menu button of mobile navigation",
+          })}
+          aria-expanded={mobileSidebar.shown}
           className="navbar__toggle"
-          role="button"
-          tabIndex={0}
           onClick={mobileSidebar.toggle}
-          onKeyDown={mobileSidebar.toggle}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -516,7 +520,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
               d="M4 7h22M4 15h22M4 23h22"
             />
           </svg>
-        </div>
+        </button>
       </div>
       <div
         role="presentation"

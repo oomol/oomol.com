@@ -248,24 +248,31 @@ const config = {
             className: "productDropdown",
             items: [
               {
-                to: "/docs/oo-cli",
+                to: "/cli",
                 label: "navbar.oo-cli",
                 className: "productDropdownItem productDropdownItemCli",
+                activeBaseRegex:
+                  "^/(?:zh-CN/)?(?:cli(?:/.*)?|docs/oo-cli(?:/.*)?|docs/cloud-services/cli(?:/.*)?|docs/cloud-services/cli-command-reference(?:/.*)?)$",
               },
               {
                 to: "/studio",
                 label: "navbar.oomol-studio",
                 className: "productDropdownItem productDropdownItemStudio",
+                activeBaseRegex:
+                  "^/(?:zh-CN/)?(?:studio(?:/.*)?|docs/(?:concepts|get-started|advanced-guide|workflow-engine)(?:/.*)?)$",
               },
               {
                 to: "/cloud",
                 label: "navbar.oomol-cloud",
                 className: "productDropdownItem productDropdownItemCloud",
+                activeBaseRegex:
+                  "^/(?:zh-CN/)?(?:cloud(?:/.*)?|docs/cloud-services/cloud-function(?:/.*)?|docs/cloud-services/cloud-task(?:/.*)?)$",
               },
               {
                 to: "/app",
                 label: "navbar.oomol-ai",
                 className: "productDropdownItem productDropdownItemAi",
+                activeBaseRegex: "^/(?:zh-CN/)?app(?:/.*)?$",
               },
             ],
           },
