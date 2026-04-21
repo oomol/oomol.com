@@ -151,6 +151,8 @@ export default function StudioPage() {
                     }}
                     alt="OOMOL Studio"
                     className={styles.visualImage}
+                    fetchPriority="high"
+                    loading="eager"
                   />
                 </div>
               </div>

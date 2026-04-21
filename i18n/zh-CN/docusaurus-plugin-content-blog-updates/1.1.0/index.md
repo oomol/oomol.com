@@ -4,7 +4,18 @@ title: OOMOL Studio 1.1.0
 date: 2025-03-20
 ---
 
-![banner](@site/static/img/release/1.1.0/cn/quick-add-block.gif)
+import ResponsiveVideo from "@site/src/components/mdx/ResponsiveVideo";
+
+<ResponsiveVideo
+src="/img/release/1.1.0/cn/quick-add-block-web.mp4"
+type="video/mp4"
+controls
+muted
+autoPlay
+loop
+preload="none"
+style={{ borderRadius: 0 }}
+/>
 
 <!-- truncate -->
 
@@ -16,37 +27,73 @@ date: 2025-03-20
 
 现在我们支持了 AI 自动编辑的功能！这将会进一步降低开发者编写的成本。
 
-![AI 自动编辑功能](@site/static/img/release/1.1.0/cn/ai-auto-edit.gif)
+<ResponsiveVideo
+src="/img/release/1.1.0/cn/ai-auto-edit-web.mp4"
+type="video/mp4"
+controls
+muted
+autoPlay
+loop
+preload="none"
+style={{ borderRadius: 0 }}
+/>
 
 ### 内置 LLM 模块
 
 我们收到了一些用户的反馈，如果我们可以内置一些可以直接调用模型的 Block，那么对 AI 相关的工作流将会帮助很大。经过一段时间的开发，现已经支持。
 
-![内置 LLM 模块](@site/static/img/release/1.1.0/cn/built-in-llm.png)
+![内置 LLM 模块](/img/release/1.1.0/cn/built-in-llm.png)
 
 ### 优化 AI Chat
 
 为了减低用户理解 Flow 的心智成本，我们对我们的 AI Chat 进行了优化，现在当你在和 AI Chat 沟通时，会自动分析当前的 Flow。
 
-![优化 AI Chat](@site/static/img/release/1.1.0/cn/optimized-ai-chat.gif)
+<ResponsiveVideo
+src="/img/release/1.1.0/cn/optimized-ai-chat-web.mp4"
+type="video/mp4"
+controls
+muted
+autoPlay
+loop
+preload="none"
+style={{ borderRadius: 0 }}
+/>
 
 ### 快速添加 Block
 
 有一些用户反馈：每次想要增加一个新的 Block 时，总是要去找，非常不方便。于是我们参考了用户推荐的做法，现在可以通过右键、连线结束后自动弹出。
 
-![快速添加 Block](@site/static/img/release/1.1.0/cn/quick-add-block.gif)
+<ResponsiveVideo
+src="/img/release/1.1.0/cn/quick-add-block-web.mp4"
+type="video/mp4"
+controls
+muted
+autoPlay
+loop
+preload="none"
+style={{ borderRadius: 0 }}
+/>
 
 ### 预览全屏
 
 我们发现当 preview 的数据比较精细时，由于大小的限制，导致有些看不清楚，所以我们在这个版本中对一些常用的图标、视频、markdown 等预览窗口支持了全屏放大的功能。
 
-![预览全屏](@site/static/img/release/1.1.0/cn/fullscreen-preview.gif)
+<ResponsiveVideo
+src="/img/release/1.1.0/cn/fullscreen-preview-web.mp4"
+type="video/mp4"
+controls
+muted
+autoPlay
+loop
+preload="none"
+style={{ borderRadius: 0 }}
+/>
 
 ### 支持中国镜像源
 
 由于许多 Flow 需要通过 npm 和 pip 下载依赖，但因网络问题，许多用户都遇到下载失败的情况。针对这一问题，我们已经作了相关支持，现在下载依赖的成功率将提升很多。
 
-![支持中国镜像源](@site/static/img/release/1.1.0/cn/china-mirror.png)
+![支持中国镜像源](/img/release/1.1.0/cn/china-mirror.png)
 
 > 在此感谢 [清华大学开源软件镜像站] 提供的服务！
 
@@ -56,7 +103,16 @@ date: 2025-03-20
 
 当电脑中已经存在了 SSH 私钥或者启用了例如 [1Password SSH Agent] 时，现在可以直接在 OOMOL Studio 中使用这些认证，而不需要重新创建一个新的 SSH 密钥。
 
-![支持系统 SSH Auth](@site/static/img/release/1.1.0/cn/system-ssh-auth.gif)
+<ResponsiveVideo
+src="/img/release/1.1.0/cn/system-ssh-auth-web.mp4"
+type="video/mp4"
+controls
+muted
+autoPlay
+loop
+preload="none"
+style={{ borderRadius: 0 }}
+/>
 
 相关项目: [ovm-ssh-agent] [ssh-forward]
 
@@ -70,7 +126,7 @@ date: 2025-03-20
 > 我们不支持移动到远程共享的网络目录（UNC）中，因为这会导致 WSL2 出现意外问题。
 > 同时，在迁移完成后，我们会重置 OVM 虚拟机中的数据，原因请查看：[ovm-win#97]
 
-![移动 OVM 数据目录](@site/static/img/release/1.1.0/cn/move-ovm-data.png)
+![移动 OVM 数据目录](/img/release/1.1.0/cn/move-ovm-data.png)
 
 ### 修复部分无法打开 Flow 项目的情况
 

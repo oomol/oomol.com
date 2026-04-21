@@ -37,7 +37,13 @@ export default function HomepageDownloads() {
   return (
     <div className={styles.container}>
       <BlurFade className={styles["overview-blur-fade"]}>
-        <img className={styles.image} src={"/img/logo2x.png"} />
+        <img
+          className={styles.image}
+          src={"/img/logo2x.png"}
+          alt="OOMOL"
+          loading="lazy"
+          decoding="async"
+        />
         <div className={styles.content}>
           <p className={styles.overview}>
             {translate({

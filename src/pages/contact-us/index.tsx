@@ -313,7 +313,13 @@ export default function ContactUsPage() {
                 }
                 position="right"
                 content={
-                  <img alt="qrcode" className={styles.qrcode} src={qrcodeUrl} />
+                  <img
+                    alt="qrcode"
+                    className={styles.qrcode}
+                    src={qrcodeUrl}
+                    loading="lazy"
+                    decoding="async"
+                  />
                 }
               />
             </div>
@@ -347,6 +353,8 @@ export default function ContactUsPage() {
                       className={styles["repo-icon"]}
                       src={repositoryIconUrl}
                       alt={repo.name}
+                      loading="lazy"
+                      decoding="async"
                     />
                     <span className={styles["repo-title"]}>{repo.name}</span>
                   </div>

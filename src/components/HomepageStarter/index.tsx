@@ -23,7 +23,7 @@ export default function HomepageStarter() {
 
   return (
     <div className={styles.sectionStarter}>
-      <img src={logoSrc} alt="logo" />
+      <img src={logoSrc} alt="logo" loading="lazy" decoding="async" />
       <h2 className={styles.sectionTitle}>Start creating today</h2>
       <p className={styles.sectionDescription}>
         Whether you’re new to Oomol or back to see what’s new, we’ll have you

@@ -4,7 +4,18 @@ title: OOMOL Studio 1.1.0
 date: 2025-03-20
 ---
 
-![banner](@site/static/img/release/1.1.0/cn/quick-add-block.gif)
+import ResponsiveVideo from "@site/src/components/mdx/ResponsiveVideo";
+
+<ResponsiveVideo
+src="/img/release/1.1.0/cn/quick-add-block-web.mp4"
+type="video/mp4"
+controls
+muted
+autoPlay
+loop
+preload="none"
+style={{ borderRadius: 0 }}
+/>
 
 <!-- truncate -->
 
@@ -16,37 +27,73 @@ date: 2025-03-20
 
 We now support AI auto-editing functionality! This will further reduce development costs for creators.
 
-![Image](@site/static/img/release/1.1.0/cn/ai-auto-edit.gif)
+<ResponsiveVideo
+src="/img/release/1.1.0/cn/ai-auto-edit-web.mp4"
+type="video/mp4"
+controls
+muted
+autoPlay
+loop
+preload="none"
+style={{ borderRadius: 0 }}
+/>
 
 ### Built-in LLM Module
 
 Based on user feedback requesting direct model integration, we've developed built-in LLM Blocks that can be directly invoked, significantly enhancing AI-related workflows.
 
-![Image](@site/static/img/release/1.1.0/cn/built-in-llm.png)
+![Image](/img/release/1.1.0/cn/built-in-llm.png)
 
 ### Enhanced AI Chat
 
 To reduce the cognitive load of understanding Flow, we've optimized our AI Chat to automatically analyze the current Flow during conversations.
 
-![Image](@site/static/img/release/1.1.0/cn/optimized-ai-chat.gif)
+<ResponsiveVideo
+src="/img/release/1.1.0/cn/optimized-ai-chat-web.mp4"
+type="video/mp4"
+controls
+muted
+autoPlay
+loop
+preload="none"
+style={{ borderRadius: 0 }}
+/>
 
 ### Quick Block Addition
 
 Users reported difficulties in finding new Blocks to add. Following user recommendations, we've implemented right-click functionality and automatic popups after connecting lines.
 
-![Image](@site/static/img/release/1.1.0/cn/quick-add-block.gif)
+<ResponsiveVideo
+src="/img/release/1.1.0/cn/quick-add-block-web.mp4"
+type="video/mp4"
+controls
+muted
+autoPlay
+loop
+preload="none"
+style={{ borderRadius: 0 }}
+/>
 
 ### Fullscreen Preview
 
 When previewing detailed data, size limitations sometimes made content difficult to see. This version adds fullscreen expansion capabilities for common preview windows including icons, videos, and markdown.
 
-![Image](@site/static/img/release/1.1.0/cn/fullscreen-preview.gif)
+<ResponsiveVideo
+src="/img/release/1.1.0/cn/fullscreen-preview-web.mp4"
+type="video/mp4"
+controls
+muted
+autoPlay
+loop
+preload="none"
+style={{ borderRadius: 0 }}
+/>
 
 ### Support for Chinese Mirror Sources
 
 Many Flows require npm and pip dependencies, but network issues often caused download failures for users. We've implemented support for Chinese mirrors, significantly improving download success rates.
 
-![Image](@site/static/img/release/1.1.0/cn/china-mirror.png)
+![Image](/img/release/1.1.0/cn/china-mirror.png)
 
 > Special thanks to [Tsinghua University Open Source Software Mirror](https://mirror.tuna.tsinghua.edu.cn/) for providing this service!
 
@@ -56,7 +103,16 @@ Many Flows require npm and pip dependencies, but network issues often caused dow
 
 When SSH private keys already exist on your computer or when using services like [1Password SSH Agent], you can now use these authentications directly in OOMOL Studio without creating new SSH keys.
 
-![Image](@site/static/img/release/1.1.0/cn/system-ssh-auth.gif)
+<ResponsiveVideo
+src="/img/release/1.1.0/cn/system-ssh-auth-web.mp4"
+type="video/mp4"
+controls
+muted
+autoPlay
+loop
+preload="none"
+style={{ borderRadius: 0 }}
+/>
 
 Related projects: [ovm-ssh-agent] [ssh-forward]
 
@@ -70,7 +126,7 @@ Many users requested the ability to move the OVM virtual machine data directory 
 > We do not support migration to remote shared network directories (UNC) as this can cause unexpected issues with WSL2.
 > Additionally, after migration, we will reset the data in the OVM virtual machine. For more information, see: [ovm-win#97]
 
-![Image](@site/static/img/release/1.1.0/move-ovm-data.png)
+![Image](/img/release/1.1.0/move-ovm-data.png)
 
 Related PRs: [ovm-win#89] [ovm-win#91] [ovm-win#94] [ovm-win#95] [ovm-win#96] [ovm-win#98] [ovm-win#99]
 

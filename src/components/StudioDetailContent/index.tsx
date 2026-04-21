@@ -189,6 +189,8 @@ export default function StudioDetailContent({
             }}
             alt="OOMOL Studio"
             className={styles.heroImage}
+            fetchPriority="high"
+            loading="eager"
           />
         </div>
       </section>

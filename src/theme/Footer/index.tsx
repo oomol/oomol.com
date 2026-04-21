@@ -199,7 +199,13 @@ const Footer: React.FC = () => {
               }
               position="top"
               content={
-                <img alt="qrcode" className={styles.qrcode} src={qrCodeSrc} />
+                <img
+                  alt="qrcode"
+                  className={styles.qrcode}
+                  src={qrCodeSrc}
+                  loading="lazy"
+                  decoding="async"
+                />
               }
             />
           </div>

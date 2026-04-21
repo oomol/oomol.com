@@ -349,7 +349,13 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
       <div className={clsx("navbar__inner", styles.inner)}>
         <div className="navbar__items">
           <Link className={styles.brand} to="/">
-            <ThemedImage sources={logoSources} alt="logo" height={32} />
+            <ThemedImage
+              sources={logoSources}
+              alt="logo"
+              height={32}
+              fetchPriority="high"
+              loading="eager"
+            />
           </Link>
           {leftItems.map((item, i) => {
             if (item === productMenuItem) {

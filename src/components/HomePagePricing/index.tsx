@@ -60,7 +60,13 @@ const HomepagePricing = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.sectionTitle}>
-        <img src={"/img/pricing.svg"} />
+        <img
+          src={"/img/pricing.svg"}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+        />
         {translate({ message: "HOME.Pricing.title" })}
       </h2>
       <BlurFade>
