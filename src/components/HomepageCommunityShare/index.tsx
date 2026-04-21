@@ -22,16 +22,16 @@ export default function HomepageCommunityShare() {
   ];
 
   const communityHomeLight = useBaseUrl(
-    "/img/pages/home/community-home-light.png"
+    "/img/pages/home/community-home-light.webp"
   );
   const communityHomeDark = useBaseUrl(
-    "/img/pages/home/community-home-dark.png"
+    "/img/pages/home/community-home-dark.webp"
   );
   const communityDetailLight = useBaseUrl(
-    "/img/pages/home/community-detail-light.png"
+    "/img/pages/home/community-detail-light.webp"
   );
   const communityDetailDark = useBaseUrl(
-    "/img/pages/home/community-detail-dark.png"
+    "/img/pages/home/community-detail-dark.webp"
   );
 
   return (

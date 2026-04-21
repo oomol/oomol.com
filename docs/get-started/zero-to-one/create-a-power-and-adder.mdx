@@ -4,6 +4,7 @@ sidebar_label: Create an Adder
 ---
 
 import Image from "@theme/ThemedImage";
+import ThemedResponsiveVideo from "@site/src/components/mdx/ThemedResponsiveVideo";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 # Create an Adder and a Exponentiation
@@ -12,15 +13,15 @@ In the world of programming languages, printing "Hello, World!" is a traditional
 
 ## Create an Adder
 
-<Image
-  sources={{
-    light: useBaseUrl(
-      "/img/docs/get-started/zero-to-one/scriptlet-drag-light.gif"
-    ),
-    dark: useBaseUrl(
-      "/img/docs/get-started/zero-to-one/scriptlet-drag-dark.gif"
-    ),
-  }}
+<ThemedResponsiveVideo
+  lightSrc="/img/docs/get-started/zero-to-one/scriptlet-drag-light.mp4"
+  darkSrc="/img/docs/get-started/zero-to-one/scriptlet-drag-dark.mp4"
+  type="video/mp4"
+  muted
+  autoPlay
+  loop
+  playsInline
+  preload="none"
 />
 
 OOMOL Studio has some built-in system blocks, and scriptlet blocks are included, such as: _Python_, _TypeScript_, _JavaScript_.
@@ -32,16 +33,16 @@ We will write the code for the adder in this scriptlet block.
 ### Configure Inputs
 
 <div className="image-container">
-  <Image
+  <ThemedResponsiveVideo
     style={{ width: "450px" }}
-    sources={{
-      light: useBaseUrl(
-        "/img/docs/get-started/zero-to-one/scriptlet-set-input-light.gif"
-      ),
-      dark: useBaseUrl(
-        "/img/docs/get-started/zero-to-one/scriptlet-set-input-dark.gif"
-      ),
-    }}
+    lightSrc="/img/docs/get-started/zero-to-one/scriptlet-set-input-light.mp4"
+    darkSrc="/img/docs/get-started/zero-to-one/scriptlet-set-input-dark.mp4"
+    type="video/mp4"
+    muted
+    autoPlay
+    loop
+    playsInline
+    preload="none"
   />
 </div>
 
@@ -95,10 +96,10 @@ Now our adder is complete. It will receive two numeric inputs `a` and `b`, and r
     style={{ width: "600px" }}
     sources={{
       light: useBaseUrl(
-        "/img/docs/get-started/zero-to-one/scriptlet-run-block-light.png"
+        "/img/docs/get-started/zero-to-one/scriptlet-run-block-light.webp"
       ),
       dark: useBaseUrl(
-        "/img/docs/get-started/zero-to-one/scriptlet-run-block-dark.png"
+        "/img/docs/get-started/zero-to-one/scriptlet-run-block-dark.webp"
       ),
     }}
   />
@@ -113,10 +114,10 @@ We will change parameter `a` to `1`, change parameter `b` to `2`, and then click
     style={{ width: "600px" }}
     sources={{
       light: useBaseUrl(
-        "/img/docs/get-started/zero-to-one/run-power-calculator-light.png"
+        "/img/docs/get-started/zero-to-one/run-power-calculator-light.webp"
       ),
       dark: useBaseUrl(
-        "/img/docs/get-started/zero-to-one/run-power-calculator-dark.png"
+        "/img/docs/get-started/zero-to-one/run-power-calculator-dark.webp"
       ),
     }}
   />

@@ -4,7 +4,6 @@ import type { DocusaurusContext } from "@docusaurus/types";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import * as Dialog from "@radix-ui/react-dialog";
-import { Switch, Theme } from "@radix-ui/themes";
 import { Button } from "@site/src/components/ui/button";
 import {
   clearGoogleAnalyticsCookies,
@@ -13,7 +12,6 @@ import {
   syncGoogleTracking,
   trackFirstLoginConversion,
 } from "@site/src/lib/analytics";
-import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
 import React, {
   createContext,
   useCallback,
@@ -143,7 +141,6 @@ function interpolateStatus(
   return template.replace("{{date}}", date).replace("{{status}}", status);
 }
 
-/** Radix `Switch` only — must render inside a parent `@radix-ui/themes` `Theme` (see preferences dialog). A standalone `Theme` would be `data-is-root-theme` and pick up `min-height: 100vh` from the library stylesheet. */
 function CookiePreferenceSwitch({
   ariaLabel,
   checked,
@@ -154,14 +151,24 @@ function CookiePreferenceSwitch({
   onCheckedChange: (value: boolean) => void;
 }) {
   return (
-    <Switch
+    <button
       aria-label={ariaLabel}
-      checked={checked}
-      className="shrink-0"
-      color="gray"
-      onCheckedChange={onCheckedChange}
-      size="2"
-    />
+      aria-checked={checked}
+      className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border border-solid transition-colors ${
+        checked
+          ? "border-[var(--oomol-primary)] bg-[var(--oomol-primary)]"
+          : "border-[var(--oomol-border-default)] bg-[var(--oomol-bg-spotlight)]"
+      }`}
+      onClick={() => onCheckedChange(!checked)}
+      role="switch"
+      type="button"
+    >
+      <span
+        className={`pointer-events-none inline-block h-4 w-4 rounded-full bg-white shadow-[0_1px_3px_rgba(0,0,0,0.18)] transition-transform ${
+          checked ? "translate-x-[1.18rem]" : "translate-x-1"
+        }`}
+      />
+    </button>
   );
 }
 
@@ -223,7 +230,6 @@ const CookieConsentProviderInner: React.FC = () => {
     i18n: { currentLocale: string };
   };
   const privacyPolicyUrl = useBaseUrl("/privacy");
-  const { colorMode } = useHydratedColorMode();
   const t = translationsByLocale[currentLocale] ?? translationsByLocale.en;
   const localeTag = currentLocale === "zh-CN" ? "zh-CN" : "en-US";
 
@@ -402,14 +408,7 @@ const CookieConsentProviderInner: React.FC = () => {
             key={preferencesSession}
             style={{ zIndex: "var(--oomol-z-dialog-content)" }}
           >
-            <Theme
-              accentColor="gray"
-              appearance={colorMode}
-              className="oomol-cookie-preferences-theme flex w-full min-w-0 flex-col"
-              grayColor="slate"
-              hasBackground={false}
-              panelBackground="solid"
-            >
+            <div className="flex w-full min-w-0 flex-col">
               <div className="border-b border-solid border-[var(--oomol-divider)] px-5 py-4">
                 <Dialog.Title className="m-0 text-oomol-base font-semibold leading-snug tracking-[-0.02em] text-[var(--oomol-text-primary)] [font-family:var(--oomol-font-display)] sm:text-oomol-lg">
                   {t.manageTitle}
@@ -496,7 +495,7 @@ const CookieConsentProviderInner: React.FC = () => {
                   {t.manageSaveButtonText}
                 </Button>
               </div>
-            </Theme>
+            </div>
           </Dialog.Content>
         </Dialog.Portal>
       </Dialog.Root>

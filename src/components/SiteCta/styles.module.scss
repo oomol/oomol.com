@@ -6,7 +6,7 @@
      `.inner` card never touches the viewport edge on narrow screens. */
   padding: clamp(5rem, 10vw, 8rem) clamp(16px, 4vw, 32px)
     clamp(3.5rem, 7vw, 5.5rem);
-  background: var(--ifm-footer-background-color);
+  background: var(--oomol-footer-band-bg);
   box-sizing: border-box;
 }
 
@@ -23,7 +23,7 @@
   padding-bottom: clamp(2.2rem, 5vw, 3.5rem);
   border: 1px solid var(--oomol-border-default);
   border-radius: 14px;
-  background: var(--ifm-footer-background-color);
+  background: var(--oomol-bg-base);
   text-align: center;
 }
 
@@ -119,5 +119,11 @@
   .ctaTitle {
     font-size: var(--oomol-display-card);
     line-height: 1.14;
+  }
+}
+
+[data-theme="dark"] {
+  .inner {
+    background: var(--oomol-bg-elevated);
   }
 }

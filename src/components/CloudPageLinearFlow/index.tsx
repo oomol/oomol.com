@@ -1,5 +1,4 @@
 import styles from "./styles.module.scss";
-import siteCtaStyles from "@site/src/components/SiteCta/styles.module.scss";
 
 import type { DocusaurusContext } from "@docusaurus/types";
 
@@ -7,6 +6,7 @@ import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import CloudPageDeveloperBenefits from "@site/src/components/CloudPageDeveloperBenefits";
+import ResponsiveVideo from "@site/src/components/mdx/ResponsiveVideo";
 import { SiteCta } from "@site/src/components/SiteCta";
 import { Button } from "@site/src/components/ui/button";
 import { clsx } from "clsx";
@@ -59,17 +59,18 @@ function VideoCard({ title, note, src }: VideoCardProps) {
   return (
     <div className={styles.videoCard}>
       <div className={styles.videoCardMedia}>
-        <video
-          className={styles.videoCardVideo}
+        <ResponsiveVideo
           autoPlay
+          className={styles.videoCardVideo}
           loop
           muted
           playsInline
-          preload="metadata"
+          preload="none"
+          src={src}
+          type="video/webm"
+          loadRootMargin="360px 0px"
           aria-label={title}
-        >
-          <source src={src} type="video/webm" />
-        </video>
+        />
       </div>
       <div className={styles.videoCardMeta}>
         <h3 className={styles.videoCardTitle}>{title}</h3>
@@ -83,7 +84,13 @@ function ImageCard({ title, note, src, pills }: ImageCardProps) {
   return (
     <div className={styles.videoCard}>
       <div className={styles.imageCardMedia}>
-        <img className={styles.imageCardImage} src={src} alt={title} />
+        <img
+          className={styles.imageCardImage}
+          src={src}
+          alt={title}
+          loading="lazy"
+          decoding="async"
+        />
       </div>
       <div className={styles.videoCardMeta}>
         <h3 className={styles.videoCardTitle}>{title}</h3>
@@ -206,8 +213,8 @@ export default function CloudPageLinearFlow() {
   const copy = i18n.currentLocale === "zh-CN" ? zhCopy : enCopy;
   const cloudConsoleImage = useBaseUrl(
     i18n.currentLocale === "zh-CN"
-      ? "/img/pages/home/cloud-console-zh.png"
-      : "/img/pages/home/cloud-console-en.png"
+      ? "/img/pages/home/cloud-console-zh.webp"
+      : "/img/pages/home/cloud-console-en.webp"
   );
 
   return (
@@ -298,19 +305,20 @@ export default function CloudPageLinearFlow() {
         description={copy.cta.description}
         actions={
           <>
-            <Button asChild size="lg" className={siteCtaStyles.actionButton}>
+            <Button asChild size="lg">
               <Link to="/docs/cloud-services/cloud-function">
                 {copy.cta.primary}
               </Link>
             </Button>
-            <a
-              href="https://console.oomol.com/cloud-function"
-              target="_blank"
-              rel="noreferrer"
-              className={siteCtaStyles.ghostLink}
-            >
-              {copy.cta.secondary}
-            </a>
+            <Button asChild size="lg" variant="outline">
+              <a
+                href="https://console.oomol.com/cloud-function"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {copy.cta.secondary}
+              </a>
+            </Button>
           </>
         }
       />

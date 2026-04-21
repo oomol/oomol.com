@@ -2,36 +2,6 @@
 @use "./design-tokens.scss" as *;
 @use "./mixins.scss" as *;
 
-/* Radix Themes — only for components that opt in (e.g. Cookie preferences Switch). */
-@import "@radix-ui/themes/styles.css";
-
-/* Root `Theme` in Radix sets `min-height: 100vh` on `.radix-themes[data-is-root-theme='true']`.
-   In a dialog that becomes a full-viewport “pillar”; scope the override to cookie preferences only. */
-.oomol-cookie-preferences-theme.radix-themes[data-is-root-theme="true"] {
-  min-height: 0;
-}
-
-/* Cookie switches: Radix default `accentColor="gray"` makes the “on” track too close to “off”.
-   Use the same fill token as the primary Button (`--oomol-foreground`). */
-.oomol-cookie-preferences-theme.radix-themes
-  .rt-SwitchRoot.rt-variant-surface:not([data-disabled])::before {
-  background-image: linear-gradient(
-    to right,
-    var(--oomol-foreground) 40%,
-    transparent 60%
-  );
-}
-
-.oomol-cookie-preferences-theme.radix-themes
-  .rt-SwitchRoot.rt-variant-surface:not([data-disabled])
-  :where(.rt-SwitchThumb):where([data-state="checked"]) {
-  box-shadow:
-    0 1px 3px var(--black-a2),
-    0 2px 4px -1px var(--black-a1),
-    0 0 0 1px var(--black-a2),
-    -1px 0 1px var(--black-a2);
-}
-
 :root {
   --ifm-color-primary: var(--oomol-primary);
   --ifm-color-primary-dark: #45486f;
@@ -68,7 +38,8 @@
   --ifm-menu-color-background-hover: var(--oomol-hover-bg);
   --ifm-toc-link-color: var(--oomol-text-secondary);
   --ifm-navbar-link-color: var(--oomol-text-primary);
-  --ifm-footer-background-color: var(--oomol-bg-base);
+  --oomol-footer-band-bg: var(--oomol-bg-spotlight);
+  --ifm-footer-background-color: var(--oomol-footer-band-bg);
 }
 
 /* iOS Safari may auto-enlarge text on real devices, which can cause
@@ -96,7 +67,8 @@ html {
   --ifm-menu-color-background-hover: var(--oomol-hover-bg);
   --ifm-toc-link-color: var(--oomol-text-secondary);
   --ifm-navbar-link-color: var(--oomol-text-primary);
-  --ifm-footer-background-color: var(--oomol-bg-base);
+  --oomol-footer-band-bg: var(--oomol-bg-container);
+  --ifm-footer-background-color: var(--oomol-footer-band-bg);
 }
 
 html,
@@ -447,6 +419,15 @@ body,
 .oomol-home-main > section:nth-of-type(even),
 .oomol-landing-main:not(.oomol-app-page) > section:nth-of-type(even) {
   background: var(--oomol-bg-container);
+}
+
+/* CTA band before the swizzled footer should match the footer background,
+   instead of participating in the generic odd/even landing-page striping. */
+.oomol-home-main > section[data-oomol-surface="footer-band"],
+.oomol-landing-main:not(.oomol-app-page)
+  > section[data-oomol-surface="footer-band"] {
+  background: var(--oomol-footer-band-bg);
+  border-bottom: 0;
 }
 
 /* 抹掉 section 内装饰性渐变伪元素（许多老样式用 ::before 画紫光） */

@@ -21,8 +21,8 @@ const principles = [
       "STUDIO.principle1.paragraph3",
     ],
     image: {
-      light: "/img/pages/studio/code-light.png",
-      dark: "/img/pages/studio/code-dark.png",
+      light: "/img/pages/studio/code-light.webp",
+      dark: "/img/pages/studio/code-dark.webp",
     },
     alt: "Write function tools with code in OOMOL Studio",
   },
@@ -34,8 +34,8 @@ const principles = [
       "STUDIO.principle2.paragraph3",
     ],
     image: {
-      light: "/img/pages/studio/edit-light.png",
-      dark: "/img/pages/studio/edit-dark.png",
+      light: "/img/pages/studio/edit-light.webp",
+      dark: "/img/pages/studio/edit-dark.webp",
     },
     alt: "Developer experience for function tools in OOMOL Studio",
   },
@@ -47,8 +47,8 @@ const principles = [
       "STUDIO.principle3.paragraph3",
     ],
     image: {
-      light: "/img/pages/studio/package-light.png",
-      dark: "/img/pages/studio/package-dark.png",
+      light: "/img/pages/studio/package-light.webp",
+      dark: "/img/pages/studio/package-dark.webp",
     },
     alt: "Local and cloud continuity for tools built in OOMOL Studio",
   },
@@ -73,14 +73,14 @@ const painPoints = [
 ];
 
 export default function StudioPage() {
-  const studioPreviewLight = useBaseUrl("/img/pages/studio/studio-light.png");
-  const studioPreviewDark = useBaseUrl("/img/pages/studio/studio-dark.png");
-  const principle1Light = useBaseUrl("/img/pages/studio/code-light.png");
-  const principle1Dark = useBaseUrl("/img/pages/studio/code-dark.png");
-  const principle2Light = useBaseUrl("/img/pages/studio/edit-light.png");
-  const principle2Dark = useBaseUrl("/img/pages/studio/edit-dark.png");
-  const principle3Light = useBaseUrl("/img/pages/studio/package-light.png");
-  const principle3Dark = useBaseUrl("/img/pages/studio/package-dark.png");
+  const studioPreviewLight = useBaseUrl("/img/pages/studio/studio-light.webp");
+  const studioPreviewDark = useBaseUrl("/img/pages/studio/studio-dark.webp");
+  const principle1Light = useBaseUrl("/img/pages/studio/code-light.webp");
+  const principle1Dark = useBaseUrl("/img/pages/studio/code-dark.webp");
+  const principle2Light = useBaseUrl("/img/pages/studio/edit-light.webp");
+  const principle2Dark = useBaseUrl("/img/pages/studio/edit-dark.webp");
+  const principle3Light = useBaseUrl("/img/pages/studio/package-light.webp");
+  const principle3Dark = useBaseUrl("/img/pages/studio/package-dark.webp");
   const principleImages = [
     { light: principle1Light, dark: principle1Dark },
     { light: principle2Light, dark: principle2Dark },

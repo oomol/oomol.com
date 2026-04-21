@@ -45,7 +45,7 @@ export default function CloudPageFirstScreen() {
   const heroVideoUrl =
     "https://static.oomol.com/assets/homepage/oomol-flow-en.webm";
   const heroVideoPosterUrl = useBaseUrl(
-    "/img/pages/home/homepage-first-screen-workflow-poster.png"
+    "/img/pages/home/homepage-first-screen-workflow-poster.webp"
   );
 
   const handlePlay = async () => {
@@ -119,7 +119,7 @@ export default function CloudPageFirstScreen() {
               controls={isPlaying}
               poster={heroVideoPosterUrl}
               playsInline
-              preload="metadata"
+              preload="none"
               onPlay={() => setIsPlaying(true)}
               onPause={() => {
                 if (videoRef.current && videoRef.current.currentTime === 0) {
