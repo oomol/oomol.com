@@ -86,8 +86,10 @@ export default function HomepageGuiEntry() {
         <div className={styles.card}>
           <div className={styles.copy}>
             <div className={styles.badge}>{copy.badge}</div>
-            <h2 className={styles.title}>{renderLockedBrand(copy.title)}</h2>
-            <p className={styles.description}>{copy.description}</p>
+            <h2 className={styles.sectionTitle}>
+              {renderLockedBrand(copy.title)}
+            </h2>
+            <p className={styles.sectionDescription}>{copy.description}</p>
             <div className={styles.pointRow}>
               {copy.points.map(point => (
                 <span key={point} className={styles.point}>

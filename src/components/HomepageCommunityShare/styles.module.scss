@@ -1,3 +1,5 @@
+@use "../../css/mixins.scss" as *;
+
 .section {
   padding: 0;
 }
@@ -18,25 +20,12 @@
   text-align: left;
 }
 
-.title {
-  margin: 0;
-  max-width: 11ch;
-  font-family: var(--oomol-font-display);
-  font-size: var(--oomol-display-hero);
-  line-height: 1.04;
-  letter-spacing: var(--oomol-tracking-display);
-  font-weight: 600;
-  text-wrap: balance;
-  color: var(--oomol-text-primary);
+.sectionTitle {
+  @include marketing-display-title(hero, 11ch, left, 1.04);
 }
 
-.subtitle {
-  margin: 0;
-  max-width: 32rem;
-  font-size: var(--oomol-body-lead);
-  line-height: var(--oomol-line-height-relaxed);
-  letter-spacing: var(--oomol-tracking-body);
-  color: var(--oomol-text-secondary);
+.sectionSubtitle {
+  @include marketing-supporting-copy(32rem);
 }
 
 .pointsGrid {
@@ -114,7 +103,7 @@
   gap: clamp(2.1rem, 4vw, 3.4rem);
 }
 
-:global(html[lang="en"]) .title {
+:global(html[lang="en"]) .sectionTitle {
   max-width: 18ch;
   font-size: var(--oomol-display-hero);
   line-height: 1.03;
@@ -130,7 +119,7 @@
     gap: 1.5rem;
   }
 
-  .title {
+  .sectionTitle {
     max-width: 100%;
   }
 
@@ -149,7 +138,7 @@
     grid-template-columns: 1fr;
   }
 
-  .title {
+  .sectionTitle {
     font-size: var(--oomol-display-hero);
     line-height: 1.08;
     letter-spacing: var(--oomol-tracking-display);
@@ -160,7 +149,7 @@
     gap: 0.85rem;
   }
 
-  .subtitle,
+  .sectionSubtitle,
   .pointDescription {
     font-size: var(--oomol-body-base);
     line-height: 1.6;

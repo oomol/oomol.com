@@ -8,10 +8,10 @@ export default function StudioPdfCraftCase() {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.title}>
+          <h2 className={styles.sectionTitle}>
             {translate({ message: "STUDIO.case.title" })}
           </h2>
-          <p className={styles.subtitle}>
+          <p className={styles.sectionSubtitle}>
             {translate({ message: "STUDIO.case.subtitle" })}
           </p>
         </div>

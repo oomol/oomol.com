@@ -171,8 +171,8 @@ export default function Downloads() {
           <div className={styles.heroInner}>
             <span className={styles.eyebrow}>{copy.heroEyebrow}</span>
             <div className={styles.titleBox}>
-              <h1 className={styles.title}>{copy.heroTitle}</h1>
-              <p className={styles["sub-title"]}>{copy.heroSubtitle}</p>
+              <h1 className={styles.heroTitle}>{copy.heroTitle}</h1>
+              <p className={styles.heroSubtitle}>{copy.heroSubtitle}</p>
             </div>
           </div>
         </section>

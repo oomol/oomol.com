@@ -215,10 +215,10 @@ export default function BrandAssets() {
       </Head>
       <div className={styles.container}>
         <div className={styles.titleBox}>
-          <h1 className={styles.title}>
+          <h1 className={styles.heroTitle}>
             {translate({ message: "HOME.BrandAssets.title" })}
           </h1>
-          <p className={styles.subTitle}>
+          <p className={styles.heroSubtitle}>
             {translate({ message: "HOME.BrandAssets.subtitle" })}
           </p>
         </div>

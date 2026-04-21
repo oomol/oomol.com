@@ -27,7 +27,7 @@ export default function Support() {
         <div className={styles.supportCellBox}>
           <Card className={styles.supportCell}>
             <CardHeader className={styles.supportHeader}>
-              <div className={styles.title}>
+              <div className={styles.supportCardTitleRow}>
                 <i
                   className={`i-bi-github ${styles.titleIcon}`}
                   aria-hidden="true"
@@ -55,7 +55,7 @@ export default function Support() {
           </Card>
           <Card className={styles.supportCell}>
             <CardHeader className={styles.supportHeader}>
-              <div className={styles.title}>
+              <div className={styles.supportCardTitleRow}>
                 <i
                   className={`i-bi-discord ${styles.titleIconMuted}`}
                   aria-hidden="true"
@@ -83,7 +83,7 @@ export default function Support() {
           </Card>
           <Card className={styles.supportCell}>
             <CardHeader className={styles.supportHeader}>
-              <div className={styles.title}>
+              <div className={styles.supportCardTitleRow}>
                 <i
                   className={`i-codicon-mail ${styles.titleIcon}`}
                   aria-hidden="true"

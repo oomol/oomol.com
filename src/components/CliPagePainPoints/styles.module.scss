@@ -44,11 +44,11 @@
   }
 }
 
-.title {
+.sectionTitle {
   @include marketing-display-title(section, 22ch, left, 1.06);
 }
 
-.subtitle {
+.sectionSubtitle {
   @include marketing-supporting-copy(44rem);
 }
 
@@ -186,11 +186,11 @@
 
 /* ── English overrides ── */
 
-:global(html[lang="en"]) .title {
+:global(html[lang="en"]) .sectionTitle {
   max-width: 26ch;
 }
 
-:global(html[lang="en"]) .subtitle {
+:global(html[lang="en"]) .sectionSubtitle {
   max-width: 48rem;
 }
 
@@ -247,11 +247,11 @@
     }
   }
 
-  .title {
+  .sectionTitle {
     font-size: var(--oomol-display-section);
   }
 
-  .subtitle {
+  .sectionSubtitle {
     @include marketing-mobile-supporting-copy();
   }
 }

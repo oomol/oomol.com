@@ -667,10 +667,10 @@ export default function Index() {
         <section className={styles.heroSection}>
           <div className={styles.sectionInner}>
             <div className={styles.titleBox}>
-              <h1 className={styles.title}>
+              <h1 className={styles.heroTitle}>
                 {translate({ message: "PRICING.title" })}
               </h1>
-              <p className={styles.subTitle}>
+              <p className={styles.heroSubtitle}>
                 {translate({ message: "PRICING.subtitle" })}
               </p>
             </div>

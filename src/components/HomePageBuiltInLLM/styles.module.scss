@@ -1,3 +1,5 @@
+@use "../../css/mixins.scss" as *;
+
 .container {
   display: flex;
   flex-direction: column;
@@ -27,24 +29,15 @@
   margin-bottom: 24px;
 }
 
-.title {
-  font-family: var(--oomol-font-display);
-  font-size: var(--oomol-display-section);
-  font-weight: 600;
-  color: var(--oomol-text-primary);
+.sectionTitle {
+  @include marketing-display-title(section, null, center, 1.12);
   margin-bottom: 12px;
-  letter-spacing: var(--oomol-tracking-section);
-  line-height: 1.12;
-  text-wrap: balance;
 }
 
-.subtitle {
-  font-size: var(--oomol-body-lead);
-  color: var(--oomol-text-secondary);
+.sectionSubtitle {
+  @include marketing-supporting-copy(720px, center);
   max-width: 720px;
   margin: 0 auto;
-  line-height: var(--oomol-line-height-relaxed);
-  letter-spacing: var(--oomol-tracking-body);
 }
 
 .llmList {

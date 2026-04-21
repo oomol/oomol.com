@@ -55,12 +55,12 @@
   margin-inline: auto;
 }
 
-.title {
+.heroTitle {
   @include marketing-display-title(hero, 18.5ch, center, 1.05);
   margin-inline: auto;
 }
 
-.sub-title {
+.heroSubtitle {
   @include marketing-supporting-copy(48rem, center);
   margin-inline: auto;
 }
@@ -309,13 +309,13 @@
     padding: clamp(2.6rem, 7vw, 3.4rem) 0 clamp(1.6rem, 4vw, 2.2rem);
   }
 
-  .title {
+  .heroTitle {
     max-width: 100%;
     font-size: var(--oomol-display-hero);
     line-height: 1.08;
   }
 
-  .sub-title {
+  .heroSubtitle {
     @include marketing-mobile-supporting-copy();
   }
 
@@ -371,12 +371,12 @@
     gap: 0.65rem;
   }
 
-  .title {
+  .heroTitle {
     font-size: clamp(2.25rem, 12vw, 3rem);
     line-height: 1.06;
   }
 
-  .sub-title,
+  .heroSubtitle,
   .sectionSubtitle {
     line-height: 1.56;
   }

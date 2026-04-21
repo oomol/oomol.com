@@ -59,10 +59,10 @@ const pricingTopUpData = [
 const HomepagePricing = () => {
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>
+      <h2 className={styles.sectionTitle}>
         <img src={"/img/pricing.svg"} />
         {translate({ message: "HOME.Pricing.title" })}
-      </h1>
+      </h2>
       <BlurFade>
         <div className={styles.pricing}>
           {pricingData.map((item, index) => {

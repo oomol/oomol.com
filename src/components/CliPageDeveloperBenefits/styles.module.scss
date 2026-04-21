@@ -47,11 +47,11 @@
   }
 }
 
-.title {
+.sectionTitle {
   @include marketing-display-title(hero, 16ch, left, 1.06);
 }
 
-.subtitle {
+.sectionSubtitle {
   @include marketing-supporting-copy(32rem, left, 1.6, null);
 }
 
@@ -267,11 +267,11 @@
   max-width: 38rem;
 }
 
-:global(html[lang="en"]) .title {
+:global(html[lang="en"]) .sectionTitle {
   max-width: 20ch;
 }
 
-:global(html[lang="en"]) .subtitle {
+:global(html[lang="en"]) .sectionSubtitle {
   max-width: 42rem;
 }
 
@@ -292,7 +292,7 @@
     max-width: 100%;
   }
 
-  .title {
+  .sectionTitle {
     max-width: 100%;
   }
 }
@@ -306,7 +306,7 @@
     width: min(100%, calc(100% - 40px));
   }
 
-  .subtitle {
+  .sectionSubtitle {
     @include marketing-mobile-supporting-copy();
   }
 

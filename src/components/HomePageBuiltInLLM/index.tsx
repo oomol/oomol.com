@@ -101,10 +101,10 @@ export default function HomePageBuiltInLLM() {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <h2 className={styles.title}>
+        <h2 className={styles.sectionTitle}>
           {translate({ id: "HOME.Built-in.title" })}
         </h2>
-        <p className={styles.subtitle}>
+        <p className={styles.sectionSubtitle}>
           {translate({ id: "HOME.Built-in.subtitle" })}
         </p>
       </div>

@@ -44,13 +44,13 @@
   background: var(--oomol-primary);
 }
 
-.title {
+.sectionTitle {
   @include marketing-display-title(hero, 18ch, left, 1.08);
   overflow-wrap: anywhere;
   word-break: break-word;
 }
 
-.subtitle {
+.sectionSubtitle {
   @include marketing-supporting-copy(38rem);
   overflow-wrap: anywhere;
   word-break: break-word;
@@ -174,12 +174,12 @@
     padding-inline: 20px;
   }
 
-  .title {
+  .sectionTitle {
     max-width: 100%;
     font-size: var(--oomol-display-section);
   }
 
-  .subtitle {
+  .sectionSubtitle {
     @include marketing-mobile-supporting-copy();
   }
 
@@ -198,7 +198,7 @@
     padding-inline: 16px;
   }
 
-  .title {
+  .sectionTitle {
     font-size: var(--oomol-display-card);
     line-height: 1.14;
   }
@@ -221,6 +221,6 @@
   }
 }
 
-:global(html[lang="en"]) .title {
+:global(html[lang="en"]) .sectionTitle {
   max-width: 22ch;
 }

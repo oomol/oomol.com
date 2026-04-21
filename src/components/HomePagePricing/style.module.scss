@@ -1,3 +1,5 @@
+@use "../../css/mixins.scss" as *;
+
 .container {
   display: flex;
   flex-direction: column;
@@ -6,15 +8,11 @@
   box-sizing: border-box;
 }
 
-.title {
+.sectionTitle {
   display: flex;
   align-items: center;
   gap: 14px;
-  font-family: var(--oomol-font-display);
-  font-size: var(--oomol-font-size-3xl);
-  color: var(--oomol-text-primary);
-  font-weight: 600;
-  letter-spacing: var(--oomol-tracking-section);
+  @include marketing-display-title(section, null, center, 1.12);
   padding-top: 40px;
   padding-bottom: 60px;
 }
@@ -129,7 +127,7 @@
     padding: 0 12px;
   }
 
-  .title {
+  .sectionTitle {
     gap: 10px;
     padding-top: 28px;
     padding-bottom: 36px;

@@ -135,8 +135,8 @@ export default function CliPageDeveloperBenefits() {
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles.badge}>{copy.badge}</div>
-          <h2 className={styles.title}>{copy.title}</h2>
-          <p className={styles.subtitle}>{copy.subtitle}</p>
+          <h2 className={styles.sectionTitle}>{copy.title}</h2>
+          <p className={styles.sectionSubtitle}>{copy.subtitle}</p>
         </div>
 
         <div className={styles.grid}>

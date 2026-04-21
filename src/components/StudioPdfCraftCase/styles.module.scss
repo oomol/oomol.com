@@ -1,3 +1,5 @@
+@use "../../css/mixins.scss" as *;
+
 .section {
   padding: 100px 24px;
   background: var(--oomol-bg-base);
@@ -21,28 +23,19 @@
   }
 }
 
-.title {
-  font-family: var(--oomol-font-display);
-  font-size: var(--oomol-display-section);
-  font-weight: 600;
-  letter-spacing: var(--oomol-tracking-section);
-  line-height: 1.12;
+.sectionTitle {
+  @include marketing-display-title(section, null, center, 1.12);
   margin-bottom: 16px;
-  color: var(--oomol-text-primary);
-  text-wrap: balance;
 
   @media (max-width: 768px) {
     font-size: var(--oomol-display-section);
   }
 }
 
-.subtitle {
-  font-size: var(--oomol-body-lead);
-  color: var(--oomol-text-secondary);
+.sectionSubtitle {
+  @include marketing-supporting-copy(700px, center);
   max-width: 700px;
   margin: 0 auto;
-  line-height: var(--oomol-line-height-relaxed);
-  letter-spacing: var(--oomol-tracking-body);
 
   @media (max-width: 768px) {
     font-size: var(--oomol-body-lead);

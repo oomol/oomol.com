@@ -208,7 +208,7 @@ const Footer: React.FC = () => {
           {links.map((linkItem, i) => (
             <div key={i} className={styles.category}>
               {linkItem.title && (
-                <div className={styles.title}>{linkItem.title}</div>
+                <div className={styles.categoryTitle}>{linkItem.title}</div>
               )}
               {linkItem.items?.length > 0 && (
                 <div className={styles.items}>

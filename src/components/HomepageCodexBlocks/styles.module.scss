@@ -1,3 +1,5 @@
+@use "../../css/mixins.scss" as *;
+
 .section {
   padding: clamp(4rem, 8vw, 6rem) 0 clamp(2.5rem, 5vw, 4rem);
   background: var(--oomol-bg-base);
@@ -38,25 +40,12 @@
   }
 }
 
-.title {
-  margin: 0;
-  max-width: 12ch;
-  font-family: var(--oomol-font-display);
-  font-size: var(--oomol-display-hero);
-  line-height: 1.04;
-  letter-spacing: var(--oomol-tracking-display);
-  font-weight: 600;
-  text-wrap: balance;
-  color: var(--oomol-text-primary);
+.sectionTitle {
+  @include marketing-display-title(hero, 12ch, left, 1.04);
 }
 
-.subtitle {
-  margin: 0;
-  max-width: 48rem;
-  font-size: var(--oomol-body-lead);
-  line-height: var(--oomol-line-height-relaxed);
-  letter-spacing: var(--oomol-tracking-body);
-  color: var(--oomol-text-secondary);
+.sectionSubtitle {
+  @include marketing-supporting-copy(48rem);
 }
 
 .headerActions {
@@ -262,7 +251,7 @@
   color: var(--oomol-text-secondary);
 }
 
-:global(html[lang="en"]) .title {
+:global(html[lang="en"]) .sectionTitle {
   max-width: 18ch;
   font-size: var(--oomol-display-hero);
   line-height: 1.03;
@@ -283,7 +272,7 @@
     padding: 0 20px;
   }
 
-  .title {
+  .sectionTitle {
     max-width: 100%;
     font-size: var(--oomol-display-hero);
     line-height: 1.08;
@@ -291,7 +280,7 @@
     text-wrap: pretty;
   }
 
-  .subtitle,
+  .sectionSubtitle,
   .cardDescription,
   .videoMetaNote {
     font-size: var(--oomol-body-base);

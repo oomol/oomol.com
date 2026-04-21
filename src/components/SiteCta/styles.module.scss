@@ -4,8 +4,7 @@
   width: 100%;
   /* Horizontal padding is on `.section` (not `.inner`) so the rounded
      `.inner` card never touches the viewport edge on narrow screens. */
-  padding:
-    clamp(5rem, 10vw, 8rem) clamp(16px, 4vw, 32px)
+  padding: clamp(5rem, 10vw, 8rem) clamp(16px, 4vw, 32px)
     clamp(3.5rem, 7vw, 5.5rem);
   background: var(--oomol-bg-spotlight);
   box-sizing: border-box;
@@ -28,13 +27,13 @@
   text-align: center;
 }
 
-.title {
+.ctaTitle {
   @include marketing-display-title(section, 24ch, center, 1.08);
   overflow-wrap: anywhere;
   word-break: break-word;
 }
 
-.description {
+.ctaDescription {
   @include marketing-supporting-copy(42rem, center);
   overflow-wrap: anywhere;
   word-break: break-word;
@@ -84,12 +83,12 @@
     padding-bottom: 2rem;
   }
 
-  .title {
+  .ctaTitle {
     max-width: 100%;
     font-size: var(--oomol-display-section);
   }
 
-  .description {
+  .ctaDescription {
     @include marketing-mobile-supporting-copy();
   }
 
@@ -117,7 +116,7 @@
     padding-bottom: 1.65rem;
   }
 
-  .title {
+  .ctaTitle {
     font-size: var(--oomol-display-card);
     line-height: 1.14;
   }
