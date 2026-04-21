@@ -76,8 +76,8 @@ export default function HomepageGuiEntry() {
     }),
   };
   const imageSources = {
-    light: useBaseUrl("/img/pages/app/chat-light.png"),
-    dark: useBaseUrl("/img/pages/app/chat-dark.png"),
+    light: useBaseUrl("/img/pages/app/chat-light.webp"),
+    dark: useBaseUrl("/img/pages/app/chat-dark.webp"),
   };
 
   return (

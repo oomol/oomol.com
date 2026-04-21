@@ -55,15 +55,20 @@ type DownloadItem = {
   kind?: "web" | "desktop" | "ios";
 };
 
-const VIDEO_BASE_URL = "https://static.oomol.com/assets/homepage";
+const VIDEO_BASE_URL = "/video/app";
 
 const VIDEO_FILES = {
-  hero: { zh: "chart-gen-4k-ZH.mp4", en: "chart-gen-4K-en.mp4" },
-  startFast: { zh: "use-skills-4K-ZH.mp4", en: "use-skills-4K-en.mp4" },
-  /* EN: chart-edit-4K-en.mp4 在 CDN 上当前 404；与 ZH 共用可用片源，避免工作流区块黑屏 */
-  keepEditing: { zh: "chart-edit-4k-ZH.mp4", en: "chart-edit-4k-ZH.mp4" },
-  trustSources: { zh: "chat-source-4K-ZH.mp4", en: "chat-source-4K-en.mp4" },
-  outputs: { zh: "epub-translate-4K-ZH.mp4", en: "epub-translator-4K-en.mp4" },
+  hero: { zh: "chart-gen-zh-web.mp4", en: "chart-gen-en-web.mp4" },
+  startFast: { zh: "use-skills-zh-web.mp4", en: "use-skills-en-web.mp4" },
+  keepEditing: { zh: "chart-edit-zh-web.mp4", en: "chart-edit-zh-web.mp4" },
+  trustSources: {
+    zh: "chat-source-zh-web.mp4",
+    en: "chat-source-en-web.mp4",
+  },
+  outputs: {
+    zh: "epub-translator-zh-web.mp4",
+    en: "epub-translator-en-web.mp4",
+  },
 } as const;
 
 /** 与导出素材一致；若源文件改版请同步更新（用于 /app 尺寸标注）。 */
@@ -488,6 +493,7 @@ const AutoPlayVideo = memo(function AutoPlayVideo({
   label: string;
 }) {
   const [showControls, setShowControls] = useState(false);
+  const [shouldLoad, setShouldLoad] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -510,6 +516,7 @@ const AutoPlayVideo = memo(function AutoPlayVideo({
     };
 
     if (typeof IntersectionObserver === "undefined") {
+      setShouldLoad(true);
       playVideo();
       return;
     }
@@ -522,36 +529,55 @@ const AutoPlayVideo = memo(function AutoPlayVideo({
         }
 
         if (entry.isIntersecting) {
+          setShouldLoad(true);
           playVideo();
           return;
         }
 
         video.pause();
       },
-      { threshold: 0 }
+      {
+        rootMargin: "320px 0px",
+        threshold: 0.01,
+      }
     );
 
     observer.observe(video);
     return () => observer.disconnect();
   }, [src]);
 
+  useEffect(() => {
+    if (!shouldLoad) {
+      return;
+    }
+
+    const video = videoRef.current;
+    if (!video) {
+      return;
+    }
+
+    video.load();
+    void video.play().catch(() => {});
+  }, [shouldLoad, src]);
+
   return (
     <video
       ref={videoRef}
       className={className}
-      src={src}
       aria-label={label}
       muted
       loop
       playsInline
-      preload="metadata"
+      preload={shouldLoad ? "metadata" : "none"}
       controls={showControls}
       tabIndex={0}
       onMouseEnter={() => setShowControls(true)}
       onMouseLeave={() => setShowControls(false)}
       onFocus={() => setShowControls(true)}
       onBlur={() => setShowControls(false)}
-    />
+    >
+      {shouldLoad ? <source src={src} type="video/mp4" /> : null}
+    </video>
   );
 });
 
@@ -571,7 +597,11 @@ export default function AppPage() {
     : [copy.pricing.title];
 
   const nativeWorkspacePng = useBaseUrl(
-    "/img/pages/app/chat-login-agent-miniapps.png"
+    "/img/pages/app/chat-login-agent-miniapps.webp"
+  );
+  const heroVideoSrc = useBaseUrl(getLocalizedVideoSrc(VIDEO_FILES.hero, isZh));
+  const outputsVideoSrc = useBaseUrl(
+    getLocalizedVideoSrc(VIDEO_FILES.outputs, isZh)
   );
 
   useEffect(() => {
@@ -747,7 +777,7 @@ export default function AppPage() {
                 <div className={styles.heroFrame}>
                   <AutoPlayVideo
                     className={styles.heroScreenshot}
-                    src={getLocalizedVideoSrc(VIDEO_FILES.hero, isZh)}
+                    src={heroVideoSrc}
                     label={copy.hero.productScreenshotAlt}
                   />
                 </div>
@@ -816,6 +846,10 @@ export default function AppPage() {
                   src={nativeWorkspacePng}
                   alt={copy.models.demo.imageAlt}
                   className={styles.modelDemoImage}
+                  width={APP_MEDIA_PIXELS.nativeWorkspacePng.width}
+                  height={APP_MEDIA_PIXELS.nativeWorkspacePng.height}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <figcaption className={styles.mediaDimension}>
@@ -898,7 +932,7 @@ export default function AppPage() {
               <div className={styles.outputsShowcaseFrame}>
                 <AutoPlayVideo
                   className={styles.outputsShowcaseImage}
-                  src={getLocalizedVideoSrc(VIDEO_FILES.outputs, isZh)}
+                  src={outputsVideoSrc}
                   label={copy.outputs.imageAlt}
                 />
               </div>

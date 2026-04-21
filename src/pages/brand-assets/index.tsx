@@ -36,6 +36,7 @@ export default function BrandAssets() {
   const [isScrolling, setIsScrolling] = useState(false);
   const isManualScroll = useRef(false);
   const activeSectionRef = useRef(activeSection);
+  const isScrollingRef = useRef(false);
 
   interface CornerDownloadProps {
     url: string;
@@ -149,12 +150,19 @@ export default function BrandAssets() {
   useEffect(() => {
     let scrollTimer = null;
     const handleScroll = () => {
-      if (!isScrolling) setIsScrolling(true);
+      if (!isScrollingRef.current) {
+        isScrollingRef.current = true;
+        setIsScrolling(true);
+      }
 
       if (scrollTimer) clearTimeout(scrollTimer);
 
       scrollTimer = setTimeout(() => {
-        setIsScrolling(false);
+        if (isScrollingRef.current) {
+          isScrollingRef.current = false;
+          setIsScrolling(false);
+        }
+
         // 只有非手动滚动时才更新状态
         if (!isManualScroll.current) {
           const currentScroll = window.scrollY + 100;
@@ -193,12 +201,12 @@ export default function BrandAssets() {
       }, 100);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
       if (scrollTimer) clearTimeout(scrollTimer);
     };
-  }, [sections, isScrolling]);
+  }, [sections]);
 
   return (
     <Layout>

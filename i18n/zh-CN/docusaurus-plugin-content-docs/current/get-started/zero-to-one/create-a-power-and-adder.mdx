@@ -4,6 +4,7 @@ sidebar_label: 创建加法器
 ---
 
 import Image from "@theme/ThemedImage";
+import ThemedResponsiveVideo from "@site/src/components/mdx/ThemedResponsiveVideo";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 # 创建一个加法器和幂运算器
@@ -12,15 +13,15 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ## 创建一个加法器
 
-<Image
-  sources={{
-    light: useBaseUrl(
-      "/img/docs/cn/get-started/zero-to-one/scriptlet-drag-light.gif"
-    ),
-    dark: useBaseUrl(
-      "/img/docs/cn/get-started/zero-to-one/scriptlet-drag-dark.gif"
-    ),
-  }}
+<ThemedResponsiveVideo
+  lightSrc="/img/docs/cn/get-started/zero-to-one/scriptlet-drag-light.mp4"
+  darkSrc="/img/docs/cn/get-started/zero-to-one/scriptlet-drag-dark.mp4"
+  type="video/mp4"
+  muted
+  autoPlay
+  loop
+  playsInline
+  preload="none"
 />
 
 OOMOL Studio 有一些内置的系统区块，而小脚本区块就包含在里面，如: _Python_、_TypeScript_、_JavaScript_
@@ -32,16 +33,16 @@ OOMOL Studio 有一些内置的系统区块，而小脚本区块就包含在里�
 ### 配置输入
 
 <div className="image-container">
-  <Image
+  <ThemedResponsiveVideo
     style={{ width: "450px" }}
-    sources={{
-      light: useBaseUrl(
-        "/img/docs/cn/get-started/zero-to-one/scriptlet-set-input-light.gif"
-      ),
-      dark: useBaseUrl(
-        "/img/docs/cn/get-started/zero-to-one/scriptlet-set-input-dark.gif"
-      ),
-    }}
+    lightSrc="/img/docs/cn/get-started/zero-to-one/scriptlet-set-input-light.mp4"
+    darkSrc="/img/docs/cn/get-started/zero-to-one/scriptlet-set-input-dark.mp4"
+    type="video/mp4"
+    muted
+    autoPlay
+    loop
+    playsInline
+    preload="none"
   />
 </div>
 
@@ -95,10 +96,10 @@ return { output: params.a + params.b };
     style={{ width: "600px" }}
     sources={{
       light: useBaseUrl(
-        "/img/docs/cn/get-started/zero-to-one/scriptlet-run-block-light.png"
+        "/img/docs/cn/get-started/zero-to-one/scriptlet-run-block-light.webp"
       ),
       dark: useBaseUrl(
-        "/img/docs/cn/get-started/zero-to-one/scriptlet-run-block-dark.png"
+        "/img/docs/cn/get-started/zero-to-one/scriptlet-run-block-dark.webp"
       ),
     }}
   />
@@ -113,10 +114,10 @@ return { output: params.a + params.b };
     style={{ width: "600px" }}
     sources={{
       light: useBaseUrl(
-        "/img/docs/cn/get-started/zero-to-one/run-power-calculator-light.png"
+        "/img/docs/cn/get-started/zero-to-one/run-power-calculator-light.webp"
       ),
       dark: useBaseUrl(
-        "/img/docs/cn/get-started/zero-to-one/run-power-calculator-dark.png"
+        "/img/docs/cn/get-started/zero-to-one/run-power-calculator-dark.webp"
       ),
     }}
   />

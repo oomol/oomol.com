@@ -118,7 +118,7 @@ export default function CliPageFirstScreen() {
               controls={isPlaying}
               poster={heroVideoPosterUrl}
               playsInline
-              preload="metadata"
+              preload="none"
               onPlay={() => setIsPlaying(true)}
               onPause={() => {
                 if (videoRef.current && videoRef.current.currentTime === 0) {

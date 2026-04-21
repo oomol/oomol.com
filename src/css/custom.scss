@@ -2,36 +2,6 @@
 @use "./design-tokens.scss" as *;
 @use "./mixins.scss" as *;
 
-/* Radix Themes — only for components that opt in (e.g. Cookie preferences Switch). */
-@import "@radix-ui/themes/styles.css";
-
-/* Root `Theme` in Radix sets `min-height: 100vh` on `.radix-themes[data-is-root-theme='true']`.
-   In a dialog that becomes a full-viewport “pillar”; scope the override to cookie preferences only. */
-.oomol-cookie-preferences-theme.radix-themes[data-is-root-theme="true"] {
-  min-height: 0;
-}
-
-/* Cookie switches: Radix default `accentColor="gray"` makes the “on” track too close to “off”.
-   Use the same fill token as the primary Button (`--oomol-foreground`). */
-.oomol-cookie-preferences-theme.radix-themes
-  .rt-SwitchRoot.rt-variant-surface:not([data-disabled])::before {
-  background-image: linear-gradient(
-    to right,
-    var(--oomol-foreground) 40%,
-    transparent 60%
-  );
-}
-
-.oomol-cookie-preferences-theme.radix-themes
-  .rt-SwitchRoot.rt-variant-surface:not([data-disabled])
-  :where(.rt-SwitchThumb):where([data-state="checked"]) {
-  box-shadow:
-    0 1px 3px var(--black-a2),
-    0 2px 4px -1px var(--black-a1),
-    0 0 0 1px var(--black-a2),
-    -1px 0 1px var(--black-a2);
-}
-
 :root {
   --ifm-color-primary: var(--oomol-primary);
   --ifm-color-primary-dark: #45486f;

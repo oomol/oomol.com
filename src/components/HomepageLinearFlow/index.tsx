@@ -171,8 +171,8 @@ export default function HomepageLinearFlow() {
   };
   const cloudConsoleImage = useBaseUrl(
     i18n.currentLocale === "zh-CN"
-      ? "/img/pages/home/cloud-console-zh.png"
-      : "/img/pages/home/cloud-console-en.png"
+      ? "/img/pages/home/cloud-console-zh.webp"
+      : "/img/pages/home/cloud-console-en.webp"
   );
   const copy: Copy = {
     cli: {
