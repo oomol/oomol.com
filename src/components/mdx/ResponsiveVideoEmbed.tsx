@@ -23,6 +23,7 @@ export default function ResponsiveVideoEmbed({
   allow = defaultAllow,
   allowFullScreen = true,
   frameBorder = "0",
+  loading = "lazy",
   ...properties
 }: ResponsiveVideoEmbedProps) {
   return (
@@ -47,6 +48,7 @@ export default function ResponsiveVideoEmbed({
         allow={allow}
         allowFullScreen={allowFullScreen}
         frameBorder={frameBorder}
+        loading={loading}
         style={{
           width: "100%",
           height: "100%",
