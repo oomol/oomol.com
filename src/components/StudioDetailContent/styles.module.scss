@@ -64,7 +64,7 @@
   display: grid;
   gap: 0.85rem;
   padding: 1.2rem 1.15rem;
-  border-radius: 1.3rem;
+  border-radius: var(--oomol-radius-3xl);
   background: var(--oomol-bg-container);
   border: 1px solid var(--oomol-divider);
 
@@ -95,7 +95,7 @@
   justify-content: center;
   min-height: 2.85rem;
   padding: 0 1rem;
-  border-radius: 999px;
+  border-radius: var(--oomol-radius-full);
   text-decoration: none;
   font-size: var(--oomol-body-base);
   font-weight: 650;
@@ -124,7 +124,7 @@
 .homePreviewCard {
   min-width: 0;
   padding: 0.9rem;
-  border-radius: 1.8rem;
+  border-radius: var(--oomol-radius-showcase);
   border: 1px solid var(--oomol-divider);
   background: var(--oomol-bg-elevated);
   box-shadow: none;
@@ -133,7 +133,7 @@
 .homePreviewFrame {
   overflow: hidden;
   min-height: 420px;
-  border-radius: 1.3rem;
+  border-radius: var(--oomol-radius-3xl);
   border: 1px solid var(--oomol-divider);
   background: var(--oomol-bg-spotlight);
 }
@@ -173,7 +173,7 @@
 }
 
 .homePrincipleMedia {
-  border-radius: 1.4rem;
+  border-radius: var(--oomol-radius-3xl);
   padding: 0.65rem;
   border: 1px solid var(--oomol-divider);
   background: color-mix(in srgb, var(--oomol-bg-elevated) 96%, white 4%);
@@ -185,7 +185,7 @@
   aspect-ratio: 16 / 10;
   object-fit: cover;
   object-position: top center;
-  border-radius: 1rem;
+  border-radius: var(--oomol-radius-2xl);
   border: 1px solid var(--oomol-divider);
 }
 
@@ -328,13 +328,13 @@
 
   .homePreviewCard {
     padding: 0.7rem;
-    border-radius: 1.25rem;
+    border-radius: var(--oomol-radius-3xl);
   }
 
   .homePreviewFrame {
     min-height: 220px;
     aspect-ratio: 16 / 10;
-    border-radius: 1rem;
+    border-radius: var(--oomol-radius-2xl);
   }
 
   .homePrinciplesGrid {
@@ -343,7 +343,7 @@
 
   .homePrincipleMedia {
     padding: 0.45rem;
-    border-radius: 1.1rem;
+    border-radius: var(--oomol-radius-panel);
   }
 
   .homePrincipleImage {
@@ -473,7 +473,7 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 18px;
+  border-radius: var(--oomol-radius-panel);
   overflow: hidden;
   background: var(--ifm-background-surface-color);
   border: 1px solid var(--ifm-color-emphasis-200);
@@ -514,7 +514,7 @@
   border-left: 4px solid var(--ifm-color-primary);
   padding: 32px;
   margin: 40px 0;
-  border-radius: 0 16px 16px 0;
+  border-radius: 0 var(--oomol-radius-2xl) var(--oomol-radius-2xl) 0;
 
   p {
     font-size: var(--oomol-body-lead);
@@ -590,7 +590,7 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 12px;
+  border-radius: var(--oomol-radius-xl);
   overflow: hidden;
   background: var(--ifm-background-surface-color);
   border: 1px solid var(--ifm-color-emphasis-200);
@@ -632,12 +632,12 @@
 
   .homePreviewCard,
   .homePrincipleMedia {
-    border-radius: 1.25rem;
+    border-radius: var(--oomol-radius-3xl);
   }
 
   .homePreviewFrame {
     min-height: 220px;
-    border-radius: 1rem;
+    border-radius: var(--oomol-radius-2xl);
   }
 }
 

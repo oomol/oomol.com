@@ -164,7 +164,7 @@ function CookiePreferenceSwitch({
       type="button"
     >
       <span
-        className={`pointer-events-none inline-block h-4 w-4 rounded-full bg-white shadow-[0_1px_3px_rgba(0,0,0,0.18)] transition-transform ${
+        className={`pointer-events-none inline-block h-4 w-4 rounded-full bg-[var(--oomol-white)] shadow-[var(--oomol-shadow-sm)] transition-transform ${
           checked ? "translate-x-[1.18rem]" : "translate-x-1"
         }`}
       />

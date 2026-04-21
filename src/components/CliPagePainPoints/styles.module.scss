@@ -39,7 +39,7 @@
     width: 6px;
     height: 6px;
     margin-right: 0.55rem;
-    border-radius: 999px;
+    border-radius: var(--oomol-radius-full);
     background: var(--oomol-primary);
   }
 }
@@ -58,7 +58,7 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
   border: 1px solid var(--oomol-divider);
-  border-radius: 14px;
+  border-radius: var(--oomol-radius-card);
   overflow: hidden;
   background: var(--oomol-bg-base);
 }
@@ -99,7 +99,7 @@
   height: 2.2rem;
   display: grid;
   place-items: center;
-  border-radius: 8px;
+  border-radius: var(--oomol-radius-lg);
   border: 1px solid var(--oomol-divider);
   background: var(--oomol-bg-base);
   color: var(--oomol-text-primary);
@@ -130,7 +130,7 @@
   display: inline-flex;
   align-items: center;
   padding: 0.1rem 0.45rem;
-  border-radius: 5px;
+  border-radius: var(--oomol-radius-chip);
   border: 1px solid var(--oomol-divider);
   background: var(--oomol-bg-container);
   font-family: var(--oomol-font-mono);

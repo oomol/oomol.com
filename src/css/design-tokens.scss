@@ -23,6 +23,27 @@
   --oomol-surface-panel-strong: #f5f5f5;
   /* 营销区终端 / 深色 UI 示意（非主背景） */
   --oomol-chrome-void: #141414;
+  --oomol-chrome-panel: rgba(12, 16, 25, 0.42);
+  --oomol-chrome-panel-soft: rgba(11, 15, 24, 0.42);
+  --oomol-chrome-stage: rgba(0, 0, 0, 0.22);
+  --oomol-chrome-border: rgba(255, 255, 255, 0.12);
+  --oomol-chrome-border-soft: rgba(255, 255, 255, 0.08);
+  --oomol-chrome-border-strong: rgba(255, 255, 255, 0.2);
+  --oomol-chrome-fill: rgba(255, 255, 255, 0.06);
+  --oomol-chrome-fill-soft: rgba(255, 255, 255, 0.04);
+  --oomol-chrome-fill-strong: rgba(255, 255, 255, 0.12);
+  --oomol-chrome-line: rgba(255, 255, 255, 0.06);
+  --oomol-chrome-dot: rgba(222, 228, 245, 0.38);
+  --oomol-chrome-scrim: rgba(0, 0, 0, 0.04);
+  --oomol-chrome-scrim-hover: rgba(0, 0, 0, 0);
+  --oomol-chrome-control-bg: rgba(255, 255, 255, 0.96);
+  --oomol-chrome-control-border: rgba(0, 0, 0, 0.08);
+  --oomol-chrome-text-primary: rgba(239, 244, 255, 0.94);
+  --oomol-chrome-text-secondary: rgba(250, 250, 250, 0.72);
+  --oomol-chrome-text-tertiary: rgba(250, 250, 250, 0.55);
+  --oomol-chrome-text-muted: rgba(250, 250, 250, 0.45);
+  --oomol-chrome-text-faint: rgba(250, 250, 250, 0.42);
+  --oomol-chrome-text-accent: rgba(193, 202, 232, 0.76);
 
   /* ----------------------
      文字色 (Text)
@@ -199,6 +220,28 @@
   --oomol-surface-float: #0a0a0a;
   --oomol-surface-panel: #0f0f0f;
   --oomol-surface-panel-strong: #171717;
+  --oomol-chrome-void: #0f0f0f;
+  --oomol-chrome-panel: rgba(255, 255, 255, 0.06);
+  --oomol-chrome-panel-soft: rgba(255, 255, 255, 0.04);
+  --oomol-chrome-stage: rgba(255, 255, 255, 0.02);
+  --oomol-chrome-border: rgba(255, 255, 255, 0.12);
+  --oomol-chrome-border-soft: rgba(255, 255, 255, 0.08);
+  --oomol-chrome-border-strong: rgba(255, 255, 255, 0.2);
+  --oomol-chrome-fill: rgba(255, 255, 255, 0.06);
+  --oomol-chrome-fill-soft: rgba(255, 255, 255, 0.04);
+  --oomol-chrome-fill-strong: rgba(255, 255, 255, 0.12);
+  --oomol-chrome-line: rgba(255, 255, 255, 0.06);
+  --oomol-chrome-dot: rgba(255, 255, 255, 0.28);
+  --oomol-chrome-scrim: rgba(0, 0, 0, 0.28);
+  --oomol-chrome-scrim-hover: rgba(0, 0, 0, 0.15);
+  --oomol-chrome-control-bg: rgba(255, 255, 255, 0.95);
+  --oomol-chrome-control-border: rgba(0, 0, 0, 0.08);
+  --oomol-chrome-text-primary: rgba(245, 248, 255, 0.96);
+  --oomol-chrome-text-secondary: rgba(224, 230, 242, 0.76);
+  --oomol-chrome-text-tertiary: rgba(250, 250, 250, 0.72);
+  --oomol-chrome-text-muted: rgba(250, 250, 250, 0.45);
+  --oomol-chrome-text-faint: rgba(250, 250, 250, 0.42);
+  --oomol-chrome-text-accent: rgba(193, 202, 232, 0.76);
 
   /* ----------------------
      文字色 (Text)
@@ -401,11 +444,18 @@
   --oomol-radius-none: 0;
   --oomol-radius-sm: 2px;
   --oomol-radius-base: 4px;
+  --oomol-radius-chip: 5px;
   --oomol-radius-md: 6px;
   --oomol-radius-lg: 8px;
+  --oomol-radius-control: 10px;
   --oomol-radius-xl: 12px;
+  --oomol-radius-card: 14px;
   --oomol-radius-2xl: 16px;
+  --oomol-radius-panel: 18px;
   --oomol-radius-3xl: 20px;
+  --oomol-radius-feature: 1.6rem;
+  --oomol-radius-shell: 2.2rem;
+  --oomol-radius-showcase: 1.8rem;
   --oomol-radius-full: 9999px;
 }
 

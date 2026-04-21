@@ -63,7 +63,7 @@
 .projectCard {
   background: var(--oomol-bg-elevated);
   border: 1px solid var(--oomol-border-subtle);
-  border-radius: 16px;
+  border-radius: var(--oomol-radius-2xl);
   padding: 32px;
   box-shadow: none;
   width: 100%;
@@ -110,7 +110,7 @@
   gap: 6px;
   padding: 6px 12px;
   background: var(--oomol-bg-subtle);
-  border-radius: 20px;
+  border-radius: var(--oomol-radius-3xl);
   text-decoration: none;
   color: var(--oomol-text-primary);
   font-size: var(--oomol-font-size-sm);
@@ -132,7 +132,7 @@
 
 .projectDescription {
   font-size: var(--oomol-font-size-base);
-  line-height: 1.6;
+  line-height: var(--oomol-line-height-relaxed);
   color: var(--oomol-text-secondary);
   margin-bottom: 24px;
 }
@@ -172,7 +172,7 @@
 .comparisonCard {
   background: var(--oomol-bg-elevated);
   border: 2px solid var(--oomol-border-subtle);
-  border-radius: 12px;
+  border-radius: var(--oomol-radius-xl);
   padding: 24px;
   transition:
     border-color 0.3s ease,
@@ -210,7 +210,7 @@
   padding: 4px 12px;
   background: var(--oomol-bg-muted);
   color: var(--oomol-text-secondary);
-  border-radius: 12px;
+  border-radius: var(--oomol-radius-xl);
   font-size: var(--oomol-font-size-xs);
   font-weight: 600;
   text-transform: none;
@@ -219,10 +219,10 @@
 
 .recommended {
   background: var(--oomol-primary);
-  color: white;
+  color: var(--oomol-white);
   border: 1px solid var(--oomol-primary);
   padding: 6px 16px;
-  border-radius: 20px;
+  border-radius: var(--oomol-radius-3xl);
   font-size: var(--oomol-body-mono);
   transition:
     background-color 0.2s ease,
@@ -239,7 +239,7 @@
   color: var(--oomol-text-secondary);
   border: 1px solid var(--oomol-border-default);
   padding: 6px 16px;
-  border-radius: 20px;
+  border-radius: var(--oomol-radius-3xl);
   font-size: var(--oomol-body-mono);
   transition:
     background-color 0.2s ease,
@@ -276,7 +276,7 @@
 .cardDescription {
   font-size: var(--oomol-font-size-sm);
   color: var(--oomol-text-secondary);
-  line-height: 1.5;
+  line-height: var(--oomol-line-height-normal);
   margin: 0;
 }
 
@@ -294,7 +294,7 @@
     gap: 10px;
     font-size: var(--oomol-body-base);
     color: var(--oomol-text-primary);
-    line-height: 1.5;
+    line-height: var(--oomol-line-height-normal);
   }
 }
 
@@ -325,7 +325,7 @@
   justify-content: center;
   gap: 6px;
   padding: 8px 20px;
-  border-radius: 4px;
+  border-radius: var(--oomol-radius-base);
   font-size: var(--oomol-font-size-sm);
   font-weight: 500;
   text-decoration: none;

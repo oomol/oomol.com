@@ -6,7 +6,7 @@ import * as React from "react";
 
 const alertVariants = cva(
   [
-    "relative w-full rounded-[12px] border px-4 py-3 text-oomol-sm",
+    "relative w-full rounded-[var(--oomol-radius-xl)] border px-4 py-3 text-oomol-sm",
     "[&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-[var(--oomol-text-primary)]",
     "[&>svg~*]:pl-7",
   ].join(" "),

@@ -1,6 +1,7 @@
 @use "../../css/mixins.scss" as *;
 
 .page {
+  --studio-radius: var(--oomol-radius-card);
   background: var(--oomol-bg-base);
 }
 
@@ -48,7 +49,7 @@
     width: 6px;
     height: 6px;
     margin-right: 0.55rem;
-    border-radius: 999px;
+    border-radius: var(--oomol-radius-full);
     background: var(--oomol-primary);
   }
 }
@@ -74,7 +75,7 @@
 .painPointText,
 .principleText {
   margin: 0;
-  line-height: 1.6;
+  line-height: var(--oomol-line-height-relaxed);
   color: var(--oomol-text-secondary);
 }
 
@@ -110,7 +111,7 @@
 
 .visualFrame {
   width: 100%;
-  border-radius: 14px;
+  border-radius: var(--studio-radius);
   border: 1px solid var(--oomol-border-default);
   background: var(--oomol-bg-spotlight);
   box-shadow: none;
@@ -167,7 +168,7 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
   border: 1px solid var(--oomol-divider);
-  border-radius: 14px;
+  border-radius: var(--studio-radius);
   overflow: hidden;
   background: var(--oomol-bg-base);
   align-items: stretch;
@@ -208,7 +209,7 @@
   font-family: var(--oomol-font-mono);
   font-size: var(--oomol-body-mono);
   font-weight: 500;
-  letter-spacing: 0.02em;
+  letter-spacing: var(--oomol-tracking-mono);
   color: var(--oomol-primary);
   font-feature-settings: "tnum" 1;
 }
@@ -234,7 +235,7 @@
 
 .painPointText {
   font-size: var(--oomol-body-base);
-  line-height: 1.6;
+  line-height: var(--oomol-line-height-relaxed);
 }
 
 .principlesGrid {
@@ -259,7 +260,7 @@
 
 .principleMedia {
   order: 2;
-  border-radius: 14px;
+  border-radius: var(--studio-radius);
   padding: 0;
   border: 1px solid var(--oomol-divider);
   background: var(--oomol-bg-spotlight);

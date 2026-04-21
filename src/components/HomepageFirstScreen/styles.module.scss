@@ -87,7 +87,7 @@
 
 .videoFrame {
   width: 100%;
-  border-radius: 14px;
+  border-radius: var(--oomol-radius-card);
   overflow: clip;
   border: 1px solid var(--oomol-border-default);
   background: var(--oomol-bg-spotlight);
@@ -101,14 +101,14 @@
   z-index: 2;
   display: grid;
   place-items: center;
-  background: rgba(0, 0, 0, 0.04);
+  background: var(--oomol-chrome-scrim);
   border: 0;
   padding: 0;
   cursor: pointer;
   transition: background 0.2s ease;
 
   &:hover {
-    background: rgba(0, 0, 0, 0);
+    background: var(--oomol-chrome-scrim-hover);
   }
 
   &:focus-visible {
@@ -128,8 +128,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: var(--oomol-chrome-control-bg);
+  border: 1px solid var(--oomol-chrome-control-border);
   box-shadow: none;
   transition: transform 0.2s ease;
 }
@@ -307,14 +307,14 @@
   }
 
   .playOverlay {
-    background: rgba(0, 0, 0, 0.28);
+    background: var(--oomol-chrome-scrim);
 
     &:hover {
-      background: rgba(0, 0, 0, 0.15);
+      background: var(--oomol-chrome-scrim-hover);
     }
   }
 
   .playButton {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--oomol-chrome-control-bg);
   }
 }

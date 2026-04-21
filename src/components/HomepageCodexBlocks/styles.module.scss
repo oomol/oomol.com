@@ -140,14 +140,14 @@
   gap: 0.4rem;
   min-height: 2.25rem;
   padding: 0 0.9rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--oomol-chrome-line);
 }
 
 .videoDot {
   width: 0.42rem;
   height: 0.42rem;
   border-radius: 999px;
-  background: rgba(222, 228, 245, 0.38);
+  background: var(--oomol-chrome-dot);
 }
 
 .videoCanvas {
@@ -179,7 +179,7 @@
     display: block;
     height: 0.85rem;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.11);
+    background: var(--oomol-chrome-fill-strong);
 
     &:nth-child(2) {
       width: 78%;
@@ -208,13 +208,13 @@
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--oomol-chrome-fill-strong);
+  border: 1px solid var(--oomol-chrome-border-strong);
   box-shadow: none;
 
   i {
     font-size: var(--oomol-font-size-xl);
-    color: rgba(245, 248, 255, 0.96);
+    color: var(--oomol-chrome-text-primary);
     transform: translateX(1px);
   }
 }
@@ -222,13 +222,13 @@
 .videoLabel {
   padding: 0.38rem 0.7rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--oomol-chrome-fill-soft);
+  border: 1px solid var(--oomol-chrome-border);
   font-size: var(--oomol-font-size-xs);
   font-weight: 500;
   letter-spacing: var(--oomol-tracking-mono);
   text-transform: none;
-  color: rgba(224, 230, 242, 0.76);
+  color: var(--oomol-chrome-text-accent);
 }
 
 .videoMeta {
@@ -301,7 +301,7 @@
   }
 
   .videoTracks span {
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--oomol-chrome-fill-soft);
   }
 
   .card {

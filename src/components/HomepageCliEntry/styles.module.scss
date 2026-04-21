@@ -1,6 +1,13 @@
 @use "../../css/mixins.scss" as *;
 
 .section {
+  --cli-entry-gap-card: 0.85rem;
+  --cli-entry-gap-list: 1rem;
+  --cli-entry-gap-compact: 0.8rem;
+  --cli-entry-radius-card: 1.1rem;
+  --cli-entry-radius-stage: 1.2rem;
+  --cli-entry-radius-command: 1rem;
+  --cli-entry-radius-mobile: 1.45rem;
   position: relative;
   padding: clamp(3.5rem, 7vw, 5.6rem) 0;
   background: var(--oomol-bg-base);
@@ -53,7 +60,7 @@
 .benefitGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.85rem;
+  gap: var(--cli-entry-gap-card);
   margin-top: 0.2rem;
 }
 
@@ -62,7 +69,7 @@
   gap: 0.42rem;
   padding: 0.95rem 1rem 1rem;
   border: 1px solid var(--oomol-divider);
-  border-radius: 1.1rem;
+  border-radius: var(--cli-entry-radius-card);
   background: var(--oomol-bg-elevated);
   box-shadow: none;
 }
@@ -73,7 +80,7 @@
   align-items: center;
   min-height: 1.7rem;
   padding: 0 0.62rem;
-  border-radius: 999px;
+  border-radius: var(--oomol-radius-full);
   border: 1px solid var(--oomol-divider);
   background: var(--oomol-bg-container);
   color: var(--oomol-text-tertiary);
@@ -93,7 +100,7 @@
 
 .stepList {
   display: grid;
-  gap: 0.85rem;
+  gap: var(--cli-entry-gap-card);
   margin-top: 0.35rem;
 }
 
@@ -103,7 +110,7 @@
   gap: 1rem;
   padding: 1rem 1.05rem;
   border: 1px solid var(--oomol-divider);
-  border-radius: 1.25rem;
+  border-radius: var(--oomol-radius-3xl);
   background: var(--oomol-surface-float);
 }
 
@@ -143,14 +150,14 @@
 
 .showcaseColumn {
   display: grid;
-  gap: 1rem;
+  gap: var(--cli-entry-gap-list);
 }
 
 .setupCard,
 .demoCard {
   position: relative;
   overflow: hidden;
-  border-radius: 1.8rem;
+  border-radius: var(--oomol-radius-showcase);
   border: 1px solid var(--oomol-border-default);
   background: var(--oomol-chrome-void);
   box-shadow: none;
@@ -171,14 +178,14 @@
   font-weight: 500;
   letter-spacing: var(--oomol-tracking-mono);
   text-transform: none;
-  color: rgba(250, 250, 250, 0.45);
+  color: var(--oomol-chrome-text-muted);
 
   &::before {
     content: "";
     width: 6px;
     height: 6px;
-    border-radius: 999px;
-    background: rgba(250, 250, 250, 0.35);
+    border-radius: var(--oomol-radius-full);
+    background: var(--oomol-chrome-dot);
   }
 }
 
@@ -186,7 +193,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 1rem;
+  gap: var(--cli-entry-gap-list);
   margin-top: 0.8rem;
 }
 
@@ -196,7 +203,7 @@
   font-size: var(--oomol-font-size-2xl);
   line-height: 1.05;
   letter-spacing: -0.04em;
-  color: rgba(250, 250, 250, 0.96);
+  color: var(--oomol-chrome-text-primary);
 }
 
 .panelPill,
@@ -205,7 +212,7 @@
   align-items: center;
   min-height: 1.9rem;
   padding: 0 0.7rem;
-  border-radius: 999px;
+  border-radius: var(--oomol-radius-full);
   font-family: var(--oomol-font-mono);
   font-size: var(--oomol-body-mono);
   font-weight: 500;
@@ -214,15 +221,15 @@
 }
 
 .panelPill {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(250, 250, 250, 0.72);
+  border: 1px solid var(--oomol-chrome-border);
+  background: var(--oomol-chrome-fill);
+  color: var(--oomol-chrome-text-secondary);
 }
 
 .liveBadge {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(250, 250, 250, 0.72);
+  border: 1px solid var(--oomol-chrome-border);
+  background: var(--oomol-chrome-fill);
+  color: var(--oomol-chrome-text-secondary);
 }
 
 .panelNote {
@@ -230,41 +237,32 @@
   max-width: 34rem;
   font-size: var(--oomol-body-base);
   line-height: 1.55;
-  color: rgba(250, 250, 250, 0.55);
+  color: var(--oomol-chrome-text-tertiary);
 }
 
 .commandBlock {
   margin: 1rem 0 0;
   overflow: hidden;
   padding: 1rem 1rem 1.05rem;
-  border-radius: 1.1rem;
-  background: rgba(12, 16, 25, 0.42);
+  border-radius: var(--cli-entry-radius-card);
+  background: var(--oomol-chrome-panel);
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
 
 .commandLine {
   display: block;
-  font-family:
-    ui-monospace,
-    SFMono-Regular,
-    SFMono-Regular,
-    Menlo,
-    Monaco,
-    Consolas,
-    Liberation Mono,
-    Courier New,
-    monospace;
+  font-family: var(--oomol-font-mono);
   font-size: var(--oomol-body-base);
   line-height: 1.8;
-  color: rgba(239, 244, 255, 0.94);
+  color: var(--oomol-chrome-text-primary);
   white-space: inherit;
   overflow-wrap: anywhere;
   word-break: break-word;
 }
 
 .prompt {
-  color: rgba(250, 250, 250, 0.42);
+  color: var(--oomol-chrome-text-faint);
 }
 
 .demoStageList {
@@ -275,15 +273,15 @@
 
 .demoStage {
   padding: 0.95rem 0.95rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 1.2rem;
-  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid var(--oomol-chrome-border-soft);
+  border-radius: var(--cli-entry-radius-stage);
+  background: var(--oomol-chrome-stage);
 }
 
 .demoStageHeader {
   display: flex;
   align-items: flex-start;
-  gap: 0.8rem;
+  gap: var(--cli-entry-gap-compact);
 }
 
 .demoStageIndex {
@@ -293,10 +291,10 @@
   width: 2rem;
   height: 2rem;
   flex: 0 0 auto;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.04);
-  color: rgba(250, 250, 250, 0.65);
+  border-radius: var(--oomol-radius-full);
+  border: 1px solid var(--oomol-chrome-border-soft);
+  background: var(--oomol-chrome-fill-soft);
+  color: var(--oomol-chrome-text-secondary);
   font-family: var(--oomol-font-mono);
   font-size: var(--oomol-body-mono);
   font-weight: 600;
@@ -314,22 +312,22 @@
   font-weight: 500;
   letter-spacing: var(--oomol-tracking-mono);
   text-transform: none;
-  color: rgba(250, 250, 250, 0.45);
+  color: var(--oomol-chrome-text-muted);
 }
 
 .demoStageTitle {
   margin: 0;
   font-size: var(--oomol-body-base);
   line-height: 1.3;
-  color: rgba(246, 248, 255, 0.94);
+  color: var(--oomol-chrome-text-primary);
 }
 
 .stageCommandBlock {
   margin: 0.55rem 0 0;
   overflow: hidden;
   padding: 0.85rem 0.9rem;
-  border-radius: 1rem;
-  background: rgba(11, 15, 24, 0.42);
+  border-radius: var(--cli-entry-radius-command);
+  background: var(--oomol-chrome-panel-soft);
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
@@ -337,19 +335,10 @@
 .commandLineMuted {
   display: block;
   margin-top: 0.35rem;
-  font-family:
-    ui-monospace,
-    SFMono-Regular,
-    SFMono-Regular,
-    Menlo,
-    Monaco,
-    Consolas,
-    Liberation Mono,
-    Courier New,
-    monospace;
+  font-family: var(--oomol-font-mono);
   font-size: var(--oomol-body-base);
   line-height: 1.7;
-  color: rgba(193, 202, 232, 0.76);
+  color: var(--oomol-chrome-text-accent);
   white-space: inherit;
   overflow-wrap: anywhere;
   word-break: break-word;
@@ -408,7 +397,7 @@
 
   .setupCard,
   .demoCard {
-    border-radius: 1.45rem;
+    border-radius: var(--cli-entry-radius-mobile);
   }
 
   .commandBlock,

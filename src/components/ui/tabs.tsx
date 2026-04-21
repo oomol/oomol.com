@@ -11,7 +11,7 @@ const TabsList = React.forwardRef<
   <TabsPrimitive.List
     ref={ref}
     className={cn(
-      "inline-flex h-9 items-center justify-center rounded-[8px] border border-[var(--oomol-divider)] bg-[var(--oomol-bg-container)] p-[3px] text-[var(--oomol-text-secondary)]",
+      "inline-flex h-9 items-center justify-center rounded-[var(--oomol-radius-lg)] border border-[var(--oomol-divider)] bg-[var(--oomol-bg-container)] p-[3px] text-[var(--oomol-text-secondary)]",
       className
     )}
     {...props}
@@ -28,7 +28,7 @@ const TabsTrigger = React.forwardRef<
     className={cn(
       // border-0 + bg-transparent 显式覆盖浏览器 <button> 默认样式
       // (项目 Tailwind preflight 被关掉了，所以必须手动重置)
-      "inline-flex items-center justify-center whitespace-nowrap rounded-[5px] px-3 h-full",
+      "inline-flex h-full items-center justify-center whitespace-nowrap rounded-[var(--oomol-radius-md)] px-3",
       "border-0 bg-transparent cursor-pointer appearance-none",
       "text-oomol-mono font-medium tracking-[-0.005em] text-[var(--oomol-text-secondary)]",
       "ring-offset-[var(--oomol-bg-base)] transition-colors",

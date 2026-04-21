@@ -1,6 +1,19 @@
 @use "../../css/mixins.scss" as *;
 
 .page {
+  --pricing-gap-card: 10px;
+  --pricing-gap-block: 14px;
+  --pricing-gap-list: 12px;
+  --pricing-gap-tight: 6px;
+  --pricing-gap-chip: 8px;
+  --pricing-gap-grid: 20px;
+  --pricing-chip-line-height: 1.45;
+  --pricing-chip-tracking: 0.02em;
+  --pricing-chip-tracking-tight: 0.01em;
+  --pricing-padding-model-card: 20px 22px;
+  --pricing-padding-plan-card: 28px 26px 26px;
+  --pricing-padding-sync-note: 14px 16px;
+  --pricing-padding-status: 28px 24px;
   background: var(--oomol-bg-base);
 }
 
@@ -80,14 +93,14 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
+  gap: var(--pricing-gap-grid);
 }
 
 .pricingModelCard {
   display: grid;
-  gap: 10px;
-  padding: 20px 22px;
-  border-radius: 12px;
+  gap: var(--pricing-gap-card);
+  padding: var(--pricing-padding-model-card);
+  border-radius: var(--oomol-radius-xl);
   background: var(--oomol-bg-base);
   border: 1px solid var(--oomol-divider);
   box-shadow: none;
@@ -98,15 +111,15 @@
   align-items: center;
   width: fit-content;
   padding: 2px 8px;
-  border-radius: 5px;
+  border-radius: var(--oomol-radius-chip);
   background: var(--oomol-bg-container);
   border: 1px solid var(--oomol-divider);
   color: var(--oomol-text-secondary);
   font-family: var(--oomol-font-mono);
   font-size: var(--oomol-font-size-xs);
-  line-height: 1.45;
+  line-height: var(--pricing-chip-line-height);
   font-weight: 500;
-  letter-spacing: 0.02em;
+  letter-spacing: var(--pricing-chip-tracking);
   text-transform: none;
 }
 
@@ -152,8 +165,8 @@
   display: grid;
   grid-template-rows: auto auto minmax(0, 1fr);
   align-content: start;
-  padding: 28px 26px 26px;
-  border-radius: 14px;
+  padding: var(--pricing-padding-plan-card);
+  border-radius: var(--oomol-radius-card);
   background: var(--oomol-bg-base);
   border: 1px solid var(--oomol-divider);
   box-shadow: none;
@@ -197,19 +210,19 @@
   padding: 3px 8px;
   background: var(--oomol-foreground);
   color: var(--oomol-foreground-contrast);
-  border-radius: 5px;
+  border-radius: var(--oomol-radius-chip);
   box-shadow: none;
   font-family: var(--oomol-font-mono);
   font-size: var(--oomol-font-size-xs);
   font-weight: 500;
   text-transform: none;
-  letter-spacing: 0.02em;
+  letter-spacing: var(--pricing-chip-tracking);
 }
 
 .planHeader {
   display: grid;
   align-content: start;
-  gap: 14px;
+  gap: var(--pricing-gap-block);
   min-height: 224px;
   margin-bottom: 24px;
 }
@@ -227,7 +240,7 @@
 .planPrice {
   display: flex;
   align-items: baseline;
-  gap: 6px;
+  gap: var(--pricing-gap-tight);
 
   .price {
     font-family: var(--oomol-font-display);
@@ -260,7 +273,7 @@
 .planHighlights {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: var(--pricing-gap-card);
 }
 
 .planHighlight {
@@ -268,15 +281,15 @@
   align-items: center;
   min-height: 26px;
   padding: 3px 8px;
-  border-radius: 5px;
+  border-radius: var(--oomol-radius-chip);
   background: var(--oomol-bg-base);
   border: 1px solid var(--oomol-divider);
   color: var(--oomol-text-secondary);
   font-family: var(--oomol-font-mono);
   font-size: var(--oomol-font-size-xs);
-  line-height: 1.45;
+  line-height: var(--pricing-chip-line-height);
   font-weight: 500;
-  letter-spacing: 0.01em;
+  letter-spacing: var(--pricing-chip-tracking-tight);
   box-shadow: none;
 }
 
@@ -323,7 +336,7 @@
 .featureList {
   display: grid;
   align-content: start;
-  gap: 10px;
+  gap: var(--pricing-gap-card);
   padding-top: 18px;
   min-height: 0;
   border-top: 1px solid var(--oomol-divider);
@@ -332,7 +345,7 @@
 .featureItem {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: var(--pricing-gap-card);
   font-size: var(--oomol-font-size-sm);
   line-height: 1.56;
   color: var(--oomol-text-secondary);
@@ -368,7 +381,7 @@
 .featureDisclosureTrigger {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--pricing-gap-tight);
   padding: 0;
   border: 0;
   background: transparent;
@@ -377,7 +390,7 @@
   font-size: var(--oomol-font-size-xs);
   line-height: 1.4;
   font-weight: 500;
-  letter-spacing: 0.01em;
+  letter-spacing: var(--pricing-chip-tracking-tight);
   cursor: pointer;
   list-style: none;
 
@@ -402,7 +415,7 @@
 
 .featureDisclosureContent {
   display: grid;
-  gap: 12px;
+  gap: var(--pricing-gap-list);
   padding-top: 14px;
 }
 
@@ -412,7 +425,7 @@
   margin-top: 0;
   overflow: visible;
   padding: clamp(24px, 3.2vw, 36px);
-  border-radius: 14px;
+  border-radius: var(--oomol-radius-card);
   border: 1px solid var(--oomol-divider);
   background: var(--oomol-bg-base);
   box-shadow: none;
@@ -456,10 +469,10 @@
   grid-area: note;
   display: grid;
   align-content: start;
-  gap: 10px;
+  gap: var(--pricing-gap-card);
   align-self: start;
-  padding: 14px 16px;
-  border-radius: 10px;
+  padding: var(--pricing-padding-sync-note);
+  border-radius: var(--oomol-radius-control);
   border: 1px solid var(--oomol-divider);
   background: var(--oomol-bg-container);
   color: var(--oomol-text-secondary);
@@ -471,7 +484,7 @@
     content: "";
     width: 6px;
     height: 6px;
-    border-radius: 999px;
+    border-radius: var(--oomol-radius-full);
     background: var(--oomol-primary);
     box-shadow: none;
   }
@@ -497,9 +510,9 @@
 .tableStatus {
   max-width: 760px;
   margin: 0 auto;
-  padding: 28px 24px;
+  padding: var(--pricing-padding-status);
   border: 1px solid var(--oomol-divider);
-  border-radius: 12px;
+  border-radius: var(--oomol-radius-xl);
   background: var(--oomol-bg-container);
   color: var(--oomol-text-secondary);
   font-size: var(--oomol-font-size-sm);
@@ -564,14 +577,14 @@
   align-items: center;
   max-width: 100%;
   padding: 3px 8px;
-  border-radius: 5px;
+  border-radius: var(--oomol-radius-chip);
   background: var(--oomol-bg-container);
   border: 1px solid var(--oomol-divider);
   box-shadow: none;
   color: var(--oomol-text-primary);
   font-family: var(--oomol-font-mono);
   font-size: var(--oomol-font-size-xs);
-  line-height: 1.45;
+  line-height: var(--pricing-chip-line-height);
   font-weight: 500;
   white-space: nowrap;
   overflow: hidden;
@@ -782,7 +795,7 @@
 
   .priceTablesSection {
     padding: 24px 18px;
-    border-radius: 14px;
+    border-radius: var(--oomol-radius-card);
   }
 
   .tableSectionHeader {
@@ -882,7 +895,7 @@
   }
 
   .planBox {
-    gap: 14px;
+    gap: var(--pricing-gap-block);
     padding-top: 0;
   }
 
@@ -897,7 +910,7 @@
   }
 
   .planHeader {
-    gap: 12px;
+    gap: var(--pricing-gap-list);
     margin-bottom: 18px;
   }
 
@@ -927,7 +940,7 @@
   }
 
   .featureList {
-    gap: 8px;
+    gap: var(--pricing-gap-chip);
     padding-top: 14px;
   }
 
@@ -959,7 +972,7 @@
   }
 
   .tableSyncNote {
-    gap: 8px;
+    gap: var(--pricing-gap-chip);
     padding: 12px 13px;
     font-size: var(--oomol-font-size-xs);
   }
@@ -968,7 +981,7 @@
     :global([role="tablist"]) {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 8px;
+      gap: var(--pricing-gap-chip);
     }
 
     :global([role="tab"]) {
@@ -1002,7 +1015,7 @@
   }
 
   .planHeader {
-    gap: 10px;
+    gap: var(--pricing-gap-card);
     margin-bottom: 14px;
   }
 
@@ -1020,7 +1033,7 @@
   }
 
   .planHighlights {
-    gap: 8px;
+    gap: var(--pricing-gap-chip);
   }
 
   .planHighlight {
@@ -1029,7 +1042,7 @@
   }
 
   .featureItem {
-    gap: 8px;
+    gap: var(--pricing-gap-chip);
     font-size: var(--oomol-body-sm);
     line-height: 1.5;
   }

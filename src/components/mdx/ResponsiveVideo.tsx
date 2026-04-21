@@ -110,8 +110,8 @@ export default function ResponsiveVideo({
       poster={resolvedPoster}
       style={{
         width: "100%",
-        borderRadius: "16px",
-        background: "#000",
+        borderRadius: "var(--oomol-radius-2xl)",
+        background: "var(--oomol-chrome-void)",
         ...style,
       }}
     >

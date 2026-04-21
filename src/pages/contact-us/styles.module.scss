@@ -1,6 +1,25 @@
 @use "../../css/mixins.scss" as *;
 
 .container {
+  --contact-radius-card: var(--oomol-radius-3xl);
+  --contact-gap-hero: var(--oomol-space-10);
+  --contact-gap-section: var(--oomol-space-5);
+  --contact-gap-grid: 18px;
+  --contact-gap-card: 14px;
+  --contact-gap-compact: var(--oomol-space-3);
+  --contact-gap-tight: var(--oomol-space-2);
+  --contact-gap-list: var(--oomol-space-6);
+  --contact-gap-hero-xs: 22px;
+  --contact-padding-card: var(--oomol-space-6);
+  --contact-padding-slogan: 24px 20px;
+  --contact-padding-slogan-mobile: 18px 16px;
+  --contact-padding-repo: var(--oomol-space-6);
+  --contact-padding-card-md: 22px 18px;
+  --contact-padding-card-sm: 18px 14px;
+  --contact-padding-card-xs: 16px 12px;
+  --contact-padding-repo-md: var(--oomol-space-5);
+  --contact-padding-repo-sm: var(--oomol-space-4);
+  --contact-display-mobile: clamp(2.3rem, 12vw, 3.1rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,7 +39,7 @@
   justify-content: center;
   align-items: center;
   padding: 80px 0;
-  gap: 40px;
+  gap: var(--contact-gap-hero);
   margin: 0 auto;
 }
 
@@ -32,7 +51,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--contact-gap-card);
   margin: 0 auto;
 }
 
@@ -58,14 +77,14 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: var(--contact-gap-section);
   margin: 0 auto;
 }
 
 .contactList {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 18px;
+  gap: var(--contact-gap-grid);
   width: 100%;
   padding: 0;
 }
@@ -113,9 +132,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: var(--contact-gap-compact);
   min-height: 112px;
-  padding: 22px 18px;
+  padding: var(--contact-padding-card-md);
 }
 
 .contactCardIcon {
@@ -156,7 +175,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: var(--contact-gap-tight);
 
   &:hover {
     text-decoration: none;
@@ -173,7 +192,7 @@
   align-items: center;
   justify-content: center;
   padding: 80px 0;
-  gap: 20px;
+  gap: var(--contact-gap-section);
 }
 .slogan {
   display: flex;
@@ -184,9 +203,9 @@
   max-width: 305px;
   flex: 1 1 280px;
   min-height: 130px;
-  border-radius: 20px;
-  gap: 14px;
-  padding: 24px 20px;
+  border-radius: var(--contact-radius-card);
+  gap: var(--contact-gap-card);
+  padding: var(--contact-padding-slogan);
   box-sizing: border-box;
   text-align: center;
   background-color: var(--oomol-bg-elevated);
@@ -216,7 +235,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 24px;
+  gap: var(--contact-gap-list);
   padding-top: clamp(4.5rem, 12vw, 10rem);
   padding-bottom: clamp(3.5rem, 8vw, 5rem);
 }
@@ -229,8 +248,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 20px;
-  padding: 24px;
+  border-radius: var(--contact-radius-card);
+  padding: var(--contact-padding-repo);
   box-sizing: border-box;
   background-color: var(--oomol-bg-elevated);
   cursor: pointer;
@@ -243,13 +262,13 @@
 .repo-body {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--contact-gap-compact);
 }
 
 .repo-header {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--contact-gap-compact);
 }
 
 .repo-icon {
@@ -276,7 +295,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--contact-gap-compact);
   flex-wrap: wrap;
 }
 
@@ -290,7 +309,7 @@
 .repo-status {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--contact-gap-compact);
 }
 
 .state {
@@ -333,22 +352,22 @@
   .contactBox {
     max-width: 100%;
     min-height: 0;
-    gap: 16px;
+    gap: var(--oomol-space-4);
   }
 
   .contactList {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
+    gap: var(--contact-gap-compact);
   }
 
   .contactCardHeader {
     min-height: 104px;
-    padding: 18px 14px;
+    padding: var(--contact-padding-card-sm);
   }
 
   .sloganBox {
     padding: 48px 0 0;
-    gap: 16px;
+    gap: var(--oomol-space-4);
   }
 
   .slogan {
@@ -356,7 +375,7 @@
   }
 
   .repositories {
-    gap: 16px;
+    gap: var(--oomol-space-4);
     padding-top: 64px;
     padding-bottom: 56px;
   }
@@ -365,18 +384,18 @@
     flex-basis: 100%;
     max-width: 100%;
     min-height: 0;
-    padding: 20px;
+    padding: var(--contact-padding-repo-md);
   }
 }
 
 @media (max-width: 480px) {
   .headBox {
     padding: 40px 0;
-    gap: 22px;
+    gap: var(--contact-gap-hero-xs);
   }
 
   .heroTitle {
-    font-size: clamp(2.3rem, 12vw, 3.1rem);
+    font-size: var(--contact-display-mobile);
     line-height: 1.08;
   }
 
@@ -397,7 +416,7 @@
   .contactCardHeader {
     min-height: 96px;
     gap: 10px;
-    padding: 16px 12px;
+    padding: var(--contact-padding-card-xs);
   }
 
   .contactCardIcon {
@@ -416,29 +435,29 @@
 
   .sloganBox {
     padding-top: 36px;
-    gap: 12px;
+    gap: var(--contact-gap-compact);
   }
 
   .slogan {
     flex-basis: 100%;
     min-height: 112px;
     gap: 10px;
-    padding: 18px 16px;
+    padding: var(--contact-padding-slogan-mobile);
   }
 
   .sloganText {
     font-size: var(--oomol-body-sm);
-    line-height: 1.5;
+    line-height: var(--oomol-line-height-normal);
   }
 
   .repositories {
-    gap: 12px;
+    gap: var(--contact-gap-compact);
     padding-top: 44px;
     padding-bottom: 40px;
   }
 
   .repository {
-    padding: 16px;
+    padding: var(--contact-padding-repo-sm);
   }
 
   .repo-header {
@@ -451,13 +470,13 @@
   }
 
   .repo-description {
-    line-height: 1.56;
+    line-height: var(--oomol-line-height-relaxed);
   }
 
   .repo-footer {
     align-items: flex-start;
     flex-direction: column;
-    gap: 8px;
+    gap: var(--contact-gap-tight);
   }
 
   .repo-status {
