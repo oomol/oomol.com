@@ -1,3 +1,6 @@
+$navbar-collapse: 860px;
+$navbar-desktop-min: 861px;
+
 .ctaButton {
   margin-left: 10px;
   font-size: var(--font-size-small);
@@ -79,7 +82,7 @@
 }
 
 .mobileToggle {
-  display: inline-flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 32px;
@@ -343,7 +346,7 @@
   white-space: nowrap;
 }
 
-@media screen and (max-width: 996px) {
+@media screen and (max-width: $navbar-collapse) {
   .productMenuPanel {
     width: min(24rem, calc(100vw - 2rem));
     grid-template-columns: 1fr;
@@ -697,14 +700,14 @@
 }
 
 /* prevent navbar right side to climb up on the left side, by shrinking the search bar */
-@media (min-width: 997px) and (max-width: 1027px),
+@media (min-width: $navbar-desktop-min) and (max-width: 1027px),
   (min-width: 1201px) and (max-width: 1300px) {
   :global(.DocSearch-Button-Keys) {
     display: none;
   }
 }
 
-@media (min-width: 996px) and (max-width: 1200px) {
+@media (min-width: $navbar-desktop-min) and (max-width: 1200px) {
   :global(.navbar__link) {
     --ifm-navbar-item-padding-horizontal: 0.85rem;
   }
@@ -727,7 +730,7 @@
   }
 }
 
-@media (min-width: 997px) {
+@media (min-width: $navbar-desktop-min) {
   .navbar {
     height: 64px;
     display: flex;
@@ -757,7 +760,7 @@
   // }
 }
 
-@media (max-width: 996px) {
+@media (max-width: $navbar-collapse) {
   .navbar {
     background: color-mix(in srgb, var(--oomol-bg-base) 97%, transparent);
     border-bottom: 1px solid var(--oomol-divider);
@@ -795,6 +798,10 @@
 
   .actions {
     gap: 0.55rem;
+  }
+
+  .mobileToggle {
+    display: inline-flex;
   }
 
   :global(.navbar-sidebar__backdrop) {
@@ -878,6 +885,20 @@
   :global(.navbar-sidebar .menu__link--active) {
     color: var(--oomol-primary);
     background: var(--oomol-primary-bg);
+  }
+}
+
+@media (min-width: $navbar-desktop-min) and (max-width: 996px) {
+  :global(.navbar__items) {
+    display: flex;
+  }
+
+  :global(.navbar__item) {
+    display: inline-block;
+  }
+
+  :global(.navbar__toggle) {
+    display: none !important;
   }
 }
 
