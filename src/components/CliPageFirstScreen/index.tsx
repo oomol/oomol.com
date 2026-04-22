@@ -1,63 +1,139 @@
-import styles from "../CloudPageFirstScreen/styles.module.scss";
+import styles from "./styles.module.scss";
 
 import type { DocusaurusContext } from "@docusaurus/types";
 
 import Link from "@docusaurus/Link";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import {
+  AnimatedSpan,
+  Terminal,
+  TypingAnimation,
+} from "@site/src/components/magic/terminal";
 import { Button } from "@site/src/components/ui/button";
-import React, { useRef, useState } from "react";
+import { useReducedMotion } from "framer-motion";
+import React from "react";
 
-const CLI_DEMO_VIDEO_URL =
-  "https://static.oomol.com/assets/homepage/oomol-oo-cli-en.webm";
+type Copy = {
+  slogan: string;
+  overview: string;
+  primaryCta: string;
+  secondaryCta: string;
+};
 
-const zhCopy = {
+const zhCopy: Copy = {
   slogan: `为 Agent
 提供更多工具`,
   overview: `Agent 会分析、会规划，但真正执行还得连上现有工具。oo-cli 把现实世界里的工具接到 Agent 手里，让它真正开始做事。`,
   primaryCta: "查看安装文档",
   secondaryCta: "查看 GitHub",
-  playAriaLabel: "播放 CLI 演示视频",
 };
 
-const enCopy = {
+const enCopy: Copy = {
   slogan: `More Tools
 for Agents`,
   overview: `Agents can analyze and plan, but execution still depends on real-world tools. oo-cli connects them to those tools so they can actually get work done.`,
   primaryCta: "Read the install guide",
   secondaryCta: "View GitHub",
-  playAriaLabel: "Play CLI demo video",
 };
 
+const LATEST_OO_CLI_VERSION = "0.2.27";
+
+function CliTerminalDemo({
+  isZh,
+  staticMode,
+}: {
+  isZh: boolean;
+  staticMode: boolean;
+}) {
+  return (
+    <Terminal className={styles.heroTerminal} staticMode={staticMode}>
+      <TypingAnimation className={styles.commandLine} duration={12}>
+        $ curl -fsSL https://cli.oomol.com/install.sh | bash
+      </TypingAnimation>
+
+      <AnimatedSpan className={styles.successLine}>
+        {isZh
+          ? `# 安装最新版本：oo-cli ${LATEST_OO_CLI_VERSION}`
+          : `# installs latest: oo-cli ${LATEST_OO_CLI_VERSION}`}
+      </AnimatedSpan>
+
+      <TypingAnimation className={styles.commandLine} duration={12}>
+        $ oo login
+      </TypingAnimation>
+
+      <AnimatedSpan className={styles.successLine}>
+        {isZh
+          ? "# 登录 OOMOL 账号，确认 CLI 已可用"
+          : "# sign in with your OOMOL account and confirm the CLI is ready"}
+      </AnimatedSpan>
+
+      <TypingAnimation className={styles.commandLine} duration={12}>
+        {isZh
+          ? '$ oo search "给 OOMOL 生成二维码"'
+          : '$ oo search "generate a QR code for OOMOL"'}
+      </TypingAnimation>
+
+      <AnimatedSpan className={styles.mutedLine}>
+        {isZh
+          ? "# 同时搜索 packages 和 connector actions"
+          : "# searches packages and connector actions together"}
+      </AnimatedSpan>
+
+      <TypingAnimation className={styles.commandLine} duration={12}>
+        $ oo packages search "generate a QR code"
+      </TypingAnimation>
+
+      <AnimatedSpan className={styles.mutedLine}>
+        {isZh
+          ? "# 收窄到已发布 package，准备选包"
+          : "# narrow it down to published packages before choosing one"}
+      </AnimatedSpan>
+
+      <TypingAnimation className={styles.commandLine} duration={12}>
+        {"$ oo packages info <packageSpecifier>"}
+      </TypingAnimation>
+
+      <AnimatedSpan className={styles.mutedLine}>
+        {isZh
+          ? "# 选包时先看 schema、版本和可执行 block"
+          : "# inspect schema, version, and runnable blocks before execution"}
+      </AnimatedSpan>
+
+      <TypingAnimation className={styles.commandLine} duration={12}>
+        {
+          "$ oo cloud-task run <packageSpecifier> -b <blockId> --data @input.json"
+        }
+      </TypingAnimation>
+
+      <AnimatedSpan className={styles.mutedLine}>
+        {isZh
+          ? "# Executor 执行 package block"
+          : "# execute the selected package block"}
+      </AnimatedSpan>
+
+      <TypingAnimation className={styles.commandLine} duration={12}>
+        {"$ oo cloud-task result <taskId>"}
+      </TypingAnimation>
+
+      <AnimatedSpan className={styles.successLine}>
+        {isZh
+          ? "# 任务完成后在终端里取回结果"
+          : "# fetch the result back in the terminal"}
+      </AnimatedSpan>
+    </Terminal>
+  );
+}
+
 export default function CliPageFirstScreen() {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const reduceMotion = useReducedMotion();
   const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
     i18n: { currentLocale: string };
   };
-  const copy = i18n.currentLocale === "zh-CN" ? zhCopy : enCopy;
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const heroVideoPosterUrl = useBaseUrl(
-    i18n.currentLocale === "zh-CN"
-      ? "/img/docs/cn/terminal.png"
-      : "/img/docs/terminal.png"
-  );
-
-  const handlePlay = async () => {
-    if (!videoRef.current) {
-      return;
-    }
-
-    try {
-      await videoRef.current.play();
-      setIsPlaying(true);
-    } catch {
-      setIsPlaying(false);
-    }
-  };
+  const isZh = i18n.currentLocale === "zh-CN";
+  const copy = isZh ? zhCopy : enCopy;
 
   return (
     <section className={styles.section}>
-      <div className={styles.background} />
       <div className={styles.container}>
         <div className={styles.titleGroup}>
           <h1 className={styles.slogan}>{copy.slogan}</h1>
@@ -83,39 +159,10 @@ export default function CliPageFirstScreen() {
           </div>
         </div>
       </div>
-      <div className={styles.videoShowcase}>
-        <div className={styles.videoShowcaseInner}>
-          <div className={styles.videoFrame}>
-            {!isPlaying && (
-              <button
-                type="button"
-                className={styles.playOverlay}
-                onClick={handlePlay}
-                aria-label={copy.playAriaLabel}
-              >
-                <span className={styles.playButton}>
-                  <span className={styles.playTriangle} aria-hidden="true" />
-                </span>
-              </button>
-            )}
-            <video
-              ref={videoRef}
-              className={styles.heroVideo}
-              controls={isPlaying}
-              poster={heroVideoPosterUrl}
-              playsInline
-              preload="none"
-              onPlay={() => setIsPlaying(true)}
-              onPause={() => {
-                if (videoRef.current && videoRef.current.currentTime === 0) {
-                  setIsPlaying(false);
-                }
-              }}
-              onEnded={() => setIsPlaying(false)}
-            >
-              <source src={CLI_DEMO_VIDEO_URL} type="video/webm" />
-            </video>
-          </div>
+
+      <div className={styles.showcase}>
+        <div className={styles.showcaseInner}>
+          <CliTerminalDemo isZh={isZh} staticMode={reduceMotion === true} />
         </div>
       </div>
     </section>

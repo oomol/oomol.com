@@ -1,0 +1,198 @@
+@use "../../css/mixins.scss" as *;
+
+.section {
+  position: relative;
+  overflow: clip;
+  padding: clamp(4.8rem, 10vw, 8rem) 0 clamp(5rem, 6vw, 6.6rem);
+  background: var(--oomol-bg-base);
+  border-bottom: 1px solid var(--oomol-divider);
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  gap: clamp(1rem, 2.2vw, 1.6rem);
+}
+
+.titleGroup {
+  display: grid;
+  gap: 1.1rem;
+  max-width: 52rem;
+  margin: 0 auto;
+  justify-items: center;
+  text-align: center;
+}
+
+.slogan {
+  @include marketing-display-title(hero, 100%, center, 1.04);
+  white-space: pre-line;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  display: block;
+}
+
+.overview {
+  @include marketing-supporting-copy(40rem, center);
+  white-space: pre-line;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding-top: 0.6rem;
+}
+
+.showcase {
+  width: 100%;
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.showcaseInner {
+  width: min(860px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.heroTerminal {
+  --magic-terminal-max-width: 100%;
+  --magic-terminal-height: 26.35rem;
+  --magic-terminal-body-max-height: none;
+  --magic-terminal-body-padding: 1.15rem 1.2rem;
+
+  width: 100%;
+}
+
+.commandLine {
+  color: var(--oomol-primary);
+}
+
+.successLine {
+  color: var(--oomol-success);
+}
+
+.infoLine {
+  color: var(--oomol-text-primary);
+}
+
+.mutedLine {
+  color: var(--oomol-text-secondary);
+}
+
+:global(html[lang="en"]) .container {
+  max-width: 1160px;
+}
+
+:global(html[lang="en"]) .titleGroup {
+  max-width: 54rem;
+}
+
+:global(html[lang="en"]) .slogan {
+  max-width: 22ch;
+  text-wrap: balance;
+}
+
+:global(html[lang="en"]) .overview {
+  max-width: 44rem;
+}
+
+@media (max-width: 996px) {
+  .container {
+    gap: clamp(1.35rem, 3vw, 1.9rem);
+    padding: 0 24px;
+  }
+
+  .section {
+    padding-top: 4.2rem;
+    padding-bottom: 4rem;
+  }
+
+  .slogan,
+  .overview {
+    max-width: 100%;
+  }
+
+  .showcaseInner {
+    width: min(760px, calc(100% - 40px));
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3.4rem 0 3rem;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .slogan {
+    font-size: var(--oomol-display-hero);
+    line-height: 1.08;
+    letter-spacing: var(--oomol-tracking-display);
+    max-width: 100%;
+  }
+
+  .titleGroup {
+    gap: 0.85rem;
+  }
+
+  .overview {
+    font-size: var(--oomol-body-lead);
+    line-height: var(--oomol-line-height-relaxed);
+    letter-spacing: var(--oomol-tracking-body);
+    max-width: 34rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 20rem;
+    margin: 0 auto;
+  }
+
+  .primaryCta,
+  .secondaryCta {
+    width: 100%;
+  }
+
+  .showcase {
+    margin-top: 1.8rem;
+  }
+
+  .showcaseInner {
+    width: min(100%, calc(100% - 32px));
+  }
+
+  .heroTerminal {
+    --magic-terminal-height: 24.2rem;
+    --magic-terminal-body-max-height: none;
+    --magic-terminal-body-padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 3rem 0 2.6rem;
+  }
+
+  .container {
+    padding: 0 16px;
+    gap: 1.15rem;
+  }
+
+  .overview {
+    @include marketing-mobile-supporting-copy(1.58);
+  }
+
+  .showcaseInner {
+    width: min(100%, calc(100% - 24px));
+  }
+}
