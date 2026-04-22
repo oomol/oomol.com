@@ -27,10 +27,10 @@
     "message": "Community"
   },
   "HOME.page.title": {
-    "message": "OOMOL - A CLI that connects agents to third-party services and published tools"
+    "message": "OOMOL - Start with oo-cli. Build in Studio. Deliver through Cloud."
   },
   "HOME.page.description": {
-    "message": "Start with oo-cli so Codex, OpenClaw, Claude Code, and other agents can connect to third-party services, run published tools, and use your own systems to get real work moving. When you need to build, combine, and deliver your own tools, move into OOMOL Studio and Cloud."
+    "message": "Install oo-cli through the official path so Codex, OpenClaw, Claude Code, and other agents can search, inspect, and run published tools first. When you need to build, combine, and deliver your own tools, move into OOMOL Studio and Cloud."
   },
   "HOME.FirstScreen.slogan": {
     "message": "Build and Deliver Tools for Agents"
@@ -381,7 +381,7 @@
     "message": "Start with oo-cli if you want to use tools from the terminal"
   },
   "HOME.Downloads.cli.info.description": {
-    "message": "If you want to search, run, and reuse tools in Codex, Claude Code, or your local terminal, start with oo-cli. You can install it yourself or let your agent handle setup and verification."
+    "message": "If you want to search, run, and reuse tools in Codex, Claude Code, or your local terminal, start with oo-cli. Install it through the official script or your package manager, or let your agent handle setup and verification."
   },
   "HOME.Downloads.cli.action.guide": {
     "message": "Read the oo-cli guide"
@@ -390,19 +390,19 @@
     "message": "View oo-cli on GitHub"
   },
   "HOME.Downloads.cli.method.install.title": {
-    "message": "Install in your terminal"
+    "message": "Install from the official script"
   },
   "HOME.Downloads.cli.method.install.description": {
-    "message": "Run these commands in Codex, Claude Code, or any local terminal. Then sign in and start using oo-cli."
+    "message": "Run these commands in Codex, Claude Code, or any local terminal, then sign in. The guide also covers Windows PowerShell and package-manager installs."
   },
   "HOME.Downloads.cli.method.agent.title": {
     "message": "Let your agent do it"
   },
   "HOME.Downloads.cli.method.agent.description": {
-    "message": "Paste this prompt into your agent if you want it to install oo-cli and verify the setup for you."
+    "message": "Paste this prompt into your agent if you want it to use the official install path and verify the setup for you."
   },
   "HOME.Downloads.cli.method.agent.prompt": {
-    "message": "Install oo-cli globally with Bun by running `bun install -g @oomol-lab/oo-cli`, then run `oo login`, confirm that the CLI is ready to use, and tell me the best next oo-cli command to run."
+    "message": "Install oo-cli using the official install method for this environment (`curl -fsSL https://cli.oomol.com/install.sh | bash` on macOS/Linux or `irm https://cli.oomol.com/install.ps1 | iex` on Windows PowerShell), then run `oo login`, confirm that the CLI is ready to use, and tell me the best next oo-cli command to run."
   },
   "HOME.Downloads.cli.copy": {
     "message": "Copy"
@@ -1936,10 +1936,10 @@
     "message": "CLI FIRST"
   },
   "HOME.CliEntry.title": {
-    "message": "oo-cli is the default way to discover and run tools"
+    "message": "oo-cli is the default way to install, discover, and run tools"
   },
   "HOME.CliEntry.subtitle": {
-    "message": "Install once in Codex, Claude Code, or any terminal. Search packages, inspect inputs, run tools, and get results before you wire API or MCP."
+    "message": "Install once through the official script in Codex, Claude Code, or any terminal. Search packages, inspect inputs, run tools, and keep oo updated before you wire API or MCP."
   },
   "HOME.CliEntry.benefit1.label": {
     "message": "Start from published tools"
@@ -1957,13 +1957,13 @@
     "message": "Install oo-cli"
   },
   "HOME.CliEntry.step1.description": {
-    "message": "Install the default entry point for using published tools."
+    "message": "Use the official install path for the default entry point to published tools."
   },
   "HOME.CliEntry.step2.title": {
     "message": "Sign in to your account"
   },
   "HOME.CliEntry.step2.description": {
-    "message": "Sign in, then start searching and running published tools."
+    "message": "Sign in once, then keep using the same account context to search and run published tools."
   },
   "HOME.CliEntry.step3.title": {
     "message": "Search and run a tool"
@@ -1981,13 +1981,13 @@
     "message": "INSTALL ONCE"
   },
   "HOME.CliEntry.setup.title": {
-    "message": "Two commands to install and sign in to oo-cli"
+    "message": "Official install plus sign-in in two commands"
   },
   "HOME.CliEntry.setup.pill": {
     "message": "30 sec"
   },
   "HOME.CliEntry.setup.note": {
-    "message": "Install once, then use it directly."
+    "message": "Install once through the official script, then use oo update to stay current."
   },
   "HOME.CliEntry.demo.eyebrow": {
     "message": "FIRST RUN DEMO"
@@ -2011,13 +2011,13 @@
     "message": "Inspect"
   },
   "HOME.CliEntry.demo.stage2.title": {
-    "message": "Check package info"
+    "message": "Check package metadata"
   },
   "HOME.CliEntry.demo.stage3.label": {
     "message": "Run"
   },
   "HOME.CliEntry.demo.stage3.title": {
-    "message": "Run and get the result"
+    "message": "Run the task and bring the result back"
   },
   "HOME.CodexBlocks.badge": {
     "message": "CODEX EXAMPLES"
@@ -2392,7 +2392,7 @@
     "message": "Build, combine, and orchestrate your own tools when connected services and published tools are not enough"
   },
   "Theme.Navbar.product.cli.description": {
-    "message": "Primary entry: install in agents and search and use tools directly"
+    "message": "Primary entry: install officially, then search, inspect, and use tools directly"
   },
   "Theme.Navbar.product.cloud.description": {
     "message": "Deliver tools back through oo-cli with hosted cloud runtime"

@@ -53,7 +53,7 @@ const darkTheme = themes.dracula;
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "OOMOL",
-  tagline: "Start with oo-cli. Build in Studio. Deliver through Cloud.",
+  tagline: "Start with oo-cli. Install, inspect, and run. Build in Studio. Deliver through Cloud.",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -114,7 +114,7 @@ const config = {
         "@type": "Organization",
         name: "OOMOL",
         description:
-          "Let agents use your apps, APIs, and internal tools through one continuous path from oo-cli to Studio and Cloud.",
+          "Let agents use your apps, APIs, and internal tools through one continuous path from oo-cli through Studio and Cloud.",
         url: "https://oomol.com",
         logo: "https://oomol.com/img/logo2x.png",
         sameAs: ["https://hub.oomol.com"],
@@ -211,7 +211,7 @@ const config = {
         {
           name: "description",
           content:
-            "Let agents use your apps, APIs, and internal tools. Start with oo-cli, build in Studio when needed, and deliver through Cloud.",
+            "Let agents use your apps, APIs, and internal tools. Start with oo-cli through official install and update paths, build in Studio when needed, and deliver through Cloud.",
         },
         { property: "og:site_name", content: "OOMOL" },
         { property: "og:type", content: "website" },

@@ -14,8 +14,13 @@ const CLI_DEMO_VIDEO_URL =
 const zhCopy = {
   slogan: `为 Agent
 提供更多工具`,
-  overview: `Agent 会分析、会规划，但真正执行还得连上现有工具。oo-cli 把现实世界里的工具接到 Agent 手里，让它真正开始做事。`,
-  highlights: ["搜索工具", "调用连接器", "运行云任务", "安装技能"],
+  overview: `Agent 会分析、会规划，但真正执行还得连上现有工具。oo-cli 把 OOMOL 账号、已发布 package、connector、Cloud Task 和 managed skills 接到 Agent 手里，让你在 Codex、Claude Code 或 shell 里走完官方安装、搜索、校验、执行和更新这条终端优先路径。`,
+  highlights: [
+    "官方安装与更新",
+    "搜索与查看",
+    "Connector / Cloud Task",
+    "Codex / Claude Code Skills",
+  ],
   primaryCta: "查看安装文档",
   secondaryCta: "查看 GitHub",
   playAriaLabel: "播放 CLI 演示视频",
@@ -24,12 +29,12 @@ const zhCopy = {
 const enCopy = {
   slogan: `More Tools
 for Agents`,
-  overview: `Agents can analyze and plan, but execution still depends on real-world tools. oo-cli connects them to those tools so they can actually get work done.`,
+  overview: `Agents can analyze and plan, but execution still depends on real tools. oo-cli connects OOMOL accounts, published packages, connector actions, cloud tasks, and managed skills so Codex, Claude Code, and regular shells can follow one terminal-first path from official install and inspection to execution and ongoing updates.`,
   highlights: [
-    "Search Tools",
-    "Run Connectors",
-    "Run Cloud Tasks",
-    "Install Skills",
+    "Install & Update",
+    "Search & Inspect",
+    "Connectors / Cloud Tasks",
+    "Codex / Claude Code Skills",
   ],
   primaryCta: "Read the install guide",
   secondaryCta: "View GitHub",

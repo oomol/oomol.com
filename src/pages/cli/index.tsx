@@ -10,13 +10,13 @@ import Layout from "../../theme/Layout";
 const zhCopy = {
   title: "oo-cli - 为 Agent 提供更多工具",
   description:
-    "在一个 CLI 里搜索工具、查看输入、调用 connector、运行 cloud task、安装 skills，让 Agent 直接开始做事。",
+    "在一个 CLI 里完成安装与更新、搜索与查看、connector 与 cloud task 执行、skills 与文件管理，让 Agent 直接开始做事。",
 };
 
 const enCopy = {
   title: "oo-cli - More Tools for Agents",
   description:
-    "Search tools, inspect inputs, run connector actions, launch cloud tasks, and install skills from one CLI so agents can get to work.",
+    "Install and update oo, search and inspect tools, run connector actions and cloud tasks, and manage skills and files from one CLI so agents can get to work.",
 };
 
 export default function CliPage() {

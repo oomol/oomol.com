@@ -9,28 +9,50 @@ pagination_next: cloud-services/cli-command-reference
 # oo-cli
 
 `oo-cli` exposes the `oo` command as OOMOL's terminal-first interface for
-working with OOMOL accounts, published packages, connector actions, cloud
-tasks, and managed skills.
+managed installs, OOMOL accounts, published packages, connector actions, cloud
+tasks, files, logs, and managed skills.
 
 If you are in Codex, Claude Code, or a regular shell session, start here before
 you wire a lower-level API or MCP integration. `oo` is the terminal-first path
-for both trying published capabilities and handling operational tasks such as
-auth, file transfer, and skill management.
+for trying published capabilities, handling auth and file transfer, managing
+skills, and keeping the active CLI version current through official installer
+scripts and managed updates.
 
 ## What `oo-cli` is good for
 
+- Install the managed CLI binary from official scripts or a package manager, then keep it current with `oo update`.
 - Sign in and switch between OOMOL accounts.
 - Search packages and connector actions with one free-form query.
-- Inspect package metadata, then create and monitor Cloud Task runs.
-- Run authenticated connector actions directly from the terminal.
+- Inspect package metadata and connector schemas before execution.
+- Run authenticated connector actions directly from the terminal, including dry runs and JSON output.
+- Create, list, monitor, and fetch Cloud Task runs.
 - Install bundled or published skills into Codex and Claude Code.
-- Upload and download artifacts that your workflows need.
+- Upload, download, list, and clean up workflow files.
+- Inspect persisted logs, manage CLI config, and generate shell completion scripts.
 
 ## Install
+
+Recommended managed install:
+
+```bash
+curl -fsSL https://cli.oomol.com/install.sh | bash
+```
+
+On Windows PowerShell:
+
+```powershell
+irm https://cli.oomol.com/install.ps1 | iex
+```
+
+Package-manager install remains available:
 
 ```bash
 bun install -g @oomol-lab/oo-cli
 ```
+
+After a managed install, use `oo update` to move to the latest published
+release, `oo upgrade` as an alias, and `oo check-update` when you only want to
+see whether a newer release exists.
 
 ## Quick Start
 
@@ -40,7 +62,13 @@ bun install -g @oomol-lab/oo-cli
 oo login
 ```
 
-2. In Codex, use the bundled `oo` skill:
+2. Search for a published capability:
+
+```bash
+oo search "generate a QR code"
+```
+
+3. In Codex, use the bundled `oo` skill:
 
 ```text
 $oo generate a QR code for the string OOMOL
@@ -65,6 +93,10 @@ The two bundled skills solve different problems:
 - `oo-find-skills`: searches the published OOMOL and `oo` skill catalog, then
   installs one or more selected skills
 
+Successful `oo install` and `oo update` runs refresh these bundled skills
+automatically. For a manual refresh, use `oo skills add`. `oo skills update`
+is for published oo-managed skills and does not update bundled skills.
+
 You can also install bundled skills explicitly:
 
 ```bash
@@ -74,18 +106,46 @@ oo skills install oo-find-skills
 
 ## Main Workflows
 
+### Install or refresh the managed CLI
+
+Use the managed install flow when you want official binary releases and a clear
+ongoing update path.
+
+```bash
+oo install
+oo check-update
+oo update
+```
+
+`oo install` installs the latest managed release. `oo update` keeps that
+managed install current and refreshes bundled skills after a successful update.
+
 ### Search across packages and connector actions
 
 Use `oo search` when the user intent matters more than the exact execution
 path.
 
 ```bash
-oo search "generate a QR code"
+oo search "generate a QR code" --json
 ```
 
 This command returns a mixed result set. Package results represent published
 OOMOL capabilities. Connector results represent callable external service
-actions.
+actions and include fields such as `authenticated` and `schemaPath`.
+
+### Inspect a package or connector before execution
+
+Use package inspection and connector search when you want the schema, metadata,
+or version details before you call anything.
+
+```bash
+oo packages info foo/bar@latest
+oo connector search "send an email" --json
+```
+
+`oo packages info` resolves `@latest` for inspection. `oo connector search`
+also caches connector schemas locally and reports the cached path in text and
+JSON output.
 
 ### Run connector actions directly
 
@@ -94,7 +154,8 @@ action.
 
 ```bash
 oo connector search "send an email"
-oo connector run <serviceName> -a <action> -d @input.json
+oo connector run <serviceName> -a <action> --dry-run --data @input.json
+oo connector run <serviceName> -a <action> --data @input.json --json
 ```
 
 `oo connector run` supports `--dry-run` for payload validation and can emit
@@ -108,8 +169,10 @@ path to a published block.
 ```bash
 oo packages search "generate a QR code"
 oo packages info foo/bar@latest
-oo cloud-task run foo/bar@1.2.3 -b main -d '{"text":"OOMOL"}'
+oo cloud-task run foo/bar@1.2.3 -b main --data @input.json
+oo cloud-task list --status running --json
 oo cloud-task wait <taskId>
+oo cloud-task log <taskId>
 oo cloud-task result <taskId>
 ```
 
@@ -122,25 +185,30 @@ Use the file namespace when the task needs input artifacts or downloadable
 results.
 
 ```bash
-oo file upload ./input.pdf
+oo file upload ./input.pdf --json
+oo file list --status active --json
 oo file download <url>
+oo file cleanup --json
 ```
 
 Uploads expire after one day. Downloads default to the configured
 `file.download.out_dir`, or `~/Downloads` when that setting is not present.
+Downloads also resume when possible and never overwrite an existing target
+path.
 
 ## Command Groups At A Glance
 
 | Area | Key commands | Purpose |
 | --- | --- | --- |
+| Install & Updates | `oo install`, `oo update`, `oo upgrade`, `oo check-update` | Install a managed release and keep it current |
 | Auth | `oo auth ...`, `oo login`, `oo logout` | Manage accounts and verify the active API key |
 | Config | `oo config ...` | Persist CLI settings such as language and download directory |
 | Search | `oo search`, `oo packages search`, `oo connector search` | Discover packages, connector actions, or both |
+| Inspect | `oo packages info`, `oo connector search` | Inspect metadata, versions, and schemas before execution |
 | Execution | `oo connector run`, `oo cloud-task ...` | Call connector actions or create and monitor cloud tasks |
 | Skills | `oo skills ...` | List, search, install, update, and remove oo-managed skills |
-| Files | `oo file ...` | Upload local inputs and download remote outputs |
-| Logs | `oo log ...`, `--debug` | Inspect persisted debug logs |
-| Updates | `oo check-update` | Check for a newer CLI release |
+| Files | `oo file ...` | Upload, download, list, and clean up local file-transfer records |
+| Logs | `oo log ...`, `--debug` | Inspect persisted debug logs and the current log directory |
 | Shell | `oo completion <shell>` | Generate shell completion scripts |
 
 ## When to use CLI vs API or MCP

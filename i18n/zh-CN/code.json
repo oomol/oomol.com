@@ -27,10 +27,10 @@
     "message": "社区"
   },
   "HOME.page.title": {
-    "message": "OOMOL - 一个让 AI Agent 接入第三方服务和已发布工具的 CLI 入口"
+    "message": "OOMOL - 先用 oo-cli，再在 Studio 构建，并通过 Cloud 交付"
   },
   "HOME.page.description": {
-    "message": "先用 oo-cli 让 Codex、OpenClaw、Claude Code 等 Agent 接入第三方服务、运行已发布工具，并调用你的自有系统，把工作先跑起来；当你需要自己生产、组合和交付工具时，再进入 OOMOL Studio 和 Cloud。"
+    "message": "先通过官方方式安装 oo-cli，让 Codex、OpenClaw、Claude Code 等 Agent 先搜索、查看并运行已发布工具；当你需要自己生产、组合和交付工具时，再进入 OOMOL Studio 和 Cloud。"
   },
   "HOME.FirstScreen.slogan": {
     "message": "先用起来，再按需连接"
@@ -381,7 +381,7 @@
     "message": "如果你要在终端和 Agent 中使用，就从 oo-cli 开始"
   },
   "HOME.Downloads.cli.info.description": {
-    "message": "如果你想在 Codex、Claude Code 或本地终端里直接搜索、调用和运行工具，就从 oo-cli 开始。你可以自己安装，也可以把下面的提示词发给 Agent，让它替你完成安装和检查。"
+    "message": "如果你想在 Codex、Claude Code 或本地终端里直接搜索、调用和运行工具，就从 oo-cli 开始。你可以通过官方脚本或包管理器安装，也可以把下面的提示词发给 Agent，让它替你完成安装和检查。"
   },
   "HOME.Downloads.cli.action.guide": {
     "message": "打开 oo-cli 指南"
@@ -390,19 +390,19 @@
     "message": "查看 oo-cli GitHub"
   },
   "HOME.Downloads.cli.method.install.title": {
-    "message": "直接在终端安装"
+    "message": "使用官方脚本安装"
   },
   "HOME.Downloads.cli.method.install.description": {
-    "message": "在 Codex、Claude Code 或任意本地终端里运行这两条命令，登录后就可以开始使用 oo-cli。"
+    "message": "在 Codex、Claude Code 或任意本地终端里运行这两条命令，再登录即可开始使用 oo-cli。指南里也包含 Windows PowerShell 和包管理器安装方式。"
   },
   "HOME.Downloads.cli.method.agent.title": {
     "message": "把安装交给 Agent"
   },
   "HOME.Downloads.cli.method.agent.description": {
-    "message": "如果你更希望 Agent 代你完成安装和检查，就把下面这段提示词直接复制给它。"
+    "message": "如果你更希望 Agent 按官方安装路径代你完成安装和检查，就把下面这段提示词直接复制给它。"
   },
   "HOME.Downloads.cli.method.agent.prompt": {
-    "message": "请帮我用 Bun 全局安装 oo-cli：先运行 `bun install -g @oomol-lab/oo-cli`，再运行 `oo login`，确认 CLI 已经可以使用，并告诉我下一条最适合在 oo-cli 里执行的命令。"
+    "message": "请帮我按当前环境的官方方式安装 oo-cli（macOS / Linux 用 `curl -fsSL https://cli.oomol.com/install.sh | bash`，Windows PowerShell 用 `irm https://cli.oomol.com/install.ps1 | iex`），然后运行 `oo login`，确认 CLI 已经可以使用，并告诉我下一条最适合在 oo-cli 里执行的命令。"
   },
   "HOME.Downloads.cli.copy": {
     "message": "复制"
@@ -1936,10 +1936,10 @@
     "message": "CLI FIRST"
   },
   "HOME.CliEntry.title": {
-    "message": "oo-cli 是发现和运行工具的默认入口"
+    "message": "oo-cli 是安装、发现和运行工具的默认入口"
   },
   "HOME.CliEntry.subtitle": {
-    "message": "在 Codex、Claude Code 或任意终端里装一次，就可以搜索包、查看输入、运行工具，再决定要不要接 API 或 MCP。"
+    "message": "在 Codex、Claude Code 或任意终端里通过官方脚本装好一次，就可以搜索包、查看输入、运行工具，并继续用 oo update 保持最新，再决定要不要接 API 或 MCP。"
   },
   "HOME.CliEntry.benefit1.label": {
     "message": "先用已发布工具"
@@ -1957,13 +1957,13 @@
     "message": "安装 oo-cli"
   },
   "HOME.CliEntry.step1.description": {
-    "message": "先把使用已发布工具的默认入口装好。"
+    "message": "先用官方安装路径把已发布工具的默认入口装好。"
   },
   "HOME.CliEntry.step2.title": {
     "message": "登录账号"
   },
   "HOME.CliEntry.step2.description": {
-    "message": "登录后开始搜索和运行已发布的工具。"
+    "message": "登录一次后，就可以沿同一套账号上下文持续搜索和运行已发布工具。"
   },
   "HOME.CliEntry.step3.title": {
     "message": "搜索并运行工具"
@@ -1981,13 +1981,13 @@
     "message": "INSTALL ONCE"
   },
   "HOME.CliEntry.setup.title": {
-    "message": "两条命令，先把 oo-cli 装好并登录"
+    "message": "两条命令，先按官方方式装好 oo-cli 并登录"
   },
   "HOME.CliEntry.setup.pill": {
     "message": "30 秒"
   },
   "HOME.CliEntry.setup.note": {
-    "message": "装好一次，后面直接用。"
+    "message": "官方方式装好一次，后面继续用 oo update 保持最新。"
   },
   "HOME.CliEntry.demo.eyebrow": {
     "message": "FIRST RUN DEMO"
@@ -2011,13 +2011,13 @@
     "message": "Inspect"
   },
   "HOME.CliEntry.demo.stage2.title": {
-    "message": "查看 package info"
+    "message": "查看 package 元数据"
   },
   "HOME.CliEntry.demo.stage3.label": {
     "message": "Run"
   },
   "HOME.CliEntry.demo.stage3.title": {
-    "message": "运行并获取结果"
+    "message": "运行任务并把结果取回来"
   },
   "HOME.CodexBlocks.badge": {
     "message": "CODEX EXAMPLES"
@@ -2392,7 +2392,7 @@
     "message": "当服务接入和已发布工具不够时，构建、组合和编排你自己的工具"
   },
   "Theme.Navbar.product.cli.description": {
-    "message": "主入口：装进 Agent，直接搜索和调用工具"
+    "message": "主入口：先官方安装，再直接搜索、查看和调用工具"
   },
   "Theme.Navbar.product.cloud.description": {
     "message": "把工具交付回 oo-cli，并在云端托管运行"

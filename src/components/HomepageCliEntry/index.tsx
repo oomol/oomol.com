@@ -26,7 +26,7 @@ const steps = [
 const installCommands = [
   {
     prompt: "$",
-    text: "bun install -g @oomol-lab/oo-cli",
+    text: "curl -fsSL https://cli.oomol.com/install.sh | bash",
   },
   {
     prompt: "$",
@@ -47,14 +47,14 @@ const demoStages = [
     label: translate({ message: "HOME.CliEntry.demo.stage2.label" }),
     title: translate({ message: "HOME.CliEntry.demo.stage2.title" }),
     prompt: "$",
-    text: "oo package info foo/bar@latest",
+    text: "oo packages info foo/bar@latest",
   },
   {
     index: "03",
     label: translate({ message: "HOME.CliEntry.demo.stage3.label" }),
     title: translate({ message: "HOME.CliEntry.demo.stage3.title" }),
     prompt: "$",
-    text: `oo cloud-task run foo/bar@1.2.3 --block-id main --data '{"text":"OOMOL"}'`,
+    text: "oo cloud-task run foo/bar@1.2.3 --block-id main --data @input.json",
     followUp: "oo cloud-task result <task-id>",
   },
 ];

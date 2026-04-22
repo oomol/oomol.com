@@ -3,7 +3,8 @@ import styles from "./styles.module.scss";
 import { translate } from "@docusaurus/Translate";
 import React from "react";
 
-const INSTALL_COMMAND = "bun install -g @oomol-lab/oo-cli\noo login";
+const INSTALL_COMMAND =
+  "curl -fsSL https://cli.oomol.com/install.sh | bash\noo login";
 
 type CopyTarget = "command" | "prompt" | null;
 

@@ -64,35 +64,50 @@ type Copy = {
 
 const zhCopy: Copy = {
   workflow: {
-    eyebrow: "真实流程",
-    title: "让 Agent 在 oo-cli 里完成一次真实任务",
+    eyebrow: "最新路径",
+    title: "从安装到执行，把一次真实任务走通",
     description:
-      "oo login 通常只需做一次，用来建立会话；之后每次完成任务，多半是发现工具、执行调用、再取回结果。下面这条流程讲的是这一套日常业务路径（终端里仍会从登录写起，方便你对照一次完整会话）。",
+      "先用官方脚本或包管理器把 oo 接进终端，再登录一次建立账号上下文。完成这一步后，大多数任务都会沿着同一条路径重复：搜索、查看、校验、执行，再把结果拿回来。",
     steps: [
       {
         index: "01",
-        command:
-          'oo search "generate a QR code for OOMOL"\noo packages info foo/bar',
-        title: "发现：搜工具、看清用法",
-        text: "用自然语言搜 package 与 connector，再用 metadata / schema 确认输入与行为，能复用就别从零写。",
+        command: "curl -fsSL https://cli.oomol.com/install.sh | bash\noo login",
+        title: "接入：安装并建立账号上下文",
+        text: "先把 oo 安装成一个可持续维护的终端入口，再登录一次，后面的 Agent 会话就能复用这套账号上下文。",
       },
       {
         index: "02",
-        command: "oo connector run …\noo cloud-task run …",
-        title: "执行：连接器或云任务",
-        text: "可直接跑 connector，也可以提交 cloud task，把重活交给云端。",
+        command:
+          'oo search "generate a QR code for OOMOL"\noo packages info foo/bar@latest',
+        title: "发现：统一搜索，再看清 package 信息",
+        text: "先搜 package 和 connector，再看 metadata、版本和输入要求，确认是否已经有现成能力能直接复用。",
       },
       {
         index: "03",
+        command:
+          'oo connector search "send an email"\noo connector run <serviceName> -a <action> --dry-run --data @input.json',
+        title: "执行：先校验输入，再直接调用 connector",
+        text: "schema cache 和 dry-run 帮 Agent 先检查输入，再同步拿到结果和 executionId，而不是一开始就盲跑。",
+      },
+      {
+        index: "04",
         command: "oo cloud-task wait <taskId>\noo cloud-task result <taskId>",
-        title: "收尾：等状态、取结果",
-        text: "CLI 会等待状态、读日志，需要时用 result 取回结构化输出，Agent 再接下一步。",
+        title: "扩展：交给 Cloud Task 并把结果带回 CLI",
+        text: "当任务更长时，把执行交给云端，再用 wait、result、log 继续沿着同一条命令路径收尾。",
       },
     ],
     terminal: {
       label: "一次真实任务的命令流程",
       lines: [
-        { kind: "comment", text: "# 先登录，后面复用同一套账号上下文" },
+        {
+          kind: "comment",
+          text: "# 先用官方脚本安装，之后继续用 oo update 保持最新",
+        },
+        {
+          kind: "command",
+          text: "curl -fsSL https://cli.oomol.com/install.sh | bash",
+        },
+        { kind: "comment", text: "# 登录一次，后面复用同一套账号上下文" },
         { kind: "command", text: "oo login" },
         {
           kind: "comment",
@@ -104,9 +119,17 @@ const zhCopy: Copy = {
         },
         {
           kind: "comment",
-          text: "# 先看一个工具的说明和输入要求",
+          text: "# 先看一个工具的说明、版本和输入要求",
         },
-        { kind: "command", text: "oo packages info foo/bar" },
+        { kind: "command", text: "oo packages info foo/bar@latest" },
+        {
+          kind: "comment",
+          text: "# 先 dry-run 校验 connector 输入，再真正执行",
+        },
+        {
+          kind: "command",
+          text: "oo connector run <serviceName> -a <action> --dry-run --data @input.json",
+        },
         {
           kind: "comment",
           text: "# 运行一个云任务，再把结果拿回来",
@@ -124,13 +147,25 @@ const zhCopy: Copy = {
   },
   examples: {
     eyebrow: "命令示例",
-    title: "这些功能现在就能直接用",
+    title: "这些能力现在就能直接用在真实环境里",
     description:
-      "下面四组示例，分别对应搜索、调用、云任务，以及在 Codex 和 Claude Code 里使用。",
+      "从官方安装、结构化搜索，到 connector 和 cloud task，这些都是最新版本最适合直接落地的用法。",
     cards: [
       {
+        tag: "安装与更新",
+        result: "官方脚本 + oo update",
+        title: "先把 CLI 装成可持续维护的终端入口",
+        description:
+          "最新版本提供官方安装脚本和明确的升级路径，不用每次发布后都重新摸索怎么装、怎么更新。",
+        commands: [
+          "curl -fsSL https://cli.oomol.com/install.sh | bash",
+          "oo check-update",
+          "oo update",
+        ],
+      },
+      {
         tag: "搜索",
-        result: "返回工具和连接器结果",
+        result: "返回 package / connector 混合结果",
         title: "先搜索，再决定要不要自己做",
         description:
           "先用一句自然语言找找有没有现成工具，而不是一开始就自己做。",
@@ -138,36 +173,38 @@ const zhCopy: Copy = {
       },
       {
         tag: "连接器",
-        result: "支持 dry-run 与结构化结果",
-        title: "直接运行连接器",
+        result: "带 schemaPath，可 dry-run",
+        title: "先查看 connector，再校验输入并执行",
         description:
-          "拿到 schema 后，先 dry-run 检查输入，再直接运行 connector action，把结果交给下一步。",
+          "先通过 connector search 看清 schema，再 dry-run 检查输入，确认没问题后再执行 action，把结果交给下一步。",
         commands: [
-          "oo connector run slack.send-message --dry-run --data @input.json",
-          "oo connector run slack.send-message --data @input.json",
+          'oo connector search "send an email" --json',
+          "oo connector run <serviceName> -a <action> --dry-run --data @input.json",
+          "oo connector run <serviceName> -a <action> --data @input.json",
         ],
       },
       {
         tag: "云任务",
-        result: "适合较长任务与异步等待",
+        result: "list / log / wait / result 一条龙",
         title: "运行一个任务并等待结果",
         description:
-          "对于已发布任务，CLI 会负责创建任务、等待状态变化、读取日志，再把结果拿回来。",
+          "对于已发布任务，CLI 会负责创建任务、等待状态变化、读取日志，再把结果拿回来，不必切到别的后台。",
         commands: [
           "oo cloud-task run foo/bar@1.2.3 -b main --data @input.json",
           "oo cloud-task wait <taskId>",
+          "oo cloud-task log <taskId>",
           "oo cloud-task result <taskId>",
         ],
       },
       {
         tag: "技能",
-        result: "直接在 Codex / Claude Code 中使用",
-        title: "在 Codex 和 Claude Code 里直接使用",
+        result: "区分 bundled 与 published skills",
+        title: "在 Codex 和 Claude Code 里直接继续工作",
         description:
-          "技能的搜索、安装和更新都在 oo-cli 里完成，不需要换一套地方继续用。",
+          "bundled skills 和 published skills 都能通过 oo-cli 管理，让 Agent 继续留在你已经在用的宿主里工作。",
         commands: [
+          "oo skills install",
           'oo skills search "figma"',
-          "oo skills install package/name --all -y",
           "oo skills update",
         ],
       },
@@ -177,7 +214,7 @@ const zhCopy: Copy = {
     eyebrow: "还需要更多时",
     title: "现成工具不够时，再用 Studio 或 Cloud",
     description:
-      "oo-cli 先帮你把任务跑起来。需要自己做工具，或者让工具持续运行时，再去 Studio 或 Cloud。",
+      "oo-cli 先帮你把已发布能力和安装路径跑通。需要自己做工具，或者让工具持续运行时，再去 Studio 或 Cloud。",
     cards: [
       {
         title: "去 Studio 生成或补全自己的工具",
@@ -196,7 +233,7 @@ const zhCopy: Copy = {
   cta: {
     title: "现在就让 Agent 用上这些工具",
     description:
-      "安装 oo-cli，先在终端里搜索工具、查看输入，并跑通一个真实任务。",
+      "用官方脚本或包管理器安装 oo-cli，先在终端里搜索工具、查看输入，并跑通一个真实任务。",
     primary: "查看安装文档",
     secondary: "查看命令参考",
   },
@@ -204,34 +241,49 @@ const zhCopy: Copy = {
 
 const enCopy: Copy = {
   workflow: {
-    eyebrow: "Real Workflow",
-    title: "See how an agent completes a real task in oo-cli",
+    eyebrow: "Current Path",
+    title: "From install to execution, walk through one real task",
     description:
-      "oo login is usually a one-time setup to establish a session. After that, most tasks follow the same loop: discover the right tool, run it, then collect the result. The steps below focus on that repeating workflow (the terminal still starts from login so you can mirror a full session).",
+      "Start by getting oo into the terminal through the official installer or a package manager, then log in once to establish the account context. After that, most tasks repeat the same loop: search, inspect, validate, execute, and bring the result back.",
     steps: [
       {
         index: "01",
-        command:
-          'oo search "generate a QR code for OOMOL"\noo packages info foo/bar',
-        title: "Discover: search, then inspect the tool",
-        text: "Search packages and connectors in natural language, then inspect metadata or schemas so inputs and behavior are clear before you call anything.",
+        command: "curl -fsSL https://cli.oomol.com/install.sh | bash\noo login",
+        title: "Set up: install oo and establish account context",
+        text: "Turn oo into a maintained terminal entry point first, then log in once so later agent sessions can reuse the same account context.",
       },
       {
         index: "02",
-        command: "oo connector run …\noo cloud-task run …",
-        title: "Run: connector or cloud task",
-        text: "Call a connector directly, or submit a cloud task when the job is better handled asynchronously.",
+        command:
+          'oo search "generate a QR code for OOMOL"\noo packages info foo/bar@latest',
+        title: "Discover: search once, then inspect the package",
+        text: "Search packages and connectors together, then inspect metadata, versions, and input requirements to confirm whether a published capability already fits.",
       },
       {
         index: "03",
+        command:
+          'oo connector search "send an email"\noo connector run <serviceName> -a <action> --dry-run --data @input.json',
+        title: "Execute: validate inputs, then run the connector",
+        text: "Schema cache plus dry-run validation lets the agent check inputs first, then get the result and executionId without a blind attempt.",
+      },
+      {
+        index: "04",
         command: "oo cloud-task wait <taskId>\noo cloud-task result <taskId>",
-        title: "Finish: wait, then fetch the result",
-        text: "The CLI waits for status changes and logs. Use result when you need structured output for the next step.",
+        title: "Extend: hand longer work to Cloud Task and bring it back",
+        text: "When the job runs longer, move execution to the cloud, then use wait, result, and log commands to finish in the same command path.",
       },
     ],
     terminal: {
       label: "One real task in oo-cli",
       lines: [
+        {
+          kind: "comment",
+          text: "# install once from the official script, then keep using oo update",
+        },
+        {
+          kind: "command",
+          text: "curl -fsSL https://cli.oomol.com/install.sh | bash",
+        },
         { kind: "comment", text: "# log in once and reuse the same context" },
         { kind: "command", text: "oo login" },
         {
@@ -246,7 +298,15 @@ const enCopy: Copy = {
           kind: "comment",
           text: "# inspect one package before deciding how to call it",
         },
-        { kind: "command", text: "oo packages info foo/bar" },
+        { kind: "command", text: "oo packages info foo/bar@latest" },
+        {
+          kind: "comment",
+          text: "# validate a connector input before execution",
+        },
+        {
+          kind: "command",
+          text: "oo connector run <serviceName> -a <action> --dry-run --data @input.json",
+        },
         {
           kind: "comment",
           text: "# run a cloud task and keep the result in the same CLI flow",
@@ -264,13 +324,25 @@ const enCopy: Copy = {
   },
   examples: {
     eyebrow: "Command Examples",
-    title: "These features are available right now",
+    title: "These capabilities are ready for real work right now",
     description:
-      "These examples cover search, execution, cloud tasks, and using tools inside Codex and Claude Code.",
+      "From official install to structured search, connector execution, and cloud-task tracking, these are the most practical ways to use the current CLI.",
     cards: [
       {
+        tag: "Install & Update",
+        result: "Official scripts + oo update",
+        title: "Turn oo into a maintained terminal entry point first",
+        description:
+          "The latest CLI adds official install scripts and a clear upgrade path, so you do not have to rediscover how to install or update it on every release.",
+        commands: [
+          "curl -fsSL https://cli.oomol.com/install.sh | bash",
+          "oo check-update",
+          "oo update",
+        ],
+      },
+      {
         tag: "Search",
-        result: "Returns packages and connectors together",
+        result: "Returns mixed package and connector results",
         title: "Search first before deciding to build",
         description:
           "Use one natural-language query to look for ready-made tools before deciding to build your own.",
@@ -278,36 +350,38 @@ const enCopy: Copy = {
       },
       {
         tag: "Connector",
-        result: "Support dry runs and structured results",
-        title: "Execute a connector action directly",
+        result: "Includes schemaPath and dry-run support",
+        title: "Inspect a connector, then validate and execute it",
         description:
-          "Check inputs with a dry run first, then run the connector action and pass the result into the next step.",
+          "Use connector search to inspect the schema first, then validate the payload with a dry run before sending the real action call.",
         commands: [
-          "oo connector run slack.send-message --dry-run --data @input.json",
-          "oo connector run slack.send-message --data @input.json",
+          'oo connector search "send an email" --json',
+          "oo connector run <serviceName> -a <action> --dry-run --data @input.json",
+          "oo connector run <serviceName> -a <action> --data @input.json",
         ],
       },
       {
         tag: "Cloud Task",
-        result: "Good for longer-running tasks and async waits",
+        result: "list / log / wait / result in one flow",
         title: "Run a workload and wait for the result",
         description:
-          "For published tasks, the CLI creates the task, waits for status updates, reads logs, and brings the result back.",
+          "For published tasks, the CLI creates the task, waits for status updates, reads logs, and brings the result back without leaving the terminal path.",
         commands: [
           "oo cloud-task run foo/bar@1.2.3 -b main --data @input.json",
           "oo cloud-task wait <taskId>",
+          "oo cloud-task log <taskId>",
           "oo cloud-task result <taskId>",
         ],
       },
       {
         tag: "Skills",
-        result: "Use directly in Codex / Claude Code",
-        title: "Use these tools directly in Codex and Claude Code",
+        result: "Separates bundled and published skills",
+        title: "Keep working directly inside Codex and Claude Code",
         description:
-          "Search, install, and update skills through oo-cli instead of jumping to a separate place to keep using them.",
+          "Manage bundled and published skills through oo-cli so agents keep working in the hosts they already use.",
         commands: [
+          "oo skills install",
           'oo skills search "figma"',
-          "oo skills install package/name --all -y",
           "oo skills update",
         ],
       },
@@ -317,7 +391,7 @@ const enCopy: Copy = {
     eyebrow: "Need More?",
     title: "When ready-made tools are not enough, use Studio or Cloud",
     description:
-      "Let oo-cli get the task moving first. If you need to build your own tool or keep it running continuously, then move on to Studio or Cloud.",
+      "Let oo-cli establish the published-tool path and the install/update lifecycle first. If you need to build your own tool or keep it running continuously, then move on to Studio or Cloud.",
     cards: [
       {
         title: "Go to Studio to generate or complete your own tool",
@@ -336,7 +410,7 @@ const enCopy: Copy = {
   cta: {
     title: "Let your agent use these tools now",
     description:
-      "Install oo-cli and use it to search tools, inspect inputs, and run a real task from the terminal.",
+      "Install oo-cli from the official script or your package manager, then use it to search tools, inspect inputs, and run a real task from the terminal.",
     primary: "Read the install guide",
     secondary: "Read the command reference",
   },
