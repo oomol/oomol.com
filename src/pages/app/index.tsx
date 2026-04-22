@@ -841,17 +841,15 @@ export default function AppPage() {
             <figure
               className={cx(styles.mediaFigure, styles.modelDemoMediaFigure)}
             >
-              <div className={styles.modelDemoFrame}>
-                <img
-                  src={nativeWorkspacePng}
-                  alt={copy.models.demo.imageAlt}
-                  className={styles.modelDemoImage}
-                  width={APP_MEDIA_PIXELS.nativeWorkspacePng.width}
-                  height={APP_MEDIA_PIXELS.nativeWorkspacePng.height}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
+              <img
+                src={nativeWorkspacePng}
+                alt={copy.models.demo.imageAlt}
+                className={styles.modelDemoImage}
+                width={APP_MEDIA_PIXELS.nativeWorkspacePng.width}
+                height={APP_MEDIA_PIXELS.nativeWorkspacePng.height}
+                loading="lazy"
+                decoding="async"
+              />
               <figcaption className={styles.mediaDimension}>
                 {formatMediaPixelDimensions(
                   APP_MEDIA_PIXELS.nativeWorkspacePng.width,

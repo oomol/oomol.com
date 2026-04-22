@@ -47,6 +47,9 @@
   "HOME.FirstScreen.video.playAriaLabel": {
     "message": "Play demo video"
   },
+  "HOME.FirstScreen.video.closeAriaLabel": {
+    "message": "Close video dialog"
+  },
   "HOME.PainPoints.badge": {
     "message": "Step 1: Start with connected services and tools"
   },

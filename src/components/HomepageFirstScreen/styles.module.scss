@@ -85,72 +85,6 @@
   margin: 0 auto;
 }
 
-.videoFrame {
-  width: 100%;
-  border-radius: var(--oomol-radius-card);
-  overflow: clip;
-  border: 1px solid var(--oomol-border-default);
-  background: var(--oomol-bg-spotlight);
-  box-shadow: none;
-  position: relative;
-}
-
-.playOverlay {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  display: grid;
-  place-items: center;
-  background: var(--oomol-chrome-scrim);
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-  transition: background 0.2s ease;
-
-  &:hover {
-    background: var(--oomol-chrome-scrim-hover);
-  }
-
-  &:focus-visible {
-    outline: 2px solid var(--oomol-primary);
-    outline-offset: -4px;
-  }
-
-  &:hover .playButton {
-    transform: scale(1.02);
-  }
-}
-
-.playButton {
-  width: 4.4rem;
-  height: 4.4rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  background: var(--oomol-chrome-control-bg);
-  border: 1px solid var(--oomol-chrome-control-border);
-  box-shadow: none;
-  transition: transform 0.2s ease;
-}
-
-.playTriangle {
-  width: 0;
-  height: 0;
-  margin-left: 0.25rem;
-  border-top: 0.75rem solid transparent;
-  border-bottom: 0.75rem solid transparent;
-  border-left: 1.15rem solid var(--oomol-text-primary);
-}
-
-.heroVideo {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  display: block;
-  object-fit: contain;
-  background: var(--oomol-bg-spotlight);
-}
-
 /* ── English overrides ── */
 
 :global(html[lang="en"]) .container {
@@ -247,17 +181,6 @@
 
   .videoShowcaseInner {
     width: min(100%, calc(100% - 32px));
-  }
-
-  .playButton {
-    width: 3.4rem;
-    height: 3.4rem;
-  }
-
-  .playTriangle {
-    border-top-width: 0.55rem;
-    border-bottom-width: 0.55rem;
-    border-left-width: 0.9rem;
   }
 }
 

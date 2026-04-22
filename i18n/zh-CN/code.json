@@ -47,6 +47,9 @@
   "HOME.FirstScreen.video.playAriaLabel": {
     "message": "播放演示视频"
   },
+  "HOME.FirstScreen.video.closeAriaLabel": {
+    "message": "关闭视频弹窗"
+  },
   "HOME.PainPoints.badge": {
     "message": "第一步：先用接好的服务和工具"
   },
