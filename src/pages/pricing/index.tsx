@@ -294,7 +294,7 @@ export default function Index() {
     ? {
         title: "价格 - OOMOL",
         description:
-          "本地构建与验证始终免费。Free 用户每月包含 200 分钟 Cloud Task 和 20K 次授权请求，Auth Link 也已包含在内；只有当托管运行时长或授权请求量需要更高额度时再升级。",
+          "本地构建与验证始终免费。Free 用户每月包含 200 分钟 Cloud Task 和 20K 次 Auth Link 请求；需要更多托管运行时长或更高的 Auth Link 用量时再升级。",
       }
     : {
         title: "Pricing - OOMOL",

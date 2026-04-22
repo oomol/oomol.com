@@ -504,10 +504,10 @@
     "message": "简单、透明的定价"
   },
   "PRICING.subtitle": {
-    "message": "本地构建与验证始终免费。Free 每月包含 200 分钟 Cloud Task、20K 次授权请求，并已包含 Auth Link。需要更多托管运行或授权请求额度时再升级。"
+    "message": "本地构建与验证始终免费。Free 每月包含 200 分钟 Cloud Task 和 20K 次 Auth Link 请求。需要更多托管运行时长或更高的 Auth Link 用量时再升级。"
   },
   "PRICING.model.summary": {
-    "message": "先在 Studio 本地做和验证，再决定要不要上云或接入 Auth Link。Free 每月会自动刷新 200 分钟 Cloud Task 和 20K 次授权请求。"
+    "message": "先在 Studio 本地做和验证，再决定要不要上云或接入 Auth Link。Free 每月会自动刷新 200 分钟 Cloud Task 和 20K 次 Auth Link 请求。"
   },
   "PRICING.model.local.label": {
     "message": "本地"
@@ -522,16 +522,16 @@
     "message": "线上"
   },
   "PRICING.model.online.title": {
-    "message": "先上线，再按运行时长与授权请求扩容"
+    "message": "先上线，再按运行时长与 Auth Link 用量扩容"
   },
   "PRICING.model.online.text": {
-    "message": "Free 已可发布并使用 Cloud，每月包含 200 分钟 Cloud Task 和 20K 次授权请求。Auth Link 负责让用户连接账号并完成授权；只有完成授权后发起的请求才计费。"
+    "message": "Free 已可发布并使用 Cloud，每月包含 200 分钟 Cloud Task 和 20K 次 Auth Link 请求。Auth Link 负责让用户连接账号并完成授权；只有完成授权后发往你服务的请求才计费。"
   },
   "PRICING.subscription.title": {
     "message": "选择你使用 OOMOL 的方式"
   },
   "PRICING.subscription.subtitle": {
-    "message": "Free 适合本地使用和轻量托管。Pro、Growth 与 Scale 提供更高的 Cloud Task 额度和更多授权请求。"
+    "message": "Free 适合本地使用和轻量托管。Pro、Growth 与 Scale 提供更高的 Cloud Task 额度和更多 Auth Link 请求。"
   },
   "PRICING.subscription.recommended": {
     "message": "推荐"
@@ -555,7 +555,7 @@
     "message": "$0"
   },
   "PRICING.subscription.free.description": {
-    "message": "适合本地开发、结果验证，\n以及先用 200 分钟 Cloud Task 和 20K 次授权请求\n把工具在线跑起来"
+    "message": "适合本地开发、结果验证，\n以及先用 200 分钟 Cloud Task 和 20K 次 Auth Link 请求\n把工具在线跑起来"
   },
   "PRICING.subscription.free.feature1": {
     "message": "完整使用 OOMOL Studio 本地开发环境"
@@ -573,13 +573,13 @@
     "message": "可发布 20 个包（公有/私有合计）"
   },
   "PRICING.subscription.free.feature6": {
-    "message": "包含 Auth Link，每月附带 20K 次授权请求"
+    "message": "包含 Auth Link，每月附带 20K 次 Auth Link 请求"
   },
   "PRICING.subscription.free.highlight1": {
     "message": "200 分钟/月"
   },
   "PRICING.subscription.free.highlight2": {
-    "message": "20K 次授权请求/月"
+    "message": "20K Auth Link/月"
   },
   "PRICING.subscription.pro.name": {
     "message": "Pro"
@@ -588,7 +588,7 @@
     "message": "$12"
   },
   "PRICING.subscription.pro.description": {
-    "message": "适合个人开发者正式上线后，\n需要更多托管运行时长\n和更高的授权请求额度"
+    "message": "适合个人开发者正式上线后，\n需要更多托管运行时长\n和更高的 Auth Link 请求额度"
   },
   "PRICING.subscription.pro.feature1": {
     "message": "使用 OOMOL 承接线上发布、运行和交付"
@@ -597,7 +597,7 @@
     "message": "每月包含 1800 分钟 Cloud Task 额度"
   },
   "PRICING.subscription.pro.feature3": {
-    "message": "每月包含 50K 次授权请求"
+    "message": "每月包含 50K 次 Auth Link 请求"
   },
   "PRICING.subscription.pro.feature4": {
     "message": "适合开始稳定承接线上请求"
@@ -612,7 +612,7 @@
     "message": "1800 分钟/月"
   },
   "PRICING.subscription.pro.highlight2": {
-    "message": "50K 次授权请求/月"
+    "message": "50K Auth Link/月"
   },
   "PRICING.subscription.growth.name": {
     "message": "Growth"
@@ -621,7 +621,7 @@
     "message": "$29"
   },
   "PRICING.subscription.growth.description": {
-    "message": "适合稳定线上流量，\n需要更高的月度额度\n和更高的授权请求量"
+    "message": "适合稳定线上流量，\n需要更高的月度额度\n和更高的 Auth Link 请求量"
   },
   "PRICING.subscription.growth.feature1": {
     "message": "包含全部 Pro 能力，并提供更高包含额度"
@@ -630,7 +630,7 @@
     "message": "每月包含 5000 分钟 Cloud Task 额度"
   },
   "PRICING.subscription.growth.feature3": {
-    "message": "每月包含 200K 次授权请求"
+    "message": "每月包含 200K 次 Auth Link 请求"
   },
   "PRICING.subscription.growth.feature4": {
     "message": "适合稳定承接更高频率的线上请求"
@@ -645,7 +645,7 @@
     "message": "5000 分钟/月"
   },
   "PRICING.subscription.growth.highlight2": {
-    "message": "200K 次授权请求/月"
+    "message": "200K Auth Link/月"
   },
   "PRICING.subscription.max.name": {
     "message": "Scale"
@@ -654,7 +654,7 @@
     "message": "$79"
   },
   "PRICING.subscription.max.description": {
-    "message": "适合更高量级的托管流量，\n需要更多运行时长余量\n和更低的授权请求超额单价"
+    "message": "适合更高量级的托管流量，\n需要更多运行时长余量\n和更低的 Auth Link 超额单价"
   },
   "PRICING.subscription.max.feature1": {
     "message": "包含全部 Growth 能力，额度更高"
@@ -663,7 +663,7 @@
     "message": "每月包含 15000 分钟 Cloud Task 额度"
   },
   "PRICING.subscription.max.feature3": {
-    "message": "每月包含 1M 次授权请求"
+    "message": "每月包含 1M 次 Auth Link 请求"
   },
   "PRICING.subscription.max.feature4": {
     "message": "适合更高量级的持续线上流量"
@@ -678,7 +678,7 @@
     "message": "15000 分钟/月"
   },
   "PRICING.subscription.max.highlight2": {
-    "message": "1M 次授权请求/月"
+    "message": "1M Auth Link/月"
   },
   "PRICING.tables.title": {
     "message": "按量价格与服务单价"
@@ -768,34 +768,34 @@
     "message": "需要升级后继续使用"
   },
   "PRICING.tables.gateway.freeIncluded": {
-    "message": "20K 次授权请求/月"
+    "message": "20K 次 Auth Link 请求/月"
   },
   "PRICING.tables.gateway.proIncluded": {
-    "message": "50K 次授权请求/月"
+    "message": "50K 次 Auth Link 请求/月"
   },
   "PRICING.tables.gateway.growthIncluded": {
-    "message": "200K 次授权请求/月"
+    "message": "200K 次 Auth Link 请求/月"
   },
   "PRICING.tables.gateway.scaleIncluded": {
-    "message": "1M 次授权请求/月"
+    "message": "1M 次 Auth Link 请求/月"
   },
   "PRICING.tables.gateway.standardOverage": {
-    "message": "0.3 / 1K 次授权请求"
+    "message": "0.3 / 1K 次 Auth Link 请求"
   },
   "PRICING.tables.gateway.scaleOverage": {
-    "message": "0.25 / 1K 次授权请求"
+    "message": "0.25 / 1K 次 Auth Link 请求"
   },
   "PRICING.tables.gateway.freeNote": {
     "message": "包含 Auth Link、OAuth 回调、token refresh 与连接状态检查"
   },
   "PRICING.tables.gateway.proNote": {
-    "message": "包含 Auth Link，并提高每月授权请求额度"
+    "message": "包含 Auth Link，并提高每月 Auth Link 请求额度"
   },
   "PRICING.tables.gateway.growthNote": {
-    "message": "包含 Auth Link，并提供更高的每月授权请求额度"
+    "message": "包含 Auth Link，并提供更高的每月 Auth Link 请求额度"
   },
   "PRICING.tables.gateway.scaleNote": {
-    "message": "包含 Auth Link，并提供最高的每月授权请求额度"
+    "message": "包含 Auth Link，并提供最高的每月 Auth Link 请求额度"
   },
   "PRICING.tables.fusionApi.service": {
     "message": "服务名"
