@@ -58,6 +58,9 @@
 .showcaseInner {
   width: min(860px, calc(100% - 48px));
   margin: 0 auto;
+  display: grid;
+  justify-items: center;
+  gap: 1.8rem;
 }
 
 .heroTerminal {
@@ -67,6 +70,66 @@
   --magic-terminal-body-padding: 1.15rem 1.2rem;
 
   width: 100%;
+}
+
+.installCommandGroup {
+  display: grid;
+  justify-items: center;
+  gap: 0.45rem;
+}
+
+.installCommandStrip {
+  width: fit-content;
+  max-width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 0.62rem 1rem;
+  border: 1px solid var(--oomol-divider);
+  border-radius: var(--oomol-radius-full);
+  background: transparent;
+  color: var(--oomol-text-primary);
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--oomol-border-strong);
+    background: var(--oomol-bg-container);
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.installCommandText {
+  min-width: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-body-mono);
+  font-weight: 500;
+  line-height: 1.6;
+  color: inherit;
+}
+
+.installCommandNote {
+  margin: 0;
+  font-size: var(--oomol-body-mono);
+  line-height: 1.5;
+  font-family: var(--oomol-font-mono);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  color: var(--oomol-text-tertiary);
+  text-align: center;
 }
 
 .commandLine {
@@ -120,6 +183,7 @@
 
   .showcaseInner {
     width: min(760px, calc(100% - 40px));
+    gap: 1.45rem;
   }
 }
 
@@ -169,12 +233,23 @@
 
   .showcaseInner {
     width: min(100%, calc(100% - 32px));
+    gap: 1.2rem;
   }
 
   .heroTerminal {
     --magic-terminal-height: 24.2rem;
     --magic-terminal-body-max-height: none;
     --magic-terminal-body-padding: 1rem;
+  }
+
+  .installCommandStrip {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.62rem 0.8rem;
+  }
+
+  .installCommandNote {
+    max-width: 100%;
   }
 }
 

@@ -18,6 +18,8 @@ type Copy = {
   overview: string;
   primaryCta: string;
   secondaryCta: string;
+  installNote: string;
+  copiedNote: string;
 };
 
 const zhCopy: Copy = {
@@ -26,6 +28,8 @@ const zhCopy: Copy = {
   overview: `Agent 会分析、会规划，但真正执行还得连上现有工具。oo-cli 把现实世界里的工具接到 Agent 手里，让它真正开始做事。`,
   primaryCta: "查看安装文档",
   secondaryCta: "查看 GitHub",
+  installNote: "点击复制安装命令（macOS / Linux），Windows 请查看安装文档",
+  copiedNote: "已复制到剪贴板，Windows 请查看安装文档",
 };
 
 const enCopy: Copy = {
@@ -34,9 +38,13 @@ for Agents`,
   overview: `Agents can analyze and plan, but execution still depends on real-world tools. oo-cli connects them to those tools so they can actually get work done.`,
   primaryCta: "Read the install guide",
   secondaryCta: "View GitHub",
+  installNote:
+    "Click to copy the install command for macOS / Linux. See the docs for Windows.",
+  copiedNote: "Copied to clipboard. See the docs for Windows.",
 };
 
 const LATEST_OO_CLI_VERSION = "0.2.27";
+const INSTALL_COMMAND = "curl -fsSL https://cli.oomol.com/install.sh | bash";
 
 function CliTerminalDemo({
   isZh,
@@ -126,11 +134,21 @@ function CliTerminalDemo({
 
 export default function CliPageFirstScreen() {
   const reduceMotion = useReducedMotion();
+  const [isCopied, setIsCopied] = React.useState(false);
   const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
     i18n: { currentLocale: string };
   };
   const isZh = i18n.currentLocale === "zh-CN";
   const copy = isZh ? zhCopy : enCopy;
+
+  const handleCopyInstallCommand = React.useCallback(async () => {
+    if (typeof navigator === "undefined" || !navigator.clipboard) {
+      return;
+    }
+
+    await navigator.clipboard.writeText(INSTALL_COMMAND);
+    setIsCopied(true);
+  }, []);
 
   return (
     <section className={styles.section}>
@@ -163,6 +181,20 @@ export default function CliPageFirstScreen() {
       <div className={styles.showcase}>
         <div className={styles.showcaseInner}>
           <CliTerminalDemo isZh={isZh} staticMode={reduceMotion === true} />
+          <div className={styles.installCommandGroup}>
+            <button
+              className={styles.installCommandStrip}
+              onClick={() => void handleCopyInstallCommand()}
+              type="button"
+            >
+              <code className={styles.installCommandText}>
+                {INSTALL_COMMAND}
+              </code>
+            </button>
+            <p className={styles.installCommandNote}>
+              {isCopied ? copy.copiedNote : copy.installNote}
+            </p>
+          </div>
         </div>
       </div>
     </section>
