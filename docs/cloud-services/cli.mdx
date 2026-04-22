@@ -9,18 +9,18 @@ pagination_next: cloud-services/cli-command-reference
 # oo-cli
 
 `oo-cli` exposes the `oo` command as OOMOL's terminal-first interface for
-managed installs, OOMOL accounts, published packages, connector actions, cloud
+official installs, OOMOL accounts, published packages, connector actions, cloud
 tasks, files, logs, and managed skills.
 
 If you are in Codex, Claude Code, or a regular shell session, start here before
 you wire a lower-level API or MCP integration. `oo` is the terminal-first path
 for trying published capabilities, handling auth and file transfer, managing
-skills, and keeping the active CLI version current through official installer
-scripts and managed updates.
+skills, and keeping the active CLI version current through official install
+commands and managed updates.
 
 ## What `oo-cli` is good for
 
-- Install the managed CLI binary from official scripts or a package manager, then keep it current with `oo update`.
+- Install the managed CLI binary through the official install commands, then keep it current with `oo update`.
 - Sign in and switch between OOMOL accounts.
 - Search packages and connector actions with one free-form query.
 - Inspect package metadata and connector schemas before execution.
@@ -38,8 +38,10 @@ If you want your agent to handle the install for you, copy this prompt first:
 Please help me install and verify oo-cli:
 
 1. Install oo-cli using the official method for this environment.
-   - macOS / Linux: `curl -fsSL https://cli.oomol.com/install.sh | bash`
+   - macOS / Linux (option 1): `wget -qO - https://cli.oomol.com/install.sh | bash`
+   - macOS / Linux (option 2): `curl -fsSL https://cli.oomol.com/install.sh | bash`
    - Windows PowerShell: `irm https://cli.oomol.com/install.ps1 | iex`
+   - Windows CMD: `curl -fsSL https://cli.oomol.com/install.cmd -o install.cmd && install.cmd && del install.cmd`
 
 2. Run `oo login`.
 
@@ -48,9 +50,10 @@ Please help me install and verify oo-cli:
 4. Tell me the best next oo-cli command to run.
 ```
 
-Recommended managed install:
+On macOS / Linux, use either of these official install commands:
 
 ```bash
+wget -qO - https://cli.oomol.com/install.sh | bash
 curl -fsSL https://cli.oomol.com/install.sh | bash
 ```
 
@@ -60,10 +63,10 @@ On Windows PowerShell:
 irm https://cli.oomol.com/install.ps1 | iex
 ```
 
-Package-manager install remains available:
+On Windows CMD:
 
-```bash
-bun install -g @oomol-lab/oo-cli
+```bat
+curl -fsSL https://cli.oomol.com/install.cmd -o install.cmd && install.cmd && del install.cmd
 ```
 
 After a managed install, use `oo update` to move to the latest published

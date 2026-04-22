@@ -33,9 +33,9 @@ const zhCopy = {
       value: "安装 / 更新",
       valueCaption: "官方脚本 + 版本对齐",
       eyebrow: "生命周期",
-      title: "官方安装脚本和 oo update 把 CLI 生命周期接起来",
+      title: "官方安装命令和 oo update 把 CLI 生命周期接起来",
       description:
-        "最新版本支持官方安装脚本和受管更新路径，按平台拉取正确的二进制，并在安装或升级后自动刷新 bundled skills。",
+        "最新版本支持官方安装命令和受管更新路径，按平台拉取正确的二进制，并在安装或升级后自动刷新 bundled skills。",
       note: "终端工具本身也要有稳定的升级路径。",
       cta: "查看安装文档",
       href: "/docs/oo-cli",
@@ -91,9 +91,9 @@ const enCopy = {
       valueCaption: "Official scripts + aligned versions",
       eyebrow: "Lifecycle",
       title:
-        "Official install scripts and oo update keep the CLI lifecycle connected",
+        "Official install commands and oo update keep the CLI lifecycle connected",
       description:
-        "The latest CLI adds official install scripts and a managed update path that downloads the right binary for the current platform and refreshes bundled skills after install or upgrade.",
+        "The latest CLI adds official install commands and a managed update path that downloads the right binary for the current platform and refreshes bundled skills after install or upgrade.",
       note: "A terminal-first tool should also have a stable upgrade path.",
       cta: "Read the install guide",
       href: "/docs/oo-cli",

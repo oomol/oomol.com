@@ -126,7 +126,7 @@
     "message": "开始使用 oo-cli"
   },
   "HOME.FirstScreen.terminal.l1": {
-    "message": "$ bun install -g @oomol-lab/oo-cli"
+    "message": "$ curl -fsSL https://cli.oomol.com/install.sh | bash"
   },
   "HOME.FirstScreen.terminal.l2": {
     "message": "✔ 已安装 oo-cli"
@@ -381,7 +381,7 @@
     "message": "如果你要在终端和 Agent 中使用，就从 oo-cli 开始"
   },
   "HOME.Downloads.cli.info.description": {
-    "message": "如果你想在 Codex、Claude Code 或本地终端里直接搜索、调用和运行工具，就从 oo-cli 开始。你可以通过官方脚本或包管理器安装，也可以把下面的提示词发给 Agent，让它替你完成安装和检查。"
+    "message": "如果你想在 Codex、Claude Code 或本地终端里直接搜索、调用和运行工具，就从 oo-cli 开始。你可以通过官方安装命令安装，也可以把下面的提示词发给 Agent，让它替你完成安装和检查。"
   },
   "HOME.Downloads.cli.action.guide": {
     "message": "打开 oo-cli 指南"
@@ -390,19 +390,19 @@
     "message": "查看 oo-cli GitHub"
   },
   "HOME.Downloads.cli.method.install.title": {
-    "message": "使用官方脚本安装"
+    "message": "使用官方安装命令"
   },
   "HOME.Downloads.cli.method.install.description": {
-    "message": "在 Codex、Claude Code 或任意本地终端里运行这两条命令，再登录即可开始使用 oo-cli。指南里也包含 Windows PowerShell 和包管理器安装方式。"
+    "message": "在 Codex、Claude Code 或任意本地终端里运行与你环境匹配的安装命令，再登录即可开始使用 oo-cli。指南里包含 macOS/Linux 的 wget 与 curl，以及 Windows PowerShell 和 Windows CMD。"
   },
   "HOME.Downloads.cli.method.agent.title": {
     "message": "把安装交给 Agent"
   },
   "HOME.Downloads.cli.method.agent.description": {
-    "message": "如果你更希望 Agent 按官方安装路径代你完成安装和检查，就把下面这段提示词直接复制给它。"
+    "message": "如果你更希望 Agent 按官方安装命令代你完成安装和检查，就把下面这段提示词直接复制给它。"
   },
   "HOME.Downloads.cli.method.agent.prompt": {
-    "message": "请帮我按当前环境的官方方式安装 oo-cli（macOS / Linux 用 `curl -fsSL https://cli.oomol.com/install.sh | bash`，Windows PowerShell 用 `irm https://cli.oomol.com/install.ps1 | iex`），然后运行 `oo login`，确认 CLI 已经可以使用，并告诉我下一条最适合在 oo-cli 里执行的命令。"
+    "message": "请帮我安装并检查 oo-cli：\n\n1. 按当前环境的官方方式安装 oo-cli。\n   - macOS / Linux（方式一）：`wget -qO - https://cli.oomol.com/install.sh | bash`\n   - macOS / Linux（方式二）：`curl -fsSL https://cli.oomol.com/install.sh | bash`\n   - Windows PowerShell：`irm https://cli.oomol.com/install.ps1 | iex`\n   - Windows CMD：`curl -fsSL https://cli.oomol.com/install.cmd -o install.cmd && install.cmd && del install.cmd`\n\n2. 运行 `oo login`。\n\n3. 确认 CLI 已经可以正常使用。\n\n4. 告诉我下一条最适合在 oo-cli 里执行的命令。"
   },
   "HOME.Downloads.cli.copy": {
     "message": "复制"
@@ -1957,7 +1957,7 @@
     "message": "安装 oo-cli"
   },
   "HOME.CliEntry.step1.description": {
-    "message": "先用官方安装路径把已发布工具的默认入口装好。"
+    "message": "先用官方安装命令把已发布工具的默认入口装好。"
   },
   "HOME.CliEntry.step2.title": {
     "message": "登录账号"

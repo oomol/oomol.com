@@ -31,7 +31,7 @@ const zhCopy: Copy = {
       command: "oo install / oo update / oo skills install",
       title: "把 oo-cli 接进终端和宿主",
       description:
-        "通过官方安装脚本或包管理器把 oo 接进终端，再把需要的 skills 接到 Codex、Claude Code 等宿主里。",
+        "通过官方安装命令把 oo 接进终端，再把需要的 skills 接到 Codex、Claude Code 等宿主里。",
       points: ["安装和升级路径清楚", "不用换一套地方继续工作"],
     },
     {
@@ -67,7 +67,7 @@ const enCopy: Copy = {
       command: "oo install / oo update / oo skills install",
       title: "Connect oo-cli to the terminal and the hosts people already use",
       description:
-        "Use the official install script or a package manager to get oo into the terminal, then connect the skills you need to hosts such as Codex and Claude Code.",
+        "Use the official install commands to get oo into the terminal, then connect the skills you need to hosts such as Codex and Claude Code.",
       points: [
         "Clear install and upgrade path",
         "No separate place to switch to",

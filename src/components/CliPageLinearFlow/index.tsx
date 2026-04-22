@@ -53,7 +53,7 @@ const zhCopy: Copy = {
       lines: [
         {
           kind: "comment",
-          text: "# 先装好 oo-cli 并登录",
+          text: "# 先用官方安装命令装好 oo-cli 并登录",
         },
         {
           kind: "command",
@@ -89,7 +89,7 @@ const zhCopy: Copy = {
     eyebrow: "还需要更多时",
     title: "现成工具不够时，再用 Studio 或 Cloud",
     description:
-      "oo-cli 先帮你把已发布能力和安装路径跑通。需要自己做工具，或者让工具持续运行时，再去 Studio 或 Cloud。",
+      "oo-cli 先帮你把已发布能力和官方安装命令这条路径跑通。需要自己做工具，或者让工具持续运行时，再去 Studio 或 Cloud。",
     cards: [
       {
         title: "去 Studio 生成或补全自己的工具",
@@ -108,7 +108,7 @@ const zhCopy: Copy = {
   cta: {
     title: "现在就让 Agent 用上这些工具",
     description:
-      "用官方脚本或包管理器安装 oo-cli，先在终端里搜索工具、查看输入，并跑通一个真实任务。",
+      "用官方安装命令安装 oo-cli，先在终端里搜索工具、查看输入，并跑通一个真实任务。",
     primary: "查看安装文档",
     secondary: "查看命令参考",
   },
@@ -125,7 +125,7 @@ const enCopy: Copy = {
       lines: [
         {
           kind: "comment",
-          text: "# install oo-cli and sign in first",
+          text: "# install oo-cli with the official install command, then sign in",
         },
         {
           kind: "command",
@@ -180,7 +180,7 @@ const enCopy: Copy = {
   cta: {
     title: "Let your agent use these tools now",
     description:
-      "Install oo-cli from the official script or your package manager, then use it to search tools, inspect inputs, and run a real task from the terminal.",
+      "Install oo-cli with the official install commands, then use it to search tools, inspect inputs, and run a real task from the terminal.",
     primary: "Read the install guide",
     secondary: "Read the command reference",
   },

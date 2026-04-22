@@ -126,7 +126,7 @@
     "message": "Start with oo-cli"
   },
   "HOME.FirstScreen.terminal.l1": {
-    "message": "$ bun install -g @oomol-lab/oo-cli"
+    "message": "$ curl -fsSL https://cli.oomol.com/install.sh | bash"
   },
   "HOME.FirstScreen.terminal.l2": {
     "message": "✔ oo-cli installed"
@@ -381,7 +381,7 @@
     "message": "Start with oo-cli if you want to use tools from the terminal"
   },
   "HOME.Downloads.cli.info.description": {
-    "message": "If you want to search, run, and reuse tools in Codex, Claude Code, or your local terminal, start with oo-cli. Install it through the official script or your package manager, or let your agent handle setup and verification."
+    "message": "If you want to search, run, and reuse tools in Codex, Claude Code, or your local terminal, start with oo-cli. Install it through the official install commands, or let your agent handle setup and verification."
   },
   "HOME.Downloads.cli.action.guide": {
     "message": "Read the oo-cli guide"
@@ -390,19 +390,19 @@
     "message": "View oo-cli on GitHub"
   },
   "HOME.Downloads.cli.method.install.title": {
-    "message": "Install from the official script"
+    "message": "Use the official install commands"
   },
   "HOME.Downloads.cli.method.install.description": {
-    "message": "Run these commands in Codex, Claude Code, or any local terminal, then sign in. The guide also covers Windows PowerShell and package-manager installs."
+    "message": "Run the command that matches your environment in Codex, Claude Code, or any local terminal, then sign in. The guide covers wget or curl on macOS/Linux, plus Windows PowerShell and Windows CMD."
   },
   "HOME.Downloads.cli.method.agent.title": {
     "message": "Let your agent do it"
   },
   "HOME.Downloads.cli.method.agent.description": {
-    "message": "Paste this prompt into your agent if you want it to use the official install path and verify the setup for you."
+    "message": "Paste this prompt into your agent if you want it to use the official install commands and verify the setup for you."
   },
   "HOME.Downloads.cli.method.agent.prompt": {
-    "message": "Install oo-cli using the official install method for this environment (`curl -fsSL https://cli.oomol.com/install.sh | bash` on macOS/Linux or `irm https://cli.oomol.com/install.ps1 | iex` on Windows PowerShell), then run `oo login`, confirm that the CLI is ready to use, and tell me the best next oo-cli command to run."
+    "message": "Please help me install and verify oo-cli:\n\n1. Install oo-cli using the official method for this environment.\n   - macOS / Linux (option 1): `wget -qO - https://cli.oomol.com/install.sh | bash`\n   - macOS / Linux (option 2): `curl -fsSL https://cli.oomol.com/install.sh | bash`\n   - Windows PowerShell: `irm https://cli.oomol.com/install.ps1 | iex`\n   - Windows CMD: `curl -fsSL https://cli.oomol.com/install.cmd -o install.cmd && install.cmd && del install.cmd`\n\n2. Run `oo login`.\n\n3. Confirm that the CLI is ready to use.\n\n4. Tell me the best next oo-cli command to run."
   },
   "HOME.Downloads.cli.copy": {
     "message": "Copy"
@@ -1957,7 +1957,7 @@
     "message": "Install oo-cli"
   },
   "HOME.CliEntry.step1.description": {
-    "message": "Use the official install path for the default entry point to published tools."
+    "message": "Use the official install commands for the default entry point to published tools."
   },
   "HOME.CliEntry.step2.title": {
     "message": "Sign in to your account"

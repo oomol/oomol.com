@@ -13,12 +13,14 @@ import { Button } from "@site/src/components/ui/button";
 import { useReducedMotion } from "framer-motion";
 import React from "react";
 
+type InstallPlatform = "unix" | "windows";
+
 type Copy = {
   slogan: string;
   overview: string;
   primaryCta: string;
   secondaryCta: string;
-  installNote: string;
+  installNote: Record<InstallPlatform, string>;
   copiedNote: string;
 };
 
@@ -28,8 +30,11 @@ const zhCopy: Copy = {
   overview: `Agent 会分析、会规划，但真正执行还得连上现有工具。oo-cli 把现实世界里的工具接到 Agent 手里，让它真正开始做事。`,
   primaryCta: "查看安装文档",
   secondaryCta: "查看 GitHub",
-  installNote: "点击复制安装命令（macOS / Linux），Windows 请查看安装文档",
-  copiedNote: "已复制到剪贴板，Windows 请查看安装文档",
+  installNote: {
+    unix: "点击复制当前系统安装命令",
+    windows: "点击复制 Windows PowerShell 安装命令",
+  },
+  copiedNote: "已复制到剪贴板",
 };
 
 const enCopy: Copy = {
@@ -38,13 +43,35 @@ for Agents`,
   overview: `Agents can analyze and plan, but execution still depends on real-world tools. oo-cli connects them to those tools so they can actually get work done.`,
   primaryCta: "Read the install guide",
   secondaryCta: "View GitHub",
-  installNote:
-    "Click to copy the install command for macOS / Linux. See the docs for Windows.",
-  copiedNote: "Copied to clipboard. See the docs for Windows.",
+  installNote: {
+    unix: "Click to copy the install command for your system.",
+    windows: "Click to copy the Windows PowerShell install command.",
+  },
+  copiedNote: "Copied to clipboard.",
 };
 
 const LATEST_OO_CLI_VERSION = "0.2.27";
-const INSTALL_COMMAND = "curl -fsSL https://cli.oomol.com/install.sh | bash";
+const INSTALL_COMMANDS: Record<InstallPlatform, string> = {
+  unix: "curl -fsSL https://cli.oomol.com/install.sh | bash",
+  windows: "irm https://cli.oomol.com/install.ps1 | iex",
+};
+
+function detectInstallPlatform(): InstallPlatform {
+  if (typeof navigator === "undefined") {
+    return "unix";
+  }
+
+  const candidate =
+    (
+      navigator as Navigator & {
+        userAgentData?: { platform?: string };
+      }
+    ).userAgentData?.platform ??
+    navigator.platform ??
+    navigator.userAgent;
+
+  return /win/i.test(candidate) ? "windows" : "unix";
+}
 
 function CliTerminalDemo({
   isZh,
@@ -135,20 +162,27 @@ function CliTerminalDemo({
 export default function CliPageFirstScreen() {
   const reduceMotion = useReducedMotion();
   const [isCopied, setIsCopied] = React.useState(false);
+  const [installPlatform, setInstallPlatform] =
+    React.useState<InstallPlatform>("unix");
   const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
     i18n: { currentLocale: string };
   };
   const isZh = i18n.currentLocale === "zh-CN";
   const copy = isZh ? zhCopy : enCopy;
+  const installCommand = INSTALL_COMMANDS[installPlatform];
+
+  React.useEffect(() => {
+    setInstallPlatform(detectInstallPlatform());
+  }, []);
 
   const handleCopyInstallCommand = React.useCallback(async () => {
     if (typeof navigator === "undefined" || !navigator.clipboard) {
       return;
     }
 
-    await navigator.clipboard.writeText(INSTALL_COMMAND);
+    await navigator.clipboard.writeText(installCommand);
     setIsCopied(true);
-  }, []);
+  }, [installCommand]);
 
   return (
     <section className={styles.section}>
@@ -188,11 +222,11 @@ export default function CliPageFirstScreen() {
               type="button"
             >
               <code className={styles.installCommandText}>
-                {INSTALL_COMMAND}
+                {installCommand}
               </code>
             </button>
             <p className={styles.installCommandNote}>
-              {isCopied ? copy.copiedNote : copy.installNote}
+              {isCopied ? copy.copiedNote : copy.installNote[installPlatform]}
             </p>
           </div>
         </div>
