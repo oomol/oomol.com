@@ -5,7 +5,7 @@ import type { DocusaurusContext } from "@docusaurus/types";
 import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { DownloadButton } from "@site/src/components/DownloadButton";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { Alert, AlertDescription } from "@site/src/components/ui/alert";
 import { Button } from "@site/src/components/ui/button";
@@ -225,6 +225,7 @@ export default function Index() {
     i18n: { currentLocale: string };
   };
   const isZh = i18n.currentLocale === "zh-CN";
+  const cliInstallGuideUrl = useBaseUrl("/docs/oo-cli");
   const [activePricingTable, setActivePricingTable] =
     useState<PricingTableKey>("fusion-api");
   const [llmRows, setLlmRows] = useState<LLMPricingRow[]>([]);
@@ -290,6 +291,7 @@ export default function Index() {
     "PRICING.subscription.subscribe",
     "Subscribe"
   );
+  const freePlanCtaLabel = isZh ? "去安装 oo-cli" : "Install oo-cli";
   const pageCopy = isZh
     ? {
         title: "价格 - OOMOL",
@@ -964,13 +966,15 @@ export default function Index() {
                   </div>
                   <div className={styles.planActionArea}>
                     {plan.isFree ? (
-                      <div className={styles.downloadBtnWrapper}>
-                        <DownloadButton
-                          buttonSize="default"
-                          fullWidth
-                          className={styles.planCta}
+                      <>
+                        <Button asChild size="default" className={styles.planCta}>
+                          <a href={cliInstallGuideUrl}>{freePlanCtaLabel}</a>
+                        </Button>
+                        <div
+                          className={styles.planActionMeta}
+                          aria-hidden="true"
                         />
-                      </div>
+                      </>
                     ) : (
                       <>
                         <Button
