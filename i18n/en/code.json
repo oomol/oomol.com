@@ -504,10 +504,10 @@
     "message": "Simple, Transparent Pricing"
   },
   "PRICING.subtitle": {
-    "message": "Local building and validation stay free. Free users also get 200 Cloud Task minutes and 20K AI Gateway calls every month. Upgrade only when you need more hosted runtime, Gateway volume, or advanced authentication controls."
+    "message": "Build and validate locally for free. Free includes 200 Cloud Task minutes, Auth Link, and 20K requests through it each month. Upgrade only when you need more hosted runtime or a higher request volume."
   },
   "PRICING.model.summary": {
-    "message": "Build and validate in Studio first, then decide whether the tool needs cloud runtime or authenticated Gateway access. Free users get 200 Cloud Task minutes and 20K AI Gateway calls refreshed every month; upgrade only after that."
+    "message": "Start in Studio for free, then decide whether you need cloud runtime or Auth Link. Free refreshes 200 Cloud Task minutes and 20K Auth Link requests every month."
   },
   "PRICING.model.local.label": {
     "message": "Local"
@@ -522,16 +522,16 @@
     "message": "Online"
   },
   "PRICING.model.online.title": {
-    "message": "Run online first, then scale runtime and Gateway usage"
+    "message": "Go live first, then scale runtime and request volume"
   },
   "PRICING.model.online.text": {
-    "message": "Free users can already publish and use Cloud with 200 monthly Cloud Task minutes plus 20K AI Gateway calls. Upgrade only when you need more hosted runtime, Gateway volume, or advanced auth controls."
+    "message": "Free already lets you publish and use Cloud with 200 monthly Cloud Task minutes plus 20K Auth Link requests. Auth Link lets users connect accounts and grant access. Only requests made after authorization are billed."
   },
   "PRICING.subscription.title": {
     "message": "Choose How You Use OOMOL"
   },
   "PRICING.subscription.subtitle": {
-    "message": "Free covers local work plus light hosted runtime and Gateway usage. Pro, Growth, and Scale include larger Cloud Task allowances, more AI Gateway calls, and stronger authentication controls."
+    "message": "Free covers local work and light hosted usage. Pro, Growth, and Scale add more Cloud Task runtime and more Auth Link request volume."
   },
   "PRICING.subscription.recommended": {
     "message": "Recommended"
@@ -555,7 +555,7 @@
     "message": "$0"
   },
   "PRICING.subscription.free.description": {
-    "message": "For local development,\nvalidation, and getting your first tool online\nwith 200 Cloud Task minutes and 20K AI Gateway calls each month"
+    "message": "For local development,\nvalidation, and getting your first tool online\nwith 200 Cloud Task minutes and 20K Auth Link requests"
   },
   "PRICING.subscription.free.feature1": {
     "message": "Full OOMOL Studio local development environment"
@@ -573,13 +573,13 @@
     "message": "Publish up to 20 packages total, public and private combined"
   },
   "PRICING.subscription.free.feature6": {
-    "message": "20K AI Gateway calls each month, with Hosted Auth Link and managed auth included"
+    "message": "Auth Link included, plus 20K requests each month"
   },
   "PRICING.subscription.free.highlight1": {
     "message": "200 min/month"
   },
   "PRICING.subscription.free.highlight2": {
-    "message": "20K Gateway calls/month"
+    "message": "20K requests/month"
   },
   "PRICING.subscription.pro.name": {
     "message": "Pro"
@@ -588,7 +588,7 @@
     "message": "$12"
   },
   "PRICING.subscription.pro.description": {
-    "message": "For solo builders running tools in production\nwho need more hosted runtime\nand a higher monthly Gateway allowance"
+    "message": "For solo builders in production\nwho need more hosted runtime\nand a higher monthly request allowance"
   },
   "PRICING.subscription.pro.feature1": {
     "message": "Publish online with OOMOL-managed delivery and runtime"
@@ -597,10 +597,10 @@
     "message": "1,800 Cloud Task minutes included each month"
   },
   "PRICING.subscription.pro.feature3": {
-    "message": "50K AI Gateway calls included each month"
+    "message": "50K Auth Link requests included each month"
   },
   "PRICING.subscription.pro.feature4": {
-    "message": "Hosted Auth Link and managed auth are included"
+    "message": "A better fit for steady production traffic"
   },
   "PRICING.subscription.pro.feature5": {
     "message": "$3 in general credits included each month"
@@ -612,7 +612,7 @@
     "message": "1,800 min/month"
   },
   "PRICING.subscription.pro.highlight2": {
-    "message": "50K Gateway calls/month"
+    "message": "50K requests/month"
   },
   "PRICING.subscription.growth.name": {
     "message": "Growth"
@@ -621,7 +621,7 @@
     "message": "$29"
   },
   "PRICING.subscription.growth.description": {
-    "message": "For steady hosted traffic\nthat needs a stronger monthly allowance\nand custom authentication controls"
+    "message": "For steady hosted traffic\nthat needs more monthly capacity\nand a larger request allowance"
   },
   "PRICING.subscription.growth.feature1": {
     "message": "All Pro capabilities, with more included usage"
@@ -630,10 +630,10 @@
     "message": "5,000 Cloud Task minutes included each month"
   },
   "PRICING.subscription.growth.feature3": {
-    "message": "200K AI Gateway calls included each month"
+    "message": "200K Auth Link requests included each month"
   },
   "PRICING.subscription.growth.feature4": {
-    "message": "Custom auth configs, your own OAuth credentials, and custom scopes"
+    "message": "A better fit for higher-frequency traffic"
   },
   "PRICING.subscription.growth.feature5": {
     "message": "$8 in general credits included each month"
@@ -645,7 +645,7 @@
     "message": "5,000 min/month"
   },
   "PRICING.subscription.growth.highlight2": {
-    "message": "200K Gateway calls/month"
+    "message": "200K requests/month"
   },
   "PRICING.subscription.max.name": {
     "message": "Scale"
@@ -654,7 +654,7 @@
     "message": "$79"
   },
   "PRICING.subscription.max.description": {
-    "message": "For higher-volume hosted traffic\nthat needs more runtime headroom\nand a lower Gateway overage rate"
+    "message": "For higher-volume hosted traffic\nthat needs more runtime headroom\nand a lower request overage rate"
   },
   "PRICING.subscription.max.feature1": {
     "message": "All Growth capabilities, with higher limits"
@@ -663,10 +663,10 @@
     "message": "15,000 Cloud Task minutes included each month"
   },
   "PRICING.subscription.max.feature3": {
-    "message": "1M AI Gateway calls included each month"
+    "message": "1M Auth Link requests included each month"
   },
   "PRICING.subscription.max.feature4": {
-    "message": "White-label auth and higher Gateway usage headroom"
+    "message": "Built for higher-volume production traffic"
   },
   "PRICING.subscription.max.feature5": {
     "message": "$15 in general credits included each month"
@@ -678,16 +678,16 @@
     "message": "15,000 min/month"
   },
   "PRICING.subscription.max.highlight2": {
-    "message": "1M Gateway calls/month"
+    "message": "1M requests/month"
   },
   "PRICING.tables.title": {
-    "message": "Usage & Service Pricing"
+    "message": "Usage & Service Rates"
   },
   "PRICING.tables.subtitle": {
-    "message": "For most users, start with Images & Other Services, then Cloud Task. AI Gateway mainly applies to services you publish with auth, and LLM pricing here matters only when you call models through OOMOL directly."
+    "message": "This section covers four categories: LLMs, Cloud Task, Auth Link, and OOMOL's first-party APIs."
   },
   "PRICING.tables.syncNote": {
-    "message": "Images & Other Services usually drive the first credits usage; Cloud Task is the runtime cost after you host tools on OOMOL; AI Gateway is mainly for services you publish with auth and forwarding; LLM pricing here applies only to model calls OOMOL pays for."
+    "message": "Cloud Task covers cloud functions or APIs you publish yourself. Auth Link covers requests made after a user connects an account and grants access. Official API Services are first-party APIs like image generation, TTS, and STT."
   },
   "PRICING.tables.tab.llm": {
     "message": "LLMs"
@@ -696,13 +696,13 @@
     "message": "Cloud Task"
   },
   "PRICING.tables.tab.gateway": {
-    "message": "AI Gateway"
+    "message": "Auth Link"
   },
   "PRICING.tables.tab.fusionApi": {
     "message": "Images & Other Services"
   },
   "PRICING.tables.llm.note": {
-    "message": "Check this only when you call OOMOL-billed models directly. If you mainly use your own model configuration in CLI or Studio, that cost is usually paid by you instead. Rates update with the model configuration in the console. Units are credits per million tokens."
+    "message": "Check this only when you call OOMOL-billed models directly. Rates update with the model configuration in the console. Units are credits per million tokens."
   },
   "PRICING.tables.llm.loading": {
     "message": "Loading the latest LLM pricing from OOMOL Console..."
@@ -744,7 +744,7 @@
     "message": "Billed by runtime. Anything under one minute is billed as one minute"
   },
   "PRICING.tables.cloudTask.alert": {
-    "message": "If you host tools on OOMOL, Cloud Task is usually the second cost to watch. It applies to cloud functions or APIs you publish through OOMOL and is billed by runtime."
+    "message": "Use this for cloud functions or APIs you publish through OOMOL. Cloud Task is the runtime layer and is billed by runtime."
   },
   "PRICING.tables.gateway.plan": {
     "message": "Plan"
@@ -756,46 +756,46 @@
     "message": "Overage"
   },
   "PRICING.tables.gateway.note": {
-    "message": "Billing Definition"
+    "message": "Included"
   },
   "PRICING.tables.gateway.alert": {
-    "message": "AI Gateway is mainly for services you publish with auth and request forwarding. Most CLI users do not need to look at this first; only forwarded requests after auth are billed."
+    "message": "Use this for services that need user authorization. Auth Link handles account connection and authorization, and only requests made after a user grants access are billed."
   },
   "PRICING.tables.gateway.empty": {
-    "message": "No AI Gateway pricing data is available right now."
+    "message": "No Auth Link pricing data is available right now."
   },
   "PRICING.tables.gateway.freeOverage": {
     "message": "Upgrade to continue"
   },
   "PRICING.tables.gateway.freeIncluded": {
-    "message": "20K calls / month"
+    "message": "20K requests / month"
   },
   "PRICING.tables.gateway.proIncluded": {
-    "message": "50K calls / month"
+    "message": "50K requests / month"
   },
   "PRICING.tables.gateway.growthIncluded": {
-    "message": "200K calls / month"
+    "message": "200K requests / month"
   },
   "PRICING.tables.gateway.scaleIncluded": {
-    "message": "1M calls / month"
+    "message": "1M requests / month"
   },
   "PRICING.tables.gateway.standardOverage": {
-    "message": "0.3 / 1K calls"
+    "message": "0.3 / 1K requests"
   },
   "PRICING.tables.gateway.scaleOverage": {
-    "message": "0.25 / 1K calls"
+    "message": "0.25 / 1K requests"
   },
   "PRICING.tables.gateway.freeNote": {
-    "message": "Hosted Auth Link, OAuth callback, token refresh, and connection checks are included"
+    "message": "Includes Auth Link, OAuth callbacks, token refresh, and connection checks"
   },
   "PRICING.tables.gateway.proNote": {
-    "message": "Hosted Auth Link and managed auth are included"
+    "message": "Includes Auth Link and a higher monthly request allowance"
   },
   "PRICING.tables.gateway.growthNote": {
-    "message": "Custom auth configs, your own OAuth credentials, and custom scopes"
+    "message": "Includes Auth Link and a larger monthly request allowance"
   },
   "PRICING.tables.gateway.scaleNote": {
-    "message": "White-label auth and higher Gateway usage headroom"
+    "message": "Includes Auth Link and the highest monthly request allowance"
   },
   "PRICING.tables.fusionApi.service": {
     "message": "Service"
@@ -807,7 +807,7 @@
     "message": "Description"
   },
   "PRICING.tables.fusionApi.alert": {
-    "message": "This is usually the first usage-based pricing most users care about. Official OOMOL tools call these services directly, and you can call them yourself as well. Charges are deducted in credits based on each service unit."
+    "message": "These are first-party APIs provided directly by OOMOL, such as image generation, TTS, and STT. Charges are deducted in credits based on each service unit."
   },
   "PRICING.tables.fusionApi.unit.image": {
     "message": "Image"
@@ -868,81 +868,6 @@
   },
   "PRICING.tables.fusionApi.description.doubaoStt": {
     "message": "Doubao speech to text"
-  },
-  "PRICING.free.badge": {
-    "message": "Recommended"
-  },
-  "PRICING.free.title": {
-    "message": "Local + FRP Deployment"
-  },
-  "PRICING.free.subtitle": {
-    "message": "Run Studio locally, share via FRP protocol, forever free"
-  },
-  "PRICING.free.text": {
-    "message": "Forever Free"
-  },
-  "PRICING.free.feature1": {
-    "message": "Studio local development and runtime"
-  },
-  "PRICING.free.feature2": {
-    "message": "FRP protocol P2P sharing"
-  },
-  "PRICING.free.feature3": {
-    "message": "Unlimited GPU compute usage"
-  },
-  "PRICING.free.feature4": {
-    "message": "Full development features and tools"
-  },
-  "PRICING.list.text1": {
-    "message": "Get By Registry"
-  },
-  "PRICING.list.text2": {
-    "message": "Free 1M Credits Per Month"
-  },
-  "PRICING.standard.title": {
-    "message": "Standard Plan"
-  },
-  "PRICING.standard.subtitle": {
-    "message": "Suitable For Individual Users, Providing Credits And Support."
-  },
-  "PRICING.standard.price.before": {
-    "message": "$5.00"
-  },
-  "PRICING.standard.price.after": {
-    "message": "/month"
-  },
-  "PRICING.standard.list.text1": {
-    "message": "Free 5M Credits Per Month"
-  },
-  "PRICING.standard.list.text2": {
-    "message": "Invite Other Users To Collaborate"
-  },
-  "PRICING.standard.list.text3": {
-    "message": "20% discount for Credits Package purchase"
-  },
-  "PRICING.question.title": {
-    "message": "Questions & Answers"
-  },
-  "PRICING.question.subtitle": {
-    "message": "If You Have Any Other Questions, Please "
-  },
-  "PRICING.question.link": {
-    "message": "Contact Us"
-  },
-  "PRICING.question.text1": {
-    "message": "Do OOMOL Credits Expire?"
-  },
-  "PRICING.question.text1.answer": {
-    "message": "The Free Credits Gifted Each Month Are Only Valid Within That Month, But Purchased Credits Package Does Not Expire, It Is Unavailable Only When It Is Used Up"
-  },
-  "PRICING.question.text2": {
-    "message": "How Does OOMOL Prioritize Credit Usage?"
-  },
-  "PRICING.question.text2.answer": {
-    "message": "Prioritize The Use Of Free Credits"
-  },
-  "PRICING.buttonText": {
-    "message": "Get Started"
   },
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",

@@ -504,10 +504,10 @@
     "message": "简单、透明的定价"
   },
   "PRICING.subtitle": {
-    "message": "本地构建与验证始终免费。Free 用户每月包含 200 分钟 Cloud Task 和 20K 次 AI Gateway 调用；只有当托管运行、Gateway 调用量或鉴权能力需要更高额度时再升级。"
+    "message": "本地构建与验证始终免费。Free 每月包含 200 分钟 Cloud Task、20K 次授权请求，并已包含 Auth Link。需要更多托管运行或授权请求额度时再升级。"
   },
   "PRICING.model.summary": {
-    "message": "先在 Studio 本地做和验证，再决定要不要上云或接入鉴权后的 Gateway。Free 用户每月会自动刷新 200 分钟 Cloud Task 和 20K 次 AI Gateway 调用；超出后再升级。"
+    "message": "先在 Studio 本地做和验证，再决定要不要上云或接入 Auth Link。Free 每月会自动刷新 200 分钟 Cloud Task 和 20K 次授权请求。"
   },
   "PRICING.model.local.label": {
     "message": "本地"
@@ -522,16 +522,16 @@
     "message": "线上"
   },
   "PRICING.model.online.title": {
-    "message": "先上线，再按运行时长和 Gateway 用量扩容"
+    "message": "先上线，再按运行时长与授权请求扩容"
   },
   "PRICING.model.online.text": {
-    "message": "Free 用户已经可以发布并使用 Cloud，每月包含 200 分钟 Cloud Task 和 20K 次 AI Gateway 调用。只有当你需要更多托管运行时长、Gateway 调用量或更强的鉴权能力时，再升级。"
+    "message": "Free 已可发布并使用 Cloud，每月包含 200 分钟 Cloud Task 和 20K 次授权请求。Auth Link 负责让用户连接账号并完成授权；只有完成授权后发起的请求才计费。"
   },
   "PRICING.subscription.title": {
     "message": "选择你使用 OOMOL 的方式"
   },
   "PRICING.subscription.subtitle": {
-    "message": "Free 适合本地使用以及轻量托管运行和 Gateway 调用；Pro、Growth 与 Scale 提供更高的 Cloud Task 额度、更多 AI Gateway 调用量和更强的鉴权控制。"
+    "message": "Free 适合本地使用和轻量托管。Pro、Growth 与 Scale 提供更高的 Cloud Task 额度和更多授权请求。"
   },
   "PRICING.subscription.recommended": {
     "message": "推荐"
@@ -555,7 +555,7 @@
     "message": "$0"
   },
   "PRICING.subscription.free.description": {
-    "message": "适合本地开发、结果验证，\n以及先用每月 200 分钟 Cloud Task 和 20K 次 AI Gateway 调用\n把工具在线跑起来"
+    "message": "适合本地开发、结果验证，\n以及先用 200 分钟 Cloud Task 和 20K 次授权请求\n把工具在线跑起来"
   },
   "PRICING.subscription.free.feature1": {
     "message": "完整使用 OOMOL Studio 本地开发环境"
@@ -573,13 +573,13 @@
     "message": "可发布 20 个包（公有/私有合计）"
   },
   "PRICING.subscription.free.feature6": {
-    "message": "每月包含 20K 次 AI Gateway 调用，并包含 Hosted Auth Link 与托管鉴权"
+    "message": "包含 Auth Link，每月附带 20K 次授权请求"
   },
   "PRICING.subscription.free.highlight1": {
     "message": "200 分钟/月"
   },
   "PRICING.subscription.free.highlight2": {
-    "message": "20K 次 Gateway 调用/月"
+    "message": "20K 次授权请求/月"
   },
   "PRICING.subscription.pro.name": {
     "message": "Pro"
@@ -588,7 +588,7 @@
     "message": "$12"
   },
   "PRICING.subscription.pro.description": {
-    "message": "适合个人开发者正式上线后，\n需要更多托管运行时长\n和更高的月度 Gateway 额度"
+    "message": "适合个人开发者正式上线后，\n需要更多托管运行时长\n和更高的授权请求额度"
   },
   "PRICING.subscription.pro.feature1": {
     "message": "使用 OOMOL 承接线上发布、运行和交付"
@@ -597,10 +597,10 @@
     "message": "每月包含 1800 分钟 Cloud Task 额度"
   },
   "PRICING.subscription.pro.feature3": {
-    "message": "每月包含 50K 次 AI Gateway 调用"
+    "message": "每月包含 50K 次授权请求"
   },
   "PRICING.subscription.pro.feature4": {
-    "message": "包含 Hosted Auth Link 与托管鉴权"
+    "message": "适合开始稳定承接线上请求"
   },
   "PRICING.subscription.pro.feature5": {
     "message": "每月包含价值 $3 的通用 credits"
@@ -612,7 +612,7 @@
     "message": "1800 分钟/月"
   },
   "PRICING.subscription.pro.highlight2": {
-    "message": "50K 次 Gateway 调用/月"
+    "message": "50K 次授权请求/月"
   },
   "PRICING.subscription.growth.name": {
     "message": "Growth"
@@ -621,7 +621,7 @@
     "message": "$29"
   },
   "PRICING.subscription.growth.description": {
-    "message": "适合稳定线上用量的场景，\n需要更强的月度额度\n以及自定义鉴权能力"
+    "message": "适合稳定线上流量，\n需要更高的月度额度\n和更高的授权请求量"
   },
   "PRICING.subscription.growth.feature1": {
     "message": "包含全部 Pro 能力，并提供更高包含额度"
@@ -630,10 +630,10 @@
     "message": "每月包含 5000 分钟 Cloud Task 额度"
   },
   "PRICING.subscription.growth.feature3": {
-    "message": "每月包含 200K 次 AI Gateway 调用"
+    "message": "每月包含 200K 次授权请求"
   },
   "PRICING.subscription.growth.feature4": {
-    "message": "支持自定义 Auth Config、自己的 OAuth 凭证与自定义 Scopes"
+    "message": "适合稳定承接更高频率的线上请求"
   },
   "PRICING.subscription.growth.feature5": {
     "message": "每月包含价值 $8 的通用 credits"
@@ -645,7 +645,7 @@
     "message": "5000 分钟/月"
   },
   "PRICING.subscription.growth.highlight2": {
-    "message": "200K 次 Gateway 调用/月"
+    "message": "200K 次授权请求/月"
   },
   "PRICING.subscription.max.name": {
     "message": "Scale"
@@ -654,7 +654,7 @@
     "message": "$79"
   },
   "PRICING.subscription.max.description": {
-    "message": "适合更高量级的托管流量，\n需要更多运行时长余量\n和更低的 Gateway 超额价格"
+    "message": "适合更高量级的托管流量，\n需要更多运行时长余量\n和更低的授权请求超额单价"
   },
   "PRICING.subscription.max.feature1": {
     "message": "包含全部 Growth 能力，额度更高"
@@ -663,10 +663,10 @@
     "message": "每月包含 15000 分钟 Cloud Task 额度"
   },
   "PRICING.subscription.max.feature3": {
-    "message": "每月包含 1M 次 AI Gateway 调用"
+    "message": "每月包含 1M 次授权请求"
   },
   "PRICING.subscription.max.feature4": {
-    "message": "支持白标鉴权，并提供更高的 Gateway 使用余量"
+    "message": "适合更高量级的持续线上流量"
   },
   "PRICING.subscription.max.feature5": {
     "message": "每月包含价值 $15 的通用 credits"
@@ -678,16 +678,16 @@
     "message": "15000 分钟/月"
   },
   "PRICING.subscription.max.highlight2": {
-    "message": "1M 次 Gateway 调用/月"
+    "message": "1M 次授权请求/月"
   },
   "PRICING.tables.title": {
-    "message": "按量与服务价格"
+    "message": "按量价格与服务单价"
   },
   "PRICING.tables.subtitle": {
-    "message": "从用户最常见的支出来看，通常先关注图像与其他服务，其次是 Cloud Task。AI Gateway 主要面向你自己发布并接入鉴权的服务；大模型只有在你直接通过 OOMOL 调用时才需要看这里。"
+    "message": "这里分成四类：大模型、Cloud Task、Auth Link，以及 OOMOL 官方提供的一方 API 服务。"
   },
   "PRICING.tables.syncNote": {
-    "message": "图像与其他服务通常最先影响点数消耗；Cloud Task 是你把工具托管到 OOMOL 后的运行成本；AI Gateway 主要面向你自己发布并接入鉴权的服务；大模型价格只对应 OOMOL 代付的模型调用。"
+    "message": "Cloud Task 适用于你自己发布的云函数或 API；Auth Link 适用于需要用户授权的服务；官方 API 服务则是 OOMOL 直接提供的文生图、TTS、STT 等能力。"
   },
   "PRICING.tables.tab.llm": {
     "message": "大模型"
@@ -696,13 +696,13 @@
     "message": "Cloud Task"
   },
   "PRICING.tables.tab.gateway": {
-    "message": "AI Gateway"
+    "message": "Auth Link"
   },
   "PRICING.tables.tab.fusionApi": {
     "message": "图像与其他服务"
   },
   "PRICING.tables.llm.note": {
-    "message": "只有当你直接调用 OOMOL 代付的大模型时，才需要看这里；如果你主要在 CLI 或 Studio 中使用自己的模型配置，相关开销通常由你自己承担。价格会随 Console 中的模型配置变化而更新，单位为点数 / M Token。"
+    "message": "只有当你直接调用 OOMOL 代付的大模型时，才需要看这里。价格会随 Console 中的模型配置变化而更新，单位为点数 / M Token。"
   },
   "PRICING.tables.llm.loading": {
     "message": "正在从 OOMOL Console 加载最新大模型价格..."
@@ -744,7 +744,7 @@
     "message": "按运行时长计费；不满一分钟按 1 分钟计费"
   },
   "PRICING.tables.cloudTask.alert": {
-    "message": "如果你把工具托管到 OOMOL，Cloud Task 通常是第二个需要看的成本项。它适用于你自己编写并发布到 OOMOL 的云函数或 API 服务，按运行时长计费。"
+    "message": "适用于你自己编写并发布到 OOMOL 的云函数或 API 服务。Cloud Task 是运行层，按运行时长计费。"
   },
   "PRICING.tables.gateway.plan": {
     "message": "套餐"
@@ -756,46 +756,46 @@
     "message": "超额价格"
   },
   "PRICING.tables.gateway.note": {
-    "message": "计费定义"
+    "message": "计费说明"
   },
   "PRICING.tables.gateway.alert": {
-    "message": "AI Gateway 主要面向你自己发布并接入鉴权、转发的服务。普通 CLI 使用者通常不需要先看这一项；它只统计鉴权后真正转发出去的请求。"
+    "message": "适用于需要用户授权的服务。Auth Link 用于连接账号并完成授权；只有完成授权后发往你服务的请求才计费。"
   },
   "PRICING.tables.gateway.empty": {
-    "message": "当前没有可展示的 AI Gateway 价格数据。"
+    "message": "当前没有可展示的 Auth Link 价格数据。"
   },
   "PRICING.tables.gateway.freeOverage": {
     "message": "需要升级后继续使用"
   },
   "PRICING.tables.gateway.freeIncluded": {
-    "message": "20K 次调用/月"
+    "message": "20K 次授权请求/月"
   },
   "PRICING.tables.gateway.proIncluded": {
-    "message": "50K 次调用/月"
+    "message": "50K 次授权请求/月"
   },
   "PRICING.tables.gateway.growthIncluded": {
-    "message": "200K 次调用/月"
+    "message": "200K 次授权请求/月"
   },
   "PRICING.tables.gateway.scaleIncluded": {
-    "message": "1M 次调用/月"
+    "message": "1M 次授权请求/月"
   },
   "PRICING.tables.gateway.standardOverage": {
-    "message": "0.3 / 1K 次调用"
+    "message": "0.3 / 1K 次授权请求"
   },
   "PRICING.tables.gateway.scaleOverage": {
-    "message": "0.25 / 1K 次调用"
+    "message": "0.25 / 1K 次授权请求"
   },
   "PRICING.tables.gateway.freeNote": {
-    "message": "包含 Hosted Auth Link、OAuth 回调、token refresh 与连接状态检查"
+    "message": "包含 Auth Link、OAuth 回调、token refresh 与连接状态检查"
   },
   "PRICING.tables.gateway.proNote": {
-    "message": "包含 Hosted Auth Link 与托管鉴权"
+    "message": "包含 Auth Link，并提高每月授权请求额度"
   },
   "PRICING.tables.gateway.growthNote": {
-    "message": "支持自定义 Auth Config、自己的 OAuth 凭证与自定义 Scopes"
+    "message": "包含 Auth Link，并提供更高的每月授权请求额度"
   },
   "PRICING.tables.gateway.scaleNote": {
-    "message": "支持白标鉴权，并提供更高的 Gateway 使用余量"
+    "message": "包含 Auth Link，并提供最高的每月授权请求额度"
   },
   "PRICING.tables.fusionApi.service": {
     "message": "服务名"
@@ -807,7 +807,7 @@
     "message": "说明"
   },
   "PRICING.tables.fusionApi.alert": {
-    "message": "这通常是用户最先关注的按量价格。OOMOL 官方工具会直接用到这些服务，你也可以自己调用；费用按各自服务单位从点数里扣除。"
+    "message": "这是 OOMOL 直接提供的一方 API 服务，例如文生图、TTS、STT。你可以直接调用，费用按各自服务单位从点数里扣除。"
   },
   "PRICING.tables.fusionApi.unit.image": {
     "message": "张图片"
@@ -868,81 +868,6 @@
   },
   "PRICING.tables.fusionApi.description.doubaoStt": {
     "message": "豆包语音转文字"
-  },
-  "PRICING.free.badge": {
-    "message": "推荐"
-  },
-  "PRICING.free.title": {
-    "message": "本地 + FRP 部署"
-  },
-  "PRICING.free.subtitle": {
-    "message": "Studio 本地运行,通过 FRP 协议分享,永久免费使用"
-  },
-  "PRICING.free.text": {
-    "message": "永久免费"
-  },
-  "PRICING.free.feature1": {
-    "message": "Studio 本地开发和运行"
-  },
-  "PRICING.free.feature2": {
-    "message": "FRP 协议 P2P 分享"
-  },
-  "PRICING.free.feature3": {
-    "message": "无限制的 GPU 算力使用"
-  },
-  "PRICING.free.feature4": {
-    "message": "完整的开发功能和工具"
-  },
-  "PRICING.list.text1": {
-    "message": "注册即可获取"
-  },
-  "PRICING.list.text2": {
-    "message": "每月免费 100 万积分"
-  },
-  "PRICING.standard.title": {
-    "message": "标准计划"
-  },
-  "PRICING.standard.subtitle": {
-    "message": "适合个人用户，提供积分和支持服务。"
-  },
-  "PRICING.standard.price.before": {
-    "message": "$5.00"
-  },
-  "PRICING.standard.price.after": {
-    "message": "/月"
-  },
-  "PRICING.standard.list.text1": {
-    "message": "每月免费 500 万积分"
-  },
-  "PRICING.standard.list.text2": {
-    "message": "邀请其他用户协作"
-  },
-  "PRICING.standard.list.text3": {
-    "message": "购买积分包可享 8 折优惠"
-  },
-  "PRICING.question.title": {
-    "message": "常见问题"
-  },
-  "PRICING.question.subtitle": {
-    "message": "如果您有其他疑问，请"
-  },
-  "PRICING.question.link": {
-    "message": "联系我们"
-  },
-  "PRICING.question.text1": {
-    "message": "OOMOL 积分会过期吗？"
-  },
-  "PRICING.question.text1.answer": {
-    "message": "每月赠送的免费积分仅当月可用，但是用户购买的积分包不会过期，仅在用完后不可用"
-  },
-  "PRICING.question.text2": {
-    "message": "OOMOL 如何优先使用积分？"
-  },
-  "PRICING.question.text2.answer": {
-    "message": "优先使用免费积分"
-  },
-  "PRICING.buttonText": {
-    "message": "开始体验"
   },
   "CREATE.title": {
     "message": "OOMOL Studio"

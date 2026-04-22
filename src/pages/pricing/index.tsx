@@ -294,12 +294,12 @@ export default function Index() {
     ? {
         title: "价格 - OOMOL",
         description:
-          "本地构建与验证始终免费。Free 用户每月包含 200 分钟 Cloud Task 和 20K AI Gateway 调用；只有当托管运行、Gateway 调用量或鉴权能力需要更高额度时再升级。",
+          "本地构建与验证始终免费。Free 用户每月包含 200 分钟 Cloud Task 和 20K 次授权请求，Auth Link 也已包含在内；只有当托管运行时长或授权请求量需要更高额度时再升级。",
       }
     : {
         title: "Pricing - OOMOL",
         description:
-          "Local building and validation stay free. Free users also get 200 Cloud Task minutes and 20K AI Gateway calls every month. Upgrade only when you need more hosted runtime, Gateway volume, or advanced authentication controls.",
+          "Build and validate locally for free. Free includes 200 Cloud Task minutes, Auth Link, and 20K requests through it each month. Upgrade only when you need more hosted runtime or a higher request volume.",
       };
 
   const planCards = [
@@ -491,7 +491,7 @@ export default function Index() {
     {
       dataIndex: "note",
       key: "note",
-      title: tPricing("PRICING.tables.gateway.note", "What is included"),
+      title: tPricing("PRICING.tables.gateway.note", "Included"),
     },
   ];
 
@@ -501,7 +501,7 @@ export default function Index() {
       plan: tPricing("PRICING.subscription.free.name", "Free"),
       includedUsage: tPricing(
         "PRICING.tables.gateway.freeIncluded",
-        "20K calls / month"
+        "20K requests / month"
       ),
       overage: tPricing(
         "PRICING.tables.gateway.freeOverage",
@@ -509,7 +509,7 @@ export default function Index() {
       ),
       note: tPricing(
         "PRICING.tables.gateway.freeNote",
-        "Hosted Auth Link, OAuth callback, token refresh, and connection checks are included"
+        "Auth Link, OAuth callback, token refresh, and connection checks are included"
       ),
     },
     {
@@ -517,15 +517,15 @@ export default function Index() {
       plan: tPricing("PRICING.subscription.pro.name", "Pro"),
       includedUsage: tPricing(
         "PRICING.tables.gateway.proIncluded",
-        "50K calls / month"
+        "50K requests / month"
       ),
       overage: tPricing(
         "PRICING.tables.gateway.standardOverage",
-        "0.3 / 1K calls"
+        "0.3 / 1K requests"
       ),
       note: tPricing(
         "PRICING.tables.gateway.proNote",
-        "Hosted Auth Link and managed auth are included"
+        "Includes Auth Link and a higher monthly request allowance"
       ),
     },
     {
@@ -533,15 +533,15 @@ export default function Index() {
       plan: tPricing("PRICING.subscription.growth.name", "Growth"),
       includedUsage: tPricing(
         "PRICING.tables.gateway.growthIncluded",
-        "200K calls / month"
+        "200K requests / month"
       ),
       overage: tPricing(
         "PRICING.tables.gateway.standardOverage",
-        "0.3 / 1K calls"
+        "0.3 / 1K requests"
       ),
       note: tPricing(
         "PRICING.tables.gateway.growthNote",
-        "Custom auth configs, your own OAuth credentials, and custom scopes"
+        "Includes Auth Link and a larger monthly request allowance"
       ),
     },
     {
@@ -549,15 +549,15 @@ export default function Index() {
       plan: tPricing("PRICING.subscription.max.name", "Scale"),
       includedUsage: tPricing(
         "PRICING.tables.gateway.scaleIncluded",
-        "1M calls / month"
+        "1M requests / month"
       ),
       overage: tPricing(
         "PRICING.tables.gateway.scaleOverage",
-        "0.25 / 1K calls"
+        "0.25 / 1K requests"
       ),
       note: tPricing(
         "PRICING.tables.gateway.scaleNote",
-        "White-label auth and higher Gateway usage headroom"
+        "Includes Auth Link and the highest monthly request allowance"
       ),
     },
   ];
@@ -761,7 +761,7 @@ export default function Index() {
     },
     {
       key: "ai-gateway" as const,
-      label: tPricing("PRICING.tables.tab.gateway", "AI Gateway"),
+      label: tPricing("PRICING.tables.tab.gateway", "Auth Link"),
     },
   ];
 
@@ -782,7 +782,7 @@ export default function Index() {
         : isGatewayTable
           ? tPricing(
               "PRICING.tables.gateway.alert",
-              "AI Gateway is mainly for services you publish with auth and request forwarding. Most CLI users do not need to look at this first; only forwarded requests after auth are billed."
+              "Use this for services that need user authorization. Auth Link handles account connection and authorization, and only requests made after a user grants access are billed."
             )
           : tPricing(
               "PRICING.tables.fusionApi.alert",
@@ -826,7 +826,7 @@ export default function Index() {
             columns={gatewayColumns}
             emptyState={tPricing(
               "PRICING.tables.gateway.empty",
-              "No AI Gateway pricing data is available right now."
+              "No Auth Link pricing data is available right now."
             )}
             rows={gatewayRows}
           />
@@ -870,7 +870,7 @@ export default function Index() {
               <AlertDescription>
                 {tPricing(
                   "PRICING.model.summary",
-                  "Studio stays free for local work. Free users also get 200 Cloud Task minutes and 20K AI Gateway calls every month, then upgrade only after that included usage runs out. OOMOL-provided models and services use credits."
+                  "Start in Studio for free, then decide whether you need cloud runtime or Auth Link. Free refreshes 200 Cloud Task minutes and 20K Auth Link requests every month."
                 )}
               </AlertDescription>
             </Alert>
@@ -899,13 +899,13 @@ export default function Index() {
                 <h2 className={styles.pricingModelTitle}>
                   {tPricing(
                     "PRICING.model.online.title",
-                    "Run online first, then scale runtime and Gateway usage"
+                    "Go live first, then scale runtime and request volume"
                   )}
                 </h2>
                 <p className={styles.pricingModelText}>
                   {tPricing(
                     "PRICING.model.online.text",
-                    "Free users can already publish and use Cloud with 200 monthly Cloud Task minutes plus 20K AI Gateway calls each month. Upgrade only when you need more hosted runtime, Gateway volume, or advanced auth controls."
+                    "Free already lets you publish and use Cloud with 200 monthly Cloud Task minutes plus 20K Auth Link requests. Auth Link lets users connect accounts and grant access. Only requests made after authorization are billed."
                   )}
                 </p>
               </div>
@@ -1045,7 +1045,7 @@ export default function Index() {
                 <p className={styles.tableSectionSubtitle}>
                   {tPricing(
                     "PRICING.tables.subtitle",
-                    "For most users, start with Images & Other Services, then Cloud Task. AI Gateway mainly applies to services you publish with auth, and LLM pricing here matters only when you call models through OOMOL directly."
+                    "This section covers four categories: LLMs, Cloud Task, Auth Link, and OOMOL's first-party APIs."
                   )}
                 </p>
               </div>
