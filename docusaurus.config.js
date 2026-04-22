@@ -132,7 +132,7 @@ const config = {
         showReadingTime: true,
         blogSidebarCount: "ALL",
         blogSidebarTitle: "Updates",
-        onUntruncatedBlogPosts: "ignore",
+        onUntruncatedBlogPosts: "warn",
       },
     ],
     function catalogStatsPlugin() {
@@ -186,7 +186,7 @@ const config = {
           showReadingTime: true,
           blogSidebarCount: "ALL",
           blogSidebarTitle: "All posts",
-          onUntruncatedBlogPosts: "ignore",
+          onUntruncatedBlogPosts: "warn",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
         },

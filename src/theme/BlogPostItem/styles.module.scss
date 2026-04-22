@@ -1,0 +1,135 @@
+.preview {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.previewMediaLink {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.previewMediaFrame {
+  position: relative;
+  border: 1px solid var(--oomol-divider);
+  background:
+    radial-gradient(
+      circle at top right,
+      color-mix(in srgb, var(--oomol-primary) 18%, transparent),
+      transparent 52%
+    ),
+    linear-gradient(
+      180deg,
+      var(--oomol-bg-elevated) 0%,
+      var(--oomol-bg-container) 100%
+    );
+}
+
+.previewMediaImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.previewFallback {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 18rem;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1.5rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        140deg,
+        color-mix(in srgb, var(--oomol-primary) 14%, transparent) 0%,
+        transparent 45%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.02) 0%,
+        rgba(0, 0, 0, 0.06) 100%
+      );
+    pointer-events: none;
+  }
+}
+
+.previewFallbackLight {
+  color: var(--oomol-text-primary);
+}
+
+.previewFallbackDark {
+  color: var(--oomol-text-inverse);
+}
+
+.previewFallbackTitle {
+  position: relative;
+  z-index: 1;
+  max-width: min(28rem, 100%);
+  font-family: var(--oomol-font-display);
+  font-size: clamp(1.15rem, 1rem + 0.35vw, 1.45rem);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+.previewBadge,
+.previewBadgeOverlay {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--oomol-primary) 22%, transparent);
+  background: color-mix(in srgb, var(--oomol-bg-base) 82%, transparent);
+  color: var(--oomol-primary);
+  font-family: var(--oomol-font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.previewBadge {
+  position: relative;
+  z-index: 1;
+  padding: 0.45rem 0.7rem;
+}
+
+.previewBadgeOverlay {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  padding: 0.42rem 0.66rem;
+  backdrop-filter: blur(10px);
+}
+
+.previewDescription {
+  margin: 0;
+  color: var(--oomol-text-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+  letter-spacing: -0.004em;
+}
+
+@media (max-width: 996px) {
+  .previewFallback {
+    padding: 1.1rem;
+  }
+
+  .previewFallbackTitle {
+    font-size: 1rem;
+  }
+
+  .previewDescription {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+}

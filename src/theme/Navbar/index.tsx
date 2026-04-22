@@ -496,37 +496,49 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
                 );
               }}
             </BrowserOnly>
+            <Button
+              type="button"
+              variant="outline"
+              size="icon"
+              aria-label={translate({
+                id: "theme.docs.sidebar.toggleSidebarButtonAriaLabel",
+                message: "Toggle navigation bar",
+                description:
+                  "The ARIA label for hamburger menu button of mobile navigation",
+              })}
+              aria-expanded={mobileSidebar.shown}
+              className={clsx("navbar__toggle", styles.mobileToggle)}
+              onClick={mobileSidebar.toggle}
+            >
+              <svg
+                aria-hidden="true"
+                className={styles.mobileToggleIcon}
+                viewBox="0 0 24 24"
+                fill="none"
+                role="img"
+              >
+                <path
+                  d="M4 7.5H20"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeWidth="1.9"
+                />
+                <path
+                  d="M4 12H20"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeWidth="1.9"
+                />
+                <path
+                  d="M4 16.5H20"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeWidth="1.9"
+                />
+              </svg>
+            </Button>
           </div>
         </div>
-        <button
-          type="button"
-          aria-label={translate({
-            id: "theme.docs.sidebar.toggleSidebarButtonAriaLabel",
-            message: "Toggle navigation bar",
-            description:
-              "The ARIA label for hamburger menu button of mobile navigation",
-          })}
-          aria-expanded={mobileSidebar.shown}
-          className="navbar__toggle"
-          onClick={mobileSidebar.toggle}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="30"
-            height="30"
-            viewBox="0 0 30 30"
-            role="img"
-            focusable="false"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeMiterlimit="10"
-              strokeWidth="2"
-              d="M4 7h22M4 15h22M4 23h22"
-            />
-          </svg>
-        </button>
       </div>
       <div
         role="presentation"

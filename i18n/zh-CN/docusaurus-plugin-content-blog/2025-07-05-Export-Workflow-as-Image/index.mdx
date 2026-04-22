@@ -3,6 +3,8 @@ title: 如何将工作流导出为镜像并作为服务运行？
 authors: [zhangli]
 tags: [workflow automation, OOMOL, container, export image]
 date: 2025-07-05
+description: "了解如何把 OOMOL 工作流导出成 OCI 镜像、部署成后台服务，并运行一个 PDF 转 EPUB 翻译流程。"
+image: /img/blogs/2025-07-05-Export-Workflow-as-Image/flow.png
 ---
 
 import Image from "@theme/ThemedImage";
@@ -15,6 +17,8 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 具体实现的工作流你可以通过 [translate-pdf-to-epub](https://github.com/oomol-flows/translate-pdf-to-epub) 下载，你可以跟随文章将本文的工作流作为服务运行在你想要的计算机或者云平台上。
 
 > 阅读该文章需要你具备基础的[镜像容器](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-an-image/)相关知识。
+
+<!-- truncate -->
 
 ## 工作流开发
 

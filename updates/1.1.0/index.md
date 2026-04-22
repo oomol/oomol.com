@@ -2,6 +2,8 @@
 slug: OOMOL_Studio_1.1.0
 title: OOMOL Studio 1.1.0
 date: 2025-03-20
+description: "OOMOL Studio 1.1.0 adds AI auto-editing, built-in LLM blocks, smarter chat analysis, and faster block insertion."
+image: /img/release/1.1.0/cn/built-in-llm.png
 ---
 
 import ResponsiveVideo from "@site/src/components/mdx/ResponsiveVideo";

@@ -7,6 +7,7 @@
     "docusaurus": "docusaurus",
     "start": "node ./scripts/docusaurus-start.mjs",
     "start:zh-cn": "npm run start -- --locale zh-CN",
+    "test:blog-previews": "node tests/blog-truncation-markers.mjs",
     "build": "npm run build-unocss && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
