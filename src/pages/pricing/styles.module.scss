@@ -14,6 +14,7 @@
   --pricing-padding-plan-card: 22px 16px 18px;
   --pricing-padding-status: 28px 24px;
   background: var(--oomol-bg-base);
+  box-shadow: inset 0 -2px 0 var(--oomol-footer-band-bg);
 }
 
 .heroSection,
@@ -492,6 +493,7 @@
 .tablePanel {
   display: grid;
   gap: 16px;
+  width: 100%;
   padding-top: 12px;
 }
 
@@ -514,13 +516,23 @@
 }
 
 .tableWrap {
+  display: block;
   width: 100%;
-  margin: 0 auto;
+  max-width: none;
+  margin: 0;
+  justify-self: stretch;
   min-width: 0;
+
+  > :global(div) {
+    width: 100%;
+    max-width: none;
+  }
 }
 
 .dataTable {
+  display: table;
   width: 100%;
+  min-width: 100%;
   table-layout: fixed;
   border-collapse: separate;
   border-spacing: 0;

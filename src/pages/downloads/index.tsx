@@ -76,11 +76,11 @@ export default function Downloads() {
     ? {
         pageTitle: "获取与安装 OOMOL",
         pageDescription:
-          "先通过 oo-cli 的官方安装路径把 Agent 接到第三方服务和已发布工具上；如果你更喜欢图形界面，可以使用 OOMOL AI；如果你要自己做工具，再下载 OOMOL Studio。",
+          "先通过 oo-cli 的官方安装命令把 Agent 接到第三方服务和已发布工具上；如果你更喜欢图形界面，可以使用 OOMOL AI；如果你要自己做工具，再下载 OOMOL Studio。",
         heroEyebrow: "获取与安装",
         heroTitle: "选择最适合你的 OOMOL 入口",
         heroSubtitle:
-          "如果你想在终端里让 Agent 直接使用工具，就先通过官方脚本或包管理器装好 oo-cli；如果你更喜欢图形界面，可以使用 OOMOL AI；如果你要自己做工具，再下载 OOMOL Studio。",
+          "如果你想在终端里让 Agent 直接使用工具，就先通过官方安装命令装好 oo-cli；如果你更喜欢图形界面，可以使用 OOMOL AI；如果你要自己做工具，再下载 OOMOL Studio。",
         recommended: "推荐",
         cliEyebrow: "命令行入口",
         aiEyebrow: "图形界面入口",
@@ -100,11 +100,11 @@ export default function Downloads() {
     : {
         pageTitle: "Get and Install OOMOL",
         pageDescription:
-          "Use oo-cli through its official install path as the primary entry point for connecting agents to third-party services and published tools. If you prefer a GUI, use OOMOL AI. Download OOMOL Studio when you want to build your own tools.",
+          "Use oo-cli through its official install commands as the primary entry point for connecting agents to third-party services and published tools. If you prefer a GUI, use OOMOL AI. Download OOMOL Studio when you want to build your own tools.",
         heroEyebrow: "Downloads",
         heroTitle: "Choose the OOMOL entry point that fits you best",
         heroSubtitle:
-          "Start with oo-cli if you want agents to use tools in the terminal, and install it through the official script or your package manager. Use OOMOL AI if you prefer a GUI. Download OOMOL Studio when you want to build your own tools.",
+          "Start with oo-cli if you want agents to use tools in the terminal, and install it through the official install commands. Use OOMOL AI if you prefer a GUI. Download OOMOL Studio when you want to build your own tools.",
         recommended: "Recommended",
         cliEyebrow: "Command line",
         aiEyebrow: "GUI",
@@ -211,6 +211,69 @@ export default function Downloads() {
             <DownloadsCliPanel />
           </section>
 
+          <section id="studio-downloads" className={styles.pageSection}>
+            <div className={styles.sectionHeader}>
+              <div className={styles.sectionHeadingBlock}>
+                <span className={styles.eyebrow}>{copy.studioEyebrow}</span>
+                <h2 className={styles.sectionTitle}>
+                  {translate({ message: "HOME.Downloads.studioSection.title" })}
+                </h2>
+                <p className={styles.sectionSubtitle}>
+                  {translate({
+                    message: "HOME.Downloads.studioSection.subtitle",
+                  })}
+                </p>
+              </div>
+            </div>
+            <div className={`${styles.cards} ${styles.cardsTwo}`}>
+              {downloadData.map((item, index) => {
+                const isRecommended = !!item.mostRecommended;
+                return (
+                  <div
+                    className={`${styles.card} ${item.className ?? ""}`}
+                    key={`download-${index}`}
+                  >
+                    {isRecommended && (
+                      <span className={styles.cardBadge}>
+                        {copy.recommended}
+                      </span>
+                    )}
+                    <div className={styles.content}>
+                      <div className={styles.type}>{item.type}</div>
+                      <span className={styles.description}>
+                        {item.subTitle}
+                      </span>
+                    </div>
+                    <div className={styles.downloads}>
+                      {item.downloads.map((download, i) => (
+                        <Button
+                          key={`download-${index}-${i}`}
+                          asChild
+                          variant={i === 0 ? "default" : "outline"}
+                          size="sm"
+                        >
+                          <a
+                            href={download.url}
+                            onClick={
+                              isRecommended
+                                ? event => downloadStable(event, download.url)
+                                : undefined
+                            }
+                          >
+                            <i
+                              className={`${styles["download-icon"]} i-codicon-desktop-download`}
+                            />
+                            {download.text}
+                          </a>
+                        </Button>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+
           <section className={styles.pageSection}>
             <div className={styles.sectionHeader}>
               <div className={styles.sectionHeadingBlock}>
@@ -301,69 +364,6 @@ export default function Downloads() {
                   </Button>
                 </div>
               </div>
-            </div>
-          </section>
-
-          <section id="studio-downloads" className={styles.pageSection}>
-            <div className={styles.sectionHeader}>
-              <div className={styles.sectionHeadingBlock}>
-                <span className={styles.eyebrow}>{copy.studioEyebrow}</span>
-                <h2 className={styles.sectionTitle}>
-                  {translate({ message: "HOME.Downloads.studioSection.title" })}
-                </h2>
-                <p className={styles.sectionSubtitle}>
-                  {translate({
-                    message: "HOME.Downloads.studioSection.subtitle",
-                  })}
-                </p>
-              </div>
-            </div>
-            <div className={`${styles.cards} ${styles.cardsTwo}`}>
-              {downloadData.map((item, index) => {
-                const isRecommended = !!item.mostRecommended;
-                return (
-                  <div
-                    className={`${styles.card} ${item.className ?? ""}`}
-                    key={`download-${index}`}
-                  >
-                    {isRecommended && (
-                      <span className={styles.cardBadge}>
-                        {copy.recommended}
-                      </span>
-                    )}
-                    <div className={styles.content}>
-                      <div className={styles.type}>{item.type}</div>
-                      <span className={styles.description}>
-                        {item.subTitle}
-                      </span>
-                    </div>
-                    <div className={styles.downloads}>
-                      {item.downloads.map((download, i) => (
-                        <Button
-                          key={`download-${index}-${i}`}
-                          asChild
-                          variant={i === 0 ? "default" : "outline"}
-                          size="sm"
-                        >
-                          <a
-                            href={download.url}
-                            onClick={
-                              isRecommended
-                                ? event => downloadStable(event, download.url)
-                                : undefined
-                            }
-                          >
-                            <i
-                              className={`${styles["download-icon"]} i-codicon-desktop-download`}
-                            />
-                            {download.text}
-                          </a>
-                        </Button>
-                      ))}
-                    </div>
-                  </div>
-                );
-              })}
             </div>
           </section>
         </div>
