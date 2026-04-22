@@ -76,7 +76,7 @@ export default function Downloads() {
     ? {
         pageTitle: "获取与安装 OOMOL",
         pageDescription:
-          "以 oo-cli 作为主入口，把 Agent 接到现成工具与能力上；如果你更喜欢图形界面，可以使用 OOMOL AI；如果你要自己做工具，再下载 OOMOL Studio。",
+          "以 oo-cli 作为主入口，把 Agent 接到第三方服务和已发布工具上；如果你更喜欢图形界面，可以使用 OOMOL AI；如果你要自己做工具，再下载 OOMOL Studio。",
         heroEyebrow: "获取与安装",
         heroTitle: "选择最适合你的 OOMOL 入口",
         heroSubtitle:
@@ -100,7 +100,7 @@ export default function Downloads() {
     : {
         pageTitle: "Get and Install OOMOL",
         pageDescription:
-          "Use oo-cli as the primary entry point to connect agents to ready-made tools and capabilities. If you prefer a GUI, use OOMOL AI. Download OOMOL Studio when you want to build your own tools.",
+          "Use oo-cli as the primary entry point to connect agents to third-party services and published tools. If you prefer a GUI, use OOMOL AI. Download OOMOL Studio when you want to build your own tools.",
         heroEyebrow: "Downloads",
         heroTitle: "Choose the OOMOL entry point that fits you best",
         heroSubtitle:

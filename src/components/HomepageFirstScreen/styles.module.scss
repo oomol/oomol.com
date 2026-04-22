@@ -50,7 +50,7 @@
 }
 
 .overview {
-  @include marketing-supporting-copy(38rem, center);
+  @include marketing-supporting-copy(42rem, center);
   white-space: pre-line;
 }
 
@@ -170,7 +170,7 @@
 }
 
 :global(html[lang="en"]) .overview {
-  max-width: 40rem;
+  max-width: 42rem;
 }
 
 /* ── Tablet ── */

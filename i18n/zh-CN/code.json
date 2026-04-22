@@ -27,10 +27,10 @@
     "message": "社区"
   },
   "HOME.page.title": {
-    "message": "OOMOL - 一个让 AI Agent 调用现成工具的 CLI 入口"
+    "message": "OOMOL - 一个让 AI Agent 接入第三方服务和已发布工具的 CLI 入口"
   },
   "HOME.page.description": {
-    "message": "先用 oo-cli 让 Codex、OpenClaw、Claude Code 等 Agent 直接调用现成工具、API 和业务系统，把工作先跑起来；当你需要自己生产、组合和交付工具时，再进入 OOMOL Studio 和 Cloud。"
+    "message": "先用 oo-cli 让 Codex、OpenClaw、Claude Code 等 Agent 接入第三方服务、运行已发布工具，并调用你的自有系统，把工作先跑起来；当你需要自己生产、组合和交付工具时，再进入 OOMOL Studio 和 Cloud。"
   },
   "HOME.FirstScreen.slogan": {
     "message": "先用起来，再按需连接"
@@ -42,19 +42,19 @@
     "message": "你的 Agent 负责思考与决策\n剩下的交给 OOMOL"
   },
   "HOME.FirstScreen.heroLead": {
-    "message": "让 Codex、OpenClaw、Claude Code 等 Agent 直接调用 Gmail、Notion 等工具、API 和业务系统。用 OOMOL Studio 继续组合和扩展自己的工具。"
+    "message": "通过 oo-cli 把 Agent 连接到 Gmail、Notion 等第三方服务，以及你的自有系统。使用 OOMOL Studio 构建和扩展你自己的工具。"
   },
   "HOME.FirstScreen.video.playAriaLabel": {
     "message": "播放演示视频"
   },
   "HOME.PainPoints.badge": {
-    "message": "第一步：先用现成能力"
+    "message": "第一步：先用接好的服务和工具"
   },
   "HOME.PainPoints.title": {
-    "message": "先让 Agent 直接把现成工作跑起来"
+    "message": "先让 Agent 直接把常见工作跑起来"
   },
   "HOME.PainPoints.subtitle": {
-    "message": "如果现成工具已经够用，OOMOL 的第一层价值就很简单：先接上、先执行，不必一上来就自己做工具。"
+    "message": "如果已发布工具或接好的服务已经够用，OOMOL 的第一层价值就很简单：先接上、先执行，不必一上来就自己做工具。"
   },
   "HOME.PainPoints.promptLabel": {
     "message": "直接这样说"
@@ -201,7 +201,7 @@
     "message": "设计和生产全程 AI 辅助完成"
   },
   "HOME.Lifecycle.step1.description": {
-    "message": "• 创建项目，定义功能节点\n• 从社区安装现成函数工具，或自己编码补充\n• 拖放组合成可视化工作流"
+    "message": "• 创建项目，定义功能节点\n• 从社区安装已发布函数工具，或自己编码补充\n• 拖放组合成可视化工作流"
   },
   "HOME.Lifecycle.step2.title": {
     "message": "发布"
@@ -339,10 +339,10 @@
     "message": "//#region generated meta\ntype Inputs = {\n};\ntype Outputs = {\n};\n//#endregion\n\nimport type { Context } from \"@oomol/types/oocana\";\n\nexport default async function(\n    params: Inputs,\n    context: Context<Inputs, Outputs>\n): Promise<Partial<Outputs> | undefined | void> {\n    // 融合 API 基础地址\n    const api_url = \"https://fusion-api.oomol.com/v1/fal-nano-banana-edit/submit\"\n\n    // 大模型基础地址，可使用 openai sdk\n    const llm_base_url = \"https://llm.oomol.com/v1\"\n\n    // 从 context 获取 OOMOL token（无需手动输入 API key）\n    const api_token = await context.getOomolToken()\n    // return { output: \"output_value\" };\n};"
   },
   "HOME.GetStartedPrompt.title": {
-    "message": "先用现成工具，需要时再做自己的"
+    "message": "先用已发布工具，需要时再做自己的"
   },
   "HOME.GetStartedPrompt.subtitle": {
-    "message": "先用 oo-cli 跑通现成工具。需要自定义时，再用 Studio 和 Cloud 组合、扩展并交付自己的工具。"
+    "message": "先用 oo-cli 跑通已发布工具。需要自定义时，再用 Studio 和 Cloud 组合、扩展并交付自己的工具。"
   },
   "HOME.GetStartedPrompt.primary": {
     "message": "先用 oo-cli"
@@ -357,7 +357,7 @@
     "message": "如果你要自己做工具，就下载 OOMOL Studio"
   },
   "HOME.Downloads.studioSection.subtitle": {
-    "message": "当现成工具不够时，用 Studio 在本地生成、组合、修改并验证自己的工具。准备好之后，再继续交给 Cloud 承接交付和运行。"
+    "message": "当已发布工具不够时，用 Studio 在本地生成、组合、修改并验证自己的工具。准备好之后，再继续交给 Cloud 承接交付和运行。"
   },
   "HOME.Downloads.Stable.title": {
     "message": "稳定版"
@@ -1882,7 +1882,7 @@
     "message": "先把一个工具用起来，再决定要不要做自己的"
   },
   "HOME.DeveloperBenefits.subtitle": {
-    "message": "想先跑通，就从 oo-cli 开始；现成工具不够，再进入 Studio + Cloud。"
+    "message": "想先跑通，就从 oo-cli 开始；已发布工具不够，再进入 Studio + Cloud。"
   },
   "HOME.DeveloperBenefits.card1.eyebrow": {
     "message": "先用起来"
@@ -1897,7 +1897,7 @@
     "message": "最快开始"
   },
   "HOME.DeveloperBenefits.card1.title": {
-    "message": "先让 Agent 在终端里直接用上现成工具"
+    "message": "先让 Agent 在终端里直接用上已发布工具"
   },
   "HOME.DeveloperBenefits.card1.description": {
     "message": "如果你想先让 Codex、OpenClaw、Claude Code 跑起来，就先装 oo-cli，直接搜索并运行已发布工具。"
@@ -1942,7 +1942,7 @@
     "message": "在 Codex、Claude Code 或任意终端里装一次，就可以搜索包、查看输入、运行工具，再决定要不要接 API 或 MCP。"
   },
   "HOME.CliEntry.benefit1.label": {
-    "message": "先用现成工具"
+    "message": "先用已发布工具"
   },
   "HOME.CliEntry.benefit1.description": {
     "message": "先从别人已经发布好的工具开始搜索、查看和运行，不必第一天就自己重做一套。"
@@ -1951,7 +1951,7 @@
     "message": "需要时再发布自己的"
   },
   "HOME.CliEntry.benefit2.description": {
-    "message": "如果现成工具不够，就回到 Studio 里生成、验证并通过 Cloud 发布自己的工具。"
+    "message": "如果已发布工具不够，就回到 Studio 里生成、验证并通过 Cloud 发布自己的工具。"
   },
   "HOME.CliEntry.step1.title": {
     "message": "安装 oo-cli"
@@ -2362,13 +2362,13 @@
     "message": "从想法，到可交付的工具"
   },
   "HOME.StudioChain.subtitle": {
-    "message": "当现成工具不够时，OOMOL 给你一条连续的路径：在 Studio 里生成，在本地验证，通过 Cloud 发布，再由 oo-cli 交付出去。"
+    "message": "当已发布工具不够时，OOMOL 给你一条连续的路径：在 Studio 里生成，在本地验证，通过 Cloud 发布，再由 oo-cli 交付出去。"
   },
   "HOME.StudioChain.lead": {
     "message": "不要停在本地自动化，把它做成别人真的能用的工具。"
   },
   "HOME.StudioChain.summary": {
-    "message": "在 OOMOL 里，你可以先使用现成工具，再在 Studio 里生成并验证自己的实现，最后通过 Cloud 私有发布给自己、团队或客户使用。"
+    "message": "在 OOMOL 里，你可以先使用已发布工具，再在 Studio 里生成并验证自己的实现，最后通过 Cloud 私有发布给自己、团队或客户使用。"
   },
   "HOME.StudioChain.card1.title": {
     "message": "OOMOL Studio"
@@ -2389,7 +2389,7 @@
     "message": "了解 Cloud"
   },
   "Theme.Navbar.product.studio.description": {
-    "message": "现成能力不够时，构建、组合和编排你自己的工具"
+    "message": "当服务接入和已发布工具不够时，构建、组合和编排你自己的工具"
   },
   "Theme.Navbar.product.cli.description": {
     "message": "主入口：装进 Agent，直接搜索和调用工具"
@@ -2572,7 +2572,7 @@
     "message": "先看 OOMOL 已经接好了多少应用"
   },
   "HOME.ToolStrip.description": {
-    "message": "OOMOL 内置支持 {providerCount} 个应用，包含 {actionCount} 个封装工具。先通过 oo-cli 用现成连接把工作跑起来，再决定哪些环节值得继续编排、扩展，或做成你自己的工具。"
+    "message": "OOMOL 内置支持 {providerCount} 个应用，包含 {actionCount} 个封装工具。先通过 oo-cli 使用这些接好的服务和已发布工具，再决定哪些环节值得继续编排、扩展，或做成你自己的工具。"
   },
   "HOME.ToolStrip.providerStat.label": {
     "message": "个应用"
@@ -2593,10 +2593,10 @@
     "message": "开发者入口"
   },
   "HOME.DeveloperEntry.title": {
-    "message": "现成能力不够，就到 OOMOL Studio 做自己的工具"
+    "message": "现有服务接入不够，就到 OOMOL Studio 做自己的工具"
   },
   "HOME.DeveloperEntry.subtitle": {
-    "message": "你可以在 Studio 里重组现成能力、补代码、编排 workflow、写新的 function tool。工具在本地跑通之后，再交给 Cloud 承接交付。"
+    "message": "你可以在 Studio 里重组现有服务接入、补代码、编排 workflow、写新的 function tool。工具在本地跑通之后，再交给 Cloud 承接交付。"
   },
   "HOME.DeveloperEntry.primaryCta": {
     "message": "了解 OOMOL Studio"
@@ -2605,10 +2605,10 @@
     "message": "下载 OOMOL Studio"
   },
   "HOME.DeveloperEntry.card1.title": {
-    "message": "把现成能力重组成你自己的工具"
+    "message": "把现有服务接入重组成你自己的工具"
   },
   "HOME.DeveloperEntry.card1.text": {
-    "message": "把 GitHub、Slack、Notion、Gmail 这些现成能力继续拼成你自己的执行链路，而不是停在单次调用。"
+    "message": "把 GitHub、Slack、Notion、Gmail 这些服务接入继续拼成你自己的执行链路，而不是停在单次调用。"
   },
   "HOME.DeveloperEntry.card2.title": {
     "message": "把多步逻辑固定成 workflow"
@@ -2686,7 +2686,7 @@
     "message": "03 / 给 Agent 使用"
   },
   "HOME.LinearFlow.cli.title": {
-    "message": "最后把工具交回 oo-cli，给 Agent 直接调用"
+    "message": "最后通过 oo-cli 交给 Agent 使用"
   },
   "HOME.LinearFlow.cli.description": {
     "message": "当工具已经做好并交付出去后，Agent、Codex、OpenClaw 和 Claude Code 会继续沿同一条 oo-cli 路径来搜索、查看和调用。"
@@ -2704,10 +2704,10 @@
     "message": "查看 GitHub"
   },
   "HOME.LinearFlow.cta.title": {
-    "message": "先用现成工具；需要时再走这条开发者路径"
+    "message": "先用已发布工具；需要时再走这条开发者路径"
   },
   "HOME.LinearFlow.cta.description": {
-    "message": "先用 oo-cli 跑通现成能力。需要自己生产、组合和交付工具时，再进入 Studio 和 Cloud。"
+    "message": "先用 oo-cli 跑通接好的服务和已发布工具。需要自己生产、组合和交付工具时，再进入 Studio 和 Cloud。"
   },
   "HOME.LinearFlow.cta.primary": {
     "message": "先用 oo-cli"
@@ -2719,7 +2719,7 @@
     "message": "oo-cli 的 GUI 延伸"
   },
   "HOME.GuiEntry.title": {
-    "message": "同一套能力，也可以在 OOMOL AI 里继续用图形界面"
+    "message": "同一套能力，也能在 OOMOL AI 里继续使用"
   },
   "HOME.GuiEntry.description": {
     "message": "当你已经沿 oo-cli 这条路径把工具接起来之后，如果更喜欢图形界面，OOMOL AI 提供同一套能力的官方 GUI 入口，适合在 Web、桌面和 iOS 中继续使用。"

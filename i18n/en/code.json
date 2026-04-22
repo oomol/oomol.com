@@ -27,10 +27,10 @@
     "message": "Community"
   },
   "HOME.page.title": {
-    "message": "OOMOL - A CLI that turns apps into tools for agents"
+    "message": "OOMOL - A CLI that connects agents to third-party services and published tools"
   },
   "HOME.page.description": {
-    "message": "Start with oo-cli so Codex, OpenClaw, Claude Code, and other agents can use ready-made tools, APIs, and business systems to get real work moving. When you need to build, combine, and deliver your own tools, move into OOMOL Studio and Cloud."
+    "message": "Start with oo-cli so Codex, OpenClaw, Claude Code, and other agents can connect to third-party services, run published tools, and use your own systems to get real work moving. When you need to build, combine, and deliver your own tools, move into OOMOL Studio and Cloud."
   },
   "HOME.FirstScreen.slogan": {
     "message": "Build and Deliver Tools for Agents"
@@ -39,22 +39,22 @@
     "message": "Your agent does the thinking and makes the decisions. OOMOL connects accounts and apps, handles auth, calls, and execution, and lets you build your own tools in Studio when you need to."
   },
   "HOME.FirstScreen.heroTitle": {
-    "message": "Your agent does the thinking\nand decision-making.\nLeave the rest to OOMOL."
+    "message": "Your agent thinks and decides.\nOOMOL handles the rest."
   },
   "HOME.FirstScreen.heroLead": {
-    "message": "Let Codex, OpenClaw, Claude Code, and other agents directly use tools like Gmail and Notion, plus APIs and business systems. Then use OOMOL Studio to compose and extend your own tools."
+    "message": "Connect agents through oo-cli to third-party services like Gmail and Notion, as well as your own systems. Use OOMOL Studio to build and extend your own tools."
   },
   "HOME.FirstScreen.video.playAriaLabel": {
     "message": "Play demo video"
   },
   "HOME.PainPoints.badge": {
-    "message": "Step 1: Use what already exists"
+    "message": "Step 1: Start with connected services and tools"
   },
   "HOME.PainPoints.title": {
-    "message": "Let agents run ready-made work first"
+    "message": "Let agents run common work first"
   },
   "HOME.PainPoints.subtitle": {
-    "message": "If a ready-made tool already solves the job, OOMOL's first layer of value is simple: connect it, run it, and skip building your own tool at the start."
+    "message": "If a published tool or connected service already solves the job, OOMOL's first layer of value is simple: connect it, run it, and skip building your own tool at the start."
   },
   "HOME.PainPoints.promptLabel": {
     "message": "Say this"
@@ -201,7 +201,7 @@
     "message": "Design and implement workflows in OOMOL Studio"
   },
   "HOME.Lifecycle.step1.description": {
-    "message": "Create projects in OOMOL Studio, define functional nodes by installing ready-made function tools from the community or coding your own, then drag and drop to compose visual workflows with full AI assistance from design to production."
+    "message": "Create projects in OOMOL Studio, define functional nodes by installing published function tools from the community or coding your own, then drag and drop to compose visual workflows with full AI assistance from design to production."
   },
   "HOME.Lifecycle.step2.title": {
     "message": "Publish"
@@ -339,10 +339,10 @@
     "message": "//#region generated meta\ntype Inputs = {\n};\ntype Outputs = {\n};\n//#endregion\n\nimport type { Context } from \"@oomol/types/oocana\";\n\nexport default async function(\n    params: Inputs,\n    context: Context<Inputs, Outputs>\n): Promise<Partial<Outputs> | undefined | void> {\n    // Fusion API Base URL\n    const api_url = \"https://fusion-api.oomol.com/v1/fal-nano-banana-edit/submit\"\n\n    // LLM Base URL, can use openai sdk\n    const llm_base_url = \"https://llm.oomol.com/v1\"\n\n    // Get OOMOL token from context (no need for manual API key input)\n    const api_token = await context.getOomolToken()\n    // return { output: \"output_value\" };\n};"
   },
   "HOME.GetStartedPrompt.title": {
-    "message": "Start with ready-made tools, build your own only when needed"
+    "message": "Start with published tools, build your own only when needed"
   },
   "HOME.GetStartedPrompt.subtitle": {
-    "message": "Use oo-cli to get ready-made tools working first. When you need custom ones, move into Studio and Cloud to compose, extend, and deliver your own tools."
+    "message": "Use oo-cli to get published tools working first. When you need custom ones, move into Studio and Cloud to compose, extend, and deliver your own tools."
   },
   "HOME.GetStartedPrompt.primary": {
     "message": "Start with oo-cli"
@@ -357,7 +357,7 @@
     "message": "Download OOMOL Studio when you want to build your own tools"
   },
   "HOME.Downloads.studioSection.subtitle": {
-    "message": "Use Studio when ready-made tools are not enough. Build, combine, edit, and validate your own tools locally, then hand them to Cloud when you are ready to deliver them."
+    "message": "Use Studio when published tools are not enough. Build, combine, edit, and validate your own tools locally, then hand them to Cloud when you are ready to deliver them."
   },
   "HOME.Downloads.Stable.title": {
     "message": "Stable"
@@ -1882,7 +1882,7 @@
     "message": "Get one tool working first, then decide whether to build your own"
   },
   "HOME.DeveloperBenefits.subtitle": {
-    "message": "If you just want to get moving, start with oo-cli. When ready-made tools are not enough, move into Studio + Cloud."
+    "message": "If you just want to get moving, start with oo-cli. When published tools are not enough, move into Studio + Cloud."
   },
   "HOME.DeveloperBenefits.card1.eyebrow": {
     "message": "Use first"
@@ -1897,7 +1897,7 @@
     "message": "Fastest start"
   },
   "HOME.DeveloperBenefits.card1.title": {
-    "message": "Let agents use a ready-made tool from the terminal first"
+    "message": "Let agents use a published tool from the terminal first"
   },
   "HOME.DeveloperBenefits.card1.description": {
     "message": "If you want Codex, OpenClaw, or Claude Code working first, install oo-cli and start by searching, inspecting, and running published tools."
@@ -1924,7 +1924,7 @@
     "message": "When you need your own APIs and logic, move into Studio + Cloud"
   },
   "HOME.DeveloperBenefits.card2.description": {
-    "message": "When ready-made tools are not enough, use Studio + Cloud to add your APIs, custom logic, and a long-running delivery path."
+    "message": "When published tools are not enough, use Studio + Cloud to add your APIs, custom logic, and a long-running delivery path."
   },
   "HOME.DeveloperBenefits.card2.note": {
     "message": "Best when you need custom tools and continuous delivery."
@@ -1951,7 +1951,7 @@
     "message": "Publish your own when needed"
   },
   "HOME.CliEntry.benefit2.description": {
-    "message": "When existing tools are not enough, use Studio to generate, validate, and publish your own tools through Cloud."
+    "message": "When published tools are not enough, use Studio to generate, validate, and publish your own tools through Cloud."
   },
   "HOME.CliEntry.step1.title": {
     "message": "Install oo-cli"
@@ -2362,13 +2362,13 @@
     "message": "From idea to a deliverable tool"
   },
   "HOME.StudioChain.subtitle": {
-    "message": "When ready-made tools are not enough, OOMOL gives you one continuous path: generate in Studio, validate locally, publish through Cloud, and deliver through oo-cli."
+    "message": "When published tools are not enough, OOMOL gives you one continuous path: generate in Studio, validate locally, publish through Cloud, and deliver through oo-cli."
   },
   "HOME.StudioChain.lead": {
     "message": "Do not stop at local automation. Build a tool people can actually use."
   },
   "HOME.StudioChain.summary": {
-    "message": "In OOMOL, you can start with ready-made tools, create your own implementation in Studio, validate it locally, then publish it privately to yourself, your team, or your customers."
+    "message": "In OOMOL, you can start with published tools, create your own implementation in Studio, validate it locally, then publish it privately to yourself, your team, or your customers."
   },
   "HOME.StudioChain.card1.title": {
     "message": "OOMOL Studio"
@@ -2389,7 +2389,7 @@
     "message": "Explore Cloud"
   },
   "Theme.Navbar.product.studio.description": {
-    "message": "Build, combine, and orchestrate your own tools when ready-made ones are not enough"
+    "message": "Build, combine, and orchestrate your own tools when connected services and published tools are not enough"
   },
   "Theme.Navbar.product.cli.description": {
     "message": "Primary entry: install in agents and search and use tools directly"
@@ -2572,7 +2572,7 @@
     "message": "Start with the apps OOMOL already connects"
   },
   "HOME.ToolStrip.description": {
-    "message": "OOMOL comes with support for {providerCount} apps and {actionCount} packaged tools. Start by using what already exists through oo-cli, then decide what is worth orchestrating further, extending, or turning into your own tool."
+    "message": "OOMOL comes with support for {providerCount} apps and {actionCount} packaged tools. Start with connected services and published tools through oo-cli, then decide what is worth orchestrating further, extending, or turning into your own tool."
   },
   "HOME.ToolStrip.providerStat.label": {
     "message": "apps"
@@ -2593,10 +2593,10 @@
     "message": "Developer entry"
   },
   "HOME.DeveloperEntry.title": {
-    "message": "When ready-made capabilities are not enough, move into OOMOL Studio"
+    "message": "When connected services are not enough, move into OOMOL Studio"
   },
   "HOME.DeveloperEntry.subtitle": {
-    "message": "In Studio, you can recombine ready-made capabilities, add code, orchestrate workflows, and write new function tools. Once the tool works locally, hand it to Cloud for delivery."
+    "message": "In Studio, you can recombine connected services, add code, orchestrate workflows, and write new function tools. Once the tool works locally, hand it to Cloud for delivery."
   },
   "HOME.DeveloperEntry.primaryCta": {
     "message": "Explore OOMOL Studio"
@@ -2605,10 +2605,10 @@
     "message": "Download OOMOL Studio"
   },
   "HOME.DeveloperEntry.card1.title": {
-    "message": "Turn ready-made capabilities into your own tool"
+    "message": "Turn connected services into your own tool"
   },
   "HOME.DeveloperEntry.card1.text": {
-    "message": "Take GitHub, Slack, Notion, Gmail, and other built-in capabilities and reorganize them into your own execution chain instead of stopping at one-off use."
+    "message": "Take GitHub, Slack, Notion, Gmail, and other connected services and reorganize them into your own execution chain instead of stopping at one-off use."
   },
   "HOME.DeveloperEntry.card2.title": {
     "message": "Turn multi-step logic into a workflow"
@@ -2704,10 +2704,10 @@
     "message": "View GitHub"
   },
   "HOME.LinearFlow.cta.title": {
-    "message": "Start with ready-made tools, then take the developer path when needed"
+    "message": "Start with published tools, then take the developer path when needed"
   },
   "HOME.LinearFlow.cta.description": {
-    "message": "Use oo-cli to get ready-made capabilities working first. When you need to produce, combine, and deliver your own tools, move into Studio and Cloud."
+    "message": "Use oo-cli to get connected services and published tools working first. When you need to produce, combine, and deliver your own tools, move into Studio and Cloud."
   },
   "HOME.LinearFlow.cta.primary": {
     "message": "Start with oo-cli"
