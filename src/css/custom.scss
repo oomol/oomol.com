@@ -724,10 +724,6 @@ body,
     font-kerning: normal;
     text-rendering: optimizeLegibility;
 
-    > :where(p, ul, ol, blockquote) {
-      max-width: 72ch;
-    }
-
     > :where(
       p,
       ul,
@@ -868,10 +864,6 @@ body,
 
   @media screen and (max-width: 996px) {
     .theme-doc-markdown {
-      > :where(p, ul, ol, blockquote) {
-        max-width: none;
-      }
-
       h1 {
         font-size: var(--oomol-display-hero);
       }

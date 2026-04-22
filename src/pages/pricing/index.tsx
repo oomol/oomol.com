@@ -38,7 +38,7 @@ const LLM_PRICING_ENDPOINT =
   "https://console-server.oomol.com/api/models/models_with_config";
 const SUBSCRIPTION_BILLING_URL = "https://console.oomol.com/billing/recharge";
 
-type PricingTableKey = "llm" | "cloud-task" | "fusion-api";
+type PricingTableKey = "llm" | "cloud-task" | "ai-gateway" | "fusion-api";
 
 interface LLMModelConfig {
   model_name: string;
@@ -71,6 +71,13 @@ interface LLMPricingRow extends PricingRowBase {
 interface CloudTaskPricingRow extends PricingRowBase {
   service: string;
   price: string;
+  note: string;
+}
+
+interface GatewayPricingRow extends PricingRowBase {
+  plan: string;
+  includedUsage: string;
+  overage: string;
   note: string;
 }
 
@@ -219,7 +226,7 @@ export default function Index() {
   };
   const isZh = i18n.currentLocale === "zh-CN";
   const [activePricingTable, setActivePricingTable] =
-    useState<PricingTableKey>("llm");
+    useState<PricingTableKey>("fusion-api");
   const [llmRows, setLlmRows] = useState<LLMPricingRow[]>([]);
   const [isLLMLoading, setIsLLMLoading] = useState(true);
   const [llmLoadFailed, setLlmLoadFailed] = useState(false);
@@ -237,21 +244,31 @@ export default function Index() {
     "PRICING.subscription.pro.feature1",
     "PRICING.subscription.pro.feature2",
     "PRICING.subscription.pro.feature3",
-    "PRICING.subscription.pro.feature6",
+    "PRICING.subscription.pro.feature4",
   ];
   const proMoreFeatures = [
-    "PRICING.subscription.pro.feature4",
     "PRICING.subscription.pro.feature5",
+    "PRICING.subscription.pro.feature6",
+  ];
+  const growthFeatures = [
+    "PRICING.subscription.growth.feature1",
+    "PRICING.subscription.growth.feature2",
+    "PRICING.subscription.growth.feature3",
+    "PRICING.subscription.growth.feature4",
+  ];
+  const growthMoreFeatures = [
+    "PRICING.subscription.growth.feature5",
+    "PRICING.subscription.growth.feature6",
   ];
   const maxFeatures = [
     "PRICING.subscription.max.feature1",
     "PRICING.subscription.max.feature2",
     "PRICING.subscription.max.feature3",
-    "PRICING.subscription.max.feature6",
+    "PRICING.subscription.max.feature4",
   ];
   const maxMoreFeatures = [
-    "PRICING.subscription.max.feature4",
     "PRICING.subscription.max.feature5",
+    "PRICING.subscription.max.feature6",
   ];
   const freeHighlights = [
     "PRICING.subscription.free.highlight1",
@@ -260,6 +277,10 @@ export default function Index() {
   const proHighlights = [
     "PRICING.subscription.pro.highlight1",
     "PRICING.subscription.pro.highlight2",
+  ];
+  const growthHighlights = [
+    "PRICING.subscription.growth.highlight1",
+    "PRICING.subscription.growth.highlight2",
   ];
   const maxHighlights = [
     "PRICING.subscription.max.highlight1",
@@ -273,13 +294,64 @@ export default function Index() {
     ? {
         title: "价格 - OOMOL",
         description:
-          "本地构建与验证始终免费。Free 用户每月还可直接使用 200 分钟 Cloud Task；超额后再充值或升级，OOMOL 提供的模型与服务按点数结算。",
+          "本地构建与验证始终免费。Free 用户每月包含 200 分钟 Cloud Task 和 20K AI Gateway 调用；只有当托管运行、Gateway 调用量或鉴权能力需要更高额度时再升级。",
       }
     : {
         title: "Pricing - OOMOL",
         description:
-          "Local building and validation stay free. Free users also get 200 Cloud Task minutes every month, then top up or upgrade only after that included usage runs out. OOMOL-provided models and services use credits.",
+          "Local building and validation stay free. Free users also get 200 Cloud Task minutes and 20K AI Gateway calls every month. Upgrade only when you need more hosted runtime, Gateway volume, or advanced authentication controls.",
       };
+
+  const planCards = [
+    {
+      key: "free",
+      className: `${styles.planCard} ${styles.freePlan}`,
+      descriptionKey: "PRICING.subscription.free.description",
+      featureKeys: freeFeatures,
+      highlightKeys: freeHighlights,
+      moreFeatureKeys: freeMoreFeatures,
+      nameKey: "PRICING.subscription.free.name",
+      priceKey: "PRICING.subscription.free.price",
+      isFree: true,
+      isRecommended: false,
+    },
+    {
+      key: "pro",
+      className: `${styles.planCard} ${styles.proPlan}`,
+      descriptionKey: "PRICING.subscription.pro.description",
+      featureKeys: proFeatures,
+      highlightKeys: proHighlights,
+      moreFeatureKeys: proMoreFeatures,
+      nameKey: "PRICING.subscription.pro.name",
+      priceKey: "PRICING.subscription.pro.price",
+      isFree: false,
+      isRecommended: false,
+    },
+    {
+      key: "growth",
+      className: `${styles.planCard} ${styles.recommended} ${styles.growthPlan}`,
+      descriptionKey: "PRICING.subscription.growth.description",
+      featureKeys: growthFeatures,
+      highlightKeys: growthHighlights,
+      moreFeatureKeys: growthMoreFeatures,
+      nameKey: "PRICING.subscription.growth.name",
+      priceKey: "PRICING.subscription.growth.price",
+      isFree: false,
+      isRecommended: true,
+    },
+    {
+      key: "max",
+      className: `${styles.planCard} ${styles.maxPlan}`,
+      descriptionKey: "PRICING.subscription.max.description",
+      featureKeys: maxFeatures,
+      highlightKeys: maxHighlights,
+      moreFeatureKeys: maxMoreFeatures,
+      nameKey: "PRICING.subscription.max.name",
+      priceKey: "PRICING.subscription.max.price",
+      isFree: false,
+      isRecommended: false,
+    },
+  ];
 
   useEffect(() => {
     let cancelled = false;
@@ -392,7 +464,100 @@ export default function Index() {
       price: "0.01",
       note: tPricing(
         "PRICING.tables.cloudTask.noteText",
-        "Anything under one minute is billed as one minute"
+        "Billed by runtime. Anything under one minute is billed as one minute"
+      ),
+    },
+  ];
+
+  const gatewayColumns: PricingColumn<GatewayPricingRow>[] = [
+    {
+      dataIndex: "plan",
+      key: "plan",
+      render: renderIdentifierBadge,
+      title: tPricing("PRICING.tables.gateway.plan", "Plan"),
+    },
+    {
+      dataIndex: "includedUsage",
+      key: "includedUsage",
+      render: renderSinglePriceValue,
+      title: tPricing("PRICING.tables.gateway.includedUsage", "Included Usage"),
+    },
+    {
+      dataIndex: "overage",
+      key: "overage",
+      render: renderSinglePriceValue,
+      title: tPricing("PRICING.tables.gateway.overage", "Overage"),
+    },
+    {
+      dataIndex: "note",
+      key: "note",
+      title: tPricing("PRICING.tables.gateway.note", "What is included"),
+    },
+  ];
+
+  const gatewayRows: GatewayPricingRow[] = [
+    {
+      key: "gateway-free",
+      plan: tPricing("PRICING.subscription.free.name", "Free"),
+      includedUsage: tPricing(
+        "PRICING.tables.gateway.freeIncluded",
+        "20K calls / month"
+      ),
+      overage: tPricing(
+        "PRICING.tables.gateway.freeOverage",
+        "Upgrade to continue"
+      ),
+      note: tPricing(
+        "PRICING.tables.gateway.freeNote",
+        "Hosted Auth Link, OAuth callback, token refresh, and connection checks are included"
+      ),
+    },
+    {
+      key: "gateway-pro",
+      plan: tPricing("PRICING.subscription.pro.name", "Pro"),
+      includedUsage: tPricing(
+        "PRICING.tables.gateway.proIncluded",
+        "50K calls / month"
+      ),
+      overage: tPricing(
+        "PRICING.tables.gateway.standardOverage",
+        "0.3 / 1K calls"
+      ),
+      note: tPricing(
+        "PRICING.tables.gateway.proNote",
+        "Hosted Auth Link and managed auth are included"
+      ),
+    },
+    {
+      key: "gateway-growth",
+      plan: tPricing("PRICING.subscription.growth.name", "Growth"),
+      includedUsage: tPricing(
+        "PRICING.tables.gateway.growthIncluded",
+        "200K calls / month"
+      ),
+      overage: tPricing(
+        "PRICING.tables.gateway.standardOverage",
+        "0.3 / 1K calls"
+      ),
+      note: tPricing(
+        "PRICING.tables.gateway.growthNote",
+        "Custom auth configs, your own OAuth credentials, and custom scopes"
+      ),
+    },
+    {
+      key: "gateway-scale",
+      plan: tPricing("PRICING.subscription.max.name", "Scale"),
+      includedUsage: tPricing(
+        "PRICING.tables.gateway.scaleIncluded",
+        "1M calls / month"
+      ),
+      overage: tPricing(
+        "PRICING.tables.gateway.scaleOverage",
+        "0.25 / 1K calls"
+      ),
+      note: tPricing(
+        "PRICING.tables.gateway.scaleNote",
+        "White-label auth and higher Gateway usage headroom"
       ),
     },
   ];
@@ -580,36 +745,49 @@ export default function Index() {
 
   const tableTabs = [
     {
-      key: "llm" as const,
-      label: tPricing("PRICING.tables.tab.llm", "LLM Pricing"),
+      key: "fusion-api" as const,
+      label: tPricing(
+        "PRICING.tables.tab.fusionApi",
+        "Images & Other Services"
+      ),
     },
     {
       key: "cloud-task" as const,
-      label: tPricing("PRICING.tables.tab.cloudTask", "Cloud Task Pricing"),
+      label: tPricing("PRICING.tables.tab.cloudTask", "Cloud Task"),
     },
     {
-      key: "fusion-api" as const,
-      label: tPricing("PRICING.tables.tab.fusionApi", "Fusion API Pricing"),
+      key: "llm" as const,
+      label: tPricing("PRICING.tables.tab.llm", "LLMs"),
+    },
+    {
+      key: "ai-gateway" as const,
+      label: tPricing("PRICING.tables.tab.gateway", "AI Gateway"),
     },
   ];
 
   function renderPricingTable(tableKey: PricingTableKey) {
     const isLLMTable = tableKey === "llm";
     const isCloudTaskTable = tableKey === "cloud-task";
+    const isGatewayTable = tableKey === "ai-gateway";
     const tableAlert = isLLMTable
       ? tPricing(
           "PRICING.tables.llm.note",
-          "LLM rates update with the model configuration in the console. Units are credits per million tokens."
+          "Check this only when you call OOMOL-billed models directly. If you mainly use your own model configuration in CLI or Studio, that cost is usually paid by you instead. Rates update with the model configuration in the console. Units are credits per million tokens."
         )
       : isCloudTaskTable
         ? tPricing(
             "PRICING.tables.cloudTask.alert",
-            "Running tools locally in OOMOL Studio does not incur Cloud Task charges. Running the same tools through OOMOL-hosted services does."
+            "If you host tools on OOMOL, Cloud Task is usually the second cost to watch. It applies to cloud functions or APIs you publish through OOMOL and is billed by runtime."
           )
-        : tPricing(
-            "PRICING.tables.fusionApi.alert",
-            "Some official OOMOL tools use these services directly. You can also call them yourself, and that usage is deducted from your credits."
-          );
+        : isGatewayTable
+          ? tPricing(
+              "PRICING.tables.gateway.alert",
+              "AI Gateway is mainly for services you publish with auth and request forwarding. Most CLI users do not need to look at this first; only forwarded requests after auth are billed."
+            )
+          : tPricing(
+              "PRICING.tables.fusionApi.alert",
+              "This is usually the first usage-based pricing most users care about. Official OOMOL tools call these services directly, and you can call them yourself as well. Charges are deducted in credits based on each service unit."
+            );
     const tableEmptyState = tPricing(
       "PRICING.tables.llm.empty",
       "No LLM pricing data is available right now."
@@ -639,9 +817,18 @@ export default function Index() {
             columns={cloudTaskColumns}
             emptyState={tPricing(
               "PRICING.tables.cloudTask.noteText",
-              "Anything under one minute is billed as one minute"
+              "Billed by runtime. Anything under one minute is billed as one minute"
             )}
             rows={cloudTaskRows}
+          />
+        ) : isGatewayTable ? (
+          <PriceTable
+            columns={gatewayColumns}
+            emptyState={tPricing(
+              "PRICING.tables.gateway.empty",
+              "No AI Gateway pricing data is available right now."
+            )}
+            rows={gatewayRows}
           />
         ) : (
           <PriceTable
@@ -683,7 +870,7 @@ export default function Index() {
               <AlertDescription>
                 {tPricing(
                   "PRICING.model.summary",
-                  "Studio stays free for local work. Free users also get 200 Cloud Task minutes every month, then top up or upgrade only after that included usage runs out. OOMOL-provided models and services use credits."
+                  "Studio stays free for local work. Free users also get 200 Cloud Task minutes and 20K AI Gateway calls every month, then upgrade only after that included usage runs out. OOMOL-provided models and services use credits."
                 )}
               </AlertDescription>
             </Alert>
@@ -712,13 +899,13 @@ export default function Index() {
                 <h2 className={styles.pricingModelTitle}>
                   {tPricing(
                     "PRICING.model.online.title",
-                    "Free first, then top up when online usage grows"
+                    "Run online first, then scale runtime and Gateway usage"
                   )}
                 </h2>
                 <p className={styles.pricingModelText}>
                   {tPricing(
                     "PRICING.model.online.text",
-                    "Free users can already publish and use Cloud with 200 monthly Cloud Task minutes. Top up or move to a paid plan only when you need more included usage or higher limits."
+                    "Free users can already publish and use Cloud with 200 monthly Cloud Task minutes plus 20K AI Gateway calls each month. Upgrade only when you need more hosted runtime, Gateway volume, or advanced auth controls."
                   )}
                 </p>
               </div>
@@ -736,264 +923,112 @@ export default function Index() {
             </p>
 
             <div className={styles.planBox}>
-              {/* 免费版 */}
-              <div className={`${styles.planCard} ${styles.freePlan}`}>
-                <div className={styles.planHeader}>
-                  <h3 className={styles.planName}>
-                    {translate({ message: "PRICING.subscription.free.name" })}
-                  </h3>
-                  <div className={styles.planPrice}>
-                    <span className={styles.price}>
+              {planCards.map(plan => (
+                <div key={plan.key} className={plan.className}>
+                  {plan.isRecommended ? (
+                    <div className={styles.badge}>
                       {translate({
-                        message: "PRICING.subscription.free.price",
+                        message: "PRICING.subscription.recommended",
                       })}
-                    </span>
-                  </div>
-                  <div className={styles.planDescription}>
-                    {translate({
-                      message: "PRICING.subscription.free.description",
-                    })}
-                  </div>
-                  <div className={styles.planHighlights}>
-                    {freeHighlights.map(highlightKey => (
-                      <span key={highlightKey} className={styles.planHighlight}>
-                        {translate({ message: highlightKey })}
+                    </div>
+                  ) : null}
+                  <div className={styles.planHeader}>
+                    <h3 className={styles.planName}>
+                      {translate({ message: plan.nameKey })}
+                    </h3>
+                    <div className={styles.planPrice}>
+                      <span className={styles.price}>
+                        {translate({ message: plan.priceKey })}
                       </span>
-                    ))}
-                  </div>
-                </div>
-                <div className={styles.planActionArea}>
-                  <div className={styles.downloadBtnWrapper}>
-                    <DownloadButton
-                      buttonSize="default"
-                      fullWidth
-                      className={styles.planCta}
-                    />
-                  </div>
-                </div>
-                <div className={styles.planDetails}>
-                  <div className={styles.featureList}>
-                    {freeFeatures.map(featureKey => (
-                      <div key={featureKey} className={styles.featureItem}>
-                        <i className="i-codicon:check" />
-                        <span>
+                      {!plan.isFree ? (
+                        <span className={styles.period}>
                           {translate({
-                            message: featureKey,
+                            message: "PRICING.subscription.period",
                           })}
                         </span>
-                      </div>
-                    ))}
+                      ) : null}
+                    </div>
+                    <div className={styles.planDescription}>
+                      {translate({ message: plan.descriptionKey })}
+                    </div>
+                    <div className={styles.planHighlights}>
+                      {plan.highlightKeys.map(highlightKey => (
+                        <span
+                          key={highlightKey}
+                          className={styles.planHighlight}
+                        >
+                          {translate({ message: highlightKey })}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  <details className={styles.featureDisclosure}>
-                    <summary className={styles.featureDisclosureTrigger}>
-                      <span className={styles.featureDisclosureOpenLabel}>
-                        {translate({
-                          message: "PRICING.subscription.showDetails",
-                        })}
-                      </span>
-                      <span className={styles.featureDisclosureCloseLabel}>
-                        {translate({
-                          message: "PRICING.subscription.hideDetails",
-                        })}
-                      </span>
-                      <i className="i-codicon:chevron-down" />
-                    </summary>
-                    <div className={styles.featureDisclosureContent}>
-                      {freeMoreFeatures.map(featureKey => (
+                  <div className={styles.planActionArea}>
+                    {plan.isFree ? (
+                      <div className={styles.downloadBtnWrapper}>
+                        <DownloadButton
+                          buttonSize="default"
+                          fullWidth
+                          className={styles.planCta}
+                        />
+                      </div>
+                    ) : (
+                      <>
+                        <Button
+                          asChild
+                          size="default"
+                          className={styles.planCta}
+                          aria-label={paidPlanCtaLabel}
+                        >
+                          <a
+                            href={SUBSCRIPTION_BILLING_URL}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            {paidPlanCtaLabel}
+                          </a>
+                        </Button>
+                        <div
+                          className={styles.planActionMeta}
+                          aria-hidden="true"
+                        />
+                      </>
+                    )}
+                  </div>
+                  <div className={styles.planDetails}>
+                    <div className={styles.featureList}>
+                      {plan.featureKeys.map(featureKey => (
                         <div key={featureKey} className={styles.featureItem}>
                           <i className="i-codicon:check" />
-                          <span>
-                            {translate({
-                              message: featureKey,
-                            })}
-                          </span>
+                          <span>{translate({ message: featureKey })}</span>
                         </div>
                       ))}
                     </div>
-                  </details>
-                </div>
-              </div>
-
-              <div
-                className={`${styles.planCard} ${styles.recommended} ${styles.proPlan}`}
-              >
-                <div className={styles.badge}>
-                  {translate({ message: "PRICING.subscription.recommended" })}
-                </div>
-                <div className={styles.planHeader}>
-                  <h3 className={styles.planName}>
-                    {translate({ message: "PRICING.subscription.pro.name" })}
-                  </h3>
-                  <div className={styles.planPrice}>
-                    <span className={styles.price}>
-                      {translate({
-                        message: "PRICING.subscription.pro.price",
-                      })}
-                    </span>
-                    <span className={styles.period}>
-                      {translate({ message: "PRICING.subscription.period" })}
-                    </span>
-                  </div>
-                  <div className={styles.planDescription}>
-                    {translate({
-                      message: "PRICING.subscription.pro.description",
-                    })}
-                  </div>
-                  <div className={styles.planHighlights}>
-                    {proHighlights.map(highlightKey => (
-                      <span key={highlightKey} className={styles.planHighlight}>
-                        {translate({ message: highlightKey })}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div className={styles.planActionArea}>
-                  <Button
-                    asChild
-                    size="default"
-                    className={styles.planCta}
-                    aria-label={paidPlanCtaLabel}
-                  >
-                    <a
-                      href={SUBSCRIPTION_BILLING_URL}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      {paidPlanCtaLabel}
-                    </a>
-                  </Button>
-                  <div className={styles.planActionMeta} aria-hidden="true" />
-                </div>
-                <div className={styles.planDetails}>
-                  <div className={styles.featureList}>
-                    {proFeatures.map(featureKey => (
-                      <div key={featureKey} className={styles.featureItem}>
-                        <i className="i-codicon:check" />
-                        <span>
+                    <details className={styles.featureDisclosure}>
+                      <summary className={styles.featureDisclosureTrigger}>
+                        <span className={styles.featureDisclosureOpenLabel}>
                           {translate({
-                            message: featureKey,
+                            message: "PRICING.subscription.showDetails",
                           })}
                         </span>
-                      </div>
-                    ))}
-                  </div>
-                  <details className={styles.featureDisclosure}>
-                    <summary className={styles.featureDisclosureTrigger}>
-                      <span className={styles.featureDisclosureOpenLabel}>
-                        {translate({
-                          message: "PRICING.subscription.showDetails",
-                        })}
-                      </span>
-                      <span className={styles.featureDisclosureCloseLabel}>
-                        {translate({
-                          message: "PRICING.subscription.hideDetails",
-                        })}
-                      </span>
-                      <i className="i-codicon:chevron-down" />
-                    </summary>
-                    <div className={styles.featureDisclosureContent}>
-                      {proMoreFeatures.map(featureKey => (
-                        <div key={featureKey} className={styles.featureItem}>
-                          <i className="i-codicon:check" />
-                          <span>
-                            {translate({
-                              message: featureKey,
-                            })}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </details>
-                </div>
-              </div>
-
-              <div className={`${styles.planCard} ${styles.maxPlan}`}>
-                <div className={styles.planHeader}>
-                  <h3 className={styles.planName}>
-                    {translate({ message: "PRICING.subscription.max.name" })}
-                  </h3>
-                  <div className={styles.planPrice}>
-                    <span className={styles.price}>
-                      {translate({
-                        message: "PRICING.subscription.max.price",
-                      })}
-                    </span>
-                    <span className={styles.period}>
-                      {translate({ message: "PRICING.subscription.period" })}
-                    </span>
-                  </div>
-                  <div className={styles.planDescription}>
-                    {translate({
-                      message: "PRICING.subscription.max.description",
-                    })}
-                  </div>
-                  <div className={styles.planHighlights}>
-                    {maxHighlights.map(highlightKey => (
-                      <span key={highlightKey} className={styles.planHighlight}>
-                        {translate({ message: highlightKey })}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div className={styles.planActionArea}>
-                  <Button
-                    asChild
-                    size="default"
-                    className={styles.planCta}
-                    aria-label={paidPlanCtaLabel}
-                  >
-                    <a
-                      href={SUBSCRIPTION_BILLING_URL}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      {paidPlanCtaLabel}
-                    </a>
-                  </Button>
-                  <div className={styles.planActionMeta} aria-hidden="true" />
-                </div>
-                <div className={styles.planDetails}>
-                  <div className={styles.featureList}>
-                    {maxFeatures.map(featureKey => (
-                      <div key={featureKey} className={styles.featureItem}>
-                        <i className="i-codicon:check" />
-                        <span>
+                        <span className={styles.featureDisclosureCloseLabel}>
                           {translate({
-                            message: featureKey,
+                            message: "PRICING.subscription.hideDetails",
                           })}
                         </span>
+                        <i className="i-codicon:chevron-down" />
+                      </summary>
+                      <div className={styles.featureDisclosureContent}>
+                        {plan.moreFeatureKeys.map(featureKey => (
+                          <div key={featureKey} className={styles.featureItem}>
+                            <i className="i-codicon:check" />
+                            <span>{translate({ message: featureKey })}</span>
+                          </div>
+                        ))}
                       </div>
-                    ))}
+                    </details>
                   </div>
-                  <details className={styles.featureDisclosure}>
-                    <summary className={styles.featureDisclosureTrigger}>
-                      <span className={styles.featureDisclosureOpenLabel}>
-                        {translate({
-                          message: "PRICING.subscription.showDetails",
-                        })}
-                      </span>
-                      <span className={styles.featureDisclosureCloseLabel}>
-                        {translate({
-                          message: "PRICING.subscription.hideDetails",
-                        })}
-                      </span>
-                      <i className="i-codicon:chevron-down" />
-                    </summary>
-                    <div className={styles.featureDisclosureContent}>
-                      {maxMoreFeatures.map(featureKey => (
-                        <div key={featureKey} className={styles.featureItem}>
-                          <i className="i-codicon:check" />
-                          <span>
-                            {translate({
-                              message: featureKey,
-                            })}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </details>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -1005,20 +1040,14 @@ export default function Index() {
             <div className={styles.priceTablesSection}>
               <div className={styles.tableSectionHeader}>
                 <h2 className={styles.tableSectionTitle}>
-                  {tPricing("PRICING.tables.title", "Detailed Pricing Tables")}
+                  {tPricing("PRICING.tables.title", "Usage & Service Pricing")}
                 </h2>
                 <p className={styles.tableSectionSubtitle}>
                   {tPricing(
                     "PRICING.tables.subtitle",
-                    "Think of pricing in two layers: the plans above include monthly usage, and the tables below show what happens after that included usage is used up."
+                    "For most users, start with Images & Other Services, then Cloud Task. AI Gateway mainly applies to services you publish with auth, and LLM pricing here matters only when you call models through OOMOL directly."
                   )}
                 </p>
-                <div className={styles.tableSyncNote}>
-                  {tPricing(
-                    "PRICING.tables.syncNote",
-                    "Free and paid plans can both run tools online. Free includes 200 Cloud Task minutes each month, paid plans include larger monthly allowances, and additional usage or model/service calls deduct credits."
-                  )}
-                </div>
               </div>
 
               <Tabs

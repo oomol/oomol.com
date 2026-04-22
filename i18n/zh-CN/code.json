@@ -504,10 +504,10 @@
     "message": "简单、透明的定价"
   },
   "PRICING.subtitle": {
-    "message": "本地构建与验证始终免费。Free 用户每月包含 200 分钟 Cloud Task；不够时再充值或升级，模型与其他服务按点数结算。"
+    "message": "本地构建与验证始终免费。Free 用户每月包含 200 分钟 Cloud Task 和 20K 次 AI Gateway 调用；只有当托管运行、Gateway 调用量或鉴权能力需要更高额度时再升级。"
   },
   "PRICING.model.summary": {
-    "message": "先在 Studio 本地做和验证，再决定要不要上云。Free 用户每月会自动刷新 200 分钟 Cloud Task；超出后再充值或升级。"
+    "message": "先在 Studio 本地做和验证，再决定要不要上云或接入鉴权后的 Gateway。Free 用户每月会自动刷新 200 分钟 Cloud Task 和 20K 次 AI Gateway 调用；超出后再升级。"
   },
   "PRICING.model.local.label": {
     "message": "本地"
@@ -522,16 +522,16 @@
     "message": "线上"
   },
   "PRICING.model.online.title": {
-    "message": "先免费上线，不够时再充值"
+    "message": "先上线，再按运行时长和 Gateway 用量扩容"
   },
   "PRICING.model.online.text": {
-    "message": "Free 用户已经可以发布并使用 Cloud，每月包含 200 分钟 Cloud Task。只有当你需要更多在线额度或更高限制时，再充值或升级。"
+    "message": "Free 用户已经可以发布并使用 Cloud，每月包含 200 分钟 Cloud Task 和 20K 次 AI Gateway 调用。只有当你需要更多托管运行时长、Gateway 调用量或更强的鉴权能力时，再升级。"
   },
   "PRICING.subscription.title": {
     "message": "选择你使用 OOMOL 的方式"
   },
   "PRICING.subscription.subtitle": {
-    "message": "Free 适合本地使用和轻量线上运行；Pro 与 Max 提供更高的每月 Cloud Task 额度与线上限制。"
+    "message": "Free 适合本地使用以及轻量托管运行和 Gateway 调用；Pro、Growth 与 Scale 提供更高的 Cloud Task 额度、更多 AI Gateway 调用量和更强的鉴权控制。"
   },
   "PRICING.subscription.recommended": {
     "message": "推荐"
@@ -555,7 +555,7 @@
     "message": "$0"
   },
   "PRICING.subscription.free.description": {
-    "message": "适合本地开发、结果验证，\n以及先用每月 200 分钟 Cloud Task\n把工具在线跑起来"
+    "message": "适合本地开发、结果验证，\n以及先用每月 200 分钟 Cloud Task 和 20K 次 AI Gateway 调用\n把工具在线跑起来"
   },
   "PRICING.subscription.free.feature1": {
     "message": "完整使用 OOMOL Studio 本地开发环境"
@@ -570,16 +570,16 @@
     "message": "每月自动刷新 200 分钟 Cloud Task 额度"
   },
   "PRICING.subscription.free.feature5": {
-    "message": "注册即送 1 credit，用于试用 LLM 与 Fusion API"
+    "message": "可发布 20 个包（公有/私有合计）"
   },
   "PRICING.subscription.free.feature6": {
-    "message": "可发布 20 个包（公有/私有合计），可直接交付到 Cloud"
+    "message": "每月包含 20K 次 AI Gateway 调用，并包含 Hosted Auth Link 与托管鉴权"
   },
   "PRICING.subscription.free.highlight1": {
     "message": "200 分钟/月"
   },
   "PRICING.subscription.free.highlight2": {
-    "message": "20 个包"
+    "message": "20K 次 Gateway 调用/月"
   },
   "PRICING.subscription.pro.name": {
     "message": "Pro"
@@ -588,7 +588,7 @@
     "message": "$12"
   },
   "PRICING.subscription.pro.description": {
-    "message": "适合免费额度不够时，\n继续扩大线上托管运行规模，\n并获得更高的每月包含额度"
+    "message": "适合个人开发者正式上线后，\n需要更多托管运行时长\n和更高的月度 Gateway 额度"
   },
   "PRICING.subscription.pro.feature1": {
     "message": "使用 OOMOL 承接线上发布、运行和交付"
@@ -597,13 +597,13 @@
     "message": "每月包含 1800 分钟 Cloud Task 额度"
   },
   "PRICING.subscription.pro.feature3": {
-    "message": "每月包含价值 $3 的通用 credits"
+    "message": "每月包含 50K 次 AI Gateway 调用"
   },
   "PRICING.subscription.pro.feature4": {
-    "message": "适合从本地验证切换到正式线上托管"
+    "message": "包含 Hosted Auth Link 与托管鉴权"
   },
   "PRICING.subscription.pro.feature5": {
-    "message": "超出包含额度后按标准价格继续充值使用"
+    "message": "每月包含价值 $3 的通用 credits"
   },
   "PRICING.subscription.pro.feature6": {
     "message": "可发布 100 个包（公有/私有合计）"
@@ -612,190 +612,97 @@
     "message": "1800 分钟/月"
   },
   "PRICING.subscription.pro.highlight2": {
-    "message": "100 个包"
+    "message": "50K 次 Gateway 调用/月"
+  },
+  "PRICING.subscription.growth.name": {
+    "message": "Growth"
+  },
+  "PRICING.subscription.growth.price": {
+    "message": "$29"
+  },
+  "PRICING.subscription.growth.description": {
+    "message": "适合稳定线上用量的场景，\n需要更强的月度额度\n以及自定义鉴权能力"
+  },
+  "PRICING.subscription.growth.feature1": {
+    "message": "包含全部 Pro 能力，并提供更高包含额度"
+  },
+  "PRICING.subscription.growth.feature2": {
+    "message": "每月包含 5000 分钟 Cloud Task 额度"
+  },
+  "PRICING.subscription.growth.feature3": {
+    "message": "每月包含 200K 次 AI Gateway 调用"
+  },
+  "PRICING.subscription.growth.feature4": {
+    "message": "支持自定义 Auth Config、自己的 OAuth 凭证与自定义 Scopes"
+  },
+  "PRICING.subscription.growth.feature5": {
+    "message": "每月包含价值 $8 的通用 credits"
+  },
+  "PRICING.subscription.growth.feature6": {
+    "message": "可发布 300 个包（公有/私有合计）"
+  },
+  "PRICING.subscription.growth.highlight1": {
+    "message": "5000 分钟/月"
+  },
+  "PRICING.subscription.growth.highlight2": {
+    "message": "200K 次 Gateway 调用/月"
   },
   "PRICING.subscription.max.name": {
-    "message": "Max"
+    "message": "Scale"
   },
   "PRICING.subscription.max.price": {
     "message": "$79"
   },
   "PRICING.subscription.max.description": {
-    "message": "适合已有稳定线上调用量，\n希望用更高月度托管额度\n持续承接运行需求的用户"
+    "message": "适合更高量级的托管流量，\n需要更多运行时长余量\n和更低的 Gateway 超额价格"
   },
   "PRICING.subscription.max.feature1": {
-    "message": "包含全部 Pro 功能，额度更高"
+    "message": "包含全部 Growth 能力，额度更高"
   },
   "PRICING.subscription.max.feature2": {
-    "message": "每月包含 14400 分钟 Cloud Task 额度"
+    "message": "每月包含 15000 分钟 Cloud Task 额度"
   },
   "PRICING.subscription.max.feature3": {
-    "message": "每月包含价值 $8 的通用 credits"
+    "message": "每月包含 1M 次 AI Gateway 调用"
   },
   "PRICING.subscription.max.feature4": {
-    "message": "适合稳定高用量的托管运行场景"
+    "message": "支持白标鉴权，并提供更高的 Gateway 使用余量"
   },
   "PRICING.subscription.max.feature5": {
-    "message": "超出包含额度后按标准价格继续充值使用"
+    "message": "每月包含价值 $15 的通用 credits"
   },
   "PRICING.subscription.max.feature6": {
-    "message": "可发布 300 个包（公有/私有合计）"
+    "message": "可发布 1000 个包（公有/私有合计）"
   },
   "PRICING.subscription.max.highlight1": {
-    "message": "14400 分钟/月"
+    "message": "15000 分钟/月"
   },
   "PRICING.subscription.max.highlight2": {
-    "message": "300 个包"
-  },
-  "PRICING.payAsYouGo.title": {
-    "message": "按量计费"
-  },
-  "PRICING.payAsYouGo.subtitle": {
-    "message": "按实际使用量付费，灵活透明"
-  },
-  "PRICING.payAsYouGo.table.item": {
-    "message": "计费项"
-  },
-  "PRICING.payAsYouGo.table.price": {
-    "message": "单价"
-  },
-  "PRICING.payAsYouGo.category.execution": {
-    "message": "执行任务"
-  },
-  "PRICING.payAsYouGo.execution.workflow": {
-    "message": "工作流执行"
-  },
-  "PRICING.payAsYouGo.execution.workflow.price": {
-    "message": "10 积分/次"
-  },
-  "PRICING.payAsYouGo.execution.block": {
-    "message": "工具执行"
-  },
-  "PRICING.payAsYouGo.execution.block.price": {
-    "message": "5 积分/次"
-  },
-  "PRICING.payAsYouGo.execution.computeTime": {
-    "message": "计算时长"
-  },
-  "PRICING.payAsYouGo.execution.computeTime.price": {
-    "message": "1 积分/秒"
-  },
-  "PRICING.payAsYouGo.category.llm": {
-    "message": "大模型"
-  },
-  "PRICING.payAsYouGo.llm.gpt4": {
-    "message": "GPT-4"
-  },
-  "PRICING.payAsYouGo.llm.gpt4.price": {
-    "message": "100 积分/1K tokens"
-  },
-  "PRICING.payAsYouGo.llm.claude": {
-    "message": "Claude"
-  },
-  "PRICING.payAsYouGo.llm.claude.price": {
-    "message": "80 积分/1K tokens"
-  },
-  "PRICING.payAsYouGo.llm.gemini": {
-    "message": "Gemini"
-  },
-  "PRICING.payAsYouGo.llm.gemini.price": {
-    "message": "60 积分/1K tokens"
-  },
-  "PRICING.payAsYouGo.category.fusionAPI": {
-    "message": "融合 API"
-  },
-  "PRICING.payAsYouGo.fusionAPI.imageGen": {
-    "message": "图像生成"
-  },
-  "PRICING.payAsYouGo.fusionAPI.imageGen.price": {
-    "message": "50 积分/张"
-  },
-  "PRICING.payAsYouGo.fusionAPI.ocr": {
-    "message": "OCR 识别"
-  },
-  "PRICING.payAsYouGo.fusionAPI.ocr.price": {
-    "message": "20 积分/张"
-  },
-  "PRICING.payAsYouGo.fusionAPI.tts": {
-    "message": "语音合成"
-  },
-  "PRICING.payAsYouGo.fusionAPI.tts.price": {
-    "message": "10 积分/分钟"
-  },
-  "PRICING.payAsYouGo.taskExecution.name": {
-    "message": "任务调用"
-  },
-  "PRICING.payAsYouGo.taskExecution.price": {
-    "message": "¥0.01/千次"
-  },
-  "PRICING.payAsYouGo.taskExecution.description": {
-    "message": "工作流和工具的调用计费"
-  },
-  "PRICING.payAsYouGo.taskExecution.feature1": {
-    "message": "工作流执行：10 积分/次"
-  },
-  "PRICING.payAsYouGo.taskExecution.feature2": {
-    "message": "工具执行：5 积分/次"
-  },
-  "PRICING.payAsYouGo.taskExecution.feature3": {
-    "message": "计算时长：1 积分/秒"
-  },
-  "PRICING.payAsYouGo.llm.name": {
-    "message": "大语言模型"
-  },
-  "PRICING.payAsYouGo.llm.price": {
-    "message": "¥0.01/1M token"
-  },
-  "PRICING.payAsYouGo.llm.description": {
-    "message": "主流大语言模型调用计费"
-  },
-  "PRICING.payAsYouGo.llm.feature1": {
-    "message": "GPT-4：100 积分/1K tokens"
-  },
-  "PRICING.payAsYouGo.llm.feature2": {
-    "message": "Claude：80 积分/1K tokens"
-  },
-  "PRICING.payAsYouGo.llm.feature3": {
-    "message": "Gemini：60 积分/1K tokens"
-  },
-  "PRICING.payAsYouGo.fusionAPI.name": {
-    "message": "融合 API"
-  },
-  "PRICING.payAsYouGo.fusionAPI.price": {
-    "message": "¥0.01/次调用"
-  },
-  "PRICING.payAsYouGo.fusionAPI.description": {
-    "message": "统一的 API 调用服务"
-  },
-  "PRICING.payAsYouGo.fusionAPI.feature1": {
-    "message": "图像生成：50 积分/张"
-  },
-  "PRICING.payAsYouGo.fusionAPI.feature2": {
-    "message": "OCR 识别：20 积分/张"
-  },
-  "PRICING.payAsYouGo.fusionAPI.feature3": {
-    "message": "语音合成：10 积分/分钟"
+    "message": "1M 次 Gateway 调用/月"
   },
   "PRICING.tables.title": {
-    "message": "按量计费价格"
+    "message": "按量与服务价格"
   },
   "PRICING.tables.subtitle": {
-    "message": "价格可以分成两层来看：上面是每月套餐，下面是超出套餐后的按量价格。"
+    "message": "从用户最常见的支出来看，通常先关注图像与其他服务，其次是 Cloud Task。AI Gateway 主要面向你自己发布并接入鉴权的服务；大模型只有在你直接通过 OOMOL 调用时才需要看这里。"
   },
   "PRICING.tables.syncNote": {
-    "message": "Free 与付费套餐都可以在线运行工具。差别主要在每月包含的 Cloud Task 额度；超出部分，以及模型与其他服务调用，再按点数结算。"
+    "message": "图像与其他服务通常最先影响点数消耗；Cloud Task 是你把工具托管到 OOMOL 后的运行成本；AI Gateway 主要面向你自己发布并接入鉴权的服务；大模型价格只对应 OOMOL 代付的模型调用。"
   },
   "PRICING.tables.tab.llm": {
-    "message": "大模型价格"
+    "message": "大模型"
   },
   "PRICING.tables.tab.cloudTask": {
-    "message": "Cloud Task 价格"
+    "message": "Cloud Task"
+  },
+  "PRICING.tables.tab.gateway": {
+    "message": "AI Gateway"
   },
   "PRICING.tables.tab.fusionApi": {
     "message": "图像与其他服务"
   },
   "PRICING.tables.llm.note": {
-    "message": "大模型价格会随 Console 中的模型配置变化而更新，单位为点数 / M Token。"
+    "message": "只有当你直接调用 OOMOL 代付的大模型时，才需要看这里；如果你主要在 CLI 或 Studio 中使用自己的模型配置，相关开销通常由你自己承担。价格会随 Console 中的模型配置变化而更新，单位为点数 / M Token。"
   },
   "PRICING.tables.llm.loading": {
     "message": "正在从 OOMOL Console 加载最新大模型价格..."
@@ -834,10 +741,61 @@
     "message": "说明"
   },
   "PRICING.tables.cloudTask.noteText": {
-    "message": "不满一分钟按 1 分钟计费"
+    "message": "按运行时长计费；不满一分钟按 1 分钟计费"
   },
   "PRICING.tables.cloudTask.alert": {
-    "message": "仅使用 OOMOL Studio 在本地运行工具不会触发 Cloud Task 计费。通过 OOMOL 托管入口运行同一工具时，才会触发 Cloud Task 并扣费。"
+    "message": "如果你把工具托管到 OOMOL，Cloud Task 通常是第二个需要看的成本项。它适用于你自己编写并发布到 OOMOL 的云函数或 API 服务，按运行时长计费。"
+  },
+  "PRICING.tables.gateway.plan": {
+    "message": "套餐"
+  },
+  "PRICING.tables.gateway.includedUsage": {
+    "message": "包含额度"
+  },
+  "PRICING.tables.gateway.overage": {
+    "message": "超额价格"
+  },
+  "PRICING.tables.gateway.note": {
+    "message": "计费定义"
+  },
+  "PRICING.tables.gateway.alert": {
+    "message": "AI Gateway 主要面向你自己发布并接入鉴权、转发的服务。普通 CLI 使用者通常不需要先看这一项；它只统计鉴权后真正转发出去的请求。"
+  },
+  "PRICING.tables.gateway.empty": {
+    "message": "当前没有可展示的 AI Gateway 价格数据。"
+  },
+  "PRICING.tables.gateway.freeOverage": {
+    "message": "需要升级后继续使用"
+  },
+  "PRICING.tables.gateway.freeIncluded": {
+    "message": "20K 次调用/月"
+  },
+  "PRICING.tables.gateway.proIncluded": {
+    "message": "50K 次调用/月"
+  },
+  "PRICING.tables.gateway.growthIncluded": {
+    "message": "200K 次调用/月"
+  },
+  "PRICING.tables.gateway.scaleIncluded": {
+    "message": "1M 次调用/月"
+  },
+  "PRICING.tables.gateway.standardOverage": {
+    "message": "0.3 / 1K 次调用"
+  },
+  "PRICING.tables.gateway.scaleOverage": {
+    "message": "0.25 / 1K 次调用"
+  },
+  "PRICING.tables.gateway.freeNote": {
+    "message": "包含 Hosted Auth Link、OAuth 回调、token refresh 与连接状态检查"
+  },
+  "PRICING.tables.gateway.proNote": {
+    "message": "包含 Hosted Auth Link 与托管鉴权"
+  },
+  "PRICING.tables.gateway.growthNote": {
+    "message": "支持自定义 Auth Config、自己的 OAuth 凭证与自定义 Scopes"
+  },
+  "PRICING.tables.gateway.scaleNote": {
+    "message": "支持白标鉴权，并提供更高的 Gateway 使用余量"
   },
   "PRICING.tables.fusionApi.service": {
     "message": "服务名"
@@ -849,7 +807,7 @@
     "message": "说明"
   },
   "PRICING.tables.fusionApi.alert": {
-    "message": "有些 OOMOL 官方工具会直接用到这些服务。你也可以自己调用它们，费用会从点数里扣除。"
+    "message": "这通常是用户最先关注的按量价格。OOMOL 官方工具会直接用到这些服务，你也可以自己调用；费用按各自服务单位从点数里扣除。"
   },
   "PRICING.tables.fusionApi.unit.image": {
     "message": "张图片"

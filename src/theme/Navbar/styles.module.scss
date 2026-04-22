@@ -362,6 +362,95 @@
 
 .searchBar {
   margin-left: 12px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+
+  :global(.DocSearch-Button) {
+    width: clamp(148px, 12vw, 176px);
+    min-width: 148px;
+    height: 32px;
+    margin: 0 !important;
+    padding: 0 8px 0 10px;
+    border: 1px solid var(--oomol-border-strong);
+    border-radius: var(--ifm-global-radius);
+    background: var(--oomol-bg-base);
+    box-shadow: none;
+    color: var(--oomol-text-secondary);
+    transition:
+      background-color 0.15s ease,
+      border-color 0.15s ease,
+      color 0.15s ease;
+  }
+
+  :global(.DocSearch-Button:hover) {
+    background: var(--oomol-bg-spotlight);
+    border-color: var(--oomol-border-strong);
+    box-shadow: none;
+    color: var(--oomol-text-primary);
+  }
+
+  :global(.DocSearch-Button:focus-visible) {
+    outline: none;
+    border-color: var(--oomol-primary);
+    box-shadow: 0 0 0 3px
+      color-mix(in srgb, var(--oomol-primary) 16%, transparent);
+  }
+
+  :global(.DocSearch-Button-Container) {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    flex: 1;
+  }
+
+  :global(.DocSearch-Search-Icon) {
+    width: 14px;
+    height: 14px;
+    color: var(--oomol-text-tertiary);
+    stroke-width: 1.8;
+  }
+
+  :global(.DocSearch-Button-Placeholder) {
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    color: inherit;
+    font-family: var(--oomol-font-body);
+    font-size: var(--oomol-font-size-sm);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  :global(.DocSearch-Button-Keys) {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    min-width: auto;
+    margin: 0 0 0 10px;
+  }
+
+  :global(.DocSearch-Button-Key) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+    margin: 0;
+    padding: 0 4px;
+    border: 1px solid var(--oomol-divider);
+    border-radius: 6px;
+    background: var(--oomol-bg-container);
+    box-shadow: none;
+    color: var(--oomol-text-tertiary);
+    font-family: var(--oomol-font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1;
+  }
 }
 
 .inner {
@@ -629,6 +718,27 @@
   .navbar {
     background: color-mix(in srgb, var(--oomol-bg-base) 97%, transparent);
     border-bottom: 1px solid var(--oomol-divider);
+  }
+
+  .searchBar {
+    margin-left: 0;
+
+    :global(.DocSearch-Button) {
+      width: 40px;
+      min-width: 40px;
+      padding: 0;
+      justify-content: center;
+    }
+
+    :global(.DocSearch-Button-Container) {
+      justify-content: center;
+      flex: 0 0 auto;
+    }
+
+    :global(.DocSearch-Button-Placeholder),
+    :global(.DocSearch-Button-Keys) {
+      display: none;
+    }
   }
 
   .productMenuWrapper {
