@@ -12,6 +12,11 @@
   border-bottom: 1px solid var(--oomol-divider);
 }
 
+.workflowSection {
+  padding-top: clamp(3.2rem, 6vw, 4.8rem);
+  padding-bottom: clamp(3.2rem, 6vw, 4.8rem);
+}
+
 .sectionTint {
   background: var(--oomol-bg-container);
 }
@@ -25,8 +30,7 @@
 
 .twoColumn {
   grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
-  grid-template-rows: auto auto;
-  gap: clamp(2rem, 4vw, 3.4rem);
+  gap: clamp(1.4rem, 3vw, 2.2rem);
   align-items: start;
 }
 
@@ -198,36 +202,29 @@
   font-weight: 500;
 }
 
-/* Command steps: three business beats (discover → run → finish), subgrid-aligned */
+/* Workflow steps — compact horizontal journey on desktop */
 .commandGrid {
   grid-column: 1 / -1;
   grid-row: 2;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: auto auto auto 1fr;
-  row-gap: 0.65rem;
-  column-gap: 0;
-  margin-top: 0.8rem;
-  border: 1px solid var(--oomol-divider);
-  border-radius: var(--ifm-global-radius);
-  overflow: hidden;
-  background: var(--oomol-bg-elevated);
-  box-shadow: none;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin-top: 1rem;
+  overflow: visible;
+  background: transparent;
 }
 
 .commandCard {
   display: grid;
-  grid-template-rows: subgrid;
-  grid-row: span 4;
+  grid-template-rows: auto auto auto 1fr;
   min-height: 100%;
-  padding: 1.35rem 1.25rem 1.45rem;
-  border-right: 1px solid var(--oomol-divider);
+  padding: 3rem 1.15rem 1.25rem;
+  border: 1px solid var(--oomol-divider);
+  border-radius: var(--oomol-radius-card);
   background: var(--oomol-bg-base);
+  overflow: visible;
   transition: background-color 0.18s ease;
-
-  &:last-child {
-    border-right: 0;
-  }
+  position: relative;
 
   &:hover {
     background: var(--oomol-bg-container);
@@ -239,7 +236,6 @@
     display: flex;
     flex-direction: column;
     gap: 0.65rem;
-    grid-row: auto;
   }
 
   .commandTitle {
@@ -248,20 +244,31 @@
 }
 
 .commandIndex {
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  z-index: 1;
+  width: 2rem;
+  height: 2rem;
+  display: inline-grid;
+  place-items: center;
+  border-radius: var(--oomol-radius-full);
+  border: 1px solid var(--oomol-divider);
+  background: var(--oomol-bg-base);
   font-family: var(--oomol-font-mono);
   font-size: var(--oomol-body-mono);
   font-weight: 600;
   color: var(--oomol-primary);
   letter-spacing: 0.02em;
   font-feature-settings: "tnum" 1;
-  line-height: 1.2;
+  line-height: 1;
 }
 
 .commandSnippet {
   display: block;
   width: 100%;
   margin: 0;
-  padding: 0.4rem 0.5rem;
+  padding: 0.55rem 0.6rem;
   border-radius: var(--oomol-radius-md);
   border: 1px solid var(--oomol-border-default);
   background: var(--oomol-bg-container);
@@ -278,8 +285,9 @@
 
 .commandTitle {
   margin: 0;
-  font-size: var(--oomol-body-lead);
-  line-height: 1.52;
+  padding-top: 0.85rem;
+  font-size: var(--oomol-body-lg);
+  line-height: 1.42;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--oomol-text-primary);
@@ -402,10 +410,11 @@
 }
 
 .nextCard {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 0.7rem;
   padding: 1.6rem 1.7rem 1.7rem;
-  align-content: start;
+  align-items: flex-start;
 
   &:nth-child(odd) {
     border-right: 1px solid var(--oomol-divider);
@@ -413,6 +422,7 @@
 
   .primaryLink {
     padding-top: 0.2rem;
+    margin-top: auto;
   }
 }
 
@@ -449,33 +459,8 @@
     max-width: 100%;
   }
 
-  .commandGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: none;
-  }
-
   .commandCard {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    grid-row: auto;
-
-    &:nth-child(odd) {
-      border-right: 1px solid var(--oomol-divider);
-    }
-
-    &:nth-child(2n) {
-      border-right: 0;
-    }
-
-    &:nth-child(-n + 2) {
-      border-bottom: 1px solid var(--oomol-divider);
-    }
-
-    &:last-child {
-      grid-column: 1 / -1;
-      border-right: 0;
-    }
+    padding-top: 2.9rem;
   }
 }
 
@@ -492,21 +477,10 @@
 
   .commandGrid {
     grid-template-columns: 1fr;
-    grid-template-rows: none;
   }
 
   .commandCard {
-    border-right: 0 !important;
-    border-bottom: 1px solid var(--oomol-divider);
-
-    &:last-child {
-      border-bottom: 0;
-      grid-column: 1;
-    }
-
-    &:nth-child(odd) {
-      border-right: 0 !important;
-    }
+    padding: 2.8rem 1rem 1.15rem;
   }
 
   .exampleGrid,
@@ -561,17 +535,21 @@
   .exampleGrid,
   .nextGrid,
   .commandGrid {
-    background: var(--oomol-bg-elevated);
-    border-color: var(--oomol-border-subtle);
+    background: transparent;
+    border-color: transparent;
   }
 
   .commandCard {
     background: var(--oomol-bg-base);
-    border-right-color: var(--oomol-border-subtle);
+    border-color: var(--oomol-border-subtle);
 
     &:hover {
       background: var(--oomol-bg-container);
     }
+  }
+
+  .commandIndex {
+    border-color: var(--oomol-border-subtle);
   }
 
   .commandSnippet {

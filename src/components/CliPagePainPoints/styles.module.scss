@@ -64,8 +64,8 @@
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto minmax(3.2rem, auto) minmax(3.4rem, auto) auto 1fr;
   gap: 0.7rem;
   padding: 1.5rem 1.4rem 1.6rem;
   border: 0;
@@ -110,10 +110,8 @@
 }
 
 .cardMeta {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  flex-wrap: wrap;
+  display: grid;
+  gap: 0.45rem;
   padding-top: 0.1rem;
 }
 
@@ -127,9 +125,11 @@
 }
 
 .cardCommand {
-  display: inline-flex;
-  align-items: center;
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
   padding: 0.1rem 0.45rem;
+  min-height: calc(2 * 1.45em + 0.35rem);
   border-radius: var(--oomol-radius-chip);
   border: 1px solid var(--oomol-divider);
   background: var(--oomol-bg-container);
@@ -139,6 +139,7 @@
   font-weight: 500;
   letter-spacing: 0.01em;
   color: var(--oomol-text-primary);
+  white-space: normal;
 }
 
 .cardTitle {
@@ -148,7 +149,12 @@
   font-weight: 600;
   letter-spacing: -0.015em;
   color: var(--oomol-text-primary);
-  text-wrap: balance;
+  min-height: calc(2 * 1.28em);
+  align-self: start;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .cardDescription {
@@ -238,7 +244,7 @@
   .card {
     padding: 1.35rem 1.25rem 1.4rem;
 
-    &:not(:nth-child(2n)) {
+    &:not(:nth-child(3n)) {
       border-right: 0;
     }
 

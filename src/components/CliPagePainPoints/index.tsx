@@ -21,158 +21,80 @@ type Copy = {
 
 const zhCopy: Copy = {
   badge: "oo-cli 现在能做什么",
-  title: "把安装、查看、运行和收尾放到同一条 CLI 路径里",
+  title: "先接入，再找现成工具，然后把任务跑通",
   subtitle:
-    "现在不只是搜索工具。官方安装与更新、schema 查看、dry-run、云任务等待、skills、文件和日志，都已经在 oo-cli 里连成一条 Agent 能直接复用的终端路径。",
+    "这页不展开讲命令细节。你只要先把 oo-cli 接进终端，再用它找现成工具、执行任务，并把结果带回来；更细的说明交给文档站。",
   cards: [
     {
-      icon: "i-lucide-search",
-      eyebrow: "搜索",
-      command: "oo search",
-      title: "一条查询同时搜索 package 和 connector",
-      description:
-        "用一条自然语言查询，同时搜索已发布 package 和 connector action，先看看是否已经有现成能力可以直接接进 Agent 的工作流里。",
-      points: ["混合结果可导出为 JSON", "connector 命中会带 schemaPath"],
-    },
-    {
-      icon: "i-lucide-box",
-      eyebrow: "查看",
-      command: "oo packages info / oo connector search",
-      title: "先看元数据和 schema，再决定怎么跑",
-      description:
-        "先查看 package 的版本、输入要求和 block 信息，或者先搜 connector schema，让 Agent 在真正执行前就知道需要什么输入。",
-      points: ["先理解输入再执行", "减少盲试和无效调用"],
-    },
-    {
       icon: "i-lucide-download",
-      eyebrow: "安装",
-      command: "oo install / oo update",
-      title: "用官方安装脚本接入，并保持 CLI 常新",
+      eyebrow: "接入",
+      command: "oo install / oo update / oo skills install",
+      title: "把 oo-cli 接进终端和宿主",
       description:
-        "除了包管理器安装，现在也能通过官方脚本拉取匹配平台的二进制，并用 oo update / check-update 维护受管安装。",
-      points: ["官方分发二进制", "升级路径更明确"],
+        "通过官方安装脚本或包管理器把 oo 接进终端，再把需要的 skills 接到 Codex、Claude Code 等宿主里。",
+      points: ["安装和升级路径清楚", "不用换一套地方继续工作"],
+    },
+    {
+      icon: "i-lucide-search",
+      eyebrow: "发现",
+      command: "oo search / oo packages info / oo connector search",
+      title: "先找现成工具，再决定要不要自己做",
+      description:
+        "先搜 package 和 connector，再看 package metadata 或 connector schema，确认是否已经有现成能力可以直接复用。",
+      points: ["先理解输入和能力范围", "减少一上来就自己做的概率"],
     },
     {
       icon: "i-lucide-plug",
       eyebrow: "运行",
-      command: "oo connector run",
-      title: "先 dry-run 校验，再直接调用 connector",
+      command: "oo connector run / oo cloud-task ... / oo file / oo log",
+      title: "直接执行、等待结果、查看日志都在同一条路径里",
       description:
-        "本地 schema cache 和 dry-run 让 Agent 先确认输入，再把结果和 executionId 交给下一步，而不是一开始就盲跑。",
-      points: ["支持 dry-run", "失败信息更易诊断"],
-    },
-    {
-      icon: "i-lucide-cloud",
-      eyebrow: "云任务",
-      command: "oo cloud-task run / wait / result / log",
-      title: "把长任务交给 Cloud Task，再在 CLI 里追踪",
-      description:
-        "创建任务后继续用 wait、result、log、list 管理状态，不必为了看进度或拿结果再跳去另一套后台。",
-      points: ["长任务可持续追踪", "结果能回到同一条 CLI 流程"],
-    },
-    {
-      icon: "i-lucide-bot",
-      eyebrow: "技能",
-      command: "oo skills install / update",
-      title: "把 published skills 和 bundled skills 管理清楚",
-      description:
-        "CLI 可以搜索、安装和更新已发布 skills，并在 install / update 后自动刷新内置 bundled skills，让 Codex 和 Claude Code 保持同步。",
-      points: ["支持搜索已发布 skills", "bundled skills 会跟随安装升级刷新"],
-    },
-    {
-      icon: "i-lucide-folder-cog",
-      eyebrow: "配套",
-      command: "oo file / oo log / oo config / oo completion",
-      title: "文件、日志、补全和配置也都在 CLI 里",
-      description:
-        "上传、下载、列出、清理文件记录，查看持久化日志，保存配置并生成 shell 补全，减少为了收尾任务再找别的工具。",
-      points: ["文件记录可 list / cleanup", "日志和补全都有现成命令"],
+        "短任务可以直接跑 connector，长任务可以交给 Cloud Task。等待、取结果、文件和日志也都留在 oo-cli 里完成。",
+      points: ["支持 dry-run 和长任务追踪", "不必切到另一套后台收尾"],
     },
   ],
 };
 
 const enCopy: Copy = {
   badge: "What oo-cli Covers Now",
-  title: "Keep install, inspection, execution, and follow-through in one CLI",
+  title: "Set it up, find a ready-made tool, then run the task",
   subtitle:
-    "It does more than search. Official installs and updates, schema inspection, dry runs, cloud-task tracking, skills, files, and logs now form one reusable terminal path for agents.",
+    "This page does not need to unpack every command. The main job is simpler: get oo-cli into the terminal, use it to find a ready-made tool, then run the task and bring the result back. The detailed command surface belongs in the docs.",
   cards: [
+    {
+      icon: "i-lucide-download",
+      eyebrow: "Setup",
+      command: "oo install / oo update / oo skills install",
+      title: "Connect oo-cli to the terminal and the hosts people already use",
+      description:
+        "Use the official install script or a package manager to get oo into the terminal, then connect the skills you need to hosts such as Codex and Claude Code.",
+      points: [
+        "Clear install and upgrade path",
+        "No separate place to switch to",
+      ],
+    },
     {
       icon: "i-lucide-search",
       eyebrow: "Discovery",
-      command: "oo search",
-      title: "Search packages and connectors through one entry point",
+      command: "oo search / oo packages info / oo connector search",
+      title: "Find the ready-made tool first before deciding to build",
       description:
-        "Use one natural-language query to search published packages and connector actions before deciding whether a ready-made capability already solves the job.",
+        "Search packages and connectors in natural language, then inspect package metadata or connector schemas to confirm whether a published capability already fits.",
       points: [
-        "Mixed results export as JSON",
-        "Connector hits report cached schemaPath values",
+        "Understand inputs and scope first",
+        "Avoid rebuilding what already exists",
       ],
-    },
-    {
-      icon: "i-lucide-box",
-      eyebrow: "Inspect",
-      command: "oo packages info / oo connector search",
-      title: "Inspect metadata and schemas before you run",
-      description:
-        "Inspect package versions, block metadata, and input requirements, or look at connector schemas first so the agent knows what execution will require.",
-      points: [
-        "Understand inputs before execution",
-        "Reduce blind retries and invalid calls",
-      ],
-    },
-    {
-      icon: "i-lucide-download",
-      eyebrow: "Install",
-      command: "oo install / oo update",
-      title: "Use official install scripts and keep the CLI current",
-      description:
-        "In addition to package-manager installs, the latest CLI ships an official binary install path plus oo update / check-update for managed lifecycle maintenance.",
-      points: ["Official binary distribution", "Clear ongoing update path"],
     },
     {
       icon: "i-lucide-plug",
       eyebrow: "Run",
-      command: "oo connector run",
-      title: "Dry-run first, then execute a connector action",
+      command: "oo connector run / oo cloud-task ... / oo file / oo log",
+      title: "Execute, wait, fetch results, and inspect logs in the same path",
       description:
-        "Schema cache plus dry-run validation lets the agent verify inputs first, then pass the result and executionId into the next step.",
-      points: ["Dry-run before execution", "Diagnose failures more easily"],
-    },
-    {
-      icon: "i-lucide-cloud",
-      eyebrow: "Cloud",
-      command: "oo cloud-task run / wait / result / log",
-      title: "Hand off longer work to Cloud Task and track it in the CLI",
-      description:
-        "Create a task, then keep using wait, result, log, and list commands without jumping into a separate backend just to monitor progress.",
+        "Direct connector calls work for short jobs. Cloud Task handles longer ones. Waiting, results, files, and logs still stay inside oo-cli instead of another backend.",
       points: [
-        "Fits longer-running work",
-        "Bring the result back into the same CLI flow",
-      ],
-    },
-    {
-      icon: "i-lucide-bot",
-      eyebrow: "Skills",
-      command: "oo skills install / update",
-      title: "Manage published and bundled skills cleanly",
-      description:
-        "Search, install, and update published skills, while install / update keeps bundled skills aligned for Codex and Claude Code.",
-      points: [
-        "Search published skills",
-        "Bundled skills refresh with install and update",
-      ],
-    },
-    {
-      icon: "i-lucide-folder-cog",
-      eyebrow: "Ops",
-      command: "oo file / oo log / oo config / oo completion",
-      title: "Keep files, logs, config, and shell setup in the same CLI",
-      description:
-        "Upload, download, list, and clean up file records, inspect persisted logs, keep config on disk, and generate shell completion scripts without leaving the CLI.",
-      points: [
-        "Files support list and cleanup",
-        "Logs and completion are built in",
+        "Dry-run and long-task tracking are built in",
+        "No need to switch tools to finish the job",
       ],
     },
   ],
