@@ -73,10 +73,10 @@ export default function HomepageFirstScreen() {
 
         <HomepageHeroBeam />
         */}
+      </div>
 
-        <div className={styles.workflowArchive}>
-          <HomepageFirstScreenVideoHero />
-        </div>
+      <div className={styles.workflowArchive}>
+        <HomepageFirstScreenVideoHero />
       </div>
     </section>
   );
