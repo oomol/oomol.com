@@ -2605,22 +2605,22 @@
     "message": "WHY OO-CLI"
   },
   "HOME.CliReasons.title": {
-    "message": "Why you need OOMOL"
+    "message": "Why OOMOL"
   },
   "HOME.CliReasons.subtitle": {
-    "message": "Account access, agent calls, and custom tools should not be scattered across different platforms. OOMOL connects them into one path: use oo-cli to let agents call authorized capabilities, and use OOMOL Studio to build your own tools."
+    "message": "OOMOL keeps authorization, agent calls, and custom tools on one path: agents use authorized capabilities through oo-cli, while you build your own tools in OOMOL Studio."
   },
   "HOME.CliReasons.card1.title": {
-    "message": "Authorize once, then keep using it across agents"
+    "message": "Authorize once, reuse across agents"
   },
   "HOME.CliReasons.card1.description": {
-    "message": "Many users switch between Codex, Claude Code, Qode, OpenCrawl, and other agents. Once connection and authorization are set up in OOMOL, oo-cli keeps those capabilities available across agents and terminal environments."
+    "message": "Connect and authorize in OOMOL once. Codex, Claude Code, Qode, OpenCrawl, and terminal workflows can keep calling those capabilities through oo-cli."
   },
   "HOME.CliReasons.card2.title": {
-    "message": "Custom capabilities travel with you like tools"
+    "message": "Build custom tools in Studio"
   },
   "HOME.CliReasons.card2.description": {
-    "message": "When ready-made tools are not enough, use OOMOL Studio to combine third-party blocks, add cloud functions, and connect your own APIs and business logic. Once built, the tool can be delivered and reused through the OOMOL path."
+    "message": "When packaged tools are not enough, compose third-party blocks, cloud functions, APIs, and business logic in OOMOL Studio, then deliver and reuse them through OOMOL."
   },
   "HOME.CliReasons.primaryCta": {
     "message": "Explore oo-cli"
@@ -2638,7 +2638,7 @@
     "message": "OOMOL"
   },
   "HOME.CliReasons.visual.note": {
-    "message": "OOMOL connects a mature SaaS ecosystem, supports custom function tools built in OOMOL Studio, and brings them back to agents."
+    "message": "Connect SaaS apps, build custom function tools in Studio, and hand them back to agents through OOMOL."
   },
   "HOME.DeveloperEntry.badge": {
     "message": "Developer entry"

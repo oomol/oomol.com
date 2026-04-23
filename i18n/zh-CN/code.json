@@ -2605,22 +2605,22 @@
     "message": "WHY OO-CLI"
   },
   "HOME.CliReasons.title": {
-    "message": "为什么你需要 OOMOL"
+    "message": "为什么需要 OOMOL"
   },
   "HOME.CliReasons.subtitle": {
-    "message": "账号授权、Agent 调用和自定义工具不该散落在不同平台里。OOMOL 把这些能力接成一条路径：用 oo-cli 让 Agent 调用已授权能力，用 OOMOL Studio 构建自己的工具。"
+    "message": "OOMOL 把账号授权、Agent 调用和自定义工具放在一条路径里：Agent 通过 oo-cli 使用已授权能力，你在 OOMOL Studio 构建自己的工具。"
   },
   "HOME.CliReasons.card1.title": {
-    "message": "授权一次，多个 Agent 都能继续用"
+    "message": "授权一次，多 Agent 复用"
   },
   "HOME.CliReasons.card1.description": {
-    "message": "很多用户会同时使用 Codex、Claude Code、Qode、OpenCrawl 等 Agent。只要在 OOMOL 里完成一次连接和授权，之后就可以通过 oo-cli 在不同 Agent 和终端环境中继续调用这些能力。"
+    "message": "在 OOMOL 完成一次连接和授权后，Codex、Claude Code、Qode、OpenCrawl 和终端环境都能继续通过 oo-cli 调用。"
   },
   "HOME.CliReasons.card2.title": {
-    "message": "自定义能力，也能像工具一样随身带走"
+    "message": "自定义工具，用 Studio 构建"
   },
   "HOME.CliReasons.card2.description": {
-    "message": "当现成工具不够用时，你可以在 OOMOL Studio 里组合第三方 Block、编写云函数，接入自己的 API 和业务逻辑。工具做好后，再沿 OOMOL 的路径交付和复用。"
+    "message": "现成工具不够时，在 OOMOL Studio 组合第三方 Block、云函数、API 和业务逻辑；做好后沿 OOMOL 路径交付和复用。"
   },
   "HOME.CliReasons.primaryCta": {
     "message": "了解 oo-cli"
@@ -2638,7 +2638,7 @@
     "message": "OOMOL"
   },
   "HOME.CliReasons.visual.note": {
-    "message": "OOMOL 连接成熟的 SaaS 生态，也支持在 OOMOL Studio 中构建自定义函数工具，再交给 Agent 使用。"
+    "message": "连接 SaaS、构建自定义函数工具，再交给 Agent 使用，都在 OOMOL 里完成。"
   },
   "HOME.DeveloperEntry.badge": {
     "message": "开发者入口"
