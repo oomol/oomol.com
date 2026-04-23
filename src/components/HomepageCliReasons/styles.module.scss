@@ -159,9 +159,16 @@
   background: var(--oomol-bg-base);
 }
 
-.appNode > svg {
+.appIcon {
   position: relative;
   z-index: 1;
+}
+
+.appIcon {
+  display: block;
+  width: 1.9rem;
+  height: 1.9rem;
+  object-fit: contain;
 }
 
 .flowLine {

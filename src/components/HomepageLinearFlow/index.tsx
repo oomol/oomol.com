@@ -7,6 +7,7 @@ import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import HomepageGuiEntry from "@site/src/components/HomepageGuiEntry";
+import siteCtaStyles from "@site/src/components/SiteCta/styles.module.scss";
 import { SiteCta } from "@site/src/components/SiteCta";
 import { Button } from "@site/src/components/ui/button";
 import { clsx } from "clsx";
@@ -23,7 +24,7 @@ type Copy = {
     eyebrow: string;
     title: string;
     description: string;
-    media: { title: string; note: string };
+    media: { title: string };
     guide: string;
     github: string;
   };
@@ -31,7 +32,7 @@ type Copy = {
     eyebrow: string;
     title: string;
     description: string;
-    media: { title: string; note: string };
+    media: { title: string };
     primary: string;
     secondary: string;
   };
@@ -41,7 +42,7 @@ type Copy = {
     description: string;
     cards: Array<{ title: string; text: string }>;
     quota: { title: string; text: string };
-    media: { title: string; note: string };
+    media: { title: string };
     primary: string;
     secondary: string;
   };
@@ -55,17 +56,15 @@ type Copy = {
 
 type VideoCardProps = {
   title: string;
-  note: string;
   src: string;
 };
 
 type ImageCardProps = {
   title: string;
-  note: string;
   src: string;
 };
 
-function VideoCard({ title, note, src }: VideoCardProps) {
+function VideoCard({ title, src }: VideoCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -129,15 +128,11 @@ function VideoCard({ title, note, src }: VideoCardProps) {
           <source src={src} type="video/webm" />
         </video>
       </div>
-      <div className={styles.videoCardMeta}>
-        <h3 className={styles.videoCardTitle}>{title}</h3>
-        <p className={styles.videoCardNote}>{note}</p>
-      </div>
     </div>
   );
 }
 
-function ImageCard({ title, note, src }: ImageCardProps) {
+function ImageCard({ title, src }: ImageCardProps) {
   return (
     <div className={styles.videoCard}>
       <div className={styles.imageCardMedia}>
@@ -148,10 +143,6 @@ function ImageCard({ title, note, src }: ImageCardProps) {
           loading="lazy"
           decoding="async"
         />
-      </div>
-      <div className={styles.videoCardMeta}>
-        <h3 className={styles.videoCardTitle}>{title}</h3>
-        <p className={styles.videoCardNote}>{note}</p>
       </div>
     </div>
   );
@@ -194,11 +185,6 @@ export default function HomepageLinearFlow() {
           id: "HOME.LinearFlow.cli.media.title",
           message: "oo-cli invocation demo",
         }),
-        note: translate({
-          id: "HOME.LinearFlow.cli.media.note",
-          message:
-            "Shows a delivered tool being searched, inspected, and called in Codex.",
-        }),
       },
       guide: translate({
         id: "HOME.LinearFlow.cli.guide",
@@ -227,11 +213,6 @@ export default function HomepageLinearFlow() {
         title: translate({
           id: "HOME.LinearFlow.studio.media.title",
           message: "Studio demo video",
-        }),
-        note: translate({
-          id: "HOME.LinearFlow.studio.media.note",
-          message:
-            "Show the path from prompting to generating a tool and validating it locally.",
         }),
       },
       primary: translate({
@@ -297,11 +278,6 @@ export default function HomepageLinearFlow() {
         title: translate({
           id: "HOME.LinearFlow.cloud.media.title",
           message: "Cloud console preview",
-        }),
-        note: translate({
-          id: "HOME.LinearFlow.cloud.media.note",
-          message:
-            "Bring runtime settings, secrets, and delivery into one backend.",
         }),
       },
       primary: translate({
@@ -371,7 +347,6 @@ export default function HomepageLinearFlow() {
           <div className={styles.mediaPanel}>
             <VideoCard
               title={copy.studio.media.title}
-              note={copy.studio.media.note}
               src={homepageMediaUrls.studio}
             />
           </div>
@@ -383,8 +358,8 @@ export default function HomepageLinearFlow() {
         <div className={styles.stepWatermark} aria-hidden="true">
           {cloudEyebrow.number}
         </div>
-        <div className={styles.container}>
-          <div className={styles.copyPanel}>
+        <div className={clsx(styles.container, styles.cloudContainer)}>
+          <div className={clsx(styles.copyPanel, styles.cloudCopyPanel)}>
             <span className={styles.eyebrow}>
               <span className={styles.eyebrowNumber}>
                 {cloudEyebrow.number}
@@ -422,10 +397,9 @@ export default function HomepageLinearFlow() {
             </div>
           </div>
 
-          <div className={styles.mediaPanel}>
+          <div className={clsx(styles.mediaPanel, styles.cloudMediaPanel)}>
             <ImageCard
               title={copy.cloud.media.title}
-              note={copy.cloud.media.note}
               src={cloudConsoleImage}
             />
           </div>
@@ -463,7 +437,6 @@ export default function HomepageLinearFlow() {
           <div className={styles.mediaPanel}>
             <VideoCard
               title={copy.cli.media.title}
-              note={copy.cli.media.note}
               src={homepageMediaUrls.cli}
             />
           </div>
@@ -478,10 +451,15 @@ export default function HomepageLinearFlow() {
         description={copy.cta.description}
         actions={
           <>
-            <Button asChild size="lg">
+            <Button asChild size="lg" className={siteCtaStyles.actionButton}>
               <Link to="/cli">{copy.cta.primary}</Link>
             </Button>
-            <Button asChild variant="contrast" size="lg">
+            <Button
+              asChild
+              variant="contrast"
+              size="lg"
+              className={siteCtaStyles.actionButton}
+            >
               <Link to="/studio">{copy.cta.secondary}</Link>
             </Button>
           </>

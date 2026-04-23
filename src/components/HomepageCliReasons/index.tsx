@@ -5,13 +5,6 @@ import type { Ref } from "react";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { AnimatedBeam } from "@site/src/components/magic/animated-beam";
-import {
-  CopilotBeamIconGoogleDocs,
-  CopilotBeamIconGoogleDrive,
-  CopilotBeamIconMessenger,
-  CopilotBeamIconNotion,
-  CopilotBeamIconWhatsApp,
-} from "@site/src/components/magic/copilot-beam-brand-icons";
 import ThemedImage from "@theme/ThemedImage";
 import { useReducedMotion } from "framer-motion";
 import React, { createRef, forwardRef, useMemo, useRef } from "react";
@@ -42,11 +35,11 @@ const agentSurfaces = [
 ] as const;
 
 const beamApps = [
-  { label: "Google Drive", Icon: CopilotBeamIconGoogleDrive },
-  { label: "Google Docs", Icon: CopilotBeamIconGoogleDocs },
-  { label: "WhatsApp", Icon: CopilotBeamIconWhatsApp },
-  { label: "Messenger", Icon: CopilotBeamIconMessenger },
-  { label: "Notion", Icon: CopilotBeamIconNotion },
+  { label: "GitHub", iconPath: "/img/pages/home/brand-icons/github.svg" },
+  { label: "Slack", iconPath: "/img/pages/home/brand-icons/slack.svg" },
+  { label: "Notion", iconPath: "/img/pages/home/brand-icons/notion.svg" },
+  { label: "Gmail", iconPath: "/img/pages/home/brand-icons/gmail.svg" },
+  { label: "Linear", iconPath: "/img/pages/home/brand-icons/linear.svg" },
 ] as const;
 
 const beamCurvatures = [150, 82, 0, -82, -150] as const;
@@ -78,16 +71,23 @@ const BeamAgentNode = forwardRef(function BeamAgentNode(
 const BeamAppNode = forwardRef(function BeamAppNode(
   {
     label,
-    children,
+    iconPath,
   }: {
     label: string;
-    children: React.ReactNode;
+    iconPath: string;
   },
   ref: Ref<HTMLDivElement>
 ) {
+  const iconSrc = useBaseUrl(iconPath);
+
   return (
     <div ref={ref} className={styles.appNode} aria-label={label}>
-      {children}
+      <img
+        className={styles.appIcon}
+        src={iconSrc}
+        alt=""
+        aria-hidden="true"
+      />
     </div>
   );
 });
@@ -173,10 +173,13 @@ function CliReasonsBeam() {
         </div>
 
         <div className={styles.beamAppsColumn}>
-          {beamApps.map(({ label, Icon }, index) => (
-            <BeamAppNode key={label} ref={appRefs[index]} label={label}>
-              <Icon />
-            </BeamAppNode>
+          {beamApps.map(({ label, iconPath }, index) => (
+            <BeamAppNode
+              key={label}
+              ref={appRefs[index]}
+              label={label}
+              iconPath={iconPath}
+            />
           ))}
         </div>
       </div>

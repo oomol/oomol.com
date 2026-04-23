@@ -132,18 +132,20 @@
   border: 1px solid var(--oomol-divider);
   border-radius: 14px;
   overflow: hidden;
-  background: var(--oomol-bg-base);
+  background: var(--oomol-bg-spotlight);
 }
 
 .videoCard {
-  display: grid;
+  display: block;
   min-width: 0;
+  height: 100%;
 }
 
 .videoCardMedia,
 .imageCardMedia {
   aspect-ratio: 16 / 10;
   min-height: 0;
+  overflow: hidden;
   background: var(--oomol-bg-spotlight);
 }
 
@@ -153,34 +155,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.videoCardMeta {
-  display: grid;
-  gap: 0.35rem;
-  padding: 1rem 1.1rem 1.15rem;
-  border-top: 1px solid var(--oomol-divider);
-  background: var(--oomol-bg-base);
-  min-width: 0;
-}
-
-.videoCardTitle {
-  margin: 0;
-  font-size: var(--oomol-body-base);
-  line-height: 1.35;
-  font-weight: 500;
-  color: var(--oomol-text-primary);
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
-
-.videoCardNote {
-  margin: 0;
-  font-size: var(--oomol-body-sm);
-  line-height: 1.56;
-  color: var(--oomol-text-tertiary);
-  overflow-wrap: anywhere;
-  word-break: break-word;
+  object-position: center;
+  transform: scale(1.08);
 }
 
 .cloudCardStack {
@@ -242,8 +218,42 @@
     grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
   }
 
+  .cloudContainer {
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    align-items: stretch;
+    gap: clamp(2.25rem, 4vw, 4rem);
+  }
+
+  .cloudCopyPanel {
+    max-width: 32rem;
+    gap: 0.9rem;
+  }
+
   .cloudCardStack {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.7rem;
+    margin-top: 0;
+  }
+
+  .cloudCard {
+    padding: 0.9rem 1rem;
+  }
+
+  .cloudQuotaNote {
+    padding: 0.85rem 1rem;
+  }
+
+  .cloudMediaPanel {
+    height: 100%;
+  }
+
+  .cloudMediaPanel .videoCard,
+  .cloudMediaPanel .imageCardMedia {
+    height: 100%;
+  }
+
+  .cloudMediaPanel .imageCardMedia {
+    aspect-ratio: auto;
   }
 }
 
@@ -280,10 +290,6 @@
   .primaryLink,
   .secondaryLink {
     width: 100%;
-  }
-
-  .videoCardMeta {
-    padding: 0.9rem 1rem 1rem;
   }
 
   .cloudCardStack {
@@ -332,10 +338,6 @@
     background: var(--oomol-bg-elevated);
   }
 
-  .videoCardMeta {
-    border-top-color: var(--oomol-border-subtle);
-    background: var(--oomol-bg-elevated);
-  }
 }
 
 :global(html[lang="en"]) .sectionTitle {
