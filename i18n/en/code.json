@@ -2605,7 +2605,7 @@
     "message": "Authorize once, then keep using it across agents"
   },
   "HOME.CliReasons.card1.description": {
-    "message": "Many users switch between Codex, Claude Code, Hermes, OpenCrawl, and other agents. Once connection and authorization are set up in OOMOL, those capabilities stay available through oo-cli."
+    "message": "Many users switch between Codex, Claude Code, Qode, OpenCrawl, and other agents. Once connection and authorization are set up in OOMOL, those capabilities stay available through oo-cli."
   },
   "HOME.CliReasons.card2.title": {
     "message": "Custom capabilities travel with you like tools"

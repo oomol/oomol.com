@@ -69,6 +69,30 @@
   border-left: 1.15rem solid var(--oomol-text-primary);
 }
 
+:global(html[data-theme="dark"]) .thumbnailFrame {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+:global(html[data-theme="dark"]) .playOverlay {
+  background: rgba(0, 0, 0, 0.18);
+}
+
+:global(html[data-theme="dark"]) .trigger:hover .playOverlay {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+:global(html[data-theme="dark"]) .playButton {
+  border-color: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow:
+    0 1.1rem 2.6rem rgba(0, 0, 0, 0.32),
+    0 0 0 0.45rem rgba(255, 255, 255, 0.1);
+}
+
+:global(html[data-theme="dark"]) .playTriangle {
+  border-left-color: #2f3363;
+}
+
 .overlay {
   position: fixed;
   inset: 0;

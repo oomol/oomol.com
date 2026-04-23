@@ -7,7 +7,7 @@
 }
 
 .container {
-  width: min(1260px, calc(100% - 48px));
+  width: min(1200px, calc(100% - 48px));
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
@@ -83,6 +83,12 @@
 }
 
 .visualCard {
+  --cli-reasons-beam-path: rgba(24, 24, 27, 0.11);
+  --cli-reasons-agent-beam-start: rgba(99, 102, 241, 0);
+  --cli-reasons-agent-beam-stop: rgba(99, 102, 241, 0.58);
+  --cli-reasons-app-beam-start: rgba(59, 130, 246, 0);
+  --cli-reasons-app-beam-stop: rgba(59, 130, 246, 0.58);
+
   overflow: hidden;
   display: grid;
   gap: 0.85rem;
@@ -123,6 +129,7 @@
 }
 
 .agentNode {
+  position: relative;
   display: grid;
   place-items: center;
   width: 4.5rem;
@@ -132,15 +139,17 @@
   background: var(--oomol-bg-base);
 }
 
-.agentMark {
-  font-family: var(--oomol-font-mono);
-  font-size: var(--oomol-body-sm);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--oomol-text-primary);
+.agentIcon {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 1.95rem;
+  height: 1.95rem;
+  object-fit: contain;
 }
 
 .appNode {
+  position: relative;
   display: grid;
   place-items: center;
   width: 4.5rem;
@@ -148,6 +157,11 @@
   border-radius: 999px;
   border: 1px solid var(--oomol-divider);
   background: var(--oomol-bg-base);
+}
+
+.appNode > svg {
+  position: relative;
+  z-index: 1;
 }
 
 .flowLine {
@@ -158,6 +172,7 @@
 }
 
 .hubNode {
+  position: relative;
   display: grid;
   place-items: center;
   width: clamp(6.2rem, 8vw, 7.2rem);
@@ -167,13 +182,51 @@
   background: var(--oomol-bg-base);
 }
 
-.hubText {
-  font-family: var(--oomol-font-mono);
-  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: lowercase;
-  color: var(--oomol-text-primary);
+.hubLogo {
+  display: block;
+  width: clamp(3.1rem, 4vw, 3.65rem);
+  height: clamp(3.1rem, 4vw, 3.65rem);
+  object-fit: contain;
+}
+
+:global(html[data-theme="dark"]) .visualCard {
+  --cli-reasons-beam-path: rgba(255, 255, 255, 0.16);
+  --cli-reasons-agent-beam-start: rgba(148, 163, 255, 0);
+  --cli-reasons-agent-beam-stop: rgba(148, 163, 255, 0.46);
+  --cli-reasons-app-beam-start: rgba(96, 165, 250, 0);
+  --cli-reasons-app-beam-stop: rgba(96, 165, 250, 0.46);
+
+  border-color: rgba(255, 255, 255, 0.12);
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(79, 83, 135, 0.14),
+      transparent 46%
+    ),
+    rgba(255, 255, 255, 0.015);
+}
+
+:global(html[data-theme="dark"]) .agentNode,
+:global(html[data-theme="dark"]) .appNode,
+:global(html[data-theme="dark"]) .hubNode {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: #050505;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+:global(html[data-theme="dark"]) .agentNode::before,
+:global(html[data-theme="dark"]) .appNode::before {
+  content: "";
+  position: absolute;
+  width: 2.55rem;
+  height: 2.55rem;
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow:
+    0 0.55rem 1.4rem rgba(0, 0, 0, 0.28),
+    inset 0 0 0 1px rgba(24, 24, 27, 0.08);
 }
 
 .visualNote {

@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import type { Ref } from "react";
 
 import { translate } from "@docusaurus/Translate";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import { AnimatedBeam } from "@site/src/components/magic/animated-beam";
 import {
   CopilotBeamIconGoogleDocs,
@@ -11,6 +12,7 @@ import {
   CopilotBeamIconNotion,
   CopilotBeamIconWhatsApp,
 } from "@site/src/components/magic/copilot-beam-brand-icons";
+import ThemedImage from "@theme/ThemedImage";
 import { useReducedMotion } from "framer-motion";
 import React, { createRef, forwardRef, useMemo, useRef } from "react";
 
@@ -32,11 +34,11 @@ const reasonCards = [
 ];
 
 const agentSurfaces = [
-  { label: "Codex", mark: "CX" },
-  { label: "Claude Code", mark: "CC" },
-  { label: "Cursor", mark: "CU" },
-  { label: "Hermes", mark: "HM" },
-  { label: "OpenCrawl", mark: "OC" },
+  { label: "Codex", iconPath: "/img/pages/home/codex-color.svg" },
+  { label: "Claude Code", iconPath: "/img/pages/home/claude-color.svg" },
+  { label: "OpenCrawl", iconPath: "/img/pages/home/openclaw-color.svg" },
+  { label: "Cursor", iconPath: "/img/pages/home/cursor.svg" },
+  { label: "Qode", iconPath: "/img/pages/home/qoder-color.svg" },
 ] as const;
 
 const beamApps = [
@@ -52,18 +54,23 @@ const beamCurvatures = [150, 82, 0, -82, -150] as const;
 const BeamAgentNode = forwardRef(function BeamAgentNode(
   {
     label,
-    mark,
+    iconPath,
   }: {
     label: string;
-    mark: string;
+    iconPath: string;
   },
   ref: Ref<HTMLDivElement>
 ) {
+  const iconSrc = useBaseUrl(iconPath);
+
   return (
     <div ref={ref} className={styles.agentNode} aria-label={label}>
-      <span className={styles.agentMark} aria-hidden="true">
-        {mark}
-      </span>
+      <img
+        className={styles.agentIcon}
+        src={iconSrc}
+        alt=""
+        aria-hidden="true"
+      />
     </div>
   );
 });
@@ -89,6 +96,10 @@ function CliReasonsBeam() {
   const reduceMotion = useReducedMotion();
   const containerRef = useRef<HTMLDivElement>(null);
   const hubRef = useRef<HTMLDivElement>(null);
+  const hubLogoSources = {
+    light: useBaseUrl("/img/pages/home/oomol-logo-light.svg"),
+    dark: useBaseUrl("/img/pages/home/oomol-logo-dark.svg"),
+  };
   const agentRefs = useMemo(
     () => agentSurfaces.map(() => createRef<HTMLDivElement>()),
     []
@@ -109,13 +120,13 @@ function CliReasonsBeam() {
                 fromRef={hubRef}
                 toRef={ref}
                 curvature={beamCurvatures[index]}
-                pathColor="rgba(24, 24, 27, 0.11)"
+                pathColor="var(--cli-reasons-beam-path)"
                 pathWidth={1.45}
                 pathOpacity={1}
                 duration={4.6}
                 delay={index * 0.12}
-                gradientStartColor="rgba(99, 102, 241, 0)"
-                gradientStopColor="rgba(99, 102, 241, 0.58)"
+                gradientStartColor="var(--cli-reasons-agent-beam-start)"
+                gradientStopColor="var(--cli-reasons-agent-beam-stop)"
               />
             ))
           : null}
@@ -128,13 +139,13 @@ function CliReasonsBeam() {
                 fromRef={hubRef}
                 toRef={ref}
                 curvature={beamCurvatures[index]}
-                pathColor="rgba(24, 24, 27, 0.11)"
+                pathColor="var(--cli-reasons-beam-path)"
                 pathWidth={1.45}
                 pathOpacity={1}
                 duration={4.6}
                 delay={0.16 + index * 0.12}
-                gradientStartColor="rgba(59, 130, 246, 0)"
-                gradientStopColor="rgba(59, 130, 246, 0.58)"
+                gradientStartColor="var(--cli-reasons-app-beam-start)"
+                gradientStopColor="var(--cli-reasons-app-beam-stop)"
               />
             ))
           : null}
@@ -145,14 +156,19 @@ function CliReasonsBeam() {
               key={agent.label}
               ref={agentRefs[index]}
               label={agent.label}
-              mark={agent.mark}
+              iconPath={agent.iconPath}
             />
           ))}
         </div>
 
         <div className={styles.beamCenterColumn}>
-          <div ref={hubRef} className={styles.hubNode}>
-            <span className={styles.hubText}>oo-cli</span>
+          <div ref={hubRef} className={styles.hubNode} aria-label="OOMOL">
+            <ThemedImage
+              className={styles.hubLogo}
+              sources={hubLogoSources}
+              alt=""
+              aria-hidden="true"
+            />
           </div>
         </div>
 
