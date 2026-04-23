@@ -1,7 +1,7 @@
 @use "../../css/mixins.scss" as *;
 
 .section {
-  padding: clamp(2.4rem, 4.4vw, 3.4rem) 0 clamp(2rem, 3.8vw, 3rem);
+  padding: clamp(4.2rem, 6.6vw, 5.8rem) 0 clamp(4.4rem, 7vw, 6rem);
   background: var(--oomol-bg-base);
   border-top: 1px solid var(--oomol-divider-subtle);
 }
@@ -308,7 +308,7 @@
 
 @media (max-width: 768px) {
   .section {
-    padding: 2.1rem 0 2.2rem;
+    padding: 3.2rem 0 3.4rem;
   }
 
   .container {

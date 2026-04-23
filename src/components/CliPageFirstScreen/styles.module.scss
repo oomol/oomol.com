@@ -73,6 +73,8 @@
 }
 
 .installCommandGroup {
+  width: min(100%, 42rem);
+  margin-top: 0.25rem;
   display: grid;
   justify-items: center;
   gap: 0.45rem;
@@ -246,6 +248,11 @@
     width: 100%;
     justify-content: space-between;
     padding: 0.62rem 0.8rem;
+  }
+
+  .installCommandGroup {
+    width: 100%;
+    max-width: 20rem;
   }
 
   .installCommandNote {

@@ -31,10 +31,10 @@ const zhCopy: Copy = {
   primaryCta: "查看安装文档",
   secondaryCta: "查看 GitHub",
   installNote: {
-    unix: "点击复制当前系统安装命令",
-    windows: "点击复制 Windows PowerShell 安装命令",
+    unix: "点击复制当前系统的 oo-cli 安装命令",
+    windows: "点击复制 Windows PowerShell 的 oo-cli 安装命令",
   },
-  copiedNote: "已复制到剪贴板",
+  copiedNote: "oo-cli 安装命令已复制",
 };
 
 const enCopy: Copy = {
@@ -44,10 +44,10 @@ for Agents`,
   primaryCta: "Read the install guide",
   secondaryCta: "View GitHub",
   installNote: {
-    unix: "Click to copy the install command for your system.",
-    windows: "Click to copy the Windows PowerShell install command.",
+    unix: "Click to copy the oo-cli install command for your system.",
+    windows: "Click to copy the oo-cli install command for Windows PowerShell.",
   },
-  copiedNote: "Copied to clipboard.",
+  copiedNote: "oo-cli install command copied.",
 };
 
 const LATEST_OO_CLI_VERSION = "0.2.27";
@@ -209,12 +209,6 @@ export default function CliPageFirstScreen() {
               </a>
             </Button>
           </div>
-        </div>
-      </div>
-
-      <div className={styles.showcase}>
-        <div className={styles.showcaseInner}>
-          <CliTerminalDemo isZh={isZh} staticMode={reduceMotion === true} />
           <div className={styles.installCommandGroup}>
             <button
               className={styles.installCommandStrip}
@@ -229,6 +223,12 @@ export default function CliPageFirstScreen() {
               {isCopied ? copy.copiedNote : copy.installNote[installPlatform]}
             </p>
           </div>
+        </div>
+      </div>
+
+      <div className={styles.showcase}>
+        <div className={styles.showcaseInner}>
+          <CliTerminalDemo isZh={isZh} staticMode={reduceMotion === true} />
         </div>
       </div>
     </section>

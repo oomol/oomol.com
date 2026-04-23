@@ -3,7 +3,7 @@
 .section {
   position: relative;
   overflow: clip;
-  padding: clamp(4.8rem, 10vw, 8rem) 0 clamp(2.4rem, 4vw, 3.4rem);
+  padding: clamp(4.8rem, 10vw, 8rem) 0 clamp(4.2rem, 6.6vw, 5.8rem);
   background: var(--oomol-bg-base);
   border-bottom: 1px solid var(--oomol-divider);
 }
@@ -64,6 +64,67 @@
   padding-top: 0.6rem;
 }
 
+.installCommandGroup {
+  width: min(100%, 42rem);
+  margin-top: 0.25rem;
+  display: grid;
+  justify-items: center;
+  gap: 0.45rem;
+}
+
+.installCommandStrip {
+  width: fit-content;
+  max-width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.62rem 1rem;
+  border: 1px solid var(--oomol-divider);
+  border-radius: var(--oomol-radius-full);
+  background: transparent;
+  color: var(--oomol-text-primary);
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--oomol-border-strong);
+    background: var(--oomol-bg-container);
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.installCommandText {
+  min-width: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  font-family: var(--oomol-font-mono);
+  font-size: var(--oomol-body-mono);
+  font-weight: 500;
+  line-height: 1.6;
+  color: inherit;
+}
+
+.installCommandNote {
+  margin: 0;
+  font-size: var(--oomol-body-mono);
+  line-height: 1.5;
+  font-family: var(--oomol-font-mono);
+  font-weight: 500;
+  letter-spacing: var(--oomol-tracking-mono);
+  color: var(--oomol-text-tertiary);
+  text-align: center;
+}
+
 .workflowArchive {
   width: min(1200px, calc(100% - 48px));
   margin-top: clamp(1.6rem, 3vw, 2.4rem);
@@ -121,7 +182,7 @@
 
   .section {
     padding-top: 4.2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
   }
 
   .slogan {
@@ -141,7 +202,7 @@
 
 @media (max-width: 768px) {
   .section {
-    padding: 3.4rem 0 1.6rem;
+    padding: 3.4rem 0 3.2rem;
   }
 
   .container {
@@ -179,6 +240,21 @@
     width: 100%;
   }
 
+  .installCommandGroup {
+    width: 100%;
+    max-width: 20rem;
+  }
+
+  .installCommandStrip {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.62rem 0.8rem;
+  }
+
+  .installCommandNote {
+    max-width: 100%;
+  }
+
   .workflowArchive {
     width: min(100%, calc(100% - 40px));
     margin-top: clamp(1.2rem, 5vw, 1.75rem);
@@ -191,7 +267,7 @@
 
 @media (max-width: 480px) {
   .section {
-    padding: 3rem 0 1.4rem;
+    padding: 3rem 0 3rem;
   }
 
   .container {

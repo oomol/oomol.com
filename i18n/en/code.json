@@ -128,6 +128,15 @@
   "HOME.FirstScreen.cta.primary": {
     "message": "Start with oo-cli"
   },
+  "HOME.FirstScreen.install.note.unix": {
+    "message": "Click to copy the oo-cli install command for your system."
+  },
+  "HOME.FirstScreen.install.note.windows": {
+    "message": "Click to copy the oo-cli install command for Windows PowerShell."
+  },
+  "HOME.FirstScreen.install.copied": {
+    "message": "oo-cli install command copied."
+  },
   "HOME.FirstScreen.terminal.l1": {
     "message": "$ curl -fsSL https://cli.oomol.com/install.sh | bash"
   },
@@ -2596,22 +2605,22 @@
     "message": "WHY OO-CLI"
   },
   "HOME.CliReasons.title": {
-    "message": "Why you need oo-cli"
+    "message": "Why you need OOMOL"
   },
   "HOME.CliReasons.subtitle": {
-    "message": "Account access and tool capabilities should not be locked to a single agent platform. With oo-cli, they can be managed independently and called from different agents or terminal environments."
+    "message": "Account access, agent calls, and custom tools should not be scattered across different platforms. OOMOL connects them into one path: use oo-cli to let agents call authorized capabilities, and use OOMOL Studio to build your own tools."
   },
   "HOME.CliReasons.card1.title": {
     "message": "Authorize once, then keep using it across agents"
   },
   "HOME.CliReasons.card1.description": {
-    "message": "Many users switch between Codex, Claude Code, Qode, OpenCrawl, and other agents. Once connection and authorization are set up in OOMOL, those capabilities stay available through oo-cli."
+    "message": "Many users switch between Codex, Claude Code, Qode, OpenCrawl, and other agents. Once connection and authorization are set up in OOMOL, oo-cli keeps those capabilities available across agents and terminal environments."
   },
   "HOME.CliReasons.card2.title": {
     "message": "Custom capabilities travel with you like tools"
   },
   "HOME.CliReasons.card2.description": {
-    "message": "When ready-made tools are not enough, you can combine third-party blocks, add cloud functions, and connect your own APIs and business logic, then keep reusing them through oo-cli across environments. Over time, that becomes your own portable toolbox."
+    "message": "When ready-made tools are not enough, use OOMOL Studio to combine third-party blocks, add cloud functions, and connect your own APIs and business logic. Once built, the tool can be delivered and reused through the OOMOL path."
   },
   "HOME.CliReasons.primaryCta": {
     "message": "Explore oo-cli"
@@ -2629,7 +2638,7 @@
     "message": "OOMOL"
   },
   "HOME.CliReasons.visual.note": {
-    "message": "Through oo-cli, users can connect to a mature SaaS ecosystem and call custom function tools."
+    "message": "OOMOL connects a mature SaaS ecosystem, supports custom function tools built in OOMOL Studio, and brings them back to agents."
   },
   "HOME.DeveloperEntry.badge": {
     "message": "Developer entry"
