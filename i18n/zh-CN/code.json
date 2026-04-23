@@ -2599,7 +2599,7 @@
     "message": "为什么你需要 oo-cli"
   },
   "HOME.CliReasons.subtitle": {
-    "message": "如果你会在多个 Agent 和终端之间来回切换，最该先准备好的就是 oo-cli。它让已授权的账号能力和你的自定义能力，都能以统一的方式被搜索、调用和复用。"
+    "message": "账号授权和工具能力不该只绑定在单一 Agent 平台里。通过 oo-cli，它们可以独立管理，并在不同 Agent 和终端环境中继续调用。"
   },
   "HOME.CliReasons.card1.title": {
     "message": "授权一次，多个 Agent 都能继续用"

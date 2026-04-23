@@ -10,7 +10,7 @@
   width: min(1260px, calc(100% - 48px));
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: clamp(1.5rem, 3vw, 2.5rem);
   align-items: start;
 }
@@ -80,7 +80,6 @@
 .visualColumn {
   min-width: 0;
   padding-left: clamp(1.1rem, 2vw, 1.8rem);
-  border-left: 1px solid var(--oomol-divider-subtle);
 }
 
 .visualCard {

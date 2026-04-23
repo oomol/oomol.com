@@ -2599,7 +2599,7 @@
     "message": "Why you need oo-cli"
   },
   "HOME.CliReasons.subtitle": {
-    "message": "If you move between multiple agents and terminals, oo-cli is the first thing worth setting up. It gives your authorized accounts and custom capabilities one consistent way to be discovered, called, and reused."
+    "message": "Account access and tool capabilities should not be locked to a single agent platform. With oo-cli, they can be managed independently and called from different agents or terminal environments."
   },
   "HOME.CliReasons.card1.title": {
     "message": "Authorize once, then keep using it across agents"

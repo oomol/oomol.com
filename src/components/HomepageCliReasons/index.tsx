@@ -34,7 +34,7 @@ const reasonCards = [
 const agentSurfaces = [
   { label: "Codex", mark: "CX" },
   { label: "Claude Code", mark: "CC" },
-  { label: "Cline", mark: "CL" },
+  { label: "Cursor", mark: "CU" },
   { label: "Hermes", mark: "HM" },
   { label: "OpenCrawl", mark: "OC" },
 ] as const;
