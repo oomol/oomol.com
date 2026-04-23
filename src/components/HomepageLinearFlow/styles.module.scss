@@ -46,11 +46,11 @@
   min-width: 0;
 }
 
-.eyebrow {
+.flow .eyebrow {
   display: inline-flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.65rem;
+  gap: 1ch;
   width: fit-content;
   font-family: var(--oomol-font-mono);
   font-size: var(--oomol-body-mono);
@@ -59,18 +59,11 @@
   color: var(--oomol-primary);
 }
 
-.eyebrowNumber {
+.flow .eyebrowNumber {
   font-weight: 600;
 }
 
-.eyebrowDivider {
-  width: 18px;
-  height: 1px;
-  background: var(--oomol-border-strong);
-  flex: none;
-}
-
-.eyebrowLabel {
+.flow .eyebrowLabel {
   color: var(--oomol-text-secondary);
   overflow-wrap: anywhere;
 }

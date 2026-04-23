@@ -341,7 +341,6 @@ export default function HomepageLinearFlow() {
               <span className={styles.eyebrowNumber}>
                 {studioEyebrow.number}
               </span>
-              <span className={styles.eyebrowDivider} aria-hidden="true" />
               <span className={styles.eyebrowLabel}>{studioEyebrow.label}</span>
             </span>
             <h2 className={styles.sectionTitle}>{copy.studio.title}</h2>
@@ -379,7 +378,6 @@ export default function HomepageLinearFlow() {
               <span className={styles.eyebrowNumber}>
                 {cloudEyebrow.number}
               </span>
-              <span className={styles.eyebrowDivider} aria-hidden="true" />
               <span className={styles.eyebrowLabel}>{cloudEyebrow.label}</span>
             </span>
             <h2 className={styles.sectionTitle}>{copy.cloud.title}</h2>
@@ -428,7 +426,6 @@ export default function HomepageLinearFlow() {
           <div className={styles.copyPanel}>
             <span className={styles.eyebrow}>
               <span className={styles.eyebrowNumber}>{cliEyebrow.number}</span>
-              <span className={styles.eyebrowDivider} aria-hidden="true" />
               <span className={styles.eyebrowLabel}>{cliEyebrow.label}</span>
             </span>
             <h2 className={styles.sectionTitle}>{copy.cli.title}</h2>
