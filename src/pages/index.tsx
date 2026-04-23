@@ -51,8 +51,8 @@ function HomepageSections({ hidden }: { hidden: Set<PerfSection> }) {
         </div>
       )}
       <HomepageCliReasons />
-      {!hidden.has("toolstrip") && <HomepageToolStrip />}
       {!hidden.has("painpoints") && <HomepagePainPoints />}
+      {!hidden.has("toolstrip") && <HomepageToolStrip />}
       {!hidden.has("flow") && <HomepageLinearFlow />}
     </main>
   );

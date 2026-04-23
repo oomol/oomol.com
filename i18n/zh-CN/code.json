@@ -42,7 +42,7 @@
     "message": "你的 Agent 负责思考与决策\n剩下的交给 OOMOL"
   },
   "HOME.FirstScreen.heroLead": {
-    "message": "通过 oo-cli 把 Agent 连接到 Gmail、Notion 等第三方服务，以及你的自有系统。使用 OOMOL Studio 构建和扩展你自己的工具。"
+    "message": "先通过 oo-cli 把 Agent 连接到 Gmail、Notion 等第三方服务和你的自有系统；当现成能力不够时，再用 OOMOL Studio 构建和扩展自己的工具。"
   },
   "HOME.FirstScreen.video.playAriaLabel": {
     "message": "播放演示视频"
@@ -2581,10 +2581,10 @@
     "message": "支持文生图、语音合成等多种服务"
   },
   "HOME.ToolStrip.title": {
-    "message": "先看 OOMOL 已经接好了多少应用"
+    "message": "这些能力背后，是已接好的应用和工具"
   },
   "HOME.ToolStrip.description": {
-    "message": "OOMOL 内置支持 {providerCount} 个应用，包含 {actionCount} 个封装工具。先通过 oo-cli 使用这些接好的服务和已发布工具，再决定哪些环节值得继续编排、扩展，或做成你自己的工具。"
+    "message": "OOMOL 内置支持 {providerCount} 个应用，包含 {actionCount} 个封装工具。它们不是零散接口，而是 Agent 可以通过 oo-cli 直接调用的工作入口；跑通常见工作之后，再决定哪些环节值得继续编排、扩展，或做成你自己的工具。"
   },
   "HOME.ToolStrip.providerStat.label": {
     "message": "个应用"
@@ -2605,10 +2605,10 @@
     "message": "WHY OO-CLI"
   },
   "HOME.CliReasons.title": {
-    "message": "为什么使用 OOMOL"
+    "message": "一套连接，给所有 Agent 使用"
   },
   "HOME.CliReasons.subtitle": {
-    "message": "让 Agent 接入你的日常工具，而且可以按需扩展"
+    "message": "先把账号、应用和工具能力接到 OOMOL，再让 Codex、Claude Code、Qode 和终端环境沿同一条 oo-cli 路径调用。"
   },
   "HOME.CliReasons.card1.title": {
     "message": "授权一次，多 Agent 复用"
@@ -2677,13 +2677,13 @@
     "message": "Studio 不是终点。本地验证后，再交给 Cloud，并主要沿 oo-cli 继续给 Agent 使用。"
   },
   "HOME.LinearFlow.studio.eyebrow": {
-    "message": "01 / 在 Studio 中构建"
+    "message": "开发者路径 01 / 在 Studio 中构建"
   },
   "HOME.LinearFlow.studio.title": {
-    "message": "先在 OOMOL Studio 里生成、组合并验证"
+    "message": "现成工具不够时，再在 OOMOL Studio 里生成、组合并验证"
   },
   "HOME.LinearFlow.studio.description": {
-    "message": "把需求交给 Agent 起步，然后继续补代码、接依赖、改参数和做编排。Studio 面向的是构建工具，而不是日常使用工具。"
+    "message": "把需求交给 Agent 起步，然后继续补代码、接依赖、改参数和做编排。这里进入的是开发者路径：Studio 面向构建工具，而不是替代 oo-cli 做日常调用。"
   },
   "HOME.LinearFlow.studio.media.title": {
     "message": "Studio 演示视频"
@@ -2698,7 +2698,7 @@
     "message": "了解 Studio"
   },
   "HOME.LinearFlow.cloud.eyebrow": {
-    "message": "02 / 通过 Cloud 交付"
+    "message": "开发者路径 02 / 通过 Cloud 交付"
   },
   "HOME.LinearFlow.cloud.title": {
     "message": "验证完成后，再交给 Cloud 承接交付和运行"
@@ -2737,13 +2737,13 @@
     "message": "打开 Cloud 控制台"
   },
   "HOME.LinearFlow.cli.eyebrow": {
-    "message": "03 / 给 Agent 使用"
+    "message": "开发者路径 03 / 回到 oo-cli"
   },
   "HOME.LinearFlow.cli.title": {
-    "message": "最后通过 oo-cli 交给 Agent 使用"
+    "message": "交付完成后，让 Agent 直接使用"
   },
   "HOME.LinearFlow.cli.description": {
-    "message": "当工具已经做好并交付出去后，Agent、Codex、OpenClaw 和 Claude Code 会继续沿同一条 oo-cli 路径来搜索、查看和调用。"
+    "message": "工具做好并交付出去后，Agent、Codex、OpenClaw 和 Claude Code 会继续沿同一条 oo-cli 路径搜索、查看和调用。对使用者来说，现成工具和自建工具最终都回到同一个入口。"
   },
   "HOME.LinearFlow.cli.media.title": {
     "message": "oo-cli 调用演示"
@@ -2758,10 +2758,10 @@
     "message": "查看 GitHub"
   },
   "HOME.LinearFlow.cta.title": {
-    "message": "先用已发布工具；需要时再走这条开发者路径"
+    "message": "先用已发布工具；不够时再进入开发者路径"
   },
   "HOME.LinearFlow.cta.description": {
-    "message": "先用 oo-cli 跑通接好的服务和已发布工具。需要自己生产、组合和交付工具时，再进入 Studio 和 Cloud。"
+    "message": "先用 oo-cli 跑通接好的服务和已发布工具。只有当你需要自己生产、组合和交付工具时，再进入 Studio 和 Cloud。"
   },
   "HOME.LinearFlow.cta.primary": {
     "message": "先用 oo-cli"
