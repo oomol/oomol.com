@@ -65,7 +65,9 @@
 }
 
 .workflowArchive {
+  width: min(1200px, calc(100% - 48px));
   margin-top: clamp(1.6rem, 3vw, 2.4rem);
+  margin-inline: auto;
 }
 
 .primaryCta,
@@ -84,8 +86,7 @@
 }
 
 .videoShowcaseInner {
-  width: min(1200px, calc(100% - 48px));
-  margin: 0 auto;
+  width: 100%;
 }
 
 /* ── English overrides ── */
@@ -179,11 +180,12 @@
   }
 
   .workflowArchive {
+    width: min(100%, calc(100% - 40px));
     margin-top: clamp(1.2rem, 5vw, 1.75rem);
   }
 
   .videoShowcaseInner {
-    width: min(100%, calc(100% - 32px));
+    width: 100%;
   }
 }
 
