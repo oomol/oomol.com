@@ -576,7 +576,7 @@
     "message": "Bring your own model service if you do not want managed AI billing"
   },
   "PRICING.subscription.free.feature3": {
-    "message": "No charge for local runs inside Studio"
+    "message": "Only calls to local function code in Studio avoid Cloud Task billing"
   },
   "PRICING.subscription.free.feature4": {
     "message": "200 Cloud Task minutes refreshed automatically every month"

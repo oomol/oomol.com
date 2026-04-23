@@ -576,7 +576,7 @@
     "message": "不想走托管 AI 计费时，可接入自己的模型服务"
   },
   "PRICING.subscription.free.feature3": {
-    "message": "在 Studio 内本地运行不触发 Cloud Task 计费"
+    "message": "仅在 Studio 内调用本地函数代码时不触发 Cloud Task 计费"
   },
   "PRICING.subscription.free.feature4": {
     "message": "每月自动刷新 200 分钟 Cloud Task 额度"
