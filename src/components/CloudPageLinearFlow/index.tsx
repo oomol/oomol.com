@@ -21,8 +21,8 @@ type Copy = {
     eyebrow: string;
     title: string;
     description: string;
-    cards: Array<{ title: string; text: string }>;
-    media: { title: string; note: string; pills: string[] };
+    points: string[];
+    media: { title: string };
     docs: string;
     secondary: string;
   };
@@ -30,7 +30,7 @@ type Copy = {
     eyebrow: string;
     title: string;
     description: string;
-    media: { title: string; note: string };
+    media: { title: string };
     guide: string;
     github: string;
   };
@@ -44,18 +44,15 @@ type Copy = {
 
 type VideoCardProps = {
   title: string;
-  note: string;
   src: string;
 };
 
 type ImageCardProps = {
   title: string;
-  note: string;
   src: string;
-  pills: string[];
 };
 
-function VideoCard({ title, note, src }: VideoCardProps) {
+function VideoCard({ title, src }: VideoCardProps) {
   return (
     <div className={styles.videoCard}>
       <div className={styles.videoCardMedia}>
@@ -72,15 +69,11 @@ function VideoCard({ title, note, src }: VideoCardProps) {
           aria-label={title}
         />
       </div>
-      <div className={styles.videoCardMeta}>
-        <h3 className={styles.videoCardTitle}>{title}</h3>
-        <p className={styles.videoCardNote}>{note}</p>
-      </div>
     </div>
   );
 }
 
-function ImageCard({ title, note, src, pills }: ImageCardProps) {
+function ImageCard({ title, src }: ImageCardProps) {
   return (
     <div className={styles.videoCard}>
       <div className={styles.imageCardMedia}>
@@ -92,17 +85,6 @@ function ImageCard({ title, note, src, pills }: ImageCardProps) {
           decoding="async"
         />
       </div>
-      <div className={styles.videoCardMeta}>
-        <h3 className={styles.videoCardTitle}>{title}</h3>
-        <p className={styles.videoCardNote}>{note}</p>
-        <div className={styles.cloudMetaRow}>
-          {pills.map(pill => (
-            <span key={pill} className={styles.cloudMetaPill}>
-              {pill}
-            </span>
-          ))}
-        </div>
-      </div>
     </div>
   );
 }
@@ -110,47 +92,31 @@ function ImageCard({ title, note, src, pills }: ImageCardProps) {
 const zhCopy: Copy = {
   cloud: {
     eyebrow: "01 / Cloud",
-    title: "把交付、托管运行、配置和权限收进同一个后台",
+    title: "发布到 Cloud，让工具在线运行",
     description:
-      "工具验证完成后，Cloud 承接交付，并统一管理托管运行、运行配置、Secrets 和访问控制。默认的主要交付路径仍然是 oo-cli。",
-    cards: [
-      {
-        title: "主要沿 oo-cli 交付，托管运行仍沿用同一份实现",
-        text: "工具交付出去之后，主要还是给 oo-cli 和 Agent 使用，不需要再围绕它额外重做一层服务。",
-      },
-      {
-        title: "配置和 Secrets 集中管理",
-        text: "把运行配置、Secrets 和环境差异放到同一个后台里维护。",
-      },
-      {
-        title: "权限、状态和使用关系统一查看",
-        text: "访问控制、运行状态和使用关系集中管理，减少分散维护。",
-      },
-    ],
+      "本地测试没问题后，把工具发布到 Cloud。它会在云端运行，密钥和谁能使用也都在 Cloud 里管理。",
+    points: ["云端运行", "保存密钥", "管理谁能用"],
     media: {
       title: "Cloud 控制台预览",
-      note: "在同一个后台里管理交付、运行配置、Secrets 和访问控制。",
-      pills: ["交付", "运行配置", "Secrets", "访问控制"],
     },
     docs: "查看 Cloud 文档",
     secondary: "打开 Cloud 控制台",
   },
   cli: {
     eyebrow: "02 / oo-cli",
-    title: "交付之后，Agent 仍然沿 oo-cli 这条路径来使用",
+    title: "发布后，AI Agent 仍在 oo-cli 里使用工具",
     description:
-      "对使用者来说，不需要认识你背后的实现，也不需要切换工作方式。工具交付后，他们仍然在 oo-cli 中搜索、查看和调用；API、MCP 与自动化只是可选延伸面。",
+      "使用者不用知道工具部署在哪里，也不用换新的使用方式。工具发布后，AI Agent 仍然可以在 oo-cli 里搜索、查看并运行它；以后如果需要 API、MCP 或自动化，再继续扩展。",
     media: {
       title: "oo-cli 调用演示",
-      note: "展示已交付工具在 Codex 中被搜索、查看和调用。",
     },
     guide: "了解 oo-cli",
     github: "查看 GitHub",
   },
   cta: {
-    title: "让 Cloud 接住已经验证好的工具",
+    title: "把跑通的工具发布给 AI Agent 使用",
     description:
-      "用 Cloud 承接交付、托管运行、配置、Secrets 和访问控制，然后主要沿 oo-cli 继续把工具交给 Agent 使用。",
+      "Cloud 负责在线运行、保存密钥和管理谁能使用；AI Agent 继续在 oo-cli 里使用工具。",
     primary: "查看 Cloud 文档",
     secondary: "打开 Cloud 控制台",
   },
@@ -159,48 +125,31 @@ const zhCopy: Copy = {
 const enCopy: Copy = {
   cloud: {
     eyebrow: "01 / Cloud",
-    title: "Keep delivery, hosted runtime, config, and access in one backend",
+    title: "Publish the tool to Cloud and keep it running",
     description:
-      "Once the tool is validated, Cloud takes over delivery and keeps hosted runtime, runtime settings, secrets, and access control in one place. By default, the tool is still delivered mainly through oo-cli.",
-    cards: [
-      {
-        title:
-          "Deliver it mainly through oo-cli while keeping the same implementation",
-        text: "Once the tool is delivered, agents still use it mainly through oo-cli instead of through a separate service layer built around it.",
-      },
-      {
-        title: "Manage config and secrets together",
-        text: "Keep runtime settings, secrets, and environment differences in one console.",
-      },
-      {
-        title: "Review access, status, and usage in one place",
-        text: "Manage permissions, runtime status, and usage data without splitting them across tools.",
-      },
-    ],
+      "After local testing, publish the tool to Cloud. It runs online, and Cloud manages secrets and who can use it.",
+    points: ["Runs online", "Stores secrets", "Controls access"],
     media: {
       title: "Cloud console preview",
-      note: "Keep delivery, runtime settings, secrets, and access control in one backend.",
-      pills: ["Delivery", "Runtime settings", "Secrets", "Access control"],
     },
     docs: "Read Cloud docs",
     secondary: "Open Cloud Console",
   },
   cli: {
     eyebrow: "02 / oo-cli",
-    title: "After delivery, agents still use it through the oo-cli path",
+    title: "After publishing, agents still find and run it with oo-cli",
     description:
-      "For the user, there is no need to understand your implementation or learn a new workflow. Once delivered, they still search, inspect, and use it through oo-cli. APIs, MCP, and automation remain optional ways to use the same tool.",
+      "Users do not need to know where the tool is deployed or learn a new workflow. After publishing, they can still search, inspect, and run it in oo-cli. If you later need an API, MCP, or automation, you can add those paths.",
     media: {
       title: "oo-cli invocation demo",
-      note: "Shows a delivered tool being searched, inspected, and called in Codex.",
     },
     guide: "Explore oo-cli",
     github: "View GitHub",
   },
   cta: {
-    title: "Let Cloud take over validated tools",
+    title: "Publish working tools for agents to use",
     description:
-      "Use Cloud to handle delivery, hosted runtime, configuration, secrets, and access control, then keep the tool flowing mainly back into oo-cli.",
+      "Cloud keeps the tool running, stores secrets, and controls who can use it. Agents keep finding and running the tool through oo-cli.",
     primary: "Read Cloud docs",
     secondary: "Open Cloud Console",
   },
@@ -221,19 +170,18 @@ export default function CloudPageLinearFlow() {
     <div className={`${styles.flow} oomol-no-section-isolation`}>
       {/* ── Section: Cloud ── */}
       <section className={clsx(styles.section, styles.cloudSection)}>
-        <div className={styles.container}>
+        <div className={clsx(styles.container, styles.cloudContainer)}>
           <div className={styles.copyPanel}>
             <span className={styles.eyebrow}>{copy.cloud.eyebrow}</span>
             <h2 className={styles.sectionTitle}>{copy.cloud.title}</h2>
             <p className={styles.sectionDescription}>
               {copy.cloud.description}
             </p>
-            <div className={styles.cloudCardStack}>
-              {copy.cloud.cards.map(card => (
-                <article key={card.title} className={styles.cloudCard}>
-                  <h3 className={styles.cloudTitle}>{card.title}</h3>
-                  <p className={styles.cloudText}>{card.text}</p>
-                </article>
+            <div className={styles.cloudPointList} aria-label="Cloud covers">
+              {copy.cloud.points.map(point => (
+                <span key={point} className={styles.cloudPoint}>
+                  {point}
+                </span>
               ))}
             </div>
             <div className={styles.inlineActions}>
@@ -254,13 +202,8 @@ export default function CloudPageLinearFlow() {
             </div>
           </div>
 
-          <div className={styles.mediaPanel}>
-            <ImageCard
-              title={copy.cloud.media.title}
-              note={copy.cloud.media.note}
-              src={cloudConsoleImage}
-              pills={copy.cloud.media.pills}
-            />
+          <div className={clsx(styles.mediaPanel, styles.cloudMediaPanel)}>
+            <ImageCard title={copy.cloud.media.title} src={cloudConsoleImage} />
           </div>
         </div>
       </section>
@@ -290,7 +233,6 @@ export default function CloudPageLinearFlow() {
           <div className={styles.mediaPanel}>
             <VideoCard
               title={copy.cli.media.title}
-              note={copy.cli.media.note}
               src={homepageMediaUrls.cli}
             />
           </div>

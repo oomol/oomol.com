@@ -15,6 +15,10 @@
   align-items: stretch;
 }
 
+.stackFullWidth .download {
+  width: 100%;
+}
+
 .download {
   /* Vercel primary button handles size/radius/fill via the Button component.
      We only need to ensure the asChild <a> fills the button and carry the icon slot. */

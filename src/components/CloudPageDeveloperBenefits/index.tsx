@@ -13,12 +13,12 @@ export default function CloudPageDeveloperBenefits() {
     }),
     title: translate({
       id: "HOME.CloudBenefits.title",
-      message: "Start delivery with the included free quota",
+      message: "Publish your first tool with the included quota",
     }),
     subtitle: translate({
       id: "HOME.CloudBenefits.subtitle",
       message:
-        "Free users get 200 Cloud Task minutes refreshed every month. Use them to deliver the tool through Cloud first, then top up or upgrade when the quota is not enough.",
+        "Free users get 200 Cloud Task minutes each month. Use them to publish and try your first tool, then top up or upgrade when usage grows.",
     }),
     benefits: [
       {
@@ -32,7 +32,7 @@ export default function CloudPageDeveloperBenefits() {
         }),
         valueCaption: translate({
           id: "HOME.CloudBenefits.card1.valueCaption",
-          message: "Included Cloud Task time",
+          message: "Cloud Task time",
         }),
         eyebrow: translate({
           id: "HOME.CloudBenefits.card1.eyebrow",
@@ -40,17 +40,17 @@ export default function CloudPageDeveloperBenefits() {
         }),
         title: translate({
           id: "HOME.CloudBenefits.card1.title",
-          message: "Deliver the tool and start using it",
+          message: "Publish a first version people can use",
         }),
         description: translate({
           id: "HOME.CloudBenefits.card1.description",
           message:
-            "Use the monthly refreshed quota to deliver the tool, confirm it keeps running, and make sure it is searchable and callable in oo-cli.",
+            "Use the monthly quota to put the tool online, check that it runs reliably, and make sure agents can find and run it through oo-cli.",
         }),
         note: translate({
           id: "HOME.CloudBenefits.card1.note",
           message:
-            "A good fit for first delivery, lightweight jobs, and everyday trial use.",
+            "A good fit for first tools, lightweight jobs, and everyday trials.",
         }),
         cta: translate({
           id: "HOME.CloudBenefits.card1.cta",
@@ -65,11 +65,11 @@ export default function CloudPageDeveloperBenefits() {
         }),
         value: translate({
           id: "HOME.CloudBenefits.card2.value",
-          message: "By runtime",
+          message: "By time",
         }),
         valueCaption: translate({
           id: "HOME.CloudBenefits.card2.valueCaption",
-          message: "How Cloud Task is billed",
+          message: "Cloud Task billing",
         }),
         eyebrow: translate({
           id: "HOME.CloudBenefits.card2.eyebrow",
@@ -77,12 +77,12 @@ export default function CloudPageDeveloperBenefits() {
         }),
         title: translate({
           id: "HOME.CloudBenefits.card2.title",
-          message: "Pay by runtime as usage grows",
+          message: "Pay only for the time you use",
         }),
         description: translate({
           id: "HOME.CloudBenefits.card2.description",
           message:
-            "You do not need to buy servers or reserve fixed capacity up front. Pay for actual call time only after the included quota runs out, and expand only when demand grows.",
+            "You do not need to buy servers or reserve capacity in advance. After the free quota runs out, billing is based on actual run time, so you can grow when demand grows.",
         }),
         note: translate({
           id: "HOME.CloudBenefits.card2.note",

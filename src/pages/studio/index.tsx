@@ -260,7 +260,7 @@ export default function StudioPage() {
           description={translate({ message: "STUDIO.product.cta.description" })}
           actions={
             <>
-              <DownloadButton centered showNote noteTone="inverse" />
+              <DownloadButton centered showNote noteTone="inverse" fullWidth />
               <Button asChild size="lg" variant="outline">
                 <Link to="/cloud">
                   {translate({ message: "HOME.StudioChain.action.cloud" })}

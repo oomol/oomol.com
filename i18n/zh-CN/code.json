@@ -2080,10 +2080,10 @@
     "message": "这里会替换成视频，用来展示从方法描述到论文插图生成的完整调用过程。"
   },
   "CLOUD.hero.title": {
-    "message": "OOMOL Cloud - 工具的交付与托管层"
+    "message": "OOMOL Cloud - 把工具发布给 AI Agent 使用"
   },
   "CLOUD.hero.description": {
-    "message": "把 Studio 里已经验证好的工具交给 Cloud，统一承接交付、托管运行、配置、Secrets 和访问控制，再主要沿 oo-cli 交给 Agent 使用。"
+    "message": "在 Studio 里做好并测试工具后，发布到 Cloud，让工具在线运行，并让 AI Agent 继续在 oo-cli 里查找和使用。"
   },
   "CLOUD.hero.kicker": {
     "message": "Cloud Runtime"
@@ -2110,13 +2110,13 @@
     "message": "打开 Cloud 控制台"
   },
   "CLOUD.painPoints.title": {
-    "message": "交付一个工具，不该等于重做一个 SaaS"
+    "message": "工具跑通后，Cloud 帮你把它上线"
   },
   "CLOUD.painPoints.subtitle": {
     "message": "作为开发者，我们深知你的苦恼"
   },
   "CLOUD.painPoints.description": {
-    "message": "真正拖慢交付的，往往不是工具本身，而是围绕它补出来的那层东西：给用户做入口、让它稳定在线、控制访问、承担运维。Cloud 的目标就是把这一层压到最短。"
+    "message": "本地能跑只是第一步。要让同事、客户或 AI Agent 稳定使用，你还要准备服务器、保存密钥、控制谁能用，并处理运行中的问题。Cloud 把这些麻烦集中处理。"
   },
   "CLOUD.solution.title": {
     "message": "一份工具，三种消费路径"
@@ -2794,58 +2794,58 @@
     "message": "OOMOL AI 界面预览"
   },
   "HOME.CloudBenefits.badge": {
-    "message": "免费额度"
+    "message": "每月免费额度"
   },
   "HOME.CloudBenefits.title": {
-    "message": "先用免费额度开始交付"
+    "message": "先用免费额度上线第一个工具"
   },
   "HOME.CloudBenefits.subtitle": {
-    "message": "免费用户每月自动刷新 200 分钟 Cloud Task。先用它把工具交付到 Cloud；额度不够时，再充值或升级。"
+    "message": "免费用户每月有 200 分钟 Cloud Task。可以先用它发布并试用第一个工具；用量变大后，再充值或升级。"
   },
   "HOME.CloudBenefits.card1.tag": {
-    "message": "每月赠送"
+    "message": "每月免费"
   },
   "HOME.CloudBenefits.card1.value": {
     "message": "200 分钟"
   },
   "HOME.CloudBenefits.card1.valueCaption": {
-    "message": "Cloud Task 免费时长"
+    "message": "Cloud Task 可用时长"
   },
   "HOME.CloudBenefits.card1.eyebrow": {
     "message": "免费额度"
   },
   "HOME.CloudBenefits.card1.title": {
-    "message": "先把工具交付并用起来"
+    "message": "先发布一个能用的版本"
   },
   "HOME.CloudBenefits.card1.description": {
-    "message": "用每月自动刷新的免费额度把工具交付出去，确认它能持续运行，并在 oo-cli 中直接被搜索、查看和调用。"
+    "message": "用每月额度把工具上线，确认它能稳定运行，也能被 AI Agent 在 oo-cli 里找到并运行。"
   },
   "HOME.CloudBenefits.card1.note": {
-    "message": "适合首次交付、轻量任务和日常试用。"
+    "message": "适合第一个工具、轻量任务和日常试用。"
   },
   "HOME.CloudBenefits.card1.cta": {
     "message": "查看 Cloud 文档"
   },
   "HOME.CloudBenefits.card2.tag": {
-    "message": "按时间计费"
+    "message": "按运行时长"
   },
   "HOME.CloudBenefits.card2.value": {
-    "message": "按时间"
+    "message": "按时长"
   },
   "HOME.CloudBenefits.card2.valueCaption": {
-    "message": "Cloud Task 计费方式"
+    "message": "Cloud Task 计费"
   },
   "HOME.CloudBenefits.card2.eyebrow": {
     "message": "按量使用"
   },
   "HOME.CloudBenefits.card2.title": {
-    "message": "按调用时长计费，按需扩展"
+    "message": "用多少付多少"
   },
   "HOME.CloudBenefits.card2.description": {
-    "message": "先用每月自动刷新的免费额度；超出后，再按实际调用时长计费，不需要先买服务器或预留固定资源。"
+    "message": "不用提前买服务器或预留资源。免费额度用完后，按实际运行时长计费；用量变大，再继续扩展。"
   },
   "HOME.CloudBenefits.card2.note": {
-    "message": "先用赠送额度跑起来，再决定规模。"
+    "message": "先用免费额度跑起来，再决定是否扩大使用。"
   },
   "HOME.CloudBenefits.card2.cta": {
     "message": "查看价格"

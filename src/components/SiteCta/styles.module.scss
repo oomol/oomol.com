@@ -40,6 +40,8 @@
 }
 
 .actions {
+  --site-cta-action-width: 14rem;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -47,11 +49,19 @@
   padding-top: 0.4rem;
 }
 
+.actions > * {
+  flex: 0 1 var(--site-cta-action-width);
+  width: var(--site-cta-action-width);
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 .ghostLink {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 10rem;
+  width: var(--site-cta-action-width);
+  max-width: 100%;
   min-height: 48px;
   padding: 0 1.25rem;
   border: 1px solid var(--oomol-border-strong);
@@ -69,7 +79,7 @@
 }
 
 .actionButton {
-  width: 11rem;
+  width: var(--site-cta-action-width);
   max-width: 100%;
 }
 
@@ -98,6 +108,11 @@
     max-width: 20rem;
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .actions > * {
+    width: 100%;
+    flex-basis: auto;
   }
 
   .ghostLink,

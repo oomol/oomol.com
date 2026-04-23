@@ -19,59 +19,56 @@ type Copy = {
 };
 
 const zhCopy: Copy = {
-  badge: "为什么在 Studio 之后还需要 Cloud",
-  title: "Studio 解决构建，Cloud 解决交付层",
+  badge: "什么时候需要 Cloud",
+  title: "工具跑通后，Cloud 帮你把它上线",
   subtitle:
-    "工具在本地跑通之后，真正拖慢上线的往往不是逻辑本身，而是托管运行、访问控制、Secrets 和交付这层。Cloud 的角色，就是把这一层压到最短。",
+    "本地能跑只是第一步。要让同事、客户或 AI Agent 稳定使用，你还要准备服务器、保存密钥、控制谁能用，并处理运行中的问题。Cloud 把这些麻烦集中处理。",
   cards: [
     {
       icon: "i-lucide-waypoints",
-      eyebrow: "交付层",
-      title: "不用再围着同一份实现补一套后台",
+      eyebrow: "发布工具",
+      title: "不用为了一个工具再做一套系统",
       description:
-        "Cloud 承接交付、配置、权限和运行关系，让你不需要再单独做一个发布后台去包住同一份实现。",
-      points: [
-        "主要沿 oo-cli 继续交付给 Agent",
-        "不用再额外补一层用户入口和管理面",
-      ],
+        "把工具发布到 Cloud 后，你不需要再单独开发登录、权限、后台管理这些配套功能。",
+      points: ["AI Agent 仍在 oo-cli 里使用工具", "少做一套页面和管理后台"],
     },
     {
       icon: "i-lucide-blocks",
-      eyebrow: "托管层",
-      title: "把运行、权限和访问控制一起交给 Cloud",
+      eyebrow: "在线运行",
+      title: "让工具一直可用，而不是只在本机能跑",
       description:
-        "用户主要通过 oo-cli 继续使用工具；当你需要 API、MCP 或自动化时，也可以从同一层能力继续往外提供，而实现仍然留在服务器端。",
-      points: ["少管运维和权限细节", "先交付，再按实际使用扩展"],
+        "Cloud 负责在线运行、保存密钥、管理谁能使用。以后需要 API、MCP 或自动化，也可以再加上这些使用方式，不用重做工具。",
+      points: ["少处理服务器和权限细节", "先上线给 Agent 用，再按需要扩展"],
     },
   ],
 };
 
 const enCopy: Copy = {
-  badge: "Why Cloud after Studio",
-  title: "Studio handles building. Cloud handles delivery.",
+  badge: "When to use Cloud",
+  title: "Once a tool works locally, Cloud helps you publish it",
   subtitle:
-    "Once the tool works locally, what slows launch is usually not the logic itself but everything around it: hosted runtime, access control, secrets, and delivery. Cloud exists to shrink that layer.",
+    "A working local tool is only the first step. To let teammates, customers, or AI agents use it reliably, you still need hosting, secrets, access rules, and operations. Cloud takes care of that work.",
   cards: [
     {
       icon: "i-lucide-waypoints",
-      eyebrow: "Delivery layer",
-      title: "Stop building another backend around the same implementation",
+      eyebrow: "Publish tools",
+      title: "Do not build a whole app around one tool",
       description:
-        "Cloud takes over delivery, configuration, access, and runtime so you do not need a separate publishing backend wrapped around the same tool.",
+        "Publish the tool to Cloud instead of building login, permissions, admin pages, and other supporting features yourself.",
       points: [
-        "Deliver it mainly through oo-cli for agents",
-        "Avoid building a separate user and admin layer",
+        "Agents still find and run it with oo-cli",
+        "Fewer pages and admin tools to build",
       ],
     },
     {
       icon: "i-lucide-blocks",
-      eyebrow: "Hosted layer",
-      title: "Let Cloud handle runtime, access, and permissions together",
+      eyebrow: "Keep it running",
+      title: "Make the tool available beyond your own machine",
       description:
-        "Users still access the tool mainly through oo-cli. When you need API, MCP, or automation endpoints, you can add them through the same Cloud setup while the implementation stays on the server.",
+        "Cloud keeps the tool online, stores secrets, and controls who can use it. If you later need an API, MCP, or automation, you can add those options without rebuilding the tool.",
       points: [
-        "Less ops and permission work to manage",
-        "Deliver first, then expand with real usage",
+        "Less server and permission work",
+        "Start with agents, then expand when needed",
       ],
     },
   ],

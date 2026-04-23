@@ -1,4 +1,5 @@
 import styles from "./styles.module.scss";
+import siteCtaStyles from "@site/src/components/SiteCta/styles.module.scss";
 
 import type { DocusaurusContext } from "@docusaurus/types";
 
@@ -7,7 +8,6 @@ import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import HomepageGuiEntry from "@site/src/components/HomepageGuiEntry";
-import siteCtaStyles from "@site/src/components/SiteCta/styles.module.scss";
 import { SiteCta } from "@site/src/components/SiteCta";
 import { Button } from "@site/src/components/ui/button";
 import { clsx } from "clsx";
@@ -398,10 +398,7 @@ export default function HomepageLinearFlow() {
           </div>
 
           <div className={clsx(styles.mediaPanel, styles.cloudMediaPanel)}>
-            <ImageCard
-              title={copy.cloud.media.title}
-              src={cloudConsoleImage}
-            />
+            <ImageCard title={copy.cloud.media.title} src={cloudConsoleImage} />
           </div>
         </div>
       </section>
