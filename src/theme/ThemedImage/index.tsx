@@ -22,6 +22,9 @@ export default function ThemedImage({
   const resolvedDecoding = decoding ?? "async";
   const resolvedLoading =
     loading ?? (fetchPriority === "high" ? "eager" : "lazy");
+  const fetchPriorityProps = fetchPriority
+    ? ({ fetchpriority: fetchPriority } as Record<string, string>)
+    : undefined;
 
   if (!isHydrated || colorModeChoice === null) {
     return (
@@ -29,9 +32,9 @@ export default function ThemedImage({
         <source media="(prefers-color-scheme: dark)" srcSet={sources.dark} />
         <img
           {...imgProps}
+          {...fetchPriorityProps}
           alt={alt}
           decoding={resolvedDecoding}
-          fetchPriority={fetchPriority}
           loading={resolvedLoading}
           src={sources.light}
         />
@@ -42,9 +45,9 @@ export default function ThemedImage({
   return (
     <img
       {...imgProps}
+      {...fetchPriorityProps}
       alt={alt}
       decoding={resolvedDecoding}
-      fetchPriority={fetchPriority}
       loading={resolvedLoading}
       src={colorMode === "dark" ? sources.dark : sources.light}
     />

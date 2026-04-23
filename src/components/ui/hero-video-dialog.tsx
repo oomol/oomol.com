@@ -1,9 +1,8 @@
 import styles from "./hero-video-dialog.module.scss";
 
-import * as Dialog from "@radix-ui/react-dialog";
 import { translate } from "@docusaurus/Translate";
-import clsx from "clsx";
-import { X } from "lucide-react";
+import * as Dialog from "@radix-ui/react-dialog";
+import { clsx } from "clsx";
 import React from "react";
 
 type AnimationStyle = "from-center";
@@ -23,6 +22,25 @@ const DIRECT_VIDEO_RE = /\.(mp4|webm|ogg|mov|m4v)(?:[?#].*)?$/i;
 const ANIMATION_STYLE_CLASS_MAP: Record<AnimationStyle, string> = {
   "from-center": styles.fromCenter,
 };
+
+function CloseIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M18 6 6 18" />
+      <path d="m6 6 12 12" />
+    </svg>
+  );
+}
 
 function withAutoplay(src: string) {
   if (DIRECT_VIDEO_RE.test(src)) {
@@ -106,7 +124,7 @@ export function HeroVideoDialog({
               className={styles.close}
               aria-label={resolvedCloseLabel}
             >
-              <X size={18} strokeWidth={2} />
+              <CloseIcon />
             </button>
           </Dialog.Close>
 

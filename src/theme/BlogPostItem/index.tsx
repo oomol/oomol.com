@@ -1,19 +1,18 @@
 import styles from "./styles.module.scss";
 
+import type { Props } from "@theme/BlogPostItem";
 import type { ReactNode } from "react";
 
 import Link from "@docusaurus/Link";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import { useBlogPost } from "@docusaurus/plugin-content-blog/client";
-import type { Props } from "@theme/BlogPostItem";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
 import BlogPostItemContainer from "@theme/BlogPostItem/Container";
 import BlogPostItemContent from "@theme/BlogPostItem/Content";
 import BlogPostItemFooter from "@theme/BlogPostItem/Footer";
 import BlogPostItemHeader from "@theme/BlogPostItem/Header";
 import { clsx } from "clsx";
 import React from "react";
-
-import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
 
 function useContainerClassName() {
   const { isBlogPostPage } = useBlogPost();
@@ -32,7 +31,9 @@ function BlogPostListPreview() {
   const isUpdate = metadata.permalink.includes("/updates/");
   const previewLabel = isUpdate ? "Updates" : "Blog";
   const previewTone =
-    colorMode === "dark" ? styles.previewFallbackDark : styles.previewFallbackLight;
+    colorMode === "dark"
+      ? styles.previewFallbackDark
+      : styles.previewFallbackLight;
 
   return (
     <div className={styles.preview}>
@@ -53,7 +54,9 @@ function BlogPostListPreview() {
           ) : (
             <div className={clsx(styles.previewFallback, previewTone)}>
               <span className={styles.previewBadge}>{previewLabel}</span>
-              <span className={styles.previewFallbackTitle}>{metadata.title}</span>
+              <span className={styles.previewFallbackTitle}>
+                {metadata.title}
+              </span>
             </div>
           )}
           {cover ? (
@@ -66,7 +69,10 @@ function BlogPostListPreview() {
   );
 }
 
-export default function BlogPostItem({ children, className }: Props): ReactNode {
+export default function BlogPostItem({
+  children,
+  className,
+}: Props): ReactNode {
   const { isBlogPostPage } = useBlogPost();
   const containerClassName = useContainerClassName();
 

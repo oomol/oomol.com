@@ -8,7 +8,10 @@ const blogRoots = [
   path.resolve(projectRoot, "blog"),
   path.resolve(projectRoot, "updates"),
   path.resolve(projectRoot, "i18n/zh-CN/docusaurus-plugin-content-blog"),
-  path.resolve(projectRoot, "i18n/zh-CN/docusaurus-plugin-content-blog-updates"),
+  path.resolve(
+    projectRoot,
+    "i18n/zh-CN/docusaurus-plugin-content-blog-updates"
+  ),
 ];
 const blogExtensions = new Set([".md", ".mdx"]);
 const missingDescription = [];

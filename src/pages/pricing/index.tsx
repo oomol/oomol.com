@@ -4,8 +4,8 @@ import type { DocusaurusContext } from "@docusaurus/types";
 
 import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { Alert, AlertDescription } from "@site/src/components/ui/alert";
 import { Button } from "@site/src/components/ui/button";
@@ -25,14 +25,14 @@ import {
 } from "@site/src/components/ui/tabs";
 import React, { useEffect, useState } from "react";
 
+import Layout from "../../theme/Layout";
+
 type PricingColumn<T> = {
   key: string;
   title: React.ReactNode;
   dataIndex?: keyof T;
   render?: (value: unknown, record: T, index: number) => React.ReactNode;
 };
-
-import Layout from "../../theme/Layout";
 
 const LLM_PRICING_ENDPOINT =
   "https://console-server.oomol.com/api/models/models_with_config";
@@ -967,7 +967,11 @@ export default function Index() {
                   <div className={styles.planActionArea}>
                     {plan.isFree ? (
                       <>
-                        <Button asChild size="default" className={styles.planCta}>
+                        <Button
+                          asChild
+                          size="default"
+                          className={styles.planCta}
+                        >
                           <a href={cliInstallGuideUrl}>{freePlanCtaLabel}</a>
                         </Button>
                         <div
