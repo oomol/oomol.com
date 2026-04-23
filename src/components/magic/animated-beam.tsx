@@ -69,6 +69,7 @@ export function AnimatedBeam({
 
   useLayoutEffect(() => {
     let raf = 0;
+    let cancelled = false;
 
     const updatePath = () => {
       const container = containerRef.current;
@@ -105,9 +106,17 @@ export function AnimatedBeam({
     const scheduleUpdate = () => {
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => {
+        if (cancelled) {
+          return;
+        }
+
         updatePath();
-        // Second frame: satellite refs/layout can settle after flex/order.
-        raf = requestAnimationFrame(updatePath);
+        // Second frame: refs and responsive flex layout can settle after paint.
+        raf = requestAnimationFrame(() => {
+          if (!cancelled) {
+            updatePath();
+          }
+        });
       });
     };
 
@@ -126,10 +135,21 @@ export function AnimatedBeam({
       resizeObserver.observe(toEl);
     }
 
+    window.addEventListener("resize", scheduleUpdate);
+    window.addEventListener("orientationchange", scheduleUpdate);
+    void document.fonts?.ready.then(() => {
+      if (!cancelled) {
+        scheduleUpdate();
+      }
+    });
+
     scheduleUpdate();
 
     return () => {
+      cancelled = true;
       cancelAnimationFrame(raf);
+      window.removeEventListener("resize", scheduleUpdate);
+      window.removeEventListener("orientationchange", scheduleUpdate);
       resizeObserver.disconnect();
     };
   }, [

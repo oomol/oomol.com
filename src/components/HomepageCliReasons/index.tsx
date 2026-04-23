@@ -7,7 +7,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import { AnimatedBeam } from "@site/src/components/magic/animated-beam";
 import ThemedImage from "@theme/ThemedImage";
 import { useReducedMotion } from "framer-motion";
-import React, { createRef, forwardRef, useMemo, useRef } from "react";
+import React, { createRef, forwardRef, useRef } from "react";
 
 const reasonCards = [
   {
@@ -29,7 +29,7 @@ const reasonCards = [
 const agentSurfaces = [
   { label: "Codex", iconPath: "/img/pages/home/codex-color.svg" },
   { label: "Claude Code", iconPath: "/img/pages/home/claude-color.svg" },
-  { label: "OpenCrawl", iconPath: "/img/pages/home/openclaw-color.svg" },
+  { label: "OpenClaw", iconPath: "/img/pages/home/openclaw-color.svg" },
   { label: "Cursor", iconPath: "/img/pages/home/cursor.svg" },
   { label: "Qode", iconPath: "/img/pages/home/qoder-color.svg" },
 ] as const;
@@ -41,8 +41,6 @@ const beamApps = [
   { label: "Gmail", iconPath: "/img/pages/home/brand-icons/gmail.svg" },
   { label: "Linear", iconPath: "/img/pages/home/brand-icons/linear.svg" },
 ] as const;
-
-const beamCurvatures = [150, 82, 0, -82, -150] as const;
 
 const BeamAgentNode = forwardRef(function BeamAgentNode(
   {
@@ -82,12 +80,7 @@ const BeamAppNode = forwardRef(function BeamAppNode(
 
   return (
     <div ref={ref} className={styles.appNode} aria-label={label}>
-      <img
-        className={styles.appIcon}
-        src={iconSrc}
-        alt=""
-        aria-hidden="true"
-      />
+      <img className={styles.appIcon} src={iconSrc} alt="" aria-hidden="true" />
     </div>
   );
 });
@@ -96,65 +89,23 @@ function CliReasonsBeam() {
   const reduceMotion = useReducedMotion();
   const containerRef = useRef<HTMLDivElement>(null);
   const hubRef = useRef<HTMLDivElement>(null);
+  const agentRefs = useRef(
+    agentSurfaces.map(() => createRef<HTMLDivElement>())
+  );
+  const appRefs = useRef(beamApps.map(() => createRef<HTMLDivElement>()));
   const hubLogoSources = {
     light: useBaseUrl("/img/pages/home/oomol-logo-light.svg"),
     dark: useBaseUrl("/img/pages/home/oomol-logo-dark.svg"),
   };
-  const agentRefs = useMemo(
-    () => agentSurfaces.map(() => createRef<HTMLDivElement>()),
-    []
-  );
-  const appRefs = useMemo(
-    () => beamApps.map(() => createRef<HTMLDivElement>()),
-    []
-  );
 
   return (
     <div className={styles.visualCard}>
       <div ref={containerRef} className={styles.beamCanvas}>
-        {!reduceMotion
-          ? agentRefs.map((ref, index) => (
-              <AnimatedBeam
-                key={`agent-${agentSurfaces[index].label}`}
-                containerRef={containerRef}
-                fromRef={hubRef}
-                toRef={ref}
-                curvature={beamCurvatures[index]}
-                pathColor="var(--cli-reasons-beam-path)"
-                pathWidth={1.45}
-                pathOpacity={1}
-                duration={4.6}
-                delay={index * 0.12}
-                gradientStartColor="var(--cli-reasons-agent-beam-start)"
-                gradientStopColor="var(--cli-reasons-agent-beam-stop)"
-              />
-            ))
-          : null}
-
-        {!reduceMotion
-          ? appRefs.map((ref, index) => (
-              <AnimatedBeam
-                key={`app-${beamApps[index].label}`}
-                containerRef={containerRef}
-                fromRef={hubRef}
-                toRef={ref}
-                curvature={beamCurvatures[index]}
-                pathColor="var(--cli-reasons-beam-path)"
-                pathWidth={1.45}
-                pathOpacity={1}
-                duration={4.6}
-                delay={0.16 + index * 0.12}
-                gradientStartColor="var(--cli-reasons-app-beam-start)"
-                gradientStopColor="var(--cli-reasons-app-beam-stop)"
-              />
-            ))
-          : null}
-
         <div className={styles.beamAgentsColumn}>
           {agentSurfaces.map((agent, index) => (
             <BeamAgentNode
               key={agent.label}
-              ref={agentRefs[index]}
+              ref={agentRefs.current[index]}
               label={agent.label}
               iconPath={agent.iconPath}
             />
@@ -176,17 +127,49 @@ function CliReasonsBeam() {
           {beamApps.map(({ label, iconPath }, index) => (
             <BeamAppNode
               key={label}
-              ref={appRefs[index]}
+              ref={appRefs.current[index]}
               label={label}
               iconPath={iconPath}
             />
           ))}
         </div>
-      </div>
 
-      <p className={styles.visualNote}>
-        {translate({ message: "HOME.CliReasons.visual.note" })}
-      </p>
+        {!reduceMotion
+          ? agentRefs.current.map((ref, index) => (
+              <AnimatedBeam
+                key={`agent-${agentSurfaces[index].label}`}
+                containerRef={containerRef}
+                fromRef={ref}
+                toRef={hubRef}
+                pathColor="var(--cli-reasons-beam-path)"
+                pathWidth={1.45}
+                pathOpacity={1}
+                duration={4.6}
+                delay={index * 0.12}
+                gradientStartColor="var(--cli-reasons-agent-beam-start)"
+                gradientStopColor="var(--cli-reasons-agent-beam-stop)"
+              />
+            ))
+          : null}
+
+        {!reduceMotion
+          ? appRefs.current.map((ref, index) => (
+              <AnimatedBeam
+                key={`app-${beamApps[index].label}`}
+                containerRef={containerRef}
+                fromRef={ref}
+                toRef={hubRef}
+                pathColor="var(--cli-reasons-beam-path)"
+                pathWidth={1.45}
+                pathOpacity={1}
+                duration={4.6}
+                delay={0.16 + index * 0.12}
+                gradientStartColor="var(--cli-reasons-app-beam-start)"
+                gradientStopColor="var(--cli-reasons-app-beam-stop)"
+              />
+            ))
+          : null}
+      </div>
     </div>
   );
 }

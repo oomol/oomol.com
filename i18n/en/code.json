@@ -2605,10 +2605,10 @@
     "message": "WHY OO-CLI"
   },
   "HOME.CliReasons.title": {
-    "message": "Keep authorization, calls, and tool building on one path"
+    "message": "Why use OOMOL"
   },
   "HOME.CliReasons.subtitle": {
-    "message": "Agents start by using authorized capabilities through oo-cli. When packaged tools are not enough, you move into OOMOL Studio to build your own tools and deliver them back through the same path."
+    "message": "Connect agents to your everyday tools, and extend them when needed."
   },
   "HOME.CliReasons.card1.title": {
     "message": "Authorize once, reuse across agents"
@@ -2636,9 +2636,6 @@
   },
   "HOME.CliReasons.visual.hubTitle": {
     "message": "OOMOL"
-  },
-  "HOME.CliReasons.visual.note": {
-    "message": "Connect SaaS apps, build custom function tools in Studio, and hand them back to agents through OOMOL."
   },
   "HOME.DeveloperEntry.badge": {
     "message": "Developer entry"

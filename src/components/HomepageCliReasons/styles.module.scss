@@ -12,12 +12,13 @@
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: clamp(1.5rem, 3vw, 2.5rem);
-  align-items: start;
+  align-items: center;
 }
 
 .copyColumn {
   display: grid;
   gap: 1.15rem;
+  align-content: center;
   padding-right: clamp(0.3rem, 1vw, 0.8rem);
 }
 
@@ -28,13 +29,14 @@
 }
 
 .sectionTitle {
-  @include marketing-display-title(hero, 11ch, left, 1.04);
+  @include marketing-display-title(hero, none, left, 1.04);
   margin: 0;
-  text-wrap: balance;
+  max-width: none;
+  white-space: nowrap;
 }
 
 .sectionSubtitle {
-  @include marketing-supporting-copy();
+  @include marketing-supporting-copy(36rem);
   margin: 0;
 }
 
@@ -100,12 +102,16 @@
 
 .beamCanvas {
   position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 0.9fr) minmax(0, 0.9fr);
-  align-items: center;
-  gap: 1rem;
+  display: flex;
+  width: 100%;
+  max-width: 42rem;
+  margin-inline: auto;
+  overflow: hidden;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: clamp(0.9rem, 3vw, 2.4rem);
   min-height: 27rem;
-  padding: 0.2rem 0 0.1rem;
+  padding: 0.2rem clamp(0.1rem, 1vw, 0.35rem) 0.1rem;
 }
 
 .beamAgentsColumn,
@@ -114,14 +120,18 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 0.9rem;
+  flex: 0 0 auto;
 }
 
 .beamCenterColumn {
   position: relative;
   z-index: 1;
-  display: grid;
-  justify-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
 }
 
 .beamAppsColumn {
@@ -236,22 +246,12 @@
     inset 0 0 0 1px rgba(24, 24, 27, 0.08);
 }
 
-.visualNote {
-  margin: 0;
-  max-width: 44ch;
-  margin-inline: auto;
-  font-size: var(--oomol-body-sm);
-  line-height: 1.6;
-  color: var(--oomol-text-tertiary);
-  text-align: center;
-}
-
 :global(html[lang="en"]) .container {
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
 }
 
 :global(html[lang="en"]) .sectionTitle {
-  max-width: 13ch;
+  max-width: none;
   font-size: var(--oomol-display-hero);
   line-height: 1.02;
 }
@@ -260,13 +260,10 @@
   max-width: 38rem;
 }
 
-:global(html[lang="en"]) .beamCanvas {
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 0.8fr) minmax(0, 0.95fr);
-}
-
 @media (max-width: 996px) {
   .container {
     grid-template-columns: 1fr;
+    align-items: start;
   }
 
   .copyColumn {
@@ -288,28 +285,27 @@
   }
 
   .beamCanvas {
-    grid-template-columns: 1fr;
-    min-height: auto;
-    gap: 1.1rem;
+    min-height: 27rem;
+    gap: clamp(0.7rem, 2vw, 1.2rem);
   }
 
   .beamAgentsColumn,
   .beamAppsColumn {
-    align-items: flex-start;
+    flex-direction: column;
   }
 
   .beamCenterColumn {
-    order: -1;
+    order: 0;
   }
 
   .agentNode {
-    width: 4rem;
-    height: 4rem;
+    width: 4.5rem;
+    height: 4.5rem;
   }
 
   .appNode {
-    width: 4rem;
-    height: 4rem;
+    width: 4.5rem;
+    height: 4.5rem;
   }
 }
 
@@ -328,6 +324,7 @@
     font-size: var(--oomol-display-hero);
     line-height: 1.08;
     letter-spacing: var(--oomol-tracking-display);
+    white-space: normal;
   }
 
   .sectionSubtitle {
@@ -349,6 +346,7 @@
   }
 
   .visualCard {
+    justify-items: center;
     padding: 0.9rem;
   }
 
@@ -357,17 +355,52 @@
   }
 
   .agentNode {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 4.5rem;
+    height: 4.5rem;
   }
 
   .appNode {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 4.5rem;
+    height: 4.5rem;
   }
 
   .hubNode {
-    width: 5rem;
-    height: 5rem;
+    width: clamp(6.2rem, 8vw, 7.2rem);
+    height: clamp(6.2rem, 8vw, 7.2rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .beamCanvas {
+    gap: 0.45rem;
+    min-height: 22rem;
+    width: 100%;
+  }
+
+  .beamAgentsColumn,
+  .beamAppsColumn {
+    gap: 0.72rem;
+  }
+
+  .agentNode,
+  .appNode {
+    width: 3.45rem;
+    height: 3.45rem;
+  }
+
+  .agentIcon,
+  .appIcon {
+    width: 1.55rem;
+    height: 1.55rem;
+  }
+
+  .hubNode {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+
+  .hubLogo {
+    width: 2.45rem;
+    height: 2.45rem;
   }
 }

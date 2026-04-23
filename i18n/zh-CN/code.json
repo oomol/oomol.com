@@ -2605,10 +2605,10 @@
     "message": "WHY OO-CLI"
   },
   "HOME.CliReasons.title": {
-    "message": "把授权、调用和工具构建放在一条路径里"
+    "message": "为什么使用 OOMOL"
   },
   "HOME.CliReasons.subtitle": {
-    "message": "Agent 先通过 oo-cli 使用已授权能力；当现成工具不够时，你再进入 OOMOL Studio 构建自己的工具，并沿同一条路径交付回去。"
+    "message": "让 Agent 接入你的日常工具，而且可以按需扩展"
   },
   "HOME.CliReasons.card1.title": {
     "message": "授权一次，多 Agent 复用"
@@ -2636,9 +2636,6 @@
   },
   "HOME.CliReasons.visual.hubTitle": {
     "message": "OOMOL"
-  },
-  "HOME.CliReasons.visual.note": {
-    "message": "连接 SaaS、构建自定义函数工具，再交给 Agent 使用，都在 OOMOL 里完成。"
   },
   "HOME.DeveloperEntry.badge": {
     "message": "开发者入口"
