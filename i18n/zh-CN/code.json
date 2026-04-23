@@ -2592,6 +2592,45 @@
   "HOME.ToolStrip.wallTitle": {
     "message": "常见应用已内置接入"
   },
+  "HOME.CliReasons.badge": {
+    "message": "WHY OO-CLI"
+  },
+  "HOME.CliReasons.title": {
+    "message": "为什么你需要 oo-cli"
+  },
+  "HOME.CliReasons.subtitle": {
+    "message": "如果你会在多个 Agent 和终端之间来回切换，最该先准备好的就是 oo-cli。它让已授权的账号能力和你的自定义能力，都能以统一的方式被搜索、调用和复用。"
+  },
+  "HOME.CliReasons.card1.title": {
+    "message": "授权一次，多个 Agent 都能继续用"
+  },
+  "HOME.CliReasons.card1.description": {
+    "message": "很多用户会同时使用 Codex、Claude Code、Hermes、OpenCrawl 等 Agent。只要在 OOMOL 里完成一次连接和授权，之后就可以继续通过 oo-cli 调用这些能力。"
+  },
+  "HOME.CliReasons.card2.title": {
+    "message": "自定义能力，也能像工具一样随身带走"
+  },
+  "HOME.CliReasons.card2.description": {
+    "message": "当现成工具不够用时，你可以组合第三方 Block、编写云函数，接入自己的 API 和业务逻辑，再通过 oo-cli 在不同环境中复用。久而久之，它会变成一套你自己的工具箱。"
+  },
+  "HOME.CliReasons.primaryCta": {
+    "message": "了解 oo-cli"
+  },
+  "HOME.CliReasons.secondaryCta": {
+    "message": "了解 Studio"
+  },
+  "HOME.CliReasons.visual.eyebrow": {
+    "message": "账号、能力与知名 Agent"
+  },
+  "HOME.CliReasons.visual.hubLabel": {
+    "message": "统一连接与授权"
+  },
+  "HOME.CliReasons.visual.hubTitle": {
+    "message": "OOMOL"
+  },
+  "HOME.CliReasons.visual.note": {
+    "message": "通过 oo-cli，用户既可以连接成熟的 SaaS 生态，也可以调用自定义的函数工具。"
+  },
   "HOME.DeveloperEntry.badge": {
     "message": "开发者入口"
   },

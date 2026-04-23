@@ -3,6 +3,7 @@ import homeStyles from "./home.module.scss";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
+import HomepageCliReasons from "@site/src/components/HomepageCliReasons";
 import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
 import HomepageLinearFlow from "@site/src/components/HomepageLinearFlow";
 import HomepagePainPoints from "@site/src/components/HomepagePainPoints";
@@ -51,6 +52,7 @@ function HomepageSections({ hidden }: { hidden: Set<PerfSection> }) {
           <HomepageFirstScreen />
         </div>
       )}
+      <HomepageCliReasons />
       {!hidden.has("toolstrip") && <HomepageToolStrip />}
       {!hidden.has("painpoints") && <HomepagePainPoints />}
       {!hidden.has("why") && <HomepageWhyOomol />}

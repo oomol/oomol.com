@@ -2592,6 +2592,45 @@
   "HOME.ToolStrip.wallTitle": {
     "message": "Common apps are already available"
   },
+  "HOME.CliReasons.badge": {
+    "message": "WHY OO-CLI"
+  },
+  "HOME.CliReasons.title": {
+    "message": "Why you need oo-cli"
+  },
+  "HOME.CliReasons.subtitle": {
+    "message": "If you move between multiple agents and terminals, oo-cli is the first thing worth setting up. It gives your authorized accounts and custom capabilities one consistent way to be discovered, called, and reused."
+  },
+  "HOME.CliReasons.card1.title": {
+    "message": "Authorize once, then keep using it across agents"
+  },
+  "HOME.CliReasons.card1.description": {
+    "message": "Many users switch between Codex, Claude Code, Hermes, OpenCrawl, and other agents. Once connection and authorization are set up in OOMOL, those capabilities stay available through oo-cli."
+  },
+  "HOME.CliReasons.card2.title": {
+    "message": "Custom capabilities travel with you like tools"
+  },
+  "HOME.CliReasons.card2.description": {
+    "message": "When ready-made tools are not enough, you can combine third-party blocks, add cloud functions, and connect your own APIs and business logic, then keep reusing them through oo-cli across environments. Over time, that becomes your own portable toolbox."
+  },
+  "HOME.CliReasons.primaryCta": {
+    "message": "Explore oo-cli"
+  },
+  "HOME.CliReasons.secondaryCta": {
+    "message": "Explore Studio"
+  },
+  "HOME.CliReasons.visual.eyebrow": {
+    "message": "Accounts, capabilities, and well-known agents"
+  },
+  "HOME.CliReasons.visual.hubLabel": {
+    "message": "Unified connection and auth"
+  },
+  "HOME.CliReasons.visual.hubTitle": {
+    "message": "OOMOL"
+  },
+  "HOME.CliReasons.visual.note": {
+    "message": "Through oo-cli, users can connect to a mature SaaS ecosystem and call custom function tools."
+  },
   "HOME.DeveloperEntry.badge": {
     "message": "Developer entry"
   },
