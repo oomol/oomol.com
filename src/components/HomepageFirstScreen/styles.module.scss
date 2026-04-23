@@ -68,7 +68,10 @@
   margin-top: clamp(1.6rem, 3vw, 2.4rem);
 }
 
-/* Hero CTAs — styling comes from the Button component; no overrides needed. */
+.primaryCta,
+.secondaryCta {
+  width: 14rem;
+}
 
 /* ── 视频展示区 — hairline frame，无阴影光晕 ── */
 
