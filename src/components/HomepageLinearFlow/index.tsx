@@ -6,7 +6,6 @@ import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import CloudPageDeveloperBenefits from "@site/src/components/CloudPageDeveloperBenefits";
 import HomepageGuiEntry from "@site/src/components/HomepageGuiEntry";
 import { SiteCta } from "@site/src/components/SiteCta";
 import { Button } from "@site/src/components/ui/button";
@@ -41,6 +40,7 @@ type Copy = {
     title: string;
     description: string;
     cards: Array<{ title: string; text: string }>;
+    quota: { title: string; text: string };
     media: { title: string; note: string };
     primary: string;
     secondary: string;
@@ -282,6 +282,17 @@ export default function HomepageLinearFlow() {
           }),
         },
       ],
+      quota: {
+        title: translate({
+          id: "HOME.LinearFlow.cloud.quota.title",
+          message: "Start delivery with included usage",
+        }),
+        text: translate({
+          id: "HOME.LinearFlow.cloud.quota.text",
+          message:
+            "Free users get 200 Cloud Task minutes refreshed every month, so first delivery does not require buying servers or reserving capacity.",
+        }),
+      },
       media: {
         title: translate({
           id: "HOME.LinearFlow.cloud.media.title",
@@ -392,6 +403,10 @@ export default function HomepageLinearFlow() {
                 </article>
               ))}
             </div>
+            <div className={styles.cloudQuotaNote}>
+              <strong>{copy.cloud.quota.title}</strong>
+              <span>{copy.cloud.quota.text}</span>
+            </div>
             <div className={styles.inlineActions}>
               <Link to="/cloud" className={styles.primaryLink}>
                 {copy.cloud.primary}
@@ -456,8 +471,6 @@ export default function HomepageLinearFlow() {
       </section>
 
       <HomepageGuiEntry />
-
-      <CloudPageDeveloperBenefits />
 
       {/* ── CTA ── */}
       <SiteCta

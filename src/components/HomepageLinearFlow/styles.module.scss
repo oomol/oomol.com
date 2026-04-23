@@ -218,6 +218,25 @@
   word-break: break-word;
 }
 
+.cloudQuotaNote {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--oomol-divider);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--oomol-primary) 6%, transparent);
+  color: var(--oomol-text-secondary);
+  font-size: var(--oomol-body-sm);
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.cloudQuotaNote strong {
+  color: var(--oomol-text-primary);
+  font-weight: 600;
+}
+
 @media (min-width: 997px) {
   .container {
     grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
@@ -274,6 +293,10 @@
   .cloudCard {
     padding: 0.95rem 1rem;
   }
+
+  .cloudQuotaNote {
+    padding: 0.85rem 0.95rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -303,7 +326,8 @@
   }
 
   .mediaPanel,
-  .cloudCard {
+  .cloudCard,
+  .cloudQuotaNote {
     border-color: var(--oomol-border-subtle);
     background: var(--oomol-bg-elevated);
   }

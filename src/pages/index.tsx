@@ -8,18 +8,16 @@ import HomepageFirstScreen from "@site/src/components/HomepageFirstScreen";
 import HomepageLinearFlow from "@site/src/components/HomepageLinearFlow";
 import HomepagePainPoints from "@site/src/components/HomepagePainPoints";
 import HomepageToolStrip from "@site/src/components/HomepageToolStrip";
-import HomepageWhyOomol from "@site/src/components/HomepageWhyOomol";
 import React from "react";
 
 import Layout from "../theme/Layout";
 
-type PerfSection = "hero" | "toolstrip" | "painpoints" | "why" | "flow";
+type PerfSection = "hero" | "toolstrip" | "painpoints" | "flow";
 
 const PERF_SECTION_KEYS: PerfSection[] = [
   "hero",
   "toolstrip",
   "painpoints",
-  "why",
   "flow",
 ];
 
@@ -55,7 +53,6 @@ function HomepageSections({ hidden }: { hidden: Set<PerfSection> }) {
       <HomepageCliReasons />
       {!hidden.has("toolstrip") && <HomepageToolStrip />}
       {!hidden.has("painpoints") && <HomepagePainPoints />}
-      {!hidden.has("why") && <HomepageWhyOomol />}
       {!hidden.has("flow") && <HomepageLinearFlow />}
     </main>
   );

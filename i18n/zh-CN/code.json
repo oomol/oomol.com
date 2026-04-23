@@ -2605,10 +2605,10 @@
     "message": "WHY OO-CLI"
   },
   "HOME.CliReasons.title": {
-    "message": "为什么需要 OOMOL"
+    "message": "把授权、调用和工具构建放在一条路径里"
   },
   "HOME.CliReasons.subtitle": {
-    "message": "OOMOL 把账号授权、Agent 调用和自定义工具放在一条路径里：Agent 通过 oo-cli 使用已授权能力，你在 OOMOL Studio 构建自己的工具。"
+    "message": "Agent 先通过 oo-cli 使用已授权能力；当现成工具不够时，你再进入 OOMOL Studio 构建自己的工具，并沿同一条路径交付回去。"
   },
   "HOME.CliReasons.card1.title": {
     "message": "授权一次，多 Agent 复用"
@@ -2720,6 +2720,12 @@
   },
   "HOME.LinearFlow.cloud.card2.text": {
     "message": "Secrets、权限、版本、运行配置和使用数据集中管理，减少分散维护。"
+  },
+  "HOME.LinearFlow.cloud.quota.title": {
+    "message": "先用免费额度开始交付"
+  },
+  "HOME.LinearFlow.cloud.quota.text": {
+    "message": "免费用户每月自动刷新 200 分钟 Cloud Task。首次交付不需要先买服务器，也不需要预留固定资源。"
   },
   "HOME.LinearFlow.cloud.media.title": {
     "message": "Cloud 控制台预览"

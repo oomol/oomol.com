@@ -2605,10 +2605,10 @@
     "message": "WHY OO-CLI"
   },
   "HOME.CliReasons.title": {
-    "message": "Why OOMOL"
+    "message": "Keep authorization, calls, and tool building on one path"
   },
   "HOME.CliReasons.subtitle": {
-    "message": "OOMOL keeps authorization, agent calls, and custom tools on one path: agents use authorized capabilities through oo-cli, while you build your own tools in OOMOL Studio."
+    "message": "Agents start by using authorized capabilities through oo-cli. When packaged tools are not enough, you move into OOMOL Studio to build your own tools and deliver them back through the same path."
   },
   "HOME.CliReasons.card1.title": {
     "message": "Authorize once, reuse across agents"
@@ -2720,6 +2720,12 @@
   },
   "HOME.LinearFlow.cloud.card2.text": {
     "message": "Manage secrets, access, releases, runtime settings, and usage data in one place."
+  },
+  "HOME.LinearFlow.cloud.quota.title": {
+    "message": "Start delivery with included usage"
+  },
+  "HOME.LinearFlow.cloud.quota.text": {
+    "message": "Free users get 200 Cloud Task minutes refreshed every month, so first delivery does not require buying servers or reserving capacity."
   },
   "HOME.LinearFlow.cloud.media.title": {
     "message": "Cloud console preview"
