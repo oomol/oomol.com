@@ -152,19 +152,12 @@
 
 /* ── English overrides ── */
 
-:global(html[lang="en"]) .container {
-  max-width: 1160px;
-}
-
 :global(html[lang="en"]) .titleGroup {
   max-width: 48rem;
 }
 
 :global(html[lang="en"]) .slogan {
   max-width: 20ch;
-  font-size: var(--oomol-display-hero);
-  line-height: 1.04;
-  letter-spacing: var(--oomol-tracking-display);
   text-wrap: balance;
 }
 

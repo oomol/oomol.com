@@ -263,7 +263,6 @@
 
 :global(html[lang="en"]) .sectionTitle {
   max-width: 26ch;
-  font-size: var(--oomol-display-hero);
 }
 
 :global(html[lang="zh-CN"]) .sectionTitle {
@@ -272,11 +271,6 @@
 
 :global(html[lang="en"]) .sectionSubtitle {
   max-width: 48rem;
-}
-
-:global(html[lang="en"]) .cardTitle {
-  font-size: var(--oomol-body-lead);
-  line-height: 1.32;
 }
 
 @media (max-width: 996px) {

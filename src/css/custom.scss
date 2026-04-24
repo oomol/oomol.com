@@ -201,8 +201,7 @@ body,
    Safari/WebKit 对 `keep-all + overflow-wrap: break-word` 的降级不可靠，
    会把一整句中文当成一个不可断的"单词"，导致窄屏下标题撑出容器、
    进而把整个 section 的宽度顶宽（Chrome 能正常降级，Safari 不行）。 */
-:lang(zh-CN) .oomol-home-main :is(h1, h2, h3),
-:lang(zh-CN) .oomol-landing-main :is(h1, h2, h3) {
+:lang(zh-CN) :where(.oomol-home-main, .oomol-landing-main) :where(h1, h2, h3) {
   letter-spacing: -0.022em;
   font-weight: 600;
   line-height: 1.12;
@@ -212,8 +211,7 @@ body,
   font-variation-settings: normal;
 }
 
-:lang(en) .oomol-home-main :is(h1, h2, h3),
-:lang(en) .oomol-landing-main :is(h1, h2, h3) {
+:lang(en) :where(.oomol-home-main, .oomol-landing-main) :where(h1, h2, h3) {
   letter-spacing: -0.034em;
   font-weight: 600;
   line-height: 1.06;
@@ -222,16 +220,14 @@ body,
 }
 
 /* 落地页语义标题字号 — 与 design-tokens 同一套 scale，避免各模块各自 clamp 过大 */
-.oomol-home-main h1,
-.oomol-landing-main h1 {
+:where(.oomol-home-main, .oomol-landing-main) :where(h1) {
   font-family: var(--oomol-font-display);
   font-size: var(--oomol-display-hero);
   letter-spacing: var(--oomol-tracking-display);
   line-height: 1.06;
 }
 
-.oomol-home-main h2,
-.oomol-landing-main h2 {
+:where(.oomol-home-main, .oomol-landing-main) :where(h2) {
   font-family: var(--oomol-font-display);
   font-size: var(--oomol-display-section);
   letter-spacing: var(--oomol-tracking-section);
@@ -246,8 +242,7 @@ body,
   line-height: 1.25;
 }
 
-:lang(zh-CN) .oomol-home-main h3,
-:lang(zh-CN) .oomol-landing-main h3 {
+:lang(zh-CN) :where(.oomol-home-main, .oomol-landing-main) :where(h3) {
   letter-spacing: -0.018em;
 }
 

@@ -187,10 +187,6 @@
   @include marketing-supporting-copy(34rem, center);
 }
 
-:global(html[lang="en"]) .heroTitle {
-  font-size: var(--oomol-display-hero);
-}
-
 :global(html[lang="en"]) .heroLead {
   max-width: 36rem;
 }
@@ -908,10 +904,6 @@ video.outputsShowcaseImage {
 
   .sectionIntro p {
     @include marketing-mobile-supporting-copy();
-  }
-
-  :global(html[lang="en"]) .heroTitle {
-    font-size: var(--oomol-display-hero);
   }
 
   .heroActions {

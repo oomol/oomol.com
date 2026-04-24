@@ -311,8 +311,6 @@
 
 :global(html[lang="en"]) .sectionTitle {
   max-width: 18ch;
-  font-size: var(--oomol-display-hero);
-  line-height: 1.03;
 }
 
 :global(html[lang="en"]) .headerText {
@@ -321,15 +319,6 @@
 
 :global(html[lang="en"]) .sectionSubtitle {
   max-width: 54rem;
-}
-
-:global(html[lang="en"]) .topPair {
-  grid-template-columns: minmax(340px, 0.76fr) minmax(0, 1.24fr);
-  gap: 1.5rem;
-}
-
-:global(html[lang="en"]) .cardTitle {
-  font-size: var(--oomol-display-section);
 }
 
 @media (max-width: 996px) {
@@ -347,11 +336,6 @@
 
   .topPair {
     grid-template-columns: 1fr;
-  }
-
-  :global(html[lang="en"]) .topPair {
-    grid-template-columns: 1fr;
-    gap: 1rem;
   }
 
   .sectionHeader {
@@ -480,7 +464,4 @@
     line-height: 1.52;
   }
 
-  :global(html[lang="en"]) .topPair {
-    grid-template-columns: 1fr;
-  }
 }

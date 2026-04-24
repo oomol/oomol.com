@@ -29,10 +29,10 @@
 }
 
 .sectionTitle {
-  @include marketing-display-title(hero, none, left, 1.04);
+  @include marketing-display-title(section, 100%, left, 1.06);
   margin: 0;
-  max-width: none;
-  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .sectionSubtitle {
@@ -307,10 +307,6 @@
 
   .sectionTitle {
     max-width: 100%;
-    font-size: var(--oomol-display-hero);
-    line-height: 1.08;
-    letter-spacing: var(--oomol-tracking-display);
-    white-space: normal;
   }
 
   .sectionSubtitle {

@@ -206,43 +206,24 @@
   }
 }
 
-:global(html[lang="en"]) .container {
-  grid-template-columns: 1fr;
-  gap: 1.6rem;
-}
-
 :global(html[lang="en"]) .header {
   max-width: 42rem;
 }
 
 :global(html[lang="en"]) .sectionTitle {
   max-width: 14ch;
-  font-size: var(--oomol-display-hero);
-  line-height: 1.02;
 }
 
 :global(html[lang="en"]) .sectionSubtitle {
   max-width: 34rem;
 }
 
-:global(html[lang="en"]) .grid {
-  gap: 1.1rem;
-}
-
-:global(html[lang="en"]) .card {
-  gap: 0.95rem;
-  padding: 1.15rem 1.15rem 1.2rem;
-}
-
 :global(html[lang="en"]) .cardTitle {
   max-width: 20ch;
-  font-size: var(--oomol-font-size-xl);
-  line-height: 1.32;
 }
 
 :global(html[lang="en"]) .cardDescription {
   max-width: 42ch;
-  line-height: 1.78;
 }
 
 :global(html[lang="en"]) .valueCaption {

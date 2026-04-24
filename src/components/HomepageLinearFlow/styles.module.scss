@@ -69,7 +69,7 @@
 }
 
 .sectionTitle {
-  @include marketing-display-title(hero, 18ch, left, 1.08);
+  @include marketing-display-title(section, 22ch, left, 1.06);
   overflow-wrap: anywhere;
   word-break: break-word;
 }
