@@ -1,9 +1,7 @@
 import styles from "./styles.module.scss";
 
-import type { DocusaurusContext } from "@docusaurus/types";
-
 import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { translate } from "@docusaurus/Translate";
 import {
   AnimatedSpan,
   Terminal,
@@ -14,41 +12,6 @@ import { useReducedMotion } from "framer-motion";
 import React from "react";
 
 type InstallPlatform = "unix" | "windows";
-
-type Copy = {
-  slogan: string;
-  overview: string;
-  primaryCta: string;
-  secondaryCta: string;
-  installNote: Record<InstallPlatform, string>;
-  copiedNote: string;
-};
-
-const zhCopy: Copy = {
-  slogan: `为 Agent
-提供更多工具`,
-  overview: `Agent 会分析、会规划，但真正执行还得连上现有工具。oo-cli 把现实世界里的工具接到 Agent 手里，让它真正开始做事。`,
-  primaryCta: "查看安装文档",
-  secondaryCta: "查看 GitHub",
-  installNote: {
-    unix: "点击复制当前系统的 oo-cli 安装命令",
-    windows: "点击复制 Windows PowerShell 的 oo-cli 安装命令",
-  },
-  copiedNote: "oo-cli 安装命令已复制",
-};
-
-const enCopy: Copy = {
-  slogan: `More Tools
-for Agents`,
-  overview: `Agents can analyze and plan, but execution still depends on real-world tools. oo-cli connects them to those tools so they can actually get work done.`,
-  primaryCta: "Read the install guide",
-  secondaryCta: "View GitHub",
-  installNote: {
-    unix: "Click to copy the oo-cli install command for your system.",
-    windows: "Click to copy the oo-cli install command for Windows PowerShell.",
-  },
-  copiedNote: "oo-cli install command copied.",
-};
 
 const LATEST_OO_CLI_VERSION = "0.2.27";
 const INSTALL_COMMANDS: Record<InstallPlatform, string> = {
@@ -73,13 +36,7 @@ function detectInstallPlatform(): InstallPlatform {
   return /win/i.test(candidate) ? "windows" : "unix";
 }
 
-function CliTerminalDemo({
-  isZh,
-  staticMode,
-}: {
-  isZh: boolean;
-  staticMode: boolean;
-}) {
+function CliTerminalDemo({ staticMode }: { staticMode: boolean }) {
   return (
     <Terminal className={styles.heroTerminal} staticMode={staticMode}>
       <TypingAnimation className={styles.commandLine} duration={12}>
@@ -87,9 +44,9 @@ function CliTerminalDemo({
       </TypingAnimation>
 
       <AnimatedSpan className={styles.successLine}>
-        {isZh
-          ? `# 安装最新版本：oo-cli ${LATEST_OO_CLI_VERSION}`
-          : `# installs latest: oo-cli ${LATEST_OO_CLI_VERSION}`}
+        {translate({
+          message: "CLI.hero.terminal.installsLatest",
+        }).replace("{version}", LATEST_OO_CLI_VERSION)}
       </AnimatedSpan>
 
       <TypingAnimation className={styles.commandLine} duration={12}>
@@ -97,21 +54,15 @@ function CliTerminalDemo({
       </TypingAnimation>
 
       <AnimatedSpan className={styles.successLine}>
-        {isZh
-          ? "# 登录 OOMOL 账号，确认 CLI 已可用"
-          : "# sign in with your OOMOL account and confirm the CLI is ready"}
+        {translate({ message: "CLI.hero.terminal.loginReady" })}
       </AnimatedSpan>
 
       <TypingAnimation className={styles.commandLine} duration={12}>
-        {isZh
-          ? '$ oo search "给 OOMOL 生成二维码"'
-          : '$ oo search "generate a QR code for OOMOL"'}
+        {translate({ message: "CLI.hero.terminal.searchQr" })}
       </TypingAnimation>
 
       <AnimatedSpan className={styles.mutedLine}>
-        {isZh
-          ? "# 同时搜索 packages 和 connector actions"
-          : "# searches packages and connector actions together"}
+        {translate({ message: "CLI.hero.terminal.searchTogether" })}
       </AnimatedSpan>
 
       <TypingAnimation className={styles.commandLine} duration={12}>
@@ -119,9 +70,7 @@ function CliTerminalDemo({
       </TypingAnimation>
 
       <AnimatedSpan className={styles.mutedLine}>
-        {isZh
-          ? "# 收窄到已发布 package，准备选包"
-          : "# narrow it down to published packages before choosing one"}
+        {translate({ message: "CLI.hero.terminal.narrowPackages" })}
       </AnimatedSpan>
 
       <TypingAnimation className={styles.commandLine} duration={12}>
@@ -129,9 +78,7 @@ function CliTerminalDemo({
       </TypingAnimation>
 
       <AnimatedSpan className={styles.mutedLine}>
-        {isZh
-          ? "# 选包时先看 schema、版本和可执行 block"
-          : "# inspect schema, version, and runnable blocks before execution"}
+        {translate({ message: "CLI.hero.terminal.inspectPackage" })}
       </AnimatedSpan>
 
       <TypingAnimation className={styles.commandLine} duration={12}>
@@ -141,9 +88,7 @@ function CliTerminalDemo({
       </TypingAnimation>
 
       <AnimatedSpan className={styles.mutedLine}>
-        {isZh
-          ? "# Executor 执行 package block"
-          : "# execute the selected package block"}
+        {translate({ message: "CLI.hero.terminal.executeBlock" })}
       </AnimatedSpan>
 
       <TypingAnimation className={styles.commandLine} duration={12}>
@@ -151,9 +96,7 @@ function CliTerminalDemo({
       </TypingAnimation>
 
       <AnimatedSpan className={styles.successLine}>
-        {isZh
-          ? "# 任务完成后在终端里取回结果"
-          : "# fetch the result back in the terminal"}
+        {translate({ message: "CLI.hero.terminal.fetchResult" })}
       </AnimatedSpan>
     </Terminal>
   );
@@ -164,11 +107,17 @@ export default function CliPageFirstScreen() {
   const [isCopied, setIsCopied] = React.useState(false);
   const [installPlatform, setInstallPlatform] =
     React.useState<InstallPlatform>("unix");
-  const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
-    i18n: { currentLocale: string };
+  const copy = {
+    slogan: translate({ message: "CLI.hero.slogan" }),
+    overview: translate({ message: "CLI.hero.overview" }),
+    primaryCta: translate({ message: "CLI.hero.cta.primary" }),
+    secondaryCta: translate({ message: "CLI.hero.cta.secondary" }),
+    installNote: {
+      unix: translate({ message: "CLI.hero.installNote.unix" }),
+      windows: translate({ message: "CLI.hero.installNote.windows" }),
+    },
+    copiedNote: translate({ message: "CLI.hero.copiedNote" }),
   };
-  const isZh = i18n.currentLocale === "zh-CN";
-  const copy = isZh ? zhCopy : enCopy;
   const installCommand = INSTALL_COMMANDS[installPlatform];
 
   React.useEffect(() => {
@@ -228,7 +177,7 @@ export default function CliPageFirstScreen() {
 
       <div className={styles.showcase}>
         <div className={styles.showcaseInner}>
-          <CliTerminalDemo isZh={isZh} staticMode={reduceMotion === true} />
+          <CliTerminalDemo staticMode={reduceMotion === true} />
         </div>
       </div>
     </section>

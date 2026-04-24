@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import type { DocusaurusContext } from "@docusaurus/types";
 
 import Link from "@docusaurus/Link";
+import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import CloudPageDeveloperBenefits from "@site/src/components/CloudPageDeveloperBenefits";
@@ -89,77 +90,43 @@ function ImageCard({ title, src }: ImageCardProps) {
   );
 }
 
-const zhCopy: Copy = {
-  cloud: {
-    eyebrow: "01 / Cloud",
-    title: "发布到 Cloud，让工具在线运行",
-    description:
-      "本地测试没问题后，把工具发布到 Cloud。它会在云端运行，密钥和谁能使用也都在 Cloud 里管理。",
-    points: ["云端运行", "保存密钥", "管理谁能用"],
-    media: {
-      title: "Cloud 控制台预览",
-    },
-    docs: "查看 Cloud 文档",
-    secondary: "打开 Cloud 控制台",
-  },
-  cli: {
-    eyebrow: "02 / oo-cli",
-    title: "发布后，AI Agent 仍在 oo-cli 里使用工具",
-    description:
-      "使用者不用知道工具部署在哪里，也不用换新的使用方式。工具发布后，AI Agent 仍然可以在 oo-cli 里搜索、查看并运行它；以后如果需要 API、MCP 或自动化，再继续扩展。",
-    media: {
-      title: "oo-cli 调用演示",
-    },
-    guide: "了解 oo-cli",
-    github: "查看 GitHub",
-  },
-  cta: {
-    title: "把跑通的工具发布给 AI Agent 使用",
-    description:
-      "Cloud 负责在线运行、保存密钥和管理谁能使用；AI Agent 继续在 oo-cli 里使用工具。",
-    primary: "查看 Cloud 文档",
-    secondary: "打开 Cloud 控制台",
-  },
-};
-
-const enCopy: Copy = {
-  cloud: {
-    eyebrow: "01 / Cloud",
-    title: "Publish the tool to Cloud and keep it running",
-    description:
-      "After local testing, publish the tool to Cloud. It runs online, and Cloud manages secrets and who can use it.",
-    points: ["Runs online", "Stores secrets", "Controls access"],
-    media: {
-      title: "Cloud console preview",
-    },
-    docs: "Read Cloud docs",
-    secondary: "Open Cloud Console",
-  },
-  cli: {
-    eyebrow: "02 / oo-cli",
-    title: "After publishing, agents still find and run it with oo-cli",
-    description:
-      "Users do not need to know where the tool is deployed or learn a new workflow. After publishing, they can still search, inspect, and run it in oo-cli. If you later need an API, MCP, or automation, you can add those paths.",
-    media: {
-      title: "oo-cli invocation demo",
-    },
-    guide: "Explore oo-cli",
-    github: "View GitHub",
-  },
-  cta: {
-    title: "Publish working tools for agents to use",
-    description:
-      "Cloud keeps the tool running, stores secrets, and controls who can use it. Agents keep finding and running the tool through oo-cli.",
-    primary: "Read Cloud docs",
-    secondary: "Open Cloud Console",
-  },
-};
-
 export default function CloudPageLinearFlow() {
   const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
     i18n: { currentLocale: string };
   };
-  const copy = i18n.currentLocale === "zh-CN" ? zhCopy : enCopy;
+  const copy: Copy = {
+    cloud: {
+      eyebrow: translate({ message: "CLOUD.flow.cloud.eyebrow" }),
+      title: translate({ message: "CLOUD.flow.cloud.title" }),
+      description: translate({ message: "CLOUD.flow.cloud.description" }),
+      points: [
+        translate({ message: "CLOUD.flow.cloud.point1" }),
+        translate({ message: "CLOUD.flow.cloud.point2" }),
+        translate({ message: "CLOUD.flow.cloud.point3" }),
+      ],
+      media: {
+        title: translate({ message: "CLOUD.flow.cloud.media.title" }),
+      },
+      docs: translate({ message: "CLOUD.flow.cloud.docs" }),
+      secondary: translate({ message: "CLOUD.flow.cloud.secondary" }),
+    },
+    cli: {
+      eyebrow: translate({ message: "CLOUD.flow.cli.eyebrow" }),
+      title: translate({ message: "CLOUD.flow.cli.title" }),
+      description: translate({ message: "CLOUD.flow.cli.description" }),
+      media: {
+        title: translate({ message: "CLOUD.flow.cli.media.title" }),
+      },
+      guide: translate({ message: "CLOUD.flow.cli.guide" }),
+      github: translate({ message: "CLOUD.flow.cli.github" }),
+    },
+    cta: {
+      title: translate({ message: "CLOUD.flow.cta.title" }),
+      description: translate({ message: "CLOUD.flow.cta.description" }),
+      primary: translate({ message: "CLOUD.flow.cta.primary" }),
+      secondary: translate({ message: "CLOUD.flow.cta.secondary" }),
+    },
+  };
   const cloudConsoleImage = useBaseUrl(
     i18n.currentLocale === "zh-CN"
       ? "/img/pages/home/cloud-console-zh.webp"
@@ -177,7 +144,12 @@ export default function CloudPageLinearFlow() {
             <p className={styles.sectionDescription}>
               {copy.cloud.description}
             </p>
-            <div className={styles.cloudPointList} aria-label="Cloud covers">
+            <div
+              className={styles.cloudPointList}
+              aria-label={translate({
+                message: "CLOUD.flow.cloud.pointsAriaLabel",
+              })}
+            >
               {copy.cloud.points.map(point => (
                 <span key={point} className={styles.cloudPoint}>
                   {point}

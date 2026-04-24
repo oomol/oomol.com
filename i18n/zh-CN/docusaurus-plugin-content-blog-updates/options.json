@@ -1,14 +1,14 @@
 {
   "title": {
-    "message": "Blog",
+    "message": "更新日志",
     "description": "The title for the blog used in SEO"
   },
   "description": {
-    "message": "Blog",
+    "message": "OOMOL 更新日志",
     "description": "The description for the blog used in SEO"
   },
   "sidebar.title": {
-    "message": "Updates",
+    "message": "更新日志",
     "description": "The label for the left sidebar"
   }
 }

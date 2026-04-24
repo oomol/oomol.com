@@ -2,6 +2,7 @@ import styles from "./styles.module.scss";
 
 import type { DocusaurusContext } from "@docusaurus/types";
 
+import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { Popover } from "@site/src/components/Popover";
@@ -179,7 +180,11 @@ const Footer: React.FC = () => {
       <div className={clsx(styles.content, styles.center)}>
         <div className={styles.leftBox}>
           <div className={styles.leftBoxLogo}>
-            <ThemedImage sources={logoSources} alt="oomol" height={24} />
+            <ThemedImage
+              sources={logoSources}
+              alt={translate({ message: "Theme.logo.alt" })}
+              height={24}
+            />
           </div>
           <div className={styles.iconOutBox}>
             {logoNodes}
@@ -189,7 +194,9 @@ const Footer: React.FC = () => {
                   className={styles.iconBox}
                   role="button"
                   tabIndex={0}
-                  aria-label="WeChat QR code"
+                  aria-label={translate({
+                    message: "HOME.Community.qrcodeAlt",
+                  })}
                 >
                   <i
                     className={clsx("i-simple-icons-wechat", styles.socialIcon)}
@@ -200,7 +207,7 @@ const Footer: React.FC = () => {
               position="top"
               content={
                 <img
-                  alt="qrcode"
+                  alt={translate({ message: "HOME.Community.qrcodeAlt" })}
                   className={styles.qrcode}
                   src={qrCodeSrc}
                   loading="lazy"
@@ -255,7 +262,7 @@ const Footer: React.FC = () => {
               onClick={showCookieConsent}
             >
               <i className={`i-lucide-cookie ${styles.cookieControlIcon}`} />
-              {currentLocale === "zh-CN" ? "Cookie 设置" : "Cookie settings"}
+              {translate({ message: "FOOTER.cookieSettings" })}
             </Button>
             <LocalDropdown
               buttonVariant="outline"

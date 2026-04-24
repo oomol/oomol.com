@@ -1,6 +1,7 @@
 import styles from "./styles.module.scss";
 
 import Head from "@docusaurus/Head";
+import { translate } from "@docusaurus/Translate";
 import { Button } from "@site/src/components/ui/button";
 import {
   Card,
@@ -16,14 +17,16 @@ export default function Support() {
   return (
     <Layout>
       <Head>
-        <title>Support - OOMOL</title>
+        <title>{translate({ message: "SUPPORT.page.title" })}</title>
         <meta
           name="description"
-          content="Get help through GitHub Discussions, Discord, or email."
+          content={translate({ message: "SUPPORT.page.description" })}
         />
       </Head>
       <div className={styles.supportBox}>
-        <h1 className={styles.supportTitle}>Support</h1>
+        <h1 className={styles.supportTitle}>
+          {translate({ message: "SUPPORT.title" })}
+        </h1>
         <div className={styles.supportCellBox}>
           <Card className={styles.supportCell}>
             <CardHeader className={styles.supportHeader}>
@@ -33,14 +36,13 @@ export default function Support() {
                   aria-hidden="true"
                 />
                 <CardTitle className={styles["support-title"]}>
-                  Github Support
+                  {translate({ message: "SUPPORT.github.title" })}
                 </CardTitle>
               </div>
             </CardHeader>
             <CardContent className={styles.inner}>
               <div className={styles.text}>
-                Go to our GitHub discussions to browse for help and best
-                practices.
+                {translate({ message: "SUPPORT.github.description" })}
               </div>
               <Button asChild className={styles.supportAction}>
                 <a
@@ -48,7 +50,7 @@ export default function Support() {
                   href="https://github.com/orgs/oomol-lab/discussions"
                   rel="noopener noreferrer"
                 >
-                  Github Discussions
+                  {translate({ message: "SUPPORT.github.cta" })}
                 </a>
               </Button>
             </CardContent>
@@ -61,14 +63,13 @@ export default function Support() {
                   aria-hidden="true"
                 />
                 <CardTitle className={styles["support-title"]}>
-                  Discord Support
+                  {translate({ message: "SUPPORT.discord.title" })}
                 </CardTitle>
               </div>
             </CardHeader>
             <CardContent className={styles.inner}>
               <div className={styles.text}>
-                If you need instant communication, please join our Discord
-                server.
+                {translate({ message: "SUPPORT.discord.description" })}
               </div>
               <Button asChild className={styles.supportAction}>
                 <a
@@ -76,7 +77,7 @@ export default function Support() {
                   href="https://discord.gg/W3evr2kJDa"
                   rel="noopener noreferrer"
                 >
-                  Join Discord
+                  {translate({ message: "SUPPORT.discord.cta" })}
                 </a>
               </Button>
             </CardContent>
@@ -89,17 +90,18 @@ export default function Support() {
                   aria-hidden="true"
                 />
                 <CardTitle className={styles["support-title"]}>
-                  Email Support
+                  {translate({ message: "SUPPORT.email.title" })}
                 </CardTitle>
               </div>
             </CardHeader>
             <CardContent className={styles.inner}>
               <div className={styles.text}>
-                If you need help beyond the product, you can contact us by
-                email.
+                {translate({ message: "SUPPORT.email.description" })}
               </div>
               <Button asChild className={styles.supportAction}>
-                <a href="mailto:support@oomol.com">Email To Us</a>
+                <a href="mailto:support@oomol.com">
+                  {translate({ message: "SUPPORT.email.cta" })}
+                </a>
               </Button>
             </CardContent>
           </Card>

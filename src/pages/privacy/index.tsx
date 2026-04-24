@@ -1,6 +1,7 @@
 import styles from "./styles.module.scss";
 
 import Head from "@docusaurus/Head";
+import { translate } from "@docusaurus/Translate";
 import { MDXProvider } from "@mdx-js/react";
 import React from "react";
 
@@ -16,10 +17,10 @@ export default function Index() {
   return (
     <Layout>
       <Head>
-        <title>Privacy - OOMOL</title>
+        <title>{translate({ message: "PRIVACY.page.title" })}</title>
         <meta
           name="description"
-          content="Read OOMOL's privacy policy and data-handling terms."
+          content={translate({ message: "PRIVACY.page.description" })}
         />
       </Head>
       <MDXProvider components={components}>

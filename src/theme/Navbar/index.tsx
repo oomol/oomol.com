@@ -351,7 +351,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
           <Link className={styles.brand} to="/">
             <ThemedImage
               sources={logoSources}
-              alt="logo"
+              alt={translate({ message: "Theme.logo.alt" })}
               height={32}
               fetchPriority="high"
               loading="eager"

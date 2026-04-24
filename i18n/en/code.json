@@ -3104,5 +3104,509 @@
   },
   "APP.downloads.items.ios.action": {
     "message": "Open App Store"
+  },
+  "CLI.page.title": {
+    "message": "oo-cli - More Tools for Agents"
+  },
+  "CLI.page.description": {
+    "message": "Install and update oo, search and inspect tools, run connector actions and cloud tasks, and manage skills and files from one CLI so agents can get to work."
+  },
+  "CLI.hero.slogan": {
+    "message": "More Tools\nfor Agents"
+  },
+  "CLI.hero.overview": {
+    "message": "Agents can analyze and plan, but execution still depends on real-world tools. oo-cli connects them to those tools so they can actually get work done."
+  },
+  "CLI.hero.cta.primary": {
+    "message": "Read the install guide"
+  },
+  "CLI.hero.cta.secondary": {
+    "message": "View GitHub"
+  },
+  "CLI.hero.installNote.unix": {
+    "message": "Click to copy the oo-cli install command for your system."
+  },
+  "CLI.hero.installNote.windows": {
+    "message": "Click to copy the oo-cli install command for Windows PowerShell."
+  },
+  "CLI.hero.copiedNote": {
+    "message": "oo-cli install command copied."
+  },
+  "CLI.hero.terminal.installsLatest": {
+    "message": "# installs latest: oo-cli {version}"
+  },
+  "CLI.hero.terminal.loginReady": {
+    "message": "# sign in with your OOMOL account and confirm the CLI is ready"
+  },
+  "CLI.hero.terminal.searchQr": {
+    "message": "$ oo search \"generate a QR code for OOMOL\""
+  },
+  "CLI.hero.terminal.searchTogether": {
+    "message": "# searches packages and connector actions together"
+  },
+  "CLI.hero.terminal.narrowPackages": {
+    "message": "# narrow it down to published packages before choosing one"
+  },
+  "CLI.hero.terminal.inspectPackage": {
+    "message": "# inspect schema, version, and runnable blocks before execution"
+  },
+  "CLI.hero.terminal.executeBlock": {
+    "message": "# execute the selected package block"
+  },
+  "CLI.hero.terminal.fetchResult": {
+    "message": "# fetch the result back in the terminal"
+  },
+  "CLI.painpoints.badge": {
+    "message": "What oo-cli Covers Now"
+  },
+  "CLI.painpoints.title": {
+    "message": "Set it up, find a ready-made tool, then run the task"
+  },
+  "CLI.painpoints.subtitle": {
+    "message": "This page does not need to unpack every command. The main job is simpler: get oo-cli into the terminal, use it to find a ready-made tool, then run the task and bring the result back. The detailed command surface belongs in the docs."
+  },
+  "CLI.painpoints.card1.eyebrow": {
+    "message": "Setup"
+  },
+  "CLI.painpoints.card1.title": {
+    "message": "Connect oo-cli to the terminal and host apps"
+  },
+  "CLI.painpoints.card1.description": {
+    "message": "Use the official install command to put oo in the terminal, then install the needed skills into Codex, Claude Code, and other supported hosts."
+  },
+  "CLI.painpoints.card1.point1": {
+    "message": "Clear install and update path"
+  },
+  "CLI.painpoints.card1.point2": {
+    "message": "Keep working from the same place"
+  },
+  "CLI.painpoints.card2.eyebrow": {
+    "message": "Discover"
+  },
+  "CLI.painpoints.card2.title": {
+    "message": "Search ready-made tools before building your own"
+  },
+  "CLI.painpoints.card2.description": {
+    "message": "Search packages and connectors first, then inspect package metadata or connector schemas to confirm whether a reusable capability already exists."
+  },
+  "CLI.painpoints.card2.point1": {
+    "message": "Understand inputs and capability boundaries first"
+  },
+  "CLI.painpoints.card2.point2": {
+    "message": "Reduce unnecessary custom builds"
+  },
+  "CLI.painpoints.card3.eyebrow": {
+    "message": "Run"
+  },
+  "CLI.painpoints.card3.title": {
+    "message": "Run, wait for results, and inspect logs in one path"
+  },
+  "CLI.painpoints.card3.description": {
+    "message": "Short tasks can run directly through connectors. Longer jobs can go through Cloud Task. Waiting, fetching results, files, and logs all stay inside oo-cli."
+  },
+  "CLI.painpoints.card3.point1": {
+    "message": "Supports dry-run and long task tracking"
+  },
+  "CLI.painpoints.card3.point2": {
+    "message": "No separate admin console needed to finish the job"
+  },
+  "CLI.flow.workflow.eyebrow": {
+    "message": "Current Path"
+  },
+  "CLI.flow.workflow.title": {
+    "message": "This is roughly how a real task gets moving"
+  },
+  "CLI.flow.workflow.description": {
+    "message": "Install and log in first, then search and confirm the tool. If it can run directly, run it directly. If it takes longer, wait for the result to come back. The detailed commands and parameters live in the docs."
+  },
+  "CLI.flow.workflow.terminal.label": {
+    "message": "One real task usually looks like this"
+  },
+  "CLI.flow.workflow.terminal.comment1": {
+    "message": "# install oo-cli with the official install command, then sign in"
+  },
+  "CLI.flow.workflow.terminal.comment2": {
+    "message": "# search and confirm whether it is the right tool"
+  },
+  "CLI.flow.workflow.terminal.comment3": {
+    "message": "# run it directly, or wait for the longer job to come back"
+  },
+  "CLI.flow.next.eyebrow": {
+    "message": "Need More?"
+  },
+  "CLI.flow.next.title": {
+    "message": "When ready-made tools are not enough, use Studio or Cloud"
+  },
+  "CLI.flow.next.description": {
+    "message": "Let oo-cli establish the published-tool path and the install/update lifecycle first. If you need to build your own tool or keep it running continuously, then move on to Studio or Cloud."
+  },
+  "CLI.flow.next.card1.title": {
+    "message": "Go to Studio to generate or complete your own tool"
+  },
+  "CLI.flow.next.card1.text": {
+    "message": "When existing tools are not enough, use Studio to let the agent generate code, fill in parameters, and validate the tool locally."
+  },
+  "CLI.flow.next.card1.cta": {
+    "message": "Explore Studio"
+  },
+  "CLI.flow.next.card2.title": {
+    "message": "Go to Cloud when it needs stable runtime and delivery"
+  },
+  "CLI.flow.next.card2.text": {
+    "message": "When the tool needs stable runtime, logs, or broader reuse, let Cloud take over."
+  },
+  "CLI.flow.next.card2.cta": {
+    "message": "Explore Cloud"
+  },
+  "CLI.flow.cta.title": {
+    "message": "Let your agent use these tools now"
+  },
+  "CLI.flow.cta.description": {
+    "message": "Install oo-cli with the official install commands, then use it to search tools, inspect inputs, and run a real task from the terminal."
+  },
+  "CLI.flow.cta.primary": {
+    "message": "Read the install guide"
+  },
+  "CLI.flow.cta.secondary": {
+    "message": "Read the command reference"
+  },
+  "CLOUD.first.slogan": {
+    "message": "Put delivery, hosted runtime,\nand access control in Cloud"
+  },
+  "CLOUD.first.overview": {
+    "message": "Studio is where the tool gets built and validated. Cloud is where delivery happens, with hosted runtime, configuration, and access handled in one place, then used mainly through oo-cli by agents."
+  },
+  "CLOUD.first.highlight1": {
+    "message": "Ready for agents"
+  },
+  "CLOUD.first.highlight2": {
+    "message": "Runs in Cloud"
+  },
+  "CLOUD.first.highlight3": {
+    "message": "Stores secrets"
+  },
+  "CLOUD.first.highlight4": {
+    "message": "Control access"
+  },
+  "CLOUD.first.cta.primary": {
+    "message": "Read Cloud docs"
+  },
+  "CLOUD.first.cta.secondary": {
+    "message": "Open Cloud Console"
+  },
+  "CLOUD.first.video.playAriaLabel": {
+    "message": "Play demo video"
+  },
+  "CLOUD.first.video.title": {
+    "message": "OOMOL Cloud workflow demo"
+  },
+  "CLOUD.painpoints.badge": {
+    "message": "When to use Cloud"
+  },
+  "CLOUD.painpoints.title": {
+    "message": "Once a tool works locally, Cloud helps you publish it"
+  },
+  "CLOUD.painpoints.subtitle": {
+    "message": "A working local tool is only the first step. To let teammates, customers, or AI agents use it reliably, you still need hosting, secrets, access rules, and operations. Cloud takes care of that work."
+  },
+  "CLOUD.painpoints.card1.eyebrow": {
+    "message": "Publish tools"
+  },
+  "CLOUD.painpoints.card1.title": {
+    "message": "Do not build a whole app around one tool"
+  },
+  "CLOUD.painpoints.card1.description": {
+    "message": "Publish the tool to Cloud instead of building login, permissions, admin pages, and other supporting features yourself."
+  },
+  "CLOUD.painpoints.card1.point1": {
+    "message": "Agents still find and run it with oo-cli"
+  },
+  "CLOUD.painpoints.card1.point2": {
+    "message": "Fewer pages and admin tools to build"
+  },
+  "CLOUD.painpoints.card2.eyebrow": {
+    "message": "Keep it running"
+  },
+  "CLOUD.painpoints.card2.title": {
+    "message": "Make the tool available beyond your own machine"
+  },
+  "CLOUD.painpoints.card2.description": {
+    "message": "Cloud keeps the tool online, stores secrets, and controls who can use it. If you later need an API, MCP, or automation, you can add those options without rebuilding the tool."
+  },
+  "CLOUD.painpoints.card2.point1": {
+    "message": "Less server and permission work"
+  },
+  "CLOUD.painpoints.card2.point2": {
+    "message": "Start with agents, then expand when needed"
+  },
+  "CLOUD.flow.cloud.eyebrow": {
+    "message": "01 / Cloud"
+  },
+  "CLOUD.flow.cloud.title": {
+    "message": "Publish the tool to Cloud and keep it running"
+  },
+  "CLOUD.flow.cloud.description": {
+    "message": "After local testing, publish the tool to Cloud. It runs online, and Cloud manages secrets and who can use it."
+  },
+  "CLOUD.flow.cloud.point1": {
+    "message": "Runs online"
+  },
+  "CLOUD.flow.cloud.point2": {
+    "message": "Stores secrets"
+  },
+  "CLOUD.flow.cloud.point3": {
+    "message": "Controls access"
+  },
+  "CLOUD.flow.cloud.media.title": {
+    "message": "Cloud console preview"
+  },
+  "CLOUD.flow.cloud.docs": {
+    "message": "Read Cloud docs"
+  },
+  "CLOUD.flow.cloud.secondary": {
+    "message": "Open Cloud Console"
+  },
+  "CLOUD.flow.cloud.pointsAriaLabel": {
+    "message": "Cloud covers"
+  },
+  "CLOUD.flow.cli.eyebrow": {
+    "message": "02 / oo-cli"
+  },
+  "CLOUD.flow.cli.title": {
+    "message": "After publishing, agents still find and run it with oo-cli"
+  },
+  "CLOUD.flow.cli.description": {
+    "message": "Users do not need to know where the tool is deployed or learn a new workflow. After publishing, they can still search, inspect, and run it in oo-cli. If you later need an API, MCP, or automation, you can add those paths."
+  },
+  "CLOUD.flow.cli.media.title": {
+    "message": "oo-cli invocation demo"
+  },
+  "CLOUD.flow.cli.guide": {
+    "message": "Explore oo-cli"
+  },
+  "CLOUD.flow.cli.github": {
+    "message": "View GitHub"
+  },
+  "CLOUD.flow.cta.title": {
+    "message": "Publish working tools for agents to use"
+  },
+  "CLOUD.flow.cta.description": {
+    "message": "Cloud keeps the tool running, stores secrets, and controls who can use it. Agents keep finding and running the tool through oo-cli."
+  },
+  "CLOUD.flow.cta.primary": {
+    "message": "Read Cloud docs"
+  },
+  "CLOUD.flow.cta.secondary": {
+    "message": "Open Cloud Console"
+  },
+  "HOME.Downloads.page.title": {
+    "message": "Get and Install OOMOL"
+  },
+  "HOME.Downloads.page.description": {
+    "message": "Use oo-cli through its official install commands as the primary entry point for connecting agents to third-party services and published tools. If you prefer a GUI, use OOMOL AI. Download OOMOL Studio when you want to build your own tools."
+  },
+  "HOME.Downloads.hero.eyebrow": {
+    "message": "Downloads"
+  },
+  "HOME.Downloads.hero.title": {
+    "message": "Choose the OOMOL entry point that fits you best"
+  },
+  "HOME.Downloads.hero.subtitle": {
+    "message": "Start with oo-cli if you want agents to use tools in the terminal, and install it through the official install commands. Use OOMOL AI if you prefer a GUI. Download OOMOL Studio when you want to build your own tools."
+  },
+  "HOME.Downloads.recommended": {
+    "message": "Recommended"
+  },
+  "HOME.Downloads.cli.eyebrow": {
+    "message": "Command line"
+  },
+  "HOME.Downloads.ai.eyebrow": {
+    "message": "GUI"
+  },
+  "HOME.Downloads.studio.eyebrow": {
+    "message": "Tool builder"
+  },
+  "HOME.Downloads.ai.title": {
+    "message": "If you prefer a GUI, use OOMOL AI"
+  },
+  "HOME.Downloads.ai.subtitle": {
+    "message": "OOMOL AI is the official GUI for the same tools, giving you an easier way to chat, review results, and keep working across web, desktop, and iOS. If you mainly want an easier way to use tools, start here."
+  },
+  "HOME.Downloads.ai.action.openWeb": {
+    "message": "Open Web App"
+  },
+  "HOME.Downloads.ai.action.desktopMac": {
+    "message": "Download for macOS"
+  },
+  "HOME.Downloads.ai.action.desktopWindows": {
+    "message": "Download for Windows"
+  },
+  "HOME.Downloads.ai.action.openStore": {
+    "message": "Open App Store"
+  },
+  "HOME.Downloads.ai.web.description": {
+    "message": "Chat-based interface"
+  },
+  "HOME.Downloads.ai.desktop.description": {
+    "message": "Desktop app"
+  },
+  "HOME.Downloads.ai.ios.description": {
+    "message": "Mobile app"
+  },
+  "PRICING.page.title": {
+    "message": "Pricing - OOMOL"
+  },
+  "PRICING.page.description": {
+    "message": "Build and validate locally for free. Free includes 200 Cloud Task minutes, Auth Link, and 20K requests through it each month. Upgrade only when you need more hosted runtime or a higher request volume."
+  },
+  "PRICING.subscription.free.cta": {
+    "message": "Install oo-cli"
+  },
+  "SUPPORT.page.title": {
+    "message": "Support - OOMOL"
+  },
+  "SUPPORT.page.description": {
+    "message": "Get help through GitHub Discussions, Discord, or email."
+  },
+  "SUPPORT.title": {
+    "message": "Support"
+  },
+  "SUPPORT.github.title": {
+    "message": "GitHub Support"
+  },
+  "SUPPORT.github.description": {
+    "message": "Go to our GitHub discussions to browse for help and best practices."
+  },
+  "SUPPORT.github.cta": {
+    "message": "GitHub Discussions"
+  },
+  "SUPPORT.discord.title": {
+    "message": "Discord Support"
+  },
+  "SUPPORT.discord.description": {
+    "message": "If you need instant communication, please join our Discord server."
+  },
+  "SUPPORT.discord.cta": {
+    "message": "Join Discord"
+  },
+  "SUPPORT.email.title": {
+    "message": "Email Support"
+  },
+  "SUPPORT.email.description": {
+    "message": "If you need help beyond the product, you can contact us by email."
+  },
+  "SUPPORT.email.cta": {
+    "message": "Email Us"
+  },
+  "TERMS.page.title": {
+    "message": "Terms - OOMOL"
+  },
+  "TERMS.page.description": {
+    "message": "Read OOMOL's terms of service and usage conditions."
+  },
+  "PRIVACY.page.title": {
+    "message": "Privacy - OOMOL"
+  },
+  "PRIVACY.page.description": {
+    "message": "Read OOMOL's privacy policy and data-handling terms."
+  },
+  "HOME.BrandAssets.page.title": {
+    "message": "Brand Assets - OOMOL"
+  },
+  "HOME.BrandAssets.page.description": {
+    "message": "Download OOMOL logos, icons, color references, and type assets."
+  },
+  "HOME.BrandAssets.downloadAriaLabel": {
+    "message": "Download asset"
+  },
+  "HOME.Community.page.title": {
+    "message": "Contact Us - OOMOL"
+  },
+  "HOME.Community.page.description": {
+    "message": "Find OOMOL community links, open-source repositories, and contact channels."
+  },
+  "HOME.Community.qrcodeAlt": {
+    "message": "WeCom QR code"
+  },
+  "FOOTER.cookieSettings": {
+    "message": "Cookie settings"
+  },
+  "COOKIE.button.acceptAll": {
+    "message": "Accept all"
+  },
+  "COOKIE.button.rejectAll": {
+    "message": "Reject all"
+  },
+  "COOKIE.privacyPolicy": {
+    "message": "Privacy Policy"
+  },
+  "COOKIE.title": {
+    "message": "Cookie settings"
+  },
+  "COOKIE.message": {
+    "message": "We use optional cookies for site analytics and conversion tracking. Essential cookies remain enabled so the website can function correctly."
+  },
+  "COOKIE.manage.title": {
+    "message": "Cookie settings"
+  },
+  "COOKIE.manage.message": {
+    "message": "Choose which optional cookies OOMOL may use on this device. You can reopen these settings from the footer at any time."
+  },
+  "COOKIE.manage.essential.title": {
+    "message": "Essential"
+  },
+  "COOKIE.manage.essential.subtitle": {
+    "message": "Required for core site behavior such as language preference, security, and session continuity."
+  },
+  "COOKIE.manage.essential.status": {
+    "message": "Status: Always enabled"
+  },
+  "COOKIE.manage.essential.statusButton": {
+    "message": "Always On"
+  },
+  "COOKIE.manage.analytics.title": {
+    "message": "Analytics"
+  },
+  "COOKIE.manage.analytics.subtitle": {
+    "message": "Helps us understand visits, traffic sources, and product usage across the website."
+  },
+  "COOKIE.manage.advertising.title": {
+    "message": "Advertising"
+  },
+  "COOKIE.manage.advertising.subtitle": {
+    "message": "Allows Google Ads conversion tracking for key actions such as downloads and first sign-in."
+  },
+  "COOKIE.manage.status": {
+    "message": "Status: {{status}} on {{date}}"
+  },
+  "COOKIE.manage.status.consented": {
+    "message": "Consented"
+  },
+  "COOKIE.manage.status.declined": {
+    "message": "Declined"
+  },
+  "COOKIE.manage.cancel": {
+    "message": "Cancel"
+  },
+  "COOKIE.manage.save": {
+    "message": "Save preferences"
+  },
+  "HOME.Downloads.cli.installDescription.windows": {
+    "message": "Showing the Windows PowerShell install command for your current browser environment. See the docs for Windows CMD."
+  },
+  "HOME.Downloads.cli.installDescription.unix": {
+    "message": "Showing the curl install command for macOS / Linux based on your current browser environment."
+  },
+  "HOME.Downloads.cli.agentPrompt.windows": {
+    "message": "Please help me install and verify oo-cli:\n\n1. Install oo-cli using the official method for this environment.\n   - Windows PowerShell: `irm https://cli.oomol.com/install.ps1 | iex`\n\n2. Run `oo login`.\n\n3. Confirm that the CLI is ready to use.\n\n4. Tell me the best next oo-cli command to run."
+  },
+  "HOME.Downloads.cli.agentPrompt.unix": {
+    "message": "Please help me install and verify oo-cli:\n\n1. Install oo-cli using the official method for this environment.\n   - macOS / Linux: `curl -fsSL https://cli.oomol.com/install.sh | bash`\n\n2. Run `oo login`.\n\n3. Confirm that the CLI is ready to use.\n\n4. Tell me the best next oo-cli command to run."
+  },
+  "PRICING.table.loading": {
+    "message": "Loading..."
+  },
+  "Theme.logo.alt": {
+    "message": "OOMOL logo"
   }
 }

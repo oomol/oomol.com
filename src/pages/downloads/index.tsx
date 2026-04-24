@@ -1,12 +1,9 @@
 import styles from "./styles.module.scss";
 
-import type { DocusaurusContext } from "@docusaurus/types";
-
 import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import DownloadsCliPanel from "@site/src/components/DownloadsCliPanel";
 import { SiteCta } from "@site/src/components/SiteCta";
 import { Button } from "@site/src/components/ui/button";
@@ -68,59 +65,6 @@ const downloadData = [
 ];
 
 export default function Downloads() {
-  const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
-    i18n: { currentLocale: string };
-  };
-  const isZh = i18n.currentLocale === "zh-CN";
-  const copy = isZh
-    ? {
-        pageTitle: "获取与安装 OOMOL",
-        pageDescription:
-          "先通过 oo-cli 的官方安装命令把 Agent 接到第三方服务和已发布工具上；如果你更喜欢图形界面，可以使用 OOMOL AI；如果你要自己做工具，再下载 OOMOL Studio。",
-        heroEyebrow: "获取与安装",
-        heroTitle: "选择最适合你的 OOMOL 入口",
-        heroSubtitle:
-          "如果你想在终端里让 Agent 直接使用工具，就先通过官方安装命令装好 oo-cli；如果你更喜欢图形界面，可以使用 OOMOL AI；如果你要自己做工具，再下载 OOMOL Studio。",
-        recommended: "推荐",
-        cliEyebrow: "命令行入口",
-        aiEyebrow: "图形界面入口",
-        studioEyebrow: "构建工具入口",
-        ai: {
-          title: "如果你更喜欢图形界面，可以使用 OOMOL AI",
-          subtitle:
-            "OOMOL AI 是同一套能力的官方 GUI 入口，适合在 Web、桌面和 iOS 中直接对话、查看结果并继续处理任务。如果你只是想更轻松地使用工具，从这里开始就可以。",
-          actions: {
-            openWeb: "打开网页版",
-            desktopMac: "下载 Mac 版",
-            desktopWindows: "下载 Windows 版",
-            openStore: "打开 App Store",
-          },
-        },
-      }
-    : {
-        pageTitle: "Get and Install OOMOL",
-        pageDescription:
-          "Use oo-cli through its official install commands as the primary entry point for connecting agents to third-party services and published tools. If you prefer a GUI, use OOMOL AI. Download OOMOL Studio when you want to build your own tools.",
-        heroEyebrow: "Downloads",
-        heroTitle: "Choose the OOMOL entry point that fits you best",
-        heroSubtitle:
-          "Start with oo-cli if you want agents to use tools in the terminal, and install it through the official install commands. Use OOMOL AI if you prefer a GUI. Download OOMOL Studio when you want to build your own tools.",
-        recommended: "Recommended",
-        cliEyebrow: "Command line",
-        aiEyebrow: "GUI",
-        studioEyebrow: "Tool builder",
-        ai: {
-          title: "If you prefer a GUI, use OOMOL AI",
-          subtitle:
-            "OOMOL AI is the official GUI for the same tools, giving you an easier way to chat, review results, and keep working across web, desktop, and iOS. If you mainly want an easier way to use tools, start here.",
-          actions: {
-            openWeb: "Open Web App",
-            desktopMac: "Download for macOS",
-            desktopWindows: "Download for Windows",
-            openStore: "Open App Store",
-          },
-        },
-      };
   const cliGuideUrl = useBaseUrl("/docs/oo-cli");
   const studioDownloadsUrl = useBaseUrl("/downloads?section=studio-downloads");
 
@@ -163,16 +107,25 @@ export default function Downloads() {
   return (
     <Layout>
       <Head>
-        <title>{copy.pageTitle}</title>
-        <meta name="description" content={copy.pageDescription} />
+        <title>{translate({ message: "HOME.Downloads.page.title" })}</title>
+        <meta
+          name="description"
+          content={translate({ message: "HOME.Downloads.page.description" })}
+        />
       </Head>
       <main className={`${styles.page} oomol-landing-main`}>
         <section className={styles.hero}>
           <div className={styles.heroInner}>
-            <span className={styles.eyebrow}>{copy.heroEyebrow}</span>
+            <span className={styles.eyebrow}>
+              {translate({ message: "HOME.Downloads.hero.eyebrow" })}
+            </span>
             <div className={styles.titleBox}>
-              <h1 className={styles.heroTitle}>{copy.heroTitle}</h1>
-              <p className={styles.heroSubtitle}>{copy.heroSubtitle}</p>
+              <h1 className={styles.heroTitle}>
+                {translate({ message: "HOME.Downloads.hero.title" })}
+              </h1>
+              <p className={styles.heroSubtitle}>
+                {translate({ message: "HOME.Downloads.hero.subtitle" })}
+              </p>
             </div>
           </div>
         </section>
@@ -181,7 +134,9 @@ export default function Downloads() {
           <section className={styles.pageSection}>
             <div className={styles.sectionHeader}>
               <div className={styles.sectionHeadingBlock}>
-                <span className={styles.eyebrow}>{copy.cliEyebrow}</span>
+                <span className={styles.eyebrow}>
+                  {translate({ message: "HOME.Downloads.cli.eyebrow" })}
+                </span>
                 <h2 className={styles.sectionTitle}>
                   {translate({ message: "HOME.Downloads.cli.info.title" })}
                 </h2>
@@ -214,7 +169,9 @@ export default function Downloads() {
           <section id="studio-downloads" className={styles.pageSection}>
             <div className={styles.sectionHeader}>
               <div className={styles.sectionHeadingBlock}>
-                <span className={styles.eyebrow}>{copy.studioEyebrow}</span>
+                <span className={styles.eyebrow}>
+                  {translate({ message: "HOME.Downloads.studio.eyebrow" })}
+                </span>
                 <h2 className={styles.sectionTitle}>
                   {translate({ message: "HOME.Downloads.studioSection.title" })}
                 </h2>
@@ -235,7 +192,7 @@ export default function Downloads() {
                   >
                     {isRecommended && (
                       <span className={styles.cardBadge}>
-                        {copy.recommended}
+                        {translate({ message: "HOME.Downloads.recommended" })}
                       </span>
                     )}
                     <div className={styles.content}>
@@ -277,9 +234,15 @@ export default function Downloads() {
           <section className={styles.pageSection}>
             <div className={styles.sectionHeader}>
               <div className={styles.sectionHeadingBlock}>
-                <span className={styles.eyebrow}>{copy.aiEyebrow}</span>
-                <h2 className={styles.sectionTitle}>{copy.ai.title}</h2>
-                <p className={styles.sectionSubtitle}>{copy.ai.subtitle}</p>
+                <span className={styles.eyebrow}>
+                  {translate({ message: "HOME.Downloads.ai.eyebrow" })}
+                </span>
+                <h2 className={styles.sectionTitle}>
+                  {translate({ message: "HOME.Downloads.ai.title" })}
+                </h2>
+                <p className={styles.sectionSubtitle}>
+                  {translate({ message: "HOME.Downloads.ai.subtitle" })}
+                </p>
               </div>
             </div>
             <div className={styles.cards}>
@@ -287,7 +250,9 @@ export default function Downloads() {
                 <div className={styles.content}>
                   <div className={styles.type}>Web</div>
                   <span className={styles.description}>
-                    {isZh ? "对话式图形入口" : "Chat-based interface"}
+                    {translate({
+                      message: "HOME.Downloads.ai.web.description",
+                    })}
                   </span>
                 </div>
                 <div className={styles.downloads}>
@@ -300,17 +265,23 @@ export default function Downloads() {
                       <i
                         className={`${styles["download-icon"]} i-codicon-link-external`}
                       />
-                      {copy.ai.actions.openWeb}
+                      {translate({
+                        message: "HOME.Downloads.ai.action.openWeb",
+                      })}
                     </a>
                   </Button>
                 </div>
               </div>
               <div className={`${styles.card} ${styles.stable}`}>
-                <span className={styles.cardBadge}>{copy.recommended}</span>
+                <span className={styles.cardBadge}>
+                  {translate({ message: "HOME.Downloads.recommended" })}
+                </span>
                 <div className={styles.content}>
                   <div className={styles.type}>Desktop</div>
                   <span className={styles.description}>
-                    {isZh ? "桌面应用" : "Desktop app"}
+                    {translate({
+                      message: "HOME.Downloads.ai.desktop.description",
+                    })}
                   </span>
                 </div>
                 <div className={styles.downloads}>
@@ -324,7 +295,9 @@ export default function Downloads() {
                       <i
                         className={`${styles["download-icon"]} i-codicon-desktop-download`}
                       />
-                      {copy.ai.actions.desktopMac}
+                      {translate({
+                        message: "HOME.Downloads.ai.action.desktopMac",
+                      })}
                     </a>
                   </Button>
                   <Button asChild variant="outline" size="sm">
@@ -337,7 +310,9 @@ export default function Downloads() {
                       <i
                         className={`${styles["download-icon"]} i-codicon-desktop-download`}
                       />
-                      {copy.ai.actions.desktopWindows}
+                      {translate({
+                        message: "HOME.Downloads.ai.action.desktopWindows",
+                      })}
                     </a>
                   </Button>
                 </div>
@@ -346,7 +321,9 @@ export default function Downloads() {
                 <div className={styles.content}>
                   <div className={styles.type}>iOS</div>
                   <span className={styles.description}>
-                    {isZh ? "移动应用" : "Mobile app"}
+                    {translate({
+                      message: "HOME.Downloads.ai.ios.description",
+                    })}
                   </span>
                 </div>
                 <div className={styles.downloads}>
@@ -359,7 +336,9 @@ export default function Downloads() {
                       <i
                         className={`${styles["download-icon"]} i-codicon-link-external`}
                       />
-                      {copy.ai.actions.openStore}
+                      {translate({
+                        message: "HOME.Downloads.ai.action.openStore",
+                      })}
                     </a>
                   </Button>
                 </div>

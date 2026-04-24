@@ -1,11 +1,8 @@
 import styles from "./styles.module.scss";
 
-import type { DocusaurusContext } from "@docusaurus/types";
-
 import Head from "@docusaurus/Head";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { GetStartedPrompt } from "@site/src/components/GetStartedPrompt";
 import { Alert, AlertDescription } from "@site/src/components/ui/alert";
 import { Button } from "@site/src/components/ui/button";
@@ -187,7 +184,7 @@ function PriceTable<T extends PricingRowBase>({
                   className="i-lucide-loader-circle inline-block size-4 animate-spin mr-2 align-[-3px]"
                   aria-hidden="true"
                 />
-                Loading…
+                {translate({ message: "PRICING.table.loading" })}
               </TableCell>
             </TableRow>
           ) : rows.length === 0 ? (
@@ -221,10 +218,6 @@ function PriceTable<T extends PricingRowBase>({
 }
 
 export default function Index() {
-  const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
-    i18n: { currentLocale: string };
-  };
-  const isZh = i18n.currentLocale === "zh-CN";
   const cliInstallGuideUrl = useBaseUrl("/docs/oo-cli");
   const [activePricingTable, setActivePricingTable] =
     useState<PricingTableKey>("fusion-api");
@@ -291,18 +284,10 @@ export default function Index() {
     "PRICING.subscription.subscribe",
     "Subscribe"
   );
-  const freePlanCtaLabel = isZh ? "去安装 oo-cli" : "Install oo-cli";
-  const pageCopy = isZh
-    ? {
-        title: "价格 - OOMOL",
-        description:
-          "本地构建与验证始终免费。Free 用户每月包含 200 分钟 Cloud Task 和 20K 次 Auth Link 请求；需要更多托管运行时长或更高的 Auth Link 用量时再升级。",
-      }
-    : {
-        title: "Pricing - OOMOL",
-        description:
-          "Build and validate locally for free. Free includes 200 Cloud Task minutes, Auth Link, and 20K requests through it each month. Upgrade only when you need more hosted runtime or a higher request volume.",
-      };
+  const freePlanCtaLabel = tPricing(
+    "PRICING.subscription.free.cta",
+    "Install oo-cli"
+  );
 
   const planCards = [
     {
@@ -849,8 +834,11 @@ export default function Index() {
   return (
     <Layout>
       <Head>
-        <title>{pageCopy.title}</title>
-        <meta name="description" content={pageCopy.description} />
+        <title>{translate({ message: "PRICING.page.title" })}</title>
+        <meta
+          name="description"
+          content={translate({ message: "PRICING.page.description" })}
+        />
       </Head>
       <main className={`${styles.page} oomol-landing-main`}>
         <section className={styles.heroSection}>

@@ -3104,5 +3104,509 @@
   },
   "APP.downloads.items.ios.action": {
     "message": "打开 App Store"
+  },
+  "CLI.page.title": {
+    "message": "oo-cli - 为 Agent 提供更多工具"
+  },
+  "CLI.page.description": {
+    "message": "在一个 CLI 里完成安装与更新、搜索与查看、connector 与 cloud task 执行、skills 与文件管理，让 Agent 直接开始做事。"
+  },
+  "CLI.hero.slogan": {
+    "message": "为 Agent\n提供更多工具"
+  },
+  "CLI.hero.overview": {
+    "message": "Agent 会分析、会规划，但真正执行还得连上现有工具。oo-cli 把现实世界里的工具接到 Agent 手里，让它真正开始做事。"
+  },
+  "CLI.hero.cta.primary": {
+    "message": "查看安装文档"
+  },
+  "CLI.hero.cta.secondary": {
+    "message": "查看 GitHub"
+  },
+  "CLI.hero.installNote.unix": {
+    "message": "点击复制当前系统的 oo-cli 安装命令"
+  },
+  "CLI.hero.installNote.windows": {
+    "message": "点击复制 Windows PowerShell 的 oo-cli 安装命令"
+  },
+  "CLI.hero.copiedNote": {
+    "message": "oo-cli 安装命令已复制"
+  },
+  "CLI.hero.terminal.installsLatest": {
+    "message": "# 安装最新版本：oo-cli {version}"
+  },
+  "CLI.hero.terminal.loginReady": {
+    "message": "# 登录 OOMOL 账号，确认 CLI 已可用"
+  },
+  "CLI.hero.terminal.searchQr": {
+    "message": "$ oo search \"给 OOMOL 生成二维码\""
+  },
+  "CLI.hero.terminal.searchTogether": {
+    "message": "# 同时搜索 packages 和 connector actions"
+  },
+  "CLI.hero.terminal.narrowPackages": {
+    "message": "# 收窄到已发布 package，准备选包"
+  },
+  "CLI.hero.terminal.inspectPackage": {
+    "message": "# 选包时先看 schema、版本和可执行 block"
+  },
+  "CLI.hero.terminal.executeBlock": {
+    "message": "# Executor 执行 package block"
+  },
+  "CLI.hero.terminal.fetchResult": {
+    "message": "# 任务完成后在终端里取回结果"
+  },
+  "CLI.painpoints.badge": {
+    "message": "oo-cli 现在能做什么"
+  },
+  "CLI.painpoints.title": {
+    "message": "先接入，再找现成工具，然后把任务跑通"
+  },
+  "CLI.painpoints.subtitle": {
+    "message": "这页不展开讲命令细节。你只要先把 oo-cli 接进终端，再用它找现成工具、执行任务，并把结果带回来；更细的说明交给文档站。"
+  },
+  "CLI.painpoints.card1.eyebrow": {
+    "message": "接入"
+  },
+  "CLI.painpoints.card1.title": {
+    "message": "把 oo-cli 接进终端和宿主"
+  },
+  "CLI.painpoints.card1.description": {
+    "message": "通过官方安装命令把 oo 接进终端，再把需要的 skills 接到 Codex、Claude Code 等宿主里。"
+  },
+  "CLI.painpoints.card1.point1": {
+    "message": "安装和升级路径清楚"
+  },
+  "CLI.painpoints.card1.point2": {
+    "message": "不用换一套地方继续工作"
+  },
+  "CLI.painpoints.card2.eyebrow": {
+    "message": "发现"
+  },
+  "CLI.painpoints.card2.title": {
+    "message": "先找现成工具，再决定要不要自己做"
+  },
+  "CLI.painpoints.card2.description": {
+    "message": "先搜 package 和 connector，再看 package metadata 或 connector schema，确认是否已经有现成能力可以直接复用。"
+  },
+  "CLI.painpoints.card2.point1": {
+    "message": "先理解输入和能力范围"
+  },
+  "CLI.painpoints.card2.point2": {
+    "message": "减少一上来就自己做的概率"
+  },
+  "CLI.painpoints.card3.eyebrow": {
+    "message": "运行"
+  },
+  "CLI.painpoints.card3.title": {
+    "message": "直接执行、等待结果、查看日志都在同一条路径里"
+  },
+  "CLI.painpoints.card3.description": {
+    "message": "短任务可以直接跑 connector，长任务可以交给 Cloud Task。等待、取结果、文件和日志也都留在 oo-cli 里完成。"
+  },
+  "CLI.painpoints.card3.point1": {
+    "message": "支持 dry-run 和长任务追踪"
+  },
+  "CLI.painpoints.card3.point2": {
+    "message": "不必切到另一套后台收尾"
+  },
+  "CLI.flow.workflow.eyebrow": {
+    "message": "最新路径"
+  },
+  "CLI.flow.workflow.title": {
+    "message": "大概就是这样开始并把一次任务跑通"
+  },
+  "CLI.flow.workflow.description": {
+    "message": "先装好并登录，再搜索并确认工具；能直接跑就直接跑，任务更长就等待结果回来。更细的命令和参数说明都在文档站里。"
+  },
+  "CLI.flow.workflow.terminal.label": {
+    "message": "一次真实任务大概会这样走"
+  },
+  "CLI.flow.workflow.terminal.comment1": {
+    "message": "# 先用官方安装命令装好 oo-cli 并登录"
+  },
+  "CLI.flow.workflow.terminal.comment2": {
+    "message": "# 搜索并确认它是不是你要的工具"
+  },
+  "CLI.flow.workflow.terminal.comment3": {
+    "message": "# 能直接跑就直接跑，长任务就等结果回来"
+  },
+  "CLI.flow.next.eyebrow": {
+    "message": "还需要更多时"
+  },
+  "CLI.flow.next.title": {
+    "message": "现成工具不够时，再用 Studio 或 Cloud"
+  },
+  "CLI.flow.next.description": {
+    "message": "oo-cli 先帮你把已发布能力和官方安装命令这条路径跑通。需要自己做工具，或者让工具持续运行时，再去 Studio 或 Cloud。"
+  },
+  "CLI.flow.next.card1.title": {
+    "message": "去 Studio 生成或补全自己的工具"
+  },
+  "CLI.flow.next.card1.text": {
+    "message": "当现有工具不够用时，再去 Studio 让 Agent 帮你生成代码、补参数并做本地验证。"
+  },
+  "CLI.flow.next.card1.cta": {
+    "message": "了解 Studio"
+  },
+  "CLI.flow.next.card2.title": {
+    "message": "去 Cloud 持续运行和交付"
+  },
+  "CLI.flow.next.card2.text": {
+    "message": "当工具需要稳定运行、查看日志或给更多人复用时，再用 Cloud 托管和交付。"
+  },
+  "CLI.flow.next.card2.cta": {
+    "message": "了解 Cloud"
+  },
+  "CLI.flow.cta.title": {
+    "message": "现在就让 Agent 用上这些工具"
+  },
+  "CLI.flow.cta.description": {
+    "message": "用官方安装命令安装 oo-cli，先在终端里搜索工具、查看输入，并跑通一个真实任务。"
+  },
+  "CLI.flow.cta.primary": {
+    "message": "查看安装文档"
+  },
+  "CLI.flow.cta.secondary": {
+    "message": "查看命令参考"
+  },
+  "CLOUD.first.slogan": {
+    "message": "把工具的交付、托管运行\n和访问控制交给 Cloud"
+  },
+  "CLOUD.first.overview": {
+    "message": "Studio 负责把工具做出来并验证；Cloud 负责把它交付出去，承接托管运行、配置和权限，并继续主要沿 oo-cli 给 Agent 使用。"
+  },
+  "CLOUD.first.highlight1": {
+    "message": "AI Agent 能直接用"
+  },
+  "CLOUD.first.highlight2": {
+    "message": "在线运行"
+  },
+  "CLOUD.first.highlight3": {
+    "message": "保存密钥"
+  },
+  "CLOUD.first.highlight4": {
+    "message": "管理谁能用"
+  },
+  "CLOUD.first.cta.primary": {
+    "message": "查看 Cloud 文档"
+  },
+  "CLOUD.first.cta.secondary": {
+    "message": "打开 Cloud 控制台"
+  },
+  "CLOUD.first.video.playAriaLabel": {
+    "message": "播放演示视频"
+  },
+  "CLOUD.first.video.title": {
+    "message": "OOMOL Cloud 工作流演示"
+  },
+  "CLOUD.painpoints.badge": {
+    "message": "什么时候需要 Cloud"
+  },
+  "CLOUD.painpoints.title": {
+    "message": "工具跑通后，Cloud 帮你把它上线"
+  },
+  "CLOUD.painpoints.subtitle": {
+    "message": "本地能跑只是第一步。要让同事、客户或 AI Agent 稳定使用，你还要准备服务器、保存密钥、控制谁能用，并处理运行中的问题。Cloud 把这些麻烦集中处理。"
+  },
+  "CLOUD.painpoints.card1.eyebrow": {
+    "message": "发布工具"
+  },
+  "CLOUD.painpoints.card1.title": {
+    "message": "不用为了一个工具再做一套系统"
+  },
+  "CLOUD.painpoints.card1.description": {
+    "message": "把工具发布到 Cloud 后，你不需要再单独开发登录、权限、后台管理这些配套功能。"
+  },
+  "CLOUD.painpoints.card1.point1": {
+    "message": "AI Agent 仍在 oo-cli 里使用工具"
+  },
+  "CLOUD.painpoints.card1.point2": {
+    "message": "少做一套页面和管理后台"
+  },
+  "CLOUD.painpoints.card2.eyebrow": {
+    "message": "在线运行"
+  },
+  "CLOUD.painpoints.card2.title": {
+    "message": "让工具一直可用，而不是只在本机能跑"
+  },
+  "CLOUD.painpoints.card2.description": {
+    "message": "Cloud 负责在线运行、保存密钥、管理谁能使用。以后需要 API、MCP 或自动化，也可以再加上这些使用方式，不用重做工具。"
+  },
+  "CLOUD.painpoints.card2.point1": {
+    "message": "少处理服务器和权限细节"
+  },
+  "CLOUD.painpoints.card2.point2": {
+    "message": "先上线给 Agent 用，再按需要扩展"
+  },
+  "CLOUD.flow.cloud.eyebrow": {
+    "message": "01 / Cloud"
+  },
+  "CLOUD.flow.cloud.title": {
+    "message": "发布到 Cloud，让工具在线运行"
+  },
+  "CLOUD.flow.cloud.description": {
+    "message": "本地测试没问题后，把工具发布到 Cloud。它会在云端运行，密钥和谁能使用也都在 Cloud 里管理。"
+  },
+  "CLOUD.flow.cloud.point1": {
+    "message": "云端运行"
+  },
+  "CLOUD.flow.cloud.point2": {
+    "message": "保存密钥"
+  },
+  "CLOUD.flow.cloud.point3": {
+    "message": "管理谁能用"
+  },
+  "CLOUD.flow.cloud.media.title": {
+    "message": "Cloud 控制台预览"
+  },
+  "CLOUD.flow.cloud.docs": {
+    "message": "查看 Cloud 文档"
+  },
+  "CLOUD.flow.cloud.secondary": {
+    "message": "打开 Cloud 控制台"
+  },
+  "CLOUD.flow.cloud.pointsAriaLabel": {
+    "message": "Cloud 覆盖的能力"
+  },
+  "CLOUD.flow.cli.eyebrow": {
+    "message": "02 / oo-cli"
+  },
+  "CLOUD.flow.cli.title": {
+    "message": "发布后，AI Agent 仍在 oo-cli 里使用工具"
+  },
+  "CLOUD.flow.cli.description": {
+    "message": "使用者不用知道工具部署在哪里，也不用换新的使用方式。工具发布后，AI Agent 仍然可以在 oo-cli 里搜索、查看并运行它；以后如果需要 API、MCP 或自动化，再继续扩展。"
+  },
+  "CLOUD.flow.cli.media.title": {
+    "message": "oo-cli 调用演示"
+  },
+  "CLOUD.flow.cli.guide": {
+    "message": "了解 oo-cli"
+  },
+  "CLOUD.flow.cli.github": {
+    "message": "查看 GitHub"
+  },
+  "CLOUD.flow.cta.title": {
+    "message": "把跑通的工具发布给 AI Agent 使用"
+  },
+  "CLOUD.flow.cta.description": {
+    "message": "Cloud 负责在线运行、保存密钥和管理谁能使用；AI Agent 继续在 oo-cli 里使用工具。"
+  },
+  "CLOUD.flow.cta.primary": {
+    "message": "查看 Cloud 文档"
+  },
+  "CLOUD.flow.cta.secondary": {
+    "message": "打开 Cloud 控制台"
+  },
+  "HOME.Downloads.page.title": {
+    "message": "获取与安装 OOMOL"
+  },
+  "HOME.Downloads.page.description": {
+    "message": "先通过 oo-cli 的官方安装命令把 Agent 接到第三方服务和已发布工具上；如果你更喜欢图形界面，可以使用 OOMOL AI；如果你要自己做工具，再下载 OOMOL Studio。"
+  },
+  "HOME.Downloads.hero.eyebrow": {
+    "message": "获取与安装"
+  },
+  "HOME.Downloads.hero.title": {
+    "message": "选择最适合你的 OOMOL 入口"
+  },
+  "HOME.Downloads.hero.subtitle": {
+    "message": "如果你想在终端里让 Agent 直接使用工具，就先通过官方安装命令装好 oo-cli；如果你更喜欢图形界面，可以使用 OOMOL AI；如果你要自己做工具，再下载 OOMOL Studio。"
+  },
+  "HOME.Downloads.recommended": {
+    "message": "推荐"
+  },
+  "HOME.Downloads.cli.eyebrow": {
+    "message": "命令行入口"
+  },
+  "HOME.Downloads.ai.eyebrow": {
+    "message": "图形界面入口"
+  },
+  "HOME.Downloads.studio.eyebrow": {
+    "message": "构建工具入口"
+  },
+  "HOME.Downloads.ai.title": {
+    "message": "如果你更喜欢图形界面，可以使用 OOMOL AI"
+  },
+  "HOME.Downloads.ai.subtitle": {
+    "message": "OOMOL AI 是同一套能力的官方 GUI 入口，适合在 Web、桌面和 iOS 中直接对话、查看结果并继续处理任务。如果你只是想更轻松地使用工具，从这里开始就可以。"
+  },
+  "HOME.Downloads.ai.action.openWeb": {
+    "message": "打开网页版"
+  },
+  "HOME.Downloads.ai.action.desktopMac": {
+    "message": "下载 Mac 版"
+  },
+  "HOME.Downloads.ai.action.desktopWindows": {
+    "message": "下载 Windows 版"
+  },
+  "HOME.Downloads.ai.action.openStore": {
+    "message": "打开 App Store"
+  },
+  "HOME.Downloads.ai.web.description": {
+    "message": "对话式图形入口"
+  },
+  "HOME.Downloads.ai.desktop.description": {
+    "message": "桌面应用"
+  },
+  "HOME.Downloads.ai.ios.description": {
+    "message": "移动应用"
+  },
+  "PRICING.page.title": {
+    "message": "价格 - OOMOL"
+  },
+  "PRICING.page.description": {
+    "message": "本地构建与验证始终免费。Free 用户每月包含 200 分钟 Cloud Task 和 20K 次 Auth Link 请求；需要更多托管运行时长或更高的 Auth Link 用量时再升级。"
+  },
+  "PRICING.subscription.free.cta": {
+    "message": "去安装 oo-cli"
+  },
+  "SUPPORT.page.title": {
+    "message": "技术支持 - OOMOL"
+  },
+  "SUPPORT.page.description": {
+    "message": "通过 GitHub 讨论区、Discord 或邮件获取 OOMOL 支持。"
+  },
+  "SUPPORT.title": {
+    "message": "技术支持"
+  },
+  "SUPPORT.github.title": {
+    "message": "GitHub 支持"
+  },
+  "SUPPORT.github.description": {
+    "message": "访问我们的 GitHub 讨论区，浏览帮助和最佳实践。"
+  },
+  "SUPPORT.github.cta": {
+    "message": "GitHub 讨论区"
+  },
+  "SUPPORT.discord.title": {
+    "message": "Discord 支持"
+  },
+  "SUPPORT.discord.description": {
+    "message": "如果您需要即时沟通，请加入我们的 Discord 服务器。"
+  },
+  "SUPPORT.discord.cta": {
+    "message": "加入 Discord"
+  },
+  "SUPPORT.email.title": {
+    "message": "邮件支持"
+  },
+  "SUPPORT.email.description": {
+    "message": "如果您需要产品之外的帮助，可以通过邮件联系我们。"
+  },
+  "SUPPORT.email.cta": {
+    "message": "发送邮件"
+  },
+  "TERMS.page.title": {
+    "message": "使用条款 - OOMOL"
+  },
+  "TERMS.page.description": {
+    "message": "查看 OOMOL 的使用条款和服务条件。"
+  },
+  "PRIVACY.page.title": {
+    "message": "隐私政策 - OOMOL"
+  },
+  "PRIVACY.page.description": {
+    "message": "查看 OOMOL 的隐私政策和数据处理说明。"
+  },
+  "HOME.BrandAssets.page.title": {
+    "message": "品牌资源 - OOMOL"
+  },
+  "HOME.BrandAssets.page.description": {
+    "message": "下载 OOMOL 的 Logo、图标、色彩和字体资源。"
+  },
+  "HOME.BrandAssets.downloadAriaLabel": {
+    "message": "下载资源"
+  },
+  "HOME.Community.page.title": {
+    "message": "联系我们 - OOMOL"
+  },
+  "HOME.Community.page.description": {
+    "message": "查看 OOMOL 的社区入口、开源仓库和联系渠道。"
+  },
+  "HOME.Community.qrcodeAlt": {
+    "message": "企业微信二维码"
+  },
+  "FOOTER.cookieSettings": {
+    "message": "Cookie 设置"
+  },
+  "COOKIE.button.acceptAll": {
+    "message": "接受全部"
+  },
+  "COOKIE.button.rejectAll": {
+    "message": "拒绝全部"
+  },
+  "COOKIE.privacyPolicy": {
+    "message": "隐私政策"
+  },
+  "COOKIE.title": {
+    "message": "Cookie 设置"
+  },
+  "COOKIE.message": {
+    "message": "我们会把可选 Cookie 用于站点统计和转化跟踪。必要 Cookie 会保持开启，以保证网站正常工作。"
+  },
+  "COOKIE.manage.title": {
+    "message": "Cookie 设置"
+  },
+  "COOKIE.manage.message": {
+    "message": "选择 OOMOL 可以在当前设备上使用哪些可选 Cookie。你之后也可以随时在页脚重新打开这些设置。"
+  },
+  "COOKIE.manage.essential.title": {
+    "message": "必要 Cookie"
+  },
+  "COOKIE.manage.essential.subtitle": {
+    "message": "用于语言偏好、安全能力和会话连续性等基础站点功能。"
+  },
+  "COOKIE.manage.essential.status": {
+    "message": "状态：始终开启"
+  },
+  "COOKIE.manage.essential.statusButton": {
+    "message": "始终开启"
+  },
+  "COOKIE.manage.analytics.title": {
+    "message": "统计"
+  },
+  "COOKIE.manage.analytics.subtitle": {
+    "message": "帮助我们了解访问来源、页面使用情况以及产品相关行为。"
+  },
+  "COOKIE.manage.advertising.title": {
+    "message": "广告与转化跟踪"
+  },
+  "COOKIE.manage.advertising.subtitle": {
+    "message": "用于 Google Ads 转化跟踪，例如下载和首次登录这类关键动作。"
+  },
+  "COOKIE.manage.status": {
+    "message": "状态：{{date}} {{status}}"
+  },
+  "COOKIE.manage.status.consented": {
+    "message": "已同意"
+  },
+  "COOKIE.manage.status.declined": {
+    "message": "已拒绝"
+  },
+  "COOKIE.manage.cancel": {
+    "message": "取消"
+  },
+  "COOKIE.manage.save": {
+    "message": "保存偏好"
+  },
+  "HOME.Downloads.cli.installDescription.windows": {
+    "message": "已根据当前浏览器环境选择 Windows PowerShell 安装命令。Windows CMD 请查看安装文档。"
+  },
+  "HOME.Downloads.cli.installDescription.unix": {
+    "message": "已根据当前浏览器环境选择 macOS / Linux 的 curl 安装命令。"
+  },
+  "HOME.Downloads.cli.agentPrompt.windows": {
+    "message": "请帮我安装并检查 oo-cli：\n\n1. 按当前环境的官方方式安装 oo-cli。\n   - Windows PowerShell：`irm https://cli.oomol.com/install.ps1 | iex`\n\n2. 运行 `oo login`。\n\n3. 确认 CLI 已经可以正常使用。\n\n4. 告诉我下一条最适合在 oo-cli 里执行的命令。"
+  },
+  "HOME.Downloads.cli.agentPrompt.unix": {
+    "message": "请帮我安装并检查 oo-cli：\n\n1. 按当前环境的官方方式安装 oo-cli。\n   - macOS / Linux：`curl -fsSL https://cli.oomol.com/install.sh | bash`\n\n2. 运行 `oo login`。\n\n3. 确认 CLI 已经可以正常使用。\n\n4. 告诉我下一条最适合在 oo-cli 里执行的命令。"
+  },
+  "PRICING.table.loading": {
+    "message": "加载中..."
+  },
+  "Theme.logo.alt": {
+    "message": "OOMOL 标志"
   }
 }

@@ -1,6 +1,7 @@
 import type { DetailedCookieConsent } from "./cookieConsentStorage";
 import type { DocusaurusContext } from "@docusaurus/types";
 
+import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import * as Dialog from "@radix-ui/react-dialog";
@@ -58,63 +59,6 @@ const CATEGORY_VISIBILITY = {
   Social: false,
   Advertising: true,
 } as const;
-
-const translationsByLocale: Record<string, Translations> = {
-  en: {
-    buttonText: "Accept all",
-    declineButtonText: "Reject all",
-    privacyPolicyText: "Privacy Policy",
-    title: "Cookie settings",
-    message:
-      "We use optional cookies for site analytics and conversion tracking. Essential cookies remain enabled so the website can function correctly.",
-    manageTitle: "Cookie settings",
-    manageMessage:
-      "Choose which optional cookies OOMOL may use on this device. You can reopen these settings from the footer at any time.",
-    manageEssentialTitle: "Essential",
-    manageEssentialSubtitle:
-      "Required for core site behavior such as language preference, security, and session continuity.",
-    manageEssentialStatus: "Status: Always enabled",
-    manageEssentialStatusButtonText: "Always On",
-    manageAnalyticsTitle: "Analytics",
-    manageAnalyticsSubtitle:
-      "Helps us understand visits, traffic sources, and product usage across the website.",
-    manageAdvertTitle: "Advertising",
-    manageAdvertSubtitle:
-      "Allows Google Ads conversion tracking for key actions such as downloads and first sign-in.",
-    manageCookiesStatus: "Status: {{status}} on {{date}}",
-    manageCookiesStatusConsented: "Consented",
-    manageCookiesStatusDeclined: "Declined",
-    manageCancelButtonText: "Cancel",
-    manageSaveButtonText: "Save preferences",
-  },
-  "zh-CN": {
-    buttonText: "接受全部",
-    declineButtonText: "拒绝全部",
-    privacyPolicyText: "隐私政策",
-    title: "Cookie 设置",
-    message:
-      "我们会把可选 Cookie 用于站点统计和转化跟踪。必要 Cookie 会保持开启，以保证网站正常工作。",
-    manageTitle: "Cookie 设置",
-    manageMessage:
-      "选择 OOMOL 可以在当前设备上使用哪些可选 Cookie。你之后也可以随时在页脚重新打开这些设置。",
-    manageEssentialTitle: "必要 Cookie",
-    manageEssentialSubtitle:
-      "用于语言偏好、安全能力和会话连续性等基础站点功能。",
-    manageEssentialStatus: "状态：始终开启",
-    manageEssentialStatusButtonText: "始终开启",
-    manageAnalyticsTitle: "统计",
-    manageAnalyticsSubtitle:
-      "帮助我们了解访问来源、页面使用情况以及产品相关行为。",
-    manageAdvertTitle: "广告与转化跟踪",
-    manageAdvertSubtitle:
-      "用于 Google Ads 转化跟踪，例如下载和首次登录这类关键动作。",
-    manageCookiesStatus: "状态：{{date}} {{status}}",
-    manageCookiesStatusConsented: "已同意",
-    manageCookiesStatusDeclined: "已拒绝",
-    manageCancelButtonText: "取消",
-    manageSaveButtonText: "保存偏好",
-  },
-};
 
 function formatConsentDate(timestamp: string, locale: string): string {
   try {
@@ -230,7 +174,48 @@ const CookieConsentProviderInner: React.FC = () => {
     i18n: { currentLocale: string };
   };
   const privacyPolicyUrl = useBaseUrl("/privacy");
-  const t = translationsByLocale[currentLocale] ?? translationsByLocale.en;
+  const t: Translations = {
+    buttonText: translate({ message: "COOKIE.button.acceptAll" }),
+    declineButtonText: translate({ message: "COOKIE.button.rejectAll" }),
+    privacyPolicyText: translate({ message: "COOKIE.privacyPolicy" }),
+    title: translate({ message: "COOKIE.title" }),
+    message: translate({ message: "COOKIE.message" }),
+    manageTitle: translate({ message: "COOKIE.manage.title" }),
+    manageMessage: translate({ message: "COOKIE.manage.message" }),
+    manageEssentialTitle: translate({
+      message: "COOKIE.manage.essential.title",
+    }),
+    manageEssentialSubtitle: translate({
+      message: "COOKIE.manage.essential.subtitle",
+    }),
+    manageEssentialStatus: translate({
+      message: "COOKIE.manage.essential.status",
+    }),
+    manageEssentialStatusButtonText: translate({
+      message: "COOKIE.manage.essential.statusButton",
+    }),
+    manageAnalyticsTitle: translate({
+      message: "COOKIE.manage.analytics.title",
+    }),
+    manageAnalyticsSubtitle: translate({
+      message: "COOKIE.manage.analytics.subtitle",
+    }),
+    manageAdvertTitle: translate({
+      message: "COOKIE.manage.advertising.title",
+    }),
+    manageAdvertSubtitle: translate({
+      message: "COOKIE.manage.advertising.subtitle",
+    }),
+    manageCookiesStatus: translate({ message: "COOKIE.manage.status" }),
+    manageCookiesStatusConsented: translate({
+      message: "COOKIE.manage.status.consented",
+    }),
+    manageCookiesStatusDeclined: translate({
+      message: "COOKIE.manage.status.declined",
+    }),
+    manageCancelButtonText: translate({ message: "COOKIE.manage.cancel" }),
+    manageSaveButtonText: translate({ message: "COOKIE.manage.save" }),
+  };
   const localeTag = currentLocale === "zh-CN" ? "zh-CN" : "en-US";
 
   const [detailedConsent, setDetailedConsent] =
