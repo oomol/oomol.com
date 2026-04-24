@@ -4,10 +4,6 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import { HeroVideoDialog } from "@site/src/components/ui/hero-video-dialog";
 import React from "react";
 
-/**
- * Original homepage hero video block — kept for reuse / future layouts.
- * Not mounted on the default homepage after the Magic UI–style refresh.
- */
 export function HomepageFirstScreenVideoHero() {
   const heroVideoUrl = useBaseUrl(
     "https://static.oomol.com/assets/homepage/oomol-flow-en.webm"

@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { HomepageFirstScreenVideoHero } from "@site/src/components/_archive/HomepageFirstScreenVideoHero";
+import { HomepageFirstScreenVideoHero } from "@site/src/components/HomepageFirstScreenVideoHero";
 import { Button } from "@site/src/components/ui/button";
 import React from "react";
 
