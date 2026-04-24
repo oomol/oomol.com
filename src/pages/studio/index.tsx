@@ -1,9 +1,13 @@
 import styles from "./styles.module.scss";
 
+import type { DocusaurusContext } from "@docusaurus/types";
+
 import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import ResponsiveVideo from "@site/src/components/mdx/ResponsiveVideo";
 import { SiteCta } from "@site/src/components/SiteCta";
 import { Button } from "@site/src/components/ui/button";
 import ThemedImage from "@theme/ThemedImage";
@@ -72,9 +76,17 @@ const painPoints = [
   },
 ];
 
+const STUDIO_OVERVIEW_VIDEO_SRC =
+  "https://cloud-storage.oomol.com/users/019343aa-ff25-727c-a449-9017313539b0/chat-uploads/2026-03-23/4gxes_hu5_ua-OOMOL_Studio.webm";
+
 export default function StudioPage() {
-  const studioPreviewLight = useBaseUrl("/img/pages/studio/studio-light.webp");
-  const studioPreviewDark = useBaseUrl("/img/pages/studio/studio-dark.webp");
+  const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
+    i18n: { currentLocale: string };
+  };
+  const isZh = i18n.currentLocale === "zh-CN";
+  const studioHeroPoster = isZh
+    ? "/img/docs/cn/desktop.png"
+    : "/img/docs/desktop.png";
   const principle1Light = useBaseUrl("/img/pages/studio/code-light.webp");
   const principle1Dark = useBaseUrl("/img/pages/studio/code-dark.webp");
   const principle2Light = useBaseUrl("/img/pages/studio/edit-light.webp");
@@ -140,15 +152,20 @@ export default function StudioPage() {
             <div className={styles.heroShowcaseInner}>
               <div className={styles.heroVisual}>
                 <div className={styles.visualFrame}>
-                  <ThemedImage
-                    sources={{
-                      light: studioPreviewLight,
-                      dark: studioPreviewDark,
-                    }}
-                    alt={translate({ message: "STUDIO.hero.imageAlt" })}
-                    className={styles.visualImage}
-                    fetchPriority="high"
-                    loading="eager"
+                  <ResponsiveVideo
+                    src={STUDIO_OVERVIEW_VIDEO_SRC}
+                    type="video/webm"
+                    aria-label={translate({ message: "STUDIO.hero.imageAlt" })}
+                    className={styles.visualMedia}
+                    controls
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    poster={studioHeroPoster}
+                    loadWhenInView={false}
+                    style={{ borderRadius: 0 }}
                   />
                 </div>
               </div>
