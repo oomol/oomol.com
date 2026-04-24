@@ -3,7 +3,16 @@ type TrackingConsentState = {
   analytics: boolean;
 };
 
-type GtagFunction = Gtag.Gtag;
+type GtagConsentValue = "denied" | "granted";
+
+type GtagConsentParams = {
+  ad_personalization?: GtagConsentValue;
+  ad_storage?: GtagConsentValue;
+  ad_user_data?: GtagConsentValue;
+  analytics_storage?: GtagConsentValue;
+};
+
+type GtagFunction = (...args: unknown[]) => void;
 
 declare global {
   interface Window {
@@ -171,13 +180,15 @@ function initializeGtag() {
   }
 
   if (!window.__oomolGoogleTagConfigured) {
-    window.gtag("js", new Date());
-    window.gtag("consent", "default", {
+    const defaultConsentParams: GtagConsentParams = {
       ad_personalization: "denied",
       ad_storage: "denied",
       ad_user_data: "denied",
       analytics_storage: "denied",
-    } as unknown as Gtag.ConsentParams);
+    };
+
+    window.gtag("js", new Date());
+    window.gtag("consent", "default", defaultConsentParams);
     window.__oomolGoogleTagConfigured = {
       ads: false,
       analytics: false,
@@ -232,12 +243,14 @@ export function updateGoogleConsent(
     return false;
   }
 
-  window.gtag?.("consent", "update", {
+  const consentParams: GtagConsentParams = {
     ad_storage: consentState.advertising ? "granted" : "denied",
     ad_user_data: consentState.advertising ? "granted" : "denied",
     ad_personalization: consentState.advertising ? "granted" : "denied",
     analytics_storage: consentState.analytics ? "granted" : "denied",
-  } as unknown as Gtag.ConsentParams);
+  };
+
+  window.gtag?.("consent", "update", consentParams);
 
   return true;
 }

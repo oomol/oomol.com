@@ -98,9 +98,6 @@ export default function StudioPage() {
   const principlesTitleLines = translate({
     message: "STUDIO.product.principles.title",
   }).split("\n");
-  const heroKicker = translate({
-    message: "STUDIO.product.hero.kicker",
-  });
   const storyKicker = translate({
     message: "STUDIO.product.story.kicker",
   });
@@ -121,7 +118,6 @@ export default function StudioPage() {
         <section className={styles.hero}>
           <div className={styles.sectionContainer}>
             <div className={styles.heroCopy}>
-              <div className={styles.eyebrow}>{heroKicker}</div>
               <h1 className={styles.heroTitle}>
                 {heroTitleLines.map((line, index) => (
                   <React.Fragment key={`${index}-${line}`}>
