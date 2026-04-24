@@ -29,6 +29,7 @@ const sidebars = {
       collapsible: true,
       collapsed: true,
       items: [
+        "studio/overview",
         {
           type: "category",
           label: "Core Concepts",

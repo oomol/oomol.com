@@ -799,6 +799,27 @@ body,
       margin-bottom: 0.5rem;
       color: var(--oomol-text-secondary);
     }
+
+    > .docs-overview-intro {
+      margin-bottom: 2rem;
+
+      h1 {
+        margin-top: 0;
+      }
+
+      .docs-overview-intro-copy {
+        line-height: 1.78;
+        margin-bottom: 1.1rem;
+      }
+
+      .docs-overview-intro-copy:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    > .docs-overview-intro + h2 {
+      margin-top: 0;
+    }
   }
 
   .theme-doc-breadcrumbs,

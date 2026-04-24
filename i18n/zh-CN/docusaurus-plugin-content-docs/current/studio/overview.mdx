@@ -1,0 +1,63 @@
+---
+title: OOMOL Studio 概述
+sidebar_label: 概述
+description: 了解 OOMOL Studio 适合做什么、什么时候从 oo-cli 进入 Studio，以及 Studio 的基础工作方式。
+---
+
+import desktop from "@site/static/img/docs/cn/desktop.png";
+import ResponsiveVideo from "@site/src/components/mdx/ResponsiveVideo";
+
+OOMOL Studio 是用来构建、编辑和验证工具的本地环境。当已发布的 package
+或 connector action 不够用时，你可以进入 Studio，把工作流画布、代码工作区、
+依赖管理、本地运行、调试和发布准备放在同一个项目里完成。
+
+<ResponsiveVideo
+  src="https://cloud-storage.oomol.com/users/019343aa-ff25-727c-a449-9017313539b0/chat-uploads/2026-03-23/4gxes_hu5_ua-OOMOL_Studio.webm"
+  type="video/webm"
+  controls
+  autoPlay
+  muted
+  loop
+  playsInline
+  preload="metadata"
+  poster={desktop}
+/>
+
+## 什么时候使用 Studio
+
+如果你只是想搜索、查看和运行已有工具，先从 `oo-cli` 开始。只有当你需要自己
+创建实现，或者改造现有实现时，再进入 OOMOL Studio。
+
+常见的 Studio 使用场景包括：
+
+- 从可复用区块搭建新的工作流
+- 为区块编写自定义 Python 或 Node.js 逻辑
+- 为项目安装和锁定依赖
+- 在发布或交给 Cloud 之前先本地测试工作流
+- 准备一个之后可以被其他用户或 Agent 调用的可复用 package
+
+## Studio 由哪些部分组成
+
+Studio 里的工作通常从项目开始。一个项目包含 flows、blocks、依赖、本地文件、
+配置，以及之后可以发布的 package 元数据。
+
+flow 是真正运行的可视化工作流。flow 里的每个节点都使用一个 block。block
+可以封装代码、调用三方服务、复用另一个 flow，也可以把值暴露给工作流中的其他
+节点。Studio 会把可视化结构和代码工作区连接在一起，所以你可以在编辑 flow
+和编辑背后的实现之间来回切换。
+
+## 基础工作流
+
+1. 创建或打开一个项目。
+2. 在 flow 中添加 blocks，并连接它们的输入和输出。
+3. 当已有行为不够时，编辑 block 的代码或配置。
+4. 按需安装依赖、配置 secrets。
+5. 本地运行 flow，查看日志和输出，然后继续迭代。
+6. 验证完成后，发布或导出这份工作，让它可以被复用。
+
+## 继续阅读
+
+- [项目](/zh-CN/docs/concepts/project)：了解 Studio 如何组织文件和工作流工作
+- [流](/zh-CN/docs/concepts/flow)：理解可运行的工作流模型
+- [界面导览](/zh-CN/docs/get-started/interface/home)：熟悉首页和项目工作区
+- [第一个工作流](/zh-CN/docs/get-started/zero-to-one/create-a-power-and-adder)：从零搭建一个小工作流

@@ -1,0 +1,66 @@
+---
+title: OOMOL Studio Overview
+sidebar_label: Overview
+description: Understand what OOMOL Studio is for, when to move from oo-cli into Studio, and how the basic Studio workflow fits together.
+---
+
+import desktop from "@site/static/img/docs/desktop.png";
+import ResponsiveVideo from "@site/src/components/mdx/ResponsiveVideo";
+
+OOMOL Studio is the local environment for building, editing, and validating
+tools when published packages or connector actions are not enough. It combines
+a workflow canvas, a coding workspace, dependency management, local execution,
+debugging, and publishing preparation in one place.
+
+<ResponsiveVideo
+  src="https://cloud-storage.oomol.com/users/019343aa-ff25-727c-a449-9017313539b0/chat-uploads/2026-03-23/4gxes_hu5_ua-OOMOL_Studio.webm"
+  type="video/webm"
+  controls
+  autoPlay
+  muted
+  loop
+  playsInline
+  preload="metadata"
+  poster={desktop}
+/>
+
+## When to use Studio
+
+Start with `oo-cli` when you only need to search, inspect, and run existing
+tools. Move into OOMOL Studio when you need to create your own implementation
+or adapt an existing one.
+
+Common Studio use cases include:
+
+- building a new workflow from reusable blocks
+- writing custom Python or Node.js logic for a block
+- installing and locking dependencies for a project
+- testing a workflow locally before publishing or handing it to Cloud
+- preparing a reusable package that other users or agents can call later
+
+## How Studio fits together
+
+Studio work usually starts from a project. A project contains flows, blocks,
+dependencies, local files, configuration, and publishable package metadata.
+
+A flow is the visual workflow you run. Each node in the flow uses a block.
+Blocks can wrap code, call third-party services, reuse another flow, or expose
+values to the rest of the workflow. Studio keeps the visual structure and the
+code workspace connected, so you can switch between editing the flow and editing
+the implementation behind it.
+
+## Basic workflow
+
+1. Create or open a project.
+2. Add blocks to a flow and connect their inputs and outputs.
+3. Edit block code or configuration when the existing behavior is not enough.
+4. Install dependencies and configure secrets as needed.
+5. Run the flow locally, inspect logs and outputs, then iterate.
+6. Publish or export the validated work when it is ready to be reused.
+
+## Continue reading
+
+- [Projects](/docs/concepts/project): learn how Studio organizes files and workflow work
+- [Flows](/docs/concepts/flow): understand the runnable workflow model
+- [Interface Tour](/docs/get-started/interface/home): get familiar with the home screen and project workspace
+- [First Workflow](/docs/get-started/zero-to-one/create-a-power-and-adder): build a small workflow from scratch

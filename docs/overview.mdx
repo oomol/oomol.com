@@ -3,46 +3,21 @@ sidebar_position: 1
 title: Overview
 sidebar_label: Overview
 hide_title: true
-description: Start with oo-cli through official install and update paths, build in OOMOL Studio when published tools stop short, and deliver through OOMOL Cloud.
+description: OOMOL docs are designed for AI-assisted reading. Let AI read the docs first, then ask questions directly.
 ---
 
-import desktop from "@site/static/img/docs/desktop.png";
-import ResponsiveVideo from "@site/src/components/mdx/ResponsiveVideo";
-
-<div
-  style={{
-    marginBottom: "0.9rem",
-    color: "var(--oomol-text-primary)",
-    fontSize: "clamp(1.6rem, 1.45rem + 0.7vw, 2rem)",
-    fontWeight: 700,
-    lineHeight: 1.18,
-    letterSpacing: "-0.02em",
-  }}
->
-  Start with oo-cli. Install it through the official install commands. Search,
-  inspect, and run published tools first. Move into Studio when published tools
-  stop short. Deliver through Cloud when it needs to keep running.
-</div>
-
-These docs follow the same path as the main site. If you only need to use
-published tools, start with `oo-cli`. The current CLI path now includes
-official install commands, managed updates, bundled skills for Codex and
-Claude Code, connector execution, Cloud Task operations, files, logs, and
-shell completion. If you need to build or extend your own tools, move into
-OOMOL Studio. If the validated tool needs hosting, hosted delivery, or managed
-access, continue with OOMOL Cloud.
-
-<ResponsiveVideo
-  src="https://cloud-storage.oomol.com/users/019343aa-ff25-727c-a449-9017313539b0/chat-uploads/2026-03-23/4gxes_hu5_ua-OOMOL_Studio.webm"
-  type="video/webm"
-  controls
-  autoPlay
-  muted
-  loop
-  playsInline
-  preload="metadata"
-  poster={desktop}
-/>
+<section className="docs-overview-intro">
+  <h1>Docs for AI-assisted reading</h1>
+  <div className="docs-overview-intro-copy">
+    OOMOL docs are designed to be read, searched, and summarized by AI. Give the
+    complete docs site to your AI assistant first, let it understand the product
+    structure, commands, and workflows, then ask questions directly.
+  </div>
+  <div className="docs-overview-intro-copy">
+    For questions inside OOMOL Studio, use the Oopilot panel on the right side
+    of Studio.
+  </div>
+</section>
 
 ## The Main Path
 
@@ -76,33 +51,49 @@ delivery back into the main `oo-cli` path.
 ## How The Docs Are Organized
 
 - [oo-cli](/docs/oo-cli): start here if you want to use published tools through agents or terminal workflows
-- [OOMOL Studio](/docs/concepts/project): use this when you need to build, extend, and validate your own tools
+- [OOMOL Studio](/docs/studio/overview): use this when you need to build, extend, and validate your own tools
 - [Cloud Function](/docs/cloud-services/cloud-function): use this when the validated tool needs hosting, hosted delivery, or managed access
 - [Support](/docs/community): use this for publishing, community, and related operational topics
 
-## Product Layers
+## User Path And Product Layers
 
 ```mermaid
-graph LR
-    Community["Community / Catalog<br/>(discover packages and examples)"] -. discovery .-> CLI["oo-cli<br/>(search, inspect, run)"]
-    CLI --> Studio["OOMOL Studio<br/>(build and validate)"]
-    Studio --> Cloud["OOMOL Cloud<br/>(run and deliver online)"]
+graph TB
+    User["User / Agent<br/>wants to use or deliver a tool"]
 
-    subgraph Foundation["Implementation Layers"]
+    subgraph UserPath["Direct user-facing entry points"]
+        Community["Community / Catalog<br/>discover packages and examples"]
+        CLI["oo-cli<br/>search, inspect, and run published tools"]
+        Studio["OOMOL Studio<br/>extend capabilities, build, and validate locally"]
+        Cloud["OOMOL Cloud<br/>host, run online, and manage delivery"]
+    end
+
+    User -->|"find an existing tool"| Community
+    User -->|"call from a terminal or agent"| CLI
+    Community -->|"choose a package"| CLI
+    CLI -->|"published tool is enough: finish the task"| Done["Task complete"]
+    CLI -->|"need to extend or compose capabilities"| Studio
+    Studio -->|"validated and needs online runtime"| Cloud
+    Cloud -->|"deliver back through oo-cli / API / MCP"| CLI
+
+    subgraph Foundation["Runtime foundation"]
         OOCANA["OOCANA Workflow Engine"]
         OVM["OVM Runtime Environment"]
     end
 
-    Studio --> OOCANA
-    Cloud --> OOCANA
-    OOCANA --> OVM
+    Studio -. "local execution depends on" .-> OOCANA
+    Cloud -. "hosted execution depends on" .-> OOCANA
+    OOCANA -. "runs on" .-> OVM
 ```
 
-The open-source layers are still important, but they are not the first stop for
-most users:
+Read the upper part first as the user path:
 
-- `OOCANA` is the workflow engine behind execution
-- `OVM` provides the runtime environment used by OOMOL Studio and related tooling
+- To find existing capabilities, start from the community or catalog, then use `oo-cli` to search, inspect, and run packages.
+- When existing capabilities are not enough, use OOMOL Studio to extend functionality or compose your own workflow.
+- When the tool is validated and needs online runtime, continuous delivery, or managed configuration, use OOMOL Cloud.
 
-If you are new to the product, start with the user path above and go deeper
-into the engine layers only when you need implementation detail.
+The lower part is the runtime foundation, not the first entry point for most
+users:
+
+- `OOCANA` is the workflow engine behind execution.
+- `OVM` provides the runtime environment used by OOMOL Studio and related tooling.
