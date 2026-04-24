@@ -2849,5 +2849,260 @@
   },
   "HOME.CloudBenefits.card2.cta": {
     "message": "查看价格"
+  },
+  "APP.page.title": {
+    "message": "悟墨 AI（OOMOL AI）- 用图形界面使用 OOMOL 工具"
+  },
+  "APP.page.description": {
+    "message": "在 Web、桌面和 iOS 上用对话方式使用已连接的 OOMOL 工具，查看结果、继续追问，并在不同设备上接着处理任务。"
+  },
+  "APP.hero.titleLine1": {
+    "message": "用图形界面继续使用"
+  },
+  "APP.hero.titleLine2": {
+    "message": "OOMOL 工具"
+  },
+  "APP.hero.lead": {
+    "message": "在 Web、桌面和 iOS 中，用对话方式发起任务、查看结果，并继续处理下一步。如果你已经连接了账号、工具和服务，悟墨 AI 可以让这些能力在图形界面中直接可用。"
+  },
+  "APP.hero.productScreenshotAlt": {
+    "message": "悟墨 AI 中用对话方式调用工具完成任务的界面"
+  },
+  "APP.actions.openWeb": {
+    "message": "打开网页版"
+  },
+  "APP.actions.downloadDesktop": {
+    "message": "下载桌面版"
+  },
+  "APP.actions.ios": {
+    "message": "iOS"
+  },
+  "APP.models.title": {
+    "message": "从发起任务到继续处理，都在同一处完成"
+  },
+  "APP.models.description": {
+    "message": "账号、工具调用、任务结果和后续追问都留在同一个图形工作区里。你可以先看结果，再决定下一步怎么改、怎么问、怎么继续执行。"
+  },
+  "APP.models.demo.title": {
+    "message": "不用在多个入口之间重新开始"
+  },
+  "APP.models.demo.description": {
+    "message": "打开悟墨 AI，就能围绕同一个任务继续查看、追问和处理。"
+  },
+  "APP.models.demo.imageAlt": {
+    "message": "悟墨 AI 中的工具能力与小程序工作台界面"
+  },
+  "APP.models.cards.chat.eyebrow": {
+    "message": "对话工作区"
+  },
+  "APP.models.cards.chat.title": {
+    "message": "说出目标后，直接推进任务"
+  },
+  "APP.models.cards.chat.body": {
+    "message": "用自然语言说明你想完成的事，相关结果和后续操作会留在当前页面里，方便继续跟进。"
+  },
+  "APP.models.cards.chat.chip1": {
+    "message": "对话发起"
+  },
+  "APP.models.cards.chat.chip2": {
+    "message": "结果保留"
+  },
+  "APP.models.cards.chat.chip3": {
+    "message": "继续处理"
+  },
+  "APP.models.cards.image.eyebrow": {
+    "message": "结果预览"
+  },
+  "APP.models.cards.image.title": {
+    "message": "看清结果后，再决定下一步"
+  },
+  "APP.models.cards.image.body": {
+    "message": "图片、文档、表格和中间结果都可以在页面里查看，适合边确认边修改。"
+  },
+  "APP.models.cards.image.chip1": {
+    "message": "预览结果"
+  },
+  "APP.models.cards.image.chip2": {
+    "message": "补充要求"
+  },
+  "APP.models.cards.image.chip3": {
+    "message": "多轮调整"
+  },
+  "APP.problems.titleLine1": {
+    "message": "什么时候适合"
+  },
+  "APP.problems.titleLine2": {
+    "message": "打开悟墨 AI？"
+  },
+  "APP.problems.cards.review.title": {
+    "message": "需要看清结果再继续"
+  },
+  "APP.problems.cards.review.body": {
+    "message": "图片、文档、表格、长文本和中间结果更适合在图形界面中查看。确认之后，可以直接补充要求并继续处理。"
+  },
+  "APP.problems.cards.iterate.title": {
+    "message": "任务不是一次性完成"
+  },
+  "APP.problems.cards.iterate.body": {
+    "message": "很多任务需要多轮调整：先生成一版，再修改、追问、补充条件。悟墨 AI 更适合这种连续推进的过程。"
+  },
+  "APP.problems.cards.devices.title": {
+    "message": "想在不同设备上继续"
+  },
+  "APP.problems.cards.devices.body": {
+    "message": "在桌面端处理复杂任务，在浏览器里快速打开，在手机上查看进展或继续跟进。入口不同，使用的是同一套 OOMOL 能力。"
+  },
+  "APP.workflow.steps.describe.title": {
+    "message": "说出你想完成的事"
+  },
+  "APP.workflow.steps.describe.body": {
+    "message": "用自然语言描述目标，悟墨 AI 会在当前对话中帮你推进任务。"
+  },
+  "APP.workflow.steps.describe.detail": {
+    "message": "适合不想每一步都切回终端处理的日常任务。"
+  },
+  "APP.workflow.steps.describe.alt": {
+    "message": "悟墨 AI 中用对话方式发起任务的界面"
+  },
+  "APP.workflow.steps.review.title": {
+    "message": "查看结果，再决定下一步"
+  },
+  "APP.workflow.steps.review.body": {
+    "message": "结果会保留在页面中，你可以继续追问、修改要求，或让它接着处理。"
+  },
+  "APP.workflow.steps.review.detail": {
+    "message": "适合边看边改、边确认边推进的任务。"
+  },
+  "APP.workflow.steps.review.alt": {
+    "message": "悟墨 AI 中继续执行多步工具任务的界面"
+  },
+  "APP.workflow.steps.devices.title": {
+    "message": "换到其他设备，也能接着看"
+  },
+  "APP.workflow.steps.devices.body": {
+    "message": "Web、桌面和 iOS 都可以使用，适合在不同场景下继续同一件事。"
+  },
+  "APP.workflow.steps.devices.detail": {
+    "message": "在电脑前处理复杂任务，离开座位后继续查看进展。"
+  },
+  "APP.workflow.steps.devices.alt": {
+    "message": "悟墨 AI 中在同一套 OOMOL 能力上继续处理任务的界面"
+  },
+  "APP.outputs.title": {
+    "message": "终端里快速执行，图形界面里清楚查看"
+  },
+  "APP.outputs.description": {
+    "message": "oo-cli 适合在终端和 Agent 工作流里快速搜索、查看和运行工具。悟墨 AI 适合在你需要预览结果、连续追问、多端继续时，使用同一套能力完成后续处理。"
+  },
+  "APP.outputs.imageAlt": {
+    "message": "悟墨 AI 中使用同一套工具能力持续完成任务的界面"
+  },
+  "APP.pricing.title": {
+    "message": "同一账户，同一套点数"
+  },
+  "APP.pricing.description": {
+    "message": "悟墨 AI 与 oo-cli 共用同一账户和点数。无论你从终端、Web、桌面还是 iOS 发起任务，都按实际使用消耗，不需要为不同入口分别充值。"
+  },
+  "APP.pricing.perPack": {
+    "message": "/ 包"
+  },
+  "APP.pricing.featureTitle": {
+    "message": "适合这种任务节奏"
+  },
+  "APP.pricing.cta": {
+    "message": "去充值"
+  },
+  "APP.pricing.packs.starter.tier": {
+    "message": "偶尔使用"
+  },
+  "APP.pricing.packs.starter.name": {
+    "message": "入门包"
+  },
+  "APP.pricing.packs.starter.description": {
+    "message": "到账 5 点数。适合轻量体验或偶尔补充。"
+  },
+  "APP.pricing.packs.starter.note": {
+    "message": "灵活"
+  },
+  "APP.pricing.packs.starter.feature1": {
+    "message": "先小额体验"
+  },
+  "APP.pricing.packs.starter.feature2": {
+    "message": "不用一开始准备太多余量"
+  },
+  "APP.pricing.packs.boost.tier": {
+    "message": "日常使用"
+  },
+  "APP.pricing.packs.boost.name": {
+    "message": "增强包"
+  },
+  "APP.pricing.packs.boost.description": {
+    "message": "到账 24 点数（20 基础点数 + 4 额外点数）。适合日常使用。"
+  },
+  "APP.pricing.packs.boost.note": {
+    "message": "推荐"
+  },
+  "APP.pricing.packs.boost.feature1": {
+    "message": "适合稳定日常使用"
+  },
+  "APP.pricing.packs.boost.feature2": {
+    "message": "连续处理多个任务更从容"
+  },
+  "APP.pricing.packs.ultra.tier": {
+    "message": "高频任务"
+  },
+  "APP.pricing.packs.ultra.name": {
+    "message": "超级包"
+  },
+  "APP.pricing.packs.ultra.description": {
+    "message": "到账 128 点数（100 基础点数 + 28 额外点数）。适合批量任务与高频阶段。"
+  },
+  "APP.pricing.packs.ultra.note": {
+    "message": "储备型"
+  },
+  "APP.pricing.packs.ultra.feature1": {
+    "message": "适合批量与长链路任务"
+  },
+  "APP.pricing.packs.ultra.feature2": {
+    "message": "为高频阶段预留更多余量"
+  },
+  "APP.downloads.title": {
+    "message": "在你需要的设备上打开"
+  },
+  "APP.downloads.items.web.title": {
+    "message": "网页版"
+  },
+  "APP.downloads.items.web.subtitle": {
+    "message": "对话式图形入口"
+  },
+  "APP.downloads.items.web.description": {
+    "message": "无需安装，打开浏览器即可开始查看和继续处理任务。"
+  },
+  "APP.downloads.items.web.action": {
+    "message": "打开网页版"
+  },
+  "APP.downloads.items.desktop.title": {
+    "message": "桌面版"
+  },
+  "APP.downloads.items.desktop.subtitle": {
+    "message": "桌面应用"
+  },
+  "APP.downloads.items.desktop.description": {
+    "message": "适合长时间保持工作区，连续处理更复杂的任务。"
+  },
+  "APP.downloads.items.desktop.action": {
+    "message": "下载桌面版"
+  },
+  "APP.downloads.items.ios.title": {
+    "message": "iOS"
+  },
+  "APP.downloads.items.ios.subtitle": {
+    "message": "移动应用"
+  },
+  "APP.downloads.items.ios.description": {
+    "message": "适合在移动设备上查看进展，并继续跟进当前任务。"
+  },
+  "APP.downloads.items.ios.action": {
+    "message": "打开 App Store"
   }
 }

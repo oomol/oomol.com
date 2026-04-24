@@ -2849,5 +2849,260 @@
   },
   "HOME.CloudBenefits.card2.cta": {
     "message": "View pricing"
+  },
+  "APP.page.title": {
+    "message": "OOMOL AI - Use OOMOL tools in a visual workspace"
+  },
+  "APP.page.description": {
+    "message": "Use connected OOMOL tools in a conversational GUI across web, desktop, and iOS. Review results, ask follow-up questions, and keep tasks moving across devices."
+  },
+  "APP.hero.titleLine1": {
+    "message": "Keep using OOMOL tools"
+  },
+  "APP.hero.titleLine2": {
+    "message": "in a visual workspace"
+  },
+  "APP.hero.lead": {
+    "message": "Use OOMOL AI on web, desktop, and iOS to start tasks through chat, review results, and decide what to do next. If your accounts, tools, and services are already connected, those capabilities are ready to use in the GUI."
+  },
+  "APP.hero.productScreenshotAlt": {
+    "message": "OOMOL AI interface where a task is completed through chat and tool use"
+  },
+  "APP.actions.openWeb": {
+    "message": "Open Web App"
+  },
+  "APP.actions.downloadDesktop": {
+    "message": "Download desktop app"
+  },
+  "APP.actions.ios": {
+    "message": "iOS"
+  },
+  "APP.models.title": {
+    "message": "Start the task, review the result, and keep going in one place"
+  },
+  "APP.models.description": {
+    "message": "Connected accounts, tool calls, task results, and follow-up questions stay in the same visual workspace. You can review the output first, then decide how to refine, ask, or continue."
+  },
+  "APP.models.demo.title": {
+    "message": "No need to start over in another entry point"
+  },
+  "APP.models.demo.description": {
+    "message": "Open OOMOL AI and continue reviewing, asking, and working around the same task."
+  },
+  "APP.models.demo.imageAlt": {
+    "message": "OOMOL AI workspace showing tool capabilities and mini apps"
+  },
+  "APP.models.cards.chat.eyebrow": {
+    "message": "Chat workspace"
+  },
+  "APP.models.cards.chat.title": {
+    "message": "Describe the goal, then move the task forward"
+  },
+  "APP.models.cards.chat.body": {
+    "message": "Say what you want to get done in natural language. Results and next actions stay on the page, so it is easy to keep going."
+  },
+  "APP.models.cards.chat.chip1": {
+    "message": "Start in chat"
+  },
+  "APP.models.cards.chat.chip2": {
+    "message": "Keep results"
+  },
+  "APP.models.cards.chat.chip3": {
+    "message": "Continue work"
+  },
+  "APP.models.cards.image.eyebrow": {
+    "message": "Result review"
+  },
+  "APP.models.cards.image.title": {
+    "message": "See the output clearly before choosing the next step"
+  },
+  "APP.models.cards.image.body": {
+    "message": "Images, documents, spreadsheets, and intermediate results are easier to review on the page before you refine the request or continue."
+  },
+  "APP.models.cards.image.chip1": {
+    "message": "Preview results"
+  },
+  "APP.models.cards.image.chip2": {
+    "message": "Refine request"
+  },
+  "APP.models.cards.image.chip3": {
+    "message": "Iterate"
+  },
+  "APP.problems.titleLine1": {
+    "message": "When should you"
+  },
+  "APP.problems.titleLine2": {
+    "message": "open OOMOL AI?"
+  },
+  "APP.problems.cards.review.title": {
+    "message": "When you need to review the result before continuing"
+  },
+  "APP.problems.cards.review.body": {
+    "message": "Images, documents, spreadsheets, long text, and intermediate outputs are easier to inspect in a GUI. Once the result looks right, you can add more context and continue."
+  },
+  "APP.problems.cards.iterate.title": {
+    "message": "When the task takes more than one pass"
+  },
+  "APP.problems.cards.iterate.body": {
+    "message": "Many tasks need several rounds: generate a first version, revise it, ask follow-up questions, and add constraints. OOMOL AI is built for that kind of continued work."
+  },
+  "APP.problems.cards.devices.title": {
+    "message": "When you want to continue across devices"
+  },
+  "APP.problems.cards.devices.body": {
+    "message": "Handle complex work on desktop, open it quickly in a browser, or check progress from your iPhone. The entry point changes, but the OOMOL capabilities stay the same."
+  },
+  "APP.workflow.steps.describe.title": {
+    "message": "Say what you want to get done"
+  },
+  "APP.workflow.steps.describe.body": {
+    "message": "Describe the goal in natural language, and OOMOL AI helps move the task forward in the current conversation."
+  },
+  "APP.workflow.steps.describe.detail": {
+    "message": "Useful when you do not want to move every step back into the terminal."
+  },
+  "APP.workflow.steps.describe.alt": {
+    "message": "OOMOL AI interface where a task starts from chat"
+  },
+  "APP.workflow.steps.review.title": {
+    "message": "Review the result, then choose the next step"
+  },
+  "APP.workflow.steps.review.body": {
+    "message": "Results stay on the page, so you can ask follow-up questions, change the request, or continue the task."
+  },
+  "APP.workflow.steps.review.detail": {
+    "message": "A better fit for work that moves forward through review and iteration."
+  },
+  "APP.workflow.steps.review.alt": {
+    "message": "OOMOL AI interface continuing a multi-step tool task"
+  },
+  "APP.workflow.steps.devices.title": {
+    "message": "Switch devices and keep the task in view"
+  },
+  "APP.workflow.steps.devices.body": {
+    "message": "Use it on web, desktop, or iOS when the same task needs attention in different settings."
+  },
+  "APP.workflow.steps.devices.detail": {
+    "message": "Work through complex tasks at your desk, then check progress later from another device."
+  },
+  "APP.workflow.steps.devices.alt": {
+    "message": "OOMOL AI interface continuing work with the same OOMOL capabilities"
+  },
+  "APP.outputs.title": {
+    "message": "Run fast in the terminal. Review clearly in the GUI."
+  },
+  "APP.outputs.description": {
+    "message": "oo-cli is a strong fit for searching, inspecting, and running tools from the terminal and agent workflows. OOMOL AI is for the moments when you need result previews, follow-up conversation, and continuity across devices while using the same capabilities."
+  },
+  "APP.outputs.imageAlt": {
+    "message": "OOMOL AI interface continuing work with the same tools in one workspace"
+  },
+  "APP.pricing.title": {
+    "message": "One account, one credit system"
+  },
+  "APP.pricing.description": {
+    "message": "OOMOL AI and oo-cli share the same account and credits. Whether a task starts from the terminal, web, desktop, or iOS, usage is counted the same way, so you do not need to top up each entry point separately."
+  },
+  "APP.pricing.perPack": {
+    "message": "/ pack"
+  },
+  "APP.pricing.featureTitle": {
+    "message": "Works well for"
+  },
+  "APP.pricing.cta": {
+    "message": "Top Up"
+  },
+  "APP.pricing.packs.starter.tier": {
+    "message": "Occasional use"
+  },
+  "APP.pricing.packs.starter.name": {
+    "message": "Starter Pack"
+  },
+  "APP.pricing.packs.starter.description": {
+    "message": "Includes 5 credits. A small refill for light use or occasional top-ups."
+  },
+  "APP.pricing.packs.starter.note": {
+    "message": "Flexible"
+  },
+  "APP.pricing.packs.starter.feature1": {
+    "message": "Useful for a small first balance"
+  },
+  "APP.pricing.packs.starter.feature2": {
+    "message": "No need to reserve too much upfront"
+  },
+  "APP.pricing.packs.boost.tier": {
+    "message": "Daily use"
+  },
+  "APP.pricing.packs.boost.name": {
+    "message": "Boost Pack"
+  },
+  "APP.pricing.packs.boost.description": {
+    "message": "Includes 24 credits (20 base + 4 bonus). A better fit for regular day-to-day use."
+  },
+  "APP.pricing.packs.boost.note": {
+    "message": "Popular"
+  },
+  "APP.pricing.packs.boost.feature1": {
+    "message": "A stronger fit for steady daily use"
+  },
+  "APP.pricing.packs.boost.feature2": {
+    "message": "More comfortable when several tasks arrive in a row"
+  },
+  "APP.pricing.packs.ultra.tier": {
+    "message": "Heavy use"
+  },
+  "APP.pricing.packs.ultra.name": {
+    "message": "Ultra Pack"
+  },
+  "APP.pricing.packs.ultra.description": {
+    "message": "Includes 128 credits (100 base + 28 bonus). Best for batch work and heavier periods."
+  },
+  "APP.pricing.packs.ultra.note": {
+    "message": "Reserve"
+  },
+  "APP.pricing.packs.ultra.feature1": {
+    "message": "Built for batch work and longer workflows"
+  },
+  "APP.pricing.packs.ultra.feature2": {
+    "message": "Keeps more headroom available during heavier periods"
+  },
+  "APP.downloads.title": {
+    "message": "Open it on the device you need"
+  },
+  "APP.downloads.items.web.title": {
+    "message": "Web"
+  },
+  "APP.downloads.items.web.subtitle": {
+    "message": "Chat-based interface"
+  },
+  "APP.downloads.items.web.description": {
+    "message": "Start in the browser without installing anything, then review and continue your task."
+  },
+  "APP.downloads.items.web.action": {
+    "message": "Open Web App"
+  },
+  "APP.downloads.items.desktop.title": {
+    "message": "Desktop"
+  },
+  "APP.downloads.items.desktop.subtitle": {
+    "message": "Desktop app"
+  },
+  "APP.downloads.items.desktop.description": {
+    "message": "Best when you want to keep a workspace open for longer or more complex tasks."
+  },
+  "APP.downloads.items.desktop.action": {
+    "message": "Download desktop app"
+  },
+  "APP.downloads.items.ios.title": {
+    "message": "iOS"
+  },
+  "APP.downloads.items.ios.subtitle": {
+    "message": "Mobile app"
+  },
+  "APP.downloads.items.ios.description": {
+    "message": "Track progress and continue the current task from your phone or tablet."
+  },
+  "APP.downloads.items.ios.action": {
+    "message": "Open App Store"
   }
 }

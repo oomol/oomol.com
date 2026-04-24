@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import type { DocusaurusContext } from "@docusaurus/types";
 
 import Head from "@docusaurus/Head";
+import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { Button } from "@site/src/components/ui/button";
@@ -53,6 +54,70 @@ type DownloadItem = {
   href?: string;
   external?: boolean;
   kind?: "web" | "desktop" | "ios";
+};
+
+type AppCopy = {
+  page: {
+    title: string;
+    description: string;
+  };
+  hero: {
+    titleLine1: string;
+    titleLine2: string;
+    lead: string;
+    productScreenshotAlt: string;
+  };
+  actions: {
+    openWeb: string;
+    downloadDesktop: string;
+    ios: string;
+  };
+  models: {
+    title: string;
+    description: string;
+    demo: {
+      title: string;
+      description: string;
+      imageAlt: string;
+    };
+    cards: {
+      chat: ModelFeatureCard;
+      image: ModelFeatureCard;
+    };
+  };
+  problems: {
+    titleLine1: string;
+    titleLine2: string;
+    cards: ProblemCard[];
+  };
+  workflow: {
+    steps: Array<Omit<WorkflowStep, "videoSrc">>;
+  };
+  outputs: {
+    title: string;
+    description: string;
+    imageAlt: string;
+  };
+  pricing: {
+    title: string;
+    description: string;
+    perPack: string;
+    featureTitle: string;
+    cta: string;
+    packs: {
+      starter: Omit<PricingPack, "price" | "featureTitle" | "cta" | "featured">;
+      boost: Omit<PricingPack, "price" | "featureTitle" | "cta" | "featured">;
+      ultra: Omit<PricingPack, "price" | "featureTitle" | "cta" | "featured">;
+    };
+  };
+  downloads: {
+    title: string;
+    items: {
+      web: Omit<DownloadItem, "href" | "external" | "kind">;
+      desktop: Omit<DownloadItem, "href" | "external" | "kind">;
+      ios: Omit<DownloadItem, "href" | "external" | "kind">;
+    };
+  };
 };
 
 const VIDEO_BASE_URL = "/video/app";
@@ -111,347 +176,436 @@ function renderHangingTitleLine(text: string, className: string) {
   );
 }
 
-const COPY = {
-  zh: {
-    brandLabel: "悟墨 AI",
+function createAppCopy(): AppCopy {
+  return {
     page: {
-      title: "悟墨 AI（OOMOL AI）- OOMOL 的官方图形入口",
-      description:
-        "当你更喜欢图形界面时，可以在 Web、桌面和 iOS 中直接使用 OOMOL 的工具，适合连续对话、查看结果和继续处理任务。",
+      title: translate({
+        id: "APP.page.title",
+        message: "OOMOL AI - Use OOMOL tools in a visual workspace",
+      }),
+      description: translate({
+        id: "APP.page.description",
+        message:
+          "Use connected OOMOL tools in a conversational GUI across web, desktop, and iOS. Review results, ask follow-up questions, and keep tasks moving across devices.",
+      }),
     },
     hero: {
-      titleLine1: "悟墨 AI，让 OOMOL 工具",
-      titleLine2: "在图形界面里直接可用",
-      lead: "面向日常使用的官方图形入口。你可以在 Web、桌面和 iOS 上发起任务、查看结果，并在同一个上下文里继续处理。",
-      productScreenshotAlt: "悟墨 AI 中由 Agent 原生调用工具完成任务的界面",
+      titleLine1: translate({
+        id: "APP.hero.titleLine1",
+        message: "Keep using OOMOL tools",
+      }),
+      titleLine2: translate({
+        id: "APP.hero.titleLine2",
+        message: "in a visual workspace",
+      }),
+      lead: translate({
+        id: "APP.hero.lead",
+        message:
+          "Use OOMOL AI on web, desktop, and iOS to start tasks through chat, review results, and decide what to do next. If your accounts, tools, and services are already connected, those capabilities are ready to use in the GUI.",
+      }),
+      productScreenshotAlt: translate({
+        id: "APP.hero.productScreenshotAlt",
+        message:
+          "OOMOL AI interface where a task is completed through chat and tool use",
+      }),
     },
     actions: {
-      openWeb: "打开网页版",
-      downloadDesktop: "下载桌面版",
-      ios: "iOS",
+      openWeb: translate({
+        id: "APP.actions.openWeb",
+        message: "Open Web App",
+      }),
+      downloadDesktop: translate({
+        id: "APP.actions.downloadDesktop",
+        message: "Download desktop app",
+      }),
+      ios: translate({ id: "APP.actions.ios", message: "iOS" }),
     },
     models: {
-      title: "把任务留在一个工作区",
-      description:
-        "从连接账号、调用工具，到查看输出、继续追问，都在同一处完成。",
+      title: translate({
+        id: "APP.models.title",
+        message:
+          "Start the task, review the result, and keep going in one place",
+      }),
+      description: translate({
+        id: "APP.models.description",
+        message:
+          "Connected accounts, tool calls, task results, and follow-up questions stay in the same visual workspace. You can review the output first, then decide how to refine, ask, or continue.",
+      }),
       demo: {
-        title: "任务不用在多个入口之间来回切换",
-        description: "搜索、执行、结果和后续处理都围绕同一个上下文展开。",
-        imageAlt: "悟墨 AI 中原生工具能力与小程序工作台界面",
+        title: translate({
+          id: "APP.models.demo.title",
+          message: "No need to start over in another entry point",
+        }),
+        description: translate({
+          id: "APP.models.demo.description",
+          message:
+            "Open OOMOL AI and continue reviewing, asking, and working around the same task.",
+        }),
+        imageAlt: translate({
+          id: "APP.models.demo.imageAlt",
+          message: "OOMOL AI workspace showing tool capabilities and mini apps",
+        }),
       },
       cards: {
         chat: {
-          eyebrow: "连续处理",
-          title: "从发起任务到查看结果，都在当前页面",
-          body: "账号连接、任务运行和工具调用会自然衔接到当前工作区，不需要在不同产品形态之间来回找入口。",
-          chips: ["一个工作区", "连续处理", "直接使用"],
+          eyebrow: translate({
+            id: "APP.models.cards.chat.eyebrow",
+            message: "Chat workspace",
+          }),
+          title: translate({
+            id: "APP.models.cards.chat.title",
+            message: "Describe the goal, then move the task forward",
+          }),
+          body: translate({
+            id: "APP.models.cards.chat.body",
+            message:
+              "Say what you want to get done in natural language. Results and next actions stay on the page, so it is easy to keep going.",
+          }),
+          chips: [
+            translate({
+              id: "APP.models.cards.chat.chip1",
+              message: "Start in chat",
+            }),
+            translate({
+              id: "APP.models.cards.chat.chip2",
+              message: "Keep results",
+            }),
+            translate({
+              id: "APP.models.cards.chat.chip3",
+              message: "Continue work",
+            }),
+          ],
         },
         image: {
-          eyebrow: "后续跟进",
-          title: "拿到结果后，可以继续追问或继续执行",
-          body: "图片、文档、表格和中间结果都留在页面里，适合边看边改、边确认边推进。",
-          chips: ["查看结果", "继续追问", "继续执行"],
+          eyebrow: translate({
+            id: "APP.models.cards.image.eyebrow",
+            message: "Result review",
+          }),
+          title: translate({
+            id: "APP.models.cards.image.title",
+            message: "See the output clearly before choosing the next step",
+          }),
+          body: translate({
+            id: "APP.models.cards.image.body",
+            message:
+              "Images, documents, spreadsheets, and intermediate results are easier to review on the page before you refine the request or continue.",
+          }),
+          chips: [
+            translate({
+              id: "APP.models.cards.image.chip1",
+              message: "Preview results",
+            }),
+            translate({
+              id: "APP.models.cards.image.chip2",
+              message: "Refine request",
+            }),
+            translate({
+              id: "APP.models.cards.image.chip3",
+              message: "Iterate",
+            }),
+          ],
         },
       },
     },
     problems: {
-      titleLine1: "这些场景，",
-      titleLine2: "图形界面更合适",
+      titleLine1: translate({
+        id: "APP.problems.titleLine1",
+        message: "When should you",
+      }),
+      titleLine2: translate({
+        id: "APP.problems.titleLine2",
+        message: "open OOMOL AI?",
+      }),
       cards: [
         {
-          title: "需要反复查看和调整",
-          body: "当任务不是一次性结束，而是需要看结果、补充要求、继续修改时，图形界面更直观。",
+          title: translate({
+            id: "APP.problems.cards.review.title",
+            message: "When you need to review the result before continuing",
+          }),
+          body: translate({
+            id: "APP.problems.cards.review.body",
+            message:
+              "Images, documents, spreadsheets, long text, and intermediate outputs are easier to inspect in a GUI. Once the result looks right, you can add more context and continue.",
+          }),
         },
         {
-          title: "希望结果和上下文留在一起",
-          body: "图片、文档、表格或中间结果保留在当前工作区里，后续处理会更容易接上。",
+          title: translate({
+            id: "APP.problems.cards.iterate.title",
+            message: "When the task takes more than one pass",
+          }),
+          body: translate({
+            id: "APP.problems.cards.iterate.body",
+            message:
+              "Many tasks need several rounds: generate a first version, revise it, ask follow-up questions, and add constraints. OOMOL AI is built for that kind of continued work.",
+          }),
         },
         {
-          title: "想减少入口和设备切换",
-          body: "Web、桌面和 iOS 使用一致的图形入口，日常打开、回来继续都更顺手。",
+          title: translate({
+            id: "APP.problems.cards.devices.title",
+            message: "When you want to continue across devices",
+          }),
+          body: translate({
+            id: "APP.problems.cards.devices.body",
+            message:
+              "Handle complex work on desktop, open it quickly in a browser, or check progress from your iPhone. The entry point changes, but the OOMOL capabilities stay the same.",
+          }),
         },
-      ] as ProblemCard[],
+      ],
     },
     workflow: {
       steps: [
         {
-          title: "描述任务后，直接开始",
-          body: "用自然语言说明目标，悟墨 AI 会在当前工作区里衔接搜索、工具调用和执行过程。",
-          detail: "适合不想切换终端或多套入口的日常任务。",
-          alt: "悟墨 AI 中由 Agent 主动搜索和调用技能的界面",
+          title: translate({
+            id: "APP.workflow.steps.describe.title",
+            message: "Say what you want to get done",
+          }),
+          body: translate({
+            id: "APP.workflow.steps.describe.body",
+            message:
+              "Describe the goal in natural language, and OOMOL AI helps move the task forward in the current conversation.",
+          }),
+          detail: translate({
+            id: "APP.workflow.steps.describe.detail",
+            message:
+              "Useful when you do not want to move every step back into the terminal.",
+          }),
+          alt: translate({
+            id: "APP.workflow.steps.describe.alt",
+            message: "OOMOL AI interface where a task starts from chat",
+          }),
         },
         {
-          title: "看到结果后，接着处理",
-          body: "结果、补充要求和下一步操作都保留在当前页面。",
-          detail: "适合边看边改、边确认边推进的任务。",
-          alt: "悟墨 AI 中继续执行多步工具任务的界面",
+          title: translate({
+            id: "APP.workflow.steps.review.title",
+            message: "Review the result, then choose the next step",
+          }),
+          body: translate({
+            id: "APP.workflow.steps.review.body",
+            message:
+              "Results stay on the page, so you can ask follow-up questions, change the request, or continue the task.",
+          }),
+          detail: translate({
+            id: "APP.workflow.steps.review.detail",
+            message:
+              "A better fit for work that moves forward through review and iteration.",
+          }),
+          alt: translate({
+            id: "APP.workflow.steps.review.alt",
+            message: "OOMOL AI interface continuing a multi-step tool task",
+          }),
         },
         {
-          title: "换到其他设备，也能继续",
-          body: "Web、桌面和 iOS 使用同一套入口和上下文，不需要重新适应。",
-          detail: "在电脑前处理复杂任务，离开座位后继续查看进展。",
-          alt: "悟墨 AI 中将结果与 OOMOL 工具体系继续连接的界面",
+          title: translate({
+            id: "APP.workflow.steps.devices.title",
+            message: "Switch devices and keep the task in view",
+          }),
+          body: translate({
+            id: "APP.workflow.steps.devices.body",
+            message:
+              "Use it on web, desktop, or iOS when the same task needs attention in different settings.",
+          }),
+          detail: translate({
+            id: "APP.workflow.steps.devices.detail",
+            message:
+              "Work through complex tasks at your desk, then check progress later from another device.",
+          }),
+          alt: translate({
+            id: "APP.workflow.steps.devices.alt",
+            message:
+              "OOMOL AI interface continuing work with the same OOMOL capabilities",
+          }),
         },
       ],
     },
     outputs: {
-      title: "CLI 适合集成，悟墨 AI 适合日常使用",
-      description:
-        "oo-cli 适合把工具接入 Agent 和终端流程；悟墨 AI 适合你直接打开，用图形界面查看结果并继续处理。",
-      imageAlt: "悟墨 AI 中使用同一套工具能力持续完成任务的界面",
+      title: translate({
+        id: "APP.outputs.title",
+        message: "Run fast in the terminal. Review clearly in the GUI.",
+      }),
+      description: translate({
+        id: "APP.outputs.description",
+        message:
+          "oo-cli is a strong fit for searching, inspecting, and running tools from the terminal and agent workflows. OOMOL AI is for the moments when you need result previews, follow-up conversation, and continuity across devices while using the same capabilities.",
+      }),
+      imageAlt: translate({
+        id: "APP.outputs.imageAlt",
+        message:
+          "OOMOL AI interface continuing work with the same tools in one workspace",
+      }),
     },
     pricing: {
-      title: "共用同一套点数",
-      description:
-        "悟墨 AI 与 oo-cli 共用同一套点数。你按实际使用消耗，不按 Web、桌面和 iOS 分开计费。",
-      pillars: [
-        "Web、Desktop、iOS 共用同一账户与点数",
-        "购买后的点数会一直保留，不会按月清零",
-        "从轻量体验到高频使用都有对应档位",
-      ],
-      summary: {
-        eyebrow: "统一计费",
-        title: "不是给某个入口单独充值",
-        description:
-          "无论你从 oo-cli 还是悟墨 AI 发起任务，消耗都按实际使用计算。用得更多时再补充即可。",
-        badge: "跨入口共用",
-      },
-      perPack: "/ 包",
-      featureTitle: "适合这种任务节奏",
-      cta: "去充值",
-      note: "点数购买后会保留在账户里，不按月清零，也不会因为你切换使用入口而失效。",
+      title: translate({
+        id: "APP.pricing.title",
+        message: "One account, one credit system",
+      }),
+      description: translate({
+        id: "APP.pricing.description",
+        message:
+          "OOMOL AI and oo-cli share the same account and credits. Whether a task starts from the terminal, web, desktop, or iOS, usage is counted the same way, so you do not need to top up each entry point separately.",
+      }),
+      perPack: translate({ id: "APP.pricing.perPack", message: "/ pack" }),
+      featureTitle: translate({
+        id: "APP.pricing.featureTitle",
+        message: "Works well for",
+      }),
+      cta: translate({ id: "APP.pricing.cta", message: "Top Up" }),
       packs: {
         starter: {
-          tier: "偶尔使用",
-          name: "入门包",
-          description: "到账 5 点数。适合轻量体验或偶尔补充。",
-          note: "灵活",
-          features: ["先小额体验", "不用一开始准备太多余量"],
-        },
-        boost: {
-          tier: "日常使用",
-          name: "增强包",
-          description:
-            "到账 24 点数（20 基础点数 + 4 额外点数）。适合日常使用。",
-          note: "推荐",
-          features: ["适合稳定日常使用", "连续处理多个任务更从容"],
-        },
-        ultra: {
-          tier: "高频任务",
-          name: "超级包",
-          description:
-            "到账 128 点数（100 基础点数 + 28 额外点数）。适合批量任务与高频阶段。",
-          note: "储备型",
-          features: ["适合批量与长链路任务", "为高频阶段预留更多余量"],
-        },
-      },
-    },
-    downloads: {
-      title: "选择当前最方便的入口",
-      items: {
-        web: {
-          title: "网页版",
-          subtitle: "对话式图形入口",
-          description: "无需安装，打开浏览器即可开始。",
-          action: "打开网页版",
-        },
-        desktop: {
-          title: "桌面版",
-          subtitle: "桌面应用",
-          description: "适合长时间保持工作区，并连续处理复杂任务。",
-          action: "下载桌面版",
-        },
-        ios: {
-          title: "iOS",
-          subtitle: "移动应用",
-          description: "适合在移动设备上查看进展，并继续当前任务。",
-          action: "打开 App Store",
-        },
-      },
-    },
-    footerCopyright: "Copyright © 2026 悟墨 AI.",
-  },
-  en: {
-    brandLabel: "OOMOL AI",
-    page: {
-      title: "OOMOL AI - OOMOL's official GUI",
-      description:
-        "When you prefer a GUI, use OOMOL tools on web, desktop, and iOS for ongoing work, reviewing results, and keeping tasks moving.",
-    },
-    hero: {
-      titleLine1: "OOMOL AI brings tool use",
-      titleLine2: "into a visual workspace",
-      lead: "OOMOL AI is the official GUI for using tools directly. It is better suited to ongoing conversations, reviewing results, and keeping work moving.",
-      productScreenshotAlt:
-        "OOMOL AI interface where the agent natively calls tools to complete a task",
-    },
-    actions: {
-      openWeb: "Open Web App",
-      downloadDesktop: "Download desktop app",
-      ios: "iOS",
-    },
-    models: {
-      title: "Better for everyday use",
-      description:
-        "Search, execution, results, and follow-up work all stay in one workspace.",
-      demo: {
-        title: "Keep the task moving in one workspace",
-        description:
-          "From searching for tools to reviewing results and continuing the work, you do not need to bounce between separate interfaces.",
-        imageAlt:
-          "OOMOL AI workspace showing native tool capabilities and mini apps",
-      },
-      cards: {
-        chat: {
-          eyebrow: "Continuous work",
-          title: "Search, execution, and results stay in one interface",
-          body: "Account connections, task runs, and ready-made tools all land in the current workspace instead of being scattered across extra steps.",
-          chips: ["One workspace", "Ongoing work", "Use directly"],
-        },
-        image: {
-          eyebrow: "Follow-up",
-          title:
-            "Better for reviewing results, asking follow-up questions, and continuing the work",
-          body: "Once you have the result, you can refine the request, ask follow-up questions, or continue the next action without switching to another interface.",
-          chips: ["Review result", "Ask follow-up", "Keep going"],
-        },
-      },
-    },
-    problems: {
-      titleLine1: "When does a GUI",
-      titleLine2: "feel more natural?",
-      cards: [
-        {
-          title: "When you keep it open all day",
-          body: "Compared with one-off command calls, a GUI is better suited to something you keep open and return to throughout the day.",
-        },
-        {
-          title:
-            "When you need to see the result before deciding the next step",
-          body: "Images, documents, spreadsheets, and intermediate results are easier to follow when they stay in the current workspace.",
-        },
-        {
-          title: "When you want less switching and more continuity",
-          body: "If search, execution, and follow-up all stay in one workspace, tasks feel easier to carry forward.",
-        },
-      ] as ProblemCard[],
-    },
-    workflow: {
-      steps: [
-        {
-          title: "State the goal, then start working",
-          body: "You describe the task, and the interface handles the searching and execution from there.",
-          detail:
-            "It feels more like an everyday workspace than a string of commands.",
-          alt: "OOMOL AI interface where the agent actively searches for and calls skills",
-        },
-        {
-          title: "Once the result appears, keep going",
-          body: "Review the output, refine the request, and continue from the same page.",
-          detail:
-            "It fits tasks where you need to see, edit, and continue in one flow.",
-          alt: "OOMOL AI interface continuing a multi-step tool task",
-        },
-        {
-          title: "Switch devices without switching mental modes",
-          body: "Web, desktop, and iOS all let you continue the same work without learning a different interface.",
-          detail: "Use whichever one is most convenient in the moment.",
-          alt: "OOMOL AI interface connecting results back into the OOMOL toolchain",
-        },
-      ],
-    },
-    outputs: {
-      title:
-        "Terminals are great for integration. GUIs are better for ongoing use.",
-      description:
-        "Use oo-cli when you want tools connected into agents and terminal workflows. Open OOMOL AI when you want to use those same tools yourself in a visual workspace.",
-      imageAlt:
-        "OOMOL AI interface continuing work with the same tools in one workspace",
-    },
-    pricing: {
-      title: "One credit system",
-      description:
-        "OOMOL AI and oo-cli use the same credits. You pay for actual usage, not separately for web, desktop, and iOS.",
-      pillars: [
-        "Web, desktop, and iOS share one account and one credit balance",
-        "Purchased credits stay in your account until you use them",
-        "Pack sizes cover light use through heavier ongoing work",
-      ],
-      summary: {
-        eyebrow: "Shared billing",
-        title: "You top up usage, not a specific app",
-        description:
-          "Whether a task starts from oo-cli or OOMOL AI, usage is counted the same way. Add more only when you need more headroom.",
-        badge: "One credit system",
-      },
-      perPack: "/ pack",
-      featureTitle: "Works well for",
-      cta: "Top Up",
-      note: "Purchased credits stay in your account until you use them. They do not reset monthly, and switching between entry points does not affect them.",
-      packs: {
-        starter: {
-          tier: "Occasional use",
-          name: "Starter Pack",
-          description:
-            "Includes 5 credits. A small refill for light use or occasional top-ups.",
-          note: "Flexible",
+          tier: translate({
+            id: "APP.pricing.packs.starter.tier",
+            message: "Occasional use",
+          }),
+          name: translate({
+            id: "APP.pricing.packs.starter.name",
+            message: "Starter Pack",
+          }),
+          description: translate({
+            id: "APP.pricing.packs.starter.description",
+            message:
+              "Includes 5 credits. A small refill for light use or occasional top-ups.",
+          }),
+          note: translate({
+            id: "APP.pricing.packs.starter.note",
+            message: "Flexible",
+          }),
           features: [
-            "Useful for a small first balance",
-            "No need to reserve too much upfront",
+            translate({
+              id: "APP.pricing.packs.starter.feature1",
+              message: "Useful for a small first balance",
+            }),
+            translate({
+              id: "APP.pricing.packs.starter.feature2",
+              message: "No need to reserve too much upfront",
+            }),
           ],
         },
         boost: {
-          tier: "Daily use",
-          name: "Boost Pack",
-          description:
-            "Includes 24 credits (20 base + 4 bonus). A better fit for regular day-to-day use.",
-          note: "Popular",
+          tier: translate({
+            id: "APP.pricing.packs.boost.tier",
+            message: "Daily use",
+          }),
+          name: translate({
+            id: "APP.pricing.packs.boost.name",
+            message: "Boost Pack",
+          }),
+          description: translate({
+            id: "APP.pricing.packs.boost.description",
+            message:
+              "Includes 24 credits (20 base + 4 bonus). A better fit for regular day-to-day use.",
+          }),
+          note: translate({
+            id: "APP.pricing.packs.boost.note",
+            message: "Popular",
+          }),
           features: [
-            "A stronger fit for steady daily use",
-            "More comfortable when several tasks arrive in a row",
+            translate({
+              id: "APP.pricing.packs.boost.feature1",
+              message: "A stronger fit for steady daily use",
+            }),
+            translate({
+              id: "APP.pricing.packs.boost.feature2",
+              message: "More comfortable when several tasks arrive in a row",
+            }),
           ],
         },
         ultra: {
-          tier: "Heavy use",
-          name: "Ultra Pack",
-          description:
-            "Includes 128 credits (100 base + 28 bonus). Best for batch work and heavier periods.",
-          note: "Reserve",
+          tier: translate({
+            id: "APP.pricing.packs.ultra.tier",
+            message: "Heavy use",
+          }),
+          name: translate({
+            id: "APP.pricing.packs.ultra.name",
+            message: "Ultra Pack",
+          }),
+          description: translate({
+            id: "APP.pricing.packs.ultra.description",
+            message:
+              "Includes 128 credits (100 base + 28 bonus). Best for batch work and heavier periods.",
+          }),
+          note: translate({
+            id: "APP.pricing.packs.ultra.note",
+            message: "Reserve",
+          }),
           features: [
-            "Built for batch work and longer workflows",
-            "Keeps more headroom available during heavier periods",
+            translate({
+              id: "APP.pricing.packs.ultra.feature1",
+              message: "Built for batch work and longer workflows",
+            }),
+            translate({
+              id: "APP.pricing.packs.ultra.feature2",
+              message: "Keeps more headroom available during heavier periods",
+            }),
           ],
         },
       },
     },
     downloads: {
-      title: "Open it in whichever app fits you best",
+      title: translate({
+        id: "APP.downloads.title",
+        message: "Open it on the device you need",
+      }),
       items: {
         web: {
-          title: "Web",
-          subtitle: "Chat-based interface",
-          description: "The fastest way to start using it.",
-          action: "Open Web App",
+          title: translate({
+            id: "APP.downloads.items.web.title",
+            message: "Web",
+          }),
+          subtitle: translate({
+            id: "APP.downloads.items.web.subtitle",
+            message: "Chat-based interface",
+          }),
+          description: translate({
+            id: "APP.downloads.items.web.description",
+            message:
+              "Start in the browser without installing anything, then review and continue your task.",
+          }),
+          action: translate({
+            id: "APP.downloads.items.web.action",
+            message: "Open Web App",
+          }),
         },
         desktop: {
-          title: "Desktop",
-          subtitle: "Desktop app",
-          description:
-            "Best when you want a more stable workspace for longer-running work.",
-          action: "Download desktop app",
+          title: translate({
+            id: "APP.downloads.items.desktop.title",
+            message: "Desktop",
+          }),
+          subtitle: translate({
+            id: "APP.downloads.items.desktop.subtitle",
+            message: "Desktop app",
+          }),
+          description: translate({
+            id: "APP.downloads.items.desktop.description",
+            message:
+              "Best when you want to keep a workspace open for longer or more complex tasks.",
+          }),
+          action: translate({
+            id: "APP.downloads.items.desktop.action",
+            message: "Download desktop app",
+          }),
         },
         ios: {
-          title: "iOS",
-          subtitle: "Mobile app",
-          description:
-            "Track progress and continue the current task from your phone or tablet.",
-          action: "Open App Store",
+          title: translate({
+            id: "APP.downloads.items.ios.title",
+            message: "iOS",
+          }),
+          subtitle: translate({
+            id: "APP.downloads.items.ios.subtitle",
+            message: "Mobile app",
+          }),
+          description: translate({
+            id: "APP.downloads.items.ios.description",
+            message:
+              "Track progress and continue the current task from your phone or tablet.",
+          }),
+          action: translate({
+            id: "APP.downloads.items.ios.action",
+            message: "Open App Store",
+          }),
         },
       },
     },
-    footerCopyright: "Copyright © 2026 OOMOL AI.",
-  },
-} as const;
+  };
+}
 
 function getLocalizedVideoSrc(
   file: { zh: string; en: string },
@@ -579,7 +733,7 @@ export default function AppPage() {
     i18n: { currentLocale: string };
   };
   const isZh = i18n.currentLocale === "zh-CN";
-  const copy = isZh ? COPY.zh : COPY.en;
+  const copy = createAppCopy();
 
   const appWebHref = "https://app.oomol.com";
   const appStoreHref = "https://apps.apple.com/app/id6749377154";
