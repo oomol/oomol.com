@@ -129,8 +129,8 @@ export default function CloudPageLinearFlow() {
   };
   const cloudConsoleImage = useBaseUrl(
     i18n.currentLocale === "zh-CN"
-      ? "/img/pages/home/cloud-console-zh.webp"
-      : "/img/pages/home/cloud-console-en.webp"
+      ? "/img/pages/home/cloud-console-zh.png"
+      : "/img/pages/home/cloud-console-en.png"
   );
 
   return (
