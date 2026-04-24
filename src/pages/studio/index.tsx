@@ -143,7 +143,12 @@ export default function StudioPage() {
               </p>
 
               <div className={styles.actions}>
-                <DownloadButton centered />
+                <DownloadButton centered showNote={false} />
+                <Button asChild size="lg" variant="outline">
+                  <Link to="/cloud">
+                    {translate({ message: "HOME.StudioChain.action.cloud" })}
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>

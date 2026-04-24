@@ -84,8 +84,11 @@
 }
 
 .actions {
-  display: grid;
-  justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
   padding-top: 0.6rem;
 }
 
@@ -166,31 +169,30 @@
 .painPointsGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0;
-  border: 1px solid var(--oomol-divider);
-  border-radius: var(--studio-radius);
-  overflow: hidden;
-  background: var(--oomol-bg-base);
+  gap: 1rem;
+  border: 0;
+  border-radius: 0;
+  overflow: visible;
+  background: transparent;
   align-items: stretch;
 }
 
 .painPointCard {
   position: relative;
   display: grid;
-  gap: 0.7rem;
-  padding: 1.6rem 1.6rem 1.75rem;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
+  gap: 0.8rem;
+  padding: 1.4rem 1.4rem 1.5rem;
+  border: 1px solid var(--oomol-divider);
+  border-radius: var(--studio-radius);
+  background: var(--oomol-bg-base);
   box-shadow: none !important;
-  transition: background-color 0.2s ease;
-
-  &:not(:last-child) {
-    border-right: 1px solid var(--oomol-divider);
-  }
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
 
   &:hover {
     background: var(--oomol-bg-container);
+    border-color: var(--oomol-border-strong);
   }
 
   &::before,
@@ -224,9 +226,9 @@
 
 .painPointTitle {
   margin: 0;
-  max-width: 20ch;
-  font-size: var(--oomol-display-card);
-  line-height: 1.3;
+  max-width: 16ch;
+  font-size: var(--oomol-body-lead);
+  line-height: 1.32;
   font-weight: 600;
   letter-spacing: -0.012em;
   color: var(--oomol-text-primary);
@@ -235,7 +237,7 @@
 
 .painPointText {
   font-size: var(--oomol-body-base);
-  line-height: var(--oomol-line-height-relaxed);
+  line-height: 1.6;
 }
 
 .principlesGrid {
@@ -281,30 +283,25 @@
 .principleContent {
   order: 1;
   display: grid;
-  gap: 0.85rem;
-  max-width: 36rem;
+  gap: 0.9rem;
+  max-width: 34rem;
 }
 
 .principleTitle {
-  margin: 0;
-  max-width: 22ch;
-  font-size: var(--oomol-font-size-xl);
-  line-height: 1.2;
-  font-weight: 600;
-  letter-spacing: var(--oomol-tracking-section);
-  color: var(--oomol-text-primary);
-  text-wrap: balance;
+  @include marketing-display-title(hero, 18ch, left, 1.04);
+  overflow-wrap: normal;
+  word-break: keep-all;
 }
 
 .principleParagraphs {
   display: grid;
-  gap: 0.7rem;
+  gap: 0.75rem;
 }
 
 .principleText {
-  font-size: var(--oomol-body-lead);
-  line-height: var(--oomol-line-height-relaxed);
-  letter-spacing: var(--oomol-tracking-body);
+  font-size: var(--oomol-body-base);
+  line-height: 1.64;
+  letter-spacing: 0;
   color: var(--oomol-text-secondary);
 }
 
@@ -323,13 +320,6 @@
 @media (max-width: 996px) {
   .painPointsGrid {
     grid-template-columns: 1fr;
-  }
-
-  .painPointCard {
-    &:not(:last-child) {
-      border-right: 0;
-      border-bottom: 1px solid var(--oomol-divider);
-    }
   }
 
   .principleCard,
@@ -378,20 +368,33 @@
     font-size: var(--oomol-body-lead);
   }
 
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 20rem;
+    margin: 0 auto;
+  }
+
+  .actions > * {
+    width: 100%;
+  }
+
   .heroShowcaseInner {
     width: min(100%, calc(100% - 32px));
   }
 
   .painPointCard {
-    padding: 1.35rem 1.2rem 1.4rem;
+    padding: 1.2rem 1.15rem 1.3rem;
   }
 
   .painPointTitle {
     font-size: var(--oomol-body-lead);
   }
-
   .principleTitle {
-    font-size: var(--oomol-font-size-xl);
+    @include marketing-display-title(section, 18ch, left, 1.06);
+    overflow-wrap: normal;
+    word-break: keep-all;
   }
 }
 
@@ -425,16 +428,13 @@
     border-color: var(--oomol-border-subtle);
   }
 
-  .painPointsGrid {
-    background: var(--oomol-bg-base);
+  .painPointCard {
+    background: var(--oomol-bg-elevated);
     border-color: var(--oomol-border-subtle);
-  }
-
-  .painPointCard:not(:last-child) {
-    border-right-color: var(--oomol-border-subtle);
   }
 
   .painPointCard:hover {
     background: var(--oomol-bg-elevated);
+    border-color: var(--oomol-border-strong);
   }
 }
