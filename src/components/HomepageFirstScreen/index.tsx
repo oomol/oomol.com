@@ -112,31 +112,6 @@ export default function HomepageFirstScreen() {
             </div>
           </div>
         </div>
-
-        {/* 这里保留的是旧版首页实验方案的说明；当前首页不再使用 beam / terminal 组合。
-
-        <div className={styles.heroTerminal}>
-          <Terminal staticMode={reduceMotion === true}>
-            <TypingAnimation>
-              {translate({ message: "HOME.FirstScreen.terminal.l1" })}
-            </TypingAnimation>
-            <AnimatedSpan className={terminalStyles.lineOk}>
-              {translate({ message: "HOME.FirstScreen.terminal.l2" })}
-            </AnimatedSpan>
-            <TypingAnimation>
-              {translate({ message: "HOME.FirstScreen.terminal.l3" })}
-            </TypingAnimation>
-            <AnimatedSpan className={terminalStyles.lineOk}>
-              {translate({ message: "HOME.FirstScreen.terminal.l4" })}
-            </AnimatedSpan>
-            <TypingAnimation>
-              {translate({ message: "HOME.FirstScreen.terminal.l5" })}
-            </TypingAnimation>
-          </Terminal>
-        </div>
-
-        <HomepageHeroBeam />
-        */}
       </div>
 
       <div className={styles.workflowArchive}>

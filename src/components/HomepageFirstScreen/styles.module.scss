@@ -33,13 +33,6 @@
   text-align: center;
 }
 
-.heroTerminal {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: clamp(1.25rem, 3vw, 2rem);
-}
-
 .slogan {
   @include marketing-display-title(hero, 100%, center, 1.04);
   white-space: pre-line;
