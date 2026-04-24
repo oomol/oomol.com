@@ -8,14 +8,14 @@ import { usePluginData } from "@docusaurus/useGlobalData";
 import React from "react";
 
 const toolIcons = [
-  { icon: "i-simple-icons-github", label: "GitHub" },
-  { icon: "i-simple-icons-slack", label: "Slack" },
-  { icon: "i-simple-icons-notion", label: "Notion" },
-  { icon: "i-simple-icons-gmail", label: "Gmail" },
-  { icon: "i-simple-icons-linear", label: "Linear" },
-  { icon: "i-simple-icons-vercel", label: "Vercel" },
-  { icon: "i-simple-icons-supabase", label: "Supabase" },
-  { icon: "i-simple-icons-twilio", label: "Twilio" },
+  { icon: "i-simple-icons-github", labelKey: "COMMON.brand.github" },
+  { icon: "i-simple-icons-slack", labelKey: "COMMON.brand.slack" },
+  { icon: "i-simple-icons-notion", labelKey: "COMMON.brand.notion" },
+  { icon: "i-simple-icons-gmail", labelKey: "COMMON.brand.gmail" },
+  { icon: "i-simple-icons-linear", labelKey: "COMMON.brand.linear" },
+  { icon: "i-simple-icons-vercel", labelKey: "COMMON.brand.vercel" },
+  { icon: "i-simple-icons-supabase", labelKey: "COMMON.brand.supabase" },
+  { icon: "i-simple-icons-twilio", labelKey: "COMMON.brand.twilio" },
 ];
 
 const DEFAULT_CATALOG_STATS = {
@@ -132,12 +132,14 @@ export default function HomepageToolStrip() {
             <div className={styles.wallTitle}>{copy.wallTitle}</div>
             <div className={styles.toolGrid}>
               {toolIcons.map(tool => (
-                <div key={tool.label} className={styles.toolChip}>
+                <div key={tool.labelKey} className={styles.toolChip}>
                   <i
                     className={`${styles.toolIcon} ${tool.icon}`}
                     aria-hidden="true"
                   />
-                  <span className={styles.toolLabel}>{tool.label}</span>
+                  <span className={styles.toolLabel}>
+                    {translate({ message: tool.labelKey })}
+                  </span>
                 </div>
               ))}
             </div>

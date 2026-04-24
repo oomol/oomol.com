@@ -1,4 +1,73 @@
 {
+  "COMMON.copy": {
+    "message": "Copy"
+  },
+  "COMMON.copied": {
+    "message": "Copied"
+  },
+  "COMMON.copyToClipboard": {
+    "message": "Copy to clipboard"
+  },
+  "COMMON.brand.oomol": {
+    "message": "OOMOL"
+  },
+  "COMMON.brand.github": {
+    "message": "GitHub"
+  },
+  "COMMON.brand.slack": {
+    "message": "Slack"
+  },
+  "COMMON.brand.notion": {
+    "message": "Notion"
+  },
+  "COMMON.brand.gmail": {
+    "message": "Gmail"
+  },
+  "COMMON.brand.linear": {
+    "message": "Linear"
+  },
+  "COMMON.brand.vercel": {
+    "message": "Vercel"
+  },
+  "COMMON.brand.supabase": {
+    "message": "Supabase"
+  },
+  "COMMON.brand.twilio": {
+    "message": "Twilio"
+  },
+  "COMMON.brand.codex": {
+    "message": "Codex"
+  },
+  "COMMON.brand.claudeCode": {
+    "message": "Claude Code"
+  },
+  "COMMON.brand.openClaw": {
+    "message": "OpenClaw"
+  },
+  "COMMON.brand.cursor": {
+    "message": "Cursor"
+  },
+  "COMMON.brand.qode": {
+    "message": "Qode"
+  },
+  "COMMON.brand.discord": {
+    "message": "Discord"
+  },
+  "COMMON.brand.youtube": {
+    "message": "YouTube"
+  },
+  "COMMON.brand.x": {
+    "message": "X"
+  },
+  "COMMON.platform.web": {
+    "message": "Web"
+  },
+  "COMMON.platform.desktop": {
+    "message": "Desktop"
+  },
+  "COMMON.platform.ios": {
+    "message": "iOS"
+  },
   "Theme.Navbar.login": {
     "message": "Login"
   },
@@ -25,6 +94,12 @@
   },
   "HOME.FirstScreen.video.closeAriaLabel": {
     "message": "Close video dialog"
+  },
+  "HOME.FirstScreen.video.thumbnailAlt": {
+    "message": "OOMOL homepage workflow demo"
+  },
+  "HOME.FirstScreen.video.title": {
+    "message": "OOMOL homepage workflow demo"
   },
   "HOME.PainPoints.title": {
     "message": "Connect the tools your team already uses"
@@ -184,12 +259,6 @@
   },
   "HOME.Downloads.cli.method.agent.description": {
     "message": "Paste this prompt into your agent if you want it to use the official install commands and verify the setup for you."
-  },
-  "HOME.Downloads.cli.copy": {
-    "message": "Copy"
-  },
-  "HOME.Downloads.cli.copied": {
-    "message": "Copied"
   },
   "HOME.Downloads.cta.title": {
     "message": "Easy to install. Easy to extend."
@@ -592,6 +661,9 @@
   },
   "PRICING.tables.fusionApi.description.doubaoStt": {
     "message": "Doubao speech to text"
+  },
+  "PRICING.tables.fusionApi.description.jinaReader": {
+    "message": "Jina Reader"
   },
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
@@ -1143,6 +1215,9 @@
   "STUDIO.principle1.paragraph3": {
     "message": "The point is not to stop at automatic generation. It is to let you take over from the first working version inside a real engineering environment."
   },
+  "STUDIO.principle1.imageAlt": {
+    "message": "Write function tools with code in OOMOL Studio"
+  },
   "STUDIO.principle2.title": {
     "message": "2. Start composing without learning a DSL first"
   },
@@ -1155,6 +1230,9 @@
   "STUDIO.principle2.paragraph3": {
     "message": "That keeps learning cost out of the critical path and makes orchestration understandable from the start."
   },
+  "STUDIO.principle2.imageAlt": {
+    "message": "Developer experience for function tools in OOMOL Studio"
+  },
   "STUDIO.principle3.title": {
     "message": "3. Extend it the way engineers actually do"
   },
@@ -1166,6 +1244,12 @@
   },
   "STUDIO.principle3.paragraph3": {
     "message": "So the flow is not just something you can visually compose. It can keep expanding with the rest of your stack."
+  },
+  "STUDIO.principle3.imageAlt": {
+    "message": "Local and cloud continuity for tools built in OOMOL Studio"
+  },
+  "STUDIO.hero.imageAlt": {
+    "message": "OOMOL Studio"
   },
   "HOME.ToolStrip.title": {
     "message": "Behind those capabilities are connected apps and tools"
@@ -2048,6 +2132,30 @@
   },
   "HOME.Community.qrcodeAlt": {
     "message": "WeCom QR code"
+  },
+  "HOME.Community.discussions.name": {
+    "message": "Discussion"
+  },
+  "HOME.Community.discussions.text": {
+    "message": "Discussions"
+  },
+  "HOME.Community.repo.pdfCraft.name": {
+    "message": "PDF Craft"
+  },
+  "HOME.Community.repo.pdfCraft.description": {
+    "message": "Convert PDFs into EPUB, Markdown, and other formats, with a strong focus on scanned books."
+  },
+  "HOME.Community.repo.ovmWin.name": {
+    "message": "OVM Win"
+  },
+  "HOME.Community.repo.ovmWin.description": {
+    "message": "Run the ovm-core virtual machine on Windows through WSL2."
+  },
+  "HOME.Community.repo.macPowerMonitor.name": {
+    "message": "Mac Power Monitor"
+  },
+  "HOME.Community.repo.macPowerMonitor.description": {
+    "message": "Receive macOS sleep and wake notifications."
   },
   "FOOTER.cookieSettings": {
     "message": "Cookie settings"

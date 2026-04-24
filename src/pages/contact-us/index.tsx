@@ -38,24 +38,29 @@ const CACHE_HOURS = 6;
 
 const REPOS: RepoInfo[] = [
   {
-    name: "PDF Craft",
+    name: translate({ message: "HOME.Community.repo.pdfCraft.name" }),
     url: "oomol-lab/pdf-craft",
-    description:
-      "Convert PDFs into EPUB, Markdown, and other formats, with a strong focus on scanned books.",
+    description: translate({
+      message: "HOME.Community.repo.pdfCraft.description",
+    }),
     defaultStar: 2879,
     defaultForks: 163,
   },
   {
-    name: "OVM Win",
+    name: translate({ message: "HOME.Community.repo.ovmWin.name" }),
     url: "oomol-lab/ovm-win",
-    description: "Run the ovm-core virtual machine on Windows through WSL2.",
+    description: translate({
+      message: "HOME.Community.repo.ovmWin.description",
+    }),
     defaultStar: 20,
     defaultForks: 3,
   },
   {
-    name: "Mac Power Monitor",
+    name: translate({ message: "HOME.Community.repo.macPowerMonitor.name" }),
     url: "oomol-lab/mac-power-monitor",
-    description: "Receive macOS sleep and wake notifications.",
+    description: translate({
+      message: "HOME.Community.repo.macPowerMonitor.description",
+    }),
     defaultStar: 18,
     defaultForks: 3,
   },
@@ -64,33 +69,33 @@ const REPOS: RepoInfo[] = [
 const contentData = [
   {
     icon: <i className={`${styles.logo} i-bi-discord`} />,
-    name: "Discord",
+    name: translate({ message: "COMMON.brand.discord" }),
     href: "https://discord.gg/W3evr2kJDa",
-    text: "Discord",
+    text: translate({ message: "COMMON.brand.discord" }),
   },
   {
     icon: <i className={`${styles.logo} i-bi-youtube`} />,
-    name: "Youtube",
+    name: translate({ message: "COMMON.brand.youtube" }),
     href: "https://www.youtube.com/@oomolstudio",
-    text: "YouTube",
+    text: translate({ message: "COMMON.brand.youtube" }),
   },
   {
     icon: <i className={`${styles.logo} i-bi-twitter-x`} />,
-    name: "X",
+    name: translate({ message: "COMMON.brand.x" }),
     href: "https://twitter.com/OomolStudio",
-    text: "X",
+    text: translate({ message: "COMMON.brand.x" }),
   },
   {
     icon: <i className={`${styles.logo} i-bi-github`} />,
-    name: "GitHub",
+    name: translate({ message: "COMMON.brand.github" }),
     href: "https://github.com/oomol-lab",
-    text: "GitHub",
+    text: translate({ message: "COMMON.brand.github" }),
   },
   {
     icon: <i className={`${styles.logo} i-octicon-comment-discussion-16`} />,
-    name: "Discussion",
+    name: translate({ message: "HOME.Community.discussions.name" }),
     href: "https://github.com/orgs/oomol-lab/discussions",
-    text: "Discussions",
+    text: translate({ message: "HOME.Community.discussions.text" }),
   },
 ];
 

@@ -56,6 +56,8 @@ export default function BrandAssets() {
 
   const CornerCopy = ({ text }: CornerCopyProps) => {
     const [isCopied, setIsCopied] = useState(false);
+    const copyAriaLabel = translate({ message: "COMMON.copyToClipboard" });
+    const copiedAriaLabel = translate({ message: "COMMON.copied" });
 
     const handleCopy = async () => {
       try {
@@ -72,7 +74,7 @@ export default function BrandAssets() {
     return (
       <Button
         className={styles.icon}
-        aria-label={isCopied ? "Copied" : "Copy to clipboard"}
+        aria-label={isCopied ? copiedAriaLabel : copyAriaLabel}
         size="icon"
         variant="ghost"
         onClick={handleCopy}

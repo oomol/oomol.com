@@ -114,16 +114,22 @@ function formatPricingValue(value: number) {
   return value.toString();
 }
 
-function renderIdentifierBadge(value: string) {
-  return <IdentifierBadge>{value}</IdentifierBadge>;
+function formatTableCellValue(value: unknown) {
+  return value == null ? "" : String(value);
 }
 
-function renderSinglePriceValue(value: string) {
-  return <PriceValue>{value}</PriceValue>;
+function renderIdentifierBadge(value: unknown) {
+  return <IdentifierBadge>{formatTableCellValue(value)}</IdentifierBadge>;
 }
 
-function renderMultiLinePriceValue(value: string | string[]) {
-  const normalizedValue = Array.isArray(value) ? value.join("\n") : value;
+function renderSinglePriceValue(value: unknown) {
+  return <PriceValue>{formatTableCellValue(value)}</PriceValue>;
+}
+
+function renderMultiLinePriceValue(value: unknown) {
+  const normalizedValue = Array.isArray(value)
+    ? value.map(formatTableCellValue).join("\n")
+    : formatTableCellValue(value);
   return (
     <PriceValue multiline={Array.isArray(value)}>{normalizedValue}</PriceValue>
   );
@@ -672,7 +678,10 @@ export default function Index() {
       key: "jina-reader",
       service: "jina-reader",
       price: [`search: 0.05 / ${unitMToken}`, `read: 0.05 / ${unitMToken}`],
-      description: "Jina Reader",
+      description: tPricing(
+        "PRICING.tables.fusionApi.description.jinaReader",
+        "Jina Reader"
+      ),
     },
     {
       key: "fal-remove-background",

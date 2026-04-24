@@ -1,5 +1,6 @@
-import styles from "@site/src/components/HomepageFirstScreen/styles.module.scss";
+import styles from "../HomepageFirstScreen/styles.module.scss";
 
+import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { HeroVideoDialog } from "@site/src/components/ui/hero-video-dialog";
 import React from "react";
@@ -18,8 +19,10 @@ export function HomepageFirstScreenVideoHero() {
         <HeroVideoDialog
           videoSrc={heroVideoUrl}
           thumbnailSrc={heroVideoPosterUrl}
-          thumbnailAlt="OOMOL homepage workflow demo"
-          title="OOMOL homepage workflow demo"
+          thumbnailAlt={translate({
+            message: "HOME.FirstScreen.video.thumbnailAlt",
+          })}
+          title={translate({ message: "HOME.FirstScreen.video.title" })}
         />
       </div>
     </div>

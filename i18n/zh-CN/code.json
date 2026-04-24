@@ -1,4 +1,73 @@
 {
+  "COMMON.copy": {
+    "message": "复制"
+  },
+  "COMMON.copied": {
+    "message": "已复制"
+  },
+  "COMMON.copyToClipboard": {
+    "message": "复制到剪贴板"
+  },
+  "COMMON.brand.oomol": {
+    "message": "OOMOL"
+  },
+  "COMMON.brand.github": {
+    "message": "GitHub"
+  },
+  "COMMON.brand.slack": {
+    "message": "Slack"
+  },
+  "COMMON.brand.notion": {
+    "message": "Notion"
+  },
+  "COMMON.brand.gmail": {
+    "message": "Gmail"
+  },
+  "COMMON.brand.linear": {
+    "message": "Linear"
+  },
+  "COMMON.brand.vercel": {
+    "message": "Vercel"
+  },
+  "COMMON.brand.supabase": {
+    "message": "Supabase"
+  },
+  "COMMON.brand.twilio": {
+    "message": "Twilio"
+  },
+  "COMMON.brand.codex": {
+    "message": "Codex"
+  },
+  "COMMON.brand.claudeCode": {
+    "message": "Claude Code"
+  },
+  "COMMON.brand.openClaw": {
+    "message": "OpenClaw"
+  },
+  "COMMON.brand.cursor": {
+    "message": "Cursor"
+  },
+  "COMMON.brand.qode": {
+    "message": "Qode"
+  },
+  "COMMON.brand.discord": {
+    "message": "Discord"
+  },
+  "COMMON.brand.youtube": {
+    "message": "YouTube"
+  },
+  "COMMON.brand.x": {
+    "message": "X"
+  },
+  "COMMON.platform.web": {
+    "message": "网页端"
+  },
+  "COMMON.platform.desktop": {
+    "message": "桌面端"
+  },
+  "COMMON.platform.ios": {
+    "message": "iOS"
+  },
   "Theme.Navbar.login": {
     "message": "登录"
   },
@@ -25,6 +94,12 @@
   },
   "HOME.FirstScreen.video.closeAriaLabel": {
     "message": "关闭视频弹窗"
+  },
+  "HOME.FirstScreen.video.thumbnailAlt": {
+    "message": "OOMOL 首页工作流演示"
+  },
+  "HOME.FirstScreen.video.title": {
+    "message": "OOMOL 首页工作流演示"
   },
   "HOME.PainPoints.title": {
     "message": "串联你已经在用的工具"
@@ -184,12 +259,6 @@
   },
   "HOME.Downloads.cli.method.agent.description": {
     "message": "如果你更希望 Agent 按官方安装命令代你完成安装和检查，就把下面这段提示词直接复制给它。"
-  },
-  "HOME.Downloads.cli.copy": {
-    "message": "复制"
-  },
-  "HOME.Downloads.cli.copied": {
-    "message": "已复制"
   },
   "HOME.Downloads.cta.title": {
     "message": "安装简单，扩展也简单"
@@ -592,6 +661,9 @@
   },
   "PRICING.tables.fusionApi.description.doubaoStt": {
     "message": "豆包语音转文字"
+  },
+  "PRICING.tables.fusionApi.description.jinaReader": {
+    "message": "Jina Reader"
   },
   "theme.ErrorPageContent.title": {
     "message": "页面已崩溃。",
@@ -1143,6 +1215,9 @@
   "STUDIO.principle1.paragraph3": {
     "message": "重点不是停在自动搭建，而是让你从第一版开始就在真实工程环境里继续接手。"
   },
+  "STUDIO.principle1.imageAlt": {
+    "message": "在 OOMOL Studio 中用代码编写函数工具"
+  },
   "STUDIO.principle2.title": {
     "message": "2. 不用先学 DSL，就能开始编排"
   },
@@ -1155,6 +1230,9 @@
   "STUDIO.principle2.paragraph3": {
     "message": "这样学习成本不会先挡在前面，编排从一开始就能按工程方式看懂和改动。"
   },
+  "STUDIO.principle2.imageAlt": {
+    "message": "OOMOL Studio 中的函数工具开发体验"
+  },
   "STUDIO.principle3.title": {
     "message": "3. 引库和扩展，都按工程方式做"
   },
@@ -1166,6 +1244,12 @@
   },
   "STUDIO.principle3.paragraph3": {
     "message": "这样组合出来的流程不只是能跑起来，而是真的能顺着你的技术栈继续扩。"
+  },
+  "STUDIO.principle3.imageAlt": {
+    "message": "OOMOL Studio 中本地和云端连续衔接的工具工作流"
+  },
+  "STUDIO.hero.imageAlt": {
+    "message": "OOMOL Studio"
   },
   "HOME.ToolStrip.title": {
     "message": "这些能力背后，是已接好的应用和工具"
@@ -2048,6 +2132,30 @@
   },
   "HOME.Community.qrcodeAlt": {
     "message": "企业微信二维码"
+  },
+  "HOME.Community.discussions.name": {
+    "message": "讨论区"
+  },
+  "HOME.Community.discussions.text": {
+    "message": "讨论"
+  },
+  "HOME.Community.repo.pdfCraft.name": {
+    "message": "PDF Craft"
+  },
+  "HOME.Community.repo.pdfCraft.description": {
+    "message": "将 PDF 转换为 EPUB、Markdown 和其他格式，尤其适合处理扫描书籍。"
+  },
+  "HOME.Community.repo.ovmWin.name": {
+    "message": "OVM Win"
+  },
+  "HOME.Community.repo.ovmWin.description": {
+    "message": "通过 WSL2 在 Windows 上运行 ovm-core 虚拟机。"
+  },
+  "HOME.Community.repo.macPowerMonitor.name": {
+    "message": "Mac Power Monitor"
+  },
+  "HOME.Community.repo.macPowerMonitor.description": {
+    "message": "接收 macOS 睡眠和唤醒通知。"
   },
   "FOOTER.cookieSettings": {
     "message": "Cookie 设置"

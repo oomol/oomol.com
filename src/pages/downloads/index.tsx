@@ -248,7 +248,9 @@ export default function Downloads() {
             <div className={styles.cards}>
               <div className={styles.card}>
                 <div className={styles.content}>
-                  <div className={styles.type}>Web</div>
+                  <div className={styles.type}>
+                    {translate({ message: "COMMON.platform.web" })}
+                  </div>
                   <span className={styles.description}>
                     {translate({
                       message: "HOME.Downloads.ai.web.description",
@@ -277,7 +279,9 @@ export default function Downloads() {
                   {translate({ message: "HOME.Downloads.recommended" })}
                 </span>
                 <div className={styles.content}>
-                  <div className={styles.type}>Desktop</div>
+                  <div className={styles.type}>
+                    {translate({ message: "COMMON.platform.desktop" })}
+                  </div>
                   <span className={styles.description}>
                     {translate({
                       message: "HOME.Downloads.ai.desktop.description",
@@ -319,7 +323,9 @@ export default function Downloads() {
               </div>
               <div className={styles.card}>
                 <div className={styles.content}>
-                  <div className={styles.type}>iOS</div>
+                  <div className={styles.type}>
+                    {translate({ message: "COMMON.platform.ios" })}
+                  </div>
                   <span className={styles.description}>
                     {translate({
                       message: "HOME.Downloads.ai.ios.description",

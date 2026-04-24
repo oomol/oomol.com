@@ -24,7 +24,7 @@ const principles = [
       light: "/img/pages/studio/code-light.webp",
       dark: "/img/pages/studio/code-dark.webp",
     },
-    alt: "Write function tools with code in OOMOL Studio",
+    altKey: "STUDIO.principle1.imageAlt",
   },
   {
     titleKey: "STUDIO.principle2.title",
@@ -37,7 +37,7 @@ const principles = [
       light: "/img/pages/studio/edit-light.webp",
       dark: "/img/pages/studio/edit-dark.webp",
     },
-    alt: "Developer experience for function tools in OOMOL Studio",
+    altKey: "STUDIO.principle2.imageAlt",
   },
   {
     titleKey: "STUDIO.principle3.title",
@@ -50,7 +50,7 @@ const principles = [
       light: "/img/pages/studio/package-light.webp",
       dark: "/img/pages/studio/package-dark.webp",
     },
-    alt: "Local and cloud continuity for tools built in OOMOL Studio",
+    altKey: "STUDIO.principle3.imageAlt",
   },
 ];
 
@@ -145,7 +145,7 @@ export default function StudioPage() {
                       light: studioPreviewLight,
                       dark: studioPreviewDark,
                     }}
-                    alt="OOMOL Studio"
+                    alt={translate({ message: "STUDIO.hero.imageAlt" })}
                     className={styles.visualImage}
                     fetchPriority="high"
                     loading="eager"
@@ -229,7 +229,7 @@ export default function StudioPage() {
                   <div className={styles.principleMedia}>
                     <ThemedImage
                       sources={principleImages[index]}
-                      alt={principle.alt}
+                      alt={translate({ message: principle.altKey })}
                       className={styles.principleImage}
                     />
                   </div>

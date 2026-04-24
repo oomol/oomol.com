@@ -44,8 +44,14 @@ export default function HomepagePainPoints() {
             "Read the diff, extract key points, and post to the target channel.",
         }),
         apps: [
-          { icon: "i-simple-icons-github", label: "GitHub" },
-          { icon: "i-simple-icons-slack", label: "Slack" },
+          {
+            icon: "i-simple-icons-github",
+            label: translate({ message: "COMMON.brand.github" }),
+          },
+          {
+            icon: "i-simple-icons-slack",
+            label: translate({ message: "COMMON.brand.slack" }),
+          },
         ],
       },
       {
@@ -69,8 +75,14 @@ export default function HomepagePainPoints() {
             "Extract requirements, shape tasks, and write them back to Linear.",
         }),
         apps: [
-          { icon: "i-simple-icons-notion", label: "Notion" },
-          { icon: "i-simple-icons-linear", label: "Linear" },
+          {
+            icon: "i-simple-icons-notion",
+            label: translate({ message: "COMMON.brand.notion" }),
+          },
+          {
+            icon: "i-simple-icons-linear",
+            label: translate({ message: "COMMON.brand.linear" }),
+          },
         ],
       },
       {
@@ -94,7 +106,10 @@ export default function HomepagePainPoints() {
             "Download the attachment, call your API, and return the output.",
         }),
         apps: [
-          { icon: "i-simple-icons-gmail", label: "Gmail" },
+          {
+            icon: "i-simple-icons-gmail",
+            label: translate({ message: "COMMON.brand.gmail" }),
+          },
           {
             icon: "i-lucide-braces",
             label: translate({

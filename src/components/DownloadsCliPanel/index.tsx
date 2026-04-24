@@ -54,10 +54,10 @@ export default function DownloadsCliPanel() {
       : translate({ message: "HOME.Downloads.cli.agentPrompt.unix" });
 
   const copyLabel = translate({
-    message: "HOME.Downloads.cli.copy",
+    message: "COMMON.copy",
   });
   const copiedLabel = translate({
-    message: "HOME.Downloads.cli.copied",
+    message: "COMMON.copied",
   });
 
   const handleCopy = React.useCallback(

@@ -27,32 +27,60 @@ const reasonCards = [
 ];
 
 const agentSurfaces = [
-  { label: "Codex", iconPath: "/img/pages/home/codex-color.svg" },
-  { label: "Claude Code", iconPath: "/img/pages/home/claude-color.svg" },
-  { label: "OpenClaw", iconPath: "/img/pages/home/openclaw-color.svg" },
-  { label: "Cursor", iconPath: "/img/pages/home/cursor.svg" },
-  { label: "Qode", iconPath: "/img/pages/home/qoder-color.svg" },
+  {
+    labelKey: "COMMON.brand.codex",
+    iconPath: "/img/pages/home/codex-color.svg",
+  },
+  {
+    labelKey: "COMMON.brand.claudeCode",
+    iconPath: "/img/pages/home/claude-color.svg",
+  },
+  {
+    labelKey: "COMMON.brand.openClaw",
+    iconPath: "/img/pages/home/openclaw-color.svg",
+  },
+  { labelKey: "COMMON.brand.cursor", iconPath: "/img/pages/home/cursor.svg" },
+  {
+    labelKey: "COMMON.brand.qode",
+    iconPath: "/img/pages/home/qoder-color.svg",
+  },
 ] as const;
 
 const beamApps = [
-  { label: "GitHub", iconPath: "/img/pages/home/brand-icons/github.svg" },
-  { label: "Slack", iconPath: "/img/pages/home/brand-icons/slack.svg" },
-  { label: "Notion", iconPath: "/img/pages/home/brand-icons/notion.svg" },
-  { label: "Gmail", iconPath: "/img/pages/home/brand-icons/gmail.svg" },
-  { label: "Linear", iconPath: "/img/pages/home/brand-icons/linear.svg" },
+  {
+    labelKey: "COMMON.brand.github",
+    iconPath: "/img/pages/home/brand-icons/github.svg",
+  },
+  {
+    labelKey: "COMMON.brand.slack",
+    iconPath: "/img/pages/home/brand-icons/slack.svg",
+  },
+  {
+    labelKey: "COMMON.brand.notion",
+    iconPath: "/img/pages/home/brand-icons/notion.svg",
+  },
+  {
+    labelKey: "COMMON.brand.gmail",
+    iconPath: "/img/pages/home/brand-icons/gmail.svg",
+  },
+  {
+    labelKey: "COMMON.brand.linear",
+    iconPath: "/img/pages/home/brand-icons/linear.svg",
+  },
 ] as const;
 
 const BeamAgentNode = forwardRef(function BeamAgentNode(
   {
-    label,
+    labelKey,
     iconPath,
   }: {
-    label: string;
+    labelKey: string;
     iconPath: string;
   },
   ref: Ref<HTMLDivElement>
 ) {
   const iconSrc = useBaseUrl(iconPath);
+  const label = translate({ message: labelKey });
 
   return (
     <div ref={ref} className={styles.agentNode} aria-label={label}>
@@ -68,15 +96,16 @@ const BeamAgentNode = forwardRef(function BeamAgentNode(
 
 const BeamAppNode = forwardRef(function BeamAppNode(
   {
-    label,
+    labelKey,
     iconPath,
   }: {
-    label: string;
+    labelKey: string;
     iconPath: string;
   },
   ref: Ref<HTMLDivElement>
 ) {
   const iconSrc = useBaseUrl(iconPath);
+  const label = translate({ message: labelKey });
 
   return (
     <div ref={ref} className={styles.appNode} aria-label={label}>
@@ -104,16 +133,20 @@ function CliReasonsBeam() {
         <div className={styles.beamAgentsColumn}>
           {agentSurfaces.map((agent, index) => (
             <BeamAgentNode
-              key={agent.label}
+              key={agent.labelKey}
               ref={agentRefs.current[index]}
-              label={agent.label}
+              labelKey={agent.labelKey}
               iconPath={agent.iconPath}
             />
           ))}
         </div>
 
         <div className={styles.beamCenterColumn}>
-          <div ref={hubRef} className={styles.hubNode} aria-label="OOMOL">
+          <div
+            ref={hubRef}
+            className={styles.hubNode}
+            aria-label={translate({ message: "COMMON.brand.oomol" })}
+          >
             <ThemedImage
               className={styles.hubLogo}
               sources={hubLogoSources}
@@ -124,11 +157,11 @@ function CliReasonsBeam() {
         </div>
 
         <div className={styles.beamAppsColumn}>
-          {beamApps.map(({ label, iconPath }, index) => (
+          {beamApps.map(({ labelKey, iconPath }, index) => (
             <BeamAppNode
-              key={label}
+              key={labelKey}
               ref={appRefs.current[index]}
-              label={label}
+              labelKey={labelKey}
               iconPath={iconPath}
             />
           ))}
@@ -137,7 +170,7 @@ function CliReasonsBeam() {
         {!reduceMotion
           ? agentRefs.current.map((ref, index) => (
               <AnimatedBeam
-                key={`agent-${agentSurfaces[index].label}`}
+                key={`agent-${agentSurfaces[index].labelKey}`}
                 containerRef={containerRef}
                 fromRef={ref}
                 toRef={hubRef}
@@ -155,7 +188,7 @@ function CliReasonsBeam() {
         {!reduceMotion
           ? appRefs.current.map((ref, index) => (
               <AnimatedBeam
-                key={`app-${beamApps[index].label}`}
+                key={`app-${beamApps[index].labelKey}`}
                 containerRef={containerRef}
                 fromRef={ref}
                 toRef={hubRef}
