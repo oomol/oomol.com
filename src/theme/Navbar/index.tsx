@@ -127,6 +127,8 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
   const locale = i18n.currentLocale;
   const location = useLocation();
 
+  // Keep the zh-CN logo files: static cleanup will not detect them from this
+  // dynamic path. Runtime uses logo-zh-light.svg and logo-zh-dark.svg.
   const logoLight = useBaseUrl(
     `/img/logo-${locale === "zh-CN" ? "zh" : "en"}-light.svg`
   );

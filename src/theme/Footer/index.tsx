@@ -130,6 +130,8 @@ const Footer: React.FC = () => {
   const hasFooter = !!siteConfig.themeConfig.footer;
   const currentLocale = i18n.currentLocale;
 
+  // Keep the zh-CN logo files: static cleanup will not detect them from this
+  // dynamic path. Runtime uses logo-zh-light.svg and logo-zh-dark.svg.
   const logoLight = useBaseUrl(
     `/img/logo-${currentLocale === "zh-CN" ? "zh" : "en"}-light.svg`
   );
