@@ -26,14 +26,11 @@
   "HOME.FirstScreen.video.closeAriaLabel": {
     "message": "关闭视频弹窗"
   },
-  "HOME.PainPoints.badge": {
-    "message": "第一步：先用接好的服务和工具"
-  },
   "HOME.PainPoints.title": {
-    "message": "先让 Agent 直接把常见工作跑起来"
+    "message": "串联你已经在用的工具"
   },
   "HOME.PainPoints.subtitle": {
-    "message": "如果已发布工具或接好的服务已经够用，OOMOL 的第一层价值就很简单：先接上、先执行，不必一上来就自己做工具。"
+    "message": "GitHub、Slack、Notion、Gmail 和你的 API 都可以通过 OOMOL 连起来，让 Agent 直接参与现有流程，不用改变团队原本的工作习惯。"
   },
   "HOME.PainPoints.promptLabel": {
     "message": "直接这样说"
@@ -1228,31 +1225,31 @@
     "message": "了解 Studio"
   },
   "HOME.LinearFlow.cloud.eyebrow": {
-    "message": "开发者路径 02 / 通过 Cloud 交付"
+    "message": "开发者路径 02 / 放到 Cloud 运行"
   },
   "HOME.LinearFlow.cloud.title": {
-    "message": "验证完成后，再交给 Cloud 承接交付和运行"
+    "message": "验证完成后，把工具放到 Cloud 上运行"
   },
   "HOME.LinearFlow.cloud.description": {
-    "message": "Cloud 承接运行、配置、Secrets、权限和使用关系，让你不必围绕同一份实现再补一层后台。"
+    "message": "Cloud 会帮你运行工具、保存配置和密钥、管理权限和用量记录。你不用再为同一个工具单独写后台服务。"
   },
   "HOME.LinearFlow.cloud.card1.title": {
-    "message": "统一承接交付和托管运行"
+    "message": "把工具发布出去，并保持在线运行"
   },
   "HOME.LinearFlow.cloud.card1.text": {
-    "message": "当你把工具交付给自己、团队或客户时，继续沿用同一份实现和同一条路径。"
+    "message": "无论是自己用、团队用，还是给客户用，都可以沿用同一份工具，不用再复制一套。"
   },
   "HOME.LinearFlow.cloud.card2.title": {
-    "message": "把配置、权限和使用关系放进同一个后台"
+    "message": "配置、权限和用量集中管理"
   },
   "HOME.LinearFlow.cloud.card2.text": {
-    "message": "Secrets、权限、版本、运行配置和使用数据集中管理，减少分散维护。"
+    "message": "密钥、权限、版本、运行配置和用量记录都放在 Cloud 里，后续调整和排查更容易。"
   },
   "HOME.LinearFlow.cloud.quota.title": {
-    "message": "先用免费额度开始交付"
+    "message": "先用免费额度跑起来"
   },
   "HOME.LinearFlow.cloud.quota.text": {
-    "message": "免费用户每月自动刷新 200 分钟 Cloud Task。首次交付不需要先买服务器，也不需要预留固定资源。"
+    "message": "免费用户每月有 200 分钟 Cloud Task 用量。第一次上线不用先买服务器，也不用预留固定资源。"
   },
   "HOME.LinearFlow.cloud.media.title": {
     "message": "Cloud 控制台预览"

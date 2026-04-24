@@ -22,33 +22,8 @@
   max-width: 48rem;
 }
 
-/* Monospace eyebrow — Vercel 经典手法 */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  font-family: var(--oomol-font-mono);
-  font-size: var(--oomol-body-mono);
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  text-transform: none;
-  color: var(--oomol-primary);
-
-  &::before {
-    content: "";
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    margin-right: 0.6rem;
-    border-radius: 999px;
-    background: var(--oomol-primary);
-  }
-}
-
 .sectionTitle {
-  @include marketing-display-title(hero, 22ch, left, 1.06);
+  @include marketing-display-title(section, 100%, left, 1.08);
 }
 
 .sectionSubtitle {
@@ -259,16 +234,6 @@
   }
 }
 
-/* ── English overrides ── */
-
-:global(html[lang="en"]) .sectionTitle {
-  max-width: 26ch;
-}
-
-:global(html[lang="zh-CN"]) .sectionTitle {
-  max-width: 17ch;
-}
-
 :global(html[lang="en"]) .sectionSubtitle {
   max-width: 48rem;
 }
@@ -295,9 +260,9 @@
 
   .sectionTitle {
     max-width: 100%;
-    font-size: var(--oomol-display-hero);
-    line-height: 1.08;
-    letter-spacing: var(--oomol-tracking-display);
+    font-size: var(--oomol-display-section);
+    line-height: 1.1;
+    letter-spacing: var(--oomol-tracking-section);
   }
 
   .sectionSubtitle {

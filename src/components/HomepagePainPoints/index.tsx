@@ -5,18 +5,14 @@ import React from "react";
 
 export default function HomepagePainPoints() {
   const copy = {
-    badge: translate({
-      id: "HOME.PainPoints.badge",
-      message: "Step 1: Use what already exists",
-    }),
     title: translate({
       id: "HOME.PainPoints.title",
-      message: "Let agents run ready-made work first",
+      message: "Connect the tools your team already uses",
     }),
     subtitle: translate({
       id: "HOME.PainPoints.subtitle",
       message:
-        "If a ready-made tool already solves the job, OOMOL's first layer of value is simple: connect it, run it, and skip building your own tool at the start.",
+        "GitHub, Slack, Notion, Gmail, and your own APIs can work together through OOMOL, so agents can help without asking your team to change how they already work.",
     }),
     promptLabel: translate({
       id: "HOME.PainPoints.promptLabel",
@@ -115,7 +111,6 @@ export default function HomepagePainPoints() {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <div className={styles.badge}>{copy.badge}</div>
           <h2 className={styles.sectionTitle}>{copy.title}</h2>
           <p className={styles.sectionSubtitle}>{copy.subtitle}</p>
         </div>

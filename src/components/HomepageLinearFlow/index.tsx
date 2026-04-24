@@ -227,51 +227,50 @@ export default function HomepageLinearFlow() {
     cloud: {
       eyebrow: translate({
         id: "HOME.LinearFlow.cloud.eyebrow",
-        message: "02 / Deliver through Cloud",
+        message: "02 / Run it in Cloud",
       }),
       title: translate({
         id: "HOME.LinearFlow.cloud.title",
-        message:
-          "Once validation is done, let Cloud handle delivery and runtime",
+        message: "After validation, run your tool in Cloud",
       }),
       description: translate({
         id: "HOME.LinearFlow.cloud.description",
         message:
-          "Cloud takes over runtime, configuration, secrets, access, and delivery so you do not need to build another backend around the same implementation.",
+          "Cloud runs the tool, stores config and secrets, manages access, and tracks usage. You do not need to build a separate backend service for the same tool.",
       }),
       cards: [
         {
           title: translate({
             id: "HOME.LinearFlow.cloud.card1.title",
-            message: "Handle delivery and hosted runtime in one place",
+            message: "Publish the tool and keep it running",
           }),
           text: translate({
             id: "HOME.LinearFlow.cloud.card1.text",
             message:
-              "Keep the same implementation as you deliver the tool to yourself, your team, or customers.",
+              "Use the same tool for yourself, your team, or customers without copying and maintaining separate versions.",
           }),
         },
         {
           title: translate({
             id: "HOME.LinearFlow.cloud.card2.title",
-            message: "Keep config, access, and usage in one backend",
+            message: "Manage config, access, and usage in one place",
           }),
           text: translate({
             id: "HOME.LinearFlow.cloud.card2.text",
             message:
-              "Manage secrets, access, releases, runtime settings, and usage data in one place.",
+              "Secrets, permissions, versions, runtime config, and usage logs live in Cloud, making updates and troubleshooting easier.",
           }),
         },
       ],
       quota: {
         title: translate({
           id: "HOME.LinearFlow.cloud.quota.title",
-          message: "Start delivery with included usage",
+          message: "Start with included usage",
         }),
         text: translate({
           id: "HOME.LinearFlow.cloud.quota.text",
           message:
-            "Free users get 200 Cloud Task minutes refreshed every month, so first delivery does not require buying servers or reserving capacity.",
+            "Free users get 200 Cloud Task minutes each month. You can launch first without buying servers or reserving capacity.",
         }),
       },
       media: {

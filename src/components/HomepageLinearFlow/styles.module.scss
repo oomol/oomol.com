@@ -173,6 +173,10 @@
   transform-origin: center;
 }
 
+.cloudMediaPanel .imageCardMedia {
+  aspect-ratio: 1 / 1;
+}
+
 .cloudCardStack {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -234,7 +238,7 @@
 
   .cloudContainer {
     grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
-    align-items: stretch;
+    align-items: start;
     gap: clamp(2.25rem, 4vw, 4rem);
   }
 
@@ -257,18 +261,6 @@
     padding: 0.85rem 1rem;
   }
 
-  .cloudMediaPanel {
-    height: 100%;
-  }
-
-  .cloudMediaPanel .videoCard,
-  .cloudMediaPanel .imageCardMedia {
-    height: 100%;
-  }
-
-  .cloudMediaPanel .imageCardMedia {
-    aspect-ratio: auto;
-  }
 }
 
 @media (max-width: 768px) {
