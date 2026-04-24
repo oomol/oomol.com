@@ -102,7 +102,7 @@
     "message": "OOMOL homepage workflow demo"
   },
   "HOME.PainPoints.title": {
-    "message": "Connect the tools your team already uses"
+    "message": "Connect the tools you love without changing habits"
   },
   "HOME.PainPoints.subtitle": {
     "message": "GitHub, Slack, Notion, Gmail, and your own APIs can work together through OOMOL, so agents can help without asking your team to change how they already work."
@@ -1252,7 +1252,7 @@
     "message": "OOMOL Studio"
   },
   "HOME.ToolStrip.title": {
-    "message": "Behind those capabilities are connected apps and tools"
+    "message": "Deep coverage for common tools"
   },
   "HOME.ToolStrip.description": {
     "message": "OOMOL comes with support for {providerCount} apps and {actionCount} packaged tools. They are not scattered APIs, but work entries agents can call directly through oo-cli. After common work is running, decide what is worth orchestrating further, extending, or turning into your own tool."
@@ -1276,19 +1276,19 @@
     "message": "One connection path for every agent"
   },
   "HOME.CliReasons.subtitle": {
-    "message": "Connect accounts, apps, and tool capabilities to OOMOL first, then let Codex, Claude Code, OpenClaw, Qode, and terminal workflows call them through the same oo-cli path."
+    "message": "Connect accounts, apps, and tool capabilities to OOMOL first, then let Codex, Claude Code, OpenClaw, and terminal workflows call them through the same oo-cli path."
   },
   "HOME.CliReasons.card1.title": {
     "message": "Authorize once, reuse across agents"
   },
   "HOME.CliReasons.card1.description": {
-    "message": "After one connection and authorization in OOMOL, Codex, Claude Code, OpenClaw, Qode, and terminal workflows can keep calling those capabilities through oo-cli."
+    "message": "After one connection and authorization in OOMOL, Codex, Claude Code, OpenClaw, and terminal workflows can keep calling those capabilities through oo-cli."
   },
   "HOME.CliReasons.card2.title": {
     "message": "Build custom tools in Studio"
   },
   "HOME.CliReasons.card2.description": {
-    "message": "When packaged tools are not enough, compose third-party blocks, cloud functions, APIs, and business logic in OOMOL Studio, then deliver and reuse them through OOMOL."
+    "message": "When ready-made tools are not enough, use OOMOL Studio to compose third-party tools, cloud functions, and APIs, or build new function tools; extensions remain usable from the CLI."
   },
   "HOME.LinearFlow.studio.eyebrow": {
     "message": "Developer path 01 / Build in Studio"

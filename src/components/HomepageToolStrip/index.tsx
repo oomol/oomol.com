@@ -56,7 +56,7 @@ export default function HomepageToolStrip() {
   const copy: ToolStripCopy = {
     title: translate({
       id: "HOME.ToolStrip.title",
-      message: "Start with the apps OOMOL already connects",
+      message: "Deep coverage for common tools",
     }),
     description: translate(
       {

@@ -7,7 +7,7 @@ export default function HomepagePainPoints() {
   const copy = {
     title: translate({
       id: "HOME.PainPoints.title",
-      message: "Connect the tools your team already uses",
+      message: "Connect the tools you love without changing habits",
     }),
     subtitle: translate({
       id: "HOME.PainPoints.subtitle",

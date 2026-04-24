@@ -102,7 +102,7 @@
     "message": "OOMOL 首页工作流演示"
   },
   "HOME.PainPoints.title": {
-    "message": "串联你已经在用的工具"
+    "message": "连入你喜欢的工具，无需改变习惯"
   },
   "HOME.PainPoints.subtitle": {
     "message": "GitHub、Slack、Notion、Gmail 和你的 API 都可以通过 OOMOL 连起来，让 Agent 直接参与现有流程，不用改变团队原本的工作习惯。"
@@ -1252,7 +1252,7 @@
     "message": "OOMOL Studio"
   },
   "HOME.ToolStrip.title": {
-    "message": "这些能力背后，是已接好的应用和工具"
+    "message": "深度覆盖常用工具"
   },
   "HOME.ToolStrip.description": {
     "message": "OOMOL 内置支持 {providerCount} 个应用，包含 {actionCount} 个封装工具。它们不是零散接口，而是 Agent 可以通过 oo-cli 直接调用的工作入口；跑通常见工作之后，再决定哪些环节值得继续编排、扩展，或做成你自己的工具。"
@@ -1276,19 +1276,19 @@
     "message": "一套连接，给所有 Agent 使用"
   },
   "HOME.CliReasons.subtitle": {
-    "message": "先把账号、应用和工具能力接到 OOMOL，再让 Codex、Claude Code、OpenClaw、Qode 和终端环境沿同一条 oo-cli 路径调用。"
+    "message": "先把账号、应用和工具能力接到 OOMOL，再让 Codex、Claude Code、OpenClaw 和终端环境沿同一条 oo-cli 路径调用。"
   },
   "HOME.CliReasons.card1.title": {
     "message": "授权一次，多 Agent 复用"
   },
   "HOME.CliReasons.card1.description": {
-    "message": "在 OOMOL 完成一次连接和授权后，Codex、Claude Code、OpenClaw、Qode 和终端环境都能继续通过 oo-cli 调用。"
+    "message": "在 OOMOL 完成一次连接和授权后，Codex、Claude Code、OpenClaw 和终端环境都能继续通过 oo-cli 调用。"
   },
   "HOME.CliReasons.card2.title": {
     "message": "自定义工具，用 Studio 构建"
   },
   "HOME.CliReasons.card2.description": {
-    "message": "现成工具不够时，在 OOMOL Studio 组合第三方 Block、云函数、API 和业务逻辑；做好后沿 OOMOL 路径交付和复用。"
+    "message": "现成工具不够时，用 OOMOL Studio 组合第三方工具、云函数和 API，或开发新的函数工具；扩展后仍能在 CLI 中使用。"
   },
   "HOME.LinearFlow.studio.eyebrow": {
     "message": "开发者路径 01 / 在 Studio 中构建"
