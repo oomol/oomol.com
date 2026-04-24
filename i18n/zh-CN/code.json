@@ -1,24 +1,6 @@
 {
-  "Theme.Navbar.download-now": {
-    "message": "立即下载"
-  },
-  "Theme.Navbar.go-to-hub-flow": {
-    "message": "开始构建"
-  },
-  "Theme.Navbar.use-in-chat": {
-    "message": "在 Chat 中使用"
-  },
-  "Theme.Navbar.sign-in": {
-    "message": "登录"
-  },
-  "Theme.Navbar.download": {
-    "message": "下载"
-  },
   "Theme.Navbar.login": {
     "message": "登录"
-  },
-  "Theme.Navbar.chat": {
-    "message": "聊天"
   },
   "Theme.Navbar.console": {
     "message": "控制台"
@@ -137,21 +119,6 @@
   "HOME.FirstScreen.install.copied": {
     "message": "oo-cli 安装命令已复制"
   },
-  "HOME.FirstScreen.terminal.l1": {
-    "message": "$ curl -fsSL https://cli.oomol.com/install.sh | bash"
-  },
-  "HOME.FirstScreen.terminal.l2": {
-    "message": "✔ 已安装 oo-cli"
-  },
-  "HOME.FirstScreen.terminal.l3": {
-    "message": "$ oo login"
-  },
-  "HOME.FirstScreen.terminal.l4": {
-    "message": "✔ 已通过 OOMOL 认证"
-  },
-  "HOME.FirstScreen.terminal.l5": {
-    "message": "$ oo search \"生成二维码\""
-  },
   "HOME.FirstScreen.flow.aria": {
     "message": "从 Agent 经 oo-cli 到 Studio 与 Cloud 的集成路径"
   },
@@ -200,102 +167,6 @@
   "HOME.CoreFeatures.vscode.highlight1": {
     "message": "写完、跑通、直接交付"
   },
-  "HOME.Lifecycle.title": {
-    "message": "使用生命周期"
-  },
-  "HOME.Lifecycle.subtitle": {
-    "message": "从构建到交付,一站式开发体验"
-  },
-  "HOME.Lifecycle.step1.title": {
-    "message": "构建"
-  },
-  "HOME.Lifecycle.step1.subtitle": {
-    "message": "设计和生产全程 AI 辅助完成"
-  },
-  "HOME.Lifecycle.step1.description": {
-    "message": "• 创建项目，定义功能节点\n• 从社区安装已发布函数工具，或自己编码补充\n• 拖放组合成可视化工作流"
-  },
-  "HOME.Lifecycle.step2.title": {
-    "message": "发布"
-  },
-  "HOME.Lifecycle.step2.subtitle": {
-    "message": "共享给社区或作为个人能力库"
-  },
-  "HOME.Lifecycle.step2.description": {
-    "message": "• 选择公开或私有发布\n• 私有包用于模块化能力沉淀、便捷复用\n• 公开包参与社区共建"
-  },
-  "HOME.Lifecycle.step3.title": {
-    "message": "部署"
-  },
-  "HOME.Lifecycle.step3.subtitle": {
-    "message": "运行在本地、私有主机或云端"
-  },
-  "HOME.Lifecycle.step3.description": {
-    "message": "• 本地运行: PC/Mac,自用或共享\n• 云端 Serverless: 一键托管成 API,无需配置"
-  },
-  "HOME.Lifecycle.step4.title": {
-    "message": "交付"
-  },
-  "HOME.Lifecycle.step4.subtitle": {
-    "message": "转化成用户和 AI 都能使用的能力"
-  },
-  "HOME.Lifecycle.step4.description": {
-    "message": "• 对外 API 服务与用户交互应用\n• 供 AI 调用的 MCP 工具\n• 自动化工作流交付"
-  },
-  "HOME.PdfCraft.title": {
-    "message": "基于 OOMOL 的开源项目：PDF-Craft"
-  },
-  "HOME.PdfCraft.subtitle": {
-    "message": "基于 OOMOL 构建的旗舰开源项目，体验本地算力的强大优势"
-  },
-  "HOME.PdfCraft.description": {
-    "message": "PDF-Craft 是 OOMOL 官方开源的 PDF 转电子书工具，在 GitHub 上已获得 3000+ Stars。支持本地免费运行、通过 OOMOL  分享给朋友、或使用官方 API 服务 —— 总有适合你的服务。"
-  },
-  "HOME.PdfCraft.feature1": {
-    "message": "MIT 开源，完全透明"
-  },
-  "HOME.PdfCraft.feature2": {
-    "message": "基于 DeepSeek OCR，模型先进"
-  },
-  "HOME.PdfCraft.feature3": {
-    "message": "专业团队维护，开源和服务并行"
-  },
-  "HOME.PdfCraft.traditional.badge": {
-    "message": "本地部署"
-  },
-  "HOME.PdfCraft.traditional.title": {
-    "message": "本地算力，免费私密"
-  },
-  "HOME.PdfCraft.traditional.step1": {
-    "message": "准备具有 3060 以上显卡的 PC"
-  },
-  "HOME.PdfCraft.traditional.step2": {
-    "message": "安装 OOMOL Studio 本地免费部署"
-  },
-  "HOME.PdfCraft.traditional.step3": {
-    "message": "使用小应用或者 Flow 运行"
-  },
-  "HOME.PdfCraft.oomol.badge": {
-    "message": "官方服务"
-  },
-  "HOME.PdfCraft.oomol.title": {
-    "message": "按量计费，开箱即用"
-  },
-  "HOME.PdfCraft.oomol.method1": {
-    "message": "官方维护，品质保证"
-  },
-  "HOME.PdfCraft.oomol.method2": {
-    "message": "支持在 PDF-Craft 网站使用"
-  },
-  "HOME.PdfCraft.oomol.method3": {
-    "message": "支持开发者调用 API 服务"
-  },
-  "HOME.PdfCraft.cta.primary": {
-    "message": "体验 PDF-Craft"
-  },
-  "HOME.PdfCraft.cta.secondary": {
-    "message": "查看源码"
-  },
   "HOME.BrandAssets.title": {
     "message": "品牌资产与指南"
   },
@@ -314,42 +185,6 @@
   "HOME.BrandAssets.typeface": {
     "message": "字体"
   },
-  "HOME.CommunityShare.title": {
-    "message": "写过一次的函数，应该继续被团队复用"
-  },
-  "HOME.CommunityShare.subtitle": {
-    "message": "函数不该只活在某个项目里。发布之后，它还可以继续被装回本地、接进 AI 工作流，或者作为后续服务的基础能力。"
-  },
-  "HOME.CommunityShare.point1.title": {
-    "message": "随时装回自己用"
-  },
-  "HOME.CommunityShare.point1.description": {
-    "message": "把已经发布过的函数重新装回自己的环境，下一次开发不用再从零开始。"
-  },
-  "HOME.CommunityShare.point2.title": {
-    "message": "逐步积累自己的函数资产"
-  },
-  "HOME.CommunityShare.point2.description": {
-    "message": "每次发布都会留下可复用的能力，逐步积累成你自己的函数资产。"
-  },
-  "HOME.CommunityShare.point3.title": {
-    "message": "继续拼出新的服务"
-  },
-  "HOME.CommunityShare.point3.description": {
-    "message": "基于已经发布的函数继续组合和扩展，把已有能力不断变成新的作品和服务。"
-  },
-  "HOME.Built-in.title": {
-    "message": "融合 APIs 与大模型"
-  },
-  "HOME.Built-in.subtitle": {
-    "message": "使用一个 OOMOL API Token，即可快速调用多种常用 API 与主流大模型，开发体验更简单、更统一。"
-  },
-  "HOME.Built-in.code.python": {
-    "message": "from oocana import Context\n\n#region generated meta\nimport typing\nInputs = typing.Dict[str, typing.Any]\nOutputs = typing.Dict[str, typing.Any]\n#endregion\n\nasync def main(params: Inputs, context: Context) -> Outputs | None:\n\n    # 融合 API 基础地址\n    api_url = \"https://fusion-api.oomol.com/v1/fal-nano-banana-edit/submit\"\n\n    # 大模型基础地址，可使用 openai sdk\n    llm_base_url = \"https://llm.oomol.com/v1\"\n\n    # 从 context 获取 OOMOL token（无需手动输入 API key）\n    api_token = await context.oomol_token()\n\n    return {\n      # \"output\": \"output_value\"\n    }"
-  },
-  "HOME.Built-in.code.typescript": {
-    "message": "//#region generated meta\ntype Inputs = {\n};\ntype Outputs = {\n};\n//#endregion\n\nimport type { Context } from \"@oomol/types/oocana\";\n\nexport default async function(\n    params: Inputs,\n    context: Context<Inputs, Outputs>\n): Promise<Partial<Outputs> | undefined | void> {\n    // 融合 API 基础地址\n    const api_url = \"https://fusion-api.oomol.com/v1/fal-nano-banana-edit/submit\"\n\n    // 大模型基础地址，可使用 openai sdk\n    const llm_base_url = \"https://llm.oomol.com/v1\"\n\n    // 从 context 获取 OOMOL token（无需手动输入 API key）\n    const api_token = await context.getOomolToken()\n    // return { output: \"output_value\" };\n};"
-  },
   "HOME.GetStartedPrompt.title": {
     "message": "先用已发布工具，需要时再做自己的"
   },
@@ -361,9 +196,6 @@
   },
   "HOME.GetStartedPrompt.secondary": {
     "message": "了解 Studio"
-  },
-  "HOME.Pricing.title": {
-    "message": "价格"
   },
   "HOME.Downloads.studioSection.title": {
     "message": "如果你要自己做工具，就下载 OOMOL Studio"
@@ -404,17 +236,11 @@
   "HOME.Downloads.cli.method.install.title": {
     "message": "使用官方安装命令"
   },
-  "HOME.Downloads.cli.method.install.description": {
-    "message": "在 Codex、Claude Code 或任意本地终端里运行与你环境匹配的安装命令，再登录即可开始使用 oo-cli。指南里包含 macOS/Linux 的 wget 与 curl，以及 Windows PowerShell 和 Windows CMD。"
-  },
   "HOME.Downloads.cli.method.agent.title": {
     "message": "把安装交给 Agent"
   },
   "HOME.Downloads.cli.method.agent.description": {
     "message": "如果你更希望 Agent 按官方安装命令代你完成安装和检查，就把下面这段提示词直接复制给它。"
-  },
-  "HOME.Downloads.cli.method.agent.prompt": {
-    "message": "请帮我安装并检查 oo-cli：\n\n1. 按当前环境的官方方式安装 oo-cli。\n   - macOS / Linux（方式一）：`wget -qO - https://cli.oomol.com/install.sh | bash`\n   - macOS / Linux（方式二）：`curl -fsSL https://cli.oomol.com/install.sh | bash`\n   - Windows PowerShell：`irm https://cli.oomol.com/install.ps1 | iex`\n   - Windows CMD：`curl -fsSL https://cli.oomol.com/install.cmd -o install.cmd && install.cmd && del install.cmd`\n\n2. 运行 `oo login`。\n\n3. 确认 CLI 已经可以正常使用。\n\n4. 告诉我下一条最适合在 oo-cli 里执行的命令。"
   },
   "HOME.Downloads.cli.copy": {
     "message": "复制"
@@ -460,57 +286,6 @@
   },
   "HOME.Community.open-source.subtitle": {
     "message": "这些项目承接了 OOMOL 在运行时、部署和真实场景工具上的持续投入。"
-  },
-  "FEATURES.title": {
-    "message": "涵盖你所需的全部功能"
-  },
-  "FEATURES.description": {
-    "message": "方便的拖放式工作流、专业的代码编辑器、精美的数据可视化展示"
-  },
-  "FEATURES.sceneOne.title": {
-    "message": "直观交互"
-  },
-  "FEATURES.sceneTwo.title": {
-    "message": "编程友好"
-  },
-  "FEATURES.sceneOne.content-1": {
-    "message": "简单拖放函数工具即可构建工作流，定制自己需要的业务"
-  },
-  "FEATURES.sceneOne.content-2": {
-    "message": "根据输入的参数类型提供各种 UI 组件，帮助用户更简单地使用"
-  },
-  "FEATURES.sceneOne.content-3": {
-    "message": "直观 UI 方便用户清晰了解运行状况"
-  },
-  "FEATURES.sceneOne.content-4": {
-    "message": "日志易读，时序结构清晰，状态明确"
-  },
-  "FEATURES.sceneTwo.content-5": {
-    "message": "内置 Python 和 Node.js，支持开源库安装"
-  },
-  "FEATURES.sceneTwo.content-6": {
-    "message": "基于 Visual Studio Code，提供代码补全、高亮和 AI 提示"
-  },
-  "FEATURES.sceneTwo.content-7": {
-    "message": "节点就是函数，只要会编程就可以自定义节点"
-  },
-  "FEATURES.block-1.title": {
-    "message": "使用容器统一开发环境，支持跨系统共享工作流"
-  },
-  "FEATURES.block-2.title": {
-    "message": "通过安全隔离保护本地环境和数据安全"
-  },
-  "FEATURES.block-3.title": {
-    "message": "本地云端皆为 Linux，镜像轻松部署上云"
-  },
-  "FEATURES.block-4.title": {
-    "message": "分享工作流模板，便于场景应用与二次开发"
-  },
-  "FEATURES.block-5.title": {
-    "message": "分享函数工具库，功能可连接编排即用"
-  },
-  "FEATURES.block-6.title": {
-    "message": "GitHub 同步源码，支持协作开发与维护"
   },
   "PRICING.title": {
     "message": "简单、透明的定价"
@@ -698,9 +473,6 @@
   "PRICING.tables.subtitle": {
     "message": "这里分成四类：大模型、Cloud Task、Auth Link，以及 OOMOL 官方提供的一方 API 服务。"
   },
-  "PRICING.tables.syncNote": {
-    "message": "Cloud Task 适用于你自己发布的云函数或 API；Auth Link 适用于需要用户授权的服务；官方 API 服务则是 OOMOL 直接提供的文生图、TTS、STT 等能力。"
-  },
   "PRICING.tables.tab.llm": {
     "message": "大模型"
   },
@@ -715,9 +487,6 @@
   },
   "PRICING.tables.llm.note": {
     "message": "只有当你直接调用 OOMOL 代付的大模型时，才需要看这里。价格会随 Console 中的模型配置变化而更新，单位为点数 / M Token。"
-  },
-  "PRICING.tables.llm.loading": {
-    "message": "正在从 OOMOL Console 加载最新大模型价格..."
   },
   "PRICING.tables.llm.error": {
     "message": "暂时无法加载大模型价格，请稍后刷新页面或前往 Console 查看。"
@@ -880,495 +649,6 @@
   },
   "PRICING.tables.fusionApi.description.doubaoStt": {
     "message": "豆包语音转文字"
-  },
-  "CREATE.title": {
-    "message": "OOMOL Studio"
-  },
-  "CREATE.description": {
-    "message": "OOMOL 推出的 AI 工具创作平台。该平台的核心优势在于：既保留了传统编程的无限创造能力，又具备低代码开发的便捷性，让用户能够高效地构建各类 AI 工具。"
-  },
-  "STUDIO.hero.subtitle": {
-    "message": "为开发者重新设计的工作流工具"
-  },
-  "STUDIO.hero.description": {
-    "message": "面向开发者的本地开发环境，基于 VSCode 的可视化编程工具，结合 FRP 协议实现 P2P 算力共享"
-  },
-  "STUDIO.painPoints.title": {
-    "message": "传统工作流工具的三大痛点"
-  },
-  "STUDIO.painPoints.subtitle": {
-    "message": "作为开发者，我们深知这些问题有多让人头疼"
-  },
-  "STUDIO.painPoints.learningCurve.title": {
-    "message": "学习成本高"
-  },
-  "STUDIO.painPoints.learningCurve.description": {
-    "message": "学习平台的交互和设计理念，简单的 if-else 逻辑被几个拖拽组件搞得复杂难用。明明一句代码能解决的问题，却要花时间理解平台的抽象概念。"
-  },
-  "STUDIO.painPoints.extension.title": {
-    "message": "扩展麻烦"
-  },
-  "STUDIO.painPoints.extension.description": {
-    "message": "编程时引用个开源库就能解决的问题，在工作流平台里却像造火箭一样复杂。想要扩展功能？先看看平台支不支持，不支持就只能干瞪眼。"
-  },
-  "STUDIO.painPoints.toolSwitching.title": {
-    "message": "离开熟悉的工具"
-  },
-  "STUDIO.painPoints.toolSwitching.description": {
-    "message": "就算平台提供了脚本功能，也要在难用的网页编辑器里写代码，而不是在熟悉的 VSCode 中。失去了代码补全、调试工具和各种插件，开发效率大打折扣。"
-  },
-  "STUDIO.solutions.title": {
-    "message": "OOMOL Studio 的解决方案"
-  },
-  "STUDIO.solutions.subtitle": {
-    "message": "我们从开发者的实际需求出发，重新设计工作流开发体验"
-  },
-  "STUDIO.solutions.functions.title": {
-    "message": "节点即函数，引用库零门槛"
-  },
-  "STUDIO.solutions.functions.description": {
-    "message": "在 OOMOL Studio 中，节点就是函数。你不需要学习任何新概念，用熟悉的方式编写代码，任意引用开源库。想要什么功能，npm install 就能搞定。"
-  },
-  "STUDIO.solutions.functions.highlight": {
-    "message": "不学新概念，不设天花板。像写代码一样创建工作流。"
-  },
-  "STUDIO.solutions.vscode.title": {
-    "message": "基于 VSCode，继承编程习惯"
-  },
-  "STUDIO.solutions.vscode.description": {
-    "message": "OOMOL Studio 基于 VSCode 开发，你可以在熟悉的编辑器中编写节点代码。代码补全、调试工具、Git 集成、各种插件...所有你习惯的开发体验都在这里。"
-  },
-  "STUDIO.solutions.vscode.highlight": {
-    "message": "熟悉的编辑器，熟悉的快捷键，零适应成本。"
-  },
-  "STUDIO.solutions.container.title": {
-    "message": "内置容器，环境一致好部署"
-  },
-  "STUDIO.solutions.container.description": {
-    "message": "软件内置容器环境，本地开发和服务器环境完全一致。写完代码直接运行，不用担心「我这能跑，服务器怎么就不行」。通过网络反代，让你的设备秒变私人服务器，零成本启动任务。"
-  },
-  "STUDIO.solutions.container.highlight": {
-    "message": "本地即生产，部署不踩坑。闲置设备也能当服务器用。"
-  },
-  "STUDIO.hero.description.old": {
-    "message": "可视化工作流 + VSCode 全代码，快速构建并分享 AI 工具"
-  },
-  "STUDIO.hero.stat1": {
-    "message": "AI 模型"
-  },
-  "STUDIO.hero.stat2": {
-    "message": "发布 API"
-  },
-  "STUDIO.hero.stat3": {
-    "message": "算力共享"
-  },
-  "STUDIO.hero.cta.download": {
-    "message": "立即下载"
-  },
-  "STUDIO.hero.cta.docs": {
-    "message": "查看文档"
-  },
-  "STUDIO.workflow.title": {
-    "message": "开发者工作流"
-  },
-  "STUDIO.workflow.subtitle": {
-    "message": "创建工作流 → 生成 Package → 发布社区 → 灵活部署"
-  },
-  "STUDIO.workflow.step1.title": {
-    "message": "创建工作流"
-  },
-  "STUDIO.workflow.step1.description": {
-    "message": "拖拽式可视化编辑器，基于 VSCode 的函数工具编码"
-  },
-  "STUDIO.workflow.step1.feature1": {
-    "message": "拖拽式可视化编辑器"
-  },
-  "STUDIO.workflow.step1.feature2": {
-    "message": "基于 VSCode 的函数工具编码"
-  },
-  "STUDIO.workflow.step2.title": {
-    "message": "生成 Package"
-  },
-  "STUDIO.workflow.step2.description": {
-    "message": "函数工具 + Flows 自动打包，支持 MCP 接口"
-  },
-  "STUDIO.workflow.step2.feature1": {
-    "message": "函数工具 + Flows 自动打包"
-  },
-  "STUDIO.workflow.step2.feature2": {
-    "message": "支持 MCP 接口（AI Agent 直接调用）"
-  },
-  "STUDIO.workflow.step3.title": {
-    "message": "发布到社区"
-  },
-  "STUDIO.workflow.step3.description": {
-    "message": "一键发布工作流模板和函数工具库"
-  },
-  "STUDIO.workflow.step3.feature1": {
-    "message": "一键发布工作流模板"
-  },
-  "STUDIO.workflow.step3.feature2": {
-    "message": "分享函数工具库到社区"
-  },
-  "STUDIO.workflow.step4.title": {
-    "message": "灵活部署"
-  },
-  "STUDIO.workflow.step4.description": {
-    "message": "本地部署 + FRP 协议分享，或云端一键部署"
-  },
-  "STUDIO.workflow.step4.feature1": {
-    "message": "本地部署 + FRP 协议分享"
-  },
-  "STUDIO.workflow.step4.feature2": {
-    "message": "OOMOL 云端一键部署"
-  },
-  "STUDIO.workflow.step4.feature3": {
-    "message": "工作流自动发布为 API 服务"
-  },
-  "STUDIO.advantages.title": {
-    "message": "核心差异化优势"
-  },
-  "STUDIO.advantages.vscode.title": {
-    "message": "基于 VSCode 的开发体验"
-  },
-  "STUDIO.advantages.vscode.description": {
-    "message": "专业的代码编辑器，支持 Vibe Coding 函数工具和 AI 辅助开发"
-  },
-  "STUDIO.advantages.vscode.feature1": {
-    "message": "内置 Python/Node.js 环境"
-  },
-  "STUDIO.advantages.vscode.feature2": {
-    "message": "专业代码编辑器"
-  },
-  "STUDIO.advantages.vscode.feature3": {
-    "message": "节点即函数，代码与可视化无缝切换"
-  },
-  "STUDIO.advantages.p2p.title": {
-    "message": "P2P 算力与软件共享"
-  },
-  "STUDIO.advantages.p2p.description": {
-    "message": "基于 FRP 协议的本地部署共享方案，类似 P2P 方式共享算力"
-  },
-  "STUDIO.advantages.p2p.feature1": {
-    "message": "本地部署通过 FRP 协议分享"
-  },
-  "STUDIO.advantages.p2p.feature2": {
-    "message": "类似 P2P 方式共享算力"
-  },
-  "STUDIO.advantages.p2p.feature3": {
-    "message": "既可自用也可分享给他人"
-  },
-  "STUDIO.advantages.api.title": {
-    "message": "工作流即 API"
-  },
-  "STUDIO.advantages.api.description": {
-    "message": "低成本将本地函数发布为 API 服务，支持 MCP 接口供 AI Agent 调用"
-  },
-  "STUDIO.advantages.api.feature1": {
-    "message": "低成本将本地函数发布为 API 服务"
-  },
-  "STUDIO.advantages.api.feature2": {
-    "message": "支持 MCP 接口供 AI Agent 调用"
-  },
-  "STUDIO.advantages.api.feature3": {
-    "message": "自动生成 API 文档"
-  },
-  "STUDIO.ai.title": {
-    "message": "AI 集成能力"
-  },
-  "STUDIO.ai.description": {
-    "message": "集成主流 AI 服务，提供丰富的 AI 能力支持"
-  },
-  "STUDIO.ai.feature1": {
-    "message": "支持多种大语言模型（GPT、Claude、Gemini 等）"
-  },
-  "STUDIO.ai.feature2": {
-    "message": "图像生成和处理（DALL-E、Midjourney、Stable Diffusion）"
-  },
-  "STUDIO.ai.feature3": {
-    "message": "语音识别和合成"
-  },
-  "STUDIO.ai.feature4": {
-    "message": "实时预览和调试"
-  },
-  "STUDIO.techFeatures.title": {
-    "message": "技术特性"
-  },
-  "STUDIO.case.title": {
-    "message": "实战案例:用 Studio 构建 PDF-Craft"
-  },
-  "STUDIO.case.subtitle": {
-    "message": "从函数工具编写到 API 发布，完整展示 OOMOL Studio 的开发流程"
-  },
-  "STUDIO.case.process.title": {
-    "message": "构建流程"
-  },
-  "STUDIO.case.step1.title": {
-    "message": "编写 PDF 处理函数工具"
-  },
-  "STUDIO.case.step1.desc": {
-    "message": "在 VSCode 中编写 PDF 解析、OCR 识别、格式转换等核心函数工具"
-  },
-  "STUDIO.case.step2.title": {
-    "message": "可视化组合工作流"
-  },
-  "STUDIO.case.step2.desc": {
-    "message": "通过拖拽方式连接各个函数工具，构建完整的 PDF 处理流程"
-  },
-  "STUDIO.case.step3.title": {
-    "message": "一键发布为 API"
-  },
-  "STUDIO.case.step3.desc": {
-    "message": "自动生成 RESTful API 和 MCP 接口,支持 AI Agent 调用"
-  },
-  "STUDIO.case.deploy.title": {
-    "message": "灵活部署方式"
-  },
-  "STUDIO.case.deploy.local.title": {
-    "message": "本地开发测试"
-  },
-  "STUDIO.case.deploy.local.desc": {
-    "message": "在本地运行和调试,完全免费"
-  },
-  "STUDIO.case.deploy.local.badge": {
-    "message": "永久免费"
-  },
-  "STUDIO.case.deploy.frp.title": {
-    "message": "FRP 分享"
-  },
-  "STUDIO.case.deploy.frp.desc": {
-    "message": "通过 FRP 协议分享给团队成员使用"
-  },
-  "STUDIO.case.deploy.frp.badge": {
-    "message": "零成本分享"
-  },
-  "STUDIO.case.deploy.cloud.title": {
-    "message": "云端部署"
-  },
-  "STUDIO.case.deploy.cloud.desc": {
-    "message": "一键部署到 OOMOL Cloud,自动扩缩容"
-  },
-  "STUDIO.case.deploy.cloud.badge": {
-    "message": "按量计费"
-  },
-  "STUDIO.case.stat2": {
-    "message": "个核心 Blocks"
-  },
-  "STUDIO.case.stat3": {
-    "message": "种部署方式"
-  },
-  "CREATE.workflow.title": {
-    "message": "可视化工作流引擎"
-  },
-  "CREATE.workflow.description": {
-    "message": "通过拖拽式界面构建复杂的AI工作流，无需编程经验"
-  },
-  "CREATE.workflow.feature1": {
-    "message": "直观的拖拽界面，轻松连接各种AI模块和功能组件"
-  },
-  "CREATE.workflow.feature2": {
-    "message": "丰富的预置模板，快速启动常见的AI应用场景"
-  },
-  "CREATE.workflow.feature3": {
-    "message": "实时预览和调试，即时查看工作流执行效果"
-  },
-  "CREATE.workflow.feature4": {
-    "message": "版本控制和协作，支持团队共同开发和维护工作流"
-  },
-  "CREATE.ai.title": {
-    "message": "强大的AI集成模块"
-  },
-  "CREATE.ai.description": {
-    "message": "集成主流AI服务，提供丰富的AI能力支持"
-  },
-  "CREATE.ai.feature1": {
-    "message": "支持多种大语言模型，包括GPT、Claude、Gemini等"
-  },
-  "CREATE.ai.feature2": {
-    "message": "图像生成和处理能力，支持DALL-E、Midjourney等服务"
-  },
-  "CREATE.ai.feature3": {
-    "message": "语音识别和合成，实现多模态AI交互体验"
-  },
-  "SHARE.title": {
-    "message": "沉淀与复用函数资产"
-  },
-  "SHARE.description": {
-    "message": "把做好的函数能力沉淀成可安装、可复用、可继续组合的团队资产。"
-  },
-  "SHARE.hub.description": {
-    "message": "从团队共享目录中安装、复用并继续扩展函数资产。"
-  },
-  "SHARE.flowCommunity.title": {
-    "message": "函数资产目录"
-  },
-  "SHARE.flowCommunity.description": {
-    "message": "把函数能力收进统一目录，团队知道有哪些资产、如何安装、由谁维护。"
-  },
-  "SHARE.flowCommunity.feature1": {
-    "message": "把完成的函数能力沉淀为可安装资产，而不是散落在项目里"
-  },
-  "SHARE.flowCommunity.feature2": {
-    "message": "按名称和用途检索已有能力，减少重复开发"
-  },
-  "SHARE.flowCommunity.feature3": {
-    "message": "明确版本与维护关系，让团队知道该复用哪一份能力"
-  },
-  "SHARE.flowCommunity.feature4": {
-    "message": "基于已有资产继续组合，逐步长成更大的服务"
-  },
-  "SHARE.analytics.title": {
-    "message": "使用与维护反馈"
-  },
-  "SHARE.analytics.description": {
-    "message": "不仅知道资产被发布了，还知道它是否真的被安装、调用和持续维护。"
-  },
-  "SHARE.analytics.feature1": {
-    "message": "查看哪些资产被频繁安装和调用，判断复用价值"
-  },
-  "SHARE.analytics.feature2": {
-    "message": "根据使用情况持续优化参数、依赖和交付方式"
-  },
-  "SHARE.analytics.feature3": {
-    "message": "让资产维护者知道哪些能力值得继续投入和扩展"
-  },
-  "USE.title": {
-    "message": "使用 AI 工具"
-  },
-  "USE.description": {
-    "message": "通过智能对话工具，享受流畅的AI工具使用体验"
-  },
-  "USE.chatTools.title": {
-    "message": "智能对话工具"
-  },
-  "USE.chatTools.description": {
-    "message": "通过直观的对话界面，轻松使用各种AI工具，无需复杂操作"
-  },
-  "USE.chatTools.feature1": {
-    "message": "自然语言交互，像聊天一样使用AI工具"
-  },
-  "USE.chatTools.feature2": {
-    "message": "多轮对话支持，保持上下文连贯性"
-  },
-  "USE.chatTools.feature3": {
-    "message": "智能提示和建议，帮助用户更好地使用工具"
-  },
-  "USE.chatTools.feature4": {
-    "message": "历史记录管理，随时回顾和重用对话内容"
-  },
-  "USE.userExperience.title": {
-    "message": "优质使用体验"
-  },
-  "USE.userExperience.description": {
-    "message": "为用户提供流畅、高效的AI工具使用体验"
-  },
-  "USE.userExperience.feature1": {
-    "message": "响应式设计，支持桌面端和移动端无缝切换"
-  },
-  "USE.userExperience.feature2": {
-    "message": "实时反馈和状态显示，让用户了解处理进度"
-  },
-  "USE.userExperience.feature3": {
-    "message": "个性化设置，根据用户偏好定制使用界面"
-  },
-  "CHAT.hero.description": {
-    "message": "基于 MCP Tool 的 AI 对话助手，组合 Tool 构建 Agent 专家"
-  },
-  "CHAT.hero.stat1": {
-    "message": "协议支持"
-  },
-  "CHAT.hero.statValue2": {
-    "message": "多模型"
-  },
-  "CHAT.hero.stat2": {
-    "message": "支持"
-  },
-  "CHAT.hero.stat3": {
-    "message": "专家系统"
-  },
-  "CHAT.hero.cta.download": {
-    "message": "立即下载"
-  },
-  "CHAT.hero.cta.docs": {
-    "message": "查看文档"
-  },
-  "CHAT.useCases.title": {
-    "message": "使用场景"
-  },
-  "CHAT.useCases.subtitle": {
-    "message": "通过自然对话，完成各类 AI 任务"
-  },
-  "CHAT.useCase.conversation.title": {
-    "message": "自然对话交互"
-  },
-  "CHAT.useCase.conversation.description": {
-    "message": "像聊天一样使用 AI 工具，多轮对话保持上下文连贯性"
-  },
-  "CHAT.useCase.tools.title": {
-    "message": "MCP Tool 集成"
-  },
-  "CHAT.useCase.tools.description": {
-    "message": "调用 Studio 创建的 MCP Tool，实现复杂功能组合"
-  },
-  "CHAT.useCase.knowledge.title": {
-    "message": "企业知识库"
-  },
-  "CHAT.useCase.knowledge.description": {
-    "message": "集成企业知识，构建专属领域的智能助手"
-  },
-  "CHAT.useCase.collaboration.title": {
-    "message": "团队协作"
-  },
-  "CHAT.useCase.collaboration.description": {
-    "message": "分享对话和工具配置，提升团队协作效率"
-  },
-  "CHAT.features.title": {
-    "message": "核心功能"
-  },
-  "CHAT.features.mcp.title": {
-    "message": "MCP Tool 生态"
-  },
-  "CHAT.features.mcp.description": {
-    "message": "原生支持 MCP 协议，直接调用各类工具"
-  },
-  "CHAT.features.mcp.feature1": {
-    "message": "自动发现和加载 MCP Tool"
-  },
-  "CHAT.features.mcp.feature2": {
-    "message": "智能推荐合适的工具组合"
-  },
-  "CHAT.features.mcp.feature3": {
-    "message": "工具调用记录和调试"
-  },
-  "CHAT.features.agent.title": {
-    "message": "Agent 专家系统"
-  },
-  "CHAT.features.agent.description": {
-    "message": "组合多个 Tool 构建专业领域 Agent"
-  },
-  "CHAT.features.agent.feature1": {
-    "message": "自定义 Agent 角色和能力"
-  },
-  "CHAT.features.agent.feature2": {
-    "message": "Agent 工作流编排"
-  },
-  "CHAT.features.agent.feature3": {
-    "message": "Agent 共享和复用"
-  },
-  "CHAT.features.models.title": {
-    "message": "多模型支持"
-  },
-  "CHAT.features.models.description": {
-    "message": "支持主流 AI 模型，自由切换选择"
-  },
-  "CHAT.features.models.feature1": {
-    "message": "GPT、Claude、Gemini 等主流模型"
-  },
-  "CHAT.features.models.feature2": {
-    "message": "模型性能和成本对比"
-  },
-  "CHAT.features.models.feature3": {
-    "message": "自动选择最适合的模型"
   },
   "theme.ErrorPageContent.title": {
     "message": "页面已崩溃。",
@@ -2085,201 +1365,6 @@
   "CLOUD.hero.description": {
     "message": "在 Studio 里做好并测试工具后，发布到 Cloud，让工具在线运行，并让 AI Agent 继续在 oo-cli 里查找和使用。"
   },
-  "CLOUD.hero.kicker": {
-    "message": "Cloud Runtime"
-  },
-  "CLOUD.hero.note": {
-    "message": "用户主要通过 oo-cli 使用工具；实现则继续留在服务器端。"
-  },
-  "CLOUD.hero.stat1": {
-    "message": "私有交付"
-  },
-  "CLOUD.hero.stat2": {
-    "message": "按量计费"
-  },
-  "CLOUD.hero.stat3": {
-    "message": "少管运维"
-  },
-  "CLOUD.hero.cta.start": {
-    "message": "查看 Cloud 文档"
-  },
-  "CLOUD.hero.cta.docs": {
-    "message": "打开 Cloud 控制台"
-  },
-  "CLOUD.hero.cta.console": {
-    "message": "打开 Cloud 控制台"
-  },
-  "CLOUD.painPoints.title": {
-    "message": "工具跑通后，Cloud 帮你把它上线"
-  },
-  "CLOUD.painPoints.subtitle": {
-    "message": "作为开发者，我们深知你的苦恼"
-  },
-  "CLOUD.painPoints.description": {
-    "message": "本地能跑只是第一步。要让同事、客户或 AI Agent 稳定使用，你还要准备服务器、保存密钥、控制谁能用，并处理运行中的问题。Cloud 把这些麻烦集中处理。"
-  },
-  "CLOUD.solution.title": {
-    "message": "一份工具，三种消费路径"
-  },
-  "CLOUD.solution.subtitle": {
-    "message": "同一份工具可以继续通过 API、MCP 或自动化被消费，同时仍然只维护一份实现。"
-  },
-  "CLOUD.solution.kicker": {
-    "message": "消费路径"
-  },
-  "CLOUD.modes.library.title": {
-    "message": "作为自动化运行"
-  },
-  "CLOUD.modes.library.description": {
-    "message": "让同一份工具按触发器或定时器持续运行，而不是只停留在本地手动执行。"
-  },
-  "CLOUD.modes.serverless.title": {
-    "message": "通过 API 使用"
-  },
-  "CLOUD.modes.serverless.description": {
-    "message": "让应用直接通过 API 调用同一份工具，而不用围绕它再补一层独立后端。"
-  },
-  "CLOUD.modes.mcp.title": {
-    "message": "通过 MCP 使用"
-  },
-  "CLOUD.modes.mcp.description": {
-    "message": "当 agent-native 集成更重要时，把同一份工具作为 MCP Tool 暴露给 Agent 和 AI 应用。"
-  },
-  "CLOUD.pricing.title": {
-    "message": "先发布，按使用增长再付费"
-  },
-  "CLOUD.pricing.description": {
-    "message": "你不需要为了验证交付先养一台服务器。先发布、先验证需求，再随着使用量增长继续扩展。"
-  },
-  "CLOUD.pricing.kicker": {
-    "message": "价格"
-  },
-  "CLOUD.pricing.cta": {
-    "message": "查看详细价格"
-  },
-  "CLOUD.cta.primary": {
-    "message": "查看 Cloud 文档"
-  },
-  "CLOUD.cta.secondary": {
-    "message": "打开 Cloud 控制台"
-  },
-  "CLOUD.opensource.title": {
-    "message": "开放运行时，灵活部署"
-  },
-  "CLOUD.opensource.subtitle": {
-    "message": "即使你发布的工具是私有的，底层运行时基础仍然保持开源。"
-  },
-  "CLOUD.opensource.description": {
-    "message": "OOMOL 的虚拟机和运行时核心持续开源，所以无论你用个人服务器、私有基础设施还是公有云，都依然保有部署自由，同时为每个工具单独决定如何交付。"
-  },
-  "CLOUD.opensource.projects.title": {
-    "message": "开源项目"
-  },
-  "CLOUD.opensource.ovm.title": {
-    "message": "OVM"
-  },
-  "CLOUD.opensource.ovm.description": {
-    "message": "跨平台虚拟机管理器,为 OOMOL 提供统一的容器运行环境"
-  },
-  "CLOUD.opensource.ovm-core.title": {
-    "message": "OVM Core"
-  },
-  "CLOUD.opensource.ovm-core.description": {
-    "message": "OVM 的核心运行时库,处理容器生命周期和资源管理"
-  },
-  "CLOUD.opensource.ovm-win.title": {
-    "message": "OVM Windows"
-  },
-  "CLOUD.opensource.ovm-win.description": {
-    "message": "Windows 平台的 OVM 实现,支持 WSL2 和 Hyper-V"
-  },
-  "CLOUD.opensource.ovm-mac.title": {
-    "message": "OVM macOS"
-  },
-  "CLOUD.opensource.ovm-mac.description": {
-    "message": "macOS 平台的 OVM 实现,基于 Apple Virtualization Framework"
-  },
-  "APP.new.hero.title": {
-    "message": "OOMOL App Surfaces"
-  },
-  "APP.new.hero.subtitle": {
-    "message": "cloud skill 的产品化入口"
-  },
-  "APP.new.hero.description": {
-    "message": "一个 cloud skill 可以继续通过对话入口或结构化 applet 被使用，而不用为每种产品形态重做一套界面。"
-  },
-  "APP.new.concept.title": {
-    "message": "一个 skill，多种入口"
-  },
-  "APP.new.concept.description": {
-    "message": "OOMOL 把同一个 cloud skill 包装成不同的可用入口。你专注实现本身，我们负责把它连接到用户。"
-  },
-  "APP.new.chat.pill": {
-    "message": "对话入口 · Chat Skill"
-  },
-  "APP.new.chat.title": {
-    "message": "OOMOL Chat"
-  },
-  "APP.new.chat.subtitle": {
-    "message": "AI 助手 · 探索性交互"
-  },
-  "APP.new.chat.description": {
-    "message": "当用户意图还不够明确时，让 AI 在对话中选择并运行合适的 cloud skill。"
-  },
-  "APP.new.chat.meta1.label": {
-    "message": "适合谁"
-  },
-  "APP.new.chat.meta1.value": {
-    "message": "适合通过对话暴露 cloud skill，并先逐步澄清用户意图的场景"
-  },
-  "APP.new.chat.meta2.label": {
-    "message": "核心体验"
-  },
-  "APP.new.chat.meta2.value": {
-    "message": "先理解意图，再调用正确的 cloud skill，降低用户上手门槛"
-  },
-  "APP.new.chat.devValue": {
-    "message": "cloud skill 即 agent tool：同一份实现可以直接变成 AI 可调用入口"
-  },
-  "APP.new.applet.pill": {
-    "message": "结构化入口 · Applet"
-  },
-  "APP.new.applet.title": {
-    "message": "OOMOL Applet"
-  },
-  "APP.new.applet.subtitle": {
-    "message": "表单小程序 · 确定性交互"
-  },
-  "APP.new.applet.description": {
-    "message": "当用户输入明确时，用结构化参数运行同一个 cloud skill，交付更稳定。"
-  },
-  "APP.new.applet.meta1.label": {
-    "message": "适合谁"
-  },
-  "APP.new.applet.meta1.value": {
-    "message": "适合把固定输入输出的 cloud skill 交付给团队或最终用户"
-  },
-  "APP.new.applet.meta2.label": {
-    "message": "核心体验"
-  },
-  "APP.new.applet.meta2.value": {
-    "message": "把同一个 cloud skill 包装成可填写、可执行、可复用的产品入口"
-  },
-  "APP.new.applet.devValue": {
-    "message": "cloud skill 即应用：自动生成参数入口，减少前端样板"
-  },
-  "APP.new.hero.cta.web": {
-    "message": "在网页中使用"
-  },
-  "APP.new.hero.cta.studio": {
-    "message": "在 OOMOL Studio 中使用"
-  },
-  "APP.new.cta.download": {
-    "message": "下载体验"
-  },
-  "APP.new.cta.docs": {
-    "message": "查看文档"
-  },
   "STUDIO.page.title": {
     "message": "OOMOL Studio - 在真实工程环境里构建和验证工具"
   },
@@ -2291,15 +1376,6 @@
   },
   "STUDIO.manifesto.subtitle": {
     "message": "让 AI 先帮你起步，然后继续写代码、接依赖、编排流程，把工具在本地跑通；准备交付时，再把同一份实现交给 Cloud。"
-  },
-  "STUDIO.manifesto.cta.download": {
-    "message": "下载 OOMOL Studio"
-  },
-  "STUDIO.product.hero.kicker": {
-    "message": "OOMOL Studio"
-  },
-  "STUDIO.product.hero.secondary": {
-    "message": "查看下载"
   },
   "STUDIO.product.story.kicker": {
     "message": "开发者问题"
@@ -2324,24 +1400,6 @@
   },
   "STUDIO.product.cta.description": {
     "message": "先在真实 coding 环境里把工具做出来并跑通；准备交付时，再交给 Cloud。"
-  },
-  "STUDIO.story.paragraph1": {
-    "message": "我们想要的，不是另一个要求开发者迁就平台的工具，而是一个能先让 AI Agent 全自动搭建、再继续写函数、编排节点、调试依赖和验证结果的工作环境。"
-  },
-  "STUDIO.story.frustration.line1": {
-    "message": "「为什么我还不能直接让 AI Agent 把这个工具全自动搭出来？」"
-  },
-  "STUDIO.story.frustration.line2": {
-    "message": "「为什么我还得先学专有 DSL，才能开始编排？」"
-  },
-  "STUDIO.story.frustration.line3": {
-    "message": "「为什么我想引一个库，还得等平台支持？」"
-  },
-  "STUDIO.story.paragraph2": {
-    "message": "对开发者来说，问题不只是能不能拖拽，而是能不能把从需求到可用工具的第一步交给 AI Agent 自动完成。"
-  },
-  "STUDIO.story.paragraph3": {
-    "message": "所以 Studio 的角色很明确：先把 AI Agent 全自动搭建放进真实工程环境，再把本地验证和后续交付连起来。"
   },
   "STUDIO.story.point1.label": {
     "message": "学习成本"
@@ -2369,33 +1427,6 @@
   },
   "STUDIO.story.point3.description": {
     "message": "你希望 AI 先帮你找包、搭骨架、补节点，但最后仍能回到真实工程环境继续接手。"
-  },
-  "HOME.StudioChain.title": {
-    "message": "从想法，到可交付的工具"
-  },
-  "HOME.StudioChain.subtitle": {
-    "message": "当已发布工具不够时，OOMOL 给你一条连续的路径：在 Studio 里生成，在本地验证，通过 Cloud 发布，再由 oo-cli 交付出去。"
-  },
-  "HOME.StudioChain.lead": {
-    "message": "不要停在本地自动化，把它做成别人真的能用的工具。"
-  },
-  "HOME.StudioChain.summary": {
-    "message": "在 OOMOL 里，你可以先使用已发布工具，再在 Studio 里生成并验证自己的实现，最后通过 Cloud 私有发布给自己、团队或客户使用。"
-  },
-  "HOME.StudioChain.card1.title": {
-    "message": "OOMOL Studio"
-  },
-  "HOME.StudioChain.card1.description": {
-    "message": "在 Studio 里描述、编写、调试和验证自己的工具，用真实工程环境管理代码、依赖和输入输出。"
-  },
-  "HOME.StudioChain.card2.title": {
-    "message": "Cloud"
-  },
-  "HOME.StudioChain.card2.description": {
-    "message": "把已经验证过的实现发布为工具，持续提供给自己、团队或客户使用，而不暴露源码。"
-  },
-  "HOME.StudioChain.action.studio": {
-    "message": "了解 Studio"
   },
   "HOME.StudioChain.action.cloud": {
     "message": "了解 Cloud"
@@ -2427,18 +1458,6 @@
   "STUDIO.principle1.paragraph3": {
     "message": "重点不是停在自动搭建，而是让你从第一版开始就在真实工程环境里继续接手。"
   },
-  "STUDIO.principle1.codeComment1": {
-    "message": "# Perform addition of x and y"
-  },
-  "STUDIO.principle1.codeComment2": {
-    "message": "// ...自动变成一个节点："
-  },
-  "STUDIO.principle1.codeComment3": {
-    "message": "// 输入端口: \"text\""
-  },
-  "STUDIO.principle1.codeComment4": {
-    "message": "// 输出端口: \"result\""
-  },
   "STUDIO.principle2.title": {
     "message": "2. 不用先学 DSL，就能开始编排"
   },
@@ -2463,123 +1482,6 @@
   "STUDIO.principle3.paragraph3": {
     "message": "这样组合出来的流程不只是能跑起来，而是真的能顺着你的技术栈继续扩。"
   },
-  "STUDIO.principle3.codeComment": {
-    "message": "# 没有封装。只有标准工具。"
-  },
-  "STUDIO.principle3.codeComment2": {
-    "message": "# 就是这么简单。"
-  },
-  "SDK.hero.title": {
-    "message": "OOMOL SDK"
-  },
-  "SDK.hero.description": {
-    "message": "把函数能力接到不同交付通道的开发入口。用 SDK 把本地能力接到 Connect、Cloud、MCP 和 Fusion 服务，而不是重复搭胶水层。"
-  },
-  "SDK.category.connect.title": {
-    "message": "OOMOL Connect SDK"
-  },
-  "SDK.category.connect.description": {
-    "message": "把本地已经跑通的函数或服务安全暴露出去，让远程 API 调用和 MCP 调用都更直接。"
-  },
-  "SDK.connect.mcp.description": {
-    "message": "把本地函数暴露成可远程调用的 MCP 工具，让 Agent 使用的就是你真实运行的能力。"
-  },
-  "SDK.connect.mcp.feature1": {
-    "message": "零配置网络反代"
-  },
-  "SDK.connect.mcp.feature2": {
-    "message": "原生 MCP 协议支持"
-  },
-  "SDK.connect.mcp.feature3": {
-    "message": "安全的端到端加密"
-  },
-  "SDK.connect.api.description": {
-    "message": "把本地函数或服务暴露成远程 API，适合先本地运行、再逐步开放访问。"
-  },
-  "SDK.connect.api.feature1": {
-    "message": "RESTful API 支持"
-  },
-  "SDK.connect.api.feature2": {
-    "message": "自动 HTTPS 证书"
-  },
-  "SDK.connect.api.feature3": {
-    "message": "高性能反向代理"
-  },
-  "SDK.category.cloud.title": {
-    "message": "OOMOL Cloud SDK"
-  },
-  "SDK.category.cloud.description": {
-    "message": "把同一份函数能力交给 OOMOL Cloud 运行，减少服务化时的基础设施工作。"
-  },
-  "SDK.cloud.mcp.description": {
-    "message": "把部署在 OOMOL Cloud 上的函数直接作为 MCP 工具提供给 Agent 使用。"
-  },
-  "SDK.cloud.mcp.feature1": {
-    "message": "Serverless 架构"
-  },
-  "SDK.cloud.mcp.feature2": {
-    "message": "自动扩缩容"
-  },
-  "SDK.cloud.mcp.feature3": {
-    "message": "按调用计费"
-  },
-  "SDK.block.mcp.description": {
-    "message": "把函数工具或函数能力封装成 MCP 工具接口，减少从实现到可调用工具之间的样板代码。"
-  },
-  "SDK.block.mcp.feature1": {
-    "message": "函数工具转 MCP 工具"
-  },
-  "SDK.block.mcp.feature2": {
-    "message": "完整的类型支持"
-  },
-  "SDK.block.mcp.feature3": {
-    "message": "无缝集成 OOMOL 生态"
-  },
-  "SDK.cloud.task.python.description": {
-    "message": "使用 Python 编写可直接运行在 OOMOL Cloud 的函数任务。"
-  },
-  "SDK.cloud.task.ts.description": {
-    "message": "使用 TypeScript 编写可直接运行在 OOMOL Cloud 的函数任务。"
-  },
-  "SDK.cloud.task.feature1": {
-    "message": "完整的类型定义"
-  },
-  "SDK.cloud.task.feature2": {
-    "message": "异步任务支持"
-  },
-  "SDK.cloud.task.feature3": {
-    "message": "内置日志和监控"
-  },
-  "SDK.cta.title": {
-    "message": "开始使用 OOMOL SDK"
-  },
-  "SDK.cta.description": {
-    "message": "查看完整的 API 文档和示例代码,快速上手 OOMOL SDK 开发"
-  },
-  "SDK.cta.button": {
-    "message": "查看文档"
-  },
-  "SDK.category.fusion.title": {
-    "message": "OOMOL Fusion SDK"
-  },
-  "SDK.category.fusion.description": {
-    "message": "用统一 SDK 调用 OOMOL 提供的 Fusion API，少处理轮询和异步细节。"
-  },
-  "SDK.fusion.ts.description": {
-    "message": "使用 TypeScript 调用 OOMOL Fusion API，把多种能力接进你的函数或服务。"
-  },
-  "SDK.fusion.py.description": {
-    "message": "使用 Python 调用 OOMOL Fusion API，把多种能力接进你的函数或服务。"
-  },
-  "SDK.fusion.feature1": {
-    "message": "简化的 API 调用接口"
-  },
-  "SDK.fusion.feature2": {
-    "message": "自动处理轮询和异步流程"
-  },
-  "SDK.fusion.feature3": {
-    "message": "支持文生图、语音合成等多种服务"
-  },
   "HOME.ToolStrip.title": {
     "message": "这些能力背后，是已接好的应用和工具"
   },
@@ -2601,9 +1503,6 @@
   "HOME.ToolStrip.wallTitle": {
     "message": "常见应用已内置接入"
   },
-  "HOME.CliReasons.badge": {
-    "message": "WHY OO-CLI"
-  },
   "HOME.CliReasons.title": {
     "message": "一套连接，给所有 Agent 使用"
   },
@@ -2621,21 +1520,6 @@
   },
   "HOME.CliReasons.card2.description": {
     "message": "现成工具不够时，在 OOMOL Studio 组合第三方 Block、云函数、API 和业务逻辑；做好后沿 OOMOL 路径交付和复用。"
-  },
-  "HOME.CliReasons.primaryCta": {
-    "message": "了解 oo-cli"
-  },
-  "HOME.CliReasons.secondaryCta": {
-    "message": "了解 Studio"
-  },
-  "HOME.CliReasons.visual.eyebrow": {
-    "message": "账号、能力与知名 Agent"
-  },
-  "HOME.CliReasons.visual.hubLabel": {
-    "message": "统一连接与授权"
-  },
-  "HOME.CliReasons.visual.hubTitle": {
-    "message": "OOMOL"
   },
   "HOME.DeveloperEntry.badge": {
     "message": "开发者入口"
@@ -2688,9 +1572,6 @@
   "HOME.LinearFlow.studio.media.title": {
     "message": "Studio 演示视频"
   },
-  "HOME.LinearFlow.studio.media.note": {
-    "message": "展示从描述需求、生成工具到本地验证跑通的过程。"
-  },
   "HOME.LinearFlow.studio.primary": {
     "message": "安装 OOMOL Studio"
   },
@@ -2727,9 +1608,6 @@
   "HOME.LinearFlow.cloud.media.title": {
     "message": "Cloud 控制台预览"
   },
-  "HOME.LinearFlow.cloud.media.note": {
-    "message": "把运行配置、Secrets 和使用关系放到同一个后台里管理。"
-  },
   "HOME.LinearFlow.cloud.primary": {
     "message": "了解 Cloud"
   },
@@ -2747,9 +1625,6 @@
   },
   "HOME.LinearFlow.cli.media.title": {
     "message": "oo-cli 调用演示"
-  },
-  "HOME.LinearFlow.cli.media.note": {
-    "message": "展示一个已交付工具在 Codex 中被搜索、查看和调用。"
   },
   "HOME.LinearFlow.cli.guide": {
     "message": "了解 oo-cli"

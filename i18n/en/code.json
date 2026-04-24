@@ -1,24 +1,6 @@
 {
-  "Theme.Navbar.download-now": {
-    "message": "Download Now"
-  },
-  "Theme.Navbar.go-to-hub-flow": {
-    "message": "Start Building"
-  },
-  "Theme.Navbar.use-in-chat": {
-    "message": "Use in Chat"
-  },
-  "Theme.Navbar.sign-in": {
-    "message": "Sign in"
-  },
-  "Theme.Navbar.download": {
-    "message": "Download"
-  },
   "Theme.Navbar.login": {
     "message": "Login"
-  },
-  "Theme.Navbar.chat": {
-    "message": "Chat"
   },
   "Theme.Navbar.console": {
     "message": "Console"
@@ -137,21 +119,6 @@
   "HOME.FirstScreen.install.copied": {
     "message": "oo-cli install command copied."
   },
-  "HOME.FirstScreen.terminal.l1": {
-    "message": "$ curl -fsSL https://cli.oomol.com/install.sh | bash"
-  },
-  "HOME.FirstScreen.terminal.l2": {
-    "message": "✔ oo-cli installed"
-  },
-  "HOME.FirstScreen.terminal.l3": {
-    "message": "$ oo login"
-  },
-  "HOME.FirstScreen.terminal.l4": {
-    "message": "✔ Authenticated with OOMOL"
-  },
-  "HOME.FirstScreen.terminal.l5": {
-    "message": "$ oo search \"generate a QR code\""
-  },
   "HOME.FirstScreen.flow.aria": {
     "message": "Integration path from agents through oo-cli to Studio and Cloud"
   },
@@ -200,102 +167,6 @@
   "HOME.CoreFeatures.vscode.highlight1": {
     "message": "When the function is ready, delivery should follow naturally"
   },
-  "HOME.Lifecycle.title": {
-    "message": "Development Lifecycle"
-  },
-  "HOME.Lifecycle.subtitle": {
-    "message": "From build to delivery, all-in-one development experience"
-  },
-  "HOME.Lifecycle.step1.title": {
-    "message": "Build"
-  },
-  "HOME.Lifecycle.step1.subtitle": {
-    "message": "Design and implement workflows in OOMOL Studio"
-  },
-  "HOME.Lifecycle.step1.description": {
-    "message": "Create projects in OOMOL Studio, define functional nodes by installing published function tools from the community or coding your own, then drag and drop to compose visual workflows with full AI assistance from design to production."
-  },
-  "HOME.Lifecycle.step2.title": {
-    "message": "Publish"
-  },
-  "HOME.Lifecycle.step2.subtitle": {
-    "message": "Share with community, or manage as personal capability library"
-  },
-  "HOME.Lifecycle.step2.description": {
-    "message": "Choose to publish your packages publicly or privately — keep private packages to build your own modular capability library for reuse, or share them publicly in the community for others to benefit from your work."
-  },
-  "HOME.Lifecycle.step3.title": {
-    "message": "Deploy"
-  },
-  "HOME.Lifecycle.step3.subtitle": {
-    "message": "Run on local, private host or cloud"
-  },
-  "HOME.Lifecycle.step3.description": {
-    "message": "Deploy locally on your PC or Mac for personal use and sharing, or deploy to Cloud Serverless with one click for hassle-free API hosting."
-  },
-  "HOME.Lifecycle.step4.title": {
-    "message": "Deliver"
-  },
-  "HOME.Lifecycle.step4.subtitle": {
-    "message": "Transform into capabilities usable by both users and AI"
-  },
-  "HOME.Lifecycle.step4.description": {
-    "message": "Transform your workflows into external API services and interactive user applications, MCP Tools that AI can directly invoke, or automated workflows that run on schedules or triggers."
-  },
-  "HOME.PdfCraft.title": {
-    "message": "Open Source Project Built on OOMOL: PDF-Craft"
-  },
-  "HOME.PdfCraft.subtitle": {
-    "message": "Experience the power of local computing with our flagship open source project built on OOMOL"
-  },
-  "HOME.PdfCraft.description": {
-    "message": "PDF-Craft is OOMOL's official open source PDF to eBook conversion tool with 3000+ GitHub stars. Run it locally for free, share with friends via OOMOL, or use the official API service — there's always a service that fits you."
-  },
-  "HOME.PdfCraft.feature1": {
-    "message": "MIT open source, fully transparent"
-  },
-  "HOME.PdfCraft.feature2": {
-    "message": "Built on DeepSeek OCR, advanced model"
-  },
-  "HOME.PdfCraft.feature3": {
-    "message": "Professional team maintenance, open source and service in parallel"
-  },
-  "HOME.PdfCraft.traditional.badge": {
-    "message": "Local Deployment"
-  },
-  "HOME.PdfCraft.traditional.title": {
-    "message": "Local Computing, Free & Private"
-  },
-  "HOME.PdfCraft.traditional.step1": {
-    "message": "Prepare a PC with RTX 3060 or higher GPU"
-  },
-  "HOME.PdfCraft.traditional.step2": {
-    "message": "Install OOMOL Studio for free local deployment"
-  },
-  "HOME.PdfCraft.traditional.step3": {
-    "message": "Use Mini App or Flow to run"
-  },
-  "HOME.PdfCraft.oomol.badge": {
-    "message": "Official Service"
-  },
-  "HOME.PdfCraft.oomol.title": {
-    "message": "Pay-as-you-go, Ready to Use"
-  },
-  "HOME.PdfCraft.oomol.method1": {
-    "message": "Official maintenance, quality guaranteed"
-  },
-  "HOME.PdfCraft.oomol.method2": {
-    "message": "Available on PDF-Craft website"
-  },
-  "HOME.PdfCraft.oomol.method3": {
-    "message": "API service for developers"
-  },
-  "HOME.PdfCraft.cta.primary": {
-    "message": "Try PDF-Craft"
-  },
-  "HOME.PdfCraft.cta.secondary": {
-    "message": "View Source Code"
-  },
   "HOME.BrandAssets.title": {
     "message": "Brand Assets & Guidelines"
   },
@@ -314,42 +185,6 @@
   "HOME.BrandAssets.typeface": {
     "message": "Typeface"
   },
-  "HOME.CommunityShare.title": {
-    "message": "A function you wrote once should keep paying off"
-  },
-  "HOME.CommunityShare.subtitle": {
-    "message": "A function should not stay trapped in one project. After publishing, it can come back into local work, plug into AI workflows, or become the base capability behind future services."
-  },
-  "HOME.CommunityShare.point1.title": {
-    "message": "Reuse What You Already Built"
-  },
-  "HOME.CommunityShare.point1.description": {
-    "message": "Bring published functions back into your own environment so you do not have to start from scratch the next time."
-  },
-  "HOME.CommunityShare.point2.title": {
-    "message": "Build Your Own Function Library"
-  },
-  "HOME.CommunityShare.point2.description": {
-    "message": "Each release leaves behind reusable capabilities that gradually become your own function library."
-  },
-  "HOME.CommunityShare.point3.title": {
-    "message": "Compose New Services from Existing Ones"
-  },
-  "HOME.CommunityShare.point3.description": {
-    "message": "Keep extending published functions and recombining them into new products and services."
-  },
-  "HOME.Built-in.title": {
-    "message": "Fusion APIs & LLM Access"
-  },
-  "HOME.Built-in.subtitle": {
-    "message": "Use a single OOMOL API Token to quickly access various common APIs and mainstream LLMs. Simpler, more unified development experience."
-  },
-  "HOME.Built-in.code.python": {
-    "message": "from oocana import Context\n\n#region generated meta\nimport typing\nInputs = typing.Dict[str, typing.Any]\nOutputs = typing.Dict[str, typing.Any]\n#endregion\n\nasync def main(params: Inputs, context: Context) -> Outputs | None:\n\n    # Fusion API Base URL\n    api_url = \"https://fusion-api.oomol.com/v1/fal-nano-banana-edit/submit\"\n\n    # LLM Base URL, can use openai sdk\n    llm_base_url = \"https://llm.oomol.com/v1\"\n\n    # Get OOMOL token from context (no need for manual API key input)\n    api_token = await context.oomol_token()\n\n    return {\n      # \"output\": \"output_value\"\n    }"
-  },
-  "HOME.Built-in.code.typescript": {
-    "message": "//#region generated meta\ntype Inputs = {\n};\ntype Outputs = {\n};\n//#endregion\n\nimport type { Context } from \"@oomol/types/oocana\";\n\nexport default async function(\n    params: Inputs,\n    context: Context<Inputs, Outputs>\n): Promise<Partial<Outputs> | undefined | void> {\n    // Fusion API Base URL\n    const api_url = \"https://fusion-api.oomol.com/v1/fal-nano-banana-edit/submit\"\n\n    // LLM Base URL, can use openai sdk\n    const llm_base_url = \"https://llm.oomol.com/v1\"\n\n    // Get OOMOL token from context (no need for manual API key input)\n    const api_token = await context.getOomolToken()\n    // return { output: \"output_value\" };\n};"
-  },
   "HOME.GetStartedPrompt.title": {
     "message": "Start with published tools, build your own only when needed"
   },
@@ -361,9 +196,6 @@
   },
   "HOME.GetStartedPrompt.secondary": {
     "message": "Build your first tool"
-  },
-  "HOME.Pricing.title": {
-    "message": "Pricing"
   },
   "HOME.Downloads.studioSection.title": {
     "message": "Download OOMOL Studio when you want to build your own tools"
@@ -404,17 +236,11 @@
   "HOME.Downloads.cli.method.install.title": {
     "message": "Use the official install commands"
   },
-  "HOME.Downloads.cli.method.install.description": {
-    "message": "Run the command that matches your environment in Codex, Claude Code, or any local terminal, then sign in. The guide covers wget or curl on macOS/Linux, plus Windows PowerShell and Windows CMD."
-  },
   "HOME.Downloads.cli.method.agent.title": {
     "message": "Let your agent do it"
   },
   "HOME.Downloads.cli.method.agent.description": {
     "message": "Paste this prompt into your agent if you want it to use the official install commands and verify the setup for you."
-  },
-  "HOME.Downloads.cli.method.agent.prompt": {
-    "message": "Please help me install and verify oo-cli:\n\n1. Install oo-cli using the official method for this environment.\n   - macOS / Linux (option 1): `wget -qO - https://cli.oomol.com/install.sh | bash`\n   - macOS / Linux (option 2): `curl -fsSL https://cli.oomol.com/install.sh | bash`\n   - Windows PowerShell: `irm https://cli.oomol.com/install.ps1 | iex`\n   - Windows CMD: `curl -fsSL https://cli.oomol.com/install.cmd -o install.cmd && install.cmd && del install.cmd`\n\n2. Run `oo login`.\n\n3. Confirm that the CLI is ready to use.\n\n4. Tell me the best next oo-cli command to run."
   },
   "HOME.Downloads.cli.copy": {
     "message": "Copy"
@@ -460,57 +286,6 @@
   },
   "HOME.Community.open-source.subtitle": {
     "message": "These projects reflect OOMOL's ongoing work on runtime, deployment, and real-world developer tools."
-  },
-  "FEATURES.title": {
-    "message": "All the features that you need"
-  },
-  "FEATURES.description": {
-    "message": "Easy drag-and-drop workflows, professional code editor, and elegant data visualization."
-  },
-  "FEATURES.sceneOne.title": {
-    "message": "Intuitive interaction"
-  },
-  "FEATURES.sceneTwo.title": {
-    "message": "Developer-friendly"
-  },
-  "FEATURES.sceneOne.content-1": {
-    "message": "Build workflows with simple drag-and-drop function tools to fit your needs."
-  },
-  "FEATURES.sceneOne.content-2": {
-    "message": "Automatically offer UI components based on parameter types for easier use."
-  },
-  "FEATURES.sceneOne.content-3": {
-    "message": "An intuitive UI helps users clearly understand the system’s status."
-  },
-  "FEATURES.sceneOne.content-4": {
-    "message": "Readable logs with clear sequence and explicit status."
-  },
-  "FEATURES.sceneTwo.content-5": {
-    "message": "Built-in Python and Node.js with support for open-source library installation."
-  },
-  "FEATURES.sceneTwo.content-6": {
-    "message": "Based on Visual Studio Code with code completion, highlighting, and AI tips."
-  },
-  "FEATURES.sceneTwo.content-7": {
-    "message": "Each node is a function—customize them easily if you know programming."
-  },
-  "FEATURES.block-1.title": {
-    "message": "Containerized development environment for seamless cross-system workflow sharing."
-  },
-  "FEATURES.block-2.title": {
-    "message": "Protect local environment and data security through secure isolation."
-  },
-  "FEATURES.block-3.title": {
-    "message": "Unified Linux environment, easy image deployment to cloud."
-  },
-  "FEATURES.block-4.title": {
-    "message": "Share workflow templates for easy scenario application and secondary development."
-  },
-  "FEATURES.block-5.title": {
-    "message": "Share function tool libraries with connectable, ready-to-use functions."
-  },
-  "FEATURES.block-6.title": {
-    "message": "Code synced to GitHub for collaborative development and upkeep."
   },
   "PRICING.title": {
     "message": "Simple, Transparent Pricing"
@@ -698,9 +473,6 @@
   "PRICING.tables.subtitle": {
     "message": "This section covers four categories: LLMs, Cloud Task, Auth Link, and OOMOL's first-party APIs."
   },
-  "PRICING.tables.syncNote": {
-    "message": "Cloud Task covers cloud functions or APIs you publish yourself. Auth Link covers requests made after a user connects an account and grants access. Official API Services are first-party APIs like image generation, TTS, and STT."
-  },
   "PRICING.tables.tab.llm": {
     "message": "LLMs"
   },
@@ -715,9 +487,6 @@
   },
   "PRICING.tables.llm.note": {
     "message": "Check this only when you call OOMOL-billed models directly. Rates update with the model configuration in the console. Units are credits per million tokens."
-  },
-  "PRICING.tables.llm.loading": {
-    "message": "Loading the latest LLM pricing from OOMOL Console..."
   },
   "PRICING.tables.llm.error": {
     "message": "LLM pricing is temporarily unavailable. Please refresh later or check console directly."
@@ -1332,495 +1101,6 @@
     "message": "This author has not written any posts yet.",
     "description": "The text for authors with 0 blog post"
   },
-  "CREATE.title": {
-    "message": "OOMOL Studio"
-  },
-  "CREATE.description": {
-    "message": "OOMOL's AI tool creation platform. The core advantage lies in: retaining the unlimited creative ability of traditional programming while having the convenience of low-code development, allowing users to efficiently build various AI tools."
-  },
-  "STUDIO.hero.subtitle": {
-    "message": "Workflow Tools Redesigned for Developers"
-  },
-  "STUDIO.hero.description": {
-    "message": "Local development environment for developers, VSCode-based visual programming tool with FRP protocol for P2P computing power sharing"
-  },
-  "STUDIO.painPoints.title": {
-    "message": "Three Pain Points of Traditional Workflow Tools"
-  },
-  "STUDIO.painPoints.subtitle": {
-    "message": "As developers, we know exactly how frustrating these problems are"
-  },
-  "STUDIO.painPoints.learningCurve.title": {
-    "message": "High Learning Curve"
-  },
-  "STUDIO.painPoints.learningCurve.description": {
-    "message": "Learning the platform's interaction and design concepts, simple if-else logic becomes complicated with drag-and-drop components. Problems that could be solved with one line of code require time to understand the platform's abstract concepts."
-  },
-  "STUDIO.painPoints.extension.title": {
-    "message": "Difficult Extension"
-  },
-  "STUDIO.painPoints.extension.description": {
-    "message": "Problems that could be solved by importing an open-source library in programming become as complex as rocket science in workflow platforms. Want to extend functionality? Check if the platform supports it first—if not, you're stuck."
-  },
-  "STUDIO.painPoints.toolSwitching.title": {
-    "message": "Leaving Familiar Tools"
-  },
-  "STUDIO.painPoints.toolSwitching.description": {
-    "message": "Even if the platform provides scripting, you have to write code in a clunky web editor instead of your familiar VSCode. You lose code completion, debugging tools, and various extensions, significantly reducing development efficiency."
-  },
-  "STUDIO.solutions.title": {
-    "message": "OOMOL Studio's Solutions"
-  },
-  "STUDIO.solutions.subtitle": {
-    "message": "We redesigned the workflow development experience based on developers' actual needs"
-  },
-  "STUDIO.solutions.functions.title": {
-    "message": "Nodes as Functions, Zero Barrier for Libraries"
-  },
-  "STUDIO.solutions.functions.description": {
-    "message": "In OOMOL Studio, nodes are functions. You don't need to learn any new concepts—write code in familiar ways and import any open-source library. Need a feature? Just npm install."
-  },
-  "STUDIO.solutions.functions.highlight": {
-    "message": "No new concepts, no ceiling. Create workflows like writing code."
-  },
-  "STUDIO.solutions.vscode.title": {
-    "message": "Built on VSCode, Inherit Your Coding Habits"
-  },
-  "STUDIO.solutions.vscode.description": {
-    "message": "OOMOL Studio is built on VSCode, so you can write node code in your familiar editor. Code completion, debugging tools, Git integration, various extensions... all your familiar development experience is here."
-  },
-  "STUDIO.solutions.vscode.highlight": {
-    "message": "Familiar editor, familiar shortcuts, zero adaptation cost."
-  },
-  "STUDIO.solutions.container.title": {
-    "message": "Built-in Container, Consistent Environment for Easy Deployment"
-  },
-  "STUDIO.solutions.container.description": {
-    "message": "Built-in container environment ensures local development is identical to server environment. Write code and run it directly without worrying about 'works on my machine'. Network proxy turns your device into a personal server, zero-cost task launching."
-  },
-  "STUDIO.solutions.container.highlight": {
-    "message": "Local is production, no deployment pitfalls. Idle devices can serve too."
-  },
-  "STUDIO.hero.description.old": {
-    "message": "Generate functions with full code, validate them locally, and carry them forward into service delivery."
-  },
-  "STUDIO.hero.stat1": {
-    "message": "AI Models"
-  },
-  "STUDIO.hero.stat2": {
-    "message": "Publish API"
-  },
-  "STUDIO.hero.stat3": {
-    "message": "Computing Share"
-  },
-  "STUDIO.hero.cta.download": {
-    "message": "Download Now"
-  },
-  "STUDIO.hero.cta.docs": {
-    "message": "View Docs"
-  },
-  "STUDIO.workflow.title": {
-    "message": "Developer Workflow"
-  },
-  "STUDIO.workflow.subtitle": {
-    "message": "Create Workflow → Generate Package → Publish to Community → Flexible Deployment"
-  },
-  "STUDIO.workflow.step1.title": {
-    "message": "Create Workflow"
-  },
-  "STUDIO.workflow.step1.description": {
-    "message": "Drag-and-drop visual editor, VSCode-based function tool coding"
-  },
-  "STUDIO.workflow.step1.feature1": {
-    "message": "Drag-and-drop visual editor"
-  },
-  "STUDIO.workflow.step1.feature2": {
-    "message": "VSCode-based function tool coding"
-  },
-  "STUDIO.workflow.step2.title": {
-    "message": "Generate Package"
-  },
-  "STUDIO.workflow.step2.description": {
-    "message": "Function tools + Flows auto-packaging, MCP interface support"
-  },
-  "STUDIO.workflow.step2.feature1": {
-    "message": "Function tools + Flows auto-packaging"
-  },
-  "STUDIO.workflow.step2.feature2": {
-    "message": "MCP interface support (AI Agent direct access)"
-  },
-  "STUDIO.workflow.step3.title": {
-    "message": "Publish to Community"
-  },
-  "STUDIO.workflow.step3.description": {
-    "message": "One-click publish workflow templates and function tool libraries"
-  },
-  "STUDIO.workflow.step3.feature1": {
-    "message": "One-click publish workflow templates"
-  },
-  "STUDIO.workflow.step3.feature2": {
-    "message": "Share function tool libraries to the community"
-  },
-  "STUDIO.workflow.step4.title": {
-    "message": "Flexible Deployment"
-  },
-  "STUDIO.workflow.step4.description": {
-    "message": "Local deployment + FRP sharing, or one-click cloud deployment"
-  },
-  "STUDIO.workflow.step4.feature1": {
-    "message": "Local deployment + FRP protocol sharing"
-  },
-  "STUDIO.workflow.step4.feature2": {
-    "message": "OOMOL Cloud one-click deployment"
-  },
-  "STUDIO.workflow.step4.feature3": {
-    "message": "Workflow auto-publish as API service"
-  },
-  "STUDIO.advantages.title": {
-    "message": "Core Advantages"
-  },
-  "STUDIO.advantages.vscode.title": {
-    "message": "VSCode Development Experience"
-  },
-  "STUDIO.advantages.vscode.description": {
-    "message": "Professional code editor with vibe-coded function tools and AI-assisted development"
-  },
-  "STUDIO.advantages.vscode.feature1": {
-    "message": "Built-in Python/Node.js environment"
-  },
-  "STUDIO.advantages.vscode.feature2": {
-    "message": "Professional code editor"
-  },
-  "STUDIO.advantages.vscode.feature3": {
-    "message": "Nodes as functions, seamless code-visual switching"
-  },
-  "STUDIO.advantages.p2p.title": {
-    "message": "P2P Computing & Software Sharing"
-  },
-  "STUDIO.advantages.p2p.description": {
-    "message": "FRP protocol-based local deployment sharing, P2P-like computing sharing"
-  },
-  "STUDIO.advantages.p2p.feature1": {
-    "message": "Local deployment via FRP protocol sharing"
-  },
-  "STUDIO.advantages.p2p.feature2": {
-    "message": "P2P-like computing power sharing"
-  },
-  "STUDIO.advantages.p2p.feature3": {
-    "message": "Use privately or share with others"
-  },
-  "STUDIO.advantages.api.title": {
-    "message": "Workflow as API"
-  },
-  "STUDIO.advantages.api.description": {
-    "message": "Low-cost local function publishing as API service, MCP interface for AI Agent access"
-  },
-  "STUDIO.advantages.api.feature1": {
-    "message": "Low-cost local function publishing as API"
-  },
-  "STUDIO.advantages.api.feature2": {
-    "message": "MCP interface for AI Agent access"
-  },
-  "STUDIO.advantages.api.feature3": {
-    "message": "Auto-generate API documentation"
-  },
-  "STUDIO.ai.title": {
-    "message": "AI Integration Capabilities"
-  },
-  "STUDIO.ai.description": {
-    "message": "Integrate mainstream AI services with rich AI capability support"
-  },
-  "STUDIO.ai.feature1": {
-    "message": "Multiple large language models (GPT, Claude, Gemini, etc.)"
-  },
-  "STUDIO.ai.feature2": {
-    "message": "Image generation and processing (DALL-E, Midjourney, Stable Diffusion)"
-  },
-  "STUDIO.ai.feature3": {
-    "message": "Speech recognition and synthesis"
-  },
-  "STUDIO.ai.feature4": {
-    "message": "Real-time preview and debugging"
-  },
-  "STUDIO.techFeatures.title": {
-    "message": "Technical Features"
-  },
-  "STUDIO.case.title": {
-    "message": "Case Study: Building PDF-Craft with Studio"
-  },
-  "STUDIO.case.subtitle": {
-    "message": "Complete workflow from function tool development to API publishing with OOMOL Studio"
-  },
-  "STUDIO.case.process.title": {
-    "message": "Build Process"
-  },
-  "STUDIO.case.step1.title": {
-    "message": "Write PDF processing function tools"
-  },
-  "STUDIO.case.step1.desc": {
-    "message": "Develop core function tools for PDF parsing, OCR recognition, and format conversion in VSCode"
-  },
-  "STUDIO.case.step2.title": {
-    "message": "Visual Workflow Composition"
-  },
-  "STUDIO.case.step2.desc": {
-    "message": "Connect function tools through drag-and-drop to build a complete PDF processing workflow"
-  },
-  "STUDIO.case.step3.title": {
-    "message": "One-Click API Publishing"
-  },
-  "STUDIO.case.step3.desc": {
-    "message": "Auto-generate RESTful API and MCP interface for AI Agent integration"
-  },
-  "STUDIO.case.deploy.title": {
-    "message": "Flexible Deployment"
-  },
-  "STUDIO.case.deploy.local.title": {
-    "message": "Local Development"
-  },
-  "STUDIO.case.deploy.local.desc": {
-    "message": "Run and debug locally, completely free"
-  },
-  "STUDIO.case.deploy.local.badge": {
-    "message": "Forever Free"
-  },
-  "STUDIO.case.deploy.frp.title": {
-    "message": "FRP Sharing"
-  },
-  "STUDIO.case.deploy.frp.desc": {
-    "message": "Share with team members via FRP protocol"
-  },
-  "STUDIO.case.deploy.frp.badge": {
-    "message": "Zero Cost Sharing"
-  },
-  "STUDIO.case.deploy.cloud.title": {
-    "message": "Cloud Deployment"
-  },
-  "STUDIO.case.deploy.cloud.desc": {
-    "message": "One-click deploy to OOMOL Cloud with auto-scaling"
-  },
-  "STUDIO.case.deploy.cloud.badge": {
-    "message": "Pay as You Go"
-  },
-  "STUDIO.case.stat2": {
-    "message": "Core Blocks"
-  },
-  "STUDIO.case.stat3": {
-    "message": "Deployment Options"
-  },
-  "CREATE.workflow.title": {
-    "message": "Visual Workflow Engine"
-  },
-  "CREATE.workflow.description": {
-    "message": "Build complex AI workflows through drag-and-drop interface, no programming experience required"
-  },
-  "CREATE.workflow.feature1": {
-    "message": "Intuitive drag-and-drop interface, easily connect various AI modules and functional components"
-  },
-  "CREATE.workflow.feature2": {
-    "message": "Rich preset templates, quickly start common AI application scenarios"
-  },
-  "CREATE.workflow.feature3": {
-    "message": "Real-time preview and debugging, instantly view workflow execution results"
-  },
-  "CREATE.workflow.feature4": {
-    "message": "Version control and collaboration, support team development and maintenance of workflows"
-  },
-  "CREATE.ai.title": {
-    "message": "Powerful AI Integration Modules"
-  },
-  "CREATE.ai.description": {
-    "message": "Integrate mainstream AI services, providing rich AI capability support"
-  },
-  "CREATE.ai.feature1": {
-    "message": "Support multiple large language models, including GPT, Claude, Gemini, etc."
-  },
-  "CREATE.ai.feature2": {
-    "message": "Image generation and processing capabilities, support DALL-E, Midjourney and other services"
-  },
-  "CREATE.ai.feature3": {
-    "message": "Speech recognition and synthesis, enabling multimodal AI interaction experience"
-  },
-  "SHARE.title": {
-    "message": "Build and Reuse Function Assets"
-  },
-  "SHARE.description": {
-    "message": "Turn finished capabilities into installable, reusable, and composable assets for the team."
-  },
-  "SHARE.hub.description": {
-    "message": "Install, reuse, and extend function assets from a shared team catalog."
-  },
-  "SHARE.flowCommunity.title": {
-    "message": "Capability Catalog"
-  },
-  "SHARE.flowCommunity.description": {
-    "message": "Keep capabilities in one catalog so the team knows what exists, how to install it, and who maintains it."
-  },
-  "SHARE.flowCommunity.feature1": {
-    "message": "Turn finished functions into installable assets instead of leaving them buried in projects"
-  },
-  "SHARE.flowCommunity.feature2": {
-    "message": "Search existing capabilities by name and purpose to avoid rebuilding the same thing"
-  },
-  "SHARE.flowCommunity.feature3": {
-    "message": "Track versions and ownership so the team knows which capability to reuse"
-  },
-  "SHARE.flowCommunity.feature4": {
-    "message": "Keep composing on top of existing assets until they grow into larger services"
-  },
-  "SHARE.analytics.title": {
-    "message": "Usage and Maintenance Signals"
-  },
-  "SHARE.analytics.description": {
-    "message": "Know not only what was published, but what is actually installed, called, and maintained over time."
-  },
-  "SHARE.analytics.feature1": {
-    "message": "See which assets are installed and called most often to judge reuse value"
-  },
-  "SHARE.analytics.feature2": {
-    "message": "Use adoption signals to improve parameters, dependencies, and delivery paths"
-  },
-  "SHARE.analytics.feature3": {
-    "message": "Help maintainers decide which capabilities are worth extending further"
-  },
-  "USE.title": {
-    "message": "Use AI Tools"
-  },
-  "USE.description": {
-    "message": "Enjoy smooth AI tool usage experience through intelligent chat tools"
-  },
-  "USE.chatTools.title": {
-    "message": "Intelligent Chat Tools"
-  },
-  "USE.chatTools.description": {
-    "message": "Easily use various AI tools through intuitive chat interface, no complex operations required"
-  },
-  "USE.chatTools.feature1": {
-    "message": "Natural language interaction, use AI tools like chatting"
-  },
-  "USE.chatTools.feature2": {
-    "message": "Multi-turn conversation support, maintain contextual coherence"
-  },
-  "USE.chatTools.feature3": {
-    "message": "Smart prompts and suggestions, help users better use tools"
-  },
-  "USE.chatTools.feature4": {
-    "message": "History management, review and reuse conversation content anytime"
-  },
-  "USE.userExperience.title": {
-    "message": "Quality User Experience"
-  },
-  "USE.userExperience.description": {
-    "message": "Provide smooth and efficient AI tool usage experience for users"
-  },
-  "USE.userExperience.feature1": {
-    "message": "Responsive design, support seamless switching between desktop and mobile"
-  },
-  "USE.userExperience.feature2": {
-    "message": "Real-time feedback and status display, let users understand processing progress"
-  },
-  "USE.userExperience.feature3": {
-    "message": "Personalized settings, customize usage interface according to user preferences"
-  },
-  "CHAT.hero.description": {
-    "message": "MCP Tool-based AI chat assistant, build expert Agents by combining Tools"
-  },
-  "CHAT.hero.stat1": {
-    "message": "Protocol Support"
-  },
-  "CHAT.hero.statValue2": {
-    "message": "Multi-Model"
-  },
-  "CHAT.hero.stat2": {
-    "message": "Support"
-  },
-  "CHAT.hero.stat3": {
-    "message": "Expert System"
-  },
-  "CHAT.hero.cta.download": {
-    "message": "Download Now"
-  },
-  "CHAT.hero.cta.docs": {
-    "message": "View Docs"
-  },
-  "CHAT.useCases.title": {
-    "message": "Use Cases"
-  },
-  "CHAT.useCases.subtitle": {
-    "message": "Complete AI tasks through natural conversation"
-  },
-  "CHAT.useCase.conversation.title": {
-    "message": "Natural Conversation"
-  },
-  "CHAT.useCase.conversation.description": {
-    "message": "Use AI tools like chatting, multi-turn conversations maintain context coherence"
-  },
-  "CHAT.useCase.tools.title": {
-    "message": "MCP Tool Integration"
-  },
-  "CHAT.useCase.tools.description": {
-    "message": "Call MCP Tools created in Studio to achieve complex feature combinations"
-  },
-  "CHAT.useCase.knowledge.title": {
-    "message": "Enterprise Knowledge Base"
-  },
-  "CHAT.useCase.knowledge.description": {
-    "message": "Integrate enterprise knowledge to build domain-specific intelligent assistants"
-  },
-  "CHAT.useCase.collaboration.title": {
-    "message": "Team Collaboration"
-  },
-  "CHAT.useCase.collaboration.description": {
-    "message": "Share conversations and tool configurations to improve team collaboration efficiency"
-  },
-  "CHAT.features.title": {
-    "message": "Core Features"
-  },
-  "CHAT.features.mcp.title": {
-    "message": "MCP Tool Ecosystem"
-  },
-  "CHAT.features.mcp.description": {
-    "message": "Native MCP protocol support, directly call various tools"
-  },
-  "CHAT.features.mcp.feature1": {
-    "message": "Auto-discover and load MCP Tools"
-  },
-  "CHAT.features.mcp.feature2": {
-    "message": "Smart recommendation of tool combinations"
-  },
-  "CHAT.features.mcp.feature3": {
-    "message": "Tool invocation logging and debugging"
-  },
-  "CHAT.features.agent.title": {
-    "message": "Agent Expert System"
-  },
-  "CHAT.features.agent.description": {
-    "message": "Build domain-specific Agents by combining multiple Tools"
-  },
-  "CHAT.features.agent.feature1": {
-    "message": "Customize Agent roles and capabilities"
-  },
-  "CHAT.features.agent.feature2": {
-    "message": "Agent workflow orchestration"
-  },
-  "CHAT.features.agent.feature3": {
-    "message": "Agent sharing and reuse"
-  },
-  "CHAT.features.models.title": {
-    "message": "Multi-Model Support"
-  },
-  "CHAT.features.models.description": {
-    "message": "Support mainstream AI models, freely switch and choose"
-  },
-  "CHAT.features.models.feature1": {
-    "message": "GPT, Claude, Gemini and other mainstream models"
-  },
-  "CHAT.features.models.feature2": {
-    "message": "Model performance and cost comparison"
-  },
-  "CHAT.features.models.feature3": {
-    "message": "Auto-select the most suitable model"
-  },
   "HOME.ProductComparison.title": {
     "message": "Cloud is where a tool becomes deliverable"
   },
@@ -2085,201 +1365,6 @@
   "CLOUD.hero.description": {
     "message": "Build and test tools in Studio, then publish them to Cloud so they run online and can be found and used by AI agents through oo-cli."
   },
-  "CLOUD.hero.kicker": {
-    "message": "Cloud Runtime"
-  },
-  "CLOUD.hero.note": {
-    "message": "Users mainly access the tool through oo-cli while your implementation stays on the server."
-  },
-  "CLOUD.hero.stat1": {
-    "message": "Private Delivery"
-  },
-  "CLOUD.hero.stat2": {
-    "message": "Pay-as-you-go"
-  },
-  "CLOUD.hero.stat3": {
-    "message": "Less Ops"
-  },
-  "CLOUD.hero.cta.start": {
-    "message": "Read Cloud docs"
-  },
-  "CLOUD.hero.cta.docs": {
-    "message": "Open Cloud Console"
-  },
-  "CLOUD.hero.cta.console": {
-    "message": "Open Cloud Console"
-  },
-  "CLOUD.painPoints.title": {
-    "message": "Once a tool works locally, Cloud helps you publish it"
-  },
-  "CLOUD.painPoints.subtitle": {
-    "message": "We know the struggle as developers"
-  },
-  "CLOUD.painPoints.description": {
-    "message": "A working local tool is only the first step. To let teammates, customers, or AI agents use it reliably, you still need hosting, secrets, access rules, and operations. Cloud takes care of that work."
-  },
-  "CLOUD.solution.title": {
-    "message": "One tool, three ways to use it"
-  },
-  "CLOUD.solution.subtitle": {
-    "message": "The same tool can be used through API, MCP, or automation while still being backed by a single implementation."
-  },
-  "CLOUD.solution.kicker": {
-    "message": "Consumption Paths"
-  },
-  "CLOUD.modes.library.title": {
-    "message": "Run as Automation"
-  },
-  "CLOUD.modes.library.description": {
-    "message": "Run the same tool on triggers or schedules so it keeps delivering value beyond local or manual execution."
-  },
-  "CLOUD.modes.serverless.title": {
-    "message": "Use through API"
-  },
-  "CLOUD.modes.serverless.description": {
-    "message": "Give applications direct API access to the same tool without rebuilding a separate backend around it."
-  },
-  "CLOUD.modes.mcp.title": {
-    "message": "Use through MCP"
-  },
-  "CLOUD.modes.mcp.description": {
-    "message": "Expose the same tool to agents and AI apps as an MCP tool when agent-native integration matters."
-  },
-  "CLOUD.pricing.title": {
-    "message": "Start small. Pay as usage grows."
-  },
-  "CLOUD.pricing.description": {
-    "message": "You do not need dedicated servers just to validate delivery. Publish first, validate demand, and expand only as usage grows."
-  },
-  "CLOUD.pricing.kicker": {
-    "message": "Pricing"
-  },
-  "CLOUD.pricing.cta": {
-    "message": "View Pricing"
-  },
-  "CLOUD.cta.primary": {
-    "message": "Read Cloud docs"
-  },
-  "CLOUD.cta.secondary": {
-    "message": "Open Cloud Console"
-  },
-  "CLOUD.opensource.title": {
-    "message": "Open runtime, flexible deployment"
-  },
-  "CLOUD.opensource.subtitle": {
-    "message": "The runtime foundation stays open source even when the tool you publish stays private."
-  },
-  "CLOUD.opensource.description": {
-    "message": "OOMOL's virtual machine and runtime core stay open source, so you keep the freedom to deploy across personal servers, private infrastructure, or public cloud environments while choosing how each tool is delivered."
-  },
-  "CLOUD.opensource.projects.title": {
-    "message": "Open Source Projects"
-  },
-  "CLOUD.opensource.ovm.title": {
-    "message": "OVM"
-  },
-  "CLOUD.opensource.ovm.description": {
-    "message": "Cross-platform virtual machine manager providing unified container runtime for OOMOL"
-  },
-  "CLOUD.opensource.ovm-core.title": {
-    "message": "OVM Core"
-  },
-  "CLOUD.opensource.ovm-core.description": {
-    "message": "Core runtime library for OVM, handling container lifecycle and resource management"
-  },
-  "CLOUD.opensource.ovm-win.title": {
-    "message": "OVM Windows"
-  },
-  "CLOUD.opensource.ovm-win.description": {
-    "message": "OVM implementation for Windows platform, supporting WSL2 and Hyper-V"
-  },
-  "CLOUD.opensource.ovm-mac.title": {
-    "message": "OVM macOS"
-  },
-  "CLOUD.opensource.ovm-mac.description": {
-    "message": "OVM implementation for macOS platform, based on Apple Virtualization Framework"
-  },
-  "APP.new.hero.title": {
-    "message": "OOMOL App Surfaces"
-  },
-  "APP.new.hero.subtitle": {
-    "message": "Product surfaces for cloud skills"
-  },
-  "APP.new.hero.description": {
-    "message": "A single cloud skill can be delivered through chat or structured applets, without building separate product surfaces from scratch."
-  },
-  "APP.new.concept.title": {
-    "message": "One skill, different surfaces"
-  },
-  "APP.new.concept.description": {
-    "message": "OOMOL turns the same cloud skill into usable entry points. You focus on the implementation; we connect it to the user."
-  },
-  "APP.new.chat.pill": {
-    "message": "Chat Surface · Skill"
-  },
-  "APP.new.chat.title": {
-    "message": "OOMOL Chat"
-  },
-  "APP.new.chat.subtitle": {
-    "message": "AI Assistant · Exploratory Interaction"
-  },
-  "APP.new.chat.description": {
-    "message": "When user intent is still vague, let AI choose and run the right cloud skill through conversation."
-  },
-  "APP.new.chat.meta1.label": {
-    "message": "For Whom"
-  },
-  "APP.new.chat.meta1.value": {
-    "message": "Best when a cloud skill should be used through conversation and intent needs clarification first"
-  },
-  "APP.new.chat.meta2.label": {
-    "message": "Core Experience"
-  },
-  "APP.new.chat.meta2.value": {
-    "message": "Understand intent first, then call the right cloud skill with less setup"
-  },
-  "APP.new.chat.devValue": {
-    "message": "Cloud skill as agent tool: the same implementation becomes an AI-callable surface."
-  },
-  "APP.new.applet.pill": {
-    "message": "Structured Surface · Applet"
-  },
-  "APP.new.applet.title": {
-    "message": "OOMOL Applet"
-  },
-  "APP.new.applet.subtitle": {
-    "message": "Form Applet · Deterministic Interaction"
-  },
-  "APP.new.applet.description": {
-    "message": "When inputs are clear, run the same cloud skill through structured parameters for more reliable delivery."
-  },
-  "APP.new.applet.meta1.label": {
-    "message": "For Whom"
-  },
-  "APP.new.applet.meta1.value": {
-    "message": "Best for teams delivering fixed-input cloud skills to internal or external users"
-  },
-  "APP.new.applet.meta2.label": {
-    "message": "Core Experience"
-  },
-  "APP.new.applet.meta2.value": {
-    "message": "Wrap the same cloud skill as a fillable, executable, and reusable entry point"
-  },
-  "APP.new.applet.devValue": {
-    "message": "Cloud skill as app: auto-generated parameter UI with less frontend boilerplate."
-  },
-  "APP.new.hero.cta.web": {
-    "message": "Use in Web"
-  },
-  "APP.new.hero.cta.studio": {
-    "message": "Use in OOMOL Studio"
-  },
-  "APP.new.cta.download": {
-    "message": "Download"
-  },
-  "APP.new.cta.docs": {
-    "message": "View Docs"
-  },
   "STUDIO.page.title": {
     "message": "OOMOL Studio - Build and validate tools in a real engineering environment"
   },
@@ -2291,15 +1376,6 @@
   },
   "STUDIO.manifesto.subtitle": {
     "message": "Let AI help you get started, then keep writing code, adding dependencies, orchestrating flows, and getting the tool working locally. When you are ready to deliver it, hand the same implementation to Cloud."
-  },
-  "STUDIO.manifesto.cta.download": {
-    "message": "Download OOMOL Studio"
-  },
-  "STUDIO.product.hero.kicker": {
-    "message": "OOMOL Studio"
-  },
-  "STUDIO.product.hero.secondary": {
-    "message": "View Downloads"
   },
   "STUDIO.product.story.kicker": {
     "message": "Developer friction"
@@ -2324,24 +1400,6 @@
   },
   "STUDIO.product.cta.description": {
     "message": "Build, debug, and get the tool working in a real coding environment first. When you are ready to deliver it, hand it to Cloud."
-  },
-  "STUDIO.story.paragraph1": {
-    "message": "What we want is not another tool that asks developers to adapt to the platform. We want a working environment where an AI agent can build the first version automatically, and engineers can keep writing functions, orchestrating nodes, debugging dependencies, and validating results."
-  },
-  "STUDIO.story.frustration.line1": {
-    "message": "\"Why can't I just let an AI agent build this tool automatically?\""
-  },
-  "STUDIO.story.frustration.line2": {
-    "message": "\"Why do I still have to learn a proprietary DSL before I can compose anything?\""
-  },
-  "STUDIO.story.frustration.line3": {
-    "message": "\"Why do I still have to wait for platform support just to import a library?\""
-  },
-  "STUDIO.story.paragraph2": {
-    "message": "For developers, the real problem is not whether something can be dragged visually. It is whether the first step from requirement to usable tool can be completed automatically by an AI agent."
-  },
-  "STUDIO.story.paragraph3": {
-    "message": "So Studio has a clear role: bring fully automated AI-agent building into a real engineering environment, then connect local validation to delivery."
   },
   "STUDIO.story.point1.label": {
     "message": "Learning Curve"
@@ -2369,33 +1427,6 @@
   },
   "STUDIO.story.point3.description": {
     "message": "You want AI to find packages, sketch the first version, and add nodes when needed, while still leaving you in a real engineering environment to take over from there."
-  },
-  "HOME.StudioChain.title": {
-    "message": "From idea to a deliverable tool"
-  },
-  "HOME.StudioChain.subtitle": {
-    "message": "When published tools are not enough, OOMOL gives you one continuous path: generate in Studio, validate locally, publish through Cloud, and deliver through oo-cli."
-  },
-  "HOME.StudioChain.lead": {
-    "message": "Do not stop at local automation. Build a tool people can actually use."
-  },
-  "HOME.StudioChain.summary": {
-    "message": "In OOMOL, you can start with published tools, create your own implementation in Studio, validate it locally, then publish it privately to yourself, your team, or your customers."
-  },
-  "HOME.StudioChain.card1.title": {
-    "message": "OOMOL Studio"
-  },
-  "HOME.StudioChain.card1.description": {
-    "message": "Describe, write, debug, and validate your own tools in a real coding environment for code, dependencies, and inputs."
-  },
-  "HOME.StudioChain.card2.title": {
-    "message": "Cloud"
-  },
-  "HOME.StudioChain.card2.description": {
-    "message": "Publish the validated implementation as a tool through Cloud and keep serving it without exposing your source code."
-  },
-  "HOME.StudioChain.action.studio": {
-    "message": "Explore Studio"
   },
   "HOME.StudioChain.action.cloud": {
     "message": "Explore Cloud"
@@ -2427,18 +1458,6 @@
   "STUDIO.principle1.paragraph3": {
     "message": "The point is not to stop at automatic generation. It is to let you take over from the first working version inside a real engineering environment."
   },
-  "STUDIO.principle1.codeComment1": {
-    "message": "# Perform addition of x and y"
-  },
-  "STUDIO.principle1.codeComment2": {
-    "message": "// ...Automatically becomes a Node with:"
-  },
-  "STUDIO.principle1.codeComment3": {
-    "message": "// Input port: \"text\""
-  },
-  "STUDIO.principle1.codeComment4": {
-    "message": "// Output port: \"result\""
-  },
   "STUDIO.principle2.title": {
     "message": "2. Start composing without learning a DSL first"
   },
@@ -2463,123 +1482,6 @@
   "STUDIO.principle3.paragraph3": {
     "message": "So the flow is not just something you can visually compose. It can keep expanding with the rest of your stack."
   },
-  "STUDIO.principle3.codeComment": {
-    "message": "# No wrappers. Just standard tools."
-  },
-  "STUDIO.principle3.codeComment2": {
-    "message": "# It just works."
-  },
-  "SDK.hero.title": {
-    "message": "OOMOL SDKs"
-  },
-  "SDK.hero.description": {
-    "message": "Development entry points for connecting your function capabilities to different delivery channels. Use SDKs to plug local code into Connect, Cloud, MCP, and Fusion services instead of rewriting glue code."
-  },
-  "SDK.category.connect.title": {
-    "message": "OOMOL Connect SDKs"
-  },
-  "SDK.category.connect.description": {
-    "message": "Expose functions or services that already run locally, so remote API access and MCP access become direct and controlled."
-  },
-  "SDK.connect.mcp.description": {
-    "message": "Expose local functions as remotely callable MCP tools so agents use the capability exactly where it already runs."
-  },
-  "SDK.connect.mcp.feature1": {
-    "message": "Zero-config network proxy"
-  },
-  "SDK.connect.mcp.feature2": {
-    "message": "Native MCP protocol support"
-  },
-  "SDK.connect.mcp.feature3": {
-    "message": "Secure end-to-end encryption"
-  },
-  "SDK.connect.api.description": {
-    "message": "Expose local functions or services as remote APIs, useful when you want to start locally and open access step by step."
-  },
-  "SDK.connect.api.feature1": {
-    "message": "RESTful API support"
-  },
-  "SDK.connect.api.feature2": {
-    "message": "Automatic HTTPS certificates"
-  },
-  "SDK.connect.api.feature3": {
-    "message": "High-performance reverse proxy"
-  },
-  "SDK.category.cloud.title": {
-    "message": "OOMOL Cloud SDKs"
-  },
-  "SDK.category.cloud.description": {
-    "message": "Hand the same function capability over to OOMOL Cloud and reduce the infrastructure work behind service delivery."
-  },
-  "SDK.cloud.mcp.description": {
-    "message": "Provide functions deployed on OOMOL Cloud directly as MCP tools for agent use."
-  },
-  "SDK.cloud.mcp.feature1": {
-    "message": "Serverless architecture"
-  },
-  "SDK.cloud.mcp.feature2": {
-    "message": "Auto-scaling"
-  },
-  "SDK.cloud.mcp.feature3": {
-    "message": "Pay-per-call billing"
-  },
-  "SDK.block.mcp.description": {
-    "message": "Wrap function tools or function capabilities as MCP tool interfaces with less boilerplate between implementation and tool delivery."
-  },
-  "SDK.block.mcp.feature1": {
-    "message": "Function tools as MCP tools"
-  },
-  "SDK.block.mcp.feature2": {
-    "message": "Full type support"
-  },
-  "SDK.block.mcp.feature3": {
-    "message": "Seamless OOMOL ecosystem integration"
-  },
-  "SDK.cloud.task.python.description": {
-    "message": "Write function tasks in Python that run directly on OOMOL Cloud."
-  },
-  "SDK.cloud.task.ts.description": {
-    "message": "Write function tasks in TypeScript that run directly on OOMOL Cloud."
-  },
-  "SDK.cloud.task.feature1": {
-    "message": "Full type definitions"
-  },
-  "SDK.cloud.task.feature2": {
-    "message": "Async task support"
-  },
-  "SDK.cloud.task.feature3": {
-    "message": "Built-in logging and monitoring"
-  },
-  "SDK.cta.title": {
-    "message": "Get Started with OOMOL SDKs"
-  },
-  "SDK.cta.description": {
-    "message": "View complete API documentation and sample code to quickly get started with OOMOL SDK development"
-  },
-  "SDK.cta.button": {
-    "message": "View Documentation"
-  },
-  "SDK.category.fusion.title": {
-    "message": "OOMOL Fusion SDKs"
-  },
-  "SDK.category.fusion.description": {
-    "message": "Call OOMOL Fusion APIs through one SDK and avoid rebuilding polling and async handling yourself."
-  },
-  "SDK.fusion.ts.description": {
-    "message": "Call OOMOL Fusion APIs from TypeScript and plug more capabilities into your functions or services."
-  },
-  "SDK.fusion.py.description": {
-    "message": "Call OOMOL Fusion APIs from Python and plug more capabilities into your functions or services."
-  },
-  "SDK.fusion.feature1": {
-    "message": "Simplified API calling interface"
-  },
-  "SDK.fusion.feature2": {
-    "message": "Auto-handle polling and async workflows"
-  },
-  "SDK.fusion.feature3": {
-    "message": "Support text-to-image, TTS and more services"
-  },
   "HOME.ToolStrip.title": {
     "message": "Behind those capabilities are connected apps and tools"
   },
@@ -2601,9 +1503,6 @@
   "HOME.ToolStrip.wallTitle": {
     "message": "Common apps are already available"
   },
-  "HOME.CliReasons.badge": {
-    "message": "WHY OO-CLI"
-  },
   "HOME.CliReasons.title": {
     "message": "One connection path for every agent"
   },
@@ -2621,21 +1520,6 @@
   },
   "HOME.CliReasons.card2.description": {
     "message": "When packaged tools are not enough, compose third-party blocks, cloud functions, APIs, and business logic in OOMOL Studio, then deliver and reuse them through OOMOL."
-  },
-  "HOME.CliReasons.primaryCta": {
-    "message": "Explore oo-cli"
-  },
-  "HOME.CliReasons.secondaryCta": {
-    "message": "Explore Studio"
-  },
-  "HOME.CliReasons.visual.eyebrow": {
-    "message": "Accounts, capabilities, and well-known agents"
-  },
-  "HOME.CliReasons.visual.hubLabel": {
-    "message": "Unified connection and auth"
-  },
-  "HOME.CliReasons.visual.hubTitle": {
-    "message": "OOMOL"
   },
   "HOME.DeveloperEntry.badge": {
     "message": "Developer entry"
@@ -2688,9 +1572,6 @@
   "HOME.LinearFlow.studio.media.title": {
     "message": "Studio demo video"
   },
-  "HOME.LinearFlow.studio.media.note": {
-    "message": "Show the path from prompting to generating a tool and validating it locally."
-  },
   "HOME.LinearFlow.studio.primary": {
     "message": "Install OOMOL Studio"
   },
@@ -2727,9 +1608,6 @@
   "HOME.LinearFlow.cloud.media.title": {
     "message": "Cloud console preview"
   },
-  "HOME.LinearFlow.cloud.media.note": {
-    "message": "Bring runtime settings, secrets, and delivery into one backend."
-  },
   "HOME.LinearFlow.cloud.primary": {
     "message": "Explore Cloud"
   },
@@ -2747,9 +1625,6 @@
   },
   "HOME.LinearFlow.cli.media.title": {
     "message": "oo-cli invocation demo"
-  },
-  "HOME.LinearFlow.cli.media.note": {
-    "message": "Shows a delivered tool being searched, inspected, and called in Codex."
   },
   "HOME.LinearFlow.cli.guide": {
     "message": "Explore oo-cli"

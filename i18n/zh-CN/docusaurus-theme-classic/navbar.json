@@ -11,37 +11,9 @@
     "message": "更新日志",
     "description": "Navbar item with label Updates"
   },
-  "item.label.Downloads": {
-    "message": "下载",
-    "description": "Navbar item with label Downloads"
-  },
-  "item.label.Community": {
-    "message": "社区",
-    "description": "Navbar item with label Community"
-  },
-  "item.label.Features": {
-    "message": "功能",
-    "description": "Navbar item with label Features"
-  },
-  "item.label.Pricing": {
-    "message": "价格",
-    "description": "Navbar item with label Pricing"
-  },
   "item.label.Blog": {
     "message": "博客",
     "description": "Navbar item with label Blog"
-  },
-  "item.label.navbar.create": {
-    "message": "创造",
-    "description": "Navbar item with label navbar.create"
-  },
-  "item.label.navbar.share": {
-    "message": "分享",
-    "description": "Navbar item with label navbar.share"
-  },
-  "item.label.navbar.use": {
-    "message": "使用",
-    "description": "Navbar item with label navbar.use"
   },
   "item.label.navbar.oo-cli": {
     "message": "oo-cli",
@@ -51,14 +23,6 @@
     "message": "OOMOL Studio",
     "description": "Navbar item with label navbar.oomol-studio"
   },
-  "item.label.navbar.oomol-hub": {
-    "message": "OOMOL Hub",
-    "description": "Navbar item with label navbar.oomol-hub"
-  },
-  "item.label.navbar.oomol-app": {
-    "message": "OOMOL App",
-    "description": "Navbar item with label navbar.oomol-app"
-  },
   "item.label.navbar.oomol-cloud": {
     "message": "OOMOL Cloud",
     "description": "Navbar item with label navbar.oomol-cloud"
@@ -66,10 +30,6 @@
   "item.label.navbar.oomol-ai": {
     "message": "OOMOL AI",
     "description": "Navbar item with label navbar.oomol-ai"
-  },
-  "item.label.navbar.oomol-sdk": {
-    "message": "OOMOL SDK",
-    "description": "Navbar item with label navbar.oomol-sdk"
   },
   "item.label.Product": {
     "message": "产品",
