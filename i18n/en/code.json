@@ -2608,13 +2608,13 @@
     "message": "One connection path for every agent"
   },
   "HOME.CliReasons.subtitle": {
-    "message": "Connect accounts, apps, and tool capabilities to OOMOL once, then let Codex, Claude Code, Qode, and terminal workflows call them through the same oo-cli path."
+    "message": "Connect accounts, apps, and tool capabilities to OOMOL first, then let Codex, Claude Code, OpenClaw, Qode, and terminal workflows call them through the same oo-cli path."
   },
   "HOME.CliReasons.card1.title": {
     "message": "Authorize once, reuse across agents"
   },
   "HOME.CliReasons.card1.description": {
-    "message": "Connect and authorize in OOMOL once. Codex, Claude Code, Qode, OpenCrawl, and terminal workflows can keep calling those capabilities through oo-cli."
+    "message": "After one connection and authorization in OOMOL, Codex, Claude Code, OpenClaw, Qode, and terminal workflows can keep calling those capabilities through oo-cli."
   },
   "HOME.CliReasons.card2.title": {
     "message": "Build custom tools in Studio"

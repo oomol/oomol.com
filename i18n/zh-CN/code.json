@@ -2608,13 +2608,13 @@
     "message": "一套连接，给所有 Agent 使用"
   },
   "HOME.CliReasons.subtitle": {
-    "message": "先把账号、应用和工具能力接到 OOMOL，再让 Codex、Claude Code、Qode 和终端环境沿同一条 oo-cli 路径调用。"
+    "message": "先把账号、应用和工具能力接到 OOMOL，再让 Codex、Claude Code、OpenClaw、Qode 和终端环境沿同一条 oo-cli 路径调用。"
   },
   "HOME.CliReasons.card1.title": {
     "message": "授权一次，多 Agent 复用"
   },
   "HOME.CliReasons.card1.description": {
-    "message": "在 OOMOL 完成一次连接和授权后，Codex、Claude Code、Qode、OpenCrawl 和终端环境都能继续通过 oo-cli 调用。"
+    "message": "在 OOMOL 完成一次连接和授权后，Codex、Claude Code、OpenClaw、Qode 和终端环境都能继续通过 oo-cli 调用。"
   },
   "HOME.CliReasons.card2.title": {
     "message": "自定义工具，用 Studio 构建"

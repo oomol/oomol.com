@@ -246,20 +246,6 @@
     inset 0 0 0 1px rgba(24, 24, 27, 0.08);
 }
 
-:global(html[lang="en"]) .container {
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-}
-
-:global(html[lang="en"]) .sectionTitle {
-  max-width: none;
-  font-size: var(--oomol-display-hero);
-  line-height: 1.02;
-}
-
-:global(html[lang="en"]) .sectionSubtitle {
-  max-width: 38rem;
-}
-
 @media (max-width: 996px) {
   .container {
     grid-template-columns: 1fr;
