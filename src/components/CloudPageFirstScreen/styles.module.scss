@@ -27,32 +27,6 @@
   text-align: center;
 }
 
-/* Mono eyebrow with dot marker — matches global landing rule */
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  width: fit-content;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  font-family: var(--oomol-font-mono);
-  font-size: var(--oomol-body-mono);
-  font-weight: 500;
-  letter-spacing: var(--oomol-tracking-mono);
-  text-transform: none;
-  color: var(--oomol-primary);
-
-  &::before {
-    content: "";
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    margin-right: 0.55rem;
-    border-radius: 999px;
-    background: var(--oomol-primary);
-  }
-}
-
 .slogan {
   @include marketing-display-title(hero, 100%, center, 1.04);
   white-space: pre-line;

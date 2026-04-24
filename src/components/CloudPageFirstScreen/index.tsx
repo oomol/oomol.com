@@ -10,7 +10,6 @@ import { HeroVideoDialog } from "@site/src/components/ui/hero-video-dialog";
 import React from "react";
 
 const zhCopy = {
-  eyebrow: "OOMOL Cloud",
   slogan: `把工具的交付、托管运行
 和访问控制交给 Cloud`,
   overview: `Studio 负责把工具做出来并验证；Cloud 负责把它交付出去，承接托管运行、配置和权限，并继续主要沿 oo-cli 给 Agent 使用。`,
@@ -21,7 +20,6 @@ const zhCopy = {
 };
 
 const enCopy = {
-  eyebrow: "OOMOL Cloud",
   slogan: `Put delivery, hosted runtime,
 and access control in Cloud`,
   overview: `Studio is where the tool gets built and validated. Cloud is where delivery happens, with hosted runtime, configuration, and access handled in one place, then used mainly through oo-cli by agents.`,
@@ -51,7 +49,6 @@ export default function CloudPageFirstScreen() {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.titleGroup}>
-          <div className={styles.eyebrow}>{copy.eyebrow}</div>
           <h1 className={styles.slogan}>{copy.slogan}</h1>
           <p className={styles.overview}>{copy.overview}</p>
           <div className={styles.highlights}>

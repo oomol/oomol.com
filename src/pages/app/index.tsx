@@ -71,15 +71,10 @@ const VIDEO_FILES = {
   },
 } as const;
 
-/** 与导出素材一致；若源文件改版请同步更新（用于 /app 尺寸标注）。 */
-const APP_MEDIA_PIXELS = {
-  video4k: { width: 3840, height: 2160 },
-  nativeWorkspacePng: { width: 2470, height: 1964 },
+/** 与导出素材一致；若源文件改版请同步更新图片固有尺寸。 */
+const APP_MEDIA_INTRINSIC_SIZE = {
+  nativeWorkspace: { width: 2470, height: 1964 },
 } as const;
-
-function formatMediaPixelDimensions(width: number, height: number): string {
-  return `${width} × ${height}`;
-}
 
 const APP_DESKTOP_DOWNLOAD_URLS = {
   macos: "https://app-downloads.oomol.com/oomol-ai/darwin/arm64",
@@ -125,9 +120,9 @@ const COPY = {
         "当你更喜欢图形界面时，可以在 Web、桌面和 iOS 中直接使用 OOMOL 的工具，适合连续对话、查看结果和继续处理任务。",
     },
     hero: {
-      titleLine1: "OOMOL AI，把工具使用体验",
-      titleLine2: "直接带进图形界面",
-      lead: "悟墨 AI 是给人直接打开来用的官方图形入口，更适合连续对话、查看结果和继续处理任务。",
+      titleLine1: "悟墨 AI，让 OOMOL 工具",
+      titleLine2: "在图形界面里直接可用",
+      lead: "面向日常使用的官方图形入口。你可以在 Web、桌面和 iOS 上发起任务、查看结果，并在同一个上下文里继续处理。",
       productScreenshotAlt: "悟墨 AI 中由 Agent 原生调用工具完成任务的界面",
     },
     actions: {
@@ -136,74 +131,73 @@ const COPY = {
       ios: "iOS",
     },
     models: {
-      title: "更适合日常打开来用",
+      title: "把任务留在一个工作区",
       description:
-        "在这里，搜索、执行、查看结果和继续处理都留在同一个工作区里。",
+        "从连接账号、调用工具，到查看输出、继续追问，都在同一处完成。",
       demo: {
-        eyebrow: "一个工作区",
-        title: "让任务在一个界面里继续往下走",
-        description: "从搜索工具到查看结果，再到继续处理，都不需要来回跳转。",
+        title: "任务不用在多个入口之间来回切换",
+        description: "搜索、执行、结果和后续处理都围绕同一个上下文展开。",
         imageAlt: "悟墨 AI 中原生工具能力与小程序工作台界面",
       },
       cards: {
         chat: {
           eyebrow: "连续处理",
-          title: "搜索、执行和结果都留在同一界面",
-          body: "账号连接、任务运行和现成工具的调用，会直接进入当前工作区，不再散落在额外步骤里。",
-          chips: ["一个工作区", "连续处理", "直接打开用"],
+          title: "从发起任务到查看结果，都在当前页面",
+          body: "账号连接、任务运行和工具调用会自然衔接到当前工作区，不需要在不同产品形态之间来回找入口。",
+          chips: ["一个工作区", "连续处理", "直接使用"],
         },
         image: {
-          eyebrow: "结果跟进",
-          title: "更适合看结果、继续追问、继续处理",
-          body: "当你拿到结果后，可以直接补充要求、继续追问或执行下一步，而不是先换回别的入口。",
-          chips: ["先看结果", "继续追问", "继续处理"],
+          eyebrow: "后续跟进",
+          title: "拿到结果后，可以继续追问或继续执行",
+          body: "图片、文档、表格和中间结果都留在页面里，适合边看边改、边确认边推进。",
+          chips: ["查看结果", "继续追问", "继续执行"],
         },
       },
     },
     problems: {
-      titleLine1: "什么时候",
-      titleLine2: "图形界面会更顺手",
+      titleLine1: "这些场景，",
+      titleLine2: "图形界面更合适",
       cards: [
         {
-          title: "你会经常开着它",
-          body: "相比一次性命令调用，图形界面更适合日常打开、随时回来继续。",
+          title: "需要反复查看和调整",
+          body: "当任务不是一次性结束，而是需要看结果、补充要求、继续修改时，图形界面更直观。",
         },
         {
-          title: "你需要看结果再决定下一步",
-          body: "图片、文档、表格或中间结果留在当前界面里，会更容易继续跟进。",
+          title: "希望结果和上下文留在一起",
+          body: "图片、文档、表格或中间结果保留在当前工作区里，后续处理会更容易接上。",
         },
         {
-          title: "你想少一点切换，多一点连续感",
-          body: "当搜索、执行和追问都留在一个工作区里，处理任务会更自然。",
+          title: "想减少入口和设备切换",
+          body: "Web、桌面和 iOS 使用一致的图形入口，日常打开、回来继续都更顺手。",
         },
       ] as ProblemCard[],
     },
     workflow: {
       steps: [
         {
-          title: "先说目标，再开始处理",
-          body: "你先描述任务，界面再接住后面的搜索与执行。",
-          detail: "更像日常打开来用的工作区，而不是一串命令。",
+          title: "描述任务后，直接开始",
+          body: "用自然语言说明目标，悟墨 AI 会在当前工作区里衔接搜索、工具调用和执行过程。",
+          detail: "适合不想切换终端或多套入口的日常任务。",
           alt: "悟墨 AI 中由 Agent 主动搜索和调用技能的界面",
         },
         {
-          title: "结果出来后，直接继续下一步",
-          body: "查看结果、补充要求、继续处理，都可以留在当前页面里完成。",
-          detail: "适合需要边看边改、边问边做的任务。",
+          title: "看到结果后，接着处理",
+          body: "结果、补充要求和下一步操作都保留在当前页面。",
+          detail: "适合边看边改、边确认边推进的任务。",
           alt: "悟墨 AI 中继续执行多步工具任务的界面",
         },
         {
-          title: "换设备时，当前工作还能继续",
-          body: "Web、桌面和 iOS 都可以继续使用，不必重新理解另一套界面。",
-          detail: "你打开哪个入口，取决于当下最顺手的设备。",
+          title: "换到其他设备，也能继续",
+          body: "Web、桌面和 iOS 使用同一套入口和上下文，不需要重新适应。",
+          detail: "在电脑前处理复杂任务，离开座位后继续查看进展。",
           alt: "悟墨 AI 中将结果与 OOMOL 工具体系继续连接的界面",
         },
       ],
     },
     outputs: {
-      title: "终端适合接入，图形界面适合持续使用",
+      title: "CLI 适合集成，悟墨 AI 适合日常使用",
       description:
-        "oo-cli 更适合给 Agent 和终端接入；悟墨 AI 更适合你直接打开来用，持续查看结果并继续处理。",
+        "oo-cli 适合把工具接入 Agent 和终端流程；悟墨 AI 适合你直接打开，用图形界面查看结果并继续处理。",
       imageAlt: "悟墨 AI 中使用同一套工具能力持续完成任务的界面",
     },
     pricing: {
@@ -253,24 +247,24 @@ const COPY = {
       },
     },
     downloads: {
-      title: "从你最顺手的入口打开",
+      title: "选择当前最方便的入口",
       items: {
         web: {
-          title: "Web",
+          title: "网页版",
           subtitle: "对话式图形入口",
-          description: "最快开始使用。",
+          description: "无需安装，打开浏览器即可开始。",
           action: "打开网页版",
         },
         desktop: {
-          title: "Desktop",
+          title: "桌面版",
           subtitle: "桌面应用",
-          description: "适合更稳定的工作区与更长时间的连续处理。",
+          description: "适合长时间保持工作区，并连续处理复杂任务。",
           action: "下载桌面版",
         },
         ios: {
           title: "iOS",
           subtitle: "移动应用",
-          description: "适合随时查看进展，并继续当前任务。",
+          description: "适合在移动设备上查看进展，并继续当前任务。",
           action: "打开 App Store",
         },
       },
@@ -301,7 +295,6 @@ const COPY = {
       description:
         "Search, execution, results, and follow-up work all stay in one workspace.",
       demo: {
-        eyebrow: "One workspace",
         title: "Keep the task moving in one workspace",
         description:
           "From searching for tools to reviewing results and continuing the work, you do not need to bounce between separate interfaces.",
@@ -628,15 +621,17 @@ export default function AppPage() {
   const workflowSteps: readonly WorkflowStep[] = [
     {
       ...copy.workflow.steps[0],
-      videoSrc: getLocalizedVideoSrc(VIDEO_FILES.startFast, isZh),
+      videoSrc: useBaseUrl(getLocalizedVideoSrc(VIDEO_FILES.startFast, isZh)),
     },
     {
       ...copy.workflow.steps[1],
-      videoSrc: getLocalizedVideoSrc(VIDEO_FILES.keepEditing, isZh),
+      videoSrc: useBaseUrl(getLocalizedVideoSrc(VIDEO_FILES.keepEditing, isZh)),
     },
     {
       ...copy.workflow.steps[2],
-      videoSrc: getLocalizedVideoSrc(VIDEO_FILES.trustSources, isZh),
+      videoSrc: useBaseUrl(
+        getLocalizedVideoSrc(VIDEO_FILES.trustSources, isZh)
+      ),
     },
   ];
 
@@ -781,12 +776,6 @@ export default function AppPage() {
                     label={copy.hero.productScreenshotAlt}
                   />
                 </div>
-                <figcaption className={styles.mediaDimension}>
-                  {formatMediaPixelDimensions(
-                    APP_MEDIA_PIXELS.video4k.width,
-                    APP_MEDIA_PIXELS.video4k.height
-                  )}
-                </figcaption>
               </figure>
             </div>
           </div>
@@ -829,9 +818,6 @@ export default function AppPage() {
         >
           <div className={styles.modelDemo}>
             <div className={styles.modelDemoCopy}>
-              <p className={styles.modelDemoEyebrow}>
-                {copy.models.demo.eyebrow}
-              </p>
               <h2 id="models-demo-heading" className={styles.modelDemoTitle}>
                 {copy.models.demo.title}
               </h2>
@@ -845,17 +831,11 @@ export default function AppPage() {
                 src={nativeWorkspacePng}
                 alt={copy.models.demo.imageAlt}
                 className={styles.modelDemoImage}
-                width={APP_MEDIA_PIXELS.nativeWorkspacePng.width}
-                height={APP_MEDIA_PIXELS.nativeWorkspacePng.height}
+                width={APP_MEDIA_INTRINSIC_SIZE.nativeWorkspace.width}
+                height={APP_MEDIA_INTRINSIC_SIZE.nativeWorkspace.height}
                 loading="lazy"
                 decoding="async"
               />
-              <figcaption className={styles.mediaDimension}>
-                {formatMediaPixelDimensions(
-                  APP_MEDIA_PIXELS.nativeWorkspacePng.width,
-                  APP_MEDIA_PIXELS.nativeWorkspacePng.height
-                )}
-              </figcaption>
             </figure>
           </div>
         </section>
@@ -898,12 +878,6 @@ export default function AppPage() {
                       src={step.videoSrc}
                       label={step.alt}
                     />
-                    <figcaption className={styles.mediaDimension}>
-                      {formatMediaPixelDimensions(
-                        APP_MEDIA_PIXELS.video4k.width,
-                        APP_MEDIA_PIXELS.video4k.height
-                      )}
-                    </figcaption>
                   </figure>
                 </div>
 
@@ -934,12 +908,6 @@ export default function AppPage() {
                   label={copy.outputs.imageAlt}
                 />
               </div>
-              <figcaption className={styles.mediaDimension}>
-                {formatMediaPixelDimensions(
-                  APP_MEDIA_PIXELS.video4k.width,
-                  APP_MEDIA_PIXELS.video4k.height
-                )}
-              </figcaption>
             </figure>
           </div>
         </section>
