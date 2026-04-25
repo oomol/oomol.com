@@ -94,7 +94,6 @@
 
 .installCommandText {
   min-width: 0;
-  overflow-x: auto;
   white-space: nowrap;
   padding: 0;
   border: 0;
@@ -228,17 +227,26 @@
 
   .installCommandGroup {
     width: 100%;
-    max-width: 20rem;
+    max-width: 28rem;
   }
 
   .installCommandStrip {
     width: 100%;
-    justify-content: space-between;
-    padding: 0.62rem 0.8rem;
+    justify-content: flex-start;
+    padding: 0.72rem 0.9rem;
   }
 
   .installCommandNote {
     max-width: 100%;
+  }
+
+  .installCommandText {
+    width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    text-align: center;
+    line-height: 1.55;
   }
 
   .workflowArchive {
@@ -273,6 +281,10 @@
   .actions {
     max-width: 100%;
     gap: 0.6rem;
+  }
+
+  .installCommandGroup {
+    max-width: 100%;
   }
 
   .workflowArchive {

@@ -110,7 +110,6 @@
 
 .installCommandText {
   min-width: 0;
-  overflow-x: auto;
   white-space: nowrap;
   padding: 0;
   border: 0;
@@ -242,17 +241,26 @@
 
   .installCommandStrip {
     width: 100%;
-    justify-content: space-between;
-    padding: 0.62rem 0.8rem;
+    justify-content: flex-start;
+    padding: 0.72rem 0.9rem;
   }
 
   .installCommandGroup {
     width: 100%;
-    max-width: 20rem;
+    max-width: 28rem;
   }
 
   .installCommandNote {
     max-width: 100%;
+  }
+
+  .installCommandText {
+    width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    text-align: center;
+    line-height: 1.55;
   }
 }
 
@@ -272,5 +280,9 @@
 
   .showcaseInner {
     width: min(100%, calc(100% - 24px));
+  }
+
+  .installCommandGroup {
+    max-width: 100%;
   }
 }
