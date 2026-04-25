@@ -1909,58 +1909,58 @@
     "message": "When to use Cloud"
   },
   "CLOUD.painpoints.title": {
-    "message": "Once a tool works locally, Cloud helps you publish it"
+    "message": "Ship newly built tools to Cloud and keep them stable"
   },
   "CLOUD.painpoints.subtitle": {
-    "message": "A working local tool is only the first step. To let teammates, customers, or AI agents use it reliably, you still need hosting, secrets, access rules, and operations. Cloud takes care of that work."
+    "message": "In Studio, generate, combine, and extend tools around your business needs. After publishing to Cloud, runtime and access control are managed in one place."
   },
   "CLOUD.painpoints.card1.eyebrow": {
-    "message": "Publish tools"
+    "message": "Generate and Compose"
   },
   "CLOUD.painpoints.card1.title": {
-    "message": "Do not build a whole app around one tool"
+    "message": "Package generated and combined tools into new capabilities"
   },
   "CLOUD.painpoints.card1.description": {
-    "message": "Publish the tool to Cloud instead of building login, permissions, admin pages, and other supporting features yourself."
+    "message": "In Studio, you can write code to create new function tools and combine existing ones. After publishing to Cloud, those capabilities become new tools that keep running reliably."
   },
   "CLOUD.painpoints.card1.point1": {
-    "message": "Agents still find and run it with oo-cli"
+    "message": "Both generated and combined tools can be published directly"
   },
   "CLOUD.painpoints.card1.point2": {
-    "message": "Fewer pages and admin tools to build"
+    "message": "Use richer custom tools through oo-cli"
   },
   "CLOUD.painpoints.card2.eyebrow": {
-    "message": "Keep it running"
+    "message": "Unified Across Agents"
   },
   "CLOUD.painpoints.card2.title": {
-    "message": "Make the tool available beyond your own machine"
+    "message": "Access and permissions are managed by Cloud"
   },
   "CLOUD.painpoints.card2.description": {
-    "message": "Cloud keeps the tool online, stores secrets, and controls who can use it. If you later need an API, MCP, or automation, you can add those options without rebuilding the tool."
+    "message": "No matter which agent you use, once it is connected through oo-cli it follows the same account and permission system. Your tool capabilities move with you instead of being tied to one agent."
   },
   "CLOUD.painpoints.card2.point1": {
-    "message": "Less server and permission work"
+    "message": "Accounts and permissions stay with your identity"
   },
   "CLOUD.painpoints.card2.point2": {
-    "message": "Start with agents, then expand when needed"
+    "message": "Keep the same toolset when switching agents"
   },
   "CLOUD.flow.cloud.eyebrow": {
     "message": "01 / Cloud"
   },
   "CLOUD.flow.cloud.title": {
-    "message": "Publish the tool to Cloud and keep it running"
+    "message": "Publish to Cloud and keep new tools stable"
   },
   "CLOUD.flow.cloud.description": {
-    "message": "After local testing, publish the tool to Cloud. It runs online, and Cloud manages secrets and who can use it."
+    "message": "Publish the tools you generated and combined in Studio to Cloud. After launch, Cloud handles runtime and access management so you do not have to maintain them separately."
   },
   "CLOUD.flow.cloud.point1": {
-    "message": "Runs online"
+    "message": "Stable cloud runtime"
   },
   "CLOUD.flow.cloud.point2": {
-    "message": "Stores secrets"
+    "message": "Unified access and permissions"
   },
   "CLOUD.flow.cloud.point3": {
-    "message": "Controls access"
+    "message": "Gateway managed in one place"
   },
   "CLOUD.flow.cloud.media.title": {
     "message": "Cloud console preview"
@@ -1978,10 +1978,10 @@
     "message": "02 / oo-cli"
   },
   "CLOUD.flow.cli.title": {
-    "message": "After publishing, agents still find and run it with oo-cli"
+    "message": "After publishing, keep using them through oo-cli across agents"
   },
   "CLOUD.flow.cli.description": {
-    "message": "Users do not need to know where the tool is deployed or learn a new workflow. After publishing, they can still search, inspect, and run it in oo-cli. If you later need an API, MCP, or automation, you can add those paths."
+    "message": "Users do not need to care about deployment details or change habits. With oo-cli connected, they can keep using the same toolset across different agents."
   },
   "CLOUD.flow.cli.media.title": {
     "message": "oo-cli invocation demo"
@@ -1993,10 +1993,10 @@
     "message": "View GitHub"
   },
   "CLOUD.flow.cta.title": {
-    "message": "Publish working tools for agents to use"
+    "message": "Publish new tools to Cloud, then keep using them through oo-cli"
   },
   "CLOUD.flow.cta.description": {
-    "message": "Cloud keeps the tool running, stores secrets, and controls who can use it. Agents keep finding and running the tool through oo-cli."
+    "message": "Cloud handles post-launch management, while your team keeps the same oo-cli workflow."
   },
   "CLOUD.flow.cta.primary": {
     "message": "Read Cloud docs"

@@ -19,7 +19,7 @@
   gap: 0.9rem;
   text-align: left;
   justify-items: start;
-  max-width: 48rem;
+  max-width: 56rem;
 }
 
 .badge {
@@ -47,11 +47,12 @@
 }
 
 .sectionTitle {
-  @include marketing-display-title(section, 22ch, left, 1.06);
+  @include marketing-display-title(section, 26ch, left, 1.06);
 }
 
 .sectionSubtitle {
   @include marketing-supporting-copy(48rem);
+  max-width: 56rem;
 }
 
 .grid {
