@@ -26,7 +26,6 @@
 .thumbnail {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
   object-fit: cover;
   background: var(--oomol-bg-spotlight);
 }
@@ -114,13 +113,109 @@
   left: 50%;
   top: 50%;
   z-index: var(--oomol-z-dialog-content);
-  width: min(1200px, calc(100vw - 2rem));
+  width: min(1200px, calc(100vw - 1rem));
   overflow: clip;
   border-radius: calc(var(--oomol-radius-card) + 6px);
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: #000;
   box-shadow: var(--oomol-shadow-lg);
   outline: none;
+}
+
+.mediaShell {
+  position: relative;
+  background: #000;
+}
+
+.mediaViewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--hero-media-aspect-ratio, 16 / 9);
+  margin: 0 auto;
+  overflow: hidden;
+  background: #000;
+}
+
+.interludeFrame {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(96, 118, 255, 0.24), transparent 32%),
+    radial-gradient(circle at 78% 22%, rgba(114, 233, 203, 0.18), transparent 28%),
+    linear-gradient(135deg, #05070d 0%, #0b1018 42%, #06080d 100%);
+  isolation: isolate;
+}
+
+.interludeFrameTransition {
+  animation: hero-video-interlude-sequence
+    var(--hero-transition-duration, 1400ms) linear both;
+}
+
+.interludeFrameEnding {
+  background:
+    radial-gradient(circle at 18% 22%, rgba(255, 208, 121, 0.18), transparent 32%),
+    radial-gradient(circle at 80% 24%, rgba(88, 141, 255, 0.2), transparent 28%),
+    linear-gradient(140deg, #06070b 0%, #111620 46%, #05070b 100%);
+  animation: hero-video-interlude-fade 0.52s ease-out both;
+}
+
+.interludeBackdrop {
+  position: absolute;
+  inset: -12%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08), transparent 34%),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.05), transparent 55%);
+  filter: blur(12px);
+  opacity: 0.9;
+  animation: hero-video-interlude-glow
+    var(--hero-transition-duration, 1400ms) ease-out both;
+}
+
+.interludeBackdropEnding {
+  animation: hero-video-interlude-glow-ending 0.56s ease-out both;
+}
+
+.interludeGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 3.5rem 3.5rem;
+  mask-image: radial-gradient(circle at center, black 32%, transparent 78%);
+  opacity: 0.42;
+  transform: perspective(900px) rotateX(66deg) scale(1.45) translateY(22%);
+}
+
+.interludeContent {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  padding: 2rem;
+  text-align: center;
+  animation: hero-video-interlude-text-sequence
+    var(--hero-transition-duration, 1400ms) cubic-bezier(0.16, 1, 0.3, 1)
+    both;
+}
+
+.interludeContentEnding {
+  animation: hero-video-interlude-text-ending 0.56s
+    cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.interludeTitle {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  color: rgba(255, 255, 255, 0.96);
+  text-wrap: balance;
+  text-shadow: 0 0.1rem 1.5rem rgba(0, 0, 0, 0.34);
 }
 
 .fromCenter[data-state="open"] {
@@ -165,11 +260,24 @@
 }
 
 .media {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 100%;
   border: 0;
   background: #000;
+}
+
+.videoMedia {
+  object-fit: cover;
+  object-position: center;
+  animation: hero-video-media-fade 0.34s ease-out both;
+}
+
+.iframeMedia {
+  width: 100%;
+  height: 100%;
 }
 
 .srOnly {
@@ -228,6 +336,108 @@
   }
 }
 
+@keyframes hero-video-media-fade {
+  from {
+    opacity: 0;
+    transform: scale(0.992);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-video-interlude-fade {
+  from {
+    opacity: 0;
+    transform: scale(1.01);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-video-interlude-sequence {
+  0% {
+    opacity: 0;
+    transform: scale(1.01);
+  }
+
+  16%,
+  72% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.996);
+  }
+}
+
+@keyframes hero-video-interlude-text-sequence {
+  0% {
+    opacity: 0;
+    transform: translateY(22px) scale(0.985);
+  }
+
+  18%,
+  72% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-12px) scale(1.01);
+  }
+}
+
+@keyframes hero-video-interlude-glow {
+  0% {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+
+  20%,
+  72% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+
+@keyframes hero-video-interlude-glow-ending {
+  from {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+
+  to {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-video-interlude-text-ending {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 @media (max-width: 768px) {
   .playButton {
     width: 3.4rem;
@@ -241,7 +451,7 @@
   }
 
   .content {
-    width: min(100vw - 1rem, 1200px);
+    width: min(100vw - 0.5rem, 1200px);
     border-radius: 20px;
   }
 
@@ -250,5 +460,17 @@
     right: 8px;
     width: 36px;
     height: 36px;
+  }
+
+  .mediaViewport {
+    width: 100%;
+  }
+
+  .interludeContent {
+    padding: 1.5rem;
+  }
+
+  .interludeTitle {
+    font-size: clamp(1.65rem, 8vw, 2.7rem);
   }
 }

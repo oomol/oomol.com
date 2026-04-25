@@ -6,18 +6,39 @@ import { HeroVideoDialog } from "@site/src/components/ui/hero-video-dialog";
 import React from "react";
 
 export function HomepageFirstScreenVideoHero() {
-  const heroVideoUrl = useBaseUrl(
-    "https://static.oomol.com/assets/homepage/oomol-flow-en.webm"
-  );
+  const codexVideoUrl = useBaseUrl("/video/home/homepage-hero-codex.mp4");
+  const openClawVideoUrl = useBaseUrl("/video/home/homepage-hero-openclaw.mp4");
+  const claudeVideoUrl = useBaseUrl("/video/home/homepage-hero-claude.mp4");
   const heroVideoPosterUrl = useBaseUrl(
-    "/img/pages/home/homepage-first-screen-workflow-poster.webp"
+    "/img/pages/home/homepage-first-screen-hero-video-poster.png"
   );
 
   return (
     <div id="workflow-video" className={styles.videoShowcase}>
       <div className={styles.videoShowcaseInner}>
         <HeroVideoDialog
-          videoSrc={heroVideoUrl}
+          videoPlaylist={[
+            {
+              src: codexVideoUrl,
+              label: "Codex",
+              title: "Codex demo video",
+              transitionTitle: "Using Cloud X",
+            },
+            {
+              src: openClawVideoUrl,
+              label: "OpenClaw",
+              title: "OpenClaw demo video",
+              transitionTitle: "Using OpenClaw",
+            },
+            {
+              src: claudeVideoUrl,
+              label: "Claude",
+              title: "Claude demo video",
+              transitionTitle: "Using Claude",
+            },
+          ]}
+          mediaAspectRatio="3424 / 2160"
+          playlistEndingTitle="Works In Any Agent"
           thumbnailSrc={heroVideoPosterUrl}
           thumbnailAlt={translate({
             message: "HOME.FirstScreen.video.thumbnailAlt",

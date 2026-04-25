@@ -7,10 +7,19 @@ import React from "react";
 
 type AnimationStyle = "from-center";
 
+type HeroVideoPlaylistItem = {
+  src: string;
+  label?: string;
+  title?: string;
+  transitionTitle?: string;
+};
+
 type HeroVideoDialogProps = {
   className?: string;
   animationStyle?: AnimationStyle;
-  videoSrc: string;
+  videoSrc?: string;
+  videoPlaylist?: HeroVideoPlaylistItem[];
+  mediaAspectRatio?: React.CSSProperties["aspectRatio"];
   thumbnailSrc: string;
   thumbnailAlt?: string;
   thumbnailAspectRatio?: React.CSSProperties["aspectRatio"];
@@ -18,12 +27,17 @@ type HeroVideoDialogProps = {
   title?: string;
   playAriaLabel?: string;
   closeAriaLabel?: string;
+  playlistEndingTitle?: string;
+  transitionDurationMs?: number;
 };
+
+type PlaybackPhase = "transition" | "video" | "ending";
 
 const DIRECT_VIDEO_RE = /\.(mp4|webm|ogg|mov|m4v)(?:[?#].*)?$/i;
 const ANIMATION_STYLE_CLASS_MAP: Record<AnimationStyle, string> = {
   "from-center": styles.fromCenter,
 };
+const DEFAULT_TRANSITION_DURATION_MS = 1400;
 
 function CloseIcon() {
   return (
@@ -60,10 +74,45 @@ function withAutoplay(src: string) {
   }
 }
 
+function parseAspectRatio(
+  aspectRatio?: React.CSSProperties["aspectRatio"]
+): number | null {
+  if (!aspectRatio) {
+    return null;
+  }
+
+  if (typeof aspectRatio === "number") {
+    return Number.isFinite(aspectRatio) && aspectRatio > 0 ? aspectRatio : null;
+  }
+
+  const normalized = aspectRatio.replace(/\s+/g, "");
+  const [width, height] = normalized.split("/");
+
+  if (!width || !height) {
+    const value = Number(normalized);
+    return Number.isFinite(value) && value > 0 ? value : null;
+  }
+
+  const widthValue = Number(width);
+  const heightValue = Number(height);
+
+  if (!Number.isFinite(widthValue) || !Number.isFinite(heightValue)) {
+    return null;
+  }
+
+  if (widthValue <= 0 || heightValue <= 0) {
+    return null;
+  }
+
+  return widthValue / heightValue;
+}
+
 export function HeroVideoDialog({
   className,
   animationStyle = "from-center",
   videoSrc,
+  videoPlaylist,
+  mediaAspectRatio,
   thumbnailSrc,
   thumbnailAlt = "Video thumbnail",
   thumbnailAspectRatio,
@@ -71,8 +120,9 @@ export function HeroVideoDialog({
   title,
   playAriaLabel,
   closeAriaLabel,
+  playlistEndingTitle,
+  transitionDurationMs = DEFAULT_TRANSITION_DURATION_MS,
 }: HeroVideoDialogProps) {
-  const resolvedTitle = title ?? thumbnailAlt;
   const resolvedPlayLabel =
     playAriaLabel ??
     translate({
@@ -85,11 +135,85 @@ export function HeroVideoDialog({
       id: "HOME.FirstScreen.video.closeAriaLabel",
       message: "Close video dialog",
     });
-  const resolvedVideoSrc = withAutoplay(videoSrc);
-  const isDirectVideo = DIRECT_VIDEO_RE.test(videoSrc);
+  const [open, setOpen] = React.useState(false);
+  const [activeIndex, setActiveIndex] = React.useState(0);
+  const [phase, setPhase] = React.useState<PlaybackPhase>("video");
+  const playlist =
+    videoPlaylist && videoPlaylist.length > 0
+      ? videoPlaylist
+      : videoSrc
+        ? [{ src: videoSrc, title }]
+        : [];
+  const activeVideo = playlist[activeIndex] ?? playlist[0];
+
+  if (!activeVideo) {
+    return null;
+  }
+
+  const resolvedTitle = activeVideo.title ?? title ?? thumbnailAlt;
+  const resolvedVideoSrc = withAutoplay(activeVideo.src);
+  const isDirectVideo = DIRECT_VIDEO_RE.test(activeVideo.src);
+  const shouldUseInterludes =
+    isDirectVideo && (playlist.length > 1 || Boolean(playlistEndingTitle));
+  const interludeTitle = activeVideo.transitionTitle ?? activeVideo.title;
+  const showInterlude =
+    isDirectVideo && (phase === "transition" || phase === "ending");
+  const interludeDisplayTitle =
+    phase === "ending" ? playlistEndingTitle : interludeTitle;
+  const resolvedMediaAspectRatio =
+    mediaAspectRatio ?? (isDirectVideo ? "16 / 9" : undefined);
+  const numericMediaAspectRatio = parseAspectRatio(resolvedMediaAspectRatio);
+  const contentStyle =
+    numericMediaAspectRatio && isDirectVideo
+      ? ({
+          width: `min(1520px, calc((100vh - 3rem) * ${numericMediaAspectRatio}), calc(100vw - 0.75rem))`,
+          "--hero-media-aspect-ratio": String(resolvedMediaAspectRatio),
+          "--hero-transition-duration": `${transitionDurationMs}ms`,
+        } as React.CSSProperties)
+      : ({
+          "--hero-media-aspect-ratio": String(
+            resolvedMediaAspectRatio ?? "16 / 9"
+          ),
+          "--hero-transition-duration": `${transitionDurationMs}ms`,
+        } as React.CSSProperties);
+
+  React.useEffect(() => {
+    if (!open || phase !== "transition") {
+      return undefined;
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      setPhase("video");
+    }, transitionDurationMs);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [open, phase, transitionDurationMs, activeIndex]);
+
+  function handleOpenChange(nextOpen: boolean) {
+    setOpen(nextOpen);
+    if (!nextOpen) {
+      setActiveIndex(0);
+      setPhase("video");
+      return;
+    }
+    setActiveIndex(0);
+    setPhase(shouldUseInterludes ? "transition" : "video");
+  }
+
+  function handleVideoEnded() {
+    if (activeIndex < playlist.length - 1) {
+      setActiveIndex(activeIndex + 1);
+      setPhase("transition");
+      return;
+    }
+
+    if (playlistEndingTitle) {
+      setPhase("ending");
+    }
+  }
 
   return (
-    <Dialog.Root>
+    <Dialog.Root open={open} onOpenChange={handleOpenChange}>
       <Dialog.Trigger asChild>
         <button
           type="button"
@@ -124,6 +248,7 @@ export function HeroVideoDialog({
             styles.content,
             ANIMATION_STYLE_CLASS_MAP[animationStyle]
           )}
+          style={contentStyle}
         >
           <Dialog.Title className={styles.srOnly}>{resolvedTitle}</Dialog.Title>
           <Dialog.Close asChild>
@@ -136,25 +261,64 @@ export function HeroVideoDialog({
             </button>
           </Dialog.Close>
 
-          {isDirectVideo ? (
-            <video
-              className={styles.media}
-              src={resolvedVideoSrc}
-              controls
-              autoPlay
-              playsInline
-              preload="metadata"
-            />
-          ) : (
-            <iframe
-              className={styles.media}
-              src={resolvedVideoSrc}
-              title={resolvedTitle}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            />
-          )}
+          <div
+            className={styles.mediaShell}
+          >
+            <div className={styles.mediaViewport}>
+              {showInterlude && interludeDisplayTitle ? (
+                <div
+                  className={clsx(
+                    styles.interludeFrame,
+                    phase === "ending"
+                      ? styles.interludeFrameEnding
+                      : styles.interludeFrameTransition
+                  )}
+                  aria-hidden="true"
+                >
+                  <div
+                    className={clsx(
+                      styles.interludeBackdrop,
+                      phase === "ending" && styles.interludeBackdropEnding
+                    )}
+                  />
+                  <div className={styles.interludeGrid} />
+                  <div
+                    className={clsx(
+                      styles.interludeContent,
+                      phase === "ending" && styles.interludeContentEnding
+                    )}
+                  >
+                    <p className={styles.interludeTitle}>
+                      {interludeDisplayTitle}
+                    </p>
+                  </div>
+                </div>
+              ) : null}
+
+              {isDirectVideo && phase === "video" ? (
+                <video
+                  key={resolvedVideoSrc}
+                  className={clsx(styles.media, styles.videoMedia)}
+                  src={resolvedVideoSrc}
+                  autoPlay
+                  playsInline
+                  preload="metadata"
+                  onEnded={shouldUseInterludes ? handleVideoEnded : undefined}
+                />
+              ) : (
+                !isDirectVideo ? (
+                  <iframe
+                    className={clsx(styles.media, styles.iframeMedia)}
+                    src={resolvedVideoSrc}
+                    title={resolvedTitle}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                ) : null
+              )}
+            </div>
+          </div>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
