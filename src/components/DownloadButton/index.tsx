@@ -34,6 +34,8 @@ export interface DownloadButtonProps {
   buttonSize?: "default" | "lg";
   /** Stretch to parent width (e.g. pricing cards next to full-width Subscribe). */
   fullWidth?: boolean;
+  /** Stretch to parent width only on small screens. */
+  mobileFullWidth?: boolean;
   /** Merged onto the primary Button / link (e.g. pricing `planCta`). */
   className?: string;
   texts?: Partial<{
@@ -53,6 +55,7 @@ export const DownloadButton = ({
   noteTone = "default",
   buttonSize = "lg",
   fullWidth = false,
+  mobileFullWidth = false,
   className,
   texts,
 }: DownloadButtonProps) => {
@@ -113,10 +116,17 @@ export const DownloadButton = ({
     className
   );
   const stackStretchClass = fullWidth ? styles.stackFullWidth : "";
+  const mobileStackStretchClass = mobileFullWidth
+    ? styles.mobileStackFullWidth
+    : "";
   const outerBoxClass = fullWidth
-    ? `${styles["button-box"]} ${styles.buttonBoxFullWidth}`
-    : styles["button-box"];
-  const macWindowsShellClass = [containerClassName, stackStretchClass]
+    ? `${styles["button-box"]} ${styles.buttonBoxFullWidth} ${mobileStackStretchClass}`.trim()
+    : `${styles["button-box"]} ${mobileStackStretchClass}`.trim();
+  const macWindowsShellClass = [
+    containerClassName,
+    stackStretchClass,
+    mobileStackStretchClass,
+  ]
     .filter(Boolean)
     .join(" ");
 
@@ -157,9 +167,13 @@ export const DownloadButton = ({
             ) : (
               <div
                 className={
-                  fullWidth
-                    ? `${windowsClassName} ${styles.stackFullWidth}`.trim()
-                    : windowsClassName
+                  [
+                    windowsClassName,
+                    fullWidth ? styles.stackFullWidth : "",
+                    mobileFullWidth ? styles.mobileStackFullWidth : "",
+                  ]
+                    .filter(Boolean)
+                    .join(" ")
                 }
               >
                 <Button

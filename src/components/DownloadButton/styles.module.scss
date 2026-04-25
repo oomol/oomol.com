@@ -19,6 +19,10 @@
   width: 100%;
 }
 
+.mobileStackFullWidth {
+  width: auto;
+}
+
 .download {
   /* Vercel primary button handles size/radius/fill via the Button component.
      We only need to ensure the asChild <a> fills the button and carry the icon slot. */
@@ -153,5 +157,16 @@
       text-align: center;
       line-height: 1.35;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .mobileStackFullWidth {
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .mobileStackFullWidth .download {
+    width: 100%;
   }
 }
