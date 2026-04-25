@@ -1150,7 +1150,7 @@
     "message": "OOMOL Studio turns\nthose three needs into one path"
   },
   "STUDIO.product.principles.description": {
-    "message": "Let AI handle the starting point, let a real engineering environment support real extension, and let the same implementation move straight into delivery. When you need manual control, you still do not need a DSL."
+    "message": "The goal is not to add another platform abstraction, but to make the development flow smoother and easier to maintain."
   },
   "STUDIO.product.cta.title": {
     "message": "Get the next tool running in Studio first"

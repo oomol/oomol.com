@@ -110,9 +110,6 @@ export default function StudioPage() {
   const principlesTitleLines = translate({
     message: "STUDIO.product.principles.title",
   }).split("\n");
-  const storyKicker = translate({
-    message: "STUDIO.product.story.kicker",
-  });
   return (
     <Layout>
       <Head>
@@ -177,7 +174,6 @@ export default function StudioPage() {
         <section className={styles.storySection}>
           <div className={styles.sectionContainer}>
             <div className={styles.sectionHeader}>
-              <div className={styles.eyebrow}>{storyKicker}</div>
               <h2 className={styles.sectionTitle}>
                 {storyTitleLines.map((line, index) => (
                   <React.Fragment key={`${index}-${line}`}>
@@ -197,16 +193,8 @@ export default function StudioPage() {
             </div>
 
             <div className={styles.painPointsGrid}>
-              {painPoints.map((point, index) => (
+              {painPoints.map(point => (
                 <article key={point.titleKey} className={styles.painPointCard}>
-                  <div className={styles.painPointMeta}>
-                    <span className={styles.painPointIndex}>
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <span className={styles.painPointLabel}>
-                      {translate({ message: point.labelKey })}
-                    </span>
-                  </div>
                   <h3 className={styles.painPointTitle}>
                     {translate({ message: point.titleKey })}
                   </h3>

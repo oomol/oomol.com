@@ -1141,7 +1141,7 @@
     "message": "扩展工具，真正难的\n其实就三件事"
   },
   "STUDIO.product.story.description": {
-    "message": "起步慢、环境配置复杂、开源库不好用，都会把开发效率拉下来。OOMOL Studio 就是围绕这三件事来解决问题的。"
+    "message": "要让扩展持续推进，需要同时解决学习成本、部署复杂度与生态衔接问题。"
   },
   "STUDIO.product.principles.kicker": {
     "message": "开发者路径 01 在 Studio 中构建"
@@ -1150,7 +1150,7 @@
     "message": "OOMOL Studio 怎么\n解决这三个问题"
   },
   "STUDIO.product.principles.description": {
-    "message": "答案分三部分：Studio 内置 Agent、容器化环境，以及面向开发者习惯的代码与开源库支持。"
+    "message": "目标不是多一套平台概念，而是让开发流程更顺、更可维护。"
   },
   "STUDIO.product.cta.title": {
     "message": "在 OOMOL Studio 里，开始下一次更高效的工具开发"
@@ -1159,25 +1159,25 @@
     "message": "从 AI 自动生成，到本地验证、工程化调整和云端交付，OOMOL Studio 让整个开发过程更连贯，也让每一次产出更接近真正可用、可复用、可部署的结果。"
   },
   "STUDIO.story.point1.label": {
-    "message": "起步慢"
+    "message": "学习曲线"
   },
   "STUDIO.story.point1.title": {
-    "message": "起步慢，学习曲线陡"
+    "message": "学习曲线陡"
   },
   "STUDIO.story.point1.description": {
     "message": "Studio 内置 Agent。遇到问题可以直接问 AI，想做什么也可以直接让 AI 做，很多事情不用先学会再开始。"
   },
   "STUDIO.story.point2.label": {
-    "message": "环境配置"
+    "message": "环境部署"
   },
   "STUDIO.story.point2.title": {
-    "message": "环境复杂，发布不顺"
+    "message": "环境部署复杂"
   },
   "STUDIO.story.point2.description": {
     "message": "Studio 内置容器，把本地和云端环境尽量做成一体。开发、调试、发布会顺很多，不容易卡在环境问题上。"
   },
   "STUDIO.story.point3.label": {
-    "message": "开源库支持"
+    "message": "生态分叉"
   },
   "STUDIO.story.point3.title": {
     "message": "与社区生态分叉"
@@ -1207,13 +1207,13 @@
     "message": "Studio 内置 Agent，自动生成和编排"
   },
   "STUDIO.principle1.paragraph1": {
-    "message": "1. 从生成节点到组合成工作流，这整条链路都可以交给 Studio 内置 Agent 来做。很多时候你不需要先理解概念，直接告诉它你想做什么就行。"
+    "message": "1. 从生成节点到工作流编排，Studio 内置 Agent 都能先帮你完成。你只要说清目标，就能直接开工。"
   },
   "STUDIO.principle1.paragraph2": {
-    "message": "2. 我们把做事需要的信息都提供给了这个内置 Agent。它不是普通聊天助手，而是一个知道 Studio 怎么生成、怎么编排、怎么扩展工具的 Agent。"
+    "message": "2. 它拿到的是 Studio 的完整上下文，不是通用聊天助手；知道怎么生成、编排和扩展工具。"
   },
   "STUDIO.principle1.paragraph3": {
-    "message": "3. 它也不绑定固定的 Coding Plan。你可以配置自己的模型和 Token；如果中途想自己接手，也可以随时进入代码继续改。"
+    "message": "3. 你可接入自己的模型和 Token；需要手动接管时，随时进代码继续改。"
   },
   "STUDIO.principle1.imageAlt": {
     "message": "在 OOMOL Studio 中用代码编写函数工具"
@@ -1222,13 +1222,13 @@
     "message": "内置高性能容器，本地和云端一体化"
   },
   "STUDIO.principle2.paragraph1": {
-    "message": "1. Studio 在应用内部封装了一个完整且性能很强的容器。常见开发环境和运行时默认都已经准备好，打开就能用。"
+    "message": "1. Studio 内置完整高性能容器，常见开发环境和运行时开箱即用。"
   },
   "STUDIO.principle2.paragraph2": {
-    "message": "2. 本地和云端都统一在 Linux 环境里运行，开发、调试、发布走的是同一套基础环境，流程会顺很多。"
+    "message": "2. 本地与云端统一 Linux 基座，开发、调试、发布走同一套环境。"
   },
   "STUDIO.principle2.paragraph3": {
-    "message": "3. 容器和宿主机会隔离开。你可以放心让 AI 在里面写代码、跑代码，而不用担心直接影响自己的主机环境和隐私数据。"
+    "message": "3. 容器与宿主机隔离，AI 在容器内写码跑码，不影响本机环境和隐私数据。"
   },
   "STUDIO.principle2.imageAlt": {
     "message": "OOMOL Studio 中的函数工具开发体验"
@@ -1237,13 +1237,13 @@
     "message": "按开发者习惯写代码、管依赖、扩展能力"
   },
   "STUDIO.principle3.paragraph1": {
-    "message": "1. OOMOL Studio 的设计很符合开发者直觉。一个节点就像一个函数，多个节点编排成工作流，再进一步封装成可复用工具，理解起来很自然。"
+    "message": "1. 在 Studio 里，一个节点就是一个函数；节点可编排为工作流，并继续封装成可复用工具。"
   },
   "STUDIO.principle3.paragraph2": {
-    "message": "2. 在 JavaScript 环境里你可以继续用 npm；在 Python 环境里可以用 Poetry 或 pip。引库和管理依赖都沿用开源社区既有的工程方式。"
+    "message": "2. JavaScript 继续用 npm，Python 继续用 Poetry 或 pip；依赖管理沿用社区工程习惯。"
   },
   "STUDIO.principle3.paragraph3": {
-    "message": "3. 这意味着即使你主要靠 AI 来做事，真的需要自己接手时，也不用重新学习一套新概念，直接按熟悉的方式继续开发就行。"
+    "message": "3. 所以即使主要靠 AI，后续人工接手也不用切换思维，按熟悉方式继续开发。"
   },
   "STUDIO.principle3.imageAlt": {
     "message": "OOMOL Studio 中本地和云端连续衔接的工具工作流"

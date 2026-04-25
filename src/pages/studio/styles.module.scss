@@ -131,13 +131,7 @@
   margin-inline: auto;
   justify-items: center;
   text-align: center;
-}
-
-/* 总标题比下方每个分块标题高一个层级，形成清晰主次。 */
-.principlesSection .sectionTitle {
-  font-size: clamp(1.9rem, 3.2vw, 2.7rem);
-  line-height: 1.06;
-  letter-spacing: var(--oomol-tracking-display);
+  margin-bottom: clamp(4.8rem, 8vw, 6.4rem);
 }
 
 .sectionTitle {
@@ -150,6 +144,13 @@
   font-size: clamp(2.2rem, 4vw, 3.1rem);
   line-height: 1.04;
   letter-spacing: -0.03em;
+}
+
+.principlesSection .sectionTitle {
+  font-size: clamp(2.2rem, 4vw, 3.1rem);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.45rem;
 }
 
 .sectionDescription {
@@ -192,29 +193,6 @@
   }
 }
 
-.painPointMeta {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-}
-
-.painPointIndex {
-  font-family: var(--oomol-font-mono);
-  font-size: var(--oomol-body-mono);
-  font-weight: 500;
-  letter-spacing: var(--oomol-tracking-mono);
-  color: var(--oomol-primary);
-  font-feature-settings: "tnum" 1;
-}
-
-.painPointLabel {
-  font-family: var(--oomol-font-mono);
-  font-size: var(--oomol-body-mono);
-  font-weight: 500;
-  letter-spacing: var(--oomol-tracking-mono);
-  color: var(--oomol-text-tertiary);
-}
-
 .painPointTitle {
   margin: 0;
   max-width: none;
@@ -229,7 +207,7 @@
 
 .principlesGrid {
   display: grid;
-  gap: clamp(3rem, 6vw, 5.2rem);
+  gap: clamp(3.8rem, 7vw, 6.4rem);
 }
 
 .principleCard {
@@ -333,11 +311,11 @@
   }
 
   .principlesSection .sectionHeader {
-    margin-bottom: 2.1rem;
+    margin-bottom: 4.2rem;
   }
 
   .principlesGrid {
-    gap: 2.4rem;
+    gap: 3rem;
   }
 
   .heroTitle,
@@ -346,12 +324,12 @@
     max-width: 100%;
   }
 
-  .principlesSection .sectionTitle {
-    font-size: clamp(1.7rem, 6vw, 2.2rem);
+  .storySection .sectionTitle {
+    font-size: clamp(1.95rem, 8vw, 2.45rem);
     line-height: 1.08;
   }
 
-  .storySection .sectionTitle {
+  .principlesSection .sectionTitle {
     font-size: clamp(1.95rem, 8vw, 2.45rem);
     line-height: 1.08;
   }
