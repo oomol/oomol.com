@@ -207,6 +207,45 @@
     cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+.endingPlaylist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: center;
+  margin-top: 1.15rem;
+}
+
+.endingPlaylistButton {
+  min-height: 2.5rem;
+  padding: 0.55rem 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.82);
+  font: inherit;
+  cursor: pointer;
+  transition:
+    border-color 0.18s ease,
+    background-color 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
+
+  &:hover,
+  &:focus-visible {
+    border-color: rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.98);
+    transform: translateY(-1px);
+    outline: none;
+  }
+}
+
+.endingPlaylistButtonActive {
+  border-color: rgba(255, 255, 255, 0.34);
+  background: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.98);
+}
+
 .interludeTitle {
   margin: 0;
   font-size: clamp(2rem, 4vw, 4rem);
@@ -472,5 +511,14 @@
 
   .interludeTitle {
     font-size: clamp(1.65rem, 8vw, 2.7rem);
+  }
+
+  .endingPlaylist {
+    gap: 0.55rem;
+  }
+
+  .endingPlaylistButton {
+    width: 100%;
+    max-width: 16rem;
   }
 }

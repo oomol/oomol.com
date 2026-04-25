@@ -212,6 +212,11 @@ export function HeroVideoDialog({
     }
   }
 
+  function handlePlaylistSelect(index: number) {
+    setActiveIndex(index);
+    setPhase("video");
+  }
+
   return (
     <Dialog.Root open={open} onOpenChange={handleOpenChange}>
       <Dialog.Trigger asChild>
@@ -273,7 +278,7 @@ export function HeroVideoDialog({
                       ? styles.interludeFrameEnding
                       : styles.interludeFrameTransition
                   )}
-                  aria-hidden="true"
+                  aria-hidden={phase === "transition" ? "true" : undefined}
                 >
                   <div
                     className={clsx(
@@ -291,18 +296,42 @@ export function HeroVideoDialog({
                     <p className={styles.interludeTitle}>
                       {interludeDisplayTitle}
                     </p>
+                    {phase === "ending" && playlist.length > 1 ? (
+                      <div className={styles.endingPlaylist}>
+                        {playlist.map((item, index) => {
+                          const itemLabel =
+                            item.label ?? item.transitionTitle ?? item.title;
+
+                          return (
+                            <button
+                              key={`${item.src}-${index}`}
+                              type="button"
+                              className={clsx(
+                                styles.endingPlaylistButton,
+                                index === activeIndex &&
+                                  styles.endingPlaylistButtonActive
+                              )}
+                              onClick={() => handlePlaylistSelect(index)}
+                            >
+                              {itemLabel ?? `Video ${index + 1}`}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    ) : null}
                   </div>
                 </div>
               ) : null}
 
               {isDirectVideo && phase === "video" ? (
-                <video
-                  key={resolvedVideoSrc}
-                  className={clsx(styles.media, styles.videoMedia)}
-                  src={resolvedVideoSrc}
-                  autoPlay
-                  playsInline
-                  preload="metadata"
+              <video
+                key={resolvedVideoSrc}
+                className={clsx(styles.media, styles.videoMedia)}
+                src={resolvedVideoSrc}
+                controls
+                autoPlay
+                playsInline
+                preload="metadata"
                   onEnded={shouldUseInterludes ? handleVideoEnded : undefined}
                 />
               ) : (

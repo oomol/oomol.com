@@ -22,7 +22,7 @@ export function HomepageFirstScreenVideoHero() {
               src: codexVideoUrl,
               label: "Codex",
               title: "Codex demo video",
-              transitionTitle: "Using Cloud X",
+              transitionTitle: "Using Codex",
             },
             {
               src: openClawVideoUrl,
@@ -32,9 +32,9 @@ export function HomepageFirstScreenVideoHero() {
             },
             {
               src: claudeVideoUrl,
-              label: "Claude",
-              title: "Claude demo video",
-              transitionTitle: "Using Claude",
+              label: "Claude Code",
+              title: "Claude Code demo video",
+              transitionTitle: "Using Claude Code",
             },
           ]}
           mediaAspectRatio="3424 / 2160"
