@@ -143,8 +143,16 @@
   place-items: center;
   overflow: hidden;
   background:
-    radial-gradient(circle at 20% 20%, rgba(96, 118, 255, 0.24), transparent 32%),
-    radial-gradient(circle at 78% 22%, rgba(114, 233, 203, 0.18), transparent 28%),
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(96, 118, 255, 0.24),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 78% 22%,
+      rgba(114, 233, 203, 0.18),
+      transparent 28%
+    ),
     linear-gradient(135deg, #05070d 0%, #0b1018 42%, #06080d 100%);
   isolation: isolate;
 }
@@ -156,8 +164,16 @@
 
 .interludeFrameEnding {
   background:
-    radial-gradient(circle at 18% 22%, rgba(255, 208, 121, 0.18), transparent 32%),
-    radial-gradient(circle at 80% 24%, rgba(88, 141, 255, 0.2), transparent 28%),
+    radial-gradient(
+      circle at 18% 22%,
+      rgba(255, 208, 121, 0.18),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 80% 24%,
+      rgba(88, 141, 255, 0.2),
+      transparent 28%
+    ),
     linear-gradient(140deg, #06070b 0%, #111620 46%, #05070b 100%);
   animation: hero-video-interlude-fade 0.52s ease-out both;
 }
@@ -166,12 +182,16 @@
   position: absolute;
   inset: -12%;
   background:
-    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08), transparent 34%),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.08),
+      transparent 34%
+    ),
     linear-gradient(120deg, rgba(255, 255, 255, 0.05), transparent 55%);
   filter: blur(12px);
   opacity: 0.9;
-  animation: hero-video-interlude-glow
-    var(--hero-transition-duration, 1400ms) ease-out both;
+  animation: hero-video-interlude-glow var(--hero-transition-duration, 1400ms)
+    ease-out both;
 }
 
 .interludeBackdropEnding {
@@ -198,8 +218,7 @@
   padding: 2rem;
   text-align: center;
   animation: hero-video-interlude-text-sequence
-    var(--hero-transition-duration, 1400ms) cubic-bezier(0.16, 1, 0.3, 1)
-    both;
+    var(--hero-transition-duration, 1400ms) cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .interludeContentEnding {

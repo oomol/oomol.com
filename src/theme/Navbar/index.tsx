@@ -218,6 +218,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
         }),
         iconClassName: "i-lucide-cloud",
       },
+      /*
       {
         key: "oomol-ai",
         href: "/app",
@@ -230,6 +231,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
         }),
         iconClassName: "i-lucide-bot",
       },
+      */
     ],
     [locale]
   );

@@ -266,9 +266,7 @@ export function HeroVideoDialog({
             </button>
           </Dialog.Close>
 
-          <div
-            className={styles.mediaShell}
-          >
+          <div className={styles.mediaShell}>
             <div className={styles.mediaViewport}>
               {showInterlude && interludeDisplayTitle ? (
                 <div
@@ -324,28 +322,26 @@ export function HeroVideoDialog({
               ) : null}
 
               {isDirectVideo && phase === "video" ? (
-              <video
-                key={resolvedVideoSrc}
-                className={clsx(styles.media, styles.videoMedia)}
-                src={resolvedVideoSrc}
-                controls
-                autoPlay
-                playsInline
-                preload="metadata"
+                <video
+                  key={resolvedVideoSrc}
+                  className={clsx(styles.media, styles.videoMedia)}
+                  src={resolvedVideoSrc}
+                  controls
+                  autoPlay
+                  playsInline
+                  preload="metadata"
                   onEnded={shouldUseInterludes ? handleVideoEnded : undefined}
                 />
-              ) : (
-                !isDirectVideo ? (
-                  <iframe
-                    className={clsx(styles.media, styles.iframeMedia)}
-                    src={resolvedVideoSrc}
-                    title={resolvedTitle}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  />
-                ) : null
-              )}
+              ) : !isDirectVideo ? (
+                <iframe
+                  className={clsx(styles.media, styles.iframeMedia)}
+                  src={resolvedVideoSrc}
+                  title={resolvedTitle}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              ) : null}
             </div>
           </div>
         </Dialog.Content>

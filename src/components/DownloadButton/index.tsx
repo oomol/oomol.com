@@ -169,15 +169,13 @@ export const DownloadButton = ({
               </div>
             ) : (
               <div
-                className={
-                  [
-                    windowsClassName,
-                    fullWidth ? styles.stackFullWidth : "",
-                    mobileFullWidth ? styles.mobileStackFullWidth : "",
-                  ]
-                    .filter(Boolean)
-                    .join(" ")
-                }
+                className={[
+                  windowsClassName,
+                  fullWidth ? styles.stackFullWidth : "",
+                  mobileFullWidth ? styles.mobileStackFullWidth : "",
+                ]
+                  .filter(Boolean)
+                  .join(" ")}
               >
                 <Button
                   asChild

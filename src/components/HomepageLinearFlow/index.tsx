@@ -1,5 +1,5 @@
 import styles from "./styles.module.scss";
-import siteCtaStyles from "@site/src/components/SiteCta/styles.module.scss";
+import siteCtaStyles from "../SiteCta/styles.module.scss";
 
 import type { DocusaurusContext } from "@docusaurus/types";
 
@@ -7,7 +7,6 @@ import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import HomepageGuiEntry from "@site/src/components/HomepageGuiEntry";
 import { SiteCta } from "@site/src/components/SiteCta";
 import { Button } from "@site/src/components/ui/button";
 import { clsx } from "clsx";
@@ -439,7 +438,7 @@ export default function HomepageLinearFlow() {
         </div>
       </section>
 
-      <HomepageGuiEntry />
+      {/* <HomepageGuiEntry /> */}
 
       {/* ── CTA ── */}
       <SiteCta

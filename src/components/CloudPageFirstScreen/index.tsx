@@ -14,9 +14,7 @@ export default function CloudPageFirstScreen() {
     secondaryCta: translate({ message: "CLOUD.first.cta.secondary" }),
     videoTitle: translate({ message: "CLOUD.first.video.title" }),
   };
-  const heroVideoPosterUrl = useBaseUrl(
-    "/img/pages/studio/cloud-cover.png"
-  );
+  const heroVideoPosterUrl = useBaseUrl("/img/pages/studio/cloud-cover.png");
 
   return (
     <section className={styles.section}>
