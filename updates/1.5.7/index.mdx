@@ -1,0 +1,49 @@
+---
+slug: OOMOL_Studio_1.5.7
+title: OOMOL Studio 1.5.7
+date: 2026-04-23
+description: "OOMOL Studio 1.5.7 focuses on OOPilot startup compatibility, dependency refreshes, and overall stability improvements."
+image: /img/release/1.5.7/cover.svg
+---
+
+# OOMOL Studio
+
+## General
+
+### 1. OOPilot stays available on fresh profiles
+
+In previous builds, upstream VS Code migration logic could treat OOPilot like a separate chat extension and disable it during first-run setup. OOMOL Studio now skips that path for OOPilot, so chat and completion capabilities remain available on fresh profiles and newly initialized environments.
+
+<!-- truncate -->
+
+### 2. Updated bundled OOPilot
+
+This release updates the bundled OOPilot extension from `0.1.132` to `0.1.135`, bringing together several follow-up fixes delivered across recent dependency updates.
+
+## Programming Features
+
+### 1. Refreshed Studio Core and workflow dependencies
+
+We updated several key OOMOL packages in this release:
+
+- `@oomol/studio-core`: `0.0.892` -> `0.0.893`
+- `@oomol/oocana`: `0.24.10` -> `0.24.11`
+- `@oomol/designer`: `0.8.420` -> `0.8.421`
+
+These upgrades mainly improve internal stability and keep the editor, workflow engine, and design experience aligned.
+
+### 2. Runtime maintenance
+
+We also bumped the bundled Bun version to `1.5.7` as part of routine runtime maintenance.
+
+## Others
+
+### Compare
+
+Source repository: [oomol/oomol-studio-code](https://github.com/oomol/oomol-studio-code)
+
+Changes in this release: [v1.5.6...v1.5.7](https://github.com/oomol/oomol-studio-code/compare/v1.5.6...v1.5.7)
+
+### Thanks
+
+Thanks to everyone who reported regressions and helped us improve the AI development experience in this release.

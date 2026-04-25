@@ -1,0 +1,41 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#F4F7FC"/>
+  <rect x="56" y="56" width="1488" height="788" rx="40" fill="url(#bg)"/>
+  <rect x="96" y="96" width="1408" height="708" rx="32" fill="url(#panel)" fill-opacity="0.92"/>
+  <circle cx="1328" cy="212" r="180" fill="url(#orbA)" fill-opacity="0.9"/>
+  <circle cx="1180" cy="720" r="220" fill="url(#orbB)" fill-opacity="0.8"/>
+  <circle cx="1460" cy="680" r="96" fill="#DCE7FF" fill-opacity="0.85"/>
+  <rect x="136" y="138" width="184" height="48" rx="24" fill="#E8EEFF"/>
+  <text x="176" y="170" fill="#4B63D7" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="0.08em">UPDATES</text>
+  <text x="136" y="294" fill="#243159" font-family="Inter, Arial, sans-serif" font-size="84" font-weight="800">OOMOL Studio 1.5.7</text>
+  <text x="136" y="362" fill="#5B678A" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="500">Stability update for OOPilot startup, core packages, and runtime maintenance</text>
+  <rect x="136" y="444" width="248" height="72" rx="22" fill="#FFFFFF" fill-opacity="0.92"/>
+  <rect x="408" y="444" width="260" height="72" rx="22" fill="#FFFFFF" fill-opacity="0.92"/>
+  <rect x="692" y="444" width="232" height="72" rx="22" fill="#FFFFFF" fill-opacity="0.92"/>
+  <text x="168" y="489" fill="#243159" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">OOPilot Fix</text>
+  <text x="440" y="489" fill="#243159" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Core Refresh</text>
+  <text x="724" y="489" fill="#243159" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Bun 1.5.7</text>
+  <rect x="136" y="582" width="780" height="148" rx="28" fill="#FFFFFF" fill-opacity="0.88"/>
+  <text x="180" y="636" fill="#4B63D7" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">WHAT'S INCLUDED</text>
+  <text x="180" y="682" fill="#243159" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="600">Prevents OOPilot from being disabled on fresh profiles</text>
+  <text x="180" y="722" fill="#5B678A" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="500">Updates OOPilot, Studio Core, Oocana, and related editor dependencies</text>
+  <defs>
+    <linearGradient id="bg" x1="104" y1="88" x2="1492" y2="812" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DCE6FF"/>
+      <stop offset="0.5" stop-color="#EAF4FF"/>
+      <stop offset="1" stop-color="#FBE8DD"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="96" y1="96" x2="1504" y2="804" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F7FAFF"/>
+    </linearGradient>
+    <radialGradient id="orbA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1328 212) rotate(90) scale(180)">
+      <stop stop-color="#95ACFF"/>
+      <stop offset="1" stop-color="#95ACFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1180 720) rotate(90) scale(220)">
+      <stop stop-color="#FFC9A8"/>
+      <stop offset="1" stop-color="#FFC9A8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

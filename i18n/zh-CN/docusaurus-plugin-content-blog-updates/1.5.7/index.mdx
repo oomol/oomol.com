@@ -1,0 +1,49 @@
+---
+slug: OOMOL_Studio_1.5.7
+title: OOMOL Studio 1.5.7
+date: 2026-04-23
+description: "OOMOL Studio 1.5.7 重点修复 OOPilot 首次启动兼容性问题，并完成一轮核心依赖升级与稳定性优化。"
+image: /img/release/1.5.7/cover.svg
+---
+
+# OOMOL Studio
+
+## 通用
+
+### 1. 修复 OOPilot 在新配置下可能被误禁用的问题
+
+在之前的版本中，上游 VS Code 的首次启动迁移逻辑会把 OOPilot 视为独立的聊天扩展处理，从而在部分新配置或新环境初始化时错误地将其禁用。现在 OOMOL Studio 已跳过这条不适用于 OOPilot 的逻辑，聊天与补全能力在首次启动后可以直接正常使用。
+
+<!-- truncate -->
+
+### 2. 升级内置 OOPilot
+
+本次版本将内置 OOPilot 从 `0.1.132` 升级到 `0.1.135`，合并了最近几轮依赖更新中的一系列后续修复。
+
+## 编程功能
+
+### 1. 更新 Studio Core 与工作流相关依赖
+
+这个版本同步升级了多项关键 OOMOL 依赖：
+
+- `@oomol/studio-core`: `0.0.892` -> `0.0.893`
+- `@oomol/oocana`: `0.24.10` -> `0.24.11`
+- `@oomol/designer`: `0.8.420` -> `0.8.421`
+
+这些更新主要用于提升内部稳定性，并让编辑器、工作流引擎与设计器相关能力保持一致。
+
+### 2. 运行时维护更新
+
+我们也同步将内置 Bun 版本更新到 `1.5.7`，用于日常运行时维护。
+
+## 其他
+
+### 对比
+
+源代码仓库: [oomol/oomol-studio-code](https://github.com/oomol/oomol-studio-code)
+
+本次版本变更: [v1.5.6...v1.5.7](https://github.com/oomol/oomol-studio-code/compare/v1.5.6...v1.5.7)
+
+### 感谢
+
+感谢所有反馈回归问题并协助我们持续打磨 AI 开发体验的用户。
