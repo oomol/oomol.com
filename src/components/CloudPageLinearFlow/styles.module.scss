@@ -190,6 +190,20 @@
   object-position: center;
 }
 
+.cloudMediaPanel .imageCardMedia {
+  aspect-ratio: auto;
+  overflow: visible;
+  background: transparent;
+}
+
+.cloudMediaPanel .imageCardImage {
+  position: static;
+  inset: auto;
+  height: auto;
+  object-fit: initial;
+  border-radius: var(--oomol-radius-card);
+}
+
 @media (min-width: 997px) {
   .container {
     grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
@@ -207,10 +221,6 @@
 
   .cloudMediaPanel .videoCard {
     display: flex;
-  }
-
-  .cloudMediaPanel .imageCardMedia {
-    aspect-ratio: 16 / 10;
   }
 }
 

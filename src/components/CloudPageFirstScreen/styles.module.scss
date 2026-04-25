@@ -95,6 +95,13 @@
   margin: 0 auto;
 }
 
+.showcaseImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--oomol-radius-card);
+}
+
 /* ── English overrides ── */
 
 :global(html[lang="en"]) .titleGroup {

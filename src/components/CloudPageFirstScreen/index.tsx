@@ -4,7 +4,6 @@ import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { Button } from "@site/src/components/ui/button";
-import { HeroVideoDialog } from "@site/src/components/ui/hero-video-dialog";
 import React from "react";
 
 export default function CloudPageFirstScreen() {
@@ -13,13 +12,8 @@ export default function CloudPageFirstScreen() {
     overview: translate({ message: "CLOUD.first.overview" }),
     primaryCta: translate({ message: "CLOUD.first.cta.primary" }),
     secondaryCta: translate({ message: "CLOUD.first.cta.secondary" }),
-    playAriaLabel: translate({
-      message: "CLOUD.first.video.playAriaLabel",
-    }),
     videoTitle: translate({ message: "CLOUD.first.video.title" }),
   };
-  const heroVideoUrl =
-    "https://static.oomol.com/assets/homepage/oomol-flow-en.webm";
   const heroVideoPosterUrl = useBaseUrl(
     "/img/pages/studio/cloud-cover.png"
   );
@@ -55,12 +49,12 @@ export default function CloudPageFirstScreen() {
       </div>
       <div className={styles.videoShowcase}>
         <div className={styles.videoShowcaseInner}>
-          <HeroVideoDialog
-            videoSrc={heroVideoUrl}
-            thumbnailSrc={heroVideoPosterUrl}
-            thumbnailAlt={copy.videoTitle}
-            title={copy.videoTitle}
-            playAriaLabel={copy.playAriaLabel}
+          <img
+            className={styles.showcaseImage}
+            src={heroVideoPosterUrl}
+            alt={copy.videoTitle}
+            loading="eager"
+            decoding="async"
           />
         </div>
       </div>
