@@ -141,13 +141,14 @@
 }
 
 .storySection .sectionTitle {
-  font-size: clamp(2.2rem, 4vw, 3.1rem);
+  max-width: 30ch;
+  font-size: clamp(2rem, 3.6vw, 2.8rem);
   line-height: 1.04;
   letter-spacing: -0.03em;
 }
 
 .principlesSection .sectionTitle {
-  font-size: clamp(2.2rem, 4vw, 3.1rem);
+  font-size: clamp(2rem, 3.6vw, 2.8rem);
   line-height: 1.04;
   letter-spacing: -0.03em;
   margin-bottom: 0.45rem;
@@ -325,12 +326,12 @@
   }
 
   .storySection .sectionTitle {
-    font-size: clamp(1.95rem, 8vw, 2.45rem);
+    font-size: clamp(1.8rem, 7vw, 2.25rem);
     line-height: 1.08;
   }
 
   .principlesSection .sectionTitle {
-    font-size: clamp(1.95rem, 8vw, 2.45rem);
+    font-size: clamp(1.8rem, 7vw, 2.25rem);
     line-height: 1.08;
   }
 

@@ -1123,31 +1123,31 @@
     "message": "Build and test tools in Studio, then publish them to Cloud so they run online and can be found and used by AI agents through oo-cli."
   },
   "STUDIO.page.title": {
-    "message": "OOMOL Studio - Build and validate tools in a real engineering environment"
+    "message": "OOMOL Studio - Generate, compose, and extend tools for oo-cli"
   },
   "STUDIO.page.description": {
-    "message": "Use AI to get started, then add code, dependencies, orchestration, and validation in a real engineering environment before handing the same implementation to Cloud."
+    "message": "When ready-made tools are not enough, use Studio's built-in AI to generate code and flows, then compose, extend, and ship them back through oo-cli and Cloud."
   },
   "STUDIO.manifesto.title": {
-    "message": "OOMOL Studio is\nthe environment where developers build tools"
+    "message": "OOMOL Studio helps you\ngenerate, compose, and extend tools"
   },
   "STUDIO.manifesto.subtitle": {
-    "message": "Let AI help you get started, then keep writing code, adding dependencies, orchestrating flows, and getting the tool working locally. When you are ready to deliver it, hand the same implementation to Cloud."
+    "message": "Use Studio's built-in AI to create or extend tools with workflows, then deliver them to Cloud for oo-cli use."
   },
   "STUDIO.product.story.kicker": {
-    "message": "Developer friction"
+    "message": "Why Studio"
   },
   "STUDIO.product.story.title": {
-    "message": "Building tools for agents\ngets blocked in three places"
+    "message": "When ready-made tools are not enough,\ncustom extension often gets blocked on these three points"
   },
   "STUDIO.product.story.description": {
-    "message": "What really blocks progress is not just composition. It is whether you can start quickly, extend deeply with real engineering tools, and keep moving toward delivery on the same implementation."
+    "message": "Sustainable expansion depends on three things: manageable learning cost, predictable deployment, and ecosystem alignment."
   },
   "STUDIO.product.principles.kicker": {
     "message": "01 / Build in Studio"
   },
   "STUDIO.product.principles.title": {
-    "message": "OOMOL Studio turns\nthose three needs into one path"
+    "message": "How OOMOL Studio\nsolves these three problems"
   },
   "STUDIO.product.principles.description": {
     "message": "The goal is not to add another platform abstraction, but to make the development flow smoother and easier to maintain."
@@ -1162,28 +1162,28 @@
     "message": "Learning Curve"
   },
   "STUDIO.story.point1.title": {
-    "message": "You have to learn a DSL before you can even start composing"
+    "message": "Steep learning curve"
   },
   "STUDIO.story.point1.description": {
-    "message": "Many platforms build workflows on top of proprietary low-code syntax. Before you can extend anything, you first have to learn the platform."
+    "message": "Studio includes a built-in Agent, so you can start from intent instead of learning every concept first."
   },
   "STUDIO.story.point2.label": {
-    "message": "Extension Cost"
+    "message": "Deployment"
   },
   "STUDIO.story.point2.title": {
-    "message": "You can compose, but dependencies and extension still feel awkward"
+    "message": "Complex deployment"
   },
   "STUDIO.story.point2.description": {
-    "message": "Connecting nodes does not mean the system is truly extensible. Importing libraries or changing logic still gets stuck on platform constraints."
+    "message": "A built-in container keeps local and cloud environments aligned, so dev, debug, and release stay on one track."
   },
   "STUDIO.story.point3.label": {
-    "message": "Starting Speed"
+    "message": "Ecosystem"
   },
   "STUDIO.story.point3.title": {
-    "message": "Getting from requirement to a first working version is still too slow"
+    "message": "Ecosystem misalignment"
   },
   "STUDIO.story.point3.description": {
-    "message": "You want AI to find packages, sketch the first version, and add nodes when needed, while still leaving you in a real engineering environment to take over from there."
+    "message": "When dependency management and design patterns diverge from community conventions, team knowledge is harder to reuse and extension costs rise."
   },
   "HOME.StudioChain.action.cloud": {
     "message": "Explore Cloud"
@@ -1204,46 +1204,46 @@
     "message": "Product"
   },
   "STUDIO.principle1.title": {
-    "message": "1. Let AI help you start"
+    "message": "Built-in Studio Agent for generation and orchestration"
   },
   "STUDIO.principle1.paragraph1": {
-    "message": "Describe the tool you want, and the AI agent can look for the right packages and nodes to draft the first version."
+    "message": "1. From node generation to workflow orchestration, Studio's built-in Agent handles the first pass so you can start immediately."
   },
   "STUDIO.principle1.paragraph2": {
-    "message": "When the existing nodes are not enough, it can keep going by generating new function nodes instead of only completing a few lines of code."
+    "message": "2. It runs with full Studio context, not generic chat context, so it understands how to generate, orchestrate, and extend tools."
   },
   "STUDIO.principle1.paragraph3": {
-    "message": "The point is not to stop at automatic generation. It is to let you take over from the first working version inside a real engineering environment."
+    "message": "3. Bring your own model and token, and take manual control in code whenever needed."
   },
   "STUDIO.principle1.imageAlt": {
     "message": "Write function tools with code in OOMOL Studio"
   },
   "STUDIO.principle2.title": {
-    "message": "2. Start composing without learning a DSL first"
+    "message": "Built-in high-performance container, unified local to cloud"
   },
   "STUDIO.principle2.paragraph1": {
-    "message": "In Studio, nodes are still functions. Inputs are arguments. Outputs are return values."
+    "message": "1. Studio ships with a high-performance container and common runtimes ready out of the box."
   },
   "STUDIO.principle2.paragraph2": {
-    "message": "When you describe, review, or edit a flow, you work with concepts developers already understand instead of translating ideas into a platform DSL."
+    "message": "2. Local and cloud share the same Linux base, so development, debugging, and release run on one consistent environment."
   },
   "STUDIO.principle2.paragraph3": {
-    "message": "That keeps learning cost out of the critical path and makes orchestration understandable from the start."
+    "message": "3. The container is isolated from your host, so AI can write and run code without touching your local environment or private data."
   },
   "STUDIO.principle2.imageAlt": {
     "message": "Developer experience for function tools in OOMOL Studio"
   },
   "STUDIO.principle3.title": {
-    "message": "3. Extend it the way engineers actually do"
+    "message": "Build with familiar engineering habits"
   },
   "STUDIO.principle3.paragraph1": {
-    "message": "Install, import, and validate the dependencies you need in a real engineering environment instead of waiting for a platform allowlist."
+    "message": "1. In Studio, a node is a function. Nodes orchestrate into workflows, then package into reusable tools."
   },
   "STUDIO.principle3.paragraph2": {
-    "message": "Changing logic, adding nodes, and connecting external capabilities all happen in the same codebase and container."
+    "message": "2. Use npm for JavaScript and Poetry or pip for Python; dependency management follows community-standard practice."
   },
   "STUDIO.principle3.paragraph3": {
-    "message": "So the flow is not just something you can visually compose. It can keep expanding with the rest of your stack."
+    "message": "3. So even if AI does most of the work, human takeover stays straightforward in the same familiar workflow."
   },
   "STUDIO.principle3.imageAlt": {
     "message": "Local and cloud continuity for tools built in OOMOL Studio"

@@ -1138,7 +1138,7 @@
     "message": "为什么需要 Studio"
   },
   "STUDIO.product.story.title": {
-    "message": "扩展工具，真正难的\n其实就三件事"
+    "message": "现成工具不够时，\n自定义扩展常卡在这三点"
   },
   "STUDIO.product.story.description": {
     "message": "要让扩展持续推进，需要同时解决学习成本、部署复杂度与生态衔接问题。"
