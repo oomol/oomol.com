@@ -13,6 +13,8 @@ type HeroVideoDialogProps = {
   videoSrc: string;
   thumbnailSrc: string;
   thumbnailAlt?: string;
+  thumbnailAspectRatio?: React.CSSProperties["aspectRatio"];
+  thumbnailObjectPosition?: React.CSSProperties["objectPosition"];
   title?: string;
   playAriaLabel?: string;
   closeAriaLabel?: string;
@@ -64,6 +66,8 @@ export function HeroVideoDialog({
   videoSrc,
   thumbnailSrc,
   thumbnailAlt = "Video thumbnail",
+  thumbnailAspectRatio,
+  thumbnailObjectPosition,
   title,
   playAriaLabel,
   closeAriaLabel,
@@ -97,6 +101,10 @@ export function HeroVideoDialog({
               src={thumbnailSrc}
               alt={thumbnailAlt}
               className={styles.thumbnail}
+              style={{
+                aspectRatio: thumbnailAspectRatio,
+                objectPosition: thumbnailObjectPosition,
+              }}
               loading="lazy"
               decoding="async"
             />

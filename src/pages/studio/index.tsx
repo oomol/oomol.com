@@ -1,15 +1,12 @@
 import styles from "./styles.module.scss";
 
-import type { DocusaurusContext } from "@docusaurus/types";
-
 import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import ResponsiveVideo from "@site/src/components/mdx/ResponsiveVideo";
 import { SiteCta } from "@site/src/components/SiteCta";
 import { Button } from "@site/src/components/ui/button";
+import { HeroVideoDialog } from "@site/src/components/ui/hero-video-dialog";
 import ThemedImage from "@theme/ThemedImage";
 import React from "react";
 
@@ -80,23 +77,22 @@ const STUDIO_OVERVIEW_VIDEO_SRC =
   "https://cloud-storage.oomol.com/users/019343aa-ff25-727c-a449-9017313539b0/chat-uploads/2026-03-23/4gxes_hu5_ua-OOMOL_Studio.webm";
 
 export default function StudioPage() {
-  const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
-    i18n: { currentLocale: string };
-  };
-  const isZh = i18n.currentLocale === "zh-CN";
-  const studioHeroPoster = isZh
-    ? "/img/docs/cn/desktop.png"
-    : "/img/docs/desktop.png";
-  const principle1Light = useBaseUrl("/img/pages/studio/code-light.webp");
-  const principle1Dark = useBaseUrl("/img/pages/studio/code-dark.webp");
-  const principle2Light = useBaseUrl("/img/pages/studio/edit-light.webp");
-  const principle2Dark = useBaseUrl("/img/pages/studio/edit-dark.webp");
-  const principle3Light = useBaseUrl("/img/pages/studio/package-light.webp");
-  const principle3Dark = useBaseUrl("/img/pages/studio/package-dark.webp");
+  const principle1Image = useBaseUrl(
+    "/img/pages/studio/studio-agent-workflow.png"
+  );
+  const principle2Image = useBaseUrl(
+    "/img/pages/studio/studio-container-workflow.png"
+  );
+  const principle3Image = useBaseUrl(
+    "/img/pages/studio/studio-dependency-management.png"
+  );
+  const studioHeroPoster = useBaseUrl(
+    "/img/pages/studio/studio-hero-video-poster.png"
+  );
   const principleImages = [
-    { light: principle1Light, dark: principle1Dark },
-    { light: principle2Light, dark: principle2Dark },
-    { light: principle3Light, dark: principle3Dark },
+    { light: principle1Image, dark: principle1Image },
+    { light: principle2Image, dark: principle2Image },
+    { light: principle3Image, dark: principle3Image },
   ];
   const storyTitleLines = translate({
     message: "STUDIO.product.story.title",
@@ -136,12 +132,26 @@ export default function StudioPage() {
               </p>
 
               <div className={styles.actions}>
-                <DownloadButton centered showNote={false} mobileFullWidth />
-                <Button asChild size="lg" variant="outline">
-                  <Link to="/cloud">
-                    {translate({ message: "HOME.StudioChain.action.cloud" })}
-                  </Link>
-                </Button>
+                <div className={styles.ctaAction}>
+                  <DownloadButton
+                    centered
+                    showNote={false}
+                    fullWidth
+                    mobileFullWidth
+                  />
+                </div>
+                <div className={styles.ctaAction}>
+                  <Button
+                    asChild
+                    size="lg"
+                    variant="outline"
+                    className={styles.actionButtonFill}
+                  >
+                    <Link to="/cloud">
+                      {translate({ message: "HOME.StudioChain.action.cloud" })}
+                    </Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
@@ -149,23 +159,14 @@ export default function StudioPage() {
           <div className={styles.heroShowcase}>
             <div className={styles.heroShowcaseInner}>
               <div className={styles.heroVisual}>
-                <div className={styles.visualFrame}>
-                  <ResponsiveVideo
-                    src={STUDIO_OVERVIEW_VIDEO_SRC}
-                    type="video/webm"
-                    aria-label={translate({ message: "STUDIO.hero.imageAlt" })}
-                    className={styles.visualMedia}
-                    controls
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    poster={studioHeroPoster}
-                    loadWhenInView={false}
-                    style={{ borderRadius: 0 }}
-                  />
-                </div>
+                <HeroVideoDialog
+                  videoSrc={STUDIO_OVERVIEW_VIDEO_SRC}
+                  thumbnailSrc={studioHeroPoster}
+                  thumbnailAlt={translate({ message: "STUDIO.hero.imageAlt" })}
+                  title={translate({ message: "STUDIO.hero.imageAlt" })}
+                  thumbnailAspectRatio="90 / 56"
+                  thumbnailObjectPosition="center top"
+                />
               </div>
             </div>
           </div>
@@ -261,12 +262,26 @@ export default function StudioPage() {
           description={translate({ message: "STUDIO.product.cta.description" })}
           actions={
             <>
-              <DownloadButton centered showNote noteTone="inverse" fullWidth />
-              <Button asChild size="lg" variant="outline">
-                <Link to="/cloud">
-                  {translate({ message: "HOME.StudioChain.action.cloud" })}
-                </Link>
-              </Button>
+              <div className={styles.siteCtaAction}>
+                <DownloadButton
+                  centered
+                  showNote
+                  noteTone="inverse"
+                  fullWidth
+                />
+              </div>
+              <div className={styles.siteCtaAction}>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className={styles.actionButtonFill}
+                >
+                  <Link to="/cloud">
+                    {translate({ message: "HOME.StudioChain.action.cloud" })}
+                  </Link>
+                </Button>
+              </div>
             </>
           }
         />

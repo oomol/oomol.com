@@ -58,6 +58,26 @@
   justify-content: center;
   gap: 0.7rem;
   padding-top: 0.6rem;
+  width: min(100%, 34rem);
+  margin: 0 auto;
+}
+
+.ctaAction {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.siteCtaAction {
+  min-width: 0;
+}
+
+.ctaAction > *,
+.siteCtaAction > * {
+  width: 100%;
+}
+
+.actionButtonFill {
+  width: 100%;
 }
 
 .heroShowcase {
@@ -78,25 +98,6 @@
 
 .heroVisual {
   min-width: 0;
-}
-
-.visualFrame {
-  width: 100%;
-  border-radius: var(--studio-radius);
-  border: 1px solid var(--oomol-border-default);
-  background: var(--oomol-bg-spotlight);
-  box-shadow: none;
-  position: relative;
-  overflow: clip;
-}
-
-.visualMedia {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 41 / 27;
-  object-fit: cover;
-  object-position: top center;
 }
 
 .storySection,
@@ -374,12 +375,6 @@
 
   .page {
     background: var(--oomol-bg-base);
-  }
-
-  .visualFrame {
-    background: var(--oomol-bg-elevated);
-    border-color: var(--oomol-border-subtle);
-    box-shadow: none;
   }
 
   .principleMedia {
