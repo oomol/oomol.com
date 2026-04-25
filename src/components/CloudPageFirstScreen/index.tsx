@@ -11,12 +11,6 @@ export default function CloudPageFirstScreen() {
   const copy = {
     slogan: translate({ message: "CLOUD.first.slogan" }),
     overview: translate({ message: "CLOUD.first.overview" }),
-    highlights: [
-      translate({ message: "CLOUD.first.highlight1" }),
-      translate({ message: "CLOUD.first.highlight2" }),
-      translate({ message: "CLOUD.first.highlight3" }),
-      translate({ message: "CLOUD.first.highlight4" }),
-    ],
     primaryCta: translate({ message: "CLOUD.first.cta.primary" }),
     secondaryCta: translate({ message: "CLOUD.first.cta.secondary" }),
     playAriaLabel: translate({
@@ -36,13 +30,6 @@ export default function CloudPageFirstScreen() {
         <div className={styles.titleGroup}>
           <h1 className={styles.slogan}>{copy.slogan}</h1>
           <p className={styles.overview}>{copy.overview}</p>
-          <div className={styles.highlights}>
-            {copy.highlights.map(item => (
-              <span key={item} className={styles.highlightPill}>
-                {item}
-              </span>
-            ))}
-          </div>
           <div className={styles.actions}>
             <Button asChild size="lg" className={styles.primaryCta}>
               <Link to="/docs/cloud-services/cloud-function">
