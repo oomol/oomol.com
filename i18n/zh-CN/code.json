@@ -1123,67 +1123,67 @@
     "message": "在 Studio 里做好并测试工具后，发布到 Cloud，让工具在线运行，并让 AI Agent 继续在 oo-cli 里查找和使用。"
   },
   "STUDIO.page.title": {
-    "message": "OOMOL Studio - 在真实工程环境里构建和验证工具"
+    "message": "OOMOL Studio - 为 oo-cli 自动生成、组合并扩展工具"
   },
   "STUDIO.page.description": {
-    "message": "用 AI 帮你起步，然后在真实工程环境里补代码、接依赖、编排流程并验证结果；准备交付时，再把同一份实现交给 Cloud。"
+    "message": "当现成工具不够时，在 OOMOL Studio 里用内置 AI 自动生成代码、结构和流程，继续组合与扩展工具，再把成果交回 oo-cli 和 Cloud 使用。"
   },
   "STUDIO.manifesto.title": {
-    "message": "OOMOL Studio 是\n给开发者构建工具的环境"
+    "message": "OOMOL Studio 用来\n自动生成、组合并扩展工具"
   },
   "STUDIO.manifesto.subtitle": {
-    "message": "让 AI 先帮你起步，然后继续写代码、接依赖、编排流程，把工具在本地跑通；准备交付时，再把同一份实现交给 Cloud。"
+    "message": "当现成工具不够用时，用 Studio 内置 AI 生成新工具，或通过工作流组合和扩展现有工具，再通过 Cloud 交付回 oo-cli 使用。"
   },
   "STUDIO.product.story.kicker": {
-    "message": "开发者问题"
+    "message": "为什么需要 Studio"
   },
   "STUDIO.product.story.title": {
-    "message": "给 Agent 做工具\n真正卡住的是三件事"
+    "message": "现成工具不够时，\n自定义扩展常卡在这三点"
   },
   "STUDIO.product.story.description": {
-    "message": "真正卡住的，不只是能不能编排，而是能不能起步够快、扩展够深，并沿同一份实现继续走向交付。"
+    "message": "要让扩展持续推进，需要同时解决学习成本、部署复杂度与生态衔接问题。"
   },
   "STUDIO.product.principles.kicker": {
-    "message": "构建原则"
+    "message": "开发者路径 01 在 Studio 中构建"
   },
   "STUDIO.product.principles.title": {
-    "message": "OOMOL Studio，把这\n三件事接成一条路"
+    "message": "OOMOL Studio 怎么\n解决这三个问题"
   },
   "STUDIO.product.principles.description": {
-    "message": "让 AI 帮你起步，让工程环境支持真实扩展，让同一份实现直接走向交付。需要手动调整时，也不用先学 DSL。"
+    "message": "目标不是多一套平台概念，而是让开发流程更顺、更可维护。"
   },
   "STUDIO.product.cta.title": {
-    "message": "把下一个工具先在 Studio 里跑出来"
+    "message": "在 OOMOL Studio 里，开始下一次更高效的工具开发"
   },
   "STUDIO.product.cta.description": {
-    "message": "先在真实 coding 环境里把工具做出来并跑通；准备交付时，再交给 Cloud。"
+    "message": "从 AI 自动生成，到本地验证、工程化调整和云端交付，OOMOL Studio 让整个开发过程更连贯，也让每一次产出更接近真正可用、可复用、可部署的结果。"
   },
   "STUDIO.story.point1.label": {
-    "message": "学习成本"
+    "message": "学习曲线"
   },
   "STUDIO.story.point1.title": {
-    "message": "先学 DSL，才能开始编排"
+    "message": "学习曲线陡"
   },
   "STUDIO.story.point1.description": {
-    "message": "很多平台把工作流建立在专有低代码语法上。扩工具之前，先得学平台。"
+    "message": "Studio 内置 Agent。遇到问题可以直接问 AI，想做什么也可以直接让 AI 做，很多事情不用先学会再开始。"
   },
   "STUDIO.story.point2.label": {
-    "message": "扩展成本"
+    "message": "环境部署"
   },
   "STUDIO.story.point2.title": {
-    "message": "能组合，但引库和扩展都不顺手"
+    "message": "环境部署复杂"
   },
   "STUDIO.story.point2.description": {
-    "message": "节点能连起来，不代表系统真可扩。引库、改逻辑时，还是常被平台约束卡住。"
+    "message": "Studio 内置容器，把本地和云端环境尽量做成一体。开发、调试、发布会顺很多，不容易卡在环境问题上。"
   },
   "STUDIO.story.point3.label": {
-    "message": "起步速度"
+    "message": "生态分叉"
   },
   "STUDIO.story.point3.title": {
-    "message": "从需求到第一版工具，起步还是太慢"
+    "message": "与社区生态分叉"
   },
   "STUDIO.story.point3.description": {
-    "message": "你希望 AI 先帮你找包、搭骨架、补节点，但最后仍能回到真实工程环境继续接手。"
+    "message": "当依赖管理和设计方式与社区惯例分叉时，团队已有知识很难复用，协作和扩展成本都会上升。"
   },
   "HOME.StudioChain.action.cloud": {
     "message": "了解 Cloud"
@@ -1204,46 +1204,46 @@
     "message": "产品"
   },
   "STUDIO.principle1.title": {
-    "message": "1. 先让 AI 帮你起步"
+    "message": "Studio 内置 Agent，自动生成和编排"
   },
   "STUDIO.principle1.paragraph1": {
-    "message": "把你要的工具描述清楚，AI Agent 会先去找合适的包和节点，帮你把第一版搭出来。"
+    "message": "1. 从生成节点到工作流编排，Studio 内置 Agent 都能先帮你完成。你只要说清目标，就能直接开工。"
   },
   "STUDIO.principle1.paragraph2": {
-    "message": "现成节点不够时，它还可以继续生成新的函数节点，而不是只补全几行代码。"
+    "message": "2. 它拿到的是 Studio 的完整上下文，不是通用聊天助手；知道怎么生成、编排和扩展工具。"
   },
   "STUDIO.principle1.paragraph3": {
-    "message": "重点不是停在自动搭建，而是让你从第一版开始就在真实工程环境里继续接手。"
+    "message": "3. 你可接入自己的模型和 Token；需要手动接管时，随时进代码继续改。"
   },
   "STUDIO.principle1.imageAlt": {
     "message": "在 OOMOL Studio 中用代码编写函数工具"
   },
   "STUDIO.principle2.title": {
-    "message": "2. 不用先学 DSL，就能开始编排"
+    "message": "内置高性能容器，本地和云端一体化"
   },
   "STUDIO.principle2.paragraph1": {
-    "message": "在 Studio 里，节点背后还是函数。输入是参数，输出是返回值。"
+    "message": "1. Studio 内置完整高性能容器，常见开发环境和运行时开箱即用。"
   },
   "STUDIO.principle2.paragraph2": {
-    "message": "你描述、审阅和修改流程时，用的都是开发者熟悉的概念，不用先把想法翻译成平台 DSL。"
+    "message": "2. 本地与云端统一 Linux 基座，开发、调试、发布走同一套环境。"
   },
   "STUDIO.principle2.paragraph3": {
-    "message": "这样学习成本不会先挡在前面，编排从一开始就能按工程方式看懂和改动。"
+    "message": "3. 容器与宿主机隔离，AI 在容器内写码跑码，不影响本机环境和隐私数据。"
   },
   "STUDIO.principle2.imageAlt": {
     "message": "OOMOL Studio 中的函数工具开发体验"
   },
   "STUDIO.principle3.title": {
-    "message": "3. 引库和扩展，都按工程方式做"
+    "message": "按开发者习惯写代码、管依赖、扩展能力"
   },
   "STUDIO.principle3.paragraph1": {
-    "message": "需要什么依赖，就按真实工程环境去安装、导入和验证，不用等平台白名单。"
+    "message": "1. 在 Studio 里，一个节点就是一个函数；节点可编排为工作流，并继续封装成可复用工具。"
   },
   "STUDIO.principle3.paragraph2": {
-    "message": "改逻辑、补节点、接外部能力，也是在同一套代码和容器里继续做。"
+    "message": "2. JavaScript 继续用 npm，Python 继续用 Poetry 或 pip；依赖管理沿用社区工程习惯。"
   },
   "STUDIO.principle3.paragraph3": {
-    "message": "这样组合出来的流程不只是能跑起来，而是真的能顺着你的技术栈继续扩。"
+    "message": "3. 所以即使主要靠 AI，后续人工接手也不用切换思维，按熟悉方式继续开发。"
   },
   "STUDIO.principle3.imageAlt": {
     "message": "OOMOL Studio 中本地和云端连续衔接的工具工作流"

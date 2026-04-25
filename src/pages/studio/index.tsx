@@ -60,11 +60,6 @@ const principles = [
 
 const painPoints = [
   {
-    labelKey: "STUDIO.story.point3.label",
-    titleKey: "STUDIO.story.point3.title",
-    descriptionKey: "STUDIO.story.point3.description",
-  },
-  {
     labelKey: "STUDIO.story.point1.label",
     titleKey: "STUDIO.story.point1.title",
     descriptionKey: "STUDIO.story.point1.description",
@@ -73,6 +68,11 @@ const painPoints = [
     labelKey: "STUDIO.story.point2.label",
     titleKey: "STUDIO.story.point2.title",
     descriptionKey: "STUDIO.story.point2.description",
+  },
+  {
+    labelKey: "STUDIO.story.point3.label",
+    titleKey: "STUDIO.story.point3.title",
+    descriptionKey: "STUDIO.story.point3.description",
   },
 ];
 
@@ -110,13 +110,6 @@ export default function StudioPage() {
   const principlesTitleLines = translate({
     message: "STUDIO.product.principles.title",
   }).split("\n");
-  const storyKicker = translate({
-    message: "STUDIO.product.story.kicker",
-  });
-  const principlesKicker = translate({
-    message: "STUDIO.product.principles.kicker",
-  });
-
   return (
     <Layout>
       <Head>
@@ -181,7 +174,6 @@ export default function StudioPage() {
         <section className={styles.storySection}>
           <div className={styles.sectionContainer}>
             <div className={styles.sectionHeader}>
-              <div className={styles.eyebrow}>{storyKicker}</div>
               <h2 className={styles.sectionTitle}>
                 {storyTitleLines.map((line, index) => (
                   <React.Fragment key={`${index}-${line}`}>
@@ -201,16 +193,8 @@ export default function StudioPage() {
             </div>
 
             <div className={styles.painPointsGrid}>
-              {painPoints.map((point, index) => (
+              {painPoints.map(point => (
                 <article key={point.titleKey} className={styles.painPointCard}>
-                  <div className={styles.painPointMeta}>
-                    <span className={styles.painPointIndex}>
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <span className={styles.painPointLabel}>
-                      {translate({ message: point.labelKey })}
-                    </span>
-                  </div>
                   <h3 className={styles.painPointTitle}>
                     {translate({ message: point.titleKey })}
                   </h3>
@@ -226,7 +210,6 @@ export default function StudioPage() {
         <section className={styles.principlesSection}>
           <div className={styles.sectionContainer}>
             <div className={styles.sectionHeader}>
-              <div className={styles.eyebrow}>{principlesKicker}</div>
               <h2 className={styles.sectionTitle}>
                 {principlesTitleLines.map((line, index) => (
                   <React.Fragment key={`${index}-${line}`}>
@@ -256,9 +239,9 @@ export default function StudioPage() {
                     />
                   </div>
                   <div className={styles.principleContent}>
-                    <h3 className={styles.principleTitle}>
+                    <h2 className={styles.principleTitle}>
                       {translate({ message: principle.titleKey })}
-                    </h3>
+                    </h2>
                     <div className={styles.principleParagraphs}>
                       {principle.paragraphs.map(key => (
                         <p key={key} className={styles.principleText}>
