@@ -29,58 +29,26 @@
   text-align: center;
 }
 
-/* Mono eyebrow */
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  font-family: var(--oomol-font-mono);
-  font-size: var(--oomol-body-mono);
-  font-weight: 500;
-  letter-spacing: var(--oomol-tracking-mono);
-  text-transform: none;
-  color: var(--oomol-primary);
-
-  &::before {
-    content: "";
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    margin-right: 0.55rem;
-    border-radius: var(--oomol-radius-full);
-    background: var(--oomol-primary);
-  }
-}
-
-.heroTitle,
-.sectionTitle {
-  margin: 0;
-  font-family: var(--oomol-font-display);
-  color: var(--oomol-text-primary);
-  font-weight: 600;
-  text-wrap: balance;
-}
+/* Note:
+   .eyebrow / heading typography / sectionDescription typography 都由
+   `src/css/custom.scss` 的全站规则自动接管（基于 `.oomol-landing-main` +
+   语义标签 / 通用类名命中）。这里只声明本页特有的布局属性。 */
 
 .heroTitle {
-  @include marketing-display-title(hero, 22ch, center, 1.04);
-  white-space: pre-line;
-  word-break: keep-all;
-  overflow-wrap: normal;
-}
-
-.heroDescription,
-.sectionDescription,
-.painPointText,
-.principleText {
   margin: 0;
-  line-height: var(--oomol-line-height-relaxed);
-  color: var(--oomol-text-secondary);
+  max-width: 22ch;
+  text-align: center;
+  white-space: pre-line;
 }
 
 .heroDescription {
-  @include marketing-supporting-copy(44rem, center);
+  margin: 0;
+  max-width: 44rem;
+  text-align: center;
+  font-size: var(--oomol-body-lead);
+  line-height: var(--oomol-line-height-relaxed);
+  letter-spacing: var(--oomol-tracking-body);
+  color: var(--oomol-text-secondary);
 }
 
 .actions {
@@ -145,25 +113,48 @@
 .sectionHeader {
   display: grid;
   gap: 0.9rem;
-  margin-bottom: 2rem;
+  margin-bottom: clamp(2.4rem, 4vw, 3.2rem);
 }
 
 .storySection .sectionHeader,
 .principlesSection .sectionHeader {
   max-width: 48rem;
+}
+
+.storySection .sectionHeader {
   margin-inline: 0;
   justify-items: start;
   text-align: left;
 }
 
+.principlesSection .sectionHeader {
+  margin-inline: auto;
+  justify-items: center;
+  text-align: center;
+}
+
+/* 总标题比下方每个分块标题高一个层级，形成清晰主次。 */
+.principlesSection .sectionTitle {
+  font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+  line-height: 1.06;
+  letter-spacing: var(--oomol-tracking-display);
+}
+
 .sectionTitle {
-  @include marketing-display-title(section, 22ch, left, 1.06);
-  text-wrap: balance;
+  margin: 0;
+  max-width: 22ch;
   white-space: pre-line;
 }
 
+.storySection .sectionTitle {
+  font-size: clamp(2.2rem, 4vw, 3.1rem);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+}
+
 .sectionDescription {
-  @include marketing-supporting-copy(44rem);
+  margin: 0;
+  max-width: 44rem;
 }
 
 .painPointsGrid {
@@ -226,38 +217,26 @@
 
 .painPointTitle {
   margin: 0;
-  max-width: 16ch;
-  font-size: var(--oomol-body-lead);
-  line-height: 1.32;
-  font-weight: 600;
-  letter-spacing: -0.012em;
-  color: var(--oomol-text-primary);
-  text-wrap: balance;
+  max-width: none;
 }
 
 .painPointText {
+  margin: 0;
   font-size: var(--oomol-body-base);
   line-height: 1.6;
+  color: var(--oomol-text-secondary);
 }
 
 .principlesGrid {
   display: grid;
-  gap: clamp(2.4rem, 5vw, 4rem);
+  gap: clamp(3rem, 6vw, 5.2rem);
 }
 
 .principleCard {
   display: grid;
   grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
   gap: clamp(2rem, 4vw, 3rem);
-  align-items: center;
-}
-
-.principleCard:nth-child(even) .principleMedia {
-  order: 1;
-}
-
-.principleCard:nth-child(even) .principleContent {
-  order: 2;
+  align-items: start;
 }
 
 .principleMedia {
@@ -268,6 +247,7 @@
   background: var(--oomol-bg-spotlight);
   overflow: hidden;
   box-shadow: none;
+  align-self: start;
 }
 
 .principleImage {
@@ -285,12 +265,14 @@
   display: grid;
   gap: 0.9rem;
   max-width: 34rem;
+  align-content: start;
+  align-self: start;
 }
 
+/* principleTitle 是 <h2>，全站规则自动给 display-section 字号 / tracking /
+   line-height（详见 src/css/custom.scss）。这里只补一个布局上的最大宽度。 */
 .principleTitle {
-  @include marketing-display-title(hero, 18ch, left, 1.04);
-  overflow-wrap: normal;
-  word-break: keep-all;
+  max-width: 22ch;
 }
 
 .principleParagraphs {
@@ -299,9 +281,9 @@
 }
 
 .principleText {
+  margin: 0;
   font-size: var(--oomol-body-base);
   line-height: 1.64;
-  letter-spacing: 0;
   color: var(--oomol-text-secondary);
 }
 
@@ -322,9 +304,7 @@
     grid-template-columns: 1fr;
   }
 
-  .principleCard,
-  .principleCard:nth-child(even) .principleMedia,
-  .principleCard:nth-child(even) .principleContent {
+  .principleCard {
     grid-template-columns: 1fr;
     order: initial;
   }
@@ -352,20 +332,28 @@
     padding: 3rem 0;
   }
 
-  .heroTitle,
-  .sectionTitle {
-    max-width: 100%;
-    text-wrap: pretty;
-    font-size: var(--oomol-display-section);
+  .principlesSection .sectionHeader {
+    margin-bottom: 2.1rem;
   }
 
-  .heroTitle {
-    font-size: var(--oomol-display-hero);
+  .principlesGrid {
+    gap: 2.4rem;
+  }
+
+  .heroTitle,
+  .sectionTitle,
+  .principleTitle {
+    max-width: 100%;
+  }
+
+  .principlesSection .sectionTitle {
+    font-size: clamp(1.7rem, 6vw, 2.2rem);
     line-height: 1.08;
   }
 
-  .heroDescription {
-    font-size: var(--oomol-body-lead);
+  .storySection .sectionTitle {
+    font-size: clamp(1.95rem, 8vw, 2.45rem);
+    line-height: 1.08;
   }
 
   .actions {
@@ -387,20 +375,12 @@
   .painPointCard {
     padding: 1.2rem 1.15rem 1.3rem;
   }
-
-  .painPointTitle {
-    font-size: var(--oomol-body-lead);
-  }
-  .principleTitle {
-    @include marketing-display-title(section, 18ch, left, 1.06);
-    overflow-wrap: normal;
-    word-break: keep-all;
-  }
 }
 
 @media (max-width: 480px) {
   .heroDescription {
-    @include marketing-mobile-supporting-copy(1.58);
+    font-size: var(--oomol-body-base);
+    line-height: 1.58;
   }
 }
 
