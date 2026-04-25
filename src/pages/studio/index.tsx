@@ -135,6 +135,7 @@ export default function StudioPage() {
                 <div className={styles.ctaAction}>
                   <DownloadButton
                     centered
+                    showIcon={false}
                     showNote={false}
                     fullWidth
                     mobileFullWidth
@@ -147,8 +148,8 @@ export default function StudioPage() {
                     variant="outline"
                     className={styles.actionButtonFill}
                   >
-                    <Link to="/cloud">
-                      {translate({ message: "HOME.StudioChain.action.cloud" })}
+                    <Link to="/docs/studio/overview">
+                      {translate({ message: "HOME.StudioChain.action.studio" })}
                     </Link>
                   </Button>
                 </div>
@@ -258,6 +259,7 @@ export default function StudioPage() {
         </section>
 
         <SiteCta
+          className={styles.siteCtaSection}
           title={translate({ message: "STUDIO.product.cta.title" })}
           description={translate({ message: "STUDIO.product.cta.description" })}
           actions={
@@ -265,6 +267,7 @@ export default function StudioPage() {
               <div className={styles.siteCtaAction}>
                 <DownloadButton
                   centered
+                  showIcon={false}
                   showNote
                   noteTone="inverse"
                   fullWidth
@@ -277,8 +280,8 @@ export default function StudioPage() {
                   variant="outline"
                   className={styles.actionButtonFill}
                 >
-                  <Link to="/cloud">
-                    {translate({ message: "HOME.StudioChain.action.cloud" })}
+                  <Link to="/docs/studio/overview">
+                    {translate({ message: "HOME.StudioChain.action.studio" })}
                   </Link>
                 </Button>
               </div>

@@ -1185,8 +1185,8 @@
   "STUDIO.story.point3.description": {
     "message": "当依赖管理和设计方式与社区惯例分叉时，团队已有知识很难复用，协作和扩展成本都会上升。"
   },
-  "HOME.StudioChain.action.cloud": {
-    "message": "了解 Cloud"
+  "HOME.StudioChain.action.studio": {
+    "message": "了解 OOMOL Studio"
   },
   "Theme.Navbar.product.studio.description": {
     "message": "当服务接入和已发布工具不够时，构建、组合和编排你自己的工具"

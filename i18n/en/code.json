@@ -1185,8 +1185,8 @@
   "STUDIO.story.point3.description": {
     "message": "When dependency management and design patterns diverge from community conventions, team knowledge is harder to reuse and extension costs rise."
   },
-  "HOME.StudioChain.action.cloud": {
-    "message": "Explore Cloud"
+  "HOME.StudioChain.action.studio": {
+    "message": "Explore OOMOL Studio"
   },
   "Theme.Navbar.product.studio.description": {
     "message": "Build, combine, and orchestrate your own tools when connected services and published tools are not enough"

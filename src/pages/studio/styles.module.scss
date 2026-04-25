@@ -6,7 +6,7 @@
 }
 
 .hero {
-  padding: clamp(4.8rem, 10vw, 8rem) 0 clamp(2.4rem, 4vw, 3.4rem);
+  padding: clamp(4.8rem, 10vw, 8rem) 0 clamp(4.8rem, 8vw, 6.8rem);
   background: var(--oomol-bg-base);
   border-bottom: 1px solid var(--oomol-divider);
   position: relative;
@@ -69,6 +69,10 @@
 
 .siteCtaAction {
   min-width: 0;
+}
+
+.siteCtaSection {
+  --site-cta-action-width: 17rem;
 }
 
 .ctaAction > *,
@@ -304,7 +308,7 @@
   }
 
   .hero {
-    padding: 3.4rem 0 2rem;
+    padding: 3.4rem 0 4rem;
   }
 
   .storySection,
@@ -361,6 +365,10 @@
   .heroDescription {
     font-size: var(--oomol-body-base);
     line-height: 1.58;
+  }
+
+  .hero {
+    padding-bottom: 3.2rem;
   }
 }
 

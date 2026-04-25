@@ -3,7 +3,7 @@
 .section {
   position: relative;
   overflow: clip;
-  padding: clamp(4.8rem, 10vw, 8rem) 0 clamp(2.4rem, 4vw, 3.4rem);
+  padding: clamp(4.8rem, 10vw, 8rem) 0 clamp(4.8rem, 8vw, 6.8rem);
   background: var(--oomol-bg-base);
   border-bottom: 1px solid var(--oomol-divider);
 }
@@ -120,7 +120,7 @@
 
   .section {
     padding-top: 4.2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
   }
 
   .slogan {
@@ -136,7 +136,7 @@
 
 @media (max-width: 768px) {
   .section {
-    padding: 3.4rem 0 1.6rem;
+    padding: 3.4rem 0 3.2rem;
   }
 
   .container {
@@ -185,7 +185,7 @@
 
 @media (max-width: 480px) {
   .section {
-    padding: 3rem 0 1.4rem;
+    padding: 3rem 0 2.8rem;
   }
 
   .container {

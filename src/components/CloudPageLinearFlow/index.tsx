@@ -1,11 +1,8 @@
 import styles from "./styles.module.scss";
 
-import type { DocusaurusContext } from "@docusaurus/types";
-
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import CloudPageDeveloperBenefits from "@site/src/components/CloudPageDeveloperBenefits";
 import ResponsiveVideo from "@site/src/components/mdx/ResponsiveVideo";
 import { SiteCta } from "@site/src/components/SiteCta";
@@ -91,9 +88,6 @@ function ImageCard({ title, src }: ImageCardProps) {
 }
 
 export default function CloudPageLinearFlow() {
-  const { i18n } = useDocusaurusContext() as unknown as DocusaurusContext & {
-    i18n: { currentLocale: string };
-  };
   const copy: Copy = {
     cloud: {
       eyebrow: translate({ message: "CLOUD.flow.cloud.eyebrow" }),
@@ -128,9 +122,7 @@ export default function CloudPageLinearFlow() {
     },
   };
   const cloudConsoleImage = useBaseUrl(
-    i18n.currentLocale === "zh-CN"
-      ? "/img/pages/home/cloud-console-zh.png"
-      : "/img/pages/home/cloud-console-en.png"
+    "/img/pages/studio/cloud-runtime-overview.png"
   );
 
   return (

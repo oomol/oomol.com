@@ -28,6 +28,7 @@ function detectOSAndArchitecture(): OS {
 export interface DownloadButtonProps {
   stableTag?: boolean;
   centered?: boolean;
+  showIcon?: boolean;
   showNote?: boolean;
   noteTone?: "default" | "inverse";
   /** `default` (40px) matches pricing subscribe CTAs; `lg` (48px) for hero sections. */
@@ -51,6 +52,7 @@ export interface DownloadButtonProps {
 export const DownloadButton = ({
   stableTag,
   centered,
+  showIcon = true,
   showNote = true,
   noteTone = "default",
   buttonSize = "lg",
@@ -64,6 +66,7 @@ export const DownloadButton = ({
       <span className={`i-codicon-desktop-download ${styles.downloadIcon}`} />
     </span>
   );
+  const renderedIcon = showIcon ? downloadIcon : null;
   const containerClassName = centered
     ? `${styles.downloadContainer} ${styles.centered}`
     : styles.downloadContainer;
@@ -135,7 +138,7 @@ export const DownloadButton = ({
       fallback={
         <div className={macWindowsShellClass}>
           <Button size={size} className={downloadClassName}>
-            {downloadIcon}
+            {renderedIcon}
             {stableTag ? macosStableLabel : macosLabel}
           </Button>
           {showNote ? <span className={noteClassName}>{macosNote}</span> : null}
@@ -156,7 +159,7 @@ export const DownloadButton = ({
                   }
                 >
                   <a href={DownloadUrl.Stable.MacOS.AppleSilicon}>
-                    {downloadIcon}
+                    {renderedIcon}
                     {stableTag ? macosStableLabel : macosLabel}
                   </a>
                 </Button>
@@ -185,7 +188,7 @@ export const DownloadButton = ({
                   }
                 >
                   <a href={DownloadUrl.Stable.Windows.x64}>
-                    {downloadIcon}
+                    {renderedIcon}
                     {stableTag ? windowsStableLabel : windowsLabel}
                   </a>
                 </Button>

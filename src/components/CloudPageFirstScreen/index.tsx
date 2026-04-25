@@ -21,7 +21,7 @@ export default function CloudPageFirstScreen() {
   const heroVideoUrl =
     "https://static.oomol.com/assets/homepage/oomol-flow-en.webm";
   const heroVideoPosterUrl = useBaseUrl(
-    "/img/pages/home/homepage-first-screen-workflow-poster.webp"
+    "/img/pages/studio/cloud-cover.png"
   );
 
   return (

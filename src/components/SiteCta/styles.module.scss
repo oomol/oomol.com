@@ -40,7 +40,7 @@
 }
 
 .actions {
-  --site-cta-action-width: 14rem;
+  --site-cta-action-width-resolved: var(--site-cta-action-width, 14rem);
 
   display: flex;
   flex-wrap: wrap;
@@ -50,8 +50,8 @@
 }
 
 .actions > * {
-  flex: 0 1 var(--site-cta-action-width);
-  width: var(--site-cta-action-width);
+  flex: 0 1 var(--site-cta-action-width-resolved);
+  width: var(--site-cta-action-width-resolved);
   max-width: 100%;
   box-sizing: border-box;
 }
@@ -60,7 +60,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: var(--site-cta-action-width);
+  width: var(--site-cta-action-width-resolved);
   max-width: 100%;
   min-height: 48px;
   padding: 0 1.25rem;
@@ -79,7 +79,7 @@
 }
 
 .actionButton {
-  width: var(--site-cta-action-width);
+  width: var(--site-cta-action-width-resolved);
   max-width: 100%;
 }
 
