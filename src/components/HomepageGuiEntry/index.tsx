@@ -4,7 +4,6 @@ import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { Button } from "@site/src/components/ui/button";
-import ThemedImage from "@theme/ThemedImage";
 import React from "react";
 
 function renderLockedBrand(text: string) {
@@ -75,10 +74,7 @@ export default function HomepageGuiEntry() {
       message: "OOMOL AI interface preview",
     }),
   };
-  const imageSources = {
-    light: useBaseUrl("/img/pages/app/chat-light.webp"),
-    dark: useBaseUrl("/img/pages/app/chat-dark.webp"),
-  };
+  const imageSrc = useBaseUrl("/img/pages/home/oomol-ai-gui-preview.png");
 
   return (
     <section className={styles.section}>
@@ -106,10 +102,12 @@ export default function HomepageGuiEntry() {
 
           <div className={styles.media}>
             <div className={styles.mediaFrame}>
-              <ThemedImage
-                sources={imageSources}
+              <img
+                src={imageSrc}
                 alt={copy.imageAlt}
                 className={styles.mediaImage}
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
