@@ -40,17 +40,26 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.25rem 1rem;
   min-width: 0;
+  align-items: start;
+  justify-items: stretch;
 }
 
 .category {
   display: grid;
   gap: 0.45rem;
   min-width: 0;
+  width: 100%;
+  align-content: start;
+  justify-items: start;
+  text-align: left;
 }
 
 .items {
   display: grid;
   gap: 0.1rem;
+  width: 100%;
+  justify-items: start;
+  align-content: start;
 }
 
 .categoryTitle {
@@ -65,9 +74,13 @@
 .item {
   font-size: var(--oomol-body-base);
   line-height: 1.5;
+  width: 100%;
 }
 
 .link {
+  display: inline-flex;
+  justify-content: flex-start;
+  width: 100%;
   color: var(--oomol-text-secondary);
   text-decoration: none;
   border-radius: 4px;
