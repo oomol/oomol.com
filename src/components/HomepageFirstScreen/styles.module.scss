@@ -2,6 +2,7 @@
 
 .section {
   position: relative;
+  overflow: hidden;
   overflow: clip;
   padding: clamp(4.8rem, 10vw, 8rem) 0 clamp(4.2rem, 6.6vw, 5.8rem);
   background: var(--oomol-bg-base);
@@ -36,8 +37,8 @@
 .slogan {
   @include marketing-display-title(hero, 100%, center, 1.04);
   white-space: pre-line;
-  word-break: keep-all;
-  overflow-wrap: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
   display: block;
   overflow: visible;
 }

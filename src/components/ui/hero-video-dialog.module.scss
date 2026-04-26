@@ -17,6 +17,7 @@
 .thumbnailFrame {
   position: relative;
   width: 100%;
+  overflow: hidden;
   overflow: clip;
   border-radius: var(--oomol-radius-card);
   border: 1px solid var(--oomol-border-default);
@@ -115,6 +116,7 @@
   top: 50%;
   z-index: var(--oomol-z-dialog-content);
   width: min(1200px, calc(100vw - 1rem));
+  overflow: hidden;
   overflow: clip;
   border-radius: calc(var(--oomol-radius-card) + 6px);
   border: 1px solid rgba(255, 255, 255, 0.12);
