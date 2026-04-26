@@ -268,12 +268,14 @@ const config = {
                 activeBaseRegex:
                   "^/(?:zh-CN/)?(?:cloud(?:/.*)?|docs/cloud-services/cloud-function(?:/.*)?|docs/cloud-services/cloud-task(?:/.*)?)$",
               },
+              /*
               {
                 to: "/app",
                 label: "navbar.oomol-ai",
                 className: "productDropdownItem productDropdownItemAi",
                 activeBaseRegex: "^/(?:zh-CN/)?app(?:/.*)?$",
               },
+              */
             ],
           },
           { to: "/downloads", label: "navbar.download", position: "left" },
@@ -439,7 +441,16 @@ const config = {
     }),
   future: {
     v4: true,
-    experimental_faster: true,
+    experimental_faster: {
+      swcJsLoader: true,
+      swcJsMinimizer: true,
+      swcHtmlMinimizer: true,
+      lightningCssMinimizer: false,
+      mdxCrossCompilerCache: true,
+      rspackBundler: false,
+      rspackPersistentCache: false,
+      ssgWorkerThreads: true,
+    },
   },
 };
 

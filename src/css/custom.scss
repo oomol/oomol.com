@@ -562,6 +562,7 @@ body,
 }
 
 ::selection {
+  background: rgba(85, 103, 216, 0.24);
   background: color-mix(in srgb, var(--oomol-primary) 24%, transparent);
 }
 
@@ -582,22 +583,22 @@ body,
 
 // 文档页面使用，用于在一行显示多个图片
 .image-container {
+  --sibling-count: 1;
+
   display: flex;
   gap: 10px;
   align-items: flex-start;
   justify-content: center;
   margin-bottom: 15px;
 
-  &:has(> :nth-child(1)) {
-    --sibling-count: 1;
-  }
+  @supports selector(:has(> :last-child:nth-child(2))) {
+    &:has(> :last-child:nth-child(2)) {
+      --sibling-count: 2;
+    }
 
-  &:has(> :last-child:nth-child(2)) {
-    --sibling-count: 2;
-  }
-
-  &:has(> :last-child:nth-child(3)) {
-    --sibling-count: 3;
+    &:has(> :last-child:nth-child(3)) {
+      --sibling-count: 3;
+    }
   }
 
   & > img,

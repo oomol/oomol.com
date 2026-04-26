@@ -331,7 +331,7 @@ const CookieConsentProviderInner: React.FC = () => {
 
       {showBanner ? (
         <div
-          className="fixed inset-x-4 bottom-4 box-border w-auto max-w-[calc(100dvw-2rem)] rounded-xl border border-solid border-[var(--oomol-border-default)] bg-[var(--oomol-bg-base)] px-5 py-4 text-[var(--oomol-text-secondary)] shadow-[var(--oomol-shadow-md)] [font-family:var(--oomol-font-body)] md:inset-x-auto md:bottom-6 md:right-6 md:w-[min(28rem,calc(100dvw-3rem))]"
+          className="fixed inset-x-4 bottom-4 box-border w-auto max-w-[calc(100vw-2rem)] rounded-xl border border-solid border-[var(--oomol-border-default)] bg-[var(--oomol-bg-base)] px-5 py-4 text-[var(--oomol-text-secondary)] shadow-[var(--oomol-shadow-md)] [font-family:var(--oomol-font-body)] md:inset-x-auto md:bottom-6 md:right-6 md:w-[min(28rem,calc(100vw-3rem))]"
           role="region"
           aria-label={t.title}
           style={{ zIndex: "var(--oomol-z-cookie-banner)" }}
@@ -385,11 +385,11 @@ const CookieConsentProviderInner: React.FC = () => {
       <Dialog.Root onOpenChange={setPreferencesOpen} open={preferencesOpen}>
         <Dialog.Portal>
           <Dialog.Overlay
-            className="fixed inset-0 bg-[var(--oomol-mask)] backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
+            className="fixed inset-0 bg-[var(--oomol-mask)] [-webkit-backdrop-filter:blur(4px)] backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
             style={{ zIndex: "var(--oomol-z-dialog-overlay)" }}
           />
           <Dialog.Content
-            className="fixed left-1/2 top-1/2 flex w-[min(26rem,calc(100vw-2rem))] max-h-[min(90dvh,calc(100vh-2rem))] -translate-x-1/2 -translate-y-1/2 flex-col overflow-y-auto rounded-2xl border border-solid border-[var(--oomol-border-default)] bg-[var(--oomol-bg-elevated)] p-0 text-[var(--oomol-text-secondary)] shadow-[var(--oomol-shadow-lg)] [font-family:var(--oomol-font-body)] focus:outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95"
+            className="fixed left-1/2 top-1/2 flex w-[min(26rem,calc(100vw-2rem))] max-h-[min(90vh,calc(100vh-2rem))] -translate-x-1/2 -translate-y-1/2 flex-col overflow-y-auto rounded-2xl border border-solid border-[var(--oomol-border-default)] bg-[var(--oomol-bg-elevated)] p-0 text-[var(--oomol-text-secondary)] shadow-[var(--oomol-shadow-lg)] [font-family:var(--oomol-font-body)] focus:outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95"
             key={preferencesSession}
             style={{ zIndex: "var(--oomol-z-dialog-content)" }}
           >

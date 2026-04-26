@@ -280,6 +280,7 @@ $navbar-desktop-min: 861px;
   .productMenuEntryIcon {
     color: var(--ifm-menu-color-active, var(--oomol-primary-text));
     border-color: var(--oomol-primary-border);
+    background: var(--oomol-primary-bg);
     background: color-mix(
       in srgb,
       var(--oomol-primary-bg) 55%,
@@ -442,6 +443,7 @@ $navbar-desktop-min: 861px;
   :global(.DocSearch-Button:focus-visible) {
     outline: none;
     border-color: var(--oomol-primary);
+    box-shadow: 0 0 0 3px var(--oomol-primary-bg-hover);
     box-shadow: 0 0 0 3px
       color-mix(in srgb, var(--oomol-primary) 16%, transparent);
   }
@@ -521,7 +523,7 @@ $navbar-desktop-min: 861px;
   isolation: isolate;
   transition: transform 0.3s ease;
   --ifm-navbar-padding-vertical: 0;
-  background: transparent;
+  background: var(--ifm-navbar-background-color, var(--oomol-bg-base));
   // border-bottom-style: solid;
   // border-bottom-color: #fafafa;
   // display: flex;
@@ -736,6 +738,7 @@ $navbar-desktop-min: 861px;
     display: flex;
     /* Solid-tint bar instead of backdrop-filter: resize drags re-sample the full
        navbar width every frame; blur + sticky is a common jank source (see custom.scss). */
+    background: var(--ifm-navbar-background-color, var(--oomol-bg-base));
     background: color-mix(in srgb, var(--oomol-bg-base) 97%, transparent);
     border-bottom: 1px solid var(--oomol-divider);
 
@@ -762,6 +765,7 @@ $navbar-desktop-min: 861px;
 
 @media (max-width: $navbar-collapse) {
   .navbar {
+    background: var(--ifm-navbar-background-color, var(--oomol-bg-base));
     background: color-mix(in srgb, var(--oomol-bg-base) 97%, transparent);
     border-bottom: 1px solid var(--oomol-divider);
   }
@@ -805,7 +809,9 @@ $navbar-desktop-min: 861px;
   }
 
   :global(.navbar-sidebar__backdrop) {
+    background: rgba(10, 10, 10, 0.45);
     background: color-mix(in srgb, var(--oomol-mask) 72%, transparent);
+    -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
   }
 
@@ -823,6 +829,7 @@ $navbar-desktop-min: 861px;
     min-height: 64px;
     padding: 0 0.9rem;
     border-bottom: 1px solid var(--oomol-divider);
+    background: var(--ifm-navbar-background-color, var(--oomol-bg-base));
     background: color-mix(in srgb, var(--oomol-bg-base) 96%, transparent);
   }
 

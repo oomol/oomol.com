@@ -97,6 +97,7 @@
   inset: 0;
   z-index: var(--oomol-z-dialog-overlay);
   background: var(--oomol-mask);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 

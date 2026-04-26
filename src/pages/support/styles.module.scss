@@ -132,6 +132,7 @@
 
 [data-theme="dark"] {
   .supportCell {
+    border-color: var(--oomol-border-default);
     border-color: color-mix(
       in srgb,
       var(--oomol-border-default) 72%,
