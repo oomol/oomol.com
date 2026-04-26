@@ -117,6 +117,9 @@ $desktop-width: $breakpoint-xl;
   font-family: var(--oomol-font-display);
   font-weight: 600;
   text-align: $align;
+  /* Fallback for browsers without `text-wrap` support. */
+  word-break: normal;
+  overflow-wrap: break-word;
   text-wrap: balance;
   color: var(--oomol-text-primary);
 
@@ -153,6 +156,8 @@ $desktop-width: $breakpoint-xl;
   line-height: $line-height;
   letter-spacing: var(--oomol-tracking-body);
   text-align: $align;
+  word-break: normal;
+  overflow-wrap: break-word;
 
   @if $wrap != null {
     text-wrap: $wrap;

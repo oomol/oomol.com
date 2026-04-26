@@ -9,6 +9,7 @@
 
 .hero {
   position: relative;
+  overflow: hidden;
   overflow: clip;
   padding: clamp(3.1rem, 6.2vw, 5rem) 0 clamp(2rem, 3.2vw, 2.8rem);
   background: var(--oomol-bg-base);
@@ -264,8 +265,8 @@
 :global(html[lang="zh-CN"]) .sectionTitle,
 :global(html[lang="zh-CN"]) .sub-title,
 :global(html[lang="zh-CN"]) .sectionSubtitle {
-  word-break: keep-all;
-  overflow-wrap: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 /* ── Tablet ────────────────────────────────────────────── */
