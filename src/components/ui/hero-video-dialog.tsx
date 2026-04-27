@@ -20,10 +20,11 @@ type HeroVideoDialogProps = {
   videoSrc?: string;
   videoPlaylist?: HeroVideoPlaylistItem[];
   mediaAspectRatio?: React.CSSProperties["aspectRatio"];
-  thumbnailSrc: string;
+  thumbnailSrc?: string;
   thumbnailAlt?: string;
   thumbnailAspectRatio?: React.CSSProperties["aspectRatio"];
   thumbnailObjectPosition?: React.CSSProperties["objectPosition"];
+  trigger?: React.ReactNode;
   title?: string;
   playAriaLabel?: string;
   closeAriaLabel?: string;
@@ -117,6 +118,7 @@ export function HeroVideoDialog({
   thumbnailAlt = "Video thumbnail",
   thumbnailAspectRatio,
   thumbnailObjectPosition,
+  trigger,
   title,
   playAriaLabel,
   closeAriaLabel,
@@ -147,6 +149,10 @@ export function HeroVideoDialog({
   const activeVideo = playlist[activeIndex] ?? playlist[0];
 
   if (!activeVideo) {
+    return null;
+  }
+
+  if (!trigger && !thumbnailSrc) {
     return null;
   }
 
@@ -222,27 +228,32 @@ export function HeroVideoDialog({
       <Dialog.Trigger asChild>
         <button
           type="button"
-          className={clsx(styles.trigger, className)}
+          className={clsx(
+            trigger ? styles.customTrigger : styles.trigger,
+            className
+          )}
           aria-label={resolvedPlayLabel}
         >
-          <div className={styles.thumbnailFrame}>
-            <img
-              src={thumbnailSrc}
-              alt={thumbnailAlt}
-              className={styles.thumbnail}
-              style={{
-                aspectRatio: thumbnailAspectRatio,
-                objectPosition: thumbnailObjectPosition,
-              }}
-              loading="lazy"
-              decoding="async"
-            />
-            <span className={styles.playOverlay} aria-hidden="true">
-              <span className={styles.playButton}>
-                <span className={styles.playTriangle} />
+          {trigger ?? (
+            <div className={styles.thumbnailFrame}>
+              <img
+                src={thumbnailSrc}
+                alt={thumbnailAlt}
+                className={styles.thumbnail}
+                style={{
+                  aspectRatio: thumbnailAspectRatio,
+                  objectPosition: thumbnailObjectPosition,
+                }}
+                loading="lazy"
+                decoding="async"
+              />
+              <span className={styles.playOverlay} aria-hidden="true">
+                <span className={styles.playButton}>
+                  <span className={styles.playTriangle} />
+                </span>
               </span>
-            </span>
-          </div>
+            </div>
+          )}
         </button>
       </Dialog.Trigger>
 

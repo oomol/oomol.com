@@ -84,166 +84,69 @@
   padding-left: clamp(1.1rem, 2vw, 1.8rem);
 }
 
-.visualCard {
-  --cli-reasons-beam-path: rgba(24, 24, 27, 0.11);
-  --cli-reasons-agent-beam-start: rgba(99, 102, 241, 0);
-  --cli-reasons-agent-beam-stop: rgba(99, 102, 241, 0.58);
-  --cli-reasons-app-beam-start: rgba(59, 130, 246, 0);
-  --cli-reasons-app-beam-stop: rgba(59, 130, 246, 0.58);
-
-  overflow: hidden;
-  display: grid;
-  gap: 0.85rem;
-  padding: clamp(1rem, 1.8vw, 1.2rem);
-  border: 1px solid var(--oomol-divider);
-  border-radius: 1.25rem;
-  background: var(--oomol-bg-base);
-}
-
-.beamCanvas {
+.installTerminalWrap {
   position: relative;
-  display: flex;
-  width: 100%;
-  max-width: 42rem;
+  width: min(100%, 36rem);
   margin-inline: auto;
-  overflow: hidden;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: clamp(0.9rem, 3vw, 2.4rem);
-  min-height: 27rem;
-  padding: 0.2rem clamp(0.1rem, 1vw, 0.35rem) 0.1rem;
 }
 
-.beamAgentsColumn,
-.beamAppsColumn {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.9rem;
-  flex: 0 0 auto;
+.installTerminal {
+  --magic-terminal-max-width: 100%;
+  --magic-terminal-height: 22.4rem;
+  --magic-terminal-body-max-height: none;
+  --magic-terminal-body-padding: 1.05rem 1.1rem 1.1rem;
 }
 
-.beamCenterColumn {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 0 0 auto;
-}
-
-.beamAppsColumn {
-  align-items: flex-end;
-}
-
-.agentNode {
-  position: relative;
-  display: grid;
-  place-items: center;
-  width: 4.5rem;
-  height: 4.5rem;
-  border: 1px solid var(--oomol-divider);
-  border-radius: 999px;
-  background: var(--oomol-bg-base);
-}
-
-.agentIcon {
-  position: relative;
-  z-index: 1;
-  display: block;
-  width: 1.95rem;
-  height: 1.95rem;
-  object-fit: contain;
-}
-
-.appNode {
-  position: relative;
-  display: grid;
-  place-items: center;
-  width: 4.5rem;
-  height: 4.5rem;
-  border-radius: 999px;
-  border: 1px solid var(--oomol-divider);
-  background: var(--oomol-bg-base);
-}
-
-.appIcon {
-  position: relative;
-  z-index: 1;
-}
-
-.appIcon {
-  display: block;
-  width: 1.9rem;
-  height: 1.9rem;
-  object-fit: contain;
-}
-
-.flowLine {
-  width: 1px;
-  height: 1rem;
-  margin: 0 auto;
-  background: var(--oomol-divider);
-}
-
-.hubNode {
-  position: relative;
-  display: grid;
-  place-items: center;
-  width: clamp(6.2rem, 8vw, 7.2rem);
-  height: clamp(6.2rem, 8vw, 7.2rem);
-  border-radius: 999px;
-  border: 1px solid var(--oomol-divider);
-  background: var(--oomol-bg-base);
-}
-
-.hubLogo {
-  display: block;
-  width: clamp(3.1rem, 4vw, 3.65rem);
-  height: clamp(3.1rem, 4vw, 3.65rem);
-  object-fit: contain;
-}
-
-:global(html[data-theme="dark"]) .visualCard {
-  --cli-reasons-beam-path: rgba(255, 255, 255, 0.16);
-  --cli-reasons-agent-beam-start: rgba(148, 163, 255, 0);
-  --cli-reasons-agent-beam-stop: rgba(148, 163, 255, 0.46);
-  --cli-reasons-app-beam-start: rgba(96, 165, 250, 0);
-  --cli-reasons-app-beam-stop: rgba(96, 165, 250, 0.46);
-
-  border-color: rgba(255, 255, 255, 0.12);
-  background:
-    radial-gradient(
-      circle at 50% 50%,
-      rgba(79, 83, 135, 0.14),
-      transparent 46%
-    ),
-    rgba(255, 255, 255, 0.015);
-}
-
-:global(html[data-theme="dark"]) .agentNode,
-:global(html[data-theme="dark"]) .appNode,
-:global(html[data-theme="dark"]) .hubNode {
-  border-color: rgba(255, 255, 255, 0.16);
-  background: #050505;
-  box-shadow:
-    0 0 0 1px rgba(0, 0, 0, 0.22),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
-}
-
-:global(html[data-theme="dark"]) .agentNode::before,
-:global(html[data-theme="dark"]) .appNode::before {
-  content: "";
+.installTerminalAction {
   position: absolute;
-  width: 2.55rem;
-  height: 2.55rem;
-  border-radius: 0.9rem;
-  background: rgba(255, 255, 255, 0.94);
-  box-shadow:
-    0 0.55rem 1.4rem rgba(0, 0, 0, 0.28),
-    inset 0 0 0 1px rgba(24, 24, 27, 0.08);
+  left: 50%;
+  bottom: 1.18rem;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.copyPromptButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.38rem;
+  min-height: 2rem;
+  padding: 0 0.65rem;
+  border: 1px solid var(--oomol-divider);
+  border-radius: 7px;
+  background: var(--oomol-bg-base);
+  color: var(--oomol-text-secondary);
+  font-size: var(--oomol-body-sm);
+  line-height: 1.2;
+  font-weight: var(--oomol-font-weight-medium);
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease,
+    color 0.15s ease;
+
+  &:hover {
+    border-color: var(--oomol-border-strong);
+    background: var(--oomol-bg-spotlight);
+    color: var(--oomol-text-primary);
+  }
+}
+
+.commandLine {
+  color: var(--oomol-primary);
+}
+
+.successLine {
+  color: var(--oomol-success);
+}
+
+.mutedLine {
+  color: var(--oomol-text-secondary);
+}
+
+:global(html[data-theme="dark"]) .copyPromptButton {
+  background: var(--oomol-bg-elevated);
+  border-color: var(--oomol-border-default);
 }
 
 @media (max-width: 996px) {
@@ -268,30 +171,6 @@
 
   .copyIntro {
     gap: 0.72rem;
-  }
-
-  .beamCanvas {
-    min-height: 27rem;
-    gap: clamp(0.7rem, 2vw, 1.2rem);
-  }
-
-  .beamAgentsColumn,
-  .beamAppsColumn {
-    flex-direction: column;
-  }
-
-  .beamCenterColumn {
-    order: 0;
-  }
-
-  .agentNode {
-    width: 4.5rem;
-    height: 4.5rem;
-  }
-
-  .appNode {
-    width: 4.5rem;
-    height: 4.5rem;
   }
 }
 
@@ -327,62 +206,28 @@
     line-height: 1.68;
   }
 
-  .visualCard {
-    justify-items: center;
-    padding: 0.9rem;
+  .installTerminalWrap {
+    width: 100%;
   }
 
-  .beamCanvas {
-    padding: 0.1rem 0 0;
-  }
-
-  .agentNode {
-    width: 4.5rem;
-    height: 4.5rem;
-  }
-
-  .appNode {
-    width: 4.5rem;
-    height: 4.5rem;
-  }
-
-  .hubNode {
-    width: clamp(6.2rem, 8vw, 7.2rem);
-    height: clamp(6.2rem, 8vw, 7.2rem);
+  .installTerminal {
+    --magic-terminal-height: 21.2rem;
+    --magic-terminal-body-padding: 1rem;
   }
 }
 
 @media (max-width: 640px) {
-  .beamCanvas {
-    gap: 0.45rem;
-    min-height: 22rem;
-    width: 100%;
+  .installTerminal {
+    --magic-terminal-height: 20rem;
+    --magic-terminal-body-padding: 0.86rem;
   }
 
-  .beamAgentsColumn,
-  .beamAppsColumn {
-    gap: 0.72rem;
+  .installTerminalAction {
+    bottom: 0.9rem;
   }
 
-  .agentNode,
-  .appNode {
-    width: 3.45rem;
-    height: 3.45rem;
-  }
-
-  .agentIcon,
-  .appIcon {
-    width: 1.55rem;
-    height: 1.55rem;
-  }
-
-  .hubNode {
-    width: 4.8rem;
-    height: 4.8rem;
-  }
-
-  .hubLogo {
-    width: 2.45rem;
-    height: 2.45rem;
+  .copyPromptButton {
+    min-height: 1.86rem;
+    padding: 0 0.55rem;
   }
 }

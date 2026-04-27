@@ -171,7 +171,7 @@
     "message": "only supports x64"
   },
   "HOME.FirstScreen.cta.secondary": {
-    "message": "Download OOMOL Studio"
+    "message": "Play video"
   },
   "HOME.FirstScreen.cta.primary": {
     "message": "Start with oo-cli"
@@ -1289,6 +1289,21 @@
   },
   "HOME.CliReasons.card2.description": {
     "message": "When ready-made tools are not enough, use OOMOL Studio to compose third-party tools, cloud functions, and APIs, or build new function tools; extensions remain usable from the CLI."
+  },
+  "HOME.CliReasons.installTerminal.copyPrompt": {
+    "message": "Copy prompt"
+  },
+  "HOME.CliReasons.installTerminal.agentPrompt": {
+    "message": "# copy the prompt to your agent so it can install and verify"
+  },
+  "HOME.CliReasons.installTerminal.installed": {
+    "message": "# oo-cli is installed in the current environment"
+  },
+  "HOME.CliReasons.installTerminal.loginReady": {
+    "message": "# sign in with your OOMOL account and confirm the CLI is ready"
+  },
+  "HOME.CliReasons.installTerminal.nextCommand": {
+    "message": "# next: search for available tools and start running tasks"
   },
   "HOME.LinearFlow.studio.eyebrow": {
     "message": "Developer path 01 / Build in Studio"

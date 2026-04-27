@@ -1,13 +1,20 @@
 import styles from "./styles.module.scss";
 
-import type { Ref } from "react";
-
 import { translate } from "@docusaurus/Translate";
-import useBaseUrl from "@docusaurus/useBaseUrl";
-import { AnimatedBeam } from "@site/src/components/magic/animated-beam";
-import ThemedImage from "@theme/ThemedImage";
-import { useReducedMotion } from "framer-motion";
-import React, { createRef, forwardRef, useRef } from "react";
+import {
+  AnimatedSpan,
+  Terminal,
+  TypingAnimation,
+} from "@site/src/components/magic/terminal";
+import React from "react";
+
+type CopyTarget = "prompt" | null;
+type InstallPlatform = "unix" | "windows";
+
+const INSTALL_COMMANDS: Record<InstallPlatform, string> = {
+  unix: "curl -fsSL https://cli.oomol.com/install.sh | bash",
+  windows: "irm https://cli.oomol.com/install.ps1 | iex",
+};
 
 const reasonCards = [
   {
@@ -26,182 +33,121 @@ const reasonCards = [
   },
 ];
 
-const agentSurfaces = [
-  {
-    labelKey: "COMMON.brand.codex",
-    iconPath: "/img/pages/home/codex-color.svg",
-  },
-  {
-    labelKey: "COMMON.brand.claudeCode",
-    iconPath: "/img/pages/home/claude-color.svg",
-  },
-  {
-    labelKey: "COMMON.brand.openClaw",
-    iconPath: "/img/pages/home/openclaw-color.svg",
-  },
-  { labelKey: "COMMON.brand.cursor", iconPath: "/img/pages/home/cursor.svg" },
-  {
-    labelKey: "COMMON.brand.qode",
-    iconPath: "/img/pages/home/qoder-color.svg",
-  },
-] as const;
+function detectInstallPlatform(): InstallPlatform {
+  if (typeof navigator === "undefined") {
+    return "unix";
+  }
 
-const beamApps = [
-  {
-    labelKey: "COMMON.brand.github",
-    iconPath: "/img/pages/home/brand-icons/github.svg",
-  },
-  {
-    labelKey: "COMMON.brand.slack",
-    iconPath: "/img/pages/home/brand-icons/slack.svg",
-  },
-  {
-    labelKey: "COMMON.brand.notion",
-    iconPath: "/img/pages/home/brand-icons/notion.svg",
-  },
-  {
-    labelKey: "COMMON.brand.gmail",
-    iconPath: "/img/pages/home/brand-icons/gmail.svg",
-  },
-  {
-    labelKey: "COMMON.brand.linear",
-    iconPath: "/img/pages/home/brand-icons/linear.svg",
-  },
-] as const;
+  const candidate =
+    (
+      navigator as Navigator & {
+        userAgentData?: { platform?: string };
+      }
+    ).userAgentData?.platform ??
+    navigator.platform ??
+    navigator.userAgent;
 
-const BeamAgentNode = forwardRef(function BeamAgentNode(
-  {
-    labelKey,
-    iconPath,
-  }: {
-    labelKey: string;
-    iconPath: string;
-  },
-  ref: Ref<HTMLDivElement>
-) {
-  const iconSrc = useBaseUrl(iconPath);
-  const label = translate({ message: labelKey });
+  return /win/i.test(candidate) ? "windows" : "unix";
+}
+
+function HomepageInstallPromptCard() {
+  const [copiedTarget, setCopiedTarget] = React.useState<CopyTarget>(null);
+  const [installPlatform, setInstallPlatform] =
+    React.useState<InstallPlatform>("unix");
+
+  React.useEffect(() => {
+    setInstallPlatform(detectInstallPlatform());
+  }, []);
+
+  const installCommand = INSTALL_COMMANDS[installPlatform];
+  const agentPrompt =
+    installPlatform === "windows"
+      ? translate({ message: "HOME.Downloads.cli.agentPrompt.windows" })
+      : translate({ message: "HOME.Downloads.cli.agentPrompt.unix" });
+  const copiedLabel = translate({ message: "COMMON.copied" });
+
+  const handleCopy = React.useCallback(async (value: string) => {
+    if (typeof navigator === "undefined" || !navigator.clipboard) {
+      return;
+    }
+
+    await navigator.clipboard.writeText(value);
+    setCopiedTarget("prompt");
+    window.setTimeout(() => {
+      setCopiedTarget(current => (current === "prompt" ? null : current));
+    }, 1600);
+  }, []);
 
   return (
-    <div ref={ref} className={styles.agentNode} aria-label={label}>
-      <img
-        className={styles.agentIcon}
-        src={iconSrc}
-        alt=""
-        aria-hidden="true"
-      />
-    </div>
-  );
-});
+    <div className={styles.installTerminalWrap}>
+      <Terminal className={styles.installTerminal} staticMode>
+        <AnimatedSpan className={styles.mutedLine}>
+          {translate({
+            message: "HOME.CliReasons.installTerminal.agentPrompt",
+          })}
+        </AnimatedSpan>
 
-const BeamAppNode = forwardRef(function BeamAppNode(
-  {
-    labelKey,
-    iconPath,
-  }: {
-    labelKey: string;
-    iconPath: string;
-  },
-  ref: Ref<HTMLDivElement>
-) {
-  const iconSrc = useBaseUrl(iconPath);
-  const label = translate({ message: labelKey });
+        <TypingAnimation className={styles.commandLine} duration={12}>
+          {`$ ${installCommand}`}
+        </TypingAnimation>
 
-  return (
-    <div ref={ref} className={styles.appNode} aria-label={label}>
-      <img className={styles.appIcon} src={iconSrc} alt="" aria-hidden="true" />
-    </div>
-  );
-});
+        <AnimatedSpan className={styles.successLine}>
+          {translate({ message: "HOME.CliReasons.installTerminal.installed" })}
+        </AnimatedSpan>
 
-function CliReasonsBeam() {
-  const reduceMotion = useReducedMotion();
-  const containerRef = useRef<HTMLDivElement>(null);
-  const hubRef = useRef<HTMLDivElement>(null);
-  const agentRefs = useRef(
-    agentSurfaces.map(() => createRef<HTMLDivElement>())
-  );
-  const appRefs = useRef(beamApps.map(() => createRef<HTMLDivElement>()));
-  const hubLogoSources = {
-    light: useBaseUrl("/img/pages/home/oomol-logo-light.svg"),
-    dark: useBaseUrl("/img/pages/home/oomol-logo-dark.svg"),
-  };
+        <TypingAnimation className={styles.commandLine} duration={12}>
+          $ oo login
+        </TypingAnimation>
 
-  return (
-    <div className={styles.visualCard}>
-      <div ref={containerRef} className={styles.beamCanvas}>
-        <div className={styles.beamAgentsColumn}>
-          {agentSurfaces.map((agent, index) => (
-            <BeamAgentNode
-              key={agent.labelKey}
-              ref={agentRefs.current[index]}
-              labelKey={agent.labelKey}
-              iconPath={agent.iconPath}
-            />
-          ))}
-        </div>
+        <AnimatedSpan className={styles.successLine}>
+          {translate({ message: "HOME.CliReasons.installTerminal.loginReady" })}
+        </AnimatedSpan>
 
-        <div className={styles.beamCenterColumn}>
-          <div
-            ref={hubRef}
-            className={styles.hubNode}
-            aria-label={translate({ message: "COMMON.brand.oomol" })}
-          >
-            <ThemedImage
-              className={styles.hubLogo}
-              sources={hubLogoSources}
-              alt=""
-              aria-hidden="true"
-            />
-          </div>
-        </div>
+        <TypingAnimation className={styles.commandLine} duration={12}>
+          $ oo --version
+        </TypingAnimation>
 
-        <div className={styles.beamAppsColumn}>
-          {beamApps.map(({ labelKey, iconPath }, index) => (
-            <BeamAppNode
-              key={labelKey}
-              ref={appRefs.current[index]}
-              labelKey={labelKey}
-              iconPath={iconPath}
-            />
-          ))}
-        </div>
+        <AnimatedSpan className={styles.mutedLine}>
+          {translate({
+            message: "HOME.CliReasons.installTerminal.nextCommand",
+          })}
+        </AnimatedSpan>
+      </Terminal>
 
-        {!reduceMotion
-          ? agentRefs.current.map((ref, index) => (
-              <AnimatedBeam
-                key={`agent-${agentSurfaces[index].labelKey}`}
-                containerRef={containerRef}
-                fromRef={ref}
-                toRef={hubRef}
-                pathColor="var(--cli-reasons-beam-path)"
-                pathWidth={1.45}
-                pathOpacity={1}
-                duration={4.6}
-                delay={index * 0.12}
-                gradientStartColor="var(--cli-reasons-agent-beam-start)"
-                gradientStopColor="var(--cli-reasons-agent-beam-stop)"
-              />
-            ))
-          : null}
-
-        {!reduceMotion
-          ? appRefs.current.map((ref, index) => (
-              <AnimatedBeam
-                key={`app-${beamApps[index].labelKey}`}
-                containerRef={containerRef}
-                fromRef={ref}
-                toRef={hubRef}
-                pathColor="var(--cli-reasons-beam-path)"
-                pathWidth={1.45}
-                pathOpacity={1}
-                duration={4.6}
-                delay={0.16 + index * 0.12}
-                gradientStartColor="var(--cli-reasons-app-beam-start)"
-                gradientStopColor="var(--cli-reasons-app-beam-stop)"
-              />
-            ))
-          : null}
+      <div className={styles.installTerminalAction}>
+        <button
+          className={styles.copyPromptButton}
+          onClick={() => void handleCopy(agentPrompt)}
+          type="button"
+          aria-label={
+            copiedTarget === "prompt"
+              ? copiedLabel
+              : translate({
+                  message: "HOME.CliReasons.installTerminal.copyPrompt",
+                })
+          }
+          title={
+            copiedTarget === "prompt"
+              ? copiedLabel
+              : translate({
+                  message: "HOME.CliReasons.installTerminal.copyPrompt",
+                })
+          }
+        >
+          <span
+            className={
+              copiedTarget === "prompt" ? "i-lucide-check" : "i-lucide-copy"
+            }
+            aria-hidden="true"
+          />
+          <span>
+            {copiedTarget === "prompt"
+              ? copiedLabel
+              : translate({
+                  message: "HOME.CliReasons.installTerminal.copyPrompt",
+                })}
+          </span>
+        </button>
       </div>
     </div>
   );
@@ -234,7 +180,7 @@ export default function HomepageCliReasons() {
         </div>
 
         <div className={styles.visualColumn}>
-          <CliReasonsBeam />
+          <HomepageInstallPromptCard />
         </div>
       </div>
     </section>

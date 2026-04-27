@@ -58,66 +58,6 @@
   padding-top: 0.6rem;
 }
 
-.installCommandGroup {
-  width: min(100%, 42rem);
-  margin-top: 0.25rem;
-  display: grid;
-  justify-items: center;
-  gap: 0.45rem;
-}
-
-.installCommandStrip {
-  width: fit-content;
-  max-width: 100%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.62rem 1rem;
-  border: 1px solid var(--oomol-divider);
-  border-radius: var(--oomol-radius-full);
-  background: transparent;
-  color: var(--oomol-text-primary);
-  cursor: pointer;
-  transition:
-    border-color 0.15s ease,
-    background-color 0.15s ease;
-
-  &:hover,
-  &:focus-visible {
-    border-color: var(--oomol-border-strong);
-    background: var(--oomol-bg-container);
-  }
-
-  &:focus-visible {
-    outline: none;
-  }
-}
-
-.installCommandText {
-  min-width: 0;
-  white-space: nowrap;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  border-radius: 0;
-  font-family: var(--oomol-font-mono);
-  font-size: var(--oomol-body-mono);
-  font-weight: 500;
-  line-height: 1.6;
-  color: inherit;
-}
-
-.installCommandNote {
-  margin: 0;
-  font-size: var(--oomol-body-mono);
-  line-height: 1.5;
-  font-family: var(--oomol-font-mono);
-  font-weight: 500;
-  letter-spacing: var(--oomol-tracking-mono);
-  color: var(--oomol-text-tertiary);
-  text-align: center;
-}
-
 .workflowArchive {
   width: min(1200px, calc(100% - 48px));
   margin-top: clamp(1.6rem, 3vw, 2.4rem);
@@ -141,6 +81,11 @@
 
 .videoShowcaseInner {
   width: 100%;
+}
+
+.heroConnectionBeam {
+  width: min(100%, 44rem);
+  margin-inline: auto;
 }
 
 /* ── English overrides ── */
@@ -226,30 +171,6 @@
     width: 100%;
   }
 
-  .installCommandGroup {
-    width: 100%;
-    max-width: 28rem;
-  }
-
-  .installCommandStrip {
-    width: 100%;
-    justify-content: flex-start;
-    padding: 0.72rem 0.9rem;
-  }
-
-  .installCommandNote {
-    max-width: 100%;
-  }
-
-  .installCommandText {
-    width: 100%;
-    white-space: normal;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-    text-align: center;
-    line-height: 1.55;
-  }
-
   .workflowArchive {
     width: min(100%, calc(100% - 40px));
     margin-top: clamp(1.2rem, 5vw, 1.75rem);
@@ -282,10 +203,6 @@
   .actions {
     max-width: 100%;
     gap: 0.6rem;
-  }
-
-  .installCommandGroup {
-    max-width: 100%;
   }
 
   .workflowArchive {
