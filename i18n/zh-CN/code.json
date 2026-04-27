@@ -1318,7 +1318,7 @@
     "message": "现成工具不够时，再在 OOMOL Studio 里生成、组合并验证"
   },
   "HOME.LinearFlow.studio.description": {
-    "message": "把需求交给 Agent 起步，然后继续补代码、接依赖、改参数和做编排。这里进入的是开发者路径：Studio 面向构建工具，而不是替代 oo-cli 做日常调用。"
+    "message": "当现成工具不够用时，用 Studio 内置 AI 生成新工具，或通过工作流组合和扩展现有工具，再交付到 Cloud 给 oo-cli 使用。"
   },
   "HOME.LinearFlow.studio.media.title": {
     "message": "Studio 演示视频"

@@ -1318,7 +1318,7 @@
     "message": "When packaged tools are not enough, generate, compose, and validate in OOMOL Studio"
   },
   "HOME.LinearFlow.studio.description": {
-    "message": "Use the agent to get started, then keep editing code, dependencies, parameters, and workflows yourself. This is the developer path: Studio is for building tools, not replacing oo-cli for day-to-day calls."
+    "message": "When ready-made tools are not enough, use Studio's built-in AI to generate new tools or extend existing ones with workflows, then deliver them to Cloud for oo-cli use."
   },
   "HOME.LinearFlow.studio.media.title": {
     "message": "Studio demo video"

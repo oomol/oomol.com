@@ -8,14 +8,9 @@ import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { SiteCta } from "@site/src/components/SiteCta";
-import { HeroVideoDialog } from "@site/src/components/ui/hero-video-dialog";
 import { Button } from "@site/src/components/ui/button";
+import { HeroVideoDialog } from "@site/src/components/ui/hero-video-dialog";
 import { clsx } from "clsx";
-import React, { useEffect, useRef } from "react";
-
-const homepageMediaUrls = {
-  cli: "https://static.oomol.com/assets/homepage/oomol-oo-cli-en.webm",
-} as const;
 
 const STUDIO_OVERVIEW_VIDEO_SRC =
   "https://cloud-storage.oomol.com/users/019343aa-ff25-727c-a449-9017313539b0/chat-uploads/2026-03-23/4gxes_hu5_ua-OOMOL_Studio.webm";
@@ -55,83 +50,10 @@ type Copy = {
   };
 };
 
-type VideoCardProps = {
-  title: string;
-  src: string;
-};
-
 type ImageCardProps = {
   title: string;
   src: string;
 };
-
-function VideoCard({ title, src }: VideoCardProps) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) {
-      return;
-    }
-
-    let isInView = false;
-
-    const syncPlayback = async () => {
-      if (!isInView || document.visibilityState !== "visible") {
-        video.pause();
-        return;
-      }
-
-      try {
-        await video.play();
-      } catch {
-        // Ignore autoplay rejections on restrictive browsers.
-      }
-    };
-
-    const observer = new IntersectionObserver(
-      entries => {
-        const entry = entries[0];
-        isInView = entry?.isIntersecting ?? false;
-        void syncPlayback();
-      },
-      {
-        rootMargin: "240px 0px",
-        threshold: 0.01,
-      }
-    );
-
-    observer.observe(video);
-    const onVisibilityChange = () => {
-      void syncPlayback();
-    };
-    document.addEventListener("visibilitychange", onVisibilityChange);
-
-    return () => {
-      observer.disconnect();
-      document.removeEventListener("visibilitychange", onVisibilityChange);
-      video.pause();
-    };
-  }, []);
-
-  return (
-    <div className={styles.videoCard}>
-      <div className={styles.videoCardMedia}>
-        <video
-          ref={videoRef}
-          className={styles.videoCardVideo}
-          loop
-          muted
-          playsInline
-          preload="none"
-          aria-label={title}
-        >
-          <source src={src} type="video/webm" />
-        </video>
-      </div>
-    </div>
-  );
-}
 
 function ImageCard({ title, src }: ImageCardProps) {
   return (
@@ -168,6 +90,9 @@ export default function HomepageLinearFlow() {
   );
   const studioHeroPoster = useBaseUrl(
     "/img/pages/studio/studio-hero-video-poster.png"
+  );
+  const cliWorkspaceImage = useBaseUrl(
+    "/img/pages/home/cli-workspace-preview.png"
   );
   const copy: Copy = {
     cli: {
@@ -211,7 +136,7 @@ export default function HomepageLinearFlow() {
       description: translate({
         id: "HOME.LinearFlow.studio.description",
         message:
-          "Use the agent to get started, then keep editing code, dependencies, parameters, and workflows yourself. Studio is for building tools, not day-to-day tool use.",
+          "When ready-made tools are not enough, use Studio's built-in AI to generate new tools or extend existing ones with workflows, then deliver them to Cloud for oo-cli use.",
       }),
       media: {
         title: translate({
@@ -336,7 +261,12 @@ export default function HomepageLinearFlow() {
             <h2 className={clsx(styles.sectionTitle, styles.studioTitle)}>
               {copy.studio.title}
             </h2>
-            <p className={clsx(styles.sectionDescription, styles.studioDescription)}>
+            <p
+              className={clsx(
+                styles.sectionDescription,
+                styles.studioDescription
+              )}
+            >
               {copy.studio.description}
             </p>
             <div className={styles.inlineActions}>
@@ -441,10 +371,7 @@ export default function HomepageLinearFlow() {
           </div>
 
           <div className={styles.mediaPanel}>
-            <VideoCard
-              title={copy.cli.media.title}
-              src={homepageMediaUrls.cli}
-            />
+            <ImageCard title={copy.cli.media.title} src={cliWorkspaceImage} />
           </div>
         </div>
       </section>
