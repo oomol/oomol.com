@@ -204,7 +204,7 @@ body,
 :lang(zh-CN) :where(.oomol-home-main, .oomol-landing-main) :where(h1, h2, h3) {
   letter-spacing: -0.022em;
   font-weight: 600;
-  line-height: 1.12;
+  line-height: var(--oomol-line-height-snug);
   text-wrap: pretty;
   word-break: normal;
   overflow-wrap: anywhere;
@@ -214,9 +214,19 @@ body,
 :lang(en) :where(.oomol-home-main, .oomol-landing-main) :where(h1, h2, h3) {
   letter-spacing: -0.034em;
   font-weight: 600;
-  line-height: 1.06;
+  line-height: 1.12;
   text-wrap: balance;
   hyphens: auto;
+}
+
+:lang(zh-CN) .oomol-home-main :where(h1, h2),
+:lang(zh-CN) .oomol-landing-main :where(h1, h2) {
+  line-height: var(--oomol-line-height-snug);
+}
+
+:lang(en) .oomol-home-main :where(h1, h2),
+:lang(en) .oomol-landing-main :where(h1, h2) {
+  line-height: 1.12;
 }
 
 /* 落地页语义标题字号 — 与 design-tokens 同一套 scale，避免各模块各自 clamp 过大 */
@@ -224,14 +234,14 @@ body,
   font-family: var(--oomol-font-display);
   font-size: var(--oomol-display-hero);
   letter-spacing: var(--oomol-tracking-display);
-  line-height: 1.06;
+  line-height: 1.12;
 }
 
 :where(.oomol-home-main, .oomol-landing-main) :where(h2) {
   font-family: var(--oomol-font-display);
   font-size: var(--oomol-display-section);
   letter-spacing: var(--oomol-tracking-section);
-  line-height: 1.1;
+  line-height: 1.14;
 }
 
 .oomol-home-main h3,
@@ -893,7 +903,7 @@ body,
 html[lang="zh-CN"] .docs-wrapper .theme-doc-markdown {
   :is(h1, h2) {
     letter-spacing: -0.022em;
-    line-height: 1.12;
+    line-height: var(--oomol-line-height-snug);
     text-wrap: pretty;
     word-break: normal;
     overflow-wrap: break-word;
@@ -901,7 +911,7 @@ html[lang="zh-CN"] .docs-wrapper .theme-doc-markdown {
 
   h3 {
     letter-spacing: -0.018em;
-    line-height: 1.12;
+    line-height: 1.2;
     text-wrap: pretty;
     word-break: normal;
     overflow-wrap: break-word;

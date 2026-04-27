@@ -216,7 +216,7 @@ export default function BrandAssets() {
           })}
         />
       </Head>
-      <div className={styles.container}>
+      <div className={`${styles.container} oomol-landing-main`}>
         <div className={styles.titleBox}>
           <h1 className={styles.heroTitle}>
             {translate({ message: "HOME.BrandAssets.title" })}

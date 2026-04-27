@@ -1,6 +1,9 @@
 /* Shared Sass helpers only.
    Keep this file CSS-output-free so module styles can safely `@use` it. */
 
+@use "sass:math";
+@use "sass:meta";
+
 // Standard breakpoint definitions
 $breakpoint-xs: 375px; // Small phones
 $breakpoint-sm: 640px; // Large phones
@@ -17,6 +20,18 @@ $tablet-width: $breakpoint-sm;
 $tablet-middle-width: $breakpoint-md;
 $tablet-large-width: 820px;
 $desktop-width: $breakpoint-xl;
+
+@function at-least-line-height($line-height, $minimum) {
+  @if $line-height == null {
+    @return $minimum;
+  }
+
+  @if meta.type-of($line-height) == number and math.is-unitless($line-height) {
+    @return math.max($line-height, $minimum);
+  }
+
+  @return $line-height;
+}
 
 @mixin respond-to($breakpoint) {
   @if $breakpoint == xs {
@@ -126,11 +141,11 @@ $desktop-width: $breakpoint-xl;
   @if $level == hero {
     font-size: var(--oomol-display-hero);
     letter-spacing: var(--oomol-tracking-display);
-    line-height: if($line-height == null, 1.06, $line-height);
+    line-height: at-least-line-height($line-height, 1.12);
   } @else if $level == section {
     font-size: var(--oomol-display-section);
     letter-spacing: var(--oomol-tracking-section);
-    line-height: if($line-height == null, 1.06, $line-height);
+    line-height: at-least-line-height($line-height, 1.14);
   } @else if $level == card {
     font-size: var(--oomol-display-card);
     letter-spacing: -0.012em;

@@ -23,7 +23,7 @@ export default function Support() {
           content={translate({ message: "SUPPORT.page.description" })}
         />
       </Head>
-      <div className={styles.supportBox}>
+      <div className={`${styles.supportBox} oomol-landing-main`}>
         <h1 className={styles.supportTitle}>
           {translate({ message: "SUPPORT.title" })}
         </h1>
