@@ -1,5 +1,5 @@
 .visualCard {
-  --connection-beam-path: rgba(24, 24, 27, 0.11);
+  --connection-beam-path: rgba(24, 24, 27, 0.14);
   --connection-beam-agent-start: rgba(99, 102, 241, 0);
   --connection-beam-agent-stop: rgba(99, 102, 241, 0.58);
   --connection-beam-app-start: rgba(59, 130, 246, 0);
@@ -98,7 +98,7 @@
 }
 
 :global(html[data-theme="dark"]) .visualCard {
-  --connection-beam-path: rgba(255, 255, 255, 0.16);
+  --connection-beam-path: rgba(255, 255, 255, 0.22);
   --connection-beam-agent-start: rgba(148, 163, 255, 0);
   --connection-beam-agent-stop: rgba(148, 163, 255, 0.46);
   --connection-beam-app-start: rgba(96, 165, 250, 0);

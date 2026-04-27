@@ -42,20 +42,29 @@
   inset: -18% 0 -8%;
   width: 100%;
   height: 126%;
-  opacity: 0.9;
+  opacity: 0.92;
   transform: skewY(7deg);
   transform-origin: 50% 18%;
-  /* Full-bleed grid: fixed-radius masks leave empty “wings” on wide viewports. */
+  /* 两侧网格更清晰，中间减弱，避免与 ConnectionBeam 动画线叠在一起发花 */
+  mask-image: linear-gradient(
+    90deg,
+    #000 0%,
+    #000 11%,
+    rgba(0, 0, 0, 0.38) 46%,
+    rgba(0, 0, 0, 0.38) 54%,
+    #000 89%,
+    #000 100%
+  );
 }
 
 .gridPattern path {
   fill: none;
-  stroke: rgba(10, 10, 10, 0.11);
+  stroke: rgba(10, 10, 10, 0.15);
   stroke-width: 1;
 }
 
 .gridSquare {
-  fill: rgba(10, 10, 10, 0.055);
+  fill: rgba(10, 10, 10, 0.07);
   opacity: 0;
   animation: homepage-grid-square 3.8s ease-in-out infinite;
 }
@@ -63,14 +72,20 @@
 .rayField {
   position: absolute;
   inset: 36% -14% -18%;
-  opacity: 0.86;
-  mask-image: linear-gradient(
-    180deg,
-    transparent 0%,
-    #000 18%,
-    #000 78%,
-    transparent 100%
-  );
+  opacity: 0.88;
+  /* 放射线仅保留左右翼，中间留给 ConnectionBeam；与纵向渐变求交 */
+  mask-image:
+    linear-gradient(
+      90deg,
+      #000 0%,
+      rgba(0, 0, 0, 0.92) 11%,
+      transparent 37%,
+      transparent 63%,
+      rgba(0, 0, 0, 0.92) 89%,
+      #000 100%
+    ),
+    linear-gradient(180deg, transparent 0%, #000 16%, #000 82%, transparent 100%);
+  mask-composite: intersect;
 }
 
 .rayField::before,
@@ -90,12 +105,6 @@
   );
   transform: scaleX(1.45);
   transform-origin: 50% 78%;
-  mask-image: radial-gradient(
-    54% 72% at 50% 72%,
-    #000 0%,
-    rgba(0, 0, 0, 0.5) 42%,
-    transparent 70%
-  );
 }
 
 .rayField::after {
@@ -123,12 +132,6 @@
   filter: blur(18px) saturate(1.16);
   mix-blend-mode: multiply;
   opacity: 0.66;
-  mask-image: radial-gradient(
-    40% 56% at 50% 64%,
-    #000 0%,
-    rgba(0, 0, 0, 0.72) 46%,
-    transparent 76%
-  );
 }
 
 @keyframes homepage-grid-square {
@@ -431,22 +434,22 @@
   }
 
   .gridPattern {
-    opacity: 0.98;
+    opacity: 1;
   }
 
   .gridPattern path {
-    stroke: rgba(255, 255, 255, 0.17);
+    stroke: rgba(255, 255, 255, 0.23);
   }
 
   .gridSquare {
-    fill: rgba(255, 255, 255, 0.12);
+    fill: rgba(255, 255, 255, 0.14);
   }
 
   .rayField::before {
     background: repeating-conic-gradient(
       from 235deg at 50% 78%,
-      rgba(255, 255, 255, 0.22) 0deg,
-      rgba(255, 255, 255, 0.22) 0.18deg,
+      rgba(255, 255, 255, 0.26) 0deg,
+      rgba(255, 255, 255, 0.26) 0.18deg,
       transparent 0.28deg,
       transparent 0.76deg
     );
