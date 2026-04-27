@@ -1,5 +1,6 @@
 import styles from "./styles.module.scss";
 
+import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import {
   AnimatedSpan,
@@ -23,6 +24,8 @@ const reasonCards = [
     description: translate({
       message: "HOME.CliReasons.card1.description",
     }),
+    href: "/docs/oo-cli",
+    linkLabel: translate({ message: "HOME.CliReasons.card1.link" }),
   },
   {
     index: "02",
@@ -30,6 +33,8 @@ const reasonCards = [
     description: translate({
       message: "HOME.CliReasons.card2.description",
     }),
+    href: "/studio",
+    linkLabel: translate({ message: "HOME.CliReasons.card2.link" }),
   },
 ];
 
@@ -171,7 +176,12 @@ export default function HomepageCliReasons() {
             {reasonCards.map(card => (
               <article key={card.index} className={styles.reasonCard}>
                 <div className={styles.reasonBody}>
-                  <h3 className={styles.reasonTitle}>{card.title}</h3>
+                  <div className={styles.reasonHeader}>
+                    <h3 className={styles.reasonTitle}>{card.title}</h3>
+                    <Link to={card.href} className={styles.reasonLink}>
+                      {card.linkLabel}
+                    </Link>
+                  </div>
                   <p className={styles.reasonDescription}>{card.description}</p>
                 </div>
               </article>

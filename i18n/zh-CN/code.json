@@ -1279,16 +1279,22 @@
     "message": "先把账号、应用和工具能力接到 OOMOL，再让 Codex、Claude Code、OpenClaw 和终端环境沿同一条 oo-cli 路径调用。"
   },
   "HOME.CliReasons.card1.title": {
-    "message": "授权一次，多 Agent 复用"
+    "message": "让 Agent 帮你装好 CLI"
   },
   "HOME.CliReasons.card1.description": {
-    "message": "在 OOMOL 完成一次连接和授权后，Codex、Claude Code、OpenClaw 和终端环境都能继续通过 oo-cli 调用。"
+    "message": "把右侧提示词复制给 Codex、Claude Code 或 OpenClaw，让它按当前环境执行官方安装命令，并完成登录和检查。"
+  },
+  "HOME.CliReasons.card1.link": {
+    "message": "安装 CLI →"
   },
   "HOME.CliReasons.card2.title": {
     "message": "自定义工具，用 Studio 构建"
   },
   "HOME.CliReasons.card2.description": {
-    "message": "现成工具不够时，用 OOMOL Studio 组合第三方工具、云函数和 API，或开发新的函数工具；扩展后仍能在 CLI 中使用。"
+    "message": "现成工具不够时，用 OOMOL Studio 组合第三方工具、云函数和 API，或直接开发新工具；发布后仍可通过 oo-cli 使用。"
+  },
+  "HOME.CliReasons.card2.link": {
+    "message": "了解 Studio →"
   },
   "HOME.CliReasons.installTerminal.copyPrompt": {
     "message": "复制提示词"

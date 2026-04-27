@@ -1279,16 +1279,22 @@
     "message": "Connect accounts, apps, and tool capabilities to OOMOL first, then let Codex, Claude Code, OpenClaw, and terminal workflows call them through the same oo-cli path."
   },
   "HOME.CliReasons.card1.title": {
-    "message": "Authorize once, reuse across agents"
+    "message": "Let your agent install the CLI"
   },
   "HOME.CliReasons.card1.description": {
-    "message": "After one connection and authorization in OOMOL, Codex, Claude Code, OpenClaw, and terminal workflows can keep calling those capabilities through oo-cli."
+    "message": "Copy the prompt on the right into Codex, Claude Code, or OpenClaw. It will run the official install command for your environment, then handle sign-in and checks."
+  },
+  "HOME.CliReasons.card1.link": {
+    "message": "Install CLI →"
   },
   "HOME.CliReasons.card2.title": {
     "message": "Build custom tools in Studio"
   },
   "HOME.CliReasons.card2.description": {
-    "message": "When ready-made tools are not enough, use OOMOL Studio to compose third-party tools, cloud functions, and APIs, or build new function tools; extensions remain usable from the CLI."
+    "message": "When ready-made tools are not enough, use OOMOL Studio to combine third-party tools, cloud functions, and APIs, or build a new tool. Published tools stay available through oo-cli."
+  },
+  "HOME.CliReasons.card2.link": {
+    "message": "Explore Studio →"
   },
   "HOME.CliReasons.installTerminal.copyPrompt": {
     "message": "Copy prompt"
