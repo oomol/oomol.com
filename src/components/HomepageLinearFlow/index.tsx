@@ -8,15 +8,17 @@ import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { SiteCta } from "@site/src/components/SiteCta";
+import { HeroVideoDialog } from "@site/src/components/ui/hero-video-dialog";
 import { Button } from "@site/src/components/ui/button";
 import { clsx } from "clsx";
 import React, { useEffect, useRef } from "react";
 
 const homepageMediaUrls = {
   cli: "https://static.oomol.com/assets/homepage/oomol-oo-cli-en.webm",
-  studio:
-    "https://static.oomol.com/assets/homepage/OOMOL-Studio-gen-use-skils-en.webm",
 } as const;
+
+const STUDIO_OVERVIEW_VIDEO_SRC =
+  "https://cloud-storage.oomol.com/users/019343aa-ff25-727c-a449-9017313539b0/chat-uploads/2026-03-23/4gxes_hu5_ua-OOMOL_Studio.webm";
 
 type Copy = {
   cli: {
@@ -163,6 +165,9 @@ export default function HomepageLinearFlow() {
     i18n.currentLocale === "zh-CN"
       ? "/img/pages/home/cloud-console-zh.png"
       : "/img/pages/home/cloud-console-en.png"
+  );
+  const studioHeroPoster = useBaseUrl(
+    "/img/pages/studio/studio-hero-video-poster.png"
   );
   const copy: Copy = {
     cli: {
@@ -320,16 +325,18 @@ export default function HomepageLinearFlow() {
         <div className={styles.stepWatermark} aria-hidden="true">
           {studioEyebrow.number}
         </div>
-        <div className={styles.container}>
-          <div className={styles.copyPanel}>
+        <div className={clsx(styles.container, styles.studioContainer)}>
+          <div className={clsx(styles.copyPanel, styles.studioCopyPanel)}>
             <span className={styles.eyebrow}>
               <span className={styles.eyebrowNumber}>
                 {studioEyebrow.number}
               </span>
               <span className={styles.eyebrowLabel}>{studioEyebrow.label}</span>
             </span>
-            <h2 className={styles.sectionTitle}>{copy.studio.title}</h2>
-            <p className={styles.sectionDescription}>
+            <h2 className={clsx(styles.sectionTitle, styles.studioTitle)}>
+              {copy.studio.title}
+            </h2>
+            <p className={clsx(styles.sectionDescription, styles.studioDescription)}>
               {copy.studio.description}
             </p>
             <div className={styles.inlineActions}>
@@ -342,10 +349,14 @@ export default function HomepageLinearFlow() {
             </div>
           </div>
 
-          <div className={styles.mediaPanel}>
-            <VideoCard
+          <div className={clsx(styles.mediaPanel, styles.studioMediaPanel)}>
+            <HeroVideoDialog
+              videoSrc={STUDIO_OVERVIEW_VIDEO_SRC}
+              thumbnailSrc={studioHeroPoster}
+              thumbnailAlt={copy.studio.media.title}
               title={copy.studio.media.title}
-              src={homepageMediaUrls.studio}
+              thumbnailAspectRatio="90 / 56"
+              thumbnailObjectPosition="center top"
             />
           </div>
         </div>

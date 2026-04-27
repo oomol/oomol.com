@@ -46,6 +46,10 @@
   min-width: 0;
 }
 
+.studioCopyPanel {
+  max-width: 44rem;
+}
+
 .flow .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -78,6 +82,14 @@
   @include marketing-supporting-copy(36rem);
   overflow-wrap: anywhere;
   word-break: break-word;
+}
+
+.studioTitle {
+  max-width: 30ch;
+}
+
+.studioDescription {
+  max-width: 44rem;
 }
 
 .inlineActions {
@@ -133,6 +145,13 @@
   border-radius: 14px;
   overflow: hidden;
   background: var(--oomol-bg-spotlight);
+}
+
+.studioMediaPanel {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  overflow: visible;
 }
 
 .videoCard {
@@ -231,8 +250,24 @@
 }
 
 @media (min-width: 997px) {
+  .studioCopyPanel {
+    max-width: 52rem;
+  }
+
+  .studioTitle {
+    max-width: 34ch;
+  }
+
+  .studioDescription {
+    max-width: 50rem;
+  }
+
   .container {
     grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  }
+
+  .container.studioContainer {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .cloudContainer {
@@ -275,6 +310,10 @@
     gap: 0.85rem;
   }
 
+  .studioCopyPanel {
+    max-width: 100%;
+  }
+
   .sectionTitle {
     max-width: 100%;
     font-size: var(--oomol-display-section);
@@ -283,6 +322,11 @@
 
   .sectionDescription {
     @include marketing-mobile-supporting-copy();
+  }
+
+  .studioTitle,
+  .studioDescription {
+    max-width: 100%;
   }
 
   .inlineActions {
