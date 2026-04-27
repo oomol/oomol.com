@@ -50,7 +50,6 @@ function HomepageGridBackdrop() {
           />
         ))}
       </svg>
-      <div className={styles.rayField} />
     </div>
   );
 }
