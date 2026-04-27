@@ -117,7 +117,7 @@
 
 .installTerminal {
   --magic-terminal-max-width: 100%;
-  --magic-terminal-height: 22.4rem;
+  --magic-terminal-height: var(--homepage-cli-terminal-height, 22.4rem);
   --magic-terminal-body-max-height: none;
   --magic-terminal-body-padding: 1.05rem 1.1rem 1.1rem;
 }
@@ -162,11 +162,11 @@
 }
 
 .successLine {
-  color: var(--oomol-success);
+  color: var(--oomol-text-primary);
 }
 
 .mutedLine {
-  color: var(--oomol-text-secondary);
+  color: var(--oomol-text-primary);
 }
 
 :global(html[data-theme="dark"]) .copyPromptButton {

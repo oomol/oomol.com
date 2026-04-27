@@ -139,7 +139,7 @@
 }
 
 .successLine {
-  color: var(--oomol-success);
+  color: var(--oomol-text-primary);
 }
 
 .infoLine {
@@ -147,7 +147,7 @@
 }
 
 .mutedLine {
-  color: var(--oomol-text-secondary);
+  color: var(--oomol-text-primary);
 }
 
 :global(html[lang="en"]) .titleGroup {

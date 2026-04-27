@@ -11,6 +11,9 @@ import React from "react";
 
 type CopyTarget = "prompt" | null;
 type InstallPlatform = "unix" | "windows";
+type TerminalHeightStyle = React.CSSProperties & {
+  "--homepage-cli-terminal-height"?: string;
+};
 
 const INSTALL_COMMANDS: Record<InstallPlatform, string> = {
   unix: "curl -fsSL https://cli.oomol.com/install.sh | bash",
@@ -159,10 +162,54 @@ function HomepageInstallPromptCard() {
 }
 
 export default function HomepageCliReasons() {
+  const copyColumnRef = React.useRef<HTMLDivElement | null>(null);
+  const [terminalHeight, setTerminalHeight] = React.useState<number | null>(
+    null
+  );
+
+  React.useEffect(() => {
+    const copyColumn = copyColumnRef.current;
+    if (!copyColumn) {
+      return;
+    }
+
+    const desktopQuery = window.matchMedia("(min-width: 997px)");
+
+    const syncTerminalHeight = () => {
+      if (!desktopQuery.matches) {
+        setTerminalHeight(null);
+        return;
+      }
+
+      const nextHeight = Math.ceil(copyColumn.getBoundingClientRect().height);
+      setTerminalHeight(current =>
+        current === nextHeight ? current : nextHeight
+      );
+    };
+
+    syncTerminalHeight();
+
+    const resizeObserver = new ResizeObserver(syncTerminalHeight);
+    resizeObserver.observe(copyColumn);
+    desktopQuery.addEventListener("change", syncTerminalHeight);
+    window.addEventListener("resize", syncTerminalHeight);
+
+    return () => {
+      resizeObserver.disconnect();
+      desktopQuery.removeEventListener("change", syncTerminalHeight);
+      window.removeEventListener("resize", syncTerminalHeight);
+    };
+  }, []);
+
+  const terminalStyle: TerminalHeightStyle =
+    terminalHeight === null
+      ? {}
+      : { "--homepage-cli-terminal-height": `${terminalHeight}px` };
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.copyColumn}>
+        <div className={styles.copyColumn} ref={copyColumnRef}>
           <div className={styles.copyIntro}>
             <h2 className={styles.sectionTitle}>
               {translate({ message: "HOME.CliReasons.title" })}
@@ -190,7 +237,9 @@ export default function HomepageCliReasons() {
         </div>
 
         <div className={styles.visualColumn}>
-          <HomepageInstallPromptCard />
+          <div style={terminalStyle}>
+            <HomepageInstallPromptCard />
+          </div>
         </div>
       </div>
     </section>
