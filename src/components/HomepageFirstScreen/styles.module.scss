@@ -49,17 +49,17 @@
   mask-image: linear-gradient(
     90deg,
     #000 0%,
-    #000 11%,
-    rgba(0, 0, 0, 0.38) 46%,
-    rgba(0, 0, 0, 0.38) 54%,
-    #000 89%,
+    #000 15%,
+    rgba(0, 0, 0, 0.3) 44%,
+    rgba(0, 0, 0, 0.3) 56%,
+    #000 85%,
     #000 100%
   );
 }
 
 .gridPattern path {
   fill: none;
-  stroke: rgba(10, 10, 10, 0.15);
+  stroke: rgba(10, 10, 10, 0.16);
   stroke-width: 1;
 }
 
@@ -71,20 +71,24 @@
 
 .rayField {
   position: absolute;
-  inset: 36% -14% -18%;
-  opacity: 0.88;
-  /* 放射线仅保留左右翼，中间留给 ConnectionBeam；与纵向渐变求交 */
+  inset: 36% -18% -18%;
+  opacity: 0.94;
+  /* 两翼更宽、渐变更慢，让金/紫氛围光在左右更看得见；中间仍留空给 ConnectionBeam */
   mask-image:
     linear-gradient(
       90deg,
       #000 0%,
-      rgba(0, 0, 0, 0.92) 11%,
-      transparent 37%,
-      transparent 63%,
-      rgba(0, 0, 0, 0.92) 89%,
+      rgba(0, 0, 0, 1) 7%,
+      rgba(0, 0, 0, 0.88) 20%,
+      rgba(0, 0, 0, 0.35) 38%,
+      transparent 44%,
+      transparent 56%,
+      rgba(0, 0, 0, 0.35) 62%,
+      rgba(0, 0, 0, 0.88) 80%,
+      rgba(0, 0, 0, 1) 93%,
       #000 100%
     ),
-    linear-gradient(180deg, transparent 0%, #000 16%, #000 82%, transparent 100%);
+    linear-gradient(180deg, transparent 0%, #000 14%, #000 84%, transparent 100%);
   mask-composite: intersect;
 }
 
@@ -110,28 +114,28 @@
 .rayField::after {
   background:
     radial-gradient(
-      ellipse at 43% 63%,
-      rgba(var(--hero-accent-gold), 0.48),
-      transparent 20%
+      ellipse 52% 46% at 17% 66%,
+      rgba(var(--hero-accent-gold), 0.58),
+      transparent 58%
     ),
     radial-gradient(
-      ellipse at 57% 63%,
-      rgba(var(--hero-accent-primary), 0.5),
-      transparent 22%
+      ellipse 52% 46% at 83% 66%,
+      rgba(var(--hero-accent-primary), 0.6),
+      transparent 58%
     ),
     radial-gradient(
-      ellipse at 50% 73%,
-      rgba(85, 103, 216, 0.24),
-      transparent 18%
+      ellipse 38% 32% at 26% 56%,
+      rgba(255, 255, 255, 0.42),
+      transparent 48%
     ),
     radial-gradient(
-      ellipse at 50% 52%,
-      rgba(255, 255, 255, 0.82),
-      transparent 28%
+      ellipse 38% 32% at 74% 56%,
+      rgba(255, 255, 255, 0.36),
+      transparent 48%
     );
-  filter: blur(18px) saturate(1.16);
+  filter: blur(20px) saturate(1.2);
   mix-blend-mode: multiply;
-  opacity: 0.66;
+  opacity: 0.72;
 }
 
 @keyframes homepage-grid-square {
@@ -438,26 +442,47 @@
   }
 
   .gridPattern path {
-    stroke: rgba(255, 255, 255, 0.23);
+    stroke: rgba(255, 255, 255, 0.27);
   }
 
   .gridSquare {
-    fill: rgba(255, 255, 255, 0.14);
+    fill: rgba(255, 255, 255, 0.15);
   }
 
   .rayField::before {
     background: repeating-conic-gradient(
       from 235deg at 50% 78%,
-      rgba(255, 255, 255, 0.26) 0deg,
-      rgba(255, 255, 255, 0.26) 0.18deg,
+      rgba(255, 255, 255, 0.32) 0deg,
+      rgba(255, 255, 255, 0.32) 0.18deg,
       transparent 0.28deg,
       transparent 0.76deg
     );
   }
 
   .rayField::after {
+    background:
+      radial-gradient(
+        ellipse 54% 48% at 16% 67%,
+        rgba(var(--hero-accent-gold), 0.72),
+        transparent 58%
+      ),
+      radial-gradient(
+        ellipse 54% 48% at 84% 67%,
+        rgba(var(--hero-accent-primary), 0.74),
+        transparent 58%
+      ),
+      radial-gradient(
+        ellipse 40% 34% at 24% 56%,
+        rgba(255, 255, 255, 0.22),
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse 40% 34% at 76% 56%,
+        rgba(255, 255, 255, 0.18),
+        transparent 50%
+      );
     mix-blend-mode: screen;
-    opacity: 0.42;
+    opacity: 0.62;
   }
 
   .playTriangle {

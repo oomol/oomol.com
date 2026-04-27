@@ -99,7 +99,7 @@ const config = {
           display: initial;
         }
 
-        html:not([data-theme]) [class*="themedComponent--light"] {
+        html:not([data-theme]) [class*="themedComponent--dark"] {
           display: initial;
         }
       `,
@@ -232,7 +232,8 @@ const config = {
       colorMode: {
         defaultMode: "dark",
         disableSwitch: false,
-        respectPrefersColorScheme: true,
+        /* 未在站内切换过时始终用 defaultMode，不跟系统浅色偏好走 */
+        respectPrefersColorScheme: false,
       },
       navbar: {
         title: "OOMOL",
