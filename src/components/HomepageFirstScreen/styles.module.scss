@@ -7,11 +7,172 @@
   padding: clamp(4.8rem, 10vw, 8rem) 0 clamp(4.2rem, 6.6vw, 5.8rem);
   background: var(--oomol-bg-base);
   border-bottom: 1px solid var(--oomol-divider);
+  isolation: isolate;
+}
+
+.backdrop {
+  --hero-accent-gold: 251, 191, 36;
+  --hero-accent-lavender: 196, 181, 253;
+  --hero-accent-primary: 125, 127, 233;
+
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.96) 0%,
+    rgba(255, 255, 255, 0.74) 52%,
+    rgba(255, 255, 255, 0.96) 100%
+  );
+}
+
+.stageFrame {
+  position: absolute;
+  inset: clamp(2.8rem, 5vw, 4.3rem) 0 0;
+  border: 1px solid var(--oomol-divider);
+  border-top: 0;
+  border-inline: 0;
+  opacity: 0.9;
+}
+
+.stageFrame::before,
+.stageFrame::after {
+  content: "";
+  position: absolute;
+  width: 1.05rem;
+  height: 1.05rem;
+  border-color: rgba(10, 10, 10, 0.2);
+  opacity: 0.58;
+}
+
+.stageFrame::before {
+  display: none;
+}
+
+.stageFrame::after {
+  right: clamp(1.8rem, 7vw, 7rem);
+  bottom: clamp(0.9rem, 2vw, 1.6rem);
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.gridPattern {
+  position: absolute;
+  inset: -18% 0 -8%;
+  width: 100%;
+  height: 126%;
+  opacity: 0.9;
+  transform: skewY(7deg);
+  transform-origin: 50% 18%;
+  mask-image: radial-gradient(
+    760px circle at 50% 35%,
+    #000 0%,
+    rgba(0, 0, 0, 0.78) 52%,
+    transparent 86%
+  );
+}
+
+.gridPattern path {
+  fill: none;
+  stroke: rgba(10, 10, 10, 0.11);
+  stroke-width: 1;
+}
+
+.gridSquare {
+  fill: rgba(10, 10, 10, 0.055);
+  opacity: 0;
+  animation: homepage-grid-square 3.8s ease-in-out infinite;
+}
+
+.rayField {
+  position: absolute;
+  inset: 36% -14% -18%;
+  opacity: 0.86;
+  mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    #000 18%,
+    #000 78%,
+    transparent 100%
+  );
+}
+
+.rayField::before,
+.rayField::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.rayField::before {
+  background: repeating-conic-gradient(
+    from 235deg at 50% 78%,
+    rgba(10, 10, 10, 0.095) 0deg,
+    rgba(10, 10, 10, 0.095) 0.18deg,
+    transparent 0.28deg,
+    transparent 0.74deg
+  );
+  transform: scaleX(1.45);
+  transform-origin: 50% 78%;
+  mask-image: radial-gradient(
+    54% 72% at 50% 72%,
+    #000 0%,
+    rgba(0, 0, 0, 0.5) 42%,
+    transparent 70%
+  );
+}
+
+.rayField::after {
+  background:
+    radial-gradient(
+      ellipse at 43% 63%,
+      rgba(var(--hero-accent-gold), 0.48),
+      transparent 20%
+    ),
+    radial-gradient(
+      ellipse at 57% 63%,
+      rgba(var(--hero-accent-primary), 0.5),
+      transparent 22%
+    ),
+    radial-gradient(
+      ellipse at 50% 73%,
+      rgba(85, 103, 216, 0.24),
+      transparent 18%
+    ),
+    radial-gradient(
+      ellipse at 50% 52%,
+      rgba(255, 255, 255, 0.82),
+      transparent 28%
+    );
+  filter: blur(18px) saturate(1.16);
+  mix-blend-mode: multiply;
+  opacity: 0.66;
+  mask-image: radial-gradient(
+    40% 56% at 50% 64%,
+    #000 0%,
+    rgba(0, 0, 0, 0.72) 46%,
+    transparent 76%
+  );
+}
+
+@keyframes homepage-grid-square {
+  0%,
+  24%,
+  100% {
+    opacity: 0;
+  }
+
+  38%,
+  64% {
+    opacity: 1;
+  }
 }
 
 .container {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 32px;
@@ -59,6 +220,8 @@
 }
 
 .workflowArchive {
+  position: relative;
+  z-index: 2;
   width: min(1200px, calc(100% - 48px));
   margin-top: clamp(1.6rem, 3vw, 2.4rem);
   margin-inline: auto;
@@ -116,6 +279,11 @@
     padding-bottom: 4rem;
   }
 
+  .gridPattern {
+    inset-inline: -10%;
+    width: 120%;
+  }
+
   .slogan {
     max-width: 100%;
   }
@@ -134,6 +302,22 @@
 @media (max-width: 768px) {
   .section {
     padding: 3.4rem 0 3.2rem;
+  }
+
+  .stageFrame {
+    inset: 2.2rem 0 0;
+  }
+
+  .gridPattern {
+    inset: -16% -22% 13%;
+    width: 144%;
+    height: 88%;
+    opacity: 0.58;
+  }
+
+  .rayField {
+    inset: 44% -36% -14%;
+    opacity: 0.55;
   }
 
   .container {
@@ -186,6 +370,15 @@
     padding: 3rem 0 3rem;
   }
 
+  .stageFrame {
+    inset: 1.8rem 0 0;
+  }
+
+  .stageFrame::before,
+  .stageFrame::after {
+    display: none;
+  }
+
   .container {
     padding: 0 16px;
     gap: 1.15rem;
@@ -215,6 +408,47 @@
 [data-theme="dark"] {
   .section {
     padding-top: clamp(5rem, 10vw, 8.4rem);
+  }
+
+  .backdrop {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.96) 0%,
+      rgba(0, 0, 0, 0.72) 50%,
+      rgba(0, 0, 0, 0.96) 100%
+    );
+  }
+
+  .stageFrame {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .stageFrame::before,
+  .stageFrame::after {
+    border-color: rgba(255, 255, 255, 0.22);
+  }
+
+  .gridPattern path {
+    stroke: rgba(255, 255, 255, 0.085);
+  }
+
+  .gridSquare {
+    fill: rgba(255, 255, 255, 0.07);
+  }
+
+  .rayField::before {
+    background: repeating-conic-gradient(
+      from 235deg at 50% 78%,
+      rgba(255, 255, 255, 0.14) 0deg,
+      rgba(255, 255, 255, 0.14) 0.18deg,
+      transparent 0.28deg,
+      transparent 0.76deg
+    );
+  }
+
+  .rayField::after {
+    mix-blend-mode: screen;
+    opacity: 0.42;
   }
 
   .playTriangle {
