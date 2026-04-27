@@ -1,0 +1,72 @@
+---
+sidebar_position: 2
+sidebar_label: 连接飞书应用机器人
+slug: /oo-cli/connect-feishu-app-bot
+pagination_prev: cloud-services/cli
+pagination_next: cloud-services/cli-command-reference
+---
+
+# 连接飞书应用机器人
+
+这篇指南会带你创建飞书企业自建应用，启用机器人能力，开通消息相关权限，并把
+飞书应用机器人连接到 OOMOL。如果你只需要让 OOMOL 调用飞书接口，完成基础连接
+即可；如果还需要接收机器人消息等事件，再继续配置事件回调。
+
+## 准备工作
+
+- 你可以访问 [飞书开放平台](https://open.feishu.cn/app)。
+- 你有权限在当前飞书组织中创建企业自建应用。
+- 你可以打开 [OOMOL Console](https://console.oomol.com/app-connections?provider=feishu_app_bot)。
+
+## 创建飞书企业自建应用
+
+打开 [飞书开放平台](https://open.feishu.cn/app)，点击 **创建企业自建应用**。
+填写应用名称和应用描述，选择或上传应用图标，然后创建应用。
+
+![创建飞书企业自建应用](/img/docs/cloud-services/cli/connect-feishu-app-bot/create-custom-app.png)
+
+创建成功后，进入应用详情页。在 **凭证与基础信息** 面板中找到并复制
+**App ID** 和 **App Secret**。后续在 OOMOL Console 连接应用时需要使用这两个值。
+
+## 启用机器人能力
+
+在飞书应用详情页，选择 **添加应用能力**。进入 **按能力添加**，选择
+**机器人**，然后点击 **添加**。
+
+## 开通消息权限
+
+打开 **权限管理**，点击 **开通权限**。在 **应用身份权限** 中进入
+**消息与群组**。
+
+把右上角的权限筛选切换为 **免审权限**，勾选当前列表中的所有权限，然后点击
+**确认开通权限**。
+
+## 在 OOMOL Console 连接应用
+
+打开 [OOMOL Console](https://console.oomol.com/app-connections?provider=feishu_app_bot)，
+输入飞书应用的 **App ID** 和 **App Secret**，然后连接应用。
+
+如果你不需要接收飞书事件，例如机器人收到的消息，到这里就配置完成了。如果你
+需要事件回调，先不要结束配置，继续完成下面的步骤。
+
+## 启用事件回调
+
+在飞书应用详情页打开 **事件与回调**，选择 **加密策略**。把
+**Verification Token** 复制到 OOMOL Console，然后连接应用。
+
+连接成功后，OOMOL Console 会显示一个回调地址。复制这个地址。
+
+![复制 OOMOL 回调地址](/img/docs/cloud-services/cli/connect-feishu-app-bot/oomol-callback-url.png)
+
+回到飞书应用详情页，打开 **事件与回调**，选择 **事件配置**。在
+**将事件发送至开发者服务器** 中，把 OOMOL 回调地址粘贴到 **请求地址**，然后
+点击 **保存**。
+
+![把回调地址填入飞书事件配置](/img/docs/cloud-services/cli/connect-feishu-app-bot/feishu-event-request-url.png)
+
+## 订阅消息事件
+
+在 **事件与回调** > **事件配置** 下方点击 **添加事件**。在左侧分类中选择
+**消息与群组**，勾选该分类下的所有事件，然后点击 **添加**。
+
+至此，飞书应用机器人已经连接到 OOMOL，并可以接收已订阅的飞书事件。

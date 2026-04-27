@@ -1,0 +1,81 @@
+---
+sidebar_position: 2
+sidebar_label: Connect Feishu App Bot
+slug: /oo-cli/connect-feishu-app-bot
+pagination_prev: cloud-services/cli
+pagination_next: cloud-services/cli-command-reference
+---
+
+# Connect a Feishu App Bot
+
+This guide shows how to create a Feishu custom app, enable its bot capability,
+grant message permissions, and connect it to OOMOL. If you only need OOMOL to
+call Feishu APIs, you can stop after the basic connection. If you also want to
+receive bot messages or other Feishu events, finish the event callback setup.
+
+## Prerequisites
+
+- You have access to the [Feishu Open Platform](https://open.feishu.cn/app).
+- You can create a custom app in your Feishu organization.
+- You can open [OOMOL Console](https://console.oomol.com/app-connections?provider=feishu_app_bot).
+
+## Create a Feishu custom app
+
+Open [Feishu Open Platform](https://open.feishu.cn/app), then click **Create
+enterprise custom app**. Enter an app name and description, choose or upload an
+icon, and create the app.
+
+![Create a Feishu enterprise custom app](/img/docs/cloud-services/cli/connect-feishu-app-bot/create-custom-app.png)
+
+After the app is created, open the app detail page. In **Credentials & Basic
+Info**, copy the **App ID** and **App Secret**. You will use both values when
+connecting the app in OOMOL Console.
+
+## Enable the bot capability
+
+In the Feishu app detail page, go to **Add app capabilities**. Choose **Add by
+capability**, select **Bot**, then click **Add**.
+
+## Grant message permissions
+
+Open **Permission Management**, then choose **Enable Permissions**. In
+**Application identity permissions**, open **Messages and Groups**.
+
+Switch the permission filter in the upper-right corner to **No review
+required**, select all permissions in the current list, then click **Confirm
+permission activation**.
+
+## Connect in OOMOL Console
+
+Open [OOMOL Console](https://console.oomol.com/app-connections?provider=feishu_app_bot),
+enter the Feishu **App ID** and **App Secret**, then connect the app.
+
+If you do not need to receive Feishu events such as incoming bot messages, the
+connection is complete. If you need event callbacks, do not finish the
+connection yet. Continue with the following steps.
+
+## Enable event callbacks
+
+In the Feishu app detail page, open **Events & Callbacks**, then choose
+**Encryption Strategy**. Copy the **Verification Token** into OOMOL Console,
+then connect the app.
+
+After the connection succeeds, OOMOL Console shows a callback URL. Copy this
+URL.
+
+![Copy the OOMOL callback URL](/img/docs/cloud-services/cli/connect-feishu-app-bot/oomol-callback-url.png)
+
+Return to the Feishu app detail page. Open **Events & Callbacks** and choose
+**Event Configuration**. Under **Send events to developer server**, paste the
+OOMOL callback URL into **Request URL**, then click **Save**.
+
+![Paste the callback URL into Feishu event configuration](/img/docs/cloud-services/cli/connect-feishu-app-bot/feishu-event-request-url.png)
+
+## Subscribe to message events
+
+In **Events & Callbacks** > **Event Configuration**, click **Add event**. Select
+**Messages and Groups** from the left category list, select all events in that
+category, then click **Add**.
+
+Your Feishu App Bot is now connected to OOMOL and can receive the subscribed
+Feishu events.
