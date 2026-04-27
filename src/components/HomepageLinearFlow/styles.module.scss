@@ -141,7 +141,7 @@
 
 .mediaPanel {
   min-width: 0;
-  border: 1px solid var(--oomol-divider);
+  border: 0;
   border-radius: 14px;
   overflow: hidden;
   background: var(--oomol-bg-spotlight);
@@ -192,6 +192,10 @@
 
 .cloudMediaPanel .imageCardMedia {
   aspect-ratio: 1 / 1;
+}
+
+.cloudMediaPanel {
+  border: 0;
 }
 
 .cloudCardStack {
