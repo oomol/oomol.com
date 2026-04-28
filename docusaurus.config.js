@@ -50,6 +50,31 @@ async function loadCatalogStats() {
 const lightTheme = themes.github;
 const darkTheme = themes.dracula;
 
+const earlyColorModeScript = `
+(function() {
+  function getQueryStringTheme() {
+    try {
+      return new URLSearchParams(window.location.search).get("docusaurus-theme");
+    } catch (e) {}
+  }
+
+  function getStoredTheme() {
+    try {
+      return window.localStorage.getItem("theme");
+    } catch (e) {}
+  }
+
+  var theme = getQueryStringTheme() || getStoredTheme() || "dark";
+
+  if (theme !== "light" && theme !== "dark") {
+    theme = "dark";
+  }
+
+  document.documentElement.setAttribute("data-theme", theme);
+  document.documentElement.setAttribute("data-theme-choice", theme);
+})();
+`;
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "OOMOL",
@@ -83,6 +108,33 @@ const config = {
     mermaid: true,
   },
   headTags: [
+    {
+      tagName: "style",
+      attributes: {},
+      innerHTML: `
+        html,
+        body,
+        #__docusaurus,
+        html[data-theme="dark"],
+        html[data-theme="dark"] body,
+        html[data-theme="dark"] #__docusaurus {
+          background: #000;
+          color-scheme: dark;
+        }
+
+        html[data-theme="light"],
+        html[data-theme="light"] body,
+        html[data-theme="light"] #__docusaurus {
+          background: #fff;
+          color-scheme: light;
+        }
+      `,
+    },
+    {
+      tagName: "script",
+      attributes: {},
+      innerHTML: earlyColorModeScript,
+    },
     {
       tagName: "style",
       attributes: {},
