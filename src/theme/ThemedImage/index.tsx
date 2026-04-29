@@ -1,6 +1,6 @@
 import type { ImgHTMLAttributes } from "react";
 
-import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
+import { ThemedComponent } from "@docusaurus/theme-common";
 import React from "react";
 
 type ThemedImageProps = Omit<ImgHTMLAttributes<HTMLImageElement>, "src"> & {
@@ -12,13 +12,13 @@ type ThemedImageProps = Omit<ImgHTMLAttributes<HTMLImageElement>, "src"> & {
 
 export default function ThemedImage({
   alt,
+  className: imageClassName,
   sources,
   decoding,
   fetchPriority,
   loading,
   ...imgProps
 }: ThemedImageProps) {
-  const { colorMode, colorModeChoice, isHydrated } = useHydratedColorMode();
   const resolvedDecoding = decoding ?? "async";
   const resolvedLoading =
     loading ?? (fetchPriority === "high" ? "eager" : "lazy");
@@ -26,30 +26,19 @@ export default function ThemedImage({
     ? ({ fetchpriority: fetchPriority } as Record<string, string>)
     : undefined;
 
-  if (!isHydrated || colorModeChoice === null) {
-    return (
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcSet={sources.dark} />
+  return (
+    <ThemedComponent className={imageClassName}>
+      {({ theme, className }) => (
         <img
           {...imgProps}
           {...fetchPriorityProps}
           alt={alt}
+          className={className}
           decoding={resolvedDecoding}
           loading={resolvedLoading}
-          src={sources.light}
+          src={sources[theme]}
         />
-      </picture>
-    );
-  }
-
-  return (
-    <img
-      {...imgProps}
-      {...fetchPriorityProps}
-      alt={alt}
-      decoding={resolvedDecoding}
-      loading={resolvedLoading}
-      src={colorMode === "dark" ? sources.dark : sources.light}
-    />
+      )}
+    </ThemedComponent>
   );
 }
