@@ -13,43 +13,46 @@ import React, { createRef, forwardRef, useRef } from "react";
 const agentSurfaces = [
   {
     labelKey: "COMMON.brand.codex",
-    iconPath: "/img/pages/home/codex-color.svg",
+    iconPath: "/img/pages/home/agent-icon/codex-color.svg",
   },
   {
     labelKey: "COMMON.brand.claudeCode",
-    iconPath: "/img/pages/home/claude-color.svg",
+    iconPath: "/img/pages/home/agent-icon/claude-color.svg",
   },
   {
     labelKey: "COMMON.brand.openClaw",
-    iconPath: "/img/pages/home/openclaw-color.svg",
+    iconPath: "/img/pages/home/agent-icon/openclaw-color.svg",
   },
-  { labelKey: "COMMON.brand.cursor", iconPath: "/img/pages/home/cursor.svg" },
+  {
+    labelKey: "COMMON.brand.cursor",
+    iconPath: "/img/pages/home/agent-icon/cursor.svg",
+  },
   {
     labelKey: "COMMON.brand.qode",
-    iconPath: "/img/pages/home/qoder-color.svg",
+    iconPath: "/img/pages/home/agent-icon/qoder-color.svg",
   },
 ] as const;
 
 const beamApps = [
   {
     labelKey: "COMMON.brand.github",
-    iconPath: "/img/pages/home/brand-icons/github.svg",
+    iconPath: "/img/pages/home/saas-icon/github.svg",
   },
   {
     labelKey: "COMMON.brand.slack",
-    iconPath: "/img/pages/home/brand-icons/slack.svg",
+    iconPath: "/img/pages/home/saas-icon/slack.svg",
   },
   {
     labelKey: "COMMON.brand.notion",
-    iconPath: "/img/pages/home/brand-icons/notion.svg",
+    iconPath: "/img/pages/home/saas-icon/notion.svg",
   },
   {
     labelKey: "COMMON.brand.gmail",
-    iconPath: "/img/pages/home/brand-icons/gmail.svg",
+    iconPath: "/img/pages/home/saas-icon/gmail.svg",
   },
   {
     labelKey: "COMMON.brand.linear",
-    iconPath: "/img/pages/home/brand-icons/linear.svg",
+    iconPath: "/img/pages/home/saas-icon/linear.svg",
   },
 ] as const;
 
