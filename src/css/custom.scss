@@ -49,6 +49,21 @@ html {
   text-size-adjust: 100%;
 }
 
+/* Docusaurus' themed image CSS defaults to the light asset before
+   data-theme is present. The site default is dark, so the no-theme first
+   frame should use dark assets too. */
+html:not([data-theme]) body [class*="themedComponent"] {
+  display: none;
+}
+
+html:not([data-theme]) body [class*="themedComponent--dark"] {
+  display: initial;
+}
+
+html:not([data-theme]) body [class*="themedComponent--light"] {
+  display: none;
+}
+
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 
 [data-theme="dark"] {
