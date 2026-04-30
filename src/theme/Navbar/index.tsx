@@ -11,10 +11,10 @@ import { translate } from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { Button } from "@site/src/components/ui/button";
+import { useHydratedColorMode } from "@site/src/lib/useHydratedColorMode";
 import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
 import NavbarItem from "@theme/NavbarItem";
 import SearchBar from "@theme/SearchBar";
-import ThemedImage from "@theme/ThemedImage";
 import { clsx } from "clsx";
 import React, { memo, useEffect, useMemo, useRef, useState } from "react";
 
@@ -126,6 +126,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
   };
   const locale = i18n.currentLocale;
   const location = useLocation();
+  const { colorMode } = useHydratedColorMode("dark");
 
   // Keep the zh-CN logo files: static cleanup will not detect them from this
   // dynamic path. Runtime uses logo-zh-light.svg and logo-zh-dark.svg.
@@ -145,14 +146,7 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
       }) as React.CSSProperties,
     [logoMobileWidth, logoWidth]
   );
-
-  const logoSources = useMemo(
-    () => ({
-      light: logoLight,
-      dark: logoDark,
-    }),
-    [logoDark, logoLight]
-  );
+  const logoSrc = colorMode === "dark" ? logoDark : logoLight;
 
   const isDocumentPath = useMemo(() => {
     return (
@@ -363,11 +357,12 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
       <div className={clsx("navbar__inner", styles.inner)}>
         <div className="navbar__items">
           <Link className={styles.brand} style={logoStyle} to="/">
-            <ThemedImage
-              sources={logoSources}
+            <img
+              src={logoSrc}
               alt={translate({ message: "Theme.logo.alt" })}
               height={32}
               width={Math.round(logoWidth)}
+              decoding="async"
               fetchPriority="high"
               loading="eager"
             />
