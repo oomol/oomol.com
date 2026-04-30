@@ -375,7 +375,7 @@ $navbar-desktop-min: 861px;
 .brand img {
   display: block;
   height: 32px;
-  width: auto;
+  width: var(--navbar-logo-width, auto);
 }
 
 .cutLine {
@@ -916,7 +916,7 @@ $navbar-desktop-min: 861px;
 
   .brand img {
     height: 28px;
-    width: auto;
+    width: var(--navbar-logo-mobile-width, auto);
   }
 
   .brand picture {

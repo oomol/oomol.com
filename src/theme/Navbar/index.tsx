@@ -135,6 +135,16 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
   const logoDark = useBaseUrl(
     `/img/logo-${locale === "zh-CN" ? "zh" : "en"}-dark.svg`
   );
+  const logoWidth = locale === "zh-CN" ? 79.04 : 112.32;
+  const logoMobileWidth = locale === "zh-CN" ? 69.16 : 98.28;
+  const logoStyle = useMemo(
+    () =>
+      ({
+        "--navbar-logo-width": `${logoWidth}px`,
+        "--navbar-logo-mobile-width": `${logoMobileWidth}px`,
+      }) as React.CSSProperties,
+    [logoMobileWidth, logoWidth]
+  );
 
   const logoSources = useMemo(
     () => ({
@@ -352,11 +362,12 @@ const NavbarComponent: React.FC<NavbarProps> = memo(() => {
     >
       <div className={clsx("navbar__inner", styles.inner)}>
         <div className="navbar__items">
-          <Link className={styles.brand} to="/">
+          <Link className={styles.brand} style={logoStyle} to="/">
             <ThemedImage
               sources={logoSources}
               alt={translate({ message: "Theme.logo.alt" })}
               height={32}
+              width={Math.round(logoWidth)}
               fetchPriority="high"
               loading="eager"
             />
