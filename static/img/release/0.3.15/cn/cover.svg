@@ -1,0 +1,77 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <linearGradient id="bg" x1="64" y1="32" x2="1120" y2="612" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07111B"/>
+      <stop offset="0.5" stop-color="#122336"/>
+      <stop offset="1" stop-color="#071418"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(198 152) rotate(34.6) scale(460 246)">
+      <stop stop-color="#2BF4C9" stop-opacity="0.62"/>
+      <stop offset="1" stop-color="#2BF4C9" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(974 476) rotate(154.5) scale(416 236)">
+      <stop stop-color="#5CA8FF" stop-opacity="0.52"/>
+      <stop offset="1" stop-color="#5CA8FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="91" y1="75" x2="1034" y2="568" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101D28" stop-opacity="0.98"/>
+      <stop offset="1" stop-color="#091017" stop-opacity="0.98"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="114" y1="506" x2="1084" y2="506" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2BF4C9"/>
+      <stop offset="0.5" stop-color="#5CA8FF"/>
+      <stop offset="1" stop-color="#F3C766"/>
+    </linearGradient>
+    <filter id="shadow" x="50" y="44" width="1100" height="552" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#000000" flood-opacity="0.42"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glowA)"/>
+  <rect width="1200" height="630" fill="url(#glowB)"/>
+  <path d="M0 518C147 463 264 482 407 522C562 565 683 584 836 517C967 459 1060 453 1200 497V630H0V518Z" fill="#0B1016" fill-opacity="0.5"/>
+  <g opacity="0.16">
+    <path d="M96 166H1104" stroke="#D6DEE6"/>
+    <path d="M96 234H1104" stroke="#D6DEE6"/>
+    <path d="M96 302H1104" stroke="#D6DEE6"/>
+    <path d="M96 370H1104" stroke="#D6DEE6"/>
+    <path d="M96 438H1104" stroke="#D6DEE6"/>
+    <path d="M232 76V554" stroke="#D6DEE6"/>
+    <path d="M394 76V554" stroke="#D6DEE6"/>
+    <path d="M556 76V554" stroke="#D6DEE6"/>
+    <path d="M718 76V554" stroke="#D6DEE6"/>
+    <path d="M880 76V554" stroke="#D6DEE6"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="72" y="66" width="1056" height="498" rx="26" fill="url(#panel)" stroke="#2B4052" stroke-width="2"/>
+    <rect x="72" y="66" width="1056" height="64" rx="26" fill="#172430"/>
+    <path d="M72 114H1128" stroke="#2B4052" stroke-width="2"/>
+    <circle cx="112" cy="98" r="8" fill="#F56B6B"/>
+    <circle cx="140" cy="98" r="8" fill="#F3C766"/>
+    <circle cx="168" cy="98" r="8" fill="#54D99C"/>
+  </g>
+  <text x="214" y="107" fill="#7E91A3" font-family="Menlo, Consolas, monospace" font-size="18">oomol.com / updates / oo-cli</text>
+  <text x="112" y="192" fill="#7FE0C2" font-family="Menlo, Consolas, monospace" font-size="22" font-weight="700">OO-CLI RELEASE</text>
+  <text x="112" y="286" fill="#F5F8FA" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="66" font-weight="800">oo-cli 0.3.15</text>
+  <text x="112" y="346" fill="#B8C5D1" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="28" font-weight="500">从命令行发布本地 Skill 到 OOMOL Hub</text>
+  <rect x="112" y="472" width="556" height="64" rx="16" fill="#0D151C" stroke="#304657"/>
+  <path d="M140 504H276" stroke="url(#accent)" stroke-width="8" stroke-linecap="round"/>
+  <text x="306" y="514" fill="#D9E4EC" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="650">CLI</text>
+  <text x="424" y="514" fill="#6E8496" font-family="Inter, Arial, sans-serif" font-size="22">/</text>
+  <text x="452" y="514" fill="#D9E4EC" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="650">Skills</text>
+  <text x="596" y="514" fill="#6E8496" font-family="Inter, Arial, sans-serif" font-size="22">/</text>
+  <text x="624" y="514" fill="#D9E4EC" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="650">Hub</text>
+  <g transform="translate(716 174)">
+    <rect x="0" y="0" width="332" height="286" rx="24" fill="#0C151D" stroke="#345064"/>
+    <rect x="24" y="28" width="284" height="44" rx="12" fill="#142230" stroke="#2B4052"/>
+    <text x="44" y="57" fill="#7FE0C2" font-family="Menlo, Consolas, monospace" font-size="18">$ oo skills publish</text>
+    <rect x="24" y="104" width="284" height="42" rx="12" fill="#111B25"/>
+    <path d="M46 125H176" stroke="#5CA8FF" stroke-width="8" stroke-linecap="round"/>
+    <path d="M46 168H252" stroke="#2BF4C9" stroke-width="8" stroke-linecap="round"/>
+    <path d="M46 211H214" stroke="#F3C766" stroke-width="8" stroke-linecap="round"/>
+    <rect x="24" y="232" width="284" height="34" rx="10" fill="#101B24"/>
+    <text x="44" y="254" fill="#D9E4EC" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="18" font-weight="700">发布成功</text>
+    <text x="44" y="280" fill="#8295A8" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15" font-weight="600">Hub 页面已生成</text>
+  </g>
+</svg>

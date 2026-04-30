@@ -1,0 +1,51 @@
+---
+slug: oo_cli_0.3.15
+title: oo-cli 0.3.15
+date: 2026-04-30
+description: "oo-cli 0.3.15 新增从命令行发布本地 Skill 的能力，帮助 Skill 作者把本地成果发布成可从 OOMOL Hub 安装的 OOMOL Package。"
+image: /img/release/0.3.15/cn/cover.svg
+---
+
+# oo-cli
+
+## Skills
+
+### 1. 从命令行发布本地 Skill 到 OOMOL Hub
+
+oo-cli `0.3.15` 新增 `oo skills publish <skill-id>`，让 Skill 作者可以直接把本地 Skill 发布为 OOMOL Package。
+
+当你创建或维护本地 Skill 后，现在可以通过 CLI 使用当前 OOMOL 账号完成发布。这个命令会校验本地 `SKILL.md`，把 Skill 准备成 package，发布到 OOMOL Hub，并在成功后输出已发布 Package 的 Hub 页面地址。
+
+<!-- truncate -->
+
+这会缩短从创作到分享的路径。一个 Skill 可以先在本地创建和测试，然后发布成其他用户可以在 OOMOL 生态中发现、安装和使用的 Package。
+
+默认情况下，发布出的 Skill Package 是私有包。当 Skill 已经准备好对更多用户开放时，可以通过 `--visibility public` 发布为公开包。
+
+### 2. 更清晰的包元数据与版本处理
+
+发布命令会在合理范围内补齐实用默认值。如果 Skill 没有提供展示标题，oo-cli 会根据 Skill id 生成标题；如果没有提供版本，首次发布会从 `0.0.1` 开始。
+
+发布成功后，oo-cli 会把最终的包名和版本写回 `SKILL.md`。这样本地 Skill 在发布后更容易追踪，后续再次发布时也能延续用户实际安装的 Package 信息。
+
+如果请求发布的版本不高于 OOMOL Hub 上已有的版本，oo-cli 会自动发布下一个 patch 版本。这样在多次发布小更新时，作者不需要每次都手动调整版本号。
+
+### 3. 发布已有 Package 时更安全
+
+发布前，oo-cli 会检查远端最新 Package 元数据。如果远端同名 Package 已经包含 Blocks，oo-cli 会要求在交互式终端中确认后才继续发布。
+
+这可以减少把一个同时包含 Blocks 的 Package 误替换成只包含 Skill 文件的版本的风险。打包时，命令也会遵循 Skill 目录中的 `.gitignore`，并拒绝符号链接，让实际发布内容更可预期。
+
+## 其他
+
+### 对比
+
+源代码仓库: [oomol-lab/oo-cli](https://github.com/oomol-lab/oo-cli)
+
+本次版本变更: [v0.3.14...v0.3.15](https://github.com/oomol-lab/oo-cli/compare/v0.3.14...v0.3.15)
+
+Release 页面: [v0.3.15](https://github.com/oomol-lab/oo-cli/releases/tag/v0.3.15)
+
+### 感谢
+
+感谢所有使用 oo-cli 创建和分享 Skills 的用户。我们会继续改进命令行工作流，让本地创作、发布、安装和更新成为一条更连贯的路径。

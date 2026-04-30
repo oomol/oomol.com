@@ -54,14 +54,14 @@
   <text x="214" y="107" fill="#7E91A3" font-family="Menlo, Consolas, monospace" font-size="18">oomol.com / updates / studio</text>
   <text x="112" y="192" fill="#7FE0C2" font-family="Menlo, Consolas, monospace" font-size="22" font-weight="700">STUDIO RELEASE</text>
   <text x="112" y="286" fill="#F5F8FA" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="66" font-weight="800">OOMOL Studio 1.5.7</text>
-  <text x="112" y="346" fill="#B8C5D1" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="28" font-weight="500">OOPilot startup compatibility and core stability</text>
+  <text x="112" y="346" fill="#B8C5D1" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="28" font-weight="500">OOPilot 首次启动兼容性与核心稳定性</text>
   <rect x="112" y="472" width="556" height="64" rx="16" fill="#0D151C" stroke="#304657"/>
   <path d="M140 504H276" stroke="url(#accent)" stroke-width="8" stroke-linecap="round"/>
   <text x="306" y="514" fill="#D9E4EC" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="650">OOPilot</text>
-  <text x="432" y="514" fill="#6E8496" font-family="Inter, Arial, sans-serif" font-size="22">/</text>
-  <text x="460" y="514" fill="#D9E4EC" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="650">Core</text>
-  <text x="578" y="514" fill="#6E8496" font-family="Inter, Arial, sans-serif" font-size="22">/</text>
-  <text x="606" y="514" fill="#D9E4EC" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="650">Runtime</text>
+  <text x="474" y="514" fill="#6E8496" font-family="Inter, Arial, sans-serif" font-size="22">/</text>
+  <text x="502" y="514" fill="#D9E4EC" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="650">核心依赖</text>
+  <text x="620" y="514" fill="#6E8496" font-family="Inter, Arial, sans-serif" font-size="22">/</text>
+  <text x="648" y="514" fill="#D9E4EC" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="650">运行时</text>
   <g transform="translate(760 356) scale(0.62)">
     <rect x="0" y="0" width="332" height="286" rx="24" fill="#0C151D" stroke="#345064"/>
     <rect x="24" y="26" width="132" height="18" rx="9" fill="#2BF4C9" fill-opacity="0.28"/>
@@ -70,13 +70,13 @@
 
     <rect x="42" y="126" width="116" height="62" rx="16" fill="#142B36" stroke="#2BF4C9" stroke-opacity="0.72"/>
     <text x="58" y="152" fill="#F5F8FA" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15" font-weight="750">OOPilot</text>
-    <text x="58" y="174" fill="#9FB0C0" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="550">Fresh profiles</text>
+    <text x="58" y="174" fill="#9FB0C0" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="550">新环境可用</text>
     <rect x="178" y="126" width="116" height="62" rx="16" fill="#12243A" stroke="#5CA8FF" stroke-opacity="0.72"/>
     <text x="194" y="152" fill="#F5F8FA" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15" font-weight="750">Core</text>
-    <text x="194" y="174" fill="#9FB0C0" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="550">Dependency refresh</text>
+    <text x="194" y="174" fill="#9FB0C0" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="550">依赖升级</text>
     <rect x="110" y="212" width="116" height="62" rx="16" fill="#29221B" stroke="#F3C766" stroke-opacity="0.72"/>
     <text x="126" y="238" fill="#F5F8FA" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15" font-weight="750">Runtime</text>
-    <text x="126" y="260" fill="#9FB0C0" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="550">Maintenance</text>
+    <text x="126" y="260" fill="#9FB0C0" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="550">运行时维护</text>
     <path d="M158 157H178" stroke="#7E91A3" stroke-width="3" stroke-linecap="round"/>
     <path d="M174 188L168 212" stroke="#7E91A3" stroke-width="3" stroke-linecap="round"/>
     <path d="M236 188L226 212" stroke="#7E91A3" stroke-width="3" stroke-linecap="round"/>

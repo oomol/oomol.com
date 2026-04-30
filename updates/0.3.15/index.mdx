@@ -1,0 +1,51 @@
+---
+slug: oo_cli_0.3.15
+title: oo-cli 0.3.15
+date: 2026-04-30
+description: "oo-cli 0.3.15 adds command-line publishing for local Skills, helping Skill authors turn local work into OOMOL Packages that can be installed from OOMOL Hub."
+image: /img/release/0.3.15/cover.svg
+---
+
+# oo-cli
+
+## Skills
+
+### 1. Publish local Skills to OOMOL Hub from the command line
+
+oo-cli `0.3.15` adds `oo skills publish <skill-id>`, giving Skill authors a direct path from a local Skill to an OOMOL Package.
+
+After you create or maintain a local Skill, you can now publish it through the CLI under your current OOMOL account. The command validates the local `SKILL.md`, prepares the Skill as a package, publishes it to OOMOL Hub, and prints the Hub URL for the published package.
+
+<!-- truncate -->
+
+This makes the handoff from authoring to sharing much shorter. A Skill can start locally, be tested in your own environment, and then become a package that other users can discover and install through the OOMOL ecosystem.
+
+By default, published Skill packages are private. When a Skill is ready to be shared more broadly, you can publish it as a public package with `--visibility public`.
+
+### 2. Clearer package metadata and version handling
+
+The publish command fills in practical defaults where possible. If a Skill does not provide a display title, oo-cli derives one from the Skill id. If it does not provide a version, the first publish starts from `0.0.1`.
+
+When publishing succeeds, oo-cli writes the final package name and version back to `SKILL.md`. This makes the local Skill easier to track after publication and helps future publishes continue from the package that users install.
+
+If the requested version is not newer than the package already available on OOMOL Hub, oo-cli publishes the next patch version automatically. This keeps repeated publishes moving without forcing authors to manually adjust the version for every small update.
+
+### 3. Safer publishing for existing packages
+
+Before publishing, oo-cli checks the latest remote package metadata. If the remote package already contains Blocks, oo-cli asks for confirmation in an interactive terminal before continuing.
+
+This helps prevent accidentally replacing a Package that also includes Blocks with a release that only contains Skill files. The command also respects the Skill directory's `.gitignore` when packaging and rejects symbolic links, making the published contents easier to predict.
+
+## Others
+
+### Compare
+
+Source repository: [oomol-lab/oo-cli](https://github.com/oomol-lab/oo-cli)
+
+Changes in this release: [v0.3.14...v0.3.15](https://github.com/oomol-lab/oo-cli/compare/v0.3.14...v0.3.15)
+
+Release page: [v0.3.15](https://github.com/oomol-lab/oo-cli/releases/tag/v0.3.15)
+
+### Thanks
+
+Thanks to everyone building and sharing Skills with oo-cli. We will continue improving the command-line workflow so local authoring, publishing, installation, and updates feel like one connected path.

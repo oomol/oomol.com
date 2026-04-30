@@ -1,29 +1,84 @@
-<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1600" height="900" fill="#F6F8FB"/>
-  <rect x="72" y="72" width="1456" height="756" rx="36" fill="#FFFFFF"/>
-  <rect x="72" y="72" width="1456" height="756" rx="36" stroke="#D9E0EA" stroke-width="2"/>
-  <rect x="116" y="116" width="1368" height="112" rx="20" fill="#182033"/>
-  <circle cx="162" cy="172" r="14" fill="#FF7468"/>
-  <circle cx="206" cy="172" r="14" fill="#FFD166"/>
-  <circle cx="250" cy="172" r="14" fill="#4EC9A7"/>
-  <text x="316" y="184" fill="#E8EEF7" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="30" font-weight="700">OOMOL Studio 更新日志</text>
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
 
-  <text x="132" y="344" fill="#182033" font-family="Inter, Arial, sans-serif" font-size="92" font-weight="800">OOMOL Studio 1.5.10</text>
-  <text x="136" y="412" fill="#526071" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="34" font-weight="500">OOPilot 上下文、连接器工作流、包搜索与稳定性优化</text>
+  <defs>
+    <linearGradient id="bg" x1="64" y1="32" x2="1120" y2="612" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07111B"/>
+      <stop offset="0.5" stop-color="#122336"/>
+      <stop offset="1" stop-color="#071418"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(198 152) rotate(34.6) scale(460 246)">
+      <stop stop-color="#2BF4C9" stop-opacity="0.62"/>
+      <stop offset="1" stop-color="#2BF4C9" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(974 476) rotate(154.5) scale(416 236)">
+      <stop stop-color="#5CA8FF" stop-opacity="0.52"/>
+      <stop offset="1" stop-color="#5CA8FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="91" y1="75" x2="1034" y2="568" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101D28" stop-opacity="0.98"/>
+      <stop offset="1" stop-color="#091017" stop-opacity="0.98"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="114" y1="506" x2="1084" y2="506" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2BF4C9"/>
+      <stop offset="0.5" stop-color="#5CA8FF"/>
+      <stop offset="1" stop-color="#F3C766"/>
+    </linearGradient>
+    <filter id="shadow" x="50" y="44" width="1100" height="552" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#000000" flood-opacity="0.42"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glowA)"/>
+  <rect width="1200" height="630" fill="url(#glowB)"/>
+  <path d="M0 518C147 463 264 482 407 522C562 565 683 584 836 517C967 459 1060 453 1200 497V630H0V518Z" fill="#0B1016" fill-opacity="0.5"/>
+  <g opacity="0.16">
+    <path d="M96 166H1104" stroke="#D6DEE6"/>
+    <path d="M96 234H1104" stroke="#D6DEE6"/>
+    <path d="M96 302H1104" stroke="#D6DEE6"/>
+    <path d="M96 370H1104" stroke="#D6DEE6"/>
+    <path d="M96 438H1104" stroke="#D6DEE6"/>
+    <path d="M232 76V554" stroke="#D6DEE6"/>
+    <path d="M394 76V554" stroke="#D6DEE6"/>
+    <path d="M556 76V554" stroke="#D6DEE6"/>
+    <path d="M718 76V554" stroke="#D6DEE6"/>
+    <path d="M880 76V554" stroke="#D6DEE6"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="72" y="66" width="1056" height="498" rx="26" fill="url(#panel)" stroke="#2B4052" stroke-width="2"/>
+    <rect x="72" y="66" width="1056" height="64" rx="26" fill="#172430"/>
+    <path d="M72 114H1128" stroke="#2B4052" stroke-width="2"/>
+    <circle cx="112" cy="98" r="8" fill="#F56B6B"/>
+    <circle cx="140" cy="98" r="8" fill="#F3C766"/>
+    <circle cx="168" cy="98" r="8" fill="#54D99C"/>
+  </g>
+  <text x="214" y="107" fill="#7E91A3" font-family="Menlo, Consolas, monospace" font-size="18">oomol.com / updates / studio</text>
+  <text x="112" y="192" fill="#7FE0C2" font-family="Menlo, Consolas, monospace" font-size="22" font-weight="700">STUDIO RELEASE</text>
+  <text x="112" y="286" fill="#F5F8FA" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="66" font-weight="800">OOMOL Studio 1.5.10</text>
+  <text x="112" y="346" fill="#B8C5D1" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="28" font-weight="500">OOPilot 上下文、连接器、包搜索与日志体验</text>
+  <rect x="112" y="472" width="556" height="64" rx="16" fill="#0D151C" stroke="#304657"/>
+  <path d="M140 504H276" stroke="url(#accent)" stroke-width="8" stroke-linecap="round"/>
+  <text x="306" y="514" fill="#D9E4EC" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="650">OOPilot</text>
+  <text x="474" y="514" fill="#6E8496" font-family="Inter, Arial, sans-serif" font-size="22">/</text>
+  <text x="502" y="514" fill="#D9E4EC" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="650">连接器</text>
+  <text x="620" y="514" fill="#6E8496" font-family="Inter, Arial, sans-serif" font-size="22">/</text>
+  <text x="648" y="514" fill="#D9E4EC" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="650">日志</text>
+  <g transform="translate(760 356) scale(0.62)">
+    <rect x="0" y="0" width="332" height="286" rx="24" fill="#0C151D" stroke="#345064"/>
+    <rect x="24" y="26" width="132" height="18" rx="9" fill="#2BF4C9" fill-opacity="0.28"/>
+    <rect x="24" y="58" width="248" height="12" rx="6" fill="#42576B"/>
+    <rect x="24" y="80" width="202" height="12" rx="6" fill="#2D4051"/>
 
-  <rect x="136" y="500" width="380" height="126" rx="24" fill="#EEF6FF"/>
-  <rect x="560" y="500" width="380" height="126" rx="24" fill="#EEF9F3"/>
-  <rect x="984" y="500" width="380" height="126" rx="24" fill="#FFF6E8"/>
-  <text x="180" y="552" fill="#1263B3" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="800">OOPilot</text>
-  <text x="180" y="592" fill="#182033" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="30" font-weight="700">更懂上下文</text>
-  <text x="604" y="552" fill="#168C58" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="26" font-weight="800">连接器</text>
-  <text x="604" y="592" fill="#182033" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="30" font-weight="700">节点操作更清晰</text>
-  <text x="1028" y="552" fill="#B76700" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="26" font-weight="800">工作流</text>
-  <text x="1028" y="592" fill="#182033" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="30" font-weight="700">日常使用更稳定</text>
-
-  <rect x="136" y="688" width="1228" height="64" rx="18" fill="#F1F4F8"/>
-  <rect x="168" y="712" width="280" height="16" rx="8" fill="#1263B3"/>
-  <rect x="480" y="712" width="208" height="16" rx="8" fill="#168C58"/>
-  <rect x="720" y="712" width="160" height="16" rx="8" fill="#B76700"/>
-  <rect x="912" y="712" width="316" height="16" rx="8" fill="#6C5CE7"/>
+    <rect x="42" y="126" width="116" height="62" rx="16" fill="#142B36" stroke="#2BF4C9" stroke-opacity="0.72"/>
+    <text x="58" y="152" fill="#F5F8FA" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15" font-weight="750">OOPilot</text>
+    <text x="58" y="174" fill="#9FB0C0" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="550">上下文理解</text>
+    <rect x="178" y="126" width="116" height="62" rx="16" fill="#12243A" stroke="#5CA8FF" stroke-opacity="0.72"/>
+    <text x="194" y="152" fill="#F5F8FA" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15" font-weight="750">Connector</text>
+    <text x="194" y="174" fill="#9FB0C0" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="550">节点操作</text>
+    <rect x="110" y="212" width="116" height="62" rx="16" fill="#29221B" stroke="#F3C766" stroke-opacity="0.72"/>
+    <text x="126" y="238" fill="#F5F8FA" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15" font-weight="750">Logs</text>
+    <text x="126" y="260" fill="#9FB0C0" font-family="Inter, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="550">日志体验</text>
+    <path d="M158 157H178" stroke="#7E91A3" stroke-width="3" stroke-linecap="round"/>
+    <path d="M174 188L168 212" stroke="#7E91A3" stroke-width="3" stroke-linecap="round"/>
+    <path d="M236 188L226 212" stroke="#7E91A3" stroke-width="3" stroke-linecap="round"/>
+  </g>
 </svg>
