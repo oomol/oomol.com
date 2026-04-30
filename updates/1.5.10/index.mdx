@@ -1,0 +1,90 @@
+---
+slug: OOMOL_Studio_1.5.10
+title: OOMOL Studio 1.5.10
+date: 2026-04-30
+description: "OOMOL Studio 1.5.10 improves OOPilot context understanding, connector interactions, package management, logs, and syncs with upstream VS Code 1.117.0."
+image: /img/release/1.5.10/cover.svg
+---
+
+# OOMOL Studio
+
+## General
+
+### 1. OOPilot better understands your current work context
+
+This release continues to improve the OOPilot experience in real projects. OOPilot now more reliably understands the files you currently have open, the context across ongoing conversations, and the relationship between multiple rounds of user requests.
+
+In day-to-day use, this means OOPilot can better follow what you are working on when you ask it to modify a Block, add configuration, continue a previous task, or adjust something based on the current file. You should need to repeat context less often.
+
+<!-- truncate -->
+
+### 2. Improved AI assistant task understanding and prompt quality
+
+We streamlined and adjusted OOPilot's internal prompts to reduce repeated instructions and irrelevant context, helping the AI stay more focused when working with workflows, Blocks, Packages, and Skills.
+
+When creating task Blocks, writing workflow configuration, handling cloud Skill documentation, or preparing releases, OOPilot now gives suggestions that are more closely aligned with OOMOL scenarios. It also reduces common issues such as placeholder template content, self-dependent configuration, and overly generic explanations.
+
+### 3. Fixed chat startup state in new environments
+
+In some fresh configurations or new environments, chat could already be available while the UI still showed that setup needed to be completed. OOMOL Studio now marks setup as complete after detecting available chat capabilities, preventing the lower-right corner from incorrectly continuing to show `Finish Setup`.
+
+## Workflows and Connectors
+
+### 1. Clearer connector actions
+
+This release improves connector-related interactions. Workflow nodes can provide more direct entry points for connector actions, and connection status, menu items, and error feedback are now clearer.
+
+When a Block needs to connect to an external service or account, users can more easily see the current connection status and complete related actions near the node, reducing the need to jump between pages to find configuration entry points.
+
+### 2. Improved connector status and error messages
+
+We improved connector status display and node error handling in Designer. When a node has a connection issue or incomplete precondition before execution, the UI now more clearly indicates where the problem is, helping users determine whether the connection is incomplete, configuration is missing, or the service state is abnormal.
+
+### 3. Fixed connector menu and styling issues
+
+This release fixes styling issues in connector actions and connector submenus, making connector menus more stable across different nodes and panels and reducing layout misalignment or inconsistent interactions.
+
+## Programming Features
+
+### 1. Updated upstream VS Code capabilities
+
+OOMOL Studio has synced with upstream VS Code `1.117.0`, bringing updates to underlying editor capabilities, compatibility, and dependencies.
+
+### 2. Improved package search and package management
+
+Package search now sorts results by relevance when a search query is present, helping users find target Packages more quickly. When there is no query, search avoids incorrectly applying relevance sorting, reducing unexpected result ordering.
+
+We also fixed an issue where the wrong icon could be shown during Package downloads, making installation and download status more accurate.
+
+### 3. Improved the log panel
+
+The log panel now follows a display style closer to VS Code and includes a reset action. When debugging workflows, checking execution logs, or investigating errors, the panel state is easier to restore and better suited for long viewing sessions.
+
+### 4. Fixed chat title generation stability
+
+This release adjusts the output limits used during chat title generation, reducing the risk of abnormal output or overly long content during title generation.
+
+## Others
+
+### Dependency Updates
+
+This release upgrades several OOMOL internal core components:
+
+- OOPilot upgraded to `0.1.139`
+- Studio Core upgraded to `0.0.899`
+- Designer upgraded to `0.8.426`
+- Oocana upgraded to `0.24.11`
+
+Together, these updates improve consistency across the AI assistant, workflow designer, connector services, and runtime capabilities.
+
+### Compare
+
+Source repository: [oomol/oomol-studio-code](https://github.com/oomol/oomol-studio-code)
+
+Changes in this release: [v1.5.9...v1.5.10](https://github.com/oomol/oomol-studio-code/compare/v1.5.9...v1.5.10)
+
+Recent cumulative improvements: [v1.5.6...v1.5.10](https://github.com/oomol/oomol-studio-code/compare/v1.5.6...v1.5.10)
+
+### Thanks
+
+Thanks to everyone who shared feedback on the AI assistant, connectors, and workflow experience. We will continue turning underlying fixes into a more stable and easier-to-understand product experience.
